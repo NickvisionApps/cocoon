@@ -40,7 +40,7 @@ if(COCOON_SDK_MAJOR)
     target_compile_definitions(${PROJECT_NAME} PUBLIC COCOON_SDK_MAJOR=${COCOON_SDK_MAJOR})
 endif()
 target_precompile_headers(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src/internal.h)
-target_compile_options(${PROJECT_NAME} PRIVATE -fobjc-arc -Wall -Wextra -Wno-unused-parameter -Wno-deprecated-declarations -Wno-unguarded-availability-new -Wno-cast-function-type-mismatch -Wno-distributed-object-modifiers -Wno-auto-var-id -ferror-limit=0)
+target_compile_options(${PROJECT_NAME} PRIVATE -fobjc-arc -Wall -Wextra -Wno-unused-parameter -Wno-deprecated-declarations -Wno-unguarded-availability-new -Wno-cast-function-type-mismatch -Wno-distributed-object-modifiers -Wno-objc-protocol-property-synthesis -Wno-auto-var-id -ferror-limit=0)
 
 #cocoon Packages
 target_link_libraries(${PROJECT_NAME} PUBLIC

@@ -182,12 +182,16 @@ def parm_list(decl, to_snake=True):
         while name in used:
             name += "_"
         used.append(name)
-        result.append((name, p["type"]))
+        noescape = any(c.get("kind") == "NoEscapeAttr" for c in p.get("inner", []))
+        result.append((name, {**p["type"], "noescape": True} if noescape else p["type"]))
     return result
 
 
-def signature_type(q):
+def signature_type(t):
+    q = t["qualType"]
     text = clean(q)
+    if t.get("noescape"):
+        text = text.replace("(^", "(NS_NOESCAPE ^", 1)
     if re.match(r"\s*const\b", q) and text.endswith("*") and not text.startswith("const"):
         return "const " + text
     return text
@@ -587,7 +591,7 @@ def build_delegate_block(model, d, signal_defs):
             ret_q = clean(decl["returnType"]["qualType"])
             parts = selector.split(":")
             if parms:
-                sig_text = f"- ({ret_q})" + " ".join(f"{parts[i]}:({signature_type(parms[i][1]['qualType'])}){parms[i][0]}" for i in range(len(parms)))
+                sig_text = f"- ({ret_q})" + " ".join(f"{parts[i]}:({signature_type(parms[i][1])}){parms[i][0]}" for i in range(len(parms)))
             else:
                 sig_text = f"- ({ret_q}){selector}"
             pre, post, emit_args = [], [], []

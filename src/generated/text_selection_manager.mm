@@ -116,7 +116,7 @@
 
 @implementation AKTextSelectionManagerTextSelectionDataSourceDelegate
 
-- (void)enumerateSubstringsFromLocation:(id<NSTextLocation>)location options:(NSStringEnumerationOptions)options usingBlock:(void (^)(NSString*, NSTextRange*, NSTextRange*, BOOL*))block
+- (void)enumerateSubstringsFromLocation:(id<NSTextLocation>)location options:(NSStringEnumerationOptions)options usingBlock:(void(NS_NOESCAPE ^)(NSString*, NSTextRange*, NSTextRange*, BOOL*))block
 {
     id strongHost = host;
     if (!strongHost)
@@ -183,7 +183,7 @@
     return static_cast<::NSTextSelectionNavigationWritingDirection>(__r);
 }
 
-- (void)enumerateCaretOffsetsInLineFragmentAtLocation:(id<NSTextLocation>)location usingBlock:(void (^)(CGFloat, id<NSTextLocation>, BOOL, BOOL*))block
+- (void)enumerateCaretOffsetsInLineFragmentAtLocation:(id<NSTextLocation>)location usingBlock:(void(NS_NOESCAPE ^)(CGFloat, id<NSTextLocation>, BOOL, BOOL*))block
 {
     id strongHost = host;
     if (!strongHost)
@@ -217,7 +217,7 @@
     return cocoon::internal::native<::NSTextRange>(__r);
 }
 
-- (void)enumerateContainerBoundariesFromLocation:(id<NSTextLocation>)location reverse:(BOOL)reverse usingBlock:(void (^)(id<NSTextLocation>, BOOL*))block
+- (void)enumerateContainerBoundariesFromLocation:(id<NSTextLocation>)location reverse:(BOOL)reverse usingBlock:(void(NS_NOESCAPE ^)(id<NSTextLocation>, BOOL*))block
 {
     id strongHost = host;
     if (!strongHost)
