@@ -100,4 +100,5 @@ endif()
 #cocoon Examples
 if(COCOON_BUILD_EXAMPLES)
     add_subdirectory(examples/gallery)
+    add_subdirectory(examples/calculator)
 endif()

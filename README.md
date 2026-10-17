@@ -43,7 +43,7 @@ cocoon exists to make AppKit feel native in C++: the full framework surface, wit
 
 ## Build and installation
 
-Build the static library `cocoon::cocoon` (and the gallery example):
+Build the static library `cocoon::cocoon` (and the example applications):
 
 ```
 cmake -S . -B build
@@ -54,7 +54,7 @@ The first build compiles about 580 classes, so it takes a few minutes.
 
 | Option | Default | Meaning |
 |---|---|---|
-| `COCOON_BUILD_EXAMPLES` | `ON` | Build the gallery example |
+| `COCOON_BUILD_EXAMPLES` | `ON` | Build the example applications |
 | `COCOON_REGENERATE` | `OFF` | Add a `cocoon_generate` target that reruns the generator |
 
 Install the library, headers and CMake package files:
@@ -86,3 +86,5 @@ Either way the target brings in C++20, the include directory and the AppKit, Fou
 ## Examples
 
 `examples/gallery` is a complete application that exercises much of the library: a unified titlebar window with a sidebar, Liquid Glass surfaces, a customizable toolbar, the standard menu bar and a Settings window. It is built by default and lands in `build/examples/gallery/gallery.app`; see its own [README](examples/gallery/README.md) for details.
+
+`examples/calculator` is a small calculator with a Liquid Glass keypad, a resizable window and its logic in a plain C++ class. It lands in `build/examples/calculator/calculator.app`; see its own [README](examples/calculator/README.md).
