@@ -11,6 +11,7 @@
 
 @implementation AKStatusItemExpandedInterfaceDelegateDelegate
 
+#ifdef COCOON_MACOS_27
 - (void)statusItem:(NSStatusItem*)statusItem didBeginExpandedInterfaceSession:(NSStatusItemExpandedInterfaceSession*)expandedInterfaceSession
 {
     id strongHost = host;
@@ -21,6 +22,8 @@
     cocoon::Signal<cocoon::StatusItem, void(cocoon::StatusItemExpandedInterfaceSession)>::emit((__bridge void*)strongHost, "did_begin_expanded_interface_session", cocoon::internal::wrap<cocoon::StatusItemExpandedInterfaceSession>(expandedInterfaceSession));
 }
 
+#endif
+#ifdef COCOON_MACOS_27
 - (void)statusItemDidEndExpandedInterfaceSession:(NSStatusItem*)statusItem animated:(BOOL)animated
 {
     id strongHost = host;
@@ -31,17 +34,22 @@
     cocoon::Signal<cocoon::StatusItem, void(bool)>::emit((__bridge void*)strongHost, "did_end_expanded_interface_session_animated", static_cast<bool>(animated));
 }
 
+#endif
 - (BOOL)respondsToSelector:(SEL)selector
 {
     id strongHost = host;
+#ifdef COCOON_MACOS_27
     if (selector == @selector(statusItem:didBeginExpandedInterfaceSession:))
     {
         return strongHost && cocoon::Signal<cocoon::StatusItem, void(cocoon::StatusItemExpandedInterfaceSession)>::connected((__bridge void*)strongHost, "did_begin_expanded_interface_session");
     }
+#endif
+#ifdef COCOON_MACOS_27
     if (selector == @selector(statusItemDidEndExpandedInterfaceSession:animated:))
     {
         return strongHost && cocoon::Signal<cocoon::StatusItem, void(bool)>::connected((__bridge void*)strongHost, "did_end_expanded_interface_session_animated");
     }
+#endif
     return [super respondsToSelector:selector];
 }
 

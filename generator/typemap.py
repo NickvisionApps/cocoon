@@ -231,6 +231,7 @@ def load_enum(ns):
                 "underlying": cpp_under,
                 "flags": any(c["kind"] == "FlagEnumAttr" for c in node["inner"]),
                 "values": values,
+                "since": A.availability(node).introduced,
             }
             return S.enums[ns]
     raise Unmappable(f"enum {ns} not found")

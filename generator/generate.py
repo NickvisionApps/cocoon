@@ -157,6 +157,30 @@ def future_major(since):
     return 0
 
 
+_FUTURE_CACHE = {}
+
+
+def future_types():
+    key = (len(ALL_MODELS), len(S.enums))
+    if _FUTURE_CACHE.get("key") != key:
+        result = {}
+        for m in ALL_MODELS:
+            major = future_major(m.since)
+            if major:
+                result[m.name] = result[m.ns] = major
+        for ns, e in S.enums.items():
+            major = future_major(e.get("since"))
+            if major:
+                result[e["name"]] = result[ns] = major
+        _FUTURE_CACHE["key"] = key
+        _FUTURE_CACHE["value"] = result
+    return _FUTURE_CACHE["value"]
+
+
+def taint(text):
+    return max([0] + [v for k, v in future_types().items() if re.search(r"\b" + re.escape(k) + r"\b", text)])
+
+
 def macro_guard(major, text):
     if not major:
         return text
@@ -355,7 +379,8 @@ def make_ctor(model, decl):
             body += ["if (!__r && __error) { throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription)); }"]
         expr = "[&]() -> id { " + " ".join(body) + " return __r; }()"
     return {"header": f"    explicit {model.name}({decl_params});", "params": decl_params, "expr": expr,
-            "key": tuple(norm_type(t) for t, _ in cpp_params)}
+            "key": tuple(norm_type(t) for t, _ in cpp_params), "since": info.introduced,
+            "types": " ".join(t for t, _ in cpp_params)}
 
 
 def collect_delegate_property(model, prop):
@@ -562,7 +587,8 @@ def process_delegates():
                     taken.add(name)
                     sig = f"{ret.cpp}({', '.join(a[0] for a in args)})"
                     signal_defs[(model.ns, d["prop"], selector)] = {"name": name, "sig": sig}
-                    model.signals.append({"name": name, "sig": sig, "origin": "delegate", "major": d["major"]})
+                    method_major = max(d["major"], future_major(info.introduced), taint(sig + " " + " ".join(t["qualType"] for _, t in parms)))
+                    model.signals.append({"name": name, "sig": sig, "origin": "delegate", "major": method_major})
                 except Skip as e:
                     log_skip(model, selector, "delegate " + str(e))
                 except Unmappable as e:
@@ -620,8 +646,9 @@ def build_delegate_block(model, d, signal_defs):
                 body.append(f"    auto __r = {emit};")
                 body += ["    " + l for l in post]
                 body.append(f"    return {QUALIFIER(ret.conv_to('__r'))};")
-            methods_text.append(sig_text + "\n{\n" + "\n".join(body) + "\n}\n")
-            responds.append(f"    if (selector == @selector({selector})) {{\n        return strongHost && {signal}::connected((__bridge void*)strongHost, \"{sd['name']}\");\n    }}")
+            method_major = max(d["major"], future_major(A.availability(decl).introduced), taint(sig_text + " " + sd["sig"]))
+            methods_text.append(macro_guard(method_major, sig_text + "\n{\n" + "\n".join(body) + "\n}\n"))
+            responds.append(macro_guard(method_major, f"    if (selector == @selector({selector})) {{\n        return strongHost && {signal}::connected((__bridge void*)strongHost, \"{sd['name']}\");\n    }}"))
         except (Skip, Unmappable) as e:
             log_skip(model, selector, "delegate emit " + str(e))
     if not methods_text:
@@ -842,7 +869,7 @@ def ctor_bind_lines(model):
 
 def emit_model(model, signal_defs):
     name = model.name
-    future_classes = {m.name: future_major(m.since) for m in ALL_MODELS if future_major(m.since)}
+    future_classes = future_types()
     class_major = future_major(model.since)
     curated = model.curated
     refs = set(model.refs)
@@ -852,6 +879,7 @@ def emit_model(model, signal_defs):
             if word in BY_NAME or word in S.opaques:
                 refs.add(word)
     entries = []
+    ctor_major = {}
     curated_keys = set()
     default_callable = False
     for ctor in curated.get("ctors", []):
@@ -874,16 +902,17 @@ def emit_model(model, signal_defs):
     for c in model.ctors:
         if c["key"] not in curated_keys:
             entries.append((c["header"], c["params"], f"Adopt{{cocoon::internal::retain({c['expr']})}}"))
+            ctor_major[c["header"]] = max(future_major(c.get("since")), taint(c.get("types", "")))
             curated_keys.add(c["key"])
-    has_zero = default_callable or any(e[1] == "" for e in entries)
+    has_zero = default_callable or any(e[1] == "" and not ctor_major.get(e[0]) for e in entries)
     if not has_zero and not model.alias and chain_init_available(model):
         entries.append((f"    explicit {name}();", "", f"Adopt{{cocoon::internal::retain([[::{model.ns} alloc] init])}}"))
         has_zero = True
     binds = ctor_bind_lines(model)
     ctor_decls, other_decls, impl = [], [], []
     for header, params, init in entries:
-        ctor_decls.append(f"    /// @brief Creates a new `{model.ns}` instance and returns a handle to it.\n{header}")
-        impl.append(f"{name}::{name}({params}) : {name}({init})\n{{\n" + "\n".join(binds) + ("\n" if binds else "") + "}\n")
+        ctor_decls.append(macro_guard(ctor_major.get(header, 0), f"    /// @brief Creates a new `{model.ns}` instance and returns a handle to it.\n{header}"))
+        impl.append(macro_guard(ctor_major.get(header, 0), f"{name}::{name}({params}) : {name}({init})\n{{\n" + "\n".join(binds) + ("\n" if binds else "") + "}\n"))
     if not has_zero:
         ctor_decls.append(f"    {name}();")
         impl.append(f"{name}::{name}() : {model.base_name}(nullptr) {{}}\n")
