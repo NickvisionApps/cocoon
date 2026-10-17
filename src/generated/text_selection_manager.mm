@@ -24,6 +24,7 @@
 }
 
 #endif
+
 #ifdef COCOON_MACOS_27
 - (void)selectionManagerWillBeginSelection:(NSTextSelectionManager*)selectionManager
 {
@@ -36,6 +37,7 @@
 }
 
 #endif
+
 #ifdef COCOON_MACOS_27
 - (void)selectionManagerDidEndSelection:(NSTextSelectionManager*)selectionManager
 {
@@ -48,6 +50,7 @@
 }
 
 #endif
+
 #ifdef COCOON_MACOS_27
 - (id<NSTextLocation>)selectionManager:(NSTextSelectionManager*)selectionManager locationOfTextContainerAtPoint:(NSPoint)point
 {
@@ -61,6 +64,7 @@
 }
 
 #endif
+
 #ifdef COCOON_MACOS_27
 - (NSRect)selectionManager:(NSTextSelectionManager*)selectionManager frameOfTextContainerAtPoint:(NSPoint)point
 {
@@ -74,6 +78,7 @@
 }
 
 #endif
+
 #ifdef COCOON_MACOS_27
 - (NSDraggingSession*)selectionManager:(NSTextSelectionManager*)selectionManager makeDraggingSessionWithGesture:(NSGestureRecognizer*)gesture
 {
@@ -87,6 +92,7 @@
 }
 
 #endif
+
 - (BOOL)respondsToSelector:(SEL)selector
 {
     id strongHost = host;
@@ -96,36 +102,42 @@
         return strongHost && cocoon::Signal<cocoon::TextSelectionManager, bool(cocoon::Point)>::connected((__bridge void*)strongHost, "selection_manager_should_begin_selection_at_point");
     }
 #endif
+
 #ifdef COCOON_MACOS_27
     if (selector == @selector(selectionManagerWillBeginSelection:))
     {
         return strongHost && cocoon::Signal<cocoon::TextSelectionManager, void()>::connected((__bridge void*)strongHost, "selection_manager_will_begin_selection");
     }
 #endif
+
 #ifdef COCOON_MACOS_27
     if (selector == @selector(selectionManagerDidEndSelection:))
     {
         return strongHost && cocoon::Signal<cocoon::TextSelectionManager, void()>::connected((__bridge void*)strongHost, "selection_manager_did_end_selection");
     }
 #endif
+
 #ifdef COCOON_MACOS_27
     if (selector == @selector(selectionManager:locationOfTextContainerAtPoint:))
     {
         return strongHost && cocoon::Signal<cocoon::TextSelectionManager, cocoon::Object(cocoon::Point)>::connected((__bridge void*)strongHost, "selection_manager_location_of_text_container_at_point");
     }
 #endif
+
 #ifdef COCOON_MACOS_27
     if (selector == @selector(selectionManager:frameOfTextContainerAtPoint:))
     {
         return strongHost && cocoon::Signal<cocoon::TextSelectionManager, cocoon::Rect(cocoon::Point)>::connected((__bridge void*)strongHost, "selection_manager_frame_of_text_container_at_point");
     }
 #endif
+
 #ifdef COCOON_MACOS_27
     if (selector == @selector(selectionManager:makeDraggingSessionWithGesture:))
     {
         return strongHost && cocoon::Signal<cocoon::TextSelectionManager, cocoon::DraggingSession(cocoon::GestureRecognizer)>::connected((__bridge void*)strongHost, "selection_manager_make_dragging_session_with_gesture");
     }
 #endif
+
     return [super respondsToSelector:selector];
 }
 
@@ -288,6 +300,7 @@
 }
 
 #endif
+
 - (BOOL)respondsToSelector:(SEL)selector
 {
     id strongHost = host;
@@ -333,6 +346,7 @@
         return strongHost && cocoon::Signal<cocoon::TextSelectionManager, cocoon::Point(cocoon::Object)>::connected((__bridge void*)strongHost, "convert_interaction_point_to_container_at_location");
     }
 #endif
+
     return [super respondsToSelector:selector];
 }
 
@@ -369,6 +383,7 @@ namespace cocoon
     }
 
 #endif
+
 #ifdef COCOON_MACOS_27
     void TextSelectionManager::set_text_selection_mode(TextSelectionMode value) const
     {
@@ -376,6 +391,7 @@ namespace cocoon
     }
 
 #endif
+
     void TextSelectionManager::install_delegate_delegate_(void* native)
     {
         ::NSTextSelectionManager* host = (__bridge ::NSTextSelectionManager*)native;

@@ -384,6 +384,7 @@ namespace cocoon
      */
         std::int64_t maximum_number_of_touches_for_scrolling() const;
 #endif
+
 #ifdef COCOON_MACOS_27
         /**
      * @brief Sets the `maximumNumberOfTouchesForScrolling` property of `NSScrollView`.
@@ -392,6 +393,7 @@ namespace cocoon
      */
         void set_maximum_number_of_touches_for_scrolling(std::int64_t value) const;
 #endif
+
         /**
      * @brief Returns the `minMagnification` property of `NSScrollView`.
      * @details This value determines how small the content can be magnified. The default value is 0.25.
@@ -412,6 +414,7 @@ namespace cocoon
      */
         std::int64_t minimum_number_of_touches_for_scrolling() const;
 #endif
+
 #ifdef COCOON_MACOS_27
         /**
      * @brief Sets the `minimumNumberOfTouchesForScrolling` property of `NSScrollView`.
@@ -420,6 +423,7 @@ namespace cocoon
      */
         void set_minimum_number_of_touches_for_scrolling(std::int64_t value) const;
 #endif
+
         /**
      * @brief Returns the `pageScroll` property of `NSScrollView`.
      * @return The converted Objective-C result.
@@ -438,6 +442,7 @@ namespace cocoon
      */
         RefreshController refresh_controller() const;
 #endif
+
 #ifdef COCOON_MACOS_27
         /**
      * @brief Sets the `refreshController` property of `NSScrollView`.
@@ -446,6 +451,7 @@ namespace cocoon
      */
         void set_refresh_controller(const RefreshController& value) const;
 #endif
+
         /**
      * @brief Returns the `rulerViewClass` property of `NSScrollView`.
      * @return The converted Objective-C result.
@@ -474,6 +480,7 @@ namespace cocoon
      */
         GestureRecognizer scroll_gesture_for_relationships() const;
 #endif
+
         /**
      * @brief Returns the `scrollerInsets` property of `NSScrollView`.
      * @details The distance the scrollers are inset from the edge of the scroll view.
@@ -528,6 +535,7 @@ namespace cocoon
      */
         bool is_touch_scrolling_enabled() const;
 #endif
+
 #ifdef COCOON_MACOS_27
         /**
      * @brief Sets the `touchScrollingEnabled` property of `NSScrollView`.
@@ -536,6 +544,7 @@ namespace cocoon
      */
         void set_touch_scrolling_enabled(bool value) const;
 #endif
+
         /**
      * @brief Returns the `usesPredominantAxisScrolling` property of `NSScrollView`.
      * @details Some content is scrollable in both the horizontal and vertical axes, but is predominantly scrolled one axis at a time. Other content (such as a drawing canvas) should scroll freely in both axes. Traditionally this is not an issue with scroll wheels since they can only scroll in one direction at a time. With scroll balls and touch surfaces, it becomes more difficult to determine the user's intention. This property helps NSScrollView determine the user's intention by specifying the type of scrolling content. When set to YES, NSScrollView will only scroll in the predominate direction the user is scrolling. The default value is YES for apps build on 10.7; NO otherwise.

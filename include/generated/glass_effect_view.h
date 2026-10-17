@@ -79,6 +79,7 @@ namespace cocoon
      */
         bool effect_is_interactive() const;
 #endif
+
 #ifdef COCOON_MACOS_27
         /**
      * @brief Sets the `effectIsInteractive` property of `NSGlassEffectView`.
@@ -87,6 +88,7 @@ namespace cocoon
      */
         void set_effect_is_interactive(bool value) const;
 #endif
+
         /**
      * @brief Returns the `style` property of `NSGlassEffectView`.
      * @details The style of glass this view uses.

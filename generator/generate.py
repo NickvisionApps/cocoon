@@ -184,7 +184,7 @@ def taint(text):
 def macro_guard(major, text):
     if not major:
         return text
-    return f"#ifdef COCOON_MACOS_{major}\n{text}\n#endif"
+    return f"#ifdef COCOON_MACOS_{major}\n{text}\n#endif\n"
 
 
 def guard_lines(lines, since, void, ret=None):

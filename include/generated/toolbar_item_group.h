@@ -104,6 +104,7 @@ namespace cocoon
      */
         ToolbarItemGroupRole role() const;
 #endif
+
 #ifdef COCOON_MACOS_27
         /**
      * @brief Sets the `role` property of `NSToolbarItemGroup`.
@@ -112,6 +113,7 @@ namespace cocoon
      */
         void set_role(ToolbarItemGroupRole value) const;
 #endif
+
         /**
      * @brief Returns the `selectedIndex` property of `NSToolbarItemGroup`.
      * @details The most recently selected item of the group, or -1 if nothing is selected.

@@ -23,6 +23,7 @@ namespace cocoon
     }
 
 #endif
+
 #ifdef COCOON_MACOS_27
     ViewCornerRadius ViewCornerRadius::fixed_radius(double radius)
     {
@@ -30,6 +31,7 @@ namespace cocoon
     }
 
 #endif
+
 #ifdef COCOON_MACOS_27
     ViewCornerRadius ViewCornerRadius::container_concentric_radius()
     {

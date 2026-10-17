@@ -388,6 +388,7 @@ namespace cocoon
     }
 
 #endif
+
     TrackingArea Event::tracking_area() const
     {
         return cocoon::internal::wrap<TrackingArea>([cocoon::internal::ns<::NSEvent>(this) trackingArea]);

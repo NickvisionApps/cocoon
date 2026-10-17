@@ -222,6 +222,7 @@ namespace cocoon
     }
 
 #endif
+
 #ifdef COCOON_MACOS_27
     void MenuItem::set_preferred_image_visibility(MenuItemImageVisibility value) const
     {
@@ -232,6 +233,7 @@ namespace cocoon
     }
 
 #endif
+
     Object MenuItem::represented_object() const
     {
         return cocoon::internal::wrap<Object>([cocoon::internal::ns<::NSMenuItem>(this) representedObject]);

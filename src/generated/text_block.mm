@@ -31,6 +31,7 @@ namespace cocoon
     }
 
 #endif
+
     Rect TextBlock::bounds_rect_for_content_rect(const Rect& content_rect, const Rect& rect, const TextContainer& text_container, const Range& char_range) const
     {
         return cocoon::internal::from([cocoon::internal::ns<::NSTextBlock>(this) boundsRectForContentRect:cocoon::internal::to(content_rect) inRect:cocoon::internal::to(rect) textContainer:cocoon::internal::native<::NSTextContainer>(text_container) characterRange:cocoon::internal::to(char_range)]);
@@ -66,6 +67,7 @@ namespace cocoon
     }
 
 #endif
+
     void TextBlock::set_content_width(double content_width, TextBlockValueType type) const
     {
         [cocoon::internal::ns<::NSTextBlock>(this) setContentWidth:static_cast<::CGFloat>(content_width) type:static_cast<::NSTextBlockValueType>(type)];
@@ -96,6 +98,7 @@ namespace cocoon
     }
 
 #endif
+
     double TextBlock::value_for_dimension(TextBlockDimension dimension) const
     {
         return static_cast<double>([cocoon::internal::ns<::NSTextBlock>(this) valueForDimension:static_cast<::NSTextBlockDimension>(dimension)]);
@@ -122,6 +125,7 @@ namespace cocoon
     }
 
 #endif
+
     TextBlockValueType TextBlock::width_value_type_for_layer(TextBlockLayer layer, RectEdge edge) const
     {
         return static_cast<TextBlockValueType>([cocoon::internal::ns<::NSTextBlock>(this) widthValueTypeForLayer:static_cast<::NSTextBlockLayer>(layer) edge:static_cast<::NSRectEdge>(edge)]);
@@ -138,6 +142,7 @@ namespace cocoon
     }
 
 #endif
+
     Color TextBlock::background_color() const
     {
         return cocoon::internal::wrap<Color>([cocoon::internal::ns<::NSTextBlock>(this) backgroundColor]);

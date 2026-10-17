@@ -52,6 +52,7 @@ namespace cocoon
     }
 
 #endif
+
 #ifdef COCOON_MACOS_27
     void PanGestureRecognizer::set_maximum_number_of_touches(std::int64_t value) const
     {
@@ -62,6 +63,7 @@ namespace cocoon
     }
 
 #endif
+
 #ifdef COCOON_MACOS_27
     std::int64_t PanGestureRecognizer::minimum_number_of_touches() const
     {
@@ -73,6 +75,7 @@ namespace cocoon
     }
 
 #endif
+
 #ifdef COCOON_MACOS_27
     void PanGestureRecognizer::set_minimum_number_of_touches(std::int64_t value) const
     {
@@ -83,6 +86,7 @@ namespace cocoon
     }
 
 #endif
+
     std::int64_t PanGestureRecognizer::number_of_touches_required() const
     {
         return static_cast<std::int64_t>([cocoon::internal::ns<::NSPanGestureRecognizer>(this) numberOfTouchesRequired]);

@@ -315,6 +315,7 @@ namespace cocoon
     }
 
 #endif
+
 #ifdef COCOON_MACOS_27
     void ScrollView::set_maximum_number_of_touches_for_scrolling(std::int64_t value) const
     {
@@ -325,6 +326,7 @@ namespace cocoon
     }
 
 #endif
+
     double ScrollView::min_magnification() const
     {
         return static_cast<double>([cocoon::internal::ns<::NSScrollView>(this) minMagnification]);
@@ -346,6 +348,7 @@ namespace cocoon
     }
 
 #endif
+
 #ifdef COCOON_MACOS_27
     void ScrollView::set_minimum_number_of_touches_for_scrolling(std::int64_t value) const
     {
@@ -356,6 +359,7 @@ namespace cocoon
     }
 
 #endif
+
     double ScrollView::page_scroll() const
     {
         return static_cast<double>([cocoon::internal::ns<::NSScrollView>(this) pageScroll]);
@@ -377,6 +381,7 @@ namespace cocoon
     }
 
 #endif
+
 #ifdef COCOON_MACOS_27
     void ScrollView::set_refresh_controller(const RefreshController& value) const
     {
@@ -387,6 +392,7 @@ namespace cocoon
     }
 
 #endif
+
     std::string ScrollView::ruler_view_class()
     {
         return cocoon::internal::from(NSStringFromClass([::NSScrollView rulerViewClass]));
@@ -418,6 +424,7 @@ namespace cocoon
     }
 
 #endif
+
     Insets ScrollView::scroller_insets() const
     {
         return cocoon::internal::from([cocoon::internal::ns<::NSScrollView>(this) scrollerInsets]);
@@ -469,6 +476,7 @@ namespace cocoon
     }
 
 #endif
+
 #ifdef COCOON_MACOS_27
     void ScrollView::set_touch_scrolling_enabled(bool value) const
     {
@@ -479,6 +487,7 @@ namespace cocoon
     }
 
 #endif
+
     bool ScrollView::uses_predominant_axis_scrolling() const
     {
         return static_cast<bool>([cocoon::internal::ns<::NSScrollView>(this) usesPredominantAxisScrolling]);

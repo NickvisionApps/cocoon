@@ -220,6 +220,7 @@ namespace cocoon
      */
         DraggingSession begin_dragging_session_with_items(const std::vector<DraggingItem>& items, const GestureRecognizer& gesture, const Object& source) const;
 #endif
+
         /**
      * @brief Calls `-[NSView beginPageInRect:atPlacement:]`.
      * @param rect Argument converted to the Objective-C parameter of the same role.
@@ -507,6 +508,7 @@ namespace cocoon
      */
         void invalidate_corner_configuration() const;
 #endif
+
         /**
      * @brief Calls `-[NSView invalidateIntrinsicContentSize]`.
      */
@@ -883,6 +885,7 @@ namespace cocoon
      */
         void view_did_change_effective_corner_radii() const;
 #endif
+
         /**
      * @brief Calls `-[NSView viewDidEndLiveResize]`.
      * @details A view receives viewDidEndLiveResize after the frame is last changed for a live resize. It is important to call [super viewDidEndLiveResize].
@@ -1155,6 +1158,7 @@ namespace cocoon
      */
         ViewCornerConfiguration corner_configuration() const;
 #endif
+
         /**
      * @brief Returns the `defaultFocusRingType` property of `NSView`.
      * @return The converted Objective-C result.
@@ -1179,6 +1183,7 @@ namespace cocoon
      */
         ViewCornerRadii effective_corner_radii() const;
 #endif
+
         /**
      * @brief Returns the `enclosingMenuItem` property of `NSView`.
      * @return The converted Objective-C result.
@@ -1198,6 +1203,7 @@ namespace cocoon
      */
         ViewExclusiveGestureBehavior exclusive_gesture_behavior() const;
 #endif
+
 #ifdef COCOON_MACOS_27
         /**
      * @brief Sets the `exclusiveGestureBehavior` property of `NSView`.
@@ -1206,6 +1212,7 @@ namespace cocoon
      */
         void set_exclusive_gesture_behavior(ViewExclusiveGestureBehavior value) const;
 #endif
+
         /**
      * @brief Returns the `firstBaselineAnchor` property of `NSView`.
      * @return The converted Objective-C result.
@@ -1663,6 +1670,7 @@ namespace cocoon
      */
         TextSelectionManager text_selection_manager() const;
 #endif
+
 #ifdef COCOON_MACOS_27
         /**
      * @brief Sets the `textSelectionManager` property of `NSView`.
@@ -1670,6 +1678,7 @@ namespace cocoon
      */
         void set_text_selection_manager(const TextSelectionManager& value) const;
 #endif
+
         /**
      * @brief Returns the `toolTip` property of `NSView`.
      * @return The converted Objective-C result.

@@ -136,6 +136,7 @@ namespace cocoon
     }
 
 #endif
+
     Rect Screen::visible_frame() const
     {
         return cocoon::internal::from([cocoon::internal::ns<::NSScreen>(this) visibleFrame]);

@@ -294,6 +294,7 @@ namespace cocoon
     }
 
 #endif
+
 #ifdef COCOON_MACOS_27
     void GestureRecognizer::set_cancellable_by_scroll_gesture(bool value) const
     {
@@ -304,6 +305,7 @@ namespace cocoon
     }
 
 #endif
+
     bool GestureRecognizer::delays_key_events() const
     {
         return static_cast<bool>([cocoon::internal::ns<::NSGestureRecognizer>(this) delaysKeyEvents]);

@@ -123,6 +123,7 @@ namespace cocoon
     }
 
 #endif
+
     void SpellChecker::ignore_word(const std::string& word_to_ignore, std::int64_t tag) const
     {
         [cocoon::internal::ns<::NSSpellChecker>(this) ignoreWord:cocoon::internal::to(word_to_ignore) inSpellDocumentWithTag:static_cast<::NSInteger>(tag)];

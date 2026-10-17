@@ -171,6 +171,7 @@ namespace cocoon
      */
         void ignore_grammar_range(const Range& grammar_range, const std::string& sentence, std::int64_t tag) const;
 #endif
+
         /**
      * @brief Calls `-[NSSpellChecker ignoreWord:inSpellDocumentWithTag:]`.
      * @details This method should be called from the client's implementation of -ignoreSpelling:

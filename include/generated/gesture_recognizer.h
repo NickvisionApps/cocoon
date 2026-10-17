@@ -222,6 +222,7 @@ namespace cocoon
      */
         bool is_cancellable_by_scroll_gesture() const;
 #endif
+
 #ifdef COCOON_MACOS_27
         /**
      * @brief Sets the `cancellableByScrollGesture` property of `NSGestureRecognizer`.
@@ -230,6 +231,7 @@ namespace cocoon
      */
         void set_cancellable_by_scroll_gesture(bool value) const;
 #endif
+
         /**
      * @brief Returns the `delaysKeyEvents` property of `NSGestureRecognizer`.
      * @return The converted Objective-C result.

@@ -88,6 +88,7 @@ namespace cocoon
      */
         std::int64_t maximum_number_of_touches() const;
 #endif
+
 #ifdef COCOON_MACOS_27
         /**
      * @brief Sets the `maximumNumberOfTouches` property of `NSPanGestureRecognizer`.
@@ -96,6 +97,7 @@ namespace cocoon
      */
         void set_maximum_number_of_touches(std::int64_t value) const;
 #endif
+
 #ifdef COCOON_MACOS_27
         /**
      * @brief Returns the `minimumNumberOfTouches` property of `NSPanGestureRecognizer`.
@@ -104,6 +106,7 @@ namespace cocoon
      */
         std::int64_t minimum_number_of_touches() const;
 #endif
+
 #ifdef COCOON_MACOS_27
         /**
      * @brief Sets the `minimumNumberOfTouches` property of `NSPanGestureRecognizer`.
@@ -112,6 +115,7 @@ namespace cocoon
      */
         void set_minimum_number_of_touches(std::int64_t value) const;
 #endif
+
         /**
      * @brief Returns the `numberOfTouchesRequired` property of `NSPanGestureRecognizer`.
      * @details Number of touches required to recognize the gesture when used in NSTouchBar

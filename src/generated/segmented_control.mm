@@ -205,6 +205,7 @@ namespace cocoon
     }
 
 #endif
+
 #ifdef COCOON_MACOS_27
     void SegmentedControl::set_role(SegmentedControlRole value) const
     {
@@ -215,6 +216,7 @@ namespace cocoon
     }
 
 #endif
+
     std::int64_t SegmentedControl::segment_count() const
     {
         return static_cast<std::int64_t>([cocoon::internal::ns<::NSSegmentedControl>(this) segmentCount]);

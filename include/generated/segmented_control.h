@@ -260,6 +260,7 @@ namespace cocoon
      */
         SegmentedControlRole role() const;
 #endif
+
 #ifdef COCOON_MACOS_27
         /**
      * @brief Sets the `role` property of `NSSegmentedControl`.
@@ -267,6 +268,7 @@ namespace cocoon
      */
         void set_role(SegmentedControlRole value) const;
 #endif
+
         /**
      * @brief Returns the `segmentCount` property of `NSSegmentedControl`.
      * @return The converted Objective-C result.

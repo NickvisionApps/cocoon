@@ -940,6 +940,7 @@ namespace cocoon
     }
 
 #endif
+
     void TextView::replace_text_container(const TextContainer& new_container) const
     {
         [cocoon::internal::ns<::NSTextView>(this) replaceTextContainer:cocoon::internal::native<::NSTextContainer>(new_container)];
@@ -1101,6 +1102,7 @@ namespace cocoon
     }
 
 #endif
+
 #ifdef COCOON_MACOS_27
     void TextView::text_viewport_layout_controller_did_layout(const TextViewportLayoutController& text_viewport_layout_controller) const
     {
@@ -1111,6 +1113,7 @@ namespace cocoon
     }
 
 #endif
+
 #ifdef COCOON_MACOS_27
     void TextView::text_viewport_layout_controller_received_set_needs_layout(const TextViewportLayoutController& text_viewport_layout_controller) const
     {
@@ -1121,6 +1124,7 @@ namespace cocoon
     }
 
 #endif
+
 #ifdef COCOON_MACOS_27
     void TextView::text_viewport_layout_controller_will_layout(const TextViewportLayoutController& text_viewport_layout_controller) const
     {
@@ -1131,6 +1135,7 @@ namespace cocoon
     }
 
 #endif
+
     void TextView::tighten_kerning(const Object& sender) const
     {
         [cocoon::internal::ns<::NSTextView>(this) tightenKerning:cocoon::internal::native_id(sender)];
@@ -1272,6 +1277,7 @@ namespace cocoon
     }
 
 #endif
+
     bool TextView::write_selection_to_pasteboard(const Pasteboard& pboard, const std::string& type) const
     {
         return static_cast<bool>([cocoon::internal::ns<::NSTextView>(this) writeSelectionToPasteboard:cocoon::internal::native<::NSPasteboard>(pboard) type:cocoon::internal::to(type)]);

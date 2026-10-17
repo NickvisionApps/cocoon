@@ -793,21 +793,30 @@ namespace cocoon
         {
             return Signal<Browser, bool(std::int64_t, std::int64_t)>(handle(), "should_show_cell_expansion_for_row_column");
         }
+#ifdef COCOON_MACOS_27
         /// @brief Signal for the delegate/data-source method behind `pasteboard_writer_for_row_column`; connect a callback with `pasteboard_writer_for_row_column().connect(...)`.
         Signal<Browser, Object(std::int64_t, std::int64_t)> pasteboard_writer_for_row_column() const
         {
             return Signal<Browser, Object(std::int64_t, std::int64_t)>(handle(), "pasteboard_writer_for_row_column");
         }
+#endif
+
+#ifdef COCOON_MACOS_27
         /// @brief Signal for the delegate/data-source method behind `dragging_session_will_begin_at_point_for_rows_with_indexes_column`; connect a callback with `dragging_session_will_begin_at_point_for_rows_with_indexes_column().connect(...)`.
         Signal<Browser, void(DraggingSession, Point, IndexSet, std::int64_t)> dragging_session_will_begin_at_point_for_rows_with_indexes_column() const
         {
             return Signal<Browser, void(DraggingSession, Point, IndexSet, std::int64_t)>(handle(), "dragging_session_will_begin_at_point_for_rows_with_indexes_column");
         }
+#endif
+
+#ifdef COCOON_MACOS_27
         /// @brief Signal for the delegate/data-source method behind `dragging_session_ended_at_point_operation`; connect a callback with `dragging_session_ended_at_point_operation().connect(...)`.
         Signal<Browser, void(DraggingSession, Point, DragOperation)> dragging_session_ended_at_point_operation() const
         {
             return Signal<Browser, void(DraggingSession, Point, DragOperation)>(handle(), "dragging_session_ended_at_point_operation");
         }
+#endif
+
         /// @brief Signal for the delegate/data-source method behind `write_rows_with_indexes_in_column_to_pasteboard`; connect a callback with `write_rows_with_indexes_in_column_to_pasteboard().connect(...)`.
         Signal<Browser, bool(IndexSet, std::int64_t, Pasteboard)> write_rows_with_indexes_in_column_to_pasteboard() const
         {

@@ -165,6 +165,7 @@ namespace cocoon
      */
         ScreenTouchCapabilities touch_capabilities() const;
 #endif
+
         /**
      * @brief Returns the `visibleFrame` property of `NSScreen`.
      * @return The converted Objective-C result.

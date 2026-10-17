@@ -79,6 +79,7 @@ namespace cocoon
     }
 
 #endif
+
 #ifdef COCOON_MACOS_27
     void ToolbarItemGroup::set_role(ToolbarItemGroupRole value) const
     {
@@ -89,6 +90,7 @@ namespace cocoon
     }
 
 #endif
+
     std::int64_t ToolbarItemGroup::selected_index() const
     {
         return static_cast<std::int64_t>([cocoon::internal::ns<::NSToolbarItemGroup>(this) selectedIndex]);

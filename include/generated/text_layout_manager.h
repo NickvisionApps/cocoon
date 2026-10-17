@@ -322,16 +322,21 @@ namespace cocoon
         {
             return Signal<TextLayoutManager, std::map<std::string, Object>(Object, Object, std::map<std::string, Object>)>(handle(), "rendering_attributes_for_link_at_location_default_attributes");
         }
+#ifdef COCOON_MACOS_27
         /// @brief Signal for the delegate/data-source method behind `cache_text_attachment_view_provider_for_text_attachment`; connect a callback with `cache_text_attachment_view_provider_for_text_attachment().connect(...)`.
         Signal<TextLayoutManager, void(TextAttachmentViewProvider, TextAttachment)> cache_text_attachment_view_provider_for_text_attachment() const
         {
             return Signal<TextLayoutManager, void(TextAttachmentViewProvider, TextAttachment)>(handle(), "cache_text_attachment_view_provider_for_text_attachment");
         }
+#endif
+
+#ifdef COCOON_MACOS_27
         /// @brief Signal for the delegate/data-source method behind `retrieve_cached_text_attachment_view_provider_for_text_attachment`; connect a callback with `retrieve_cached_text_attachment_view_provider_for_text_attachment().connect(...)`.
         Signal<TextLayoutManager, TextAttachmentViewProvider(TextAttachment)> retrieve_cached_text_attachment_view_provider_for_text_attachment() const
         {
             return Signal<TextLayoutManager, TextAttachmentViewProvider(TextAttachment)>(handle(), "retrieve_cached_text_attachment_view_provider_for_text_attachment");
         }
+#endif
 
     protected:
         static void install_delegate_delegate_(void* native);

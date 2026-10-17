@@ -72,6 +72,7 @@ namespace cocoon
      */
         void add_target(const Object& target, const std::string& action, ControlEvents control_events) const;
 #endif
+
         /**
      * @brief Calls `-[NSControl currentEditor]`.
      * @return The converted Objective-C result.
@@ -134,6 +135,7 @@ namespace cocoon
      */
         void remove_target(const Object& target, const std::string& action, ControlEvents control_events) const;
 #endif
+
         /**
      * @brief Calls `-[NSControl selectCell:]`.
      * @param cell Argument converted to the Objective-C parameter of the same role.

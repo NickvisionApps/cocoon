@@ -248,6 +248,7 @@
 }
 
 #endif
+
 #ifdef COCOON_MACOS_27
 - (void)browser:(NSBrowser*)browser draggingSession:(NSDraggingSession*)session willBeginAtPoint:(NSPoint)screenPoint forRowsWithIndexes:(NSIndexSet*)rowIndexes column:(NSInteger)column
 {
@@ -260,6 +261,7 @@
 }
 
 #endif
+
 #ifdef COCOON_MACOS_27
 - (void)browser:(NSBrowser*)browser draggingSession:(NSDraggingSession*)session endedAtPoint:(NSPoint)screenPoint operation:(NSDragOperation)operation
 {
@@ -272,6 +274,7 @@
 }
 
 #endif
+
 - (BOOL)browser:(NSBrowser*)browser writeRowsWithIndexes:(NSIndexSet*)rowIndexes inColumn:(NSInteger)column toPasteboard:(NSPasteboard*)pasteboard
 {
     id strongHost = host;
@@ -496,18 +499,21 @@
         return strongHost && cocoon::Signal<cocoon::Browser, cocoon::Object(std::int64_t, std::int64_t)>::connected((__bridge void*)strongHost, "pasteboard_writer_for_row_column");
     }
 #endif
+
 #ifdef COCOON_MACOS_27
     if (selector == @selector(browser:draggingSession:willBeginAtPoint:forRowsWithIndexes:column:))
     {
         return strongHost && cocoon::Signal<cocoon::Browser, void(cocoon::DraggingSession, cocoon::Point, cocoon::IndexSet, std::int64_t)>::connected((__bridge void*)strongHost, "dragging_session_will_begin_at_point_for_rows_with_indexes_column");
     }
 #endif
+
 #ifdef COCOON_MACOS_27
     if (selector == @selector(browser:draggingSession:endedAtPoint:operation:))
     {
         return strongHost && cocoon::Signal<cocoon::Browser, void(cocoon::DraggingSession, cocoon::Point, cocoon::DragOperation)>::connected((__bridge void*)strongHost, "dragging_session_ended_at_point_operation");
     }
 #endif
+
     if (selector == @selector(browser:writeRowsWithIndexes:inColumn:toPasteboard:))
     {
         return strongHost && cocoon::Signal<cocoon::Browser, bool(cocoon::IndexSet, std::int64_t, cocoon::Pasteboard)>::connected((__bridge void*)strongHost, "write_rows_with_indexes_in_column_to_pasteboard");

@@ -60,6 +60,7 @@ namespace cocoon
      */
         void cancel_text_animations_with_identifiers(const std::vector<UUID>& identifiers) const;
 #endif
+
 #ifdef COCOON_MACOS_27
         /**
      * @brief Calls `-[NSWritingToolsCoordinator showGrammarPresentationForRange:inContext:]`.
@@ -70,6 +71,7 @@ namespace cocoon
      */
         bool show_grammar_presentation_for_range(const Range& range, const WritingToolsCoordinatorContext& context) const;
 #endif
+
 #ifdef COCOON_MACOS_27
         /**
      * @brief Calls `-[NSWritingToolsCoordinator startTextAnimation:forRange:inContext:writingDirection:]`.
@@ -81,6 +83,7 @@ namespace cocoon
      */
         UUID start_text_animation(WritingToolsCoordinatorTextAnimation text_animation, const Range& range, const WritingToolsCoordinatorContext& context, WritingDirection writing_direction) const;
 #endif
+
         /**
      * @brief Calls `-[NSWritingToolsCoordinator stopWritingTools]`.
      * @details Stops the current Writing Tools operation and dismisses the system UI. Call this method to abort the current Writing Tools operation. This method dismisses the system’s Writing Tools UI and stops any in-flight interactions with your view. This method does not undo any changes that Writing Tools already made to your view’s content.

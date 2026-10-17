@@ -32,6 +32,7 @@ namespace cocoon
     }
 
 #endif
+
 #ifdef COCOON_MACOS_27
     bool WritingToolsCoordinator::show_grammar_presentation_for_range(const Range& range, const WritingToolsCoordinatorContext& context) const
     {
@@ -43,6 +44,7 @@ namespace cocoon
     }
 
 #endif
+
 #ifdef COCOON_MACOS_27
     UUID WritingToolsCoordinator::start_text_animation(WritingToolsCoordinatorTextAnimation text_animation, const Range& range, const WritingToolsCoordinatorContext& context, WritingDirection writing_direction) const
     {
@@ -54,6 +56,7 @@ namespace cocoon
     }
 
 #endif
+
     void WritingToolsCoordinator::stop_writing_tools() const
     {
         [cocoon::internal::ns<::NSWritingToolsCoordinator>(this) stopWritingTools];

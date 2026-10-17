@@ -46,6 +46,7 @@ namespace cocoon
     }
 
 #endif
+
 #ifdef COCOON_MACOS_27
     void GlassEffectView::set_effect_is_interactive(bool value) const
     {
@@ -56,6 +57,7 @@ namespace cocoon
     }
 
 #endif
+
     GlassStyle GlassEffectView::style() const
     {
         return static_cast<GlassStyle>([cocoon::internal::ns<::NSGlassEffectView>(this) style]);

@@ -269,6 +269,7 @@ namespace cocoon
      */
         MenuItemImageVisibility preferred_image_visibility() const;
 #endif
+
 #ifdef COCOON_MACOS_27
         /**
      * @brief Sets the `preferredImageVisibility` property of `NSMenuItem`.
@@ -277,6 +278,7 @@ namespace cocoon
      */
         void set_preferred_image_visibility(MenuItemImageVisibility value) const;
 #endif
+
         /**
      * @brief Returns the `representedObject` property of `NSMenuItem`.
      * @return The converted Objective-C result.

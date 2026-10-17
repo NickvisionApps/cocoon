@@ -513,6 +513,7 @@ namespace cocoon
      */
         static bool is_touch_swipe_navigation_enabled();
 #endif
+
         /**
      * @brief Returns the `trackingArea` property of `NSEvent`.
      * @details -trackingArea returns the NSTrackingArea that generated this event. It is possible for there to be no trackingArea associated with the event in some cases where the event corresponds to a trackingRect installed with -[NSView addTrackingRect:owner:userData:assumeInside:], in which case nil is returned.

@@ -48,6 +48,7 @@ namespace cocoon
      */
         static ViewCornerRadius container_concentric_radius_with_minimum(double minimum_radius);
 #endif
+
 #ifdef COCOON_MACOS_27
         /**
      * @brief Calls `+[NSViewCornerRadius fixedRadius:]`.
@@ -57,6 +58,7 @@ namespace cocoon
      */
         static ViewCornerRadius fixed_radius(double radius);
 #endif
+
 #ifdef COCOON_MACOS_27
         /**
      * @brief Returns the `containerConcentricRadius` property of `NSViewCornerRadius`.

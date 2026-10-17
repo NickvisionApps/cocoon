@@ -373,6 +373,7 @@ namespace cocoon
      */
         void register_text_attachment_view_provider_reuse_policy(TextAttachmentViewProviderReusePolicy policy, const std::string& view_provider_type) const;
 #endif
+
         /**
      * @brief Calls `-[NSTextView replaceTextContainer:]`.
      * @param new_container Argument converted to the Objective-C parameter of the same role.
@@ -546,6 +547,7 @@ namespace cocoon
      */
         void text_viewport_layout_controller(const TextViewportLayoutController& text_viewport_layout_controller, const TextLayoutFragment& text_layout_fragment) const;
 #endif
+
 #ifdef COCOON_MACOS_27
         /**
      * @brief Calls `-[NSTextView textViewportLayoutControllerDidLayout:]`.
@@ -554,6 +556,7 @@ namespace cocoon
      */
         void text_viewport_layout_controller_did_layout(const TextViewportLayoutController& text_viewport_layout_controller) const;
 #endif
+
 #ifdef COCOON_MACOS_27
         /**
      * @brief Calls `-[NSTextView textViewportLayoutControllerReceivedSetNeedsLayout:]`.
@@ -562,6 +565,7 @@ namespace cocoon
      */
         void text_viewport_layout_controller_received_set_needs_layout(const TextViewportLayoutController& text_viewport_layout_controller) const;
 #endif
+
 #ifdef COCOON_MACOS_27
         /**
      * @brief Calls `-[NSTextView textViewportLayoutControllerWillLayout:]`.
@@ -570,6 +574,7 @@ namespace cocoon
      */
         void text_viewport_layout_controller_will_layout(const TextViewportLayoutController& text_viewport_layout_controller) const;
 #endif
+
         /**
      * @brief Calls `-[NSTextView tightenKerning:]`.
      * @param sender Argument converted to the Objective-C parameter of the same role.
@@ -706,6 +711,7 @@ namespace cocoon
      */
         Rect viewport_bounds_for_text_viewport_layout_controller(const TextViewportLayoutController& text_viewport_layout_controller) const;
 #endif
+
         /**
      * @brief Calls `-[NSTextView writeSelectionToPasteboard:type:]`.
      * @param pboard Argument converted to the Objective-C parameter of the same role.

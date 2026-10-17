@@ -99,6 +99,7 @@ namespace cocoon
      */
         StatusItemExpandedInterfaceSession expanded_interface_session() const;
 #endif
+
         /**
      * @brief Returns the `length` property of `NSStatusItem`.
      * @details The amount of space in the status bar that should be allocated to the receiver. \\c NSVariableStatusItemLength will adjust the length to the size of the status item's contents and \\c NSSquareStatusItemLength will keep the length the same as the status bar's height.
@@ -172,6 +173,7 @@ namespace cocoon
             return Signal<StatusItem, void(StatusItemExpandedInterfaceSession)>(handle(), "did_begin_expanded_interface_session");
         }
 #endif
+
 #ifdef COCOON_MACOS_27
         /// @brief Signal for the delegate/data-source method behind `did_end_expanded_interface_session_animated`; connect a callback with `did_end_expanded_interface_session_animated().connect(...)`.
         Signal<StatusItem, void(bool)> did_end_expanded_interface_session_animated() const

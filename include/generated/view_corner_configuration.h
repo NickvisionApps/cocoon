@@ -50,6 +50,7 @@ namespace cocoon
      */
         static ViewCornerConfiguration capsule_corner_configuration_with_maximum_radius(double maximum_radius);
 #endif
+
 #ifdef COCOON_MACOS_27
         /**
      * @brief Calls `+[NSViewCornerConfiguration configurationWithRadius:]`.
@@ -59,6 +60,7 @@ namespace cocoon
      */
         static ViewCornerConfiguration configuration_with_radius(const ViewCornerRadius& radius);
 #endif
+
 #ifdef COCOON_MACOS_27
         /**
      * @brief Calls `+[NSViewCornerConfiguration configurationWithTopLeftRadius:topRightRadius:bottomLeftRadius:bottomRightRadius:]`.
@@ -71,6 +73,7 @@ namespace cocoon
      */
         static ViewCornerConfiguration configuration_with_top_left_radius(const ViewCornerRadius& top_left_radius, const ViewCornerRadius& top_right_radius, const ViewCornerRadius& bottom_left_radius, const ViewCornerRadius& bottom_right_radius);
 #endif
+
 #ifdef COCOON_MACOS_27
         /**
      * @brief Calls `+[NSViewCornerConfiguration configurationWithUniformBottomRadius:topLeftRadius:topRightRadius:]`.
@@ -82,6 +85,7 @@ namespace cocoon
      */
         static ViewCornerConfiguration configuration_with_uniform_bottom_radius(const ViewCornerRadius& bottom_radius, const ViewCornerRadius& top_left_radius, const ViewCornerRadius& top_right_radius);
 #endif
+
 #ifdef COCOON_MACOS_27
         /**
      * @brief Calls `+[NSViewCornerConfiguration configurationWithUniformLeftRadius:rightRadius:]`.
@@ -92,6 +96,7 @@ namespace cocoon
      */
         static ViewCornerConfiguration configuration_with_uniform_left_radius(const ViewCornerRadius& left_radius, const ViewCornerRadius& right_radius);
 #endif
+
 #ifdef COCOON_MACOS_27
         /**
      * @brief Calls `+[NSViewCornerConfiguration configurationWithUniformLeftRadius:topRightRadius:bottomRightRadius:]`.
@@ -103,6 +108,7 @@ namespace cocoon
      */
         static ViewCornerConfiguration configuration_with_uniform_left_radius(const ViewCornerRadius& left_radius, const ViewCornerRadius& top_right_radius, const ViewCornerRadius& bottom_right_radius);
 #endif
+
 #ifdef COCOON_MACOS_27
         /**
      * @brief Calls `+[NSViewCornerConfiguration configurationWithUniformRadius:]`.
@@ -112,6 +118,7 @@ namespace cocoon
      */
         static ViewCornerConfiguration configuration_with_uniform_radius(const ViewCornerRadius& radius);
 #endif
+
 #ifdef COCOON_MACOS_27
         /**
      * @brief Calls `+[NSViewCornerConfiguration configurationWithUniformRadius:topLeftRadius:topRightRadius:bottomLeftRadius:bottomRightRadius:]`.
@@ -125,6 +132,7 @@ namespace cocoon
      */
         static ViewCornerConfiguration configuration_with_uniform_radius(const ViewCornerRadius& radius, const ViewCornerRadius& top_left_radius, const ViewCornerRadius& top_right_radius, const ViewCornerRadius& bottom_left_radius, const ViewCornerRadius& bottom_right_radius);
 #endif
+
 #ifdef COCOON_MACOS_27
         /**
      * @brief Calls `+[NSViewCornerConfiguration configurationWithUniformRightRadius:topLeftRadius:bottomLeftRadius:]`.
@@ -136,6 +144,7 @@ namespace cocoon
      */
         static ViewCornerConfiguration configuration_with_uniform_right_radius(const ViewCornerRadius& right_radius, const ViewCornerRadius& top_left_radius, const ViewCornerRadius& bottom_left_radius);
 #endif
+
 #ifdef COCOON_MACOS_27
         /**
      * @brief Calls `+[NSViewCornerConfiguration configurationWithUniformTopRadius:bottomLeftRadius:bottomRightRadius:]`.
@@ -147,6 +156,7 @@ namespace cocoon
      */
         static ViewCornerConfiguration configuration_with_uniform_top_radius(const ViewCornerRadius& top_radius, const ViewCornerRadius& bottom_left_radius, const ViewCornerRadius& bottom_right_radius);
 #endif
+
 #ifdef COCOON_MACOS_27
         /**
      * @brief Calls `+[NSViewCornerConfiguration configurationWithUniformTopRadius:bottomRadius:]`.
@@ -157,6 +167,7 @@ namespace cocoon
      */
         static ViewCornerConfiguration configuration_with_uniform_top_radius(const ViewCornerRadius& top_radius, const ViewCornerRadius& bottom_radius);
 #endif
+
 #ifdef COCOON_MACOS_27
         /**
      * @brief Returns the `capsuleCornerConfiguration` property of `NSViewCornerConfiguration`.

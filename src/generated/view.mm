@@ -138,6 +138,7 @@ namespace cocoon
     }
 
 #endif
+
     void View::begin_page_in_rect(const Rect& rect, const Point& location) const
     {
         [cocoon::internal::ns<::NSView>(this) beginPageInRect:cocoon::internal::to(rect) atPlacement:cocoon::internal::to(location)];
@@ -411,6 +412,7 @@ namespace cocoon
     }
 
 #endif
+
     void View::invalidate_intrinsic_content_size() const
     {
         [cocoon::internal::ns<::NSView>(this) invalidateIntrinsicContentSize];
@@ -777,6 +779,7 @@ namespace cocoon
     }
 
 #endif
+
     void View::view_did_end_live_resize() const
     {
         [cocoon::internal::ns<::NSView>(this) viewDidEndLiveResize];
@@ -1053,6 +1056,7 @@ namespace cocoon
     }
 
 #endif
+
     FocusRingType View::default_focus_ring_type()
     {
         return static_cast<FocusRingType>([::NSView defaultFocusRingType]);
@@ -1079,6 +1083,7 @@ namespace cocoon
     }
 
 #endif
+
     MenuItem View::enclosing_menu_item() const
     {
         return cocoon::internal::wrap<MenuItem>([cocoon::internal::ns<::NSView>(this) enclosingMenuItem]);
@@ -1100,6 +1105,7 @@ namespace cocoon
     }
 
 #endif
+
 #ifdef COCOON_MACOS_27
     void View::set_exclusive_gesture_behavior(ViewExclusiveGestureBehavior value) const
     {
@@ -1110,6 +1116,7 @@ namespace cocoon
     }
 
 #endif
+
     LayoutYAxisAnchor View::first_baseline_anchor() const
     {
         return cocoon::internal::wrap<LayoutYAxisAnchor>([cocoon::internal::ns<::NSView>(this) firstBaselineAnchor]);
@@ -1569,6 +1576,7 @@ namespace cocoon
     }
 
 #endif
+
 #ifdef COCOON_MACOS_27
     void View::set_text_selection_manager(const TextSelectionManager& value) const
     {
@@ -1579,6 +1587,7 @@ namespace cocoon
     }
 
 #endif
+
     std::string View::tool_tip() const
     {
         return cocoon::internal::from([cocoon::internal::ns<::NSView>(this) toolTip]);

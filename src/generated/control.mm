@@ -34,6 +34,7 @@ namespace cocoon
     }
 
 #endif
+
     Text Control::current_editor() const
     {
         return cocoon::internal::wrap<Text>([cocoon::internal::ns<::NSControl>(this) currentEditor]);
@@ -89,6 +90,7 @@ namespace cocoon
     }
 
 #endif
+
     void Control::select_cell(const Cell& cell) const
     {
         [cocoon::internal::ns<::NSControl>(this) selectCell:cocoon::internal::native<::NSCell>(cell)];

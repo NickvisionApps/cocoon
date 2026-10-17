@@ -23,6 +23,7 @@ namespace cocoon
     }
 
 #endif
+
 #ifdef COCOON_MACOS_27
     ViewCornerConfiguration ViewCornerConfiguration::configuration_with_radius(const ViewCornerRadius& radius)
     {
@@ -30,6 +31,7 @@ namespace cocoon
     }
 
 #endif
+
 #ifdef COCOON_MACOS_27
     ViewCornerConfiguration ViewCornerConfiguration::configuration_with_top_left_radius(const ViewCornerRadius& top_left_radius, const ViewCornerRadius& top_right_radius, const ViewCornerRadius& bottom_left_radius, const ViewCornerRadius& bottom_right_radius)
     {
@@ -37,6 +39,7 @@ namespace cocoon
     }
 
 #endif
+
 #ifdef COCOON_MACOS_27
     ViewCornerConfiguration ViewCornerConfiguration::configuration_with_uniform_bottom_radius(const ViewCornerRadius& bottom_radius, const ViewCornerRadius& top_left_radius, const ViewCornerRadius& top_right_radius)
     {
@@ -44,6 +47,7 @@ namespace cocoon
     }
 
 #endif
+
 #ifdef COCOON_MACOS_27
     ViewCornerConfiguration ViewCornerConfiguration::configuration_with_uniform_left_radius(const ViewCornerRadius& left_radius, const ViewCornerRadius& right_radius)
     {
@@ -51,6 +55,7 @@ namespace cocoon
     }
 
 #endif
+
 #ifdef COCOON_MACOS_27
     ViewCornerConfiguration ViewCornerConfiguration::configuration_with_uniform_left_radius(const ViewCornerRadius& left_radius, const ViewCornerRadius& top_right_radius, const ViewCornerRadius& bottom_right_radius)
     {
@@ -58,6 +63,7 @@ namespace cocoon
     }
 
 #endif
+
 #ifdef COCOON_MACOS_27
     ViewCornerConfiguration ViewCornerConfiguration::configuration_with_uniform_radius(const ViewCornerRadius& radius)
     {
@@ -65,6 +71,7 @@ namespace cocoon
     }
 
 #endif
+
 #ifdef COCOON_MACOS_27
     ViewCornerConfiguration ViewCornerConfiguration::configuration_with_uniform_radius(const ViewCornerRadius& radius, const ViewCornerRadius& top_left_radius, const ViewCornerRadius& top_right_radius, const ViewCornerRadius& bottom_left_radius, const ViewCornerRadius& bottom_right_radius)
     {
@@ -72,6 +79,7 @@ namespace cocoon
     }
 
 #endif
+
 #ifdef COCOON_MACOS_27
     ViewCornerConfiguration ViewCornerConfiguration::configuration_with_uniform_right_radius(const ViewCornerRadius& right_radius, const ViewCornerRadius& top_left_radius, const ViewCornerRadius& bottom_left_radius)
     {
@@ -79,6 +87,7 @@ namespace cocoon
     }
 
 #endif
+
 #ifdef COCOON_MACOS_27
     ViewCornerConfiguration ViewCornerConfiguration::configuration_with_uniform_top_radius(const ViewCornerRadius& top_radius, const ViewCornerRadius& bottom_left_radius, const ViewCornerRadius& bottom_right_radius)
     {
@@ -86,6 +95,7 @@ namespace cocoon
     }
 
 #endif
+
 #ifdef COCOON_MACOS_27
     ViewCornerConfiguration ViewCornerConfiguration::configuration_with_uniform_top_radius(const ViewCornerRadius& top_radius, const ViewCornerRadius& bottom_radius)
     {
@@ -93,6 +103,7 @@ namespace cocoon
     }
 
 #endif
+
 #ifdef COCOON_MACOS_27
     ViewCornerConfiguration ViewCornerConfiguration::capsule_corner_configuration()
     {
