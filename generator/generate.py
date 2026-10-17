@@ -591,7 +591,8 @@ def build_delegate_block(model, d, signal_defs):
             ret_q = clean(decl["returnType"]["qualType"])
             parts = selector.split(":")
             if parms:
-                sig_text = f"- ({ret_q})" + " ".join(f"{parts[i]}:({signature_type(parms[i][1])}){parms[i][0]}" for i in range(len(parms)))
+                qualifiers = A.parameter_qualifiers(selector)
+                sig_text = f"- ({ret_q})" + " ".join(f"{parts[i]}:({qualifiers[i] + ' ' if qualifiers[i] else ''}{signature_type(parms[i][1])}){parms[i][0]}" for i in range(len(parms)))
             else:
                 sig_text = f"- ({ret_q}){selector}"
             pre, post, emit_args = [], [], []

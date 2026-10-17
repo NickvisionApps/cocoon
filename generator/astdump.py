@@ -86,6 +86,21 @@ def _macro_text(loc):
     return match.group(1)
 
 
+@functools.lru_cache(maxsize=None)
+def _header_text():
+    return "\n".join(path.read_text(errors="replace") for directory in HEADER_DIRS for path in sorted(directory.glob("*.h")))
+
+
+@functools.lru_cache(maxsize=None)
+def parameter_qualifiers(selector):
+    parts = [part for part in selector.split(":") if part]
+    if not parts or ":" not in selector:
+        return []
+    pattern = r"[^;]*?".join(r"\b" + re.escape(part) + r"\s*:\s*\(\s*((?:inout|in|out|bycopy|byref|oneway)\b)?" for part in parts)
+    match = re.search(pattern, _header_text())
+    return [group or "" for group in match.groups()] if match else [""] * len(parts)
+
+
 def _version(text):
     match = re.match(r"\s*(\d+)(?:[._](\d+))?", text or "")
     if not match:

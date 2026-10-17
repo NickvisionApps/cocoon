@@ -98,7 +98,7 @@
     return cocoon::internal::to(__r);
 }
 
-- (BOOL)layoutManager:(NSLayoutManager*)layoutManager shouldSetLineFragmentRect:(NSRect*)lineFragmentRect lineFragmentUsedRect:(NSRect*)lineFragmentUsedRect baselineOffset:(CGFloat*)baselineOffset inTextContainer:(NSTextContainer*)textContainer forGlyphRange:(NSRange)glyphRange
+- (BOOL)layoutManager:(NSLayoutManager*)layoutManager shouldSetLineFragmentRect:(inout NSRect*)lineFragmentRect lineFragmentUsedRect:(inout NSRect*)lineFragmentUsedRect baselineOffset:(inout CGFloat*)baselineOffset inTextContainer:(NSTextContainer*)textContainer forGlyphRange:(NSRange)glyphRange
 {
     id strongHost = host;
     if (!strongHost)
