@@ -80,14 +80,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ac2304f20b2e790923d881f2989449ede"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a null handle that refers to no native object.  <br /></td></tr>
 <tr class="memitem:a46a705c4730759816ee5a847a3ea19db" id="r_a46a705c4730759816ee5a847a3ea19db"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a46a705c4730759816ee5a847a3ea19db">Port</a> (<a class="el" href="structcocoon_1_1_adopt.html">Adopt</a> adopt)</td></tr>
 <tr class="memdesc:a46a705c4730759816ee5a847a3ea19db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wraps an existing retained native object without creating a new one.  <br /></td></tr>
-<tr class="memitem:a06384e3006ca251eb8eff09d1acc1ccd" id="r_a06384e3006ca251eb8eff09d1acc1ccd"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a06384e3006ca251eb8eff09d1acc1ccd">add_connection</a> (const <a class="el" href="classcocoon_1_1_connection.html">Connection</a> &amp;conn, const <a class="el" href="classcocoon_1_1_run_loop.html">RunLoop</a> &amp;run_loop, const std::string &amp;mode) const</td></tr>
-<tr class="memdesc:a06384e3006ca251eb8eff09d1acc1ccd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">-[NSPort addConnection:toRunLoop:forMode:]</span>.  <br /></td></tr>
 <tr class="memitem:aa57439b0378f7b59e1f8185e23016787" id="r_aa57439b0378f7b59e1f8185e23016787"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a>&#160;</td><td class="memItemRight"><a class="el" href="#aa57439b0378f7b59e1f8185e23016787">delegate</a> () const</td></tr>
 <tr class="memdesc:aa57439b0378f7b59e1f8185e23016787"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">-[NSPort <a class="el" href="#aa57439b0378f7b59e1f8185e23016787" title="Calls -[NSPort delegate].">delegate</a>]</span>.  <br /></td></tr>
 <tr class="memitem:a052aac111ccf371ec0f27133767fd1d6" id="r_a052aac111ccf371ec0f27133767fd1d6"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a052aac111ccf371ec0f27133767fd1d6">invalidate</a> () const</td></tr>
 <tr class="memdesc:a052aac111ccf371ec0f27133767fd1d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">-[NSPort <a class="el" href="#a052aac111ccf371ec0f27133767fd1d6" title="Calls -[NSPort invalidate].">invalidate</a>]</span>.  <br /></td></tr>
-<tr class="memitem:a33ba809a7a73eb02524af0b282bbe476" id="r_a33ba809a7a73eb02524af0b282bbe476"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a33ba809a7a73eb02524af0b282bbe476">remove_connection</a> (const <a class="el" href="classcocoon_1_1_connection.html">Connection</a> &amp;conn, const <a class="el" href="classcocoon_1_1_run_loop.html">RunLoop</a> &amp;run_loop, const std::string &amp;mode) const</td></tr>
-<tr class="memdesc:a33ba809a7a73eb02524af0b282bbe476"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">-[NSPort removeConnection:fromRunLoop:forMode:]</span>.  <br /></td></tr>
 <tr class="memitem:a45d2049a76ad1c9ad5aa3efc1bc8faf2" id="r_a45d2049a76ad1c9ad5aa3efc1bc8faf2"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a45d2049a76ad1c9ad5aa3efc1bc8faf2">remove_from_run_loop</a> (const <a class="el" href="classcocoon_1_1_run_loop.html">RunLoop</a> &amp;run_loop, const std::string &amp;mode) const</td></tr>
 <tr class="memdesc:a45d2049a76ad1c9ad5aa3efc1bc8faf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">-[NSPort removeFromRunLoop:forMode:]</span>.  <br /></td></tr>
 <tr class="memitem:a6e73171f8ace71eb3d7e9c1e629356b9" id="r_a6e73171f8ace71eb3d7e9c1e629356b9"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6e73171f8ace71eb3d7e9c1e629356b9">schedule_in_run_loop</a> (const <a class="el" href="classcocoon_1_1_run_loop.html">RunLoop</a> &amp;run_loop, const std::string &amp;mode) const</td></tr>
@@ -139,17 +135,16 @@ Static Public Member Functions</h2></td></tr>
 <dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;cocoon.h&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_class" href="classcocoon_1_1_port.html">cocoon::Port</a> <a class="code hl_function" href="#a689be289b4fae06a0d17eaf59bd21fc3">port</a>;</div>
-<div class="ttc" id="aclasscocoon_1_1_port_html"><div class="ttname"><a href="classcocoon_1_1_port.html">cocoon::Port</a></div><div class="ttdoc">C++ handle for the Objective-C class NSPort (Foundation).</div><div class="ttdef"><b>Definition</b> port.h:39</div></div>
+<div class="ttc" id="aclasscocoon_1_1_port_html"><div class="ttname"><a href="classcocoon_1_1_port.html">cocoon::Port</a></div><div class="ttdoc">C++ handle for the Objective-C class NSPort (Foundation).</div><div class="ttdef"><b>Definition</b> port.h:38</div></div>
 <div class="ttc" id="aclasscocoon_1_1_port_html_a689be289b4fae06a0d17eaf59bd21fc3"><div class="ttname"><a href="#a689be289b4fae06a0d17eaf59bd21fc3">cocoon::Port::port</a></div><div class="ttdeci">static Port port()</div><div class="ttdoc">Calls +[NSPort port].</div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_port.html">cocoon::Port</a> <a class="code hl_function" href="#a689be289b4fae06a0d17eaf59bd21fc3">port</a>{};</div>
 <div class="line"><span class="keyword">auto</span> made_0 = <a class="code hl_function" href="#a689be289b4fae06a0d17eaf59bd21fc3">cocoon::Port::port</a>();</div>
-<div class="line"><a class="code hl_function" href="#a689be289b4fae06a0d17eaf59bd21fc3">port</a>.<a class="code hl_function" href="#a06384e3006ca251eb8eff09d1acc1ccd">add_connection</a>(<a class="code hl_class" href="classcocoon_1_1_connection.html">cocoon::Connection</a>(), <a class="code hl_class" href="classcocoon_1_1_run_loop.html">cocoon::RunLoop</a>(), <span class="stringliteral">&quot;text&quot;</span>);</div>
 <div class="line"><a class="code hl_function" href="#a689be289b4fae06a0d17eaf59bd21fc3">port</a>.<a class="code hl_function" href="#aa57439b0378f7b59e1f8185e23016787">delegate</a>();</div>
 <div class="line"><a class="code hl_function" href="#a689be289b4fae06a0d17eaf59bd21fc3">port</a>.<a class="code hl_function" href="#a052aac111ccf371ec0f27133767fd1d6">invalidate</a>();</div>
-<div class="ttc" id="aclasscocoon_1_1_connection_html"><div class="ttname"><a href="classcocoon_1_1_connection.html">cocoon::Connection</a></div><div class="ttdoc">C++ handle for the Objective-C class NSConnection (Foundation).</div><div class="ttdef"><b>Definition</b> connection.h:49</div></div>
+<div class="line"><a class="code hl_function" href="#a689be289b4fae06a0d17eaf59bd21fc3">port</a>.<a class="code hl_function" href="#a45d2049a76ad1c9ad5aa3efc1bc8faf2">remove_from_run_loop</a>(<a class="code hl_class" href="classcocoon_1_1_run_loop.html">cocoon::RunLoop</a>(), <span class="stringliteral">&quot;text&quot;</span>);</div>
 <div class="ttc" id="aclasscocoon_1_1_port_html_a052aac111ccf371ec0f27133767fd1d6"><div class="ttname"><a href="#a052aac111ccf371ec0f27133767fd1d6">cocoon::Port::invalidate</a></div><div class="ttdeci">void invalidate() const</div><div class="ttdoc">Calls -[NSPort invalidate].</div></div>
-<div class="ttc" id="aclasscocoon_1_1_port_html_a06384e3006ca251eb8eff09d1acc1ccd"><div class="ttname"><a href="#a06384e3006ca251eb8eff09d1acc1ccd">cocoon::Port::add_connection</a></div><div class="ttdeci">void add_connection(const Connection &amp;conn, const RunLoop &amp;run_loop, const std::string &amp;mode) const</div><div class="ttdoc">Calls -[NSPort addConnection:toRunLoop:forMode:].</div></div>
+<div class="ttc" id="aclasscocoon_1_1_port_html_a45d2049a76ad1c9ad5aa3efc1bc8faf2"><div class="ttname"><a href="#a45d2049a76ad1c9ad5aa3efc1bc8faf2">cocoon::Port::remove_from_run_loop</a></div><div class="ttdeci">void remove_from_run_loop(const RunLoop &amp;run_loop, const std::string &amp;mode) const</div><div class="ttdoc">Calls -[NSPort removeFromRunLoop:forMode:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_port_html_aa57439b0378f7b59e1f8185e23016787"><div class="ttname"><a href="#aa57439b0378f7b59e1f8185e23016787">cocoon::Port::delegate</a></div><div class="ttdeci">Object delegate() const</div><div class="ttdoc">Calls -[NSPort delegate].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_run_loop_html"><div class="ttname"><a href="classcocoon_1_1_run_loop.html">cocoon::RunLoop</a></div><div class="ttdoc">C++ handle for the Objective-C class NSRunLoop (Foundation).</div><div class="ttdef"><b>Definition</b> run_loop.h:39</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -229,42 +224,6 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a06384e3006ca251eb8eff09d1acc1ccd" name="a06384e3006ca251eb8eff09d1acc1ccd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a06384e3006ca251eb8eff09d1acc1ccd">&#9670;&#160;</a></span>add_connection()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void cocoon::Port::add_connection </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_connection.html">Connection</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>conn</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_run_loop.html">RunLoop</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>run_loop</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>mode</em></span>&#160;) const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">-[NSPort addConnection:toRunLoop:forMode:]</span>. </p>
-<p>Adds a given connection to the receiver in a given run loop mode. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">conn</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">run_loop</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">mode</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="aa57439b0378f7b59e1f8185e23016787" name="aa57439b0378f7b59e1f8185e23016787"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa57439b0378f7b59e1f8185e23016787">&#9670;&#160;</a></span>delegate()</h2>
 
@@ -350,42 +309,6 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Calls <span class="tt">+[NSPort <a class="el" href="#a689be289b4fae06a0d17eaf59bd21fc3" title="Calls +[NSPort port].">port</a>]</span>. </p>
 <p>Creates and returns a new ''NSPort'' object capable of both sending and receiving messages. </p><dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a33ba809a7a73eb02524af0b282bbe476" name="a33ba809a7a73eb02524af0b282bbe476"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33ba809a7a73eb02524af0b282bbe476">&#9670;&#160;</a></span>remove_connection()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void cocoon::Port::remove_connection </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_connection.html">Connection</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>conn</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_run_loop.html">RunLoop</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>run_loop</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>mode</em></span>&#160;) const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">-[NSPort removeConnection:fromRunLoop:forMode:]</span>. </p>
-<p>Removes a given connection from the receiver in a given run loop mode. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">conn</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">run_loop</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">mode</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>

@@ -302,12 +302,6 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a806af4d8266c2e656fdc9a5666f28afd" id="r_a806af4d8266c2e656fdc9a5666f28afd"><td class="memItemLeft">static <a class="el" href="classcocoon_1_1_object.html">Object</a>&#160;</td><td class="memItemRight"><a class="el" href="#a806af4d8266c2e656fdc9a5666f28afd">unarchive_object_with_data</a> (const std::vector&lt; std::uint8_t &gt; &amp;data)</td></tr>
-<tr class="memdesc:a806af4d8266c2e656fdc9a5666f28afd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSKeyedUnarchiver unarchiveObjectWithData:]</span>.  <br /></td></tr>
-<tr class="memitem:a3b6579afc2390e187b95c5e416f98903" id="r_a3b6579afc2390e187b95c5e416f98903"><td class="memItemLeft">static <a class="el" href="classcocoon_1_1_object.html">Object</a>&#160;</td><td class="memItemRight"><a class="el" href="#a3b6579afc2390e187b95c5e416f98903">unarchive_object_with_file</a> (const std::string &amp;path)</td></tr>
-<tr class="memdesc:a3b6579afc2390e187b95c5e416f98903"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSKeyedUnarchiver unarchiveObjectWithFile:]</span>.  <br /></td></tr>
-<tr class="memitem:ae6a1598af3cfd79a9898f711213b5368" id="r_ae6a1598af3cfd79a9898f711213b5368"><td class="memItemLeft">static <a class="el" href="classcocoon_1_1_object.html">Object</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae6a1598af3cfd79a9898f711213b5368">unarchive_top_level_object_with_data</a> (const std::vector&lt; std::uint8_t &gt; &amp;data)</td></tr>
-<tr class="memdesc:ae6a1598af3cfd79a9898f711213b5368"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSKeyedUnarchiver unarchiveTopLevelObjectWithData:error:]</span>.  <br /></td></tr>
 <tr class="memitem:a2fb666e864e38f6bb1585af9781fd031" id="r_a2fb666e864e38f6bb1585af9781fd031"><td class="memItemLeft">static std::vector&lt; <a class="el" href="classcocoon_1_1_object.html">Object</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a2fb666e864e38f6bb1585af9781fd031">unarchived_array_of_objects_of_class</a> (const std::string &amp;cls, const std::vector&lt; std::uint8_t &gt; &amp;data)</td></tr>
 <tr class="memdesc:a2fb666e864e38f6bb1585af9781fd031"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSKeyedUnarchiver unarchivedArrayOfObjectsOfClass:fromData:error:]</span>.  <br /></td></tr>
 <tr class="memitem:a4561ef07a15ba8a6d767dc3ff3819d3c" id="r_a4561ef07a15ba8a6d767dc3ff3819d3c"><td class="memItemLeft">static std::vector&lt; <a class="el" href="classcocoon_1_1_object.html">Object</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a4561ef07a15ba8a6d767dc3ff3819d3c">unarchived_array_of_objects_of_classes</a> (const std::vector&lt; std::string &gt; &amp;classes, const std::vector&lt; std::uint8_t &gt; &amp;data)</td></tr>
@@ -334,7 +328,7 @@ Static Protected Member Functions</h2></td></tr>
 <div class="line">keyed_unarchiver.<a class="code hl_function" href="#a3e681cdacd4cd70613e884461b5d683b">set_decoding_failure_policy</a>(<a class="code hl_enumvalue" href="namespacecocoon.html#ab504035e5a8fc681c94412e1ddf9616caba1dc944410600b947bbd3371ef7a7fb">cocoon::DecodingFailurePolicy::RaiseException</a>);</div>
 <div class="line">keyed_unarchiver.<a class="code hl_function" href="#a189d1529d0e905f9b9dcda40e194ddba">unarchiver_will_replace_object_with_object</a>().connect([](<span class="keyword">auto</span>&amp;&amp;...) {});</div>
 <div class="ttc" id="aclasscocoon_1_1_keyed_unarchiver_html"><div class="ttname"><a href="classcocoon_1_1_keyed_unarchiver.html">cocoon::KeyedUnarchiver</a></div><div class="ttdoc">C++ handle for the Objective-C class NSKeyedUnarchiver (Foundation).</div><div class="ttdef"><b>Definition</b> keyed_unarchiver.h:44</div></div>
-<div class="ttc" id="aclasscocoon_1_1_keyed_unarchiver_html_a189d1529d0e905f9b9dcda40e194ddba"><div class="ttname"><a href="#a189d1529d0e905f9b9dcda40e194ddba">cocoon::KeyedUnarchiver::unarchiver_will_replace_object_with_object</a></div><div class="ttdeci">Signal&lt; KeyedUnarchiver, void(Object, Object)&gt; unarchiver_will_replace_object_with_object() const</div><div class="ttdoc">Signal for the delegate/data-source method behind unarchiver_will_replace_object_with_object; connect...</div><div class="ttdef"><b>Definition</b> keyed_unarchiver.h:254</div></div>
+<div class="ttc" id="aclasscocoon_1_1_keyed_unarchiver_html_a189d1529d0e905f9b9dcda40e194ddba"><div class="ttname"><a href="#a189d1529d0e905f9b9dcda40e194ddba">cocoon::KeyedUnarchiver::unarchiver_will_replace_object_with_object</a></div><div class="ttdeci">Signal&lt; KeyedUnarchiver, void(Object, Object)&gt; unarchiver_will_replace_object_with_object() const</div><div class="ttdoc">Signal for the delegate/data-source method behind unarchiver_will_replace_object_with_object; connect...</div><div class="ttdef"><b>Definition</b> keyed_unarchiver.h:233</div></div>
 <div class="ttc" id="aclasscocoon_1_1_keyed_unarchiver_html_a3e681cdacd4cd70613e884461b5d683b"><div class="ttname"><a href="#a3e681cdacd4cd70613e884461b5d683b">cocoon::KeyedUnarchiver::set_decoding_failure_policy</a></div><div class="ttdeci">void set_decoding_failure_policy(DecodingFailurePolicy value) const</div><div class="ttdoc">Sets the decodingFailurePolicy property of NSKeyedUnarchiver.</div></div>
 <div class="ttc" id="anamespacecocoon_html_ab504035e5a8fc681c94412e1ddf9616caba1dc944410600b947bbd3371ef7a7fb"><div class="ttname"><a href="namespacecocoon.html#ab504035e5a8fc681c94412e1ddf9616caba1dc944410600b947bbd3371ef7a7fb">cocoon::DecodingFailurePolicy::RaiseException</a></div><div class="ttdeci">@ RaiseException</div><div class="ttdef"><b>Definition</b> enums.h:1307</div></div>
 </div><!-- fragment --></dd></dl>
@@ -351,11 +345,11 @@ Static Protected Member Functions</h2></td></tr>
 <div class="line">keyed_unarchiver.<a class="code hl_function" href="#a3595aa81709ac6fc972e2984072fa35e">unarchiver_did_finish</a>().connect([]() {});</div>
 <div class="ttc" id="aclasscocoon_1_1_keyed_unarchiver_html_a1f1cb57d1ef9393074b6206df429c064"><div class="ttname"><a href="#a1f1cb57d1ef9393074b6206df429c064">cocoon::KeyedUnarchiver::contains_value_for_key</a></div><div class="ttdeci">bool contains_value_for_key(const std::string &amp;key) const</div><div class="ttdoc">Calls -[NSKeyedUnarchiver containsValueForKey:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_keyed_unarchiver_html_a310c42f69c4fc98ee7b6c1a94c41d2e3"><div class="ttname"><a href="#a310c42f69c4fc98ee7b6c1a94c41d2e3">cocoon::KeyedUnarchiver::decode_bool_for_key</a></div><div class="ttdeci">bool decode_bool_for_key(const std::string &amp;key) const</div><div class="ttdoc">Calls -[NSKeyedUnarchiver decodeBoolForKey:].</div></div>
-<div class="ttc" id="aclasscocoon_1_1_keyed_unarchiver_html_a3595aa81709ac6fc972e2984072fa35e"><div class="ttname"><a href="#a3595aa81709ac6fc972e2984072fa35e">cocoon::KeyedUnarchiver::unarchiver_did_finish</a></div><div class="ttdeci">Signal&lt; KeyedUnarchiver, void()&gt; unarchiver_did_finish() const</div><div class="ttdoc">Signal for the delegate/data-source method behind unarchiver_did_finish; connect a callback with unar...</div><div class="ttdef"><b>Definition</b> keyed_unarchiver.h:264</div></div>
+<div class="ttc" id="aclasscocoon_1_1_keyed_unarchiver_html_a3595aa81709ac6fc972e2984072fa35e"><div class="ttname"><a href="#a3595aa81709ac6fc972e2984072fa35e">cocoon::KeyedUnarchiver::unarchiver_did_finish</a></div><div class="ttdeci">Signal&lt; KeyedUnarchiver, void()&gt; unarchiver_did_finish() const</div><div class="ttdoc">Signal for the delegate/data-source method behind unarchiver_did_finish; connect a callback with unar...</div><div class="ttdef"><b>Definition</b> keyed_unarchiver.h:243</div></div>
 <div class="ttc" id="aclasscocoon_1_1_keyed_unarchiver_html_a3be73a451fed0c437e9ecdbf35342ccd"><div class="ttname"><a href="#a3be73a451fed0c437e9ecdbf35342ccd">cocoon::KeyedUnarchiver::requires_secure_coding</a></div><div class="ttdeci">bool requires_secure_coding() const</div><div class="ttdoc">Returns the requiresSecureCoding property of NSKeyedUnarchiver.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_keyed_unarchiver_html_a41f0025053d006a879209ccfe53dfcfb"><div class="ttname"><a href="#a41f0025053d006a879209ccfe53dfcfb">cocoon::KeyedUnarchiver::decoding_failure_policy</a></div><div class="ttdeci">DecodingFailurePolicy decoding_failure_policy() const</div><div class="ttdoc">Returns the decodingFailurePolicy property of NSKeyedUnarchiver.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_keyed_unarchiver_html_a49cb61cde7fba4cf81ec49a9585c3960"><div class="ttname"><a href="#a49cb61cde7fba4cf81ec49a9585c3960">cocoon::KeyedUnarchiver::set_requires_secure_coding</a></div><div class="ttdeci">void set_requires_secure_coding(bool value) const</div><div class="ttdoc">Sets the requiresSecureCoding property of NSKeyedUnarchiver.</div></div>
-<div class="ttc" id="aclasscocoon_1_1_keyed_unarchiver_html_adc97db9f08870d72aec68660751d9218"><div class="ttname"><a href="#adc97db9f08870d72aec68660751d9218">cocoon::KeyedUnarchiver::unarchiver_will_finish</a></div><div class="ttdeci">Signal&lt; KeyedUnarchiver, void()&gt; unarchiver_will_finish() const</div><div class="ttdoc">Signal for the delegate/data-source method behind unarchiver_will_finish; connect a callback with una...</div><div class="ttdef"><b>Definition</b> keyed_unarchiver.h:259</div></div>
+<div class="ttc" id="aclasscocoon_1_1_keyed_unarchiver_html_adc97db9f08870d72aec68660751d9218"><div class="ttname"><a href="#adc97db9f08870d72aec68660751d9218">cocoon::KeyedUnarchiver::unarchiver_will_finish</a></div><div class="ttdeci">Signal&lt; KeyedUnarchiver, void()&gt; unarchiver_will_finish() const</div><div class="ttdoc">Signal for the delegate/data-source method behind unarchiver_will_finish; connect a callback with una...</div><div class="ttdef"><b>Definition</b> keyed_unarchiver.h:238</div></div>
 <div class="ttc" id="aclasscocoon_1_1_keyed_unarchiver_html_afb8b789feaf3e6149ffc09d26acc7351"><div class="ttname"><a href="#afb8b789feaf3e6149ffc09d26acc7351">cocoon::KeyedUnarchiver::class_for_class_name</a></div><div class="ttdeci">std::string class_for_class_name(const std::string &amp;coded_name) const</div><div class="ttdoc">Calls -[NSKeyedUnarchiver classForClassName:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_object_html"><div class="ttname"><a href="classcocoon_1_1_object.html">cocoon::Object</a></div><div class="ttdoc">Root of every wrapper class: a cheap, copyable handle to a retained Objective-C object.</div><div class="ttdef"><b>Definition</b> object.h:48</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -920,108 +914,6 @@ Static Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="a806af4d8266c2e656fdc9a5666f28afd" name="a806af4d8266c2e656fdc9a5666f28afd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a806af4d8266c2e656fdc9a5666f28afd">&#9670;&#160;</a></span>unarchive_object_with_data()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classcocoon_1_1_object.html">Object</a> cocoon::KeyedUnarchiver::unarchive_object_with_data </td>
-          <td>(</td>
-          <td class="paramtype">const std::vector&lt; std::uint8_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSKeyedUnarchiver unarchiveObjectWithData:]</span>. </p>
-<p>Decodes and returns the previously-archived object graph rooted in the given data. @DeprecationSummary { Use ''NSKeyedUnarchiver/unarchivedObjectOfClass:fromData:error:'' instead. } </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">data</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a3b6579afc2390e187b95c5e416f98903" name="a3b6579afc2390e187b95c5e416f98903"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b6579afc2390e187b95c5e416f98903">&#9670;&#160;</a></span>unarchive_object_with_file()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classcocoon_1_1_object.html">Object</a> cocoon::KeyedUnarchiver::unarchive_object_with_file </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSKeyedUnarchiver unarchiveObjectWithFile:]</span>. </p>
-<p>Decodes and returns the previously-archived object graph from the file at the given path. @DeprecationSummary { Use ''NSKeyedUnarchiver/unarchivedObjectOfClass:fromData:error:'' instead. } </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">path</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="ae6a1598af3cfd79a9898f711213b5368" name="ae6a1598af3cfd79a9898f711213b5368"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6a1598af3cfd79a9898f711213b5368">&#9670;&#160;</a></span>unarchive_top_level_object_with_data()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classcocoon_1_1_object.html">Object</a> cocoon::KeyedUnarchiver::unarchive_top_level_object_with_data </td>
-          <td>(</td>
-          <td class="paramtype">const std::vector&lt; std::uint8_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSKeyedUnarchiver unarchiveTopLevelObjectWithData:error:]</span>. </p>
-<p>Decodes and returns the previously-archived object graph in the given data, returning an error if decoding fails. This method throws an error if 'data' does not contain valid keyed data. @DeprecationSummary { Use ''NSKeyedUnarchiver/unarchivedObjectOfClass:fromData:error:'' instead. } </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">data</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
 
 </div>
 </div>

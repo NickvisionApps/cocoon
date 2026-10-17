@@ -82,6 +82,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ab1d8a70164c7c789029db7f5a498bf1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a null handle that refers to no native object.  <br /></td></tr>
 <tr class="memitem:a0ab4151ea21c58a7c86be622a1f08e64" id="r_a0ab4151ea21c58a7c86be622a1f08e64"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a0ab4151ea21c58a7c86be622a1f08e64">WritingToolsCoordinator</a> (<a class="el" href="structcocoon_1_1_adopt.html">Adopt</a> adopt)</td></tr>
 <tr class="memdesc:a0ab4151ea21c58a7c86be622a1f08e64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wraps an existing retained native object without creating a new one.  <br /></td></tr>
+<tr class="memitem:ad0df47ead135901f3a18f7cde08c60dc" id="r_ad0df47ead135901f3a18f7cde08c60dc"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad0df47ead135901f3a18f7cde08c60dc">cancel_text_animations_with_identifiers</a> (const std::vector&lt; <a class="el" href="classcocoon_1_1_u_u_i_d.html">UUID</a> &gt; &amp;identifiers) const</td></tr>
+<tr class="memdesc:ad0df47ead135901f3a18f7cde08c60dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">-[NSWritingToolsCoordinator cancelTextAnimationsWithIdentifiers:]</span>.  <br /></td></tr>
+<tr class="memitem:a7f3b5cd0afeb5fcfddbbf14983f43b8e" id="r_a7f3b5cd0afeb5fcfddbbf14983f43b8e"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a7f3b5cd0afeb5fcfddbbf14983f43b8e">show_grammar_presentation_for_range</a> (const <a class="el" href="structcocoon_1_1_range.html">Range</a> &amp;range, const <a class="el" href="classcocoon_1_1_writing_tools_coordinator_context.html">WritingToolsCoordinatorContext</a> &amp;context) const</td></tr>
+<tr class="memdesc:a7f3b5cd0afeb5fcfddbbf14983f43b8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">-[NSWritingToolsCoordinator showGrammarPresentationForRange:inContext:]</span>.  <br /></td></tr>
+<tr class="memitem:aa388cb732d6e7736b127d10a2ad5d4db" id="r_aa388cb732d6e7736b127d10a2ad5d4db"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_u_u_i_d.html">UUID</a>&#160;</td><td class="memItemRight"><a class="el" href="#aa388cb732d6e7736b127d10a2ad5d4db">start_text_animation</a> (<a class="el" href="namespacecocoon.html#a782ea3bcd1efc1c6d9d96824cd39b1e0">WritingToolsCoordinatorTextAnimation</a> text_animation, const <a class="el" href="structcocoon_1_1_range.html">Range</a> &amp;range, const <a class="el" href="classcocoon_1_1_writing_tools_coordinator_context.html">WritingToolsCoordinatorContext</a> &amp;context, <a class="el" href="namespacecocoon.html#ad25d72a1874cb96f37b467346bb686dd">WritingDirection</a> writing_direction) const</td></tr>
+<tr class="memdesc:aa388cb732d6e7736b127d10a2ad5d4db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">-[NSWritingToolsCoordinator startTextAnimation:forRange:inContext:writingDirection:]</span>.  <br /></td></tr>
 <tr class="memitem:a2b506576d9d1d9929adfa70e11cc5f29" id="r_a2b506576d9d1d9929adfa70e11cc5f29"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a2b506576d9d1d9929adfa70e11cc5f29">stop_writing_tools</a> () const</td></tr>
 <tr class="memdesc:a2b506576d9d1d9929adfa70e11cc5f29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">-[NSWritingToolsCoordinator stopWritingTools]</span>.  <br /></td></tr>
 <tr class="memitem:a6d6f1e44b0aa3891660f115feb6c03a0" id="r_a6d6f1e44b0aa3891660f115feb6c03a0"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6d6f1e44b0aa3891660f115feb6c03a0">update_for_reflowed_text_in_context_with_identifier</a> (const <a class="el" href="classcocoon_1_1_u_u_i_d.html">UUID</a> &amp;context_id) const</td></tr>
@@ -296,6 +302,31 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Returns the <span class="tt"><a class="el" href="#a4262e4ef9e3d71de21712793aaffc9b2" title="Returns the behavior property of NSWritingToolsCoordinator.">behavior</a></span> property of <span class="tt">NSWritingToolsCoordinator</span>. </p>
 <p>The actual level of Writing Tools support the system provides for your view. The system chooses this value based on the device capabilities, and takes the value in the ''preferredBehavior'' property into consideration when making the choice. The value in this property is never the default option, and is instead one of the specific options such as ''NSWritingToolsBehavior/none'', ''NSWritingToolsBehavior/limited'', or ''NSWritingToolsBehavior/complete''. </p><dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
+
+</div>
+</div>
+<a id="ad0df47ead135901f3a18f7cde08c60dc" name="ad0df47ead135901f3a18f7cde08c60dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0df47ead135901f3a18f7cde08c60dc">&#9670;&#160;</a></span>cancel_text_animations_with_identifiers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cocoon::WritingToolsCoordinator::cancel_text_animations_with_identifiers </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="classcocoon_1_1_u_u_i_d.html">UUID</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>identifiers</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calls <span class="tt">-[NSWritingToolsCoordinator cancelTextAnimationsWithIdentifiers:]</span>. </p>
+<p>Used to support the presentation of grammar issues in text. If it is necessary to cancel the animation of one or more issues, call this to cancel theanimations. The UUIDs passed in should be those returned when starting the animations. To cancel all ahimations, use ''stopWritingTools'' instead. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">identifiers</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -569,6 +600,80 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a7f3b5cd0afeb5fcfddbbf14983f43b8e" name="a7f3b5cd0afeb5fcfddbbf14983f43b8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f3b5cd0afeb5fcfddbbf14983f43b8e">&#9670;&#160;</a></span>show_grammar_presentation_for_range()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool cocoon::WritingToolsCoordinator::show_grammar_presentation_for_range </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structcocoon_1_1_range.html">Range</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>range</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcocoon_1_1_writing_tools_coordinator_context.html">WritingToolsCoordinatorContext</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>context</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calls <span class="tt">-[NSWritingToolsCoordinator showGrammarPresentationForRange:inContext:]</span>. </p>
+<p>Used to support the presentation of grammar issues in text. When the user interacts with an issue, call this to bring up the relevant UI. Pass in context and range to identify the issue the user selected. The context must match one of the contexts returned from ''NSWritingToolsCoordinator/Delegate/writingToolsCoordinator(:requestsContextsFor:completion:)'' and the range must match the range in the context of one of the grammar details returned for that context from ''NSWritingToolsCoordinator/Delegate/writingToolsCoordinator(:requestsGrammarResultsFor:completion:)'' Returns NO if the UI cannot be brought up. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">range</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
+    <tr><td class="paramname">context</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
+
+</div>
+</div>
+<a id="aa388cb732d6e7736b127d10a2ad5d4db" name="aa388cb732d6e7736b127d10a2ad5d4db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa388cb732d6e7736b127d10a2ad5d4db">&#9670;&#160;</a></span>start_text_animation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcocoon_1_1_u_u_i_d.html">UUID</a> cocoon::WritingToolsCoordinator::start_text_animation </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacecocoon.html#a782ea3bcd1efc1c6d9d96824cd39b1e0">WritingToolsCoordinatorTextAnimation</a></td>          <td class="paramname"><span class="paramname"><em>text_animation</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structcocoon_1_1_range.html">Range</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>range</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcocoon_1_1_writing_tools_coordinator_context.html">WritingToolsCoordinatorContext</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>context</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacecocoon.html#ad25d72a1874cb96f37b467346bb686dd">WritingDirection</a></td>          <td class="paramname"><span class="paramname"><em>writing_direction</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calls <span class="tt">-[NSWritingToolsCoordinator startTextAnimation:forRange:inContext:writingDirection:]</span>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text_animation</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
+    <tr><td class="paramname">range</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
+    <tr><td class="paramname">context</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
+    <tr><td class="paramname">writing_direction</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
 
 </div>
 </div>

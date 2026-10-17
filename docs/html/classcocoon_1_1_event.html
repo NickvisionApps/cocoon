@@ -268,6 +268,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a8db93e038617b0944e3c96e27d83f4aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">pressedMouseButtons</span> property of <span class="tt">NSEvent</span>.  <br /></td></tr>
 <tr class="memitem:a5377b09f0573a842579ac2b1030413c1" id="r_a5377b09f0573a842579ac2b1030413c1"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#a5377b09f0573a842579ac2b1030413c1">is_swipe_tracking_from_scroll_events_enabled</a> ()</td></tr>
 <tr class="memdesc:a5377b09f0573a842579ac2b1030413c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">swipeTrackingFromScrollEventsEnabled</span> property of <span class="tt">NSEvent</span>.  <br /></td></tr>
+<tr class="memitem:ab11897feb4026119fe022a30ec4b1604" id="r_ab11897feb4026119fe022a30ec4b1604"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#ab11897feb4026119fe022a30ec4b1604">is_touch_swipe_navigation_enabled</a> ()</td></tr>
+<tr class="memdesc:ab11897feb4026119fe022a30ec4b1604"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">touchSwipeNavigationEnabled</span> property of <span class="tt">NSEvent</span>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>C++ handle for the Objective-C class <span class="tt">NSEvent</span> (AppKit). </p>
@@ -1211,6 +1213,34 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Returns the <span class="tt">swipeTrackingFromScrollEventsEnabled</span> property of <span class="tt">NSEvent</span>. </p>
 <p>Returns the user's preference about using gesture scrolls as a way to track fluid swipes. This value is determined by the Mouse / Trackpad preference panel for the current user. Generally, NSScrollView will check this for you. However, if your app is not using an NSScrollView, or your NSResponder can receive scrollWheel messages without first being sent to an NSScrollView, then you should check this preference before calling -trackSwipeEventWithOptions:dampenAmountThresholdMin:max:usingHandler: </p><dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
+
+</div>
+</div>
+<a id="ab11897feb4026119fe022a30ec4b1604" name="ab11897feb4026119fe022a30ec4b1604"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab11897feb4026119fe022a30ec4b1604">&#9670;&#160;</a></span>is_touch_swipe_navigation_enabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool cocoon::Event::is_touch_swipe_navigation_enabled </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the <span class="tt">touchSwipeNavigationEnabled</span> property of <span class="tt">NSEvent</span>. </p>
+<p>Returns the user's preference about using touch as a way to swipe between pages. This value is determined by the <a class="el" href="classcocoon_1_1_touch.html" title="C++ handle for the Objective-C class NSTouch (AppKit).">Touch</a> preference panel for the current user. </p><dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
 
 </div>
 </div>

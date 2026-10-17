@@ -144,6 +144,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a07ae8624557576964de258aae7c93564"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">allowedTouchTypes</span> property of <span class="tt">NSGestureRecognizer</span>.  <br /></td></tr>
 <tr class="memitem:a45abdddbf6475be70353e3e8d799c626" id="r_a45abdddbf6475be70353e3e8d799c626"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a45abdddbf6475be70353e3e8d799c626">set_allowed_touch_types</a> (<a class="el" href="namespacecocoon.html#aeb8c360d06c34b203b896f56de137347">TouchTypeMask</a> value) const</td></tr>
 <tr class="memdesc:a45abdddbf6475be70353e3e8d799c626"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the <span class="tt">allowedTouchTypes</span> property of <span class="tt">NSGestureRecognizer</span>.  <br /></td></tr>
+<tr class="memitem:a45af02908d7d4b1bea744ff0030f328d" id="r_a45af02908d7d4b1bea744ff0030f328d"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a45af02908d7d4b1bea744ff0030f328d">is_cancellable_by_scroll_gesture</a> () const</td></tr>
+<tr class="memdesc:a45af02908d7d4b1bea744ff0030f328d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">cancellableByScrollGesture</span> property of <span class="tt">NSGestureRecognizer</span>.  <br /></td></tr>
+<tr class="memitem:aa044bc83e4856cd4726a647ee8427ad9" id="r_aa044bc83e4856cd4726a647ee8427ad9"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa044bc83e4856cd4726a647ee8427ad9">set_cancellable_by_scroll_gesture</a> (bool value) const</td></tr>
+<tr class="memdesc:aa044bc83e4856cd4726a647ee8427ad9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the <span class="tt">cancellableByScrollGesture</span> property of <span class="tt">NSGestureRecognizer</span>.  <br /></td></tr>
 <tr class="memitem:aea5a4caaa1ef359ed97585db616e9e8b" id="r_aea5a4caaa1ef359ed97585db616e9e8b"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#aea5a4caaa1ef359ed97585db616e9e8b">delays_key_events</a> () const</td></tr>
 <tr class="memdesc:aea5a4caaa1ef359ed97585db616e9e8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">delaysKeyEvents</span> property of <span class="tt">NSGestureRecognizer</span>.  <br /></td></tr>
 <tr class="memitem:aff665f39809100aa67597885d7130c53" id="r_aff665f39809100aa67597885d7130c53"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aff665f39809100aa67597885d7130c53">set_delays_key_events</a> (bool value) const</td></tr>
@@ -249,8 +253,8 @@ Static Protected Member Functions</h2></td></tr>
 <div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#a8dc9d16c37994f998334991fe600245b">action</a> = gesture_recognizer.<a class="code hl_function" href="#a8dc9d16c37994f998334991fe600245b">action</a>();</div>
 <div class="line">gesture_recognizer.<a class="code hl_function" href="#a45abdddbf6475be70353e3e8d799c626">set_allowed_touch_types</a>(<a class="code hl_enumvalue" href="namespacecocoon.html#aeb8c360d06c34b203b896f56de137347afd1dd0c603be8170f9eae0be9f2f6afb">cocoon::TouchTypeMask::Direct</a>);</div>
 <div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#a07ae8624557576964de258aae7c93564">allowed_touch_types</a> = gesture_recognizer.<a class="code hl_function" href="#a07ae8624557576964de258aae7c93564">allowed_touch_types</a>();</div>
-<div class="line">gesture_recognizer.set_cancellable_by_scroll_gesture(<span class="keyword">true</span>);</div>
-<div class="line"><span class="keyword">auto</span> cancellable_by_scroll_gesture = gesture_recognizer.is_cancellable_by_scroll_gesture();</div>
+<div class="line">gesture_recognizer.<a class="code hl_function" href="#aa044bc83e4856cd4726a647ee8427ad9">set_cancellable_by_scroll_gesture</a>(<span class="keyword">true</span>);</div>
+<div class="line"><span class="keyword">auto</span> cancellable_by_scroll_gesture = gesture_recognizer.<a class="code hl_function" href="#a45af02908d7d4b1bea744ff0030f328d">is_cancellable_by_scroll_gesture</a>();</div>
 <div class="line">gesture_recognizer.<a class="code hl_function" href="#a6bc429ce90a2bd8dc766657d3fa90268">can_be_prevented_by_gesture_recognizer</a>(<a class="code hl_class" href="classcocoon_1_1_gesture_recognizer.html">cocoon::GestureRecognizer</a>());</div>
 <div class="line">gesture_recognizer.<a class="code hl_function" href="#aa93393366d648f67283cef1c99d65859">can_prevent_gesture_recognizer</a>(<a class="code hl_class" href="classcocoon_1_1_gesture_recognizer.html">cocoon::GestureRecognizer</a>());</div>
 <div class="line">gesture_recognizer.<a class="code hl_function" href="#a40f5cfdfcd3c1207f1d8daee9a90914d">flags_changed</a>(<a class="code hl_class" href="classcocoon_1_1_event.html">cocoon::Event</a>());</div>
@@ -258,8 +262,10 @@ Static Protected Member Functions</h2></td></tr>
 <div class="ttc" id="aclasscocoon_1_1_gesture_recognizer_html_a07ae8624557576964de258aae7c93564"><div class="ttname"><a href="#a07ae8624557576964de258aae7c93564">cocoon::GestureRecognizer::allowed_touch_types</a></div><div class="ttdeci">TouchTypeMask allowed_touch_types() const</div><div class="ttdoc">Returns the allowedTouchTypes property of NSGestureRecognizer.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_gesture_recognizer_html_a40f5cfdfcd3c1207f1d8daee9a90914d"><div class="ttname"><a href="#a40f5cfdfcd3c1207f1d8daee9a90914d">cocoon::GestureRecognizer::flags_changed</a></div><div class="ttdeci">void flags_changed(const Event &amp;event) const</div><div class="ttdoc">Calls -[NSGestureRecognizer flagsChanged:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_gesture_recognizer_html_a45abdddbf6475be70353e3e8d799c626"><div class="ttname"><a href="#a45abdddbf6475be70353e3e8d799c626">cocoon::GestureRecognizer::set_allowed_touch_types</a></div><div class="ttdeci">void set_allowed_touch_types(TouchTypeMask value) const</div><div class="ttdoc">Sets the allowedTouchTypes property of NSGestureRecognizer.</div></div>
+<div class="ttc" id="aclasscocoon_1_1_gesture_recognizer_html_a45af02908d7d4b1bea744ff0030f328d"><div class="ttname"><a href="#a45af02908d7d4b1bea744ff0030f328d">cocoon::GestureRecognizer::is_cancellable_by_scroll_gesture</a></div><div class="ttdeci">bool is_cancellable_by_scroll_gesture() const</div><div class="ttdoc">Returns the cancellableByScrollGesture property of NSGestureRecognizer.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_gesture_recognizer_html_a6bc429ce90a2bd8dc766657d3fa90268"><div class="ttname"><a href="#a6bc429ce90a2bd8dc766657d3fa90268">cocoon::GestureRecognizer::can_be_prevented_by_gesture_recognizer</a></div><div class="ttdeci">bool can_be_prevented_by_gesture_recognizer(const GestureRecognizer &amp;preventing_gesture_recognizer) const</div><div class="ttdoc">Calls -[NSGestureRecognizer canBePreventedByGestureRecognizer:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_gesture_recognizer_html_a8dc9d16c37994f998334991fe600245b"><div class="ttname"><a href="#a8dc9d16c37994f998334991fe600245b">cocoon::GestureRecognizer::action</a></div><div class="ttdeci">std::string action() const</div><div class="ttdoc">Returns the action property of NSGestureRecognizer.</div></div>
+<div class="ttc" id="aclasscocoon_1_1_gesture_recognizer_html_aa044bc83e4856cd4726a647ee8427ad9"><div class="ttname"><a href="#aa044bc83e4856cd4726a647ee8427ad9">cocoon::GestureRecognizer::set_cancellable_by_scroll_gesture</a></div><div class="ttdeci">void set_cancellable_by_scroll_gesture(bool value) const</div><div class="ttdoc">Sets the cancellableByScrollGesture property of NSGestureRecognizer.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_gesture_recognizer_html_aa93393366d648f67283cef1c99d65859"><div class="ttname"><a href="#aa93393366d648f67283cef1c99d65859">cocoon::GestureRecognizer::can_prevent_gesture_recognizer</a></div><div class="ttdeci">bool can_prevent_gesture_recognizer(const GestureRecognizer &amp;prevented_gesture_recognizer) const</div><div class="ttdoc">Calls -[NSGestureRecognizer canPreventGestureRecognizer:].</div></div>
 <div class="ttc" id="anamespacecocoon_html_aeb8c360d06c34b203b896f56de137347afd1dd0c603be8170f9eae0be9f2f6afb"><div class="ttname"><a href="namespacecocoon.html#aeb8c360d06c34b203b896f56de137347afd1dd0c603be8170f9eae0be9f2f6afb">cocoon::TouchTypeMask::Direct</a></div><div class="ttdeci">@ Direct</div><div class="ttdef"><b>Definition</b> enums.h:4676</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -683,6 +689,26 @@ Static Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a45af02908d7d4b1bea744ff0030f328d" name="a45af02908d7d4b1bea744ff0030f328d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45af02908d7d4b1bea744ff0030f328d">&#9670;&#160;</a></span>is_cancellable_by_scroll_gesture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool cocoon::GestureRecognizer::is_cancellable_by_scroll_gesture </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the <span class="tt">cancellableByScrollGesture</span> property of <span class="tt">NSGestureRecognizer</span>. </p>
+<p>Causes the receiver to be cancelled when its enclosing scroll view's gesture recognizer begins. Defaults to 'false'. </p><dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
 
 </div>
 </div>
@@ -1228,6 +1254,31 @@ Static Protected Member Functions</h2></td></tr>
 
 <p>Sets the <span class="tt">allowedTouchTypes</span> property of <span class="tt">NSGestureRecognizer</span>. </p>
 <p>Currently, only NSTouchTypeDirect is supported. Defaults to NSTouchTypeDirect as of macOS 27, and 0 on earlier releases. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa044bc83e4856cd4726a647ee8427ad9" name="aa044bc83e4856cd4726a647ee8427ad9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa044bc83e4856cd4726a647ee8427ad9">&#9670;&#160;</a></span>set_cancellable_by_scroll_gesture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cocoon::GestureRecognizer::set_cancellable_by_scroll_gesture </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the <span class="tt">cancellableByScrollGesture</span> property of <span class="tt">NSGestureRecognizer</span>. </p>
+<p>Causes the receiver to be cancelled when its enclosing scroll view's gesture recognizer begins. Defaults to 'false'. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
   </table>

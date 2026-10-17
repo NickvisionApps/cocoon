@@ -79,6 +79,7 @@ What it shows</h1>
 <li>Liquid Glass buttons (<span class="tt">BezelStyle::Glass</span>) with tinted operator keys;</li>
 <li>a monospaced digit display <span class="tt">Label</span>;</li>
 <li>button <span class="tt">clicked()</span> signals capturing handles and shared state;</li>
+<li>a settings window (Cmd+,) with a System/Light/Dark theme picker applied through <span class="tt">Application::set_appearance</span>;</li>
 <li>UI-independent logic in a plain C++ class (<span class="tt">Engine</span>).</li>
 </ul>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
@@ -90,6 +91,10 @@ Source</h1>
 <td class="markdownTableBodyNone"><span class="tt">main.cpp</span>  </td><td class="markdownTableBodyNone">Application setup and run loop  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">main_window.*</span>  </td><td class="markdownTableBodyNone">The window, display and keypad  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">main_menu.*</span>  </td><td class="markdownTableBodyNone">Menu bar with the Settings item  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">settings_window.*</span>  </td><td class="markdownTableBodyNone">Settings window with the theme picker  </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">engine.*</span>  </td><td class="markdownTableBodyNone">Calculator state and arithmetic  </td></tr>
 </table>

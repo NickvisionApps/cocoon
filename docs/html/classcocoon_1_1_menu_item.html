@@ -155,6 +155,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:af6449b18cad8f75cabb747b72912e393"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the <span class="tt">onStateImage</span> property of <span class="tt">NSMenuItem</span>.  <br /></td></tr>
 <tr class="memitem:a2b6bcef823315e47d2516e5bb65a75c5" id="r_a2b6bcef823315e47d2516e5bb65a75c5"><td class="memItemLeft"><a class="el" href="#a538fd96d369d59624305058ec1c2d973">MenuItem</a>&#160;</td><td class="memItemRight"><a class="el" href="#a2b6bcef823315e47d2516e5bb65a75c5">parent_item</a> () const</td></tr>
 <tr class="memdesc:a2b6bcef823315e47d2516e5bb65a75c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">parentItem</span> property of <span class="tt">NSMenuItem</span>.  <br /></td></tr>
+<tr class="memitem:a0caad9f0e27e94c24ff75e1a19505fd9" id="r_a0caad9f0e27e94c24ff75e1a19505fd9"><td class="memItemLeft"><a class="el" href="namespacecocoon.html#a407de5c6be77d0ea24442b8e09612c64">MenuItemImageVisibility</a>&#160;</td><td class="memItemRight"><a class="el" href="#a0caad9f0e27e94c24ff75e1a19505fd9">preferred_image_visibility</a> () const</td></tr>
+<tr class="memdesc:a0caad9f0e27e94c24ff75e1a19505fd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">preferredImageVisibility</span> property of <span class="tt">NSMenuItem</span>.  <br /></td></tr>
+<tr class="memitem:aa462ee002ee9c73d2611788265255a2d" id="r_aa462ee002ee9c73d2611788265255a2d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa462ee002ee9c73d2611788265255a2d">set_preferred_image_visibility</a> (<a class="el" href="namespacecocoon.html#a407de5c6be77d0ea24442b8e09612c64">MenuItemImageVisibility</a> value) const</td></tr>
+<tr class="memdesc:aa462ee002ee9c73d2611788265255a2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the <span class="tt">preferredImageVisibility</span> property of <span class="tt">NSMenuItem</span>.  <br /></td></tr>
 <tr class="memitem:ab959dbd1a0b428f165eb3d88c58fda79" id="r_ab959dbd1a0b428f165eb3d88c58fda79"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a>&#160;</td><td class="memItemRight"><a class="el" href="#ab959dbd1a0b428f165eb3d88c58fda79">represented_object</a> () const</td></tr>
 <tr class="memdesc:ab959dbd1a0b428f165eb3d88c58fda79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">representedObject</span> property of <span class="tt">NSMenuItem</span>.  <br /></td></tr>
 <tr class="memitem:a653aac30d5618840bd30daf23040c69e" id="r_a653aac30d5618840bd30daf23040c69e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a653aac30d5618840bd30daf23040c69e">set_represented_object</a> (const <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &amp;value) const</td></tr>
@@ -903,6 +907,26 @@ Static Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a0caad9f0e27e94c24ff75e1a19505fd9" name="a0caad9f0e27e94c24ff75e1a19505fd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0caad9f0e27e94c24ff75e1a19505fd9">&#9670;&#160;</a></span>preferred_image_visibility()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacecocoon.html#a407de5c6be77d0ea24442b8e09612c64">MenuItemImageVisibility</a> cocoon::MenuItem::preferred_image_visibility </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the <span class="tt">preferredImageVisibility</span> property of <span class="tt">NSMenuItem</span>. </p>
+<p>A menu item's image visibility determines whether the item's image is displayed when the menu is open. The default visibility for an item's image is Automatic. With this value, AppKit determines whether the item's image is visible based on system configuration. If an item's image should be visible in all cases, regardless of macOS version or other settings, then set the image visibility to '.visible'. </p><dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
+
+</div>
+</div>
 <a id="ab959dbd1a0b428f165eb3d88c58fda79" name="ab959dbd1a0b428f165eb3d88c58fda79"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab959dbd1a0b428f165eb3d88c58fda79">&#9670;&#160;</a></span>represented_object()</h2>
 
@@ -1442,6 +1466,31 @@ Static Protected Member Functions</h2></td></tr>
 
 <p>Sets the <span class="tt">onStateImage</span> property of <span class="tt">NSMenuItem</span>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa462ee002ee9c73d2611788265255a2d" name="aa462ee002ee9c73d2611788265255a2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa462ee002ee9c73d2611788265255a2d">&#9670;&#160;</a></span>set_preferred_image_visibility()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cocoon::MenuItem::set_preferred_image_visibility </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacecocoon.html#a407de5c6be77d0ea24442b8e09612c64">MenuItemImageVisibility</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the <span class="tt">preferredImageVisibility</span> property of <span class="tt">NSMenuItem</span>. </p>
+<p>A menu item's image visibility determines whether the item's image is displayed when the menu is open. The default visibility for an item's image is Automatic. With this value, AppKit determines whether the item's image is visible based on system configuration. If an item's image should be visible in all cases, regardless of macOS version or other settings, then set the image visibility to '.visible'. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
   </table>
