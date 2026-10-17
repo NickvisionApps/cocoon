@@ -91,11 +91,11 @@ namespace cocoon
     void CandidateListTouchBarItemBase::set_candidates(const std::vector<Object>& candidates, const Range& selected_range, const std::string& original_string) const
     {
         [cocoon::internal::ns<::NSCandidateListTouchBarItem>(this) setCandidates:cocoon::internal::to_array(candidates, [](const Object& e) -> id
-                                                                                {
-                                                                                    return cocoon::internal::native_id(e);
-                                                                                })
-                                                  forSelectedRange:cocoon::internal::to(selected_range)
-                                                          inString:cocoon::internal::to(original_string)];
+                                                                                                            {
+                                                                                                                return cocoon::internal::native_id(e);
+                                                                                                            })
+                                                                forSelectedRange:cocoon::internal::to(selected_range)
+                                                                        inString:cocoon::internal::to(original_string)];
     }
 
     void CandidateListTouchBarItemBase::update_with_insertion_point_visibility(bool is_visible) const
@@ -153,9 +153,9 @@ namespace cocoon
     std::vector<Object> CandidateListTouchBarItemBase::candidates() const
     {
         return cocoon::internal::from_array<Object>([cocoon::internal::ns<::NSCandidateListTouchBarItem>(this) candidates], [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     View CandidateListTouchBarItemBase::client() const
