@@ -268,8 +268,6 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a8db93e038617b0944e3c96e27d83f4aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">pressedMouseButtons</span> property of <span class="tt">NSEvent</span>.  <br /></td></tr>
 <tr class="memitem:a5377b09f0573a842579ac2b1030413c1" id="r_a5377b09f0573a842579ac2b1030413c1"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#a5377b09f0573a842579ac2b1030413c1">is_swipe_tracking_from_scroll_events_enabled</a> ()</td></tr>
 <tr class="memdesc:a5377b09f0573a842579ac2b1030413c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">swipeTrackingFromScrollEventsEnabled</span> property of <span class="tt">NSEvent</span>.  <br /></td></tr>
-<tr class="memitem:ab11897feb4026119fe022a30ec4b1604" id="r_ab11897feb4026119fe022a30ec4b1604"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#ab11897feb4026119fe022a30ec4b1604">is_touch_swipe_navigation_enabled</a> ()</td></tr>
-<tr class="memdesc:ab11897feb4026119fe022a30ec4b1604"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">touchSwipeNavigationEnabled</span> property of <span class="tt">NSEvent</span>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>C++ handle for the Objective-C class <span class="tt">NSEvent</span> (AppKit). </p>
@@ -278,7 +276,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="line"> </div>
 <div class="line"><a class="code hl_class" href="classcocoon_1_1_event.html">cocoon::Event</a> event;</div>
 <div class="line"><span class="keyword">event</span>.<a class="code hl_function" href="#aad6fee5e10c2fb961df9a0b7874e7da8">set_mouse_coalescing_enabled</a>(<span class="keyword">true</span>);</div>
-<div class="ttc" id="aclasscocoon_1_1_event_html"><div class="ttname"><a href="classcocoon_1_1_event.html">cocoon::Event</a></div><div class="ttdoc">C++ handle for the Objective-C class NSEvent (AppKit).</div><div class="ttdef"><b>Definition</b> event.h:44</div></div>
+<div class="ttc" id="aclasscocoon_1_1_event_html"><div class="ttname"><a href="classcocoon_1_1_event.html">cocoon::Event</a></div><div class="ttdoc">C++ handle for the Objective-C class NSEvent (AppKit).</div><div class="ttdef"><b>Definition</b> event.h:45</div></div>
 <div class="ttc" id="aclasscocoon_1_1_event_html_aad6fee5e10c2fb961df9a0b7874e7da8"><div class="ttname"><a href="#aad6fee5e10c2fb961df9a0b7874e7da8">cocoon::Event::set_mouse_coalescing_enabled</a></div><div class="ttdeci">static void set_mouse_coalescing_enabled(bool value)</div><div class="ttdoc">Sets the mouseCoalescingEnabled property of NSEvent.</div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_event.html">cocoon::Event</a> <span class="keyword">event</span>{};</div>
@@ -292,7 +290,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="ttc" id="aclasscocoon_1_1_event_html_a2eb6eae2c75247f29732d2f1c8f1fefc"><div class="ttname"><a href="#a2eb6eae2c75247f29732d2f1c8f1fefc">cocoon::Event::key_event_with_type</a></div><div class="ttdeci">static Event key_event_with_type(EventType type, const Point &amp;location, EventModifierFlags flags, double time, std::int64_t w_num, const GraphicsContext &amp;unused_pass_nil, const std::string &amp;keys, const std::string &amp;ukeys, bool flag, std::uint16_t code)</div><div class="ttdoc">Calls +[NSEvent keyEventWithType:location:modifierFlags:timestamp:windowNumber:context:characters:cha...</div></div>
 <div class="ttc" id="aclasscocoon_1_1_event_html_a97c194a27f15043cb912cfa89b296cb7"><div class="ttname"><a href="#a97c194a27f15043cb912cfa89b296cb7">cocoon::Event::mouse_event_with_type</a></div><div class="ttdeci">static Event mouse_event_with_type(EventType type, const Point &amp;location, EventModifierFlags flags, double time, std::int64_t w_num, const GraphicsContext &amp;unused_pass_nil, std::int64_t e_num, std::int64_t c_num, float pressure)</div><div class="ttdoc">Calls +[NSEvent mouseEventWithType:location:modifierFlags:timestamp:windowNumber:context:eventNumber:...</div></div>
 <div class="ttc" id="aclasscocoon_1_1_event_html_aba97eadf5ec72a4a56cc21c2173a8917"><div class="ttname"><a href="#aba97eadf5ec72a4a56cc21c2173a8917">cocoon::Event::all_touches</a></div><div class="ttdeci">std::vector&lt; Touch &gt; all_touches() const</div><div class="ttdoc">Calls -[NSEvent allTouches].</div></div>
-<div class="ttc" id="aclasscocoon_1_1_graphics_context_html"><div class="ttname"><a href="classcocoon_1_1_graphics_context.html">cocoon::GraphicsContext</a></div><div class="ttdoc">C++ handle for the Objective-C class NSGraphicsContext (AppKit).</div><div class="ttdef"><b>Definition</b> graphics_context.h:43</div></div>
+<div class="ttc" id="aclasscocoon_1_1_graphics_context_html"><div class="ttname"><a href="classcocoon_1_1_graphics_context.html">cocoon::GraphicsContext</a></div><div class="ttdoc">C++ handle for the Objective-C class NSGraphicsContext (AppKit).</div><div class="ttdef"><b>Definition</b> graphics_context.h:44</div></div>
 <div class="ttc" id="anamespacecocoon_html_a07bb92bfde3eca330152331aec8646e5a81e48b0ee1aabbf73a3cc6b1a512fda3"><div class="ttname"><a href="namespacecocoon.html#a07bb92bfde3eca330152331aec8646e5a81e48b0ee1aabbf73a3cc6b1a512fda3">cocoon::EventType::LeftMouseDown</a></div><div class="ttdeci">@ LeftMouseDown</div><div class="ttdef"><b>Definition</b> enums.h:1656</div></div>
 <div class="ttc" id="anamespacecocoon_html_a24f11dbd6a5563808d7633ce02227c49a8d0f4171170104d094d8b6d4f8bf49e6"><div class="ttname"><a href="namespacecocoon.html#a24f11dbd6a5563808d7633ce02227c49a8d0f4171170104d094d8b6d4f8bf49e6">cocoon::EventModifierFlags::CapsLock</a></div><div class="ttdeci">@ CapsLock</div><div class="ttdef"><b>Definition</b> enums.h:1569</div></div>
 <div class="ttc" id="anamespacecocoon_html_a5a51f734fb0a1e63af71c4c08c8e9083af0f31c9700c6b10d8a20dc487b2ae6a8"><div class="ttname"><a href="namespacecocoon.html#a5a51f734fb0a1e63af71c4c08c8e9083af0f31c9700c6b10d8a20dc487b2ae6a8">cocoon::EventSubtype::Touch</a></div><div class="ttdeci">@ Touch</div><div class="ttdef"><b>Definition</b> enums.h:1630</div></div>
@@ -1213,34 +1211,6 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Returns the <span class="tt">swipeTrackingFromScrollEventsEnabled</span> property of <span class="tt">NSEvent</span>. </p>
 <p>Returns the user's preference about using gesture scrolls as a way to track fluid swipes. This value is determined by the Mouse / Trackpad preference panel for the current user. Generally, NSScrollView will check this for you. However, if your app is not using an NSScrollView, or your NSResponder can receive scrollWheel messages without first being sent to an NSScrollView, then you should check this preference before calling -trackSwipeEventWithOptions:dampenAmountThresholdMin:max:usingHandler: </p><dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="ab11897feb4026119fe022a30ec4b1604" name="ab11897feb4026119fe022a30ec4b1604"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab11897feb4026119fe022a30ec4b1604">&#9670;&#160;</a></span>is_touch_swipe_navigation_enabled()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool cocoon::Event::is_touch_swipe_navigation_enabled </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the <span class="tt">touchSwipeNavigationEnabled</span> property of <span class="tt">NSEvent</span>. </p>
-<p>Returns the user's preference about using touch as a way to swipe between pages. This value is determined by the <a class="el" href="classcocoon_1_1_touch.html" title="C++ handle for the Objective-C class NSTouch (AppKit).">Touch</a> preference panel for the current user. </p><dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
 
 </div>
 </div>
