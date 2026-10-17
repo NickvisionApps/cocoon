@@ -1,0 +1,224 @@
+Skipped members by reason
+
+deprecated: 546
+  NSATSTypesetter.getGlyphsInRange:glyphs:characterIndexes:glyphInscriptions:elasticBits:
+  NSATSTypesetter.lineFragmentRectForProposedRect:remainingRect:
+  NSAlert.alertWithMessageText:defaultButton:alternateButton:otherButton:informativeTextWithFormat:
+  NSAlert.beginSheetModalForWindow:modalDelegate:didEndSelector:contextInfo:
+  NSApplication.application:printFiles:
+  NSApplication.beginModalSessionForWindow:relativeToWindow:
+  NSApplication.beginSheet:modalForWindow:modalDelegate:didEndSelector:contextInfo:
+  NSApplication.endSheet:
+  NSApplication.endSheet:returnCode:
+  NSApplication.makeWindowsPerform:inOrder:
+  NSApplication.runModalForWindow:relativeToWindow:
+  NSBezierPath.appendBezierPathWithGlyph:inFont:
+  NSBezierPath.appendBezierPathWithGlyphs:count:inFont:
+  NSBezierPath.appendBezierPathWithPackedGlyphs:
+  NSBezierPath.cachesBezierPath
+  NSBezierPath.setCachesBezierPath:
+  NSBox.setTitleWithMnemonic:
+  NSBrowser.acceptsArrowKeys
+  NSBrowser.columnOfMatrix:
+  NSBrowser.displayAllColumns
+  NSBrowser.displayColumn:
+  NSBrowser.matrixClass
+  NSBrowser.matrixInColumn:
+  NSBrowser.scrollViaScroller:
+  NSBrowser.setAcceptsArrowKeys:
+  NSBrowser.setMatrixClass:
+  NSBrowser.updateScroller
+  NSButton.setTitleWithMnemonic:
+  NSButtonCell.alternateMnemonic
+  NSButtonCell.alternateMnemonicLocation
+  NSButtonCell.setAlternateMnemonicLocation:
+  NSButtonCell.setAlternateTitleWithMnemonic:
+  NSButtonCell.setKeyEquivalentFont:size:
+  NSButtonCell.setTitleWithMnemonic:
+  NSCachedImageRep.initWithSize:depth:separate:alpha:
+  NSCachedImageRep.initWithWindow:rect:
+  NSCachedImageRep.rect
+  NSCachedImageRep.window
+  NSCell.entryType
+  NSCell.isEntryAcceptable:
+  ...
+
+unavailable/deprecated: 95
+  NSAppearance.currentAppearance
+  NSApplication.context
+  NSBox.borderType
+  NSButtonCell.gradientType
+  NSButtonCell.keyEquivalentFont
+  NSCell.controlTint
+  NSCollectionView.itemPrototype
+  NSCollectionView.maxItemSize
+  NSCollectionView.maxNumberOfColumns
+  NSCollectionView.maxNumberOfRows
+  NSCollectionView.minItemSize
+  NSColor.alternateSelectedControlColor
+  NSColor.colorSpaceName
+  NSColor.controlAlternatingRowBackgroundColors
+  NSColor.controlDarkShadowColor
+  NSColor.controlHighlightColor
+  NSColor.controlLightHighlightColor
+  NSColor.controlShadowColor
+  NSColor.headerColor
+  NSColor.ignoresAlpha
+  NSColor.knobColor
+  NSColor.scrollBarColor
+  NSColor.secondarySelectedControlColor
+  NSColor.selectedKnobColor
+  NSColor.selectedMenuItemColor
+  NSColor.windowFrameColor
+  NSCursor.setOnMouseEntered
+  NSCursor.setOnMouseExited
+  NSEvent.context
+  NSFontManager.collectionNames
+  NSFontManager.delegate
+  NSGraphicsContext.graphicsPort
+  NSMenu.menuChangedMessagesEnabled
+  NSMenu.tornOff
+  NSOpenGLPixelBuffer.pixelsHigh
+  NSOpenGLPixelBuffer.pixelsWide
+  NSOpenGLPixelBuffer.textureInternalFormat
+  NSOpenGLPixelBuffer.textureMaxMipMapLevel
+  NSOpenGLPixelBuffer.textureTarget
+  NSOpenGLContext.view
+  ...
+
+skipped selector: 49
+  NSCollectionViewCompositionalLayout.new
+  NSCollectionLayoutSection.new
+  NSCollectionLayoutItem.new
+  NSCollectionLayoutGroupCustomItem.new
+  NSCollectionLayoutGroup.new
+  NSCollectionLayoutDimension.new
+  NSCollectionLayoutSize.new
+  NSCollectionLayoutSpacing.new
+  NSCollectionLayoutEdgeSpacing.new
+  NSCollectionLayoutSupplementaryItem.new
+  NSCollectionLayoutBoundarySupplementaryItem.new
+  NSCollectionLayoutDecorationItem.new
+  NSCollectionLayoutAnchor.new
+  NSCollectionViewDiffableDataSource.new
+  NSPreviewRepresentingActivityItem.new
+  NSScrollEdgeEffectStyle.new
+  NSSharingCollaborationModeRestriction.new
+  NSTableViewDiffableDataSource.new
+  NSTextAttachmentViewProvider.new
+  NSTextRange.new
+  NSTextSelectionNavigation.new
+  NSTextViewportLayoutController.new
+  NSViewCornerConfiguration.new
+  NSViewCornerRadii.new
+  NSViewCornerRadius.new
+  NSViewLayoutRegion.new
+  NSBundle.load
+  NSError.new
+  NSKeyValueSharedObserversSnapshot.new
+  NSKeyValueSharedObservers.new
+  NSLocalizedNumberFormatRule.new
+  NSMorphologyPronoun.new
+  NSTermOfAddress.new
+  NSURLSession.new
+  NSURLSessionTask.new
+  NSURLSessionDataTask.new
+  NSURLSessionUploadTask.new
+  NSURLSessionDownloadTask.new
+  NSURLSessionStreamTask.new
+  NSURLSessionWebSocketMessage.new
+  ...
+
+unavailable: 41
+  NSBitmapImageRep.initWithFocusedViewRect:
+  NSCursor.initWithImage:foregroundColorHint:backgroundColorHint:hotSpot:
+  NSDatePickerCell.initImageCell:
+  NSFormCell.initImageCell:
+  NSGradient.initWithColorsAndLocations:
+  NSImage.initWithIconRef:
+  NSInputManager.initWithName:host:
+  NSInputServer.initWithDelegate:name:
+  NSMovie.initWithMovie:
+  NSOpenGLPixelBuffer.initWithCGLPBufferObj:
+  NSOpenGLPixelBuffer.initWithTextureTarget:textureInternalFormat:textureMaxMipMapLevel:pixelsWide:pixelsHigh:
+  NSOutlineView.insertRowsAtIndexes:withAnimation:
+  NSOutlineView.moveRowAtIndex:toIndex:
+  NSOutlineView.removeRowsAtIndexes:withAnimation:
+  NSSearchFieldCell.initImageCell:
+  NSSpeechSynthesizer.initWithVoice:
+  NSTextFieldCell.initImageCell:
+  NSTextListElement.initWithAttributedString:
+  NSTextViewportLayoutController.renderingSurfaceForKey:
+  NSWindow.initWithWindowRef:
+  NSUnarchiver.objectZone
+  NSUnarchiver.setObjectZone:
+  NSAttributedString.initWithFormat:options:locale:
+  NSAttributedString.initWithFormat:options:locale:context:
+  NSAttributedString.initWithPath:documentAttributes:
+  NSAttributedString.initWithURL:documentAttributes:
+  NSBundle.preservationPriorityForTag:
+  NSBundle.setPreservationPriority:forTags:
+  NSCoder.objectZone
+  NSCoder.setObjectZone:
+  NSKeyValueSharedObservers.addObserver:forKeyPath:options:context:
+  NSProcessInfo.performExpiringActivityWithReason:usingBlock:
+  NSURL.initWithScheme:host:path:
+  NSURLConnection.initWithRequest:delegate:
+  NSURLConnection.initWithRequest:delegate:startImmediately:
+  NSURLDownload.initWithRequest:delegate:
+  NSURLDownload.initWithResumeData:delegate:path:
+  NSXMLDTD.initWithKind:options:
+  CIImage.initWithCGLayer:
+  CIImage.initWithCGLayer:options:
+  ...
+
+unmapped pointer: 11
+  NSDateComponentsFormatter.getObjectValue:forString:errorDescription:
+  NSDateFormatter.getObjectValue:forString:range:error:
+  NSEnergyFormatter.getObjectValue:forString:errorDescription:
+  NSFormatter.getObjectValue:forString:errorDescription:
+  NSLengthFormatter.getObjectValue:forString:errorDescription:
+  NSMassFormatter.getObjectValue:forString:errorDescription:
+  NSNumberFormatter.getObjectValue:forString:range:error:
+  NSPersonNameComponentsFormatter.getObjectValue:forString:errorDescription:
+  NSURL.getPromisedItemResourceValue:forKey:error:
+  NSURL.getResourceValue:forKey:error:
+  NSMenu.menuHasKeyEquivalent:forEvent:target:action:
+
+variadic without va_list sibling: 9
+  NSAttributedString.localizedAttributedStringWithFormat:
+  NSAttributedString.localizedAttributedStringWithFormat:context:
+  NSAttributedString.localizedAttributedStringWithFormat:options:
+  NSAttributedString.localizedAttributedStringWithFormat:options:context:
+  NSMutableAttributedString.appendLocalizedFormat:
+  NSCoder.decodeValuesOfObjCTypes:
+  NSCoder.encodeValuesOfObjCTypes:
+  NSAssertionHandler.handleFailureInFunction:file:lineNumber:description:
+  NSAssertionHandler.handleFailureInMethod:object:file:lineNumber:description:
+
+copy-like constructor: 3
+  NSAffineTransform.initWithTransform:
+  NSAttributedString.initWithAttributedString:
+  NSIndexSet.initWithIndexSet:
+
+unmapped NSProxy: 3
+  NSConnection.rootProxyForConnectionWithRegisteredName:host:
+  NSConnection.rootProxyForConnectionWithRegisteredName:host:usingNameServer:
+  NSConnection.rootProxy
+
+unmapped class: 3
+  NSSymbolEffectOptions.optionsWithRepeatBehavior:
+  NSSymbolEffectOptions.optionsWithRepeatBehavior:
+  NSManagedObjectContext.shouldHandleInaccessibleFault:forObjectID:triggeredByProperty:
+
+unmapped odd: 1
+  NSBlockOperation.executionBlocks
+
+unmapped struct: 1
+  NSScriptCommandDescription.createCommandInstanceWithZone:
+
+unmapped unmapped: 1
+  CIColor.colorSpace
+
+delegate error param: 1
+  NSSavePanel.panel:validateURL:error:

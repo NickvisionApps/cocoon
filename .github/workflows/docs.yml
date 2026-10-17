@@ -1,0 +1,56 @@
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - "include/**"
+      - "docs/mainpage.md"
+      - "Doxyfile"
+  push:
+    branches: [ "main" ]
+    paths:
+      - "include/**"
+      - "docs/mainpage.md"
+      - "Doxyfile"
+name: Docs
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  update-docs:
+    name: "Update Docs"
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.ref || github.ref }}
+      - name: "Install Doxygen"
+        run: brew install doxygen
+      - name: "Configure"
+        run: cmake -S . -B build -DCOCOON_BUILD_EXAMPLES=OFF -DDOXYGEN_WARN_AS_ERROR=YES
+      - name: "Generate docs"
+        run: |
+          rm -rf docs/html
+          cmake --build build --target docs
+      - name: "Check for changes"
+        id: diff
+        run: echo "changed=$([ -z "$(git status --porcelain -- docs/html)" ] && echo false || echo true)" >> "$GITHUB_OUTPUT"
+      - name: "Commit to existing PR"
+        if: steps.diff.outputs.changed == 'true' && github.event_name == 'pull_request'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/html
+          git commit -m "chore: Sync docs"
+          git push
+      - name: "Open PR with sync"
+        if: steps.diff.outputs.changed == 'true' && github.event_name != 'pull_request'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.DOCS_TOKEN || secrets.GITHUB_TOKEN }}
+          commit-message: "chore: Sync docs"
+          title: "chore: Sync docs"
+          body: "Automated regeneration of the Doxygen HTML in docs/html from the headers in include/."
+          branch: sync-docs
+          add-paths: |
+            docs/html

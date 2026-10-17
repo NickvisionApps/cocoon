@@ -1,0 +1,47 @@
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+    types: [ "review_requested", "ready_for_review" ]
+  workflow_dispatch:
+  workflow_call:
+    inputs:
+      tag:
+        description: "Git ref to check out"
+        type: string
+        required: true
+name: macOS
+permissions:
+  contents: read
+jobs:
+  cocoon-macos:
+    name: "cocoon on macOS"
+    strategy:
+      fail-fast: false
+      matrix:
+        variant:
+          - arch: arm64
+            runner: macos-latest
+    runs-on: ${{ matrix.variant.runner }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ inputs.tag || github.ref_name }}
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest
+      - name: "Check for the macOS 26 SDK"
+        run: |
+          sdk="$(xcrun --show-sdk-version)"
+          echo "macOS SDK: ${sdk}"
+          if [ "${sdk%%.*}" -lt 26 ]; then
+            echo "::error::cocoon needs the macOS 26 SDK or newer, found ${sdk}"
+            exit 1
+          fi
+      - name: "Configure"
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DCOCOON_BUILD_EXAMPLES=OFF
+      - name: "Build library"
+        run: cmake --build build --target cocoon --parallel "$(sysctl -n hw.ncpu)"
+      - name: "Check library"
+        run: test -f build/libcocoon.a

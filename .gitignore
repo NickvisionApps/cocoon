@@ -1,0 +1,5 @@
+build/
+generator/.cache/
+generator/__pycache__/
+docs/latex/
+.DS_Store

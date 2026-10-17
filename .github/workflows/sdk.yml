@@ -1,0 +1,69 @@
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 6 * * 1"
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - "generator/**"
+  push:
+    branches: [ "main" ]
+    paths:
+      - "generator/**"
+name: SDK
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  update-sdk:
+    name: "Update SDK Bindings"
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.ref || github.ref }}
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest
+      - name: "Check for the macOS 26 SDK"
+        run: |
+          sdk="$(xcrun --show-sdk-version)"
+          echo "macOS SDK: ${sdk}"
+          if [ "${sdk%%.*}" -lt 26 ]; then
+            echo "::error::regeneration needs the macOS 26 SDK or newer, found ${sdk}"
+            exit 1
+          fi
+      - name: "Install clang-format"
+        run: brew install clang-format
+      - uses: actions/cache@v4
+        with:
+          path: generator/.cache
+          key: ast-${{ runner.os }}-${{ github.run_id }}
+          restore-keys: ast-${{ runner.os }}-
+      - name: "Generate headers and sources"
+        run: python3 generator/generate.py
+      - name: "Check for changes"
+        id: diff
+        run: echo "changed=$([ -z "$(git status --porcelain -- include src examples generator/skipped.txt)" ] && echo false || echo true)" >> "$GITHUB_OUTPUT"
+      - name: "Commit to existing PR"
+        if: steps.diff.outputs.changed == 'true' && github.event_name == 'pull_request'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add include src examples generator/skipped.txt
+          git commit -m "chore: Sync SDK bindings"
+          git push
+      - name: "Open PR with sync"
+        if: steps.diff.outputs.changed == 'true' && github.event_name != 'pull_request'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.SDK_TOKEN || secrets.GITHUB_TOKEN }}
+          commit-message: "chore: Sync SDK bindings"
+          title: "chore: Sync SDK bindings"
+          body: "Automated regeneration of the bindings in include/generated and src/generated (and the formatted hand-written sources) from the SDK of the newest Xcode on the runner. Review generator/skipped.txt for members that could not be mapped."
+          branch: sync-sdk
+          add-paths: |
+            include
+            src
+            examples
+            generator/skipped.txt
