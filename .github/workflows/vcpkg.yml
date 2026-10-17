@@ -1,0 +1,34 @@
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+name: Vcpkg
+permissions:
+  contents: read
+jobs:
+  vcpkg-port:
+    name: "Build Vcpkg Port"
+    strategy:
+      matrix:
+        variant:
+          - runner: macos-latest
+            triplet: arm64-osx
+          - runner: macos-26-intel
+            triplet: x64-osx
+    runs-on: ${{ matrix.variant.runner }}
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v6
+        with:
+          submodules: recursive
+      - name: "Build"
+        uses: johnwason/vcpkg-action@v8
+        id: vcpkg
+        with:
+          pkgs: cocoon
+          triplet: ${{ matrix.variant.triplet }}
+          revision: a0b1c8d3a477c1cb4813d8e127a56961707ca42b
+          token: ${{ github.token }}
+          cache-key: ${{ matrix.variant.triplet }}
+          vcpkg-subdir: vcpkg-tool
+          extra-args: --overlay-ports="${{ github.workspace }}/vcpkg/ports"

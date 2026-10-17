@@ -1,0 +1,19 @@
+{
+  "name": "cocoon",
+  "version": "0.1.0",
+  "maintainers": "Nicholas Logozzo nlogozzo225@gmail.com",
+  "description": "A C++20 wrapper over modern AppKit.",
+  "homepage": "https://github.com/NickvisionApps/cocoon",
+  "license": "MIT",
+  "supports": "osx & static",
+  "dependencies": [
+    {
+      "name": "vcpkg-cmake",
+      "host": true
+    },
+    {
+      "name": "vcpkg-cmake-config",
+      "host": true
+    }
+  ]
+}

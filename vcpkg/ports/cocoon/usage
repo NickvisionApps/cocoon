@@ -1,0 +1,8 @@
+cocoon provides CMake targets:
+
+    find_package(cocoon CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE cocoon::cocoon)
+
+cocoon provides pkg-config modules:
+
+    cocoon
