@@ -84,9 +84,9 @@ namespace cocoon
     std::vector<Operation> Operation::dependencies() const
     {
         return cocoon::internal::from_array<Operation>([cocoon::internal::ns<::NSOperation>(this) dependencies], [](id e) -> Operation
-                                         {
-                                             return cocoon::internal::wrap<Operation>((::NSOperation*)e);
-                                         });
+                                                       {
+                                                           return cocoon::internal::wrap<Operation>((::NSOperation*)e);
+                                                       });
     }
 
     bool Operation::is_executing() const

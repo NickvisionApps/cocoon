@@ -8,11 +8,11 @@ namespace cocoon
     }
 
     TextPreview::TextPreview(const CGImage& snapshot_image, const Rect& presentation_frame, const std::vector<Value>& candidate_rects) : TextPreview(Adopt{cocoon::internal::retain([[::NSTextPreview alloc] initWithSnapshotImage:((::CGImageRef)(snapshot_image).handle())
-                                                                                                                                                                                                   presentationFrame:cocoon::internal::to(presentation_frame)
-                                                                                                                                                                                                      candidateRects:cocoon::internal::to_array(candidate_rects, [](const Value& e) -> id
-                                                                                                                                                                                                                                  {
-                                                                                                                                                                                                                                      return cocoon::internal::native<::NSValue>(e);
-                                                                                                                                                                                                                                  })])})
+                                                                                                                                                                                                                 presentationFrame:cocoon::internal::to(presentation_frame)
+                                                                                                                                                                                                                    candidateRects:cocoon::internal::to_array(candidate_rects, [](const Value& e) -> id
+                                                                                                                                                                                                                                                              {
+                                                                                                                                                                                                                                                                  return cocoon::internal::native<::NSValue>(e);
+                                                                                                                                                                                                                                                              })])})
     {
     }
 
@@ -31,9 +31,9 @@ namespace cocoon
     std::vector<Value> TextPreview::candidate_rects() const
     {
         return cocoon::internal::from_array<Value>([cocoon::internal::ns<::NSTextPreview>(this) candidateRects], [](id e) -> Value
-                                     {
-                                         return cocoon::internal::wrap<Value>((::NSValue*)e);
-                                     });
+                                                   {
+                                                       return cocoon::internal::wrap<Value>((::NSValue*)e);
+                                                   });
     }
 
     Rect TextPreview::presentation_frame() const

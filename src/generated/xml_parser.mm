@@ -98,13 +98,13 @@
         return;
     }
     cocoon::Signal<cocoon::XMLParser, void(std::string, std::string, std::string, std::map<std::string, std::string>)>::emit((__bridge void*)strongHost, "parser_did_start_element_namespace_uri_qualified_name_attributes", cocoon::internal::from(elementName), cocoon::internal::from(namespaceURI), cocoon::internal::from(qName), cocoon::internal::from_dictionary<std::map<std::string, std::string>>(attributeDict, [](id k) -> std::string
-                                                                                                                                                                                                                                                                                                                                                     {
-                                                                                                                                                                                                                                                                                                                                                         return cocoon::internal::from((NSString*)k);
-                                                                                                                                                                                                                                                                                                                                                     },
-                                                                                                                                                                                                                                                                                                                                                     [](id v) -> std::string
-                                                                                                                                                                                                                                                                                                                                                     {
-                                                                                                                                                                                                                                                                                                                                                         return cocoon::internal::from((NSString*)v);
-                                                                                                                                                                                                                                                                                                                                                     }));
+                                                                                                                                                                                                                                                                                                                                                                                                             {
+                                                                                                                                                                                                                                                                                                                                                                                                                 return cocoon::internal::from((NSString*)k);
+                                                                                                                                                                                                                                                                                                                                                                                                             },
+                                                                                                                                                                                                                                                                                                                                                                                                             [](id v) -> std::string
+                                                                                                                                                                                                                                                                                                                                                                                                             {
+                                                                                                                                                                                                                                                                                                                                                                                                                 return cocoon::internal::from((NSString*)v);
+                                                                                                                                                                                                                                                                                                                                                                                                             }));
 }
 
 - (void)parser:(NSXMLParser*)parser didEndElement:(NSString*)elementName namespaceURI:(NSString*)namespaceURI qualifiedName:(NSString*)qName
@@ -349,17 +349,17 @@ namespace cocoon
     std::vector<URL> XMLParser::allowed_external_entity_urls() const
     {
         return cocoon::internal::from_array<URL>([[cocoon::internal::ns<::NSXMLParser>(this) allowedExternalEntityURLs] allObjects], [](id e) -> URL
-                                   {
-                                       return cocoon::internal::wrap<URL>((::NSURL*)e);
-                                   });
+                                                 {
+                                                     return cocoon::internal::wrap<URL>((::NSURL*)e);
+                                                 });
     }
 
     void XMLParser::set_allowed_external_entity_urls(const std::vector<URL>& value) const
     {
         [cocoon::internal::ns<::NSXMLParser>(this) setAllowedExternalEntityURLs:[NSSet setWithArray:cocoon::internal::to_array(value, [](const URL& e) -> id
-                                                                                                   {
-                                                                                                       return cocoon::internal::native<::NSURL>(e);
-                                                                                                   })]];
+                                                                                                                               {
+                                                                                                                                   return cocoon::internal::native<::NSURL>(e);
+                                                                                                                               })]];
     }
 
     std::int64_t XMLParser::column_number() const

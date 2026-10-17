@@ -43,9 +43,9 @@ namespace cocoon
     std::vector<RunningApplication> RunningApplication::running_applications_with_bundle_identifier(const std::string& bundle_identifier)
     {
         return cocoon::internal::from_array<RunningApplication>([::NSRunningApplication runningApplicationsWithBundleIdentifier:cocoon::internal::to(bundle_identifier)], [](id e) -> RunningApplication
-                                                  {
-                                                      return cocoon::internal::wrap<RunningApplication>((::NSRunningApplication*)e);
-                                                  });
+                                                                {
+                                                                    return cocoon::internal::wrap<RunningApplication>((::NSRunningApplication*)e);
+                                                                });
     }
 
     bool RunningApplication::terminate() const

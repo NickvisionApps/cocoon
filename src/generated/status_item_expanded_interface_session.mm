@@ -1,6 +1,7 @@
 #include "generated/status_item_expanded_interface_session.h"
 #include "internal.h"
 
+#ifdef COCOON_MACOS_27
 namespace cocoon
 {
     StatusItemExpandedInterfaceSession::StatusItemExpandedInterfaceSession() : StatusItemExpandedInterfaceSession(Adopt{cocoon::internal::retain([[::NSStatusItemExpandedInterfaceSession alloc] init])})
@@ -20,3 +21,5 @@ namespace cocoon
         [cocoon::internal::ns<::NSStatusItemExpandedInterfaceSession>(this) cancel];
     }
 }
+
+#endif

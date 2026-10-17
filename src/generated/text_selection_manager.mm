@@ -1,6 +1,7 @@
 #include "generated/text_selection_manager.h"
 #include "internal.h"
 
+#ifdef COCOON_MACOS_27
 @interface AKTextSelectionManagerDelegate : NSObject <NSTextSelectionManagerDelegate>
 {
 @public
@@ -328,9 +329,9 @@ namespace cocoon
     std::vector<GestureRecognizer> TextSelectionManager::gestures_for_failure_requirements() const
     {
         return cocoon::internal::from_array<GestureRecognizer>([cocoon::internal::ns<::NSTextSelectionManager>(this) gesturesForFailureRequirements], [](id e) -> GestureRecognizer
-                                                 {
-                                                     return cocoon::internal::wrap<GestureRecognizer>((::NSGestureRecognizer*)e);
-                                                 });
+                                                               {
+                                                                   return cocoon::internal::wrap<GestureRecognizer>((::NSGestureRecognizer*)e);
+                                                               });
     }
 
     TextSelectionMode TextSelectionManager::text_selection_mode() const
@@ -371,3 +372,5 @@ namespace cocoon
         });
     }
 }
+
+#endif

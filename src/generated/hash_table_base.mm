@@ -40,22 +40,22 @@ namespace cocoon
 
     void HashTableBase::intersect_hash_table(const HashTableBase& other) const
     {
-        [cocoon::internal::ns<::NSHashTable>(this) intersectHashTable:cocoon::internal::native<::NSHashTable>(other)];
+        [cocoon::internal::ns<::NSHashTable>(this) intersectHashTable:cocoon::internal::native<NSHashTable<id>>(other)];
     }
 
     bool HashTableBase::intersects_hash_table(const HashTableBase& other) const
     {
-        return static_cast<bool>([cocoon::internal::ns<::NSHashTable>(this) intersectsHashTable:cocoon::internal::native<::NSHashTable>(other)]);
+        return static_cast<bool>([cocoon::internal::ns<::NSHashTable>(this) intersectsHashTable:cocoon::internal::native<NSHashTable<id>>(other)]);
     }
 
     bool HashTableBase::is_equal_to_hash_table(const HashTableBase& other) const
     {
-        return static_cast<bool>([cocoon::internal::ns<::NSHashTable>(this) isEqualToHashTable:cocoon::internal::native<::NSHashTable>(other)]);
+        return static_cast<bool>([cocoon::internal::ns<::NSHashTable>(this) isEqualToHashTable:cocoon::internal::native<NSHashTable<id>>(other)]);
     }
 
     bool HashTableBase::is_subset_of_hash_table(const HashTableBase& other) const
     {
-        return static_cast<bool>([cocoon::internal::ns<::NSHashTable>(this) isSubsetOfHashTable:cocoon::internal::native<::NSHashTable>(other)]);
+        return static_cast<bool>([cocoon::internal::ns<::NSHashTable>(this) isSubsetOfHashTable:cocoon::internal::native<NSHashTable<id>>(other)]);
     }
 
     Object HashTableBase::member(const Object& object) const
@@ -65,7 +65,7 @@ namespace cocoon
 
     void HashTableBase::minus_hash_table(const HashTableBase& other) const
     {
-        [cocoon::internal::ns<::NSHashTable>(this) minusHashTable:cocoon::internal::native<::NSHashTable>(other)];
+        [cocoon::internal::ns<::NSHashTable>(this) minusHashTable:cocoon::internal::native<NSHashTable<id>>(other)];
     }
 
     EnumeratorBase HashTableBase::object_enumerator() const
@@ -85,7 +85,7 @@ namespace cocoon
 
     void HashTableBase::union_hash_table(const HashTableBase& other) const
     {
-        [cocoon::internal::ns<::NSHashTable>(this) unionHashTable:cocoon::internal::native<::NSHashTable>(other)];
+        [cocoon::internal::ns<::NSHashTable>(this) unionHashTable:cocoon::internal::native<NSHashTable<id>>(other)];
     }
 
     HashTableBase HashTableBase::weak_objects_hash_table()
@@ -96,9 +96,9 @@ namespace cocoon
     std::vector<Object> HashTableBase::all_objects() const
     {
         return cocoon::internal::from_array<Object>([cocoon::internal::ns<::NSHashTable>(this) allObjects], [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     Object HashTableBase::any_object() const
@@ -119,8 +119,8 @@ namespace cocoon
     std::vector<Object> HashTableBase::set_representation() const
     {
         return cocoon::internal::from_array<Object>([[cocoon::internal::ns<::NSHashTable>(this) setRepresentation] allObjects], [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 }

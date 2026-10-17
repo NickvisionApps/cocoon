@@ -26,7 +26,7 @@ namespace cocoon
 
     MeasurementBase MeasurementBase::measurement_by_adding_measurement(const MeasurementBase& measurement) const
     {
-        return cocoon::internal::wrap<MeasurementBase>([cocoon::internal::ns<::NSMeasurement>(this) measurementByAddingMeasurement:cocoon::internal::native<::NSMeasurement>(measurement)]);
+        return cocoon::internal::wrap<MeasurementBase>([cocoon::internal::ns<::NSMeasurement>(this) measurementByAddingMeasurement:cocoon::internal::native<NSMeasurement<id>>(measurement)]);
     }
 
     MeasurementBase MeasurementBase::measurement_by_converting_to_unit(const Unit& unit) const
@@ -36,7 +36,7 @@ namespace cocoon
 
     MeasurementBase MeasurementBase::measurement_by_subtracting_measurement(const MeasurementBase& measurement) const
     {
-        return cocoon::internal::wrap<MeasurementBase>([cocoon::internal::ns<::NSMeasurement>(this) measurementBySubtractingMeasurement:cocoon::internal::native<::NSMeasurement>(measurement)]);
+        return cocoon::internal::wrap<MeasurementBase>([cocoon::internal::ns<::NSMeasurement>(this) measurementBySubtractingMeasurement:cocoon::internal::native<NSMeasurement<id>>(measurement)]);
     }
 
     double MeasurementBase::double_value() const

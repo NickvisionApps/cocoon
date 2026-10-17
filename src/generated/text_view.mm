@@ -112,9 +112,9 @@
     }
     auto __r = cocoon::Signal<cocoon::TextView, std::vector<std::string>(cocoon::Object, std::uint64_t)>::emit((__bridge void*)strongHost, "writable_pasteboard_types_for_cell_at_index", cocoon::internal::wrap<cocoon::Object>(cell), static_cast<std::uint64_t>(charIndex));
     return cocoon::internal::to_array(__r, [](const std::string& e) -> id
-                        {
-                            return cocoon::internal::to(e);
-                        });
+                                      {
+                                          return cocoon::internal::to(e);
+                                      });
 }
 
 - (BOOL)textView:(NSTextView*)view writeCell:(id<NSTextAttachmentCell>)cell atIndex:(NSUInteger)charIndex toPasteboard:(NSPasteboard*)pboard type:(NSPasteboardType)type
@@ -147,17 +147,17 @@
         return {};
     }
     auto __r = cocoon::Signal<cocoon::TextView, std::vector<cocoon::Value>(std::vector<cocoon::Value>, std::vector<cocoon::Value>)>::emit((__bridge void*)strongHost, "will_change_selection_from_character_ranges_to_character_ranges", cocoon::internal::from_array<cocoon::Value>(oldSelectedCharRanges, [](id e) -> cocoon::Value
-                                                                                                                                                                                                                                                                       {
-                                                                                                                                                                                                                                                                           return cocoon::internal::wrap<cocoon::Value>((::NSValue*)e);
-                                                                                                                                                                                                                                                                       }),
+                                                                                                                                                                                                                                                                                     {
+                                                                                                                                                                                                                                                                                         return cocoon::internal::wrap<cocoon::Value>((::NSValue*)e);
+                                                                                                                                                                                                                                                                                     }),
                                                                                                                                           cocoon::internal::from_array<cocoon::Value>(newSelectedCharRanges, [](id e) -> cocoon::Value
-                                                                                                                                                                        {
-                                                                                                                                                                            return cocoon::internal::wrap<cocoon::Value>((::NSValue*)e);
-                                                                                                                                                                        }));
+                                                                                                                                                                                      {
+                                                                                                                                                                                          return cocoon::internal::wrap<cocoon::Value>((::NSValue*)e);
+                                                                                                                                                                                      }));
     return cocoon::internal::to_array(__r, [](const cocoon::Value& e) -> id
-                        {
-                            return cocoon::internal::native<::NSValue>(e);
-                        });
+                                      {
+                                          return cocoon::internal::native<::NSValue>(e);
+                                      });
 }
 
 - (BOOL)textView:(NSTextView*)textView shouldChangeTextInRanges:(NSArray<NSValue*>*)affectedRanges replacementStrings:(NSArray<NSString*>*)replacementStrings
@@ -168,13 +168,13 @@
         return {};
     }
     auto __r = cocoon::Signal<cocoon::TextView, bool(std::vector<cocoon::Value>, std::vector<std::string>)>::emit((__bridge void*)strongHost, "should_change_text_in_ranges_replacement_strings", cocoon::internal::from_array<cocoon::Value>(affectedRanges, [](id e) -> cocoon::Value
-                                                                                                                                                                                                                                {
-                                                                                                                                                                                                                                    return cocoon::internal::wrap<cocoon::Value>((::NSValue*)e);
-                                                                                                                                                                                                                                }),
+                                                                                                                                                                                                                                              {
+                                                                                                                                                                                                                                                  return cocoon::internal::wrap<cocoon::Value>((::NSValue*)e);
+                                                                                                                                                                                                                                              }),
                                                                                                                   cocoon::internal::from_array<std::string>(replacementStrings, [](id e) -> std::string
-                                                                                                                                              {
-                                                                                                                                                  return cocoon::internal::from((NSString*)e);
-                                                                                                                                              }));
+                                                                                                                                                            {
+                                                                                                                                                                return cocoon::internal::from((NSString*)e);
+                                                                                                                                                            }));
     return static_cast<::BOOL>(__r);
 }
 
@@ -186,29 +186,29 @@
         return {};
     }
     auto __r = cocoon::Signal<cocoon::TextView, std::map<std::string, cocoon::Object>(std::map<std::string, cocoon::Object>, std::map<std::string, cocoon::Object>)>::emit((__bridge void*)strongHost, "should_change_typing_attributes_to_attributes", cocoon::internal::from_dictionary<std::map<std::string, cocoon::Object>>(oldTypingAttributes, [](id k) -> std::string
-                                                                                                                                                                                                                                                                                                                   {
-                                                                                                                                                                                                                                                                                                                       return cocoon::internal::from((NSString*)k);
-                                                                                                                                                                                                                                                                                                                   },
-                                                                                                                                                                                                                                                                                                                   [](id v) -> cocoon::Object
-                                                                                                                                                                                                                                                                                                                   {
-                                                                                                                                                                                                                                                                                                                       return cocoon::internal::wrap<cocoon::Object>(v);
-                                                                                                                                                                                                                                                                                                                   }),
+                                                                                                                                                                                                                                                                                                                                 {
+                                                                                                                                                                                                                                                                                                                                     return cocoon::internal::from((NSString*)k);
+                                                                                                                                                                                                                                                                                                                                 },
+                                                                                                                                                                                                                                                                                                                                 [](id v) -> cocoon::Object
+                                                                                                                                                                                                                                                                                                                                 {
+                                                                                                                                                                                                                                                                                                                                     return cocoon::internal::wrap<cocoon::Object>(v);
+                                                                                                                                                                                                                                                                                                                                 }),
                                                                                                                                                                            cocoon::internal::from_dictionary<std::map<std::string, cocoon::Object>>(newTypingAttributes, [](id k) -> std::string
-                                                                                                                                                                                                                                      {
-                                                                                                                                                                                                                                          return cocoon::internal::from((NSString*)k);
-                                                                                                                                                                                                                                      },
-                                                                                                                                                                                                                                      [](id v) -> cocoon::Object
-                                                                                                                                                                                                                                      {
-                                                                                                                                                                                                                                          return cocoon::internal::wrap<cocoon::Object>(v);
-                                                                                                                                                                                                                                      }));
+                                                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                                                        return cocoon::internal::from((NSString*)k);
+                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                    [](id v) -> cocoon::Object
+                                                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                                                        return cocoon::internal::wrap<cocoon::Object>(v);
+                                                                                                                                                                                                                                                    }));
     return cocoon::internal::to_dictionary(__r, [](const std::string& k) -> id
-                             {
-                                 return cocoon::internal::to(k);
-                             },
-                             [](const cocoon::Object& v) -> id
-                             {
-                                 return cocoon::internal::native_id(v);
-                             });
+                                           {
+                                               return cocoon::internal::to(k);
+                                           },
+                                           [](const cocoon::Object& v) -> id
+                                           {
+                                               return cocoon::internal::native_id(v);
+                                           });
 }
 
 - (void)textViewDidChangeSelection:(NSNotification*)notification
@@ -250,14 +250,14 @@
         return {};
     }
     auto __r = cocoon::Signal<cocoon::TextView, std::vector<std::string>(std::vector<std::string>, cocoon::Range, std::int64_t*)>::emit((__bridge void*)strongHost, "completions_for_partial_word_range_index_of_selected_item", cocoon::internal::from_array<std::string>(words, [](id e) -> std::string
-                                                                                                                                                                                                                                                             {
-                                                                                                                                                                                                                                                                 return cocoon::internal::from((NSString*)e);
-                                                                                                                                                                                                                                                             }),
+                                                                                                                                                                                                                                                                           {
+                                                                                                                                                                                                                                                                               return cocoon::internal::from((NSString*)e);
+                                                                                                                                                                                                                                                                           }),
                                                                                                                                         cocoon::internal::from(charRange), (std::int64_t*)(index));
     return cocoon::internal::to_array(__r, [](const std::string& e) -> id
-                        {
-                            return cocoon::internal::to(e);
-                        });
+                                      {
+                                          return cocoon::internal::to(e);
+                                      });
 }
 
 - (BOOL)textView:(NSTextView*)textView shouldChangeTextInRange:(NSRange)affectedCharRange replacementString:(NSString*)replacementString
@@ -312,22 +312,22 @@
         return {};
     }
     auto __r = cocoon::Signal<cocoon::TextView, std::map<std::string, cocoon::Object>(cocoon::Range, std::map<std::string, cocoon::Object>, std::uint64_t*)>::emit((__bridge void*)strongHost, "will_check_text_in_range_options_types", cocoon::internal::from(range), cocoon::internal::from_dictionary<std::map<std::string, cocoon::Object>>(options, [](id k) -> std::string
-                                                                                                                                                                                                                                                                                                                     {
-                                                                                                                                                                                                                                                                                                                         return cocoon::internal::from((NSString*)k);
-                                                                                                                                                                                                                                                                                                                     },
-                                                                                                                                                                                                                                                                                                                     [](id v) -> cocoon::Object
-                                                                                                                                                                                                                                                                                                                     {
-                                                                                                                                                                                                                                                                                                                         return cocoon::internal::wrap<cocoon::Object>(v);
-                                                                                                                                                                                                                                                                                                                     }),
+                                                                                                                                                                                                                                                                                                                                                 {
+                                                                                                                                                                                                                                                                                                                                                     return cocoon::internal::from((NSString*)k);
+                                                                                                                                                                                                                                                                                                                                                 },
+                                                                                                                                                                                                                                                                                                                                                 [](id v) -> cocoon::Object
+                                                                                                                                                                                                                                                                                                                                                 {
+                                                                                                                                                                                                                                                                                                                                                     return cocoon::internal::wrap<cocoon::Object>(v);
+                                                                                                                                                                                                                                                                                                                                                 }),
                                                                                                                                                                    (std::uint64_t*)(checkingTypes));
     return cocoon::internal::to_dictionary(__r, [](const std::string& k) -> id
-                             {
-                                 return cocoon::internal::to(k);
-                             },
-                             [](const cocoon::Object& v) -> id
-                             {
-                                 return cocoon::internal::native_id(v);
-                             });
+                                           {
+                                               return cocoon::internal::to(k);
+                                           },
+                                           [](const cocoon::Object& v) -> id
+                                           {
+                                               return cocoon::internal::native_id(v);
+                                           });
 }
 
 - (NSArray<NSTextCheckingResult*>*)textView:(NSTextView*)view didCheckTextInRange:(NSRange)range types:(NSTextCheckingTypes)checkingTypes options:(NSDictionary<NSTextCheckingOptionKey, id>*)options results:(NSArray<NSTextCheckingResult*>*)results orthography:(NSOrthography*)orthography wordCount:(NSInteger)wordCount
@@ -338,22 +338,22 @@
         return {};
     }
     auto __r = cocoon::Signal<cocoon::TextView, std::vector<cocoon::TextCheckingResult>(cocoon::Range, std::uint64_t, std::map<std::string, cocoon::Object>, std::vector<cocoon::TextCheckingResult>, cocoon::Orthography, std::int64_t)>::emit((__bridge void*)strongHost, "did_check_text_in_range_types_options_results_orthography_word_count", cocoon::internal::from(range), static_cast<std::uint64_t>(checkingTypes), cocoon::internal::from_dictionary<std::map<std::string, cocoon::Object>>(options, [](id k) -> std::string
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                           {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                               return cocoon::internal::from((NSString*)k);
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                           },
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                           [](id v) -> cocoon::Object
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                           {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                               return cocoon::internal::wrap<cocoon::Object>(v);
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                           }),
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           return cocoon::internal::from((NSString*)k);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       },
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       [](id v) -> cocoon::Object
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           return cocoon::internal::wrap<cocoon::Object>(v);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       }),
                                                                                                                                                                                                                                                 cocoon::internal::from_array<cocoon::TextCheckingResult>(results, [](id e) -> cocoon::TextCheckingResult
-                                                                                                                                                                                                                                                                                           {
-                                                                                                                                                                                                                                                                                               return cocoon::internal::wrap<cocoon::TextCheckingResult>((::NSTextCheckingResult*)e);
-                                                                                                                                                                                                                                                                                           }),
+                                                                                                                                                                                                                                                                                                         {
+                                                                                                                                                                                                                                                                                                             return cocoon::internal::wrap<cocoon::TextCheckingResult>((::NSTextCheckingResult*)e);
+                                                                                                                                                                                                                                                                                                         }),
                                                                                                                                                                                                                                                 cocoon::internal::wrap<cocoon::Orthography>(orthography), static_cast<std::int64_t>(wordCount));
     return cocoon::internal::to_array(__r, [](const cocoon::TextCheckingResult& e) -> id
-                        {
-                            return cocoon::internal::native<::NSTextCheckingResult>(e);
-                        });
+                                      {
+                                          return cocoon::internal::native<::NSTextCheckingResult>(e);
+                                      });
 }
 
 - (NSURL*)textView:(NSTextView*)textView URLForContentsOfTextAttachment:(NSTextAttachment*)textAttachment atIndex:(NSUInteger)charIndex
@@ -375,9 +375,9 @@
         return {};
     }
     auto __r = cocoon::Signal<cocoon::TextView, cocoon::SharingServicePicker(cocoon::SharingServicePicker, std::vector<cocoon::Object>)>::emit((__bridge void*)strongHost, "will_show_sharing_service_picker_for_items", cocoon::internal::wrap<cocoon::SharingServicePicker>(servicePicker), cocoon::internal::from_array<cocoon::Object>(items, [](id e) -> cocoon::Object
-                                                                                                                                                                                                                                                                                                               {
-                                                                                                                                                                                                                                                                                                                   return cocoon::internal::wrap<cocoon::Object>(e);
-                                                                                                                                                                                                                                                                                                               }));
+                                                                                                                                                                                                                                                                                                                                           {
+                                                                                                                                                                                                                                                                                                                                               return cocoon::internal::wrap<cocoon::Object>(e);
+                                                                                                                                                                                                                                                                                                                                           }));
     return cocoon::internal::native<::NSSharingServicePicker>(__r);
 }
 
@@ -400,13 +400,13 @@
         return {};
     }
     auto __r = cocoon::Signal<cocoon::TextView, std::vector<std::string>(std::vector<std::string>)>::emit((__bridge void*)strongHost, "should_update_touch_bar_item_identifiers", cocoon::internal::from_array<std::string>(identifiers, [](id e) -> std::string
-                                                                                                                                                                                                              {
-                                                                                                                                                                                                                  return cocoon::internal::from((NSString*)e);
-                                                                                                                                                                                                              }));
+                                                                                                                                                                                                                            {
+                                                                                                                                                                                                                                return cocoon::internal::from((NSString*)e);
+                                                                                                                                                                                                                            }));
     return cocoon::internal::to_array(__r, [](const std::string& e) -> id
-                        {
-                            return cocoon::internal::to(e);
-                        });
+                                      {
+                                          return cocoon::internal::to(e);
+                                      });
 }
 
 - (NSArray*)textView:(NSTextView*)textView candidatesForSelectedRange:(NSRange)selectedRange
@@ -418,9 +418,9 @@
     }
     auto __r = cocoon::Signal<cocoon::TextView, std::vector<cocoon::Object>(cocoon::Range)>::emit((__bridge void*)strongHost, "candidates_for_selected_range", cocoon::internal::from(selectedRange));
     return cocoon::internal::to_array(__r, [](const cocoon::Object& e) -> id
-                        {
-                            return cocoon::internal::native_id(e);
-                        });
+                                      {
+                                          return cocoon::internal::native_id(e);
+                                      });
 }
 
 - (NSArray<NSTextCheckingResult*>*)textView:(NSTextView*)textView candidates:(NSArray<NSTextCheckingResult*>*)candidates forSelectedRange:(NSRange)selectedRange
@@ -431,14 +431,14 @@
         return {};
     }
     auto __r = cocoon::Signal<cocoon::TextView, std::vector<cocoon::TextCheckingResult>(std::vector<cocoon::TextCheckingResult>, cocoon::Range)>::emit((__bridge void*)strongHost, "text_view_candidates_for_selected_range", cocoon::internal::from_array<cocoon::TextCheckingResult>(candidates, [](id e) -> cocoon::TextCheckingResult
-                                                                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                                                                             return cocoon::internal::wrap<cocoon::TextCheckingResult>((::NSTextCheckingResult*)e);
-                                                                                                                                                                                                                                                                         }),
+                                                                                                                                                                                                                                                                                       {
+                                                                                                                                                                                                                                                                                           return cocoon::internal::wrap<cocoon::TextCheckingResult>((::NSTextCheckingResult*)e);
+                                                                                                                                                                                                                                                                                       }),
                                                                                                                                                        cocoon::internal::from(selectedRange));
     return cocoon::internal::to_array(__r, [](const cocoon::TextCheckingResult& e) -> id
-                        {
-                            return cocoon::internal::native<::NSTextCheckingResult>(e);
-                        });
+                                      {
+                                          return cocoon::internal::native<::NSTextCheckingResult>(e);
+                                      });
 }
 
 - (BOOL)textView:(NSTextView*)textView shouldSelectCandidateAtIndex:(NSUInteger)index
@@ -481,9 +481,9 @@
     }
     auto __r = cocoon::Signal<cocoon::TextView, std::vector<cocoon::Value>(cocoon::Range)>::emit((__bridge void*)strongHost, "writing_tools_ignored_ranges_in_enclosing_range", cocoon::internal::from(enclosingRange));
     return cocoon::internal::to_array(__r, [](const cocoon::Value& e) -> id
-                        {
-                            return cocoon::internal::native<::NSValue>(e);
-                        });
+                                      {
+                                          return cocoon::internal::native<::NSValue>(e);
+                                      });
 }
 
 - (BOOL)respondsToSelector:(SEL)selector
@@ -707,15 +707,15 @@ namespace cocoon
     void TextView::check_text_in_range(const Range& range, std::uint64_t checking_types, const std::map<std::string, Object>& options) const
     {
         [cocoon::internal::ns<::NSTextView>(this) checkTextInRange:cocoon::internal::to(range)
-                                               types:static_cast<::NSTextCheckingTypes>(checking_types)
-                                             options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
-                                                                       {
-                                                                           return cocoon::internal::to(k);
-                                                                       },
-                                                                       [](const Object& v) -> id
-                                                                       {
-                                                                           return cocoon::internal::native_id(v);
-                                                                       })];
+                                                             types:static_cast<::NSTextCheckingTypes>(checking_types)
+                                                           options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
+                                                                                                   {
+                                                                                                       return cocoon::internal::to(k);
+                                                                                                   },
+                                                                                                   [](const Object& v) -> id
+                                                                                                   {
+                                                                                                       return cocoon::internal::native_id(v);
+                                                                                                   })];
     }
 
     void TextView::check_text_in_selection(const Object& sender) const
@@ -741,9 +741,9 @@ namespace cocoon
     std::vector<std::string> TextView::completions_for_partial_word_range(const Range& char_range, std::int64_t* index) const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSTextView>(this) completionsForPartialWordRange:cocoon::internal::to(char_range) indexOfSelectedItem:(::NSInteger*)(index)], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void TextView::did_change_text() const
@@ -789,21 +789,21 @@ namespace cocoon
     void TextView::handle_text_checking_results(const std::vector<TextCheckingResult>& results, const Range& range, std::uint64_t checking_types, const std::map<std::string, Object>& options, const Orthography& orthography, std::int64_t word_count) const
     {
         [cocoon::internal::ns<::NSTextView>(this) handleTextCheckingResults:cocoon::internal::to_array(results, [](const TextCheckingResult& e) -> id
-                                                                           {
-                                                                               return cocoon::internal::native<::NSTextCheckingResult>(e);
-                                                                           })
-                                                     forRange:cocoon::internal::to(range)
-                                                        types:static_cast<::NSTextCheckingTypes>(checking_types)
-                                                      options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
-                                                                                {
-                                                                                    return cocoon::internal::to(k);
-                                                                                },
-                                                                                [](const Object& v) -> id
-                                                                                {
-                                                                                    return cocoon::internal::native_id(v);
-                                                                                })
-                                                  orthography:cocoon::internal::native<::NSOrthography>(orthography)
-                                                    wordCount:static_cast<::NSInteger>(word_count)];
+                                                                                                       {
+                                                                                                           return cocoon::internal::native<::NSTextCheckingResult>(e);
+                                                                                                       })
+                                                                   forRange:cocoon::internal::to(range)
+                                                                      types:static_cast<::NSTextCheckingTypes>(checking_types)
+                                                                    options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
+                                                                                                            {
+                                                                                                                return cocoon::internal::to(k);
+                                                                                                            },
+                                                                                                            [](const Object& v) -> id
+                                                                                                            {
+                                                                                                                return cocoon::internal::native_id(v);
+                                                                                                            })
+                                                                orthography:cocoon::internal::native<::NSOrthography>(orthography)
+                                                                  wordCount:static_cast<::NSInteger>(word_count)];
     }
 
     void TextView::highlight(const Object& sender) const
@@ -889,25 +889,25 @@ namespace cocoon
     std::string TextView::preferred_pasteboard_type_from_array(const std::vector<std::string>& available_types, const std::vector<std::string>& allowed_types) const
     {
         return cocoon::internal::from([cocoon::internal::ns<::NSTextView>(this) preferredPasteboardTypeFromArray:cocoon::internal::to_array(available_types, [](const std::string& e) -> id
-                                                                                                  {
-                                                                                                      return cocoon::internal::to(e);
-                                                                                                  })
-                                                          restrictedToTypesFromArray:cocoon::internal::to_array(allowed_types, [](const std::string& e) -> id
-                                                                                                  {
-                                                                                                      return cocoon::internal::to(e);
-                                                                                                  })]);
+                                                                                                                                            {
+                                                                                                                                                return cocoon::internal::to(e);
+                                                                                                                                            })
+                                                                                      restrictedToTypesFromArray:cocoon::internal::to_array(allowed_types, [](const std::string& e) -> id
+                                                                                                                                            {
+                                                                                                                                                return cocoon::internal::to(e);
+                                                                                                                                            })]);
     }
 
     std::vector<Object> TextView::quick_look_previewable_items_in_ranges(const std::vector<Value>& ranges) const
     {
         return cocoon::internal::from_array<Object>([cocoon::internal::ns<::NSTextView>(this) quickLookPreviewableItemsInRanges:cocoon::internal::to_array(ranges, [](const Value& e) -> id
-                                                                                                                 {
-                                                                                                                     return cocoon::internal::native<::NSValue>(e);
-                                                                                                                 })],
-                                      [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                                                                                                                           {
+                                                                                                                                                               return cocoon::internal::native<::NSValue>(e);
+                                                                                                                                                           })],
+                                                    [](id e) -> Object
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     void TextView::raise_baseline(const Object& sender) const
@@ -930,6 +930,7 @@ namespace cocoon
         [::NSTextView registerForServices];
     }
 
+#ifdef COCOON_MACOS_27
     void TextView::register_text_attachment_view_provider_reuse_policy(TextAttachmentViewProviderReusePolicy policy, const std::string& view_provider_type) const
     {
         if (@available(macOS 27.0, *))
@@ -938,6 +939,7 @@ namespace cocoon
         }
     }
 
+#endif
     void TextView::replace_text_container(const TextContainer& new_container) const
     {
         [cocoon::internal::ns<::NSTextView>(this) replaceTextContainer:cocoon::internal::native<::NSTextContainer>(new_container)];
@@ -1016,11 +1018,11 @@ namespace cocoon
     void TextView::set_selected_ranges(const std::vector<Value>& ranges, SelectionAffinity affinity, bool still_selecting_flag) const
     {
         [cocoon::internal::ns<::NSTextView>(this) setSelectedRanges:cocoon::internal::to_array(ranges, [](const Value& e) -> id
-                                                                   {
-                                                                       return cocoon::internal::native<::NSValue>(e);
-                                                                   })
-                                             affinity:static_cast<::NSSelectionAffinity>(affinity)
-                                       stillSelecting:static_cast<::BOOL>(still_selecting_flag)];
+                                                                                               {
+                                                                                                   return cocoon::internal::native<::NSValue>(e);
+                                                                                               })
+                                                           affinity:static_cast<::NSSelectionAffinity>(affinity)
+                                                     stillSelecting:static_cast<::BOOL>(still_selecting_flag)];
     }
 
     void TextView::set_spelling_state(std::int64_t value, const Range& char_range) const
@@ -1036,13 +1038,13 @@ namespace cocoon
     bool TextView::should_change_text_in_ranges(const std::vector<Value>& affected_ranges, const std::vector<std::string>& replacement_strings) const
     {
         return static_cast<bool>([cocoon::internal::ns<::NSTextView>(this) shouldChangeTextInRanges:cocoon::internal::to_array(affected_ranges, [](const Value& e) -> id
-                                                                                                   {
-                                                                                                       return cocoon::internal::native<::NSValue>(e);
-                                                                                                   })
-                                                                   replacementStrings:cocoon::internal::to_array(replacement_strings, [](const std::string& e) -> id
-                                                                                                   {
-                                                                                                       return cocoon::internal::to(e);
-                                                                                                   })]);
+                                                                                                                               {
+                                                                                                                                   return cocoon::internal::native<::NSValue>(e);
+                                                                                                                               })
+                                                                                 replacementStrings:cocoon::internal::to_array(replacement_strings, [](const std::string& e) -> id
+                                                                                                                               {
+                                                                                                                                   return cocoon::internal::to(e);
+                                                                                                                               })]);
     }
 
     void TextView::show_find_indicator_for_range(const Range& char_range) const
@@ -1089,6 +1091,7 @@ namespace cocoon
         return cocoon::internal::wrap<TextView>([::NSTextView textViewUsingTextLayoutManager:static_cast<::BOOL>(using_text_layout_manager)]);
     }
 
+#ifdef COCOON_MACOS_27
     void TextView::text_viewport_layout_controller(const TextViewportLayoutController& text_viewport_layout_controller, const TextLayoutFragment& text_layout_fragment) const
     {
         if (@available(macOS 27.0, *))
@@ -1097,6 +1100,8 @@ namespace cocoon
         }
     }
 
+#endif
+#ifdef COCOON_MACOS_27
     void TextView::text_viewport_layout_controller_did_layout(const TextViewportLayoutController& text_viewport_layout_controller) const
     {
         if (@available(macOS 27.0, *))
@@ -1105,6 +1110,8 @@ namespace cocoon
         }
     }
 
+#endif
+#ifdef COCOON_MACOS_27
     void TextView::text_viewport_layout_controller_received_set_needs_layout(const TextViewportLayoutController& text_viewport_layout_controller) const
     {
         if (@available(macOS 27.0, *))
@@ -1113,6 +1120,8 @@ namespace cocoon
         }
     }
 
+#endif
+#ifdef COCOON_MACOS_27
     void TextView::text_viewport_layout_controller_will_layout(const TextViewportLayoutController& text_viewport_layout_controller) const
     {
         if (@available(macOS 27.0, *))
@@ -1121,6 +1130,7 @@ namespace cocoon
         }
     }
 
+#endif
     void TextView::tighten_kerning(const Object& sender) const
     {
         [cocoon::internal::ns<::NSTextView>(this) tightenKerning:cocoon::internal::native_id(sender)];
@@ -1251,6 +1261,7 @@ namespace cocoon
         return cocoon::internal::wrap<Object>([cocoon::internal::ns<::NSTextView>(this) validRequestorForSendType:cocoon::internal::to(send_type) returnType:cocoon::internal::to(return_type)]);
     }
 
+#ifdef COCOON_MACOS_27
     Rect TextView::viewport_bounds_for_text_viewport_layout_controller(const TextViewportLayoutController& text_viewport_layout_controller) const
     {
         if (@available(macOS 27.0, *))
@@ -1260,6 +1271,7 @@ namespace cocoon
         return {};
     }
 
+#endif
     bool TextView::write_selection_to_pasteboard(const Pasteboard& pboard, const std::string& type) const
     {
         return static_cast<bool>([cocoon::internal::ns<::NSTextView>(this) writeSelectionToPasteboard:cocoon::internal::native<::NSPasteboard>(pboard) type:cocoon::internal::to(type)]);
@@ -1268,18 +1280,18 @@ namespace cocoon
     bool TextView::write_selection_to_pasteboard(const Pasteboard& pboard, const std::vector<std::string>& types) const
     {
         return static_cast<bool>([cocoon::internal::ns<::NSTextView>(this) writeSelectionToPasteboard:cocoon::internal::native<::NSPasteboard>(pboard)
-                                                                                  types:cocoon::internal::to_array(types, [](const std::string& e) -> id
-                                                                                                     {
-                                                                                                         return cocoon::internal::to(e);
-                                                                                                     })]);
+                                                                                                types:cocoon::internal::to_array(types, [](const std::string& e) -> id
+                                                                                                                                 {
+                                                                                                                                     return cocoon::internal::to(e);
+                                                                                                                                 })]);
     }
 
     std::vector<std::string> TextView::acceptable_drag_types() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSTextView>(this) acceptableDragTypes], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     bool TextView::accepts_glyph_info() const
@@ -1295,17 +1307,17 @@ namespace cocoon
     std::vector<std::string> TextView::allowed_input_source_locales() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSTextView>(this) allowedInputSourceLocales], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void TextView::set_allowed_input_source_locales(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSTextView>(this) setAllowedInputSourceLocales:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                                              {
-                                                                                  return cocoon::internal::to(e);
-                                                                              })];
+                                                                                                          {
+                                                                                                              return cocoon::internal::to(e);
+                                                                                                          })];
     }
 
     WritingToolsResultOptions TextView::allowed_writing_tools_result_options() const
@@ -1576,49 +1588,49 @@ namespace cocoon
     std::map<std::string, Object> TextView::link_text_attributes() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::NSTextView>(this) linkTextAttributes], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     void TextView::set_link_text_attributes(const std::map<std::string, Object>& value) const
     {
         [cocoon::internal::ns<::NSTextView>(this) setLinkTextAttributes:cocoon::internal::to_dictionary(value, [](const std::string& k) -> id
-                                                                            {
-                                                                                return cocoon::internal::to(k);
-                                                                            },
-                                                                            [](const Object& v) -> id
-                                                                            {
-                                                                                return cocoon::internal::native_id(v);
-                                                                            })];
+                                                                                                        {
+                                                                                                            return cocoon::internal::to(k);
+                                                                                                        },
+                                                                                                        [](const Object& v) -> id
+                                                                                                        {
+                                                                                                            return cocoon::internal::native_id(v);
+                                                                                                        })];
     }
 
     std::map<std::string, Object> TextView::marked_text_attributes() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::NSTextView>(this) markedTextAttributes], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     void TextView::set_marked_text_attributes(const std::map<std::string, Object>& value) const
     {
         [cocoon::internal::ns<::NSTextView>(this) setMarkedTextAttributes:cocoon::internal::to_dictionary(value, [](const std::string& k) -> id
-                                                                              {
-                                                                                  return cocoon::internal::to(k);
-                                                                              },
-                                                                              [](const Object& v) -> id
-                                                                              {
-                                                                                  return cocoon::internal::native_id(v);
-                                                                              })];
+                                                                                                          {
+                                                                                                              return cocoon::internal::to(k);
+                                                                                                          },
+                                                                                                          [](const Object& v) -> id
+                                                                                                          {
+                                                                                                              return cocoon::internal::native_id(v);
+                                                                                                          })];
     }
 
     TextInputTraitType TextView::math_expression_completion_type() const
@@ -1654,33 +1666,33 @@ namespace cocoon
     std::vector<Value> TextView::ranges_for_user_character_attribute_change() const
     {
         return cocoon::internal::from_array<Value>([cocoon::internal::ns<::NSTextView>(this) rangesForUserCharacterAttributeChange], [](id e) -> Value
-                                     {
-                                         return cocoon::internal::wrap<Value>((::NSValue*)e);
-                                     });
+                                                   {
+                                                       return cocoon::internal::wrap<Value>((::NSValue*)e);
+                                                   });
     }
 
     std::vector<Value> TextView::ranges_for_user_paragraph_attribute_change() const
     {
         return cocoon::internal::from_array<Value>([cocoon::internal::ns<::NSTextView>(this) rangesForUserParagraphAttributeChange], [](id e) -> Value
-                                     {
-                                         return cocoon::internal::wrap<Value>((::NSValue*)e);
-                                     });
+                                                   {
+                                                       return cocoon::internal::wrap<Value>((::NSValue*)e);
+                                                   });
     }
 
     std::vector<Value> TextView::ranges_for_user_text_change() const
     {
         return cocoon::internal::from_array<Value>([cocoon::internal::ns<::NSTextView>(this) rangesForUserTextChange], [](id e) -> Value
-                                     {
-                                         return cocoon::internal::wrap<Value>((::NSValue*)e);
-                                     });
+                                                   {
+                                                       return cocoon::internal::wrap<Value>((::NSValue*)e);
+                                                   });
     }
 
     std::vector<std::string> TextView::readable_pasteboard_types() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSTextView>(this) readablePasteboardTypes], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     bool TextView::is_rich_text() const
@@ -1716,41 +1728,41 @@ namespace cocoon
     std::vector<Value> TextView::selected_ranges() const
     {
         return cocoon::internal::from_array<Value>([cocoon::internal::ns<::NSTextView>(this) selectedRanges], [](id e) -> Value
-                                     {
-                                         return cocoon::internal::wrap<Value>((::NSValue*)e);
-                                     });
+                                                   {
+                                                       return cocoon::internal::wrap<Value>((::NSValue*)e);
+                                                   });
     }
 
     void TextView::set_selected_ranges(const std::vector<Value>& value) const
     {
         [cocoon::internal::ns<::NSTextView>(this) setSelectedRanges:cocoon::internal::to_array(value, [](const Value& e) -> id
-                                                                   {
-                                                                       return cocoon::internal::native<::NSValue>(e);
-                                                                   })];
+                                                                                               {
+                                                                                                   return cocoon::internal::native<::NSValue>(e);
+                                                                                               })];
     }
 
     std::map<std::string, Object> TextView::selected_text_attributes() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::NSTextView>(this) selectedTextAttributes], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     void TextView::set_selected_text_attributes(const std::map<std::string, Object>& value) const
     {
         [cocoon::internal::ns<::NSTextView>(this) setSelectedTextAttributes:cocoon::internal::to_dictionary(value, [](const std::string& k) -> id
-                                                                                {
-                                                                                    return cocoon::internal::to(k);
-                                                                                },
-                                                                                [](const Object& v) -> id
-                                                                                {
-                                                                                    return cocoon::internal::native_id(v);
-                                                                                })];
+                                                                                                            {
+                                                                                                                return cocoon::internal::to(k);
+                                                                                                            },
+                                                                                                            [](const Object& v) -> id
+                                                                                                            {
+                                                                                                                return cocoon::internal::native_id(v);
+                                                                                                            })];
     }
 
     SelectionAffinity TextView::selection_affinity() const
@@ -1826,25 +1838,25 @@ namespace cocoon
     std::map<std::string, Object> TextView::text_highlight_attributes() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::NSTextView>(this) textHighlightAttributes], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     void TextView::set_text_highlight_attributes(const std::map<std::string, Object>& value) const
     {
         [cocoon::internal::ns<::NSTextView>(this) setTextHighlightAttributes:cocoon::internal::to_dictionary(value, [](const std::string& k) -> id
-                                                                                 {
-                                                                                     return cocoon::internal::to(k);
-                                                                                 },
-                                                                                 [](const Object& v) -> id
-                                                                                 {
-                                                                                     return cocoon::internal::native_id(v);
-                                                                                 })];
+                                                                                                             {
+                                                                                                                 return cocoon::internal::to(k);
+                                                                                                             },
+                                                                                                             [](const Object& v) -> id
+                                                                                                             {
+                                                                                                                 return cocoon::internal::native_id(v);
+                                                                                                             })];
     }
 
     TextLayoutManager TextView::text_layout_manager() const
@@ -1860,25 +1872,25 @@ namespace cocoon
     std::map<std::string, Object> TextView::typing_attributes() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::NSTextView>(this) typingAttributes], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     void TextView::set_typing_attributes(const std::map<std::string, Object>& value) const
     {
         [cocoon::internal::ns<::NSTextView>(this) setTypingAttributes:cocoon::internal::to_dictionary(value, [](const std::string& k) -> id
-                                                                          {
-                                                                              return cocoon::internal::to(k);
-                                                                          },
-                                                                          [](const Object& v) -> id
-                                                                          {
-                                                                              return cocoon::internal::native_id(v);
-                                                                          })];
+                                                                                                      {
+                                                                                                          return cocoon::internal::to(k);
+                                                                                                      },
+                                                                                                      [](const Object& v) -> id
+                                                                                                      {
+                                                                                                          return cocoon::internal::native_id(v);
+                                                                                                      })];
     }
 
     bool TextView::uses_adaptive_color_mapping_for_dark_appearance() const
@@ -1954,9 +1966,9 @@ namespace cocoon
     std::vector<std::string> TextView::writable_pasteboard_types() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSTextView>(this) writablePasteboardTypes], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     bool TextView::is_writing_tools_active() const

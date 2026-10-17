@@ -64,13 +64,13 @@ namespace cocoon
     void SpeechSynthesizer::add_speech_dictionary(const std::map<std::string, Object>& speech_dictionary) const
     {
         [cocoon::internal::ns<::NSSpeechSynthesizer>(this) addSpeechDictionary:cocoon::internal::to_dictionary(speech_dictionary, [](const std::string& k) -> id
-                                                                                   {
-                                                                                       return cocoon::internal::to(k);
-                                                                                   },
-                                                                                   [](const Object& v) -> id
-                                                                                   {
-                                                                                       return cocoon::internal::native_id(v);
-                                                                                   })];
+                                                                                                               {
+                                                                                                                   return cocoon::internal::to(k);
+                                                                                                               },
+                                                                                                               [](const Object& v) -> id
+                                                                                                               {
+                                                                                                                   return cocoon::internal::native_id(v);
+                                                                                                               })];
     }
 
     void SpeechSynthesizer::continue_speaking() const

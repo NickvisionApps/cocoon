@@ -18,17 +18,17 @@ namespace cocoon
     std::vector<Color> CollectionViewGridLayout::background_colors() const
     {
         return cocoon::internal::from_array<Color>([cocoon::internal::ns<::NSCollectionViewGridLayout>(this) backgroundColors], [](id e) -> Color
-                                     {
-                                         return cocoon::internal::wrap<Color>((::NSColor*)e);
-                                     });
+                                                   {
+                                                       return cocoon::internal::wrap<Color>((::NSColor*)e);
+                                                   });
     }
 
     void CollectionViewGridLayout::set_background_colors(const std::vector<Color>& value) const
     {
         [cocoon::internal::ns<::NSCollectionViewGridLayout>(this) setBackgroundColors:cocoon::internal::to_array(value, [](const Color& e) -> id
-                                                                                     {
-                                                                                         return cocoon::internal::native<::NSColor>(e);
-                                                                                     })];
+                                                                                                                 {
+                                                                                                                     return cocoon::internal::native<::NSColor>(e);
+                                                                                                                 })];
     }
 
     Insets CollectionViewGridLayout::margins() const

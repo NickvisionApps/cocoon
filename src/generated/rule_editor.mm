@@ -52,13 +52,13 @@
     }
     auto __r = cocoon::Signal<cocoon::RuleEditor, std::map<std::string, cocoon::Object>(cocoon::Object, cocoon::Object, std::int64_t)>::emit((__bridge void*)strongHost, "predicate_parts_for_criterion_with_display_value_in_row", cocoon::internal::wrap<cocoon::Object>(criterion), cocoon::internal::wrap<cocoon::Object>(value), static_cast<std::int64_t>(row));
     return cocoon::internal::to_dictionary(__r, [](const std::string& k) -> id
-                             {
-                                 return cocoon::internal::to(k);
-                             },
-                             [](const cocoon::Object& v) -> id
-                             {
-                                 return cocoon::internal::native_id(v);
-                             });
+                                           {
+                                               return cocoon::internal::to(k);
+                                           },
+                                           [](const cocoon::Object& v) -> id
+                                           {
+                                               return cocoon::internal::native_id(v);
+                                           });
 }
 
 - (void)ruleEditorRowsDidChange:(NSNotification*)notification
@@ -122,17 +122,17 @@ namespace cocoon
     std::vector<Object> RuleEditor::criteria_for_row(std::int64_t row) const
     {
         return cocoon::internal::from_array<Object>([cocoon::internal::ns<::NSRuleEditor>(this) criteriaForRow:static_cast<::NSInteger>(row)], [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     std::vector<Object> RuleEditor::display_values_for_row(std::int64_t row) const
     {
         return cocoon::internal::from_array<Object>([cocoon::internal::ns<::NSRuleEditor>(this) displayValuesForRow:static_cast<::NSInteger>(row)], [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     void RuleEditor::insert_row_at_index(std::int64_t row_index, RuleEditorRowType row_type, std::int64_t parent_row, bool should_animate) const
@@ -188,14 +188,14 @@ namespace cocoon
     void RuleEditor::set_criteria(const std::vector<Object>& criteria, const std::vector<Object>& values, std::int64_t row_index) const
     {
         [cocoon::internal::ns<::NSRuleEditor>(this) setCriteria:cocoon::internal::to_array(criteria, [](const Object& e) -> id
-                                                               {
-                                                                   return cocoon::internal::native_id(e);
-                                                               })
-                                 andDisplayValues:cocoon::internal::to_array(values, [](const Object& e) -> id
-                                                               {
-                                                                   return cocoon::internal::native_id(e);
-                                                               })
-                                    forRowAtIndex:static_cast<::NSInteger>(row_index)];
+                                                                                           {
+                                                                                               return cocoon::internal::native_id(e);
+                                                                                           })
+                                               andDisplayValues:cocoon::internal::to_array(values, [](const Object& e) -> id
+                                                                                           {
+                                                                                               return cocoon::internal::native_id(e);
+                                                                                           })
+                                                  forRowAtIndex:static_cast<::NSInteger>(row_index)];
     }
 
     IndexSet RuleEditor::subrow_indexes_for_row(std::int64_t row_index) const
@@ -246,25 +246,25 @@ namespace cocoon
     std::map<std::string, std::string> RuleEditor::formatting_dictionary() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, std::string>>([cocoon::internal::ns<::NSRuleEditor>(this) formattingDictionary], [](id k) -> std::string
-                                                                       {
-                                                                           return cocoon::internal::from((NSString*)k);
-                                                                       },
-                                                                       [](id v) -> std::string
-                                                                       {
-                                                                           return cocoon::internal::from((NSString*)v);
-                                                                       });
+                                                                                     {
+                                                                                         return cocoon::internal::from((NSString*)k);
+                                                                                     },
+                                                                                     [](id v) -> std::string
+                                                                                     {
+                                                                                         return cocoon::internal::from((NSString*)v);
+                                                                                     });
     }
 
     void RuleEditor::set_formatting_dictionary(const std::map<std::string, std::string>& value) const
     {
         [cocoon::internal::ns<::NSRuleEditor>(this) setFormattingDictionary:cocoon::internal::to_dictionary(value, [](const std::string& k) -> id
-                                                                                {
-                                                                                    return cocoon::internal::to(k);
-                                                                                },
-                                                                                [](const std::string& v) -> id
-                                                                                {
-                                                                                    return cocoon::internal::to(v);
-                                                                                })];
+                                                                                                            {
+                                                                                                                return cocoon::internal::to(k);
+                                                                                                            },
+                                                                                                            [](const std::string& v) -> id
+                                                                                                            {
+                                                                                                                return cocoon::internal::to(v);
+                                                                                                            })];
     }
 
     std::string RuleEditor::formatting_strings_filename() const

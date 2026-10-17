@@ -38,13 +38,13 @@
         return;
     }
     cocoon::Signal<cocoon::NetServiceBrowser, void(std::map<std::string, cocoon::Number>)>::emit((__bridge void*)strongHost, "did_not_search", cocoon::internal::from_dictionary<std::map<std::string, cocoon::Number>>(errorDict, [](id k) -> std::string
-                                                                                                                                                                                                          {
-                                                                                                                                                                                                              return cocoon::internal::from((NSString*)k);
-                                                                                                                                                                                                          },
-                                                                                                                                                                                                          [](id v) -> cocoon::Number
-                                                                                                                                                                                                          {
-                                                                                                                                                                                                              return cocoon::internal::wrap<cocoon::Number>((::NSNumber*)v);
-                                                                                                                                                                                                          }));
+                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                            return cocoon::internal::from((NSString*)k);
+                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                        [](id v) -> cocoon::Number
+                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                            return cocoon::internal::wrap<cocoon::Number>((::NSNumber*)v);
+                                                                                                                                                                                                                        }));
 }
 
 - (void)netServiceBrowser:(NSNetServiceBrowser*)browser didFindDomain:(NSString*)domainString moreComing:(BOOL)moreComing

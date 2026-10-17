@@ -18,14 +18,14 @@ namespace cocoon
     TextCheckingResult TextCheckingResult::address_checking_result_with_range(const Range& range, const std::map<std::string, std::string>& components)
     {
         return cocoon::internal::wrap<TextCheckingResult>([::NSTextCheckingResult addressCheckingResultWithRange:cocoon::internal::to(range)
-                                                                                        components:cocoon::internal::to_dictionary(components, [](const std::string& k) -> id
-                                                                                                                     {
-                                                                                                                         return cocoon::internal::to(k);
-                                                                                                                     },
-                                                                                                                     [](const std::string& v) -> id
-                                                                                                                     {
-                                                                                                                         return cocoon::internal::to(v);
-                                                                                                                     })]);
+                                                                                                      components:cocoon::internal::to_dictionary(components, [](const std::string& k) -> id
+                                                                                                                                                 {
+                                                                                                                                                     return cocoon::internal::to(k);
+                                                                                                                                                 },
+                                                                                                                                                 [](const std::string& v) -> id
+                                                                                                                                                 {
+                                                                                                                                                     return cocoon::internal::to(v);
+                                                                                                                                                 })]);
     }
 
     TextCheckingResult TextCheckingResult::correction_checking_result_with_range(const Range& range, const std::string& replacement_string)
@@ -36,11 +36,11 @@ namespace cocoon
     TextCheckingResult TextCheckingResult::correction_checking_result_with_range(const Range& range, const std::string& replacement_string, const std::vector<std::string>& alternative_strings)
     {
         return cocoon::internal::wrap<TextCheckingResult>([::NSTextCheckingResult correctionCheckingResultWithRange:cocoon::internal::to(range)
-                                                                                    replacementString:cocoon::internal::to(replacement_string)
-                                                                                   alternativeStrings:cocoon::internal::to_array(alternative_strings, [](const std::string& e) -> id
-                                                                                                                   {
-                                                                                                                       return cocoon::internal::to(e);
-                                                                                                                   })]);
+                                                                                                  replacementString:cocoon::internal::to(replacement_string)
+                                                                                                 alternativeStrings:cocoon::internal::to_array(alternative_strings, [](const std::string& e) -> id
+                                                                                                                                               {
+                                                                                                                                                   return cocoon::internal::to(e);
+                                                                                                                                               })]);
     }
 
     TextCheckingResult TextCheckingResult::dash_checking_result_with_range(const Range& range, const std::string& replacement_string)
@@ -61,17 +61,17 @@ namespace cocoon
     TextCheckingResult TextCheckingResult::grammar_checking_result_with_range(const Range& range, const std::vector<std::map<std::string, Object>>& details)
     {
         return cocoon::internal::wrap<TextCheckingResult>([::NSTextCheckingResult grammarCheckingResultWithRange:cocoon::internal::to(range)
-                                                                                           details:cocoon::internal::to_array(details, [](const std::map<std::string, Object>& e) -> id
-                                                                                                                {
-                                                                                                                    return cocoon::internal::to_dictionary(e, [](const std::string& k) -> id
-                                                                                                                                             {
-                                                                                                                                                 return cocoon::internal::to(k);
-                                                                                                                                             },
-                                                                                                                                             [](const Object& v) -> id
-                                                                                                                                             {
-                                                                                                                                                 return cocoon::internal::native_id(v);
-                                                                                                                                             });
-                                                                                                                })]);
+                                                                                                         details:cocoon::internal::to_array(details, [](const std::map<std::string, Object>& e) -> id
+                                                                                                                                            {
+                                                                                                                                                return cocoon::internal::to_dictionary(e, [](const std::string& k) -> id
+                                                                                                                                                                                       {
+                                                                                                                                                                                           return cocoon::internal::to(k);
+                                                                                                                                                                                       },
+                                                                                                                                                                                       [](const Object& v) -> id
+                                                                                                                                                                                       {
+                                                                                                                                                                                           return cocoon::internal::native_id(v);
+                                                                                                                                                                                       });
+                                                                                                                                            })]);
     }
 
     TextCheckingResult TextCheckingResult::link_checking_result_with_range(const Range& range, const URL& url)
@@ -127,14 +127,14 @@ namespace cocoon
     TextCheckingResult TextCheckingResult::transit_information_checking_result_with_range(const Range& range, const std::map<std::string, std::string>& components)
     {
         return cocoon::internal::wrap<TextCheckingResult>([::NSTextCheckingResult transitInformationCheckingResultWithRange:cocoon::internal::to(range)
-                                                                                                   components:cocoon::internal::to_dictionary(components, [](const std::string& k) -> id
-                                                                                                                                {
-                                                                                                                                    return cocoon::internal::to(k);
-                                                                                                                                },
-                                                                                                                                [](const std::string& v) -> id
-                                                                                                                                {
-                                                                                                                                    return cocoon::internal::to(v);
-                                                                                                                                })]);
+                                                                                                                 components:cocoon::internal::to_dictionary(components, [](const std::string& k) -> id
+                                                                                                                                                            {
+                                                                                                                                                                return cocoon::internal::to(k);
+                                                                                                                                                            },
+                                                                                                                                                            [](const std::string& v) -> id
+                                                                                                                                                            {
+                                                                                                                                                                return cocoon::internal::to(v);
+                                                                                                                                                            })]);
     }
 
     URL TextCheckingResult::url() const
@@ -145,33 +145,33 @@ namespace cocoon
     std::map<std::string, std::string> TextCheckingResult::address_components() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, std::string>>([cocoon::internal::ns<::NSTextCheckingResult>(this) addressComponents], [](id k) -> std::string
-                                                                       {
-                                                                           return cocoon::internal::from((NSString*)k);
-                                                                       },
-                                                                       [](id v) -> std::string
-                                                                       {
-                                                                           return cocoon::internal::from((NSString*)v);
-                                                                       });
+                                                                                     {
+                                                                                         return cocoon::internal::from((NSString*)k);
+                                                                                     },
+                                                                                     [](id v) -> std::string
+                                                                                     {
+                                                                                         return cocoon::internal::from((NSString*)v);
+                                                                                     });
     }
 
     std::vector<std::string> TextCheckingResult::alternative_strings() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSTextCheckingResult>(this) alternativeStrings], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::map<std::string, std::string> TextCheckingResult::components() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, std::string>>([cocoon::internal::ns<::NSTextCheckingResult>(this) components], [](id k) -> std::string
-                                                                       {
-                                                                           return cocoon::internal::from((NSString*)k);
-                                                                       },
-                                                                       [](id v) -> std::string
-                                                                       {
-                                                                           return cocoon::internal::from((NSString*)v);
-                                                                       });
+                                                                                     {
+                                                                                         return cocoon::internal::from((NSString*)k);
+                                                                                     },
+                                                                                     [](id v) -> std::string
+                                                                                     {
+                                                                                         return cocoon::internal::from((NSString*)v);
+                                                                                     });
     }
 
     Date TextCheckingResult::date() const
@@ -187,16 +187,16 @@ namespace cocoon
     std::vector<std::map<std::string, Object>> TextCheckingResult::grammar_details() const
     {
         return cocoon::internal::from_array<std::map<std::string, Object>>([cocoon::internal::ns<::NSTextCheckingResult>(this) grammarDetails], [](id e) -> std::map<std::string, Object>
-                                                             {
-                                                                 return cocoon::internal::from_dictionary<std::map<std::string, Object>>((NSDictionary*)e, [](id k) -> std::string
-                                                                                                                           {
-                                                                                                                               return cocoon::internal::from((NSString*)k);
-                                                                                                                           },
-                                                                                                                           [](id v) -> Object
-                                                                                                                           {
-                                                                                                                               return cocoon::internal::wrap<Object>(v);
-                                                                                                                           });
-                                                             });
+                                                                           {
+                                                                               return cocoon::internal::from_dictionary<std::map<std::string, Object>>((NSDictionary*)e, [](id k) -> std::string
+                                                                                                                                                       {
+                                                                                                                                                           return cocoon::internal::from((NSString*)k);
+                                                                                                                                                       },
+                                                                                                                                                       [](id v) -> Object
+                                                                                                                                                       {
+                                                                                                                                                           return cocoon::internal::wrap<Object>(v);
+                                                                                                                                                       });
+                                                                           });
     }
 
     std::uint64_t TextCheckingResult::number_of_ranges() const

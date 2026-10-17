@@ -34,18 +34,18 @@ namespace cocoon
     void FileVersion::get_nonlocal_versions_of_item_at_url(const URL& url, std::function<void(std::vector<FileVersion>, Error)> completion_handler)
     {
         [::NSFileVersion getNonlocalVersionsOfItemAtURL:cocoon::internal::native<::NSURL>(url) completionHandler:(completion_handler ? (void (^)(NSArray<NSFileVersion*>*, ::NSError*)) ^ void(NSArray * a155_0, ::NSError * a155_1) { completion_handler(cocoon::internal::from_array<FileVersion>(a155_0, [](id e) -> FileVersion
-                                                                                                                                                                                                                                                                        {
-                                                                                                                                                                                                                                                                            return cocoon::internal::wrap<FileVersion>((::NSFileVersion*)e);
-                                                                                                                                                                                                                                                                        }),
-                                                                                                                                                                                                                                            cocoon::internal::wrap<Error>(a155_1)); } : (void (^)(NSArray<NSFileVersion*>*, ::NSError*))nil)];
+                                                                                                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                                                                                                        return cocoon::internal::wrap<FileVersion>((::NSFileVersion*)e);
+                                                                                                                                                                                                                                                                                                    }),
+                                                                                                                                                                                                                                                          cocoon::internal::wrap<Error>(a155_1)); } : (void (^)(NSArray<NSFileVersion*>*, ::NSError*))nil)];
     }
 
     std::vector<FileVersion> FileVersion::other_versions_of_item_at_url(const URL& url)
     {
         return cocoon::internal::from_array<FileVersion>([::NSFileVersion otherVersionsOfItemAtURL:cocoon::internal::native<::NSURL>(url)], [](id e) -> FileVersion
-                                           {
-                                               return cocoon::internal::wrap<FileVersion>((::NSFileVersion*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::wrap<FileVersion>((::NSFileVersion*)e);
+                                                         });
     }
 
     bool FileVersion::remove_and_return_error() const
@@ -89,9 +89,9 @@ namespace cocoon
     std::vector<FileVersion> FileVersion::unresolved_conflict_versions_of_item_at_url(const URL& url)
     {
         return cocoon::internal::from_array<FileVersion>([::NSFileVersion unresolvedConflictVersionsOfItemAtURL:cocoon::internal::native<::NSURL>(url)], [](id e) -> FileVersion
-                                           {
-                                               return cocoon::internal::wrap<FileVersion>((::NSFileVersion*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::wrap<FileVersion>((::NSFileVersion*)e);
+                                                         });
     }
 
     FileVersion FileVersion::version_of_item_at_url(const URL& url, const Object& persistent_identifier)

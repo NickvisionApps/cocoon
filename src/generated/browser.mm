@@ -1032,9 +1032,9 @@ namespace cocoon
     std::vector<Cell> Browser::selected_cells() const
     {
         return cocoon::internal::from_array<Cell>([cocoon::internal::ns<::NSBrowser>(this) selectedCells], [](id e) -> Cell
-                                    {
-                                        return cocoon::internal::wrap<Cell>((::NSCell*)e);
-                                    });
+                                                  {
+                                                      return cocoon::internal::wrap<Cell>((::NSCell*)e);
+                                                  });
     }
 
     std::int64_t Browser::selected_column() const
@@ -1055,17 +1055,17 @@ namespace cocoon
     std::vector<IndexPath> Browser::selection_index_paths() const
     {
         return cocoon::internal::from_array<IndexPath>([cocoon::internal::ns<::NSBrowser>(this) selectionIndexPaths], [](id e) -> IndexPath
-                                         {
-                                             return cocoon::internal::wrap<IndexPath>((::NSIndexPath*)e);
-                                         });
+                                                       {
+                                                           return cocoon::internal::wrap<IndexPath>((::NSIndexPath*)e);
+                                                       });
     }
 
     void Browser::set_selection_index_paths(const std::vector<IndexPath>& value) const
     {
         [cocoon::internal::ns<::NSBrowser>(this) setSelectionIndexPaths:cocoon::internal::to_array(value, [](const IndexPath& e) -> id
-                                                                       {
-                                                                           return cocoon::internal::native<::NSIndexPath>(e);
-                                                                       })];
+                                                                                                   {
+                                                                                                       return cocoon::internal::native<::NSIndexPath>(e);
+                                                                                                   })];
     }
 
     bool Browser::sends_action_on_arrow_keys() const

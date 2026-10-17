@@ -24,9 +24,9 @@ namespace cocoon
     std::vector<URL> OpenPanel::urls() const
     {
         return cocoon::internal::from_array<URL>([cocoon::internal::ns<::NSOpenPanel>(this) URLs], [](id e) -> URL
-                                   {
-                                       return cocoon::internal::wrap<URL>((::NSURL*)e);
-                                   });
+                                                 {
+                                                     return cocoon::internal::wrap<URL>((::NSURL*)e);
+                                                 });
     }
 
     bool OpenPanel::is_accessory_view_disclosed() const

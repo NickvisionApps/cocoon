@@ -28,13 +28,13 @@ namespace cocoon
     std::map<std::string, Object> PDFInfo::attributes() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::NSPDFInfo>(this) attributes], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     bool PDFInfo::is_file_extension_hidden() const
@@ -70,16 +70,16 @@ namespace cocoon
     std::vector<std::string> PDFInfo::tag_names() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSPDFInfo>(this) tagNames], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void PDFInfo::set_tag_names(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSPDFInfo>(this) setTagNames:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                            {
-                                                                return cocoon::internal::to(e);
-                                                            })];
+                                                                                        {
+                                                                                            return cocoon::internal::to(e);
+                                                                                        })];
     }
 }

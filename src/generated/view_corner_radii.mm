@@ -1,6 +1,7 @@
 #include "generated/view_corner_radii.h"
 #include "internal.h"
 
+#ifdef COCOON_MACOS_27
 namespace cocoon
 {
     ViewCornerRadii::ViewCornerRadii() : Object(nullptr)
@@ -35,3 +36,5 @@ namespace cocoon
         return static_cast<double>([cocoon::internal::ns<::NSViewCornerRadii>(this) topRight]);
     }
 }
+
+#endif

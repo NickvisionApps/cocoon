@@ -43,45 +43,45 @@ namespace cocoon
     void DistributedNotificationCenter::post_notification_name(const std::string& a_name, const std::string& an_object, const std::vector<std::pair<Object, Object>>& a_user_info) const
     {
         [cocoon::internal::ns<::NSDistributedNotificationCenter>(this) postNotificationName:cocoon::internal::to(a_name)
-                                                                       object:cocoon::internal::to(an_object)
-                                                                     userInfo:cocoon::internal::to_dictionary(a_user_info, [](const Object& k) -> id
-                                                                                                {
-                                                                                                    return cocoon::internal::native_id(k);
-                                                                                                },
-                                                                                                [](const Object& v) -> id
-                                                                                                {
-                                                                                                    return cocoon::internal::native_id(v);
-                                                                                                })];
+                                                                                     object:cocoon::internal::to(an_object)
+                                                                                   userInfo:cocoon::internal::to_dictionary(a_user_info, [](const Object& k) -> id
+                                                                                                                            {
+                                                                                                                                return cocoon::internal::native_id(k);
+                                                                                                                            },
+                                                                                                                            [](const Object& v) -> id
+                                                                                                                            {
+                                                                                                                                return cocoon::internal::native_id(v);
+                                                                                                                            })];
     }
 
     void DistributedNotificationCenter::post_notification_name(const std::string& name, const std::string& object, const std::vector<std::pair<Object, Object>>& user_info, bool deliver_immediately) const
     {
         [cocoon::internal::ns<::NSDistributedNotificationCenter>(this) postNotificationName:cocoon::internal::to(name)
-                                                                       object:cocoon::internal::to(object)
-                                                                     userInfo:cocoon::internal::to_dictionary(user_info, [](const Object& k) -> id
-                                                                                                {
-                                                                                                    return cocoon::internal::native_id(k);
-                                                                                                },
-                                                                                                [](const Object& v) -> id
-                                                                                                {
-                                                                                                    return cocoon::internal::native_id(v);
-                                                                                                })
-                                                           deliverImmediately:static_cast<::BOOL>(deliver_immediately)];
+                                                                                     object:cocoon::internal::to(object)
+                                                                                   userInfo:cocoon::internal::to_dictionary(user_info, [](const Object& k) -> id
+                                                                                                                            {
+                                                                                                                                return cocoon::internal::native_id(k);
+                                                                                                                            },
+                                                                                                                            [](const Object& v) -> id
+                                                                                                                            {
+                                                                                                                                return cocoon::internal::native_id(v);
+                                                                                                                            })
+                                                                         deliverImmediately:static_cast<::BOOL>(deliver_immediately)];
     }
 
     void DistributedNotificationCenter::post_notification_name(const std::string& name, const std::string& object, const std::vector<std::pair<Object, Object>>& user_info, DistributedNotificationOptions options) const
     {
         [cocoon::internal::ns<::NSDistributedNotificationCenter>(this) postNotificationName:cocoon::internal::to(name)
-                                                                       object:cocoon::internal::to(object)
-                                                                     userInfo:cocoon::internal::to_dictionary(user_info, [](const Object& k) -> id
-                                                                                                {
-                                                                                                    return cocoon::internal::native_id(k);
-                                                                                                },
-                                                                                                [](const Object& v) -> id
-                                                                                                {
-                                                                                                    return cocoon::internal::native_id(v);
-                                                                                                })
-                                                                      options:static_cast<::NSDistributedNotificationOptions>(options)];
+                                                                                     object:cocoon::internal::to(object)
+                                                                                   userInfo:cocoon::internal::to_dictionary(user_info, [](const Object& k) -> id
+                                                                                                                            {
+                                                                                                                                return cocoon::internal::native_id(k);
+                                                                                                                            },
+                                                                                                                            [](const Object& v) -> id
+                                                                                                                            {
+                                                                                                                                return cocoon::internal::native_id(v);
+                                                                                                                            })
+                                                                                    options:static_cast<::NSDistributedNotificationOptions>(options)];
     }
 
     void DistributedNotificationCenter::remove_observer(const Object& observer, const std::string& a_name, const std::string& an_object) const

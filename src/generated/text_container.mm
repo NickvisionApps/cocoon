@@ -47,17 +47,17 @@ namespace cocoon
     std::vector<BezierPath> TextContainer::exclusion_paths() const
     {
         return cocoon::internal::from_array<BezierPath>([cocoon::internal::ns<::NSTextContainer>(this) exclusionPaths], [](id e) -> BezierPath
-                                          {
-                                              return cocoon::internal::wrap<BezierPath>((::NSBezierPath*)e);
-                                          });
+                                                        {
+                                                            return cocoon::internal::wrap<BezierPath>((::NSBezierPath*)e);
+                                                        });
     }
 
     void TextContainer::set_exclusion_paths(const std::vector<BezierPath>& value) const
     {
         [cocoon::internal::ns<::NSTextContainer>(this) setExclusionPaths:cocoon::internal::to_array(value, [](const BezierPath& e) -> id
-                                                                        {
-                                                                            return cocoon::internal::native<::NSBezierPath>(e);
-                                                                        })];
+                                                                                                    {
+                                                                                                        return cocoon::internal::native<::NSBezierPath>(e);
+                                                                                                    })];
     }
 
     bool TextContainer::height_tracks_text_view() const

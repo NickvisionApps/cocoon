@@ -38,17 +38,17 @@ namespace cocoon
     std::vector<UserNotificationAction> UserNotification::additional_actions() const
     {
         return cocoon::internal::from_array<UserNotificationAction>([cocoon::internal::ns<::NSUserNotification>(this) additionalActions], [](id e) -> UserNotificationAction
-                                                      {
-                                                          return cocoon::internal::wrap<UserNotificationAction>((::NSUserNotificationAction*)e);
-                                                      });
+                                                                    {
+                                                                        return cocoon::internal::wrap<UserNotificationAction>((::NSUserNotificationAction*)e);
+                                                                    });
     }
 
     void UserNotification::set_additional_actions(const std::vector<UserNotificationAction>& value) const
     {
         [cocoon::internal::ns<::NSUserNotification>(this) setAdditionalActions:cocoon::internal::to_array(value, [](const UserNotificationAction& e) -> id
-                                                                              {
-                                                                                  return cocoon::internal::native<::NSUserNotificationAction>(e);
-                                                                              })];
+                                                                                                          {
+                                                                                                              return cocoon::internal::native<::NSUserNotificationAction>(e);
+                                                                                                          })];
     }
 
     UserNotificationAction UserNotification::additional_activation_action() const
@@ -204,24 +204,24 @@ namespace cocoon
     std::map<std::string, Object> UserNotification::user_info() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::NSUserNotification>(this) userInfo], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     void UserNotification::set_user_info(const std::map<std::string, Object>& value) const
     {
         [cocoon::internal::ns<::NSUserNotification>(this) setUserInfo:cocoon::internal::to_dictionary(value, [](const std::string& k) -> id
-                                                                          {
-                                                                              return cocoon::internal::to(k);
-                                                                          },
-                                                                          [](const Object& v) -> id
-                                                                          {
-                                                                              return cocoon::internal::native_id(v);
-                                                                          })];
+                                                                                                      {
+                                                                                                          return cocoon::internal::to(k);
+                                                                                                      },
+                                                                                                      [](const Object& v) -> id
+                                                                                                      {
+                                                                                                          return cocoon::internal::native_id(v);
+                                                                                                      })];
     }
 }

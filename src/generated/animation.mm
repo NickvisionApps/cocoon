@@ -213,25 +213,25 @@ namespace cocoon
     std::vector<Number> Animation::progress_marks() const
     {
         return cocoon::internal::from_array<Number>([cocoon::internal::ns<::NSAnimation>(this) progressMarks], [](id e) -> Number
-                                      {
-                                          return cocoon::internal::wrap<Number>((::NSNumber*)e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Number>((::NSNumber*)e);
+                                                    });
     }
 
     void Animation::set_progress_marks(const std::vector<Number>& value) const
     {
         [cocoon::internal::ns<::NSAnimation>(this) setProgressMarks:cocoon::internal::to_array(value, [](const Number& e) -> id
-                                                                   {
-                                                                       return cocoon::internal::native<::NSNumber>(e);
-                                                                   })];
+                                                                                               {
+                                                                                                   return cocoon::internal::native<::NSNumber>(e);
+                                                                                               })];
     }
 
     std::vector<std::string> Animation::run_loop_modes_for_animating() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSAnimation>(this) runLoopModesForAnimating], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void Animation::install_delegate_delegate_(void* native)

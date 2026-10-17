@@ -1,6 +1,7 @@
 #pragma once
 
 #include "generated/attributed_string.h"
+#include "generated/availability.h"
 #include "generated/enums.h"
 #include "generated/structs.h"
 #include "types.h"

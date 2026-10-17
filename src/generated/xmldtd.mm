@@ -4,28 +4,28 @@
 namespace cocoon
 {
     XMLDTD::XMLDTD(const URL& url, XMLNodeOptions mask) : XMLDTD(Adopt{cocoon::internal::retain([&]() -> id
-                                                                                  {
-                                                                                      NSError* __error = nil;
-                                                                                      id __r = [[::NSXMLDTD alloc] initWithContentsOfURL:cocoon::internal::native<::NSURL>(url) options:static_cast<::NSXMLNodeOptions>(mask) error:&__error];
-                                                                                      if (!__r && __error)
-                                                                                      {
-                                                                                          throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
-                                                                                      }
-                                                                                      return __r;
-                                                                                  }())})
+                                                                                                {
+                                                                                                    NSError* __error = nil;
+                                                                                                    id __r = [[::NSXMLDTD alloc] initWithContentsOfURL:cocoon::internal::native<::NSURL>(url) options:static_cast<::NSXMLNodeOptions>(mask) error:&__error];
+                                                                                                    if (!__r && __error)
+                                                                                                    {
+                                                                                                        throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
+                                                                                                    }
+                                                                                                    return __r;
+                                                                                                }())})
     {
     }
 
     XMLDTD::XMLDTD(const std::vector<std::uint8_t>& data, XMLNodeOptions mask) : XMLDTD(Adopt{cocoon::internal::retain([&]() -> id
-                                                                                                         {
-                                                                                                             NSError* __error = nil;
-                                                                                                             id __r = [[::NSXMLDTD alloc] initWithData:cocoon::internal::to_data(data) options:static_cast<::NSXMLNodeOptions>(mask) error:&__error];
-                                                                                                             if (!__r && __error)
-                                                                                                             {
-                                                                                                                 throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
-                                                                                                             }
-                                                                                                             return __r;
-                                                                                                         }())})
+                                                                                                                       {
+                                                                                                                           NSError* __error = nil;
+                                                                                                                           id __r = [[::NSXMLDTD alloc] initWithData:cocoon::internal::to_data(data) options:static_cast<::NSXMLNodeOptions>(mask) error:&__error];
+                                                                                                                           if (!__r && __error)
+                                                                                                                           {
+                                                                                                                               throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
+                                                                                                                           }
+                                                                                                                           return __r;
+                                                                                                                       }())})
     {
     }
 
@@ -69,10 +69,10 @@ namespace cocoon
     void XMLDTD::insert_children(const std::vector<XMLNode>& children, std::uint64_t index) const
     {
         [cocoon::internal::ns<::NSXMLDTD>(this) insertChildren:cocoon::internal::to_array(children, [](const XMLNode& e) -> id
-                                                              {
-                                                                  return cocoon::internal::native<::NSXMLNode>(e);
-                                                              })
-                                         atIndex:static_cast<::NSUInteger>(index)];
+                                                                                          {
+                                                                                              return cocoon::internal::native<::NSXMLNode>(e);
+                                                                                          })
+                                                       atIndex:static_cast<::NSUInteger>(index)];
     }
 
     XMLDTDNode XMLDTD::notation_declaration_for_name(const std::string& name) const
@@ -98,9 +98,9 @@ namespace cocoon
     void XMLDTD::set_children(const std::vector<XMLNode>& children) const
     {
         [cocoon::internal::ns<::NSXMLDTD>(this) setChildren:cocoon::internal::to_array(children, [](const XMLNode& e) -> id
-                                                           {
-                                                               return cocoon::internal::native<::NSXMLNode>(e);
-                                                           })];
+                                                                                       {
+                                                                                           return cocoon::internal::native<::NSXMLNode>(e);
+                                                                                       })];
     }
 
     std::string XMLDTD::public_id() const

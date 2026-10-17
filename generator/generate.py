@@ -97,6 +97,7 @@ class Member:
         self.static = static
         self.extra_decl = ""
         self.typed = None
+        self.since = None
         self.selector = ""
         self.prop = None
         self.role = "method"
@@ -144,6 +145,22 @@ def chain_of(model):
         model = BY_NAME[model.base_name]
         result.insert(0, model)
     return result
+
+
+FUTURE_MAJORS = set()
+
+
+def future_major(since):
+    if since and int(since) > MAJOR:
+        FUTURE_MAJORS.add(int(since))
+        return int(since)
+    return 0
+
+
+def macro_guard(major, text):
+    if not major:
+        return text
+    return f"#ifdef COCOON_MACOS_{major}\n{text}\n#endif"
 
 
 def guard_lines(lines, since, void, ret=None):
@@ -219,6 +236,7 @@ def make_member(model, selector, params, ret_type, static, since, cpp_name):
     ret, cpp_params, lines = make_body(model, static, selector, params, ret_type, since)
     key = (static, cpp_name, tuple(norm_type(t) for t, _ in cpp_params))
     member = Member(cpp_name, ret.cpp, cpp_params, lines, key, static)
+    member.since = since
     member.typed = make_body.last_typed
     member.selector = selector
     return member
@@ -245,6 +263,7 @@ def variadic_member(model, decl, static, methods, info):
     inner_params = cpp_params + [("const std::vector<VarArg>&", "args")]
     key = (static, name + "_", tuple(norm_type(t) for t, _ in inner_params))
     member = Member(name + "_", ret.cpp, inner_params, lines, key, static)
+    member.since = info.introduced
     fixed_decl = ", ".join(declare(t, n) for t, n in cpp_params)
     fixed_names = ", ".join(n for _, n in cpp_params)
     const = "" if static else " const"
@@ -809,6 +828,8 @@ def ctor_bind_lines(model):
 
 def emit_model(model, signal_defs):
     name = model.name
+    future_classes = {m.name: future_major(m.since) for m in ALL_MODELS if future_major(m.since)}
+    class_major = future_major(model.since)
     curated = model.curated
     refs = set(model.refs)
     refs.update(curated.get("forward", []))
@@ -863,6 +884,7 @@ def emit_model(model, signal_defs):
     setters = []
     usage_infos = []
     type_names = {m.name for m in ALL_MODELS} | {e["name"] for e in S.enums.values()} | {st["name"] for st in S.structs.values() if st["name"]} | set(S.opaques) | {"Object", "Size", "Point", "Rect", "Insets", "Signal", "WeakRef", "Adopt"}
+    name_major = {}
     for member in model.members:
         if (member.name, member.arity) in extra_keys:
             continue
@@ -870,16 +892,19 @@ def emit_model(model, signal_defs):
         if final in type_names or final == name:
             final = final.lower() if final.isupper() else final + "_"
         decl, member_impl = member.render(name, final)
+        signature = " ".join([member.ret] + [t for t, _ in member.cpp_params])
+        major = max([future_major(member.since)] + [v for k, v in future_classes.items() if re.search(r"\b" + re.escape(k) + r"\b", signature)])
         if member.extra_decl:
-            other_decls.append(member.extra_decl)
-        other_decls.append(member_doc(model, member) + "\n" + decl)
+            other_decls.append(macro_guard(major, member.extra_decl))
+        other_decls.append(macro_guard(major, member_doc(model, member) + "\n" + decl))
         usage_infos.append((member.role, final, member.cpp_params, member.ret, member.static, member.prop))
         if member.role == "setter" and len(member.cpp_params) == 1:
             setters.append((final, member.cpp_params[0][0] + " value"))
         if member.typed and model.tparams:
-            typed_decls.append(member.render_typed(name, final))
-        impl.append(member_impl)
+            typed_decls.append(macro_guard(major, member.render_typed(name, final)))
+        impl.append(macro_guard(major, member_impl))
         member_names.add(final)
+        name_major[final] = min(name_major.get(final, major), major)
     for extra in curated.get("extra", []):
         decl_text, impl_text = convert_extra(extra["decl"], extra["impl"].replace("{cls}", name).replace("{ns}", model.ns))
         if not decl_text.startswith("static") and not decl_text.endswith("const;"):
@@ -894,6 +919,7 @@ def emit_model(model, signal_defs):
         m = re.search(r"(\w+)\s*\(", decl_text)
         if m:
             member_names.add(m.group(1))
+            name_major[m.group(1)] = 0
     signal_names = set()
     doc_signals = []
     for s in curated.get("signals", []):
@@ -912,9 +938,10 @@ def emit_model(model, signal_defs):
     for member_name in sorted(member_names):
         for anc in reversed(ancestors):
             if member_name in anc.all_names:
-                using.append(f"    using {anc.name}::{member_name};")
+                using.append(macro_guard(max(name_major.get(member_name, 0), anc.name_major.get(member_name, 0)), f"    using {anc.name}::{member_name};"))
                 break
     model.all_names = member_names | signal_names
+    model.name_major = name_major
 
     protected = []
     if model.has_action:
@@ -950,7 +977,7 @@ def emit_model(model, signal_defs):
     wrapper = ""
     if model.tparams:
         template_head = ", ".join(f"class {p}" for p in model.tparams)
-        usings = "".join(f"    using {name}::{n};\n" for n in sorted(model.all_names))
+        usings = "".join(macro_guard(name_major.get(n, 0), f"    using {name}::{n};") + "\n" for n in sorted(model.all_names))
         wrapper = (f"template <{template_head}>\nclass {model.template_name} : public {name} {{\npublic:\n    using {name}::{name};\n"
                    f"    {model.template_name}() : {name}() {{}}\n    {model.template_name}(const {name}& other) : {name}(other) {{}}\n{usings}"
                    + "\n".join(typed_decls) + "\n};\n\n")
@@ -958,12 +985,13 @@ def emit_model(model, signal_defs):
     forwards = "".join(f"class {r};\n" for r in sorted(refs - {name}))
     bottoms = ""
     base_include = '#include "object.h"' if model.base_name == "Object" else f'#include "generated/{snake(model.base_name)}.h"'
-    header = (f'#pragma once\n\n{base_include}\n#include "generated/enums.h"\n#include "generated/structs.h"\n#include "types.h"\n{includes}\n'
+    header_body = (f'{base_include}\n#include "generated/enums.h"\n#include "generated/structs.h"\n#include "types.h"\n{includes}\n'
               f"namespace cocoon {{\n\n{forwards}\n{curated.get('preamble', '')}\n{class_doc(model, entries, setters, doc_signals, usage_infos)}\nclass {name} : public {model.base_name} {{\npublic:\n"
               + "\n".join(ctor_decls + using + other_decls) + ("\n\nprotected:\n" + "\n".join(protected) if protected else "")
               + f"\n}};\n\n{wrapper}{curated.get('headerExtra', '')}\n}}\n\n{bottoms}")
+    header = '#pragma once\n\n#include "generated/availability.h"\n\n' + macro_guard(class_major, header_body)
     write(OUT_INCLUDE / f"{snake(name)}.h", header)
-    write(OUT_SRC / f"{snake(name)}.mm", f'#include "generated/{snake(name)}.h"\n#include "internal.h"\n\n' + delegate_text + "namespace cocoon {\n\n" + "\n".join(impl) + "\n}\n")
+    write(OUT_SRC / f"{snake(name)}.mm", f'#include "generated/{snake(name)}.h"\n#include "internal.h"\n\n' + macro_guard(class_major, delegate_text + "namespace cocoon {\n\n" + "\n".join(impl) + "\n}\n"))
 
 
 def literal(value, underlying):
@@ -1148,6 +1176,7 @@ def main():
         tparams = type_params_of(interface)
         base_cpp = class_cpp_name(ns)
         model = ClassModel(ns, unique_type_name(base_cpp + "Base" if tparams else base_cpp), "A")
+        model.since = A.availability(interface).introduced
         model.tparams = tparams
         model.template_name = base_cpp if tparams else None
         model.curated = curated.get(base_cpp, {})
@@ -1200,6 +1229,7 @@ def main():
     emit_enums()
     emit_structs()
     emit_opaques()
+    write(OUT_INCLUDE / "availability.h", "#pragma once\n\n#include <Availability.h>\n\n" + "".join(f"#if defined(__MAC_OS_X_VERSION_MAX_ALLOWED) && __MAC_OS_X_VERSION_MAX_ALLOWED >= {major * 10000}\n#define COCOON_MACOS_{major}\n#endif\n\n" for major in range(MAJOR + 1, max(FUTURE_MAJORS | {MAJOR}) + 1)))
     write(OUT_INCLUDE / "generated.h", "#pragma once\n\n" + "".join(f'#include "generated/{snake(m.name)}.h"\n' for m in sorted(ALL_MODELS, key=lambda m: snake(m.name))) + "".join(f'#include "generated/{snake(n)}.h"\n' for n in sorted(S.opaques)) + '#include "generated/constants.h"\n')
     format_files()
     report = ["Skipped members by reason"]

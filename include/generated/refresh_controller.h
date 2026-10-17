@@ -1,5 +1,8 @@
 #pragma once
 
+#include "generated/availability.h"
+
+#ifdef COCOON_MACOS_27
 #include "generated/enums.h"
 #include "generated/structs.h"
 #include "object.h"
@@ -113,3 +116,5 @@ namespace cocoon
         void set_tint_color(const Color& value) const;
     };
 }
+
+#endif

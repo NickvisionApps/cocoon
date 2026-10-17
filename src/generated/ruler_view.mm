@@ -50,13 +50,13 @@ namespace cocoon
                                abbreviation:cocoon::internal::to(abbreviation)
                unitToPointsConversionFactor:static_cast<::CGFloat>(conversion_factor)
                                 stepUpCycle:cocoon::internal::to_array(step_up_cycle, [](const Number& e) -> id
-                                                         {
-                                                             return cocoon::internal::native<::NSNumber>(e);
-                                                         })
+                                                                       {
+                                                                           return cocoon::internal::native<::NSNumber>(e);
+                                                                       })
                               stepDownCycle:cocoon::internal::to_array(step_down_cycle, [](const Number& e) -> id
-                                                         {
-                                                             return cocoon::internal::native<::NSNumber>(e);
-                                                         })];
+                                                                       {
+                                                                           return cocoon::internal::native<::NSNumber>(e);
+                                                                       })];
     }
 
     void RulerView::remove_marker(const RulerMarker& marker) const
@@ -102,17 +102,17 @@ namespace cocoon
     std::vector<RulerMarker> RulerView::markers() const
     {
         return cocoon::internal::from_array<RulerMarker>([cocoon::internal::ns<::NSRulerView>(this) markers], [](id e) -> RulerMarker
-                                           {
-                                               return cocoon::internal::wrap<RulerMarker>((::NSRulerMarker*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::wrap<RulerMarker>((::NSRulerMarker*)e);
+                                                         });
     }
 
     void RulerView::set_markers(const std::vector<RulerMarker>& value) const
     {
         [cocoon::internal::ns<::NSRulerView>(this) setMarkers:cocoon::internal::to_array(value, [](const RulerMarker& e) -> id
-                                                             {
-                                                                 return cocoon::internal::native<::NSRulerMarker>(e);
-                                                             })];
+                                                                                         {
+                                                                                             return cocoon::internal::native<::NSRulerMarker>(e);
+                                                                                         })];
     }
 
     std::string RulerView::measurement_units() const

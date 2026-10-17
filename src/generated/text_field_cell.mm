@@ -32,17 +32,17 @@ namespace cocoon
     std::vector<std::string> TextFieldCell::allowed_input_source_locales() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSTextFieldCell>(this) allowedInputSourceLocales], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void TextFieldCell::set_allowed_input_source_locales(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSTextFieldCell>(this) setAllowedInputSourceLocales:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                                                   {
-                                                                                       return cocoon::internal::to(e);
-                                                                                   })];
+                                                                                                               {
+                                                                                                                   return cocoon::internal::to(e);
+                                                                                                               })];
     }
 
     Color TextFieldCell::background_color() const

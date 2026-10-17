@@ -48,8 +48,8 @@ namespace cocoon
     std::vector<std::string> ValueTransformer::value_transformer_names()
     {
         return cocoon::internal::from_array<std::string>([::NSValueTransformer valueTransformerNames], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 }

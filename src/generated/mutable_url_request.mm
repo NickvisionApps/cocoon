@@ -78,25 +78,25 @@ namespace cocoon
     std::map<std::string, std::string> MutableURLRequest::all_http_header_fields() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, std::string>>([cocoon::internal::ns<::NSMutableURLRequest>(this) allHTTPHeaderFields], [](id k) -> std::string
-                                                                       {
-                                                                           return cocoon::internal::from((NSString*)k);
-                                                                       },
-                                                                       [](id v) -> std::string
-                                                                       {
-                                                                           return cocoon::internal::from((NSString*)v);
-                                                                       });
+                                                                                     {
+                                                                                         return cocoon::internal::from((NSString*)k);
+                                                                                     },
+                                                                                     [](id v) -> std::string
+                                                                                     {
+                                                                                         return cocoon::internal::from((NSString*)v);
+                                                                                     });
     }
 
     void MutableURLRequest::set_all_http_header_fields(const std::map<std::string, std::string>& value) const
     {
         [cocoon::internal::ns<::NSMutableURLRequest>(this) setAllHTTPHeaderFields:cocoon::internal::to_dictionary(value, [](const std::string& k) -> id
-                                                                                      {
-                                                                                          return cocoon::internal::to(k);
-                                                                                      },
-                                                                                      [](const std::string& v) -> id
-                                                                                      {
-                                                                                          return cocoon::internal::to(v);
-                                                                                      })];
+                                                                                                                  {
+                                                                                                                      return cocoon::internal::to(k);
+                                                                                                                  },
+                                                                                                                  [](const std::string& v) -> id
+                                                                                                                  {
+                                                                                                                      return cocoon::internal::to(v);
+                                                                                                                  })];
     }
 
     bool MutableURLRequest::allows_cellular_access() const

@@ -53,9 +53,9 @@ namespace cocoon
     std::vector<ViewController> PageLayout::accessory_controllers() const
     {
         return cocoon::internal::from_array<ViewController>([cocoon::internal::ns<::NSPageLayout>(this) accessoryControllers], [](id e) -> ViewController
-                                              {
-                                                  return cocoon::internal::wrap<ViewController>((::NSViewController*)e);
-                                              });
+                                                            {
+                                                                return cocoon::internal::wrap<ViewController>((::NSViewController*)e);
+                                                            });
     }
 
     PrintInfo PageLayout::print_info() const

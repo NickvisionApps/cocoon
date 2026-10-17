@@ -38,13 +38,13 @@
         return;
     }
     cocoon::Signal<cocoon::NetService, void(std::map<std::string, cocoon::Number>)>::emit((__bridge void*)strongHost, "did_not_publish", cocoon::internal::from_dictionary<std::map<std::string, cocoon::Number>>(errorDict, [](id k) -> std::string
-                                                                                                                                                                                                    {
-                                                                                                                                                                                                        return cocoon::internal::from((NSString*)k);
-                                                                                                                                                                                                    },
-                                                                                                                                                                                                    [](id v) -> cocoon::Number
-                                                                                                                                                                                                    {
-                                                                                                                                                                                                        return cocoon::internal::wrap<cocoon::Number>((::NSNumber*)v);
-                                                                                                                                                                                                    }));
+                                                                                                                                                                                                                  {
+                                                                                                                                                                                                                      return cocoon::internal::from((NSString*)k);
+                                                                                                                                                                                                                  },
+                                                                                                                                                                                                                  [](id v) -> cocoon::Number
+                                                                                                                                                                                                                  {
+                                                                                                                                                                                                                      return cocoon::internal::wrap<cocoon::Number>((::NSNumber*)v);
+                                                                                                                                                                                                                  }));
 }
 
 - (void)netServiceWillResolve:(NSNetService*)sender
@@ -75,13 +75,13 @@
         return;
     }
     cocoon::Signal<cocoon::NetService, void(std::map<std::string, cocoon::Number>)>::emit((__bridge void*)strongHost, "did_not_resolve", cocoon::internal::from_dictionary<std::map<std::string, cocoon::Number>>(errorDict, [](id k) -> std::string
-                                                                                                                                                                                                    {
-                                                                                                                                                                                                        return cocoon::internal::from((NSString*)k);
-                                                                                                                                                                                                    },
-                                                                                                                                                                                                    [](id v) -> cocoon::Number
-                                                                                                                                                                                                    {
-                                                                                                                                                                                                        return cocoon::internal::wrap<cocoon::Number>((::NSNumber*)v);
-                                                                                                                                                                                                    }));
+                                                                                                                                                                                                                  {
+                                                                                                                                                                                                                      return cocoon::internal::from((NSString*)k);
+                                                                                                                                                                                                                  },
+                                                                                                                                                                                                                  [](id v) -> cocoon::Number
+                                                                                                                                                                                                                  {
+                                                                                                                                                                                                                      return cocoon::internal::wrap<cocoon::Number>((::NSNumber*)v);
+                                                                                                                                                                                                                  }));
 }
 
 - (void)netServiceDidStop:(NSNetService*)sender
@@ -191,25 +191,25 @@ namespace cocoon
     std::vector<std::uint8_t> NetService::data_from_txt_record_dictionary(const std::map<std::string, std::vector<std::uint8_t>>& txt_dictionary)
     {
         return cocoon::internal::from_data([::NSNetService dataFromTXTRecordDictionary:cocoon::internal::to_dictionary(txt_dictionary, [](const std::string& k) -> id
-                                                                                           {
-                                                                                               return cocoon::internal::to(k);
-                                                                                           },
-                                                                                           [](const std::vector<std::uint8_t>& v) -> id
-                                                                                           {
-                                                                                               return cocoon::internal::to_data(v);
-                                                                                           })]);
+                                                                                                                       {
+                                                                                                                           return cocoon::internal::to(k);
+                                                                                                                       },
+                                                                                                                       [](const std::vector<std::uint8_t>& v) -> id
+                                                                                                                       {
+                                                                                                                           return cocoon::internal::to_data(v);
+                                                                                                                       })]);
     }
 
     std::map<std::string, std::vector<std::uint8_t>> NetService::dictionary_from_txt_record_data(const std::vector<std::uint8_t>& txt_data)
     {
         return cocoon::internal::from_dictionary<std::map<std::string, std::vector<std::uint8_t>>>([::NSNetService dictionaryFromTXTRecordData:cocoon::internal::to_data(txt_data)], [](id k) -> std::string
-                                                                                     {
-                                                                                         return cocoon::internal::from((NSString*)k);
-                                                                                     },
-                                                                                     [](id v) -> std::vector<std::uint8_t>
-                                                                                     {
-                                                                                         return cocoon::internal::from_data((NSData*)v);
-                                                                                     });
+                                                                                                   {
+                                                                                                       return cocoon::internal::from((NSString*)k);
+                                                                                                   },
+                                                                                                   [](id v) -> std::vector<std::uint8_t>
+                                                                                                   {
+                                                                                                       return cocoon::internal::from_data((NSData*)v);
+                                                                                                   });
     }
 
     bool NetService::get_input_stream(InputStream& input_stream, OutputStream& output_stream) const
@@ -270,9 +270,9 @@ namespace cocoon
     std::vector<std::vector<std::uint8_t>> NetService::addresses() const
     {
         return cocoon::internal::from_array<std::vector<std::uint8_t>>([cocoon::internal::ns<::NSNetService>(this) addresses], [](id e) -> std::vector<std::uint8_t>
-                                                         {
-                                                             return cocoon::internal::from_data((NSData*)e);
-                                                         });
+                                                                       {
+                                                                           return cocoon::internal::from_data((NSData*)e);
+                                                                       });
     }
 
     std::string NetService::domain() const

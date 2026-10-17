@@ -18,9 +18,9 @@ namespace cocoon
     std::string ListFormatter::localized_string_by_joining_strings(const std::vector<std::string>& strings)
     {
         return cocoon::internal::from([::NSListFormatter localizedStringByJoiningStrings:cocoon::internal::to_array(strings, [](const std::string& e) -> id
-                                                                                        {
-                                                                                            return cocoon::internal::to(e);
-                                                                                        })]);
+                                                                                                                    {
+                                                                                                                        return cocoon::internal::to(e);
+                                                                                                                    })]);
     }
 
     std::string ListFormatter::string_for_object_value(const Object& obj) const
@@ -31,9 +31,9 @@ namespace cocoon
     std::string ListFormatter::string_from_items(const std::vector<Object>& items) const
     {
         return cocoon::internal::from([cocoon::internal::ns<::NSListFormatter>(this) stringFromItems:cocoon::internal::to_array(items, [](const Object& e) -> id
-                                                                                      {
-                                                                                          return cocoon::internal::native_id(e);
-                                                                                      })]);
+                                                                                                                                {
+                                                                                                                                    return cocoon::internal::native_id(e);
+                                                                                                                                })]);
     }
 
     Formatter ListFormatter::item_formatter() const

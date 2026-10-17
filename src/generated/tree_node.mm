@@ -27,10 +27,10 @@ namespace cocoon
     void TreeNode::sort_with_sort_descriptors(const std::vector<SortDescriptor>& sort_descriptors, bool recursively) const
     {
         [cocoon::internal::ns<::NSTreeNode>(this) sortWithSortDescriptors:cocoon::internal::to_array(sort_descriptors, [](const SortDescriptor& e) -> id
-                                                                         {
-                                                                             return cocoon::internal::native<::NSSortDescriptor>(e);
-                                                                         })
-                                                recursively:static_cast<::BOOL>(recursively)];
+                                                                                                     {
+                                                                                                         return cocoon::internal::native<::NSSortDescriptor>(e);
+                                                                                                     })
+                                                              recursively:static_cast<::BOOL>(recursively)];
     }
 
     TreeNode TreeNode::tree_node_with_represented_object(const Object& model_object)
@@ -41,9 +41,9 @@ namespace cocoon
     std::vector<TreeNode> TreeNode::child_nodes() const
     {
         return cocoon::internal::from_array<TreeNode>([cocoon::internal::ns<::NSTreeNode>(this) childNodes], [](id e) -> TreeNode
-                                        {
-                                            return cocoon::internal::wrap<TreeNode>((::NSTreeNode*)e);
-                                        });
+                                                      {
+                                                          return cocoon::internal::wrap<TreeNode>((::NSTreeNode*)e);
+                                                      });
     }
 
     IndexPath TreeNode::index_path() const
@@ -59,9 +59,9 @@ namespace cocoon
     std::vector<TreeNode> TreeNode::mutable_child_nodes() const
     {
         return cocoon::internal::from_array<TreeNode>([cocoon::internal::ns<::NSTreeNode>(this) mutableChildNodes], [](id e) -> TreeNode
-                                        {
-                                            return cocoon::internal::wrap<TreeNode>((::NSTreeNode*)e);
-                                        });
+                                                      {
+                                                          return cocoon::internal::wrap<TreeNode>((::NSTreeNode*)e);
+                                                      });
     }
 
     TreeNode TreeNode::parent_node() const

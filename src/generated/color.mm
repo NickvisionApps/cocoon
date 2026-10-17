@@ -247,9 +247,9 @@ namespace cocoon
     std::vector<Color> Color::alternating_content_background_colors()
     {
         return cocoon::internal::from_array<Color>([::NSColor alternatingContentBackgroundColors], [](id e) -> Color
-                                     {
-                                         return cocoon::internal::wrap<Color>((::NSColor*)e);
-                                     });
+                                                   {
+                                                       return cocoon::internal::wrap<Color>((::NSColor*)e);
+                                                   });
     }
 
     Color Color::black_color()

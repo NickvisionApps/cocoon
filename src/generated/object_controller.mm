@@ -158,9 +158,9 @@ namespace cocoon
     std::vector<Object> ObjectController::selected_objects() const
     {
         return cocoon::internal::from_array<Object>([cocoon::internal::ns<::NSObjectController>(this) selectedObjects], [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     Object ObjectController::selection() const

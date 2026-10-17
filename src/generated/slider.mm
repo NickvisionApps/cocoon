@@ -175,8 +175,8 @@ namespace cocoon
     {
         id host = (__bridge id)native;
         cocoon::internal::bind_action(host, host, [](id host, id sender)
-                        {
-                            cocoon::Signal<cocoon::Slider, void(double)>::emit((__bridge void*)host, "value_changed", [(NSSlider*)sender doubleValue]);
-                        });
+                                      {
+                                          cocoon::Signal<cocoon::Slider, void(double)>::emit((__bridge void*)host, "value_changed", [(NSSlider*)sender doubleValue]);
+                                      });
     }
 }

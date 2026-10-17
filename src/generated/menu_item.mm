@@ -211,6 +211,7 @@ namespace cocoon
         return cocoon::internal::wrap<MenuItem>([cocoon::internal::ns<::NSMenuItem>(this) parentItem]);
     }
 
+#ifdef COCOON_MACOS_27
     MenuItemImageVisibility MenuItem::preferred_image_visibility() const
     {
         if (@available(macOS 27.0, *))
@@ -220,6 +221,8 @@ namespace cocoon
         return {};
     }
 
+#endif
+#ifdef COCOON_MACOS_27
     void MenuItem::set_preferred_image_visibility(MenuItemImageVisibility value) const
     {
         if (@available(macOS 27.0, *))
@@ -228,6 +231,7 @@ namespace cocoon
         }
     }
 
+#endif
     Object MenuItem::represented_object() const
     {
         return cocoon::internal::wrap<Object>([cocoon::internal::ns<::NSMenuItem>(this) representedObject]);
@@ -346,9 +350,9 @@ namespace cocoon
     std::vector<MenuItem> MenuItem::writing_tools_items()
     {
         return cocoon::internal::from_array<MenuItem>([::NSMenuItem writingToolsItems], [](id e) -> MenuItem
-                                        {
-                                            return cocoon::internal::wrap<MenuItem>((::NSMenuItem*)e);
-                                        });
+                                                      {
+                                                          return cocoon::internal::wrap<MenuItem>((::NSMenuItem*)e);
+                                                      });
     }
 
     MenuItem MenuItem::separator()
@@ -392,8 +396,8 @@ namespace cocoon
     {
         id host = (__bridge id)native;
         cocoon::internal::bind_action(host, host, [](id host, id sender)
-                        {
-                            cocoon::Signal<cocoon::MenuItem, void()>::emit((__bridge void*)host, "triggered");
-                        });
+                                      {
+                                          cocoon::Signal<cocoon::MenuItem, void()>::emit((__bridge void*)host, "triggered");
+                                      });
     }
 }

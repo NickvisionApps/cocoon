@@ -33,10 +33,10 @@ namespace cocoon
     void OperationQueue::add_operations(const std::vector<Operation>& ops, bool wait) const
     {
         [cocoon::internal::ns<::NSOperationQueue>(this) addOperations:cocoon::internal::to_array(ops, [](const Operation& e) -> id
-                                                                     {
-                                                                         return cocoon::internal::native<::NSOperation>(e);
-                                                                     })
-                                      waitUntilFinished:static_cast<::BOOL>(wait)];
+                                                                                                 {
+                                                                                                     return cocoon::internal::native<::NSOperation>(e);
+                                                                                                 })
+                                                    waitUntilFinished:static_cast<::BOOL>(wait)];
     }
 
     void OperationQueue::cancel_all_operations() const
@@ -87,9 +87,9 @@ namespace cocoon
     std::vector<Operation> OperationQueue::operations() const
     {
         return cocoon::internal::from_array<Operation>([cocoon::internal::ns<::NSOperationQueue>(this) operations], [](id e) -> Operation
-                                         {
-                                             return cocoon::internal::wrap<Operation>((::NSOperation*)e);
-                                         });
+                                                       {
+                                                           return cocoon::internal::wrap<Operation>((::NSOperation*)e);
+                                                       });
     }
 
     Progress OperationQueue::progress() const

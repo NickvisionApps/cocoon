@@ -67,17 +67,17 @@ namespace cocoon
     std::vector<std::string> ColorList::all_keys() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSColorList>(this) allKeys], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::vector<ColorList> ColorList::available_color_lists()
     {
         return cocoon::internal::from_array<ColorList>([::NSColorList availableColorLists], [](id e) -> ColorList
-                                         {
-                                             return cocoon::internal::wrap<ColorList>((::NSColorList*)e);
-                                         });
+                                                       {
+                                                           return cocoon::internal::wrap<ColorList>((::NSColorList*)e);
+                                                       });
     }
 
     bool ColorList::is_editable() const

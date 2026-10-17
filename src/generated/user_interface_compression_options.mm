@@ -4,9 +4,9 @@
 namespace cocoon
 {
     UserInterfaceCompressionOptions::UserInterfaceCompressionOptions(const std::vector<UserInterfaceCompressionOptions>& options) : UserInterfaceCompressionOptions(Adopt{cocoon::internal::retain([[::NSUserInterfaceCompressionOptions alloc] initWithCompressionOptions:[NSSet setWithArray:cocoon::internal::to_array(options, [](const UserInterfaceCompressionOptions& e) -> id
-                                                                                                                                                                                                                                                                                              {
-                                                                                                                                                                                                                                                                                                  return cocoon::internal::native<::NSUserInterfaceCompressionOptions>(e);
-                                                                                                                                                                                                                                                                                              })]])})
+                                                                                                                                                                                                                                                                                                                          {
+                                                                                                                                                                                                                                                                                                                              return cocoon::internal::native<::NSUserInterfaceCompressionOptions>(e);
+                                                                                                                                                                                                                                                                                                                          })]])})
     {
     }
 

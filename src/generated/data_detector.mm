@@ -4,15 +4,15 @@
 namespace cocoon
 {
     DataDetector::DataDetector(std::uint64_t checking_types) : DataDetector(Adopt{cocoon::internal::retain([&]() -> id
-                                                                                             {
-                                                                                                 NSError* __error = nil;
-                                                                                                 id __r = [[::NSDataDetector alloc] initWithTypes:static_cast<::NSTextCheckingTypes>(checking_types) error:&__error];
-                                                                                                 if (!__r && __error)
-                                                                                                 {
-                                                                                                     throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
-                                                                                                 }
-                                                                                                 return __r;
-                                                                                             }())})
+                                                                                                           {
+                                                                                                               NSError* __error = nil;
+                                                                                                               id __r = [[::NSDataDetector alloc] initWithTypes:static_cast<::NSTextCheckingTypes>(checking_types) error:&__error];
+                                                                                                               if (!__r && __error)
+                                                                                                               {
+                                                                                                                   throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
+                                                                                                               }
+                                                                                                               return __r;
+                                                                                                           }())})
     {
     }
 

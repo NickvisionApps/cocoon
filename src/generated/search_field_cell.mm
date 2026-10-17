@@ -67,17 +67,17 @@ namespace cocoon
     std::vector<std::string> SearchFieldCell::recent_searches() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSSearchFieldCell>(this) recentSearches], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void SearchFieldCell::set_recent_searches(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSSearchFieldCell>(this) setRecentSearches:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                                          {
-                                                                              return cocoon::internal::to(e);
-                                                                          })];
+                                                                                                      {
+                                                                                                          return cocoon::internal::to(e);
+                                                                                                      })];
     }
 
     std::string SearchFieldCell::recents_autosave_name() const

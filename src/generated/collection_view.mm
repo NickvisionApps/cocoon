@@ -95,9 +95,9 @@
         return {};
     }
     auto __r = cocoon::Signal<cocoon::CollectionView, bool(std::vector<cocoon::IndexPath>, cocoon::Event)>::emit((__bridge void*)strongHost, "can_drag_items_at_index_paths_with_event", cocoon::internal::from_array<cocoon::IndexPath>([indexPaths allObjects], [](id e) -> cocoon::IndexPath
-                                                                                                                                                                                                                           {
-                                                                                                                                                                                                                               return cocoon::internal::wrap<cocoon::IndexPath>((::NSIndexPath*)e);
-                                                                                                                                                                                                                           }),
+                                                                                                                                                                                                                                         {
+                                                                                                                                                                                                                                             return cocoon::internal::wrap<cocoon::IndexPath>((::NSIndexPath*)e);
+                                                                                                                                                                                                                                         }),
                                                                                                                  cocoon::internal::wrap<cocoon::Event>(event));
     return static_cast<::BOOL>(__r);
 }
@@ -121,9 +121,9 @@
         return {};
     }
     auto __r = cocoon::Signal<cocoon::CollectionView, cocoon::Image(std::vector<cocoon::IndexPath>, cocoon::Event, cocoon::Point*)>::emit((__bridge void*)strongHost, "dragging_image_for_items_at_index_paths_with_event_offset", cocoon::internal::from_array<cocoon::IndexPath>([indexPaths allObjects], [](id e) -> cocoon::IndexPath
-                                                                                                                                                                                                                                                                     {
-                                                                                                                                                                                                                                                                         return cocoon::internal::wrap<cocoon::IndexPath>((::NSIndexPath*)e);
-                                                                                                                                                                                                                                                                     }),
+                                                                                                                                                                                                                                                                                   {
+                                                                                                                                                                                                                                                                                       return cocoon::internal::wrap<cocoon::IndexPath>((::NSIndexPath*)e);
+                                                                                                                                                                                                                                                                                   }),
                                                                                                                                           cocoon::internal::wrap<cocoon::Event>(event), (cocoon::Point*)(dragImageOffset));
     return cocoon::internal::native<::NSImage>(__r);
 }
@@ -218,9 +218,9 @@
         return;
     }
     cocoon::Signal<cocoon::CollectionView, void(cocoon::DraggingSession, cocoon::Point, std::vector<cocoon::IndexPath>)>::emit((__bridge void*)strongHost, "dragging_session_will_begin_at_point_for_items_at_index_paths", cocoon::internal::wrap<cocoon::DraggingSession>(session), cocoon::internal::from(screenPoint), cocoon::internal::from_array<cocoon::IndexPath>([indexPaths allObjects], [](id e) -> cocoon::IndexPath
-                                                                                                                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                                                                                                                     return cocoon::internal::wrap<cocoon::IndexPath>((::NSIndexPath*)e);
-                                                                                                                                                                                                                                                                                                                                 }));
+                                                                                                                                                                                                                                                                                                                                                                           {
+                                                                                                                                                                                                                                                                                                                                                                               return cocoon::internal::wrap<cocoon::IndexPath>((::NSIndexPath*)e);
+                                                                                                                                                                                                                                                                                                                                                                           }));
 }
 
 - (void)collectionView:(NSCollectionView*)collectionView draggingSession:(NSDraggingSession*)session willBeginAtPoint:(NSPoint)screenPoint forItemsAtIndexes:(NSIndexSet*)indexes
@@ -261,14 +261,14 @@
         return {};
     }
     auto __r = cocoon::Signal<cocoon::CollectionView, std::vector<cocoon::IndexPath>(std::vector<cocoon::IndexPath>, cocoon::CollectionViewItemHighlightState)>::emit((__bridge void*)strongHost, "should_change_items_at_index_paths_to_highlight_state", cocoon::internal::from_array<cocoon::IndexPath>([indexPaths allObjects], [](id e) -> cocoon::IndexPath
-                                                                                                                                                                                                                                                                                             {
-                                                                                                                                                                                                                                                                                                 return cocoon::internal::wrap<cocoon::IndexPath>((::NSIndexPath*)e);
-                                                                                                                                                                                                                                                                                             }),
+                                                                                                                                                                                                                                                                                                           {
+                                                                                                                                                                                                                                                                                                               return cocoon::internal::wrap<cocoon::IndexPath>((::NSIndexPath*)e);
+                                                                                                                                                                                                                                                                                                           }),
                                                                                                                                                                       static_cast<cocoon::CollectionViewItemHighlightState>(highlightState));
     return [NSSet setWithArray:cocoon::internal::to_array(__r, [](const cocoon::IndexPath& e) -> id
-                                            {
-                                                return cocoon::internal::native<::NSIndexPath>(e);
-                                            })];
+                                                          {
+                                                              return cocoon::internal::native<::NSIndexPath>(e);
+                                                          })];
 }
 
 - (void)collectionView:(NSCollectionView*)collectionView didChangeItemsAtIndexPaths:(NSSet<NSIndexPath*>*)indexPaths toHighlightState:(NSCollectionViewItemHighlightState)highlightState
@@ -279,9 +279,9 @@
         return;
     }
     cocoon::Signal<cocoon::CollectionView, void(std::vector<cocoon::IndexPath>, cocoon::CollectionViewItemHighlightState)>::emit((__bridge void*)strongHost, "did_change_items_at_index_paths_to_highlight_state", cocoon::internal::from_array<cocoon::IndexPath>([indexPaths allObjects], [](id e) -> cocoon::IndexPath
-                                                                                                                                                                                                                                                     {
-                                                                                                                                                                                                                                                         return cocoon::internal::wrap<cocoon::IndexPath>((::NSIndexPath*)e);
-                                                                                                                                                                                                                                                     }),
+                                                                                                                                                                                                                                                                   {
+                                                                                                                                                                                                                                                                       return cocoon::internal::wrap<cocoon::IndexPath>((::NSIndexPath*)e);
+                                                                                                                                                                                                                                                                   }),
                                                                                                                                  static_cast<cocoon::CollectionViewItemHighlightState>(highlightState));
 }
 
@@ -293,13 +293,13 @@
         return {};
     }
     auto __r = cocoon::Signal<cocoon::CollectionView, std::vector<cocoon::IndexPath>(std::vector<cocoon::IndexPath>)>::emit((__bridge void*)strongHost, "should_select_items_at_index_paths", cocoon::internal::from_array<cocoon::IndexPath>([indexPaths allObjects], [](id e) -> cocoon::IndexPath
-                                                                                                                                                                                                                                {
-                                                                                                                                                                                                                                    return cocoon::internal::wrap<cocoon::IndexPath>((::NSIndexPath*)e);
-                                                                                                                                                                                                                                }));
+                                                                                                                                                                                                                                              {
+                                                                                                                                                                                                                                                  return cocoon::internal::wrap<cocoon::IndexPath>((::NSIndexPath*)e);
+                                                                                                                                                                                                                                              }));
     return [NSSet setWithArray:cocoon::internal::to_array(__r, [](const cocoon::IndexPath& e) -> id
-                                            {
-                                                return cocoon::internal::native<::NSIndexPath>(e);
-                                            })];
+                                                          {
+                                                              return cocoon::internal::native<::NSIndexPath>(e);
+                                                          })];
 }
 
 - (NSSet<NSIndexPath*>*)collectionView:(NSCollectionView*)collectionView shouldDeselectItemsAtIndexPaths:(NSSet<NSIndexPath*>*)indexPaths
@@ -310,13 +310,13 @@
         return {};
     }
     auto __r = cocoon::Signal<cocoon::CollectionView, std::vector<cocoon::IndexPath>(std::vector<cocoon::IndexPath>)>::emit((__bridge void*)strongHost, "should_deselect_items_at_index_paths", cocoon::internal::from_array<cocoon::IndexPath>([indexPaths allObjects], [](id e) -> cocoon::IndexPath
-                                                                                                                                                                                                                                  {
-                                                                                                                                                                                                                                      return cocoon::internal::wrap<cocoon::IndexPath>((::NSIndexPath*)e);
-                                                                                                                                                                                                                                  }));
+                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                    return cocoon::internal::wrap<cocoon::IndexPath>((::NSIndexPath*)e);
+                                                                                                                                                                                                                                                }));
     return [NSSet setWithArray:cocoon::internal::to_array(__r, [](const cocoon::IndexPath& e) -> id
-                                            {
-                                                return cocoon::internal::native<::NSIndexPath>(e);
-                                            })];
+                                                          {
+                                                              return cocoon::internal::native<::NSIndexPath>(e);
+                                                          })];
 }
 
 - (void)collectionView:(NSCollectionView*)collectionView didSelectItemsAtIndexPaths:(NSSet<NSIndexPath*>*)indexPaths
@@ -327,9 +327,9 @@
         return;
     }
     cocoon::Signal<cocoon::CollectionView, void(std::vector<cocoon::IndexPath>)>::emit((__bridge void*)strongHost, "did_select_items_at_index_paths", cocoon::internal::from_array<cocoon::IndexPath>([indexPaths allObjects], [](id e) -> cocoon::IndexPath
-                                                                                                                                                                                        {
-                                                                                                                                                                                            return cocoon::internal::wrap<cocoon::IndexPath>((::NSIndexPath*)e);
-                                                                                                                                                                                        }));
+                                                                                                                                                                                                      {
+                                                                                                                                                                                                          return cocoon::internal::wrap<cocoon::IndexPath>((::NSIndexPath*)e);
+                                                                                                                                                                                                      }));
 }
 
 - (void)collectionView:(NSCollectionView*)collectionView didDeselectItemsAtIndexPaths:(NSSet<NSIndexPath*>*)indexPaths
@@ -340,9 +340,9 @@
         return;
     }
     cocoon::Signal<cocoon::CollectionView, void(std::vector<cocoon::IndexPath>)>::emit((__bridge void*)strongHost, "did_deselect_items_at_index_paths", cocoon::internal::from_array<cocoon::IndexPath>([indexPaths allObjects], [](id e) -> cocoon::IndexPath
-                                                                                                                                                                                          {
-                                                                                                                                                                                              return cocoon::internal::wrap<cocoon::IndexPath>((::NSIndexPath*)e);
-                                                                                                                                                                                          }));
+                                                                                                                                                                                                        {
+                                                                                                                                                                                                            return cocoon::internal::wrap<cocoon::IndexPath>((::NSIndexPath*)e);
+                                                                                                                                                                                                        }));
 }
 
 - (void)collectionView:(NSCollectionView*)collectionView willDisplayItem:(NSCollectionViewItem*)item forRepresentedObjectAtIndexPath:(NSIndexPath*)indexPath
@@ -523,9 +523,9 @@ namespace cocoon
     void CollectionView::delete_items_at_index_paths(const std::vector<IndexPath>& index_paths) const
     {
         [cocoon::internal::ns<::NSCollectionView>(this) deleteItemsAtIndexPaths:[NSSet setWithArray:cocoon::internal::to_array(index_paths, [](const IndexPath& e) -> id
-                                                                                                   {
-                                                                                                       return cocoon::internal::native<::NSIndexPath>(e);
-                                                                                                   })]];
+                                                                                                                               {
+                                                                                                                                   return cocoon::internal::native<::NSIndexPath>(e);
+                                                                                                                               })]];
     }
 
     void CollectionView::delete_sections(const IndexSet& sections) const
@@ -541,19 +541,19 @@ namespace cocoon
     void CollectionView::deselect_items_at_index_paths(const std::vector<IndexPath>& index_paths) const
     {
         [cocoon::internal::ns<::NSCollectionView>(this) deselectItemsAtIndexPaths:[NSSet setWithArray:cocoon::internal::to_array(index_paths, [](const IndexPath& e) -> id
-                                                                                                     {
-                                                                                                         return cocoon::internal::native<::NSIndexPath>(e);
-                                                                                                     })]];
+                                                                                                                                 {
+                                                                                                                                     return cocoon::internal::native<::NSIndexPath>(e);
+                                                                                                                                 })]];
     }
 
     Image CollectionView::dragging_image_for_items_at_index_paths(const std::vector<IndexPath>& index_paths, const Event& event, Point* drag_image_offset) const
     {
         return cocoon::internal::wrap<Image>([cocoon::internal::ns<::NSCollectionView>(this) draggingImageForItemsAtIndexPaths:[NSSet setWithArray:cocoon::internal::to_array(index_paths, [](const IndexPath& e) -> id
-                                                                                                                                    {
-                                                                                                                                        return cocoon::internal::native<::NSIndexPath>(e);
-                                                                                                                                    })]
-                                                                                         withEvent:cocoon::internal::native<::NSEvent>(event)
-                                                                                            offset:(::NSPointPointer)(drag_image_offset)]);
+                                                                                                                                                                              {
+                                                                                                                                                                                  return cocoon::internal::native<::NSIndexPath>(e);
+                                                                                                                                                                              })]
+                                                                                                                     withEvent:cocoon::internal::native<::NSEvent>(event)
+                                                                                                                        offset:(::NSPointPointer)(drag_image_offset)]);
     }
 
     Image CollectionView::dragging_image_for_items_at_indexes(const IndexSet& indexes, const Event& event, Point* drag_image_offset) const
@@ -584,25 +584,25 @@ namespace cocoon
     std::vector<IndexPath> CollectionView::index_paths_for_visible_items() const
     {
         return cocoon::internal::from_array<IndexPath>([[cocoon::internal::ns<::NSCollectionView>(this) indexPathsForVisibleItems] allObjects], [](id e) -> IndexPath
-                                         {
-                                             return cocoon::internal::wrap<IndexPath>((::NSIndexPath*)e);
-                                         });
+                                                       {
+                                                           return cocoon::internal::wrap<IndexPath>((::NSIndexPath*)e);
+                                                       });
     }
 
     std::vector<IndexPath> CollectionView::index_paths_for_visible_supplementary_elements_of_kind(const std::string& element_kind) const
     {
         return cocoon::internal::from_array<IndexPath>([[cocoon::internal::ns<::NSCollectionView>(this) indexPathsForVisibleSupplementaryElementsOfKind:cocoon::internal::to(element_kind)] allObjects], [](id e) -> IndexPath
-                                         {
-                                             return cocoon::internal::wrap<IndexPath>((::NSIndexPath*)e);
-                                         });
+                                                       {
+                                                           return cocoon::internal::wrap<IndexPath>((::NSIndexPath*)e);
+                                                       });
     }
 
     void CollectionView::insert_items_at_index_paths(const std::vector<IndexPath>& index_paths) const
     {
         [cocoon::internal::ns<::NSCollectionView>(this) insertItemsAtIndexPaths:[NSSet setWithArray:cocoon::internal::to_array(index_paths, [](const IndexPath& e) -> id
-                                                                                                   {
-                                                                                                       return cocoon::internal::native<::NSIndexPath>(e);
-                                                                                                   })]];
+                                                                                                                               {
+                                                                                                                                   return cocoon::internal::native<::NSIndexPath>(e);
+                                                                                                                               })]];
     }
 
     void CollectionView::insert_sections(const IndexSet& sections) const
@@ -688,9 +688,9 @@ namespace cocoon
     void CollectionView::reload_items_at_index_paths(const std::vector<IndexPath>& index_paths) const
     {
         [cocoon::internal::ns<::NSCollectionView>(this) reloadItemsAtIndexPaths:[NSSet setWithArray:cocoon::internal::to_array(index_paths, [](const IndexPath& e) -> id
-                                                                                                   {
-                                                                                                       return cocoon::internal::native<::NSIndexPath>(e);
-                                                                                                   })]];
+                                                                                                                               {
+                                                                                                                                   return cocoon::internal::native<::NSIndexPath>(e);
+                                                                                                                               })]];
     }
 
     void CollectionView::reload_sections(const IndexSet& sections) const
@@ -701,10 +701,10 @@ namespace cocoon
     void CollectionView::scroll_to_items_at_index_paths(const std::vector<IndexPath>& index_paths, CollectionViewScrollPosition scroll_position) const
     {
         [cocoon::internal::ns<::NSCollectionView>(this) scrollToItemsAtIndexPaths:[NSSet setWithArray:cocoon::internal::to_array(index_paths, [](const IndexPath& e) -> id
-                                                                                                     {
-                                                                                                         return cocoon::internal::native<::NSIndexPath>(e);
-                                                                                                     })]
-                                                     scrollPosition:static_cast<::NSCollectionViewScrollPosition>(scroll_position)];
+                                                                                                                                 {
+                                                                                                                                     return cocoon::internal::native<::NSIndexPath>(e);
+                                                                                                                                 })]
+                                                                   scrollPosition:static_cast<::NSCollectionViewScrollPosition>(scroll_position)];
     }
 
     void CollectionView::select_all(const Object& sender) const
@@ -715,10 +715,10 @@ namespace cocoon
     void CollectionView::select_items_at_index_paths(const std::vector<IndexPath>& index_paths, CollectionViewScrollPosition scroll_position) const
     {
         [cocoon::internal::ns<::NSCollectionView>(this) selectItemsAtIndexPaths:[NSSet setWithArray:cocoon::internal::to_array(index_paths, [](const IndexPath& e) -> id
-                                                                                                   {
-                                                                                                       return cocoon::internal::native<::NSIndexPath>(e);
-                                                                                                   })]
-                                                   scrollPosition:static_cast<::NSCollectionViewScrollPosition>(scroll_position)];
+                                                                                                                               {
+                                                                                                                                   return cocoon::internal::native<::NSIndexPath>(e);
+                                                                                                                               })]
+                                                                 scrollPosition:static_cast<::NSCollectionViewScrollPosition>(scroll_position)];
     }
 
     void CollectionView::set_dragging_source_operation_mask(DragOperation drag_operation_mask, bool local_destination) const
@@ -739,17 +739,17 @@ namespace cocoon
     std::vector<CollectionViewItem> CollectionView::visible_items() const
     {
         return cocoon::internal::from_array<CollectionViewItem>([cocoon::internal::ns<::NSCollectionView>(this) visibleItems], [](id e) -> CollectionViewItem
-                                                  {
-                                                      return cocoon::internal::wrap<CollectionViewItem>((::NSCollectionViewItem*)e);
-                                                  });
+                                                                {
+                                                                    return cocoon::internal::wrap<CollectionViewItem>((::NSCollectionViewItem*)e);
+                                                                });
     }
 
     std::vector<View> CollectionView::visible_supplementary_views_of_kind(const std::string& element_kind) const
     {
         return cocoon::internal::from_array<View>([cocoon::internal::ns<::NSCollectionView>(this) visibleSupplementaryViewsOfKind:cocoon::internal::to(element_kind)], [](id e) -> View
-                                    {
-                                        return cocoon::internal::wrap<View>((::NSView*)e);
-                                    });
+                                                  {
+                                                      return cocoon::internal::wrap<View>((::NSView*)e);
+                                                  });
     }
 
     bool CollectionView::allows_empty_selection() const
@@ -775,17 +775,17 @@ namespace cocoon
     std::vector<Color> CollectionView::background_colors() const
     {
         return cocoon::internal::from_array<Color>([cocoon::internal::ns<::NSCollectionView>(this) backgroundColors], [](id e) -> Color
-                                     {
-                                         return cocoon::internal::wrap<Color>((::NSColor*)e);
-                                     });
+                                                   {
+                                                       return cocoon::internal::wrap<Color>((::NSColor*)e);
+                                                   });
     }
 
     void CollectionView::set_background_colors(const std::vector<Color>& value) const
     {
         [cocoon::internal::ns<::NSCollectionView>(this) setBackgroundColors:cocoon::internal::to_array(value, [](const Color& e) -> id
-                                                                           {
-                                                                               return cocoon::internal::native<::NSColor>(e);
-                                                                           })];
+                                                                                                       {
+                                                                                                           return cocoon::internal::native<::NSColor>(e);
+                                                                                                       })];
     }
 
     View CollectionView::background_view() const
@@ -821,17 +821,17 @@ namespace cocoon
     std::vector<Object> CollectionView::content() const
     {
         return cocoon::internal::from_array<Object>([cocoon::internal::ns<::NSCollectionView>(this) content], [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     void CollectionView::set_content(const std::vector<Object>& value) const
     {
         [cocoon::internal::ns<::NSCollectionView>(this) setContent:cocoon::internal::to_array(value, [](const Object& e) -> id
-                                                                  {
-                                                                      return cocoon::internal::native_id(e);
-                                                                  })];
+                                                                                              {
+                                                                                                  return cocoon::internal::native_id(e);
+                                                                                              })];
     }
 
     bool CollectionView::is_first_responder() const
@@ -867,17 +867,17 @@ namespace cocoon
     std::vector<IndexPath> CollectionView::selection_index_paths() const
     {
         return cocoon::internal::from_array<IndexPath>([[cocoon::internal::ns<::NSCollectionView>(this) selectionIndexPaths] allObjects], [](id e) -> IndexPath
-                                         {
-                                             return cocoon::internal::wrap<IndexPath>((::NSIndexPath*)e);
-                                         });
+                                                       {
+                                                           return cocoon::internal::wrap<IndexPath>((::NSIndexPath*)e);
+                                                       });
     }
 
     void CollectionView::set_selection_index_paths(const std::vector<IndexPath>& value) const
     {
         [cocoon::internal::ns<::NSCollectionView>(this) setSelectionIndexPaths:[NSSet setWithArray:cocoon::internal::to_array(value, [](const IndexPath& e) -> id
-                                                                                                  {
-                                                                                                      return cocoon::internal::native<::NSIndexPath>(e);
-                                                                                                  })]];
+                                                                                                                              {
+                                                                                                                                  return cocoon::internal::native<::NSIndexPath>(e);
+                                                                                                                              })]];
     }
 
     IndexSet CollectionView::selection_indexes() const

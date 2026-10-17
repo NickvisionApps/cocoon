@@ -56,9 +56,9 @@ namespace cocoon
     std::vector<DraggingImageComponent> Cell::dragging_image_components_with_frame(const Rect& frame, const View& view) const
     {
         return cocoon::internal::from_array<DraggingImageComponent>([cocoon::internal::ns<::NSCell>(this) draggingImageComponentsWithFrame:cocoon::internal::to(frame) inView:cocoon::internal::native<::NSView>(view)], [](id e) -> DraggingImageComponent
-                                                      {
-                                                          return cocoon::internal::wrap<DraggingImageComponent>((::NSDraggingImageComponent*)e);
-                                                      });
+                                                                    {
+                                                                        return cocoon::internal::wrap<DraggingImageComponent>((::NSDraggingImageComponent*)e);
+                                                                    });
     }
 
     void Cell::draw_focus_ring_mask_with_frame(const Rect& cell_frame, const View& control_view) const

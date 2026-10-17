@@ -18,9 +18,9 @@ namespace cocoon
     std::vector<URL> DocumentController::ur_ls_from_running_open_panel() const
     {
         return cocoon::internal::from_array<URL>([cocoon::internal::ns<::NSDocumentController>(this) URLsFromRunningOpenPanel], [](id e) -> URL
-                                   {
-                                       return cocoon::internal::wrap<URL>((::NSURL*)e);
-                                   });
+                                                 {
+                                                     return cocoon::internal::wrap<URL>((::NSURL*)e);
+                                                 });
     }
 
     void DocumentController::add_document(const Document& document) const
@@ -31,19 +31,19 @@ namespace cocoon
     void DocumentController::begin_open_panel(const OpenPanel& open_panel, const std::vector<std::string>& in_types, std::function<void(std::int64_t)> completion_handler) const
     {
         [cocoon::internal::ns<::NSDocumentController>(this) beginOpenPanel:cocoon::internal::native<::NSOpenPanel>(open_panel)
-                                                    forTypes:cocoon::internal::to_array(in_types, [](const std::string& e) -> id
-                                                                          {
-                                                                              return cocoon::internal::to(e);
-                                                                          })
-                                           completionHandler:(completion_handler ? (void (^)(::NSInteger)) ^ void(::NSInteger a50_0) { completion_handler(static_cast<std::int64_t>(a50_0)); } : (void (^)(::NSInteger))nil)];
+                                                                  forTypes:cocoon::internal::to_array(in_types, [](const std::string& e) -> id
+                                                                                                      {
+                                                                                                          return cocoon::internal::to(e);
+                                                                                                      })
+                                                         completionHandler:(completion_handler ? (void (^)(::NSInteger)) ^ void(::NSInteger a50_0) { completion_handler(static_cast<std::int64_t>(a50_0)); } : (void (^)(::NSInteger))nil)];
     }
 
     void DocumentController::begin_open_panel_with_completion_handler(std::function<void(std::vector<URL>)> completion_handler) const
     {
         [cocoon::internal::ns<::NSDocumentController>(this) beginOpenPanelWithCompletionHandler:(completion_handler ? (void (^)(NSArray<NSURL*>*)) ^ void(NSArray * a51_0) { completion_handler(cocoon::internal::from_array<URL>(a51_0, [](id e) -> URL
-                                                                                                                                                                                                      {
-                                                                                                                                                                                                          return cocoon::internal::wrap<URL>((::NSURL*)e);
-                                                                                                                                                                                                      })); } : (void (^)(NSArray<NSURL*>*))nil)];
+                                                                                                                                                                                                                                  {
+                                                                                                                                                                                                                                      return cocoon::internal::wrap<URL>((::NSURL*)e);
+                                                                                                                                                                                                                                  })); } : (void (^)(NSArray<NSURL*>*))nil)];
     }
 
     void DocumentController::clear_recent_documents(const Object& sender) const
@@ -184,10 +184,10 @@ namespace cocoon
     std::int64_t DocumentController::run_modal_open_panel(const OpenPanel& open_panel, const std::vector<std::string>& types) const
     {
         return static_cast<std::int64_t>([cocoon::internal::ns<::NSDocumentController>(this) runModalOpenPanel:cocoon::internal::native<::NSOpenPanel>(open_panel)
-                                                                                        forTypes:cocoon::internal::to_array(types, [](const std::string& e) -> id
-                                                                                                              {
-                                                                                                                  return cocoon::internal::to(e);
-                                                                                                              })]);
+                                                                                                      forTypes:cocoon::internal::to_array(types, [](const std::string& e) -> id
+                                                                                                                                          {
+                                                                                                                                              return cocoon::internal::to(e);
+                                                                                                                                          })]);
     }
 
     void DocumentController::save_all_documents(const Object& sender) const
@@ -254,17 +254,17 @@ namespace cocoon
     std::vector<std::string> DocumentController::document_class_names() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSDocumentController>(this) documentClassNames], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::vector<Document> DocumentController::documents() const
     {
         return cocoon::internal::from_array<Document>([cocoon::internal::ns<::NSDocumentController>(this) documents], [](id e) -> Document
-                                        {
-                                            return cocoon::internal::wrap<Document>((::NSDocument*)e);
-                                        });
+                                                      {
+                                                          return cocoon::internal::wrap<Document>((::NSDocument*)e);
+                                                      });
     }
 
     bool DocumentController::has_edited_documents() const
@@ -280,9 +280,9 @@ namespace cocoon
     std::vector<URL> DocumentController::recent_document_urls() const
     {
         return cocoon::internal::from_array<URL>([cocoon::internal::ns<::NSDocumentController>(this) recentDocumentURLs], [](id e) -> URL
-                                   {
-                                       return cocoon::internal::wrap<URL>((::NSURL*)e);
-                                   });
+                                                 {
+                                                     return cocoon::internal::wrap<URL>((::NSURL*)e);
+                                                 });
     }
 
     DocumentController DocumentController::shared_document_controller()

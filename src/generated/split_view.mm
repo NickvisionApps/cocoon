@@ -253,9 +253,9 @@ namespace cocoon
     std::vector<View> SplitView::arranged_subviews() const
     {
         return cocoon::internal::from_array<View>([cocoon::internal::ns<::NSSplitView>(this) arrangedSubviews], [](id e) -> View
-                                    {
-                                        return cocoon::internal::wrap<View>((::NSView*)e);
-                                    });
+                                                  {
+                                                      return cocoon::internal::wrap<View>((::NSView*)e);
+                                                  });
     }
 
     bool SplitView::arranges_all_subviews() const

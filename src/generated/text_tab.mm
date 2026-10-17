@@ -4,15 +4,15 @@
 namespace cocoon
 {
     TextTab::TextTab(TextAlignment alignment, double loc, const std::map<std::string, Object>& options) : TextTab(Adopt{cocoon::internal::retain([[::NSTextTab alloc] initWithTextAlignment:static_cast<::NSTextAlignment>(alignment)
-                                                                                                                                                                     location:static_cast<::CGFloat>(loc)
-                                                                                                                                                                      options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
-                                                                                                                                                                                                {
-                                                                                                                                                                                                    return cocoon::internal::to(k);
-                                                                                                                                                                                                },
-                                                                                                                                                                                                [](const Object& v) -> id
-                                                                                                                                                                                                {
-                                                                                                                                                                                                    return cocoon::internal::native_id(v);
-                                                                                                                                                                                                })])})
+                                                                                                                                                                                   location:static_cast<::CGFloat>(loc)
+                                                                                                                                                                                    options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
+                                                                                                                                                                                                                            {
+                                                                                                                                                                                                                                return cocoon::internal::to(k);
+                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                            [](const Object& v) -> id
+                                                                                                                                                                                                                            {
+                                                                                                                                                                                                                                return cocoon::internal::native_id(v);
+                                                                                                                                                                                                                            })])})
     {
     }
 
@@ -50,13 +50,13 @@ namespace cocoon
     std::map<std::string, Object> TextTab::options() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::NSTextTab>(this) options], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     TextTabType TextTab::tab_stop_type() const

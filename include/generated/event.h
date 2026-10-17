@@ -1,5 +1,6 @@
 #pragma once
 
+#include "generated/availability.h"
 #include "generated/enums.h"
 #include "generated/structs.h"
 #include "object.h"
@@ -504,12 +505,14 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         double timestamp() const;
+#ifdef COCOON_MACOS_27
         /**
      * @brief Returns the `touchSwipeNavigationEnabled` property of `NSEvent`.
      * @details Returns the user's preference about using touch as a way to swipe between pages. This value is determined by the Touch preference panel for the current user.
      * @return The converted Objective-C result.
      */
         static bool is_touch_swipe_navigation_enabled();
+#endif
         /**
      * @brief Returns the `trackingArea` property of `NSEvent`.
      * @details -trackingArea returns the NSTrackingArea that generated this event. It is possible for there to be no trackingArea associated with the event in some cases where the event corresponds to a trackingRect installed with -[NSView addTrackingRect:owner:userData:assumeInside:], in which case nil is returned.

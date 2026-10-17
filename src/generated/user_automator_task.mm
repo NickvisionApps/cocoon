@@ -23,24 +23,24 @@ namespace cocoon
     std::map<std::string, Object> UserAutomatorTask::variables() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::NSUserAutomatorTask>(this) variables], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     void UserAutomatorTask::set_variables(const std::map<std::string, Object>& value) const
     {
         [cocoon::internal::ns<::NSUserAutomatorTask>(this) setVariables:cocoon::internal::to_dictionary(value, [](const std::string& k) -> id
-                                                                            {
-                                                                                return cocoon::internal::to(k);
-                                                                            },
-                                                                            [](const Object& v) -> id
-                                                                            {
-                                                                                return cocoon::internal::native_id(v);
-                                                                            })];
+                                                                                                        {
+                                                                                                            return cocoon::internal::to(k);
+                                                                                                        },
+                                                                                                        [](const Object& v) -> id
+                                                                                                        {
+                                                                                                            return cocoon::internal::native_id(v);
+                                                                                                        })];
     }
 }

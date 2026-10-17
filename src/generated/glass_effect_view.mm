@@ -35,6 +35,7 @@ namespace cocoon
         [cocoon::internal::ns<::NSGlassEffectView>(this) setCornerRadius:static_cast<::CGFloat>(value)];
     }
 
+#ifdef COCOON_MACOS_27
     bool GlassEffectView::effect_is_interactive() const
     {
         if (@available(macOS 27.0, *))
@@ -44,6 +45,8 @@ namespace cocoon
         return {};
     }
 
+#endif
+#ifdef COCOON_MACOS_27
     void GlassEffectView::set_effect_is_interactive(bool value) const
     {
         if (@available(macOS 27.0, *))
@@ -52,6 +55,7 @@ namespace cocoon
         }
     }
 
+#endif
     GlassStyle GlassEffectView::style() const
     {
         return static_cast<GlassStyle>([cocoon::internal::ns<::NSGlassEffectView>(this) style]);

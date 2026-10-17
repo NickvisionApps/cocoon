@@ -96,6 +96,7 @@ namespace cocoon
         return cocoon::internal::wrap<StatusBarButton>([cocoon::internal::ns<::NSStatusItem>(this) button]);
     }
 
+#ifdef COCOON_MACOS_27
     StatusItemExpandedInterfaceSession StatusItem::expanded_interface_session() const
     {
         if (@available(macOS 27.0, *))
@@ -105,6 +106,7 @@ namespace cocoon
         return StatusItemExpandedInterfaceSession(nullptr);
     }
 
+#endif
     double StatusItem::length() const
     {
         return static_cast<double>([cocoon::internal::ns<::NSStatusItem>(this) length]);

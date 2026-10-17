@@ -83,13 +83,13 @@ namespace cocoon
     void UserActivity::add_user_info_entries_from_dictionary(const std::vector<std::pair<Object, Object>>& other_dictionary) const
     {
         [cocoon::internal::ns<::NSUserActivity>(this) addUserInfoEntriesFromDictionary:cocoon::internal::to_dictionary(other_dictionary, [](const Object& k) -> id
-                                                                                           {
-                                                                                               return cocoon::internal::native_id(k);
-                                                                                           },
-                                                                                           [](const Object& v) -> id
-                                                                                           {
-                                                                                               return cocoon::internal::native_id(v);
-                                                                                           })];
+                                                                                                                       {
+                                                                                                                           return cocoon::internal::native_id(k);
+                                                                                                                       },
+                                                                                                                       [](const Object& v) -> id
+                                                                                                                       {
+                                                                                                                           return cocoon::internal::native_id(v);
+                                                                                                                       })];
     }
 
     void UserActivity::become_current() const
@@ -105,9 +105,9 @@ namespace cocoon
     void UserActivity::delete_saved_user_activities_with_persistent_identifiers(const std::vector<std::string>& persistent_identifiers, std::function<void()> handler)
     {
         [::NSUserActivity deleteSavedUserActivitiesWithPersistentIdentifiers:cocoon::internal::to_array(persistent_identifiers, [](const std::string& e) -> id
-                                                                                          {
-                                                                                              return cocoon::internal::to(e);
-                                                                                          })
+                                                                                                        {
+                                                                                                            return cocoon::internal::to(e);
+                                                                                                        })
                                                            completionHandler:(handler ? (void (^)(void)) ^ void() { handler(); } : (void (^)(void))nil)];
     }
 
@@ -174,17 +174,17 @@ namespace cocoon
     std::vector<std::string> UserActivity::keywords() const
     {
         return cocoon::internal::from_array<std::string>([[cocoon::internal::ns<::NSUserActivity>(this) keywords] allObjects], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void UserActivity::set_keywords(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSUserActivity>(this) setKeywords:[NSSet setWithArray:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                                                     {
-                                                                                         return cocoon::internal::to(e);
-                                                                                     })]];
+                                                                                                                 {
+                                                                                                                     return cocoon::internal::to(e);
+                                                                                                                 })]];
     }
 
     bool UserActivity::needs_save() const
@@ -220,17 +220,17 @@ namespace cocoon
     std::vector<std::string> UserActivity::required_user_info_keys() const
     {
         return cocoon::internal::from_array<std::string>([[cocoon::internal::ns<::NSUserActivity>(this) requiredUserInfoKeys] allObjects], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void UserActivity::set_required_user_info_keys(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSUserActivity>(this) setRequiredUserInfoKeys:[NSSet setWithArray:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                                                                 {
-                                                                                                     return cocoon::internal::to(e);
-                                                                                                 })]];
+                                                                                                                             {
+                                                                                                                                 return cocoon::internal::to(e);
+                                                                                                                             })]];
     }
 
     bool UserActivity::supports_continuation_streams() const
@@ -266,25 +266,25 @@ namespace cocoon
     std::vector<std::pair<Object, Object>> UserActivity::user_info() const
     {
         return cocoon::internal::from_dictionary<std::vector<std::pair<Object, Object>>>([cocoon::internal::ns<::NSUserActivity>(this) userInfo], [](id k) -> Object
-                                                                           {
-                                                                               return cocoon::internal::wrap<Object>(k);
-                                                                           },
-                                                                           [](id v) -> Object
-                                                                           {
-                                                                               return cocoon::internal::wrap<Object>(v);
-                                                                           });
+                                                                                         {
+                                                                                             return cocoon::internal::wrap<Object>(k);
+                                                                                         },
+                                                                                         [](id v) -> Object
+                                                                                         {
+                                                                                             return cocoon::internal::wrap<Object>(v);
+                                                                                         });
     }
 
     void UserActivity::set_user_info(const std::vector<std::pair<Object, Object>>& value) const
     {
         [cocoon::internal::ns<::NSUserActivity>(this) setUserInfo:cocoon::internal::to_dictionary(value, [](const Object& k) -> id
-                                                                      {
-                                                                          return cocoon::internal::native_id(k);
-                                                                      },
-                                                                      [](const Object& v) -> id
-                                                                      {
-                                                                          return cocoon::internal::native_id(v);
-                                                                      })];
+                                                                                                  {
+                                                                                                      return cocoon::internal::native_id(k);
+                                                                                                  },
+                                                                                                  [](const Object& v) -> id
+                                                                                                  {
+                                                                                                      return cocoon::internal::native_id(v);
+                                                                                                  })];
     }
 
     URL UserActivity::webpage_url() const

@@ -290,6 +290,7 @@ class ClassModel:
         self.ns = ns
         self.name = name
         self.tier = tier
+        self.since = None
         self.curated = {}
         self.alias = False
         self.base_ns = None

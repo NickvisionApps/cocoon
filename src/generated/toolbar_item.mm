@@ -159,17 +159,17 @@ namespace cocoon
     std::vector<std::string> ToolbarItem::possible_labels() const
     {
         return cocoon::internal::from_array<std::string>([[cocoon::internal::ns<::NSToolbarItem>(this) possibleLabels] allObjects], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void ToolbarItem::set_possible_labels(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSToolbarItem>(this) setPossibleLabels:[NSSet setWithArray:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                                                          {
-                                                                                              return cocoon::internal::to(e);
-                                                                                          })]];
+                                                                                                                      {
+                                                                                                                          return cocoon::internal::to(e);
+                                                                                                                      })]];
     }
 
     ToolbarItemStyle ToolbarItem::style() const
@@ -256,8 +256,8 @@ namespace cocoon
     {
         id host = (__bridge id)native;
         cocoon::internal::bind_action(host, host, [](id host, id sender)
-                        {
-                            cocoon::Signal<cocoon::ToolbarItem, void()>::emit((__bridge void*)host, "clicked");
-                        });
+                                      {
+                                          cocoon::Signal<cocoon::ToolbarItem, void()>::emit((__bridge void*)host, "clicked");
+                                      });
     }
 }

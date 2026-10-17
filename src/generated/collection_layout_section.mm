@@ -23,17 +23,17 @@ namespace cocoon
     std::vector<CollectionLayoutBoundarySupplementaryItem> CollectionLayoutSection::boundary_supplementary_items() const
     {
         return cocoon::internal::from_array<CollectionLayoutBoundarySupplementaryItem>([cocoon::internal::ns<::NSCollectionLayoutSection>(this) boundarySupplementaryItems], [](id e) -> CollectionLayoutBoundarySupplementaryItem
-                                                                         {
-                                                                             return cocoon::internal::wrap<CollectionLayoutBoundarySupplementaryItem>((::NSCollectionLayoutBoundarySupplementaryItem*)e);
-                                                                         });
+                                                                                       {
+                                                                                           return cocoon::internal::wrap<CollectionLayoutBoundarySupplementaryItem>((::NSCollectionLayoutBoundarySupplementaryItem*)e);
+                                                                                       });
     }
 
     void CollectionLayoutSection::set_boundary_supplementary_items(const std::vector<CollectionLayoutBoundarySupplementaryItem>& value) const
     {
         [cocoon::internal::ns<::NSCollectionLayoutSection>(this) setBoundarySupplementaryItems:cocoon::internal::to_array(value, [](const CollectionLayoutBoundarySupplementaryItem& e) -> id
-                                                                                              {
-                                                                                                  return cocoon::internal::native<::NSCollectionLayoutBoundarySupplementaryItem>(e);
-                                                                                              })];
+                                                                                                                          {
+                                                                                                                              return cocoon::internal::native<::NSCollectionLayoutBoundarySupplementaryItem>(e);
+                                                                                                                          })];
     }
 
     DirectionalEdgeInsets CollectionLayoutSection::content_insets() const
@@ -49,17 +49,17 @@ namespace cocoon
     std::vector<CollectionLayoutDecorationItem> CollectionLayoutSection::decoration_items() const
     {
         return cocoon::internal::from_array<CollectionLayoutDecorationItem>([cocoon::internal::ns<::NSCollectionLayoutSection>(this) decorationItems], [](id e) -> CollectionLayoutDecorationItem
-                                                              {
-                                                                  return cocoon::internal::wrap<CollectionLayoutDecorationItem>((::NSCollectionLayoutDecorationItem*)e);
-                                                              });
+                                                                            {
+                                                                                return cocoon::internal::wrap<CollectionLayoutDecorationItem>((::NSCollectionLayoutDecorationItem*)e);
+                                                                            });
     }
 
     void CollectionLayoutSection::set_decoration_items(const std::vector<CollectionLayoutDecorationItem>& value) const
     {
         [cocoon::internal::ns<::NSCollectionLayoutSection>(this) setDecorationItems:cocoon::internal::to_array(value, [](const CollectionLayoutDecorationItem& e) -> id
-                                                                                   {
-                                                                                       return cocoon::internal::native<::NSCollectionLayoutDecorationItem>(e);
-                                                                                   })];
+                                                                                                               {
+                                                                                                                   return cocoon::internal::native<::NSCollectionLayoutDecorationItem>(e);
+                                                                                                               })];
     }
 
     double CollectionLayoutSection::inter_group_spacing() const
@@ -104,9 +104,9 @@ namespace cocoon
             return [blk](std::vector<Object> a16_0, Point a16_1, Object a16_2) -> void
             {
                 blk(cocoon::internal::to_array(a16_0, [](const Object& e) -> id
-                                 {
-                                     return cocoon::internal::native_id(e);
-                                 }),
+                                               {
+                                                   return cocoon::internal::native_id(e);
+                                               }),
                     cocoon::internal::to(a16_1), cocoon::internal::native_id(a16_2));
             };
         }();
@@ -115,9 +115,9 @@ namespace cocoon
     void CollectionLayoutSection::set_visible_items_invalidation_handler(std::function<void(std::vector<Object>, Point, Object)> value) const
     {
         [cocoon::internal::ns<::NSCollectionLayoutSection>(this) setVisibleItemsInvalidationHandler:(value ? (::NSCollectionLayoutSectionVisibleItemsInvalidationHandler) ^ void(NSArray * a17_0, ::NSPoint a17_1, id a17_2) { value(cocoon::internal::from_array<Object>(a17_0, [](id e) -> Object
-                                                                                                                                                                                                                                              {
-                                                                                                                                                                                                                                                  return cocoon::internal::wrap<Object>(e);
-                                                                                                                                                                                                                                              }),
-                                                                                                                                                                                                                       cocoon::internal::from(a17_1), cocoon::internal::wrap<Object>(a17_2)); } : (::NSCollectionLayoutSectionVisibleItemsInvalidationHandler)nil)];
+                                                                                                                                                                                                                                                                          {
+                                                                                                                                                                                                                                                                              return cocoon::internal::wrap<Object>(e);
+                                                                                                                                                                                                                                                                          }),
+                                                                                                                                                                                                                                     cocoon::internal::from(a17_1), cocoon::internal::wrap<Object>(a17_2)); } : (::NSCollectionLayoutSectionVisibleItemsInvalidationHandler)nil)];
     }
 }

@@ -17,7 +17,7 @@ namespace cocoon
 
     void PrintPanel::add_accessory_controller(const ViewController& accessory_controller) const
     {
-        [cocoon::internal::ns<::NSPrintPanel>(this) addAccessoryController:cocoon::internal::native<::NSViewController>(accessory_controller)];
+        [cocoon::internal::ns<::NSPrintPanel>(this) addAccessoryController:cocoon::internal::native<NSViewController<NSPrintPanelAccessorizing>>(accessory_controller)];
     }
 
     void PrintPanel::begin_sheet_using_print_info(const PrintInfo& print_info, const Window& parent_window, std::function<void(PrintPanelResult)> handler) const
@@ -42,7 +42,7 @@ namespace cocoon
 
     void PrintPanel::remove_accessory_controller(const ViewController& accessory_controller) const
     {
-        [cocoon::internal::ns<::NSPrintPanel>(this) removeAccessoryController:cocoon::internal::native<::NSViewController>(accessory_controller)];
+        [cocoon::internal::ns<::NSPrintPanel>(this) removeAccessoryController:cocoon::internal::native<NSViewController<NSPrintPanelAccessorizing>>(accessory_controller)];
     }
 
     std::int64_t PrintPanel::run_modal() const
@@ -63,9 +63,9 @@ namespace cocoon
     std::vector<ViewController> PrintPanel::accessory_controllers() const
     {
         return cocoon::internal::from_array<ViewController>([cocoon::internal::ns<::NSPrintPanel>(this) accessoryControllers], [](id e) -> ViewController
-                                              {
-                                                  return cocoon::internal::wrap<ViewController>((::NSViewController*)e);
-                                              });
+                                                            {
+                                                                return cocoon::internal::wrap<ViewController>((::NSViewController*)e);
+                                                            });
     }
 
     std::string PrintPanel::help_anchor() const

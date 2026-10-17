@@ -22,9 +22,9 @@ namespace cocoon
     std::vector<TextRange> TextSelectionNavigation::deletion_ranges_for_text_selection(const TextSelection& text_selection, TextSelectionNavigationDirection direction, TextSelectionNavigationDestination destination, bool allows_decomposition) const
     {
         return cocoon::internal::from_array<TextRange>([cocoon::internal::ns<::NSTextSelectionNavigation>(this) deletionRangesForTextSelection:cocoon::internal::native<::NSTextSelection>(text_selection) direction:static_cast<::NSTextSelectionNavigationDirection>(direction) destination:static_cast<::NSTextSelectionNavigationDestination>(destination) allowsDecomposition:static_cast<::BOOL>(allows_decomposition)], [](id e) -> TextRange
-                                         {
-                                             return cocoon::internal::wrap<TextRange>((::NSTextRange*)e);
-                                         });
+                                                       {
+                                                           return cocoon::internal::wrap<TextRange>((::NSTextRange*)e);
+                                                       });
     }
 
     TextSelection TextSelectionNavigation::destination_selection_for_text_selection(const TextSelection& text_selection, TextSelectionNavigationDirection direction, TextSelectionNavigationDestination destination, bool extending, bool confined) const
@@ -55,18 +55,18 @@ namespace cocoon
     std::vector<TextSelection> TextSelectionNavigation::text_selections_interacting_at_point(const Point& point, const Object& container_location, const std::vector<TextSelection>& anchors, TextSelectionNavigationModifier modifiers, bool selecting, const Rect& bounds) const
     {
         return cocoon::internal::from_array<TextSelection>([cocoon::internal::ns<::NSTextSelectionNavigation>(this) textSelectionsInteractingAtPoint:cocoon::internal::to(point)
-                                                                                                   inContainerAtLocation:cocoon::internal::native_id(container_location)
-                                                                                                                 anchors:cocoon::internal::to_array(anchors, [](const TextSelection& e) -> id
-                                                                                                                                      {
-                                                                                                                                          return cocoon::internal::native<::NSTextSelection>(e);
-                                                                                                                                      })
-                                                                                                               modifiers:static_cast<::NSTextSelectionNavigationModifier>(modifiers)
-                                                                                                               selecting:static_cast<::BOOL>(selecting)
-                                                                                                                  bounds:cocoon::internal::to(bounds)],
-                                             [](id e) -> TextSelection
-                                             {
-                                                 return cocoon::internal::wrap<TextSelection>((::NSTextSelection*)e);
-                                             });
+                                                                                                                               inContainerAtLocation:cocoon::internal::native_id(container_location)
+                                                                                                                                             anchors:cocoon::internal::to_array(anchors, [](const TextSelection& e) -> id
+                                                                                                                                                                                {
+                                                                                                                                                                                    return cocoon::internal::native<::NSTextSelection>(e);
+                                                                                                                                                                                })
+                                                                                                                                           modifiers:static_cast<::NSTextSelectionNavigationModifier>(modifiers)
+                                                                                                                                           selecting:static_cast<::BOOL>(selecting)
+                                                                                                                                              bounds:cocoon::internal::to(bounds)],
+                                                           [](id e) -> TextSelection
+                                                           {
+                                                               return cocoon::internal::wrap<TextSelection>((::NSTextSelection*)e);
+                                                           });
     }
 
     bool TextSelectionNavigation::allows_non_contiguous_ranges() const

@@ -4,15 +4,15 @@
 namespace cocoon
 {
     RegularExpression::RegularExpression(const std::string& pattern, RegularExpressionOptions options) : RegularExpression(Adopt{cocoon::internal::retain([&]() -> id
-                                                                                                                                            {
-                                                                                                                                                NSError* __error = nil;
-                                                                                                                                                id __r = [[::NSRegularExpression alloc] initWithPattern:cocoon::internal::to(pattern) options:static_cast<::NSRegularExpressionOptions>(options) error:&__error];
-                                                                                                                                                if (!__r && __error)
-                                                                                                                                                {
-                                                                                                                                                    throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
-                                                                                                                                                }
-                                                                                                                                                return __r;
-                                                                                                                                            }())})
+                                                                                                                                                          {
+                                                                                                                                                              NSError* __error = nil;
+                                                                                                                                                              id __r = [[::NSRegularExpression alloc] initWithPattern:cocoon::internal::to(pattern) options:static_cast<::NSRegularExpressionOptions>(options) error:&__error];
+                                                                                                                                                              if (!__r && __error)
+                                                                                                                                                              {
+                                                                                                                                                                  throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
+                                                                                                                                                              }
+                                                                                                                                                              return __r;
+                                                                                                                                                          }())})
     {
     }
 
@@ -51,9 +51,9 @@ namespace cocoon
     std::vector<TextCheckingResult> RegularExpression::matches_in_string(const std::string& string, MatchingOptions options, const Range& range) const
     {
         return cocoon::internal::from_array<TextCheckingResult>([cocoon::internal::ns<::NSRegularExpression>(this) matchesInString:cocoon::internal::to(string) options:static_cast<::NSMatchingOptions>(options) range:cocoon::internal::to(range)], [](id e) -> TextCheckingResult
-                                                  {
-                                                      return cocoon::internal::wrap<TextCheckingResult>((::NSTextCheckingResult*)e);
-                                                  });
+                                                                {
+                                                                    return cocoon::internal::wrap<TextCheckingResult>((::NSTextCheckingResult*)e);
+                                                                });
     }
 
     std::uint64_t RegularExpression::number_of_matches_in_string(const std::string& string, MatchingOptions options, const Range& range) const

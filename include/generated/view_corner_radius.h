@@ -1,5 +1,8 @@
 #pragma once
 
+#include "generated/availability.h"
+
+#ifdef COCOON_MACOS_27
 #include "generated/enums.h"
 #include "generated/structs.h"
 #include "object.h"
@@ -36,6 +39,7 @@ namespace cocoon
         ViewCornerRadius(std::nullptr_t);
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit ViewCornerRadius(Adopt adopt);
+#ifdef COCOON_MACOS_27
         /**
      * @brief Calls `+[NSViewCornerRadius containerConcentricRadiusWithMinimum:]`.
      * @details A dynamic corner radius calculated based on the view’s container shape and limited to the provided minimum radius. - Parameter minimumRadius: Corner radius that’s applied when a corner of the view’s container is smaller than the specified radius.
@@ -43,6 +47,8 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         static ViewCornerRadius container_concentric_radius_with_minimum(double minimum_radius);
+#endif
+#ifdef COCOON_MACOS_27
         /**
      * @brief Calls `+[NSViewCornerRadius fixedRadius:]`.
      * @details Shorthand initializer for a configuration where all four corners are using a fixed corner radius in points. - Parameter radius: Radius for all the corners.
@@ -50,11 +56,16 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         static ViewCornerRadius fixed_radius(double radius);
+#endif
+#ifdef COCOON_MACOS_27
         /**
      * @brief Returns the `containerConcentricRadius` property of `NSViewCornerRadius`.
      * @details A dynamic corner radius calculated based on the view’s container shape.
      * @return The converted Objective-C result.
      */
         static ViewCornerRadius container_concentric_radius();
+#endif
     };
 }
+
+#endif

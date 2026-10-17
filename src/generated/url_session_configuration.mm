@@ -23,25 +23,25 @@ namespace cocoon
     std::vector<std::pair<Object, Object>> URLSessionConfiguration::http_additional_headers() const
     {
         return cocoon::internal::from_dictionary<std::vector<std::pair<Object, Object>>>([cocoon::internal::ns<::NSURLSessionConfiguration>(this) HTTPAdditionalHeaders], [](id k) -> Object
-                                                                           {
-                                                                               return cocoon::internal::wrap<Object>(k);
-                                                                           },
-                                                                           [](id v) -> Object
-                                                                           {
-                                                                               return cocoon::internal::wrap<Object>(v);
-                                                                           });
+                                                                                         {
+                                                                                             return cocoon::internal::wrap<Object>(k);
+                                                                                         },
+                                                                                         [](id v) -> Object
+                                                                                         {
+                                                                                             return cocoon::internal::wrap<Object>(v);
+                                                                                         });
     }
 
     void URLSessionConfiguration::set_http_additional_headers(const std::vector<std::pair<Object, Object>>& value) const
     {
         [cocoon::internal::ns<::NSURLSessionConfiguration>(this) setHTTPAdditionalHeaders:cocoon::internal::to_dictionary(value, [](const Object& k) -> id
-                                                                                              {
-                                                                                                  return cocoon::internal::native_id(k);
-                                                                                              },
-                                                                                              [](const Object& v) -> id
-                                                                                              {
-                                                                                                  return cocoon::internal::native_id(v);
-                                                                                              })];
+                                                                                                                          {
+                                                                                                                              return cocoon::internal::native_id(k);
+                                                                                                                          },
+                                                                                                                          [](const Object& v) -> id
+                                                                                                                          {
+                                                                                                                              return cocoon::internal::native_id(v);
+                                                                                                                          })];
     }
 
     HTTPCookieAcceptPolicy URLSessionConfiguration::http_cookie_accept_policy() const
@@ -194,25 +194,25 @@ namespace cocoon
     std::vector<std::pair<Object, Object>> URLSessionConfiguration::connection_proxy_dictionary() const
     {
         return cocoon::internal::from_dictionary<std::vector<std::pair<Object, Object>>>([cocoon::internal::ns<::NSURLSessionConfiguration>(this) connectionProxyDictionary], [](id k) -> Object
-                                                                           {
-                                                                               return cocoon::internal::wrap<Object>(k);
-                                                                           },
-                                                                           [](id v) -> Object
-                                                                           {
-                                                                               return cocoon::internal::wrap<Object>(v);
-                                                                           });
+                                                                                         {
+                                                                                             return cocoon::internal::wrap<Object>(k);
+                                                                                         },
+                                                                                         [](id v) -> Object
+                                                                                         {
+                                                                                             return cocoon::internal::wrap<Object>(v);
+                                                                                         });
     }
 
     void URLSessionConfiguration::set_connection_proxy_dictionary(const std::vector<std::pair<Object, Object>>& value) const
     {
         [cocoon::internal::ns<::NSURLSessionConfiguration>(this) setConnectionProxyDictionary:cocoon::internal::to_dictionary(value, [](const Object& k) -> id
-                                                                                                  {
-                                                                                                      return cocoon::internal::native_id(k);
-                                                                                                  },
-                                                                                                  [](const Object& v) -> id
-                                                                                                  {
-                                                                                                      return cocoon::internal::native_id(v);
-                                                                                                  })];
+                                                                                                                              {
+                                                                                                                                  return cocoon::internal::native_id(k);
+                                                                                                                              },
+                                                                                                                              [](const Object& v) -> id
+                                                                                                                              {
+                                                                                                                                  return cocoon::internal::native_id(v);
+                                                                                                                              })];
     }
 
     URLSessionConfiguration URLSessionConfiguration::default_session_configuration()
@@ -263,17 +263,17 @@ namespace cocoon
     std::vector<std::string> URLSessionConfiguration::protocol_classes() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSURLSessionConfiguration>(this) protocolClasses], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from(NSStringFromClass(e));
-                                           });
+                                                         {
+                                                             return cocoon::internal::from(NSStringFromClass(e));
+                                                         });
     }
 
     void URLSessionConfiguration::set_protocol_classes(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSURLSessionConfiguration>(this) setProtocolClasses:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                                                   {
-                                                                                       return NSClassFromString(cocoon::internal::to(e));
-                                                                                   })];
+                                                                                                               {
+                                                                                                                   return NSClassFromString(cocoon::internal::to(e));
+                                                                                                               })];
     }
 
     URLRequestCachePolicy URLSessionConfiguration::request_cache_policy() const

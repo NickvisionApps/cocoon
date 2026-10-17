@@ -33,10 +33,10 @@ namespace cocoon
     void AlignmentFeedbackFilter::perform_feedback(const std::vector<Object>& alignment_feedback_tokens, HapticFeedbackPerformanceTime performance_time) const
     {
         [cocoon::internal::ns<::NSAlignmentFeedbackFilter>(this) performFeedback:cocoon::internal::to_array(alignment_feedback_tokens, [](const Object& e) -> id
-                                                                                {
-                                                                                    return cocoon::internal::native_id(e);
-                                                                                })
-                                                   performanceTime:static_cast<::NSHapticFeedbackPerformanceTime>(performance_time)];
+                                                                                                            {
+                                                                                                                return cocoon::internal::native_id(e);
+                                                                                                            })
+                                                                 performanceTime:static_cast<::NSHapticFeedbackPerformanceTime>(performance_time)];
     }
 
     void AlignmentFeedbackFilter::update_with_event(const Event& event) const

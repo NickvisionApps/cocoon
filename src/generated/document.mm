@@ -4,41 +4,41 @@
 namespace cocoon
 {
     Document::Document(const URL& url_or_nil, const URL& contents_url, const std::string& type_name) : Document(Adopt{cocoon::internal::retain([&]() -> id
-                                                                                                                                 {
-                                                                                                                                     NSError* __error = nil;
-                                                                                                                                     id __r = [[::NSDocument alloc] initForURL:cocoon::internal::native<::NSURL>(url_or_nil) withContentsOfURL:cocoon::internal::native<::NSURL>(contents_url) ofType:cocoon::internal::to(type_name) error:&__error];
-                                                                                                                                     if (!__r && __error)
-                                                                                                                                     {
-                                                                                                                                         throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
-                                                                                                                                     }
-                                                                                                                                     return __r;
-                                                                                                                                 }())})
+                                                                                                                                               {
+                                                                                                                                                   NSError* __error = nil;
+                                                                                                                                                   id __r = [[::NSDocument alloc] initForURL:cocoon::internal::native<::NSURL>(url_or_nil) withContentsOfURL:cocoon::internal::native<::NSURL>(contents_url) ofType:cocoon::internal::to(type_name) error:&__error];
+                                                                                                                                                   if (!__r && __error)
+                                                                                                                                                   {
+                                                                                                                                                       throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
+                                                                                                                                                   }
+                                                                                                                                                   return __r;
+                                                                                                                                               }())})
     {
     }
 
     Document::Document(const URL& url, const std::string& type_name) : Document(Adopt{cocoon::internal::retain([&]() -> id
-                                                                                                 {
-                                                                                                     NSError* __error = nil;
-                                                                                                     id __r = [[::NSDocument alloc] initWithContentsOfURL:cocoon::internal::native<::NSURL>(url) ofType:cocoon::internal::to(type_name) error:&__error];
-                                                                                                     if (!__r && __error)
-                                                                                                     {
-                                                                                                         throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
-                                                                                                     }
-                                                                                                     return __r;
-                                                                                                 }())})
+                                                                                                               {
+                                                                                                                   NSError* __error = nil;
+                                                                                                                   id __r = [[::NSDocument alloc] initWithContentsOfURL:cocoon::internal::native<::NSURL>(url) ofType:cocoon::internal::to(type_name) error:&__error];
+                                                                                                                   if (!__r && __error)
+                                                                                                                   {
+                                                                                                                       throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
+                                                                                                                   }
+                                                                                                                   return __r;
+                                                                                                               }())})
     {
     }
 
     Document::Document(const std::string& type_name) : Document(Adopt{cocoon::internal::retain([&]() -> id
-                                                                                 {
-                                                                                     NSError* __error = nil;
-                                                                                     id __r = [[::NSDocument alloc] initWithType:cocoon::internal::to(type_name) error:&__error];
-                                                                                     if (!__r && __error)
-                                                                                     {
-                                                                                         throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
-                                                                                     }
-                                                                                     return __r;
-                                                                                 }())})
+                                                                                               {
+                                                                                                   NSError* __error = nil;
+                                                                                                   id __r = [[::NSDocument alloc] initWithType:cocoon::internal::to(type_name) error:&__error];
+                                                                                                   if (!__r && __error)
+                                                                                                   {
+                                                                                                       throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
+                                                                                                   }
+                                                                                                   return __r;
+                                                                                               }())})
     {
     }
 
@@ -67,9 +67,9 @@ namespace cocoon
     std::vector<std::string> Document::allowed_classes_for_restorable_state_key_path(const std::string& key_path)
     {
         return cocoon::internal::from_array<std::string>([::NSDocument allowedClassesForRestorableStateKeyPath:cocoon::internal::to(key_path)], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from(NSStringFromClass(e));
-                                           });
+                                                         {
+                                                             return cocoon::internal::from(NSStringFromClass(e));
+                                                         });
     }
 
     void Document::autosave_document_with_delegate(const Object& delegate, const std::string& did_autosave_selector, void* context_info) const
@@ -189,13 +189,13 @@ namespace cocoon
             throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
         }
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>(__r, [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     std::string Document::file_name_extension_for_type(const std::string& type_name, SaveOperationType save_operation) const
@@ -282,33 +282,33 @@ namespace cocoon
     void Document::perform_activity_with_synchronous_waiting(bool wait_synchronously, std::function<void(std::function<void()>)> block) const
     {
         [cocoon::internal::ns<::NSDocument>(this) performActivityWithSynchronousWaiting:static_cast<::BOOL>(wait_synchronously) usingBlock:(block ? (void (^)(void (^)(void))) ^ void(id a34_0) { block([&]() -> std::function<void()>
-                                                                                                                                                                                          {
-                                                                                                                                                                                              auto blk = (void (^)(void))(a34_0);
-                                                                                                                                                                                              if (!blk)
-                                                                                                                                                                                              {
-                                                                                                                                                                                                  return {};
-                                                                                                                                                                                              }
-                                                                                                                                                                                              return [blk]() -> void
-                                                                                                                                                                                              {
-                                                                                                                                                                                                  blk();
-                                                                                                                                                                                              };
-                                                                                                                                                                                          }()); } : (void (^)(void (^)(void)))nil)];
+                                                                                                                                                                                                        {
+                                                                                                                                                                                                            auto blk = (void (^)(void))(a34_0);
+                                                                                                                                                                                                            if (!blk)
+                                                                                                                                                                                                            {
+                                                                                                                                                                                                                return {};
+                                                                                                                                                                                                            }
+                                                                                                                                                                                                            return [blk]() -> void
+                                                                                                                                                                                                            {
+                                                                                                                                                                                                                blk();
+                                                                                                                                                                                                            };
+                                                                                                                                                                                                        }()); } : (void (^)(void (^)(void)))nil)];
     }
 
     void Document::perform_asynchronous_file_access_using_block(std::function<void(std::function<void()>)> block) const
     {
         [cocoon::internal::ns<::NSDocument>(this) performAsynchronousFileAccessUsingBlock:(block ? (void (^)(void (^)(void))) ^ void(id a36_0) { block([&]() -> std::function<void()>
-                                                                                                                                         {
-                                                                                                                                             auto blk = (void (^)(void))(a36_0);
-                                                                                                                                             if (!blk)
-                                                                                                                                             {
-                                                                                                                                                 return {};
-                                                                                                                                             }
-                                                                                                                                             return [blk]() -> void
-                                                                                                                                             {
-                                                                                                                                                 blk();
-                                                                                                                                             };
-                                                                                                                                         }()); } : (void (^)(void (^)(void)))nil)];
+                                                                                                                                                       {
+                                                                                                                                                           auto blk = (void (^)(void))(a36_0);
+                                                                                                                                                           if (!blk)
+                                                                                                                                                           {
+                                                                                                                                                               return {};
+                                                                                                                                                           }
+                                                                                                                                                           return [blk]() -> void
+                                                                                                                                                           {
+                                                                                                                                                               blk();
+                                                                                                                                                           };
+                                                                                                                                                       }()); } : (void (^)(void (^)(void)))nil)];
     }
 
     void Document::perform_synchronous_file_access_using_block(std::function<void()> block) const
@@ -349,9 +349,9 @@ namespace cocoon
     void Document::presented_item_did_change_ubiquity_attributes(const std::vector<std::string>& attributes) const
     {
         [cocoon::internal::ns<::NSDocument>(this) presentedItemDidChangeUbiquityAttributes:[NSSet setWithArray:cocoon::internal::to_array(attributes, [](const std::string& e) -> id
-                                                                                                              {
-                                                                                                                  return cocoon::internal::to(e);
-                                                                                                              })]];
+                                                                                                                                          {
+                                                                                                                                              return cocoon::internal::to(e);
+                                                                                                                                          })]];
     }
 
     void Document::presented_item_did_gain_version(const FileVersion& version) const
@@ -382,31 +382,31 @@ namespace cocoon
     void Document::print_document_with_settings(const std::map<std::string, Object>& print_settings, bool show_print_panel, const Object& delegate, const std::string& did_print_selector, void* context_info) const
     {
         [cocoon::internal::ns<::NSDocument>(this) printDocumentWithSettings:cocoon::internal::to_dictionary(print_settings, [](const std::string& k) -> id
-                                                                                {
-                                                                                    return cocoon::internal::to(k);
-                                                                                },
-                                                                                [](const Object& v) -> id
-                                                                                {
-                                                                                    return cocoon::internal::native_id(v);
-                                                                                })
-                                               showPrintPanel:static_cast<::BOOL>(show_print_panel)
-                                                     delegate:cocoon::internal::native_id(delegate)
-                                             didPrintSelector:NSSelectorFromString(cocoon::internal::to(did_print_selector))
-                                                  contextInfo:context_info];
+                                                                                                            {
+                                                                                                                return cocoon::internal::to(k);
+                                                                                                            },
+                                                                                                            [](const Object& v) -> id
+                                                                                                            {
+                                                                                                                return cocoon::internal::native_id(v);
+                                                                                                            })
+                                                             showPrintPanel:static_cast<::BOOL>(show_print_panel)
+                                                                   delegate:cocoon::internal::native_id(delegate)
+                                                           didPrintSelector:NSSelectorFromString(cocoon::internal::to(did_print_selector))
+                                                                contextInfo:context_info];
     }
 
     PrintOperation Document::print_operation_with_settings(const std::map<std::string, Object>& print_settings) const
     {
         NSError* __error = nil;
         auto __r = [cocoon::internal::ns<::NSDocument>(this) printOperationWithSettings:cocoon::internal::to_dictionary(print_settings, [](const std::string& k) -> id
-                                                                                            {
-                                                                                                return cocoon::internal::to(k);
-                                                                                            },
-                                                                                            [](const Object& v) -> id
-                                                                                            {
-                                                                                                return cocoon::internal::native_id(v);
-                                                                                            })
-                                                                    error:&__error];
+                                                                                                                        {
+                                                                                                                            return cocoon::internal::to(k);
+                                                                                                                        },
+                                                                                                                        [](const Object& v) -> id
+                                                                                                                        {
+                                                                                                                            return cocoon::internal::native_id(v);
+                                                                                                                        })
+                                                                                  error:&__error];
         if (__error)
         {
             throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
@@ -450,33 +450,33 @@ namespace cocoon
     void Document::relinquish_presented_item_to_reader(std::function<void(std::function<void()>)> reader) const
     {
         [cocoon::internal::ns<::NSDocument>(this) relinquishPresentedItemToReader:(reader ? (void (^)(void (^)(void))) ^ void(id a39_0) { reader([&]() -> std::function<void()>
-                                                                                                                                   {
-                                                                                                                                       auto blk = (void (^)(void))(a39_0);
-                                                                                                                                       if (!blk)
-                                                                                                                                       {
-                                                                                                                                           return {};
-                                                                                                                                       }
-                                                                                                                                       return [blk]() -> void
-                                                                                                                                       {
-                                                                                                                                           blk();
-                                                                                                                                       };
-                                                                                                                                   }()); } : (void (^)(void (^)(void)))nil)];
+                                                                                                                                                 {
+                                                                                                                                                     auto blk = (void (^)(void))(a39_0);
+                                                                                                                                                     if (!blk)
+                                                                                                                                                     {
+                                                                                                                                                         return {};
+                                                                                                                                                     }
+                                                                                                                                                     return [blk]() -> void
+                                                                                                                                                     {
+                                                                                                                                                         blk();
+                                                                                                                                                     };
+                                                                                                                                                 }()); } : (void (^)(void (^)(void)))nil)];
     }
 
     void Document::relinquish_presented_item_to_writer(std::function<void(std::function<void()>)> writer) const
     {
         [cocoon::internal::ns<::NSDocument>(this) relinquishPresentedItemToWriter:(writer ? (void (^)(void (^)(void))) ^ void(id a41_0) { writer([&]() -> std::function<void()>
-                                                                                                                                   {
-                                                                                                                                       auto blk = (void (^)(void))(a41_0);
-                                                                                                                                       if (!blk)
-                                                                                                                                       {
-                                                                                                                                           return {};
-                                                                                                                                       }
-                                                                                                                                       return [blk]() -> void
-                                                                                                                                       {
-                                                                                                                                           blk();
-                                                                                                                                       };
-                                                                                                                                   }()); } : (void (^)(void (^)(void)))nil)];
+                                                                                                                                                 {
+                                                                                                                                                     auto blk = (void (^)(void))(a41_0);
+                                                                                                                                                     if (!blk)
+                                                                                                                                                     {
+                                                                                                                                                         return {};
+                                                                                                                                                     }
+                                                                                                                                                     return [blk]() -> void
+                                                                                                                                                     {
+                                                                                                                                                         blk();
+                                                                                                                                                     };
+                                                                                                                                                 }()); } : (void (^)(void (^)(void)))nil)];
     }
 
     void Document::remove_window_controller(const WindowController& window_controller) const
@@ -678,9 +678,9 @@ namespace cocoon
     std::vector<std::string> Document::writable_types_for_save_operation(SaveOperationType save_operation) const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSDocument>(this) writableTypesForSaveOperation:static_cast<::NSSaveOperationType>(save_operation)], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     bool Document::write_safely_to_url(const URL& url, const std::string& type_name, SaveOperationType save_operation) const
@@ -879,9 +879,9 @@ namespace cocoon
     std::vector<std::string> Document::observed_presented_item_ubiquity_attributes() const
     {
         return cocoon::internal::from_array<std::string>([[cocoon::internal::ns<::NSDocument>(this) observedPresentedItemUbiquityAttributes] allObjects], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     URL Document::presented_item_url() const
@@ -897,17 +897,17 @@ namespace cocoon
     std::vector<Object> Document::preview_representable_activity_items() const
     {
         return cocoon::internal::from_array<Object>([cocoon::internal::ns<::NSDocument>(this) previewRepresentableActivityItems], [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     void Document::set_preview_representable_activity_items(const std::vector<Object>& value) const
     {
         [cocoon::internal::ns<::NSDocument>(this) setPreviewRepresentableActivityItems:cocoon::internal::to_array(value, [](const Object& e) -> id
-                                                                                      {
-                                                                                          return cocoon::internal::native_id(e);
-                                                                                      })];
+                                                                                                                  {
+                                                                                                                      return cocoon::internal::native_id(e);
+                                                                                                                  })];
     }
 
     PrintInfo Document::print_info() const
@@ -923,17 +923,17 @@ namespace cocoon
     std::vector<std::string> Document::readable_types()
     {
         return cocoon::internal::from_array<std::string>([::NSDocument readableTypes], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::vector<std::string> Document::restorable_state_key_paths()
     {
         return cocoon::internal::from_array<std::string>([::NSDocument restorableStateKeyPaths], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     bool Document::save_panel_shows_file_formats_control() const
@@ -974,9 +974,9 @@ namespace cocoon
     std::vector<WindowController> Document::window_controllers() const
     {
         return cocoon::internal::from_array<WindowController>([cocoon::internal::ns<::NSDocument>(this) windowControllers], [](id e) -> WindowController
-                                                {
-                                                    return cocoon::internal::wrap<WindowController>((::NSWindowController*)e);
-                                                });
+                                                              {
+                                                                  return cocoon::internal::wrap<WindowController>((::NSWindowController*)e);
+                                                              });
     }
 
     Window Document::window_for_sheet() const
@@ -992,8 +992,8 @@ namespace cocoon
     std::vector<std::string> Document::writable_types()
     {
         return cocoon::internal::from_array<std::string>([::NSDocument writableTypes], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 }

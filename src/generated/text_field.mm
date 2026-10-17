@@ -113,14 +113,14 @@
         return {};
     }
     auto __r = cocoon::Signal<cocoon::TextField, std::vector<std::string>(cocoon::TextView, std::vector<std::string>, cocoon::Range, std::int64_t*)>::emit((__bridge void*)strongHost, "text_view_completions_for_partial_word_range_index_of_selected_item", cocoon::internal::wrap<cocoon::TextView>(textView), cocoon::internal::from_array<std::string>(words, [](id e) -> std::string
-                                                                                                                                                                                                                                                                                                                                {
-                                                                                                                                                                                                                                                                                                                                    return cocoon::internal::from((NSString*)e);
-                                                                                                                                                                                                                                                                                                                                }),
+                                                                                                                                                                                                                                                                                                                                                            {
+                                                                                                                                                                                                                                                                                                                                                                return cocoon::internal::from((NSString*)e);
+                                                                                                                                                                                                                                                                                                                                                            }),
                                                                                                                                                            cocoon::internal::from(charRange), (std::int64_t*)(index));
     return cocoon::internal::to_array(__r, [](const std::string& e) -> id
-                        {
-                            return cocoon::internal::to(e);
-                        });
+                                      {
+                                          return cocoon::internal::to(e);
+                                      });
 }
 
 - (NSArray*)textField:(NSTextField*)textField textView:(NSTextView*)textView candidatesForSelectedRange:(NSRange)selectedRange
@@ -132,9 +132,9 @@
     }
     auto __r = cocoon::Signal<cocoon::TextField, std::vector<cocoon::Object>(cocoon::TextView, cocoon::Range)>::emit((__bridge void*)strongHost, "text_view_candidates_for_selected_range", cocoon::internal::wrap<cocoon::TextView>(textView), cocoon::internal::from(selectedRange));
     return cocoon::internal::to_array(__r, [](const cocoon::Object& e) -> id
-                        {
-                            return cocoon::internal::native_id(e);
-                        });
+                                      {
+                                          return cocoon::internal::native_id(e);
+                                      });
 }
 
 - (NSArray<NSTextCheckingResult*>*)textField:(NSTextField*)textField textView:(NSTextView*)textView candidates:(NSArray<NSTextCheckingResult*>*)candidates forSelectedRange:(NSRange)selectedRange
@@ -145,14 +145,14 @@
         return {};
     }
     auto __r = cocoon::Signal<cocoon::TextField, std::vector<cocoon::TextCheckingResult>(cocoon::TextView, std::vector<cocoon::TextCheckingResult>, cocoon::Range)>::emit((__bridge void*)strongHost, "text_field_text_view_candidates_for_selected_range", cocoon::internal::wrap<cocoon::TextView>(textView), cocoon::internal::from_array<cocoon::TextCheckingResult>(candidates, [](id e) -> cocoon::TextCheckingResult
-                                                                                                                                                                                                                                                                                                                                             {
-                                                                                                                                                                                                                                                                                                                                                 return cocoon::internal::wrap<cocoon::TextCheckingResult>((::NSTextCheckingResult*)e);
-                                                                                                                                                                                                                                                                                                                                             }),
+                                                                                                                                                                                                                                                                                                                                                                         {
+                                                                                                                                                                                                                                                                                                                                                                             return cocoon::internal::wrap<cocoon::TextCheckingResult>((::NSTextCheckingResult*)e);
+                                                                                                                                                                                                                                                                                                                                                                         }),
                                                                                                                                                                           cocoon::internal::from(selectedRange));
     return cocoon::internal::to_array(__r, [](const cocoon::TextCheckingResult& e) -> id
-                        {
-                            return cocoon::internal::native<::NSTextCheckingResult>(e);
-                        });
+                                      {
+                                          return cocoon::internal::native<::NSTextCheckingResult>(e);
+                                      });
 }
 
 - (BOOL)textField:(NSTextField*)textField textView:(NSTextView*)textView shouldSelectCandidateAtIndex:(NSUInteger)index
@@ -471,17 +471,17 @@ namespace cocoon
     std::vector<AttributedString> TextField::placeholder_attributed_strings() const
     {
         return cocoon::internal::from_array<AttributedString>([cocoon::internal::ns<::NSTextField>(this) placeholderAttributedStrings], [](id e) -> AttributedString
-                                                {
-                                                    return cocoon::internal::wrap<AttributedString>((::NSAttributedString*)e);
-                                                });
+                                                              {
+                                                                  return cocoon::internal::wrap<AttributedString>((::NSAttributedString*)e);
+                                                              });
     }
 
     void TextField::set_placeholder_attributed_strings(const std::vector<AttributedString>& value) const
     {
         [cocoon::internal::ns<::NSTextField>(this) setPlaceholderAttributedStrings:cocoon::internal::to_array(value, [](const AttributedString& e) -> id
-                                                                                  {
-                                                                                      return cocoon::internal::native<::NSAttributedString>(e);
-                                                                                  })];
+                                                                                                              {
+                                                                                                                  return cocoon::internal::native<::NSAttributedString>(e);
+                                                                                                              })];
     }
 
     std::string TextField::placeholder_string() const
@@ -497,17 +497,17 @@ namespace cocoon
     std::vector<std::string> TextField::placeholder_strings() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSTextField>(this) placeholderStrings], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void TextField::set_placeholder_strings(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSTextField>(this) setPlaceholderStrings:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                                        {
-                                                                            return cocoon::internal::to(e);
-                                                                        })];
+                                                                                                    {
+                                                                                                        return cocoon::internal::to(e);
+                                                                                                    })];
     }
 
     double TextField::preferred_max_layout_width() const
@@ -554,18 +554,18 @@ namespace cocoon
     {
         id host = (__bridge id)native;
         cocoon::internal::bind_action(host, host, [](id host, id sender)
-                        {
-                            cocoon::Signal<cocoon::TextField, void()>::emit((__bridge void*)host, "editing_finished");
-                        });
+                                      {
+                                          cocoon::Signal<cocoon::TextField, void()>::emit((__bridge void*)host, "editing_finished");
+                                      });
     }
 
     void TextField::bind_others_(void* native)
     {
         id host = (__bridge id)native;
         cocoon::internal::observe(host, host, NSControlTextDidChangeNotification, [](id host, NSNotification* note)
-                    {
-                        cocoon::Signal<cocoon::TextField, void(std::string)>::emit((__bridge void*)host, "text_changed", cocoon::internal::from(((NSTextField*)note.object).stringValue));
-                    });
+                                  {
+                                      cocoon::Signal<cocoon::TextField, void(std::string)>::emit((__bridge void*)host, "text_changed", cocoon::internal::from(((NSTextField*)note.object).stringValue));
+                                  });
     }
 
     void TextField::install_delegate_delegate_(void* native)

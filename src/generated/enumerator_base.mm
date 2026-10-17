@@ -23,8 +23,8 @@ namespace cocoon
     std::vector<Object> EnumeratorBase::all_objects() const
     {
         return cocoon::internal::from_array<Object>([cocoon::internal::ns<::NSEnumerator>(this) allObjects], [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 }

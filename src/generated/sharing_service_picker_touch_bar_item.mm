@@ -18,17 +18,17 @@
         return {};
     }
     auto __r = cocoon::Signal<cocoon::SharingServicePickerTouchBarItem, std::vector<cocoon::SharingService>(std::vector<cocoon::Object>, std::vector<cocoon::SharingService>)>::emit((__bridge void*)strongHost, "sharing_services_for_items_proposed_sharing_services", cocoon::internal::from_array<cocoon::Object>(items, [](id e) -> cocoon::Object
-                                                                                                                                                                                                                                                                                                        {
-                                                                                                                                                                                                                                                                                                            return cocoon::internal::wrap<cocoon::Object>(e);
-                                                                                                                                                                                                                                                                                                        }),
+                                                                                                                                                                                                                                                                                                                      {
+                                                                                                                                                                                                                                                                                                                          return cocoon::internal::wrap<cocoon::Object>(e);
+                                                                                                                                                                                                                                                                                                                      }),
                                                                                                                                                                                      cocoon::internal::from_array<cocoon::SharingService>(proposedServices, [](id e) -> cocoon::SharingService
-                                                                                                                                                                                                                            {
-                                                                                                                                                                                                                                return cocoon::internal::wrap<cocoon::SharingService>((::NSSharingService*)e);
-                                                                                                                                                                                                                            }));
+                                                                                                                                                                                                                                          {
+                                                                                                                                                                                                                                              return cocoon::internal::wrap<cocoon::SharingService>((::NSSharingService*)e);
+                                                                                                                                                                                                                                          }));
     return cocoon::internal::to_array(__r, [](const cocoon::SharingService& e) -> id
-                        {
-                            return cocoon::internal::native<::NSSharingService>(e);
-                        });
+                                      {
+                                          return cocoon::internal::native<::NSSharingService>(e);
+                                      });
 }
 
 - (id<NSSharingServiceDelegate>)sharingServicePicker:(NSSharingServicePicker*)sharingServicePicker delegateForSharingService:(NSSharingService*)sharingService
@@ -61,9 +61,9 @@
     }
     auto __r = cocoon::Signal<cocoon::SharingServicePickerTouchBarItem, std::vector<cocoon::SharingCollaborationModeRestriction>()>::emit((__bridge void*)strongHost, "collaboration_mode_restrictions");
     return cocoon::internal::to_array(__r, [](const cocoon::SharingCollaborationModeRestriction& e) -> id
-                        {
-                            return cocoon::internal::native<::NSSharingCollaborationModeRestriction>(e);
-                        });
+                                      {
+                                          return cocoon::internal::native<::NSSharingCollaborationModeRestriction>(e);
+                                      });
 }
 
 - (NSArray*)itemsForSharingServicePickerTouchBarItem:(NSSharingServicePickerTouchBarItem*)pickerTouchBarItem
@@ -75,9 +75,9 @@
     }
     auto __r = cocoon::Signal<cocoon::SharingServicePickerTouchBarItem, std::vector<cocoon::Object>()>::emit((__bridge void*)strongHost, "items_for_sharing_service_picker_touch_bar_item");
     return cocoon::internal::to_array(__r, [](const cocoon::Object& e) -> id
-                        {
-                            return cocoon::internal::native_id(e);
-                        });
+                                      {
+                                          return cocoon::internal::native_id(e);
+                                      });
 }
 
 - (BOOL)respondsToSelector:(SEL)selector

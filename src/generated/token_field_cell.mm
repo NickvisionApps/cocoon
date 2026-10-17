@@ -19,9 +19,9 @@
     }
     auto __r = cocoon::Signal<cocoon::TokenFieldCell, std::vector<cocoon::Object>(std::string, std::int64_t, std::int64_t*)>::emit((__bridge void*)strongHost, "completions_for_substring_index_of_token_index_of_selected_item", cocoon::internal::from(substring), static_cast<std::int64_t>(tokenIndex), (std::int64_t*)(selectedIndex));
     return cocoon::internal::to_array(__r, [](const cocoon::Object& e) -> id
-                        {
-                            return cocoon::internal::native_id(e);
-                        });
+                                      {
+                                          return cocoon::internal::native_id(e);
+                                      });
 }
 
 - (NSArray*)tokenFieldCell:(NSTokenFieldCell*)tokenFieldCell shouldAddObjects:(NSArray*)tokens atIndex:(NSUInteger)index
@@ -32,14 +32,14 @@
         return {};
     }
     auto __r = cocoon::Signal<cocoon::TokenFieldCell, std::vector<cocoon::Object>(std::vector<cocoon::Object>, std::uint64_t)>::emit((__bridge void*)strongHost, "should_add_objects_at_index", cocoon::internal::from_array<cocoon::Object>(tokens, [](id e) -> cocoon::Object
-                                                                                                                                                                                                                               {
-                                                                                                                                                                                                                                   return cocoon::internal::wrap<cocoon::Object>(e);
-                                                                                                                                                                                                                               }),
+                                                                                                                                                                                                                                             {
+                                                                                                                                                                                                                                                 return cocoon::internal::wrap<cocoon::Object>(e);
+                                                                                                                                                                                                                                             }),
                                                                                                                                      static_cast<std::uint64_t>(index));
     return cocoon::internal::to_array(__r, [](const cocoon::Object& e) -> id
-                        {
-                            return cocoon::internal::native_id(e);
-                        });
+                                      {
+                                          return cocoon::internal::native_id(e);
+                                      });
 }
 
 - (NSString*)tokenFieldCell:(NSTokenFieldCell*)tokenFieldCell displayStringForRepresentedObject:(id)representedObject
@@ -83,9 +83,9 @@
         return {};
     }
     auto __r = cocoon::Signal<cocoon::TokenFieldCell, bool(std::vector<cocoon::Object>, cocoon::Pasteboard)>::emit((__bridge void*)strongHost, "write_represented_objects_to_pasteboard", cocoon::internal::from_array<cocoon::Object>(objects, [](id e) -> cocoon::Object
-                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                             return cocoon::internal::wrap<cocoon::Object>(e);
-                                                                                                                                                                                                                         }),
+                                                                                                                                                                                                                                       {
+                                                                                                                                                                                                                                           return cocoon::internal::wrap<cocoon::Object>(e);
+                                                                                                                                                                                                                                       }),
                                                                                                                    cocoon::internal::wrap<cocoon::Pasteboard>(pboard));
     return static_cast<::BOOL>(__r);
 }
@@ -99,9 +99,9 @@
     }
     auto __r = cocoon::Signal<cocoon::TokenFieldCell, std::vector<cocoon::Object>(cocoon::Pasteboard)>::emit((__bridge void*)strongHost, "read_from_pasteboard", cocoon::internal::wrap<cocoon::Pasteboard>(pboard));
     return cocoon::internal::to_array(__r, [](const cocoon::Object& e) -> id
-                        {
-                            return cocoon::internal::native_id(e);
-                        });
+                                      {
+                                          return cocoon::internal::native_id(e);
+                                      });
 }
 
 - (NSMenu*)tokenFieldCell:(NSTokenFieldCell*)tokenFieldCell menuForRepresentedObject:(id)representedObject

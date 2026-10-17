@@ -32,9 +32,9 @@ namespace cocoon
     std::vector<Object> UserDefaults::array_for_key(const std::string& default_name) const
     {
         return cocoon::internal::from_array<Object>([cocoon::internal::ns<::NSUserDefaults>(this) arrayForKey:cocoon::internal::to(default_name)], [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     bool UserDefaults::bool_for_key(const std::string& default_name) const
@@ -50,25 +50,25 @@ namespace cocoon
     std::map<std::string, Object> UserDefaults::dictionary_for_key(const std::string& default_name) const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::NSUserDefaults>(this) dictionaryForKey:cocoon::internal::to(default_name)], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     std::map<std::string, Object> UserDefaults::dictionary_representation() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::NSUserDefaults>(this) dictionaryRepresentation], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     double UserDefaults::double_for_key(const std::string& default_name) const
@@ -104,25 +104,25 @@ namespace cocoon
     std::map<std::string, Object> UserDefaults::persistent_domain_for_name(const std::string& domain_name) const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::NSUserDefaults>(this) persistentDomainForName:cocoon::internal::to(domain_name)], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     void UserDefaults::register_defaults(const std::map<std::string, Object>& registration_dictionary) const
     {
         [cocoon::internal::ns<::NSUserDefaults>(this) registerDefaults:cocoon::internal::to_dictionary(registration_dictionary, [](const std::string& k) -> id
-                                                                           {
-                                                                               return cocoon::internal::to(k);
-                                                                           },
-                                                                           [](const Object& v) -> id
-                                                                           {
-                                                                               return cocoon::internal::native_id(v);
-                                                                           })];
+                                                                                                       {
+                                                                                                           return cocoon::internal::to(k);
+                                                                                                       },
+                                                                                                       [](const Object& v) -> id
+                                                                                                       {
+                                                                                                           return cocoon::internal::native_id(v);
+                                                                                                       })];
     }
 
     void UserDefaults::remove_object_for_key(const std::string& default_name) const
@@ -178,14 +178,14 @@ namespace cocoon
     void UserDefaults::set_persistent_domain(const std::map<std::string, Object>& domain, const std::string& domain_name) const
     {
         [cocoon::internal::ns<::NSUserDefaults>(this) setPersistentDomain:cocoon::internal::to_dictionary(domain, [](const std::string& k) -> id
-                                                                              {
-                                                                                  return cocoon::internal::to(k);
-                                                                              },
-                                                                              [](const Object& v) -> id
-                                                                              {
-                                                                                  return cocoon::internal::native_id(v);
-                                                                              })
-                                                    forName:cocoon::internal::to(domain_name)];
+                                                                                                          {
+                                                                                                              return cocoon::internal::to(k);
+                                                                                                          },
+                                                                                                          [](const Object& v) -> id
+                                                                                                          {
+                                                                                                              return cocoon::internal::native_id(v);
+                                                                                                          })
+                                                                  forName:cocoon::internal::to(domain_name)];
     }
 
     void UserDefaults::set_url(const URL& url, const std::string& default_name) const
@@ -196,22 +196,22 @@ namespace cocoon
     void UserDefaults::set_volatile_domain(const std::map<std::string, Object>& domain, const std::string& domain_name) const
     {
         [cocoon::internal::ns<::NSUserDefaults>(this) setVolatileDomain:cocoon::internal::to_dictionary(domain, [](const std::string& k) -> id
-                                                                            {
-                                                                                return cocoon::internal::to(k);
-                                                                            },
-                                                                            [](const Object& v) -> id
-                                                                            {
-                                                                                return cocoon::internal::native_id(v);
-                                                                            })
-                                                  forName:cocoon::internal::to(domain_name)];
+                                                                                                        {
+                                                                                                            return cocoon::internal::to(k);
+                                                                                                        },
+                                                                                                        [](const Object& v) -> id
+                                                                                                        {
+                                                                                                            return cocoon::internal::native_id(v);
+                                                                                                        })
+                                                                forName:cocoon::internal::to(domain_name)];
     }
 
     std::vector<std::string> UserDefaults::string_array_for_key(const std::string& default_name) const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSUserDefaults>(this) stringArrayForKey:cocoon::internal::to(default_name)], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::string UserDefaults::string_for_key(const std::string& default_name) const
@@ -227,13 +227,13 @@ namespace cocoon
     std::map<std::string, Object> UserDefaults::volatile_domain_for_name(const std::string& domain_name) const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::NSUserDefaults>(this) volatileDomainForName:cocoon::internal::to(domain_name)], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     UserDefaults UserDefaults::standard_user_defaults()
@@ -244,8 +244,8 @@ namespace cocoon
     std::vector<std::string> UserDefaults::volatile_domain_names() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSUserDefaults>(this) volatileDomainNames], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 }

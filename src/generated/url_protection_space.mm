@@ -27,9 +27,9 @@ namespace cocoon
     std::vector<std::vector<std::uint8_t>> URLProtectionSpace::distinguished_names() const
     {
         return cocoon::internal::from_array<std::vector<std::uint8_t>>([cocoon::internal::ns<::NSURLProtectionSpace>(this) distinguishedNames], [](id e) -> std::vector<std::uint8_t>
-                                                         {
-                                                             return cocoon::internal::from_data((NSData*)e);
-                                                         });
+                                                                       {
+                                                                           return cocoon::internal::from_data((NSData*)e);
+                                                                       });
     }
 
     std::string URLProtectionSpace::host() const

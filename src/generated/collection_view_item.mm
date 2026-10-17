@@ -23,9 +23,9 @@ namespace cocoon
     std::vector<DraggingImageComponent> CollectionViewItem::dragging_image_components() const
     {
         return cocoon::internal::from_array<DraggingImageComponent>([cocoon::internal::ns<::NSCollectionViewItem>(this) draggingImageComponents], [](id e) -> DraggingImageComponent
-                                                      {
-                                                          return cocoon::internal::wrap<DraggingImageComponent>((::NSDraggingImageComponent*)e);
-                                                      });
+                                                                    {
+                                                                        return cocoon::internal::wrap<DraggingImageComponent>((::NSDraggingImageComponent*)e);
+                                                                    });
     }
 
     CollectionViewItemHighlightState CollectionViewItem::highlight_state() const

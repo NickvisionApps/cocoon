@@ -70,17 +70,17 @@ namespace cocoon
     std::vector<std::string> SpeechRecognizer::commands() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSSpeechRecognizer>(this) commands], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void SpeechRecognizer::set_commands(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSSpeechRecognizer>(this) setCommands:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                                     {
-                                                                         return cocoon::internal::to(e);
-                                                                     })];
+                                                                                                 {
+                                                                                                     return cocoon::internal::to(e);
+                                                                                                 })];
     }
 
     std::string SpeechRecognizer::displayed_commands_title() const

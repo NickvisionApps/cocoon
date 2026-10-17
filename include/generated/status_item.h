@@ -1,5 +1,6 @@
 #pragma once
 
+#include "generated/availability.h"
 #include "generated/enums.h"
 #include "generated/structs.h"
 #include "object.h"
@@ -90,12 +91,14 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         StatusBarButton button() const;
+#ifdef COCOON_MACOS_27
         /**
      * @brief Returns the `expandedInterfaceSession` property of `NSStatusItem`.
      * @details A session object tracking the lifecycle of a currently showing expanded interface, if any. Will be set to a valid session object before invocation of -statusItem:didBeginExpandedInterfaceSession:, and cleared to nil before invocation of -statusItemDidEndExpandedInterfaceSession:animated: on the expandedInterfaceDelegate.
      * @return The converted Objective-C result.
      */
         StatusItemExpandedInterfaceSession expanded_interface_session() const;
+#endif
         /**
      * @brief Returns the `length` property of `NSStatusItem`.
      * @details The amount of space in the status bar that should be allocated to the receiver. \\c NSVariableStatusItemLength will adjust the length to the size of the status item's contents and \\c NSSquareStatusItemLength will keep the length the same as the status bar's height.

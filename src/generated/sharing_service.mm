@@ -18,9 +18,9 @@
         return;
     }
     cocoon::Signal<cocoon::SharingService, void(std::vector<cocoon::Object>)>::emit((__bridge void*)strongHost, "will_share_items", cocoon::internal::from_array<cocoon::Object>(items, [](id e) -> cocoon::Object
-                                                                                                                                                                   {
-                                                                                                                                                                       return cocoon::internal::wrap<cocoon::Object>(e);
-                                                                                                                                                                   }));
+                                                                                                                                                                                 {
+                                                                                                                                                                                     return cocoon::internal::wrap<cocoon::Object>(e);
+                                                                                                                                                                                 }));
 }
 
 - (void)sharingService:(NSSharingService*)sharingService didFailToShareItems:(NSArray*)items error:(NSError*)error
@@ -31,9 +31,9 @@
         return;
     }
     cocoon::Signal<cocoon::SharingService, void(std::vector<cocoon::Object>, cocoon::Error)>::emit((__bridge void*)strongHost, "did_fail_to_share_items_error", cocoon::internal::from_array<cocoon::Object>(items, [](id e) -> cocoon::Object
-                                                                                                                                                                                               {
-                                                                                                                                                                                                   return cocoon::internal::wrap<cocoon::Object>(e);
-                                                                                                                                                                                               }),
+                                                                                                                                                                                                             {
+                                                                                                                                                                                                                 return cocoon::internal::wrap<cocoon::Object>(e);
+                                                                                                                                                                                                             }),
                                                                                                    cocoon::internal::wrap<cocoon::Error>(error));
 }
 
@@ -45,9 +45,9 @@
         return;
     }
     cocoon::Signal<cocoon::SharingService, void(std::vector<cocoon::Object>)>::emit((__bridge void*)strongHost, "did_share_items", cocoon::internal::from_array<cocoon::Object>(items, [](id e) -> cocoon::Object
-                                                                                                                                                                  {
-                                                                                                                                                                      return cocoon::internal::wrap<cocoon::Object>(e);
-                                                                                                                                                                  }));
+                                                                                                                                                                                {
+                                                                                                                                                                                    return cocoon::internal::wrap<cocoon::Object>(e);
+                                                                                                                                                                                }));
 }
 
 - (NSRect)sharingService:(NSSharingService*)sharingService sourceFrameOnScreenForShareItem:(id)item
@@ -80,9 +80,9 @@
         return {};
     }
     auto __r = cocoon::Signal<cocoon::SharingService, cocoon::Window(std::vector<cocoon::Object>, cocoon::SharingContentScope*)>::emit((__bridge void*)strongHost, "source_window_for_share_items_sharing_content_scope", cocoon::internal::from_array<cocoon::Object>(items, [](id e) -> cocoon::Object
-                                                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                                                             return cocoon::internal::wrap<cocoon::Object>(e);
-                                                                                                                                                                                                                                                         }),
+                                                                                                                                                                                                                                                                       {
+                                                                                                                                                                                                                                                                           return cocoon::internal::wrap<cocoon::Object>(e);
+                                                                                                                                                                                                                                                                       }),
                                                                                                                                        (cocoon::SharingContentScope*)(sharingContentScope));
     return cocoon::internal::native<::NSWindow>(__r);
 }
@@ -156,17 +156,17 @@ namespace cocoon
     bool SharingService::can_perform_with_items(const std::vector<Object>& items) const
     {
         return static_cast<bool>([cocoon::internal::ns<::NSSharingService>(this) canPerformWithItems:cocoon::internal::to_array(items, [](const Object& e) -> id
-                                                                                                    {
-                                                                                                        return cocoon::internal::native_id(e);
-                                                                                                    })]);
+                                                                                                                                {
+                                                                                                                                    return cocoon::internal::native_id(e);
+                                                                                                                                })]);
     }
 
     void SharingService::perform_with_items(const std::vector<Object>& items) const
     {
         [cocoon::internal::ns<::NSSharingService>(this) performWithItems:cocoon::internal::to_array(items, [](const Object& e) -> id
-                                                                        {
-                                                                            return cocoon::internal::native_id(e);
-                                                                        })];
+                                                                                                    {
+                                                                                                        return cocoon::internal::native_id(e);
+                                                                                                    })];
     }
 
     SharingService SharingService::sharing_service_named(const std::string& service_name)
@@ -187,9 +187,9 @@ namespace cocoon
     std::vector<URL> SharingService::attachment_file_urls() const
     {
         return cocoon::internal::from_array<URL>([cocoon::internal::ns<::NSSharingService>(this) attachmentFileURLs], [](id e) -> URL
-                                   {
-                                       return cocoon::internal::wrap<URL>((::NSURL*)e);
-                                   });
+                                                 {
+                                                     return cocoon::internal::wrap<URL>((::NSURL*)e);
+                                                 });
     }
 
     Image SharingService::image() const
@@ -220,17 +220,17 @@ namespace cocoon
     std::vector<std::string> SharingService::recipients() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSSharingService>(this) recipients], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void SharingService::set_recipients(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSSharingService>(this) setRecipients:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                                     {
-                                                                         return cocoon::internal::to(e);
-                                                                     })];
+                                                                                                 {
+                                                                                                     return cocoon::internal::to(e);
+                                                                                                 })];
     }
 
     std::string SharingService::subject() const

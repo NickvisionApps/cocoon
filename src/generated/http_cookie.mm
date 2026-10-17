@@ -4,13 +4,13 @@
 namespace cocoon
 {
     HTTPCookie::HTTPCookie(const std::map<std::string, Object>& properties) : HTTPCookie(Adopt{cocoon::internal::retain([[::NSHTTPCookie alloc] initWithProperties:cocoon::internal::to_dictionary(properties, [](const std::string& k) -> id
-                                                                                                                                                                       {
-                                                                                                                                                                           return cocoon::internal::to(k);
-                                                                                                                                                                       },
-                                                                                                                                                                       [](const Object& v) -> id
-                                                                                                                                                                       {
-                                                                                                                                                                           return cocoon::internal::native_id(v);
-                                                                                                                                                                       })])})
+                                                                                                                                                                                                   {
+                                                                                                                                                                                                       return cocoon::internal::to(k);
+                                                                                                                                                                                                   },
+                                                                                                                                                                                                   [](const Object& v) -> id
+                                                                                                                                                                                                   {
+                                                                                                                                                                                                       return cocoon::internal::native_id(v);
+                                                                                                                                                                                                   })])})
     {
     }
 
@@ -29,46 +29,46 @@ namespace cocoon
     HTTPCookie HTTPCookie::cookie_with_properties(const std::map<std::string, Object>& properties)
     {
         return cocoon::internal::wrap<HTTPCookie>([::NSHTTPCookie cookieWithProperties:cocoon::internal::to_dictionary(properties, [](const std::string& k) -> id
-                                                                                           {
-                                                                                               return cocoon::internal::to(k);
-                                                                                           },
-                                                                                           [](const Object& v) -> id
-                                                                                           {
-                                                                                               return cocoon::internal::native_id(v);
-                                                                                           })]);
+                                                                                                                       {
+                                                                                                                           return cocoon::internal::to(k);
+                                                                                                                       },
+                                                                                                                       [](const Object& v) -> id
+                                                                                                                       {
+                                                                                                                           return cocoon::internal::native_id(v);
+                                                                                                                       })]);
     }
 
     std::vector<HTTPCookie> HTTPCookie::cookies_with_response_header_fields(const std::map<std::string, std::string>& header_fields, const URL& url)
     {
         return cocoon::internal::from_array<HTTPCookie>([::NSHTTPCookie cookiesWithResponseHeaderFields:cocoon::internal::to_dictionary(header_fields, [](const std::string& k) -> id
-                                                                                                            {
-                                                                                                                return cocoon::internal::to(k);
-                                                                                                            },
-                                                                                                            [](const std::string& v) -> id
-                                                                                                            {
-                                                                                                                return cocoon::internal::to(v);
-                                                                                                            })
-                                                                                   forURL:cocoon::internal::native<::NSURL>(url)],
-                                          [](id e) -> HTTPCookie
-                                          {
-                                              return cocoon::internal::wrap<HTTPCookie>((::NSHTTPCookie*)e);
-                                          });
+                                                                                                                                        {
+                                                                                                                                            return cocoon::internal::to(k);
+                                                                                                                                        },
+                                                                                                                                        [](const std::string& v) -> id
+                                                                                                                                        {
+                                                                                                                                            return cocoon::internal::to(v);
+                                                                                                                                        })
+                                                                                                 forURL:cocoon::internal::native<::NSURL>(url)],
+                                                        [](id e) -> HTTPCookie
+                                                        {
+                                                            return cocoon::internal::wrap<HTTPCookie>((::NSHTTPCookie*)e);
+                                                        });
     }
 
     std::map<std::string, std::string> HTTPCookie::request_header_fields_with_cookies(const std::vector<HTTPCookie>& cookies)
     {
         return cocoon::internal::from_dictionary<std::map<std::string, std::string>>([::NSHTTPCookie requestHeaderFieldsWithCookies:cocoon::internal::to_array(cookies, [](const HTTPCookie& e) -> id
-                                                                                                                                   {
-                                                                                                                                       return cocoon::internal::native<::NSHTTPCookie>(e);
-                                                                                                                                   })],
-                                                                       [](id k) -> std::string
-                                                                       {
-                                                                           return cocoon::internal::from((NSString*)k);
-                                                                       },
-                                                                       [](id v) -> std::string
-                                                                       {
-                                                                           return cocoon::internal::from((NSString*)v);
-                                                                       });
+                                                                                                                                                               {
+                                                                                                                                                                   return cocoon::internal::native<::NSHTTPCookie>(e);
+                                                                                                                                                               })],
+                                                                                     [](id k) -> std::string
+                                                                                     {
+                                                                                         return cocoon::internal::from((NSString*)k);
+                                                                                     },
+                                                                                     [](id v) -> std::string
+                                                                                     {
+                                                                                         return cocoon::internal::from((NSString*)v);
+                                                                                     });
     }
 
     bool HTTPCookie::is_http_only() const
@@ -109,21 +109,21 @@ namespace cocoon
     std::vector<Number> HTTPCookie::port_list() const
     {
         return cocoon::internal::from_array<Number>([cocoon::internal::ns<::NSHTTPCookie>(this) portList], [](id e) -> Number
-                                      {
-                                          return cocoon::internal::wrap<Number>((::NSNumber*)e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Number>((::NSNumber*)e);
+                                                    });
     }
 
     std::map<std::string, Object> HTTPCookie::properties() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::NSHTTPCookie>(this) properties], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     std::string HTTPCookie::same_site_policy() const

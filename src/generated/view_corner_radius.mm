@@ -1,6 +1,7 @@
 #include "generated/view_corner_radius.h"
 #include "internal.h"
 
+#ifdef COCOON_MACOS_27
 namespace cocoon
 {
     ViewCornerRadius::ViewCornerRadius() : Object(nullptr)
@@ -15,18 +16,27 @@ namespace cocoon
     {
     }
 
+#ifdef COCOON_MACOS_27
     ViewCornerRadius ViewCornerRadius::container_concentric_radius_with_minimum(double minimum_radius)
     {
         return cocoon::internal::wrap<ViewCornerRadius>([::NSViewCornerRadius containerConcentricRadiusWithMinimum:static_cast<::CGFloat>(minimum_radius)]);
     }
 
+#endif
+#ifdef COCOON_MACOS_27
     ViewCornerRadius ViewCornerRadius::fixed_radius(double radius)
     {
         return cocoon::internal::wrap<ViewCornerRadius>([::NSViewCornerRadius fixedRadius:static_cast<::CGFloat>(radius)]);
     }
 
+#endif
+#ifdef COCOON_MACOS_27
     ViewCornerRadius ViewCornerRadius::container_concentric_radius()
     {
         return cocoon::internal::wrap<ViewCornerRadius>([::NSViewCornerRadius containerConcentricRadius]);
     }
+
+#endif
 }
+
+#endif

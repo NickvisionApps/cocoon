@@ -23,14 +23,14 @@ namespace cocoon
     void MutableAttributedString::add_attributes(const std::map<std::string, Object>& attrs, const Range& range) const
     {
         [cocoon::internal::ns<::NSMutableAttributedString>(this) addAttributes:cocoon::internal::to_dictionary(attrs, [](const std::string& k) -> id
-                                                                                   {
-                                                                                       return cocoon::internal::to(k);
-                                                                                   },
-                                                                                   [](const Object& v) -> id
-                                                                                   {
-                                                                                       return cocoon::internal::native_id(v);
-                                                                                   })
-                                                           range:cocoon::internal::to(range)];
+                                                                                                               {
+                                                                                                                   return cocoon::internal::to(k);
+                                                                                                               },
+                                                                                                               [](const Object& v) -> id
+                                                                                                               {
+                                                                                                                   return cocoon::internal::native_id(v);
+                                                                                                               })
+                                                                         range:cocoon::internal::to(range)];
     }
 
     void MutableAttributedString::append_attributed_string(const AttributedString& attr_string) const
@@ -88,24 +88,24 @@ namespace cocoon
         NSError* __error = nil;
         NSDictionary* __v_dict = nil;
         auto __r = [cocoon::internal::ns<::NSMutableAttributedString>(this) readFromData:cocoon::internal::to_data(data)
-                                                                   options:cocoon::internal::to_dictionary(opts, [](const std::string& k) -> id
-                                                                                             {
-                                                                                                 return cocoon::internal::to(k);
-                                                                                             },
-                                                                                             [](const Object& v) -> id
-                                                                                             {
-                                                                                                 return cocoon::internal::native_id(v);
-                                                                                             })
-                                                        documentAttributes:&__v_dict
-                                                                     error:&__error];
+                                                                                 options:cocoon::internal::to_dictionary(opts, [](const std::string& k) -> id
+                                                                                                                         {
+                                                                                                                             return cocoon::internal::to(k);
+                                                                                                                         },
+                                                                                                                         [](const Object& v) -> id
+                                                                                                                         {
+                                                                                                                             return cocoon::internal::native_id(v);
+                                                                                                                         })
+                                                                      documentAttributes:&__v_dict
+                                                                                   error:&__error];
         dict = cocoon::internal::from_dictionary<std::map<std::string, Object>>(__v_dict, [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
         if (__error)
         {
             throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
@@ -118,24 +118,24 @@ namespace cocoon
         NSError* __error = nil;
         NSDictionary* __v_dict = nil;
         auto __r = [cocoon::internal::ns<::NSMutableAttributedString>(this) readFromURL:cocoon::internal::native<::NSURL>(url)
-                                                                  options:cocoon::internal::to_dictionary(opts, [](const std::string& k) -> id
-                                                                                            {
-                                                                                                return cocoon::internal::to(k);
-                                                                                            },
-                                                                                            [](const Object& v) -> id
-                                                                                            {
-                                                                                                return cocoon::internal::native_id(v);
-                                                                                            })
-                                                       documentAttributes:&__v_dict
-                                                                    error:&__error];
+                                                                                options:cocoon::internal::to_dictionary(opts, [](const std::string& k) -> id
+                                                                                                                        {
+                                                                                                                            return cocoon::internal::to(k);
+                                                                                                                        },
+                                                                                                                        [](const Object& v) -> id
+                                                                                                                        {
+                                                                                                                            return cocoon::internal::native_id(v);
+                                                                                                                        })
+                                                                     documentAttributes:&__v_dict
+                                                                                  error:&__error];
         dict = cocoon::internal::from_dictionary<std::map<std::string, Object>>(__v_dict, [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
         if (__error)
         {
             throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
@@ -171,14 +171,14 @@ namespace cocoon
     void MutableAttributedString::set_attributes(const std::map<std::string, Object>& attrs, const Range& range) const
     {
         [cocoon::internal::ns<::NSMutableAttributedString>(this) setAttributes:cocoon::internal::to_dictionary(attrs, [](const std::string& k) -> id
-                                                                                   {
-                                                                                       return cocoon::internal::to(k);
-                                                                                   },
-                                                                                   [](const Object& v) -> id
-                                                                                   {
-                                                                                       return cocoon::internal::native_id(v);
-                                                                                   })
-                                                           range:cocoon::internal::to(range)];
+                                                                                                               {
+                                                                                                                   return cocoon::internal::to(k);
+                                                                                                               },
+                                                                                                               [](const Object& v) -> id
+                                                                                                               {
+                                                                                                                   return cocoon::internal::native_id(v);
+                                                                                                               })
+                                                                         range:cocoon::internal::to(range)];
     }
 
     void MutableAttributedString::set_base_writing_direction(WritingDirection writing_direction, const Range& range) const

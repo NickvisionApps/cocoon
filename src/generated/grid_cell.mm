@@ -33,17 +33,17 @@ namespace cocoon
     std::vector<LayoutConstraint> GridCell::custom_placement_constraints() const
     {
         return cocoon::internal::from_array<LayoutConstraint>([cocoon::internal::ns<::NSGridCell>(this) customPlacementConstraints], [](id e) -> LayoutConstraint
-                                                {
-                                                    return cocoon::internal::wrap<LayoutConstraint>((::NSLayoutConstraint*)e);
-                                                });
+                                                              {
+                                                                  return cocoon::internal::wrap<LayoutConstraint>((::NSLayoutConstraint*)e);
+                                                              });
     }
 
     void GridCell::set_custom_placement_constraints(const std::vector<LayoutConstraint>& value) const
     {
         [cocoon::internal::ns<::NSGridCell>(this) setCustomPlacementConstraints:cocoon::internal::to_array(value, [](const LayoutConstraint& e) -> id
-                                                                               {
-                                                                                   return cocoon::internal::native<::NSLayoutConstraint>(e);
-                                                                               })];
+                                                                                                           {
+                                                                                                               return cocoon::internal::native<::NSLayoutConstraint>(e);
+                                                                                                           })];
     }
 
     View GridCell::empty_content_view()

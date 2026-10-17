@@ -23,9 +23,9 @@ namespace cocoon
     std::vector<std::string> XPCInterface::classes_for_selector(const std::string& sel, std::uint64_t arg, bool of_reply) const
     {
         return cocoon::internal::from_array<std::string>([[cocoon::internal::ns<::NSXPCInterface>(this) classesForSelector:NSSelectorFromString(cocoon::internal::to(sel)) argumentIndex:static_cast<::NSUInteger>(arg) ofReply:static_cast<::BOOL>(of_reply)] allObjects], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from(NSStringFromClass(e));
-                                           });
+                                                         {
+                                                             return cocoon::internal::from(NSStringFromClass(e));
+                                                         });
     }
 
     XPCInterface XPCInterface::interface_for_selector(const std::string& sel, std::uint64_t arg, bool of_reply) const
@@ -41,12 +41,12 @@ namespace cocoon
     void XPCInterface::set_classes(const std::vector<std::string>& classes, const std::string& sel, std::uint64_t arg, bool of_reply) const
     {
         [cocoon::internal::ns<::NSXPCInterface>(this) setClasses:[NSSet setWithArray:cocoon::internal::to_array(classes, [](const std::string& e) -> id
-                                                                                    {
-                                                                                        return NSClassFromString(cocoon::internal::to(e));
-                                                                                    })]
-                                       forSelector:NSSelectorFromString(cocoon::internal::to(sel))
-                                     argumentIndex:static_cast<::NSUInteger>(arg)
-                                           ofReply:static_cast<::BOOL>(of_reply)];
+                                                                                                                {
+                                                                                                                    return NSClassFromString(cocoon::internal::to(e));
+                                                                                                                })]
+                                                     forSelector:NSSelectorFromString(cocoon::internal::to(sel))
+                                                   argumentIndex:static_cast<::NSUInteger>(arg)
+                                                         ofReply:static_cast<::BOOL>(of_reply)];
     }
 
     void XPCInterface::set_interface(const XPCInterface& ifc, const std::string& sel, std::uint64_t arg, bool of_reply) const

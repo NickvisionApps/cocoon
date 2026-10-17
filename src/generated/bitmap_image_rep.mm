@@ -38,19 +38,19 @@ namespace cocoon
     std::vector<std::uint8_t> BitmapImageRep::tiff_representation_of_image_reps_in_array(const std::vector<ImageRep>& array)
     {
         return cocoon::internal::from_data([::NSBitmapImageRep TIFFRepresentationOfImageRepsInArray:cocoon::internal::to_array(array, [](const ImageRep& e) -> id
-                                                                                                   {
-                                                                                                       return cocoon::internal::native<::NSImageRep>(e);
-                                                                                                   })]);
+                                                                                                                               {
+                                                                                                                                   return cocoon::internal::native<::NSImageRep>(e);
+                                                                                                                               })]);
     }
 
     std::vector<std::uint8_t> BitmapImageRep::tiff_representation_of_image_reps_in_array(const std::vector<ImageRep>& array, TIFFCompression comp, float factor)
     {
         return cocoon::internal::from_data([::NSBitmapImageRep TIFFRepresentationOfImageRepsInArray:cocoon::internal::to_array(array, [](const ImageRep& e) -> id
-                                                                                                   {
-                                                                                                       return cocoon::internal::native<::NSImageRep>(e);
-                                                                                                   })
-                                                                     usingCompression:static_cast<::NSTIFFCompression>(comp)
-                                                                               factor:static_cast<float>(factor)]);
+                                                                                                                               {
+                                                                                                                                   return cocoon::internal::native<::NSImageRep>(e);
+                                                                                                                               })
+                                                                                   usingCompression:static_cast<::NSTIFFCompression>(comp)
+                                                                                             factor:static_cast<float>(factor)]);
     }
 
     std::vector<std::uint8_t> BitmapImageRep::tiff_representation_using_compression(TIFFCompression comp, float factor) const
@@ -111,9 +111,9 @@ namespace cocoon
     std::vector<ImageRep> BitmapImageRep::image_reps_with_data(const std::vector<std::uint8_t>& data)
     {
         return cocoon::internal::from_array<ImageRep>([::NSBitmapImageRep imageRepsWithData:cocoon::internal::to_data(data)], [](id e) -> ImageRep
-                                        {
-                                            return cocoon::internal::wrap<ImageRep>((::NSImageRep*)e);
-                                        });
+                                                      {
+                                                          return cocoon::internal::wrap<ImageRep>((::NSImageRep*)e);
+                                                      });
     }
 
     std::int64_t BitmapImageRep::incremental_load_from_data(const std::vector<std::uint8_t>& data, bool complete) const
@@ -129,31 +129,31 @@ namespace cocoon
     std::vector<std::uint8_t> BitmapImageRep::representation_of_image_reps_in_array(const std::vector<ImageRep>& image_reps, BitmapImageFileType storage_type, const std::map<std::string, Object>& properties)
     {
         return cocoon::internal::from_data([::NSBitmapImageRep representationOfImageRepsInArray:cocoon::internal::to_array(image_reps, [](const ImageRep& e) -> id
-                                                                                               {
-                                                                                                   return cocoon::internal::native<::NSImageRep>(e);
-                                                                                               })
-                                                                        usingType:static_cast<::NSBitmapImageFileType>(storage_type)
-                                                                       properties:cocoon::internal::to_dictionary(properties, [](const std::string& k) -> id
-                                                                                                    {
-                                                                                                        return cocoon::internal::to(k);
-                                                                                                    },
-                                                                                                    [](const Object& v) -> id
-                                                                                                    {
-                                                                                                        return cocoon::internal::native_id(v);
-                                                                                                    })]);
+                                                                                                                           {
+                                                                                                                               return cocoon::internal::native<::NSImageRep>(e);
+                                                                                                                           })
+                                                                                      usingType:static_cast<::NSBitmapImageFileType>(storage_type)
+                                                                                     properties:cocoon::internal::to_dictionary(properties, [](const std::string& k) -> id
+                                                                                                                                {
+                                                                                                                                    return cocoon::internal::to(k);
+                                                                                                                                },
+                                                                                                                                [](const Object& v) -> id
+                                                                                                                                {
+                                                                                                                                    return cocoon::internal::native_id(v);
+                                                                                                                                })]);
     }
 
     std::vector<std::uint8_t> BitmapImageRep::representation_using_type(BitmapImageFileType storage_type, const std::map<std::string, Object>& properties) const
     {
         return cocoon::internal::from_data([cocoon::internal::ns<::NSBitmapImageRep>(this) representationUsingType:static_cast<::NSBitmapImageFileType>(storage_type)
-                                                                            properties:cocoon::internal::to_dictionary(properties, [](const std::string& k) -> id
-                                                                                                         {
-                                                                                                             return cocoon::internal::to(k);
-                                                                                                         },
-                                                                                                         [](const Object& v) -> id
-                                                                                                         {
-                                                                                                             return cocoon::internal::native_id(v);
-                                                                                                         })]);
+                                                                                                        properties:cocoon::internal::to_dictionary(properties, [](const std::string& k) -> id
+                                                                                                                                                   {
+                                                                                                                                                       return cocoon::internal::to(k);
+                                                                                                                                                   },
+                                                                                                                                                   [](const Object& v) -> id
+                                                                                                                                                   {
+                                                                                                                                                       return cocoon::internal::native_id(v);
+                                                                                                                                                   })]);
     }
 
     void BitmapImageRep::set_color(const Color& color, std::int64_t x, std::int64_t y) const

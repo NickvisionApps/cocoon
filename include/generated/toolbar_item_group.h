@@ -1,5 +1,6 @@
 #pragma once
 
+#include "generated/availability.h"
 #include "generated/enums.h"
 #include "generated/structs.h"
 #include "generated/toolbar_item.h"
@@ -95,18 +96,22 @@ namespace cocoon
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_control_representation(ToolbarItemGroupControlRepresentation value) const;
+#ifdef COCOON_MACOS_27
         /**
      * @brief Returns the `role` property of `NSToolbarItemGroup`.
      * @details The semantic role of the item. Defaults to 'NSToolbarItemGroupRoleAutomatic'.
      * @return The converted Objective-C result.
      */
         ToolbarItemGroupRole role() const;
+#endif
+#ifdef COCOON_MACOS_27
         /**
      * @brief Sets the `role` property of `NSToolbarItemGroup`.
      * @details The semantic role of the item. Defaults to 'NSToolbarItemGroupRoleAutomatic'.
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_role(ToolbarItemGroupRole value) const;
+#endif
         /**
      * @brief Returns the `selectedIndex` property of `NSToolbarItemGroup`.
      * @details The most recently selected item of the group, or -1 if nothing is selected.

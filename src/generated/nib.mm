@@ -28,9 +28,9 @@ namespace cocoon
         NSArray* __v_top_level_objects = nil;
         auto __r = [cocoon::internal::ns<::NSNib>(this) instantiateWithOwner:cocoon::internal::native_id(owner) topLevelObjects:&__v_top_level_objects];
         top_level_objects = cocoon::internal::from_array<Object>(__v_top_level_objects, [](id e) -> Object
-                                                   {
-                                                       return cocoon::internal::wrap<Object>(e);
-                                                   });
+                                                                 {
+                                                                     return cocoon::internal::wrap<Object>(e);
+                                                                 });
         return static_cast<bool>(__r);
     }
 }

@@ -50,9 +50,9 @@
         return;
     }
     cocoon::Signal<cocoon::TableView, void(std::vector<cocoon::SortDescriptor>)>::emit((__bridge void*)strongHost, "sort_descriptors_did_change", cocoon::internal::from_array<cocoon::SortDescriptor>(oldDescriptors, [](id e) -> cocoon::SortDescriptor
-                                                                                                                                                                                         {
-                                                                                                                                                                                             return cocoon::internal::wrap<cocoon::SortDescriptor>((::NSSortDescriptor*)e);
-                                                                                                                                                                                         }));
+                                                                                                                                                                                                       {
+                                                                                                                                                                                                           return cocoon::internal::wrap<cocoon::SortDescriptor>((::NSSortDescriptor*)e);
+                                                                                                                                                                                                       }));
 }
 
 - (id<NSPasteboardWriting>)tableView:(NSTableView*)tableView pasteboardWriterForRow:(NSInteger)row
@@ -278,14 +278,14 @@
         return {};
     }
     auto __r = cocoon::Signal<cocoon::TableView, std::vector<std::string>(cocoon::TextView, std::vector<std::string>, cocoon::Range, std::int64_t*)>::emit((__bridge void*)strongHost, "text_view_completions_for_partial_word_range_index_of_selected_item", cocoon::internal::wrap<cocoon::TextView>(textView), cocoon::internal::from_array<std::string>(words, [](id e) -> std::string
-                                                                                                                                                                                                                                                                                                                                {
-                                                                                                                                                                                                                                                                                                                                    return cocoon::internal::from((NSString*)e);
-                                                                                                                                                                                                                                                                                                                                }),
+                                                                                                                                                                                                                                                                                                                                                            {
+                                                                                                                                                                                                                                                                                                                                                                return cocoon::internal::from((NSString*)e);
+                                                                                                                                                                                                                                                                                                                                                            }),
                                                                                                                                                            cocoon::internal::from(charRange), (std::int64_t*)(index));
     return cocoon::internal::to_array(__r, [](const std::string& e) -> id
-                        {
-                            return cocoon::internal::to(e);
-                        });
+                                      {
+                                          return cocoon::internal::to(e);
+                                      });
 }
 
 - (NSView*)tableView:(NSTableView*)tableView viewForTableColumn:(NSTableColumn*)tableColumn row:(NSInteger)row
@@ -555,9 +555,9 @@
     }
     auto __r = cocoon::Signal<cocoon::TableView, std::vector<cocoon::TableViewRowAction>(std::int64_t, cocoon::TableRowActionEdge)>::emit((__bridge void*)strongHost, "row_actions_for_row_edge", static_cast<std::int64_t>(row), static_cast<cocoon::TableRowActionEdge>(edge));
     return cocoon::internal::to_array(__r, [](const cocoon::TableViewRowAction& e) -> id
-                        {
-                            return cocoon::internal::native<::NSTableViewRowAction>(e);
-                        });
+                                      {
+                                          return cocoon::internal::native<::NSTableViewRowAction>(e);
+                                      });
 }
 
 - (BOOL)tableView:(NSTableView*)tableView userCanChangeVisibilityOfTableColumn:(NSTableColumn*)column
@@ -579,9 +579,9 @@
         return;
     }
     cocoon::Signal<cocoon::TableView, void(std::vector<cocoon::TableColumn>)>::emit((__bridge void*)strongHost, "user_did_change_visibility_of_table_columns", cocoon::internal::from_array<cocoon::TableColumn>(columns, [](id e) -> cocoon::TableColumn
-                                                                                                                                                                                                   {
-                                                                                                                                                                                                       return cocoon::internal::wrap<cocoon::TableColumn>((::NSTableColumn*)e);
-                                                                                                                                                                                                   }));
+                                                                                                                                                                                                                 {
+                                                                                                                                                                                                                     return cocoon::internal::wrap<cocoon::TableColumn>((::NSTableColumn*)e);
+                                                                                                                                                                                                                 }));
 }
 
 - (void)tableViewSelectionDidChange:(NSNotification*)notification
@@ -881,12 +881,12 @@ namespace cocoon
     Image TableView::drag_image_for_rows_with_indexes(const IndexSet& drag_rows, const std::vector<TableColumn>& table_columns, const Event& drag_event, Point* drag_image_offset) const
     {
         return cocoon::internal::wrap<Image>([cocoon::internal::ns<::NSTableView>(this) dragImageForRowsWithIndexes:cocoon::internal::native<::NSIndexSet>(drag_rows)
-                                                                           tableColumns:cocoon::internal::to_array(table_columns, [](const TableColumn& e) -> id
-                                                                                                     {
-                                                                                                         return cocoon::internal::native<::NSTableColumn>(e);
-                                                                                                     })
-                                                                                  event:cocoon::internal::native<::NSEvent>(drag_event)
-                                                                                 offset:(::NSPointPointer)(drag_image_offset)]);
+                                                                                                       tableColumns:cocoon::internal::to_array(table_columns, [](const TableColumn& e) -> id
+                                                                                                                                               {
+                                                                                                                                                   return cocoon::internal::native<::NSTableColumn>(e);
+                                                                                                                                               })
+                                                                                                              event:cocoon::internal::native<::NSEvent>(drag_event)
+                                                                                                             offset:(::NSPointPointer)(drag_image_offset)]);
     }
 
     void TableView::draw_background_in_clip_rect(const Rect& clip_rect) const
@@ -1352,13 +1352,13 @@ namespace cocoon
     std::map<std::string, Nib> TableView::registered_nibs_by_identifier() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Nib>>([cocoon::internal::ns<::NSTableView>(this) registeredNibsByIdentifier], [](id k) -> std::string
-                                                               {
-                                                                   return cocoon::internal::from((NSString*)k);
-                                                               },
-                                                               [](id v) -> Nib
-                                                               {
-                                                                   return cocoon::internal::wrap<Nib>((::NSNib*)v);
-                                                               });
+                                                                             {
+                                                                                 return cocoon::internal::from((NSString*)k);
+                                                                             },
+                                                                             [](id v) -> Nib
+                                                                             {
+                                                                                 return cocoon::internal::wrap<Nib>((::NSNib*)v);
+                                                                             });
     }
 
     bool TableView::row_actions_visible() const
@@ -1424,17 +1424,17 @@ namespace cocoon
     std::vector<SortDescriptor> TableView::sort_descriptors() const
     {
         return cocoon::internal::from_array<SortDescriptor>([cocoon::internal::ns<::NSTableView>(this) sortDescriptors], [](id e) -> SortDescriptor
-                                              {
-                                                  return cocoon::internal::wrap<SortDescriptor>((::NSSortDescriptor*)e);
-                                              });
+                                                            {
+                                                                return cocoon::internal::wrap<SortDescriptor>((::NSSortDescriptor*)e);
+                                                            });
     }
 
     void TableView::set_sort_descriptors(const std::vector<SortDescriptor>& value) const
     {
         [cocoon::internal::ns<::NSTableView>(this) setSortDescriptors:cocoon::internal::to_array(value, [](const SortDescriptor& e) -> id
-                                                                     {
-                                                                         return cocoon::internal::native<::NSSortDescriptor>(e);
-                                                                     })];
+                                                                                                 {
+                                                                                                     return cocoon::internal::native<::NSSortDescriptor>(e);
+                                                                                                 })];
     }
 
     TableViewStyle TableView::style() const
@@ -1450,9 +1450,9 @@ namespace cocoon
     std::vector<TableColumn> TableView::table_columns() const
     {
         return cocoon::internal::from_array<TableColumn>([cocoon::internal::ns<::NSTableView>(this) tableColumns], [](id e) -> TableColumn
-                                           {
-                                               return cocoon::internal::wrap<TableColumn>((::NSTableColumn*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::wrap<TableColumn>((::NSTableColumn*)e);
+                                                         });
     }
 
     UserInterfaceLayoutDirection TableView::user_interface_layout_direction() const

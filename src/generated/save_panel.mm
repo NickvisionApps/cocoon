@@ -187,17 +187,17 @@ namespace cocoon
     std::vector<Object> SavePanel::allowed_content_types() const
     {
         return cocoon::internal::from_array<Object>([cocoon::internal::ns<::NSSavePanel>(this) allowedContentTypes], [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     void SavePanel::set_allowed_content_types(const std::vector<Object>& value) const
     {
         [cocoon::internal::ns<::NSSavePanel>(this) setAllowedContentTypes:cocoon::internal::to_array(value, [](const Object& e) -> id
-                                                                         {
-                                                                             return cocoon::internal::native_id(e);
-                                                                         })];
+                                                                                                     {
+                                                                                                         return cocoon::internal::native_id(e);
+                                                                                                     })];
     }
 
     bool SavePanel::allows_other_file_types() const
@@ -348,17 +348,17 @@ namespace cocoon
     std::vector<std::string> SavePanel::tag_names() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSSavePanel>(this) tagNames], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void SavePanel::set_tag_names(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSSavePanel>(this) setTagNames:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                              {
-                                                                  return cocoon::internal::to(e);
-                                                              })];
+                                                                                          {
+                                                                                              return cocoon::internal::to(e);
+                                                                                          })];
     }
 
     std::string SavePanel::title() const

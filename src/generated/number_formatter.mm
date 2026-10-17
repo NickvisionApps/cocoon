@@ -593,169 +593,169 @@ namespace cocoon
     std::map<std::string, Object> NumberFormatter::text_attributes_for_negative_infinity() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::NSNumberFormatter>(this) textAttributesForNegativeInfinity], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     void NumberFormatter::set_text_attributes_for_negative_infinity(const std::map<std::string, Object>& value) const
     {
         [cocoon::internal::ns<::NSNumberFormatter>(this) setTextAttributesForNegativeInfinity:cocoon::internal::to_dictionary(value, [](const std::string& k) -> id
-                                                                                                  {
-                                                                                                      return cocoon::internal::to(k);
-                                                                                                  },
-                                                                                                  [](const Object& v) -> id
-                                                                                                  {
-                                                                                                      return cocoon::internal::native_id(v);
-                                                                                                  })];
+                                                                                                                              {
+                                                                                                                                  return cocoon::internal::to(k);
+                                                                                                                              },
+                                                                                                                              [](const Object& v) -> id
+                                                                                                                              {
+                                                                                                                                  return cocoon::internal::native_id(v);
+                                                                                                                              })];
     }
 
     std::map<std::string, Object> NumberFormatter::text_attributes_for_negative_values() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::NSNumberFormatter>(this) textAttributesForNegativeValues], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     void NumberFormatter::set_text_attributes_for_negative_values(const std::map<std::string, Object>& value) const
     {
         [cocoon::internal::ns<::NSNumberFormatter>(this) setTextAttributesForNegativeValues:cocoon::internal::to_dictionary(value, [](const std::string& k) -> id
-                                                                                                {
-                                                                                                    return cocoon::internal::to(k);
-                                                                                                },
-                                                                                                [](const Object& v) -> id
-                                                                                                {
-                                                                                                    return cocoon::internal::native_id(v);
-                                                                                                })];
+                                                                                                                            {
+                                                                                                                                return cocoon::internal::to(k);
+                                                                                                                            },
+                                                                                                                            [](const Object& v) -> id
+                                                                                                                            {
+                                                                                                                                return cocoon::internal::native_id(v);
+                                                                                                                            })];
     }
 
     std::map<std::string, Object> NumberFormatter::text_attributes_for_nil() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::NSNumberFormatter>(this) textAttributesForNil], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     void NumberFormatter::set_text_attributes_for_nil(const std::map<std::string, Object>& value) const
     {
         [cocoon::internal::ns<::NSNumberFormatter>(this) setTextAttributesForNil:cocoon::internal::to_dictionary(value, [](const std::string& k) -> id
-                                                                                     {
-                                                                                         return cocoon::internal::to(k);
-                                                                                     },
-                                                                                     [](const Object& v) -> id
-                                                                                     {
-                                                                                         return cocoon::internal::native_id(v);
-                                                                                     })];
+                                                                                                                 {
+                                                                                                                     return cocoon::internal::to(k);
+                                                                                                                 },
+                                                                                                                 [](const Object& v) -> id
+                                                                                                                 {
+                                                                                                                     return cocoon::internal::native_id(v);
+                                                                                                                 })];
     }
 
     std::map<std::string, Object> NumberFormatter::text_attributes_for_not_a_number() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::NSNumberFormatter>(this) textAttributesForNotANumber], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     void NumberFormatter::set_text_attributes_for_not_a_number(const std::map<std::string, Object>& value) const
     {
         [cocoon::internal::ns<::NSNumberFormatter>(this) setTextAttributesForNotANumber:cocoon::internal::to_dictionary(value, [](const std::string& k) -> id
-                                                                                            {
-                                                                                                return cocoon::internal::to(k);
-                                                                                            },
-                                                                                            [](const Object& v) -> id
-                                                                                            {
-                                                                                                return cocoon::internal::native_id(v);
-                                                                                            })];
+                                                                                                                        {
+                                                                                                                            return cocoon::internal::to(k);
+                                                                                                                        },
+                                                                                                                        [](const Object& v) -> id
+                                                                                                                        {
+                                                                                                                            return cocoon::internal::native_id(v);
+                                                                                                                        })];
     }
 
     std::map<std::string, Object> NumberFormatter::text_attributes_for_positive_infinity() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::NSNumberFormatter>(this) textAttributesForPositiveInfinity], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     void NumberFormatter::set_text_attributes_for_positive_infinity(const std::map<std::string, Object>& value) const
     {
         [cocoon::internal::ns<::NSNumberFormatter>(this) setTextAttributesForPositiveInfinity:cocoon::internal::to_dictionary(value, [](const std::string& k) -> id
-                                                                                                  {
-                                                                                                      return cocoon::internal::to(k);
-                                                                                                  },
-                                                                                                  [](const Object& v) -> id
-                                                                                                  {
-                                                                                                      return cocoon::internal::native_id(v);
-                                                                                                  })];
+                                                                                                                              {
+                                                                                                                                  return cocoon::internal::to(k);
+                                                                                                                              },
+                                                                                                                              [](const Object& v) -> id
+                                                                                                                              {
+                                                                                                                                  return cocoon::internal::native_id(v);
+                                                                                                                              })];
     }
 
     std::map<std::string, Object> NumberFormatter::text_attributes_for_positive_values() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::NSNumberFormatter>(this) textAttributesForPositiveValues], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     void NumberFormatter::set_text_attributes_for_positive_values(const std::map<std::string, Object>& value) const
     {
         [cocoon::internal::ns<::NSNumberFormatter>(this) setTextAttributesForPositiveValues:cocoon::internal::to_dictionary(value, [](const std::string& k) -> id
-                                                                                                {
-                                                                                                    return cocoon::internal::to(k);
-                                                                                                },
-                                                                                                [](const Object& v) -> id
-                                                                                                {
-                                                                                                    return cocoon::internal::native_id(v);
-                                                                                                })];
+                                                                                                                            {
+                                                                                                                                return cocoon::internal::to(k);
+                                                                                                                            },
+                                                                                                                            [](const Object& v) -> id
+                                                                                                                            {
+                                                                                                                                return cocoon::internal::native_id(v);
+                                                                                                                            })];
     }
 
     std::map<std::string, Object> NumberFormatter::text_attributes_for_zero() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::NSNumberFormatter>(this) textAttributesForZero], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     void NumberFormatter::set_text_attributes_for_zero(const std::map<std::string, Object>& value) const
     {
         [cocoon::internal::ns<::NSNumberFormatter>(this) setTextAttributesForZero:cocoon::internal::to_dictionary(value, [](const std::string& k) -> id
-                                                                                      {
-                                                                                          return cocoon::internal::to(k);
-                                                                                      },
-                                                                                      [](const Object& v) -> id
-                                                                                      {
-                                                                                          return cocoon::internal::native_id(v);
-                                                                                      })];
+                                                                                                                  {
+                                                                                                                      return cocoon::internal::to(k);
+                                                                                                                  },
+                                                                                                                  [](const Object& v) -> id
+                                                                                                                  {
+                                                                                                                      return cocoon::internal::native_id(v);
+                                                                                                                  })];
     }
 
     std::string NumberFormatter::thousand_separator() const

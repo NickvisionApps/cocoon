@@ -86,14 +86,14 @@ namespace cocoon
     Object XMLNode::element_with_name(const std::string& name, const std::vector<XMLNode>& children, const std::vector<XMLNode>& attributes)
     {
         return cocoon::internal::wrap<Object>([::NSXMLNode elementWithName:cocoon::internal::to(name)
-                                                    children:cocoon::internal::to_array(children, [](const XMLNode& e) -> id
-                                                                          {
-                                                                              return cocoon::internal::native<::NSXMLNode>(e);
-                                                                          })
-                                                  attributes:cocoon::internal::to_array(attributes, [](const XMLNode& e) -> id
-                                                                          {
-                                                                              return cocoon::internal::native<::NSXMLNode>(e);
-                                                                          })]);
+                                                                  children:cocoon::internal::to_array(children, [](const XMLNode& e) -> id
+                                                                                                      {
+                                                                                                          return cocoon::internal::native<::NSXMLNode>(e);
+                                                                                                      })
+                                                                attributes:cocoon::internal::to_array(attributes, [](const XMLNode& e) -> id
+                                                                                                      {
+                                                                                                          return cocoon::internal::native<::NSXMLNode>(e);
+                                                                                                      })]);
     }
 
     std::string XMLNode::local_name_for_name(const std::string& name)
@@ -115,32 +115,32 @@ namespace cocoon
             throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
         }
         return cocoon::internal::from_array<XMLNode>(__r, [](id e) -> XMLNode
-                                       {
-                                           return cocoon::internal::wrap<XMLNode>((::NSXMLNode*)e);
-                                       });
+                                                     {
+                                                         return cocoon::internal::wrap<XMLNode>((::NSXMLNode*)e);
+                                                     });
     }
 
     std::vector<Object> XMLNode::objects_for_x_query(const std::string& xquery, const std::map<std::string, Object>& constants) const
     {
         NSError* __error = nil;
         auto __r = [cocoon::internal::ns<::NSXMLNode>(this) objectsForXQuery:cocoon::internal::to(xquery)
-                                                     constants:cocoon::internal::to_dictionary(constants, [](const std::string& k) -> id
-                                                                                 {
-                                                                                     return cocoon::internal::to(k);
-                                                                                 },
-                                                                                 [](const Object& v) -> id
-                                                                                 {
-                                                                                     return cocoon::internal::native_id(v);
-                                                                                 })
-                                                         error:&__error];
+                                                                   constants:cocoon::internal::to_dictionary(constants, [](const std::string& k) -> id
+                                                                                                             {
+                                                                                                                 return cocoon::internal::to(k);
+                                                                                                             },
+                                                                                                             [](const Object& v) -> id
+                                                                                                             {
+                                                                                                                 return cocoon::internal::native_id(v);
+                                                                                                             })
+                                                                       error:&__error];
         if (__error)
         {
             throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
         }
         return cocoon::internal::from_array<Object>(__r, [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     std::vector<Object> XMLNode::objects_for_x_query(const std::string& xquery) const
@@ -152,9 +152,9 @@ namespace cocoon
             throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
         }
         return cocoon::internal::from_array<Object>(__r, [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     XMLNode XMLNode::predefined_namespace_for_prefix(const std::string& name)
@@ -210,9 +210,9 @@ namespace cocoon
     std::vector<XMLNode> XMLNode::children() const
     {
         return cocoon::internal::from_array<XMLNode>([cocoon::internal::ns<::NSXMLNode>(this) children], [](id e) -> XMLNode
-                                       {
-                                           return cocoon::internal::wrap<XMLNode>((::NSXMLNode*)e);
-                                       });
+                                                     {
+                                                         return cocoon::internal::wrap<XMLNode>((::NSXMLNode*)e);
+                                                     });
     }
 
     std::string XMLNode::description() const

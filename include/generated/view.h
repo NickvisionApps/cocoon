@@ -1,5 +1,6 @@
 #pragma once
 
+#include "generated/availability.h"
 #include "generated/enums.h"
 #include "generated/responder.h"
 #include "generated/structs.h"
@@ -208,6 +209,7 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         DraggingSession begin_dragging_session_with_items(const std::vector<DraggingItem>& items, const Event& event, const Object& source) const;
+#ifdef COCOON_MACOS_27
         /**
      * @brief Calls `-[NSView beginDraggingSessionWithItems:gesture:source:]`.
      * @details Starts a gesture based dragging session with an array of 'NSDraggingItems'. The frame property of each NSDraggingItem must be in the view's coordinate system. The images may animate (flock) from their initial layout into a system defined formation. Flocking may not be done immediately (see NSDraggingSession's flockOnBeginDrag). The visible area of the view is used as the clip rect. \@returns If the drag begins, returns the dragging session. If the drag fails to begin, returns 'nil'.
@@ -217,6 +219,7 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         DraggingSession begin_dragging_session_with_items(const std::vector<DraggingItem>& items, const GestureRecognizer& gesture, const Object& source) const;
+#endif
         /**
      * @brief Calls `-[NSView beginPageInRect:atPlacement:]`.
      * @param rect Argument converted to the Objective-C parameter of the same role.
@@ -497,11 +500,13 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         View hit_test(const Point& point) const;
+#ifdef COCOON_MACOS_27
         /**
      * @brief Calls `-[NSView invalidateCornerConfiguration]`.
      * @details Invalidates the corner configuration, causing both the configuration and its dependencies to be recomputed.
      */
         void invalidate_corner_configuration() const;
+#endif
         /**
      * @brief Calls `-[NSView invalidateIntrinsicContentSize]`.
      */
@@ -871,11 +876,13 @@ namespace cocoon
      * @details Override point for reacting to the effective appearance of the receiver changing. At this point 'effectiveAppearance' property reflects the new appearance.
      */
         void view_did_change_effective_appearance() const;
+#ifdef COCOON_MACOS_27
         /**
      * @brief Calls `-[NSView viewDidChangeEffectiveCornerRadii]`.
      * @details Informs the view that its effective corner radii changed. This method should be overridden to apply the corner radii to the view as required.
      */
         void view_did_change_effective_corner_radii() const;
+#endif
         /**
      * @brief Calls `-[NSView viewDidEndLiveResize]`.
      * @details A view receives viewDidEndLiveResize after the frame is last changed for a live resize. It is important to call [super viewDidEndLiveResize].
@@ -1140,12 +1147,14 @@ namespace cocoon
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_content_filters(const std::vector<Object>& value) const;
+#ifdef COCOON_MACOS_27
         /**
      * @brief Returns the `cornerConfiguration` property of `NSView`.
      * @details Defines the corner styles (e.g., square, capsule, concentric, etc) for the view’s corners.
      * @return The converted Objective-C result.
      */
         ViewCornerConfiguration corner_configuration() const;
+#endif
         /**
      * @brief Returns the `defaultFocusRingType` property of `NSView`.
      * @return The converted Objective-C result.
@@ -1162,12 +1171,14 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         bool is_drawing_find_indicator() const;
+#ifdef COCOON_MACOS_27
         /**
      * @brief Returns the `effectiveCornerRadii` property of `NSView`.
      * @details The effective radius of each corner in the view, calculated based on the corner configuration ('cornerConfiguration'). This value is 'nil' when the corner configuration is 'nil'.
      * @return The converted Objective-C result.
      */
         ViewCornerRadii effective_corner_radii() const;
+#endif
         /**
      * @brief Returns the `enclosingMenuItem` property of `NSView`.
      * @return The converted Objective-C result.
@@ -1179,18 +1190,22 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         ScrollView enclosing_scroll_view() const;
+#ifdef COCOON_MACOS_27
         /**
      * @brief Returns the `exclusiveGestureBehavior` property of `NSView`.
      * @details Declares whether gesture recognizers should be exclusive in this view and its subviews. When a view is set to '.exclusive', and one or more of its gesture recognizers is active, a second input event will not activate any further gesture recognizers, unless that event hit tests to this view or its subviews. Defaults to '.inherit'.
      * @return The converted Objective-C result.
      */
         ViewExclusiveGestureBehavior exclusive_gesture_behavior() const;
+#endif
+#ifdef COCOON_MACOS_27
         /**
      * @brief Sets the `exclusiveGestureBehavior` property of `NSView`.
      * @details Declares whether gesture recognizers should be exclusive in this view and its subviews. When a view is set to '.exclusive', and one or more of its gesture recognizers is active, a second input event will not activate any further gesture recognizers, unless that event hit tests to this view or its subviews. Defaults to '.inherit'.
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_exclusive_gesture_behavior(ViewExclusiveGestureBehavior value) const;
+#endif
         /**
      * @brief Returns the `firstBaselineAnchor` property of `NSView`.
      * @return The converted Objective-C result.
@@ -1641,16 +1656,20 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         std::int64_t tag() const;
+#ifdef COCOON_MACOS_27
         /**
      * @brief Returns the `textSelectionManager` property of `NSView`.
      * @return The converted Objective-C result.
      */
         TextSelectionManager text_selection_manager() const;
+#endif
+#ifdef COCOON_MACOS_27
         /**
      * @brief Sets the `textSelectionManager` property of `NSView`.
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_text_selection_manager(const TextSelectionManager& value) const;
+#endif
         /**
      * @brief Returns the `toolTip` property of `NSView`.
      * @return The converted Objective-C result.

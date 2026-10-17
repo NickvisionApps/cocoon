@@ -71,17 +71,17 @@ namespace cocoon
     std::vector<Number> Thread::call_stack_return_addresses()
     {
         return cocoon::internal::from_array<Number>([::NSThread callStackReturnAddresses], [](id e) -> Number
-                                      {
-                                          return cocoon::internal::wrap<Number>((::NSNumber*)e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Number>((::NSNumber*)e);
+                                                    });
     }
 
     std::vector<std::string> Thread::call_stack_symbols()
     {
         return cocoon::internal::from_array<std::string>([::NSThread callStackSymbols], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     bool Thread::is_cancelled() const
@@ -147,13 +147,13 @@ namespace cocoon
     std::vector<std::pair<Object, Object>> Thread::thread_dictionary() const
     {
         return cocoon::internal::from_dictionary<std::vector<std::pair<Object, Object>>>([cocoon::internal::ns<::NSThread>(this) threadDictionary], [](id k) -> Object
-                                                                           {
-                                                                               return cocoon::internal::wrap<Object>(k);
-                                                                           },
-                                                                           [](id v) -> Object
-                                                                           {
-                                                                               return cocoon::internal::wrap<Object>(v);
-                                                                           });
+                                                                                         {
+                                                                                             return cocoon::internal::wrap<Object>(k);
+                                                                                         },
+                                                                                         [](id v) -> Object
+                                                                                         {
+                                                                                             return cocoon::internal::wrap<Object>(v);
+                                                                                         });
     }
 
     double Thread::thread_priority() const

@@ -1,5 +1,6 @@
 #pragma once
 
+#include "generated/availability.h"
 #include "generated/ca_open_gl_layer.h"
 #include "generated/enums.h"
 #include "generated/structs.h"

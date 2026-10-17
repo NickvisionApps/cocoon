@@ -1,6 +1,7 @@
 #include "generated/refresh_controller.h"
 #include "internal.h"
 
+#ifdef COCOON_MACOS_27
 namespace cocoon
 {
     RefreshController::RefreshController() : RefreshController(Adopt{cocoon::internal::retain([[::NSRefreshController alloc] init])})
@@ -70,3 +71,5 @@ namespace cocoon
         [cocoon::internal::ns<::NSRefreshController>(this) setTintColor:cocoon::internal::native<::NSColor>(value)];
     }
 }
+
+#endif

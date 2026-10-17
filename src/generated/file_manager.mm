@@ -305,9 +305,9 @@ namespace cocoon
     std::vector<URL> FileManager::ur_ls_for_directory(SearchPathDirectory directory, SearchPathDomainMask domain_mask) const
     {
         return cocoon::internal::from_array<URL>([cocoon::internal::ns<::NSFileManager>(this) URLsForDirectory:static_cast<::NSSearchPathDirectory>(directory) inDomains:static_cast<::NSSearchPathDomainMask>(domain_mask)], [](id e) -> URL
-                                   {
-                                       return cocoon::internal::wrap<URL>((::NSURL*)e);
-                                   });
+                                                 {
+                                                     return cocoon::internal::wrap<URL>((::NSURL*)e);
+                                                 });
     }
 
     std::map<std::string, Object> FileManager::attributes_of_file_system_for_path(const std::string& path) const
@@ -319,13 +319,13 @@ namespace cocoon
             throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
         }
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>(__r, [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     std::map<std::string, Object> FileManager::attributes_of_item_at_path(const std::string& path) const
@@ -337,13 +337,13 @@ namespace cocoon
             throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
         }
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>(__r, [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     bool FileManager::change_current_directory_path(const std::string& path) const
@@ -354,9 +354,9 @@ namespace cocoon
     std::vector<std::string> FileManager::components_to_display_for_path(const std::string& path) const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSFileManager>(this) componentsToDisplayForPath:cocoon::internal::to(path)], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     URL FileManager::container_url_for_security_application_group_identifier(const std::string& group_identifier) const
@@ -383,29 +383,29 @@ namespace cocoon
             throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
         }
         return cocoon::internal::from_array<std::string>(__r, [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::vector<URL> FileManager::contents_of_directory_at_url(const URL& url, const std::vector<std::string>& keys, DirectoryEnumerationOptions mask) const
     {
         NSError* __error = nil;
         auto __r = [cocoon::internal::ns<::NSFileManager>(this) contentsOfDirectoryAtURL:cocoon::internal::native<::NSURL>(url)
-                                                includingPropertiesForKeys:cocoon::internal::to_array(keys, [](const std::string& e) -> id
-                                                                                        {
-                                                                                            return cocoon::internal::to(e);
-                                                                                        })
-                                                                   options:static_cast<::NSDirectoryEnumerationOptions>(mask)
-                                                                     error:&__error];
+                                                              includingPropertiesForKeys:cocoon::internal::to_array(keys, [](const std::string& e) -> id
+                                                                                                                    {
+                                                                                                                        return cocoon::internal::to(e);
+                                                                                                                    })
+                                                                                 options:static_cast<::NSDirectoryEnumerationOptions>(mask)
+                                                                                   error:&__error];
         if (__error)
         {
             throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
         }
         return cocoon::internal::from_array<URL>(__r, [](id e) -> URL
-                                   {
-                                       return cocoon::internal::wrap<URL>((::NSURL*)e);
-                                   });
+                                                 {
+                                                     return cocoon::internal::wrap<URL>((::NSURL*)e);
+                                                 });
     }
 
     bool FileManager::copy_item_at_path(const std::string& src_path, const std::string& dst_path) const
@@ -434,16 +434,16 @@ namespace cocoon
     {
         NSError* __error = nil;
         auto __r = [cocoon::internal::ns<::NSFileManager>(this) createDirectoryAtPath:cocoon::internal::to(path)
-                                            withIntermediateDirectories:static_cast<::BOOL>(create_intermediates)
-                                                             attributes:cocoon::internal::to_dictionary(attributes, [](const std::string& k) -> id
-                                                                                          {
-                                                                                              return cocoon::internal::to(k);
-                                                                                          },
-                                                                                          [](const Object& v) -> id
-                                                                                          {
-                                                                                              return cocoon::internal::native_id(v);
-                                                                                          })
-                                                                  error:&__error];
+                                                          withIntermediateDirectories:static_cast<::BOOL>(create_intermediates)
+                                                                           attributes:cocoon::internal::to_dictionary(attributes, [](const std::string& k) -> id
+                                                                                                                      {
+                                                                                                                          return cocoon::internal::to(k);
+                                                                                                                      },
+                                                                                                                      [](const Object& v) -> id
+                                                                                                                      {
+                                                                                                                          return cocoon::internal::native_id(v);
+                                                                                                                      })
+                                                                                error:&__error];
         if (__error)
         {
             throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
@@ -455,16 +455,16 @@ namespace cocoon
     {
         NSError* __error = nil;
         auto __r = [cocoon::internal::ns<::NSFileManager>(this) createDirectoryAtURL:cocoon::internal::native<::NSURL>(url)
-                                           withIntermediateDirectories:static_cast<::BOOL>(create_intermediates)
-                                                            attributes:cocoon::internal::to_dictionary(attributes, [](const std::string& k) -> id
-                                                                                         {
-                                                                                             return cocoon::internal::to(k);
-                                                                                         },
-                                                                                         [](const Object& v) -> id
-                                                                                         {
-                                                                                             return cocoon::internal::native_id(v);
-                                                                                         })
-                                                                 error:&__error];
+                                                         withIntermediateDirectories:static_cast<::BOOL>(create_intermediates)
+                                                                          attributes:cocoon::internal::to_dictionary(attributes, [](const std::string& k) -> id
+                                                                                                                     {
+                                                                                                                         return cocoon::internal::to(k);
+                                                                                                                     },
+                                                                                                                     [](const Object& v) -> id
+                                                                                                                     {
+                                                                                                                         return cocoon::internal::native_id(v);
+                                                                                                                     })
+                                                                               error:&__error];
         if (__error)
         {
             throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
@@ -475,15 +475,15 @@ namespace cocoon
     bool FileManager::create_file_at_path(const std::string& path, const std::vector<std::uint8_t>& data, const std::map<std::string, Object>& attr) const
     {
         return static_cast<bool>([cocoon::internal::ns<::NSFileManager>(this) createFileAtPath:cocoon::internal::to(path)
-                                                                        contents:cocoon::internal::to_data(data)
-                                                                      attributes:cocoon::internal::to_dictionary(attr, [](const std::string& k) -> id
-                                                                                                   {
-                                                                                                       return cocoon::internal::to(k);
-                                                                                                   },
-                                                                                                   [](const Object& v) -> id
-                                                                                                   {
-                                                                                                       return cocoon::internal::native_id(v);
-                                                                                                   })]);
+                                                                                      contents:cocoon::internal::to_data(data)
+                                                                                    attributes:cocoon::internal::to_dictionary(attr, [](const std::string& k) -> id
+                                                                                                                               {
+                                                                                                                                   return cocoon::internal::to(k);
+                                                                                                                               },
+                                                                                                                               [](const Object& v) -> id
+                                                                                                                               {
+                                                                                                                                   return cocoon::internal::native_id(v);
+                                                                                                                               })]);
     }
 
     bool FileManager::create_symbolic_link_at_path(const std::string& path, const std::string& dest_path) const
@@ -532,12 +532,12 @@ namespace cocoon
     DirectoryEnumeratorBase FileManager::enumerator_at_url(const URL& url, const std::vector<std::string>& keys, DirectoryEnumerationOptions mask, std::function<bool(URL, Error)> handler) const
     {
         return cocoon::internal::wrap<DirectoryEnumeratorBase>([cocoon::internal::ns<::NSFileManager>(this) enumeratorAtURL:cocoon::internal::native<::NSURL>(url)
-                                                                     includingPropertiesForKeys:cocoon::internal::to_array(keys, [](const std::string& e) -> id
-                                                                                                             {
-                                                                                                                 return cocoon::internal::to(e);
-                                                                                                             })
-                                                                                        options:static_cast<::NSDirectoryEnumerationOptions>(mask)
-                                                                                   errorHandler:(handler ? (BOOL(^)(::NSURL*, ::NSError*)) ^ ::BOOL(::NSURL * a147_0, ::NSError * a147_1) { auto __r = handler(cocoon::internal::wrap<URL>(a147_0), cocoon::internal::wrap<Error>(a147_1)); return static_cast<::BOOL>(__r); } : (BOOL(^)(::NSURL*, ::NSError*))nil)]);
+                                                                                                 includingPropertiesForKeys:cocoon::internal::to_array(keys, [](const std::string& e) -> id
+                                                                                                                                                       {
+                                                                                                                                                           return cocoon::internal::to(e);
+                                                                                                                                                       })
+                                                                                                                    options:static_cast<::NSDirectoryEnumerationOptions>(mask)
+                                                                                                               errorHandler:(handler ? (BOOL(^)(::NSURL*, ::NSError*)) ^ ::BOOL(::NSURL * a147_0, ::NSError * a147_1) { auto __r = handler(cocoon::internal::wrap<URL>(a147_0), cocoon::internal::wrap<Error>(a147_1)); return static_cast<::BOOL>(__r); } : (BOOL(^)(::NSURL*, ::NSError*))nil)]);
     }
 
     bool FileManager::evict_ubiquitous_item_at_url(const URL& url) const
@@ -579,14 +579,14 @@ namespace cocoon
     void FileManager::get_file_provider_services_for_item_at_url(const URL& url, std::function<void(std::map<std::string, FileProviderService>, Error)> completion_handler) const
     {
         [cocoon::internal::ns<::NSFileManager>(this) getFileProviderServicesForItemAtURL:cocoon::internal::native<::NSURL>(url) completionHandler:(completion_handler ? (void (^)(NSDictionary<NSFileProviderServiceName, NSFileProviderService*>*, ::NSError*)) ^ void(NSDictionary * a149_0, ::NSError * a149_1) { completion_handler(cocoon::internal::from_dictionary<std::map<std::string, FileProviderService>>(a149_0, [](id k) -> std::string
-                                                                                                                                                                                                                                                                                                                                                                            {
-                                                                                                                                                                                                                                                                                                                                                                                return cocoon::internal::from((NSString*)k);
-                                                                                                                                                                                                                                                                                                                                                                            },
-                                                                                                                                                                                                                                                                                                                                                                            [](id v) -> FileProviderService
-                                                                                                                                                                                                                                                                                                                                                                            {
-                                                                                                                                                                                                                                                                                                                                                                                return cocoon::internal::wrap<FileProviderService>((::NSFileProviderService*)v);
-                                                                                                                                                                                                                                                                                                                                                                            }),
-                                                                                                                                                                                                                                                                                                            cocoon::internal::wrap<Error>(a149_1)); } : (void (^)(NSDictionary<NSFileProviderServiceName, NSFileProviderService*>*, ::NSError*))nil)];
+                                                                                                                                                                                                                                                                                                                                                                                                                      {
+                                                                                                                                                                                                                                                                                                                                                                                                                          return cocoon::internal::from((NSString*)k);
+                                                                                                                                                                                                                                                                                                                                                                                                                      },
+                                                                                                                                                                                                                                                                                                                                                                                                                      [](id v) -> FileProviderService
+                                                                                                                                                                                                                                                                                                                                                                                                                      {
+                                                                                                                                                                                                                                                                                                                                                                                                                          return cocoon::internal::wrap<FileProviderService>((::NSFileProviderService*)v);
+                                                                                                                                                                                                                                                                                                                                                                                                                      }),
+                                                                                                                                                                                                                                                                                                                                        cocoon::internal::wrap<Error>(a149_1)); } : (void (^)(NSDictionary<NSFileProviderServiceName, NSFileProviderService*>*, ::NSError*))nil)];
     }
 
     bool FileManager::get_relationship(URLRelationship* out_relationship, SearchPathDirectory directory, SearchPathDomainMask domain_mask, const URL& url) const
@@ -666,14 +666,14 @@ namespace cocoon
     std::vector<URL> FileManager::mounted_volume_ur_ls_including_resource_values_for_keys(const std::vector<std::string>& property_keys, VolumeEnumerationOptions options) const
     {
         return cocoon::internal::from_array<URL>([cocoon::internal::ns<::NSFileManager>(this) mountedVolumeURLsIncludingResourceValuesForKeys:cocoon::internal::to_array(property_keys, [](const std::string& e) -> id
-                                                                                                                               {
-                                                                                                                                   return cocoon::internal::to(e);
-                                                                                                                               })
-                                                                                                          options:static_cast<::NSVolumeEnumerationOptions>(options)],
-                                   [](id e) -> URL
-                                   {
-                                       return cocoon::internal::wrap<URL>((::NSURL*)e);
-                                   });
+                                                                                                                                                                         {
+                                                                                                                                                                             return cocoon::internal::to(e);
+                                                                                                                                                                         })
+                                                                                                                                      options:static_cast<::NSVolumeEnumerationOptions>(options)],
+                                                 [](id e) -> URL
+                                                 {
+                                                     return cocoon::internal::wrap<URL>((::NSURL*)e);
+                                                 });
     }
 
     bool FileManager::move_item_at_path(const std::string& src_path, const std::string& dst_path) const
@@ -747,15 +747,15 @@ namespace cocoon
     {
         NSError* __error = nil;
         auto __r = [cocoon::internal::ns<::NSFileManager>(this) setAttributes:cocoon::internal::to_dictionary(attributes, [](const std::string& k) -> id
-                                                                                  {
-                                                                                      return cocoon::internal::to(k);
-                                                                                  },
-                                                                                  [](const Object& v) -> id
-                                                                                  {
-                                                                                      return cocoon::internal::native_id(v);
-                                                                                  })
-                                                   ofItemAtPath:cocoon::internal::to(path)
-                                                          error:&__error];
+                                                                                                              {
+                                                                                                                  return cocoon::internal::to(k);
+                                                                                                              },
+                                                                                                              [](const Object& v) -> id
+                                                                                                              {
+                                                                                                                  return cocoon::internal::native_id(v);
+                                                                                                              })
+                                                                 ofItemAtPath:cocoon::internal::to(path)
+                                                                        error:&__error];
         if (__error)
         {
             throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
@@ -793,9 +793,9 @@ namespace cocoon
     std::vector<std::string> FileManager::subpaths_at_path(const std::string& path) const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSFileManager>(this) subpathsAtPath:cocoon::internal::to(path)], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::vector<std::string> FileManager::subpaths_of_directory_at_path(const std::string& path) const
@@ -807,9 +807,9 @@ namespace cocoon
             throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
         }
         return cocoon::internal::from_array<std::string>(__r, [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     bool FileManager::trash_item_at_url(const URL& url, URL& out_resulting_url) const

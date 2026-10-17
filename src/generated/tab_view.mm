@@ -248,17 +248,17 @@ namespace cocoon
     std::vector<TabViewItem> TabView::tab_view_items() const
     {
         return cocoon::internal::from_array<TabViewItem>([cocoon::internal::ns<::NSTabView>(this) tabViewItems], [](id e) -> TabViewItem
-                                           {
-                                               return cocoon::internal::wrap<TabViewItem>((::NSTabViewItem*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::wrap<TabViewItem>((::NSTabViewItem*)e);
+                                                         });
     }
 
     void TabView::set_tab_view_items(const std::vector<TabViewItem>& value) const
     {
         [cocoon::internal::ns<::NSTabView>(this) setTabViewItems:cocoon::internal::to_array(value, [](const TabViewItem& e) -> id
-                                                                {
-                                                                    return cocoon::internal::native<::NSTabViewItem>(e);
-                                                                })];
+                                                                                            {
+                                                                                                return cocoon::internal::native<::NSTabViewItem>(e);
+                                                                                            })];
     }
 
     TabViewType TabView::tab_view_type() const

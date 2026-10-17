@@ -1,5 +1,6 @@
 #pragma once
 
+#include "generated/availability.h"
 #include "generated/enums.h"
 #include "generated/structs.h"
 #include "object.h"
@@ -160,6 +161,7 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         bool has_learned_word(const std::string& word) const;
+#ifdef COCOON_MACOS_27
         /**
      * @brief Calls `-[NSSpellChecker ignoreGrammarRange:inSentence:inSpellDocumentWithTag:]`.
      * @details This method should be called to ignore a particular grammar issue. The sentence should be the portion of the text corresponding to the range of an NSTextCheckingResult of grammar type. The grammarRange should be the range within that sentence of an individual issue, taken from the NSGrammarRange entry of one of the grammarDetails of the same NSTextCheckingResult.
@@ -168,6 +170,7 @@ namespace cocoon
      * @param tag Argument converted to the Objective-C parameter of the same role.
      */
         void ignore_grammar_range(const Range& grammar_range, const std::string& sentence, std::int64_t tag) const;
+#endif
         /**
      * @brief Calls `-[NSSpellChecker ignoreWord:inSpellDocumentWithTag:]`.
      * @details This method should be called from the client's implementation of -ignoreSpelling:

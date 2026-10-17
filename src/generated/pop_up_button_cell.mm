@@ -27,9 +27,9 @@ namespace cocoon
     void PopUpButtonCell::add_items_with_titles(const std::vector<std::string>& item_titles) const
     {
         [cocoon::internal::ns<::NSPopUpButtonCell>(this) addItemsWithTitles:cocoon::internal::to_array(item_titles, [](const std::string& e) -> id
-                                                                           {
-                                                                               return cocoon::internal::to(e);
-                                                                           })];
+                                                                                                       {
+                                                                                                           return cocoon::internal::to(e);
+                                                                                                       })];
     }
 
     void PopUpButtonCell::attach_pop_up_with_frame(const Rect& cell_frame, const View& control_view) const
@@ -175,17 +175,17 @@ namespace cocoon
     std::vector<MenuItem> PopUpButtonCell::item_array() const
     {
         return cocoon::internal::from_array<MenuItem>([cocoon::internal::ns<::NSPopUpButtonCell>(this) itemArray], [](id e) -> MenuItem
-                                        {
-                                            return cocoon::internal::wrap<MenuItem>((::NSMenuItem*)e);
-                                        });
+                                                      {
+                                                          return cocoon::internal::wrap<MenuItem>((::NSMenuItem*)e);
+                                                      });
     }
 
     std::vector<std::string> PopUpButtonCell::item_titles() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSPopUpButtonCell>(this) itemTitles], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     MenuItem PopUpButtonCell::last_item() const

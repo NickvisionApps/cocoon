@@ -16,27 +16,27 @@ namespace cocoon
     }
 
     CIImage::CIImage(const CGImage& image, const std::map<std::string, Object>& options) : CIImage(Adopt{cocoon::internal::retain([[::CIImage alloc] initWithCGImage:((::CGImageRef)(image).handle())
-                                                                                                                                               options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
-                                                                                                                                                                         {
-                                                                                                                                                                             return cocoon::internal::to(k);
-                                                                                                                                                                         },
-                                                                                                                                                                         [](const Object& v) -> id
-                                                                                                                                                                         {
-                                                                                                                                                                             return cocoon::internal::native_id(v);
-                                                                                                                                                                         })])})
+                                                                                                                                                             options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
+                                                                                                                                                                                                     {
+                                                                                                                                                                                                         return cocoon::internal::to(k);
+                                                                                                                                                                                                     },
+                                                                                                                                                                                                     [](const Object& v) -> id
+                                                                                                                                                                                                     {
+                                                                                                                                                                                                         return cocoon::internal::native_id(v);
+                                                                                                                                                                                                     })])})
     {
     }
 
     CIImage::CIImage(const CGImageSource& source, std::uint64_t index, const std::map<std::string, Object>& dict) : CIImage(Adopt{cocoon::internal::retain([[::CIImage alloc] initWithCGImageSource:((::CGImageSourceRef)(source).handle())
-                                                                                                                                                                                index:static_cast<::size_t>(index)
-                                                                                                                                                                              options:cocoon::internal::to_dictionary(dict, [](const std::string& k) -> id
-                                                                                                                                                                                                        {
-                                                                                                                                                                                                            return cocoon::internal::to(k);
-                                                                                                                                                                                                        },
-                                                                                                                                                                                                        [](const Object& v) -> id
-                                                                                                                                                                                                        {
-                                                                                                                                                                                                            return cocoon::internal::native_id(v);
-                                                                                                                                                                                                        })])})
+                                                                                                                                                                                              index:static_cast<::size_t>(index)
+                                                                                                                                                                                            options:cocoon::internal::to_dictionary(dict, [](const std::string& k) -> id
+                                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                                        return cocoon::internal::to(k);
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                    [](const Object& v) -> id
+                                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                                        return cocoon::internal::native_id(v);
+                                                                                                                                                                                                                                    })])})
     {
     }
 
@@ -45,14 +45,14 @@ namespace cocoon
     }
 
     CIImage::CIImage(const CVImageBuffer& image_buffer, const std::map<std::string, Object>& options) : CIImage(Adopt{cocoon::internal::retain([[::CIImage alloc] initWithCVImageBuffer:((::CVImageBufferRef)(image_buffer).handle())
-                                                                                                                                                                  options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
-                                                                                                                                                                                            {
-                                                                                                                                                                                                return cocoon::internal::to(k);
-                                                                                                                                                                                            },
-                                                                                                                                                                                            [](const Object& v) -> id
-                                                                                                                                                                                            {
-                                                                                                                                                                                                return cocoon::internal::native_id(v);
-                                                                                                                                                                                            })])})
+                                                                                                                                                                                options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
+                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                            return cocoon::internal::to(k);
+                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                        [](const Object& v) -> id
+                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                            return cocoon::internal::native_id(v);
+                                                                                                                                                                                                                        })])})
     {
     }
 
@@ -61,14 +61,14 @@ namespace cocoon
     }
 
     CIImage::CIImage(const CVPixelBuffer& pixel_buffer, const std::map<std::string, Object>& options) : CIImage(Adopt{cocoon::internal::retain([[::CIImage alloc] initWithCVPixelBuffer:((::CVPixelBufferRef)(pixel_buffer).handle())
-                                                                                                                                                                  options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
-                                                                                                                                                                                            {
-                                                                                                                                                                                                return cocoon::internal::to(k);
-                                                                                                                                                                                            },
-                                                                                                                                                                                            [](const Object& v) -> id
-                                                                                                                                                                                            {
-                                                                                                                                                                                                return cocoon::internal::native_id(v);
-                                                                                                                                                                                            })])})
+                                                                                                                                                                                options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
+                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                            return cocoon::internal::to(k);
+                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                        [](const Object& v) -> id
+                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                            return cocoon::internal::native_id(v);
+                                                                                                                                                                                                                        })])})
     {
     }
 
@@ -81,14 +81,14 @@ namespace cocoon
     }
 
     CIImage::CIImage(const URL& url, const std::map<std::string, Object>& options) : CIImage(Adopt{cocoon::internal::retain([[::CIImage alloc] initWithContentsOfURL:cocoon::internal::native<::NSURL>(url)
-                                                                                                                                               options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
-                                                                                                                                                                         {
-                                                                                                                                                                             return cocoon::internal::to(k);
-                                                                                                                                                                         },
-                                                                                                                                                                         [](const Object& v) -> id
-                                                                                                                                                                         {
-                                                                                                                                                                             return cocoon::internal::native_id(v);
-                                                                                                                                                                         })])})
+                                                                                                                                                             options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
+                                                                                                                                                                                                     {
+                                                                                                                                                                                                         return cocoon::internal::to(k);
+                                                                                                                                                                                                     },
+                                                                                                                                                                                                     [](const Object& v) -> id
+                                                                                                                                                                                                     {
+                                                                                                                                                                                                         return cocoon::internal::native_id(v);
+                                                                                                                                                                                                     })])})
     {
     }
 
@@ -97,14 +97,14 @@ namespace cocoon
     }
 
     CIImage::CIImage(const std::vector<std::uint8_t>& data, const std::map<std::string, Object>& options) : CIImage(Adopt{cocoon::internal::retain([[::CIImage alloc] initWithData:cocoon::internal::to_data(data)
-                                                                                                                                                             options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
-                                                                                                                                                                                       {
-                                                                                                                                                                                           return cocoon::internal::to(k);
-                                                                                                                                                                                       },
-                                                                                                                                                                                       [](const Object& v) -> id
-                                                                                                                                                                                       {
-                                                                                                                                                                                           return cocoon::internal::native_id(v);
-                                                                                                                                                                                       })])})
+                                                                                                                                                                           options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
+                                                                                                                                                                                                                   {
+                                                                                                                                                                                                                       return cocoon::internal::to(k);
+                                                                                                                                                                                                                   },
+                                                                                                                                                                                                                   [](const Object& v) -> id
+                                                                                                                                                                                                                   {
+                                                                                                                                                                                                                       return cocoon::internal::native_id(v);
+                                                                                                                                                                                                                   })])})
     {
     }
 
@@ -113,14 +113,14 @@ namespace cocoon
     }
 
     CIImage::CIImage(const Object& data, const std::map<std::string, Object>& options) : CIImage(Adopt{cocoon::internal::retain([[::CIImage alloc] initWithDepthData:cocoon::internal::native_id(data)
-                                                                                                                                               options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
-                                                                                                                                                                         {
-                                                                                                                                                                             return cocoon::internal::to(k);
-                                                                                                                                                                         },
-                                                                                                                                                                         [](const Object& v) -> id
-                                                                                                                                                                         {
-                                                                                                                                                                             return cocoon::internal::native_id(v);
-                                                                                                                                                                         })])})
+                                                                                                                                                             options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
+                                                                                                                                                                                                     {
+                                                                                                                                                                                                         return cocoon::internal::to(k);
+                                                                                                                                                                                                     },
+                                                                                                                                                                                                     [](const Object& v) -> id
+                                                                                                                                                                                                     {
+                                                                                                                                                                                                         return cocoon::internal::native_id(v);
+                                                                                                                                                                                                     })])})
     {
     }
 
@@ -129,14 +129,14 @@ namespace cocoon
     }
 
     CIImage::CIImage(const IOSurface& surface, const std::map<std::string, Object>& options) : CIImage(Adopt{cocoon::internal::retain([[::CIImage alloc] initWithIOSurface:((::IOSurfaceRef)(surface).handle())
-                                                                                                                                                     options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
-                                                                                                                                                                               {
-                                                                                                                                                                                   return cocoon::internal::to(k);
-                                                                                                                                                                               },
-                                                                                                                                                                               [](const Object& v) -> id
-                                                                                                                                                                               {
-                                                                                                                                                                                   return cocoon::internal::native_id(v);
-                                                                                                                                                                               })])})
+                                                                                                                                                                   options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
+                                                                                                                                                                                                           {
+                                                                                                                                                                                                               return cocoon::internal::to(k);
+                                                                                                                                                                                                           },
+                                                                                                                                                                                                           [](const Object& v) -> id
+                                                                                                                                                                                                           {
+                                                                                                                                                                                                               return cocoon::internal::native_id(v);
+                                                                                                                                                                                                           })])})
     {
     }
 
@@ -145,16 +145,16 @@ namespace cocoon
     }
 
     CIImage::CIImage(unsigned int name, const Size& size, bool flipped, const std::map<std::string, Object>& options) : CIImage(Adopt{cocoon::internal::retain([[::CIImage alloc] initWithTexture:static_cast<unsigned int>(name)
-                                                                                                                                                                               size:cocoon::internal::to(size)
-                                                                                                                                                                            flipped:static_cast<::BOOL>(flipped)
-                                                                                                                                                                            options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
-                                                                                                                                                                                                      {
-                                                                                                                                                                                                          return cocoon::internal::to(k);
-                                                                                                                                                                                                      },
-                                                                                                                                                                                                      [](const Object& v) -> id
-                                                                                                                                                                                                      {
-                                                                                                                                                                                                          return cocoon::internal::native_id(v);
-                                                                                                                                                                                                      })])})
+                                                                                                                                                                                             size:cocoon::internal::to(size)
+                                                                                                                                                                                          flipped:static_cast<::BOOL>(flipped)
+                                                                                                                                                                                          options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
+                                                                                                                                                                                                                                  {
+                                                                                                                                                                                                                                      return cocoon::internal::to(k);
+                                                                                                                                                                                                                                  },
+                                                                                                                                                                                                                                  [](const Object& v) -> id
+                                                                                                                                                                                                                                  {
+                                                                                                                                                                                                                                      return cocoon::internal::native_id(v);
+                                                                                                                                                                                                                                  })])})
     {
     }
 
@@ -173,25 +173,25 @@ namespace cocoon
     std::vector<Object> CIImage::auto_adjustment_filters() const
     {
         return cocoon::internal::from_array<Object>([cocoon::internal::ns<::CIImage>(this) autoAdjustmentFilters], [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     std::vector<Object> CIImage::auto_adjustment_filters_with_options(const std::map<std::string, Object>& options) const
     {
         return cocoon::internal::from_array<Object>([cocoon::internal::ns<::CIImage>(this) autoAdjustmentFiltersWithOptions:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
-                                                                                                                  {
-                                                                                                                      return cocoon::internal::to(k);
-                                                                                                                  },
-                                                                                                                  [](const Object& v) -> id
-                                                                                                                  {
-                                                                                                                      return cocoon::internal::native_id(v);
-                                                                                                                  })],
-                                      [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                                                                                                                            {
+                                                                                                                                                                return cocoon::internal::to(k);
+                                                                                                                                                            },
+                                                                                                                                                            [](const Object& v) -> id
+                                                                                                                                                            {
+                                                                                                                                                                return cocoon::internal::native_id(v);
+                                                                                                                                                            })],
+                                                    [](id e) -> Object
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     void CIImage::draw_at_point(const Point& point, const Rect& from_rect, CompositingOperation op, double delta) const
@@ -222,14 +222,14 @@ namespace cocoon
     CIImage CIImage::image_by_applying_filter(const std::string& filter_name, const std::map<std::string, Object>& params) const
     {
         return cocoon::internal::wrap<CIImage>([cocoon::internal::ns<::CIImage>(this) imageByApplyingFilter:cocoon::internal::to(filter_name)
-                                                            withInputParameters:cocoon::internal::to_dictionary(params, [](const std::string& k) -> id
-                                                                                                  {
-                                                                                                      return cocoon::internal::to(k);
-                                                                                                  },
-                                                                                                  [](const Object& v) -> id
-                                                                                                  {
-                                                                                                      return cocoon::internal::native_id(v);
-                                                                                                  })]);
+                                                                                        withInputParameters:cocoon::internal::to_dictionary(params, [](const std::string& k) -> id
+                                                                                                                                            {
+                                                                                                                                                return cocoon::internal::to(k);
+                                                                                                                                            },
+                                                                                                                                            [](const Object& v) -> id
+                                                                                                                                            {
+                                                                                                                                                return cocoon::internal::native_id(v);
+                                                                                                                                            })]);
     }
 
     CIImage CIImage::image_by_applying_gain_map(const CIImage& gainmap) const
@@ -350,13 +350,13 @@ namespace cocoon
     CIImage CIImage::image_by_setting_properties(const std::vector<std::pair<Object, Object>>& properties) const
     {
         return cocoon::internal::wrap<CIImage>([cocoon::internal::ns<::CIImage>(this) imageBySettingProperties:cocoon::internal::to_dictionary(properties, [](const Object& k) -> id
-                                                                                                     {
-                                                                                                         return cocoon::internal::native_id(k);
-                                                                                                     },
-                                                                                                     [](const Object& v) -> id
-                                                                                                     {
-                                                                                                         return cocoon::internal::native_id(v);
-                                                                                                     })]);
+                                                                                                                                               {
+                                                                                                                                                   return cocoon::internal::native_id(k);
+                                                                                                                                               },
+                                                                                                                                               [](const Object& v) -> id
+                                                                                                                                               {
+                                                                                                                                                   return cocoon::internal::native_id(v);
+                                                                                                                                               })]);
     }
 
     CIImage CIImage::image_by_unpremultiplying_alpha() const
@@ -387,28 +387,28 @@ namespace cocoon
     CIImage CIImage::image_with_cg_image(const CGImage& image, const std::map<std::string, Object>& options)
     {
         return cocoon::internal::wrap<CIImage>([::CIImage imageWithCGImage:((::CGImageRef)(image).handle())
-                                                     options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
-                                                                               {
-                                                                                   return cocoon::internal::to(k);
-                                                                               },
-                                                                               [](const Object& v) -> id
-                                                                               {
-                                                                                   return cocoon::internal::native_id(v);
-                                                                               })]);
+                                                                   options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
+                                                                                                           {
+                                                                                                               return cocoon::internal::to(k);
+                                                                                                           },
+                                                                                                           [](const Object& v) -> id
+                                                                                                           {
+                                                                                                               return cocoon::internal::native_id(v);
+                                                                                                           })]);
     }
 
     CIImage CIImage::image_with_cg_image_source(const CGImageSource& source, std::uint64_t index, const std::map<std::string, Object>& dict)
     {
         return cocoon::internal::wrap<CIImage>([::CIImage imageWithCGImageSource:((::CGImageSourceRef)(source).handle())
-                                                             index:static_cast<::size_t>(index)
-                                                           options:cocoon::internal::to_dictionary(dict, [](const std::string& k) -> id
-                                                                                     {
-                                                                                         return cocoon::internal::to(k);
-                                                                                     },
-                                                                                     [](const Object& v) -> id
-                                                                                     {
-                                                                                         return cocoon::internal::native_id(v);
-                                                                                     })]);
+                                                                           index:static_cast<::size_t>(index)
+                                                                         options:cocoon::internal::to_dictionary(dict, [](const std::string& k) -> id
+                                                                                                                 {
+                                                                                                                     return cocoon::internal::to(k);
+                                                                                                                 },
+                                                                                                                 [](const Object& v) -> id
+                                                                                                                 {
+                                                                                                                     return cocoon::internal::native_id(v);
+                                                                                                                 })]);
     }
 
     CIImage CIImage::image_with_cv_image_buffer(const CVImageBuffer& image_buffer)
@@ -419,14 +419,14 @@ namespace cocoon
     CIImage CIImage::image_with_cv_image_buffer(const CVImageBuffer& image_buffer, const std::map<std::string, Object>& options)
     {
         return cocoon::internal::wrap<CIImage>([::CIImage imageWithCVImageBuffer:((::CVImageBufferRef)(image_buffer).handle())
-                                                           options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
-                                                                                     {
-                                                                                         return cocoon::internal::to(k);
-                                                                                     },
-                                                                                     [](const Object& v) -> id
-                                                                                     {
-                                                                                         return cocoon::internal::native_id(v);
-                                                                                     })]);
+                                                                         options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
+                                                                                                                 {
+                                                                                                                     return cocoon::internal::to(k);
+                                                                                                                 },
+                                                                                                                 [](const Object& v) -> id
+                                                                                                                 {
+                                                                                                                     return cocoon::internal::native_id(v);
+                                                                                                                 })]);
     }
 
     CIImage CIImage::image_with_cv_pixel_buffer(const CVPixelBuffer& pixel_buffer)
@@ -437,14 +437,14 @@ namespace cocoon
     CIImage CIImage::image_with_cv_pixel_buffer(const CVPixelBuffer& pixel_buffer, const std::map<std::string, Object>& options)
     {
         return cocoon::internal::wrap<CIImage>([::CIImage imageWithCVPixelBuffer:((::CVPixelBufferRef)(pixel_buffer).handle())
-                                                           options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
-                                                                                     {
-                                                                                         return cocoon::internal::to(k);
-                                                                                     },
-                                                                                     [](const Object& v) -> id
-                                                                                     {
-                                                                                         return cocoon::internal::native_id(v);
-                                                                                     })]);
+                                                                         options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
+                                                                                                                 {
+                                                                                                                     return cocoon::internal::to(k);
+                                                                                                                 },
+                                                                                                                 [](const Object& v) -> id
+                                                                                                                 {
+                                                                                                                     return cocoon::internal::native_id(v);
+                                                                                                                 })]);
     }
 
     CIImage CIImage::image_with_color(const CIColor& color)
@@ -460,14 +460,14 @@ namespace cocoon
     CIImage CIImage::image_with_contents_of_url(const URL& url, const std::map<std::string, Object>& options)
     {
         return cocoon::internal::wrap<CIImage>([::CIImage imageWithContentsOfURL:cocoon::internal::native<::NSURL>(url)
-                                                           options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
-                                                                                     {
-                                                                                         return cocoon::internal::to(k);
-                                                                                     },
-                                                                                     [](const Object& v) -> id
-                                                                                     {
-                                                                                         return cocoon::internal::native_id(v);
-                                                                                     })]);
+                                                                         options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
+                                                                                                                 {
+                                                                                                                     return cocoon::internal::to(k);
+                                                                                                                 },
+                                                                                                                 [](const Object& v) -> id
+                                                                                                                 {
+                                                                                                                     return cocoon::internal::native_id(v);
+                                                                                                                 })]);
     }
 
     CIImage CIImage::image_with_data(const std::vector<std::uint8_t>& data)
@@ -478,14 +478,14 @@ namespace cocoon
     CIImage CIImage::image_with_data(const std::vector<std::uint8_t>& data, const std::map<std::string, Object>& options)
     {
         return cocoon::internal::wrap<CIImage>([::CIImage imageWithData:cocoon::internal::to_data(data)
-                                                  options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
-                                                                            {
-                                                                                return cocoon::internal::to(k);
-                                                                            },
-                                                                            [](const Object& v) -> id
-                                                                            {
-                                                                                return cocoon::internal::native_id(v);
-                                                                            })]);
+                                                                options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
+                                                                                                        {
+                                                                                                            return cocoon::internal::to(k);
+                                                                                                        },
+                                                                                                        [](const Object& v) -> id
+                                                                                                        {
+                                                                                                            return cocoon::internal::native_id(v);
+                                                                                                        })]);
     }
 
     CIImage CIImage::image_with_depth_data(const Object& data)
@@ -496,14 +496,14 @@ namespace cocoon
     CIImage CIImage::image_with_depth_data(const Object& data, const std::map<std::string, Object>& options)
     {
         return cocoon::internal::wrap<CIImage>([::CIImage imageWithDepthData:cocoon::internal::native_id(data)
-                                                       options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
-                                                                                 {
-                                                                                     return cocoon::internal::to(k);
-                                                                                 },
-                                                                                 [](const Object& v) -> id
-                                                                                 {
-                                                                                     return cocoon::internal::native_id(v);
-                                                                                 })]);
+                                                                     options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
+                                                                                                             {
+                                                                                                                 return cocoon::internal::to(k);
+                                                                                                             },
+                                                                                                             [](const Object& v) -> id
+                                                                                                             {
+                                                                                                                 return cocoon::internal::native_id(v);
+                                                                                                             })]);
     }
 
     CIImage CIImage::image_with_io_surface(const IOSurface& surface)
@@ -514,27 +514,27 @@ namespace cocoon
     CIImage CIImage::image_with_io_surface(const IOSurface& surface, const std::map<std::string, Object>& options)
     {
         return cocoon::internal::wrap<CIImage>([::CIImage imageWithIOSurface:((::IOSurfaceRef)(surface).handle())
-                                                       options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
-                                                                                 {
-                                                                                     return cocoon::internal::to(k);
-                                                                                 },
-                                                                                 [](const Object& v) -> id
-                                                                                 {
-                                                                                     return cocoon::internal::native_id(v);
-                                                                                 })]);
+                                                                     options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
+                                                                                                             {
+                                                                                                                 return cocoon::internal::to(k);
+                                                                                                             },
+                                                                                                             [](const Object& v) -> id
+                                                                                                             {
+                                                                                                                 return cocoon::internal::native_id(v);
+                                                                                                             })]);
     }
 
     CIImage CIImage::image_with_mtl_texture(const Object& texture, const std::map<std::string, Object>& options)
     {
         return cocoon::internal::wrap<CIImage>([::CIImage imageWithMTLTexture:cocoon::internal::native_id(texture)
-                                                        options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
-                                                                                  {
-                                                                                      return cocoon::internal::to(k);
-                                                                                  },
-                                                                                  [](const Object& v) -> id
-                                                                                  {
-                                                                                      return cocoon::internal::native_id(v);
-                                                                                  })]);
+                                                                      options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
+                                                                                                              {
+                                                                                                                  return cocoon::internal::to(k);
+                                                                                                              },
+                                                                                                              [](const Object& v) -> id
+                                                                                                              {
+                                                                                                                  return cocoon::internal::native_id(v);
+                                                                                                              })]);
     }
 
     CIImage CIImage::image_with_portait_effects_matte(const Object& matte)
@@ -545,14 +545,14 @@ namespace cocoon
     CIImage CIImage::image_with_portait_effects_matte(const Object& matte, const std::map<std::string, Object>& options)
     {
         return cocoon::internal::wrap<CIImage>([::CIImage imageWithPortaitEffectsMatte:cocoon::internal::native_id(matte)
-                                                                 options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
-                                                                                           {
-                                                                                               return cocoon::internal::to(k);
-                                                                                           },
-                                                                                           [](const Object& v) -> id
-                                                                                           {
-                                                                                               return cocoon::internal::native_id(v);
-                                                                                           })]);
+                                                                               options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
+                                                                                                                       {
+                                                                                                                           return cocoon::internal::to(k);
+                                                                                                                       },
+                                                                                                                       [](const Object& v) -> id
+                                                                                                                       {
+                                                                                                                           return cocoon::internal::native_id(v);
+                                                                                                                       })]);
     }
 
     CIImage CIImage::image_with_semantic_segmentation_matte(const Object& matte)
@@ -563,14 +563,14 @@ namespace cocoon
     CIImage CIImage::image_with_semantic_segmentation_matte(const Object& matte, const std::map<std::string, Object>& options)
     {
         return cocoon::internal::wrap<CIImage>([::CIImage imageWithSemanticSegmentationMatte:cocoon::internal::native_id(matte)
-                                                                       options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
-                                                                                                 {
-                                                                                                     return cocoon::internal::to(k);
-                                                                                                 },
-                                                                                                 [](const Object& v) -> id
-                                                                                                 {
-                                                                                                     return cocoon::internal::native_id(v);
-                                                                                                 })]);
+                                                                                     options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
+                                                                                                                             {
+                                                                                                                                 return cocoon::internal::to(k);
+                                                                                                                             },
+                                                                                                                             [](const Object& v) -> id
+                                                                                                                             {
+                                                                                                                                 return cocoon::internal::native_id(v);
+                                                                                                                             })]);
     }
 
     CIImage CIImage::image_with_texture(unsigned int name, const Size& size, bool flipped, const CGColorSpace& color_space)
@@ -581,16 +581,16 @@ namespace cocoon
     CIImage CIImage::image_with_texture(unsigned int name, const Size& size, bool flipped, const std::map<std::string, Object>& options)
     {
         return cocoon::internal::wrap<CIImage>([::CIImage imageWithTexture:static_cast<unsigned int>(name)
-                                                        size:cocoon::internal::to(size)
-                                                     flipped:static_cast<::BOOL>(flipped)
-                                                     options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
-                                                                               {
-                                                                                   return cocoon::internal::to(k);
-                                                                               },
-                                                                               [](const Object& v) -> id
-                                                                               {
-                                                                                   return cocoon::internal::native_id(v);
-                                                                               })]);
+                                                                      size:cocoon::internal::to(size)
+                                                                   flipped:static_cast<::BOOL>(flipped)
+                                                                   options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
+                                                                                                           {
+                                                                                                               return cocoon::internal::to(k);
+                                                                                                           },
+                                                                                                           [](const Object& v) -> id
+                                                                                                           {
+                                                                                                               return cocoon::internal::native_id(v);
+                                                                                                           })]);
     }
 
     Rect CIImage::region_of_interest_for_image(const CIImage& image, const Rect& rect) const
@@ -686,13 +686,13 @@ namespace cocoon
     std::map<std::string, Object> CIImage::properties() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::CIImage>(this) properties], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     CIImage CIImage::red_image()

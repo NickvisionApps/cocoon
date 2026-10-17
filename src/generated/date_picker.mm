@@ -227,9 +227,9 @@ namespace cocoon
     {
         id host = (__bridge id)native;
         cocoon::internal::bind_action(host, host, [](id host, id sender)
-                        {
-                            cocoon::Signal<cocoon::DatePicker, void(double)>::emit((__bridge void*)host, "date_changed", ((NSDatePicker*)sender).dateValue.timeIntervalSince1970);
-                        });
+                                      {
+                                          cocoon::Signal<cocoon::DatePicker, void(double)>::emit((__bridge void*)host, "date_changed", ((NSDatePicker*)sender).dateValue.timeIntervalSince1970);
+                                      });
     }
 
     void DatePicker::install_delegate_delegate_(void* native)

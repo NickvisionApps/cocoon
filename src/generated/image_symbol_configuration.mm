@@ -48,9 +48,9 @@ namespace cocoon
     ImageSymbolConfiguration ImageSymbolConfiguration::configuration_with_palette_colors(const std::vector<Color>& palette_colors)
     {
         return cocoon::internal::wrap<ImageSymbolConfiguration>([::NSImageSymbolConfiguration configurationWithPaletteColors:cocoon::internal::to_array(palette_colors, [](const Color& e) -> id
-                                                                                                                            {
-                                                                                                                                return cocoon::internal::native<::NSColor>(e);
-                                                                                                                            })]);
+                                                                                                                                                        {
+                                                                                                                                                            return cocoon::internal::native<::NSColor>(e);
+                                                                                                                                                        })]);
     }
 
     ImageSymbolConfiguration ImageSymbolConfiguration::configuration_with_point_size(double point_size, double weight)

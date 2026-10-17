@@ -94,17 +94,17 @@ namespace cocoon
     std::vector<TextStorage> TextStorage::attribute_runs() const
     {
         return cocoon::internal::from_array<TextStorage>([cocoon::internal::ns<::NSTextStorage>(this) attributeRuns], [](id e) -> TextStorage
-                                           {
-                                               return cocoon::internal::wrap<TextStorage>((::NSTextStorage*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::wrap<TextStorage>((::NSTextStorage*)e);
+                                                         });
     }
 
     void TextStorage::set_attribute_runs(const std::vector<TextStorage>& value) const
     {
         [cocoon::internal::ns<::NSTextStorage>(this) setAttributeRuns:cocoon::internal::to_array(value, [](const TextStorage& e) -> id
-                                                                     {
-                                                                         return cocoon::internal::native<::NSTextStorage>(e);
-                                                                     })];
+                                                                                                 {
+                                                                                                     return cocoon::internal::native<::NSTextStorage>(e);
+                                                                                                 })];
     }
 
     std::int64_t TextStorage::change_in_length() const
@@ -115,17 +115,17 @@ namespace cocoon
     std::vector<TextStorage> TextStorage::characters() const
     {
         return cocoon::internal::from_array<TextStorage>([cocoon::internal::ns<::NSTextStorage>(this) characters], [](id e) -> TextStorage
-                                           {
-                                               return cocoon::internal::wrap<TextStorage>((::NSTextStorage*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::wrap<TextStorage>((::NSTextStorage*)e);
+                                                         });
     }
 
     void TextStorage::set_characters(const std::vector<TextStorage>& value) const
     {
         [cocoon::internal::ns<::NSTextStorage>(this) setCharacters:cocoon::internal::to_array(value, [](const TextStorage& e) -> id
-                                                                  {
-                                                                      return cocoon::internal::native<::NSTextStorage>(e);
-                                                                  })];
+                                                                                              {
+                                                                                                  return cocoon::internal::native<::NSTextStorage>(e);
+                                                                                              })];
     }
 
     TextStorageEditActions TextStorage::edited_mask() const
@@ -166,25 +166,25 @@ namespace cocoon
     std::vector<LayoutManager> TextStorage::layout_managers() const
     {
         return cocoon::internal::from_array<LayoutManager>([cocoon::internal::ns<::NSTextStorage>(this) layoutManagers], [](id e) -> LayoutManager
-                                             {
-                                                 return cocoon::internal::wrap<LayoutManager>((::NSLayoutManager*)e);
-                                             });
+                                                           {
+                                                               return cocoon::internal::wrap<LayoutManager>((::NSLayoutManager*)e);
+                                                           });
     }
 
     std::vector<TextStorage> TextStorage::paragraphs() const
     {
         return cocoon::internal::from_array<TextStorage>([cocoon::internal::ns<::NSTextStorage>(this) paragraphs], [](id e) -> TextStorage
-                                           {
-                                               return cocoon::internal::wrap<TextStorage>((::NSTextStorage*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::wrap<TextStorage>((::NSTextStorage*)e);
+                                                         });
     }
 
     void TextStorage::set_paragraphs(const std::vector<TextStorage>& value) const
     {
         [cocoon::internal::ns<::NSTextStorage>(this) setParagraphs:cocoon::internal::to_array(value, [](const TextStorage& e) -> id
-                                                                  {
-                                                                      return cocoon::internal::native<::NSTextStorage>(e);
-                                                                  })];
+                                                                                              {
+                                                                                                  return cocoon::internal::native<::NSTextStorage>(e);
+                                                                                              })];
     }
 
     Object TextStorage::text_storage_observer() const
@@ -200,17 +200,17 @@ namespace cocoon
     std::vector<TextStorage> TextStorage::words() const
     {
         return cocoon::internal::from_array<TextStorage>([cocoon::internal::ns<::NSTextStorage>(this) words], [](id e) -> TextStorage
-                                           {
-                                               return cocoon::internal::wrap<TextStorage>((::NSTextStorage*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::wrap<TextStorage>((::NSTextStorage*)e);
+                                                         });
     }
 
     void TextStorage::set_words(const std::vector<TextStorage>& value) const
     {
         [cocoon::internal::ns<::NSTextStorage>(this) setWords:cocoon::internal::to_array(value, [](const TextStorage& e) -> id
-                                                             {
-                                                                 return cocoon::internal::native<::NSTextStorage>(e);
-                                                             })];
+                                                                                         {
+                                                                                             return cocoon::internal::native<::NSTextStorage>(e);
+                                                                                         })];
     }
 
     void TextStorage::install_delegate_delegate_(void* native)

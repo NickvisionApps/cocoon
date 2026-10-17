@@ -227,9 +227,9 @@ namespace cocoon
     std::vector<std::string> Calendar::era_symbols() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSCalendar>(this) eraSymbols], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::uint64_t Calendar::first_weekday() const
@@ -255,9 +255,9 @@ namespace cocoon
     std::vector<std::string> Calendar::long_era_symbols() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSCalendar>(this) longEraSymbols], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::uint64_t Calendar::minimum_days_in_first_week() const
@@ -273,89 +273,89 @@ namespace cocoon
     std::vector<std::string> Calendar::month_symbols() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSCalendar>(this) monthSymbols], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::vector<std::string> Calendar::quarter_symbols() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSCalendar>(this) quarterSymbols], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::vector<std::string> Calendar::short_month_symbols() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSCalendar>(this) shortMonthSymbols], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::vector<std::string> Calendar::short_quarter_symbols() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSCalendar>(this) shortQuarterSymbols], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::vector<std::string> Calendar::short_standalone_month_symbols() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSCalendar>(this) shortStandaloneMonthSymbols], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::vector<std::string> Calendar::short_standalone_quarter_symbols() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSCalendar>(this) shortStandaloneQuarterSymbols], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::vector<std::string> Calendar::short_standalone_weekday_symbols() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSCalendar>(this) shortStandaloneWeekdaySymbols], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::vector<std::string> Calendar::short_weekday_symbols() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSCalendar>(this) shortWeekdaySymbols], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::vector<std::string> Calendar::standalone_month_symbols() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSCalendar>(this) standaloneMonthSymbols], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::vector<std::string> Calendar::standalone_quarter_symbols() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSCalendar>(this) standaloneQuarterSymbols], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::vector<std::string> Calendar::standalone_weekday_symbols() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSCalendar>(this) standaloneWeekdaySymbols], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     TimeZone Calendar::time_zone() const
@@ -371,40 +371,40 @@ namespace cocoon
     std::vector<std::string> Calendar::very_short_month_symbols() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSCalendar>(this) veryShortMonthSymbols], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::vector<std::string> Calendar::very_short_standalone_month_symbols() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSCalendar>(this) veryShortStandaloneMonthSymbols], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::vector<std::string> Calendar::very_short_standalone_weekday_symbols() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSCalendar>(this) veryShortStandaloneWeekdaySymbols], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::vector<std::string> Calendar::very_short_weekday_symbols() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSCalendar>(this) veryShortWeekdaySymbols], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::vector<std::string> Calendar::weekday_symbols() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSCalendar>(this) weekdaySymbols], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 }

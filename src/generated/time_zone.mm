@@ -26,13 +26,13 @@ namespace cocoon
     std::map<std::string, std::string> TimeZone::abbreviation_dictionary()
     {
         return cocoon::internal::from_dictionary<std::map<std::string, std::string>>([::NSTimeZone abbreviationDictionary], [](id k) -> std::string
-                                                                       {
-                                                                           return cocoon::internal::from((NSString*)k);
-                                                                       },
-                                                                       [](id v) -> std::string
-                                                                       {
-                                                                           return cocoon::internal::from((NSString*)v);
-                                                                       });
+                                                                                     {
+                                                                                         return cocoon::internal::from((NSString*)k);
+                                                                                     },
+                                                                                     [](id v) -> std::string
+                                                                                     {
+                                                                                         return cocoon::internal::from((NSString*)v);
+                                                                                     });
     }
 
     std::string TimeZone::abbreviation_for_date(const Date& a_date) const
@@ -133,9 +133,9 @@ namespace cocoon
     std::vector<std::string> TimeZone::known_time_zone_names()
     {
         return cocoon::internal::from_array<std::string>([::NSTimeZone knownTimeZoneNames], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     TimeZone TimeZone::local_time_zone()

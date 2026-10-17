@@ -87,9 +87,9 @@ namespace cocoon
     std::vector<TextAttachmentViewProvider> TextLayoutFragment::text_attachment_view_providers() const
     {
         return cocoon::internal::from_array<TextAttachmentViewProvider>([cocoon::internal::ns<::NSTextLayoutFragment>(this) textAttachmentViewProviders], [](id e) -> TextAttachmentViewProvider
-                                                          {
-                                                              return cocoon::internal::wrap<TextAttachmentViewProvider>((::NSTextAttachmentViewProvider*)e);
-                                                          });
+                                                                        {
+                                                                            return cocoon::internal::wrap<TextAttachmentViewProvider>((::NSTextAttachmentViewProvider*)e);
+                                                                        });
     }
 
     TextElement TextLayoutFragment::text_element() const
@@ -105,9 +105,9 @@ namespace cocoon
     std::vector<TextLineFragment> TextLayoutFragment::text_line_fragments() const
     {
         return cocoon::internal::from_array<TextLineFragment>([cocoon::internal::ns<::NSTextLayoutFragment>(this) textLineFragments], [](id e) -> TextLineFragment
-                                                {
-                                                    return cocoon::internal::wrap<TextLineFragment>((::NSTextLineFragment*)e);
-                                                });
+                                                              {
+                                                                  return cocoon::internal::wrap<TextLineFragment>((::NSTextLineFragment*)e);
+                                                              });
     }
 
     double TextLayoutFragment::top_margin() const

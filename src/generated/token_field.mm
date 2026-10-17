@@ -19,9 +19,9 @@
     }
     auto __r = cocoon::Signal<cocoon::TokenField, std::vector<cocoon::Object>(std::string, std::int64_t, std::int64_t*)>::emit((__bridge void*)strongHost, "completions_for_substring_index_of_token_index_of_selected_item", cocoon::internal::from(substring), static_cast<std::int64_t>(tokenIndex), (std::int64_t*)(selectedIndex));
     return cocoon::internal::to_array(__r, [](const cocoon::Object& e) -> id
-                        {
-                            return cocoon::internal::native_id(e);
-                        });
+                                      {
+                                          return cocoon::internal::native_id(e);
+                                      });
 }
 
 - (NSArray*)tokenField:(NSTokenField*)tokenField shouldAddObjects:(NSArray*)tokens atIndex:(NSUInteger)index
@@ -32,14 +32,14 @@
         return {};
     }
     auto __r = cocoon::Signal<cocoon::TokenField, std::vector<cocoon::Object>(std::vector<cocoon::Object>, std::uint64_t)>::emit((__bridge void*)strongHost, "should_add_objects_at_index", cocoon::internal::from_array<cocoon::Object>(tokens, [](id e) -> cocoon::Object
-                                                                                                                                                                                                                           {
-                                                                                                                                                                                                                               return cocoon::internal::wrap<cocoon::Object>(e);
-                                                                                                                                                                                                                           }),
+                                                                                                                                                                                                                                         {
+                                                                                                                                                                                                                                             return cocoon::internal::wrap<cocoon::Object>(e);
+                                                                                                                                                                                                                                         }),
                                                                                                                                  static_cast<std::uint64_t>(index));
     return cocoon::internal::to_array(__r, [](const cocoon::Object& e) -> id
-                        {
-                            return cocoon::internal::native_id(e);
-                        });
+                                      {
+                                          return cocoon::internal::native_id(e);
+                                      });
 }
 
 - (NSString*)tokenField:(NSTokenField*)tokenField displayStringForRepresentedObject:(id)representedObject
@@ -83,9 +83,9 @@
         return {};
     }
     auto __r = cocoon::Signal<cocoon::TokenField, bool(std::vector<cocoon::Object>, cocoon::Pasteboard)>::emit((__bridge void*)strongHost, "write_represented_objects_to_pasteboard", cocoon::internal::from_array<cocoon::Object>(objects, [](id e) -> cocoon::Object
-                                                                                                                                                                                                                     {
-                                                                                                                                                                                                                         return cocoon::internal::wrap<cocoon::Object>(e);
-                                                                                                                                                                                                                     }),
+                                                                                                                                                                                                                                   {
+                                                                                                                                                                                                                                       return cocoon::internal::wrap<cocoon::Object>(e);
+                                                                                                                                                                                                                                   }),
                                                                                                                cocoon::internal::wrap<cocoon::Pasteboard>(pboard));
     return static_cast<::BOOL>(__r);
 }
@@ -99,9 +99,9 @@
     }
     auto __r = cocoon::Signal<cocoon::TokenField, std::vector<cocoon::Object>(cocoon::Pasteboard)>::emit((__bridge void*)strongHost, "read_from_pasteboard", cocoon::internal::wrap<cocoon::Pasteboard>(pboard));
     return cocoon::internal::to_array(__r, [](const cocoon::Object& e) -> id
-                        {
-                            return cocoon::internal::native_id(e);
-                        });
+                                      {
+                                          return cocoon::internal::native_id(e);
+                                      });
 }
 
 - (NSMenu*)tokenField:(NSTokenField*)tokenField menuForRepresentedObject:(id)representedObject
@@ -240,14 +240,14 @@
         return {};
     }
     auto __r = cocoon::Signal<cocoon::TextField, std::vector<std::string>(cocoon::TextView, std::vector<std::string>, cocoon::Range, std::int64_t*)>::emit((__bridge void*)strongHost, "text_view_completions_for_partial_word_range_index_of_selected_item", cocoon::internal::wrap<cocoon::TextView>(textView), cocoon::internal::from_array<std::string>(words, [](id e) -> std::string
-                                                                                                                                                                                                                                                                                                                                {
-                                                                                                                                                                                                                                                                                                                                    return cocoon::internal::from((NSString*)e);
-                                                                                                                                                                                                                                                                                                                                }),
+                                                                                                                                                                                                                                                                                                                                                            {
+                                                                                                                                                                                                                                                                                                                                                                return cocoon::internal::from((NSString*)e);
+                                                                                                                                                                                                                                                                                                                                                            }),
                                                                                                                                                            cocoon::internal::from(charRange), (std::int64_t*)(index));
     return cocoon::internal::to_array(__r, [](const std::string& e) -> id
-                        {
-                            return cocoon::internal::to(e);
-                        });
+                                      {
+                                          return cocoon::internal::to(e);
+                                      });
 }
 
 - (NSArray*)textField:(NSTextField*)textField textView:(NSTextView*)textView candidatesForSelectedRange:(NSRange)selectedRange
@@ -259,9 +259,9 @@
     }
     auto __r = cocoon::Signal<cocoon::TextField, std::vector<cocoon::Object>(cocoon::TextView, cocoon::Range)>::emit((__bridge void*)strongHost, "text_view_candidates_for_selected_range", cocoon::internal::wrap<cocoon::TextView>(textView), cocoon::internal::from(selectedRange));
     return cocoon::internal::to_array(__r, [](const cocoon::Object& e) -> id
-                        {
-                            return cocoon::internal::native_id(e);
-                        });
+                                      {
+                                          return cocoon::internal::native_id(e);
+                                      });
 }
 
 - (NSArray<NSTextCheckingResult*>*)textField:(NSTextField*)textField textView:(NSTextView*)textView candidates:(NSArray<NSTextCheckingResult*>*)candidates forSelectedRange:(NSRange)selectedRange
@@ -272,14 +272,14 @@
         return {};
     }
     auto __r = cocoon::Signal<cocoon::TextField, std::vector<cocoon::TextCheckingResult>(cocoon::TextView, std::vector<cocoon::TextCheckingResult>, cocoon::Range)>::emit((__bridge void*)strongHost, "text_field_text_view_candidates_for_selected_range", cocoon::internal::wrap<cocoon::TextView>(textView), cocoon::internal::from_array<cocoon::TextCheckingResult>(candidates, [](id e) -> cocoon::TextCheckingResult
-                                                                                                                                                                                                                                                                                                                                             {
-                                                                                                                                                                                                                                                                                                                                                 return cocoon::internal::wrap<cocoon::TextCheckingResult>((::NSTextCheckingResult*)e);
-                                                                                                                                                                                                                                                                                                                                             }),
+                                                                                                                                                                                                                                                                                                                                                                         {
+                                                                                                                                                                                                                                                                                                                                                                             return cocoon::internal::wrap<cocoon::TextCheckingResult>((::NSTextCheckingResult*)e);
+                                                                                                                                                                                                                                                                                                                                                                         }),
                                                                                                                                                                           cocoon::internal::from(selectedRange));
     return cocoon::internal::to_array(__r, [](const cocoon::TextCheckingResult& e) -> id
-                        {
-                            return cocoon::internal::native<::NSTextCheckingResult>(e);
-                        });
+                                      {
+                                          return cocoon::internal::native<::NSTextCheckingResult>(e);
+                                      });
 }
 
 - (BOOL)textField:(NSTextField*)textField textView:(NSTextView*)textView shouldSelectCandidateAtIndex:(NSUInteger)index

@@ -22,17 +22,17 @@ namespace cocoon
     Rect TextAttachmentViewProvider::attachment_bounds_for_attributes(const std::map<std::string, Object>& attributes, const Object& location, const TextContainer& text_container, const Rect& proposed_line_fragment, const Point& position) const
     {
         return cocoon::internal::from([cocoon::internal::ns<::NSTextAttachmentViewProvider>(this) attachmentBoundsForAttributes:cocoon::internal::to_dictionary(attributes, [](const std::string& k) -> id
-                                                                                                                      {
-                                                                                                                          return cocoon::internal::to(k);
-                                                                                                                      },
-                                                                                                                      [](const Object& v) -> id
-                                                                                                                      {
-                                                                                                                          return cocoon::internal::native_id(v);
-                                                                                                                      })
-                                                                                           location:cocoon::internal::native_id(location)
-                                                                                      textContainer:cocoon::internal::native<::NSTextContainer>(text_container)
-                                                                               proposedLineFragment:cocoon::internal::to(proposed_line_fragment)
-                                                                                           position:cocoon::internal::to(position)]);
+                                                                                                                                                                {
+                                                                                                                                                                    return cocoon::internal::to(k);
+                                                                                                                                                                },
+                                                                                                                                                                [](const Object& v) -> id
+                                                                                                                                                                {
+                                                                                                                                                                    return cocoon::internal::native_id(v);
+                                                                                                                                                                })
+                                                                                                                       location:cocoon::internal::native_id(location)
+                                                                                                                  textContainer:cocoon::internal::native<::NSTextContainer>(text_container)
+                                                                                                           proposedLineFragment:cocoon::internal::to(proposed_line_fragment)
+                                                                                                                       position:cocoon::internal::to(position)]);
     }
 
     void TextAttachmentViewProvider::load_view() const

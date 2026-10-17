@@ -63,8 +63,8 @@ namespace cocoon
     std::vector<Window> WindowTabGroup::windows() const
     {
         return cocoon::internal::from_array<Window>([cocoon::internal::ns<::NSWindowTabGroup>(this) windows], [](id e) -> Window
-                                      {
-                                          return cocoon::internal::wrap<Window>((::NSWindow*)e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Window>((::NSWindow*)e);
+                                                    });
     }
 }

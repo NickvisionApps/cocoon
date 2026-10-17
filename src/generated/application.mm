@@ -29,9 +29,9 @@
         return;
     }
     cocoon::Signal<cocoon::Application, void(std::vector<cocoon::URL>)>::emit((__bridge void*)strongHost, "open_urls", cocoon::internal::from_array<cocoon::URL>(urls, [](id e) -> cocoon::URL
-                                                                                                                                                   {
-                                                                                                                                                       return cocoon::internal::wrap<cocoon::URL>((::NSURL*)e);
-                                                                                                                                                   }));
+                                                                                                                                                                 {
+                                                                                                                                                                     return cocoon::internal::wrap<cocoon::URL>((::NSURL*)e);
+                                                                                                                                                                 }));
 }
 
 - (BOOL)application:(NSApplication*)sender openFile:(NSString*)filename
@@ -53,9 +53,9 @@
         return;
     }
     cocoon::Signal<cocoon::Application, void(std::vector<std::string>)>::emit((__bridge void*)strongHost, "open_files", cocoon::internal::from_array<std::string>(filenames, [](id e) -> std::string
-                                                                                                                                                    {
-                                                                                                                                                        return cocoon::internal::from((NSString*)e);
-                                                                                                                                                    }));
+                                                                                                                                                                  {
+                                                                                                                                                                      return cocoon::internal::from((NSString*)e);
+                                                                                                                                                                  }));
 }
 
 - (BOOL)application:(NSApplication*)sender openTempFile:(NSString*)filename
@@ -121,17 +121,17 @@
         return {};
     }
     auto __r = cocoon::Signal<cocoon::Application, cocoon::ApplicationPrintReply(std::vector<std::string>, std::map<std::string, cocoon::Object>, bool)>::emit((__bridge void*)strongHost, "print_files_with_settings_show_print_panels", cocoon::internal::from_array<std::string>(fileNames, [](id e) -> std::string
-                                                                                                                                                                                                                                                                      {
-                                                                                                                                                                                                                                                                          return cocoon::internal::from((NSString*)e);
-                                                                                                                                                                                                                                                                      }),
+                                                                                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                                                                                        return cocoon::internal::from((NSString*)e);
+                                                                                                                                                                                                                                                                                    }),
                                                                                                                                                                cocoon::internal::from_dictionary<std::map<std::string, cocoon::Object>>(printSettings, [](id k) -> std::string
-                                                                                                                                                                                                                          {
-                                                                                                                                                                                                                              return cocoon::internal::from((NSString*)k);
-                                                                                                                                                                                                                          },
-                                                                                                                                                                                                                          [](id v) -> cocoon::Object
-                                                                                                                                                                                                                          {
-                                                                                                                                                                                                                              return cocoon::internal::wrap<cocoon::Object>(v);
-                                                                                                                                                                                                                          }),
+                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                            return cocoon::internal::from((NSString*)k);
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                        [](id v) -> cocoon::Object
+                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                            return cocoon::internal::wrap<cocoon::Object>(v);
+                                                                                                                                                                                                                                        }),
                                                                                                                                                                static_cast<bool>(showPrintPanels));
     return static_cast<::NSApplicationPrintReply>(__r);
 }
@@ -208,13 +208,13 @@
         return;
     }
     cocoon::Signal<cocoon::Application, void(std::map<std::string, cocoon::Object>)>::emit((__bridge void*)strongHost, "did_receive_remote_notification", cocoon::internal::from_dictionary<std::map<std::string, cocoon::Object>>(userInfo, [](id k) -> std::string
-                                                                                                                                                                                                                     {
-                                                                                                                                                                                                                         return cocoon::internal::from((NSString*)k);
-                                                                                                                                                                                                                     },
-                                                                                                                                                                                                                     [](id v) -> cocoon::Object
-                                                                                                                                                                                                                     {
-                                                                                                                                                                                                                         return cocoon::internal::wrap<cocoon::Object>(v);
-                                                                                                                                                                                                                     }));
+                                                                                                                                                                                                                                   {
+                                                                                                                                                                                                                                       return cocoon::internal::from((NSString*)k);
+                                                                                                                                                                                                                                   },
+                                                                                                                                                                                                                                   [](id v) -> cocoon::Object
+                                                                                                                                                                                                                                   {
+                                                                                                                                                                                                                                       return cocoon::internal::wrap<cocoon::Object>(v);
+                                                                                                                                                                                                                                   }));
 }
 
 - (BOOL)applicationSupportsSecureRestorableState:(NSApplication*)app
@@ -287,9 +287,9 @@
                                                                                                                                            return [blk](std::vector<cocoon::Object> a281_0) -> void
                                                                                                                                            {
                                                                                                                                                blk(cocoon::internal::to_array(a281_0, [](const cocoon::Object& e) -> id
-                                                                                                                                                                {
-                                                                                                                                                                    return cocoon::internal::native_id(e);
-                                                                                                                                                                }));
+                                                                                                                                                                              {
+                                                                                                                                                                                  return cocoon::internal::native_id(e);
+                                                                                                                                                                              }));
                                                                                                                                            };
                                                                                                                                        }());
     return static_cast<::BOOL>(__r);
@@ -860,13 +860,13 @@ namespace cocoon
     void Application::order_front_standard_about_panel_with_options(const std::map<std::string, Object>& options_dictionary) const
     {
         [cocoon::internal::ns<::NSApplication>(this) orderFrontStandardAboutPanelWithOptions:cocoon::internal::to_dictionary(options_dictionary, [](const std::string& k) -> id
-                                                                                                 {
-                                                                                                     return cocoon::internal::to(k);
-                                                                                                 },
-                                                                                                 [](const Object& v) -> id
-                                                                                                 {
-                                                                                                     return cocoon::internal::native_id(v);
-                                                                                                 })];
+                                                                                                                             {
+                                                                                                                                 return cocoon::internal::to(k);
+                                                                                                                             },
+                                                                                                                             [](const Object& v) -> id
+                                                                                                                             {
+                                                                                                                                 return cocoon::internal::native_id(v);
+                                                                                                                             })];
     }
 
     void Application::post_event(const Event& event, bool at_start) const
@@ -892,13 +892,13 @@ namespace cocoon
     void Application::register_services_menu_send_types(const std::vector<std::string>& send_types, const std::vector<std::string>& return_types) const
     {
         [cocoon::internal::ns<::NSApplication>(this) registerServicesMenuSendTypes:cocoon::internal::to_array(send_types, [](const std::string& e) -> id
-                                                                                  {
-                                                                                      return cocoon::internal::to(e);
-                                                                                  })
-                                                         returnTypes:cocoon::internal::to_array(return_types, [](const std::string& e) -> id
-                                                                                  {
-                                                                                      return cocoon::internal::to(e);
-                                                                                  })];
+                                                                                                              {
+                                                                                                                  return cocoon::internal::to(e);
+                                                                                                              })
+                                                                       returnTypes:cocoon::internal::to_array(return_types, [](const std::string& e) -> id
+                                                                                                              {
+                                                                                                                  return cocoon::internal::to(e);
+                                                                                                              })];
     }
 
     void Application::register_user_interface_item_search_handler(const Object& handler) const
@@ -1199,17 +1199,17 @@ namespace cocoon
     std::vector<Document> Application::ordered_documents() const
     {
         return cocoon::internal::from_array<Document>([cocoon::internal::ns<::NSApplication>(this) orderedDocuments], [](id e) -> Document
-                                        {
-                                            return cocoon::internal::wrap<Document>((::NSDocument*)e);
-                                        });
+                                                      {
+                                                          return cocoon::internal::wrap<Document>((::NSDocument*)e);
+                                                      });
     }
 
     std::vector<Window> Application::ordered_windows() const
     {
         return cocoon::internal::from_array<Window>([cocoon::internal::ns<::NSApplication>(this) orderedWindows], [](id e) -> Window
-                                      {
-                                          return cocoon::internal::wrap<Window>((::NSWindow*)e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Window>((::NSWindow*)e);
+                                                    });
     }
 
     ApplicationPresentationOptions Application::presentation_options() const
@@ -1270,9 +1270,9 @@ namespace cocoon
     std::vector<Window> Application::windows() const
     {
         return cocoon::internal::from_array<Window>([cocoon::internal::ns<::NSApplication>(this) windows], [](id e) -> Window
-                                      {
-                                          return cocoon::internal::wrap<Window>((::NSWindow*)e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Window>((::NSWindow*)e);
+                                                    });
     }
 
     Menu Application::windows_menu() const

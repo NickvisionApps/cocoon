@@ -24,9 +24,9 @@ namespace cocoon
     void SegmentedControl::compress_with_prioritized_compression_options(const std::vector<UserInterfaceCompressionOptions>& prioritized_options) const
     {
         [cocoon::internal::ns<::NSSegmentedControl>(this) compressWithPrioritizedCompressionOptions:cocoon::internal::to_array(prioritized_options, [](const UserInterfaceCompressionOptions& e) -> id
-                                                                                                   {
-                                                                                                       return cocoon::internal::native<::NSUserInterfaceCompressionOptions>(e);
-                                                                                                   })];
+                                                                                                                               {
+                                                                                                                                   return cocoon::internal::native<::NSUserInterfaceCompressionOptions>(e);
+                                                                                                                               })];
     }
 
     Image SegmentedControl::image_for_segment(std::int64_t segment) const
@@ -62,31 +62,31 @@ namespace cocoon
     Size SegmentedControl::minimum_size_with_prioritized_compression_options(const std::vector<UserInterfaceCompressionOptions>& prioritized_options) const
     {
         return cocoon::internal::from([cocoon::internal::ns<::NSSegmentedControl>(this) minimumSizeWithPrioritizedCompressionOptions:cocoon::internal::to_array(prioritized_options, [](const UserInterfaceCompressionOptions& e) -> id
-                                                                                                                      {
-                                                                                                                          return cocoon::internal::native<::NSUserInterfaceCompressionOptions>(e);
-                                                                                                                      })]);
+                                                                                                                                                                {
+                                                                                                                                                                    return cocoon::internal::native<::NSUserInterfaceCompressionOptions>(e);
+                                                                                                                                                                })]);
     }
 
     SegmentedControl SegmentedControl::segmented_control_with_images(const std::vector<Image>& images, SegmentSwitchTracking tracking_mode, const Object& target, const std::string& action)
     {
         return cocoon::internal::wrap<SegmentedControl>([::NSSegmentedControl segmentedControlWithImages:cocoon::internal::to_array(images, [](const Image& e) -> id
-                                                                                                        {
-                                                                                                            return cocoon::internal::native<::NSImage>(e);
-                                                                                                        })
-                                                                              trackingMode:static_cast<::NSSegmentSwitchTracking>(tracking_mode)
-                                                                                    target:cocoon::internal::native_id(target)
-                                                                                    action:NSSelectorFromString(cocoon::internal::to(action))]);
+                                                                                                                                    {
+                                                                                                                                        return cocoon::internal::native<::NSImage>(e);
+                                                                                                                                    })
+                                                                                            trackingMode:static_cast<::NSSegmentSwitchTracking>(tracking_mode)
+                                                                                                  target:cocoon::internal::native_id(target)
+                                                                                                  action:NSSelectorFromString(cocoon::internal::to(action))]);
     }
 
     SegmentedControl SegmentedControl::segmented_control_with_labels(const std::vector<std::string>& labels, SegmentSwitchTracking tracking_mode, const Object& target, const std::string& action)
     {
         return cocoon::internal::wrap<SegmentedControl>([::NSSegmentedControl segmentedControlWithLabels:cocoon::internal::to_array(labels, [](const std::string& e) -> id
-                                                                                                        {
-                                                                                                            return cocoon::internal::to(e);
-                                                                                                        })
-                                                                              trackingMode:static_cast<::NSSegmentSwitchTracking>(tracking_mode)
-                                                                                    target:cocoon::internal::native_id(target)
-                                                                                    action:NSSelectorFromString(cocoon::internal::to(action))]);
+                                                                                                                                    {
+                                                                                                                                        return cocoon::internal::to(e);
+                                                                                                                                    })
+                                                                                            trackingMode:static_cast<::NSSegmentSwitchTracking>(tracking_mode)
+                                                                                                  target:cocoon::internal::native_id(target)
+                                                                                                  action:NSSelectorFromString(cocoon::internal::to(action))]);
     }
 
     bool SegmentedControl::select_segment_with_tag(std::int64_t tag) const
@@ -194,6 +194,7 @@ namespace cocoon
         return static_cast<std::int64_t>([cocoon::internal::ns<::NSSegmentedControl>(this) indexOfSelectedItem]);
     }
 
+#ifdef COCOON_MACOS_27
     SegmentedControlRole SegmentedControl::role() const
     {
         if (@available(macOS 27.0, *))
@@ -203,6 +204,8 @@ namespace cocoon
         return {};
     }
 
+#endif
+#ifdef COCOON_MACOS_27
     void SegmentedControl::set_role(SegmentedControlRole value) const
     {
         if (@available(macOS 27.0, *))
@@ -211,6 +214,7 @@ namespace cocoon
         }
     }
 
+#endif
     std::int64_t SegmentedControl::segment_count() const
     {
         return static_cast<std::int64_t>([cocoon::internal::ns<::NSSegmentedControl>(this) segmentCount]);
@@ -285,8 +289,8 @@ namespace cocoon
     {
         id host = (__bridge id)native;
         cocoon::internal::bind_action(host, host, [](id host, id sender)
-                        {
-                            cocoon::Signal<cocoon::SegmentedControl, void(std::int64_t)>::emit((__bridge void*)host, "selection_changed", [(NSSegmentedControl*)sender selectedSegment]);
-                        });
+                                      {
+                                          cocoon::Signal<cocoon::SegmentedControl, void(std::int64_t)>::emit((__bridge void*)host, "selection_changed", [(NSSegmentedControl*)sender selectedSegment]);
+                                      });
     }
 }

@@ -37,15 +37,15 @@ namespace cocoon
     void TextCheckingController::check_text_in_range(const Range& range, std::uint64_t checking_types, const std::map<std::string, Object>& options) const
     {
         [cocoon::internal::ns<::NSTextCheckingController>(this) checkTextInRange:cocoon::internal::to(range)
-                                                             types:static_cast<::NSTextCheckingTypes>(checking_types)
-                                                           options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
-                                                                                     {
-                                                                                         return cocoon::internal::to(k);
-                                                                                     },
-                                                                                     [](const Object& v) -> id
-                                                                                     {
-                                                                                         return cocoon::internal::native_id(v);
-                                                                                     })];
+                                                                           types:static_cast<::NSTextCheckingTypes>(checking_types)
+                                                                         options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
+                                                                                                                 {
+                                                                                                                     return cocoon::internal::to(k);
+                                                                                                                 },
+                                                                                                                 [](const Object& v) -> id
+                                                                                                                 {
+                                                                                                                     return cocoon::internal::native_id(v);
+                                                                                                                 })];
     }
 
     void TextCheckingController::check_text_in_selection(const Object& sender) const
@@ -106,9 +106,9 @@ namespace cocoon
     std::vector<std::string> TextCheckingController::valid_annotations() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSTextCheckingController>(this) validAnnotations], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::int64_t TextCheckingController::spell_checker_document_tag() const

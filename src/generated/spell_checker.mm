@@ -20,16 +20,16 @@ namespace cocoon
         NSArray* __v_details = nil;
         auto __r = [cocoon::internal::ns<::NSSpellChecker>(this) checkGrammarOfString:cocoon::internal::to(string_to_check) startingAt:static_cast<::NSInteger>(starting_offset) language:cocoon::internal::to(language) wrap:static_cast<::BOOL>(wrap_flag) inSpellDocumentWithTag:static_cast<::NSInteger>(tag) details:&__v_details];
         details = cocoon::internal::from_array<std::map<std::string, Object>>(__v_details, [](id e) -> std::map<std::string, Object>
-                                                                {
-                                                                    return cocoon::internal::from_dictionary<std::map<std::string, Object>>((NSDictionary*)e, [](id k) -> std::string
-                                                                                                                              {
-                                                                                                                                  return cocoon::internal::from((NSString*)k);
-                                                                                                                              },
-                                                                                                                              [](id v) -> Object
-                                                                                                                              {
-                                                                                                                                  return cocoon::internal::wrap<Object>(v);
-                                                                                                                              });
-                                                                });
+                                                                              {
+                                                                                  return cocoon::internal::from_dictionary<std::map<std::string, Object>>((NSDictionary*)e, [](id k) -> std::string
+                                                                                                                                                          {
+                                                                                                                                                              return cocoon::internal::from((NSString*)k);
+                                                                                                                                                          },
+                                                                                                                                                          [](id v) -> Object
+                                                                                                                                                          {
+                                                                                                                                                              return cocoon::internal::wrap<Object>(v);
+                                                                                                                                                          });
+                                                                              });
         return cocoon::internal::from(__r);
     }
 
@@ -47,24 +47,24 @@ namespace cocoon
     {
         ::NSOrthography* __v_orthography = nil;
         auto __r = [cocoon::internal::ns<::NSSpellChecker>(this) checkString:cocoon::internal::to(string_to_check)
-                                                         range:cocoon::internal::to(range)
-                                                         types:static_cast<::NSTextCheckingTypes>(checking_types)
-                                                       options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
-                                                                                 {
-                                                                                     return cocoon::internal::to(k);
-                                                                                 },
-                                                                                 [](const Object& v) -> id
-                                                                                 {
-                                                                                     return cocoon::internal::native_id(v);
-                                                                                 })
-                                        inSpellDocumentWithTag:static_cast<::NSInteger>(tag)
-                                                   orthography:&__v_orthography
-                                                     wordCount:(::NSInteger*)(word_count)];
+                                                                       range:cocoon::internal::to(range)
+                                                                       types:static_cast<::NSTextCheckingTypes>(checking_types)
+                                                                     options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
+                                                                                                             {
+                                                                                                                 return cocoon::internal::to(k);
+                                                                                                             },
+                                                                                                             [](const Object& v) -> id
+                                                                                                             {
+                                                                                                                 return cocoon::internal::native_id(v);
+                                                                                                             })
+                                                      inSpellDocumentWithTag:static_cast<::NSInteger>(tag)
+                                                                 orthography:&__v_orthography
+                                                                   wordCount:(::NSInteger*)(word_count)];
         orthography = cocoon::internal::wrap<Orthography>(__v_orthography);
         return cocoon::internal::from_array<TextCheckingResult>(__r, [](id e) -> TextCheckingResult
-                                                  {
-                                                      return cocoon::internal::wrap<TextCheckingResult>((::NSTextCheckingResult*)e);
-                                                  });
+                                                                {
+                                                                    return cocoon::internal::wrap<TextCheckingResult>((::NSTextCheckingResult*)e);
+                                                                });
     }
 
     void SpellChecker::close_spell_document_with_tag(std::int64_t tag) const
@@ -75,9 +75,9 @@ namespace cocoon
     std::vector<std::string> SpellChecker::completions_for_partial_word_range(const Range& range, const std::string& string, const std::string& language, std::int64_t tag) const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSSpellChecker>(this) completionsForPartialWordRange:cocoon::internal::to(range) inString:cocoon::internal::to(string) language:cocoon::internal::to(language) inSpellDocumentWithTag:static_cast<::NSInteger>(tag)], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::string SpellChecker::correction_for_word_range(const Range& range, const std::string& string, const std::string& language, std::int64_t tag) const
@@ -103,9 +103,9 @@ namespace cocoon
     std::vector<std::string> SpellChecker::guesses_for_word_range(const Range& range, const std::string& string, const std::string& language, std::int64_t tag) const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSSpellChecker>(this) guessesForWordRange:cocoon::internal::to(range) inString:cocoon::internal::to(string) language:cocoon::internal::to(language) inSpellDocumentWithTag:static_cast<::NSInteger>(tag)], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     bool SpellChecker::has_learned_word(const std::string& word) const
@@ -113,6 +113,7 @@ namespace cocoon
         return static_cast<bool>([cocoon::internal::ns<::NSSpellChecker>(this) hasLearnedWord:cocoon::internal::to(word)]);
     }
 
+#ifdef COCOON_MACOS_27
     void SpellChecker::ignore_grammar_range(const Range& grammar_range, const std::string& sentence, std::int64_t tag) const
     {
         if (@available(macOS 27.0, *))
@@ -121,6 +122,7 @@ namespace cocoon
         }
     }
 
+#endif
     void SpellChecker::ignore_word(const std::string& word_to_ignore, std::int64_t tag) const
     {
         [cocoon::internal::ns<::NSSpellChecker>(this) ignoreWord:cocoon::internal::to(word_to_ignore) inSpellDocumentWithTag:static_cast<::NSInteger>(tag)];
@@ -129,9 +131,9 @@ namespace cocoon
     std::vector<std::string> SpellChecker::ignored_words_in_spell_document_with_tag(std::int64_t tag) const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSSpellChecker>(this) ignoredWordsInSpellDocumentWithTag:static_cast<::NSInteger>(tag)], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::string SpellChecker::language() const
@@ -152,17 +154,17 @@ namespace cocoon
     Menu SpellChecker::menu_for_result(const TextCheckingResult& result, const std::string& checked_string, const std::map<std::string, Object>& options, const Point& location, const View& view) const
     {
         return cocoon::internal::wrap<Menu>([cocoon::internal::ns<::NSSpellChecker>(this) menuForResult:cocoon::internal::native<::NSTextCheckingResult>(result)
-                                                                     string:cocoon::internal::to(checked_string)
-                                                                    options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
-                                                                                              {
-                                                                                                  return cocoon::internal::to(k);
-                                                                                              },
-                                                                                              [](const Object& v) -> id
-                                                                                              {
-                                                                                                  return cocoon::internal::native_id(v);
-                                                                                              })
-                                                                 atLocation:cocoon::internal::to(location)
-                                                                     inView:cocoon::internal::native<::NSView>(view)]);
+                                                                                                 string:cocoon::internal::to(checked_string)
+                                                                                                options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
+                                                                                                                                        {
+                                                                                                                                            return cocoon::internal::to(k);
+                                                                                                                                        },
+                                                                                                                                        [](const Object& v) -> id
+                                                                                                                                        {
+                                                                                                                                            return cocoon::internal::native_id(v);
+                                                                                                                                        })
+                                                                                             atLocation:cocoon::internal::to(location)
+                                                                                                 inView:cocoon::internal::native<::NSView>(view)]);
     }
 
     bool SpellChecker::prevents_autocorrection_before_string(const std::string& string, const std::string& language) const
@@ -178,51 +180,51 @@ namespace cocoon
     std::int64_t SpellChecker::request_candidates_for_selected_range(const Range& selected_range, const std::string& string_to_check, std::uint64_t checking_types, const std::map<std::string, Object>& options, std::int64_t tag, std::function<void(std::int64_t, std::vector<TextCheckingResult>)> completion_handler) const
     {
         return static_cast<std::int64_t>([cocoon::internal::ns<::NSSpellChecker>(this) requestCandidatesForSelectedRange:cocoon::internal::to(selected_range)
-                                                                                                  inString:cocoon::internal::to(string_to_check)
-                                                                                                     types:static_cast<::NSTextCheckingTypes>(checking_types)
-                                                                                                   options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
-                                                                                                                             {
-                                                                                                                                 return cocoon::internal::to(k);
-                                                                                                                             },
-                                                                                                                             [](const Object& v) -> id
-                                                                                                                             {
-                                                                                                                                 return cocoon::internal::native_id(v);
-                                                                                                                             })
-                                                                                    inSpellDocumentWithTag:static_cast<::NSInteger>(tag)
-                                                                                         completionHandler:(completion_handler ? (void (^)(::NSInteger, NSArray<NSTextCheckingResult*>*)) ^ void(::NSInteger a79_0, NSArray * a79_1) { completion_handler(static_cast<std::int64_t>(a79_0), cocoon::internal::from_array<TextCheckingResult>(a79_1, [](id e) -> TextCheckingResult
-                                                                                                                                                                                                                                                                                                                               {
-                                                                                                                                                                                                                                                                                                                                   return cocoon::internal::wrap<TextCheckingResult>((::NSTextCheckingResult*)e);
-                                                                                                                                                                                                                                                                                                                               })); } : (void (^)(::NSInteger, NSArray<NSTextCheckingResult*>*))nil)]);
+                                                                                                                inString:cocoon::internal::to(string_to_check)
+                                                                                                                   types:static_cast<::NSTextCheckingTypes>(checking_types)
+                                                                                                                 options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
+                                                                                                                                                         {
+                                                                                                                                                             return cocoon::internal::to(k);
+                                                                                                                                                         },
+                                                                                                                                                         [](const Object& v) -> id
+                                                                                                                                                         {
+                                                                                                                                                             return cocoon::internal::native_id(v);
+                                                                                                                                                         })
+                                                                                                  inSpellDocumentWithTag:static_cast<::NSInteger>(tag)
+                                                                                                       completionHandler:(completion_handler ? (void (^)(::NSInteger, NSArray<NSTextCheckingResult*>*)) ^ void(::NSInteger a79_0, NSArray * a79_1) { completion_handler(static_cast<std::int64_t>(a79_0), cocoon::internal::from_array<TextCheckingResult>(a79_1, [](id e) -> TextCheckingResult
+                                                                                                                                                                                                                                                                                                                                                           {
+                                                                                                                                                                                                                                                                                                                                                               return cocoon::internal::wrap<TextCheckingResult>((::NSTextCheckingResult*)e);
+                                                                                                                                                                                                                                                                                                                                                           })); } : (void (^)(::NSInteger, NSArray<NSTextCheckingResult*>*))nil)]);
     }
 
     std::int64_t SpellChecker::request_checking_of_string(const std::string& string_to_check, const Range& range, std::uint64_t checking_types, const std::map<std::string, Object>& options, std::int64_t tag, std::function<void(std::int64_t, std::vector<TextCheckingResult>, Orthography, std::int64_t)> completion_handler) const
     {
         return static_cast<std::int64_t>([cocoon::internal::ns<::NSSpellChecker>(this) requestCheckingOfString:cocoon::internal::to(string_to_check)
-                                                                                           range:cocoon::internal::to(range)
-                                                                                           types:static_cast<::NSTextCheckingTypes>(checking_types)
-                                                                                         options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
-                                                                                                                   {
-                                                                                                                       return cocoon::internal::to(k);
-                                                                                                                   },
-                                                                                                                   [](const Object& v) -> id
-                                                                                                                   {
-                                                                                                                       return cocoon::internal::native_id(v);
-                                                                                                                   })
-                                                                          inSpellDocumentWithTag:static_cast<::NSInteger>(tag)
-                                                                               completionHandler:(completion_handler ? (void (^)(::NSInteger, NSArray<NSTextCheckingResult*>*, ::NSOrthography*, ::NSInteger)) ^ void(::NSInteger a80_0, NSArray * a80_1, ::NSOrthography * a80_2, ::NSInteger a80_3) { completion_handler(static_cast<std::int64_t>(a80_0), cocoon::internal::from_array<TextCheckingResult>(a80_1, [](id e) -> TextCheckingResult
-                                                                                                                                                                                                                                                                                                                                                                                                {
-                                                                                                                                                                                                                                                                                                                                                                                                    return cocoon::internal::wrap<TextCheckingResult>((::NSTextCheckingResult*)e);
-                                                                                                                                                                                                                                                                                                                                                                                                }),
-                                                                                                                                                                                                                                                                                                                           cocoon::internal::wrap<Orthography>(a80_2), static_cast<std::int64_t>(a80_3)); } : (void (^)(::NSInteger, NSArray<NSTextCheckingResult*>*, ::NSOrthography*, ::NSInteger))nil)]);
+                                                                                                         range:cocoon::internal::to(range)
+                                                                                                         types:static_cast<::NSTextCheckingTypes>(checking_types)
+                                                                                                       options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
+                                                                                                                                               {
+                                                                                                                                                   return cocoon::internal::to(k);
+                                                                                                                                               },
+                                                                                                                                               [](const Object& v) -> id
+                                                                                                                                               {
+                                                                                                                                                   return cocoon::internal::native_id(v);
+                                                                                                                                               })
+                                                                                        inSpellDocumentWithTag:static_cast<::NSInteger>(tag)
+                                                                                             completionHandler:(completion_handler ? (void (^)(::NSInteger, NSArray<NSTextCheckingResult*>*, ::NSOrthography*, ::NSInteger)) ^ void(::NSInteger a80_0, NSArray * a80_1, ::NSOrthography * a80_2, ::NSInteger a80_3) { completion_handler(static_cast<std::int64_t>(a80_0), cocoon::internal::from_array<TextCheckingResult>(a80_1, [](id e) -> TextCheckingResult
+                                                                                                                                                                                                                                                                                                                                                                                                                            {
+                                                                                                                                                                                                                                                                                                                                                                                                                                return cocoon::internal::wrap<TextCheckingResult>((::NSTextCheckingResult*)e);
+                                                                                                                                                                                                                                                                                                                                                                                                                            }),
+                                                                                                                                                                                                                                                                                                                                         cocoon::internal::wrap<Orthography>(a80_2), static_cast<std::int64_t>(a80_3)); } : (void (^)(::NSInteger, NSArray<NSTextCheckingResult*>*, ::NSOrthography*, ::NSInteger))nil)]);
     }
 
     void SpellChecker::set_ignored_words(const std::vector<std::string>& words, std::int64_t tag) const
     {
         [cocoon::internal::ns<::NSSpellChecker>(this) setIgnoredWords:cocoon::internal::to_array(words, [](const std::string& e) -> id
-                                                                     {
-                                                                         return cocoon::internal::to(e);
-                                                                     })
-                                 inSpellDocumentWithTag:static_cast<::NSInteger>(tag)];
+                                                                                                 {
+                                                                                                     return cocoon::internal::to(e);
+                                                                                                 })
+                                               inSpellDocumentWithTag:static_cast<::NSInteger>(tag)];
     }
 
     bool SpellChecker::set_language(const std::string& language) const
@@ -238,23 +240,23 @@ namespace cocoon
     void SpellChecker::show_correction_indicator_of_type(CorrectionIndicatorType type, const std::string& primary_string, const std::vector<std::string>& alternative_strings, const Rect& rect_of_typed_string, const View& view, std::function<void(std::string)> completion_block) const
     {
         [cocoon::internal::ns<::NSSpellChecker>(this) showCorrectionIndicatorOfType:static_cast<::NSCorrectionIndicatorType>(type)
-                                                        primaryString:cocoon::internal::to(primary_string)
-                                                   alternativeStrings:cocoon::internal::to_array(alternative_strings, [](const std::string& e) -> id
-                                                                                   {
-                                                                                       return cocoon::internal::to(e);
-                                                                                   })
-                                                      forStringInRect:cocoon::internal::to(rect_of_typed_string)
-                                                                 view:cocoon::internal::native<::NSView>(view)
-                                                    completionHandler:(completion_block ? (void (^)(::NSString*)) ^ void(NSString * a81_0) { completion_block(cocoon::internal::from(a81_0)); } : (void (^)(::NSString*))nil)];
+                                                                      primaryString:cocoon::internal::to(primary_string)
+                                                                 alternativeStrings:cocoon::internal::to_array(alternative_strings, [](const std::string& e) -> id
+                                                                                                               {
+                                                                                                                   return cocoon::internal::to(e);
+                                                                                                               })
+                                                                    forStringInRect:cocoon::internal::to(rect_of_typed_string)
+                                                                               view:cocoon::internal::native<::NSView>(view)
+                                                                  completionHandler:(completion_block ? (void (^)(::NSString*)) ^ void(NSString * a81_0) { completion_block(cocoon::internal::from(a81_0)); } : (void (^)(::NSString*))nil)];
     }
 
     void SpellChecker::show_inline_prediction_for_candidates(const std::vector<TextCheckingResult>& candidates, const Object& client) const
     {
         [cocoon::internal::ns<::NSSpellChecker>(this) showInlinePredictionForCandidates:cocoon::internal::to_array(candidates, [](const TextCheckingResult& e) -> id
-                                                                                       {
-                                                                                           return cocoon::internal::native<::NSTextCheckingResult>(e);
-                                                                                       })
-                                                                   client:cocoon::internal::native_id(client)];
+                                                                                                                   {
+                                                                                                                       return cocoon::internal::native<::NSTextCheckingResult>(e);
+                                                                                                                   })
+                                                                                 client:cocoon::internal::native_id(client)];
     }
 
     std::int64_t SpellChecker::unique_spell_document_tag()
@@ -275,14 +277,14 @@ namespace cocoon
     void SpellChecker::update_spelling_panel_with_grammar_string(const std::string& string, const std::map<std::string, Object>& detail) const
     {
         [cocoon::internal::ns<::NSSpellChecker>(this) updateSpellingPanelWithGrammarString:cocoon::internal::to(string)
-                                                                      detail:cocoon::internal::to_dictionary(detail, [](const std::string& k) -> id
-                                                                                               {
-                                                                                                   return cocoon::internal::to(k);
-                                                                                               },
-                                                                                               [](const Object& v) -> id
-                                                                                               {
-                                                                                                   return cocoon::internal::native_id(v);
-                                                                                               })];
+                                                                                    detail:cocoon::internal::to_dictionary(detail, [](const std::string& k) -> id
+                                                                                                                           {
+                                                                                                                               return cocoon::internal::to(k);
+                                                                                                                           },
+                                                                                                                           [](const Object& v) -> id
+                                                                                                                           {
+                                                                                                                               return cocoon::internal::native_id(v);
+                                                                                                                           })];
     }
 
     void SpellChecker::update_spelling_panel_with_misspelled_word(const std::string& word) const
@@ -293,9 +295,9 @@ namespace cocoon
     std::vector<std::string> SpellChecker::user_quotes_array_for_language(const std::string& language) const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSSpellChecker>(this) userQuotesArrayForLanguage:cocoon::internal::to(language)], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     View SpellChecker::accessory_view() const
@@ -361,9 +363,9 @@ namespace cocoon
     std::vector<std::string> SpellChecker::available_languages() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSSpellChecker>(this) availableLanguages], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     SpellChecker SpellChecker::shared_spell_checker()
@@ -399,20 +401,20 @@ namespace cocoon
     std::vector<std::string> SpellChecker::user_preferred_languages() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSSpellChecker>(this) userPreferredLanguages], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::map<std::string, std::string> SpellChecker::user_replacements_dictionary() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, std::string>>([cocoon::internal::ns<::NSSpellChecker>(this) userReplacementsDictionary], [](id k) -> std::string
-                                                                       {
-                                                                           return cocoon::internal::from((NSString*)k);
-                                                                       },
-                                                                       [](id v) -> std::string
-                                                                       {
-                                                                           return cocoon::internal::from((NSString*)v);
-                                                                       });
+                                                                                     {
+                                                                                         return cocoon::internal::from((NSString*)k);
+                                                                                     },
+                                                                                     [](id v) -> std::string
+                                                                                     {
+                                                                                         return cocoon::internal::from((NSString*)v);
+                                                                                     });
     }
 }

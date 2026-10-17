@@ -4,10 +4,10 @@
 namespace cocoon
 {
     LinguisticTagger::LinguisticTagger(const std::vector<std::string>& tag_schemes, std::uint64_t opts) : LinguisticTagger(Adopt{cocoon::internal::retain([[::NSLinguisticTagger alloc] initWithTagSchemes:cocoon::internal::to_array(tag_schemes, [](const std::string& e) -> id
-                                                                                                                                                                                                          {
-                                                                                                                                                                                                              return cocoon::internal::to(e);
-                                                                                                                                                                                                          })
-                                                                                                                                                                                     options:static_cast<::NSUInteger>(opts)])})
+                                                                                                                                                                                                                                      {
+                                                                                                                                                                                                                                          return cocoon::internal::to(e);
+                                                                                                                                                                                                                                      })
+                                                                                                                                                                                                   options:static_cast<::NSUInteger>(opts)])})
     {
     }
 
@@ -26,17 +26,17 @@ namespace cocoon
     std::vector<std::string> LinguisticTagger::available_tag_schemes_for_language(const std::string& language)
     {
         return cocoon::internal::from_array<std::string>([::NSLinguisticTagger availableTagSchemesForLanguage:cocoon::internal::to(language)], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::vector<std::string> LinguisticTagger::available_tag_schemes_for_unit(LinguisticTaggerUnit unit, const std::string& language)
     {
         return cocoon::internal::from_array<std::string>([::NSLinguisticTagger availableTagSchemesForUnit:static_cast<::NSLinguisticTaggerUnit>(unit) language:cocoon::internal::to(language)], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::string LinguisticTagger::dominant_language_for_string(const std::string& string)
@@ -69,13 +69,13 @@ namespace cocoon
         NSArray* __v_scores = nil;
         auto __r = [cocoon::internal::ns<::NSLinguisticTagger>(this) possibleTagsAtIndex:static_cast<::NSUInteger>(char_index) scheme:cocoon::internal::to(tag_scheme) tokenRange:(::NSRangePointer)(token_range)sentenceRange:(::NSRangePointer)(sentence_range)scores:&__v_scores];
         scores = cocoon::internal::from_array<Value>(__v_scores, [](id e) -> Value
-                                       {
-                                           return cocoon::internal::wrap<Value>((::NSValue*)e);
-                                       });
+                                                     {
+                                                         return cocoon::internal::wrap<Value>((::NSValue*)e);
+                                                     });
         return cocoon::internal::from_array<std::string>(__r, [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     Range LinguisticTagger::sentence_range_for_range(const Range& range) const
@@ -113,13 +113,13 @@ namespace cocoon
         NSArray* __v_token_ranges = nil;
         auto __r = [::NSLinguisticTagger tagsForString:cocoon::internal::to(string) range:cocoon::internal::to(range) unit:static_cast<::NSLinguisticTaggerUnit>(unit) scheme:cocoon::internal::to(scheme) options:static_cast<::NSLinguisticTaggerOptions>(options) orthography:cocoon::internal::native<::NSOrthography>(orthography) tokenRanges:&__v_token_ranges];
         token_ranges = cocoon::internal::from_array<Value>(__v_token_ranges, [](id e) -> Value
-                                             {
-                                                 return cocoon::internal::wrap<Value>((::NSValue*)e);
-                                             });
+                                                           {
+                                                               return cocoon::internal::wrap<Value>((::NSValue*)e);
+                                                           });
         return cocoon::internal::from_array<std::string>(__r, [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::vector<std::string> LinguisticTagger::tags_in_range(const Range& range, const std::string& tag_scheme, LinguisticTaggerOptions opts, std::vector<Value>& token_ranges) const
@@ -127,13 +127,13 @@ namespace cocoon
         NSArray* __v_token_ranges = nil;
         auto __r = [cocoon::internal::ns<::NSLinguisticTagger>(this) tagsInRange:cocoon::internal::to(range) scheme:cocoon::internal::to(tag_scheme) options:static_cast<::NSLinguisticTaggerOptions>(opts) tokenRanges:&__v_token_ranges];
         token_ranges = cocoon::internal::from_array<Value>(__v_token_ranges, [](id e) -> Value
-                                             {
-                                                 return cocoon::internal::wrap<Value>((::NSValue*)e);
-                                             });
+                                                           {
+                                                               return cocoon::internal::wrap<Value>((::NSValue*)e);
+                                                           });
         return cocoon::internal::from_array<std::string>(__r, [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::vector<std::string> LinguisticTagger::tags_in_range(const Range& range, LinguisticTaggerUnit unit, const std::string& scheme, LinguisticTaggerOptions options, std::vector<Value>& token_ranges) const
@@ -141,13 +141,13 @@ namespace cocoon
         NSArray* __v_token_ranges = nil;
         auto __r = [cocoon::internal::ns<::NSLinguisticTagger>(this) tagsInRange:cocoon::internal::to(range) unit:static_cast<::NSLinguisticTaggerUnit>(unit) scheme:cocoon::internal::to(scheme) options:static_cast<::NSLinguisticTaggerOptions>(options) tokenRanges:&__v_token_ranges];
         token_ranges = cocoon::internal::from_array<Value>(__v_token_ranges, [](id e) -> Value
-                                             {
-                                                 return cocoon::internal::wrap<Value>((::NSValue*)e);
-                                             });
+                                                           {
+                                                               return cocoon::internal::wrap<Value>((::NSValue*)e);
+                                                           });
         return cocoon::internal::from_array<std::string>(__r, [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     Range LinguisticTagger::token_range_at_index(std::uint64_t char_index, LinguisticTaggerUnit unit) const
@@ -173,8 +173,8 @@ namespace cocoon
     std::vector<std::string> LinguisticTagger::tag_schemes() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSLinguisticTagger>(this) tagSchemes], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 }

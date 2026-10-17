@@ -86,7 +86,7 @@ unavailable/deprecated: 95
   NSOpenGLContext.view
   ...
 
-skipped selector: 49
+skipped selector: 51
   NSCollectionViewCompositionalLayout.new
   NSCollectionLayoutSection.new
   NSCollectionLayoutItem.new
@@ -100,6 +100,8 @@ skipped selector: 49
   NSCollectionLayoutBoundarySupplementaryItem.new
   NSCollectionLayoutDecorationItem.new
   NSCollectionLayoutAnchor.new
+  NSControl.addTarget:action:forControlEvents:
+  NSControl.removeTarget:action:forControlEvents:
   NSCollectionViewDiffableDataSource.new
   NSPreviewRepresentingActivityItem.new
   NSScrollEdgeEffectStyle.new
@@ -125,8 +127,6 @@ skipped selector: 49
   NSURLSessionDataTask.new
   NSURLSessionUploadTask.new
   NSURLSessionDownloadTask.new
-  NSURLSessionStreamTask.new
-  NSURLSessionWebSocketMessage.new
   ...
 
 unavailable: 41

@@ -116,25 +116,25 @@ namespace cocoon
     std::vector<MetadataQueryResultGroup> MetadataQuery::grouped_results() const
     {
         return cocoon::internal::from_array<MetadataQueryResultGroup>([cocoon::internal::ns<::NSMetadataQuery>(this) groupedResults], [](id e) -> MetadataQueryResultGroup
-                                                        {
-                                                            return cocoon::internal::wrap<MetadataQueryResultGroup>((::NSMetadataQueryResultGroup*)e);
-                                                        });
+                                                                      {
+                                                                          return cocoon::internal::wrap<MetadataQueryResultGroup>((::NSMetadataQueryResultGroup*)e);
+                                                                      });
     }
 
     std::vector<std::string> MetadataQuery::grouping_attributes() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSMetadataQuery>(this) groupingAttributes], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void MetadataQuery::set_grouping_attributes(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSMetadataQuery>(this) setGroupingAttributes:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                                            {
-                                                                                return cocoon::internal::to(e);
-                                                                            })];
+                                                                                                        {
+                                                                                                            return cocoon::internal::to(e);
+                                                                                                        })];
     }
 
     double MetadataQuery::notification_batching_interval() const
@@ -175,57 +175,57 @@ namespace cocoon
     std::vector<Object> MetadataQuery::results() const
     {
         return cocoon::internal::from_array<Object>([cocoon::internal::ns<::NSMetadataQuery>(this) results], [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     std::vector<Object> MetadataQuery::search_items() const
     {
         return cocoon::internal::from_array<Object>([cocoon::internal::ns<::NSMetadataQuery>(this) searchItems], [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     void MetadataQuery::set_search_items(const std::vector<Object>& value) const
     {
         [cocoon::internal::ns<::NSMetadataQuery>(this) setSearchItems:cocoon::internal::to_array(value, [](const Object& e) -> id
-                                                                     {
-                                                                         return cocoon::internal::native_id(e);
-                                                                     })];
+                                                                                                 {
+                                                                                                     return cocoon::internal::native_id(e);
+                                                                                                 })];
     }
 
     std::vector<Object> MetadataQuery::search_scopes() const
     {
         return cocoon::internal::from_array<Object>([cocoon::internal::ns<::NSMetadataQuery>(this) searchScopes], [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     void MetadataQuery::set_search_scopes(const std::vector<Object>& value) const
     {
         [cocoon::internal::ns<::NSMetadataQuery>(this) setSearchScopes:cocoon::internal::to_array(value, [](const Object& e) -> id
-                                                                      {
-                                                                          return cocoon::internal::native_id(e);
-                                                                      })];
+                                                                                                  {
+                                                                                                      return cocoon::internal::native_id(e);
+                                                                                                  })];
     }
 
     std::vector<SortDescriptor> MetadataQuery::sort_descriptors() const
     {
         return cocoon::internal::from_array<SortDescriptor>([cocoon::internal::ns<::NSMetadataQuery>(this) sortDescriptors], [](id e) -> SortDescriptor
-                                              {
-                                                  return cocoon::internal::wrap<SortDescriptor>((::NSSortDescriptor*)e);
-                                              });
+                                                            {
+                                                                return cocoon::internal::wrap<SortDescriptor>((::NSSortDescriptor*)e);
+                                                            });
     }
 
     void MetadataQuery::set_sort_descriptors(const std::vector<SortDescriptor>& value) const
     {
         [cocoon::internal::ns<::NSMetadataQuery>(this) setSortDescriptors:cocoon::internal::to_array(value, [](const SortDescriptor& e) -> id
-                                                                         {
-                                                                             return cocoon::internal::native<::NSSortDescriptor>(e);
-                                                                         })];
+                                                                                                     {
+                                                                                                         return cocoon::internal::native<::NSSortDescriptor>(e);
+                                                                                                     })];
     }
 
     bool MetadataQuery::is_started() const
@@ -241,32 +241,32 @@ namespace cocoon
     std::vector<std::string> MetadataQuery::value_list_attributes() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSMetadataQuery>(this) valueListAttributes], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void MetadataQuery::set_value_list_attributes(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSMetadataQuery>(this) setValueListAttributes:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                                             {
-                                                                                 return cocoon::internal::to(e);
-                                                                             })];
+                                                                                                         {
+                                                                                                             return cocoon::internal::to(e);
+                                                                                                         })];
     }
 
     std::map<std::string, std::vector<MetadataQueryAttributeValueTuple>> MetadataQuery::value_lists() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, std::vector<MetadataQueryAttributeValueTuple>>>([cocoon::internal::ns<::NSMetadataQuery>(this) valueLists], [](id k) -> std::string
-                                                                                                         {
-                                                                                                             return cocoon::internal::from((NSString*)k);
-                                                                                                         },
-                                                                                                         [](id v) -> std::vector<MetadataQueryAttributeValueTuple>
-                                                                                                         {
-                                                                                                             return cocoon::internal::from_array<MetadataQueryAttributeValueTuple>((NSArray*)v, [](id e) -> MetadataQueryAttributeValueTuple
-                                                                                                                                                                     {
-                                                                                                                                                                         return cocoon::internal::wrap<MetadataQueryAttributeValueTuple>((::NSMetadataQueryAttributeValueTuple*)e);
-                                                                                                                                                                     });
-                                                                                                         });
+                                                                                                                       {
+                                                                                                                           return cocoon::internal::from((NSString*)k);
+                                                                                                                       },
+                                                                                                                       [](id v) -> std::vector<MetadataQueryAttributeValueTuple>
+                                                                                                                       {
+                                                                                                                           return cocoon::internal::from_array<MetadataQueryAttributeValueTuple>((NSArray*)v, [](id e) -> MetadataQueryAttributeValueTuple
+                                                                                                                                                                                                 {
+                                                                                                                                                                                                     return cocoon::internal::wrap<MetadataQueryAttributeValueTuple>((::NSMetadataQueryAttributeValueTuple*)e);
+                                                                                                                                                                                                 });
+                                                                                                                       });
     }
 
     void MetadataQuery::install_delegate_delegate_(void* native)

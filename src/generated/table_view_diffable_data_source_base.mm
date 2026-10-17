@@ -21,12 +21,12 @@ namespace cocoon
 
     void TableViewDiffableDataSourceBase::apply_snapshot(const DiffableDataSourceSnapshotBase& snapshot, bool animating_differences) const
     {
-        [cocoon::internal::ns<::NSTableViewDiffableDataSource>(this) applySnapshot:cocoon::internal::native<::NSDiffableDataSourceSnapshot>(snapshot) animatingDifferences:static_cast<::BOOL>(animating_differences)];
+        [cocoon::internal::ns<::NSTableViewDiffableDataSource>(this) applySnapshot:cocoon::internal::native<NSDiffableDataSourceSnapshot<id, id>>(snapshot) animatingDifferences:static_cast<::BOOL>(animating_differences)];
     }
 
     void TableViewDiffableDataSourceBase::apply_snapshot(const DiffableDataSourceSnapshotBase& snapshot, bool animating_differences, std::function<void()> completion) const
     {
-        [cocoon::internal::ns<::NSTableViewDiffableDataSource>(this) applySnapshot:cocoon::internal::native<::NSDiffableDataSourceSnapshot>(snapshot) animatingDifferences:static_cast<::BOOL>(animating_differences) completion:(completion ? (void (^)(void)) ^ void() { completion(); } : (void (^)(void))nil)];
+        [cocoon::internal::ns<::NSTableViewDiffableDataSource>(this) applySnapshot:cocoon::internal::native<NSDiffableDataSourceSnapshot<id, id>>(snapshot) animatingDifferences:static_cast<::BOOL>(animating_differences) completion:(completion ? (void (^)(void)) ^ void() { completion(); } : (void (^)(void))nil)];
     }
 
     Object TableViewDiffableDataSourceBase::item_identifier_for_row(std::int64_t row) const

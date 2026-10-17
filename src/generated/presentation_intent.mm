@@ -63,12 +63,12 @@ namespace cocoon
     PresentationIntent PresentationIntent::table_intent_with_identity(std::int64_t identity, std::int64_t column_count, const std::vector<Number>& alignments, const PresentationIntent& parent)
     {
         return cocoon::internal::wrap<PresentationIntent>([::NSPresentationIntent tableIntentWithIdentity:static_cast<::NSInteger>(identity)
-                                                                                columnCount:static_cast<::NSInteger>(column_count)
-                                                                                 alignments:cocoon::internal::to_array(alignments, [](const Number& e) -> id
-                                                                                                         {
-                                                                                                             return cocoon::internal::native<::NSNumber>(e);
-                                                                                                         })
-                                                                         nestedInsideIntent:cocoon::internal::native<::NSPresentationIntent>(parent)]);
+                                                                                              columnCount:static_cast<::NSInteger>(column_count)
+                                                                                               alignments:cocoon::internal::to_array(alignments, [](const Number& e) -> id
+                                                                                                                                     {
+                                                                                                                                         return cocoon::internal::native<::NSNumber>(e);
+                                                                                                                                     })
+                                                                                       nestedInsideIntent:cocoon::internal::native<::NSPresentationIntent>(parent)]);
     }
 
     PresentationIntent PresentationIntent::table_row_intent_with_identity(std::int64_t identity, std::int64_t row, const PresentationIntent& parent)
@@ -94,9 +94,9 @@ namespace cocoon
     std::vector<Number> PresentationIntent::column_alignments() const
     {
         return cocoon::internal::from_array<Number>([cocoon::internal::ns<::NSPresentationIntent>(this) columnAlignments], [](id e) -> Number
-                                      {
-                                          return cocoon::internal::wrap<Number>((::NSNumber*)e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Number>((::NSNumber*)e);
+                                                    });
     }
 
     std::int64_t PresentationIntent::column_count() const

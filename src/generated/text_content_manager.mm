@@ -91,9 +91,9 @@ namespace cocoon
     std::vector<TextElement> TextContentManager::text_elements_for_range(const TextRange& range) const
     {
         return cocoon::internal::from_array<TextElement>([cocoon::internal::ns<::NSTextContentManager>(this) textElementsForRange:cocoon::internal::native<::NSTextRange>(range)], [](id e) -> TextElement
-                                           {
-                                               return cocoon::internal::wrap<TextElement>((::NSTextElement*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::wrap<TextElement>((::NSTextElement*)e);
+                                                         });
     }
 
     bool TextContentManager::automatically_synchronizes_text_layout_managers() const
@@ -134,9 +134,9 @@ namespace cocoon
     std::vector<TextLayoutManager> TextContentManager::text_layout_managers() const
     {
         return cocoon::internal::from_array<TextLayoutManager>([cocoon::internal::ns<::NSTextContentManager>(this) textLayoutManagers], [](id e) -> TextLayoutManager
-                                                 {
-                                                     return cocoon::internal::wrap<TextLayoutManager>((::NSTextLayoutManager*)e);
-                                                 });
+                                                               {
+                                                                   return cocoon::internal::wrap<TextLayoutManager>((::NSTextLayoutManager*)e);
+                                                               });
     }
 
     void TextContentManager::install_delegate_delegate_(void* native)

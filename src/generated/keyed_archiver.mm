@@ -91,7 +91,7 @@
 
 namespace cocoon
 {
-    KeyedArchiver::KeyedArchiver(const std::vector<std::uint8_t>& data) : KeyedArchiver(Adopt{cocoon::internal::retain([[::NSKeyedArchiver alloc] initForWritingWithMutableData:cocoon::internal::to_data(data)])})
+    KeyedArchiver::KeyedArchiver(const std::vector<std::uint8_t>& data) : KeyedArchiver(Adopt{cocoon::internal::retain([[::NSKeyedArchiver alloc] initForWritingWithMutableData:cocoon::internal::to_mutable_data(data)])})
     {
         KeyedArchiver::install_delegate_delegate_(handle());
     }

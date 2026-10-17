@@ -18,14 +18,14 @@ namespace cocoon
     AttributedString Formatter::attributed_string_for_object_value(const Object& obj, const std::map<std::string, Object>& attrs) const
     {
         return cocoon::internal::wrap<AttributedString>([cocoon::internal::ns<::NSFormatter>(this) attributedStringForObjectValue:cocoon::internal::native_id(obj)
-                                                                                withDefaultAttributes:cocoon::internal::to_dictionary(attrs, [](const std::string& k) -> id
-                                                                                                                        {
-                                                                                                                            return cocoon::internal::to(k);
-                                                                                                                        },
-                                                                                                                        [](const Object& v) -> id
-                                                                                                                        {
-                                                                                                                            return cocoon::internal::native_id(v);
-                                                                                                                        })]);
+                                                                                                            withDefaultAttributes:cocoon::internal::to_dictionary(attrs, [](const std::string& k) -> id
+                                                                                                                                                                  {
+                                                                                                                                                                      return cocoon::internal::to(k);
+                                                                                                                                                                  },
+                                                                                                                                                                  [](const Object& v) -> id
+                                                                                                                                                                  {
+                                                                                                                                                                      return cocoon::internal::native_id(v);
+                                                                                                                                                                  })]);
     }
 
     std::string Formatter::editing_string_for_object_value(const Object& obj) const

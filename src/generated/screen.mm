@@ -78,13 +78,13 @@ namespace cocoon
     std::map<std::string, Object> Screen::device_description() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::NSScreen>(this) deviceDescription], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     Rect Screen::frame() const
@@ -110,9 +110,9 @@ namespace cocoon
     std::vector<Screen> Screen::screens()
     {
         return cocoon::internal::from_array<Screen>([::NSScreen screens], [](id e) -> Screen
-                                      {
-                                          return cocoon::internal::wrap<Screen>((::NSScreen*)e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Screen>((::NSScreen*)e);
+                                                    });
     }
 
     bool Screen::screens_have_separate_spaces()
@@ -125,6 +125,7 @@ namespace cocoon
         return (const WindowDepth*)([cocoon::internal::ns<::NSScreen>(this) supportedWindowDepths]);
     }
 
+#ifdef COCOON_MACOS_27
     ScreenTouchCapabilities Screen::touch_capabilities() const
     {
         if (@available(macOS 27.0, *))
@@ -134,6 +135,7 @@ namespace cocoon
         return {};
     }
 
+#endif
     Rect Screen::visible_frame() const
     {
         return cocoon::internal::from([cocoon::internal::ns<::NSScreen>(this) visibleFrame]);

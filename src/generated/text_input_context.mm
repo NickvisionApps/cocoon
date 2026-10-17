@@ -82,17 +82,17 @@ namespace cocoon
     std::vector<std::string> TextInputContext::allowed_input_source_locales() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSTextInputContext>(this) allowedInputSourceLocales], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void TextInputContext::set_allowed_input_source_locales(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSTextInputContext>(this) setAllowedInputSourceLocales:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                                                      {
-                                                                                          return cocoon::internal::to(e);
-                                                                                      })];
+                                                                                                                  {
+                                                                                                                      return cocoon::internal::to(e);
+                                                                                                                  })];
     }
 
     TextInputContext TextInputContext::current_input_context()
@@ -103,9 +103,9 @@ namespace cocoon
     std::vector<std::string> TextInputContext::keyboard_input_sources() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSTextInputContext>(this) keyboardInputSources], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::string TextInputContext::selected_keyboard_input_source() const

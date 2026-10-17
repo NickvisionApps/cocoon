@@ -39,14 +39,14 @@ namespace cocoon
     bool Predicate::evaluate_with_object(const Object& object, const std::map<std::string, Object>& bindings) const
     {
         return static_cast<bool>([cocoon::internal::ns<::NSPredicate>(this) evaluateWithObject:cocoon::internal::native_id(object)
-                                                           substitutionVariables:cocoon::internal::to_dictionary(bindings, [](const std::string& k) -> id
-                                                                                                   {
-                                                                                                       return cocoon::internal::to(k);
-                                                                                                   },
-                                                                                                   [](const Object& v) -> id
-                                                                                                   {
-                                                                                                       return cocoon::internal::native_id(v);
-                                                                                                   })]);
+                                                                         substitutionVariables:cocoon::internal::to_dictionary(bindings, [](const std::string& k) -> id
+                                                                                                                               {
+                                                                                                                                   return cocoon::internal::to(k);
+                                                                                                                               },
+                                                                                                                               [](const Object& v) -> id
+                                                                                                                               {
+                                                                                                                                   return cocoon::internal::native_id(v);
+                                                                                                                               })]);
     }
 
     Predicate Predicate::predicate_from_metadata_query_string(const std::string& query_string)
@@ -69,10 +69,10 @@ namespace cocoon
     Predicate Predicate::predicate_with_format(const std::string& predicate_format, const std::vector<Object>& arguments)
     {
         return cocoon::internal::wrap<Predicate>([::NSPredicate predicateWithFormat:cocoon::internal::to(predicate_format)
-                                                        argumentArray:cocoon::internal::to_array(arguments, [](const Object& e) -> id
-                                                                                   {
-                                                                                       return cocoon::internal::native_id(e);
-                                                                                   })]);
+                                                                      argumentArray:cocoon::internal::to_array(arguments, [](const Object& e) -> id
+                                                                                                               {
+                                                                                                                   return cocoon::internal::native_id(e);
+                                                                                                               })]);
     }
 
     Predicate Predicate::predicate_with_format(const std::string& predicate_format, char* arg_list)
@@ -83,13 +83,13 @@ namespace cocoon
     Predicate Predicate::predicate_with_substitution_variables(const std::map<std::string, Object>& variables) const
     {
         return cocoon::internal::wrap<Predicate>([cocoon::internal::ns<::NSPredicate>(this) predicateWithSubstitutionVariables:cocoon::internal::to_dictionary(variables, [](const std::string& k) -> id
-                                                                                                                     {
-                                                                                                                         return cocoon::internal::to(k);
-                                                                                                                     },
-                                                                                                                     [](const Object& v) -> id
-                                                                                                                     {
-                                                                                                                         return cocoon::internal::native_id(v);
-                                                                                                                     })]);
+                                                                                                                                                               {
+                                                                                                                                                                   return cocoon::internal::to(k);
+                                                                                                                                                               },
+                                                                                                                                                               [](const Object& v) -> id
+                                                                                                                                                               {
+                                                                                                                                                                   return cocoon::internal::native_id(v);
+                                                                                                                                                               })]);
     }
 
     Predicate Predicate::predicate_with_value(bool value)

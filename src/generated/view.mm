@@ -32,9 +32,9 @@ namespace cocoon
     void View::add_constraints(const std::vector<LayoutConstraint>& constraints) const
     {
         [cocoon::internal::ns<::NSView>(this) addConstraints:cocoon::internal::to_array(constraints, [](const LayoutConstraint& e) -> id
-                                                            {
-                                                                return cocoon::internal::native<::NSLayoutConstraint>(e);
-                                                            })];
+                                                                                        {
+                                                                                            return cocoon::internal::native<::NSLayoutConstraint>(e);
+                                                                                        })];
     }
 
     void View::add_cursor_rect(const Rect& rect, const Cursor& object) const
@@ -115,27 +115,29 @@ namespace cocoon
     DraggingSession View::begin_dragging_session_with_items(const std::vector<DraggingItem>& items, const Event& event, const Object& source) const
     {
         return cocoon::internal::wrap<DraggingSession>([cocoon::internal::ns<::NSView>(this) beginDraggingSessionWithItems:cocoon::internal::to_array(items, [](const DraggingItem& e) -> id
-                                                                                                            {
-                                                                                                                return cocoon::internal::native<::NSDraggingItem>(e);
-                                                                                                            })
-                                                                                         event:cocoon::internal::native<::NSEvent>(event)
-                                                                                        source:cocoon::internal::native_id(source)]);
+                                                                                                                                                      {
+                                                                                                                                                          return cocoon::internal::native<::NSDraggingItem>(e);
+                                                                                                                                                      })
+                                                                                                                     event:cocoon::internal::native<::NSEvent>(event)
+                                                                                                                    source:cocoon::internal::native_id(source)]);
     }
 
+#ifdef COCOON_MACOS_27
     DraggingSession View::begin_dragging_session_with_items(const std::vector<DraggingItem>& items, const GestureRecognizer& gesture, const Object& source) const
     {
         if (@available(macOS 27.0, *))
         {
             return cocoon::internal::wrap<DraggingSession>([cocoon::internal::ns<::NSView>(this) beginDraggingSessionWithItems:cocoon::internal::to_array(items, [](const DraggingItem& e) -> id
-                                                                                                                {
-                                                                                                                    return cocoon::internal::native<::NSDraggingItem>(e);
-                                                                                                                })
-                                                                                           gesture:cocoon::internal::native<::NSGestureRecognizer>(gesture)
-                                                                                            source:cocoon::internal::native_id(source)]);
+                                                                                                                                                          {
+                                                                                                                                                              return cocoon::internal::native<::NSDraggingItem>(e);
+                                                                                                                                                          })
+                                                                                                                       gesture:cocoon::internal::native<::NSGestureRecognizer>(gesture)
+                                                                                                                        source:cocoon::internal::native_id(source)]);
         }
         return DraggingSession(nullptr);
     }
 
+#endif
     void View::begin_page_in_rect(const Rect& rect, const Point& location) const
     {
         [cocoon::internal::ns<::NSView>(this) beginPageInRect:cocoon::internal::to(rect) atPlacement:cocoon::internal::to(location)];
@@ -159,9 +161,9 @@ namespace cocoon
     std::vector<LayoutConstraint> View::constraints_affecting_layout_for_orientation(ConstraintOrientation orientation) const
     {
         return cocoon::internal::from_array<LayoutConstraint>([cocoon::internal::ns<::NSView>(this) constraintsAffectingLayoutForOrientation:static_cast<::NSLayoutConstraintOrientation>(orientation)], [](id e) -> LayoutConstraint
-                                                {
-                                                    return cocoon::internal::wrap<LayoutConstraint>((::NSLayoutConstraint*)e);
-                                                });
+                                                              {
+                                                                  return cocoon::internal::wrap<LayoutConstraint>((::NSLayoutConstraint*)e);
+                                                              });
     }
 
     float View::content_compression_resistance_priority_for_orientation(ConstraintOrientation orientation) const
@@ -352,14 +354,14 @@ namespace cocoon
     bool View::enter_full_screen_mode(const Screen& screen, const std::map<std::string, Object>& options) const
     {
         return static_cast<bool>([cocoon::internal::ns<::NSView>(this) enterFullScreenMode:cocoon::internal::native<::NSScreen>(screen)
-                                                                 withOptions:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
-                                                                                               {
-                                                                                                   return cocoon::internal::to(k);
-                                                                                               },
-                                                                                               [](const Object& v) -> id
-                                                                                               {
-                                                                                                   return cocoon::internal::native_id(v);
-                                                                                               })]);
+                                                                               withOptions:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
+                                                                                                                           {
+                                                                                                                               return cocoon::internal::to(k);
+                                                                                                                           },
+                                                                                                                           [](const Object& v) -> id
+                                                                                                                           {
+                                                                                                                               return cocoon::internal::native_id(v);
+                                                                                                                           })]);
     }
 
     void View::exercise_ambiguity_in_layout() const
@@ -370,13 +372,13 @@ namespace cocoon
     void View::exit_full_screen_mode_with_options(const std::map<std::string, Object>& options) const
     {
         [cocoon::internal::ns<::NSView>(this) exitFullScreenModeWithOptions:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
-                                                                                {
-                                                                                    return cocoon::internal::to(k);
-                                                                                },
-                                                                                [](const Object& v) -> id
-                                                                                {
-                                                                                    return cocoon::internal::native_id(v);
-                                                                                })];
+                                                                                                            {
+                                                                                                                return cocoon::internal::to(k);
+                                                                                                            },
+                                                                                                            [](const Object& v) -> id
+                                                                                                            {
+                                                                                                                return cocoon::internal::native_id(v);
+                                                                                                            })];
     }
 
     Rect View::frame_for_alignment_rect(const Rect& alignment_rect) const
@@ -399,6 +401,7 @@ namespace cocoon
         return cocoon::internal::wrap<View>([cocoon::internal::ns<::NSView>(this) hitTest:cocoon::internal::to(point)]);
     }
 
+#ifdef COCOON_MACOS_27
     void View::invalidate_corner_configuration() const
     {
         if (@available(macOS 27.0, *))
@@ -407,6 +410,7 @@ namespace cocoon
         }
     }
 
+#endif
     void View::invalidate_intrinsic_content_size() const
     {
         [cocoon::internal::ns<::NSView>(this) invalidateIntrinsicContentSize];
@@ -510,9 +514,9 @@ namespace cocoon
     void View::register_for_dragged_types(const std::vector<std::string>& new_types) const
     {
         [cocoon::internal::ns<::NSView>(this) registerForDraggedTypes:cocoon::internal::to_array(new_types, [](const std::string& e) -> id
-                                                                     {
-                                                                         return cocoon::internal::to(e);
-                                                                     })];
+                                                                                                 {
+                                                                                                     return cocoon::internal::to(e);
+                                                                                                 })];
     }
 
     void View::remove_all_tool_tips() const
@@ -528,9 +532,9 @@ namespace cocoon
     void View::remove_constraints(const std::vector<LayoutConstraint>& constraints) const
     {
         [cocoon::internal::ns<::NSView>(this) removeConstraints:cocoon::internal::to_array(constraints, [](const LayoutConstraint& e) -> id
-                                                               {
-                                                                   return cocoon::internal::native<::NSLayoutConstraint>(e);
-                                                               })];
+                                                                                           {
+                                                                                               return cocoon::internal::native<::NSLayoutConstraint>(e);
+                                                                                           })];
     }
 
     void View::remove_cursor_rect(const Rect& rect, const Cursor& object) const
@@ -701,16 +705,16 @@ namespace cocoon
     void View::show_definition_for_attributed_string(const AttributedString& attr_string, const Range& target_range, const std::map<std::string, Object>& options, std::function<Point(Range)> origin_provider) const
     {
         [cocoon::internal::ns<::NSView>(this) showDefinitionForAttributedString:cocoon::internal::native<::NSAttributedString>(attr_string)
-                                                            range:cocoon::internal::to(target_range)
-                                                          options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
-                                                                                    {
-                                                                                        return cocoon::internal::to(k);
-                                                                                    },
-                                                                                    [](const Object& v) -> id
-                                                                                    {
-                                                                                        return cocoon::internal::native_id(v);
-                                                                                    })
-                                           baselineOriginProvider:(origin_provider ? (::NSPoint(^)(::NSRange)) ^ ::NSPoint(::NSRange a103_0) { auto __r = origin_provider(cocoon::internal::from(a103_0)); return cocoon::internal::to(__r); } : (::NSPoint(^)(::NSRange))nil)];
+                                                                          range:cocoon::internal::to(target_range)
+                                                                        options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
+                                                                                                                {
+                                                                                                                    return cocoon::internal::to(k);
+                                                                                                                },
+                                                                                                                [](const Object& v) -> id
+                                                                                                                {
+                                                                                                                    return cocoon::internal::native_id(v);
+                                                                                                                })
+                                                         baselineOriginProvider:(origin_provider ? (::NSPoint(^)(::NSRange)) ^ ::NSPoint(::NSRange a103_0) { auto __r = origin_provider(cocoon::internal::from(a103_0)); return cocoon::internal::to(__r); } : (::NSPoint(^)(::NSRange))nil)];
     }
 
     void View::sort_subviews_using_function(ComparisonResult (*compare)(void*, void*, void*), void* context) const
@@ -763,6 +767,7 @@ namespace cocoon
         [cocoon::internal::ns<::NSView>(this) viewDidChangeEffectiveAppearance];
     }
 
+#ifdef COCOON_MACOS_27
     void View::view_did_change_effective_corner_radii() const
     {
         if (@available(macOS 27.0, *))
@@ -771,6 +776,7 @@ namespace cocoon
         }
     }
 
+#endif
     void View::view_did_end_live_resize() const
     {
         [cocoon::internal::ns<::NSView>(this) viewDidEndLiveResize];
@@ -904,17 +910,17 @@ namespace cocoon
     std::vector<Object> View::background_filters() const
     {
         return cocoon::internal::from_array<Object>([cocoon::internal::ns<::NSView>(this) backgroundFilters], [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     void View::set_background_filters(const std::vector<Object>& value) const
     {
         [cocoon::internal::ns<::NSView>(this) setBackgroundFilters:cocoon::internal::to_array(value, [](const Object& e) -> id
-                                                                  {
-                                                                      return cocoon::internal::native_id(e);
-                                                                  })];
+                                                                                              {
+                                                                                                  return cocoon::internal::native_id(e);
+                                                                                              })];
     }
 
     double View::baseline_offset_from_bottom() const
@@ -1015,27 +1021,28 @@ namespace cocoon
     std::vector<LayoutConstraint> View::constraints() const
     {
         return cocoon::internal::from_array<LayoutConstraint>([cocoon::internal::ns<::NSView>(this) constraints], [](id e) -> LayoutConstraint
-                                                {
-                                                    return cocoon::internal::wrap<LayoutConstraint>((::NSLayoutConstraint*)e);
-                                                });
+                                                              {
+                                                                  return cocoon::internal::wrap<LayoutConstraint>((::NSLayoutConstraint*)e);
+                                                              });
     }
 
     std::vector<Object> View::content_filters() const
     {
         return cocoon::internal::from_array<Object>([cocoon::internal::ns<::NSView>(this) contentFilters], [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     void View::set_content_filters(const std::vector<Object>& value) const
     {
         [cocoon::internal::ns<::NSView>(this) setContentFilters:cocoon::internal::to_array(value, [](const Object& e) -> id
-                                                               {
-                                                                   return cocoon::internal::native_id(e);
-                                                               })];
+                                                                                           {
+                                                                                               return cocoon::internal::native_id(e);
+                                                                                           })];
     }
 
+#ifdef COCOON_MACOS_27
     ViewCornerConfiguration View::corner_configuration() const
     {
         if (@available(macOS 27.0, *))
@@ -1045,6 +1052,7 @@ namespace cocoon
         return ViewCornerConfiguration(nullptr);
     }
 
+#endif
     FocusRingType View::default_focus_ring_type()
     {
         return static_cast<FocusRingType>([::NSView defaultFocusRingType]);
@@ -1060,6 +1068,7 @@ namespace cocoon
         return static_cast<bool>([cocoon::internal::ns<::NSView>(this) isDrawingFindIndicator]);
     }
 
+#ifdef COCOON_MACOS_27
     ViewCornerRadii View::effective_corner_radii() const
     {
         if (@available(macOS 27.0, *))
@@ -1069,6 +1078,7 @@ namespace cocoon
         return ViewCornerRadii(nullptr);
     }
 
+#endif
     MenuItem View::enclosing_menu_item() const
     {
         return cocoon::internal::wrap<MenuItem>([cocoon::internal::ns<::NSView>(this) enclosingMenuItem]);
@@ -1079,6 +1089,7 @@ namespace cocoon
         return cocoon::internal::wrap<ScrollView>([cocoon::internal::ns<::NSView>(this) enclosingScrollView]);
     }
 
+#ifdef COCOON_MACOS_27
     ViewExclusiveGestureBehavior View::exclusive_gesture_behavior() const
     {
         if (@available(macOS 27.0, *))
@@ -1088,6 +1099,8 @@ namespace cocoon
         return {};
     }
 
+#endif
+#ifdef COCOON_MACOS_27
     void View::set_exclusive_gesture_behavior(ViewExclusiveGestureBehavior value) const
     {
         if (@available(macOS 27.0, *))
@@ -1096,6 +1109,7 @@ namespace cocoon
         }
     }
 
+#endif
     LayoutYAxisAnchor View::first_baseline_anchor() const
     {
         return cocoon::internal::wrap<LayoutYAxisAnchor>([cocoon::internal::ns<::NSView>(this) firstBaselineAnchor]);
@@ -1169,17 +1183,17 @@ namespace cocoon
     std::vector<GestureRecognizer> View::gesture_recognizers() const
     {
         return cocoon::internal::from_array<GestureRecognizer>([cocoon::internal::ns<::NSView>(this) gestureRecognizers], [](id e) -> GestureRecognizer
-                                                 {
-                                                     return cocoon::internal::wrap<GestureRecognizer>((::NSGestureRecognizer*)e);
-                                                 });
+                                                               {
+                                                                   return cocoon::internal::wrap<GestureRecognizer>((::NSGestureRecognizer*)e);
+                                                               });
     }
 
     void View::set_gesture_recognizers(const std::vector<GestureRecognizer>& value) const
     {
         [cocoon::internal::ns<::NSView>(this) setGestureRecognizers:cocoon::internal::to_array(value, [](const GestureRecognizer& e) -> id
-                                                                   {
-                                                                       return cocoon::internal::native<::NSGestureRecognizer>(e);
-                                                                   })];
+                                                                                               {
+                                                                                                   return cocoon::internal::native<::NSGestureRecognizer>(e);
+                                                                                               })];
     }
 
     bool View::has_ambiguous_layout() const
@@ -1295,9 +1309,9 @@ namespace cocoon
     std::vector<LayoutGuide> View::layout_guides() const
     {
         return cocoon::internal::from_array<LayoutGuide>([cocoon::internal::ns<::NSView>(this) layoutGuides], [](id e) -> LayoutGuide
-                                           {
-                                               return cocoon::internal::wrap<LayoutGuide>((::NSLayoutGuide*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::wrap<LayoutGuide>((::NSLayoutGuide*)e);
+                                                         });
     }
 
     LayoutGuide View::layout_margins_guide() const
@@ -1468,9 +1482,9 @@ namespace cocoon
     std::vector<std::string> View::registered_dragged_types() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSView>(this) registeredDraggedTypes], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     bool View::requires_constraint_based_layout()
@@ -1521,17 +1535,17 @@ namespace cocoon
     std::vector<View> View::subviews() const
     {
         return cocoon::internal::from_array<View>([cocoon::internal::ns<::NSView>(this) subviews], [](id e) -> View
-                                    {
-                                        return cocoon::internal::wrap<View>((::NSView*)e);
-                                    });
+                                                  {
+                                                      return cocoon::internal::wrap<View>((::NSView*)e);
+                                                  });
     }
 
     void View::set_subviews(const std::vector<View>& value) const
     {
         [cocoon::internal::ns<::NSView>(this) setSubviews:cocoon::internal::to_array(value, [](const View& e) -> id
-                                                         {
-                                                             return cocoon::internal::native<::NSView>(e);
-                                                         })];
+                                                                                     {
+                                                                                         return cocoon::internal::native<::NSView>(e);
+                                                                                     })];
     }
 
     View View::superview() const
@@ -1544,6 +1558,7 @@ namespace cocoon
         return static_cast<std::int64_t>([cocoon::internal::ns<::NSView>(this) tag]);
     }
 
+#ifdef COCOON_MACOS_27
     TextSelectionManager View::text_selection_manager() const
     {
         if (@available(macOS 27.0, *))
@@ -1553,6 +1568,8 @@ namespace cocoon
         return TextSelectionManager(nullptr);
     }
 
+#endif
+#ifdef COCOON_MACOS_27
     void View::set_text_selection_manager(const TextSelectionManager& value) const
     {
         if (@available(macOS 27.0, *))
@@ -1561,6 +1578,7 @@ namespace cocoon
         }
     }
 
+#endif
     std::string View::tool_tip() const
     {
         return cocoon::internal::from([cocoon::internal::ns<::NSView>(this) toolTip]);
@@ -1579,9 +1597,9 @@ namespace cocoon
     std::vector<TrackingArea> View::tracking_areas() const
     {
         return cocoon::internal::from_array<TrackingArea>([cocoon::internal::ns<::NSView>(this) trackingAreas], [](id e) -> TrackingArea
-                                            {
-                                                return cocoon::internal::wrap<TrackingArea>((::NSTrackingArea*)e);
-                                            });
+                                                          {
+                                                              return cocoon::internal::wrap<TrackingArea>((::NSTrackingArea*)e);
+                                                          });
     }
 
     LayoutXAxisAnchor View::trailing_anchor() const

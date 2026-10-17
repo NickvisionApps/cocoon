@@ -4,10 +4,10 @@
 namespace cocoon
 {
     CompoundPredicate::CompoundPredicate(CompoundPredicateType type, const std::vector<Predicate>& subpredicates) : CompoundPredicate(Adopt{cocoon::internal::retain([[::NSCompoundPredicate alloc] initWithType:static_cast<::NSCompoundPredicateType>(type)
-                                                                                                                                                                                     subpredicates:cocoon::internal::to_array(subpredicates, [](const Predicate& e) -> id
-                                                                                                                                                                                                                {
-                                                                                                                                                                                                                    return cocoon::internal::native<::NSPredicate>(e);
-                                                                                                                                                                                                                })])})
+                                                                                                                                                                                                   subpredicates:cocoon::internal::to_array(subpredicates, [](const Predicate& e) -> id
+                                                                                                                                                                                                                                            {
+                                                                                                                                                                                                                                                return cocoon::internal::native<::NSPredicate>(e);
+                                                                                                                                                                                                                                            })])})
     {
     }
 
@@ -26,9 +26,9 @@ namespace cocoon
     CompoundPredicate CompoundPredicate::and_predicate_with_subpredicates(const std::vector<Predicate>& subpredicates)
     {
         return cocoon::internal::wrap<CompoundPredicate>([::NSCompoundPredicate andPredicateWithSubpredicates:cocoon::internal::to_array(subpredicates, [](const Predicate& e) -> id
-                                                                                                             {
-                                                                                                                 return cocoon::internal::native<::NSPredicate>(e);
-                                                                                                             })]);
+                                                                                                                                         {
+                                                                                                                                             return cocoon::internal::native<::NSPredicate>(e);
+                                                                                                                                         })]);
     }
 
     CompoundPredicate CompoundPredicate::not_predicate_with_subpredicate(const Predicate& predicate)
@@ -39,9 +39,9 @@ namespace cocoon
     CompoundPredicate CompoundPredicate::or_predicate_with_subpredicates(const std::vector<Predicate>& subpredicates)
     {
         return cocoon::internal::wrap<CompoundPredicate>([::NSCompoundPredicate orPredicateWithSubpredicates:cocoon::internal::to_array(subpredicates, [](const Predicate& e) -> id
-                                                                                                            {
-                                                                                                                return cocoon::internal::native<::NSPredicate>(e);
-                                                                                                            })]);
+                                                                                                                                        {
+                                                                                                                                            return cocoon::internal::native<::NSPredicate>(e);
+                                                                                                                                        })]);
     }
 
     CompoundPredicateType CompoundPredicate::compound_predicate_type() const
@@ -52,8 +52,8 @@ namespace cocoon
     std::vector<Object> CompoundPredicate::subpredicates() const
     {
         return cocoon::internal::from_array<Object>([cocoon::internal::ns<::NSCompoundPredicate>(this) subpredicates], [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 }

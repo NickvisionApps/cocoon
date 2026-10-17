@@ -66,17 +66,17 @@ namespace cocoon
     std::vector<std::string> TouchBar::customization_allowed_item_identifiers() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSTouchBar>(this) customizationAllowedItemIdentifiers], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void TouchBar::set_customization_allowed_item_identifiers(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSTouchBar>(this) setCustomizationAllowedItemIdentifiers:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                                                        {
-                                                                                            return cocoon::internal::to(e);
-                                                                                        })];
+                                                                                                                    {
+                                                                                                                        return cocoon::internal::to(e);
+                                                                                                                    })];
     }
 
     std::string TouchBar::customization_identifier() const
@@ -92,33 +92,33 @@ namespace cocoon
     std::vector<std::string> TouchBar::customization_required_item_identifiers() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSTouchBar>(this) customizationRequiredItemIdentifiers], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void TouchBar::set_customization_required_item_identifiers(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSTouchBar>(this) setCustomizationRequiredItemIdentifiers:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                                                         {
-                                                                                             return cocoon::internal::to(e);
-                                                                                         })];
+                                                                                                                     {
+                                                                                                                         return cocoon::internal::to(e);
+                                                                                                                     })];
     }
 
     std::vector<std::string> TouchBar::default_item_identifiers() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSTouchBar>(this) defaultItemIdentifiers], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void TouchBar::set_default_item_identifiers(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSTouchBar>(this) setDefaultItemIdentifiers:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                                           {
-                                                                               return cocoon::internal::to(e);
-                                                                           })];
+                                                                                                       {
+                                                                                                           return cocoon::internal::to(e);
+                                                                                                       })];
     }
 
     std::string TouchBar::escape_key_replacement_item_identifier() const
@@ -134,9 +134,9 @@ namespace cocoon
     std::vector<std::string> TouchBar::item_identifiers() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSTouchBar>(this) itemIdentifiers], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::string TouchBar::principal_item_identifier() const
@@ -152,17 +152,17 @@ namespace cocoon
     std::vector<TouchBarItem> TouchBar::template_items() const
     {
         return cocoon::internal::from_array<TouchBarItem>([[cocoon::internal::ns<::NSTouchBar>(this) templateItems] allObjects], [](id e) -> TouchBarItem
-                                            {
-                                                return cocoon::internal::wrap<TouchBarItem>((::NSTouchBarItem*)e);
-                                            });
+                                                          {
+                                                              return cocoon::internal::wrap<TouchBarItem>((::NSTouchBarItem*)e);
+                                                          });
     }
 
     void TouchBar::set_template_items(const std::vector<TouchBarItem>& value) const
     {
         [cocoon::internal::ns<::NSTouchBar>(this) setTemplateItems:[NSSet setWithArray:cocoon::internal::to_array(value, [](const TouchBarItem& e) -> id
-                                                                                      {
-                                                                                          return cocoon::internal::native<::NSTouchBarItem>(e);
-                                                                                      })]];
+                                                                                                                  {
+                                                                                                                      return cocoon::internal::native<::NSTouchBarItem>(e);
+                                                                                                                  })]];
     }
 
     bool TouchBar::is_visible() const

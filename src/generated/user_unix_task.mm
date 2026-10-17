@@ -18,10 +18,10 @@ namespace cocoon
     void UserUnixTask::execute_with_arguments(const std::vector<std::string>& arguments, std::function<void(Error)> handler) const
     {
         [cocoon::internal::ns<::NSUserUnixTask>(this) executeWithArguments:cocoon::internal::to_array(arguments, [](const std::string& e) -> id
-                                                                          {
-                                                                              return cocoon::internal::to(e);
-                                                                          })
-                                           completionHandler:(handler ? (::NSUserUnixTaskCompletionHandler) ^ void(::NSError * a256_0) { handler(cocoon::internal::wrap<Error>(a256_0)); } : (::NSUserUnixTaskCompletionHandler)nil)];
+                                                                                                      {
+                                                                                                          return cocoon::internal::to(e);
+                                                                                                      })
+                                                         completionHandler:(handler ? (::NSUserUnixTaskCompletionHandler) ^ void(::NSError * a256_0) { handler(cocoon::internal::wrap<Error>(a256_0)); } : (::NSUserUnixTaskCompletionHandler)nil)];
     }
 
     FileHandle UserUnixTask::standard_error() const

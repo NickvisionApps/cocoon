@@ -4,15 +4,15 @@
 namespace cocoon
 {
     Exception::Exception(const std::string& a_name, const std::string& a_reason, const std::vector<std::pair<Object, Object>>& a_user_info) : Exception(Adopt{cocoon::internal::retain([[::NSException alloc] initWithName:cocoon::internal::to(a_name)
-                                                                                                                                                                                                      reason:cocoon::internal::to(a_reason)
-                                                                                                                                                                                                    userInfo:cocoon::internal::to_dictionary(a_user_info, [](const Object& k) -> id
-                                                                                                                                                                                                                               {
-                                                                                                                                                                                                                                   return cocoon::internal::native_id(k);
-                                                                                                                                                                                                                               },
-                                                                                                                                                                                                                               [](const Object& v) -> id
-                                                                                                                                                                                                                               {
-                                                                                                                                                                                                                                   return cocoon::internal::native_id(v);
-                                                                                                                                                                                                                               })])})
+                                                                                                                                                                                                                    reason:cocoon::internal::to(a_reason)
+                                                                                                                                                                                                                  userInfo:cocoon::internal::to_dictionary(a_user_info, [](const Object& k) -> id
+                                                                                                                                                                                                                                                           {
+                                                                                                                                                                                                                                                               return cocoon::internal::native_id(k);
+                                                                                                                                                                                                                                                           },
+                                                                                                                                                                                                                                                           [](const Object& v) -> id
+                                                                                                                                                                                                                                                           {
+                                                                                                                                                                                                                                                               return cocoon::internal::native_id(v);
+                                                                                                                                                                                                                                                           })])})
     {
     }
 
@@ -31,15 +31,15 @@ namespace cocoon
     Exception Exception::exception_with_name(const std::string& name, const std::string& reason, const std::vector<std::pair<Object, Object>>& user_info)
     {
         return cocoon::internal::wrap<Exception>([::NSException exceptionWithName:cocoon::internal::to(name)
-                                                             reason:cocoon::internal::to(reason)
-                                                           userInfo:cocoon::internal::to_dictionary(user_info, [](const Object& k) -> id
-                                                                                      {
-                                                                                          return cocoon::internal::native_id(k);
-                                                                                      },
-                                                                                      [](const Object& v) -> id
-                                                                                      {
-                                                                                          return cocoon::internal::native_id(v);
-                                                                                      })]);
+                                                                           reason:cocoon::internal::to(reason)
+                                                                         userInfo:cocoon::internal::to_dictionary(user_info, [](const Object& k) -> id
+                                                                                                                  {
+                                                                                                                      return cocoon::internal::native_id(k);
+                                                                                                                  },
+                                                                                                                  [](const Object& v) -> id
+                                                                                                                  {
+                                                                                                                      return cocoon::internal::native_id(v);
+                                                                                                                  })]);
     }
 
     void Exception::raise() const
@@ -62,17 +62,17 @@ namespace cocoon
     std::vector<Number> Exception::call_stack_return_addresses() const
     {
         return cocoon::internal::from_array<Number>([cocoon::internal::ns<::NSException>(this) callStackReturnAddresses], [](id e) -> Number
-                                      {
-                                          return cocoon::internal::wrap<Number>((::NSNumber*)e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Number>((::NSNumber*)e);
+                                                    });
     }
 
     std::vector<std::string> Exception::call_stack_symbols() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSException>(this) callStackSymbols], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::string Exception::name() const
@@ -88,12 +88,12 @@ namespace cocoon
     std::vector<std::pair<Object, Object>> Exception::user_info() const
     {
         return cocoon::internal::from_dictionary<std::vector<std::pair<Object, Object>>>([cocoon::internal::ns<::NSException>(this) userInfo], [](id k) -> Object
-                                                                           {
-                                                                               return cocoon::internal::wrap<Object>(k);
-                                                                           },
-                                                                           [](id v) -> Object
-                                                                           {
-                                                                               return cocoon::internal::wrap<Object>(v);
-                                                                           });
+                                                                                         {
+                                                                                             return cocoon::internal::wrap<Object>(k);
+                                                                                         },
+                                                                                         [](id v) -> Object
+                                                                                         {
+                                                                                             return cocoon::internal::wrap<Object>(v);
+                                                                                         });
     }
 }

@@ -48,17 +48,17 @@ namespace cocoon
     std::vector<ColorSpace> ColorPickerTouchBarItem::allowed_color_spaces() const
     {
         return cocoon::internal::from_array<ColorSpace>([cocoon::internal::ns<::NSColorPickerTouchBarItem>(this) allowedColorSpaces], [](id e) -> ColorSpace
-                                          {
-                                              return cocoon::internal::wrap<ColorSpace>((::NSColorSpace*)e);
-                                          });
+                                                        {
+                                                            return cocoon::internal::wrap<ColorSpace>((::NSColorSpace*)e);
+                                                        });
     }
 
     void ColorPickerTouchBarItem::set_allowed_color_spaces(const std::vector<ColorSpace>& value) const
     {
         [cocoon::internal::ns<::NSColorPickerTouchBarItem>(this) setAllowedColorSpaces:cocoon::internal::to_array(value, [](const ColorSpace& e) -> id
-                                                                                      {
-                                                                                          return cocoon::internal::native<::NSColorSpace>(e);
-                                                                                      })];
+                                                                                                                  {
+                                                                                                                      return cocoon::internal::native<::NSColorSpace>(e);
+                                                                                                                  })];
     }
 
     Color ColorPickerTouchBarItem::color() const

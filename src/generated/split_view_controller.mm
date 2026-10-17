@@ -93,17 +93,17 @@ namespace cocoon
     std::vector<SplitViewItem> SplitViewController::split_view_items() const
     {
         return cocoon::internal::from_array<SplitViewItem>([cocoon::internal::ns<::NSSplitViewController>(this) splitViewItems], [](id e) -> SplitViewItem
-                                             {
-                                                 return cocoon::internal::wrap<SplitViewItem>((::NSSplitViewItem*)e);
-                                             });
+                                                           {
+                                                               return cocoon::internal::wrap<SplitViewItem>((::NSSplitViewItem*)e);
+                                                           });
     }
 
     void SplitViewController::set_split_view_items(const std::vector<SplitViewItem>& value) const
     {
         [cocoon::internal::ns<::NSSplitViewController>(this) setSplitViewItems:cocoon::internal::to_array(value, [](const SplitViewItem& e) -> id
-                                                                              {
-                                                                                  return cocoon::internal::native<::NSSplitViewItem>(e);
-                                                                              })];
+                                                                                                          {
+                                                                                                              return cocoon::internal::native<::NSSplitViewItem>(e);
+                                                                                                          })];
     }
 
     SplitViewItem SplitViewController::add_sidebar(const ViewController& controller, double minimum_width, double maximum_width) const

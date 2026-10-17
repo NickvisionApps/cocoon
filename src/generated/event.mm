@@ -28,9 +28,9 @@ namespace cocoon
     std::vector<Touch> Event::all_touches() const
     {
         return cocoon::internal::from_array<Touch>([[cocoon::internal::ns<::NSEvent>(this) allTouches] allObjects], [](id e) -> Touch
-                                     {
-                                         return cocoon::internal::wrap<Touch>((::NSTouch*)e);
-                                     });
+                                                   {
+                                                       return cocoon::internal::wrap<Touch>((::NSTouch*)e);
+                                                   });
     }
 
     std::string Event::characters_by_applying_modifiers(EventModifierFlags modifiers) const
@@ -41,9 +41,9 @@ namespace cocoon
     std::vector<Touch> Event::coalesced_touches_for_touch(const Touch& touch) const
     {
         return cocoon::internal::from_array<Touch>([cocoon::internal::ns<::NSEvent>(this) coalescedTouchesForTouch:cocoon::internal::native<::NSTouch>(touch)], [](id e) -> Touch
-                                     {
-                                         return cocoon::internal::wrap<Touch>((::NSTouch*)e);
-                                     });
+                                                   {
+                                                       return cocoon::internal::wrap<Touch>((::NSTouch*)e);
+                                                   });
     }
 
     Event Event::enter_exit_event_with_type(EventType type, const Point& location, EventModifierFlags flags, double time, std::int64_t w_num, const GraphicsContext& unused_pass_nil, std::int64_t e_num, std::int64_t t_num, void* data)
@@ -94,17 +94,17 @@ namespace cocoon
     std::vector<Touch> Event::touches_for_view(const View& view) const
     {
         return cocoon::internal::from_array<Touch>([[cocoon::internal::ns<::NSEvent>(this) touchesForView:cocoon::internal::native<::NSView>(view)] allObjects], [](id e) -> Touch
-                                     {
-                                         return cocoon::internal::wrap<Touch>((::NSTouch*)e);
-                                     });
+                                                   {
+                                                       return cocoon::internal::wrap<Touch>((::NSTouch*)e);
+                                                   });
     }
 
     std::vector<Touch> Event::touches_matching_phase(TouchPhase phase, const View& view) const
     {
         return cocoon::internal::from_array<Touch>([[cocoon::internal::ns<::NSEvent>(this) touchesMatchingPhase:static_cast<::NSTouchPhase>(phase) inView:cocoon::internal::native<::NSView>(view)] allObjects], [](id e) -> Touch
-                                     {
-                                         return cocoon::internal::wrap<Touch>((::NSTouch*)e);
-                                     });
+                                                   {
+                                                       return cocoon::internal::wrap<Touch>((::NSTouch*)e);
+                                                   });
     }
 
     void Event::track_swipe_event_with_options(EventSwipeTrackingOptions options, double min_dampen_threshold, double max_dampen_threshold, std::function<void(double, EventPhase, bool, bool&)> tracking_handler) const
@@ -377,6 +377,7 @@ namespace cocoon
         return static_cast<double>([cocoon::internal::ns<::NSEvent>(this) timestamp]);
     }
 
+#ifdef COCOON_MACOS_27
     bool Event::is_touch_swipe_navigation_enabled()
     {
         if (@available(macOS 27.0, *))
@@ -386,6 +387,7 @@ namespace cocoon
         return {};
     }
 
+#endif
     TrackingArea Event::tracking_area() const
     {
         return cocoon::internal::wrap<TrackingArea>([cocoon::internal::ns<::NSEvent>(this) trackingArea]);

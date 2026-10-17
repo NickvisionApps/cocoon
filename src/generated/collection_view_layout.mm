@@ -56,33 +56,33 @@ namespace cocoon
     std::vector<IndexPath> CollectionViewLayout::index_paths_to_delete_for_decoration_view_of_kind(const std::string& element_kind) const
     {
         return cocoon::internal::from_array<IndexPath>([[cocoon::internal::ns<::NSCollectionViewLayout>(this) indexPathsToDeleteForDecorationViewOfKind:cocoon::internal::to(element_kind)] allObjects], [](id e) -> IndexPath
-                                         {
-                                             return cocoon::internal::wrap<IndexPath>((::NSIndexPath*)e);
-                                         });
+                                                       {
+                                                           return cocoon::internal::wrap<IndexPath>((::NSIndexPath*)e);
+                                                       });
     }
 
     std::vector<IndexPath> CollectionViewLayout::index_paths_to_delete_for_supplementary_view_of_kind(const std::string& element_kind) const
     {
         return cocoon::internal::from_array<IndexPath>([[cocoon::internal::ns<::NSCollectionViewLayout>(this) indexPathsToDeleteForSupplementaryViewOfKind:cocoon::internal::to(element_kind)] allObjects], [](id e) -> IndexPath
-                                         {
-                                             return cocoon::internal::wrap<IndexPath>((::NSIndexPath*)e);
-                                         });
+                                                       {
+                                                           return cocoon::internal::wrap<IndexPath>((::NSIndexPath*)e);
+                                                       });
     }
 
     std::vector<IndexPath> CollectionViewLayout::index_paths_to_insert_for_decoration_view_of_kind(const std::string& element_kind) const
     {
         return cocoon::internal::from_array<IndexPath>([[cocoon::internal::ns<::NSCollectionViewLayout>(this) indexPathsToInsertForDecorationViewOfKind:cocoon::internal::to(element_kind)] allObjects], [](id e) -> IndexPath
-                                         {
-                                             return cocoon::internal::wrap<IndexPath>((::NSIndexPath*)e);
-                                         });
+                                                       {
+                                                           return cocoon::internal::wrap<IndexPath>((::NSIndexPath*)e);
+                                                       });
     }
 
     std::vector<IndexPath> CollectionViewLayout::index_paths_to_insert_for_supplementary_view_of_kind(const std::string& element_kind) const
     {
         return cocoon::internal::from_array<IndexPath>([[cocoon::internal::ns<::NSCollectionViewLayout>(this) indexPathsToInsertForSupplementaryViewOfKind:cocoon::internal::to(element_kind)] allObjects], [](id e) -> IndexPath
-                                         {
-                                             return cocoon::internal::wrap<IndexPath>((::NSIndexPath*)e);
-                                         });
+                                                       {
+                                                           return cocoon::internal::wrap<IndexPath>((::NSIndexPath*)e);
+                                                       });
     }
 
     void CollectionViewLayout::invalidate_layout() const
@@ -118,9 +118,9 @@ namespace cocoon
     std::vector<CollectionViewLayoutAttributes> CollectionViewLayout::layout_attributes_for_elements_in_rect(const Rect& rect) const
     {
         return cocoon::internal::from_array<CollectionViewLayoutAttributes>([cocoon::internal::ns<::NSCollectionViewLayout>(this) layoutAttributesForElementsInRect:cocoon::internal::to(rect)], [](id e) -> CollectionViewLayoutAttributes
-                                                              {
-                                                                  return cocoon::internal::wrap<CollectionViewLayoutAttributes>((::NSCollectionViewLayoutAttributes*)e);
-                                                              });
+                                                                            {
+                                                                                return cocoon::internal::wrap<CollectionViewLayoutAttributes>((::NSCollectionViewLayoutAttributes*)e);
+                                                                            });
     }
 
     CollectionViewLayoutAttributes CollectionViewLayout::layout_attributes_for_inter_item_gap_before_index_path(const IndexPath& index_path) const
@@ -146,9 +146,9 @@ namespace cocoon
     void CollectionViewLayout::prepare_for_collection_view_updates(const std::vector<CollectionViewUpdateItem>& update_items) const
     {
         [cocoon::internal::ns<::NSCollectionViewLayout>(this) prepareForCollectionViewUpdates:cocoon::internal::to_array(update_items, [](const CollectionViewUpdateItem& e) -> id
-                                                                                             {
-                                                                                                 return cocoon::internal::native<::NSCollectionViewUpdateItem>(e);
-                                                                                             })];
+                                                                                                                         {
+                                                                                                                             return cocoon::internal::native<::NSCollectionViewUpdateItem>(e);
+                                                                                                                         })];
     }
 
     void CollectionViewLayout::prepare_for_transition_from_layout(const CollectionViewLayout& old_layout) const

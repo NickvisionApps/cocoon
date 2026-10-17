@@ -18,9 +18,9 @@ namespace cocoon
     std::vector<LayoutConstraint> LayoutGuide::constraints_affecting_layout_for_orientation(ConstraintOrientation orientation) const
     {
         return cocoon::internal::from_array<LayoutConstraint>([cocoon::internal::ns<::NSLayoutGuide>(this) constraintsAffectingLayoutForOrientation:static_cast<::NSLayoutConstraintOrientation>(orientation)], [](id e) -> LayoutConstraint
-                                                {
-                                                    return cocoon::internal::wrap<LayoutConstraint>((::NSLayoutConstraint*)e);
-                                                });
+                                                              {
+                                                                  return cocoon::internal::wrap<LayoutConstraint>((::NSLayoutConstraint*)e);
+                                                              });
     }
 
     LayoutYAxisAnchor LayoutGuide::bottom_anchor() const

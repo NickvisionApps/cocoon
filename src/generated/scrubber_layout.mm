@@ -28,9 +28,9 @@ namespace cocoon
     std::vector<ScrubberLayoutAttributes> ScrubberLayout::layout_attributes_for_items_in_rect(const Rect& rect) const
     {
         return cocoon::internal::from_array<ScrubberLayoutAttributes>([[cocoon::internal::ns<::NSScrubberLayout>(this) layoutAttributesForItemsInRect:cocoon::internal::to(rect)] allObjects], [](id e) -> ScrubberLayoutAttributes
-                                                        {
-                                                            return cocoon::internal::wrap<ScrubberLayoutAttributes>((::NSScrubberLayoutAttributes*)e);
-                                                        });
+                                                                      {
+                                                                          return cocoon::internal::wrap<ScrubberLayoutAttributes>((::NSScrubberLayoutAttributes*)e);
+                                                                      });
     }
 
     void ScrubberLayout::prepare_layout() const

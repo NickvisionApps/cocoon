@@ -40,8 +40,8 @@ namespace cocoon
     {
         id host = (__bridge id)native;
         cocoon::internal::bind_action(host, host, [](id host, id sender)
-                        {
-                            cocoon::Signal<cocoon::Switch, void(bool)>::emit((__bridge void*)host, "toggled", [(NSSwitch*)sender state] == NSControlStateValueOn);
-                        });
+                                      {
+                                          cocoon::Signal<cocoon::Switch, void(bool)>::emit((__bridge void*)host, "toggled", [(NSSwitch*)sender state] == NSControlStateValueOn);
+                                      });
     }
 }

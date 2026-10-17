@@ -76,9 +76,9 @@ namespace cocoon
     std::vector<Object> PointerArray::all_objects() const
     {
         return cocoon::internal::from_array<Object>([cocoon::internal::ns<::NSPointerArray>(this) allObjects], [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     std::uint64_t PointerArray::count() const

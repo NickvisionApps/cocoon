@@ -23,10 +23,10 @@ namespace cocoon
     void ExtensionContext::complete_request_returning_items(const std::vector<Object>& items, std::function<void(bool)> completion_handler) const
     {
         [cocoon::internal::ns<::NSExtensionContext>(this) completeRequestReturningItems:cocoon::internal::to_array(items, [](const Object& e) -> id
-                                                                                       {
-                                                                                           return cocoon::internal::native_id(e);
-                                                                                       })
-                                                        completionHandler:(completion_handler ? (void (^)(BOOL)) ^ void(::BOOL a134_0) { completion_handler(static_cast<bool>(a134_0)); } : (void (^)(BOOL))nil)];
+                                                                                                                   {
+                                                                                                                       return cocoon::internal::native_id(e);
+                                                                                                                   })
+                                                                      completionHandler:(completion_handler ? (void (^)(BOOL)) ^ void(::BOOL a134_0) { completion_handler(static_cast<bool>(a134_0)); } : (void (^)(BOOL))nil)];
     }
 
     void ExtensionContext::open_url(const URL& url, std::function<void(bool)> completion_handler) const
@@ -37,8 +37,8 @@ namespace cocoon
     std::vector<Object> ExtensionContext::input_items() const
     {
         return cocoon::internal::from_array<Object>([cocoon::internal::ns<::NSExtensionContext>(this) inputItems], [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 }

@@ -4,16 +4,16 @@
 namespace cocoon
 {
     HTTPURLResponse::HTTPURLResponse(const URL& url, std::int64_t status_code, const std::string& http_version, const std::map<std::string, std::string>& header_fields) : HTTPURLResponse(Adopt{cocoon::internal::retain([[::NSHTTPURLResponse alloc] initWithURL:cocoon::internal::native<::NSURL>(url)
-                                                                                                                                                                                                                                          statusCode:static_cast<::NSInteger>(status_code)
-                                                                                                                                                                                                                                         HTTPVersion:cocoon::internal::to(http_version)
-                                                                                                                                                                                                                                        headerFields:cocoon::internal::to_dictionary(header_fields, [](const std::string& k) -> id
-                                                                                                                                                                                                                                                                       {
-                                                                                                                                                                                                                                                                           return cocoon::internal::to(k);
-                                                                                                                                                                                                                                                                       },
-                                                                                                                                                                                                                                                                       [](const std::string& v) -> id
-                                                                                                                                                                                                                                                                       {
-                                                                                                                                                                                                                                                                           return cocoon::internal::to(v);
-                                                                                                                                                                                                                                                                       })])})
+                                                                                                                                                                                                                                                        statusCode:static_cast<::NSInteger>(status_code)
+                                                                                                                                                                                                                                                       HTTPVersion:cocoon::internal::to(http_version)
+                                                                                                                                                                                                                                                      headerFields:cocoon::internal::to_dictionary(header_fields, [](const std::string& k) -> id
+                                                                                                                                                                                                                                                                                                   {
+                                                                                                                                                                                                                                                                                                       return cocoon::internal::to(k);
+                                                                                                                                                                                                                                                                                                   },
+                                                                                                                                                                                                                                                                                                   [](const std::string& v) -> id
+                                                                                                                                                                                                                                                                                                   {
+                                                                                                                                                                                                                                                                                                       return cocoon::internal::to(v);
+                                                                                                                                                                                                                                                                                                   })])})
     {
     }
 
@@ -42,13 +42,13 @@ namespace cocoon
     std::vector<std::pair<Object, Object>> HTTPURLResponse::all_header_fields() const
     {
         return cocoon::internal::from_dictionary<std::vector<std::pair<Object, Object>>>([cocoon::internal::ns<::NSHTTPURLResponse>(this) allHeaderFields], [](id k) -> Object
-                                                                           {
-                                                                               return cocoon::internal::wrap<Object>(k);
-                                                                           },
-                                                                           [](id v) -> Object
-                                                                           {
-                                                                               return cocoon::internal::wrap<Object>(v);
-                                                                           });
+                                                                                         {
+                                                                                             return cocoon::internal::wrap<Object>(k);
+                                                                                         },
+                                                                                         [](id v) -> Object
+                                                                                         {
+                                                                                             return cocoon::internal::wrap<Object>(v);
+                                                                                         });
     }
 
     std::int64_t HTTPURLResponse::status_code() const

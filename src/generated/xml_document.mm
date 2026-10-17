@@ -4,28 +4,28 @@
 namespace cocoon
 {
     XMLDocument::XMLDocument(const URL& url, XMLNodeOptions mask) : XMLDocument(Adopt{cocoon::internal::retain([&]() -> id
-                                                                                                 {
-                                                                                                     NSError* __error = nil;
-                                                                                                     id __r = [[::NSXMLDocument alloc] initWithContentsOfURL:cocoon::internal::native<::NSURL>(url) options:static_cast<::NSXMLNodeOptions>(mask) error:&__error];
-                                                                                                     if (!__r && __error)
-                                                                                                     {
-                                                                                                         throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
-                                                                                                     }
-                                                                                                     return __r;
-                                                                                                 }())})
+                                                                                                               {
+                                                                                                                   NSError* __error = nil;
+                                                                                                                   id __r = [[::NSXMLDocument alloc] initWithContentsOfURL:cocoon::internal::native<::NSURL>(url) options:static_cast<::NSXMLNodeOptions>(mask) error:&__error];
+                                                                                                                   if (!__r && __error)
+                                                                                                                   {
+                                                                                                                       throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
+                                                                                                                   }
+                                                                                                                   return __r;
+                                                                                                               }())})
     {
     }
 
     XMLDocument::XMLDocument(const std::vector<std::uint8_t>& data, XMLNodeOptions mask) : XMLDocument(Adopt{cocoon::internal::retain([&]() -> id
-                                                                                                                        {
-                                                                                                                            NSError* __error = nil;
-                                                                                                                            id __r = [[::NSXMLDocument alloc] initWithData:cocoon::internal::to_data(data) options:static_cast<::NSXMLNodeOptions>(mask) error:&__error];
-                                                                                                                            if (!__r && __error)
-                                                                                                                            {
-                                                                                                                                throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
-                                                                                                                            }
-                                                                                                                            return __r;
-                                                                                                                        }())})
+                                                                                                                                      {
+                                                                                                                                          NSError* __error = nil;
+                                                                                                                                          id __r = [[::NSXMLDocument alloc] initWithData:cocoon::internal::to_data(data) options:static_cast<::NSXMLNodeOptions>(mask) error:&__error];
+                                                                                                                                          if (!__r && __error)
+                                                                                                                                          {
+                                                                                                                                              throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
+                                                                                                                                          }
+                                                                                                                                          return __r;
+                                                                                                                                      }())})
     {
     }
 
@@ -34,15 +34,15 @@ namespace cocoon
     }
 
     XMLDocument::XMLDocument(const std::string& string, XMLNodeOptions mask) : XMLDocument(Adopt{cocoon::internal::retain([&]() -> id
-                                                                                                            {
-                                                                                                                NSError* __error = nil;
-                                                                                                                id __r = [[::NSXMLDocument alloc] initWithXMLString:cocoon::internal::to(string) options:static_cast<::NSXMLNodeOptions>(mask) error:&__error];
-                                                                                                                if (!__r && __error)
-                                                                                                                {
-                                                                                                                    throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
-                                                                                                                }
-                                                                                                                return __r;
-                                                                                                            }())})
+                                                                                                                          {
+                                                                                                                              NSError* __error = nil;
+                                                                                                                              id __r = [[::NSXMLDocument alloc] initWithXMLString:cocoon::internal::to(string) options:static_cast<::NSXMLNodeOptions>(mask) error:&__error];
+                                                                                                                              if (!__r && __error)
+                                                                                                                              {
+                                                                                                                                  throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
+                                                                                                                              }
+                                                                                                                              return __r;
+                                                                                                                          }())})
     {
     }
 
@@ -76,25 +76,25 @@ namespace cocoon
     void XMLDocument::insert_children(const std::vector<XMLNode>& children, std::uint64_t index) const
     {
         [cocoon::internal::ns<::NSXMLDocument>(this) insertChildren:cocoon::internal::to_array(children, [](const XMLNode& e) -> id
-                                                                   {
-                                                                       return cocoon::internal::native<::NSXMLNode>(e);
-                                                                   })
-                                              atIndex:static_cast<::NSUInteger>(index)];
+                                                                                               {
+                                                                                                   return cocoon::internal::native<::NSXMLNode>(e);
+                                                                                               })
+                                                            atIndex:static_cast<::NSUInteger>(index)];
     }
 
     Object XMLDocument::object_by_applying_xslt(const std::vector<std::uint8_t>& xslt, const std::map<std::string, std::string>& arguments) const
     {
         NSError* __error = nil;
         auto __r = [cocoon::internal::ns<::NSXMLDocument>(this) objectByApplyingXSLT:cocoon::internal::to_data(xslt)
-                                                             arguments:cocoon::internal::to_dictionary(arguments, [](const std::string& k) -> id
-                                                                                         {
-                                                                                             return cocoon::internal::to(k);
-                                                                                         },
-                                                                                         [](const std::string& v) -> id
-                                                                                         {
-                                                                                             return cocoon::internal::to(v);
-                                                                                         })
-                                                                 error:&__error];
+                                                                           arguments:cocoon::internal::to_dictionary(arguments, [](const std::string& k) -> id
+                                                                                                                     {
+                                                                                                                         return cocoon::internal::to(k);
+                                                                                                                     },
+                                                                                                                     [](const std::string& v) -> id
+                                                                                                                     {
+                                                                                                                         return cocoon::internal::to(v);
+                                                                                                                     })
+                                                                               error:&__error];
         if (__error)
         {
             throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
@@ -106,15 +106,15 @@ namespace cocoon
     {
         NSError* __error = nil;
         auto __r = [cocoon::internal::ns<::NSXMLDocument>(this) objectByApplyingXSLTAtURL:cocoon::internal::native<::NSURL>(xslt_url)
-                                                                  arguments:cocoon::internal::to_dictionary(argument, [](const std::string& k) -> id
-                                                                                              {
-                                                                                                  return cocoon::internal::to(k);
-                                                                                              },
-                                                                                              [](const std::string& v) -> id
-                                                                                              {
-                                                                                                  return cocoon::internal::to(v);
-                                                                                              })
-                                                                      error:&__error];
+                                                                                arguments:cocoon::internal::to_dictionary(argument, [](const std::string& k) -> id
+                                                                                                                          {
+                                                                                                                              return cocoon::internal::to(k);
+                                                                                                                          },
+                                                                                                                          [](const std::string& v) -> id
+                                                                                                                          {
+                                                                                                                              return cocoon::internal::to(v);
+                                                                                                                          })
+                                                                                    error:&__error];
         if (__error)
         {
             throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
@@ -126,15 +126,15 @@ namespace cocoon
     {
         NSError* __error = nil;
         auto __r = [cocoon::internal::ns<::NSXMLDocument>(this) objectByApplyingXSLTString:cocoon::internal::to(xslt)
-                                                                   arguments:cocoon::internal::to_dictionary(arguments, [](const std::string& k) -> id
-                                                                                               {
-                                                                                                   return cocoon::internal::to(k);
-                                                                                               },
-                                                                                               [](const std::string& v) -> id
-                                                                                               {
-                                                                                                   return cocoon::internal::to(v);
-                                                                                               })
-                                                                       error:&__error];
+                                                                                 arguments:cocoon::internal::to_dictionary(arguments, [](const std::string& k) -> id
+                                                                                                                           {
+                                                                                                                               return cocoon::internal::to(k);
+                                                                                                                           },
+                                                                                                                           [](const std::string& v) -> id
+                                                                                                                           {
+                                                                                                                               return cocoon::internal::to(v);
+                                                                                                                           })
+                                                                                     error:&__error];
         if (__error)
         {
             throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
@@ -165,9 +165,9 @@ namespace cocoon
     void XMLDocument::set_children(const std::vector<XMLNode>& children) const
     {
         [cocoon::internal::ns<::NSXMLDocument>(this) setChildren:cocoon::internal::to_array(children, [](const XMLNode& e) -> id
-                                                                {
-                                                                    return cocoon::internal::native<::NSXMLNode>(e);
-                                                                })];
+                                                                                            {
+                                                                                                return cocoon::internal::native<::NSXMLNode>(e);
+                                                                                            })];
     }
 
     void XMLDocument::set_root_element(const XMLElement& root) const
