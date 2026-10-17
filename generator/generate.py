@@ -24,7 +24,7 @@ S.manual_enums = {e["ns"]: e for e in SPEC.get("enums", [])}
 S.class_names = SPEC.get("classNames", {})
 SIGNAL_OVERRIDES = SPEC.get("signalOverrides", {})
 SKIP_CLASSES = set(SPEC.get("skipClasses", [])) | {"NSProxy"}
-SKIP_SELECTORS = {"alloc", "allocWithZone:", "new", "copyWithZone:", "mutableCopyWithZone:", "dealloc", "retain", "release", "autorelease", "retainCount", "zone", "class", "superclass", "self", "load", "initialize"}
+SKIP_SELECTORS = {"alloc", "allocWithZone:", "new", "copyWithZone:", "mutableCopyWithZone:", "dealloc", "retain", "release", "autorelease", "retainCount", "zone", "class", "superclass", "self", "load", "initialize", "addTarget:action:forControlEvents:", "removeTarget:action:forControlEvents:"}
 SKIP_SELECTORS_STATIC = {"alloc", "allocWithZone:", "new", "load", "initialize", "class", "superclass", "instanceMethodForSelector:", "supportsSecureCoding", "copyWithZone:"}
 
 ALL_MODELS = []

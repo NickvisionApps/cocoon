@@ -165,7 +165,7 @@ namespace cocoon
 
     void CandidateListTouchBarItemBase::set_client(const View& value) const
     {
-        [cocoon::internal::ns<::NSCandidateListTouchBarItem>(this) setClient:cocoon::internal::native<::NSView>(value)];
+        [cocoon::internal::ns<::NSCandidateListTouchBarItem>(this) setClient:(::NSView<NSTextInputClient> *)(cocoon::internal::native<::NSView>(value))];
     }
 
     bool CandidateListTouchBarItemBase::is_collapsed() const

@@ -62,14 +62,6 @@ namespace cocoon
      */
         bool abort_editing() const;
         /**
-     * @brief Calls `-[NSControl addTarget:action:forControlEvents:]`.
-     * @details Associates a target object and action method with one or more control events. You can call this method multiple times to specify multiple target-action pairs for a particular event. Passing 'nil' as the target routes the action message up the responder chain. The control does not retain the target.
-     * @param target Argument converted to the Objective-C parameter of the same role.
-     * @param action Argument converted to the Objective-C parameter of the same role.
-     * @param control_events Argument converted to the Objective-C parameter of the same role.
-     */
-        void add_target(const Object& target, const std::string& action, ControlEvents control_events) const;
-        /**
      * @brief Calls `-[NSControl currentEditor]`.
      * @return The converted Objective-C result.
      */
@@ -121,14 +113,6 @@ namespace cocoon
      * @param sender Argument converted to the Objective-C parameter of the same role.
      */
         void perform_click(const Object& sender) const;
-        /**
-     * @brief Calls `-[NSControl removeTarget:action:forControlEvents:]`.
-     * @details Stops the delivery of the specified events to the given target object. Pass 'nil' as the action to remove all actions for the target.
-     * @param target Argument converted to the Objective-C parameter of the same role.
-     * @param action Argument converted to the Objective-C parameter of the same role.
-     * @param control_events Argument converted to the Objective-C parameter of the same role.
-     */
-        void remove_target(const Object& target, const std::string& action, ControlEvents control_events) const;
         /**
      * @brief Calls `-[NSControl selectCell:]`.
      * @param cell Argument converted to the Objective-C parameter of the same role.

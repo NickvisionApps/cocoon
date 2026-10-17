@@ -24,11 +24,6 @@ namespace cocoon
         return static_cast<bool>([cocoon::internal::ns<::NSControl>(this) abortEditing]);
     }
 
-    void Control::add_target(const Object& target, const std::string& action, ControlEvents control_events) const
-    {
-        [cocoon::internal::ns<::NSControl>(this) addTarget:cocoon::internal::native_id(target) action:NSSelectorFromString(cocoon::internal::to(action)) forControlEvents:static_cast<::NSControlEvents>(control_events)];
-    }
-
     Text Control::current_editor() const
     {
         return cocoon::internal::wrap<Text>([cocoon::internal::ns<::NSControl>(this) currentEditor]);
@@ -72,11 +67,6 @@ namespace cocoon
     void Control::perform_click(const Object& sender) const
     {
         [cocoon::internal::ns<::NSControl>(this) performClick:cocoon::internal::native_id(sender)];
-    }
-
-    void Control::remove_target(const Object& target, const std::string& action, ControlEvents control_events) const
-    {
-        [cocoon::internal::ns<::NSControl>(this) removeTarget:cocoon::internal::native_id(target) action:NSSelectorFromString(cocoon::internal::to(action)) forControlEvents:static_cast<::NSControlEvents>(control_events)];
     }
 
     void Control::select_cell(const Cell& cell) const

@@ -45,6 +45,7 @@ namespace calculator
             {
                 Button button{title};
                 button.set_bezel_style(BezelStyle::Glass);
+                button.set_border_shape(ControlBorderShape::Circle);
                 if (key == "/" || key == "*" || key == "-" || key == "+" || key == "=")
                 {
                     button.set_bezel_color(Color::system_orange_color());

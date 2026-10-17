@@ -500,6 +500,8 @@ def with_cast(ti, q):
     if ti.kind in ("ptr", "fnptr"):
         cast = clean_cast(q)
         ti.to = f"({cast})(@@)"
+    elif (ti.kind == "data" and "NSMutableData" in q) or (ti.kind == "handle" and re.search(r"\w\s*<[^>]*>\s*\*", q)):
+        ti.to = f"({clean_cast(q)})({ti.to})"
     return ti
 
 

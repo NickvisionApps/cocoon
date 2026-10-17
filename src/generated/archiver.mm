@@ -3,7 +3,7 @@
 
 namespace cocoon
 {
-    Archiver::Archiver(const std::vector<std::uint8_t>& mdata) : Archiver(Adopt{cocoon::internal::retain([[::NSArchiver alloc] initForWritingWithMutableData:cocoon::internal::to_data(mdata)])})
+    Archiver::Archiver(const std::vector<std::uint8_t>& mdata) : Archiver(Adopt{cocoon::internal::retain([[::NSArchiver alloc] initForWritingWithMutableData:(::NSMutableData *)(cocoon::internal::to_data(mdata))])})
     {
     }
 
