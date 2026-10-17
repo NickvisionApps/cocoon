@@ -388,15 +388,28 @@ namespace cocoon
         [cocoon::internal::ns<::NSTextField>(this) setBezeled:static_cast<::BOOL>(value)];
     }
 
+#ifdef COCOON_MACOS_27
     ControlBorderShape TextField::border_shape() const
     {
-        return static_cast<ControlBorderShape>([cocoon::internal::ns<::NSTextField>(this) borderShape]);
+        if (@available(macOS 27.0, *))
+        {
+            return static_cast<ControlBorderShape>([cocoon::internal::ns<::NSTextField>(this) borderShape]);
+        }
+        return {};
     }
 
+#endif
+
+#ifdef COCOON_MACOS_27
     void TextField::set_border_shape(ControlBorderShape value) const
     {
-        [cocoon::internal::ns<::NSTextField>(this) setBorderShape:static_cast<::NSControlBorderShape>(value)];
+        if (@available(macOS 27.0, *))
+        {
+            [cocoon::internal::ns<::NSTextField>(this) setBorderShape:static_cast<::NSControlBorderShape>(value)];
+        }
     }
+
+#endif
 
     bool TextField::is_bordered() const
     {
