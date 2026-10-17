@@ -23,40 +23,40 @@ namespace cocoon
     std::vector<std::string> FontManager::available_font_names_with_traits(FontTraitMask some_traits) const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSFontManager>(this) availableFontNamesWithTraits:static_cast<::NSFontTraitMask>(some_traits)], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::vector<std::vector<Object>> FontManager::available_members_of_font_family(const std::string& fam) const
     {
         return cocoon::internal::from_array<std::vector<Object>>([cocoon::internal::ns<::NSFontManager>(this) availableMembersOfFontFamily:cocoon::internal::to(fam)], [](id e) -> std::vector<Object>
-                                                   {
-                                                       return cocoon::internal::from_array<Object>((NSArray*)e, [](id e) -> Object
-                                                                                     {
-                                                                                         return cocoon::internal::wrap<Object>(e);
-                                                                                     });
-                                                   });
+                                                                 {
+                                                                     return cocoon::internal::from_array<Object>((NSArray*)e, [](id e) -> Object
+                                                                                                                 {
+                                                                                                                     return cocoon::internal::wrap<Object>(e);
+                                                                                                                 });
+                                                                 });
     }
 
     std::map<std::string, Object> FontManager::convert_attributes(const std::map<std::string, Object>& attributes) const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::NSFontManager>(this) convertAttributes:cocoon::internal::to_dictionary(attributes, [](const std::string& k) -> id
-                                                                                                                                     {
-                                                                                                                                         return cocoon::internal::to(k);
-                                                                                                                                     },
-                                                                                                                                     [](const Object& v) -> id
-                                                                                                                                     {
-                                                                                                                                         return cocoon::internal::native_id(v);
-                                                                                                                                     })],
-                                                                  [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                                                                                                               {
+                                                                                                                                                                                   return cocoon::internal::to(k);
+                                                                                                                                                                               },
+                                                                                                                                                                               [](const Object& v) -> id
+                                                                                                                                                                               {
+                                                                                                                                                                                   return cocoon::internal::native_id(v);
+                                                                                                                                                                               })],
+                                                                                [](id k) -> std::string
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     Font FontManager::convert_font(const Font& font_obj) const
@@ -162,14 +162,14 @@ namespace cocoon
     void FontManager::set_selected_attributes(const std::map<std::string, Object>& attributes, bool flag) const
     {
         [cocoon::internal::ns<::NSFontManager>(this) setSelectedAttributes:cocoon::internal::to_dictionary(attributes, [](const std::string& k) -> id
-                                                                               {
-                                                                                   return cocoon::internal::to(k);
-                                                                               },
-                                                                               [](const Object& v) -> id
-                                                                               {
-                                                                                   return cocoon::internal::native_id(v);
-                                                                               })
-                                                  isMultiple:static_cast<::BOOL>(flag)];
+                                                                                                           {
+                                                                                                               return cocoon::internal::to(k);
+                                                                                                           },
+                                                                                                           [](const Object& v) -> id
+                                                                                                           {
+                                                                                                               return cocoon::internal::native_id(v);
+                                                                                                           })
+                                                                isMultiple:static_cast<::BOOL>(flag)];
     }
 
     void FontManager::set_selected_font(const Font& font_obj, bool flag) const
@@ -200,17 +200,17 @@ namespace cocoon
     std::vector<std::string> FontManager::available_font_families() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSFontManager>(this) availableFontFamilies], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::vector<std::string> FontManager::available_fonts() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSFontManager>(this) availableFonts], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     FontAction FontManager::current_font_action() const

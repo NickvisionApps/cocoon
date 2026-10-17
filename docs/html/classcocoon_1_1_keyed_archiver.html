@@ -20,6 +20,7 @@
   <td id="projectalign">
    <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
    </div>
+   <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
  </tr>
  </tbody>
@@ -74,8 +75,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae1d53d1169f6a7d80415c615e19c8cdc" id="r_ae1d53d1169f6a7d80415c615e19c8cdc"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ae1d53d1169f6a7d80415c615e19c8cdc">KeyedArchiver</a> (const std::vector&lt; std::uint8_t &gt; &amp;data)</td></tr>
-<tr class="memdesc:ae1d53d1169f6a7d80415c615e19c8cdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSKeyedArchiver</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:a41db2007e7ad977e0bce4e6af41eabca" id="r_a41db2007e7ad977e0bce4e6af41eabca"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a41db2007e7ad977e0bce4e6af41eabca">KeyedArchiver</a> (bool requires_secure_coding)</td></tr>
 <tr class="memdesc:a41db2007e7ad977e0bce4e6af41eabca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSKeyedArchiver</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:af6bab7d1324a84763fe926a02e0d0b8d" id="r_af6bab7d1324a84763fe926a02e0d0b8d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af6bab7d1324a84763fe926a02e0d0b8d">KeyedArchiver</a> ()</td></tr>
@@ -118,15 +117,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a9bc0cb8433c9cfee7954a48b6d283e7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">requiresSecureCoding</span> property of <span class="tt">NSKeyedArchiver</span>.  <br /></td></tr>
 <tr class="memitem:a3c4aac5f3a4bd24546e4638bfdf64668" id="r_a3c4aac5f3a4bd24546e4638bfdf64668"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3c4aac5f3a4bd24546e4638bfdf64668">set_requires_secure_coding</a> (bool value) const</td></tr>
 <tr class="memdesc:a3c4aac5f3a4bd24546e4638bfdf64668"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the <span class="tt">requiresSecureCoding</span> property of <span class="tt">NSKeyedArchiver</span>.  <br /></td></tr>
-<tr class="memitem:a790aeb16c62849c9d1fbebb5ec5dcb0f" id="r_a790aeb16c62849c9d1fbebb5ec5dcb0f"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#ae1d53d1169f6a7d80415c615e19c8cdc">KeyedArchiver</a>, <a class="el" href="classcocoon_1_1_object.html">Object</a>(<a class="el" href="classcocoon_1_1_object.html">Object</a>)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#a790aeb16c62849c9d1fbebb5ec5dcb0f">archiver_will_encode_object</a> () const</td></tr>
+<tr class="memitem:a790aeb16c62849c9d1fbebb5ec5dcb0f" id="r_a790aeb16c62849c9d1fbebb5ec5dcb0f"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#a41db2007e7ad977e0bce4e6af41eabca">KeyedArchiver</a>, <a class="el" href="classcocoon_1_1_object.html">Object</a>(<a class="el" href="classcocoon_1_1_object.html">Object</a>)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#a790aeb16c62849c9d1fbebb5ec5dcb0f">archiver_will_encode_object</a> () const</td></tr>
 <tr class="memdesc:a790aeb16c62849c9d1fbebb5ec5dcb0f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classcocoon_1_1_signal.html" title="Callback registration point for an event, bound to one native object.">Signal</a> for the delegate/data-source method behind <span class="tt"><a class="el" href="#a790aeb16c62849c9d1fbebb5ec5dcb0f" title="Signal for the delegate/data-source method behind archiver_will_encode_object; connect a callback wit...">archiver_will_encode_object</a></span>; connect a callback with <span class="tt"><a class="el" href="#a790aeb16c62849c9d1fbebb5ec5dcb0f" title="Signal for the delegate/data-source method behind archiver_will_encode_object; connect a callback wit...">archiver_will_encode_object()</a>.connect(...)</span>.  <br /></td></tr>
-<tr class="memitem:a2179e494c26173957c7d0a0adcde496f" id="r_a2179e494c26173957c7d0a0adcde496f"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#ae1d53d1169f6a7d80415c615e19c8cdc">KeyedArchiver</a>, void(<a class="el" href="classcocoon_1_1_object.html">Object</a>)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#a2179e494c26173957c7d0a0adcde496f">archiver_did_encode_object</a> () const</td></tr>
+<tr class="memitem:a2179e494c26173957c7d0a0adcde496f" id="r_a2179e494c26173957c7d0a0adcde496f"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#a41db2007e7ad977e0bce4e6af41eabca">KeyedArchiver</a>, void(<a class="el" href="classcocoon_1_1_object.html">Object</a>)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#a2179e494c26173957c7d0a0adcde496f">archiver_did_encode_object</a> () const</td></tr>
 <tr class="memdesc:a2179e494c26173957c7d0a0adcde496f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classcocoon_1_1_signal.html" title="Callback registration point for an event, bound to one native object.">Signal</a> for the delegate/data-source method behind <span class="tt"><a class="el" href="#a2179e494c26173957c7d0a0adcde496f" title="Signal for the delegate/data-source method behind archiver_did_encode_object; connect a callback with...">archiver_did_encode_object</a></span>; connect a callback with <span class="tt"><a class="el" href="#a2179e494c26173957c7d0a0adcde496f" title="Signal for the delegate/data-source method behind archiver_did_encode_object; connect a callback with...">archiver_did_encode_object()</a>.connect(...)</span>.  <br /></td></tr>
-<tr class="memitem:a8198054ee9fee8a82688a27f07ea5245" id="r_a8198054ee9fee8a82688a27f07ea5245"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#ae1d53d1169f6a7d80415c615e19c8cdc">KeyedArchiver</a>, void(<a class="el" href="classcocoon_1_1_object.html">Object</a>, <a class="el" href="classcocoon_1_1_object.html">Object</a>)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#a8198054ee9fee8a82688a27f07ea5245">archiver_will_replace_object_with_object</a> () const</td></tr>
+<tr class="memitem:a8198054ee9fee8a82688a27f07ea5245" id="r_a8198054ee9fee8a82688a27f07ea5245"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#a41db2007e7ad977e0bce4e6af41eabca">KeyedArchiver</a>, void(<a class="el" href="classcocoon_1_1_object.html">Object</a>, <a class="el" href="classcocoon_1_1_object.html">Object</a>)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#a8198054ee9fee8a82688a27f07ea5245">archiver_will_replace_object_with_object</a> () const</td></tr>
 <tr class="memdesc:a8198054ee9fee8a82688a27f07ea5245"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classcocoon_1_1_signal.html" title="Callback registration point for an event, bound to one native object.">Signal</a> for the delegate/data-source method behind <span class="tt"><a class="el" href="#a8198054ee9fee8a82688a27f07ea5245" title="Signal for the delegate/data-source method behind archiver_will_replace_object_with_object; connect a...">archiver_will_replace_object_with_object</a></span>; connect a callback with <span class="tt"><a class="el" href="#a8198054ee9fee8a82688a27f07ea5245" title="Signal for the delegate/data-source method behind archiver_will_replace_object_with_object; connect a...">archiver_will_replace_object_with_object()</a>.connect(...)</span>.  <br /></td></tr>
-<tr class="memitem:ae4329441a6c13c74b0c4a6db6ace6574" id="r_ae4329441a6c13c74b0c4a6db6ace6574"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#ae1d53d1169f6a7d80415c615e19c8cdc">KeyedArchiver</a>, void()&gt;&#160;</td><td class="memItemRight"><a class="el" href="#ae4329441a6c13c74b0c4a6db6ace6574">archiver_will_finish</a> () const</td></tr>
+<tr class="memitem:ae4329441a6c13c74b0c4a6db6ace6574" id="r_ae4329441a6c13c74b0c4a6db6ace6574"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#a41db2007e7ad977e0bce4e6af41eabca">KeyedArchiver</a>, void()&gt;&#160;</td><td class="memItemRight"><a class="el" href="#ae4329441a6c13c74b0c4a6db6ace6574">archiver_will_finish</a> () const</td></tr>
 <tr class="memdesc:ae4329441a6c13c74b0c4a6db6ace6574"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classcocoon_1_1_signal.html" title="Callback registration point for an event, bound to one native object.">Signal</a> for the delegate/data-source method behind <span class="tt"><a class="el" href="#ae4329441a6c13c74b0c4a6db6ace6574" title="Signal for the delegate/data-source method behind archiver_will_finish; connect a callback with archi...">archiver_will_finish</a></span>; connect a callback with <span class="tt"><a class="el" href="#ae4329441a6c13c74b0c4a6db6ace6574" title="Signal for the delegate/data-source method behind archiver_will_finish; connect a callback with archi...">archiver_will_finish()</a>.connect(...)</span>.  <br /></td></tr>
-<tr class="memitem:a1aa95b8961b2c5d0c6eb81043ad28dec" id="r_a1aa95b8961b2c5d0c6eb81043ad28dec"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#ae1d53d1169f6a7d80415c615e19c8cdc">KeyedArchiver</a>, void()&gt;&#160;</td><td class="memItemRight"><a class="el" href="#a1aa95b8961b2c5d0c6eb81043ad28dec">archiver_did_finish</a> () const</td></tr>
+<tr class="memitem:a1aa95b8961b2c5d0c6eb81043ad28dec" id="r_a1aa95b8961b2c5d0c6eb81043ad28dec"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#a41db2007e7ad977e0bce4e6af41eabca">KeyedArchiver</a>, void()&gt;&#160;</td><td class="memItemRight"><a class="el" href="#a1aa95b8961b2c5d0c6eb81043ad28dec">archiver_did_finish</a> () const</td></tr>
 <tr class="memdesc:a1aa95b8961b2c5d0c6eb81043ad28dec"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classcocoon_1_1_signal.html" title="Callback registration point for an event, bound to one native object.">Signal</a> for the delegate/data-source method behind <span class="tt"><a class="el" href="#a1aa95b8961b2c5d0c6eb81043ad28dec" title="Signal for the delegate/data-source method behind archiver_did_finish; connect a callback with archiv...">archiver_did_finish</a></span>; connect a callback with <span class="tt"><a class="el" href="#a1aa95b8961b2c5d0c6eb81043ad28dec" title="Signal for the delegate/data-source method behind archiver_did_finish; connect a callback with archiv...">archiver_did_finish()</a>.connect(...)</span>.  <br /></td></tr>
 <tr class="memitem:ab23c1a2209b64307a63a18dc7329594a" id="r_ab23c1a2209b64307a63a18dc7329594a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab23c1a2209b64307a63a18dc7329594a">encode_bytes</a> (const void *byteaddr, std::uint64_t length) const</td></tr>
 <tr class="memdesc:ab23c1a2209b64307a63a18dc7329594a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">-[NSCoder encodeBytes:length:]</span>.  <br /></td></tr>
@@ -309,10 +308,6 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a74b22e0c57f39f35a7faa22e87c8be9c" id="r_a74b22e0c57f39f35a7faa22e87c8be9c"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#a74b22e0c57f39f35a7faa22e87c8be9c">archive_root_object</a> (const <a class="el" href="classcocoon_1_1_object.html">Object</a> &amp;root_object, const std::string &amp;path)</td></tr>
-<tr class="memdesc:a74b22e0c57f39f35a7faa22e87c8be9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSKeyedArchiver archiveRootObject:toFile:]</span>.  <br /></td></tr>
-<tr class="memitem:a14ce86980ffe35373b5ee09f4a8404eb" id="r_a14ce86980ffe35373b5ee09f4a8404eb"><td class="memItemLeft">static std::vector&lt; std::uint8_t &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a14ce86980ffe35373b5ee09f4a8404eb">archived_data_with_root_object</a> (const <a class="el" href="classcocoon_1_1_object.html">Object</a> &amp;root_object)</td></tr>
-<tr class="memdesc:a14ce86980ffe35373b5ee09f4a8404eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSKeyedArchiver archivedDataWithRootObject:]</span>.  <br /></td></tr>
 <tr class="memitem:a9f4374aae52898615ded3849254ee9dc" id="r_a9f4374aae52898615ded3849254ee9dc"><td class="memItemLeft">static std::vector&lt; std::uint8_t &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a9f4374aae52898615ded3849254ee9dc">archived_data_with_root_object</a> (const <a class="el" href="classcocoon_1_1_object.html">Object</a> &amp;object, bool requires_secure_coding)</td></tr>
 <tr class="memdesc:a9f4374aae52898615ded3849254ee9dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSKeyedArchiver archivedDataWithRootObject:requiringSecureCoding:error:]</span>.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -328,8 +323,8 @@ Static Protected Member Functions</h2></td></tr>
 <div class="line"><a class="code hl_class" href="classcocoon_1_1_keyed_archiver.html">cocoon::KeyedArchiver</a> keyed_archiver;</div>
 <div class="line">keyed_archiver.<a class="code hl_function" href="#a443278344946d8fc6b251500c7262eb1">set_output_format</a>(<a class="code hl_enumvalue" href="namespacecocoon.html#a4689a66b20ff7f05e162c71cae05603cabac8a73f213334f715fc30a4dd38f8e7">cocoon::PropertyListFormat::OpenStepFormat</a>);</div>
 <div class="line">keyed_archiver.<a class="code hl_function" href="#a2179e494c26173957c7d0a0adcde496f">archiver_did_encode_object</a>().connect([](<span class="keyword">auto</span>&amp;&amp;...) {});</div>
-<div class="ttc" id="aclasscocoon_1_1_keyed_archiver_html"><div class="ttname"><a href="classcocoon_1_1_keyed_archiver.html">cocoon::KeyedArchiver</a></div><div class="ttdoc">C++ handle for the Objective-C class NSKeyedArchiver (Foundation).</div><div class="ttdef"><b>Definition</b> keyed_archiver.h:43</div></div>
-<div class="ttc" id="aclasscocoon_1_1_keyed_archiver_html_a2179e494c26173957c7d0a0adcde496f"><div class="ttname"><a href="#a2179e494c26173957c7d0a0adcde496f">cocoon::KeyedArchiver::archiver_did_encode_object</a></div><div class="ttdeci">Signal&lt; KeyedArchiver, void(Object)&gt; archiver_did_encode_object() const</div><div class="ttdoc">Signal for the delegate/data-source method behind archiver_did_encode_object; connect a callback with...</div><div class="ttdef"><b>Definition</b> keyed_archiver.h:207</div></div>
+<div class="ttc" id="aclasscocoon_1_1_keyed_archiver_html"><div class="ttname"><a href="classcocoon_1_1_keyed_archiver.html">cocoon::KeyedArchiver</a></div><div class="ttdoc">C++ handle for the Objective-C class NSKeyedArchiver (Foundation).</div><div class="ttdef"><b>Definition</b> keyed_archiver.h:44</div></div>
+<div class="ttc" id="aclasscocoon_1_1_keyed_archiver_html_a2179e494c26173957c7d0a0adcde496f"><div class="ttname"><a href="#a2179e494c26173957c7d0a0adcde496f">cocoon::KeyedArchiver::archiver_did_encode_object</a></div><div class="ttdeci">Signal&lt; KeyedArchiver, void(Object)&gt; archiver_did_encode_object() const</div><div class="ttdoc">Signal for the delegate/data-source method behind archiver_did_encode_object; connect a callback with...</div><div class="ttdef"><b>Definition</b> keyed_archiver.h:191</div></div>
 <div class="ttc" id="aclasscocoon_1_1_keyed_archiver_html_a443278344946d8fc6b251500c7262eb1"><div class="ttname"><a href="#a443278344946d8fc6b251500c7262eb1">cocoon::KeyedArchiver::set_output_format</a></div><div class="ttdeci">void set_output_format(PropertyListFormat value) const</div><div class="ttdoc">Sets the outputFormat property of NSKeyedArchiver.</div></div>
 <div class="ttc" id="anamespacecocoon_html_a4689a66b20ff7f05e162c71cae05603cabac8a73f213334f715fc30a4dd38f8e7"><div class="ttname"><a href="namespacecocoon.html#a4689a66b20ff7f05e162c71cae05603cabac8a73f213334f715fc30a4dd38f8e7">cocoon::PropertyListFormat::OpenStepFormat</a></div><div class="ttdeci">@ OpenStepFormat</div><div class="ttdef"><b>Definition</b> enums.h:3338</div></div>
 </div><!-- fragment --></dd></dl>
@@ -348,43 +343,16 @@ Static Protected Member Functions</h2></td></tr>
 <div class="ttc" id="aclasscocoon_1_1_keyed_archiver_html_a3c4aac5f3a4bd24546e4638bfdf64668"><div class="ttname"><a href="#a3c4aac5f3a4bd24546e4638bfdf64668">cocoon::KeyedArchiver::set_requires_secure_coding</a></div><div class="ttdeci">void set_requires_secure_coding(bool value) const</div><div class="ttdoc">Sets the requiresSecureCoding property of NSKeyedArchiver.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_keyed_archiver_html_a3df11fccfdbfb84795658b06ea88a029"><div class="ttname"><a href="#a3df11fccfdbfb84795658b06ea88a029">cocoon::KeyedArchiver::class_name_for_class</a></div><div class="ttdeci">std::string class_name_for_class(const std::string &amp;cls) const</div><div class="ttdoc">Calls -[NSKeyedArchiver classNameForClass:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_keyed_archiver_html_a6ff066351e425ef41e285edd0a82c1dd"><div class="ttname"><a href="#a6ff066351e425ef41e285edd0a82c1dd">cocoon::KeyedArchiver::encode_bool</a></div><div class="ttdeci">void encode_bool(bool value, const std::string &amp;key) const</div><div class="ttdoc">Calls -[NSKeyedArchiver encodeBool:forKey:].</div></div>
-<div class="ttc" id="aclasscocoon_1_1_keyed_archiver_html_a8198054ee9fee8a82688a27f07ea5245"><div class="ttname"><a href="#a8198054ee9fee8a82688a27f07ea5245">cocoon::KeyedArchiver::archiver_will_replace_object_with_object</a></div><div class="ttdeci">Signal&lt; KeyedArchiver, void(Object, Object)&gt; archiver_will_replace_object_with_object() const</div><div class="ttdoc">Signal for the delegate/data-source method behind archiver_will_replace_object_with_object; connect a...</div><div class="ttdef"><b>Definition</b> keyed_archiver.h:212</div></div>
+<div class="ttc" id="aclasscocoon_1_1_keyed_archiver_html_a8198054ee9fee8a82688a27f07ea5245"><div class="ttname"><a href="#a8198054ee9fee8a82688a27f07ea5245">cocoon::KeyedArchiver::archiver_will_replace_object_with_object</a></div><div class="ttdeci">Signal&lt; KeyedArchiver, void(Object, Object)&gt; archiver_will_replace_object_with_object() const</div><div class="ttdoc">Signal for the delegate/data-source method behind archiver_will_replace_object_with_object; connect a...</div><div class="ttdef"><b>Definition</b> keyed_archiver.h:196</div></div>
 <div class="ttc" id="aclasscocoon_1_1_keyed_archiver_html_a9bc0cb8433c9cfee7954a48b6d283e7e"><div class="ttname"><a href="#a9bc0cb8433c9cfee7954a48b6d283e7e">cocoon::KeyedArchiver::requires_secure_coding</a></div><div class="ttdeci">bool requires_secure_coding() const</div><div class="ttdoc">Returns the requiresSecureCoding property of NSKeyedArchiver.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_keyed_archiver_html_ad13b0ce1765238adc4461c974023be7b"><div class="ttname"><a href="#ad13b0ce1765238adc4461c974023be7b">cocoon::KeyedArchiver::encode_double</a></div><div class="ttdeci">void encode_double(double value, const std::string &amp;key) const</div><div class="ttdoc">Calls -[NSKeyedArchiver encodeDouble:forKey:].</div></div>
-<div class="ttc" id="aclasscocoon_1_1_keyed_archiver_html_ae4329441a6c13c74b0c4a6db6ace6574"><div class="ttname"><a href="#ae4329441a6c13c74b0c4a6db6ace6574">cocoon::KeyedArchiver::archiver_will_finish</a></div><div class="ttdeci">Signal&lt; KeyedArchiver, void()&gt; archiver_will_finish() const</div><div class="ttdoc">Signal for the delegate/data-source method behind archiver_will_finish; connect a callback with archi...</div><div class="ttdef"><b>Definition</b> keyed_archiver.h:217</div></div>
+<div class="ttc" id="aclasscocoon_1_1_keyed_archiver_html_ae4329441a6c13c74b0c4a6db6ace6574"><div class="ttname"><a href="#ae4329441a6c13c74b0c4a6db6ace6574">cocoon::KeyedArchiver::archiver_will_finish</a></div><div class="ttdeci">Signal&lt; KeyedArchiver, void()&gt; archiver_will_finish() const</div><div class="ttdoc">Signal for the delegate/data-source method behind archiver_will_finish; connect a callback with archi...</div><div class="ttdef"><b>Definition</b> keyed_archiver.h:201</div></div>
 <div class="ttc" id="aclasscocoon_1_1_object_html"><div class="ttname"><a href="classcocoon_1_1_object.html">cocoon::Object</a></div><div class="ttdoc">Root of every wrapper class: a cheap, copyable handle to a retained Objective-C object.</div><div class="ttdef"><b>Definition</b> object.h:48</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/foundation/nskeyedarchiver">https://developer.apple.com/documentation/foundation/nskeyedarchiver</a> </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ae1d53d1169f6a7d80415c615e19c8cdc" name="ae1d53d1169f6a7d80415c615e19c8cdc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae1d53d1169f6a7d80415c615e19c8cdc">&#9670;&#160;</a></span>KeyedArchiver() <span class="overload">[1/5]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">cocoon::KeyedArchiver::KeyedArchiver </td>
-          <td>(</td>
-          <td class="paramtype">const std::vector&lt; std::uint8_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Creates a new <span class="tt">NSKeyedArchiver</span> instance and returns a handle to it. </p>
-
-</div>
-</div>
 <a id="a41db2007e7ad977e0bce4e6af41eabca" name="a41db2007e7ad977e0bce4e6af41eabca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a41db2007e7ad977e0bce4e6af41eabca">&#9670;&#160;</a></span>KeyedArchiver() <span class="overload">[2/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a41db2007e7ad977e0bce4e6af41eabca">&#9670;&#160;</a></span>KeyedArchiver() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -411,7 +379,7 @@ Static Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="af6bab7d1324a84763fe926a02e0d0b8d" name="af6bab7d1324a84763fe926a02e0d0b8d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6bab7d1324a84763fe926a02e0d0b8d">&#9670;&#160;</a></span>KeyedArchiver() <span class="overload">[3/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af6bab7d1324a84763fe926a02e0d0b8d">&#9670;&#160;</a></span>KeyedArchiver() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -438,7 +406,7 @@ Static Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a46ec239c03bd955cfe81084676359da7" name="a46ec239c03bd955cfe81084676359da7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a46ec239c03bd955cfe81084676359da7">&#9670;&#160;</a></span>KeyedArchiver() <span class="overload">[4/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a46ec239c03bd955cfe81084676359da7">&#9670;&#160;</a></span>KeyedArchiver() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -457,7 +425,7 @@ Static Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a645f22b4b7fa8a2108ed0d3796a8cb04" name="a645f22b4b7fa8a2108ed0d3796a8cb04"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a645f22b4b7fa8a2108ed0d3796a8cb04">&#9670;&#160;</a></span>KeyedArchiver() <span class="overload">[5/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a645f22b4b7fa8a2108ed0d3796a8cb04">&#9670;&#160;</a></span>KeyedArchiver() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -484,47 +452,8 @@ Static Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a74b22e0c57f39f35a7faa22e87c8be9c" name="a74b22e0c57f39f35a7faa22e87c8be9c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a74b22e0c57f39f35a7faa22e87c8be9c">&#9670;&#160;</a></span>archive_root_object()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool cocoon::KeyedArchiver::archive_root_object </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_object.html">Object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>root_object</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSKeyedArchiver archiveRootObject:toFile:]</span>. </p>
-<p>Archives an object graph rooted at a given object to a file at a given path. @DeprecationSummary { Use ''NSKeyedArchiver/archivedDataWithRootObject:requiringSecureCoding:error:'' and '-writeToURL:options:error:' instead. } This method archives the graph formed by the root object to a data object, then atomically writes it to the given path. The format of the archive is 'NSPropertyListBinaryFormat_v1_0'. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">root_object</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">path</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
 <a id="a9f4374aae52898615ded3849254ee9dc" name="a9f4374aae52898615ded3849254ee9dc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f4374aae52898615ded3849254ee9dc">&#9670;&#160;</a></span>archived_data_with_root_object() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f4374aae52898615ded3849254ee9dc">&#9670;&#160;</a></span>archived_data_with_root_object()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -562,40 +491,6 @@ Static Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a14ce86980ffe35373b5ee09f4a8404eb" name="a14ce86980ffe35373b5ee09f4a8404eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a14ce86980ffe35373b5ee09f4a8404eb">&#9670;&#160;</a></span>archived_data_with_root_object() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt; std::uint8_t &gt; cocoon::KeyedArchiver::archived_data_with_root_object </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_object.html">Object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>root_object</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSKeyedArchiver archivedDataWithRootObject:]</span>. </p>
-<p>Returns a data object that contains the encoded form of the object graph formed by the given root object. @DeprecationSummary { Use ''NSKeyedArchiver/archivedDataWithRootObject:requiringSecureCoding:error:'' instead. } The format of the archive is 'NSPropertyListBinaryFormat_v1_0'. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">root_object</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
 <a id="a2179e494c26173957c7d0a0adcde496f" name="a2179e494c26173957c7d0a0adcde496f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2179e494c26173957c7d0a0adcde496f">&#9670;&#160;</a></span>archiver_did_encode_object()</h2>
 
@@ -606,7 +501,7 @@ Static Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#ae1d53d1169f6a7d80415c615e19c8cdc">KeyedArchiver</a>, void(<a class="el" href="classcocoon_1_1_object.html">Object</a>)&gt; cocoon::KeyedArchiver::archiver_did_encode_object </td>
+          <td class="memname"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#a41db2007e7ad977e0bce4e6af41eabca">KeyedArchiver</a>, void(<a class="el" href="classcocoon_1_1_object.html">Object</a>)&gt; cocoon::KeyedArchiver::archiver_did_encode_object </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -633,7 +528,7 @@ Static Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#ae1d53d1169f6a7d80415c615e19c8cdc">KeyedArchiver</a>, void()&gt; cocoon::KeyedArchiver::archiver_did_finish </td>
+          <td class="memname"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#a41db2007e7ad977e0bce4e6af41eabca">KeyedArchiver</a>, void()&gt; cocoon::KeyedArchiver::archiver_did_finish </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -660,7 +555,7 @@ Static Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#ae1d53d1169f6a7d80415c615e19c8cdc">KeyedArchiver</a>, <a class="el" href="classcocoon_1_1_object.html">Object</a>(<a class="el" href="classcocoon_1_1_object.html">Object</a>)&gt; cocoon::KeyedArchiver::archiver_will_encode_object </td>
+          <td class="memname"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#a41db2007e7ad977e0bce4e6af41eabca">KeyedArchiver</a>, <a class="el" href="classcocoon_1_1_object.html">Object</a>(<a class="el" href="classcocoon_1_1_object.html">Object</a>)&gt; cocoon::KeyedArchiver::archiver_will_encode_object </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -687,7 +582,7 @@ Static Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#ae1d53d1169f6a7d80415c615e19c8cdc">KeyedArchiver</a>, void()&gt; cocoon::KeyedArchiver::archiver_will_finish </td>
+          <td class="memname"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#a41db2007e7ad977e0bce4e6af41eabca">KeyedArchiver</a>, void()&gt; cocoon::KeyedArchiver::archiver_will_finish </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -714,7 +609,7 @@ Static Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#ae1d53d1169f6a7d80415c615e19c8cdc">KeyedArchiver</a>, void(<a class="el" href="classcocoon_1_1_object.html">Object</a>, <a class="el" href="classcocoon_1_1_object.html">Object</a>)&gt; cocoon::KeyedArchiver::archiver_will_replace_object_with_object </td>
+          <td class="memname"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#a41db2007e7ad977e0bce4e6af41eabca">KeyedArchiver</a>, void(<a class="el" href="classcocoon_1_1_object.html">Object</a>, <a class="el" href="classcocoon_1_1_object.html">Object</a>)&gt; cocoon::KeyedArchiver::archiver_will_replace_object_with_object </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>

@@ -22,9 +22,9 @@ namespace cocoon
     std::vector<TextElement> TextElement::child_elements() const
     {
         return cocoon::internal::from_array<TextElement>([cocoon::internal::ns<::NSTextElement>(this) childElements], [](id e) -> TextElement
-                                           {
-                                               return cocoon::internal::wrap<TextElement>((::NSTextElement*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::wrap<TextElement>((::NSTextElement*)e);
+                                                         });
     }
 
     TextRange TextElement::element_range() const

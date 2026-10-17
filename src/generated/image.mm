@@ -81,15 +81,15 @@ namespace cocoon
     CGImage Image::cg_image_for_proposed_rect(Rect* proposed_dest_rect, const GraphicsContext& reference_context, const std::map<std::string, Object>& hints) const
     {
         return cocoon::internal::wrap_cf<CGImage>((const void*)([cocoon::internal::ns<::NSImage>(this) CGImageForProposedRect:(::NSRect*)(proposed_dest_rect)
-                                                                                          context:cocoon::internal::native<::NSGraphicsContext>(reference_context)
-                                                                                            hints:cocoon::internal::to_dictionary(hints, [](const std::string& k) -> id
-                                                                                                                    {
-                                                                                                                        return cocoon::internal::to(k);
-                                                                                                                    },
-                                                                                                                    [](const Object& v) -> id
-                                                                                                                    {
-                                                                                                                        return cocoon::internal::native_id(v);
-                                                                                                                    })]));
+                                                                                                                      context:cocoon::internal::native<::NSGraphicsContext>(reference_context)
+                                                                                                                        hints:cocoon::internal::to_dictionary(hints, [](const std::string& k) -> id
+                                                                                                                                                              {
+                                                                                                                                                                  return cocoon::internal::to(k);
+                                                                                                                                                              },
+                                                                                                                                                              [](const Object& v) -> id
+                                                                                                                                                              {
+                                                                                                                                                                  return cocoon::internal::native_id(v);
+                                                                                                                                                              })]));
     }
 
     std::vector<std::uint8_t> Image::tiff_representation_using_compression(TIFFCompression comp, float factor) const
@@ -105,23 +105,23 @@ namespace cocoon
     void Image::add_representations(const std::vector<ImageRep>& image_reps) const
     {
         [cocoon::internal::ns<::NSImage>(this) addRepresentations:cocoon::internal::to_array(image_reps, [](const ImageRep& e) -> id
-                                                                 {
-                                                                     return cocoon::internal::native<::NSImageRep>(e);
-                                                                 })];
+                                                                                             {
+                                                                                                 return cocoon::internal::native<::NSImageRep>(e);
+                                                                                             })];
     }
 
     ImageRep Image::best_representation_for_rect(const Rect& rect, const GraphicsContext& reference_context, const std::map<std::string, Object>& hints) const
     {
         return cocoon::internal::wrap<ImageRep>([cocoon::internal::ns<::NSImage>(this) bestRepresentationForRect:cocoon::internal::to(rect)
-                                                                             context:cocoon::internal::native<::NSGraphicsContext>(reference_context)
-                                                                               hints:cocoon::internal::to_dictionary(hints, [](const std::string& k) -> id
-                                                                                                       {
-                                                                                                           return cocoon::internal::to(k);
-                                                                                                       },
-                                                                                                       [](const Object& v) -> id
-                                                                                                       {
-                                                                                                           return cocoon::internal::native_id(v);
-                                                                                                       })]);
+                                                                                                         context:cocoon::internal::native<::NSGraphicsContext>(reference_context)
+                                                                                                           hints:cocoon::internal::to_dictionary(hints, [](const std::string& k) -> id
+                                                                                                                                                 {
+                                                                                                                                                     return cocoon::internal::to(k);
+                                                                                                                                                 },
+                                                                                                                                                 [](const Object& v) -> id
+                                                                                                                                                 {
+                                                                                                                                                     return cocoon::internal::native_id(v);
+                                                                                                                                                 })]);
     }
 
     bool Image::can_init_with_pasteboard(const Pasteboard& pasteboard)
@@ -147,18 +147,18 @@ namespace cocoon
     void Image::draw_in_rect(const Rect& dst_space_portion_rect, const Rect& src_space_portion_rect, CompositingOperation op, double requested_alpha, bool respect_context_is_flipped, const std::map<std::string, Object>& hints) const
     {
         [cocoon::internal::ns<::NSImage>(this) drawInRect:cocoon::internal::to(dst_space_portion_rect)
-                                   fromRect:cocoon::internal::to(src_space_portion_rect)
-                                  operation:static_cast<::NSCompositingOperation>(op)
-                                   fraction:static_cast<::CGFloat>(requested_alpha)
-                             respectFlipped:static_cast<::BOOL>(respect_context_is_flipped)
-                                      hints:cocoon::internal::to_dictionary(hints, [](const std::string& k) -> id
-                                                              {
-                                                                  return cocoon::internal::to(k);
-                                                              },
-                                                              [](const Object& v) -> id
-                                                              {
-                                                                  return cocoon::internal::native_id(v);
-                                                              })];
+                                                 fromRect:cocoon::internal::to(src_space_portion_rect)
+                                                operation:static_cast<::NSCompositingOperation>(op)
+                                                 fraction:static_cast<::CGFloat>(requested_alpha)
+                                           respectFlipped:static_cast<::BOOL>(respect_context_is_flipped)
+                                                    hints:cocoon::internal::to_dictionary(hints, [](const std::string& k) -> id
+                                                                                          {
+                                                                                              return cocoon::internal::to(k);
+                                                                                          },
+                                                                                          [](const Object& v) -> id
+                                                                                          {
+                                                                                              return cocoon::internal::native_id(v);
+                                                                                          })];
     }
 
     bool Image::draw_representation(const ImageRep& image_rep, const Rect& rect) const
@@ -169,17 +169,17 @@ namespace cocoon
     bool Image::hit_test_rect(const Rect& test_rect_dest_space, const Rect& image_rect_dest_space, const GraphicsContext& context, const std::map<std::string, Object>& hints, bool flipped) const
     {
         return static_cast<bool>([cocoon::internal::ns<::NSImage>(this) hitTestRect:cocoon::internal::to(test_rect_dest_space)
-                                             withImageDestinationRect:cocoon::internal::to(image_rect_dest_space)
-                                                              context:cocoon::internal::native<::NSGraphicsContext>(context)
-                                                                hints:cocoon::internal::to_dictionary(hints, [](const std::string& k) -> id
-                                                                                        {
-                                                                                            return cocoon::internal::to(k);
-                                                                                        },
-                                                                                        [](const Object& v) -> id
-                                                                                        {
-                                                                                            return cocoon::internal::native_id(v);
-                                                                                        })
-                                                              flipped:static_cast<::BOOL>(flipped)]);
+                                                           withImageDestinationRect:cocoon::internal::to(image_rect_dest_space)
+                                                                            context:cocoon::internal::native<::NSGraphicsContext>(context)
+                                                                              hints:cocoon::internal::to_dictionary(hints, [](const std::string& k) -> id
+                                                                                                                    {
+                                                                                                                        return cocoon::internal::to(k);
+                                                                                                                    },
+                                                                                                                    [](const Object& v) -> id
+                                                                                                                    {
+                                                                                                                        return cocoon::internal::native_id(v);
+                                                                                                                    })
+                                                                            flipped:static_cast<::BOOL>(flipped)]);
     }
 
     Image Image::image_named(const std::string& name)
@@ -325,17 +325,17 @@ namespace cocoon
     std::vector<std::string> Image::image_types()
     {
         return cocoon::internal::from_array<std::string>([::NSImage imageTypes], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::vector<std::string> Image::image_unfiltered_types()
     {
         return cocoon::internal::from_array<std::string>([::NSImage imageUnfilteredTypes], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     Locale Image::locale() const
@@ -376,9 +376,9 @@ namespace cocoon
     std::vector<ImageRep> Image::representations() const
     {
         return cocoon::internal::from_array<ImageRep>([cocoon::internal::ns<::NSImage>(this) representations], [](id e) -> ImageRep
-                                        {
-                                            return cocoon::internal::wrap<ImageRep>((::NSImageRep*)e);
-                                        });
+                                                      {
+                                                          return cocoon::internal::wrap<ImageRep>((::NSImageRep*)e);
+                                                      });
     }
 
     ImageResizingMode Image::resizing_mode() const

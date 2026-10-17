@@ -48,9 +48,9 @@ namespace cocoon
     std::vector<LayoutConstraint> LayoutAnchorBase::constraints_affecting_layout() const
     {
         return cocoon::internal::from_array<LayoutConstraint>([cocoon::internal::ns<::NSLayoutAnchor>(this) constraintsAffectingLayout], [](id e) -> LayoutConstraint
-                                                {
-                                                    return cocoon::internal::wrap<LayoutConstraint>((::NSLayoutConstraint*)e);
-                                                });
+                                                              {
+                                                                  return cocoon::internal::wrap<LayoutConstraint>((::NSLayoutConstraint*)e);
+                                                              });
     }
 
     bool LayoutAnchorBase::has_ambiguous_layout() const

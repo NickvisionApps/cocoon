@@ -1,5 +1,6 @@
 #pragma once
 
+#include "generated/availability.h"
 #include "generated/enums.h"
 #include "generated/structs.h"
 #include "object.h"
@@ -260,18 +261,24 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         MenuItem parent_item() const;
+#ifdef COCOON_MACOS_27
         /**
      * @brief Returns the `preferredImageVisibility` property of `NSMenuItem`.
      * @details A menu item's image visibility determines whether the item's image is displayed when the menu is open. The default visibility for an item's image is Automatic. With this value, AppKit determines whether the item's image is visible based on system configuration. If an item's image should be visible in all cases, regardless of macOS version or other settings, then set the image visibility to '.visible'.
      * @return The converted Objective-C result.
      */
         MenuItemImageVisibility preferred_image_visibility() const;
+#endif
+
+#ifdef COCOON_MACOS_27
         /**
      * @brief Sets the `preferredImageVisibility` property of `NSMenuItem`.
      * @details A menu item's image visibility determines whether the item's image is displayed when the menu is open. The default visibility for an item's image is Automatic. With this value, AppKit determines whether the item's image is visible based on system configuration. If an item's image should be visible in all cases, regardless of macOS version or other settings, then set the image visibility to '.visible'.
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_preferred_image_visibility(MenuItemImageVisibility value) const;
+#endif
+
         /**
      * @brief Returns the `representedObject` property of `NSMenuItem`.
      * @return The converted Objective-C result.

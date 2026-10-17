@@ -73,9 +73,9 @@ namespace cocoon
     std::vector<Value> TextFinder::incremental_match_ranges() const
     {
         return cocoon::internal::from_array<Value>([cocoon::internal::ns<::NSTextFinder>(this) incrementalMatchRanges], [](id e) -> Value
-                                     {
-                                         return cocoon::internal::wrap<Value>((::NSValue*)e);
-                                     });
+                                                   {
+                                                       return cocoon::internal::wrap<Value>((::NSValue*)e);
+                                                   });
     }
 
     bool TextFinder::is_incremental_searching_enabled() const

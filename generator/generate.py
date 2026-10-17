@@ -97,6 +97,7 @@ class Member:
         self.static = static
         self.extra_decl = ""
         self.typed = None
+        self.since = None
         self.selector = ""
         self.prop = None
         self.role = "method"
@@ -146,6 +147,50 @@ def chain_of(model):
     return result
 
 
+FUTURE_MAJORS = set()
+
+
+def future_major(since):
+    if since and int(since) > MAJOR:
+        FUTURE_MAJORS.add(int(since))
+        return int(since)
+    return 0
+
+
+_FUTURE_CACHE = {}
+
+
+def future_types():
+    key = (len(ALL_MODELS), len(S.enums))
+    if _FUTURE_CACHE.get("key") != key:
+        result = {}
+        for m in ALL_MODELS:
+            major = future_major(m.since)
+            if major:
+                result[m.name] = result[m.ns] = major
+        for ns, e in S.enums.items():
+            major = future_major(e.get("since"))
+            if major:
+                result[e["name"]] = result[ns] = major
+        _FUTURE_CACHE["key"] = key
+        _FUTURE_CACHE["value"] = result
+    return _FUTURE_CACHE["value"]
+
+
+def taint(text):
+    known = future_types()
+    result = [v for k, v in known.items() if re.search(r"\b" + re.escape(k) + r"\b", text)]
+    for name in set(re.findall(r"\bNS[A-Z]\w*\b", text)) - set(known):
+        result.append(future_major(A.type_introduced(name)))
+    return max([0] + result)
+
+
+def macro_guard(major, text):
+    if not major:
+        return text
+    return f"#ifdef COCOON_MACOS_{major}\n{text}\n#endif\n"
+
+
 def guard_lines(lines, since, void, ret=None):
     if since and since > MAJOR:
         body = ["    " + line for line in lines]
@@ -165,8 +210,19 @@ def parm_list(decl, to_snake=True):
         while name in used:
             name += "_"
         used.append(name)
-        result.append((name, p["type"]))
+        noescape = any(c.get("kind") == "NoEscapeAttr" for c in p.get("inner", []))
+        result.append((name, {**p["type"], "noescape": True} if noescape else p["type"]))
     return result
+
+
+def signature_type(t):
+    q = t["qualType"]
+    text = clean(q)
+    if t.get("noescape"):
+        text = text.replace("(^", "(NS_NOESCAPE ^", 1)
+    if re.match(r"\s*const\b", q) and text.endswith("*") and not text.startswith("const"):
+        return "const " + text
+    return text
 
 
 def log_skip(model, what, reason):
@@ -216,9 +272,11 @@ def make_body(model, static, selector, params, ret_type, since):
 
 
 def make_member(model, selector, params, ret_type, static, since, cpp_name):
+    since = max([s for s in (since, model.since) if s], default=None)
     ret, cpp_params, lines = make_body(model, static, selector, params, ret_type, since)
     key = (static, cpp_name, tuple(norm_type(t) for t, _ in cpp_params))
     member = Member(cpp_name, ret.cpp, cpp_params, lines, key, static)
+    member.since = since
     member.typed = make_body.last_typed
     member.selector = selector
     return member
@@ -245,6 +303,7 @@ def variadic_member(model, decl, static, methods, info):
     inner_params = cpp_params + [("const std::vector<VarArg>&", "args")]
     key = (static, name + "_", tuple(norm_type(t) for t, _ in inner_params))
     member = Member(name + "_", ret.cpp, inner_params, lines, key, static)
+    member.since = info.introduced
     fixed_decl = ", ".join(declare(t, n) for t, n in cpp_params)
     fixed_names = ", ".join(n for _, n in cpp_params)
     const = "" if static else " const"
@@ -264,7 +323,8 @@ def member_from_method(model, decl, static, methods=None):
     if decl.get("variadic"):
         return variadic_member(model, decl, static, methods or {}, info)
     selector = decl["name"]
-    member = make_member(model, selector, parm_list(decl), decl["returnType"], static, info.introduced, ident(snake(selector.split(":")[0])))
+    introduced = float(SPEC.get("availabilityOverrides", {}).get(f"{model.ns}.{selector}", info.introduced or 0)) or None
+    member = make_member(model, selector, parm_list(decl), decl["returnType"], static, introduced, ident(snake(selector.split(":")[0])))
     member.sdk_doc = A.doc_comment(A.CLASS_FILES.get(model.ns, ""), decl.get("loc", {}).get("line"), selector.split(":")[0])
     return member
 
@@ -277,10 +337,11 @@ def members_from_property(model, prop):
     t = prop["type"]
     getter = prop.get("getter", {}).get("name", prop["name"])
     sdk_doc = A.doc_comment(A.CLASS_FILES.get(model.ns, ""), prop.get("loc", {}).get("line"), prop["name"])
-    result = [make_member(model, getter, [], t, static, info.introduced, ident(snake(getter)))]
+    introduced = float(SPEC.get("availabilityOverrides", {}).get(f"{model.ns}.{prop['name']}", info.introduced or 0)) or None
+    result = [make_member(model, getter, [], t, static, introduced, ident(snake(getter)))]
     if not prop.get("readonly"):
         setter = prop.get("setter", {}).get("name") or "set" + prop["name"][:1].upper() + prop["name"][1:] + ":"
-        result.append(make_member(model, setter, [("value", t)], {"qualType": "void"}, static, info.introduced, ident(snake(setter.rstrip(":")))))
+        result.append(make_member(model, setter, [("value", t)], {"qualType": "void"}, static, introduced, ident(snake(setter.rstrip(":")))))
         result[1].role = "setter"
         result[1].prop = prop["name"]
         result[1].sdk_doc = sdk_doc
@@ -324,13 +385,15 @@ def make_ctor(model, decl):
             body += ["if (!__r && __error) { throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription)); }"]
         expr = "[&]() -> id { " + " ".join(body) + " return __r; }()"
     return {"header": f"    explicit {model.name}({decl_params});", "params": decl_params, "expr": expr,
-            "key": tuple(norm_type(t) for t, _ in cpp_params)}
+            "key": tuple(norm_type(t) for t, _ in cpp_params), "since": info.introduced,
+            "types": " ".join(t for t, _ in cpp_params)}
 
 
 def collect_delegate_property(model, prop):
     if prop.get("class"):
         return False
     q = clean(prop["type"]["qualType"])
+    model.delegate_majors[prop["name"]] = future_major(A.availability(prop).introduced)
     if prop.get("readonly") and re.fullmatch(r"id<[\w, ]+>", q):
         return True
     m = re.fullmatch(r"id<([\w, ]+)>", q)
@@ -482,7 +545,7 @@ def process_delegates():
     for model in ALL_MODELS:
         model.delegates = []
         for prop, protocols in model.delegate_props.items():
-            model.delegates.append({"prop": prop, "protocols": protocols, "methods": protocol_methods(protocols), "built": [], "cls": None, "text": ""})
+            model.delegates.append({"prop": prop, "protocols": protocols, "methods": protocol_methods(protocols), "built": [], "cls": None, "text": "", "major": model.delegate_majors.get(prop, 0)})
     for model in ALL_MODELS:
         for d in model.delegates:
             for selector, (decl, protocol) in d["methods"].items():
@@ -530,7 +593,8 @@ def process_delegates():
                     taken.add(name)
                     sig = f"{ret.cpp}({', '.join(a[0] for a in args)})"
                     signal_defs[(model.ns, d["prop"], selector)] = {"name": name, "sig": sig}
-                    model.signals.append({"name": name, "sig": sig, "origin": "delegate"})
+                    method_major = max(d["major"], future_major(info.introduced), taint(sig + " " + " ".join(t["qualType"] for _, t in parms)))
+                    model.signals.append({"name": name, "sig": sig, "origin": "delegate", "major": method_major})
                 except Skip as e:
                     log_skip(model, selector, "delegate " + str(e))
                 except Unmappable as e:
@@ -560,7 +624,8 @@ def build_delegate_block(model, d, signal_defs):
             ret_q = clean(decl["returnType"]["qualType"])
             parts = selector.split(":")
             if parms:
-                sig_text = f"- ({ret_q})" + " ".join(f"{parts[i]}:({clean(parms[i][1]['qualType'])}){parms[i][0]}" for i in range(len(parms)))
+                qualifiers = A.parameter_qualifiers(selector)
+                sig_text = f"- ({ret_q})" + " ".join(f"{parts[i]}:({qualifiers[i] + ' ' if qualifiers[i] else ''}{signature_type(parms[i][1])}){parms[i][0]}" for i in range(len(parms)))
             else:
                 sig_text = f"- ({ret_q}){selector}"
             pre, post, emit_args = [], [], []
@@ -587,8 +652,9 @@ def build_delegate_block(model, d, signal_defs):
                 body.append(f"    auto __r = {emit};")
                 body += ["    " + l for l in post]
                 body.append(f"    return {QUALIFIER(ret.conv_to('__r'))};")
-            methods_text.append(sig_text + "\n{\n" + "\n".join(body) + "\n}\n")
-            responds.append(f"    if (selector == @selector({selector})) {{\n        return strongHost && {signal}::connected((__bridge void*)strongHost, \"{sd['name']}\");\n    }}")
+            method_major = max(d["major"], future_major(A.availability(decl).introduced), taint(sig_text + " " + sd["sig"]))
+            methods_text.append(macro_guard(method_major, sig_text + "\n{\n" + "\n".join(body) + "\n}\n"))
+            responds.append(macro_guard(method_major, f"    if (selector == @selector({selector})) {{\n        return strongHost && {signal}::connected((__bridge void*)strongHost, \"{sd['name']}\");\n    }}"))
         except (Skip, Unmappable) as e:
             log_skip(model, selector, "delegate emit " + str(e))
     if not methods_text:
@@ -801,7 +867,7 @@ def ctor_bind_lines(model):
         for d in m.delegates:
             if d["cls"] and d["prop"] not in seen:
                 seen.add(d["prop"])
-                lines.append(f"    {m.name}::install_{snake(d['prop'])}_delegate_(handle());")
+                lines.append(macro_guard(d["major"], f"    {m.name}::install_{snake(d['prop'])}_delegate_(handle());"))
     if model.curated.get("ctorBody"):
         lines.append(f"    {convert_cpp(model.curated['ctorBody'])}")
     return lines
@@ -809,6 +875,8 @@ def ctor_bind_lines(model):
 
 def emit_model(model, signal_defs):
     name = model.name
+    future_classes = future_types()
+    class_major = future_major(model.since)
     curated = model.curated
     refs = set(model.refs)
     refs.update(curated.get("forward", []))
@@ -817,6 +885,7 @@ def emit_model(model, signal_defs):
             if word in BY_NAME or word in S.opaques:
                 refs.add(word)
     entries = []
+    ctor_major = {}
     curated_keys = set()
     default_callable = False
     for ctor in curated.get("ctors", []):
@@ -839,16 +908,17 @@ def emit_model(model, signal_defs):
     for c in model.ctors:
         if c["key"] not in curated_keys:
             entries.append((c["header"], c["params"], f"Adopt{{cocoon::internal::retain({c['expr']})}}"))
+            ctor_major[c["header"]] = max(future_major(c.get("since")), taint(c.get("types", "")))
             curated_keys.add(c["key"])
-    has_zero = default_callable or any(e[1] == "" for e in entries)
+    has_zero = default_callable or any(e[1] == "" and not ctor_major.get(e[0]) for e in entries)
     if not has_zero and not model.alias and chain_init_available(model):
         entries.append((f"    explicit {name}();", "", f"Adopt{{cocoon::internal::retain([[::{model.ns} alloc] init])}}"))
         has_zero = True
     binds = ctor_bind_lines(model)
     ctor_decls, other_decls, impl = [], [], []
     for header, params, init in entries:
-        ctor_decls.append(f"    /// @brief Creates a new `{model.ns}` instance and returns a handle to it.\n{header}")
-        impl.append(f"{name}::{name}({params}) : {name}({init})\n{{\n" + "\n".join(binds) + ("\n" if binds else "") + "}\n")
+        ctor_decls.append(macro_guard(ctor_major.get(header, 0), f"    /// @brief Creates a new `{model.ns}` instance and returns a handle to it.\n{header}"))
+        impl.append(macro_guard(ctor_major.get(header, 0), f"{name}::{name}({params}) : {name}({init})\n{{\n" + "\n".join(binds) + ("\n" if binds else "") + "}\n"))
     if not has_zero:
         ctor_decls.append(f"    {name}();")
         impl.append(f"{name}::{name}() : {model.base_name}(nullptr) {{}}\n")
@@ -863,6 +933,7 @@ def emit_model(model, signal_defs):
     setters = []
     usage_infos = []
     type_names = {m.name for m in ALL_MODELS} | {e["name"] for e in S.enums.values()} | {st["name"] for st in S.structs.values() if st["name"]} | set(S.opaques) | {"Object", "Size", "Point", "Rect", "Insets", "Signal", "WeakRef", "Adopt"}
+    name_major = {}
     for member in model.members:
         if (member.name, member.arity) in extra_keys:
             continue
@@ -870,16 +941,19 @@ def emit_model(model, signal_defs):
         if final in type_names or final == name:
             final = final.lower() if final.isupper() else final + "_"
         decl, member_impl = member.render(name, final)
+        signature = " ".join([member.ret] + [t for t, _ in member.cpp_params])
+        major = max([future_major(member.since)] + [v for k, v in future_classes.items() if re.search(r"\b" + re.escape(k) + r"\b", signature)])
         if member.extra_decl:
-            other_decls.append(member.extra_decl)
-        other_decls.append(member_doc(model, member) + "\n" + decl)
+            other_decls.append(macro_guard(major, member.extra_decl))
+        other_decls.append(macro_guard(major, member_doc(model, member) + "\n" + decl))
         usage_infos.append((member.role, final, member.cpp_params, member.ret, member.static, member.prop))
         if member.role == "setter" and len(member.cpp_params) == 1:
             setters.append((final, member.cpp_params[0][0] + " value"))
         if member.typed and model.tparams:
-            typed_decls.append(member.render_typed(name, final))
-        impl.append(member_impl)
+            typed_decls.append(macro_guard(major, member.render_typed(name, final)))
+        impl.append(macro_guard(major, member_impl))
         member_names.add(final)
+        name_major[final] = min(name_major.get(final, major), major)
     for extra in curated.get("extra", []):
         decl_text, impl_text = convert_extra(extra["decl"], extra["impl"].replace("{cls}", name).replace("{ns}", model.ns))
         if not decl_text.startswith("static") and not decl_text.endswith("const;"):
@@ -894,6 +968,7 @@ def emit_model(model, signal_defs):
         m = re.search(r"(\w+)\s*\(", decl_text)
         if m:
             member_names.add(m.group(1))
+            name_major[m.group(1)] = 0
     signal_names = set()
     doc_signals = []
     for s in curated.get("signals", []):
@@ -904,7 +979,9 @@ def emit_model(model, signal_defs):
         doc_signals.append((key, sig))
     for s in model.signals:
         if s["origin"] == "delegate":
-            other_decls.append(f"    /// @brief Signal for the delegate/data-source method behind `{s['name']}`; connect a callback with `{s['name']}().connect(...)`.\n    Signal<{name}, {s['sig']}> {s['name']}() const {{ return Signal<{name}, {s['sig']}>(handle(), \"{s['name']}\"); }}")
+            signal_major = max([s.get("major", 0)] + [v for k, v in future_classes.items() if re.search(r"\b" + re.escape(k) + r"\b", s["sig"])])
+            other_decls.append(macro_guard(signal_major, f"    /// @brief Signal for the delegate/data-source method behind `{s['name']}`; connect a callback with `{s['name']}().connect(...)`.\n    Signal<{name}, {s['sig']}> {s['name']}() const {{ return Signal<{name}, {s['sig']}>(handle(), \"{s['name']}\"); }}"))
+            name_major[s["name"]] = signal_major
             signal_names.add(s["name"])
             doc_signals.append((s["name"], s["sig"]))
     using = []
@@ -912,9 +989,10 @@ def emit_model(model, signal_defs):
     for member_name in sorted(member_names):
         for anc in reversed(ancestors):
             if member_name in anc.all_names:
-                using.append(f"    using {anc.name}::{member_name};")
+                using.append(macro_guard(max(name_major.get(member_name, 0), anc.name_major.get(member_name, 0)), f"    using {anc.name}::{member_name};"))
                 break
     model.all_names = member_names | signal_names
+    model.name_major = name_major
 
     protected = []
     if model.has_action:
@@ -943,14 +1021,14 @@ def emit_model(model, signal_defs):
     for d in model.delegates:
         if not d["cls"]:
             continue
-        delegate_text += d["text"]
+        delegate_text += macro_guard(d["major"], d["text"])
         prop, cls = d["prop"], d["cls"]
-        protected.append(f"    static void install_{snake(prop)}_delegate_(void* native);")
-        impl.append(f"void {name}::install_{snake(prop)}_delegate_(void* native) {{\n    ::{model.ns}* host = (__bridge ::{model.ns}*)native;\n    {cls}* delegate = [[{cls} alloc] init];\n    delegate->host = host;\n    host.{prop} = delegate;\n    {d['weak']} ::{model.ns}* weakHost = host;\n    cocoon::internal::keep_delegate(host, delegate, ^{{\n        ::{model.ns}* strongHost = weakHost;\n        strongHost.{prop} = nil;\n        strongHost.{prop} = delegate;\n    }});\n}}\n")
+        protected.append(macro_guard(d["major"], f"    static void install_{snake(prop)}_delegate_(void* native);"))
+        impl.append(macro_guard(d["major"], f"void {name}::install_{snake(prop)}_delegate_(void* native) {{\n    ::{model.ns}* host = (__bridge ::{model.ns}*)native;\n    {cls}* delegate = [[{cls} alloc] init];\n    delegate->host = host;\n    host.{prop} = delegate;\n    {d['weak']} ::{model.ns}* weakHost = host;\n    cocoon::internal::keep_delegate(host, delegate, ^{{\n        ::{model.ns}* strongHost = weakHost;\n        strongHost.{prop} = nil;\n        strongHost.{prop} = delegate;\n    }});\n}}\n"))
     wrapper = ""
     if model.tparams:
         template_head = ", ".join(f"class {p}" for p in model.tparams)
-        usings = "".join(f"    using {name}::{n};\n" for n in sorted(model.all_names))
+        usings = "".join(macro_guard(name_major.get(n, 0), f"    using {name}::{n};") + "\n" for n in sorted(model.all_names))
         wrapper = (f"template <{template_head}>\nclass {model.template_name} : public {name} {{\npublic:\n    using {name}::{name};\n"
                    f"    {model.template_name}() : {name}() {{}}\n    {model.template_name}(const {name}& other) : {name}(other) {{}}\n{usings}"
                    + "\n".join(typed_decls) + "\n};\n\n")
@@ -958,12 +1036,13 @@ def emit_model(model, signal_defs):
     forwards = "".join(f"class {r};\n" for r in sorted(refs - {name}))
     bottoms = ""
     base_include = '#include "object.h"' if model.base_name == "Object" else f'#include "generated/{snake(model.base_name)}.h"'
-    header = (f'#pragma once\n\n{base_include}\n#include "generated/enums.h"\n#include "generated/structs.h"\n#include "types.h"\n{includes}\n'
+    header_body = (f'{base_include}\n#include "generated/enums.h"\n#include "generated/structs.h"\n#include "types.h"\n{includes}\n'
               f"namespace cocoon {{\n\n{forwards}\n{curated.get('preamble', '')}\n{class_doc(model, entries, setters, doc_signals, usage_infos)}\nclass {name} : public {model.base_name} {{\npublic:\n"
               + "\n".join(ctor_decls + using + other_decls) + ("\n\nprotected:\n" + "\n".join(protected) if protected else "")
               + f"\n}};\n\n{wrapper}{curated.get('headerExtra', '')}\n}}\n\n{bottoms}")
+    header = '#pragma once\n\n#include "generated/availability.h"\n\n' + macro_guard(class_major, header_body)
     write(OUT_INCLUDE / f"{snake(name)}.h", header)
-    write(OUT_SRC / f"{snake(name)}.mm", f'#include "generated/{snake(name)}.h"\n#include "internal.h"\n\n' + delegate_text + "namespace cocoon {\n\n" + "\n".join(impl) + "\n}\n")
+    write(OUT_SRC / f"{snake(name)}.mm", f'#include "generated/{snake(name)}.h"\n#include "internal.h"\n\n' + macro_guard(class_major, delegate_text + "namespace cocoon {\n\n" + "\n".join(impl) + "\n}\n"))
 
 
 def literal(value, underlying):
@@ -1148,6 +1227,7 @@ def main():
         tparams = type_params_of(interface)
         base_cpp = class_cpp_name(ns)
         model = ClassModel(ns, unique_type_name(base_cpp + "Base" if tparams else base_cpp), "A")
+        model.since = A.availability(interface).introduced
         model.tparams = tparams
         model.template_name = base_cpp if tparams else None
         model.curated = curated.get(base_cpp, {})
@@ -1200,6 +1280,7 @@ def main():
     emit_enums()
     emit_structs()
     emit_opaques()
+    write(OUT_INCLUDE / "availability.h", "#pragma once\n\n#include <Availability.h>\n\n" + "".join(f"#if defined(COCOON_SDK_MAJOR)\n#if COCOON_SDK_MAJOR >= {major}\n#define COCOON_MACOS_{major}\n#endif\n#elif defined(__MAC_OS_X_VERSION_MAX_ALLOWED) && __MAC_OS_X_VERSION_MAX_ALLOWED >= {major * 10000}\n#define COCOON_MACOS_{major}\n#endif\n\n" for major in range(MAJOR + 1, max(FUTURE_MAJORS | {MAJOR}) + 1)))
     write(OUT_INCLUDE / "generated.h", "#pragma once\n\n" + "".join(f'#include "generated/{snake(m.name)}.h"\n' for m in sorted(ALL_MODELS, key=lambda m: snake(m.name))) + "".join(f'#include "generated/{snake(n)}.h"\n' for n in sorted(S.opaques)) + '#include "generated/constants.h"\n')
     format_files()
     report = ["Skipped members by reason"]

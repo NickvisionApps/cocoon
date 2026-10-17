@@ -1,5 +1,6 @@
 #pragma once
 
+#include "generated/availability.h"
 #include "generated/enums.h"
 #include "generated/structs.h"
 #include "generated/view.h"
@@ -70,18 +71,24 @@ namespace cocoon
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_corner_radius(double value) const;
+#ifdef COCOON_MACOS_27
         /**
      * @brief Returns the `effectIsInteractive` property of `NSGlassEffectView`.
      * @details Enables interactive glass behavior, which adds a visual response to user interactions. This should be enabled for glass that is used as the background for interactive controls or when used as the container of interactive controls. When 'YES', the glass effect will provide visual feedback when it is interacted with. When 'NO', the glass effect remains static. The default value is 'NO'.
      * @return The converted Objective-C result.
      */
         bool effect_is_interactive() const;
+#endif
+
+#ifdef COCOON_MACOS_27
         /**
      * @brief Sets the `effectIsInteractive` property of `NSGlassEffectView`.
      * @details Enables interactive glass behavior, which adds a visual response to user interactions. This should be enabled for glass that is used as the background for interactive controls or when used as the container of interactive controls. When 'YES', the glass effect will provide visual feedback when it is interacted with. When 'NO', the glass effect remains static. The default value is 'NO'.
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_effect_is_interactive(bool value) const;
+#endif
+
         /**
      * @brief Returns the `style` property of `NSGlassEffectView`.
      * @details The style of glass this view uses.

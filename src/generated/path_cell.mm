@@ -99,17 +99,17 @@ namespace cocoon
     std::vector<std::string> PathCell::allowed_types() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSPathCell>(this) allowedTypes], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void PathCell::set_allowed_types(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSPathCell>(this) setAllowedTypes:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                                 {
-                                                                     return cocoon::internal::to(e);
-                                                                 })];
+                                                                                             {
+                                                                                                 return cocoon::internal::to(e);
+                                                                                             })];
     }
 
     Color PathCell::background_color() const
@@ -145,17 +145,17 @@ namespace cocoon
     std::vector<PathComponentCell> PathCell::path_component_cells() const
     {
         return cocoon::internal::from_array<PathComponentCell>([cocoon::internal::ns<::NSPathCell>(this) pathComponentCells], [](id e) -> PathComponentCell
-                                                 {
-                                                     return cocoon::internal::wrap<PathComponentCell>((::NSPathComponentCell*)e);
-                                                 });
+                                                               {
+                                                                   return cocoon::internal::wrap<PathComponentCell>((::NSPathComponentCell*)e);
+                                                               });
     }
 
     void PathCell::set_path_component_cells(const std::vector<PathComponentCell>& value) const
     {
         [cocoon::internal::ns<::NSPathCell>(this) setPathComponentCells:cocoon::internal::to_array(value, [](const PathComponentCell& e) -> id
-                                                                       {
-                                                                           return cocoon::internal::native<::NSPathComponentCell>(e);
-                                                                       })];
+                                                                                                   {
+                                                                                                       return cocoon::internal::native<::NSPathComponentCell>(e);
+                                                                                                   })];
     }
 
     PathStyle PathCell::path_style() const

@@ -18,42 +18,42 @@ namespace cocoon
     std::int64_t Pasteboard::add_types(const std::vector<std::string>& new_types, const Object& new_owner) const
     {
         return static_cast<std::int64_t>([cocoon::internal::ns<::NSPasteboard>(this) addTypes:cocoon::internal::to_array(new_types, [](const std::string& e) -> id
-                                                                                             {
-                                                                                                 return cocoon::internal::to(e);
-                                                                                             })
-                                                                          owner:cocoon::internal::native_id(new_owner)]);
+                                                                                                                         {
+                                                                                                                             return cocoon::internal::to(e);
+                                                                                                                         })
+                                                                                        owner:cocoon::internal::native_id(new_owner)]);
     }
 
     std::string Pasteboard::available_type_from_array(const std::vector<std::string>& types) const
     {
         return cocoon::internal::from([cocoon::internal::ns<::NSPasteboard>(this) availableTypeFromArray:cocoon::internal::to_array(types, [](const std::string& e) -> id
-                                                                                          {
-                                                                                              return cocoon::internal::to(e);
-                                                                                          })]);
+                                                                                                                                    {
+                                                                                                                                        return cocoon::internal::to(e);
+                                                                                                                                    })]);
     }
 
     bool Pasteboard::can_read_item_with_data_conforming_to_types(const std::vector<std::string>& types) const
     {
         return static_cast<bool>([cocoon::internal::ns<::NSPasteboard>(this) canReadItemWithDataConformingToTypes:cocoon::internal::to_array(types, [](const std::string& e) -> id
-                                                                                                                 {
-                                                                                                                     return cocoon::internal::to(e);
-                                                                                                                 })]);
+                                                                                                                                             {
+                                                                                                                                                 return cocoon::internal::to(e);
+                                                                                                                                             })]);
     }
 
     bool Pasteboard::can_read_object_for_classes(const std::vector<std::string>& class_array, const std::map<std::string, Object>& options) const
     {
         return static_cast<bool>([cocoon::internal::ns<::NSPasteboard>(this) canReadObjectForClasses:cocoon::internal::to_array(class_array, [](const std::string& e) -> id
-                                                                                                    {
-                                                                                                        return NSClassFromString(cocoon::internal::to(e));
-                                                                                                    })
-                                                                               options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
-                                                                                                         {
-                                                                                                             return cocoon::internal::to(k);
-                                                                                                         },
-                                                                                                         [](const Object& v) -> id
-                                                                                                         {
-                                                                                                             return cocoon::internal::native_id(v);
-                                                                                                         })]);
+                                                                                                                                {
+                                                                                                                                    return NSClassFromString(cocoon::internal::to(e));
+                                                                                                                                })
+                                                                                             options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
+                                                                                                                                     {
+                                                                                                                                         return cocoon::internal::to(k);
+                                                                                                                                     },
+                                                                                                                                     [](const Object& v) -> id
+                                                                                                                                     {
+                                                                                                                                         return cocoon::internal::native_id(v);
+                                                                                                                                     })]);
     }
 
     std::int64_t Pasteboard::clear_contents() const
@@ -69,57 +69,57 @@ namespace cocoon
     std::int64_t Pasteboard::declare_types(const std::vector<std::string>& new_types, const Object& new_owner) const
     {
         return static_cast<std::int64_t>([cocoon::internal::ns<::NSPasteboard>(this) declareTypes:cocoon::internal::to_array(new_types, [](const std::string& e) -> id
-                                                                                                 {
-                                                                                                     return cocoon::internal::to(e);
-                                                                                                 })
-                                                                              owner:cocoon::internal::native_id(new_owner)]);
+                                                                                                                             {
+                                                                                                                                 return cocoon::internal::to(e);
+                                                                                                                             })
+                                                                                            owner:cocoon::internal::native_id(new_owner)]);
     }
 
     void Pasteboard::detect_metadata_for_types(const std::vector<std::string>& types, std::function<void(std::map<std::string, Object>, Error)> completion_handler) const
     {
         [cocoon::internal::ns<::NSPasteboard>(this) detectMetadataForTypes:[NSSet setWithArray:cocoon::internal::to_array(types, [](const std::string& e) -> id
-                                                                                              {
-                                                                                                  return cocoon::internal::to(e);
-                                                                                              })]
-                                           completionHandler:(completion_handler ? (void (^)(NSDictionary<NSPasteboardMetadataType, id>*, ::NSError*)) ^ void(NSDictionary * a67_0, ::NSError * a67_1) { completion_handler(cocoon::internal::from_dictionary<std::map<std::string, Object>>(a67_0, [](id k) -> std::string
-                                                                                                                                                                                                                                                                               {
-                                                                                                                                                                                                                                                                                   return cocoon::internal::from((NSString*)k);
-                                                                                                                                                                                                                                                                               },
-                                                                                                                                                                                                                                                                               [](id v) -> Object
-                                                                                                                                                                                                                                                                               {
-                                                                                                                                                                                                                                                                                   return cocoon::internal::wrap<Object>(v);
-                                                                                                                                                                                                                                                                               }),
-                                                                                                                                                                                                                            cocoon::internal::wrap<Error>(a67_1)); } : (void (^)(NSDictionary<NSPasteboardMetadataType, id>*, ::NSError*))nil)];
+                                                                                                                          {
+                                                                                                                              return cocoon::internal::to(e);
+                                                                                                                          })]
+                                                         completionHandler:(completion_handler ? (void (^)(NSDictionary<NSPasteboardMetadataType, id>*, ::NSError*)) ^ void(NSDictionary * a67_0, ::NSError * a67_1) { completion_handler(cocoon::internal::from_dictionary<std::map<std::string, Object>>(a67_0, [](id k) -> std::string
+                                                                                                                                                                                                                                                                                                           {
+                                                                                                                                                                                                                                                                                                               return cocoon::internal::from((NSString*)k);
+                                                                                                                                                                                                                                                                                                           },
+                                                                                                                                                                                                                                                                                                           [](id v) -> Object
+                                                                                                                                                                                                                                                                                                           {
+                                                                                                                                                                                                                                                                                                               return cocoon::internal::wrap<Object>(v);
+                                                                                                                                                                                                                                                                                                           }),
+                                                                                                                                                                                                                                          cocoon::internal::wrap<Error>(a67_1)); } : (void (^)(NSDictionary<NSPasteboardMetadataType, id>*, ::NSError*))nil)];
     }
 
     void Pasteboard::detect_patterns_for_patterns(const std::vector<std::string>& patterns, std::function<void(std::vector<std::string>, Error)> completion_handler) const
     {
         [cocoon::internal::ns<::NSPasteboard>(this) detectPatternsForPatterns:[NSSet setWithArray:cocoon::internal::to_array(patterns, [](const std::string& e) -> id
-                                                                                                 {
-                                                                                                     return cocoon::internal::to(e);
-                                                                                                 })]
-                                              completionHandler:(completion_handler ? (void (^)(NSSet<NSPasteboardDetectionPattern>*, ::NSError*)) ^ void(NSSet * a68_0, ::NSError * a68_1) { completion_handler(cocoon::internal::from_array<std::string>([a68_0 allObjects], [](id e) -> std::string
-                                                                                                                                                                                                                                             {
-                                                                                                                                                                                                                                                 return cocoon::internal::from((NSString*)e);
-                                                                                                                                                                                                                                             }),
-                                                                                                                                                                                                                 cocoon::internal::wrap<Error>(a68_1)); } : (void (^)(NSSet<NSPasteboardDetectionPattern>*, ::NSError*))nil)];
+                                                                                                                             {
+                                                                                                                                 return cocoon::internal::to(e);
+                                                                                                                             })]
+                                                            completionHandler:(completion_handler ? (void (^)(NSSet<NSPasteboardDetectionPattern>*, ::NSError*)) ^ void(NSSet * a68_0, ::NSError * a68_1) { completion_handler(cocoon::internal::from_array<std::string>([a68_0 allObjects], [](id e) -> std::string
+                                                                                                                                                                                                                                                                         {
+                                                                                                                                                                                                                                                                             return cocoon::internal::from((NSString*)e);
+                                                                                                                                                                                                                                                                         }),
+                                                                                                                                                                                                                               cocoon::internal::wrap<Error>(a68_1)); } : (void (^)(NSSet<NSPasteboardDetectionPattern>*, ::NSError*))nil)];
     }
 
     void Pasteboard::detect_values_for_patterns(const std::vector<std::string>& patterns, std::function<void(std::map<std::string, Object>, Error)> completion_handler) const
     {
         [cocoon::internal::ns<::NSPasteboard>(this) detectValuesForPatterns:[NSSet setWithArray:cocoon::internal::to_array(patterns, [](const std::string& e) -> id
-                                                                                               {
-                                                                                                   return cocoon::internal::to(e);
-                                                                                               })]
-                                            completionHandler:(completion_handler ? (void (^)(NSDictionary<NSPasteboardDetectionPattern, id>*, ::NSError*)) ^ void(NSDictionary * a69_0, ::NSError * a69_1) { completion_handler(cocoon::internal::from_dictionary<std::map<std::string, Object>>(a69_0, [](id k) -> std::string
-                                                                                                                                                                                                                                                                                    {
-                                                                                                                                                                                                                                                                                        return cocoon::internal::from((NSString*)k);
-                                                                                                                                                                                                                                                                                    },
-                                                                                                                                                                                                                                                                                    [](id v) -> Object
-                                                                                                                                                                                                                                                                                    {
-                                                                                                                                                                                                                                                                                        return cocoon::internal::wrap<Object>(v);
-                                                                                                                                                                                                                                                                                    }),
-                                                                                                                                                                                                                                 cocoon::internal::wrap<Error>(a69_1)); } : (void (^)(NSDictionary<NSPasteboardDetectionPattern, id>*, ::NSError*))nil)];
+                                                                                                                           {
+                                                                                                                               return cocoon::internal::to(e);
+                                                                                                                           })]
+                                                          completionHandler:(completion_handler ? (void (^)(NSDictionary<NSPasteboardDetectionPattern, id>*, ::NSError*)) ^ void(NSDictionary * a69_0, ::NSError * a69_1) { completion_handler(cocoon::internal::from_dictionary<std::map<std::string, Object>>(a69_0, [](id k) -> std::string
+                                                                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                                                                                [](id v) -> Object
+                                                                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                                                                                                                                                                                                                                                }),
+                                                                                                                                                                                                                                               cocoon::internal::wrap<Error>(a69_1)); } : (void (^)(NSDictionary<NSPasteboardDetectionPattern, id>*, ::NSError*))nil)];
     }
 
     std::uint64_t Pasteboard::index_of_pasteboard_item(const PasteboardItem& pasteboard_item) const
@@ -175,21 +175,21 @@ namespace cocoon
     std::vector<Object> Pasteboard::read_objects_for_classes(const std::vector<std::string>& class_array, const std::map<std::string, Object>& options) const
     {
         return cocoon::internal::from_array<Object>([cocoon::internal::ns<::NSPasteboard>(this) readObjectsForClasses:cocoon::internal::to_array(class_array, [](const std::string& e) -> id
-                                                                                                       {
-                                                                                                           return NSClassFromString(cocoon::internal::to(e));
-                                                                                                       })
-                                                                                  options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
-                                                                                                            {
-                                                                                                                return cocoon::internal::to(k);
-                                                                                                            },
-                                                                                                            [](const Object& v) -> id
-                                                                                                            {
-                                                                                                                return cocoon::internal::native_id(v);
-                                                                                                            })],
-                                      [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                                                                                                                 {
+                                                                                                                                                     return NSClassFromString(cocoon::internal::to(e));
+                                                                                                                                                 })
+                                                                                                              options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
+                                                                                                                                                      {
+                                                                                                                                                          return cocoon::internal::to(k);
+                                                                                                                                                      },
+                                                                                                                                                      [](const Object& v) -> id
+                                                                                                                                                      {
+                                                                                                                                                          return cocoon::internal::native_id(v);
+                                                                                                                                                      })],
+                                                    [](id e) -> Object
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     void Pasteboard::release_globally() const
@@ -220,9 +220,9 @@ namespace cocoon
     std::vector<std::string> Pasteboard::types_filterable_to(const std::string& type)
     {
         return cocoon::internal::from_array<std::string>([::NSPasteboard typesFilterableTo:cocoon::internal::to(type)], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     bool Pasteboard::write_file_contents(const std::string& filename) const
@@ -238,9 +238,9 @@ namespace cocoon
     bool Pasteboard::write_objects(const std::vector<Object>& objects) const
     {
         return static_cast<bool>([cocoon::internal::ns<::NSPasteboard>(this) writeObjects:cocoon::internal::to_array(objects, [](const Object& e) -> id
-                                                                                         {
-                                                                                             return cocoon::internal::native_id(e);
-                                                                                         })]);
+                                                                                                                     {
+                                                                                                                         return cocoon::internal::native_id(e);
+                                                                                                                     })]);
     }
 
     PasteboardAccessBehavior Pasteboard::access_behavior() const
@@ -266,16 +266,16 @@ namespace cocoon
     std::vector<PasteboardItem> Pasteboard::pasteboard_items() const
     {
         return cocoon::internal::from_array<PasteboardItem>([cocoon::internal::ns<::NSPasteboard>(this) pasteboardItems], [](id e) -> PasteboardItem
-                                              {
-                                                  return cocoon::internal::wrap<PasteboardItem>((::NSPasteboardItem*)e);
-                                              });
+                                                            {
+                                                                return cocoon::internal::wrap<PasteboardItem>((::NSPasteboardItem*)e);
+                                                            });
     }
 
     std::vector<std::string> Pasteboard::types() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSPasteboard>(this) types], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 }

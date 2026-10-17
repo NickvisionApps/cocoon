@@ -1,5 +1,6 @@
 #pragma once
 
+#include "generated/availability.h"
 #include "generated/enums.h"
 #include "generated/responder.h"
 #include "generated/structs.h"

@@ -123,17 +123,17 @@ namespace cocoon
     std::vector<std::string> DateFormatter::era_symbols() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSDateFormatter>(this) eraSymbols], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void DateFormatter::set_era_symbols(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSDateFormatter>(this) setEraSymbols:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                                    {
-                                                                        return cocoon::internal::to(e);
-                                                                    })];
+                                                                                                {
+                                                                                                    return cocoon::internal::to(e);
+                                                                                                })];
     }
 
     DateFormatterBehavior DateFormatter::formatter_behavior() const
@@ -199,193 +199,193 @@ namespace cocoon
     std::vector<std::string> DateFormatter::long_era_symbols() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSDateFormatter>(this) longEraSymbols], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void DateFormatter::set_long_era_symbols(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSDateFormatter>(this) setLongEraSymbols:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                                        {
-                                                                            return cocoon::internal::to(e);
-                                                                        })];
+                                                                                                    {
+                                                                                                        return cocoon::internal::to(e);
+                                                                                                    })];
     }
 
     std::vector<std::string> DateFormatter::month_symbols() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSDateFormatter>(this) monthSymbols], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void DateFormatter::set_month_symbols(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSDateFormatter>(this) setMonthSymbols:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                                      {
-                                                                          return cocoon::internal::to(e);
-                                                                      })];
+                                                                                                  {
+                                                                                                      return cocoon::internal::to(e);
+                                                                                                  })];
     }
 
     std::vector<std::string> DateFormatter::quarter_symbols() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSDateFormatter>(this) quarterSymbols], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void DateFormatter::set_quarter_symbols(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSDateFormatter>(this) setQuarterSymbols:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                                        {
-                                                                            return cocoon::internal::to(e);
-                                                                        })];
+                                                                                                    {
+                                                                                                        return cocoon::internal::to(e);
+                                                                                                    })];
     }
 
     std::vector<std::string> DateFormatter::short_month_symbols() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSDateFormatter>(this) shortMonthSymbols], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void DateFormatter::set_short_month_symbols(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSDateFormatter>(this) setShortMonthSymbols:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                                           {
-                                                                               return cocoon::internal::to(e);
-                                                                           })];
+                                                                                                       {
+                                                                                                           return cocoon::internal::to(e);
+                                                                                                       })];
     }
 
     std::vector<std::string> DateFormatter::short_quarter_symbols() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSDateFormatter>(this) shortQuarterSymbols], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void DateFormatter::set_short_quarter_symbols(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSDateFormatter>(this) setShortQuarterSymbols:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                                             {
-                                                                                 return cocoon::internal::to(e);
-                                                                             })];
+                                                                                                         {
+                                                                                                             return cocoon::internal::to(e);
+                                                                                                         })];
     }
 
     std::vector<std::string> DateFormatter::short_standalone_month_symbols() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSDateFormatter>(this) shortStandaloneMonthSymbols], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void DateFormatter::set_short_standalone_month_symbols(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSDateFormatter>(this) setShortStandaloneMonthSymbols:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                                                     {
-                                                                                         return cocoon::internal::to(e);
-                                                                                     })];
+                                                                                                                 {
+                                                                                                                     return cocoon::internal::to(e);
+                                                                                                                 })];
     }
 
     std::vector<std::string> DateFormatter::short_standalone_quarter_symbols() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSDateFormatter>(this) shortStandaloneQuarterSymbols], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void DateFormatter::set_short_standalone_quarter_symbols(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSDateFormatter>(this) setShortStandaloneQuarterSymbols:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                                                       {
-                                                                                           return cocoon::internal::to(e);
-                                                                                       })];
+                                                                                                                   {
+                                                                                                                       return cocoon::internal::to(e);
+                                                                                                                   })];
     }
 
     std::vector<std::string> DateFormatter::short_standalone_weekday_symbols() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSDateFormatter>(this) shortStandaloneWeekdaySymbols], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void DateFormatter::set_short_standalone_weekday_symbols(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSDateFormatter>(this) setShortStandaloneWeekdaySymbols:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                                                       {
-                                                                                           return cocoon::internal::to(e);
-                                                                                       })];
+                                                                                                                   {
+                                                                                                                       return cocoon::internal::to(e);
+                                                                                                                   })];
     }
 
     std::vector<std::string> DateFormatter::short_weekday_symbols() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSDateFormatter>(this) shortWeekdaySymbols], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void DateFormatter::set_short_weekday_symbols(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSDateFormatter>(this) setShortWeekdaySymbols:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                                             {
-                                                                                 return cocoon::internal::to(e);
-                                                                             })];
+                                                                                                         {
+                                                                                                             return cocoon::internal::to(e);
+                                                                                                         })];
     }
 
     std::vector<std::string> DateFormatter::standalone_month_symbols() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSDateFormatter>(this) standaloneMonthSymbols], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void DateFormatter::set_standalone_month_symbols(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSDateFormatter>(this) setStandaloneMonthSymbols:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                                                {
-                                                                                    return cocoon::internal::to(e);
-                                                                                })];
+                                                                                                            {
+                                                                                                                return cocoon::internal::to(e);
+                                                                                                            })];
     }
 
     std::vector<std::string> DateFormatter::standalone_quarter_symbols() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSDateFormatter>(this) standaloneQuarterSymbols], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void DateFormatter::set_standalone_quarter_symbols(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSDateFormatter>(this) setStandaloneQuarterSymbols:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                                                  {
-                                                                                      return cocoon::internal::to(e);
-                                                                                  })];
+                                                                                                              {
+                                                                                                                  return cocoon::internal::to(e);
+                                                                                                              })];
     }
 
     std::vector<std::string> DateFormatter::standalone_weekday_symbols() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSDateFormatter>(this) standaloneWeekdaySymbols], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void DateFormatter::set_standalone_weekday_symbols(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSDateFormatter>(this) setStandaloneWeekdaySymbols:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                                                  {
-                                                                                      return cocoon::internal::to(e);
-                                                                                  })];
+                                                                                                              {
+                                                                                                                  return cocoon::internal::to(e);
+                                                                                                              })];
     }
 
     DateFormatterStyle DateFormatter::time_style() const
@@ -421,80 +421,80 @@ namespace cocoon
     std::vector<std::string> DateFormatter::very_short_month_symbols() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSDateFormatter>(this) veryShortMonthSymbols], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void DateFormatter::set_very_short_month_symbols(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSDateFormatter>(this) setVeryShortMonthSymbols:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                                               {
-                                                                                   return cocoon::internal::to(e);
-                                                                               })];
+                                                                                                           {
+                                                                                                               return cocoon::internal::to(e);
+                                                                                                           })];
     }
 
     std::vector<std::string> DateFormatter::very_short_standalone_month_symbols() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSDateFormatter>(this) veryShortStandaloneMonthSymbols], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void DateFormatter::set_very_short_standalone_month_symbols(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSDateFormatter>(this) setVeryShortStandaloneMonthSymbols:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                                                         {
-                                                                                             return cocoon::internal::to(e);
-                                                                                         })];
+                                                                                                                     {
+                                                                                                                         return cocoon::internal::to(e);
+                                                                                                                     })];
     }
 
     std::vector<std::string> DateFormatter::very_short_standalone_weekday_symbols() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSDateFormatter>(this) veryShortStandaloneWeekdaySymbols], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void DateFormatter::set_very_short_standalone_weekday_symbols(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSDateFormatter>(this) setVeryShortStandaloneWeekdaySymbols:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                                                           {
-                                                                                               return cocoon::internal::to(e);
-                                                                                           })];
+                                                                                                                       {
+                                                                                                                           return cocoon::internal::to(e);
+                                                                                                                       })];
     }
 
     std::vector<std::string> DateFormatter::very_short_weekday_symbols() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSDateFormatter>(this) veryShortWeekdaySymbols], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void DateFormatter::set_very_short_weekday_symbols(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSDateFormatter>(this) setVeryShortWeekdaySymbols:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                                                 {
-                                                                                     return cocoon::internal::to(e);
-                                                                                 })];
+                                                                                                             {
+                                                                                                                 return cocoon::internal::to(e);
+                                                                                                             })];
     }
 
     std::vector<std::string> DateFormatter::weekday_symbols() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSDateFormatter>(this) weekdaySymbols], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void DateFormatter::set_weekday_symbols(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSDateFormatter>(this) setWeekdaySymbols:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                                        {
-                                                                            return cocoon::internal::to(e);
-                                                                        })];
+                                                                                                    {
+                                                                                                        return cocoon::internal::to(e);
+                                                                                                    })];
     }
 }

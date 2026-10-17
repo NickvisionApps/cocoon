@@ -1,5 +1,6 @@
 #pragma once
 
+#include "generated/availability.h"
 #include "generated/enums.h"
 #include "generated/structs.h"
 #include "object.h"
@@ -101,11 +102,14 @@ namespace cocoon
         {
             return Signal<TextViewportLayoutController, void()>(handle(), "did_layout");
         }
+#ifdef COCOON_MACOS_27
         /// @brief Signal for the delegate/data-source method behind `cache_rendering_surface_for_key`; connect a callback with `cache_rendering_surface_for_key().connect(...)`.
         Signal<TextViewportLayoutController, void(Object, Object)> cache_rendering_surface_for_key() const
         {
             return Signal<TextViewportLayoutController, void(Object, Object)>(handle(), "cache_rendering_surface_for_key");
         }
+#endif
+
         /// @brief Signal for the delegate/data-source method behind `retrieve_cached_rendering_surface_for_key`; connect a callback with `retrieve_cached_rendering_surface_for_key().connect(...)`.
         Signal<TextViewportLayoutController, Object(Object)> retrieve_cached_rendering_surface_for_key() const
         {

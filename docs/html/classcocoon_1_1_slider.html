@@ -20,6 +20,7 @@
   <td id="projectalign">
    <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
    </div>
+   <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
  </tr>
  </tbody>
@@ -1154,7 +1155,7 @@ Static Protected Member Functions</h2></td></tr>
 <p>Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance. Inherits from <a class="el" href="classcocoon_1_1_control.html" title="Control">Control</a>.</p>
 <dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_slider.html">cocoon::Slider</a> slider(0, 100, 50);</div>
 <div class="line">slider.value_changed().connect([](<span class="keywordtype">double</span> <a class="code hl_function" href="#a75eb25c635574c77a4dd3ea2c9ec4780">value</a>) {});</div>
-<div class="ttc" id="aclasscocoon_1_1_slider_html"><div class="ttname"><a href="classcocoon_1_1_slider.html">cocoon::Slider</a></div><div class="ttdoc">A slider control (NSSlider).</div><div class="ttdef"><b>Definition</b> slider.h:42</div></div>
+<div class="ttc" id="aclasscocoon_1_1_slider_html"><div class="ttname"><a href="classcocoon_1_1_slider.html">cocoon::Slider</a></div><div class="ttdoc">A slider control (NSSlider).</div><div class="ttdef"><b>Definition</b> slider.h:43</div></div>
 <div class="ttc" id="aclasscocoon_1_1_slider_html_a75eb25c635574c77a4dd3ea2c9ec4780"><div class="ttname"><a href="#a75eb25c635574c77a4dd3ea2c9ec4780">cocoon::Slider::value</a></div><div class="ttdeci">double value() const</div><div class="ttdoc">Convenience helper value provided by cocoon.</div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_slider.html">cocoon::Slider</a> slider{1, 1, 1};</div>
@@ -1168,7 +1169,7 @@ Static Protected Member Functions</h2></td></tr>
 <div class="line">slider.<a class="code hl_function" href="#a9c3201ca6e98dee5db264281dc4e3cfc">closest_tick_mark_value_to_value</a>(1);</div>
 <div class="line">slider.<a class="code hl_function" href="#ad4feed6247d20a12866d1b53171f043a">index_of_tick_mark_at_point</a>({0, 0});</div>
 <div class="line">slider.<a class="code hl_function" href="#aee7248234d678705c6e5cf8c9707b40a">value_changed</a>().connect([](<span class="keywordtype">double</span> a0) {});</div>
-<div class="ttc" id="aclasscocoon_1_1_event_html"><div class="ttname"><a href="classcocoon_1_1_event.html">cocoon::Event</a></div><div class="ttdoc">C++ handle for the Objective-C class NSEvent (AppKit).</div><div class="ttdef"><b>Definition</b> event.h:44</div></div>
+<div class="ttc" id="aclasscocoon_1_1_event_html"><div class="ttname"><a href="classcocoon_1_1_event.html">cocoon::Event</a></div><div class="ttdoc">C++ handle for the Objective-C class NSEvent (AppKit).</div><div class="ttdef"><b>Definition</b> event.h:45</div></div>
 <div class="ttc" id="aclasscocoon_1_1_slider_html_a05bdec76c83bbc6ff2e7f7a2ba9d196b"><div class="ttname"><a href="#a05bdec76c83bbc6ff2e7f7a2ba9d196b">cocoon::Slider::set_max_value</a></div><div class="ttdeci">void set_max_value(double value) const</div><div class="ttdoc">Sets the maxValue property of NSSlider.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_slider_html_a22c59d532dcf33b8f1bf4c841b7c6907"><div class="ttname"><a href="#a22c59d532dcf33b8f1bf4c841b7c6907">cocoon::Slider::alt_increment_value</a></div><div class="ttdeci">double alt_increment_value() const</div><div class="ttdoc">Returns the altIncrementValue property of NSSlider.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_slider_html_a4cd73015a3a654c93aed2c23c54b130c"><div class="ttname"><a href="#a4cd73015a3a654c93aed2c23c54b130c">cocoon::Slider::set_allows_tick_mark_values_only</a></div><div class="ttdeci">void set_allows_tick_mark_values_only(bool value) const</div><div class="ttdoc">Sets the allowsTickMarkValuesOnly property of NSSlider.</div></div>
@@ -1178,7 +1179,7 @@ Static Protected Member Functions</h2></td></tr>
 <div class="ttc" id="aclasscocoon_1_1_slider_html_aac95cc582d0577c75301cb665bc6f21c"><div class="ttname"><a href="#aac95cc582d0577c75301cb665bc6f21c">cocoon::Slider::set_alt_increment_value</a></div><div class="ttdeci">void set_alt_increment_value(double value) const</div><div class="ttdoc">Sets the altIncrementValue property of NSSlider.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_slider_html_ad12b8f806d9812258a27a4a61b1938b8"><div class="ttname"><a href="#ad12b8f806d9812258a27a4a61b1938b8">cocoon::Slider::max_value</a></div><div class="ttdeci">double max_value() const</div><div class="ttdoc">Returns the maxValue property of NSSlider.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_slider_html_ad4feed6247d20a12866d1b53171f043a"><div class="ttname"><a href="#ad4feed6247d20a12866d1b53171f043a">cocoon::Slider::index_of_tick_mark_at_point</a></div><div class="ttdeci">std::int64_t index_of_tick_mark_at_point(const Point &amp;point) const</div><div class="ttdoc">Calls -[NSSlider indexOfTickMarkAtPoint:].</div></div>
-<div class="ttc" id="aclasscocoon_1_1_slider_html_aee7248234d678705c6e5cf8c9707b40a"><div class="ttname"><a href="#aee7248234d678705c6e5cf8c9707b40a">cocoon::Slider::value_changed</a></div><div class="ttdeci">Signal&lt; Slider, void(double)&gt; value_changed() const</div><div class="ttdoc">Signal value_changed: connect a callback with value_changed().connect(...).</div><div class="ttdef"><b>Definition</b> slider.h:219</div></div>
+<div class="ttc" id="aclasscocoon_1_1_slider_html_aee7248234d678705c6e5cf8c9707b40a"><div class="ttname"><a href="#aee7248234d678705c6e5cf8c9707b40a">cocoon::Slider::value_changed</a></div><div class="ttdeci">Signal&lt; Slider, void(double)&gt; value_changed() const</div><div class="ttdoc">Signal value_changed: connect a callback with value_changed().connect(...).</div><div class="ttdef"><b>Definition</b> slider.h:220</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/appkit/nsslider">https://developer.apple.com/documentation/appkit/nsslider</a> </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>

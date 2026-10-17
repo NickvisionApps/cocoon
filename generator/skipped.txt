@@ -1,6 +1,6 @@
 Skipped members by reason
 
-deprecated: 546
+deprecated: 556
   NSATSTypesetter.getGlyphsInRange:glyphs:characterIndexes:glyphInscriptions:elasticBits:
   NSATSTypesetter.lineFragmentRectForProposedRect:remainingRect:
   NSAlert.alertWithMessageText:defaultButton:alternateButton:otherButton:informativeTextWithFormat:
@@ -43,7 +43,7 @@ deprecated: 546
   NSCell.isEntryAcceptable:
   ...
 
-unavailable/deprecated: 95
+unavailable/deprecated: 98
   NSAppearance.currentAppearance
   NSApplication.context
   NSBox.borderType
@@ -129,7 +129,7 @@ skipped selector: 49
   NSURLSessionWebSocketMessage.new
   ...
 
-unavailable: 41
+unavailable: 43
   NSBitmapImageRep.initWithFocusedViewRect:
   NSCursor.initWithImage:foregroundColorHint:backgroundColorHint:hotSpot:
   NSDatePickerCell.initImageCell:
@@ -161,6 +161,8 @@ unavailable: 41
   NSCoder.objectZone
   NSCoder.setObjectZone:
   NSKeyValueSharedObservers.addObserver:forKeyPath:options:context:
+  NSKeyedArchiver.initForWritingWithMutableData:
+  NSKeyedUnarchiver.initForReadingWithData:
   NSProcessInfo.performExpiringActivityWithReason:usingBlock:
   NSURL.initWithScheme:host:path:
   NSURLConnection.initWithRequest:delegate:
@@ -168,8 +170,6 @@ unavailable: 41
   NSURLDownload.initWithRequest:delegate:
   NSURLDownload.initWithResumeData:delegate:path:
   NSXMLDTD.initWithKind:options:
-  CIImage.initWithCGLayer:
-  CIImage.initWithCGLayer:options:
   ...
 
 unmapped pointer: 11

@@ -18,17 +18,17 @@ namespace cocoon
     void MutableFontCollection::add_query_for_descriptors(const std::vector<FontDescriptor>& descriptors) const
     {
         [cocoon::internal::ns<::NSMutableFontCollection>(this) addQueryForDescriptors:cocoon::internal::to_array(descriptors, [](const FontDescriptor& e) -> id
-                                                                                     {
-                                                                                         return cocoon::internal::native<::NSFontDescriptor>(e);
-                                                                                     })];
+                                                                                                                 {
+                                                                                                                     return cocoon::internal::native<::NSFontDescriptor>(e);
+                                                                                                                 })];
     }
 
     MutableFontCollection MutableFontCollection::font_collection_with_descriptors(const std::vector<FontDescriptor>& query_descriptors)
     {
         return cocoon::internal::wrap<MutableFontCollection>([::NSMutableFontCollection fontCollectionWithDescriptors:cocoon::internal::to_array(query_descriptors, [](const FontDescriptor& e) -> id
-                                                                                                                     {
-                                                                                                                         return cocoon::internal::native<::NSFontDescriptor>(e);
-                                                                                                                     })]);
+                                                                                                                                                 {
+                                                                                                                                                     return cocoon::internal::native<::NSFontDescriptor>(e);
+                                                                                                                                                 })]);
     }
 
     MutableFontCollection MutableFontCollection::font_collection_with_locale(const Locale& locale)
@@ -49,25 +49,25 @@ namespace cocoon
     void MutableFontCollection::remove_query_for_descriptors(const std::vector<FontDescriptor>& descriptors) const
     {
         [cocoon::internal::ns<::NSMutableFontCollection>(this) removeQueryForDescriptors:cocoon::internal::to_array(descriptors, [](const FontDescriptor& e) -> id
-                                                                                        {
-                                                                                            return cocoon::internal::native<::NSFontDescriptor>(e);
-                                                                                        })];
+                                                                                                                    {
+                                                                                                                        return cocoon::internal::native<::NSFontDescriptor>(e);
+                                                                                                                    })];
     }
 
     std::vector<FontDescriptor> MutableFontCollection::exclusion_descriptors() const
     {
         return cocoon::internal::from_array<FontDescriptor>([cocoon::internal::ns<::NSMutableFontCollection>(this) exclusionDescriptors], [](id e) -> FontDescriptor
-                                              {
-                                                  return cocoon::internal::wrap<FontDescriptor>((::NSFontDescriptor*)e);
-                                              });
+                                                            {
+                                                                return cocoon::internal::wrap<FontDescriptor>((::NSFontDescriptor*)e);
+                                                            });
     }
 
     void MutableFontCollection::set_exclusion_descriptors(const std::vector<FontDescriptor>& value) const
     {
         [cocoon::internal::ns<::NSMutableFontCollection>(this) setExclusionDescriptors:cocoon::internal::to_array(value, [](const FontDescriptor& e) -> id
-                                                                                      {
-                                                                                          return cocoon::internal::native<::NSFontDescriptor>(e);
-                                                                                      })];
+                                                                                                                  {
+                                                                                                                      return cocoon::internal::native<::NSFontDescriptor>(e);
+                                                                                                                  })];
     }
 
     MutableFontCollection MutableFontCollection::font_collection_with_all_available_descriptors()
@@ -78,16 +78,16 @@ namespace cocoon
     std::vector<FontDescriptor> MutableFontCollection::query_descriptors() const
     {
         return cocoon::internal::from_array<FontDescriptor>([cocoon::internal::ns<::NSMutableFontCollection>(this) queryDescriptors], [](id e) -> FontDescriptor
-                                              {
-                                                  return cocoon::internal::wrap<FontDescriptor>((::NSFontDescriptor*)e);
-                                              });
+                                                            {
+                                                                return cocoon::internal::wrap<FontDescriptor>((::NSFontDescriptor*)e);
+                                                            });
     }
 
     void MutableFontCollection::set_query_descriptors(const std::vector<FontDescriptor>& value) const
     {
         [cocoon::internal::ns<::NSMutableFontCollection>(this) setQueryDescriptors:cocoon::internal::to_array(value, [](const FontDescriptor& e) -> id
-                                                                                  {
-                                                                                      return cocoon::internal::native<::NSFontDescriptor>(e);
-                                                                                  })];
+                                                                                                              {
+                                                                                                                  return cocoon::internal::native<::NSFontDescriptor>(e);
+                                                                                                              })];
     }
 }

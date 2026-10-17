@@ -1,5 +1,6 @@
 #pragma once
 
+#include "generated/availability.h"
 #include "generated/enums.h"
 #include "generated/structs.h"
 #include "object.h"
@@ -213,18 +214,24 @@ namespace cocoon
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_allowed_touch_types(TouchTypeMask value) const;
+#ifdef COCOON_MACOS_27
         /**
      * @brief Returns the `cancellableByScrollGesture` property of `NSGestureRecognizer`.
      * @details Causes the receiver to be cancelled when its enclosing scroll view's gesture recognizer begins. Defaults to 'false'.
      * @return The converted Objective-C result.
      */
         bool is_cancellable_by_scroll_gesture() const;
+#endif
+
+#ifdef COCOON_MACOS_27
         /**
      * @brief Sets the `cancellableByScrollGesture` property of `NSGestureRecognizer`.
      * @details Causes the receiver to be cancelled when its enclosing scroll view's gesture recognizer begins. Defaults to 'false'.
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_cancellable_by_scroll_gesture(bool value) const;
+#endif
+
         /**
      * @brief Returns the `delaysKeyEvents` property of `NSGestureRecognizer`.
      * @return The converted Objective-C result.

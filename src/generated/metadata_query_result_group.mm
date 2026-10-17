@@ -33,17 +33,17 @@ namespace cocoon
     std::vector<Object> MetadataQueryResultGroup::results() const
     {
         return cocoon::internal::from_array<Object>([cocoon::internal::ns<::NSMetadataQueryResultGroup>(this) results], [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     std::vector<MetadataQueryResultGroup> MetadataQueryResultGroup::subgroups() const
     {
         return cocoon::internal::from_array<MetadataQueryResultGroup>([cocoon::internal::ns<::NSMetadataQueryResultGroup>(this) subgroups], [](id e) -> MetadataQueryResultGroup
-                                                        {
-                                                            return cocoon::internal::wrap<MetadataQueryResultGroup>((::NSMetadataQueryResultGroup*)e);
-                                                        });
+                                                                      {
+                                                                          return cocoon::internal::wrap<MetadataQueryResultGroup>((::NSMetadataQueryResultGroup*)e);
+                                                                      });
     }
 
     Object MetadataQueryResultGroup::value() const

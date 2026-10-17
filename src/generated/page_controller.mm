@@ -162,17 +162,17 @@ namespace cocoon
     std::vector<Object> PageController::arranged_objects() const
     {
         return cocoon::internal::from_array<Object>([cocoon::internal::ns<::NSPageController>(this) arrangedObjects], [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     void PageController::set_arranged_objects(const std::vector<Object>& value) const
     {
         [cocoon::internal::ns<::NSPageController>(this) setArrangedObjects:cocoon::internal::to_array(value, [](const Object& e) -> id
-                                                                          {
-                                                                              return cocoon::internal::native_id(e);
-                                                                          })];
+                                                                                                      {
+                                                                                                          return cocoon::internal::native_id(e);
+                                                                                                      })];
     }
 
     std::int64_t PageController::selected_index() const

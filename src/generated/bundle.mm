@@ -56,25 +56,25 @@ namespace cocoon
     std::vector<URL> Bundle::ur_ls_for_resources_with_extension(const std::string& ext, const std::string& subpath) const
     {
         return cocoon::internal::from_array<URL>([cocoon::internal::ns<::NSBundle>(this) URLsForResourcesWithExtension:cocoon::internal::to(ext) subdirectory:cocoon::internal::to(subpath)], [](id e) -> URL
-                                   {
-                                       return cocoon::internal::wrap<URL>((::NSURL*)e);
-                                   });
+                                                 {
+                                                     return cocoon::internal::wrap<URL>((::NSURL*)e);
+                                                 });
     }
 
     std::vector<URL> Bundle::ur_ls_for_resources_with_extension(const std::string& ext, const std::string& subpath, const URL& bundle_url)
     {
         return cocoon::internal::from_array<URL>([::NSBundle URLsForResourcesWithExtension:cocoon::internal::to(ext) subdirectory:cocoon::internal::to(subpath) inBundleWithURL:cocoon::internal::native<::NSURL>(bundle_url)], [](id e) -> URL
-                                   {
-                                       return cocoon::internal::wrap<URL>((::NSURL*)e);
-                                   });
+                                                 {
+                                                     return cocoon::internal::wrap<URL>((::NSURL*)e);
+                                                 });
     }
 
     std::vector<URL> Bundle::ur_ls_for_resources_with_extension(const std::string& ext, const std::string& subpath, const std::string& localization_name) const
     {
         return cocoon::internal::from_array<URL>([cocoon::internal::ns<::NSBundle>(this) URLsForResourcesWithExtension:cocoon::internal::to(ext) subdirectory:cocoon::internal::to(subpath) localization:cocoon::internal::to(localization_name)], [](id e) -> URL
-                                   {
-                                       return cocoon::internal::wrap<URL>((::NSURL*)e);
-                                   });
+                                                 {
+                                                     return cocoon::internal::wrap<URL>((::NSURL*)e);
+                                                 });
     }
 
     Bundle Bundle::bundle_for_class(const std::string& a_class)
@@ -128,9 +128,9 @@ namespace cocoon
         NSArray* __v_top_level_objects = nil;
         auto __r = [cocoon::internal::ns<::NSBundle>(this) loadNibNamed:cocoon::internal::to(nib_name) owner:cocoon::internal::native_id(owner) topLevelObjects:&__v_top_level_objects];
         top_level_objects = cocoon::internal::from_array<Object>(__v_top_level_objects, [](id e) -> Object
-                                                   {
-                                                       return cocoon::internal::wrap<Object>(e);
-                                                   });
+                                                                 {
+                                                                     return cocoon::internal::wrap<Object>(e);
+                                                                 });
         return static_cast<bool>(__r);
     }
 
@@ -147,12 +147,12 @@ namespace cocoon
     std::string Bundle::localized_string_for_key(const std::string& key, const std::string& value, const std::string& table_name, const std::vector<std::string>& localizations) const
     {
         return cocoon::internal::from([cocoon::internal::ns<::NSBundle>(this) localizedStringForKey:cocoon::internal::to(key)
-                                                                  value:cocoon::internal::to(value)
-                                                                  table:cocoon::internal::to(table_name)
-                                                          localizations:cocoon::internal::to_array(localizations, [](const std::string& e) -> id
-                                                                                     {
-                                                                                         return cocoon::internal::to(e);
-                                                                                     })]);
+                                                                                              value:cocoon::internal::to(value)
+                                                                                              table:cocoon::internal::to(table_name)
+                                                                                      localizations:cocoon::internal::to_array(localizations, [](const std::string& e) -> id
+                                                                                                                               {
+                                                                                                                                   return cocoon::internal::to(e);
+                                                                                                                               })]);
     }
 
     Object Bundle::object_for_info_dictionary_key(const std::string& key) const
@@ -193,45 +193,45 @@ namespace cocoon
     std::vector<std::string> Bundle::paths_for_resources_of_type(const std::string& ext, const std::string& subpath) const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSBundle>(this) pathsForResourcesOfType:cocoon::internal::to(ext) inDirectory:cocoon::internal::to(subpath)], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::vector<std::string> Bundle::paths_for_resources_of_type(const std::string& ext, const std::string& subpath, const std::string& localization_name) const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSBundle>(this) pathsForResourcesOfType:cocoon::internal::to(ext) inDirectory:cocoon::internal::to(subpath) forLocalization:cocoon::internal::to(localization_name)], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::vector<std::string> Bundle::preferred_localizations_from_array(const std::vector<std::string>& localizations_array)
     {
         return cocoon::internal::from_array<std::string>([::NSBundle preferredLocalizationsFromArray:cocoon::internal::to_array(localizations_array, [](const std::string& e) -> id
-                                                                                                    {
-                                                                                                        return cocoon::internal::to(e);
-                                                                                                    })],
-                                           [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                                                                                                {
+                                                                                                                                    return cocoon::internal::to(e);
+                                                                                                                                })],
+                                                         [](id e) -> std::string
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::vector<std::string> Bundle::preferred_localizations_from_array(const std::vector<std::string>& localizations_array, const std::vector<std::string>& preferences_array)
     {
         return cocoon::internal::from_array<std::string>([::NSBundle preferredLocalizationsFromArray:cocoon::internal::to_array(localizations_array, [](const std::string& e) -> id
-                                                                                                    {
-                                                                                                        return cocoon::internal::to(e);
-                                                                                                    })
-                                                                        forPreferences:cocoon::internal::to_array(preferences_array, [](const std::string& e) -> id
-                                                                                                    {
-                                                                                                        return cocoon::internal::to(e);
-                                                                                                    })],
-                                           [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                                                                                                {
+                                                                                                                                    return cocoon::internal::to(e);
+                                                                                                                                })
+                                                                                      forPreferences:cocoon::internal::to_array(preferences_array, [](const std::string& e) -> id
+                                                                                                                                {
+                                                                                                                                    return cocoon::internal::to(e);
+                                                                                                                                })],
+                                                         [](id e) -> std::string
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     bool Bundle::preflight_and_return_error() const
@@ -253,17 +253,17 @@ namespace cocoon
     std::vector<Bundle> Bundle::all_bundles()
     {
         return cocoon::internal::from_array<Bundle>([::NSBundle allBundles], [](id e) -> Bundle
-                                      {
-                                          return cocoon::internal::wrap<Bundle>((::NSBundle*)e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Bundle>((::NSBundle*)e);
+                                                    });
     }
 
     std::vector<Bundle> Bundle::all_frameworks()
     {
         return cocoon::internal::from_array<Bundle>([::NSBundle allFrameworks], [](id e) -> Bundle
-                                      {
-                                          return cocoon::internal::wrap<Bundle>((::NSBundle*)e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Bundle>((::NSBundle*)e);
+                                                    });
     }
 
     URL Bundle::app_store_receipt_url() const
@@ -304,9 +304,9 @@ namespace cocoon
     std::vector<Number> Bundle::executable_architectures() const
     {
         return cocoon::internal::from_array<Number>([cocoon::internal::ns<::NSBundle>(this) executableArchitectures], [](id e) -> Number
-                                      {
-                                          return cocoon::internal::wrap<Number>((::NSNumber*)e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Number>((::NSNumber*)e);
+                                                    });
     }
 
     std::string Bundle::executable_path() const
@@ -322,13 +322,13 @@ namespace cocoon
     std::map<std::string, Object> Bundle::info_dictionary() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::NSBundle>(this) infoDictionary], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     bool Bundle::is_loaded() const
@@ -339,21 +339,21 @@ namespace cocoon
     std::vector<std::string> Bundle::localizations() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSBundle>(this) localizations], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::map<std::string, Object> Bundle::localized_info_dictionary() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::NSBundle>(this) localizedInfoDictionary], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     Bundle Bundle::main_bundle()
@@ -364,9 +364,9 @@ namespace cocoon
     std::vector<std::string> Bundle::preferred_localizations() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSBundle>(this) preferredLocalizations], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::string Bundle::principal_class() const

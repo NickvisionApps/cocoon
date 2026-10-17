@@ -23,9 +23,9 @@ namespace cocoon
     std::vector<std::string> MorphologyCustomPronoun::required_keys_for_language(const std::string& language)
     {
         return cocoon::internal::from_array<std::string>([::NSMorphologyCustomPronoun requiredKeysForLanguage:cocoon::internal::to(language)], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::string MorphologyCustomPronoun::object_form() const

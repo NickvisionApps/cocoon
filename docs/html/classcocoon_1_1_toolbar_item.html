@@ -20,6 +20,7 @@
   <td id="projectalign">
    <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
    </div>
+   <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
  </tr>
  </tbody>
@@ -208,7 +209,7 @@ Static Protected Member Functions</h2></td></tr>
 <p>Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.</p>
 <dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_toolbar_item.html">cocoon::ToolbarItem</a> item(<span class="stringliteral">&quot;share&quot;</span>, <span class="stringliteral">&quot;Share&quot;</span>, <span class="stringliteral">&quot;square.and.arrow.up&quot;</span>);</div>
 <div class="line">item.clicked().connect([] {});</div>
-<div class="ttc" id="aclasscocoon_1_1_toolbar_item_html"><div class="ttname"><a href="classcocoon_1_1_toolbar_item.html">cocoon::ToolbarItem</a></div><div class="ttdoc">A toolbar item (NSToolbarItem).</div><div class="ttdef"><b>Definition</b> toolbar_item.h:43</div></div>
+<div class="ttc" id="aclasscocoon_1_1_toolbar_item_html"><div class="ttname"><a href="classcocoon_1_1_toolbar_item.html">cocoon::ToolbarItem</a></div><div class="ttdoc">A toolbar item (NSToolbarItem).</div><div class="ttdef"><b>Definition</b> toolbar_item.h:44</div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_toolbar_item.html">cocoon::ToolbarItem</a> toolbar_item{};</div>
 <div class="line">toolbar_item.<a class="code hl_function" href="#ae512baf565b94291ced3c9e2270e88de">set_action</a>(<span class="stringliteral">&quot;text&quot;</span>);</div>
@@ -219,8 +220,8 @@ Static Protected Member Functions</h2></td></tr>
 <div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#a734cc6bb9bcca1c96f22bb37ad4d01a4">background_tint_color</a> = toolbar_item.<a class="code hl_function" href="#a734cc6bb9bcca1c96f22bb37ad4d01a4">background_tint_color</a>();</div>
 <div class="line">toolbar_item.<a class="code hl_function" href="#a63f826467fd9e080e7a259220fc22a83">validate</a>();</div>
 <div class="line">toolbar_item.<a class="code hl_function" href="#a0b61cb8b4f1b65772618c19d5131b35f">clicked</a>().connect([]() {});</div>
-<div class="ttc" id="aclasscocoon_1_1_color_html"><div class="ttname"><a href="classcocoon_1_1_color.html">cocoon::Color</a></div><div class="ttdoc">A color (NSColor).</div><div class="ttdef"><b>Definition</b> color.h:41</div></div>
-<div class="ttc" id="aclasscocoon_1_1_toolbar_item_html_a0b61cb8b4f1b65772618c19d5131b35f"><div class="ttname"><a href="#a0b61cb8b4f1b65772618c19d5131b35f">cocoon::ToolbarItem::clicked</a></div><div class="ttdeci">Signal&lt; ToolbarItem, void()&gt; clicked() const</div><div class="ttdoc">Signal clicked: connect a callback with clicked().connect(...).</div><div class="ttdef"><b>Definition</b> toolbar_item.h:314</div></div>
+<div class="ttc" id="aclasscocoon_1_1_color_html"><div class="ttname"><a href="classcocoon_1_1_color.html">cocoon::Color</a></div><div class="ttdoc">A color (NSColor).</div><div class="ttdef"><b>Definition</b> color.h:42</div></div>
+<div class="ttc" id="aclasscocoon_1_1_toolbar_item_html_a0b61cb8b4f1b65772618c19d5131b35f"><div class="ttname"><a href="#a0b61cb8b4f1b65772618c19d5131b35f">cocoon::ToolbarItem::clicked</a></div><div class="ttdeci">Signal&lt; ToolbarItem, void()&gt; clicked() const</div><div class="ttdoc">Signal clicked: connect a callback with clicked().connect(...).</div><div class="ttdef"><b>Definition</b> toolbar_item.h:315</div></div>
 <div class="ttc" id="aclasscocoon_1_1_toolbar_item_html_a0ff95a4b27b426ff8f0b32883350fc92"><div class="ttname"><a href="#a0ff95a4b27b426ff8f0b32883350fc92">cocoon::ToolbarItem::set_autovalidates</a></div><div class="ttdeci">void set_autovalidates(bool value) const</div><div class="ttdoc">Sets the autovalidates property of NSToolbarItem.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_toolbar_item_html_a1ca3dd84be43a2f8a7bebecaabff872a"><div class="ttname"><a href="#a1ca3dd84be43a2f8a7bebecaabff872a">cocoon::ToolbarItem::action</a></div><div class="ttdeci">std::string action() const</div><div class="ttdoc">Returns the action property of NSToolbarItem.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_toolbar_item_html_a63f826467fd9e080e7a259220fc22a83"><div class="ttname"><a href="#a63f826467fd9e080e7a259220fc22a83">cocoon::ToolbarItem::validate</a></div><div class="ttdeci">void validate() const</div><div class="ttdoc">Calls -[NSToolbarItem validate].</div></div>

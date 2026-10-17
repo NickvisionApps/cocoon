@@ -17,12 +17,12 @@ namespace cocoon
 
     PrintOperation PrintOperation::eps_operation_with_view(const View& view, const Rect& rect, const std::vector<std::uint8_t>& data)
     {
-        return cocoon::internal::wrap<PrintOperation>([::NSPrintOperation EPSOperationWithView:cocoon::internal::native<::NSView>(view) insideRect:cocoon::internal::to(rect) toData:cocoon::internal::to_data(data)]);
+        return cocoon::internal::wrap<PrintOperation>([::NSPrintOperation EPSOperationWithView:cocoon::internal::native<::NSView>(view) insideRect:cocoon::internal::to(rect) toData:cocoon::internal::to_mutable_data(data)]);
     }
 
     PrintOperation PrintOperation::eps_operation_with_view(const View& view, const Rect& rect, const std::vector<std::uint8_t>& data, const PrintInfo& print_info)
     {
-        return cocoon::internal::wrap<PrintOperation>([::NSPrintOperation EPSOperationWithView:cocoon::internal::native<::NSView>(view) insideRect:cocoon::internal::to(rect) toData:cocoon::internal::to_data(data) printInfo:cocoon::internal::native<::NSPrintInfo>(print_info)]);
+        return cocoon::internal::wrap<PrintOperation>([::NSPrintOperation EPSOperationWithView:cocoon::internal::native<::NSView>(view) insideRect:cocoon::internal::to(rect) toData:cocoon::internal::to_mutable_data(data) printInfo:cocoon::internal::native<::NSPrintInfo>(print_info)]);
     }
 
     PrintOperation PrintOperation::eps_operation_with_view(const View& view, const Rect& rect, const std::string& path, const PrintInfo& print_info)
@@ -32,12 +32,12 @@ namespace cocoon
 
     PrintOperation PrintOperation::pdf_operation_with_view(const View& view, const Rect& rect, const std::vector<std::uint8_t>& data)
     {
-        return cocoon::internal::wrap<PrintOperation>([::NSPrintOperation PDFOperationWithView:cocoon::internal::native<::NSView>(view) insideRect:cocoon::internal::to(rect) toData:cocoon::internal::to_data(data)]);
+        return cocoon::internal::wrap<PrintOperation>([::NSPrintOperation PDFOperationWithView:cocoon::internal::native<::NSView>(view) insideRect:cocoon::internal::to(rect) toData:cocoon::internal::to_mutable_data(data)]);
     }
 
     PrintOperation PrintOperation::pdf_operation_with_view(const View& view, const Rect& rect, const std::vector<std::uint8_t>& data, const PrintInfo& print_info)
     {
-        return cocoon::internal::wrap<PrintOperation>([::NSPrintOperation PDFOperationWithView:cocoon::internal::native<::NSView>(view) insideRect:cocoon::internal::to(rect) toData:cocoon::internal::to_data(data) printInfo:cocoon::internal::native<::NSPrintInfo>(print_info)]);
+        return cocoon::internal::wrap<PrintOperation>([::NSPrintOperation PDFOperationWithView:cocoon::internal::native<::NSView>(view) insideRect:cocoon::internal::to(rect) toData:cocoon::internal::to_mutable_data(data) printInfo:cocoon::internal::native<::NSPrintInfo>(print_info)]);
     }
 
     PrintOperation PrintOperation::pdf_operation_with_view(const View& view, const Rect& rect, const std::string& path, const PrintInfo& print_info)

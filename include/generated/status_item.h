@@ -1,5 +1,6 @@
 #pragma once
 
+#include "generated/availability.h"
 #include "generated/enums.h"
 #include "generated/structs.h"
 #include "object.h"
@@ -90,12 +91,15 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         StatusBarButton button() const;
+#ifdef COCOON_MACOS_27
         /**
      * @brief Returns the `expandedInterfaceSession` property of `NSStatusItem`.
      * @details A session object tracking the lifecycle of a currently showing expanded interface, if any. Will be set to a valid session object before invocation of -statusItem:didBeginExpandedInterfaceSession:, and cleared to nil before invocation of -statusItemDidEndExpandedInterfaceSession:animated: on the expandedInterfaceDelegate.
      * @return The converted Objective-C result.
      */
         StatusItemExpandedInterfaceSession expanded_interface_session() const;
+#endif
+
         /**
      * @brief Returns the `length` property of `NSStatusItem`.
      * @details The amount of space in the status bar that should be allocated to the receiver. \\c NSVariableStatusItemLength will adjust the length to the size of the status item's contents and \\c NSSquareStatusItemLength will keep the length the same as the status bar's height.
@@ -162,18 +166,25 @@ namespace cocoon
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_visible(bool value) const;
+#ifdef COCOON_MACOS_27
         /// @brief Signal for the delegate/data-source method behind `did_begin_expanded_interface_session`; connect a callback with `did_begin_expanded_interface_session().connect(...)`.
         Signal<StatusItem, void(StatusItemExpandedInterfaceSession)> did_begin_expanded_interface_session() const
         {
             return Signal<StatusItem, void(StatusItemExpandedInterfaceSession)>(handle(), "did_begin_expanded_interface_session");
         }
+#endif
+
+#ifdef COCOON_MACOS_27
         /// @brief Signal for the delegate/data-source method behind `did_end_expanded_interface_session_animated`; connect a callback with `did_end_expanded_interface_session_animated().connect(...)`.
         Signal<StatusItem, void(bool)> did_end_expanded_interface_session_animated() const
         {
             return Signal<StatusItem, void(bool)>(handle(), "did_end_expanded_interface_session_animated");
         }
+#endif
 
     protected:
+#ifdef COCOON_MACOS_27
         static void install_expanded_interface_delegate_delegate_(void* native);
+#endif
     };
 }

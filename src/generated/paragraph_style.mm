@@ -108,9 +108,9 @@ namespace cocoon
     std::vector<TextTab> ParagraphStyle::tab_stops() const
     {
         return cocoon::internal::from_array<TextTab>([cocoon::internal::ns<::NSParagraphStyle>(this) tabStops], [](id e) -> TextTab
-                                       {
-                                           return cocoon::internal::wrap<TextTab>((::NSTextTab*)e);
-                                       });
+                                                     {
+                                                         return cocoon::internal::wrap<TextTab>((::NSTextTab*)e);
+                                                     });
     }
 
     double ParagraphStyle::tail_indent() const
@@ -121,17 +121,17 @@ namespace cocoon
     std::vector<TextBlock> ParagraphStyle::text_blocks() const
     {
         return cocoon::internal::from_array<TextBlock>([cocoon::internal::ns<::NSParagraphStyle>(this) textBlocks], [](id e) -> TextBlock
-                                         {
-                                             return cocoon::internal::wrap<TextBlock>((::NSTextBlock*)e);
-                                         });
+                                                       {
+                                                           return cocoon::internal::wrap<TextBlock>((::NSTextBlock*)e);
+                                                       });
     }
 
     std::vector<TextList> ParagraphStyle::text_lists() const
     {
         return cocoon::internal::from_array<TextList>([cocoon::internal::ns<::NSParagraphStyle>(this) textLists], [](id e) -> TextList
-                                        {
-                                            return cocoon::internal::wrap<TextList>((::NSTextList*)e);
-                                        });
+                                                      {
+                                                          return cocoon::internal::wrap<TextList>((::NSTextList*)e);
+                                                      });
     }
 
     float ParagraphStyle::tightening_factor_for_truncation() const

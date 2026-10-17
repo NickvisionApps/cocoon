@@ -18,9 +18,9 @@
         return {};
     }
     auto __r = cocoon::Signal<cocoon::KeyedUnarchiver, std::string(std::string, std::vector<std::string>)>::emit((__bridge void*)strongHost, "unarchiver_cannot_decode_object_of_class_name_original_classes", cocoon::internal::from(name), cocoon::internal::from_array<std::string>(classNames, [](id e) -> std::string
-                                                                                                                                                                                                                                                           {
-                                                                                                                                                                                                                                                               return cocoon::internal::from((NSString*)e);
-                                                                                                                                                                                                                                                           }));
+                                                                                                                                                                                                                                                                                       {
+                                                                                                                                                                                                                                                                                           return cocoon::internal::from((NSString*)e);
+                                                                                                                                                                                                                                                                                       }));
     return NSClassFromString(cocoon::internal::to(__r));
 }
 
@@ -96,15 +96,15 @@
 namespace cocoon
 {
     KeyedUnarchiver::KeyedUnarchiver(const std::vector<std::uint8_t>& data) : KeyedUnarchiver(Adopt{cocoon::internal::retain([&]() -> id
-                                                                                                               {
-                                                                                                                   NSError* __error = nil;
-                                                                                                                   id __r = [[::NSKeyedUnarchiver alloc] initForReadingFromData:cocoon::internal::to_data(data) error:&__error];
-                                                                                                                   if (!__r && __error)
-                                                                                                                   {
-                                                                                                                       throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
-                                                                                                                   }
-                                                                                                                   return __r;
-                                                                                                               }())})
+                                                                                                                             {
+                                                                                                                                 NSError* __error = nil;
+                                                                                                                                 id __r = [[::NSKeyedUnarchiver alloc] initForReadingFromData:cocoon::internal::to_data(data) error:&__error];
+                                                                                                                                 if (!__r && __error)
+                                                                                                                                 {
+                                                                                                                                     throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
+                                                                                                                                 }
+                                                                                                                                 return __r;
+                                                                                                                             }())})
     {
         KeyedUnarchiver::install_delegate_delegate_(handle());
     }
@@ -182,27 +182,6 @@ namespace cocoon
         [cocoon::internal::ns<::NSKeyedUnarchiver>(this) setClass:NSClassFromString(cocoon::internal::to(cls)) forClassName:cocoon::internal::to(coded_name)];
     }
 
-    Object KeyedUnarchiver::unarchive_object_with_data(const std::vector<std::uint8_t>& data)
-    {
-        return cocoon::internal::wrap<Object>([::NSKeyedUnarchiver unarchiveObjectWithData:cocoon::internal::to_data(data)]);
-    }
-
-    Object KeyedUnarchiver::unarchive_object_with_file(const std::string& path)
-    {
-        return cocoon::internal::wrap<Object>([::NSKeyedUnarchiver unarchiveObjectWithFile:cocoon::internal::to(path)]);
-    }
-
-    Object KeyedUnarchiver::unarchive_top_level_object_with_data(const std::vector<std::uint8_t>& data)
-    {
-        NSError* __error = nil;
-        auto __r = [::NSKeyedUnarchiver unarchiveTopLevelObjectWithData:cocoon::internal::to_data(data) error:&__error];
-        if (__error)
-        {
-            throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
-        }
-        return cocoon::internal::wrap<Object>(__r);
-    }
-
     std::vector<Object> KeyedUnarchiver::unarchived_array_of_objects_of_class(const std::string& cls, const std::vector<std::uint8_t>& data)
     {
         NSError* __error = nil;
@@ -212,18 +191,18 @@ namespace cocoon
             throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
         }
         return cocoon::internal::from_array<Object>(__r, [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     std::vector<Object> KeyedUnarchiver::unarchived_array_of_objects_of_classes(const std::vector<std::string>& classes, const std::vector<std::uint8_t>& data)
     {
         NSError* __error = nil;
         auto __r = [::NSKeyedUnarchiver unarchivedArrayOfObjectsOfClasses:[NSSet setWithArray:cocoon::internal::to_array(classes, [](const std::string& e) -> id
-                                                                                                           {
-                                                                                                               return NSClassFromString(cocoon::internal::to(e));
-                                                                                                           })]
+                                                                                                                         {
+                                                                                                                             return NSClassFromString(cocoon::internal::to(e));
+                                                                                                                         })]
                                                                  fromData:cocoon::internal::to_data(data)
                                                                     error:&__error];
         if (__error)
@@ -231,9 +210,9 @@ namespace cocoon
             throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
         }
         return cocoon::internal::from_array<Object>(__r, [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     std::vector<std::pair<Object, Object>> KeyedUnarchiver::unarchived_dictionary_with_keys_of_class(const std::string& key_cls, const std::string& value_cls, const std::vector<std::uint8_t>& data)
@@ -245,26 +224,26 @@ namespace cocoon
             throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
         }
         return cocoon::internal::from_dictionary<std::vector<std::pair<Object, Object>>>(__r, [](id k) -> Object
-                                                                           {
-                                                                               return cocoon::internal::wrap<Object>(k);
-                                                                           },
-                                                                           [](id v) -> Object
-                                                                           {
-                                                                               return cocoon::internal::wrap<Object>(v);
-                                                                           });
+                                                                                         {
+                                                                                             return cocoon::internal::wrap<Object>(k);
+                                                                                         },
+                                                                                         [](id v) -> Object
+                                                                                         {
+                                                                                             return cocoon::internal::wrap<Object>(v);
+                                                                                         });
     }
 
     std::vector<std::pair<Object, Object>> KeyedUnarchiver::unarchived_dictionary_with_keys_of_classes(const std::vector<std::string>& key_classes, const std::vector<std::string>& value_classes, const std::vector<std::uint8_t>& data)
     {
         NSError* __error = nil;
         auto __r = [::NSKeyedUnarchiver unarchivedDictionaryWithKeysOfClasses:[NSSet setWithArray:cocoon::internal::to_array(key_classes, [](const std::string& e) -> id
-                                                                                                               {
-                                                                                                                   return NSClassFromString(cocoon::internal::to(e));
-                                                                                                               })]
+                                                                                                                             {
+                                                                                                                                 return NSClassFromString(cocoon::internal::to(e));
+                                                                                                                             })]
                                                              objectsOfClasses:[NSSet setWithArray:cocoon::internal::to_array(value_classes, [](const std::string& e) -> id
-                                                                                                               {
-                                                                                                                   return NSClassFromString(cocoon::internal::to(e));
-                                                                                                               })]
+                                                                                                                             {
+                                                                                                                                 return NSClassFromString(cocoon::internal::to(e));
+                                                                                                                             })]
                                                                      fromData:cocoon::internal::to_data(data)
                                                                         error:&__error];
         if (__error)
@@ -272,13 +251,13 @@ namespace cocoon
             throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
         }
         return cocoon::internal::from_dictionary<std::vector<std::pair<Object, Object>>>(__r, [](id k) -> Object
-                                                                           {
-                                                                               return cocoon::internal::wrap<Object>(k);
-                                                                           },
-                                                                           [](id v) -> Object
-                                                                           {
-                                                                               return cocoon::internal::wrap<Object>(v);
-                                                                           });
+                                                                                         {
+                                                                                             return cocoon::internal::wrap<Object>(k);
+                                                                                         },
+                                                                                         [](id v) -> Object
+                                                                                         {
+                                                                                             return cocoon::internal::wrap<Object>(v);
+                                                                                         });
     }
 
     Object KeyedUnarchiver::unarchived_object_of_class(const std::string& cls, const std::vector<std::uint8_t>& data)
@@ -296,9 +275,9 @@ namespace cocoon
     {
         NSError* __error = nil;
         auto __r = [::NSKeyedUnarchiver unarchivedObjectOfClasses:[NSSet setWithArray:cocoon::internal::to_array(classes, [](const std::string& e) -> id
-                                                                                                   {
-                                                                                                       return NSClassFromString(cocoon::internal::to(e));
-                                                                                                   })]
+                                                                                                                 {
+                                                                                                                     return NSClassFromString(cocoon::internal::to(e));
+                                                                                                                 })]
                                                          fromData:cocoon::internal::to_data(data)
                                                             error:&__error];
         if (__error)

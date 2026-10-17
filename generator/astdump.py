@@ -86,6 +86,33 @@ def _macro_text(loc):
     return match.group(1)
 
 
+@functools.lru_cache(maxsize=None)
+def _header_text():
+    return "\n".join(path.read_text(errors="replace") for directory in HEADER_DIRS for path in sorted(directory.glob("*.h")))
+
+
+@functools.lru_cache(maxsize=None)
+def parameter_qualifiers(selector):
+    parts = [part for part in selector.split(":") if part]
+    if not parts or ":" not in selector:
+        return []
+    pattern = r"[^;]*?".join(r"\b" + re.escape(part) + r"\s*:\s*\(\s*((?:inout|in|out|bycopy|byref|oneway)\b)?" for part in parts)
+    match = re.search(pattern, _header_text())
+    return [group or "" for group in match.groups()] if match else [""] * len(parts)
+
+
+@functools.lru_cache(maxsize=None)
+def type_introduced(name):
+    text = _header_text()
+    match = re.search(r"@(?:interface|protocol)\s+" + re.escape(name) + r"\b", text)
+    if not match:
+        return None
+    window = text[max(0, match.start() - 300):match.start()]
+    window = window[max(window.rfind("@end"), window.rfind(";")) + 1:]
+    found = re.findall(r"macosx?\(\s*([\d._]+)", window)
+    return _version(found[-1]) if found else None
+
+
 def _version(text):
     match = re.match(r"\s*(\d+)(?:[._](\d+))?", text or "")
     if not match:
@@ -118,7 +145,7 @@ def availability(node):
                 if name.startswith("NS_UNAVAILABLE") or "macos" in text:
                     result.unavailable = True
             elif "DEPRECATED" in name and "SWIFT" not in name:
-                macos = re.search(r"macos\(\s*([\d._]+)\s*,\s*([\w._]+)", text)
+                macos = re.search(r"macosx?\(\s*([\d._]+)\s*,\s*([\w._]+)", text)
                 if macos:
                     end = _version(macos.group(2))
                     if end is not None and end <= 26.0:
@@ -130,7 +157,7 @@ def availability(node):
                         if end is not None and end <= 26.0:
                             result.deprecated = True
             elif "AVAILABLE" in name and "SWIFT" not in name:
-                macos = re.search(r"macos\(\s*([\d._]+)", text)
+                macos = re.search(r"macosx?\(\s*([\d._]+)", text)
                 if macos:
                     result.introduced = _version(macos.group(1))
                 elif name.startswith("NS_AVAILABLE_MAC"):

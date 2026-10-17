@@ -4,13 +4,13 @@
 namespace cocoon
 {
     FileWrapper::FileWrapper(const std::map<std::string, FileWrapper>& children_by_preferred_name) : FileWrapper(Adopt{cocoon::internal::retain([[::NSFileWrapper alloc] initDirectoryWithFileWrappers:cocoon::internal::to_dictionary(children_by_preferred_name, [](const std::string& k) -> id
-                                                                                                                                                                                                           {
-                                                                                                                                                                                                               return cocoon::internal::to(k);
-                                                                                                                                                                                                           },
-                                                                                                                                                                                                           [](const FileWrapper& v) -> id
-                                                                                                                                                                                                           {
-                                                                                                                                                                                                               return cocoon::internal::native<::NSFileWrapper>(v);
-                                                                                                                                                                                                           })])})
+                                                                                                                                                                                                                                       {
+                                                                                                                                                                                                                                           return cocoon::internal::to(k);
+                                                                                                                                                                                                                                       },
+                                                                                                                                                                                                                                       [](const FileWrapper& v) -> id
+                                                                                                                                                                                                                                       {
+                                                                                                                                                                                                                                           return cocoon::internal::native<::NSFileWrapper>(v);
+                                                                                                                                                                                                                                       })])})
     {
     }
 
@@ -23,15 +23,15 @@ namespace cocoon
     }
 
     FileWrapper::FileWrapper(const URL& url, FileWrapperReadingOptions options) : FileWrapper(Adopt{cocoon::internal::retain([&]() -> id
-                                                                                                               {
-                                                                                                                   NSError* __error = nil;
-                                                                                                                   id __r = [[::NSFileWrapper alloc] initWithURL:cocoon::internal::native<::NSURL>(url) options:static_cast<::NSFileWrapperReadingOptions>(options) error:&__error];
-                                                                                                                   if (!__r && __error)
-                                                                                                                   {
-                                                                                                                       throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
-                                                                                                                   }
-                                                                                                                   return __r;
-                                                                                                               }())})
+                                                                                                                             {
+                                                                                                                                 NSError* __error = nil;
+                                                                                                                                 id __r = [[::NSFileWrapper alloc] initWithURL:cocoon::internal::native<::NSURL>(url) options:static_cast<::NSFileWrapperReadingOptions>(options) error:&__error];
+                                                                                                                                 if (!__r && __error)
+                                                                                                                                 {
+                                                                                                                                     throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
+                                                                                                                                 }
+                                                                                                                                 return __r;
+                                                                                                                             }())})
     {
     }
 
@@ -102,37 +102,37 @@ namespace cocoon
     std::map<std::string, Object> FileWrapper::file_attributes() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::NSFileWrapper>(this) fileAttributes], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     void FileWrapper::set_file_attributes(const std::map<std::string, Object>& value) const
     {
         [cocoon::internal::ns<::NSFileWrapper>(this) setFileAttributes:cocoon::internal::to_dictionary(value, [](const std::string& k) -> id
-                                                                           {
-                                                                               return cocoon::internal::to(k);
-                                                                           },
-                                                                           [](const Object& v) -> id
-                                                                           {
-                                                                               return cocoon::internal::native_id(v);
-                                                                           })];
+                                                                                                       {
+                                                                                                           return cocoon::internal::to(k);
+                                                                                                       },
+                                                                                                       [](const Object& v) -> id
+                                                                                                       {
+                                                                                                           return cocoon::internal::native_id(v);
+                                                                                                       })];
     }
 
     std::map<std::string, FileWrapper> FileWrapper::file_wrappers() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, FileWrapper>>([cocoon::internal::ns<::NSFileWrapper>(this) fileWrappers], [](id k) -> std::string
-                                                                       {
-                                                                           return cocoon::internal::from((NSString*)k);
-                                                                       },
-                                                                       [](id v) -> FileWrapper
-                                                                       {
-                                                                           return cocoon::internal::wrap<FileWrapper>((::NSFileWrapper*)v);
-                                                                       });
+                                                                                     {
+                                                                                         return cocoon::internal::from((NSString*)k);
+                                                                                     },
+                                                                                     [](id v) -> FileWrapper
+                                                                                     {
+                                                                                         return cocoon::internal::wrap<FileWrapper>((::NSFileWrapper*)v);
+                                                                                     });
     }
 
     std::string FileWrapper::filename() const

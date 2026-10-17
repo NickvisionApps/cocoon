@@ -28,22 +28,22 @@ namespace cocoon
     std::vector<Object> Coder::decode_array_of_objects_of_class(const std::string& cls, const std::string& key) const
     {
         return cocoon::internal::from_array<Object>([cocoon::internal::ns<::NSCoder>(this) decodeArrayOfObjectsOfClass:NSClassFromString(cocoon::internal::to(cls)) forKey:cocoon::internal::to(key)], [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     std::vector<Object> Coder::decode_array_of_objects_of_classes(const std::vector<std::string>& classes, const std::string& key) const
     {
         return cocoon::internal::from_array<Object>([cocoon::internal::ns<::NSCoder>(this) decodeArrayOfObjectsOfClasses:[NSSet setWithArray:cocoon::internal::to_array(classes, [](const std::string& e) -> id
-                                                                                                                              {
-                                                                                                                                  return NSClassFromString(cocoon::internal::to(e));
-                                                                                                                              })]
-                                                                                      forKey:cocoon::internal::to(key)],
-                                      [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                                                                                                                                        {
+                                                                                                                                                                            return NSClassFromString(cocoon::internal::to(e));
+                                                                                                                                                                        })]
+                                                                                                                  forKey:cocoon::internal::to(key)],
+                                                    [](id e) -> Object
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     bool Coder::decode_bool_for_key(const std::string& key) const
@@ -79,34 +79,34 @@ namespace cocoon
     std::vector<std::pair<Object, Object>> Coder::decode_dictionary_with_keys_of_class(const std::string& key_cls, const std::string& object_cls, const std::string& key) const
     {
         return cocoon::internal::from_dictionary<std::vector<std::pair<Object, Object>>>([cocoon::internal::ns<::NSCoder>(this) decodeDictionaryWithKeysOfClass:NSClassFromString(cocoon::internal::to(key_cls)) objectsOfClass:NSClassFromString(cocoon::internal::to(object_cls)) forKey:cocoon::internal::to(key)], [](id k) -> Object
-                                                                           {
-                                                                               return cocoon::internal::wrap<Object>(k);
-                                                                           },
-                                                                           [](id v) -> Object
-                                                                           {
-                                                                               return cocoon::internal::wrap<Object>(v);
-                                                                           });
+                                                                                         {
+                                                                                             return cocoon::internal::wrap<Object>(k);
+                                                                                         },
+                                                                                         [](id v) -> Object
+                                                                                         {
+                                                                                             return cocoon::internal::wrap<Object>(v);
+                                                                                         });
     }
 
     std::vector<std::pair<Object, Object>> Coder::decode_dictionary_with_keys_of_classes(const std::vector<std::string>& key_classes, const std::vector<std::string>& object_classes, const std::string& key) const
     {
         return cocoon::internal::from_dictionary<std::vector<std::pair<Object, Object>>>([cocoon::internal::ns<::NSCoder>(this) decodeDictionaryWithKeysOfClasses:[NSSet setWithArray:cocoon::internal::to_array(key_classes, [](const std::string& e) -> id
-                                                                                                                                                                       {
-                                                                                                                                                                           return NSClassFromString(cocoon::internal::to(e));
-                                                                                                                                                                       })]
-                                                                                                                     objectsOfClasses:[NSSet setWithArray:cocoon::internal::to_array(object_classes, [](const std::string& e) -> id
-                                                                                                                                                                       {
-                                                                                                                                                                           return NSClassFromString(cocoon::internal::to(e));
-                                                                                                                                                                       })]
-                                                                                                                               forKey:cocoon::internal::to(key)],
-                                                                           [](id k) -> Object
-                                                                           {
-                                                                               return cocoon::internal::wrap<Object>(k);
-                                                                           },
-                                                                           [](id v) -> Object
-                                                                           {
-                                                                               return cocoon::internal::wrap<Object>(v);
-                                                                           });
+                                                                                                                                                                                                                 {
+                                                                                                                                                                                                                     return NSClassFromString(cocoon::internal::to(e));
+                                                                                                                                                                                                                 })]
+                                                                                                                                                 objectsOfClasses:[NSSet setWithArray:cocoon::internal::to_array(object_classes, [](const std::string& e) -> id
+                                                                                                                                                                                                                 {
+                                                                                                                                                                                                                     return NSClassFromString(cocoon::internal::to(e));
+                                                                                                                                                                                                                 })]
+                                                                                                                                                           forKey:cocoon::internal::to(key)],
+                                                                                         [](id k) -> Object
+                                                                                         {
+                                                                                             return cocoon::internal::wrap<Object>(k);
+                                                                                         },
+                                                                                         [](id v) -> Object
+                                                                                         {
+                                                                                             return cocoon::internal::wrap<Object>(v);
+                                                                                         });
     }
 
     double Coder::decode_double_for_key(const std::string& key) const
@@ -157,10 +157,10 @@ namespace cocoon
     Object Coder::decode_object_of_classes(const std::vector<std::string>& classes, const std::string& key) const
     {
         return cocoon::internal::wrap<Object>([cocoon::internal::ns<::NSCoder>(this) decodeObjectOfClasses:[NSSet setWithArray:cocoon::internal::to_array(classes, [](const std::string& e) -> id
-                                                                                                                {
-                                                                                                                    return NSClassFromString(cocoon::internal::to(e));
-                                                                                                                })]
-                                                                        forKey:cocoon::internal::to(key)]);
+                                                                                                                                                          {
+                                                                                                                                                              return NSClassFromString(cocoon::internal::to(e));
+                                                                                                                                                          })]
+                                                                                                    forKey:cocoon::internal::to(key)]);
     }
 
     Point Coder::decode_point() const
@@ -240,11 +240,11 @@ namespace cocoon
     {
         NSError* __error = nil;
         auto __r = [cocoon::internal::ns<::NSCoder>(this) decodeTopLevelObjectOfClasses:[NSSet setWithArray:cocoon::internal::to_array(classes, [](const std::string& e) -> id
-                                                                                                           {
-                                                                                                               return NSClassFromString(cocoon::internal::to(e));
-                                                                                                           })]
-                                                                   forKey:cocoon::internal::to(key)
-                                                                    error:&__error];
+                                                                                                                                       {
+                                                                                                                                           return NSClassFromString(cocoon::internal::to(e));
+                                                                                                                                       })]
+                                                                                 forKey:cocoon::internal::to(key)
+                                                                                  error:&__error];
         if (__error)
         {
             throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
@@ -405,9 +405,9 @@ namespace cocoon
     std::vector<std::string> Coder::allowed_classes() const
     {
         return cocoon::internal::from_array<std::string>([[cocoon::internal::ns<::NSCoder>(this) allowedClasses] allObjects], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from(NSStringFromClass(e));
-                                           });
+                                                         {
+                                                             return cocoon::internal::from(NSStringFromClass(e));
+                                                         });
     }
 
     bool Coder::allows_keyed_coding() const

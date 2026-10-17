@@ -18,9 +18,9 @@ namespace cocoon
     std::vector<Object> UbiquitousKeyValueStore::array_for_key(const std::string& a_key) const
     {
         return cocoon::internal::from_array<Object>([cocoon::internal::ns<::NSUbiquitousKeyValueStore>(this) arrayForKey:cocoon::internal::to(a_key)], [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     bool UbiquitousKeyValueStore::bool_for_key(const std::string& a_key) const
@@ -36,13 +36,13 @@ namespace cocoon
     std::map<std::string, Object> UbiquitousKeyValueStore::dictionary_for_key(const std::string& a_key) const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::NSUbiquitousKeyValueStore>(this) dictionaryForKey:cocoon::internal::to(a_key)], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     double UbiquitousKeyValueStore::double_for_key(const std::string& a_key) const
@@ -68,10 +68,10 @@ namespace cocoon
     void UbiquitousKeyValueStore::set_array(const std::vector<Object>& an_array, const std::string& a_key) const
     {
         [cocoon::internal::ns<::NSUbiquitousKeyValueStore>(this) setArray:cocoon::internal::to_array(an_array, [](const Object& e) -> id
-                                                                         {
-                                                                             return cocoon::internal::native_id(e);
-                                                                         })
-                                                     forKey:cocoon::internal::to(a_key)];
+                                                                                                     {
+                                                                                                         return cocoon::internal::native_id(e);
+                                                                                                     })
+                                                                   forKey:cocoon::internal::to(a_key)];
     }
 
     void UbiquitousKeyValueStore::set_bool(bool value, const std::string& a_key) const
@@ -87,14 +87,14 @@ namespace cocoon
     void UbiquitousKeyValueStore::set_dictionary(const std::map<std::string, Object>& a_dictionary, const std::string& a_key) const
     {
         [cocoon::internal::ns<::NSUbiquitousKeyValueStore>(this) setDictionary:cocoon::internal::to_dictionary(a_dictionary, [](const std::string& k) -> id
-                                                                                   {
-                                                                                       return cocoon::internal::to(k);
-                                                                                   },
-                                                                                   [](const Object& v) -> id
-                                                                                   {
-                                                                                       return cocoon::internal::native_id(v);
-                                                                                   })
-                                                          forKey:cocoon::internal::to(a_key)];
+                                                                                                               {
+                                                                                                                   return cocoon::internal::to(k);
+                                                                                                               },
+                                                                                                               [](const Object& v) -> id
+                                                                                                               {
+                                                                                                                   return cocoon::internal::native_id(v);
+                                                                                                               })
+                                                                        forKey:cocoon::internal::to(a_key)];
     }
 
     void UbiquitousKeyValueStore::set_double(double value, const std::string& a_key) const
@@ -135,12 +135,12 @@ namespace cocoon
     std::map<std::string, Object> UbiquitousKeyValueStore::dictionary_representation() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::NSUbiquitousKeyValueStore>(this) dictionaryRepresentation], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 }

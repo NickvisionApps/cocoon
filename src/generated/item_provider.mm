@@ -60,15 +60,15 @@ namespace cocoon
     void ItemProvider::load_item_for_type_identifier(const std::string& type_identifier, const std::vector<std::pair<Object, Object>>& options, std::function<void(Object, Error)> completion_handler) const
     {
         [cocoon::internal::ns<::NSItemProvider>(this) loadItemForTypeIdentifier:cocoon::internal::to(type_identifier)
-                                                          options:cocoon::internal::to_dictionary(options, [](const Object& k) -> id
-                                                                                    {
-                                                                                        return cocoon::internal::native_id(k);
-                                                                                    },
-                                                                                    [](const Object& v) -> id
-                                                                                    {
-                                                                                        return cocoon::internal::native_id(v);
-                                                                                    })
-                                                completionHandler:(completion_handler ? (::NSItemProviderCompletionHandler) ^ void(id a172_0, ::NSError * a172_1) { completion_handler(cocoon::internal::wrap<Object>(a172_0), cocoon::internal::wrap<Error>(a172_1)); } : (::NSItemProviderCompletionHandler)nil)];
+                                                                        options:cocoon::internal::to_dictionary(options, [](const Object& k) -> id
+                                                                                                                {
+                                                                                                                    return cocoon::internal::native_id(k);
+                                                                                                                },
+                                                                                                                [](const Object& v) -> id
+                                                                                                                {
+                                                                                                                    return cocoon::internal::native_id(v);
+                                                                                                                })
+                                                              completionHandler:(completion_handler ? (::NSItemProviderCompletionHandler) ^ void(id a172_0, ::NSError * a172_1) { completion_handler(cocoon::internal::wrap<Object>(a172_0), cocoon::internal::wrap<Error>(a172_1)); } : (::NSItemProviderCompletionHandler)nil)];
     }
 
     Progress ItemProvider::load_object_of_class(const std::string& a_class, std::function<void(Object, Error)> completion_handler) const
@@ -79,14 +79,14 @@ namespace cocoon
     void ItemProvider::load_preview_image_with_options(const std::vector<std::pair<Object, Object>>& options, std::function<void(Object, Error)> completion_handler) const
     {
         [cocoon::internal::ns<::NSItemProvider>(this) loadPreviewImageWithOptions:cocoon::internal::to_dictionary(options, [](const Object& k) -> id
-                                                                                      {
-                                                                                          return cocoon::internal::native_id(k);
-                                                                                      },
-                                                                                      [](const Object& v) -> id
-                                                                                      {
-                                                                                          return cocoon::internal::native_id(v);
-                                                                                      })
-                                                  completionHandler:(completion_handler ? (::NSItemProviderCompletionHandler) ^ void(id a174_0, ::NSError * a174_1) { completion_handler(cocoon::internal::wrap<Object>(a174_0), cocoon::internal::wrap<Error>(a174_1)); } : (::NSItemProviderCompletionHandler)nil)];
+                                                                                                                  {
+                                                                                                                      return cocoon::internal::native_id(k);
+                                                                                                                  },
+                                                                                                                  [](const Object& v) -> id
+                                                                                                                  {
+                                                                                                                      return cocoon::internal::native_id(v);
+                                                                                                                  })
+                                                                completionHandler:(completion_handler ? (::NSItemProviderCompletionHandler) ^ void(id a174_0, ::NSError * a174_1) { completion_handler(cocoon::internal::wrap<Object>(a174_0), cocoon::internal::wrap<Error>(a174_1)); } : (::NSItemProviderCompletionHandler)nil)];
     }
 
     void ItemProvider::register_cloud_kit_share(const Object& share, const Object& container) const
@@ -97,17 +97,17 @@ namespace cocoon
     void ItemProvider::register_cloud_kit_share_with_preparation_handler(std::function<void(std::function<void(Object, Object, Error)>)> preparation_handler) const
     {
         [cocoon::internal::ns<::NSItemProvider>(this) registerCloudKitShareWithPreparationHandler:(preparation_handler ? (void (^)(void (^)(::CKShare*, ::CKContainer*, ::NSError*))) ^ void(id a175_0) { preparation_handler([&]() -> std::function<void(Object, Object, Error)>
-                                                                                                                                                                                                                {
-                                                                                                                                                                                                                    auto blk = (void (^)(::CKShare*, ::CKContainer*, ::NSError*))(a175_0);
-                                                                                                                                                                                                                    if (!blk)
-                                                                                                                                                                                                                    {
-                                                                                                                                                                                                                        return {};
-                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                    return [blk](Object a176_0, Object a176_1, Error a176_2) -> void
-                                                                                                                                                                                                                    {
-                                                                                                                                                                                                                        blk(cocoon::internal::native_id(a176_0), cocoon::internal::native_id(a176_1), cocoon::internal::native<::NSError>(a176_2));
-                                                                                                                                                                                                                    };
-                                                                                                                                                                                                                }()); } : (void (^)(void (^)(::CKShare*, ::CKContainer*, ::NSError*)))nil)];
+                                                                                                                                                                                                                              {
+                                                                                                                                                                                                                                  auto blk = (void (^)(::CKShare*, ::CKContainer*, ::NSError*))(a175_0);
+                                                                                                                                                                                                                                  if (!blk)
+                                                                                                                                                                                                                                  {
+                                                                                                                                                                                                                                      return {};
+                                                                                                                                                                                                                                  }
+                                                                                                                                                                                                                                  return [blk](Object a176_0, Object a176_1, Error a176_2) -> void
+                                                                                                                                                                                                                                  {
+                                                                                                                                                                                                                                      blk(cocoon::internal::native_id(a176_0), cocoon::internal::native_id(a176_1), cocoon::internal::native<::NSError>(a176_2));
+                                                                                                                                                                                                                                  };
+                                                                                                                                                                                                                              }()); } : (void (^)(void (^)(::CKShare*, ::CKContainer*, ::NSError*)))nil)];
     }
 
     void ItemProvider::register_data_representation_for_type_identifier(const std::string& type_identifier, ItemProviderRepresentationVisibility visibility, std::function<Progress(std::function<void(std::vector<std::uint8_t>, Error)>)> load_handler) const
@@ -123,25 +123,25 @@ namespace cocoon
     void ItemProvider::register_item_for_type_identifier(const std::string& type_identifier, std::function<void(std::function<void(Object, Error)>, std::string, std::vector<std::pair<Object, Object>>)> load_handler) const
     {
         [cocoon::internal::ns<::NSItemProvider>(this) registerItemForTypeIdentifier:cocoon::internal::to(type_identifier) loadHandler:(load_handler ? (::NSItemProviderLoadHandler) ^ void(id a181_0, Class a181_1, NSDictionary * a181_2) { load_handler([&]() -> std::function<void(Object, Error)>
-                                                                                                                                                                                                                              {
-                                                                                                                                                                                                                                  auto blk = (::NSItemProviderCompletionHandler)(a181_0);
-                                                                                                                                                                                                                                  if (!blk)
-                                                                                                                                                                                                                                  {
-                                                                                                                                                                                                                                      return {};
-                                                                                                                                                                                                                                  }
-                                                                                                                                                                                                                                  return [blk](Object a182_0, Error a182_1) -> void
-                                                                                                                                                                                                                                  {
-                                                                                                                                                                                                                                      blk(cocoon::internal::native_id(a182_0), cocoon::internal::native<::NSError>(a182_1));
-                                                                                                                                                                                                                                  };
-                                                                                                                                                                                                                              }(),
-                                                                                                                                                                                                                              cocoon::internal::from(NSStringFromClass(a181_1)), cocoon::internal::from_dictionary<std::vector<std::pair<Object, Object>>>(a181_2, [](id k) -> Object
-                                                                                                                                                                                                                                                                                                                               {
-                                                                                                                                                                                                                                                                                                                                   return cocoon::internal::wrap<Object>(k);
-                                                                                                                                                                                                                                                                                                                               },
-                                                                                                                                                                                                                                                                                                                               [](id v) -> Object
-                                                                                                                                                                                                                                                                                                                               {
-                                                                                                                                                                                                                                                                                                                                   return cocoon::internal::wrap<Object>(v);
-                                                                                                                                                                                                                                                                                                                               })); } : (::NSItemProviderLoadHandler)nil)];
+                                                                                                                                                                                                                                                          {
+                                                                                                                                                                                                                                                              auto blk = (::NSItemProviderCompletionHandler)(a181_0);
+                                                                                                                                                                                                                                                              if (!blk)
+                                                                                                                                                                                                                                                              {
+                                                                                                                                                                                                                                                                  return {};
+                                                                                                                                                                                                                                                              }
+                                                                                                                                                                                                                                                              return [blk](Object a182_0, Error a182_1) -> void
+                                                                                                                                                                                                                                                              {
+                                                                                                                                                                                                                                                                  blk(cocoon::internal::native_id(a182_0), cocoon::internal::native<::NSError>(a182_1));
+                                                                                                                                                                                                                                                              };
+                                                                                                                                                                                                                                                          }(),
+                                                                                                                                                                                                                                                          cocoon::internal::from(NSStringFromClass(a181_1)), cocoon::internal::from_dictionary<std::vector<std::pair<Object, Object>>>(a181_2, [](id k) -> Object
+                                                                                                                                                                                                                                                                                                                                                                                       {
+                                                                                                                                                                                                                                                                                                                                                                                           return cocoon::internal::wrap<Object>(k);
+                                                                                                                                                                                                                                                                                                                                                                                       },
+                                                                                                                                                                                                                                                                                                                                                                                       [](id v) -> Object
+                                                                                                                                                                                                                                                                                                                                                                                       {
+                                                                                                                                                                                                                                                                                                                                                                                           return cocoon::internal::wrap<Object>(v);
+                                                                                                                                                                                                                                                                                                                                                                                       })); } : (::NSItemProviderLoadHandler)nil)];
     }
 
     void ItemProvider::register_object(const Object& object, ItemProviderRepresentationVisibility visibility) const
@@ -157,9 +157,9 @@ namespace cocoon
     std::vector<std::string> ItemProvider::registered_type_identifiers_with_file_options(ItemProviderFileOptions file_options) const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSItemProvider>(this) registeredTypeIdentifiersWithFileOptions:static_cast<::NSItemProviderFileOptions>(file_options)], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     Rect ItemProvider::container_frame() const
@@ -184,13 +184,13 @@ namespace cocoon
             return [blk](std::function<void(Object, Error)> a185_0, std::string a185_1, std::vector<std::pair<Object, Object>> a185_2) -> void
             {
                 blk((a185_0 ? (::NSItemProviderCompletionHandler) ^ void(id a186_0, ::NSError * a186_1) { a185_0(cocoon::internal::wrap<Object>(a186_0), cocoon::internal::wrap<Error>(a186_1)); } : (::NSItemProviderCompletionHandler)nil), NSClassFromString(cocoon::internal::to(a185_1)), cocoon::internal::to_dictionary(a185_2, [](const Object& k) -> id
-                                                                                                                                                                                                                                                                       {
-                                                                                                                                                                                                                                                                           return cocoon::internal::native_id(k);
-                                                                                                                                                                                                                                                                       },
-                                                                                                                                                                                                                                                                       [](const Object& v) -> id
-                                                                                                                                                                                                                                                                       {
-                                                                                                                                                                                                                                                                           return cocoon::internal::native_id(v);
-                                                                                                                                                                                                                                                                       }));
+                                                                                                                                                                                                                                                                                                                               {
+                                                                                                                                                                                                                                                                                                                                   return cocoon::internal::native_id(k);
+                                                                                                                                                                                                                                                                                                                               },
+                                                                                                                                                                                                                                                                                                                               [](const Object& v) -> id
+                                                                                                                                                                                                                                                                                                                               {
+                                                                                                                                                                                                                                                                                                                                   return cocoon::internal::native_id(v);
+                                                                                                                                                                                                                                                                                                                               }));
             };
         }();
     }
@@ -198,33 +198,33 @@ namespace cocoon
     void ItemProvider::set_preview_image_handler(std::function<void(std::function<void(Object, Error)>, std::string, std::vector<std::pair<Object, Object>>)> value) const
     {
         [cocoon::internal::ns<::NSItemProvider>(this) setPreviewImageHandler:(value ? (::NSItemProviderLoadHandler) ^ void(id a187_0, Class a187_1, NSDictionary * a187_2) { value([&]() -> std::function<void(Object, Error)>
-                                                                                                                                                                     {
-                                                                                                                                                                         auto blk = (::NSItemProviderCompletionHandler)(a187_0);
-                                                                                                                                                                         if (!blk)
-                                                                                                                                                                         {
-                                                                                                                                                                             return {};
-                                                                                                                                                                         }
-                                                                                                                                                                         return [blk](Object a188_0, Error a188_1) -> void
-                                                                                                                                                                         {
-                                                                                                                                                                             blk(cocoon::internal::native_id(a188_0), cocoon::internal::native<::NSError>(a188_1));
-                                                                                                                                                                         };
-                                                                                                                                                                     }(),
-                                                                                                                                                                     cocoon::internal::from(NSStringFromClass(a187_1)), cocoon::internal::from_dictionary<std::vector<std::pair<Object, Object>>>(a187_2, [](id k) -> Object
-                                                                                                                                                                                                                                                                      {
-                                                                                                                                                                                                                                                                          return cocoon::internal::wrap<Object>(k);
-                                                                                                                                                                                                                                                                      },
-                                                                                                                                                                                                                                                                      [](id v) -> Object
-                                                                                                                                                                                                                                                                      {
-                                                                                                                                                                                                                                                                          return cocoon::internal::wrap<Object>(v);
-                                                                                                                                                                                                                                                                      })); } : (::NSItemProviderLoadHandler)nil)];
+                                                                                                                                                                                   {
+                                                                                                                                                                                       auto blk = (::NSItemProviderCompletionHandler)(a187_0);
+                                                                                                                                                                                       if (!blk)
+                                                                                                                                                                                       {
+                                                                                                                                                                                           return {};
+                                                                                                                                                                                       }
+                                                                                                                                                                                       return [blk](Object a188_0, Error a188_1) -> void
+                                                                                                                                                                                       {
+                                                                                                                                                                                           blk(cocoon::internal::native_id(a188_0), cocoon::internal::native<::NSError>(a188_1));
+                                                                                                                                                                                       };
+                                                                                                                                                                                   }(),
+                                                                                                                                                                                   cocoon::internal::from(NSStringFromClass(a187_1)), cocoon::internal::from_dictionary<std::vector<std::pair<Object, Object>>>(a187_2, [](id k) -> Object
+                                                                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                                                                    return cocoon::internal::wrap<Object>(k);
+                                                                                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                                                                                [](id v) -> Object
+                                                                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                                                                                                                                                                                                                                                })); } : (::NSItemProviderLoadHandler)nil)];
     }
 
     std::vector<std::string> ItemProvider::registered_type_identifiers() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSItemProvider>(this) registeredTypeIdentifiers], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     Rect ItemProvider::source_frame() const

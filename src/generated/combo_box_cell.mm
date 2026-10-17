@@ -101,9 +101,9 @@ namespace cocoon
     void ComboBoxCell::add_items_with_object_values(const std::vector<Object>& objects) const
     {
         [cocoon::internal::ns<::NSComboBoxCell>(this) addItemsWithObjectValues:cocoon::internal::to_array(objects, [](const Object& e) -> id
-                                                                              {
-                                                                                  return cocoon::internal::native_id(e);
-                                                                              })];
+                                                                                                          {
+                                                                                                              return cocoon::internal::native_id(e);
+                                                                                                          })];
     }
 
     std::string ComboBoxCell::completed_string(const std::string& string) const
@@ -254,9 +254,9 @@ namespace cocoon
     std::vector<Object> ComboBoxCell::object_values() const
     {
         return cocoon::internal::from_array<Object>([cocoon::internal::ns<::NSComboBoxCell>(this) objectValues], [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     bool ComboBoxCell::uses_data_source() const

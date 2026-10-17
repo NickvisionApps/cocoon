@@ -15,6 +15,11 @@ SPEC = {
         "NSWindowTitleVisibility": "NSWindowTitle",
     },
     "skipClasses": [],
+    "availabilityOverrides": {
+        "NSControl.addTarget:action:forControlEvents:": 27,
+        "NSControl.removeTarget:action:forControlEvents:": 27,
+        "NSTextField.borderShape": 27,
+    },
     "signalOverrides": {
         "windowDidResize:": {"name": "resized", "args": [["Size", "cocoon::internal::from([(NSWindow*)notification.object contentRectForFrameRect:((NSWindow*)notification.object).frame].size)"]]},
         "toolbar:itemForItemIdentifier:willBeInsertedIntoToolbar:": {"name": "itemForIdentifier"},
@@ -262,6 +267,15 @@ SPEC = {
         {
             "name": "StackView", "ns": "NSStackView", "base": "View",
             "ctors": [{"objc": "[[NSStackView alloc] init]"}],
+            "extra": [
+                {"decl": "void addArrangedSubviews(const std::vector<View>& views);",
+                 "impl": """void {cls}::addArrangedSubviews(const std::vector<View>& views)
+{
+    for (const View& view : views) {
+        [cocoon::internal::ns<NSStackView>(this) addArrangedSubview:cocoon::internal::native<NSView>(view)];
+    }
+}"""},
+            ],
         },
         {
             "name": "VStack", "alias": True, "ns": "NSStackView", "base": "StackView",

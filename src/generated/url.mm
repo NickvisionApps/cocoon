@@ -8,15 +8,15 @@ namespace cocoon
     }
 
     URL::URL(const std::vector<std::uint8_t>& bookmark_data, URLBookmarkResolutionOptions options, const URL& relative_url, bool* is_stale) : URL(Adopt{cocoon::internal::retain([&]() -> id
-                                                                                                                                                                   {
-                                                                                                                                                                       NSError* __error = nil;
-                                                                                                                                                                       id __r = [[::NSURL alloc] initByResolvingBookmarkData:cocoon::internal::to_data(bookmark_data) options:static_cast<::NSURLBookmarkResolutionOptions>(options) relativeToURL:cocoon::internal::native<::NSURL>(relative_url) bookmarkDataIsStale:(BOOL*)(is_stale)error:&__error];
-                                                                                                                                                                       if (!__r && __error)
-                                                                                                                                                                       {
-                                                                                                                                                                           throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
-                                                                                                                                                                       }
-                                                                                                                                                                       return __r;
-                                                                                                                                                                   }())})
+                                                                                                                                                                                 {
+                                                                                                                                                                                     NSError* __error = nil;
+                                                                                                                                                                                     id __r = [[::NSURL alloc] initByResolvingBookmarkData:cocoon::internal::to_data(bookmark_data) options:static_cast<::NSURLBookmarkResolutionOptions>(options) relativeToURL:cocoon::internal::native<::NSURL>(relative_url) bookmarkDataIsStale:(BOOL*)(is_stale)error:&__error];
+                                                                                                                                                                                     if (!__r && __error)
+                                                                                                                                                                                     {
+                                                                                                                                                                                         throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
+                                                                                                                                                                                     }
+                                                                                                                                                                                     return __r;
+                                                                                                                                                                                 }())})
     {
     }
 
@@ -130,12 +130,12 @@ namespace cocoon
     {
         NSError* __error = nil;
         auto __r = [cocoon::internal::ns<::NSURL>(this) bookmarkDataWithOptions:static_cast<::NSURLBookmarkCreationOptions>(options)
-                                   includingResourceValuesForKeys:cocoon::internal::to_array(keys, [](const std::string& e) -> id
-                                                                               {
-                                                                                   return cocoon::internal::to(e);
-                                                                               })
-                                                    relativeToURL:cocoon::internal::native<::NSURL>(relative_url)
-                                                            error:&__error];
+                                                 includingResourceValuesForKeys:cocoon::internal::to_array(keys, [](const std::string& e) -> id
+                                                                                                           {
+                                                                                                               return cocoon::internal::to(e);
+                                                                                                           })
+                                                                  relativeToURL:cocoon::internal::native<::NSURL>(relative_url)
+                                                                          error:&__error];
         if (__error)
         {
             throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
@@ -198,9 +198,9 @@ namespace cocoon
     URL URL::file_url_with_path_components(const std::vector<std::string>& components)
     {
         return cocoon::internal::wrap<URL>([::NSURL fileURLWithPathComponents:cocoon::internal::to_array(components, [](const std::string& e) -> id
-                                                                             {
-                                                                                 return cocoon::internal::to(e);
-                                                                             })]);
+                                                                                                         {
+                                                                                                             return cocoon::internal::to(e);
+                                                                                                         })]);
     }
 
     bool URL::get_file_system_representation(char* buffer, std::uint64_t max_buffer_length) const
@@ -217,22 +217,22 @@ namespace cocoon
     {
         NSError* __error = nil;
         auto __r = [cocoon::internal::ns<::NSURL>(this) promisedItemResourceValuesForKeys:cocoon::internal::to_array(keys, [](const std::string& e) -> id
-                                                                                         {
-                                                                                             return cocoon::internal::to(e);
-                                                                                         })
-                                                                      error:&__error];
+                                                                                                                     {
+                                                                                                                         return cocoon::internal::to(e);
+                                                                                                                     })
+                                                                                    error:&__error];
         if (__error)
         {
             throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
         }
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>(__r, [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     void URL::remove_all_cached_resource_values() const
@@ -249,39 +249,39 @@ namespace cocoon
     {
         NSError* __error = nil;
         auto __r = [cocoon::internal::ns<::NSURL>(this) resourceValuesForKeys:cocoon::internal::to_array(keys, [](const std::string& e) -> id
-                                                                             {
-                                                                                 return cocoon::internal::to(e);
-                                                                             })
-                                                          error:&__error];
+                                                                                                         {
+                                                                                                             return cocoon::internal::to(e);
+                                                                                                         })
+                                                                        error:&__error];
         if (__error)
         {
             throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
         }
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>(__r, [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     std::map<std::string, Object> URL::resource_values_for_keys(const std::vector<std::string>& keys, const std::vector<std::uint8_t>& bookmark_data)
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([::NSURL resourceValuesForKeys:cocoon::internal::to_array(keys, [](const std::string& e) -> id
-                                                                                                              {
-                                                                                                                  return cocoon::internal::to(e);
-                                                                                                              })
-                                                                                fromBookmarkData:cocoon::internal::to_data(bookmark_data)],
-                                                                  [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                                                                          {
+                                                                                                                                              return cocoon::internal::to(e);
+                                                                                                                                          })
+                                                                                              fromBookmarkData:cocoon::internal::to_data(bookmark_data)],
+                                                                                [](id k) -> std::string
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     bool URL::set_resource_value(const Object& value, const std::string& key) const
@@ -299,14 +299,14 @@ namespace cocoon
     {
         NSError* __error = nil;
         auto __r = [cocoon::internal::ns<::NSURL>(this) setResourceValues:cocoon::internal::to_dictionary(keyed_values, [](const std::string& k) -> id
-                                                                              {
-                                                                                  return cocoon::internal::to(k);
-                                                                              },
-                                                                              [](const Object& v) -> id
-                                                                              {
-                                                                                  return cocoon::internal::native_id(v);
-                                                                              })
-                                                      error:&__error];
+                                                                                                          {
+                                                                                                              return cocoon::internal::to(k);
+                                                                                                          },
+                                                                                                          [](const Object& v) -> id
+                                                                                                          {
+                                                                                                              return cocoon::internal::native_id(v);
+                                                                                                          })
+                                                                    error:&__error];
         if (__error)
         {
             throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
@@ -420,11 +420,6 @@ namespace cocoon
         return cocoon::internal::from([cocoon::internal::ns<::NSURL>(this) lastPathComponent]);
     }
 
-    std::string URL::parameter_string() const
-    {
-        return cocoon::internal::from([cocoon::internal::ns<::NSURL>(this) parameterString]);
-    }
-
     std::string URL::password() const
     {
         return cocoon::internal::from([cocoon::internal::ns<::NSURL>(this) password]);
@@ -438,9 +433,9 @@ namespace cocoon
     std::vector<std::string> URL::path_components() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSURL>(this) pathComponents], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::string URL::path_extension() const

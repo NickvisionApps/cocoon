@@ -41,9 +41,9 @@ namespace cocoon
         NSError* __error = nil;
         auto __r = [::NSTask launchedTaskWithExecutableURL:cocoon::internal::native<::NSURL>(url)
                                                  arguments:cocoon::internal::to_array(arguments, [](const std::string& e) -> id
-                                                                        {
-                                                                            return cocoon::internal::to(e);
-                                                                        })
+                                                                                      {
+                                                                                          return cocoon::internal::to(e);
+                                                                                      })
                                                      error:&__error
                                         terminationHandler:(termination_handler ? (void (^)(::NSTask*)) ^ void(::NSTask * a220_0) { termination_handler(cocoon::internal::wrap<Task>(a220_0)); } : (void (^)(::NSTask*))nil)];
         if (__error)
@@ -56,10 +56,10 @@ namespace cocoon
     Task Task::launched_task_with_launch_path(const std::string& path, const std::vector<std::string>& arguments)
     {
         return cocoon::internal::wrap<Task>([::NSTask launchedTaskWithLaunchPath:cocoon::internal::to(path)
-                                                         arguments:cocoon::internal::to_array(arguments, [](const std::string& e) -> id
-                                                                                {
-                                                                                    return cocoon::internal::to(e);
-                                                                                })]);
+                                                                       arguments:cocoon::internal::to_array(arguments, [](const std::string& e) -> id
+                                                                                                            {
+                                                                                                                return cocoon::internal::to(e);
+                                                                                                            })]);
     }
 
     bool Task::resume() const
@@ -85,17 +85,17 @@ namespace cocoon
     std::vector<std::string> Task::arguments() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSTask>(this) arguments], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void Task::set_arguments(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSTask>(this) setArguments:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                          {
-                                                              return cocoon::internal::to(e);
-                                                          })];
+                                                                                      {
+                                                                                          return cocoon::internal::to(e);
+                                                                                      })];
     }
 
     std::string Task::current_directory_path() const
@@ -121,25 +121,25 @@ namespace cocoon
     std::map<std::string, std::string> Task::environment() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, std::string>>([cocoon::internal::ns<::NSTask>(this) environment], [](id k) -> std::string
-                                                                       {
-                                                                           return cocoon::internal::from((NSString*)k);
-                                                                       },
-                                                                       [](id v) -> std::string
-                                                                       {
-                                                                           return cocoon::internal::from((NSString*)v);
-                                                                       });
+                                                                                     {
+                                                                                         return cocoon::internal::from((NSString*)k);
+                                                                                     },
+                                                                                     [](id v) -> std::string
+                                                                                     {
+                                                                                         return cocoon::internal::from((NSString*)v);
+                                                                                     });
     }
 
     void Task::set_environment(const std::map<std::string, std::string>& value) const
     {
         [cocoon::internal::ns<::NSTask>(this) setEnvironment:cocoon::internal::to_dictionary(value, [](const std::string& k) -> id
-                                                                 {
-                                                                     return cocoon::internal::to(k);
-                                                                 },
-                                                                 [](const std::string& v) -> id
-                                                                 {
-                                                                     return cocoon::internal::to(v);
-                                                                 })];
+                                                                                             {
+                                                                                                 return cocoon::internal::to(k);
+                                                                                             },
+                                                                                             [](const std::string& v) -> id
+                                                                                             {
+                                                                                                 return cocoon::internal::to(v);
+                                                                                             })];
     }
 
     URL Task::executable_url() const

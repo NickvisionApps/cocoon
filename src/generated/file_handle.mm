@@ -31,9 +31,9 @@ namespace cocoon
     void FileHandle::accept_connection_in_background_and_notify_for_modes(const std::vector<std::string>& modes) const
     {
         [cocoon::internal::ns<::NSFileHandle>(this) acceptConnectionInBackgroundAndNotifyForModes:cocoon::internal::to_array(modes, [](const std::string& e) -> id
-                                                                                                 {
-                                                                                                     return cocoon::internal::to(e);
-                                                                                                 })];
+                                                                                                                             {
+                                                                                                                                 return cocoon::internal::to(e);
+                                                                                                                             })];
     }
 
     bool FileHandle::close_and_return_error() const
@@ -136,9 +136,9 @@ namespace cocoon
     void FileHandle::read_in_background_and_notify_for_modes(const std::vector<std::string>& modes) const
     {
         [cocoon::internal::ns<::NSFileHandle>(this) readInBackgroundAndNotifyForModes:cocoon::internal::to_array(modes, [](const std::string& e) -> id
-                                                                                     {
-                                                                                         return cocoon::internal::to(e);
-                                                                                     })];
+                                                                                                                 {
+                                                                                                                     return cocoon::internal::to(e);
+                                                                                                                 })];
     }
 
     void FileHandle::read_to_end_of_file_in_background_and_notify() const
@@ -149,9 +149,9 @@ namespace cocoon
     void FileHandle::read_to_end_of_file_in_background_and_notify_for_modes(const std::vector<std::string>& modes) const
     {
         [cocoon::internal::ns<::NSFileHandle>(this) readToEndOfFileInBackgroundAndNotifyForModes:cocoon::internal::to_array(modes, [](const std::string& e) -> id
-                                                                                                {
-                                                                                                    return cocoon::internal::to(e);
-                                                                                                })];
+                                                                                                                            {
+                                                                                                                                return cocoon::internal::to(e);
+                                                                                                                            })];
     }
 
     bool FileHandle::seek_to_end_returning_offset(std::uint64_t* offset_in_file) const
@@ -206,9 +206,9 @@ namespace cocoon
     void FileHandle::wait_for_data_in_background_and_notify_for_modes(const std::vector<std::string>& modes) const
     {
         [cocoon::internal::ns<::NSFileHandle>(this) waitForDataInBackgroundAndNotifyForModes:cocoon::internal::to_array(modes, [](const std::string& e) -> id
-                                                                                            {
-                                                                                                return cocoon::internal::to(e);
-                                                                                            })];
+                                                                                                                        {
+                                                                                                                            return cocoon::internal::to(e);
+                                                                                                                        })];
     }
 
     bool FileHandle::write_data(const std::vector<std::uint8_t>& data) const

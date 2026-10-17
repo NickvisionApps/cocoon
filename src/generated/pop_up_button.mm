@@ -29,9 +29,9 @@ namespace cocoon
     void PopUpButton::add_items_with_titles(const std::vector<std::string>& item_titles) const
     {
         [cocoon::internal::ns<::NSPopUpButton>(this) addItemsWithTitles:cocoon::internal::to_array(item_titles, [](const std::string& e) -> id
-                                                                       {
-                                                                           return cocoon::internal::to(e);
-                                                                       })];
+                                                                                                   {
+                                                                                                       return cocoon::internal::to(e);
+                                                                                                   })];
     }
 
     std::int64_t PopUpButton::index_of_item(const MenuItem& item) const
@@ -172,17 +172,17 @@ namespace cocoon
     std::vector<MenuItem> PopUpButton::item_array() const
     {
         return cocoon::internal::from_array<MenuItem>([cocoon::internal::ns<::NSPopUpButton>(this) itemArray], [](id e) -> MenuItem
-                                        {
-                                            return cocoon::internal::wrap<MenuItem>((::NSMenuItem*)e);
-                                        });
+                                                      {
+                                                          return cocoon::internal::wrap<MenuItem>((::NSMenuItem*)e);
+                                                      });
     }
 
     std::vector<std::string> PopUpButton::item_titles() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSPopUpButton>(this) itemTitles], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     MenuItem PopUpButton::last_item() const
@@ -254,9 +254,9 @@ namespace cocoon
     {
         id host = (__bridge id)native;
         cocoon::internal::bind_action(host, host, [](id host, id sender)
-                        {
-                            cocoon::Signal<cocoon::Button, void()>::emit((__bridge void*)host, "clicked");
-                            cocoon::Signal<cocoon::PopUpButton, void(std::int64_t)>::emit((__bridge void*)host, "selection_changed", [(NSPopUpButton*)sender indexOfSelectedItem]);
-                        });
+                                      {
+                                          cocoon::Signal<cocoon::Button, void()>::emit((__bridge void*)host, "clicked");
+                                          cocoon::Signal<cocoon::PopUpButton, void(std::int64_t)>::emit((__bridge void*)host, "selection_changed", [(NSPopUpButton*)sender indexOfSelectedItem]);
+                                      });
     }
 }

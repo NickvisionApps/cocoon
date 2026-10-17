@@ -198,13 +198,13 @@ namespace cocoon
     std::map<std::string, Object> Typesetter::attributes_for_extra_line_fragment() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::NSTypesetter>(this) attributesForExtraLineFragment], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     bool Typesetter::bidi_processing_enabled() const
@@ -285,9 +285,9 @@ namespace cocoon
     std::vector<TextContainer> Typesetter::text_containers() const
     {
         return cocoon::internal::from_array<TextContainer>([cocoon::internal::ns<::NSTypesetter>(this) textContainers], [](id e) -> TextContainer
-                                             {
-                                                 return cocoon::internal::wrap<TextContainer>((::NSTextContainer*)e);
-                                             });
+                                                           {
+                                                               return cocoon::internal::wrap<TextContainer>((::NSTextContainer*)e);
+                                                           });
     }
 
     TypesetterBehavior Typesetter::typesetter_behavior() const

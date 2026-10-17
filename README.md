@@ -26,7 +26,7 @@ int main(int argc, char** argv)
 - macOS 26 or newer
 - Xcode 26 (the macOS 26 SDK)
 - CMake 3.24 or newer
-- Optional: Python 3 and `clang-format` to regenerate the bindings, Doxygen to build the API documentation (`brew install clang-format doxygen`)
+- Optional: Python 3 and `clang-format` to regenerate the bindings and format the sources, Doxygen to build the API documentation (`brew install clang-format doxygen`)
 
 ## Design
 
@@ -43,7 +43,7 @@ cocoon exists to make AppKit feel native in C++: the full framework surface, wit
 
 ## Build and installation
 
-Build the static library `cocoon::cocoon` (and the gallery example):
+Build the static library `cocoon::cocoon` (and the example applications):
 
 ```
 cmake -S . -B build
@@ -54,7 +54,7 @@ The first build compiles about 580 classes, so it takes a few minutes.
 
 | Option | Default | Meaning |
 |---|---|---|
-| `COCOON_BUILD_EXAMPLES` | `ON` | Build the gallery example |
+| `COCOON_BUILD_EXAMPLES` | `ON` | Build the example applications |
 | `COCOON_REGENERATE` | `OFF` | Add a `cocoon_generate` target that reruns the generator |
 
 Install the library, headers and CMake package files:
@@ -83,6 +83,24 @@ target_link_libraries(my_app PRIVATE cocoon::cocoon)
 
 Either way the target brings in C++20, the include directory and the AppKit, Foundation, CoreFoundation, UniformTypeIdentifiers, QuartzCore, CoreImage and CoreGraphics frameworks.
 
+### SDK versions
+
+cocoon supports macOS 26 and newer. API that only exists in a later SDK is wrapped in a macro named after the major version, `COCOON_MACOS_27` for macOS 27 and so on. Everything up to the minimum (26) is always available and is never wrapped.
+
+```cpp
+#ifdef COCOON_MACOS_27
+event.some_new_api();
+#endif
+```
+
+The macros are defined in `generated/availability.h` and are on when the SDK major version is at least that number. CMake detects the SDK being used (`CMAKE_OSX_SYSROOT`) and passes it as `COCOON_SDK_MAJOR` to cocoon and, through the imported target, to every project that links it, so the library and your code always agree on which macros are on. Without CMake the macros fall back to `__MAC_OS_X_VERSION_MAX_ALLOWED`. Wrapped members also check `@available` at run time, so a build made with a newer SDK still runs on macOS 26.
+
+### Formatting
+
+When `clang-format` is installed, building cocoon first runs the `cocoon_format` target, which formats the hand-written headers, sources and examples (generated files are formatted by the generator). Turn it off with `-DCOCOON_FORMAT=OFF`.
+
 ## Examples
 
 `examples/gallery` is a complete application that exercises much of the library: a unified titlebar window with a sidebar, Liquid Glass surfaces, a customizable toolbar, the standard menu bar and a Settings window. It is built by default and lands in `build/examples/gallery/gallery.app`; see its own [README](examples/gallery/README.md) for details.
+
+`examples/calculator` is a small calculator with a Liquid Glass keypad, a resizable window and its logic in a plain C++ class. It lands in `build/examples/calculator/calculator.app`; see its own [README](examples/calculator/README.md).

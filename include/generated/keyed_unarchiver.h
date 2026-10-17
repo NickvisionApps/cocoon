@@ -1,5 +1,6 @@
 #pragma once
 
+#include "generated/availability.h"
 #include "generated/coder.h"
 #include "generated/enums.h"
 #include "generated/structs.h"
@@ -144,27 +145,6 @@ namespace cocoon
      * @param coded_name Argument converted to the Objective-C parameter of the same role.
      */
         void set_class(const std::string& cls, const std::string& coded_name) const;
-        /**
-     * @brief Calls `+[NSKeyedUnarchiver unarchiveObjectWithData:]`.
-     * @details Decodes and returns the previously-archived object graph rooted in the given data. \@DeprecationSummary { Use ''NSKeyedUnarchiver/unarchivedObjectOfClass:fromData:error:'' instead. }
-     * @param data Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Object unarchive_object_with_data(const std::vector<std::uint8_t>& data);
-        /**
-     * @brief Calls `+[NSKeyedUnarchiver unarchiveObjectWithFile:]`.
-     * @details Decodes and returns the previously-archived object graph from the file at the given path. \@DeprecationSummary { Use ''NSKeyedUnarchiver/unarchivedObjectOfClass:fromData:error:'' instead. }
-     * @param path Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Object unarchive_object_with_file(const std::string& path);
-        /**
-     * @brief Calls `+[NSKeyedUnarchiver unarchiveTopLevelObjectWithData:error:]`.
-     * @details Decodes and returns the previously-archived object graph in the given data, returning an error if decoding fails. This method throws an error if 'data' does not contain valid keyed data. \@DeprecationSummary { Use ''NSKeyedUnarchiver/unarchivedObjectOfClass:fromData:error:'' instead. }
-     * @param data Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Object unarchive_top_level_object_with_data(const std::vector<std::uint8_t>& data);
         /**
      * @brief Calls `+[NSKeyedUnarchiver unarchivedArrayOfObjectsOfClass:fromData:error:]`.
      * @details Decodes the \\c NSArray root object from \\c data which should be an \\c NSArray\<cls> containing the given non-collection class (no nested arrays or arrays of dictionaries, etc) from the given archive, previously encoded by \\c NSKeyedArchiver. Enables \\c requiresSecureCoding and sets the \\c decodingFailurePolicy to \\c NSDecodingFailurePolicySetErrorAndReturn. Returns \\c nil if the given data is not valid or cannot be decoded, and sets the \\c error out parameter.

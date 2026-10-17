@@ -27,9 +27,9 @@ namespace cocoon
     Expression Expression::expression_for_aggregate(const std::vector<Expression>& subexpressions)
     {
         return cocoon::internal::wrap<Expression>([::NSExpression expressionForAggregate:cocoon::internal::to_array(subexpressions, [](const Expression& e) -> id
-                                                                                        {
-                                                                                            return cocoon::internal::native<::NSExpression>(e);
-                                                                                        })]);
+                                                                                                                    {
+                                                                                                                        return cocoon::internal::native<::NSExpression>(e);
+                                                                                                                    })]);
     }
 
     Expression Expression::expression_for_any_key()
@@ -40,10 +40,10 @@ namespace cocoon
     Expression Expression::expression_for_block(std::function<Object(Object, std::vector<Expression>, std::vector<std::pair<Object, Object>>)> block, const std::vector<Expression>& arguments)
     {
         return cocoon::internal::wrap<Expression>([::NSExpression expressionForBlock:(block ? (id(^)(id, NSArray<NSExpression*>*, ::NSMutableDictionary*)) ^ id(id a132_0, NSArray * a132_1, NSDictionary * a132_2) { auto __r = block(cocoon::internal::wrap<Object>(a132_0), cocoon::internal::from_array<Expression>(a132_1, [](id e) -> Expression { return cocoon::internal::wrap<Expression>((::NSExpression *)e); }), cocoon::internal::from_dictionary<std::vector<std::pair<Object, Object>>>(a132_2, [](id k) -> Object { return cocoon::internal::wrap<Object>(k); }, [](id v) -> Object { return cocoon::internal::wrap<Object>(v); })); return cocoon::internal::native_id(__r); } : (id(^)(id, NSArray<NSExpression*>*, ::NSMutableDictionary*))nil)
-                                                             arguments:cocoon::internal::to_array(arguments, [](const Expression& e) -> id
-                                                                                    {
-                                                                                        return cocoon::internal::native<::NSExpression>(e);
-                                                                                    })]);
+                                                                           arguments:cocoon::internal::to_array(arguments, [](const Expression& e) -> id
+                                                                                                                {
+                                                                                                                    return cocoon::internal::native<::NSExpression>(e);
+                                                                                                                })]);
     }
 
     Expression Expression::expression_for_conditional(const Predicate& predicate, const Expression& true_expression, const Expression& false_expression)
@@ -64,20 +64,20 @@ namespace cocoon
     Expression Expression::expression_for_function(const std::string& name, const std::vector<Object>& parameters)
     {
         return cocoon::internal::wrap<Expression>([::NSExpression expressionForFunction:cocoon::internal::to(name)
-                                                                arguments:cocoon::internal::to_array(parameters, [](const Object& e) -> id
-                                                                                       {
-                                                                                           return cocoon::internal::native_id(e);
-                                                                                       })]);
+                                                                              arguments:cocoon::internal::to_array(parameters, [](const Object& e) -> id
+                                                                                                                   {
+                                                                                                                       return cocoon::internal::native_id(e);
+                                                                                                                   })]);
     }
 
     Expression Expression::expression_for_function(const Expression& target, const std::string& name, const std::vector<Object>& parameters)
     {
         return cocoon::internal::wrap<Expression>([::NSExpression expressionForFunction:cocoon::internal::native<::NSExpression>(target)
-                                                             selectorName:cocoon::internal::to(name)
-                                                                arguments:cocoon::internal::to_array(parameters, [](const Object& e) -> id
-                                                                                       {
-                                                                                           return cocoon::internal::native_id(e);
-                                                                                       })]);
+                                                                           selectorName:cocoon::internal::to(name)
+                                                                              arguments:cocoon::internal::to_array(parameters, [](const Object& e) -> id
+                                                                                                                   {
+                                                                                                                       return cocoon::internal::native_id(e);
+                                                                                                                   })]);
     }
 
     Expression Expression::expression_for_intersect_set(const Expression& left, const Expression& right)
@@ -113,14 +113,14 @@ namespace cocoon
     Object Expression::expression_value_with_object(const Object& object, const std::vector<std::pair<Object, Object>>& context) const
     {
         return cocoon::internal::wrap<Object>([cocoon::internal::ns<::NSExpression>(this) expressionValueWithObject:cocoon::internal::native_id(object)
-                                                                                context:cocoon::internal::to_dictionary(context, [](const Object& k) -> id
-                                                                                                          {
-                                                                                                              return cocoon::internal::native_id(k);
-                                                                                                          },
-                                                                                                          [](const Object& v) -> id
-                                                                                                          {
-                                                                                                              return cocoon::internal::native_id(v);
-                                                                                                          })]);
+                                                                                                            context:[cocoon::internal::to_dictionary(context, [](const Object& k) -> id
+                                                                                                                                                     {
+                                                                                                                                                         return cocoon::internal::native_id(k);
+                                                                                                                                                     },
+                                                                                                                                                     [](const Object& v) -> id
+                                                                                                                                                     {
+                                                                                                                                                         return cocoon::internal::native_id(v);
+                                                                                                                                                     }) mutableCopy]]);
     }
 
     Expression Expression::expression_with_format_(const std::string& expression_format, const std::vector<VarArg>& args)
@@ -133,10 +133,10 @@ namespace cocoon
     Expression Expression::expression_with_format(const std::string& expression_format, const std::vector<Object>& arguments)
     {
         return cocoon::internal::wrap<Expression>([::NSExpression expressionWithFormat:cocoon::internal::to(expression_format)
-                                                           argumentArray:cocoon::internal::to_array(arguments, [](const Object& e) -> id
-                                                                                      {
-                                                                                          return cocoon::internal::native_id(e);
-                                                                                      })]);
+                                                                         argumentArray:cocoon::internal::to_array(arguments, [](const Object& e) -> id
+                                                                                                                  {
+                                                                                                                      return cocoon::internal::native_id(e);
+                                                                                                                  })]);
     }
 
     Expression Expression::expression_with_format(const std::string& expression_format, char* arg_list)
@@ -147,9 +147,9 @@ namespace cocoon
     std::vector<Expression> Expression::arguments() const
     {
         return cocoon::internal::from_array<Expression>([cocoon::internal::ns<::NSExpression>(this) arguments], [](id e) -> Expression
-                                          {
-                                              return cocoon::internal::wrap<Expression>((::NSExpression*)e);
-                                          });
+                                                        {
+                                                            return cocoon::internal::wrap<Expression>((::NSExpression*)e);
+                                                        });
     }
 
     Object Expression::collection() const
@@ -174,17 +174,17 @@ namespace cocoon
             return [blk](Object a133_0, std::vector<Expression> a133_1, std::vector<std::pair<Object, Object>> a133_2) -> Object
             {
                 auto __r = blk(cocoon::internal::native_id(a133_0), cocoon::internal::to_array(a133_1, [](const Expression& e) -> id
-                                                                   {
-                                                                       return cocoon::internal::native<::NSExpression>(e);
-                                                                   }),
-                               cocoon::internal::to_dictionary(a133_2, [](const Object& k) -> id
-                                                 {
-                                                     return cocoon::internal::native_id(k);
-                                                 },
-                                                 [](const Object& v) -> id
-                                                 {
-                                                     return cocoon::internal::native_id(v);
-                                                 }));
+                                                                                               {
+                                                                                                   return cocoon::internal::native<::NSExpression>(e);
+                                                                                               }),
+                               [cocoon::internal::to_dictionary(a133_2, [](const Object& k) -> id
+                                                                {
+                                                                    return cocoon::internal::native_id(k);
+                                                                },
+                                                                [](const Object& v) -> id
+                                                                {
+                                                                    return cocoon::internal::native_id(v);
+                                                                }) mutableCopy]);
                 return cocoon::internal::wrap<Object>(__r);
             };
         }();

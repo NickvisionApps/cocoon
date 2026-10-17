@@ -28,13 +28,13 @@ namespace cocoon
     GraphicsContext GraphicsContext::graphics_context_with_attributes(const std::map<std::string, Object>& attributes)
     {
         return cocoon::internal::wrap<GraphicsContext>([::NSGraphicsContext graphicsContextWithAttributes:cocoon::internal::to_dictionary(attributes, [](const std::string& k) -> id
-                                                                                                              {
-                                                                                                                  return cocoon::internal::to(k);
-                                                                                                              },
-                                                                                                              [](const Object& v) -> id
-                                                                                                              {
-                                                                                                                  return cocoon::internal::native_id(v);
-                                                                                                              })]);
+                                                                                                                                          {
+                                                                                                                                              return cocoon::internal::to(k);
+                                                                                                                                          },
+                                                                                                                                          [](const Object& v) -> id
+                                                                                                                                          {
+                                                                                                                                              return cocoon::internal::native_id(v);
+                                                                                                                                          })]);
     }
 
     GraphicsContext GraphicsContext::graphics_context_with_bitmap_image_rep(const BitmapImageRep& bitmap_rep)
@@ -70,13 +70,13 @@ namespace cocoon
     std::map<std::string, Object> GraphicsContext::attributes() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::NSGraphicsContext>(this) attributes], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     ColorRenderingIntent GraphicsContext::color_rendering_intent() const

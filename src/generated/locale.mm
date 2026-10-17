@@ -37,13 +37,13 @@ namespace cocoon
     std::map<std::string, std::string> Locale::components_from_locale_identifier(const std::string& string)
     {
         return cocoon::internal::from_dictionary<std::map<std::string, std::string>>([::NSLocale componentsFromLocaleIdentifier:cocoon::internal::to(string)], [](id k) -> std::string
-                                                                       {
-                                                                           return cocoon::internal::from((NSString*)k);
-                                                                       },
-                                                                       [](id v) -> std::string
-                                                                       {
-                                                                           return cocoon::internal::from((NSString*)v);
-                                                                       });
+                                                                                     {
+                                                                                         return cocoon::internal::from((NSString*)k);
+                                                                                     },
+                                                                                     [](id v) -> std::string
+                                                                                     {
+                                                                                         return cocoon::internal::from((NSString*)v);
+                                                                                     });
     }
 
     std::string Locale::display_name_for_key(const std::string& key, const Object& value) const
@@ -59,13 +59,13 @@ namespace cocoon
     std::string Locale::locale_identifier_from_components(const std::map<std::string, std::string>& dict)
     {
         return cocoon::internal::from([::NSLocale localeIdentifierFromComponents:cocoon::internal::to_dictionary(dict, [](const std::string& k) -> id
-                                                                                     {
-                                                                                         return cocoon::internal::to(k);
-                                                                                     },
-                                                                                     [](const std::string& v) -> id
-                                                                                     {
-                                                                                         return cocoon::internal::to(v);
-                                                                                     })]);
+                                                                                                                 {
+                                                                                                                     return cocoon::internal::to(k);
+                                                                                                                 },
+                                                                                                                 [](const std::string& v) -> id
+                                                                                                                 {
+                                                                                                                     return cocoon::internal::to(v);
+                                                                                                                 })]);
     }
 
     std::string Locale::locale_identifier_from_windows_locale_code(unsigned int lcid)
@@ -136,25 +136,25 @@ namespace cocoon
     std::vector<std::string> Locale::iso_country_codes()
     {
         return cocoon::internal::from_array<std::string>([::NSLocale ISOCountryCodes], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::vector<std::string> Locale::iso_currency_codes()
     {
         return cocoon::internal::from_array<std::string>([::NSLocale ISOCurrencyCodes], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::vector<std::string> Locale::iso_language_codes()
     {
         return cocoon::internal::from_array<std::string>([::NSLocale ISOLanguageCodes], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::string Locale::alternate_quotation_begin_delimiter() const
@@ -175,9 +175,9 @@ namespace cocoon
     std::vector<std::string> Locale::available_locale_identifiers()
     {
         return cocoon::internal::from_array<std::string>([::NSLocale availableLocaleIdentifiers], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::string Locale::calendar_identifier() const
@@ -198,9 +198,9 @@ namespace cocoon
     std::vector<std::string> Locale::common_iso_currency_codes()
     {
         return cocoon::internal::from_array<std::string>([::NSLocale commonISOCurrencyCodes], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::string Locale::country_code() const
@@ -256,9 +256,9 @@ namespace cocoon
     std::vector<std::string> Locale::preferred_languages()
     {
         return cocoon::internal::from_array<std::string>([::NSLocale preferredLanguages], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::string Locale::quotation_begin_delimiter() const

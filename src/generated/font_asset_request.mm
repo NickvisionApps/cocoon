@@ -4,10 +4,10 @@
 namespace cocoon
 {
     FontAssetRequest::FontAssetRequest(const std::vector<FontDescriptor>& font_descriptors, FontAssetRequestOptions options) : FontAssetRequest(Adopt{cocoon::internal::retain([[::NSFontAssetRequest alloc] initWithFontDescriptors:cocoon::internal::to_array(font_descriptors, [](const FontDescriptor& e) -> id
-                                                                                                                                                                                                                                    {
-                                                                                                                                                                                                                                        return cocoon::internal::native<::NSFontDescriptor>(e);
-                                                                                                                                                                                                                                    })
-                                                                                                                                                                                                               options:static_cast<::NSFontAssetRequestOptions>(options)])})
+                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                    return cocoon::internal::native<::NSFontDescriptor>(e);
+                                                                                                                                                                                                                                                                })
+                                                                                                                                                                                                                             options:static_cast<::NSFontAssetRequestOptions>(options)])})
     {
     }
 
@@ -31,9 +31,9 @@ namespace cocoon
     std::vector<FontDescriptor> FontAssetRequest::downloaded_font_descriptors() const
     {
         return cocoon::internal::from_array<FontDescriptor>([cocoon::internal::ns<::NSFontAssetRequest>(this) downloadedFontDescriptors], [](id e) -> FontDescriptor
-                                              {
-                                                  return cocoon::internal::wrap<FontDescriptor>((::NSFontDescriptor*)e);
-                                              });
+                                                            {
+                                                                return cocoon::internal::wrap<FontDescriptor>((::NSFontDescriptor*)e);
+                                                            });
     }
 
     Progress FontAssetRequest::progress() const

@@ -4,9 +4,9 @@
 namespace cocoon
 {
     CountedSetBase::CountedSetBase(const std::vector<Object>& array) : CountedSetBase(Adopt{cocoon::internal::retain([[::NSCountedSet alloc] initWithArray:cocoon::internal::to_array(array, [](const Object& e) -> id
-                                                                                                                                                          {
-                                                                                                                                                              return cocoon::internal::native_id(e);
-                                                                                                                                                          })])})
+                                                                                                                                                                                      {
+                                                                                                                                                                                          return cocoon::internal::native_id(e);
+                                                                                                                                                                                      })])})
     {
     }
 

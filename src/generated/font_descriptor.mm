@@ -4,13 +4,13 @@
 namespace cocoon
 {
     FontDescriptor::FontDescriptor(const std::map<std::string, Object>& attributes) : FontDescriptor(Adopt{cocoon::internal::retain([[::NSFontDescriptor alloc] initWithFontAttributes:cocoon::internal::to_dictionary(attributes, [](const std::string& k) -> id
-                                                                                                                                                                                           {
-                                                                                                                                                                                               return cocoon::internal::to(k);
-                                                                                                                                                                                           },
-                                                                                                                                                                                           [](const Object& v) -> id
-                                                                                                                                                                                           {
-                                                                                                                                                                                               return cocoon::internal::native_id(v);
-                                                                                                                                                                                           })])})
+                                                                                                                                                                                                                       {
+                                                                                                                                                                                                                           return cocoon::internal::to(k);
+                                                                                                                                                                                                                       },
+                                                                                                                                                                                                                       [](const Object& v) -> id
+                                                                                                                                                                                                                       {
+                                                                                                                                                                                                                           return cocoon::internal::native_id(v);
+                                                                                                                                                                                                                       })])})
     {
     }
 
@@ -29,13 +29,13 @@ namespace cocoon
     FontDescriptor FontDescriptor::font_descriptor_by_adding_attributes(const std::map<std::string, Object>& attributes) const
     {
         return cocoon::internal::wrap<FontDescriptor>([cocoon::internal::ns<::NSFontDescriptor>(this) fontDescriptorByAddingAttributes:cocoon::internal::to_dictionary(attributes, [](const std::string& k) -> id
-                                                                                                                             {
-                                                                                                                                 return cocoon::internal::to(k);
-                                                                                                                             },
-                                                                                                                             [](const Object& v) -> id
-                                                                                                                             {
-                                                                                                                                 return cocoon::internal::native_id(v);
-                                                                                                                             })]);
+                                                                                                                                                                       {
+                                                                                                                                                                           return cocoon::internal::to(k);
+                                                                                                                                                                       },
+                                                                                                                                                                       [](const Object& v) -> id
+                                                                                                                                                                       {
+                                                                                                                                                                           return cocoon::internal::native_id(v);
+                                                                                                                                                                       })]);
     }
 
     FontDescriptor FontDescriptor::font_descriptor_with_design(const std::string& design) const
@@ -56,13 +56,13 @@ namespace cocoon
     FontDescriptor FontDescriptor::font_descriptor_with_font_attributes(const std::map<std::string, Object>& attributes)
     {
         return cocoon::internal::wrap<FontDescriptor>([::NSFontDescriptor fontDescriptorWithFontAttributes:cocoon::internal::to_dictionary(attributes, [](const std::string& k) -> id
-                                                                                                               {
-                                                                                                                   return cocoon::internal::to(k);
-                                                                                                               },
-                                                                                                               [](const Object& v) -> id
-                                                                                                               {
-                                                                                                                   return cocoon::internal::native_id(v);
-                                                                                                               })]);
+                                                                                                                                           {
+                                                                                                                                               return cocoon::internal::to(k);
+                                                                                                                                           },
+                                                                                                                                           [](const Object& v) -> id
+                                                                                                                                           {
+                                                                                                                                               return cocoon::internal::native_id(v);
+                                                                                                                                           })]);
     }
 
     FontDescriptor FontDescriptor::font_descriptor_with_matrix(const AffineTransform& matrix) const
@@ -93,21 +93,21 @@ namespace cocoon
     FontDescriptor FontDescriptor::matching_font_descriptor_with_mandatory_keys(const std::vector<std::string>& mandatory_keys) const
     {
         return cocoon::internal::wrap<FontDescriptor>([cocoon::internal::ns<::NSFontDescriptor>(this) matchingFontDescriptorWithMandatoryKeys:[NSSet setWithArray:cocoon::internal::to_array(mandatory_keys, [](const std::string& e) -> id
-                                                                                                                                                   {
-                                                                                                                                                       return cocoon::internal::to(e);
-                                                                                                                                                   })]]);
+                                                                                                                                                                                             {
+                                                                                                                                                                                                 return cocoon::internal::to(e);
+                                                                                                                                                                                             })]]);
     }
 
     std::vector<FontDescriptor> FontDescriptor::matching_font_descriptors_with_mandatory_keys(const std::vector<std::string>& mandatory_keys) const
     {
         return cocoon::internal::from_array<FontDescriptor>([cocoon::internal::ns<::NSFontDescriptor>(this) matchingFontDescriptorsWithMandatoryKeys:[NSSet setWithArray:cocoon::internal::to_array(mandatory_keys, [](const std::string& e) -> id
-                                                                                                                                                          {
-                                                                                                                                                              return cocoon::internal::to(e);
-                                                                                                                                                          })]],
-                                              [](id e) -> FontDescriptor
-                                              {
-                                                  return cocoon::internal::wrap<FontDescriptor>((::NSFontDescriptor*)e);
-                                              });
+                                                                                                                                                                                                    {
+                                                                                                                                                                                                        return cocoon::internal::to(e);
+                                                                                                                                                                                                    })]],
+                                                            [](id e) -> FontDescriptor
+                                                            {
+                                                                return cocoon::internal::wrap<FontDescriptor>((::NSFontDescriptor*)e);
+                                                            });
     }
 
     Object FontDescriptor::object_for_key(const std::string& attribute) const
@@ -118,26 +118,26 @@ namespace cocoon
     FontDescriptor FontDescriptor::preferred_font_descriptor_for_text_style(const std::string& style, const std::map<std::string, Object>& options)
     {
         return cocoon::internal::wrap<FontDescriptor>([::NSFontDescriptor preferredFontDescriptorForTextStyle:cocoon::internal::to(style)
-                                                                                        options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
-                                                                                                                  {
-                                                                                                                      return cocoon::internal::to(k);
-                                                                                                                  },
-                                                                                                                  [](const Object& v) -> id
-                                                                                                                  {
-                                                                                                                      return cocoon::internal::native_id(v);
-                                                                                                                  })]);
+                                                                                                      options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
+                                                                                                                                              {
+                                                                                                                                                  return cocoon::internal::to(k);
+                                                                                                                                              },
+                                                                                                                                              [](const Object& v) -> id
+                                                                                                                                              {
+                                                                                                                                                  return cocoon::internal::native_id(v);
+                                                                                                                                              })]);
     }
 
     std::map<std::string, Object> FontDescriptor::font_attributes() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::NSFontDescriptor>(this) fontAttributes], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     AffineTransform FontDescriptor::matrix() const

@@ -27,9 +27,9 @@ namespace cocoon
     std::string Appearance::best_match_from_appearances_with_names(const std::vector<std::string>& appearances) const
     {
         return cocoon::internal::from([cocoon::internal::ns<::NSAppearance>(this) bestMatchFromAppearancesWithNames:cocoon::internal::to_array(appearances, [](const std::string& e) -> id
-                                                                                                     {
-                                                                                                         return cocoon::internal::to(e);
-                                                                                                     })]);
+                                                                                                                                               {
+                                                                                                                                                   return cocoon::internal::to(e);
+                                                                                                                                               })]);
     }
 
     void Appearance::perform_as_current_drawing_appearance(std::function<void()> block) const

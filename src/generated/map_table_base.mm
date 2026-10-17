@@ -26,13 +26,13 @@ namespace cocoon
     std::vector<std::pair<Object, Object>> MapTableBase::dictionary_representation() const
     {
         return cocoon::internal::from_dictionary<std::vector<std::pair<Object, Object>>>([cocoon::internal::ns<::NSMapTable>(this) dictionaryRepresentation], [](id k) -> Object
-                                                                           {
-                                                                               return cocoon::internal::wrap<Object>(k);
-                                                                           },
-                                                                           [](id v) -> Object
-                                                                           {
-                                                                               return cocoon::internal::wrap<Object>(v);
-                                                                           });
+                                                                                         {
+                                                                                             return cocoon::internal::wrap<Object>(k);
+                                                                                         },
+                                                                                         [](id v) -> Object
+                                                                                         {
+                                                                                             return cocoon::internal::wrap<Object>(v);
+                                                                                         });
     }
 
     EnumeratorBase MapTableBase::key_enumerator() const

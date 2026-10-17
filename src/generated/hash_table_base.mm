@@ -96,9 +96,9 @@ namespace cocoon
     std::vector<Object> HashTableBase::all_objects() const
     {
         return cocoon::internal::from_array<Object>([cocoon::internal::ns<::NSHashTable>(this) allObjects], [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     Object HashTableBase::any_object() const
@@ -119,8 +119,8 @@ namespace cocoon
     std::vector<Object> HashTableBase::set_representation() const
     {
         return cocoon::internal::from_array<Object>([[cocoon::internal::ns<::NSHashTable>(this) setRepresentation] allObjects], [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 }

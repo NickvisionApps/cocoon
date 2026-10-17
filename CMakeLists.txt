@@ -17,7 +17,13 @@ if(NOT APPLE)
 endif()
 
 option(COCOON_BUILD_EXAMPLES "Build the example applications" ON)
+option(COCOON_FORMAT "Run clang-format on the hand-written sources before building" ON)
 option(COCOON_REGENERATE "Add a target that regenerates the wrapper sources from the SDK headers" OFF)
+
+#cocoon SDK
+execute_process(COMMAND xcrun --sdk "${CMAKE_OSX_SYSROOT}" --show-sdk-version OUTPUT_VARIABLE COCOON_SDK_VERSION OUTPUT_STRIP_TRAILING_WHITESPACE ERROR_QUIET)
+string(REGEX MATCH "^[0-9]+" COCOON_SDK_MAJOR "${COCOON_SDK_VERSION}")
+message(STATUS "cocoon: building against the macOS ${COCOON_SDK_VERSION} SDK")
 
 #cocoon Setup
 file(GLOB_RECURSE COCOON_SOURCES CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/src/*.mm")
@@ -30,8 +36,11 @@ target_include_directories(${PROJECT_NAME}
     PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/src)
 target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_20)
+if(COCOON_SDK_MAJOR)
+    target_compile_definitions(${PROJECT_NAME} PUBLIC COCOON_SDK_MAJOR=${COCOON_SDK_MAJOR})
+endif()
 target_precompile_headers(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src/internal.h)
-target_compile_options(${PROJECT_NAME} PRIVATE -fobjc-arc -Wall -Wextra -Wno-unused-parameter -Wno-deprecated-declarations -Wno-unguarded-availability-new -Wno-auto-var-id -ferror-limit=0)
+target_compile_options(${PROJECT_NAME} PRIVATE -fobjc-arc -Wall -Wextra -Wno-unused-parameter -Wno-deprecated-declarations -Wno-unguarded-availability-new -Wno-cast-function-type-mismatch -Wno-objc-protocol-property-synthesis -Wno-auto-var-id -ferror-limit=0)
 
 #cocoon Packages
 target_link_libraries(${PROJECT_NAME} PUBLIC
@@ -55,6 +64,27 @@ install(FILES "${CMAKE_CURRENT_BINARY_DIR}/cmake/${PROJECT_NAME}Config.cmake" "$
 install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE" DESTINATION "${CMAKE_INSTALL_DATADIR}/licenses/${PROJECT_NAME}")
 export(EXPORT "${PROJECT_NAME}Targets" FILE "${CMAKE_CURRENT_BINARY_DIR}/cmake/${PROJECT_NAME}Targets.cmake" NAMESPACE ${PROJECT_NAME}::)
 
+#cocoon Format
+if(COCOON_FORMAT)
+    find_program(CLANG_FORMAT_EXECUTABLE clang-format)
+    if(CLANG_FORMAT_EXECUTABLE)
+        file(GLOB_RECURSE COCOON_FORMAT_FILES CONFIGURE_DEPENDS
+            "${CMAKE_CURRENT_SOURCE_DIR}/include/*.h"
+            "${CMAKE_CURRENT_SOURCE_DIR}/src/*.h"
+            "${CMAKE_CURRENT_SOURCE_DIR}/src/*.mm"
+            "${CMAKE_CURRENT_SOURCE_DIR}/examples/*.h"
+            "${CMAKE_CURRENT_SOURCE_DIR}/examples/*.cpp")
+        list(FILTER COCOON_FORMAT_FILES EXCLUDE REGEX "/generated/")
+        list(JOIN COCOON_FORMAT_FILES "\n" COCOON_FORMAT_LIST)
+        file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/format_files.txt" "${COCOON_FORMAT_LIST}\n")
+        add_custom_target(${PROJECT_NAME}_format
+            COMMAND ${CLANG_FORMAT_EXECUTABLE} -i --style=file --files=${CMAKE_CURRENT_BINARY_DIR}/format_files.txt
+            WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+            COMMENT "Formatting ${PROJECT_NAME} sources")
+        add_dependencies(${PROJECT_NAME} ${PROJECT_NAME}_format)
+    endif()
+endif()
+
 #cocoon Generator
 if(COCOON_REGENERATE)
     find_package(Python3 REQUIRED COMPONENTS Interpreter)
@@ -69,6 +99,10 @@ find_package(Doxygen QUIET)
 if(DOXYGEN_FOUND)
     set(DOXYGEN_PROJECT_NAME "${PROJECT_NAME}")
     set(DOXYGEN_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/docs)
+    file(STRINGS "${CMAKE_CURRENT_SOURCE_DIR}/include/generated/availability.h" COCOON_AVAILABILITY_DEFINES REGEX "^#define COCOON_MACOS_[0-9]+")
+    list(TRANSFORM COCOON_AVAILABILITY_DEFINES REPLACE "^#define (COCOON_MACOS_[0-9]+).*" "\\1")
+    list(REMOVE_DUPLICATES COCOON_AVAILABILITY_DEFINES)
+    set(DOXYGEN_PREDEFINED ${COCOON_AVAILABILITY_DEFINES})
     set(DOXYGEN_EXTRACT_ALL YES)
     set(DOXYGEN_JAVADOC_AUTOBRIEF YES)
     set(DOXYGEN_GENERATE_LATEX NO)
@@ -100,4 +134,5 @@ endif()
 #cocoon Examples
 if(COCOON_BUILD_EXAMPLES)
     add_subdirectory(examples/gallery)
+    add_subdirectory(examples/calculator)
 endif()

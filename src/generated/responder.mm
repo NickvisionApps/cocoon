@@ -18,9 +18,9 @@ namespace cocoon
     std::vector<std::string> Responder::allowed_classes_for_restorable_state_key_path(const std::string& key_path)
     {
         return cocoon::internal::from_array<std::string>([::NSResponder allowedClassesForRestorableStateKeyPath:cocoon::internal::to(key_path)], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from(NSStringFromClass(e));
-                                           });
+                                                         {
+                                                             return cocoon::internal::from(NSStringFromClass(e));
+                                                         });
     }
 
     bool Responder::become_first_responder() const
@@ -81,9 +81,9 @@ namespace cocoon
     void Responder::interpret_key_events(const std::vector<Event>& event_array) const
     {
         [cocoon::internal::ns<::NSResponder>(this) interpretKeyEvents:cocoon::internal::to_array(event_array, [](const Event& e) -> id
-                                                                     {
-                                                                         return cocoon::internal::native<::NSEvent>(e);
-                                                                     })];
+                                                                                                 {
+                                                                                                     return cocoon::internal::native<::NSEvent>(e);
+                                                                                                 })];
     }
 
     void Responder::invalidate_restorable_state() const
@@ -359,9 +359,9 @@ namespace cocoon
     std::vector<std::string> Responder::restorable_state_key_paths()
     {
         return cocoon::internal::from_array<std::string>([::NSResponder restorableStateKeyPaths], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     TouchBar Responder::touch_bar() const

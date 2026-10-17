@@ -1,5 +1,6 @@
 #pragma once
 
+#include "generated/availability.h"
 #include "generated/collection_layout_supplementary_item.h"
 #include "generated/enums.h"
 #include "generated/structs.h"

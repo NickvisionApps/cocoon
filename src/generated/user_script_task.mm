@@ -4,15 +4,15 @@
 namespace cocoon
 {
     UserScriptTask::UserScriptTask(const URL& url) : UserScriptTask(Adopt{cocoon::internal::retain([&]() -> id
-                                                                                     {
-                                                                                         NSError* __error = nil;
-                                                                                         id __r = [[::NSUserScriptTask alloc] initWithURL:cocoon::internal::native<::NSURL>(url) error:&__error];
-                                                                                         if (!__r && __error)
-                                                                                         {
-                                                                                             throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
-                                                                                         }
-                                                                                         return __r;
-                                                                                     }())})
+                                                                                                   {
+                                                                                                       NSError* __error = nil;
+                                                                                                       id __r = [[::NSUserScriptTask alloc] initWithURL:cocoon::internal::native<::NSURL>(url) error:&__error];
+                                                                                                       if (!__r && __error)
+                                                                                                       {
+                                                                                                           throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
+                                                                                                       }
+                                                                                                       return __r;
+                                                                                                   }())})
     {
     }
 

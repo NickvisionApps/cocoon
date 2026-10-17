@@ -1,5 +1,6 @@
 #pragma once
 
+#include "generated/availability.h"
 #include "generated/enums.h"
 #include "generated/structs.h"
 #include "object.h"
@@ -406,12 +407,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         std::string last_path_component() const;
-        /**
-     * @brief Returns the `parameterString` property of `NSURL`.
-     * @details The parameter string of the URL.
-     * @return The converted Objective-C result.
-     */
-        std::string parameter_string() const;
         /**
      * @brief Returns the `password` property of `NSURL`.
      * @details The password component of the URL, or 'nil' if the URL does not conform to RFC 1808.

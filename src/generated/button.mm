@@ -39,9 +39,9 @@ namespace cocoon
     void Button::compress_with_prioritized_compression_options(const std::vector<UserInterfaceCompressionOptions>& prioritized_options) const
     {
         [cocoon::internal::ns<::NSButton>(this) compressWithPrioritizedCompressionOptions:cocoon::internal::to_array(prioritized_options, [](const UserInterfaceCompressionOptions& e) -> id
-                                                                                         {
-                                                                                             return cocoon::internal::native<::NSUserInterfaceCompressionOptions>(e);
-                                                                                         })];
+                                                                                                                     {
+                                                                                                                         return cocoon::internal::native<::NSUserInterfaceCompressionOptions>(e);
+                                                                                                                     })];
     }
 
     void Button::get_periodic_delay(float* delay, float* interval) const
@@ -57,9 +57,9 @@ namespace cocoon
     Size Button::minimum_size_with_prioritized_compression_options(const std::vector<UserInterfaceCompressionOptions>& prioritized_options) const
     {
         return cocoon::internal::from([cocoon::internal::ns<::NSButton>(this) minimumSizeWithPrioritizedCompressionOptions:cocoon::internal::to_array(prioritized_options, [](const UserInterfaceCompressionOptions& e) -> id
-                                                                                                            {
-                                                                                                                return cocoon::internal::native<::NSUserInterfaceCompressionOptions>(e);
-                                                                                                            })]);
+                                                                                                                                                      {
+                                                                                                                                                          return cocoon::internal::native<::NSUserInterfaceCompressionOptions>(e);
+                                                                                                                                                      })]);
     }
 
     bool Button::perform_key_equivalent(const Event& key) const
@@ -361,8 +361,8 @@ namespace cocoon
     {
         id host = (__bridge id)native;
         cocoon::internal::bind_action(host, host, [](id host, id sender)
-                        {
-                            cocoon::Signal<cocoon::Button, void()>::emit((__bridge void*)host, "clicked");
-                        });
+                                      {
+                                          cocoon::Signal<cocoon::Button, void()>::emit((__bridge void*)host, "clicked");
+                                      });
     }
 }

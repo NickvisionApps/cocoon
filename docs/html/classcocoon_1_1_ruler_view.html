@@ -20,6 +20,7 @@
   <td id="projectalign">
    <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
    </div>
+   <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
  </tr>
  </tbody>
@@ -983,9 +984,9 @@ Static Public Member Functions</h2></td></tr>
 <div class="line"> </div>
 <div class="line"><a class="code hl_class" href="classcocoon_1_1_ruler_view.html">cocoon::RulerView</a> <a class="code hl_function" href="classcocoon_1_1_view.html#a96da343b9862b471b88f96e21cf3c746">ruler_view</a>;</div>
 <div class="line"><a class="code hl_function" href="classcocoon_1_1_view.html#a96da343b9862b471b88f96e21cf3c746">ruler_view</a>.<a class="code hl_function" href="#a9dedea6d98ab969b5ab482d430952ad0">set_accessory_view</a>(<a class="code hl_class" href="classcocoon_1_1_view.html">cocoon::View</a>());</div>
-<div class="ttc" id="aclasscocoon_1_1_ruler_view_html"><div class="ttname"><a href="classcocoon_1_1_ruler_view.html">cocoon::RulerView</a></div><div class="ttdoc">C++ handle for the Objective-C class NSRulerView (AppKit).</div><div class="ttdef"><b>Definition</b> ruler_view.h:46</div></div>
+<div class="ttc" id="aclasscocoon_1_1_ruler_view_html"><div class="ttname"><a href="classcocoon_1_1_ruler_view.html">cocoon::RulerView</a></div><div class="ttdoc">C++ handle for the Objective-C class NSRulerView (AppKit).</div><div class="ttdef"><b>Definition</b> ruler_view.h:47</div></div>
 <div class="ttc" id="aclasscocoon_1_1_ruler_view_html_a9dedea6d98ab969b5ab482d430952ad0"><div class="ttname"><a href="#a9dedea6d98ab969b5ab482d430952ad0">cocoon::RulerView::set_accessory_view</a></div><div class="ttdeci">void set_accessory_view(const View &amp;value) const</div><div class="ttdoc">Sets the accessoryView property of NSRulerView.</div></div>
-<div class="ttc" id="aclasscocoon_1_1_view_html"><div class="ttname"><a href="classcocoon_1_1_view.html">cocoon::View</a></div><div class="ttdoc">The base of all views (NSView): hierarchy, geometry, Auto Layout helpers and appearance.</div><div class="ttdef"><b>Definition</b> view.h:76</div></div>
+<div class="ttc" id="aclasscocoon_1_1_view_html"><div class="ttname"><a href="classcocoon_1_1_view.html">cocoon::View</a></div><div class="ttdoc">The base of all views (NSView): hierarchy, geometry, Auto Layout helpers and appearance.</div><div class="ttdef"><b>Definition</b> view.h:77</div></div>
 <div class="ttc" id="aclasscocoon_1_1_view_html_a96da343b9862b471b88f96e21cf3c746"><div class="ttname"><a href="classcocoon_1_1_view.html#a96da343b9862b471b88f96e21cf3c746">cocoon::View::ruler_view</a></div><div class="ttdeci">void ruler_view(const RulerView &amp;ruler, const RulerMarker &amp;marker) const</div><div class="ttdoc">Calls -[NSView rulerView:didAddMarker:].</div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_ruler_view.html">cocoon::RulerView</a> <a class="code hl_function" href="classcocoon_1_1_view.html#a96da343b9862b471b88f96e21cf3c746">ruler_view</a>{};</div>
@@ -998,7 +999,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="line"><a class="code hl_function" href="classcocoon_1_1_view.html#a96da343b9862b471b88f96e21cf3c746">ruler_view</a>.add_marker(<a class="code hl_class" href="classcocoon_1_1_ruler_marker.html">cocoon::RulerMarker</a>());</div>
 <div class="line"><a class="code hl_function" href="classcocoon_1_1_view.html#a96da343b9862b471b88f96e21cf3c746">ruler_view</a>.draw_hash_marks_and_labels_in_rect({{0, 0}, {100, 100}});</div>
 <div class="line"><a class="code hl_function" href="classcocoon_1_1_view.html#a96da343b9862b471b88f96e21cf3c746">ruler_view</a>.<a class="code hl_function" href="#a6a138432028f64f7fbb5ba2aa4b93186">draw_markers_in_rect</a>({{0, 0}, {100, 100}});</div>
-<div class="ttc" id="aclasscocoon_1_1_ruler_marker_html"><div class="ttname"><a href="classcocoon_1_1_ruler_marker.html">cocoon::RulerMarker</a></div><div class="ttdoc">C++ handle for the Objective-C class NSRulerMarker (AppKit).</div><div class="ttdef"><b>Definition</b> ruler_marker.h:42</div></div>
+<div class="ttc" id="aclasscocoon_1_1_ruler_marker_html"><div class="ttname"><a href="classcocoon_1_1_ruler_marker.html">cocoon::RulerMarker</a></div><div class="ttdoc">C++ handle for the Objective-C class NSRulerMarker (AppKit).</div><div class="ttdef"><b>Definition</b> ruler_marker.h:43</div></div>
 <div class="ttc" id="aclasscocoon_1_1_ruler_view_html_a19c0a1d58679b68d845c013377c77b08"><div class="ttname"><a href="#a19c0a1d58679b68d845c013377c77b08">cocoon::RulerView::client_view</a></div><div class="ttdeci">View client_view() const</div><div class="ttdoc">Returns the clientView property of NSRulerView.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_ruler_view_html_a30cf084aceec2450869871151113c205"><div class="ttname"><a href="#a30cf084aceec2450869871151113c205">cocoon::RulerView::accessory_view</a></div><div class="ttdeci">View accessory_view() const</div><div class="ttdoc">Returns the accessoryView property of NSRulerView.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_ruler_view_html_a6a138432028f64f7fbb5ba2aa4b93186"><div class="ttname"><a href="#a6a138432028f64f7fbb5ba2aa4b93186">cocoon::RulerView::draw_markers_in_rect</a></div><div class="ttdeci">void draw_markers_in_rect(const Rect &amp;rect) const</div><div class="ttdoc">Calls -[NSRulerView drawMarkersInRect:].</div></div>

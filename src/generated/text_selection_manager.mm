@@ -1,6 +1,7 @@
 #include "generated/text_selection_manager.h"
 #include "internal.h"
 
+#ifdef COCOON_MACOS_27
 @interface AKTextSelectionManagerDelegate : NSObject <NSTextSelectionManagerDelegate>
 {
 @public
@@ -10,6 +11,7 @@
 
 @implementation AKTextSelectionManagerDelegate
 
+#ifdef COCOON_MACOS_27
 - (BOOL)selectionManager:(NSTextSelectionManager*)selectionManager shouldBeginSelectionAtPoint:(NSPoint)point
 {
     id strongHost = host;
@@ -21,6 +23,9 @@
     return static_cast<::BOOL>(__r);
 }
 
+#endif
+
+#ifdef COCOON_MACOS_27
 - (void)selectionManagerWillBeginSelection:(NSTextSelectionManager*)selectionManager
 {
     id strongHost = host;
@@ -31,6 +36,9 @@
     cocoon::Signal<cocoon::TextSelectionManager, void()>::emit((__bridge void*)strongHost, "selection_manager_will_begin_selection");
 }
 
+#endif
+
+#ifdef COCOON_MACOS_27
 - (void)selectionManagerDidEndSelection:(NSTextSelectionManager*)selectionManager
 {
     id strongHost = host;
@@ -41,6 +49,9 @@
     cocoon::Signal<cocoon::TextSelectionManager, void()>::emit((__bridge void*)strongHost, "selection_manager_did_end_selection");
 }
 
+#endif
+
+#ifdef COCOON_MACOS_27
 - (id<NSTextLocation>)selectionManager:(NSTextSelectionManager*)selectionManager locationOfTextContainerAtPoint:(NSPoint)point
 {
     id strongHost = host;
@@ -52,6 +63,9 @@
     return cocoon::internal::native_id(__r);
 }
 
+#endif
+
+#ifdef COCOON_MACOS_27
 - (NSRect)selectionManager:(NSTextSelectionManager*)selectionManager frameOfTextContainerAtPoint:(NSPoint)point
 {
     id strongHost = host;
@@ -63,6 +77,9 @@
     return cocoon::internal::to(__r);
 }
 
+#endif
+
+#ifdef COCOON_MACOS_27
 - (NSDraggingSession*)selectionManager:(NSTextSelectionManager*)selectionManager makeDraggingSessionWithGesture:(NSGestureRecognizer*)gesture
 {
     id strongHost = host;
@@ -74,33 +91,53 @@
     return cocoon::internal::native<::NSDraggingSession>(__r);
 }
 
+#endif
+
 - (BOOL)respondsToSelector:(SEL)selector
 {
     id strongHost = host;
+#ifdef COCOON_MACOS_27
     if (selector == @selector(selectionManager:shouldBeginSelectionAtPoint:))
     {
         return strongHost && cocoon::Signal<cocoon::TextSelectionManager, bool(cocoon::Point)>::connected((__bridge void*)strongHost, "selection_manager_should_begin_selection_at_point");
     }
+#endif
+
+#ifdef COCOON_MACOS_27
     if (selector == @selector(selectionManagerWillBeginSelection:))
     {
         return strongHost && cocoon::Signal<cocoon::TextSelectionManager, void()>::connected((__bridge void*)strongHost, "selection_manager_will_begin_selection");
     }
+#endif
+
+#ifdef COCOON_MACOS_27
     if (selector == @selector(selectionManagerDidEndSelection:))
     {
         return strongHost && cocoon::Signal<cocoon::TextSelectionManager, void()>::connected((__bridge void*)strongHost, "selection_manager_did_end_selection");
     }
+#endif
+
+#ifdef COCOON_MACOS_27
     if (selector == @selector(selectionManager:locationOfTextContainerAtPoint:))
     {
         return strongHost && cocoon::Signal<cocoon::TextSelectionManager, cocoon::Object(cocoon::Point)>::connected((__bridge void*)strongHost, "selection_manager_location_of_text_container_at_point");
     }
+#endif
+
+#ifdef COCOON_MACOS_27
     if (selector == @selector(selectionManager:frameOfTextContainerAtPoint:))
     {
         return strongHost && cocoon::Signal<cocoon::TextSelectionManager, cocoon::Rect(cocoon::Point)>::connected((__bridge void*)strongHost, "selection_manager_frame_of_text_container_at_point");
     }
+#endif
+
+#ifdef COCOON_MACOS_27
     if (selector == @selector(selectionManager:makeDraggingSessionWithGesture:))
     {
         return strongHost && cocoon::Signal<cocoon::TextSelectionManager, cocoon::DraggingSession(cocoon::GestureRecognizer)>::connected((__bridge void*)strongHost, "selection_manager_make_dragging_session_with_gesture");
     }
+#endif
+
     return [super respondsToSelector:selector];
 }
 
@@ -115,7 +152,7 @@
 
 @implementation AKTextSelectionManagerTextSelectionDataSourceDelegate
 
-- (void)enumerateSubstringsFromLocation:(id<NSTextLocation>)location options:(NSStringEnumerationOptions)options usingBlock:(void (^)(NSString*, NSTextRange*, NSTextRange*, BOOL*))block
+- (void)enumerateSubstringsFromLocation:(id<NSTextLocation>)location options:(NSStringEnumerationOptions)options usingBlock:(void(NS_NOESCAPE ^)(NSString*, NSTextRange*, NSTextRange*, BOOL*))block
 {
     id strongHost = host;
     if (!strongHost)
@@ -182,7 +219,7 @@
     return static_cast<::NSTextSelectionNavigationWritingDirection>(__r);
 }
 
-- (void)enumerateCaretOffsetsInLineFragmentAtLocation:(id<NSTextLocation>)location usingBlock:(void (^)(CGFloat, id<NSTextLocation>, BOOL, BOOL*))block
+- (void)enumerateCaretOffsetsInLineFragmentAtLocation:(id<NSTextLocation>)location usingBlock:(void(NS_NOESCAPE ^)(CGFloat, id<NSTextLocation>, BOOL, BOOL*))block
 {
     id strongHost = host;
     if (!strongHost)
@@ -216,7 +253,7 @@
     return cocoon::internal::native<::NSTextRange>(__r);
 }
 
-- (void)enumerateContainerBoundariesFromLocation:(id<NSTextLocation>)location reverse:(BOOL)reverse usingBlock:(void (^)(id<NSTextLocation>, BOOL*))block
+- (void)enumerateContainerBoundariesFromLocation:(id<NSTextLocation>)location reverse:(BOOL)reverse usingBlock:(void(NS_NOESCAPE ^)(id<NSTextLocation>, BOOL*))block
 {
     id strongHost = host;
     if (!strongHost)
@@ -250,6 +287,7 @@
     return static_cast<::NSTextSelectionNavigationLayoutOrientation>(__r);
 }
 
+#ifdef COCOON_MACOS_27
 - (CGPoint)convertInteractionPoint:(CGPoint)point toContainerAtLocation:(id<NSTextLocation>)containerLocation
 {
     id strongHost = host;
@@ -260,6 +298,8 @@
     auto __r = cocoon::Signal<cocoon::TextSelectionManager, cocoon::Point(cocoon::Object)>::emit((__bridge void*)strongHost, "convert_interaction_point_to_container_at_location", cocoon::internal::wrap<cocoon::Object>(containerLocation));
     return cocoon::internal::to(__r);
 }
+
+#endif
 
 - (BOOL)respondsToSelector:(SEL)selector
 {
@@ -300,10 +340,13 @@
     {
         return strongHost && cocoon::Signal<cocoon::TextSelectionManager, cocoon::TextSelectionNavigationLayoutOrientation()>::connected((__bridge void*)strongHost, "text_layout_orientation_at_location");
     }
+#ifdef COCOON_MACOS_27
     if (selector == @selector(convertInteractionPoint:toContainerAtLocation:))
     {
         return strongHost && cocoon::Signal<cocoon::TextSelectionManager, cocoon::Point(cocoon::Object)>::connected((__bridge void*)strongHost, "convert_interaction_point_to_container_at_location");
     }
+#endif
+
     return [super respondsToSelector:selector];
 }
 
@@ -325,23 +368,43 @@ namespace cocoon
     {
     }
 
+#ifdef COCOON_MACOS_27
     std::vector<GestureRecognizer> TextSelectionManager::gestures_for_failure_requirements() const
     {
-        return cocoon::internal::from_array<GestureRecognizer>([cocoon::internal::ns<::NSTextSelectionManager>(this) gesturesForFailureRequirements], [](id e) -> GestureRecognizer
-                                                 {
-                                                     return cocoon::internal::wrap<GestureRecognizer>((::NSGestureRecognizer*)e);
-                                                 });
+        if (@available(macOS 27.0, *))
+        {
+            return cocoon::internal::from_array<GestureRecognizer>([cocoon::internal::ns<::NSTextSelectionManager>(this) gesturesForFailureRequirements], [](id e) -> GestureRecognizer
+                                                                   {
+                                                                       return cocoon::internal::wrap<GestureRecognizer>((::NSGestureRecognizer*)e);
+                                                                   });
+        }
+        return {};
     }
 
+#endif
+
+#ifdef COCOON_MACOS_27
     TextSelectionMode TextSelectionManager::text_selection_mode() const
     {
-        return static_cast<TextSelectionMode>([cocoon::internal::ns<::NSTextSelectionManager>(this) textSelectionMode]);
+        if (@available(macOS 27.0, *))
+        {
+            return static_cast<TextSelectionMode>([cocoon::internal::ns<::NSTextSelectionManager>(this) textSelectionMode]);
+        }
+        return {};
     }
 
+#endif
+
+#ifdef COCOON_MACOS_27
     void TextSelectionManager::set_text_selection_mode(TextSelectionMode value) const
     {
-        [cocoon::internal::ns<::NSTextSelectionManager>(this) setTextSelectionMode:static_cast<::NSTextSelectionMode>(value)];
+        if (@available(macOS 27.0, *))
+        {
+            [cocoon::internal::ns<::NSTextSelectionManager>(this) setTextSelectionMode:static_cast<::NSTextSelectionMode>(value)];
+        }
     }
+
+#endif
 
     void TextSelectionManager::install_delegate_delegate_(void* native)
     {
@@ -371,3 +434,5 @@ namespace cocoon
         });
     }
 }
+
+#endif

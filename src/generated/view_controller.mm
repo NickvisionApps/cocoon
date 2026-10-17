@@ -161,17 +161,17 @@ namespace cocoon
     std::vector<ViewController> ViewController::child_view_controllers() const
     {
         return cocoon::internal::from_array<ViewController>([cocoon::internal::ns<::NSViewController>(this) childViewControllers], [](id e) -> ViewController
-                                              {
-                                                  return cocoon::internal::wrap<ViewController>((::NSViewController*)e);
-                                              });
+                                                            {
+                                                                return cocoon::internal::wrap<ViewController>((::NSViewController*)e);
+                                                            });
     }
 
     void ViewController::set_child_view_controllers(const std::vector<ViewController>& value) const
     {
         [cocoon::internal::ns<::NSViewController>(this) setChildViewControllers:cocoon::internal::to_array(value, [](const ViewController& e) -> id
-                                                                               {
-                                                                                   return cocoon::internal::native<::NSViewController>(e);
-                                                                               })];
+                                                                                                           {
+                                                                                                               return cocoon::internal::native<::NSViewController>(e);
+                                                                                                           })];
     }
 
     ExtensionContext ViewController::extension_context() const
@@ -227,9 +227,9 @@ namespace cocoon
     std::vector<ViewController> ViewController::presented_view_controllers() const
     {
         return cocoon::internal::from_array<ViewController>([cocoon::internal::ns<::NSViewController>(this) presentedViewControllers], [](id e) -> ViewController
-                                              {
-                                                  return cocoon::internal::wrap<ViewController>((::NSViewController*)e);
-                                              });
+                                                            {
+                                                                return cocoon::internal::wrap<ViewController>((::NSViewController*)e);
+                                                            });
     }
 
     ViewController ViewController::presenting_view_controller() const

@@ -4,14 +4,14 @@
 namespace cocoon
 {
     Progress::Progress(const Progress& parent_progress_or_nil, const std::map<std::string, Object>& user_info_or_nil) : Progress(Adopt{cocoon::internal::retain([[::NSProgress alloc] initWithParent:cocoon::internal::native<::NSProgress>(parent_progress_or_nil)
-                                                                                                                                                                              userInfo:cocoon::internal::to_dictionary(user_info_or_nil, [](const std::string& k) -> id
-                                                                                                                                                                                                         {
-                                                                                                                                                                                                             return cocoon::internal::to(k);
-                                                                                                                                                                                                         },
-                                                                                                                                                                                                         [](const Object& v) -> id
-                                                                                                                                                                                                         {
-                                                                                                                                                                                                             return cocoon::internal::native_id(v);
-                                                                                                                                                                                                         })])})
+                                                                                                                                                                                            userInfo:cocoon::internal::to_dictionary(user_info_or_nil, [](const std::string& k) -> id
+                                                                                                                                                                                                                                     {
+                                                                                                                                                                                                                                         return cocoon::internal::to(k);
+                                                                                                                                                                                                                                     },
+                                                                                                                                                                                                                                     [](const Object& v) -> id
+                                                                                                                                                                                                                                     {
+                                                                                                                                                                                                                                         return cocoon::internal::native_id(v);
+                                                                                                                                                                                                                                     })])})
     {
     }
 
@@ -333,12 +333,12 @@ namespace cocoon
     std::map<std::string, Object> Progress::user_info() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::NSProgress>(this) userInfo], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 }

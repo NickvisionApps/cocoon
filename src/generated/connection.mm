@@ -141,9 +141,9 @@ namespace cocoon
     std::vector<Connection> Connection::all_connections()
     {
         return cocoon::internal::from_array<Connection>([::NSConnection allConnections], [](id e) -> Connection
-                                          {
-                                              return cocoon::internal::wrap<Connection>((::NSConnection*)e);
-                                          });
+                                                        {
+                                                            return cocoon::internal::wrap<Connection>((::NSConnection*)e);
+                                                        });
     }
 
     Connection Connection::connection_with_receive_port(const Port& receive_port, const Port& send_port)
@@ -169,9 +169,9 @@ namespace cocoon
     void Connection::dispatch_with_components(const std::vector<Object>& components) const
     {
         [cocoon::internal::ns<::NSConnection>(this) dispatchWithComponents:cocoon::internal::to_array(components, [](const Object& e) -> id
-                                                                          {
-                                                                              return cocoon::internal::native_id(e);
-                                                                          })];
+                                                                                                      {
+                                                                                                          return cocoon::internal::native_id(e);
+                                                                                                      })];
     }
 
     void Connection::enable_multiple_threads() const
@@ -232,9 +232,9 @@ namespace cocoon
     std::vector<Object> Connection::local_objects() const
     {
         return cocoon::internal::from_array<Object>([cocoon::internal::ns<::NSConnection>(this) localObjects], [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     bool Connection::multiple_threads_enabled() const
@@ -250,9 +250,9 @@ namespace cocoon
     std::vector<Object> Connection::remote_objects() const
     {
         return cocoon::internal::from_array<Object>([cocoon::internal::ns<::NSConnection>(this) remoteObjects], [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     double Connection::reply_timeout() const
@@ -268,9 +268,9 @@ namespace cocoon
     std::vector<std::string> Connection::request_modes() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSConnection>(this) requestModes], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     double Connection::request_timeout() const
@@ -301,13 +301,13 @@ namespace cocoon
     std::map<std::string, Number> Connection::statistics() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Number>>([cocoon::internal::ns<::NSConnection>(this) statistics], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Number
-                                                                  {
-                                                                      return cocoon::internal::wrap<Number>((::NSNumber*)v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Number
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Number>((::NSNumber*)v);
+                                                                                });
     }
 
     bool Connection::is_valid() const

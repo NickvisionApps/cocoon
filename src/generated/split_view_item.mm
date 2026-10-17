@@ -107,17 +107,17 @@ namespace cocoon
     std::vector<SplitViewItemAccessoryViewController> SplitViewItem::bottom_aligned_accessory_view_controllers() const
     {
         return cocoon::internal::from_array<SplitViewItemAccessoryViewController>([cocoon::internal::ns<::NSSplitViewItem>(this) bottomAlignedAccessoryViewControllers], [](id e) -> SplitViewItemAccessoryViewController
-                                                                    {
-                                                                        return cocoon::internal::wrap<SplitViewItemAccessoryViewController>((::NSSplitViewItemAccessoryViewController*)e);
-                                                                    });
+                                                                                  {
+                                                                                      return cocoon::internal::wrap<SplitViewItemAccessoryViewController>((::NSSplitViewItemAccessoryViewController*)e);
+                                                                                  });
     }
 
     void SplitViewItem::set_bottom_aligned_accessory_view_controllers(const std::vector<SplitViewItemAccessoryViewController>& value) const
     {
         [cocoon::internal::ns<::NSSplitViewItem>(this) setBottomAlignedAccessoryViewControllers:cocoon::internal::to_array(value, [](const SplitViewItemAccessoryViewController& e) -> id
-                                                                                               {
-                                                                                                   return cocoon::internal::native<::NSSplitViewItemAccessoryViewController>(e);
-                                                                                               })];
+                                                                                                                           {
+                                                                                                                               return cocoon::internal::native<::NSSplitViewItemAccessoryViewController>(e);
+                                                                                                                           })];
     }
 
     bool SplitViewItem::can_collapse() const
@@ -223,17 +223,17 @@ namespace cocoon
     std::vector<SplitViewItemAccessoryViewController> SplitViewItem::top_aligned_accessory_view_controllers() const
     {
         return cocoon::internal::from_array<SplitViewItemAccessoryViewController>([cocoon::internal::ns<::NSSplitViewItem>(this) topAlignedAccessoryViewControllers], [](id e) -> SplitViewItemAccessoryViewController
-                                                                    {
-                                                                        return cocoon::internal::wrap<SplitViewItemAccessoryViewController>((::NSSplitViewItemAccessoryViewController*)e);
-                                                                    });
+                                                                                  {
+                                                                                      return cocoon::internal::wrap<SplitViewItemAccessoryViewController>((::NSSplitViewItemAccessoryViewController*)e);
+                                                                                  });
     }
 
     void SplitViewItem::set_top_aligned_accessory_view_controllers(const std::vector<SplitViewItemAccessoryViewController>& value) const
     {
         [cocoon::internal::ns<::NSSplitViewItem>(this) setTopAlignedAccessoryViewControllers:cocoon::internal::to_array(value, [](const SplitViewItemAccessoryViewController& e) -> id
-                                                                                            {
-                                                                                                return cocoon::internal::native<::NSSplitViewItemAccessoryViewController>(e);
-                                                                                            })];
+                                                                                                                        {
+                                                                                                                            return cocoon::internal::native<::NSSplitViewItemAccessoryViewController>(e);
+                                                                                                                        })];
     }
 
     ViewController SplitViewItem::view_controller() const

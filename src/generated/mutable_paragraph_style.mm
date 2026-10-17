@@ -193,17 +193,17 @@ namespace cocoon
     std::vector<TextTab> MutableParagraphStyle::tab_stops() const
     {
         return cocoon::internal::from_array<TextTab>([cocoon::internal::ns<::NSMutableParagraphStyle>(this) tabStops], [](id e) -> TextTab
-                                       {
-                                           return cocoon::internal::wrap<TextTab>((::NSTextTab*)e);
-                                       });
+                                                     {
+                                                         return cocoon::internal::wrap<TextTab>((::NSTextTab*)e);
+                                                     });
     }
 
     void MutableParagraphStyle::set_tab_stops(const std::vector<TextTab>& value) const
     {
         [cocoon::internal::ns<::NSMutableParagraphStyle>(this) setTabStops:cocoon::internal::to_array(value, [](const TextTab& e) -> id
-                                                                          {
-                                                                              return cocoon::internal::native<::NSTextTab>(e);
-                                                                          })];
+                                                                                                      {
+                                                                                                          return cocoon::internal::native<::NSTextTab>(e);
+                                                                                                      })];
     }
 
     double MutableParagraphStyle::tail_indent() const
@@ -219,33 +219,33 @@ namespace cocoon
     std::vector<TextBlock> MutableParagraphStyle::text_blocks() const
     {
         return cocoon::internal::from_array<TextBlock>([cocoon::internal::ns<::NSMutableParagraphStyle>(this) textBlocks], [](id e) -> TextBlock
-                                         {
-                                             return cocoon::internal::wrap<TextBlock>((::NSTextBlock*)e);
-                                         });
+                                                       {
+                                                           return cocoon::internal::wrap<TextBlock>((::NSTextBlock*)e);
+                                                       });
     }
 
     void MutableParagraphStyle::set_text_blocks(const std::vector<TextBlock>& value) const
     {
         [cocoon::internal::ns<::NSMutableParagraphStyle>(this) setTextBlocks:cocoon::internal::to_array(value, [](const TextBlock& e) -> id
-                                                                            {
-                                                                                return cocoon::internal::native<::NSTextBlock>(e);
-                                                                            })];
+                                                                                                        {
+                                                                                                            return cocoon::internal::native<::NSTextBlock>(e);
+                                                                                                        })];
     }
 
     std::vector<TextList> MutableParagraphStyle::text_lists() const
     {
         return cocoon::internal::from_array<TextList>([cocoon::internal::ns<::NSMutableParagraphStyle>(this) textLists], [](id e) -> TextList
-                                        {
-                                            return cocoon::internal::wrap<TextList>((::NSTextList*)e);
-                                        });
+                                                      {
+                                                          return cocoon::internal::wrap<TextList>((::NSTextList*)e);
+                                                      });
     }
 
     void MutableParagraphStyle::set_text_lists(const std::vector<TextList>& value) const
     {
         [cocoon::internal::ns<::NSMutableParagraphStyle>(this) setTextLists:cocoon::internal::to_array(value, [](const TextList& e) -> id
-                                                                           {
-                                                                               return cocoon::internal::native<::NSTextList>(e);
-                                                                           })];
+                                                                                                       {
+                                                                                                           return cocoon::internal::native<::NSTextList>(e);
+                                                                                                       })];
     }
 
     float MutableParagraphStyle::tightening_factor_for_truncation() const

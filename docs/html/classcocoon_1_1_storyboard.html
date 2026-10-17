@@ -20,6 +20,7 @@
   <td id="projectalign">
    <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
    </div>
+   <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
  </tr>
  </tbody>
@@ -126,13 +127,13 @@ Static Public Member Functions</h2></td></tr>
 <dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;cocoon.h&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_class" href="classcocoon_1_1_storyboard.html">cocoon::Storyboard</a> storyboard;</div>
-<div class="ttc" id="aclasscocoon_1_1_storyboard_html"><div class="ttname"><a href="classcocoon_1_1_storyboard.html">cocoon::Storyboard</a></div><div class="ttdoc">C++ handle for the Objective-C class NSStoryboard (AppKit).</div><div class="ttdef"><b>Definition</b> storyboard.h:35</div></div>
+<div class="ttc" id="aclasscocoon_1_1_storyboard_html"><div class="ttname"><a href="classcocoon_1_1_storyboard.html">cocoon::Storyboard</a></div><div class="ttdoc">C++ handle for the Objective-C class NSStoryboard (AppKit).</div><div class="ttdef"><b>Definition</b> storyboard.h:36</div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_storyboard.html">cocoon::Storyboard</a> storyboard{};</div>
 <div class="line"><span class="keyword">auto</span> made_0 = <a class="code hl_function" href="#a43fb2952a1928cccd04b844472832116">cocoon::Storyboard::storyboard_with_name</a>(<span class="stringliteral">&quot;text&quot;</span>, <a class="code hl_class" href="classcocoon_1_1_bundle.html">cocoon::Bundle</a>());</div>
 <div class="line">storyboard.<a class="code hl_function" href="#ade592bc8fe3de5d057bbed38583d2bef">instantiate_controller_with_identifier</a>(<span class="stringliteral">&quot;text&quot;</span>);</div>
 <div class="line">storyboard.<a class="code hl_function" href="#a4f50af61a697dd60b9420278d21e43b0">instantiate_initial_controller</a>();</div>
-<div class="ttc" id="aclasscocoon_1_1_bundle_html"><div class="ttname"><a href="classcocoon_1_1_bundle.html">cocoon::Bundle</a></div><div class="ttdoc">C++ handle for the Objective-C class NSBundle (Foundation).</div><div class="ttdef"><b>Definition</b> bundle.h:40</div></div>
+<div class="ttc" id="aclasscocoon_1_1_bundle_html"><div class="ttname"><a href="classcocoon_1_1_bundle.html">cocoon::Bundle</a></div><div class="ttdoc">C++ handle for the Objective-C class NSBundle (Foundation).</div><div class="ttdef"><b>Definition</b> bundle.h:41</div></div>
 <div class="ttc" id="aclasscocoon_1_1_storyboard_html_a43fb2952a1928cccd04b844472832116"><div class="ttname"><a href="#a43fb2952a1928cccd04b844472832116">cocoon::Storyboard::storyboard_with_name</a></div><div class="ttdeci">static Storyboard storyboard_with_name(const std::string &amp;name, const Bundle &amp;storyboard_bundle_or_nil)</div><div class="ttdoc">Calls +[NSStoryboard storyboardWithName:bundle:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_storyboard_html_a4f50af61a697dd60b9420278d21e43b0"><div class="ttname"><a href="#a4f50af61a697dd60b9420278d21e43b0">cocoon::Storyboard::instantiate_initial_controller</a></div><div class="ttdeci">Object instantiate_initial_controller() const</div><div class="ttdoc">Calls -[NSStoryboard instantiateInitialController].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_storyboard_html_ade592bc8fe3de5d057bbed38583d2bef"><div class="ttname"><a href="#ade592bc8fe3de5d057bbed38583d2bef">cocoon::Storyboard::instantiate_controller_with_identifier</a></div><div class="ttdeci">Object instantiate_controller_with_identifier(const std::string &amp;identifier) const</div><div class="ttdoc">Calls -[NSStoryboard instantiateControllerWithIdentifier:].</div></div>

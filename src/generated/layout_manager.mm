@@ -10,7 +10,7 @@
 
 @implementation AKLayoutManagerDelegate
 
-- (NSUInteger)layoutManager:(NSLayoutManager*)layoutManager shouldGenerateGlyphs:(CGGlyph*)glyphs properties:(NSGlyphProperty*)props characterIndexes:(NSUInteger*)charIndexes font:(NSFont*)aFont forGlyphRange:(NSRange)glyphRange
+- (NSUInteger)layoutManager:(NSLayoutManager*)layoutManager shouldGenerateGlyphs:(const CGGlyph*)glyphs properties:(const NSGlyphProperty*)props characterIndexes:(const NSUInteger*)charIndexes font:(NSFont*)aFont forGlyphRange:(NSRange)glyphRange
 {
     id strongHost = host;
     if (!strongHost)
@@ -98,7 +98,7 @@
     return cocoon::internal::to(__r);
 }
 
-- (BOOL)layoutManager:(NSLayoutManager*)layoutManager shouldSetLineFragmentRect:(NSRect*)lineFragmentRect lineFragmentUsedRect:(NSRect*)lineFragmentUsedRect baselineOffset:(CGFloat*)baselineOffset inTextContainer:(NSTextContainer*)textContainer forGlyphRange:(NSRange)glyphRange
+- (BOOL)layoutManager:(NSLayoutManager*)layoutManager shouldSetLineFragmentRect:(inout NSRect*)lineFragmentRect lineFragmentUsedRect:(inout NSRect*)lineFragmentUsedRect baselineOffset:(inout CGFloat*)baselineOffset inTextContainer:(NSTextContainer*)textContainer forGlyphRange:(NSRange)glyphRange
 {
     id strongHost = host;
     if (!strongHost)
@@ -147,22 +147,22 @@
         return {};
     }
     auto __r = cocoon::Signal<cocoon::LayoutManager, std::map<std::string, cocoon::Object>(std::map<std::string, cocoon::Object>, bool, std::uint64_t, cocoon::Range*)>::emit((__bridge void*)strongHost, "should_use_temporary_attributes_for_drawing_to_screen_at_character_index_effective_range", cocoon::internal::from_dictionary<std::map<std::string, cocoon::Object>>(attrs, [](id k) -> std::string
-                                                                                                                                                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                                                                                                                                                     return cocoon::internal::from((NSString*)k);
-                                                                                                                                                                                                                                                                                                                                                                 },
-                                                                                                                                                                                                                                                                                                                                                                 [](id v) -> cocoon::Object
-                                                                                                                                                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                                                                                                                                                     return cocoon::internal::wrap<cocoon::Object>(v);
-                                                                                                                                                                                                                                                                                                                                                                 }),
+                                                                                                                                                                                                                                                                                                                                                                               {
+                                                                                                                                                                                                                                                                                                                                                                                   return cocoon::internal::from((NSString*)k);
+                                                                                                                                                                                                                                                                                                                                                                               },
+                                                                                                                                                                                                                                                                                                                                                                               [](id v) -> cocoon::Object
+                                                                                                                                                                                                                                                                                                                                                                               {
+                                                                                                                                                                                                                                                                                                                                                                                   return cocoon::internal::wrap<cocoon::Object>(v);
+                                                                                                                                                                                                                                                                                                                                                                               }),
                                                                                                                                                                               static_cast<bool>(toScreen), static_cast<std::uint64_t>(charIndex), (cocoon::Range*)(effectiveCharRange));
     return cocoon::internal::to_dictionary(__r, [](const std::string& k) -> id
-                             {
-                                 return cocoon::internal::to(k);
-                             },
-                             [](const cocoon::Object& v) -> id
-                             {
-                                 return cocoon::internal::native_id(v);
-                             });
+                                           {
+                                               return cocoon::internal::to(k);
+                                           },
+                                           [](const cocoon::Object& v) -> id
+                                           {
+                                               return cocoon::internal::native_id(v);
+                                           });
 }
 
 - (BOOL)respondsToSelector:(SEL)selector
@@ -258,14 +258,14 @@ namespace cocoon
     void LayoutManager::add_temporary_attributes(const std::map<std::string, Object>& attrs, const Range& char_range) const
     {
         [cocoon::internal::ns<::NSLayoutManager>(this) addTemporaryAttributes:cocoon::internal::to_dictionary(attrs, [](const std::string& k) -> id
-                                                                                  {
-                                                                                      return cocoon::internal::to(k);
-                                                                                  },
-                                                                                  [](const Object& v) -> id
-                                                                                  {
-                                                                                      return cocoon::internal::native_id(v);
-                                                                                  })
-                                              forCharacterRange:cocoon::internal::to(char_range)];
+                                                                                                              {
+                                                                                                                  return cocoon::internal::to(k);
+                                                                                                              },
+                                                                                                              [](const Object& v) -> id
+                                                                                                              {
+                                                                                                                  return cocoon::internal::native_id(v);
+                                                                                                              })
+                                                            forCharacterRange:cocoon::internal::to(char_range)];
     }
 
     void LayoutManager::add_text_container(const TextContainer& container) const
@@ -586,9 +586,9 @@ namespace cocoon
     std::vector<RulerMarker> LayoutManager::ruler_markers_for_text_view(const TextView& view, const ParagraphStyle& style, const RulerView& ruler) const
     {
         return cocoon::internal::from_array<RulerMarker>([cocoon::internal::ns<::NSLayoutManager>(this) rulerMarkersForTextView:cocoon::internal::native<::NSTextView>(view) paragraphStyle:cocoon::internal::native<::NSParagraphStyle>(style) ruler:cocoon::internal::native<::NSRulerView>(ruler)], [](id e) -> RulerMarker
-                                           {
-                                               return cocoon::internal::wrap<RulerMarker>((::NSRulerMarker*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::wrap<RulerMarker>((::NSRulerMarker*)e);
+                                                         });
     }
 
     void LayoutManager::set_attachment_size(const Size& attachment_size, const Range& glyph_range) const
@@ -639,14 +639,14 @@ namespace cocoon
     void LayoutManager::set_temporary_attributes(const std::map<std::string, Object>& attrs, const Range& char_range) const
     {
         [cocoon::internal::ns<::NSLayoutManager>(this) setTemporaryAttributes:cocoon::internal::to_dictionary(attrs, [](const std::string& k) -> id
-                                                                                  {
-                                                                                      return cocoon::internal::to(k);
-                                                                                  },
-                                                                                  [](const Object& v) -> id
-                                                                                  {
-                                                                                      return cocoon::internal::native_id(v);
-                                                                                  })
-                                              forCharacterRange:cocoon::internal::to(char_range)];
+                                                                                                              {
+                                                                                                                  return cocoon::internal::to(k);
+                                                                                                              },
+                                                                                                              [](const Object& v) -> id
+                                                                                                              {
+                                                                                                                  return cocoon::internal::native_id(v);
+                                                                                                              })
+                                                            forCharacterRange:cocoon::internal::to(char_range)];
     }
 
     void LayoutManager::set_text_container(const TextContainer& container, const Range& glyph_range) const
@@ -662,18 +662,18 @@ namespace cocoon
     void LayoutManager::show_cg_glyphs(const std::uint16_t* glyphs, const Point* positions, std::int64_t glyph_count, const Font& font, const AffineTransform3& text_matrix, const std::map<std::string, Object>& attributes, const CGContext& cg_context) const
     {
         [cocoon::internal::ns<::NSLayoutManager>(this) showCGGlyphs:(const ::CGGlyph*)(glyphs)
-                                            positions:(const ::CGPoint*)(positions)count:static_cast<::NSInteger>(glyph_count)
-                                                 font:cocoon::internal::native<::NSFont>(font)
-                                           textMatrix:cocoon::internal::to(text_matrix)
-                                           attributes:cocoon::internal::to_dictionary(attributes, [](const std::string& k) -> id
-                                                                        {
-                                                                            return cocoon::internal::to(k);
-                                                                        },
-                                                                        [](const Object& v) -> id
-                                                                        {
-                                                                            return cocoon::internal::native_id(v);
-                                                                        })
-                                            inContext:((::CGContextRef)(cg_context).handle())];
+                                                          positions:(const ::CGPoint*)(positions)count:static_cast<::NSInteger>(glyph_count)
+                                                               font:cocoon::internal::native<::NSFont>(font)
+                                                         textMatrix:cocoon::internal::to(text_matrix)
+                                                         attributes:cocoon::internal::to_dictionary(attributes, [](const std::string& k) -> id
+                                                                                                    {
+                                                                                                        return cocoon::internal::to(k);
+                                                                                                    },
+                                                                                                    [](const Object& v) -> id
+                                                                                                    {
+                                                                                                        return cocoon::internal::native_id(v);
+                                                                                                    })
+                                                          inContext:((::CGContextRef)(cg_context).handle())];
     }
 
     void LayoutManager::strikethrough_glyph_range(const Range& glyph_range, UnderlineStyle strikethrough_val, const Rect& line_rect, const Range& line_glyph_range, const Point& container_origin) const
@@ -694,25 +694,25 @@ namespace cocoon
     std::map<std::string, Object> LayoutManager::temporary_attributes_at_character_index(std::uint64_t char_index, Range* effective_char_range) const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::NSLayoutManager>(this) temporaryAttributesAtCharacterIndex:static_cast<::NSUInteger>(char_index) effectiveRange:(::NSRangePointer)(effective_char_range)], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     std::map<std::string, Object> LayoutManager::temporary_attributes_at_character_index(std::uint64_t location, Range* range, const Range& range_limit) const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::NSLayoutManager>(this) temporaryAttributesAtCharacterIndex:static_cast<::NSUInteger>(location) longestEffectiveRange:(::NSRangePointer)(range)inRange:cocoon::internal::to(range_limit)], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     void LayoutManager::text_container_changed_geometry(const TextContainer& container) const
@@ -853,9 +853,9 @@ namespace cocoon
     std::vector<TextContainer> LayoutManager::text_containers() const
     {
         return cocoon::internal::from_array<TextContainer>([cocoon::internal::ns<::NSLayoutManager>(this) textContainers], [](id e) -> TextContainer
-                                             {
-                                                 return cocoon::internal::wrap<TextContainer>((::NSTextContainer*)e);
-                                             });
+                                                           {
+                                                               return cocoon::internal::wrap<TextContainer>((::NSTextContainer*)e);
+                                                           });
     }
 
     TextStorage LayoutManager::text_storage() const

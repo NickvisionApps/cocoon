@@ -32,11 +32,11 @@ namespace cocoon
     void FileCoordinator::coordinate_access_with_intents(const std::vector<FileAccessIntent>& intents, const OperationQueue& queue, std::function<void(Error)> accessor) const
     {
         [cocoon::internal::ns<::NSFileCoordinator>(this) coordinateAccessWithIntents:cocoon::internal::to_array(intents, [](const FileAccessIntent& e) -> id
-                                                                                    {
-                                                                                        return cocoon::internal::native<::NSFileAccessIntent>(e);
-                                                                                    })
-                                                                 queue:cocoon::internal::native<::NSOperationQueue>(queue)
-                                                            byAccessor:(accessor ? (void (^)(::NSError*)) ^ void(::NSError * a136_0) { accessor(cocoon::internal::wrap<Error>(a136_0)); } : (void (^)(::NSError*))nil)];
+                                                                                                                {
+                                                                                                                    return cocoon::internal::native<::NSFileAccessIntent>(e);
+                                                                                                                })
+                                                                               queue:cocoon::internal::native<::NSOperationQueue>(queue)
+                                                                          byAccessor:(accessor ? (void (^)(::NSError*)) ^ void(::NSError * a136_0) { accessor(cocoon::internal::wrap<Error>(a136_0)); } : (void (^)(::NSError*))nil)];
     }
 
     void FileCoordinator::coordinate_reading_item_at_url(const URL& url, FileCoordinatorReadingOptions options, std::function<void(URL)> reader) const
@@ -82,10 +82,10 @@ namespace cocoon
     void FileCoordinator::item_at_url(const URL& url, const std::vector<std::string>& attributes) const
     {
         [cocoon::internal::ns<::NSFileCoordinator>(this) itemAtURL:cocoon::internal::native<::NSURL>(url)
-                         didChangeUbiquityAttributes:[NSSet setWithArray:cocoon::internal::to_array(attributes, [](const std::string& e) -> id
-                                                                                      {
-                                                                                          return cocoon::internal::to(e);
-                                                                                      })]];
+                                       didChangeUbiquityAttributes:[NSSet setWithArray:cocoon::internal::to_array(attributes, [](const std::string& e) -> id
+                                                                                                                  {
+                                                                                                                      return cocoon::internal::to(e);
+                                                                                                                  })]];
     }
 
     void FileCoordinator::item_at_url(const URL& old_url, const URL& new_url) const
@@ -97,28 +97,28 @@ namespace cocoon
     {
         NSError* __error = nil;
         [cocoon::internal::ns<::NSFileCoordinator>(this) prepareForReadingItemsAtURLs:cocoon::internal::to_array(reading_urls, [](const URL& e) -> id
-                                                                                     {
-                                                                                         return cocoon::internal::native<::NSURL>(e);
-                                                                                     })
-                                                                options:static_cast<::NSFileCoordinatorReadingOptions>(reading_options)
-                                                     writingItemsAtURLs:cocoon::internal::to_array(writing_urls, [](const URL& e) -> id
-                                                                                     {
-                                                                                         return cocoon::internal::native<::NSURL>(e);
-                                                                                     })
-                                                                options:static_cast<::NSFileCoordinatorWritingOptions>(writing_options)
-                                                                  error:&__error
-                                                             byAccessor:(batch_accessor ? (void (^)(void (^)(void))) ^ void(id a141_0) { batch_accessor([&]() -> std::function<void()>
-                                                                                                                                                        {
-                                                                                                                                                            auto blk = (void (^)(void))(a141_0);
-                                                                                                                                                            if (!blk)
-                                                                                                                                                            {
-                                                                                                                                                                return {};
-                                                                                                                                                            }
-                                                                                                                                                            return [blk]() -> void
-                                                                                                                                                            {
-                                                                                                                                                                blk();
-                                                                                                                                                            };
-                                                                                                                                                        }()); } : (void (^)(void (^)(void)))nil)];
+                                                                                                                 {
+                                                                                                                     return cocoon::internal::native<::NSURL>(e);
+                                                                                                                 })
+                                                                              options:static_cast<::NSFileCoordinatorReadingOptions>(reading_options)
+                                                                   writingItemsAtURLs:cocoon::internal::to_array(writing_urls, [](const URL& e) -> id
+                                                                                                                 {
+                                                                                                                     return cocoon::internal::native<::NSURL>(e);
+                                                                                                                 })
+                                                                              options:static_cast<::NSFileCoordinatorWritingOptions>(writing_options)
+                                                                                error:&__error
+                                                                           byAccessor:(batch_accessor ? (void (^)(void (^)(void))) ^ void(id a141_0) { batch_accessor([&]() -> std::function<void()>
+                                                                                                                                                                      {
+                                                                                                                                                                          auto blk = (void (^)(void))(a141_0);
+                                                                                                                                                                          if (!blk)
+                                                                                                                                                                          {
+                                                                                                                                                                              return {};
+                                                                                                                                                                          }
+                                                                                                                                                                          return [blk]() -> void
+                                                                                                                                                                          {
+                                                                                                                                                                              blk();
+                                                                                                                                                                          };
+                                                                                                                                                                      }()); } : (void (^)(void (^)(void)))nil)];
         if (__error)
         {
             throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
@@ -133,9 +133,9 @@ namespace cocoon
     std::vector<Object> FileCoordinator::file_presenters()
     {
         return cocoon::internal::from_array<Object>([::NSFileCoordinator filePresenters], [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     std::string FileCoordinator::purpose_identifier() const

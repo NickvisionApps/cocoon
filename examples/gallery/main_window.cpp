@@ -68,19 +68,7 @@ namespace gallery
         popup.add_items_with_titles({"Small", "Medium", "Large"});
         Label status{"Ready"};
 
-        for (const View& view :
-             {View{title},
-              View{button},
-              View{check},
-              View{toggle},
-              View{field},
-              View{slider},
-              View{progress},
-              View{popup},
-              View{status}})
-        {
-            controls.add_arranged_subview(view);
-        }
+        controls.add_arranged_subviews({title, button, check, toggle, field, slider, progress, popup, status});
 
         button.clicked().connect([status]
         {
@@ -133,8 +121,7 @@ namespace gallery
         glass_button.set_bezel_style(BezelStyle::Glass);
         Button more_button{"Buttons"};
         more_button.set_bezel_style(BezelStyle::Glass);
-        content.add_arranged_subview(glass_button);
-        content.add_arranged_subview(more_button);
+        content.add_arranged_subviews({glass_button, more_button});
 
         GlassEffectView glass;
         glass.set_corner_radius(20);

@@ -63,9 +63,9 @@ namespace cocoon
     std::vector<std::string> ProcessInfo::arguments() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSProcessInfo>(this) arguments], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     bool ProcessInfo::automatic_termination_support_enabled() const
@@ -81,13 +81,13 @@ namespace cocoon
     std::map<std::string, std::string> ProcessInfo::environment() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, std::string>>([cocoon::internal::ns<::NSProcessInfo>(this) environment], [](id k) -> std::string
-                                                                       {
-                                                                           return cocoon::internal::from((NSString*)k);
-                                                                       },
-                                                                       [](id v) -> std::string
-                                                                       {
-                                                                           return cocoon::internal::from((NSString*)v);
-                                                                       });
+                                                                                     {
+                                                                                         return cocoon::internal::from((NSString*)k);
+                                                                                     },
+                                                                                     [](id v) -> std::string
+                                                                                     {
+                                                                                         return cocoon::internal::from((NSString*)v);
+                                                                                     });
     }
 
     std::string ProcessInfo::full_user_name() const

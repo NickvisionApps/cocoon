@@ -18,8 +18,8 @@ namespace cocoon
     std::vector<std::string> SecureUnarchiveFromDataTransformer::allowed_top_level_classes()
     {
         return cocoon::internal::from_array<std::string>([::NSSecureUnarchiveFromDataTransformer allowedTopLevelClasses], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from(NSStringFromClass(e));
-                                           });
+                                                         {
+                                                             return cocoon::internal::from(NSStringFromClass(e));
+                                                         });
     }
 }

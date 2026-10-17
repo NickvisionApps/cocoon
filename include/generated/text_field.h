@@ -1,5 +1,6 @@
 #pragma once
 
+#include "generated/availability.h"
 #include "generated/control.h"
 #include "generated/enums.h"
 #include "generated/structs.h"
@@ -216,18 +217,24 @@ namespace cocoon
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_bezeled(bool value) const;
+#ifdef COCOON_MACOS_27
         /**
      * @brief Returns the `borderShape` property of `NSTextField`.
      * @details Set border shape 'NSControlBorderShapeAutomatic' sets text field or subclass to default system shape. 'NSControlBorderShapeCircle' sets text field or subclass to 'NSControlBorderShapeAutomatic'.
      * @return The converted Objective-C result.
      */
         ControlBorderShape border_shape() const;
+#endif
+
+#ifdef COCOON_MACOS_27
         /**
      * @brief Sets the `borderShape` property of `NSTextField`.
      * @details Set border shape 'NSControlBorderShapeAutomatic' sets text field or subclass to default system shape. 'NSControlBorderShapeCircle' sets text field or subclass to 'NSControlBorderShapeAutomatic'.
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_border_shape(ControlBorderShape value) const;
+#endif
+
         /**
      * @brief Returns the `bordered` property of `NSTextField`.
      * @return The converted Objective-C result.

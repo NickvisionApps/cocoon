@@ -30,9 +30,9 @@
     }
     auto __r = cocoon::Signal<cocoon::SpellServer, std::vector<std::string>(std::string, std::string)>::emit((__bridge void*)strongHost, "suggest_guesses_for_word_in_language", cocoon::internal::from(word), cocoon::internal::from(language));
     return cocoon::internal::to_array(__r, [](const std::string& e) -> id
-                        {
-                            return cocoon::internal::to(e);
-                        });
+                                      {
+                                          return cocoon::internal::to(e);
+                                      });
 }
 
 - (void)spellServer:(NSSpellServer*)sender didLearnWord:(NSString*)word inLanguage:(NSString*)language
@@ -64,9 +64,9 @@
     }
     auto __r = cocoon::Signal<cocoon::SpellServer, std::vector<std::string>(cocoon::Range, std::string, std::string)>::emit((__bridge void*)strongHost, "suggest_completions_for_partial_word_range_in_string_language", cocoon::internal::from(range), cocoon::internal::from(string), cocoon::internal::from(language));
     return cocoon::internal::to_array(__r, [](const std::string& e) -> id
-                        {
-                            return cocoon::internal::to(e);
-                        });
+                                      {
+                                          return cocoon::internal::to(e);
+                                      });
 }
 
 - (NSRange)spellServer:(NSSpellServer*)sender checkGrammarInString:(NSString*)stringToCheck language:(NSString*)language details:(NSArray<NSDictionary<NSString*, id>*>**)details
@@ -77,31 +77,31 @@
         return {};
     }
     std::vector<std::map<std::string, cocoon::Object>> __v_details = details ? cocoon::internal::from_array<std::map<std::string, cocoon::Object>>(*details, [](id e) -> std::map<std::string, cocoon::Object>
-                                                                                                                                     {
-                                                                                                                                         return cocoon::internal::from_dictionary<std::map<std::string, cocoon::Object>>((NSDictionary*)e, [](id k) -> std::string
-                                                                                                                                                                                                           {
-                                                                                                                                                                                                               return cocoon::internal::from((NSString*)k);
-                                                                                                                                                                                                           },
-                                                                                                                                                                                                           [](id v) -> cocoon::Object
-                                                                                                                                                                                                           {
-                                                                                                                                                                                                               return cocoon::internal::wrap<cocoon::Object>(v);
-                                                                                                                                                                                                           });
-                                                                                                                                     })
+                                                                                                                                                   {
+                                                                                                                                                       return cocoon::internal::from_dictionary<std::map<std::string, cocoon::Object>>((NSDictionary*)e, [](id k) -> std::string
+                                                                                                                                                                                                                                       {
+                                                                                                                                                                                                                                           return cocoon::internal::from((NSString*)k);
+                                                                                                                                                                                                                                       },
+                                                                                                                                                                                                                                       [](id v) -> cocoon::Object
+                                                                                                                                                                                                                                       {
+                                                                                                                                                                                                                                           return cocoon::internal::wrap<cocoon::Object>(v);
+                                                                                                                                                                                                                                       });
+                                                                                                                                                   })
                                                                              : std::vector<std::map<std::string, cocoon::Object>>();
     auto __r = cocoon::Signal<cocoon::SpellServer, cocoon::Range(std::string, std::string, std::vector<std::map<std::string, cocoon::Object>>&)>::emit((__bridge void*)strongHost, "check_grammar_in_string_language_details", cocoon::internal::from(stringToCheck), cocoon::internal::from(language), __v_details);
     if (details)
     {
         *details = cocoon::internal::to_array(__v_details, [](const std::map<std::string, cocoon::Object>& e) -> id
-                                {
-                                    return cocoon::internal::to_dictionary(e, [](const std::string& k) -> id
-                                                             {
-                                                                 return cocoon::internal::to(k);
-                                                             },
-                                                             [](const cocoon::Object& v) -> id
-                                                             {
-                                                                 return cocoon::internal::native_id(v);
-                                                             });
-                                });
+                                              {
+                                                  return cocoon::internal::to_dictionary(e, [](const std::string& k) -> id
+                                                                                         {
+                                                                                             return cocoon::internal::to(k);
+                                                                                         },
+                                                                                         [](const cocoon::Object& v) -> id
+                                                                                         {
+                                                                                             return cocoon::internal::native_id(v);
+                                                                                         });
+                                              });
     }
     return cocoon::internal::to(__r);
 }
@@ -114,18 +114,18 @@
         return {};
     }
     auto __r = cocoon::Signal<cocoon::SpellServer, std::vector<cocoon::TextCheckingResult>(std::string, std::uint64_t, std::uint64_t, std::map<std::string, cocoon::Object>, cocoon::Orthography, std::int64_t*)>::emit((__bridge void*)strongHost, "check_string_offset_types_options_orthography_word_count", cocoon::internal::from(stringToCheck), static_cast<std::uint64_t>(offset), static_cast<std::uint64_t>(checkingTypes), cocoon::internal::from_dictionary<std::map<std::string, cocoon::Object>>(options, [](id k) -> std::string
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       return cocoon::internal::from((NSString*)k);
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   },
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   [](id v) -> cocoon::Object
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       return cocoon::internal::wrap<cocoon::Object>(v);
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   }),
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   return cocoon::internal::from((NSString*)k);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               },
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               [](id v) -> cocoon::Object
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   return cocoon::internal::wrap<cocoon::Object>(v);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               }),
                                                                                                                                                                                                                         cocoon::internal::wrap<cocoon::Orthography>(orthography), (std::int64_t*)(wordCount));
     return cocoon::internal::to_array(__r, [](const cocoon::TextCheckingResult& e) -> id
-                        {
-                            return cocoon::internal::native<::NSTextCheckingResult>(e);
-                        });
+                                      {
+                                          return cocoon::internal::native<::NSTextCheckingResult>(e);
+                                      });
 }
 
 - (void)spellServer:(NSSpellServer*)sender recordResponse:(NSUInteger)response toCorrection:(NSString*)correction forWord:(NSString*)word language:(NSString*)language

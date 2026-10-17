@@ -20,6 +20,7 @@
   <td id="projectalign">
    <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
    </div>
+   <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
  </tr>
  </tbody>
@@ -97,8 +98,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ac9a5ec7b45edaacc01a6954d71f6d665"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">-[NSManagedObjectContext existingObjectWithID:error:]</span>.  <br /></td></tr>
 <tr class="memitem:aef7e382a65ad66b6a0a96c12cfbd6765" id="r_aef7e382a65ad66b6a0a96c12cfbd6765"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aef7e382a65ad66b6a0a96c12cfbd6765">insert_object</a> (const <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &amp;object) const</td></tr>
 <tr class="memdesc:aef7e382a65ad66b6a0a96c12cfbd6765"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">-[NSManagedObjectContext insertObject:]</span>.  <br /></td></tr>
-<tr class="memitem:a0c7ded833f22665f8bf53dba6300d563" id="r_a0c7ded833f22665f8bf53dba6300d563"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a0c7ded833f22665f8bf53dba6300d563">lock</a> () const</td></tr>
-<tr class="memdesc:a0c7ded833f22665f8bf53dba6300d563"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">-[NSManagedObjectContext <a class="el" href="#a0c7ded833f22665f8bf53dba6300d563" title="Calls -[NSManagedObjectContext lock].">lock</a>]</span>.  <br /></td></tr>
 <tr class="memitem:a785baf0b210d4875229b6c6493bf2fdc" id="r_a785baf0b210d4875229b6c6493bf2fdc"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a785baf0b210d4875229b6c6493bf2fdc">merge_changes_from_context_did_save_notification</a> (const <a class="el" href="classcocoon_1_1_notification.html">Notification</a> &amp;notification) const</td></tr>
 <tr class="memdesc:a785baf0b210d4875229b6c6493bf2fdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">-[NSManagedObjectContext mergeChangesFromContextDidSaveNotification:]</span>.  <br /></td></tr>
 <tr class="memitem:a3d77f206643d946994dcc53075da41a7" id="r_a3d77f206643d946994dcc53075da41a7"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a>&#160;</td><td class="memItemRight"><a class="el" href="#a3d77f206643d946994dcc53075da41a7">object_registered_for_id</a> (const <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &amp;object_id) const</td></tr>
@@ -129,12 +128,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ac32a6cf789e19408d28b7b9848bfc140"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">-[NSManagedObjectContext <a class="el" href="#ac32a6cf789e19408d28b7b9848bfc140" title="Calls -[NSManagedObjectContext save:].">save</a>:]</span>.  <br /></td></tr>
 <tr class="memitem:aae613b4e015cd80b827404768998da28" id="r_aae613b4e015cd80b827404768998da28"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#aae613b4e015cd80b827404768998da28">set_query_generation_from_token</a> (const <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &amp;generation) const</td></tr>
 <tr class="memdesc:aae613b4e015cd80b827404768998da28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">-[NSManagedObjectContext setQueryGenerationFromToken:error:]</span>.  <br /></td></tr>
-<tr class="memitem:a41dc6f7510077491741740e24c94b0c0" id="r_a41dc6f7510077491741740e24c94b0c0"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a41dc6f7510077491741740e24c94b0c0">try_lock</a> () const</td></tr>
-<tr class="memdesc:a41dc6f7510077491741740e24c94b0c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">-[NSManagedObjectContext tryLock]</span>.  <br /></td></tr>
 <tr class="memitem:ae4bf758fcb5a2ff33a8bf477af71d0f4" id="r_ae4bf758fcb5a2ff33a8bf477af71d0f4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ae4bf758fcb5a2ff33a8bf477af71d0f4">undo</a> () const</td></tr>
 <tr class="memdesc:ae4bf758fcb5a2ff33a8bf477af71d0f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">-[NSManagedObjectContext <a class="el" href="#ae4bf758fcb5a2ff33a8bf477af71d0f4" title="Calls -[NSManagedObjectContext undo].">undo</a>]</span>.  <br /></td></tr>
-<tr class="memitem:a987c8c6916b63ad01705c26b615f7fd7" id="r_a987c8c6916b63ad01705c26b615f7fd7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a987c8c6916b63ad01705c26b615f7fd7">unlock</a> () const</td></tr>
-<tr class="memdesc:a987c8c6916b63ad01705c26b615f7fd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">-[NSManagedObjectContext <a class="el" href="#a987c8c6916b63ad01705c26b615f7fd7" title="Calls -[NSManagedObjectContext unlock].">unlock</a>]</span>.  <br /></td></tr>
 <tr class="memitem:a61fc3e0788e8c1654db0211fe62849e3" id="r_a61fc3e0788e8c1654db0211fe62849e3"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a61fc3e0788e8c1654db0211fe62849e3">automatically_merges_changes_from_parent</a> () const</td></tr>
 <tr class="memdesc:a61fc3e0788e8c1654db0211fe62849e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">automaticallyMergesChangesFromParent</span> property of <span class="tt">NSManagedObjectContext</span>.  <br /></td></tr>
 <tr class="memitem:a855eafe539575d96cb47477e53e291ca" id="r_a855eafe539575d96cb47477e53e291ca"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a855eafe539575d96cb47477e53e291ca">set_automatically_merges_changes_from_parent</a> (bool value) const</td></tr>
@@ -233,7 +228,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="line"> </div>
 <div class="line"><a class="code hl_class" href="classcocoon_1_1_managed_object_context.html">cocoon::ManagedObjectContext</a> managed_object_context;</div>
 <div class="line">managed_object_context.<a class="code hl_function" href="#a855eafe539575d96cb47477e53e291ca">set_automatically_merges_changes_from_parent</a>(<span class="keyword">true</span>);</div>
-<div class="ttc" id="aclasscocoon_1_1_managed_object_context_html"><div class="ttname"><a href="classcocoon_1_1_managed_object_context.html">cocoon::ManagedObjectContext</a></div><div class="ttdoc">C++ handle for the Objective-C class NSManagedObjectContext (AppKit).</div><div class="ttdef"><b>Definition</b> managed_object_context.h:42</div></div>
+<div class="ttc" id="aclasscocoon_1_1_managed_object_context_html"><div class="ttname"><a href="classcocoon_1_1_managed_object_context.html">cocoon::ManagedObjectContext</a></div><div class="ttdoc">C++ handle for the Objective-C class NSManagedObjectContext (AppKit).</div><div class="ttdef"><b>Definition</b> managed_object_context.h:43</div></div>
 <div class="ttc" id="aclasscocoon_1_1_managed_object_context_html_a855eafe539575d96cb47477e53e291ca"><div class="ttname"><a href="#a855eafe539575d96cb47477e53e291ca">cocoon::ManagedObjectContext::set_automatically_merges_changes_from_parent</a></div><div class="ttdeci">void set_automatically_merges_changes_from_parent(bool value) const</div><div class="ttdoc">Sets the automaticallyMergesChangesFromParent property of NSManagedObjectContext.</div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_managed_object_context.html">cocoon::ManagedObjectContext</a> managed_object_context{};</div>
@@ -243,10 +238,9 @@ Static Public Member Functions</h2></td></tr>
 <div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#a7ffdf745554c87c8f26e80eebabb5a90">name</a> = managed_object_context.<a class="code hl_function" href="#a7ffdf745554c87c8f26e80eebabb5a90">name</a>();</div>
 <div class="line">managed_object_context.<a class="code hl_function" href="#a72bdbbcebceb8da551b169e46379c191">set_parent_context</a>(<a class="code hl_class" href="classcocoon_1_1_managed_object_context.html">cocoon::ManagedObjectContext</a>());</div>
 <div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#a379ce53a89f4d10b21d7671e3b083fb4">parent_context</a> = managed_object_context.<a class="code hl_function" href="#a379ce53a89f4d10b21d7671e3b083fb4">parent_context</a>();</div>
-<div class="line">managed_object_context.<a class="code hl_function" href="#a0c7ded833f22665f8bf53dba6300d563">lock</a>();</div>
 <div class="line">managed_object_context.<a class="code hl_function" href="#a785baf0b210d4875229b6c6493bf2fdc">merge_changes_from_context_did_save_notification</a>(<a class="code hl_class" href="classcocoon_1_1_notification.html">cocoon::Notification</a>());</div>
 <div class="line">managed_object_context.<a class="code hl_function" href="#a19d5357976ceba69aec84e7a73115bb0">process_pending_changes</a>();</div>
-<div class="ttc" id="aclasscocoon_1_1_managed_object_context_html_a0c7ded833f22665f8bf53dba6300d563"><div class="ttname"><a href="#a0c7ded833f22665f8bf53dba6300d563">cocoon::ManagedObjectContext::lock</a></div><div class="ttdeci">void lock() const</div><div class="ttdoc">Calls -[NSManagedObjectContext lock].</div></div>
+<div class="line">managed_object_context.<a class="code hl_function" href="#abaae35438f5235a94b84843a0d227fe6">redo</a>();</div>
 <div class="ttc" id="aclasscocoon_1_1_managed_object_context_html_a19d5357976ceba69aec84e7a73115bb0"><div class="ttname"><a href="#a19d5357976ceba69aec84e7a73115bb0">cocoon::ManagedObjectContext::process_pending_changes</a></div><div class="ttdeci">void process_pending_changes() const</div><div class="ttdoc">Calls -[NSManagedObjectContext processPendingChanges].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_managed_object_context_html_a2f04fcb03dc2532f841a1d2219870a77"><div class="ttname"><a href="#a2f04fcb03dc2532f841a1d2219870a77">cocoon::ManagedObjectContext::set_name</a></div><div class="ttdeci">void set_name(const std::string &amp;value) const</div><div class="ttdoc">Sets the name property of NSManagedObjectContext.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_managed_object_context_html_a379ce53a89f4d10b21d7671e3b083fb4"><div class="ttname"><a href="#a379ce53a89f4d10b21d7671e3b083fb4">cocoon::ManagedObjectContext::parent_context</a></div><div class="ttdeci">ManagedObjectContext parent_context() const</div><div class="ttdoc">Returns the parentContext property of NSManagedObjectContext.</div></div>
@@ -254,7 +248,8 @@ Static Public Member Functions</h2></td></tr>
 <div class="ttc" id="aclasscocoon_1_1_managed_object_context_html_a72bdbbcebceb8da551b169e46379c191"><div class="ttname"><a href="#a72bdbbcebceb8da551b169e46379c191">cocoon::ManagedObjectContext::set_parent_context</a></div><div class="ttdeci">void set_parent_context(const ManagedObjectContext &amp;value) const</div><div class="ttdoc">Sets the parentContext property of NSManagedObjectContext.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_managed_object_context_html_a785baf0b210d4875229b6c6493bf2fdc"><div class="ttname"><a href="#a785baf0b210d4875229b6c6493bf2fdc">cocoon::ManagedObjectContext::merge_changes_from_context_did_save_notification</a></div><div class="ttdeci">void merge_changes_from_context_did_save_notification(const Notification &amp;notification) const</div><div class="ttdoc">Calls -[NSManagedObjectContext mergeChangesFromContextDidSaveNotification:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_managed_object_context_html_a7ffdf745554c87c8f26e80eebabb5a90"><div class="ttname"><a href="#a7ffdf745554c87c8f26e80eebabb5a90">cocoon::ManagedObjectContext::name</a></div><div class="ttdeci">std::string name() const</div><div class="ttdoc">Returns the name property of NSManagedObjectContext.</div></div>
-<div class="ttc" id="aclasscocoon_1_1_notification_html"><div class="ttname"><a href="classcocoon_1_1_notification.html">cocoon::Notification</a></div><div class="ttdoc">C++ handle for the Objective-C class NSNotification (Foundation).</div><div class="ttdef"><b>Definition</b> notification.h:24</div></div>
+<div class="ttc" id="aclasscocoon_1_1_managed_object_context_html_abaae35438f5235a94b84843a0d227fe6"><div class="ttname"><a href="#abaae35438f5235a94b84843a0d227fe6">cocoon::ManagedObjectContext::redo</a></div><div class="ttdeci">void redo() const</div><div class="ttdoc">Calls -[NSManagedObjectContext redo].</div></div>
+<div class="ttc" id="aclasscocoon_1_1_notification_html"><div class="ttname"><a href="classcocoon_1_1_notification.html">cocoon::Notification</a></div><div class="ttdoc">C++ handle for the Objective-C class NSNotification (Foundation).</div><div class="ttdef"><b>Definition</b> notification.h:25</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/appkit/nsmanagedobjectcontext">https://developer.apple.com/documentation/appkit/nsmanagedobjectcontext</a> </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -665,25 +660,6 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Returns the <span class="tt">insertedObjects</span> property of <span class="tt">NSManagedObjectContext</span>. </p>
 <dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a0c7ded833f22665f8bf53dba6300d563" name="a0c7ded833f22665f8bf53dba6300d563"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0c7ded833f22665f8bf53dba6300d563">&#9670;&#160;</a></span>lock()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void cocoon::ManagedObjectContext::lock </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">-[NSManagedObjectContext <a class="el" href="#a0c7ded833f22665f8bf53dba6300d563" title="Calls -[NSManagedObjectContext lock].">lock</a>]</span>. </p>
 
 </div>
 </div>
@@ -1586,26 +1562,6 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a41dc6f7510077491741740e24c94b0c0" name="a41dc6f7510077491741740e24c94b0c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a41dc6f7510077491741740e24c94b0c0">&#9670;&#160;</a></span>try_lock()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool cocoon::ManagedObjectContext::try_lock </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">-[NSManagedObjectContext tryLock]</span>. </p>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
 <a id="ae4bf758fcb5a2ff33a8bf477af71d0f4" name="ae4bf758fcb5a2ff33a8bf477af71d0f4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae4bf758fcb5a2ff33a8bf477af71d0f4">&#9670;&#160;</a></span>undo()</h2>
 
@@ -1642,25 +1598,6 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Returns the <span class="tt">undoManager</span> property of <span class="tt">NSManagedObjectContext</span>. </p>
 <dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a987c8c6916b63ad01705c26b615f7fd7" name="a987c8c6916b63ad01705c26b615f7fd7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a987c8c6916b63ad01705c26b615f7fd7">&#9670;&#160;</a></span>unlock()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void cocoon::ManagedObjectContext::unlock </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">-[NSManagedObjectContext <a class="el" href="#a987c8c6916b63ad01705c26b615f7fd7" title="Calls -[NSManagedObjectContext unlock].">unlock</a>]</span>. </p>
 
 </div>
 </div>

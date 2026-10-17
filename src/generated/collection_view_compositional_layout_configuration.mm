@@ -18,17 +18,17 @@ namespace cocoon
     std::vector<CollectionLayoutBoundarySupplementaryItem> CollectionViewCompositionalLayoutConfiguration::boundary_supplementary_items() const
     {
         return cocoon::internal::from_array<CollectionLayoutBoundarySupplementaryItem>([cocoon::internal::ns<::NSCollectionViewCompositionalLayoutConfiguration>(this) boundarySupplementaryItems], [](id e) -> CollectionLayoutBoundarySupplementaryItem
-                                                                         {
-                                                                             return cocoon::internal::wrap<CollectionLayoutBoundarySupplementaryItem>((::NSCollectionLayoutBoundarySupplementaryItem*)e);
-                                                                         });
+                                                                                       {
+                                                                                           return cocoon::internal::wrap<CollectionLayoutBoundarySupplementaryItem>((::NSCollectionLayoutBoundarySupplementaryItem*)e);
+                                                                                       });
     }
 
     void CollectionViewCompositionalLayoutConfiguration::set_boundary_supplementary_items(const std::vector<CollectionLayoutBoundarySupplementaryItem>& value) const
     {
         [cocoon::internal::ns<::NSCollectionViewCompositionalLayoutConfiguration>(this) setBoundarySupplementaryItems:cocoon::internal::to_array(value, [](const CollectionLayoutBoundarySupplementaryItem& e) -> id
-                                                                                                                     {
-                                                                                                                         return cocoon::internal::native<::NSCollectionLayoutBoundarySupplementaryItem>(e);
-                                                                                                                     })];
+                                                                                                                                                 {
+                                                                                                                                                     return cocoon::internal::native<::NSCollectionLayoutBoundarySupplementaryItem>(e);
+                                                                                                                                                 })];
     }
 
     double CollectionViewCompositionalLayoutConfiguration::inter_section_spacing() const

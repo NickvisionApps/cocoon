@@ -83,24 +83,4 @@ namespace cocoon
     {
         [cocoon::internal::ns<::NSPointerFunctions>(this) setSizeFunction:(::NSUInteger (*)(const void*))(value)];
     }
-
-    bool PointerFunctions::uses_strong_write_barrier() const
-    {
-        return static_cast<bool>([cocoon::internal::ns<::NSPointerFunctions>(this) usesStrongWriteBarrier]);
-    }
-
-    void PointerFunctions::set_uses_strong_write_barrier(bool value) const
-    {
-        [cocoon::internal::ns<::NSPointerFunctions>(this) setUsesStrongWriteBarrier:static_cast<::BOOL>(value)];
-    }
-
-    bool PointerFunctions::uses_weak_read_and_write_barriers() const
-    {
-        return static_cast<bool>([cocoon::internal::ns<::NSPointerFunctions>(this) usesWeakReadAndWriteBarriers]);
-    }
-
-    void PointerFunctions::set_uses_weak_read_and_write_barriers(bool value) const
-    {
-        [cocoon::internal::ns<::NSPointerFunctions>(this) setUsesWeakReadAndWriteBarriers:static_cast<::BOOL>(value)];
-    }
 }

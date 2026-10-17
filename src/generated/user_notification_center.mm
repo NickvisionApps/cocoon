@@ -48,24 +48,24 @@ namespace cocoon
     std::vector<UserNotification> UserNotificationCenter::delivered_notifications() const
     {
         return cocoon::internal::from_array<UserNotification>([cocoon::internal::ns<::NSUserNotificationCenter>(this) deliveredNotifications], [](id e) -> UserNotification
-                                                {
-                                                    return cocoon::internal::wrap<UserNotification>((::NSUserNotification*)e);
-                                                });
+                                                              {
+                                                                  return cocoon::internal::wrap<UserNotification>((::NSUserNotification*)e);
+                                                              });
     }
 
     std::vector<UserNotification> UserNotificationCenter::scheduled_notifications() const
     {
         return cocoon::internal::from_array<UserNotification>([cocoon::internal::ns<::NSUserNotificationCenter>(this) scheduledNotifications], [](id e) -> UserNotification
-                                                {
-                                                    return cocoon::internal::wrap<UserNotification>((::NSUserNotification*)e);
-                                                });
+                                                              {
+                                                                  return cocoon::internal::wrap<UserNotification>((::NSUserNotification*)e);
+                                                              });
     }
 
     void UserNotificationCenter::set_scheduled_notifications(const std::vector<UserNotification>& value) const
     {
         [cocoon::internal::ns<::NSUserNotificationCenter>(this) setScheduledNotifications:cocoon::internal::to_array(value, [](const UserNotification& e) -> id
-                                                                                         {
-                                                                                             return cocoon::internal::native<::NSUserNotification>(e);
-                                                                                         })];
+                                                                                                                     {
+                                                                                                                         return cocoon::internal::native<::NSUserNotification>(e);
+                                                                                                                     })];
     }
 }

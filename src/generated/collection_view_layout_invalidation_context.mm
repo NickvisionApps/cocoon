@@ -18,27 +18,27 @@ namespace cocoon
     void CollectionViewLayoutInvalidationContext::invalidate_decoration_elements_of_kind(const std::string& element_kind, const std::vector<IndexPath>& index_paths) const
     {
         [cocoon::internal::ns<::NSCollectionViewLayoutInvalidationContext>(this) invalidateDecorationElementsOfKind:cocoon::internal::to(element_kind)
-                                                                                         atIndexPaths:[NSSet setWithArray:cocoon::internal::to_array(index_paths, [](const IndexPath& e) -> id
-                                                                                                                                       {
-                                                                                                                                           return cocoon::internal::native<::NSIndexPath>(e);
-                                                                                                                                       })]];
+                                                                                                       atIndexPaths:[NSSet setWithArray:cocoon::internal::to_array(index_paths, [](const IndexPath& e) -> id
+                                                                                                                                                                   {
+                                                                                                                                                                       return cocoon::internal::native<::NSIndexPath>(e);
+                                                                                                                                                                   })]];
     }
 
     void CollectionViewLayoutInvalidationContext::invalidate_items_at_index_paths(const std::vector<IndexPath>& index_paths) const
     {
         [cocoon::internal::ns<::NSCollectionViewLayoutInvalidationContext>(this) invalidateItemsAtIndexPaths:[NSSet setWithArray:cocoon::internal::to_array(index_paths, [](const IndexPath& e) -> id
-                                                                                                                                {
-                                                                                                                                    return cocoon::internal::native<::NSIndexPath>(e);
-                                                                                                                                })]];
+                                                                                                                                                            {
+                                                                                                                                                                return cocoon::internal::native<::NSIndexPath>(e);
+                                                                                                                                                            })]];
     }
 
     void CollectionViewLayoutInvalidationContext::invalidate_supplementary_elements_of_kind(const std::string& element_kind, const std::vector<IndexPath>& index_paths) const
     {
         [cocoon::internal::ns<::NSCollectionViewLayoutInvalidationContext>(this) invalidateSupplementaryElementsOfKind:cocoon::internal::to(element_kind)
-                                                                                            atIndexPaths:[NSSet setWithArray:cocoon::internal::to_array(index_paths, [](const IndexPath& e) -> id
-                                                                                                                                          {
-                                                                                                                                              return cocoon::internal::native<::NSIndexPath>(e);
-                                                                                                                                          })]];
+                                                                                                          atIndexPaths:[NSSet setWithArray:cocoon::internal::to_array(index_paths, [](const IndexPath& e) -> id
+                                                                                                                                                                      {
+                                                                                                                                                                          return cocoon::internal::native<::NSIndexPath>(e);
+                                                                                                                                                                      })]];
     }
 
     Point CollectionViewLayoutInvalidationContext::content_offset_adjustment() const
@@ -74,38 +74,38 @@ namespace cocoon
     std::map<std::string, std::vector<IndexPath>> CollectionViewLayoutInvalidationContext::invalidated_decoration_index_paths() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, std::vector<IndexPath>>>([cocoon::internal::ns<::NSCollectionViewLayoutInvalidationContext>(this) invalidatedDecorationIndexPaths], [](id k) -> std::string
-                                                                                  {
-                                                                                      return cocoon::internal::from((NSString*)k);
-                                                                                  },
-                                                                                  [](id v) -> std::vector<IndexPath>
-                                                                                  {
-                                                                                      return cocoon::internal::from_array<IndexPath>([(NSSet*)v allObjects], [](id e) -> IndexPath
-                                                                                                                       {
-                                                                                                                           return cocoon::internal::wrap<IndexPath>((::NSIndexPath*)e);
-                                                                                                                       });
-                                                                                  });
+                                                                                                {
+                                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                                },
+                                                                                                [](id v) -> std::vector<IndexPath>
+                                                                                                {
+                                                                                                    return cocoon::internal::from_array<IndexPath>([(NSSet*)v allObjects], [](id e) -> IndexPath
+                                                                                                                                                   {
+                                                                                                                                                       return cocoon::internal::wrap<IndexPath>((::NSIndexPath*)e);
+                                                                                                                                                   });
+                                                                                                });
     }
 
     std::vector<IndexPath> CollectionViewLayoutInvalidationContext::invalidated_item_index_paths() const
     {
         return cocoon::internal::from_array<IndexPath>([[cocoon::internal::ns<::NSCollectionViewLayoutInvalidationContext>(this) invalidatedItemIndexPaths] allObjects], [](id e) -> IndexPath
-                                         {
-                                             return cocoon::internal::wrap<IndexPath>((::NSIndexPath*)e);
-                                         });
+                                                       {
+                                                           return cocoon::internal::wrap<IndexPath>((::NSIndexPath*)e);
+                                                       });
     }
 
     std::map<std::string, std::vector<IndexPath>> CollectionViewLayoutInvalidationContext::invalidated_supplementary_index_paths() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, std::vector<IndexPath>>>([cocoon::internal::ns<::NSCollectionViewLayoutInvalidationContext>(this) invalidatedSupplementaryIndexPaths], [](id k) -> std::string
-                                                                                  {
-                                                                                      return cocoon::internal::from((NSString*)k);
-                                                                                  },
-                                                                                  [](id v) -> std::vector<IndexPath>
-                                                                                  {
-                                                                                      return cocoon::internal::from_array<IndexPath>([(NSSet*)v allObjects], [](id e) -> IndexPath
-                                                                                                                       {
-                                                                                                                           return cocoon::internal::wrap<IndexPath>((::NSIndexPath*)e);
-                                                                                                                       });
-                                                                                  });
+                                                                                                {
+                                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                                },
+                                                                                                [](id v) -> std::vector<IndexPath>
+                                                                                                {
+                                                                                                    return cocoon::internal::from_array<IndexPath>([(NSSet*)v allObjects], [](id e) -> IndexPath
+                                                                                                                                                   {
+                                                                                                                                                       return cocoon::internal::wrap<IndexPath>((::NSIndexPath*)e);
+                                                                                                                                                   });
+                                                                                                });
     }
 }

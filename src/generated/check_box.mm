@@ -20,9 +20,9 @@ namespace cocoon
     {
         id host = (__bridge id)native;
         cocoon::internal::bind_action(host, host, [](id host, id sender)
-                        {
-                            cocoon::Signal<cocoon::Button, void()>::emit((__bridge void*)host, "clicked");
-                            cocoon::Signal<cocoon::CheckBox, void(bool)>::emit((__bridge void*)host, "toggled", [(NSButton*)sender state] == NSControlStateValueOn);
-                        });
+                                      {
+                                          cocoon::Signal<cocoon::Button, void()>::emit((__bridge void*)host, "clicked");
+                                          cocoon::Signal<cocoon::CheckBox, void(bool)>::emit((__bridge void*)host, "toggled", [(NSButton*)sender state] == NSControlStateValueOn);
+                                      });
     }
 }

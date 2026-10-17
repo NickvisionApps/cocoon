@@ -137,9 +137,9 @@ namespace cocoon
     std::vector<std::string> CALayer::animation_keys() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::CALayer>(this) animationKeys], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     bool CALayer::contains_point(const Point& p) const
@@ -320,25 +320,25 @@ namespace cocoon
     std::map<std::string, Object> CALayer::actions() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::CALayer>(this) actions], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     void CALayer::set_actions(const std::map<std::string, Object>& value) const
     {
         [cocoon::internal::ns<::CALayer>(this) setActions:cocoon::internal::to_dictionary(value, [](const std::string& k) -> id
-                                                              {
-                                                                  return cocoon::internal::to(k);
-                                                              },
-                                                              [](const Object& v) -> id
-                                                              {
-                                                                  return cocoon::internal::native_id(v);
-                                                              })];
+                                                                                          {
+                                                                                              return cocoon::internal::to(k);
+                                                                                          },
+                                                                                          [](const Object& v) -> id
+                                                                                          {
+                                                                                              return cocoon::internal::native_id(v);
+                                                                                          })];
     }
 
     bool CALayer::allows_edge_antialiasing() const
@@ -404,17 +404,17 @@ namespace cocoon
     std::vector<Object> CALayer::background_filters() const
     {
         return cocoon::internal::from_array<Object>([cocoon::internal::ns<::CALayer>(this) backgroundFilters], [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     void CALayer::set_background_filters(const std::vector<Object>& value) const
     {
         [cocoon::internal::ns<::CALayer>(this) setBackgroundFilters:cocoon::internal::to_array(value, [](const Object& e) -> id
-                                                                   {
-                                                                       return cocoon::internal::native_id(e);
-                                                                   })];
+                                                                                               {
+                                                                                                   return cocoon::internal::native_id(e);
+                                                                                               })];
     }
 
     CGColor CALayer::border_color() const
@@ -580,17 +580,17 @@ namespace cocoon
     std::vector<Object> CALayer::filters() const
     {
         return cocoon::internal::from_array<Object>([cocoon::internal::ns<::CALayer>(this) filters], [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     void CALayer::set_filters(const std::vector<Object>& value) const
     {
         [cocoon::internal::ns<::CALayer>(this) setFilters:cocoon::internal::to_array(value, [](const Object& e) -> id
-                                                         {
-                                                             return cocoon::internal::native_id(e);
-                                                         })];
+                                                                                     {
+                                                                                         return cocoon::internal::native_id(e);
+                                                                                     })];
     }
 
     Rect CALayer::frame() const
@@ -826,25 +826,25 @@ namespace cocoon
     std::vector<std::pair<Object, Object>> CALayer::style() const
     {
         return cocoon::internal::from_dictionary<std::vector<std::pair<Object, Object>>>([cocoon::internal::ns<::CALayer>(this) style], [](id k) -> Object
-                                                                           {
-                                                                               return cocoon::internal::wrap<Object>(k);
-                                                                           },
-                                                                           [](id v) -> Object
-                                                                           {
-                                                                               return cocoon::internal::wrap<Object>(v);
-                                                                           });
+                                                                                         {
+                                                                                             return cocoon::internal::wrap<Object>(k);
+                                                                                         },
+                                                                                         [](id v) -> Object
+                                                                                         {
+                                                                                             return cocoon::internal::wrap<Object>(v);
+                                                                                         });
     }
 
     void CALayer::set_style(const std::vector<std::pair<Object, Object>>& value) const
     {
         [cocoon::internal::ns<::CALayer>(this) setStyle:cocoon::internal::to_dictionary(value, [](const Object& k) -> id
-                                                            {
-                                                                return cocoon::internal::native_id(k);
-                                                            },
-                                                            [](const Object& v) -> id
-                                                            {
-                                                                return cocoon::internal::native_id(v);
-                                                            })];
+                                                                                        {
+                                                                                            return cocoon::internal::native_id(k);
+                                                                                        },
+                                                                                        [](const Object& v) -> id
+                                                                                        {
+                                                                                            return cocoon::internal::native_id(v);
+                                                                                        })];
     }
 
     CATransform3D CALayer::sublayer_transform() const
@@ -860,17 +860,17 @@ namespace cocoon
     std::vector<CALayer> CALayer::sublayers() const
     {
         return cocoon::internal::from_array<CALayer>([cocoon::internal::ns<::CALayer>(this) sublayers], [](id e) -> CALayer
-                                       {
-                                           return cocoon::internal::wrap<CALayer>((::CALayer*)e);
-                                       });
+                                                     {
+                                                         return cocoon::internal::wrap<CALayer>((::CALayer*)e);
+                                                     });
     }
 
     void CALayer::set_sublayers(const std::vector<CALayer>& value) const
     {
         [cocoon::internal::ns<::CALayer>(this) setSublayers:cocoon::internal::to_array(value, [](const CALayer& e) -> id
-                                                           {
-                                                               return cocoon::internal::native<::CALayer>(e);
-                                                           })];
+                                                                                       {
+                                                                                           return cocoon::internal::native<::CALayer>(e);
+                                                                                       })];
     }
 
     CALayer CALayer::superlayer() const

@@ -28,8 +28,8 @@ namespace cocoon
     std::vector<URLSessionTaskTransactionMetrics> URLSessionTaskMetrics::transaction_metrics() const
     {
         return cocoon::internal::from_array<URLSessionTaskTransactionMetrics>([cocoon::internal::ns<::NSURLSessionTaskMetrics>(this) transactionMetrics], [](id e) -> URLSessionTaskTransactionMetrics
-                                                                {
-                                                                    return cocoon::internal::wrap<URLSessionTaskTransactionMetrics>((::NSURLSessionTaskTransactionMetrics*)e);
-                                                                });
+                                                                              {
+                                                                                  return cocoon::internal::wrap<URLSessionTaskTransactionMetrics>((::NSURLSessionTaskTransactionMetrics*)e);
+                                                                              });
     }
 }

@@ -1,5 +1,6 @@
 #pragma once
 
+#include "generated/availability.h"
 #include "generated/enums.h"
 #include "generated/structs.h"
 #include "generated/view.h"
@@ -248,6 +249,8 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         std::vector<View> views() const;
+        /// @brief Convenience helper `add_arranged_subviews` provided by cocoon.
+        void add_arranged_subviews(const std::vector<View>& views) const;
         /// @brief Signal for the delegate/data-source method behind `will_detach_views`; connect a callback with `will_detach_views().connect(...)`.
         Signal<StackView, void(std::vector<View>)> will_detach_views() const
         {

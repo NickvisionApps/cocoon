@@ -19,17 +19,17 @@ namespace cocoon
     {
         NSError* __error = nil;
         auto __r = [cocoon::internal::ns<::NSPersistentDocument>(this) configurePersistentStoreCoordinatorForURL:cocoon::internal::native<::NSURL>(url)
-                                                                                            ofType:cocoon::internal::to(file_type)
-                                                                                modelConfiguration:cocoon::internal::to(configuration)
-                                                                                      storeOptions:cocoon::internal::to_dictionary(store_options, [](const std::string& k) -> id
-                                                                                                                     {
-                                                                                                                         return cocoon::internal::to(k);
-                                                                                                                     },
-                                                                                                                     [](const Object& v) -> id
-                                                                                                                     {
-                                                                                                                         return cocoon::internal::native_id(v);
-                                                                                                                     })
-                                                                                             error:&__error];
+                                                                                                          ofType:cocoon::internal::to(file_type)
+                                                                                              modelConfiguration:cocoon::internal::to(configuration)
+                                                                                                    storeOptions:cocoon::internal::to_dictionary(store_options, [](const std::string& k) -> id
+                                                                                                                                                 {
+                                                                                                                                                     return cocoon::internal::to(k);
+                                                                                                                                                 },
+                                                                                                                                                 [](const Object& v) -> id
+                                                                                                                                                 {
+                                                                                                                                                     return cocoon::internal::native_id(v);
+                                                                                                                                                 })
+                                                                                                           error:&__error];
         if (__error)
         {
             throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));

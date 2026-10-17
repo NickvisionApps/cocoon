@@ -38,13 +38,13 @@ namespace cocoon
     std::map<std::string, ScriptClassDescription> ScriptSuiteRegistry::class_descriptions_in_suite(const std::string& suite_name) const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, ScriptClassDescription>>([cocoon::internal::ns<::NSScriptSuiteRegistry>(this) classDescriptionsInSuite:cocoon::internal::to(suite_name)], [](id k) -> std::string
-                                                                                  {
-                                                                                      return cocoon::internal::from((NSString*)k);
-                                                                                  },
-                                                                                  [](id v) -> ScriptClassDescription
-                                                                                  {
-                                                                                      return cocoon::internal::wrap<ScriptClassDescription>((::NSScriptClassDescription*)v);
-                                                                                  });
+                                                                                                {
+                                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                                },
+                                                                                                [](id v) -> ScriptClassDescription
+                                                                                                {
+                                                                                                    return cocoon::internal::wrap<ScriptClassDescription>((::NSScriptClassDescription*)v);
+                                                                                                });
     }
 
     ScriptCommandDescription ScriptSuiteRegistry::command_description_with_apple_event_class(unsigned int apple_event_class_code, unsigned int apple_event_id_code) const
@@ -55,26 +55,26 @@ namespace cocoon
     std::map<std::string, ScriptCommandDescription> ScriptSuiteRegistry::command_descriptions_in_suite(const std::string& suite_name) const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, ScriptCommandDescription>>([cocoon::internal::ns<::NSScriptSuiteRegistry>(this) commandDescriptionsInSuite:cocoon::internal::to(suite_name)], [](id k) -> std::string
-                                                                                    {
-                                                                                        return cocoon::internal::from((NSString*)k);
-                                                                                    },
-                                                                                    [](id v) -> ScriptCommandDescription
-                                                                                    {
-                                                                                        return cocoon::internal::wrap<ScriptCommandDescription>((::NSScriptCommandDescription*)v);
-                                                                                    });
+                                                                                                  {
+                                                                                                      return cocoon::internal::from((NSString*)k);
+                                                                                                  },
+                                                                                                  [](id v) -> ScriptCommandDescription
+                                                                                                  {
+                                                                                                      return cocoon::internal::wrap<ScriptCommandDescription>((::NSScriptCommandDescription*)v);
+                                                                                                  });
     }
 
     void ScriptSuiteRegistry::load_suite_with_dictionary(const std::vector<std::pair<Object, Object>>& suite_declaration, const Bundle& bundle) const
     {
         [cocoon::internal::ns<::NSScriptSuiteRegistry>(this) loadSuiteWithDictionary:cocoon::internal::to_dictionary(suite_declaration, [](const Object& k) -> id
-                                                                                         {
-                                                                                             return cocoon::internal::native_id(k);
-                                                                                         },
-                                                                                         [](const Object& v) -> id
-                                                                                         {
-                                                                                             return cocoon::internal::native_id(v);
-                                                                                         })
-                                                            fromBundle:cocoon::internal::native<::NSBundle>(bundle)];
+                                                                                                                     {
+                                                                                                                         return cocoon::internal::native_id(k);
+                                                                                                                     },
+                                                                                                                     [](const Object& v) -> id
+                                                                                                                     {
+                                                                                                                         return cocoon::internal::native_id(v);
+                                                                                                                     })
+                                                                          fromBundle:cocoon::internal::native<::NSBundle>(bundle)];
     }
 
     void ScriptSuiteRegistry::load_suites_from_bundle(const Bundle& bundle) const
@@ -110,8 +110,8 @@ namespace cocoon
     std::vector<std::string> ScriptSuiteRegistry::suite_names() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSScriptSuiteRegistry>(this) suiteNames], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 }

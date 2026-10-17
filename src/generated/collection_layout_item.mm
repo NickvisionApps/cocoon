@@ -23,10 +23,10 @@ namespace cocoon
     CollectionLayoutItem CollectionLayoutItem::item_with_layout_size(const CollectionLayoutSize& layout_size, const std::vector<CollectionLayoutSupplementaryItem>& supplementary_items)
     {
         return cocoon::internal::wrap<CollectionLayoutItem>([::NSCollectionLayoutItem itemWithLayoutSize:cocoon::internal::native<::NSCollectionLayoutSize>(layout_size)
-                                                                        supplementaryItems:cocoon::internal::to_array(supplementary_items, [](const CollectionLayoutSupplementaryItem& e) -> id
-                                                                                                        {
-                                                                                                            return cocoon::internal::native<::NSCollectionLayoutSupplementaryItem>(e);
-                                                                                                        })]);
+                                                                                      supplementaryItems:cocoon::internal::to_array(supplementary_items, [](const CollectionLayoutSupplementaryItem& e) -> id
+                                                                                                                                    {
+                                                                                                                                        return cocoon::internal::native<::NSCollectionLayoutSupplementaryItem>(e);
+                                                                                                                                    })]);
     }
 
     DirectionalEdgeInsets CollectionLayoutItem::content_insets() const
@@ -57,8 +57,8 @@ namespace cocoon
     std::vector<CollectionLayoutSupplementaryItem> CollectionLayoutItem::supplementary_items() const
     {
         return cocoon::internal::from_array<CollectionLayoutSupplementaryItem>([cocoon::internal::ns<::NSCollectionLayoutItem>(this) supplementaryItems], [](id e) -> CollectionLayoutSupplementaryItem
-                                                                 {
-                                                                     return cocoon::internal::wrap<CollectionLayoutSupplementaryItem>((::NSCollectionLayoutSupplementaryItem*)e);
-                                                                 });
+                                                                               {
+                                                                                   return cocoon::internal::wrap<CollectionLayoutSupplementaryItem>((::NSCollectionLayoutSupplementaryItem*)e);
+                                                                               });
     }
 }

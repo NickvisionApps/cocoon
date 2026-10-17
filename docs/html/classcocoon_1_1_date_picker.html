@@ -20,6 +20,7 @@
   <td id="projectalign">
    <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
    </div>
+   <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
  </tr>
  </tbody>
@@ -1163,9 +1164,9 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_date_picker.html">cocoon::DatePicker</a> picker;</div>
 <div class="line">picker.<a class="code hl_function" href="#ab1c6177cc034e4f30bcb9eb29db75ece">set_timestamp</a>(0);</div>
 <div class="line">picker.<a class="code hl_function" href="#af3b6be59a54d8e8ffabfd7274e98463c">date_changed</a>().connect([](<span class="keywordtype">double</span> seconds) {});</div>
-<div class="ttc" id="aclasscocoon_1_1_date_picker_html"><div class="ttname"><a href="classcocoon_1_1_date_picker.html">cocoon::DatePicker</a></div><div class="ttdoc">A date and time picker.</div><div class="ttdef"><b>Definition</b> date_picker.h:43</div></div>
+<div class="ttc" id="aclasscocoon_1_1_date_picker_html"><div class="ttname"><a href="classcocoon_1_1_date_picker.html">cocoon::DatePicker</a></div><div class="ttdoc">A date and time picker.</div><div class="ttdef"><b>Definition</b> date_picker.h:44</div></div>
 <div class="ttc" id="aclasscocoon_1_1_date_picker_html_ab1c6177cc034e4f30bcb9eb29db75ece"><div class="ttname"><a href="#ab1c6177cc034e4f30bcb9eb29db75ece">cocoon::DatePicker::set_timestamp</a></div><div class="ttdeci">void set_timestamp(double seconds) const</div><div class="ttdoc">Convenience helper set_timestamp provided by cocoon.</div></div>
-<div class="ttc" id="aclasscocoon_1_1_date_picker_html_af3b6be59a54d8e8ffabfd7274e98463c"><div class="ttname"><a href="#af3b6be59a54d8e8ffabfd7274e98463c">cocoon::DatePicker::date_changed</a></div><div class="ttdeci">Signal&lt; DatePicker, void(double)&gt; date_changed() const</div><div class="ttdoc">Signal date_changed: connect a callback with date_changed().connect(...).</div><div class="ttdef"><b>Definition</b> date_picker.h:217</div></div>
+<div class="ttc" id="aclasscocoon_1_1_date_picker_html_af3b6be59a54d8e8ffabfd7274e98463c"><div class="ttname"><a href="#af3b6be59a54d8e8ffabfd7274e98463c">cocoon::DatePicker::date_changed</a></div><div class="ttdeci">Signal&lt; DatePicker, void(double)&gt; date_changed() const</div><div class="ttdoc">Signal date_changed: connect a callback with date_changed().connect(...).</div><div class="ttdef"><b>Definition</b> date_picker.h:218</div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_date_picker.html">cocoon::DatePicker</a> date_picker{};</div>
 <div class="line">date_picker.<a class="code hl_function" href="#aceea2fd3b9fd09c7b4bdccca8e1196d2">set_background_color</a>(<a class="code hl_class" href="classcocoon_1_1_color.html">cocoon::Color</a>());</div>
@@ -1175,7 +1176,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">date_picker.<a class="code hl_function" href="#ae6c18954dd351d5436db9a1a4c344749">set_bordered</a>(<span class="keyword">true</span>);</div>
 <div class="line"><span class="keyword">auto</span> bordered = date_picker.<a class="code hl_function" href="#ace13ef4efa463f7091d5dc58842110cd">is_bordered</a>();</div>
 <div class="line">date_picker.<a class="code hl_function" href="#af3b6be59a54d8e8ffabfd7274e98463c">date_changed</a>().connect([](<span class="keywordtype">double</span> a0) {});</div>
-<div class="ttc" id="aclasscocoon_1_1_color_html"><div class="ttname"><a href="classcocoon_1_1_color.html">cocoon::Color</a></div><div class="ttdoc">A color (NSColor).</div><div class="ttdef"><b>Definition</b> color.h:41</div></div>
+<div class="ttc" id="aclasscocoon_1_1_color_html"><div class="ttname"><a href="classcocoon_1_1_color.html">cocoon::Color</a></div><div class="ttdoc">A color (NSColor).</div><div class="ttdef"><b>Definition</b> color.h:42</div></div>
 <div class="ttc" id="aclasscocoon_1_1_date_picker_html_a8e30b8c701ec2d6bd05b25e615a33316"><div class="ttname"><a href="#a8e30b8c701ec2d6bd05b25e615a33316">cocoon::DatePicker::set_bezeled</a></div><div class="ttdeci">void set_bezeled(bool value) const</div><div class="ttdoc">Sets the bezeled property of NSDatePicker.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_date_picker_html_a9522b45b010c822ce720745cfbc323d6"><div class="ttname"><a href="#a9522b45b010c822ce720745cfbc323d6">cocoon::DatePicker::is_bezeled</a></div><div class="ttdeci">bool is_bezeled() const</div><div class="ttdoc">Returns the bezeled property of NSDatePicker.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_date_picker_html_ace13ef4efa463f7091d5dc58842110cd"><div class="ttname"><a href="#ace13ef4efa463f7091d5dc58842110cd">cocoon::DatePicker::is_bordered</a></div><div class="ttdeci">bool is_bordered() const</div><div class="ttdoc">Returns the bordered property of NSDatePicker.</div></div>

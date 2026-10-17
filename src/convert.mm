@@ -92,6 +92,11 @@ namespace cocoon::internal
         return [NSData dataWithBytes:value.data() length:value.size()];
     }
 
+    NSMutableData* to_mutable_data(const std::vector<std::uint8_t>& value)
+    {
+        return [NSMutableData dataWithBytes:value.data() length:value.size()];
+    }
+
     std::vector<std::uint8_t> from_data(NSData* value)
     {
         if (!value)

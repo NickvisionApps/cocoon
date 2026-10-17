@@ -28,9 +28,9 @@ namespace cocoon
     std::vector<DraggingImageComponent> TableCellView::dragging_image_components() const
     {
         return cocoon::internal::from_array<DraggingImageComponent>([cocoon::internal::ns<::NSTableCellView>(this) draggingImageComponents], [](id e) -> DraggingImageComponent
-                                                      {
-                                                          return cocoon::internal::wrap<DraggingImageComponent>((::NSDraggingImageComponent*)e);
-                                                      });
+                                                                    {
+                                                                        return cocoon::internal::wrap<DraggingImageComponent>((::NSDraggingImageComponent*)e);
+                                                                    });
     }
 
     ImageView TableCellView::image_view() const

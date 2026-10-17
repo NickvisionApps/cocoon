@@ -130,8 +130,8 @@ namespace cocoon
     {
         id host = (__bridge id)native;
         cocoon::internal::bind_action(host, host, [](id host, id sender)
-                        {
-                            cocoon::Signal<cocoon::ColorWell, void(Color)>::emit((__bridge void*)host, "color_changed", cocoon::internal::wrap<Color>(((NSColorWell*)sender).color));
-                        });
+                                      {
+                                          cocoon::Signal<cocoon::ColorWell, void(Color)>::emit((__bridge void*)host, "color_changed", cocoon::internal::wrap<Color>(((NSColorWell*)sender).color));
+                                      });
     }
 }

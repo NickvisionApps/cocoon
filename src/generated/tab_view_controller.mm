@@ -48,25 +48,25 @@ namespace cocoon
     std::vector<std::string> TabViewController::toolbar_allowed_item_identifiers(const Toolbar& toolbar) const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSTabViewController>(this) toolbarAllowedItemIdentifiers:cocoon::internal::native<::NSToolbar>(toolbar)], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::vector<std::string> TabViewController::toolbar_default_item_identifiers(const Toolbar& toolbar) const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSTabViewController>(this) toolbarDefaultItemIdentifiers:cocoon::internal::native<::NSToolbar>(toolbar)], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::vector<std::string> TabViewController::toolbar_selectable_item_identifiers(const Toolbar& toolbar) const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSTabViewController>(this) toolbarSelectableItemIdentifiers:cocoon::internal::native<::NSToolbar>(toolbar)], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void TabViewController::view_did_load() const
@@ -117,17 +117,17 @@ namespace cocoon
     std::vector<TabViewItem> TabViewController::tab_view_items() const
     {
         return cocoon::internal::from_array<TabViewItem>([cocoon::internal::ns<::NSTabViewController>(this) tabViewItems], [](id e) -> TabViewItem
-                                           {
-                                               return cocoon::internal::wrap<TabViewItem>((::NSTabViewItem*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::wrap<TabViewItem>((::NSTabViewItem*)e);
+                                                         });
     }
 
     void TabViewController::set_tab_view_items(const std::vector<TabViewItem>& value) const
     {
         [cocoon::internal::ns<::NSTabViewController>(this) setTabViewItems:cocoon::internal::to_array(value, [](const TabViewItem& e) -> id
-                                                                          {
-                                                                              return cocoon::internal::native<::NSTabViewItem>(e);
-                                                                          })];
+                                                                                                      {
+                                                                                                          return cocoon::internal::native<::NSTabViewItem>(e);
+                                                                                                      })];
     }
 
     ViewControllerTransitionOptions TabViewController::transition_options() const

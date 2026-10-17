@@ -139,17 +139,17 @@ namespace cocoon
     std::vector<std::string> PathControl::allowed_types() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSPathControl>(this) allowedTypes], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void PathControl::set_allowed_types(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSPathControl>(this) setAllowedTypes:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                                    {
-                                                                        return cocoon::internal::to(e);
-                                                                    })];
+                                                                                                {
+                                                                                                    return cocoon::internal::to(e);
+                                                                                                })];
     }
 
     Color PathControl::background_color() const
@@ -200,17 +200,17 @@ namespace cocoon
     std::vector<PathControlItem> PathControl::path_items() const
     {
         return cocoon::internal::from_array<PathControlItem>([cocoon::internal::ns<::NSPathControl>(this) pathItems], [](id e) -> PathControlItem
-                                               {
-                                                   return cocoon::internal::wrap<PathControlItem>((::NSPathControlItem*)e);
-                                               });
+                                                             {
+                                                                 return cocoon::internal::wrap<PathControlItem>((::NSPathControlItem*)e);
+                                                             });
     }
 
     void PathControl::set_path_items(const std::vector<PathControlItem>& value) const
     {
         [cocoon::internal::ns<::NSPathControl>(this) setPathItems:cocoon::internal::to_array(value, [](const PathControlItem& e) -> id
-                                                                 {
-                                                                     return cocoon::internal::native<::NSPathControlItem>(e);
-                                                                 })];
+                                                                                             {
+                                                                                                 return cocoon::internal::native<::NSPathControlItem>(e);
+                                                                                             })];
     }
 
     PathStyle PathControl::path_style() const

@@ -4,17 +4,17 @@
 namespace cocoon
 {
     Gradient::Gradient(const std::vector<Color>& color_array) : Gradient(Adopt{cocoon::internal::retain([[::NSGradient alloc] initWithColors:cocoon::internal::to_array(color_array, [](const Color& e) -> id
-                                                                                                                                            {
-                                                                                                                                                return cocoon::internal::native<::NSColor>(e);
-                                                                                                                                            })])})
+                                                                                                                                                                        {
+                                                                                                                                                                            return cocoon::internal::native<::NSColor>(e);
+                                                                                                                                                                        })])})
     {
     }
 
     Gradient::Gradient(const std::vector<Color>& color_array, const double* locations, const ColorSpace& color_space) : Gradient(Adopt{cocoon::internal::retain([[::NSGradient alloc] initWithColors:cocoon::internal::to_array(color_array, [](const Color& e) -> id
-                                                                                                                                                                                                    {
-                                                                                                                                                                                                        return cocoon::internal::native<::NSColor>(e);
-                                                                                                                                                                                                    })
-                                                                                                                                                                           atLocations:(const ::CGFloat*)(locations)colorSpace:cocoon::internal::native<::NSColorSpace>(color_space)])})
+                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                    return cocoon::internal::native<::NSColor>(e);
+                                                                                                                                                                                                                                })
+                                                                                                                                                                                         atLocations:(const ::CGFloat*)(locations)colorSpace:cocoon::internal::native<::NSColorSpace>(color_space)])})
     {
     }
 

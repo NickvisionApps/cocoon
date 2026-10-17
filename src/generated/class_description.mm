@@ -38,24 +38,24 @@ namespace cocoon
     std::vector<std::string> ClassDescription::attribute_keys() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSClassDescription>(this) attributeKeys], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::vector<std::string> ClassDescription::to_many_relationship_keys() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSClassDescription>(this) toManyRelationshipKeys], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::vector<std::string> ClassDescription::to_one_relationship_keys() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSClassDescription>(this) toOneRelationshipKeys], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 }

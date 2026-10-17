@@ -1,5 +1,8 @@
 #pragma once
 
+#include "generated/availability.h"
+
+#ifdef COCOON_MACOS_27
 #include "generated/enums.h"
 #include "generated/structs.h"
 #include "object.h"
@@ -45,54 +48,81 @@ namespace cocoon
         TextSelectionManager(std::nullptr_t);
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit TextSelectionManager(Adopt adopt);
+#ifdef COCOON_MACOS_27
         /**
      * @brief Returns the `gesturesForFailureRequirements` property of `NSTextSelectionManager`.
      * @details The gesture recognizers managed by the selection manager. Other gesture recognizers in the view hierarchy can declare dependencies on these gestures using 'requireGestureRecognizerToFail:' to ensure proper gesture recognition precedence.
      * @return The converted Objective-C result.
      */
         std::vector<GestureRecognizer> gestures_for_failure_requirements() const;
+#endif
+
+#ifdef COCOON_MACOS_27
         /**
      * @brief Returns the `textSelectionMode` property of `NSTextSelectionManager`.
      * @details The interaction mode for text selection. Determines whether text is editable, selectable only, or non-interactive. The default value is 'NSTextSelectionModeEditable'.
      * @return The converted Objective-C result.
      */
         TextSelectionMode text_selection_mode() const;
+#endif
+
+#ifdef COCOON_MACOS_27
         /**
      * @brief Sets the `textSelectionMode` property of `NSTextSelectionManager`.
      * @details The interaction mode for text selection. Determines whether text is editable, selectable only, or non-interactive. The default value is 'NSTextSelectionModeEditable'.
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_text_selection_mode(TextSelectionMode value) const;
+#endif
+
+#ifdef COCOON_MACOS_27
         /// @brief Signal for the delegate/data-source method behind `selection_manager_should_begin_selection_at_point`; connect a callback with `selection_manager_should_begin_selection_at_point().connect(...)`.
         Signal<TextSelectionManager, bool(Point)> selection_manager_should_begin_selection_at_point() const
         {
             return Signal<TextSelectionManager, bool(Point)>(handle(), "selection_manager_should_begin_selection_at_point");
         }
+#endif
+
+#ifdef COCOON_MACOS_27
         /// @brief Signal for the delegate/data-source method behind `selection_manager_will_begin_selection`; connect a callback with `selection_manager_will_begin_selection().connect(...)`.
         Signal<TextSelectionManager, void()> selection_manager_will_begin_selection() const
         {
             return Signal<TextSelectionManager, void()>(handle(), "selection_manager_will_begin_selection");
         }
+#endif
+
+#ifdef COCOON_MACOS_27
         /// @brief Signal for the delegate/data-source method behind `selection_manager_did_end_selection`; connect a callback with `selection_manager_did_end_selection().connect(...)`.
         Signal<TextSelectionManager, void()> selection_manager_did_end_selection() const
         {
             return Signal<TextSelectionManager, void()>(handle(), "selection_manager_did_end_selection");
         }
+#endif
+
+#ifdef COCOON_MACOS_27
         /// @brief Signal for the delegate/data-source method behind `selection_manager_location_of_text_container_at_point`; connect a callback with `selection_manager_location_of_text_container_at_point().connect(...)`.
         Signal<TextSelectionManager, Object(Point)> selection_manager_location_of_text_container_at_point() const
         {
             return Signal<TextSelectionManager, Object(Point)>(handle(), "selection_manager_location_of_text_container_at_point");
         }
+#endif
+
+#ifdef COCOON_MACOS_27
         /// @brief Signal for the delegate/data-source method behind `selection_manager_frame_of_text_container_at_point`; connect a callback with `selection_manager_frame_of_text_container_at_point().connect(...)`.
         Signal<TextSelectionManager, Rect(Point)> selection_manager_frame_of_text_container_at_point() const
         {
             return Signal<TextSelectionManager, Rect(Point)>(handle(), "selection_manager_frame_of_text_container_at_point");
         }
+#endif
+
+#ifdef COCOON_MACOS_27
         /// @brief Signal for the delegate/data-source method behind `selection_manager_make_dragging_session_with_gesture`; connect a callback with `selection_manager_make_dragging_session_with_gesture().connect(...)`.
         Signal<TextSelectionManager, DraggingSession(GestureRecognizer)> selection_manager_make_dragging_session_with_gesture() const
         {
             return Signal<TextSelectionManager, DraggingSession(GestureRecognizer)>(handle(), "selection_manager_make_dragging_session_with_gesture");
         }
+#endif
+
         /// @brief Signal for the delegate/data-source method behind `enumerate_substrings_from_location_options_using_block`; connect a callback with `enumerate_substrings_from_location_options_using_block().connect(...)`.
         Signal<TextSelectionManager, void(StringEnumerationOptions, std::function<void(std::string, TextRange, TextRange, bool&)>)> enumerate_substrings_from_location_options_using_block() const
         {
@@ -138,14 +168,18 @@ namespace cocoon
         {
             return Signal<TextSelectionManager, TextSelectionNavigationLayoutOrientation()>(handle(), "text_layout_orientation_at_location");
         }
+#ifdef COCOON_MACOS_27
         /// @brief Signal for the delegate/data-source method behind `convert_interaction_point_to_container_at_location`; connect a callback with `convert_interaction_point_to_container_at_location().connect(...)`.
         Signal<TextSelectionManager, Point(Object)> convert_interaction_point_to_container_at_location() const
         {
             return Signal<TextSelectionManager, Point(Object)>(handle(), "convert_interaction_point_to_container_at_location");
         }
+#endif
 
     protected:
         static void install_delegate_delegate_(void* native);
         static void install_text_selection_data_source_delegate_(void* native);
     };
 }
+
+#endif

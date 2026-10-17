@@ -32,12 +32,12 @@ namespace cocoon
     void NotificationQueue::enqueue_notification(const Notification& notification, PostingStyle posting_style, NotificationCoalescing coalesce_mask, const std::vector<std::string>& modes) const
     {
         [cocoon::internal::ns<::NSNotificationQueue>(this) enqueueNotification:cocoon::internal::native<::NSNotification>(notification)
-                                                    postingStyle:static_cast<::NSPostingStyle>(posting_style)
-                                                    coalesceMask:static_cast<::NSNotificationCoalescing>(coalesce_mask)
-                                                        forModes:cocoon::internal::to_array(modes, [](const std::string& e) -> id
-                                                                              {
-                                                                                  return cocoon::internal::to(e);
-                                                                              })];
+                                                                  postingStyle:static_cast<::NSPostingStyle>(posting_style)
+                                                                  coalesceMask:static_cast<::NSNotificationCoalescing>(coalesce_mask)
+                                                                      forModes:cocoon::internal::to_array(modes, [](const std::string& e) -> id
+                                                                                                          {
+                                                                                                              return cocoon::internal::to(e);
+                                                                                                          })];
     }
 
     NotificationQueue NotificationQueue::default_queue()

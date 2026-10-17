@@ -43,9 +43,9 @@ namespace cocoon
     std::vector<std::string> Host::addresses() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSHost>(this) addresses], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::string Host::localized_name() const
@@ -61,8 +61,8 @@ namespace cocoon
     std::vector<std::string> Host::names() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSHost>(this) names], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 }

@@ -54,9 +54,9 @@ namespace cocoon
             throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
         }
         return cocoon::internal::from_array<Object>(__r, [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     Object ManagedObjectContext::execute_request(const Object& request) const
@@ -86,11 +86,6 @@ namespace cocoon
         [cocoon::internal::ns<::NSManagedObjectContext>(this) insertObject:cocoon::internal::native_id(object)];
     }
 
-    void ManagedObjectContext::lock() const
-    {
-        [cocoon::internal::ns<::NSManagedObjectContext>(this) lock];
-    }
-
     void ManagedObjectContext::merge_changes_from_context_did_save_notification(const Notification& notification) const
     {
         [cocoon::internal::ns<::NSManagedObjectContext>(this) mergeChangesFromContextDidSaveNotification:cocoon::internal::native<::NSNotification>(notification)];
@@ -99,17 +94,17 @@ namespace cocoon
     void ManagedObjectContext::merge_changes_from_remote_context_save(const std::vector<std::pair<Object, Object>>& change_notification_data, const std::vector<ManagedObjectContext>& contexts)
     {
         [::NSManagedObjectContext mergeChangesFromRemoteContextSave:cocoon::internal::to_dictionary(change_notification_data, [](const Object& k) -> id
-                                                                                      {
-                                                                                          return cocoon::internal::native_id(k);
-                                                                                      },
-                                                                                      [](const Object& v) -> id
-                                                                                      {
-                                                                                          return cocoon::internal::native_id(v);
-                                                                                      })
+                                                                                                    {
+                                                                                                        return cocoon::internal::native_id(k);
+                                                                                                    },
+                                                                                                    [](const Object& v) -> id
+                                                                                                    {
+                                                                                                        return cocoon::internal::native_id(v);
+                                                                                                    })
                                                        intoContexts:cocoon::internal::to_array(contexts, [](const ManagedObjectContext& e) -> id
-                                                                                 {
-                                                                                     return cocoon::internal::native<::NSManagedObjectContext>(e);
-                                                                                 })];
+                                                                                               {
+                                                                                                   return cocoon::internal::native<::NSManagedObjectContext>(e);
+                                                                                               })];
     }
 
     Object ManagedObjectContext::object_registered_for_id(const Object& object_id) const
@@ -125,26 +120,26 @@ namespace cocoon
     void ManagedObjectContext::observe_value_for_key_path(const std::string& key_path, const Object& object, const std::map<std::string, Object>& change, void* context) const
     {
         [cocoon::internal::ns<::NSManagedObjectContext>(this) observeValueForKeyPath:cocoon::internal::to(key_path)
-                                                              ofObject:cocoon::internal::native_id(object)
-                                                                change:cocoon::internal::to_dictionary(change, [](const std::string& k) -> id
-                                                                                         {
-                                                                                             return cocoon::internal::to(k);
-                                                                                         },
-                                                                                         [](const Object& v) -> id
-                                                                                         {
-                                                                                             return cocoon::internal::native_id(v);
-                                                                                         })
-                                                               context:context];
+                                                                            ofObject:cocoon::internal::native_id(object)
+                                                                              change:cocoon::internal::to_dictionary(change, [](const std::string& k) -> id
+                                                                                                                     {
+                                                                                                                         return cocoon::internal::to(k);
+                                                                                                                     },
+                                                                                                                     [](const Object& v) -> id
+                                                                                                                     {
+                                                                                                                         return cocoon::internal::native_id(v);
+                                                                                                                     })
+                                                                             context:context];
     }
 
     bool ManagedObjectContext::obtain_permanent_i_ds_for_objects(const std::vector<Object>& objects) const
     {
         NSError* __error = nil;
         auto __r = [cocoon::internal::ns<::NSManagedObjectContext>(this) obtainPermanentIDsForObjects:cocoon::internal::to_array(objects, [](const Object& e) -> id
-                                                                                                     {
-                                                                                                         return cocoon::internal::native_id(e);
-                                                                                                     })
-                                                                                  error:&__error];
+                                                                                                                                 {
+                                                                                                                                     return cocoon::internal::native_id(e);
+                                                                                                                                 })
+                                                                                                error:&__error];
         if (__error)
         {
             throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
@@ -214,19 +209,9 @@ namespace cocoon
         return static_cast<bool>(__r);
     }
 
-    bool ManagedObjectContext::try_lock() const
-    {
-        return static_cast<bool>([cocoon::internal::ns<::NSManagedObjectContext>(this) tryLock]);
-    }
-
     void ManagedObjectContext::undo() const
     {
         [cocoon::internal::ns<::NSManagedObjectContext>(this) undo];
-    }
-
-    void ManagedObjectContext::unlock() const
-    {
-        [cocoon::internal::ns<::NSManagedObjectContext>(this) unlock];
     }
 
     bool ManagedObjectContext::automatically_merges_changes_from_parent() const
@@ -247,9 +232,9 @@ namespace cocoon
     std::vector<Object> ManagedObjectContext::deleted_objects() const
     {
         return cocoon::internal::from_array<Object>([[cocoon::internal::ns<::NSManagedObjectContext>(this) deletedObjects] allObjects], [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     bool ManagedObjectContext::has_changes() const
@@ -260,9 +245,9 @@ namespace cocoon
     std::vector<Object> ManagedObjectContext::inserted_objects() const
     {
         return cocoon::internal::from_array<Object>([[cocoon::internal::ns<::NSManagedObjectContext>(this) insertedObjects] allObjects], [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     Object ManagedObjectContext::merge_policy() const
@@ -323,9 +308,9 @@ namespace cocoon
     std::vector<Object> ManagedObjectContext::registered_objects() const
     {
         return cocoon::internal::from_array<Object>([[cocoon::internal::ns<::NSManagedObjectContext>(this) registeredObjects] allObjects], [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     bool ManagedObjectContext::retains_registered_objects() const
@@ -381,20 +366,20 @@ namespace cocoon
     std::vector<Object> ManagedObjectContext::updated_objects() const
     {
         return cocoon::internal::from_array<Object>([[cocoon::internal::ns<::NSManagedObjectContext>(this) updatedObjects] allObjects], [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     std::vector<std::pair<Object, Object>> ManagedObjectContext::user_info() const
     {
         return cocoon::internal::from_dictionary<std::vector<std::pair<Object, Object>>>([cocoon::internal::ns<::NSManagedObjectContext>(this) userInfo], [](id k) -> Object
-                                                                           {
-                                                                               return cocoon::internal::wrap<Object>(k);
-                                                                           },
-                                                                           [](id v) -> Object
-                                                                           {
-                                                                               return cocoon::internal::wrap<Object>(v);
-                                                                           });
+                                                                                         {
+                                                                                             return cocoon::internal::wrap<Object>(k);
+                                                                                         },
+                                                                                         [](id v) -> Object
+                                                                                         {
+                                                                                             return cocoon::internal::wrap<Object>(v);
+                                                                                         });
     }
 }

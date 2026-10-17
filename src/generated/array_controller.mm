@@ -28,17 +28,17 @@ namespace cocoon
     void ArrayController::add_objects(const std::vector<Object>& objects) const
     {
         [cocoon::internal::ns<::NSArrayController>(this) addObjects:cocoon::internal::to_array(objects, [](const Object& e) -> id
-                                                                   {
-                                                                       return cocoon::internal::native_id(e);
-                                                                   })];
+                                                                                               {
+                                                                                                   return cocoon::internal::native_id(e);
+                                                                                               })];
     }
 
     bool ArrayController::add_selected_objects(const std::vector<Object>& objects) const
     {
         return static_cast<bool>([cocoon::internal::ns<::NSArrayController>(this) addSelectedObjects:cocoon::internal::to_array(objects, [](const Object& e) -> id
-                                                                                                    {
-                                                                                                        return cocoon::internal::native_id(e);
-                                                                                                    })]);
+                                                                                                                                {
+                                                                                                                                    return cocoon::internal::native_id(e);
+                                                                                                                                })]);
     }
 
     bool ArrayController::add_selection_indexes(const IndexSet& indexes) const
@@ -49,13 +49,13 @@ namespace cocoon
     std::vector<Object> ArrayController::arrange_objects(const std::vector<Object>& objects) const
     {
         return cocoon::internal::from_array<Object>([cocoon::internal::ns<::NSArrayController>(this) arrangeObjects:cocoon::internal::to_array(objects, [](const Object& e) -> id
-                                                                                                     {
-                                                                                                         return cocoon::internal::native_id(e);
-                                                                                                     })],
-                                      [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                                                                                                               {
+                                                                                                                                                   return cocoon::internal::native_id(e);
+                                                                                                                                               })],
+                                                    [](id e) -> Object
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     void ArrayController::did_change_arrangement_criteria() const
@@ -76,10 +76,10 @@ namespace cocoon
     void ArrayController::insert_objects(const std::vector<Object>& objects, const IndexSet& indexes) const
     {
         [cocoon::internal::ns<::NSArrayController>(this) insertObjects:cocoon::internal::to_array(objects, [](const Object& e) -> id
-                                                                      {
-                                                                          return cocoon::internal::native_id(e);
-                                                                      })
-                                 atArrangedObjectIndexes:cocoon::internal::native<::NSIndexSet>(indexes)];
+                                                                                                  {
+                                                                                                      return cocoon::internal::native_id(e);
+                                                                                                  })
+                                               atArrangedObjectIndexes:cocoon::internal::native<::NSIndexSet>(indexes)];
     }
 
     void ArrayController::rearrange_objects() const
@@ -105,9 +105,9 @@ namespace cocoon
     void ArrayController::remove_objects(const std::vector<Object>& objects) const
     {
         [cocoon::internal::ns<::NSArrayController>(this) removeObjects:cocoon::internal::to_array(objects, [](const Object& e) -> id
-                                                                      {
-                                                                          return cocoon::internal::native_id(e);
-                                                                      })];
+                                                                                                  {
+                                                                                                      return cocoon::internal::native_id(e);
+                                                                                                  })];
     }
 
     void ArrayController::remove_objects_at_arranged_object_indexes(const IndexSet& indexes) const
@@ -118,9 +118,9 @@ namespace cocoon
     bool ArrayController::remove_selected_objects(const std::vector<Object>& objects) const
     {
         return static_cast<bool>([cocoon::internal::ns<::NSArrayController>(this) removeSelectedObjects:cocoon::internal::to_array(objects, [](const Object& e) -> id
-                                                                                                       {
-                                                                                                           return cocoon::internal::native_id(e);
-                                                                                                       })]);
+                                                                                                                                   {
+                                                                                                                                       return cocoon::internal::native_id(e);
+                                                                                                                                   })]);
     }
 
     bool ArrayController::remove_selection_indexes(const IndexSet& indexes) const
@@ -141,9 +141,9 @@ namespace cocoon
     bool ArrayController::set_selected_objects(const std::vector<Object>& objects) const
     {
         return static_cast<bool>([cocoon::internal::ns<::NSArrayController>(this) setSelectedObjects:cocoon::internal::to_array(objects, [](const Object& e) -> id
-                                                                                                    {
-                                                                                                        return cocoon::internal::native_id(e);
-                                                                                                    })]);
+                                                                                                                                {
+                                                                                                                                    return cocoon::internal::native_id(e);
+                                                                                                                                })]);
     }
 
     bool ArrayController::set_selection_index(std::uint64_t index) const
@@ -174,9 +174,9 @@ namespace cocoon
     std::vector<std::string> ArrayController::automatic_rearrangement_key_paths() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSArrayController>(this) automaticRearrangementKeyPaths], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     bool ArrayController::automatically_rearranges_objects() const
@@ -247,9 +247,9 @@ namespace cocoon
     std::vector<Object> ArrayController::selected_objects() const
     {
         return cocoon::internal::from_array<Object>([cocoon::internal::ns<::NSArrayController>(this) selectedObjects], [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     std::uint64_t ArrayController::selection_index() const
@@ -275,16 +275,16 @@ namespace cocoon
     std::vector<SortDescriptor> ArrayController::sort_descriptors() const
     {
         return cocoon::internal::from_array<SortDescriptor>([cocoon::internal::ns<::NSArrayController>(this) sortDescriptors], [](id e) -> SortDescriptor
-                                              {
-                                                  return cocoon::internal::wrap<SortDescriptor>((::NSSortDescriptor*)e);
-                                              });
+                                                            {
+                                                                return cocoon::internal::wrap<SortDescriptor>((::NSSortDescriptor*)e);
+                                                            });
     }
 
     void ArrayController::set_sort_descriptors(const std::vector<SortDescriptor>& value) const
     {
         [cocoon::internal::ns<::NSArrayController>(this) setSortDescriptors:cocoon::internal::to_array(value, [](const SortDescriptor& e) -> id
-                                                                           {
-                                                                               return cocoon::internal::native<::NSSortDescriptor>(e);
-                                                                           })];
+                                                                                                       {
+                                                                                                           return cocoon::internal::native<::NSSortDescriptor>(e);
+                                                                                                       })];
     }
 }

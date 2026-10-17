@@ -20,6 +20,7 @@
   <td id="projectalign">
    <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
    </div>
+   <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
  </tr>
  </tbody>
@@ -107,8 +108,8 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>One argument of a C-style variadic Objective-C call (for example a format string argument). </p>
 <p>Used by the generated variadic templates such as <span class="tt"><a class="el" href="classcocoon_1_1_predicate.html#a58d5c8d1fae5b119016c857ac5ce98cf">Predicate::predicate_with_format</a></span>. Numbers pass by value, <span class="tt">std::string</span> and handles pass as objects (<span class="tt">%@</span>), and <span class="tt">const char*</span> passes as a C string (<span class="tt">s</span>). </p><dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_predicate.html">cocoon::Predicate</a> p = <a class="code hl_function" href="classcocoon_1_1_predicate.html#a58d5c8d1fae5b119016c857ac5ce98cf">cocoon::Predicate::predicate_with_format</a>(<span class="stringliteral">&quot;name == %@ AND age &gt; %d&quot;</span>, std::string(<span class="stringliteral">&quot;Ada&quot;</span>), 36);</div>
-<div class="ttc" id="aclasscocoon_1_1_predicate_html"><div class="ttname"><a href="classcocoon_1_1_predicate.html">cocoon::Predicate</a></div><div class="ttdoc">C++ handle for the Objective-C class NSPredicate (Foundation).</div><div class="ttdef"><b>Definition</b> predicate.h:33</div></div>
-<div class="ttc" id="aclasscocoon_1_1_predicate_html_a58d5c8d1fae5b119016c857ac5ce98cf"><div class="ttname"><a href="classcocoon_1_1_predicate.html#a58d5c8d1fae5b119016c857ac5ce98cf">cocoon::Predicate::predicate_with_format</a></div><div class="ttdeci">static Predicate predicate_with_format(const std::string &amp;predicate_format, const Args &amp;... args)</div><div class="ttdef"><b>Definition</b> predicate.h:82</div></div>
+<div class="ttc" id="aclasscocoon_1_1_predicate_html"><div class="ttname"><a href="classcocoon_1_1_predicate.html">cocoon::Predicate</a></div><div class="ttdoc">C++ handle for the Objective-C class NSPredicate (Foundation).</div><div class="ttdef"><b>Definition</b> predicate.h:34</div></div>
+<div class="ttc" id="aclasscocoon_1_1_predicate_html_a58d5c8d1fae5b119016c857ac5ce98cf"><div class="ttname"><a href="classcocoon_1_1_predicate.html#a58d5c8d1fae5b119016c857ac5ce98cf">cocoon::Predicate::predicate_with_format</a></div><div class="ttdeci">static Predicate predicate_with_format(const std::string &amp;predicate_format, const Args &amp;... args)</div><div class="ttdef"><b>Definition</b> predicate.h:83</div></div>
 </div><!-- fragment --> </dd></dl>
 </div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Member Enumeration Documentation</h2>
 <a id="aa380994ef7119f3ea69a26ce0ecb5803" name="aa380994ef7119f3ea69a26ce0ecb5803"></a>

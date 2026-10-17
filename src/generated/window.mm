@@ -140,9 +140,9 @@
     }
     auto __r = cocoon::Signal<cocoon::Window, std::vector<cocoon::Window>()>::emit((__bridge void*)strongHost, "custom_windows_to_enter_full_screen_for_window");
     return cocoon::internal::to_array(__r, [](const cocoon::Window& e) -> id
-                        {
-                            return cocoon::internal::native<::NSWindow>(e);
-                        });
+                                      {
+                                          return cocoon::internal::native<::NSWindow>(e);
+                                      });
 }
 
 - (void)window:(NSWindow*)window startCustomAnimationToEnterFullScreenWithDuration:(NSTimeInterval)duration
@@ -174,9 +174,9 @@
     }
     auto __r = cocoon::Signal<cocoon::Window, std::vector<cocoon::Window>()>::emit((__bridge void*)strongHost, "custom_windows_to_exit_full_screen_for_window");
     return cocoon::internal::to_array(__r, [](const cocoon::Window& e) -> id
-                        {
-                            return cocoon::internal::native<::NSWindow>(e);
-                        });
+                                      {
+                                          return cocoon::internal::native<::NSWindow>(e);
+                                      });
 }
 
 - (void)window:(NSWindow*)window startCustomAnimationToExitFullScreenWithDuration:(NSTimeInterval)duration
@@ -198,9 +198,9 @@
     }
     auto __r = cocoon::Signal<cocoon::Window, std::vector<cocoon::Window>(cocoon::Screen)>::emit((__bridge void*)strongHost, "custom_windows_to_enter_full_screen_for_window_on_screen", cocoon::internal::wrap<cocoon::Screen>(screen));
     return cocoon::internal::to_array(__r, [](const cocoon::Window& e) -> id
-                        {
-                            return cocoon::internal::native<::NSWindow>(e);
-                        });
+                                      {
+                                          return cocoon::internal::native<::NSWindow>(e);
+                                      });
 }
 
 - (void)window:(NSWindow*)window startCustomAnimationToEnterFullScreenOnScreen:(NSScreen*)screen withDuration:(NSTimeInterval)duration
@@ -263,9 +263,9 @@
     }
     auto __r = cocoon::Signal<cocoon::Window, std::vector<cocoon::Object>()>::emit((__bridge void*)strongHost, "preview_representable_activity_items_for_window");
     return cocoon::internal::to_array(__r, [](const cocoon::Object& e) -> id
-                        {
-                            return cocoon::internal::native_id(e);
-                        });
+                                      {
+                                          return cocoon::internal::native_id(e);
+                                      });
 }
 
 - (NSWindow*)windowForSharingRequestFromWindow:(NSWindow*)window
@@ -867,11 +867,11 @@ namespace cocoon
     DraggingSession Window::begin_dragging_session_with_items(const std::vector<DraggingItem>& items, const Event& event, const Object& source) const
     {
         return cocoon::internal::wrap<DraggingSession>([cocoon::internal::ns<::NSWindow>(this) beginDraggingSessionWithItems:cocoon::internal::to_array(items, [](const DraggingItem& e) -> id
-                                                                                                              {
-                                                                                                                  return cocoon::internal::native<::NSDraggingItem>(e);
-                                                                                                              })
-                                                                                           event:cocoon::internal::native<::NSEvent>(event)
-                                                                                          source:cocoon::internal::native_id(source)]);
+                                                                                                                                                        {
+                                                                                                                                                            return cocoon::internal::native<::NSDraggingItem>(e);
+                                                                                                                                                        })
+                                                                                                                       event:cocoon::internal::native<::NSEvent>(event)
+                                                                                                                      source:cocoon::internal::native_id(source)]);
     }
 
     bool Window::can_represent_display_gamut(DisplayGamut display_gamut) const
@@ -1192,9 +1192,9 @@ namespace cocoon
     void Window::register_for_dragged_types(const std::vector<std::string>& new_types) const
     {
         [cocoon::internal::ns<::NSWindow>(this) registerForDraggedTypes:cocoon::internal::to_array(new_types, [](const std::string& e) -> id
-                                                                       {
-                                                                           return cocoon::internal::to(e);
-                                                                       })];
+                                                                                                   {
+                                                                                                       return cocoon::internal::to(e);
+                                                                                                   })];
     }
 
     void Window::remove_child_window(const Window& child_win) const
@@ -1435,9 +1435,9 @@ namespace cocoon
     void Window::visualize_constraints(const std::vector<LayoutConstraint>& constraints) const
     {
         [cocoon::internal::ns<::NSWindow>(this) visualizeConstraints:cocoon::internal::to_array(constraints, [](const LayoutConstraint& e) -> id
-                                                                    {
-                                                                        return cocoon::internal::native<::NSLayoutConstraint>(e);
-                                                                    })];
+                                                                                                {
+                                                                                                    return cocoon::internal::native<::NSLayoutConstraint>(e);
+                                                                                                })];
     }
 
     std::int64_t Window::window_number_at_point(const Point& point, std::int64_t window_number)
@@ -1448,9 +1448,9 @@ namespace cocoon
     std::vector<Number> Window::window_numbers_with_options(WindowNumberListOptions options)
     {
         return cocoon::internal::from_array<Number>([::NSWindow windowNumbersWithOptions:static_cast<::NSWindowNumberListOptions>(options)], [](id e) -> Number
-                                      {
-                                          return cocoon::internal::wrap<Number>((::NSNumber*)e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Number>((::NSNumber*)e);
+                                                    });
     }
 
     Window Window::window_with_content_view_controller(const ViewController& content_view_controller)
@@ -1626,9 +1626,9 @@ namespace cocoon
     std::vector<Window> Window::child_windows() const
     {
         return cocoon::internal::from_array<Window>([cocoon::internal::ns<::NSWindow>(this) childWindows], [](id e) -> Window
-                                      {
-                                          return cocoon::internal::wrap<Window>((::NSWindow*)e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Window>((::NSWindow*)e);
+                                                    });
     }
 
     WindowCollectionBehavior Window::collection_behavior() const
@@ -1759,13 +1759,13 @@ namespace cocoon
     std::map<std::string, Object> Window::device_description() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::NSWindow>(this) deviceDescription], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     bool Window::displays_when_screen_profile_changes() const
@@ -2171,9 +2171,9 @@ namespace cocoon
     std::vector<Window> Window::sheets() const
     {
         return cocoon::internal::from_array<Window>([cocoon::internal::ns<::NSWindow>(this) sheets], [](id e) -> Window
-                                      {
-                                          return cocoon::internal::wrap<Window>((::NSWindow*)e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Window>((::NSWindow*)e);
+                                                    });
     }
 
     bool Window::shows_toolbar_button() const
@@ -2224,9 +2224,9 @@ namespace cocoon
     std::vector<Window> Window::tabbed_windows() const
     {
         return cocoon::internal::from_array<Window>([cocoon::internal::ns<::NSWindow>(this) tabbedWindows], [](id e) -> Window
-                                      {
-                                          return cocoon::internal::wrap<Window>((::NSWindow*)e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Window>((::NSWindow*)e);
+                                                    });
     }
 
     std::string Window::tabbing_identifier() const
@@ -2272,17 +2272,17 @@ namespace cocoon
     std::vector<TitlebarAccessoryViewController> Window::titlebar_accessory_view_controllers() const
     {
         return cocoon::internal::from_array<TitlebarAccessoryViewController>([cocoon::internal::ns<::NSWindow>(this) titlebarAccessoryViewControllers], [](id e) -> TitlebarAccessoryViewController
-                                                               {
-                                                                   return cocoon::internal::wrap<TitlebarAccessoryViewController>((::NSTitlebarAccessoryViewController*)e);
-                                                               });
+                                                                             {
+                                                                                 return cocoon::internal::wrap<TitlebarAccessoryViewController>((::NSTitlebarAccessoryViewController*)e);
+                                                                             });
     }
 
     void Window::set_titlebar_accessory_view_controllers(const std::vector<TitlebarAccessoryViewController>& value) const
     {
         [cocoon::internal::ns<::NSWindow>(this) setTitlebarAccessoryViewControllers:cocoon::internal::to_array(value, [](const TitlebarAccessoryViewController& e) -> id
-                                                                                   {
-                                                                                       return cocoon::internal::native<::NSTitlebarAccessoryViewController>(e);
-                                                                                   })];
+                                                                                                               {
+                                                                                                                   return cocoon::internal::native<::NSTitlebarAccessoryViewController>(e);
+                                                                                                               })];
     }
 
     bool Window::titlebar_appears_transparent() const
@@ -2442,12 +2442,12 @@ namespace cocoon
     void Window::begin_sheet(const Window& sheet, std::function<void()> on_finished) const
     {
         [cocoon::internal::ns<NSWindow>(this) beginSheet:cocoon::internal::native<NSWindow>(sheet)
-                         completionHandler:^(NSModalResponse) {
-                             if (on_finished)
-                             {
-                                 on_finished();
-                             }
-                         }];
+                                       completionHandler:^(NSModalResponse) {
+                                           if (on_finished)
+                                           {
+                                               on_finished();
+                                           }
+                                       }];
     }
 
     void Window::end_sheet(const Window& sheet) const

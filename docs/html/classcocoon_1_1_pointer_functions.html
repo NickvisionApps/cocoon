@@ -20,6 +20,7 @@
   <td id="projectalign">
    <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
    </div>
+   <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
  </tr>
  </tbody>
@@ -105,14 +106,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:af3dca50b816756d2daceeb6285da3ac7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">sizeFunction</span> property of <span class="tt">NSPointerFunctions</span>.  <br /></td></tr>
 <tr class="memitem:a0fd30cb52e99df352e8c5ac5caadaa24" id="r_a0fd30cb52e99df352e8c5ac5caadaa24"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a0fd30cb52e99df352e8c5ac5caadaa24">set_size_function</a> (std::uint64_t(*value)(void *)) const</td></tr>
 <tr class="memdesc:a0fd30cb52e99df352e8c5ac5caadaa24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the <span class="tt">sizeFunction</span> property of <span class="tt">NSPointerFunctions</span>.  <br /></td></tr>
-<tr class="memitem:a591c32fb8948ac4e62aebc6ff4e98c06" id="r_a591c32fb8948ac4e62aebc6ff4e98c06"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a591c32fb8948ac4e62aebc6ff4e98c06">uses_strong_write_barrier</a> () const</td></tr>
-<tr class="memdesc:a591c32fb8948ac4e62aebc6ff4e98c06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">usesStrongWriteBarrier</span> property of <span class="tt">NSPointerFunctions</span>.  <br /></td></tr>
-<tr class="memitem:aea6b34d841f1312e9363791b158088fa" id="r_aea6b34d841f1312e9363791b158088fa"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aea6b34d841f1312e9363791b158088fa">set_uses_strong_write_barrier</a> (bool value) const</td></tr>
-<tr class="memdesc:aea6b34d841f1312e9363791b158088fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the <span class="tt">usesStrongWriteBarrier</span> property of <span class="tt">NSPointerFunctions</span>.  <br /></td></tr>
-<tr class="memitem:a0c7a03f51e54eefeac9f5521940fbd70" id="r_a0c7a03f51e54eefeac9f5521940fbd70"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a0c7a03f51e54eefeac9f5521940fbd70">uses_weak_read_and_write_barriers</a> () const</td></tr>
-<tr class="memdesc:a0c7a03f51e54eefeac9f5521940fbd70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">usesWeakReadAndWriteBarriers</span> property of <span class="tt">NSPointerFunctions</span>.  <br /></td></tr>
-<tr class="memitem:a4028412dc1311a46bc3725d39029658c" id="r_a4028412dc1311a46bc3725d39029658c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a4028412dc1311a46bc3725d39029658c">set_uses_weak_read_and_write_barriers</a> (bool value) const</td></tr>
-<tr class="memdesc:a4028412dc1311a46bc3725d39029658c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the <span class="tt">usesWeakReadAndWriteBarriers</span> property of <span class="tt">NSPointerFunctions</span>.  <br /></td></tr>
 <tr class="inherit_header pub_methods_classcocoon_1_1_object"><td colspan="2">Public Member Functions inherited from <a class="el" href="classcocoon_1_1_object.html">cocoon::Object</a></td></tr>
 <tr class="memitem:aa304a07e1fdfe52a0452420b27c893f5 pub_methods_classcocoon_1_1_object" id="r_aa304a07e1fdfe52a0452420b27c893f5"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> ()=default</td></tr>
 <tr class="memdesc:aa304a07e1fdfe52a0452420b27c893f5 pub_methods_classcocoon_1_1_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a null handle.  <br /></td></tr>
@@ -150,19 +143,11 @@ Static Public Member Functions</h2></td></tr>
 <dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;cocoon.h&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_class" href="classcocoon_1_1_pointer_functions.html">cocoon::PointerFunctions</a> pointer_functions;</div>
-<div class="ttc" id="aclasscocoon_1_1_pointer_functions_html"><div class="ttname"><a href="classcocoon_1_1_pointer_functions.html">cocoon::PointerFunctions</a></div><div class="ttdoc">C++ handle for the Objective-C class NSPointerFunctions (Foundation).</div><div class="ttdef"><b>Definition</b> pointer_functions.h:35</div></div>
+<div class="ttc" id="aclasscocoon_1_1_pointer_functions_html"><div class="ttname"><a href="classcocoon_1_1_pointer_functions.html">cocoon::PointerFunctions</a></div><div class="ttdoc">C++ handle for the Objective-C class NSPointerFunctions (Foundation).</div><div class="ttdef"><b>Definition</b> pointer_functions.h:32</div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_pointer_functions.html">cocoon::PointerFunctions</a> pointer_functions{};</div>
-<div class="line">pointer_functions.<a class="code hl_function" href="#aea6b34d841f1312e9363791b158088fa">set_uses_strong_write_barrier</a>(<span class="keyword">true</span>);</div>
-<div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#a591c32fb8948ac4e62aebc6ff4e98c06">uses_strong_write_barrier</a> = pointer_functions.<a class="code hl_function" href="#a591c32fb8948ac4e62aebc6ff4e98c06">uses_strong_write_barrier</a>();</div>
-<div class="line">pointer_functions.<a class="code hl_function" href="#a4028412dc1311a46bc3725d39029658c">set_uses_weak_read_and_write_barriers</a>(<span class="keyword">true</span>);</div>
-<div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#a0c7a03f51e54eefeac9f5521940fbd70">uses_weak_read_and_write_barriers</a> = pointer_functions.<a class="code hl_function" href="#a0c7a03f51e54eefeac9f5521940fbd70">uses_weak_read_and_write_barriers</a>();</div>
 <div class="line"><span class="keyword">auto</span> made_0 = <a class="code hl_function" href="#a3d8d55d0c34bcf443125b921eb0e3f5b">cocoon::PointerFunctions::pointer_functions_with_options</a>(<a class="code hl_enumvalue" href="namespacecocoon.html#a7cda810ceb3b8e47d7cc1be2f5c05c9da59c706b1d666643bc26642a82c7fb0b5">cocoon::PointerFunctionsOptions::StrongMemory</a>);</div>
-<div class="ttc" id="aclasscocoon_1_1_pointer_functions_html_a0c7a03f51e54eefeac9f5521940fbd70"><div class="ttname"><a href="#a0c7a03f51e54eefeac9f5521940fbd70">cocoon::PointerFunctions::uses_weak_read_and_write_barriers</a></div><div class="ttdeci">bool uses_weak_read_and_write_barriers() const</div><div class="ttdoc">Returns the usesWeakReadAndWriteBarriers property of NSPointerFunctions.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_pointer_functions_html_a3d8d55d0c34bcf443125b921eb0e3f5b"><div class="ttname"><a href="#a3d8d55d0c34bcf443125b921eb0e3f5b">cocoon::PointerFunctions::pointer_functions_with_options</a></div><div class="ttdeci">static PointerFunctions pointer_functions_with_options(PointerFunctionsOptions options)</div><div class="ttdoc">Calls +[NSPointerFunctions pointerFunctionsWithOptions:].</div></div>
-<div class="ttc" id="aclasscocoon_1_1_pointer_functions_html_a4028412dc1311a46bc3725d39029658c"><div class="ttname"><a href="#a4028412dc1311a46bc3725d39029658c">cocoon::PointerFunctions::set_uses_weak_read_and_write_barriers</a></div><div class="ttdeci">void set_uses_weak_read_and_write_barriers(bool value) const</div><div class="ttdoc">Sets the usesWeakReadAndWriteBarriers property of NSPointerFunctions.</div></div>
-<div class="ttc" id="aclasscocoon_1_1_pointer_functions_html_a591c32fb8948ac4e62aebc6ff4e98c06"><div class="ttname"><a href="#a591c32fb8948ac4e62aebc6ff4e98c06">cocoon::PointerFunctions::uses_strong_write_barrier</a></div><div class="ttdeci">bool uses_strong_write_barrier() const</div><div class="ttdoc">Returns the usesStrongWriteBarrier property of NSPointerFunctions.</div></div>
-<div class="ttc" id="aclasscocoon_1_1_pointer_functions_html_aea6b34d841f1312e9363791b158088fa"><div class="ttname"><a href="#aea6b34d841f1312e9363791b158088fa">cocoon::PointerFunctions::set_uses_strong_write_barrier</a></div><div class="ttdeci">void set_uses_strong_write_barrier(bool value) const</div><div class="ttdoc">Sets the usesStrongWriteBarrier property of NSPointerFunctions.</div></div>
 <div class="ttc" id="anamespacecocoon_html_a7cda810ceb3b8e47d7cc1be2f5c05c9da59c706b1d666643bc26642a82c7fb0b5"><div class="ttname"><a href="namespacecocoon.html#a7cda810ceb3b8e47d7cc1be2f5c05c9da59c706b1d666643bc26642a82c7fb0b5">cocoon::PointerFunctionsOptions::StrongMemory</a></div><div class="ttdeci">@ StrongMemory</div><div class="ttdef"><b>Definition</b> enums.h:3153</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/foundation/nspointerfunctions">https://developer.apple.com/documentation/foundation/nspointerfunctions</a> </dd></dl>
@@ -552,56 +537,6 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aea6b34d841f1312e9363791b158088fa" name="aea6b34d841f1312e9363791b158088fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea6b34d841f1312e9363791b158088fa">&#9670;&#160;</a></span>set_uses_strong_write_barrier()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void cocoon::PointerFunctions::set_uses_strong_write_barrier </td>
-          <td>(</td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the <span class="tt">usesStrongWriteBarrier</span> property of <span class="tt">NSPointerFunctions</span>. </p>
-<p>Specifies whether, in a garbage collected environment, pointers should be assigned using a strong write barrier. If you use garbage collection, read and write barrier functions must be used when pointers are from memory scanned by the collector. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a4028412dc1311a46bc3725d39029658c" name="a4028412dc1311a46bc3725d39029658c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4028412dc1311a46bc3725d39029658c">&#9670;&#160;</a></span>set_uses_weak_read_and_write_barriers()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void cocoon::PointerFunctions::set_uses_weak_read_and_write_barriers </td>
-          <td>(</td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the <span class="tt">usesWeakReadAndWriteBarriers</span> property of <span class="tt">NSPointerFunctions</span>. </p>
-<p>Specifies whether, in a garbage collected environment, pointers should use weak read and write barriers. If you use garbage collection, read and write barrier functions must be used when pointers are from memory scanned by the collector. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="af3dca50b816756d2daceeb6285da3ac7" name="af3dca50b816756d2daceeb6285da3ac7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af3dca50b816756d2daceeb6285da3ac7">&#9670;&#160;</a></span>size_function()</h2>
 
@@ -619,46 +554,6 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Returns the <span class="tt">sizeFunction</span> property of <span class="tt">NSPointerFunctions</span>. </p>
 <p>The function used to determine the size of pointers. This function is used for copy-in operations (unless the collection has an object personality). </p><dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a591c32fb8948ac4e62aebc6ff4e98c06" name="a591c32fb8948ac4e62aebc6ff4e98c06"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a591c32fb8948ac4e62aebc6ff4e98c06">&#9670;&#160;</a></span>uses_strong_write_barrier()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool cocoon::PointerFunctions::uses_strong_write_barrier </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the <span class="tt">usesStrongWriteBarrier</span> property of <span class="tt">NSPointerFunctions</span>. </p>
-<p>Specifies whether, in a garbage collected environment, pointers should be assigned using a strong write barrier. If you use garbage collection, read and write barrier functions must be used when pointers are from memory scanned by the collector. </p><dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a0c7a03f51e54eefeac9f5521940fbd70" name="a0c7a03f51e54eefeac9f5521940fbd70"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0c7a03f51e54eefeac9f5521940fbd70">&#9670;&#160;</a></span>uses_weak_read_and_write_barriers()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool cocoon::PointerFunctions::uses_weak_read_and_write_barriers </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the <span class="tt">usesWeakReadAndWriteBarriers</span> property of <span class="tt">NSPointerFunctions</span>. </p>
-<p>Specifies whether, in a garbage collected environment, pointers should use weak read and write barriers. If you use garbage collection, read and write barrier functions must be used when pointers are from memory scanned by the collector. </p><dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
 
 </div>
 </div>

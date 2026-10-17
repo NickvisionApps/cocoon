@@ -1,5 +1,6 @@
 #pragma once
 
+#include "generated/availability.h"
 #include "generated/control.h"
 #include "generated/enums.h"
 #include "generated/structs.h"
@@ -252,16 +253,22 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         std::int64_t index_of_selected_item() const;
+#ifdef COCOON_MACOS_27
         /**
      * @brief Returns the `role` property of `NSSegmentedControl`.
      * @return The converted Objective-C result.
      */
         SegmentedControlRole role() const;
+#endif
+
+#ifdef COCOON_MACOS_27
         /**
      * @brief Sets the `role` property of `NSSegmentedControl`.
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_role(SegmentedControlRole value) const;
+#endif
+
         /**
      * @brief Returns the `segmentCount` property of `NSSegmentedControl`.
      * @return The converted Objective-C result.

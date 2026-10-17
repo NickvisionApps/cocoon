@@ -96,9 +96,9 @@ namespace cocoon
     std::vector<Button> Alert::buttons() const
     {
         return cocoon::internal::from_array<Button>([cocoon::internal::ns<::NSAlert>(this) buttons], [](id e) -> Button
-                                      {
-                                          return cocoon::internal::wrap<Button>((::NSButton*)e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Button>((::NSButton*)e);
+                                                    });
     }
 
     std::string Alert::help_anchor() const
@@ -179,12 +179,12 @@ namespace cocoon
     void Alert::begin_sheet(const Window& window, std::function<void(int)> on_finished) const
     {
         [cocoon::internal::ns<NSAlert>(this) beginSheetModalForWindow:cocoon::internal::native<NSWindow>(window)
-                                      completionHandler:^(NSModalResponse response) {
-                                          if (on_finished)
-                                          {
-                                              on_finished(static_cast<int>(response - NSAlertFirstButtonReturn));
-                                          }
-                                      }];
+                                                    completionHandler:^(NSModalResponse response) {
+                                                        if (on_finished)
+                                                        {
+                                                            on_finished(static_cast<int>(response - NSAlertFirstButtonReturn));
+                                                        }
+                                                    }];
     }
 
     void Alert::install_delegate_delegate_(void* native)

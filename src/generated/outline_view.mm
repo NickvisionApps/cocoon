@@ -94,9 +94,9 @@
         return;
     }
     cocoon::Signal<cocoon::OutlineView, void(std::vector<cocoon::SortDescriptor>)>::emit((__bridge void*)strongHost, "sort_descriptors_did_change", cocoon::internal::from_array<cocoon::SortDescriptor>(oldDescriptors, [](id e) -> cocoon::SortDescriptor
-                                                                                                                                                                                           {
-                                                                                                                                                                                               return cocoon::internal::wrap<cocoon::SortDescriptor>((::NSSortDescriptor*)e);
-                                                                                                                                                                                           }));
+                                                                                                                                                                                                         {
+                                                                                                                                                                                                             return cocoon::internal::wrap<cocoon::SortDescriptor>((::NSSortDescriptor*)e);
+                                                                                                                                                                                                         }));
 }
 
 - (id<NSPasteboardWriting>)outlineView:(NSOutlineView*)outlineView pasteboardWriterForItem:(id)item
@@ -118,9 +118,9 @@
         return;
     }
     cocoon::Signal<cocoon::OutlineView, void(cocoon::DraggingSession, cocoon::Point, std::vector<cocoon::Object>)>::emit((__bridge void*)strongHost, "dragging_session_will_begin_at_point_for_items", cocoon::internal::wrap<cocoon::DraggingSession>(session), cocoon::internal::from(screenPoint), cocoon::internal::from_array<cocoon::Object>(draggedItems, [](id e) -> cocoon::Object
-                                                                                                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                                                                                                             return cocoon::internal::wrap<cocoon::Object>(e);
-                                                                                                                                                                                                                                                                                                         }));
+                                                                                                                                                                                                                                                                                                                                                   {
+                                                                                                                                                                                                                                                                                                                                                       return cocoon::internal::wrap<cocoon::Object>(e);
+                                                                                                                                                                                                                                                                                                                                                   }));
 }
 
 - (void)outlineView:(NSOutlineView*)outlineView draggingSession:(NSDraggingSession*)session endedAtPoint:(NSPoint)screenPoint operation:(NSDragOperation)operation
@@ -341,14 +341,14 @@
         return {};
     }
     auto __r = cocoon::Signal<cocoon::TableView, std::vector<std::string>(cocoon::TextView, std::vector<std::string>, cocoon::Range, std::int64_t*)>::emit((__bridge void*)strongHost, "text_view_completions_for_partial_word_range_index_of_selected_item", cocoon::internal::wrap<cocoon::TextView>(textView), cocoon::internal::from_array<std::string>(words, [](id e) -> std::string
-                                                                                                                                                                                                                                                                                                                                {
-                                                                                                                                                                                                                                                                                                                                    return cocoon::internal::from((NSString*)e);
-                                                                                                                                                                                                                                                                                                                                }),
+                                                                                                                                                                                                                                                                                                                                                            {
+                                                                                                                                                                                                                                                                                                                                                                return cocoon::internal::from((NSString*)e);
+                                                                                                                                                                                                                                                                                                                                                            }),
                                                                                                                                                            cocoon::internal::from(charRange), (std::int64_t*)(index));
     return cocoon::internal::to_array(__r, [](const std::string& e) -> id
-                        {
-                            return cocoon::internal::to(e);
-                        });
+                                      {
+                                          return cocoon::internal::to(e);
+                                      });
 }
 
 - (NSView*)outlineView:(NSOutlineView*)outlineView viewForTableColumn:(NSTableColumn*)tableColumn item:(id)item
@@ -682,9 +682,9 @@
         return;
     }
     cocoon::Signal<cocoon::OutlineView, void(std::vector<cocoon::TableColumn>)>::emit((__bridge void*)strongHost, "user_did_change_visibility_of_table_columns", cocoon::internal::from_array<cocoon::TableColumn>(columns, [](id e) -> cocoon::TableColumn
-                                                                                                                                                                                                     {
-                                                                                                                                                                                                         return cocoon::internal::wrap<cocoon::TableColumn>((::NSTableColumn*)e);
-                                                                                                                                                                                                     }));
+                                                                                                                                                                                                                   {
+                                                                                                                                                                                                                       return cocoon::internal::wrap<cocoon::TableColumn>((::NSTableColumn*)e);
+                                                                                                                                                                                                                   }));
 }
 
 - (void)outlineViewSelectionDidChange:(NSNotification*)notification

@@ -20,6 +20,7 @@
   <td id="projectalign">
    <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
    </div>
+   <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
  </tr>
  </tbody>
@@ -149,8 +150,8 @@ Static Public Member Functions</h2></td></tr>
 <div class="line"> </div>
 <div class="line"><a class="code hl_class" href="classcocoon_1_1_timer.html">cocoon::Timer</a> timer;</div>
 <div class="line">timer.<a class="code hl_function" href="#aacc9a8ad87a1d81c83517030b18727fe">set_fire_date</a>(<a class="code hl_class" href="classcocoon_1_1_date.html">cocoon::Date</a>());</div>
-<div class="ttc" id="aclasscocoon_1_1_date_html"><div class="ttname"><a href="classcocoon_1_1_date.html">cocoon::Date</a></div><div class="ttdoc">C++ handle for the Objective-C class NSDate (Foundation).</div><div class="ttdef"><b>Definition</b> date.h:35</div></div>
-<div class="ttc" id="aclasscocoon_1_1_timer_html"><div class="ttname"><a href="classcocoon_1_1_timer.html">cocoon::Timer</a></div><div class="ttdoc">C++ handle for the Objective-C class NSTimer (Foundation).</div><div class="ttdef"><b>Definition</b> timer.h:42</div></div>
+<div class="ttc" id="aclasscocoon_1_1_date_html"><div class="ttname"><a href="classcocoon_1_1_date.html">cocoon::Date</a></div><div class="ttdoc">C++ handle for the Objective-C class NSDate (Foundation).</div><div class="ttdef"><b>Definition</b> date.h:36</div></div>
+<div class="ttc" id="aclasscocoon_1_1_timer_html"><div class="ttname"><a href="classcocoon_1_1_timer.html">cocoon::Timer</a></div><div class="ttdoc">C++ handle for the Objective-C class NSTimer (Foundation).</div><div class="ttdef"><b>Definition</b> timer.h:43</div></div>
 <div class="ttc" id="aclasscocoon_1_1_timer_html_aacc9a8ad87a1d81c83517030b18727fe"><div class="ttname"><a href="#aacc9a8ad87a1d81c83517030b18727fe">cocoon::Timer::set_fire_date</a></div><div class="ttdeci">void set_fire_date(const Date &amp;value) const</div><div class="ttdoc">Sets the fireDate property of NSTimer.</div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_timer.html">cocoon::Timer</a> timer{};</div>
@@ -162,7 +163,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="line"><span class="keyword">auto</span> made_1 = <a class="code hl_function" href="#aa50cbb4d36db53357b5b66149a8e9992">cocoon::Timer::timer_with_time_interval</a>(1, <a class="code hl_class" href="classcocoon_1_1_invocation.html">cocoon::Invocation</a>(), <span class="keyword">true</span>);</div>
 <div class="line">timer.<a class="code hl_function" href="#a2590dbac0277f1ecfd04f3ee77a864c5">fire</a>();</div>
 <div class="line">timer.<a class="code hl_function" href="#a0d46c022247967a3d4cbf48cebb9e2e7">invalidate</a>();</div>
-<div class="ttc" id="aclasscocoon_1_1_invocation_html"><div class="ttname"><a href="classcocoon_1_1_invocation.html">cocoon::Invocation</a></div><div class="ttdoc">C++ handle for the Objective-C class NSInvocation (Foundation).</div><div class="ttdef"><b>Definition</b> invocation.h:38</div></div>
+<div class="ttc" id="aclasscocoon_1_1_invocation_html"><div class="ttname"><a href="classcocoon_1_1_invocation.html">cocoon::Invocation</a></div><div class="ttdoc">C++ handle for the Objective-C class NSInvocation (Foundation).</div><div class="ttdef"><b>Definition</b> invocation.h:39</div></div>
 <div class="ttc" id="aclasscocoon_1_1_timer_html_a01643645681caa2b43b5eb77955b54ff"><div class="ttname"><a href="#a01643645681caa2b43b5eb77955b54ff">cocoon::Timer::fire_date</a></div><div class="ttdeci">Date fire_date() const</div><div class="ttdoc">Returns the fireDate property of NSTimer.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_timer_html_a0d46c022247967a3d4cbf48cebb9e2e7"><div class="ttname"><a href="#a0d46c022247967a3d4cbf48cebb9e2e7">cocoon::Timer::invalidate</a></div><div class="ttdeci">void invalidate() const</div><div class="ttdoc">Calls -[NSTimer invalidate].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_timer_html_a2590dbac0277f1ecfd04f3ee77a864c5"><div class="ttname"><a href="#a2590dbac0277f1ecfd04f3ee77a864c5">cocoon::Timer::fire</a></div><div class="ttdeci">void fire() const</div><div class="ttdoc">Calls -[NSTimer fire].</div></div>

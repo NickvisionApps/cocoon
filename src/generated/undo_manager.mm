@@ -173,17 +173,17 @@ namespace cocoon
     std::vector<std::string> UndoManager::run_loop_modes() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSUndoManager>(this) runLoopModes], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void UndoManager::set_run_loop_modes(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSUndoManager>(this) setRunLoopModes:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                                    {
-                                                                        return cocoon::internal::to(e);
-                                                                    })];
+                                                                                                {
+                                                                                                    return cocoon::internal::to(e);
+                                                                                                })];
     }
 
     bool UndoManager::undo_action_is_discardable() const

@@ -1,5 +1,6 @@
 #pragma once
 
+#include "generated/availability.h"
 #include "generated/enums.h"
 #include "generated/gesture_recognizer.h"
 #include "generated/structs.h"
@@ -79,30 +80,42 @@ namespace cocoon
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_button_mask(std::uint64_t value) const;
+#ifdef COCOON_MACOS_27
         /**
      * @brief Returns the `maximumNumberOfTouches` property of `NSPanGestureRecognizer`.
      * @details The maximum number of touches allowed to recognize this gesture Set this property to 0 to require exactly 'minimumNumberOfTouches' touches to recognize the gesture. Defaults to 'NSIntegerMax'.
      * @return The converted Objective-C result.
      */
         std::int64_t maximum_number_of_touches() const;
+#endif
+
+#ifdef COCOON_MACOS_27
         /**
      * @brief Sets the `maximumNumberOfTouches` property of `NSPanGestureRecognizer`.
      * @details The maximum number of touches allowed to recognize this gesture Set this property to 0 to require exactly 'minimumNumberOfTouches' touches to recognize the gesture. Defaults to 'NSIntegerMax'.
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_maximum_number_of_touches(std::int64_t value) const;
+#endif
+
+#ifdef COCOON_MACOS_27
         /**
      * @brief Returns the `minimumNumberOfTouches` property of `NSPanGestureRecognizer`.
      * @details The minimum number of touches needed to recognize this gesture Defaults to 1.
      * @return The converted Objective-C result.
      */
         std::int64_t minimum_number_of_touches() const;
+#endif
+
+#ifdef COCOON_MACOS_27
         /**
      * @brief Sets the `minimumNumberOfTouches` property of `NSPanGestureRecognizer`.
      * @details The minimum number of touches needed to recognize this gesture Defaults to 1.
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_minimum_number_of_touches(std::int64_t value) const;
+#endif
+
         /**
      * @brief Returns the `numberOfTouchesRequired` property of `NSPanGestureRecognizer`.
      * @details Number of touches required to recognize the gesture when used in NSTouchBar

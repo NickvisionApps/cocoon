@@ -4,13 +4,13 @@
 namespace cocoon
 {
     PrintInfo::PrintInfo(const std::map<std::string, Object>& attributes) : PrintInfo(Adopt{cocoon::internal::retain([[::NSPrintInfo alloc] initWithDictionary:cocoon::internal::to_dictionary(attributes, [](const std::string& k) -> id
-                                                                                                                                                                   {
-                                                                                                                                                                       return cocoon::internal::to(k);
-                                                                                                                                                                   },
-                                                                                                                                                                   [](const Object& v) -> id
-                                                                                                                                                                   {
-                                                                                                                                                                       return cocoon::internal::native_id(v);
-                                                                                                                                                                   })])})
+                                                                                                                                                                                               {
+                                                                                                                                                                                                   return cocoon::internal::to(k);
+                                                                                                                                                                                               },
+                                                                                                                                                                                               [](const Object& v) -> id
+                                                                                                                                                                                               {
+                                                                                                                                                                                                   return cocoon::internal::native_id(v);
+                                                                                                                                                                                               })])})
     {
     }
 
@@ -44,13 +44,13 @@ namespace cocoon
     std::map<std::string, Object> PrintInfo::dictionary() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::NSPrintInfo>(this) dictionary], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     void PrintInfo::set_up_print_operation_default_values() const
@@ -171,13 +171,13 @@ namespace cocoon
     std::map<std::string, Object> PrintInfo::print_settings() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::NSPrintInfo>(this) printSettings], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     Printer PrintInfo::printer() const

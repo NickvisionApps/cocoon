@@ -12,11 +12,11 @@ namespace cocoon
     }
 
     TextSelection::TextSelection(const std::vector<TextRange>& text_ranges, TextSelectionAffinity affinity, TextSelectionGranularity granularity) : TextSelection(Adopt{cocoon::internal::retain([[::NSTextSelection alloc] initWithRanges:cocoon::internal::to_array(text_ranges, [](const TextRange& e) -> id
-                                                                                                                                                                                                                                          {
-                                                                                                                                                                                                                                              return cocoon::internal::native<::NSTextRange>(e);
-                                                                                                                                                                                                                                          })
-                                                                                                                                                                                                                    affinity:static_cast<::NSTextSelectionAffinity>(affinity)
-                                                                                                                                                                                                                 granularity:static_cast<::NSTextSelectionGranularity>(granularity)])})
+                                                                                                                                                                                                                                                                      {
+                                                                                                                                                                                                                                                                          return cocoon::internal::native<::NSTextRange>(e);
+                                                                                                                                                                                                                                                                      })
+                                                                                                                                                                                                                                  affinity:static_cast<::NSTextSelectionAffinity>(affinity)
+                                                                                                                                                                                                                               granularity:static_cast<::NSTextSelectionGranularity>(granularity)])})
     {
     }
 
@@ -35,9 +35,9 @@ namespace cocoon
     TextSelection TextSelection::text_selection_with_text_ranges(const std::vector<TextRange>& text_ranges) const
     {
         return cocoon::internal::wrap<TextSelection>([cocoon::internal::ns<::NSTextSelection>(this) textSelectionWithTextRanges:cocoon::internal::to_array(text_ranges, [](const TextRange& e) -> id
-                                                                                                                 {
-                                                                                                                     return cocoon::internal::native<::NSTextRange>(e);
-                                                                                                                 })]);
+                                                                                                                                                           {
+                                                                                                                                                               return cocoon::internal::native<::NSTextRange>(e);
+                                                                                                                                                           })]);
     }
 
     TextSelectionAffinity TextSelection::affinity() const
@@ -83,9 +83,9 @@ namespace cocoon
     std::vector<TextRange> TextSelection::text_ranges() const
     {
         return cocoon::internal::from_array<TextRange>([cocoon::internal::ns<::NSTextSelection>(this) textRanges], [](id e) -> TextRange
-                                         {
-                                             return cocoon::internal::wrap<TextRange>((::NSTextRange*)e);
-                                         });
+                                                       {
+                                                           return cocoon::internal::wrap<TextRange>((::NSTextRange*)e);
+                                                       });
     }
 
     bool TextSelection::is_transient() const
@@ -96,24 +96,24 @@ namespace cocoon
     std::map<std::string, Object> TextSelection::typing_attributes() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::NSTextSelection>(this) typingAttributes], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     void TextSelection::set_typing_attributes(const std::map<std::string, Object>& value) const
     {
         [cocoon::internal::ns<::NSTextSelection>(this) setTypingAttributes:cocoon::internal::to_dictionary(value, [](const std::string& k) -> id
-                                                                               {
-                                                                                   return cocoon::internal::to(k);
-                                                                               },
-                                                                               [](const Object& v) -> id
-                                                                               {
-                                                                                   return cocoon::internal::native_id(v);
-                                                                               })];
+                                                                                                           {
+                                                                                                               return cocoon::internal::to(k);
+                                                                                                           },
+                                                                                                           [](const Object& v) -> id
+                                                                                                           {
+                                                                                                               return cocoon::internal::native_id(v);
+                                                                                                           })];
     }
 }

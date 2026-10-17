@@ -58,22 +58,22 @@ namespace cocoon
     void RunLoop::perform_in_modes(const std::vector<std::string>& modes, std::function<void()> block) const
     {
         [cocoon::internal::ns<::NSRunLoop>(this) performInModes:cocoon::internal::to_array(modes, [](const std::string& e) -> id
-                                                               {
-                                                                   return cocoon::internal::to(e);
-                                                               })
-                                            block:(block ? (void (^)(void)) ^ void() { block(); } : (void (^)(void))nil)];
+                                                                                           {
+                                                                                               return cocoon::internal::to(e);
+                                                                                           })
+                                                          block:(block ? (void (^)(void)) ^ void() { block(); } : (void (^)(void))nil)];
     }
 
     void RunLoop::perform_selector(const std::string& a_selector, const Object& target, const Object& arg, std::uint64_t order, const std::vector<std::string>& modes) const
     {
         [cocoon::internal::ns<::NSRunLoop>(this) performSelector:NSSelectorFromString(cocoon::internal::to(a_selector))
-                                            target:cocoon::internal::native_id(target)
-                                          argument:cocoon::internal::native_id(arg)
-                                             order:static_cast<::NSUInteger>(order)
-                                             modes:cocoon::internal::to_array(modes, [](const std::string& e) -> id
-                                                                {
-                                                                    return cocoon::internal::to(e);
-                                                                })];
+                                                          target:cocoon::internal::native_id(target)
+                                                        argument:cocoon::internal::native_id(arg)
+                                                           order:static_cast<::NSUInteger>(order)
+                                                           modes:cocoon::internal::to_array(modes, [](const std::string& e) -> id
+                                                                                            {
+                                                                                                return cocoon::internal::to(e);
+                                                                                            })];
     }
 
     void RunLoop::remove_port(const Port& a_port, const std::string& mode) const

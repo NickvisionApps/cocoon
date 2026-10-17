@@ -4,10 +4,10 @@
 namespace cocoon
 {
     TextAlternatives::TextAlternatives(const std::string& primary_string, const std::vector<std::string>& alternative_strings) : TextAlternatives(Adopt{cocoon::internal::retain([[::NSTextAlternatives alloc] initWithPrimaryString:cocoon::internal::to(primary_string)
-                                                                                                                                                                                                    alternativeStrings:cocoon::internal::to_array(alternative_strings, [](const std::string& e) -> id
-                                                                                                                                                                                                                                    {
-                                                                                                                                                                                                                                        return cocoon::internal::to(e);
-                                                                                                                                                                                                                                    })])})
+                                                                                                                                                                                                                  alternativeStrings:cocoon::internal::to_array(alternative_strings, [](const std::string& e) -> id
+                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                    return cocoon::internal::to(e);
+                                                                                                                                                                                                                                                                })])})
     {
     }
 
@@ -31,9 +31,9 @@ namespace cocoon
     std::vector<std::string> TextAlternatives::alternative_strings() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSTextAlternatives>(this) alternativeStrings], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::string TextAlternatives::primary_string() const

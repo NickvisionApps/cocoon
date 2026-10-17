@@ -8,16 +8,16 @@ namespace cocoon
     }
 
     CachedURLResponse::CachedURLResponse(const URLResponse& response, const std::vector<std::uint8_t>& data, const std::vector<std::pair<Object, Object>>& user_info, URLCacheStoragePolicy storage_policy) : CachedURLResponse(Adopt{cocoon::internal::retain([[::NSCachedURLResponse alloc] initWithResponse:cocoon::internal::native<::NSURLResponse>(response)
-                                                                                                                                                                                                                                                                                            data:cocoon::internal::to_data(data)
-                                                                                                                                                                                                                                                                                        userInfo:cocoon::internal::to_dictionary(user_info, [](const Object& k) -> id
-                                                                                                                                                                                                                                                                                                                   {
-                                                                                                                                                                                                                                                                                                                       return cocoon::internal::native_id(k);
-                                                                                                                                                                                                                                                                                                                   },
-                                                                                                                                                                                                                                                                                                                   [](const Object& v) -> id
-                                                                                                                                                                                                                                                                                                                   {
-                                                                                                                                                                                                                                                                                                                       return cocoon::internal::native_id(v);
-                                                                                                                                                                                                                                                                                                                   })
-                                                                                                                                                                                                                                                                                   storagePolicy:static_cast<::NSURLCacheStoragePolicy>(storage_policy)])})
+                                                                                                                                                                                                                                                                                                          data:cocoon::internal::to_data(data)
+                                                                                                                                                                                                                                                                                                      userInfo:cocoon::internal::to_dictionary(user_info, [](const Object& k) -> id
+                                                                                                                                                                                                                                                                                                                                               {
+                                                                                                                                                                                                                                                                                                                                                   return cocoon::internal::native_id(k);
+                                                                                                                                                                                                                                                                                                                                               },
+                                                                                                                                                                                                                                                                                                                                               [](const Object& v) -> id
+                                                                                                                                                                                                                                                                                                                                               {
+                                                                                                                                                                                                                                                                                                                                                   return cocoon::internal::native_id(v);
+                                                                                                                                                                                                                                                                                                                                               })
+                                                                                                                                                                                                                                                                                                 storagePolicy:static_cast<::NSURLCacheStoragePolicy>(storage_policy)])})
     {
     }
 
@@ -51,12 +51,12 @@ namespace cocoon
     std::vector<std::pair<Object, Object>> CachedURLResponse::user_info() const
     {
         return cocoon::internal::from_dictionary<std::vector<std::pair<Object, Object>>>([cocoon::internal::ns<::NSCachedURLResponse>(this) userInfo], [](id k) -> Object
-                                                                           {
-                                                                               return cocoon::internal::wrap<Object>(k);
-                                                                           },
-                                                                           [](id v) -> Object
-                                                                           {
-                                                                               return cocoon::internal::wrap<Object>(v);
-                                                                           });
+                                                                                         {
+                                                                                             return cocoon::internal::wrap<Object>(k);
+                                                                                         },
+                                                                                         [](id v) -> Object
+                                                                                         {
+                                                                                             return cocoon::internal::wrap<Object>(v);
+                                                                                         });
     }
 }

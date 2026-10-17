@@ -23,20 +23,20 @@ namespace cocoon
     GroupTouchBarItem GroupTouchBarItem::group_item_with_identifier(const std::string& identifier, const std::vector<TouchBarItem>& items)
     {
         return cocoon::internal::wrap<GroupTouchBarItem>([::NSGroupTouchBarItem groupItemWithIdentifier:cocoon::internal::to(identifier)
-                                                                                    items:cocoon::internal::to_array(items, [](const TouchBarItem& e) -> id
-                                                                                                       {
-                                                                                                           return cocoon::internal::native<::NSTouchBarItem>(e);
-                                                                                                       })]);
+                                                                                                  items:cocoon::internal::to_array(items, [](const TouchBarItem& e) -> id
+                                                                                                                                   {
+                                                                                                                                       return cocoon::internal::native<::NSTouchBarItem>(e);
+                                                                                                                                   })]);
     }
 
     GroupTouchBarItem GroupTouchBarItem::group_item_with_identifier(const std::string& identifier, const std::vector<TouchBarItem>& items, const UserInterfaceCompressionOptions& allowed_compression_options)
     {
         return cocoon::internal::wrap<GroupTouchBarItem>([::NSGroupTouchBarItem groupItemWithIdentifier:cocoon::internal::to(identifier)
-                                                                                    items:cocoon::internal::to_array(items, [](const TouchBarItem& e) -> id
-                                                                                                       {
-                                                                                                           return cocoon::internal::native<::NSTouchBarItem>(e);
-                                                                                                       })
-                                                                allowedCompressionOptions:cocoon::internal::native<::NSUserInterfaceCompressionOptions>(allowed_compression_options)]);
+                                                                                                  items:cocoon::internal::to_array(items, [](const TouchBarItem& e) -> id
+                                                                                                                                   {
+                                                                                                                                       return cocoon::internal::native<::NSTouchBarItem>(e);
+                                                                                                                                   })
+                                                                              allowedCompressionOptions:cocoon::internal::native<::NSUserInterfaceCompressionOptions>(allowed_compression_options)]);
     }
 
     std::string GroupTouchBarItem::customization_label() const
@@ -97,16 +97,16 @@ namespace cocoon
     std::vector<UserInterfaceCompressionOptions> GroupTouchBarItem::prioritized_compression_options() const
     {
         return cocoon::internal::from_array<UserInterfaceCompressionOptions>([cocoon::internal::ns<::NSGroupTouchBarItem>(this) prioritizedCompressionOptions], [](id e) -> UserInterfaceCompressionOptions
-                                                               {
-                                                                   return cocoon::internal::wrap<UserInterfaceCompressionOptions>((::NSUserInterfaceCompressionOptions*)e);
-                                                               });
+                                                                             {
+                                                                                 return cocoon::internal::wrap<UserInterfaceCompressionOptions>((::NSUserInterfaceCompressionOptions*)e);
+                                                                             });
     }
 
     void GroupTouchBarItem::set_prioritized_compression_options(const std::vector<UserInterfaceCompressionOptions>& value) const
     {
         [cocoon::internal::ns<::NSGroupTouchBarItem>(this) setPrioritizedCompressionOptions:cocoon::internal::to_array(value, [](const UserInterfaceCompressionOptions& e) -> id
-                                                                                           {
-                                                                                               return cocoon::internal::native<::NSUserInterfaceCompressionOptions>(e);
-                                                                                           })];
+                                                                                                                       {
+                                                                                                                           return cocoon::internal::native<::NSUserInterfaceCompressionOptions>(e);
+                                                                                                                       })];
     }
 }

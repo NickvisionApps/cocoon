@@ -28,9 +28,9 @@ namespace cocoon
     bool TreeController::add_selection_index_paths(const std::vector<IndexPath>& index_paths) const
     {
         return static_cast<bool>([cocoon::internal::ns<::NSTreeController>(this) addSelectionIndexPaths:cocoon::internal::to_array(index_paths, [](const IndexPath& e) -> id
-                                                                                                       {
-                                                                                                           return cocoon::internal::native<::NSIndexPath>(e);
-                                                                                                       })]);
+                                                                                                                                   {
+                                                                                                                                       return cocoon::internal::native<::NSIndexPath>(e);
+                                                                                                                                   })]);
     }
 
     std::string TreeController::children_key_path_for_node(const TreeNode& node) const
@@ -61,13 +61,13 @@ namespace cocoon
     void TreeController::insert_objects(const std::vector<Object>& objects, const std::vector<IndexPath>& index_paths) const
     {
         [cocoon::internal::ns<::NSTreeController>(this) insertObjects:cocoon::internal::to_array(objects, [](const Object& e) -> id
-                                                                     {
-                                                                         return cocoon::internal::native_id(e);
-                                                                     })
-                             atArrangedObjectIndexPaths:cocoon::internal::to_array(index_paths, [](const IndexPath& e) -> id
-                                                                     {
-                                                                         return cocoon::internal::native<::NSIndexPath>(e);
-                                                                     })];
+                                                                                                 {
+                                                                                                     return cocoon::internal::native_id(e);
+                                                                                                 })
+                                           atArrangedObjectIndexPaths:cocoon::internal::to_array(index_paths, [](const IndexPath& e) -> id
+                                                                                                 {
+                                                                                                     return cocoon::internal::native<::NSIndexPath>(e);
+                                                                                                 })];
     }
 
     std::string TreeController::leaf_key_path_for_node(const TreeNode& node) const
@@ -83,10 +83,10 @@ namespace cocoon
     void TreeController::move_nodes(const std::vector<TreeNode>& nodes, const IndexPath& starting_index_path) const
     {
         [cocoon::internal::ns<::NSTreeController>(this) moveNodes:cocoon::internal::to_array(nodes, [](const TreeNode& e) -> id
-                                                                 {
-                                                                     return cocoon::internal::native<::NSTreeNode>(e);
-                                                                 })
-                                        toIndexPath:cocoon::internal::native<::NSIndexPath>(starting_index_path)];
+                                                                                             {
+                                                                                                 return cocoon::internal::native<::NSTreeNode>(e);
+                                                                                             })
+                                                      toIndexPath:cocoon::internal::native<::NSIndexPath>(starting_index_path)];
     }
 
     void TreeController::rearrange_objects() const
@@ -107,17 +107,17 @@ namespace cocoon
     void TreeController::remove_objects_at_arranged_object_index_paths(const std::vector<IndexPath>& index_paths) const
     {
         [cocoon::internal::ns<::NSTreeController>(this) removeObjectsAtArrangedObjectIndexPaths:cocoon::internal::to_array(index_paths, [](const IndexPath& e) -> id
-                                                                                               {
-                                                                                                   return cocoon::internal::native<::NSIndexPath>(e);
-                                                                                               })];
+                                                                                                                           {
+                                                                                                                               return cocoon::internal::native<::NSIndexPath>(e);
+                                                                                                                           })];
     }
 
     bool TreeController::remove_selection_index_paths(const std::vector<IndexPath>& index_paths) const
     {
         return static_cast<bool>([cocoon::internal::ns<::NSTreeController>(this) removeSelectionIndexPaths:cocoon::internal::to_array(index_paths, [](const IndexPath& e) -> id
-                                                                                                          {
-                                                                                                              return cocoon::internal::native<::NSIndexPath>(e);
-                                                                                                          })]);
+                                                                                                                                      {
+                                                                                                                                          return cocoon::internal::native<::NSIndexPath>(e);
+                                                                                                                                      })]);
     }
 
     bool TreeController::set_selection_index_path(const IndexPath& index_path) const
@@ -128,9 +128,9 @@ namespace cocoon
     bool TreeController::set_selection_index_paths(const std::vector<IndexPath>& index_paths) const
     {
         return static_cast<bool>([cocoon::internal::ns<::NSTreeController>(this) setSelectionIndexPaths:cocoon::internal::to_array(index_paths, [](const IndexPath& e) -> id
-                                                                                                       {
-                                                                                                           return cocoon::internal::native<::NSIndexPath>(e);
-                                                                                                       })]);
+                                                                                                                                   {
+                                                                                                                                       return cocoon::internal::native<::NSIndexPath>(e);
+                                                                                                                                   })]);
     }
 
     bool TreeController::always_uses_multiple_values_marker() const
@@ -226,17 +226,17 @@ namespace cocoon
     std::vector<TreeNode> TreeController::selected_nodes() const
     {
         return cocoon::internal::from_array<TreeNode>([cocoon::internal::ns<::NSTreeController>(this) selectedNodes], [](id e) -> TreeNode
-                                        {
-                                            return cocoon::internal::wrap<TreeNode>((::NSTreeNode*)e);
-                                        });
+                                                      {
+                                                          return cocoon::internal::wrap<TreeNode>((::NSTreeNode*)e);
+                                                      });
     }
 
     std::vector<Object> TreeController::selected_objects() const
     {
         return cocoon::internal::from_array<Object>([cocoon::internal::ns<::NSTreeController>(this) selectedObjects], [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     IndexPath TreeController::selection_index_path() const
@@ -247,9 +247,9 @@ namespace cocoon
     std::vector<IndexPath> TreeController::selection_index_paths() const
     {
         return cocoon::internal::from_array<IndexPath>([cocoon::internal::ns<::NSTreeController>(this) selectionIndexPaths], [](id e) -> IndexPath
-                                         {
-                                             return cocoon::internal::wrap<IndexPath>((::NSIndexPath*)e);
-                                         });
+                                                       {
+                                                           return cocoon::internal::wrap<IndexPath>((::NSIndexPath*)e);
+                                                       });
     }
 
     bool TreeController::selects_inserted_objects() const
@@ -265,16 +265,16 @@ namespace cocoon
     std::vector<SortDescriptor> TreeController::sort_descriptors() const
     {
         return cocoon::internal::from_array<SortDescriptor>([cocoon::internal::ns<::NSTreeController>(this) sortDescriptors], [](id e) -> SortDescriptor
-                                              {
-                                                  return cocoon::internal::wrap<SortDescriptor>((::NSSortDescriptor*)e);
-                                              });
+                                                            {
+                                                                return cocoon::internal::wrap<SortDescriptor>((::NSSortDescriptor*)e);
+                                                            });
     }
 
     void TreeController::set_sort_descriptors(const std::vector<SortDescriptor>& value) const
     {
         [cocoon::internal::ns<::NSTreeController>(this) setSortDescriptors:cocoon::internal::to_array(value, [](const SortDescriptor& e) -> id
-                                                                          {
-                                                                              return cocoon::internal::native<::NSSortDescriptor>(e);
-                                                                          })];
+                                                                                                      {
+                                                                                                          return cocoon::internal::native<::NSSortDescriptor>(e);
+                                                                                                      })];
     }
 }

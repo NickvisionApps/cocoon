@@ -27,17 +27,17 @@ namespace cocoon
     void BackgroundActivityScheduler::schedule_with_block(std::function<void(std::function<void(BackgroundActivityResult)>)> block) const
     {
         [cocoon::internal::ns<::NSBackgroundActivityScheduler>(this) scheduleWithBlock:(block ? (void (^)(::NSBackgroundActivityCompletionHandler)) ^ void(id a127_0) { block([&]() -> std::function<void(BackgroundActivityResult)>
-                                                                                                                                                                {
-                                                                                                                                                                    auto blk = (::NSBackgroundActivityCompletionHandler)(a127_0);
-                                                                                                                                                                    if (!blk)
-                                                                                                                                                                    {
-                                                                                                                                                                        return {};
-                                                                                                                                                                    }
-                                                                                                                                                                    return [blk](BackgroundActivityResult a128_0) -> void
-                                                                                                                                                                    {
-                                                                                                                                                                        blk(static_cast<::NSBackgroundActivityResult>(a128_0));
-                                                                                                                                                                    };
-                                                                                                                                                                }()); } : (void (^)(::NSBackgroundActivityCompletionHandler))nil)];
+                                                                                                                                                                              {
+                                                                                                                                                                                  auto blk = (::NSBackgroundActivityCompletionHandler)(a127_0);
+                                                                                                                                                                                  if (!blk)
+                                                                                                                                                                                  {
+                                                                                                                                                                                      return {};
+                                                                                                                                                                                  }
+                                                                                                                                                                                  return [blk](BackgroundActivityResult a128_0) -> void
+                                                                                                                                                                                  {
+                                                                                                                                                                                      blk(static_cast<::NSBackgroundActivityResult>(a128_0));
+                                                                                                                                                                                  };
+                                                                                                                                                                              }()); } : (void (^)(::NSBackgroundActivityCompletionHandler))nil)];
     }
 
     std::string BackgroundActivityScheduler::identifier() const

@@ -22,17 +22,17 @@ namespace cocoon
     GridColumn GridView::add_column_with_views(const std::vector<View>& views) const
     {
         return cocoon::internal::wrap<GridColumn>([cocoon::internal::ns<::NSGridView>(this) addColumnWithViews:cocoon::internal::to_array(views, [](const View& e) -> id
-                                                                                                {
-                                                                                                    return cocoon::internal::native<::NSView>(e);
-                                                                                                })]);
+                                                                                                                                          {
+                                                                                                                                              return cocoon::internal::native<::NSView>(e);
+                                                                                                                                          })]);
     }
 
     GridRow GridView::add_row_with_views(const std::vector<View>& views) const
     {
         return cocoon::internal::wrap<GridRow>([cocoon::internal::ns<::NSGridView>(this) addRowWithViews:cocoon::internal::to_array(views, [](const View& e) -> id
-                                                                                          {
-                                                                                              return cocoon::internal::native<::NSView>(e);
-                                                                                          })]);
+                                                                                                                                    {
+                                                                                                                                        return cocoon::internal::native<::NSView>(e);
+                                                                                                                                    })]);
     }
 
     GridCell GridView::cell_at_column_index(std::int64_t column_index, std::int64_t row_index) const
@@ -58,12 +58,12 @@ namespace cocoon
     GridView GridView::grid_view_with_views(const std::vector<std::vector<View>>& rows)
     {
         return cocoon::internal::wrap<GridView>([::NSGridView gridViewWithViews:cocoon::internal::to_array(rows, [](const std::vector<View>& e) -> id
-                                                                               {
-                                                                                   return cocoon::internal::to_array(e, [](const View& e) -> id
-                                                                                                       {
-                                                                                                           return cocoon::internal::native<::NSView>(e);
-                                                                                                       });
-                                                                               })]);
+                                                                                                           {
+                                                                                                               return cocoon::internal::to_array(e, [](const View& e) -> id
+                                                                                                                                                 {
+                                                                                                                                                     return cocoon::internal::native<::NSView>(e);
+                                                                                                                                                 });
+                                                                                                           })]);
     }
 
     std::int64_t GridView::index_of_column(const GridColumn& column) const
@@ -79,19 +79,19 @@ namespace cocoon
     GridColumn GridView::insert_column_at_index(std::int64_t index, const std::vector<View>& views) const
     {
         return cocoon::internal::wrap<GridColumn>([cocoon::internal::ns<::NSGridView>(this) insertColumnAtIndex:static_cast<::NSInteger>(index)
-                                                                          withViews:cocoon::internal::to_array(views, [](const View& e) -> id
-                                                                                                 {
-                                                                                                     return cocoon::internal::native<::NSView>(e);
-                                                                                                 })]);
+                                                                                                      withViews:cocoon::internal::to_array(views, [](const View& e) -> id
+                                                                                                                                           {
+                                                                                                                                               return cocoon::internal::native<::NSView>(e);
+                                                                                                                                           })]);
     }
 
     GridRow GridView::insert_row_at_index(std::int64_t index, const std::vector<View>& views) const
     {
         return cocoon::internal::wrap<GridRow>([cocoon::internal::ns<::NSGridView>(this) insertRowAtIndex:static_cast<::NSInteger>(index)
-                                                                    withViews:cocoon::internal::to_array(views, [](const View& e) -> id
-                                                                                           {
-                                                                                               return cocoon::internal::native<::NSView>(e);
-                                                                                           })]);
+                                                                                                withViews:cocoon::internal::to_array(views, [](const View& e) -> id
+                                                                                                                                     {
+                                                                                                                                         return cocoon::internal::native<::NSView>(e);
+                                                                                                                                     })]);
     }
 
     void GridView::merge_cells_in_horizontal_range(const Range& h_range, const Range& v_range) const

@@ -60,8 +60,8 @@ namespace cocoon
     {
         id host = (__bridge id)native;
         cocoon::internal::bind_action(((NSSearchToolbarItem*)host).searchField, host, [](id host, id sender)
-                        {
-                            cocoon::Signal<cocoon::SearchToolbarItem, void(std::string)>::emit((__bridge void*)host, "searched", cocoon::internal::from(((NSSearchField*)sender).stringValue));
-                        });
+                                      {
+                                          cocoon::Signal<cocoon::SearchToolbarItem, void(std::string)>::emit((__bridge void*)host, "searched", cocoon::internal::from(((NSSearchField*)sender).stringValue));
+                                      });
     }
 }

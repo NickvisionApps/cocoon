@@ -155,17 +155,17 @@ namespace cocoon
     std::vector<URLQueryItem> URLComponents::percent_encoded_query_items() const
     {
         return cocoon::internal::from_array<URLQueryItem>([cocoon::internal::ns<::NSURLComponents>(this) percentEncodedQueryItems], [](id e) -> URLQueryItem
-                                            {
-                                                return cocoon::internal::wrap<URLQueryItem>((::NSURLQueryItem*)e);
-                                            });
+                                                          {
+                                                              return cocoon::internal::wrap<URLQueryItem>((::NSURLQueryItem*)e);
+                                                          });
     }
 
     void URLComponents::set_percent_encoded_query_items(const std::vector<URLQueryItem>& value) const
     {
         [cocoon::internal::ns<::NSURLComponents>(this) setPercentEncodedQueryItems:cocoon::internal::to_array(value, [](const URLQueryItem& e) -> id
-                                                                                  {
-                                                                                      return cocoon::internal::native<::NSURLQueryItem>(e);
-                                                                                  })];
+                                                                                                              {
+                                                                                                                  return cocoon::internal::native<::NSURLQueryItem>(e);
+                                                                                                              })];
     }
 
     std::string URLComponents::percent_encoded_user() const
@@ -201,17 +201,17 @@ namespace cocoon
     std::vector<URLQueryItem> URLComponents::query_items() const
     {
         return cocoon::internal::from_array<URLQueryItem>([cocoon::internal::ns<::NSURLComponents>(this) queryItems], [](id e) -> URLQueryItem
-                                            {
-                                                return cocoon::internal::wrap<URLQueryItem>((::NSURLQueryItem*)e);
-                                            });
+                                                          {
+                                                              return cocoon::internal::wrap<URLQueryItem>((::NSURLQueryItem*)e);
+                                                          });
     }
 
     void URLComponents::set_query_items(const std::vector<URLQueryItem>& value) const
     {
         [cocoon::internal::ns<::NSURLComponents>(this) setQueryItems:cocoon::internal::to_array(value, [](const URLQueryItem& e) -> id
-                                                                    {
-                                                                        return cocoon::internal::native<::NSURLQueryItem>(e);
-                                                                    })];
+                                                                                                {
+                                                                                                    return cocoon::internal::native<::NSURLQueryItem>(e);
+                                                                                                })];
     }
 
     Range URLComponents::range_of_fragment() const

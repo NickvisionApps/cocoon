@@ -4,14 +4,14 @@
 namespace cocoon
 {
     UserDefaultsController::UserDefaultsController(const UserDefaults& defaults, const std::map<std::string, Object>& initial_values) : UserDefaultsController(Adopt{cocoon::internal::retain([[::NSUserDefaultsController alloc] initWithDefaults:cocoon::internal::native<::NSUserDefaults>(defaults)
-                                                                                                                                                                                                                       initialValues:cocoon::internal::to_dictionary(initial_values, [](const std::string& k) -> id
-                                                                                                                                                                                                                                                       {
-                                                                                                                                                                                                                                                           return cocoon::internal::to(k);
-                                                                                                                                                                                                                                                       },
-                                                                                                                                                                                                                                                       [](const Object& v) -> id
-                                                                                                                                                                                                                                                       {
-                                                                                                                                                                                                                                                           return cocoon::internal::native_id(v);
-                                                                                                                                                                                                                                                       })])})
+                                                                                                                                                                                                                                     initialValues:cocoon::internal::to_dictionary(initial_values, [](const std::string& k) -> id
+                                                                                                                                                                                                                                                                                   {
+                                                                                                                                                                                                                                                                                       return cocoon::internal::to(k);
+                                                                                                                                                                                                                                                                                   },
+                                                                                                                                                                                                                                                                                   [](const Object& v) -> id
+                                                                                                                                                                                                                                                                                   {
+                                                                                                                                                                                                                                                                                       return cocoon::internal::native_id(v);
+                                                                                                                                                                                                                                                                                   })])})
     {
     }
 
@@ -65,25 +65,25 @@ namespace cocoon
     std::map<std::string, Object> UserDefaultsController::initial_values() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::NSUserDefaultsController>(this) initialValues], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     void UserDefaultsController::set_initial_values(const std::map<std::string, Object>& value) const
     {
         [cocoon::internal::ns<::NSUserDefaultsController>(this) setInitialValues:cocoon::internal::to_dictionary(value, [](const std::string& k) -> id
-                                                                                     {
-                                                                                         return cocoon::internal::to(k);
-                                                                                     },
-                                                                                     [](const Object& v) -> id
-                                                                                     {
-                                                                                         return cocoon::internal::native_id(v);
-                                                                                     })];
+                                                                                                                 {
+                                                                                                                     return cocoon::internal::to(k);
+                                                                                                                 },
+                                                                                                                 [](const Object& v) -> id
+                                                                                                                 {
+                                                                                                                     return cocoon::internal::native_id(v);
+                                                                                                                 })];
     }
 
     UserDefaultsController UserDefaultsController::shared_user_defaults_controller()

@@ -4,15 +4,15 @@
 namespace cocoon
 {
     ScriptCommandDescription::ScriptCommandDescription(const std::string& suite_name, const std::string& command_name, const std::vector<std::pair<Object, Object>>& command_declaration) : ScriptCommandDescription(Adopt{cocoon::internal::retain([[::NSScriptCommandDescription alloc] initWithSuiteName:cocoon::internal::to(suite_name)
-                                                                                                                                                                                                                                                                                  commandName:cocoon::internal::to(command_name)
-                                                                                                                                                                                                                                                                                   dictionary:cocoon::internal::to_dictionary(command_declaration, [](const Object& k) -> id
-                                                                                                                                                                                                                                                                                                                {
-                                                                                                                                                                                                                                                                                                                    return cocoon::internal::native_id(k);
-                                                                                                                                                                                                                                                                                                                },
-                                                                                                                                                                                                                                                                                                                [](const Object& v) -> id
-                                                                                                                                                                                                                                                                                                                {
-                                                                                                                                                                                                                                                                                                                    return cocoon::internal::native_id(v);
-                                                                                                                                                                                                                                                                                                                })])})
+                                                                                                                                                                                                                                                                                                commandName:cocoon::internal::to(command_name)
+                                                                                                                                                                                                                                                                                                 dictionary:cocoon::internal::to_dictionary(command_declaration, [](const Object& k) -> id
+                                                                                                                                                                                                                                                                                                                                            {
+                                                                                                                                                                                                                                                                                                                                                return cocoon::internal::native_id(k);
+                                                                                                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                                                                                                            [](const Object& v) -> id
+                                                                                                                                                                                                                                                                                                                                            {
+                                                                                                                                                                                                                                                                                                                                                return cocoon::internal::native_id(v);
+                                                                                                                                                                                                                                                                                                                                            })])})
     {
     }
 
@@ -66,9 +66,9 @@ namespace cocoon
     std::vector<std::string> ScriptCommandDescription::argument_names() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSScriptCommandDescription>(this) argumentNames], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     std::string ScriptCommandDescription::command_class_name() const

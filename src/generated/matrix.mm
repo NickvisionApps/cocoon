@@ -113,14 +113,14 @@
         return {};
     }
     auto __r = cocoon::Signal<cocoon::Matrix, std::vector<std::string>(cocoon::TextView, std::vector<std::string>, cocoon::Range, std::int64_t*)>::emit((__bridge void*)strongHost, "text_view_completions_for_partial_word_range_index_of_selected_item", cocoon::internal::wrap<cocoon::TextView>(textView), cocoon::internal::from_array<std::string>(words, [](id e) -> std::string
-                                                                                                                                                                                                                                                                                                                             {
-                                                                                                                                                                                                                                                                                                                                 return cocoon::internal::from((NSString*)e);
-                                                                                                                                                                                                                                                                                                                             }),
+                                                                                                                                                                                                                                                                                                                                                         {
+                                                                                                                                                                                                                                                                                                                                                             return cocoon::internal::from((NSString*)e);
+                                                                                                                                                                                                                                                                                                                                                         }),
                                                                                                                                                         cocoon::internal::from(charRange), (std::int64_t*)(index));
     return cocoon::internal::to_array(__r, [](const std::string& e) -> id
-                        {
-                            return cocoon::internal::to(e);
-                        });
+                                      {
+                                          return cocoon::internal::to(e);
+                                      });
 }
 
 - (BOOL)respondsToSelector:(SEL)selector
@@ -214,9 +214,9 @@ namespace cocoon
     void Matrix::add_column_with_cells(const std::vector<Cell>& new_cells) const
     {
         [cocoon::internal::ns<::NSMatrix>(this) addColumnWithCells:cocoon::internal::to_array(new_cells, [](const Cell& e) -> id
-                                                                  {
-                                                                      return cocoon::internal::native<::NSCell>(e);
-                                                                  })];
+                                                                                              {
+                                                                                                  return cocoon::internal::native<::NSCell>(e);
+                                                                                              })];
     }
 
     void Matrix::add_row() const
@@ -227,9 +227,9 @@ namespace cocoon
     void Matrix::add_row_with_cells(const std::vector<Cell>& new_cells) const
     {
         [cocoon::internal::ns<::NSMatrix>(this) addRowWithCells:cocoon::internal::to_array(new_cells, [](const Cell& e) -> id
-                                                               {
-                                                                   return cocoon::internal::native<::NSCell>(e);
-                                                               })];
+                                                                                           {
+                                                                                               return cocoon::internal::native<::NSCell>(e);
+                                                                                           })];
     }
 
     Cell Matrix::cell_at_row(std::int64_t row, std::int64_t col) const
@@ -290,10 +290,10 @@ namespace cocoon
     void Matrix::insert_column(std::int64_t column, const std::vector<Cell>& new_cells) const
     {
         [cocoon::internal::ns<::NSMatrix>(this) insertColumn:static_cast<::NSInteger>(column)
-                                     withCells:cocoon::internal::to_array(new_cells, [](const Cell& e) -> id
-                                                            {
-                                                                return cocoon::internal::native<::NSCell>(e);
-                                                            })];
+                                                   withCells:cocoon::internal::to_array(new_cells, [](const Cell& e) -> id
+                                                                                        {
+                                                                                            return cocoon::internal::native<::NSCell>(e);
+                                                                                        })];
     }
 
     void Matrix::insert_row(std::int64_t row) const
@@ -304,10 +304,10 @@ namespace cocoon
     void Matrix::insert_row(std::int64_t row, const std::vector<Cell>& new_cells) const
     {
         [cocoon::internal::ns<::NSMatrix>(this) insertRow:static_cast<::NSInteger>(row)
-                                  withCells:cocoon::internal::to_array(new_cells, [](const Cell& e) -> id
-                                                         {
-                                                             return cocoon::internal::native<::NSCell>(e);
-                                                         })];
+                                                withCells:cocoon::internal::to_array(new_cells, [](const Cell& e) -> id
+                                                                                     {
+                                                                                         return cocoon::internal::native<::NSCell>(e);
+                                                                                     })];
     }
 
     Cell Matrix::make_cell_at_row(std::int64_t row, std::int64_t col) const
@@ -548,9 +548,9 @@ namespace cocoon
     std::vector<Cell> Matrix::cells() const
     {
         return cocoon::internal::from_array<Cell>([cocoon::internal::ns<::NSMatrix>(this) cells], [](id e) -> Cell
-                                    {
-                                        return cocoon::internal::wrap<Cell>((::NSCell*)e);
-                                    });
+                                                  {
+                                                      return cocoon::internal::wrap<Cell>((::NSCell*)e);
+                                                  });
     }
 
     std::string Matrix::double_action() const
@@ -646,9 +646,9 @@ namespace cocoon
     std::vector<Cell> Matrix::selected_cells() const
     {
         return cocoon::internal::from_array<Cell>([cocoon::internal::ns<::NSMatrix>(this) selectedCells], [](id e) -> Cell
-                                    {
-                                        return cocoon::internal::wrap<Cell>((::NSCell*)e);
-                                    });
+                                                  {
+                                                      return cocoon::internal::wrap<Cell>((::NSCell*)e);
+                                                  });
     }
 
     std::int64_t Matrix::selected_column() const

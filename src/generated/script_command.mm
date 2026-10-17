@@ -52,25 +52,25 @@ namespace cocoon
     std::map<std::string, Object> ScriptCommand::arguments() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::NSScriptCommand>(this) arguments], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     void ScriptCommand::set_arguments(const std::map<std::string, Object>& value) const
     {
         [cocoon::internal::ns<::NSScriptCommand>(this) setArguments:cocoon::internal::to_dictionary(value, [](const std::string& k) -> id
-                                                                        {
-                                                                            return cocoon::internal::to(k);
-                                                                        },
-                                                                        [](const Object& v) -> id
-                                                                        {
-                                                                            return cocoon::internal::native_id(v);
-                                                                        })];
+                                                                                                    {
+                                                                                                        return cocoon::internal::to(k);
+                                                                                                    },
+                                                                                                    [](const Object& v) -> id
+                                                                                                    {
+                                                                                                        return cocoon::internal::native_id(v);
+                                                                                                    })];
     }
 
     ScriptCommandDescription ScriptCommand::command_description() const
@@ -91,13 +91,13 @@ namespace cocoon
     std::map<std::string, Object> ScriptCommand::evaluated_arguments() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::NSScriptCommand>(this) evaluatedArguments], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     Object ScriptCommand::evaluated_receivers() const

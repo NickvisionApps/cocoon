@@ -4,19 +4,19 @@
 namespace cocoon
 {
     AppleScript::AppleScript(const URL& url, std::map<std::string, Object>& error_info) : AppleScript(Adopt{cocoon::internal::retain([&]() -> id
-                                                                                                                       {
-                                                                                                                           NSDictionary* __v_error_info = nil;
-                                                                                                                           id __r = [[::NSAppleScript alloc] initWithContentsOfURL:cocoon::internal::native<::NSURL>(url) error:&__v_error_info];
-                                                                                                                           error_info = cocoon::internal::from_dictionary<std::map<std::string, Object>>(__v_error_info, [](id k) -> std::string
-                                                                                                                                                                                           {
-                                                                                                                                                                                               return cocoon::internal::from((NSString*)k);
-                                                                                                                                                                                           },
-                                                                                                                                                                                           [](id v) -> Object
-                                                                                                                                                                                           {
-                                                                                                                                                                                               return cocoon::internal::wrap<Object>(v);
-                                                                                                                                                                                           });
-                                                                                                                           return __r;
-                                                                                                                       }())})
+                                                                                                                                     {
+                                                                                                                                         NSDictionary* __v_error_info = nil;
+                                                                                                                                         id __r = [[::NSAppleScript alloc] initWithContentsOfURL:cocoon::internal::native<::NSURL>(url) error:&__v_error_info];
+                                                                                                                                         error_info = cocoon::internal::from_dictionary<std::map<std::string, Object>>(__v_error_info, [](id k) -> std::string
+                                                                                                                                                                                                                       {
+                                                                                                                                                                                                                           return cocoon::internal::from((NSString*)k);
+                                                                                                                                                                                                                       },
+                                                                                                                                                                                                                       [](id v) -> Object
+                                                                                                                                                                                                                       {
+                                                                                                                                                                                                                           return cocoon::internal::wrap<Object>(v);
+                                                                                                                                                                                                                       });
+                                                                                                                                         return __r;
+                                                                                                                                     }())})
     {
     }
 
@@ -41,13 +41,13 @@ namespace cocoon
         NSDictionary* __v_error_info = nil;
         auto __r = [cocoon::internal::ns<::NSAppleScript>(this) compileAndReturnError:&__v_error_info];
         error_info = cocoon::internal::from_dictionary<std::map<std::string, Object>>(__v_error_info, [](id k) -> std::string
-                                                                        {
-                                                                            return cocoon::internal::from((NSString*)k);
-                                                                        },
-                                                                        [](id v) -> Object
-                                                                        {
-                                                                            return cocoon::internal::wrap<Object>(v);
-                                                                        });
+                                                                                      {
+                                                                                          return cocoon::internal::from((NSString*)k);
+                                                                                      },
+                                                                                      [](id v) -> Object
+                                                                                      {
+                                                                                          return cocoon::internal::wrap<Object>(v);
+                                                                                      });
         return static_cast<bool>(__r);
     }
 
@@ -56,13 +56,13 @@ namespace cocoon
         NSDictionary* __v_error_info = nil;
         auto __r = [cocoon::internal::ns<::NSAppleScript>(this) executeAndReturnError:&__v_error_info];
         error_info = cocoon::internal::from_dictionary<std::map<std::string, Object>>(__v_error_info, [](id k) -> std::string
-                                                                        {
-                                                                            return cocoon::internal::from((NSString*)k);
-                                                                        },
-                                                                        [](id v) -> Object
-                                                                        {
-                                                                            return cocoon::internal::wrap<Object>(v);
-                                                                        });
+                                                                                      {
+                                                                                          return cocoon::internal::from((NSString*)k);
+                                                                                      },
+                                                                                      [](id v) -> Object
+                                                                                      {
+                                                                                          return cocoon::internal::wrap<Object>(v);
+                                                                                      });
         return cocoon::internal::wrap<AppleEventDescriptor>(__r);
     }
 
@@ -71,13 +71,13 @@ namespace cocoon
         NSDictionary* __v_error_info = nil;
         auto __r = [cocoon::internal::ns<::NSAppleScript>(this) executeAppleEvent:cocoon::internal::native<::NSAppleEventDescriptor>(event) error:&__v_error_info];
         error_info = cocoon::internal::from_dictionary<std::map<std::string, Object>>(__v_error_info, [](id k) -> std::string
-                                                                        {
-                                                                            return cocoon::internal::from((NSString*)k);
-                                                                        },
-                                                                        [](id v) -> Object
-                                                                        {
-                                                                            return cocoon::internal::wrap<Object>(v);
-                                                                        });
+                                                                                      {
+                                                                                          return cocoon::internal::from((NSString*)k);
+                                                                                      },
+                                                                                      [](id v) -> Object
+                                                                                      {
+                                                                                          return cocoon::internal::wrap<Object>(v);
+                                                                                      });
         return cocoon::internal::wrap<AppleEventDescriptor>(__r);
     }
 

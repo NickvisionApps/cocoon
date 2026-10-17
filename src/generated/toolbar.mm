@@ -30,9 +30,9 @@
     }
     auto __r = cocoon::Signal<cocoon::Toolbar, std::vector<std::string>()>::emit((__bridge void*)strongHost, "default_item_identifiers");
     return cocoon::internal::to_array(__r, [](const std::string& e) -> id
-                        {
-                            return cocoon::internal::to(e);
-                        });
+                                      {
+                                          return cocoon::internal::to(e);
+                                      });
 }
 
 - (NSArray<NSToolbarItemIdentifier>*)toolbarAllowedItemIdentifiers:(NSToolbar*)toolbar
@@ -44,9 +44,9 @@
     }
     auto __r = cocoon::Signal<cocoon::Toolbar, std::vector<std::string>()>::emit((__bridge void*)strongHost, "allowed_item_identifiers");
     return cocoon::internal::to_array(__r, [](const std::string& e) -> id
-                        {
-                            return cocoon::internal::to(e);
-                        });
+                                      {
+                                          return cocoon::internal::to(e);
+                                      });
 }
 
 - (NSArray<NSToolbarItemIdentifier>*)toolbarSelectableItemIdentifiers:(NSToolbar*)toolbar
@@ -58,9 +58,9 @@
     }
     auto __r = cocoon::Signal<cocoon::Toolbar, std::vector<std::string>()>::emit((__bridge void*)strongHost, "selectable_item_identifiers");
     return cocoon::internal::to_array(__r, [](const std::string& e) -> id
-                        {
-                            return cocoon::internal::to(e);
-                        });
+                                      {
+                                          return cocoon::internal::to(e);
+                                      });
 }
 
 - (NSSet<NSToolbarItemIdentifier>*)toolbarImmovableItemIdentifiers:(NSToolbar*)toolbar
@@ -72,9 +72,9 @@
     }
     auto __r = cocoon::Signal<cocoon::Toolbar, std::vector<std::string>()>::emit((__bridge void*)strongHost, "immovable_item_identifiers");
     return [NSSet setWithArray:cocoon::internal::to_array(__r, [](const std::string& e) -> id
-                                            {
-                                                return cocoon::internal::to(e);
-                                            })];
+                                                          {
+                                                              return cocoon::internal::to(e);
+                                                          })];
 }
 
 - (BOOL)toolbar:(NSToolbar*)toolbar itemIdentifier:(NSToolbarItemIdentifier)itemIdentifier canBeInsertedAtIndex:(NSInteger)index
@@ -248,17 +248,17 @@ namespace cocoon
     std::vector<std::string> Toolbar::centered_item_identifiers() const
     {
         return cocoon::internal::from_array<std::string>([[cocoon::internal::ns<::NSToolbar>(this) centeredItemIdentifiers] allObjects], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void Toolbar::set_centered_item_identifiers(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSToolbar>(this) setCenteredItemIdentifiers:[NSSet setWithArray:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                                                               {
-                                                                                                   return cocoon::internal::to(e);
-                                                                                               })]];
+                                                                                                                           {
+                                                                                                                               return cocoon::internal::to(e);
+                                                                                                                           })]];
     }
 
     bool Toolbar::customization_palette_is_running() const
@@ -284,25 +284,25 @@ namespace cocoon
     std::vector<std::string> Toolbar::item_identifiers() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSToolbar>(this) itemIdentifiers], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void Toolbar::set_item_identifiers(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSToolbar>(this) setItemIdentifiers:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                                   {
-                                                                       return cocoon::internal::to(e);
-                                                                   })];
+                                                                                               {
+                                                                                                   return cocoon::internal::to(e);
+                                                                                               })];
     }
 
     std::vector<ToolbarItem> Toolbar::items() const
     {
         return cocoon::internal::from_array<ToolbarItem>([cocoon::internal::ns<::NSToolbar>(this) items], [](id e) -> ToolbarItem
-                                           {
-                                               return cocoon::internal::wrap<ToolbarItem>((::NSToolbarItem*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::wrap<ToolbarItem>((::NSToolbarItem*)e);
+                                                         });
     }
 
     std::string Toolbar::selected_item_identifier() const
@@ -338,9 +338,9 @@ namespace cocoon
     std::vector<ToolbarItem> Toolbar::visible_items() const
     {
         return cocoon::internal::from_array<ToolbarItem>([cocoon::internal::ns<::NSToolbar>(this) visibleItems], [](id e) -> ToolbarItem
-                                           {
-                                               return cocoon::internal::wrap<ToolbarItem>((::NSToolbarItem*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::wrap<ToolbarItem>((::NSToolbarItem*)e);
+                                                         });
     }
 
     void Toolbar::add_item(const ToolbarItem& item) const

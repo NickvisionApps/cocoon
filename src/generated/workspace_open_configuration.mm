@@ -73,17 +73,17 @@ namespace cocoon
     std::vector<std::string> WorkspaceOpenConfiguration::arguments() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSWorkspaceOpenConfiguration>(this) arguments], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     void WorkspaceOpenConfiguration::set_arguments(const std::vector<std::string>& value) const
     {
         [cocoon::internal::ns<::NSWorkspaceOpenConfiguration>(this) setArguments:cocoon::internal::to_array(value, [](const std::string& e) -> id
-                                                                                {
-                                                                                    return cocoon::internal::to(e);
-                                                                                })];
+                                                                                                            {
+                                                                                                                return cocoon::internal::to(e);
+                                                                                                            })];
     }
 
     bool WorkspaceOpenConfiguration::creates_new_application_instance() const
@@ -99,25 +99,25 @@ namespace cocoon
     std::map<std::string, std::string> WorkspaceOpenConfiguration::environment() const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, std::string>>([cocoon::internal::ns<::NSWorkspaceOpenConfiguration>(this) environment], [](id k) -> std::string
-                                                                       {
-                                                                           return cocoon::internal::from((NSString*)k);
-                                                                       },
-                                                                       [](id v) -> std::string
-                                                                       {
-                                                                           return cocoon::internal::from((NSString*)v);
-                                                                       });
+                                                                                     {
+                                                                                         return cocoon::internal::from((NSString*)k);
+                                                                                     },
+                                                                                     [](id v) -> std::string
+                                                                                     {
+                                                                                         return cocoon::internal::from((NSString*)v);
+                                                                                     });
     }
 
     void WorkspaceOpenConfiguration::set_environment(const std::map<std::string, std::string>& value) const
     {
         [cocoon::internal::ns<::NSWorkspaceOpenConfiguration>(this) setEnvironment:cocoon::internal::to_dictionary(value, [](const std::string& k) -> id
-                                                                                       {
-                                                                                           return cocoon::internal::to(k);
-                                                                                       },
-                                                                                       [](const std::string& v) -> id
-                                                                                       {
-                                                                                           return cocoon::internal::to(v);
-                                                                                       })];
+                                                                                                                   {
+                                                                                                                       return cocoon::internal::to(k);
+                                                                                                                   },
+                                                                                                                   [](const std::string& v) -> id
+                                                                                                                   {
+                                                                                                                       return cocoon::internal::to(v);
+                                                                                                                   })];
     }
 
     bool WorkspaceOpenConfiguration::is_for_printing() const

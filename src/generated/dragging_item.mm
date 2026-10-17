@@ -37,9 +37,9 @@ namespace cocoon
     std::vector<DraggingImageComponent> DraggingItem::image_components() const
     {
         return cocoon::internal::from_array<DraggingImageComponent>([cocoon::internal::ns<::NSDraggingItem>(this) imageComponents], [](id e) -> DraggingImageComponent
-                                                      {
-                                                          return cocoon::internal::wrap<DraggingImageComponent>((::NSDraggingImageComponent*)e);
-                                                      });
+                                                                    {
+                                                                        return cocoon::internal::wrap<DraggingImageComponent>((::NSDraggingImageComponent*)e);
+                                                                    });
     }
 
     std::function<std::vector<DraggingImageComponent>()> DraggingItem::image_components_provider() const
@@ -55,9 +55,9 @@ namespace cocoon
             {
                 auto __r = blk();
                 return cocoon::internal::from_array<DraggingImageComponent>(__r, [](id e) -> DraggingImageComponent
-                                                              {
-                                                                  return cocoon::internal::wrap<DraggingImageComponent>((::NSDraggingImageComponent*)e);
-                                                              });
+                                                                            {
+                                                                                return cocoon::internal::wrap<DraggingImageComponent>((::NSDraggingImageComponent*)e);
+                                                                            });
             };
         }();
     }

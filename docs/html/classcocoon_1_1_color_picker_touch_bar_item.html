@@ -20,6 +20,7 @@
   <td id="projectalign">
    <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
    </div>
+   <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
  </tr>
  </tbody>
@@ -176,7 +177,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="line"> </div>
 <div class="line"><a class="code hl_class" href="classcocoon_1_1_color_picker_touch_bar_item.html">cocoon::ColorPickerTouchBarItem</a> color_picker_touch_bar_item(<span class="keyword">nullptr</span>);  <span class="comment">// null handle; instances normally come from other API calls</span></div>
 <div class="line">color_picker_touch_bar_item.set_action(<span class="stringliteral">&quot;text&quot;</span>);</div>
-<div class="ttc" id="aclasscocoon_1_1_color_picker_touch_bar_item_html"><div class="ttname"><a href="classcocoon_1_1_color_picker_touch_bar_item.html">cocoon::ColorPickerTouchBarItem</a></div><div class="ttdoc">C++ handle for the Objective-C class NSColorPickerTouchBarItem (AppKit).</div><div class="ttdef"><b>Definition</b> color_picker_touch_bar_item.h:44</div></div>
+<div class="ttc" id="aclasscocoon_1_1_color_picker_touch_bar_item_html"><div class="ttname"><a href="classcocoon_1_1_color_picker_touch_bar_item.html">cocoon::ColorPickerTouchBarItem</a></div><div class="ttdoc">C++ handle for the Objective-C class NSColorPickerTouchBarItem (AppKit).</div><div class="ttdef"><b>Definition</b> color_picker_touch_bar_item.h:45</div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_color_picker_touch_bar_item.html">cocoon::ColorPickerTouchBarItem</a> color_picker_touch_bar_item(<span class="keyword">nullptr</span>);</div>
 <div class="line">color_picker_touch_bar_item.set_action(<span class="stringliteral">&quot;text&quot;</span>);</div>
@@ -187,13 +188,13 @@ Static Public Member Functions</h2></td></tr>
 <div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#a4df6b835bb2daa0cb5a01b0f36f1971e">color_list</a> = color_picker_touch_bar_item.color_list();</div>
 <div class="line"><span class="keyword">auto</span> made_0 = <a class="code hl_function" href="#a06ac813bbfa8acf63de1938e09f7f216">cocoon::ColorPickerTouchBarItem::color_picker_with_identifier</a>(<span class="stringliteral">&quot;text&quot;</span>);</div>
 <div class="line"><span class="keyword">auto</span> made_1 = <a class="code hl_function" href="#a06ac813bbfa8acf63de1938e09f7f216">cocoon::ColorPickerTouchBarItem::color_picker_with_identifier</a>(<span class="stringliteral">&quot;text&quot;</span>, <a class="code hl_class" href="classcocoon_1_1_image.html">cocoon::Image</a>());</div>
-<div class="ttc" id="aclasscocoon_1_1_color_html"><div class="ttname"><a href="classcocoon_1_1_color.html">cocoon::Color</a></div><div class="ttdoc">A color (NSColor).</div><div class="ttdef"><b>Definition</b> color.h:41</div></div>
-<div class="ttc" id="aclasscocoon_1_1_color_list_html"><div class="ttname"><a href="classcocoon_1_1_color_list.html">cocoon::ColorList</a></div><div class="ttdoc">C++ handle for the Objective-C class NSColorList (AppKit).</div><div class="ttdef"><b>Definition</b> color_list.h:36</div></div>
+<div class="ttc" id="aclasscocoon_1_1_color_html"><div class="ttname"><a href="classcocoon_1_1_color.html">cocoon::Color</a></div><div class="ttdoc">A color (NSColor).</div><div class="ttdef"><b>Definition</b> color.h:42</div></div>
+<div class="ttc" id="aclasscocoon_1_1_color_list_html"><div class="ttname"><a href="classcocoon_1_1_color_list.html">cocoon::ColorList</a></div><div class="ttdoc">C++ handle for the Objective-C class NSColorList (AppKit).</div><div class="ttdef"><b>Definition</b> color_list.h:37</div></div>
 <div class="ttc" id="aclasscocoon_1_1_color_picker_touch_bar_item_html_a06ac813bbfa8acf63de1938e09f7f216"><div class="ttname"><a href="#a06ac813bbfa8acf63de1938e09f7f216">cocoon::ColorPickerTouchBarItem::color_picker_with_identifier</a></div><div class="ttdeci">static ColorPickerTouchBarItem color_picker_with_identifier(const std::string &amp;identifier)</div><div class="ttdoc">Calls +[NSColorPickerTouchBarItem colorPickerWithIdentifier:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_color_picker_touch_bar_item_html_a4df6b835bb2daa0cb5a01b0f36f1971e"><div class="ttname"><a href="#a4df6b835bb2daa0cb5a01b0f36f1971e">cocoon::ColorPickerTouchBarItem::color_list</a></div><div class="ttdeci">ColorList color_list() const</div><div class="ttdoc">Returns the colorList property of NSColorPickerTouchBarItem.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_color_picker_touch_bar_item_html_a608c363b11fdc2e83d38690dd5cf133c"><div class="ttname"><a href="#a608c363b11fdc2e83d38690dd5cf133c">cocoon::ColorPickerTouchBarItem::action</a></div><div class="ttdeci">std::string action() const</div><div class="ttdoc">Returns the action property of NSColorPickerTouchBarItem.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_color_picker_touch_bar_item_html_a8bf0c930e4867ed024f851bd0d040551"><div class="ttname"><a href="#a8bf0c930e4867ed024f851bd0d040551">cocoon::ColorPickerTouchBarItem::color</a></div><div class="ttdeci">Color color() const</div><div class="ttdoc">Returns the color property of NSColorPickerTouchBarItem.</div></div>
-<div class="ttc" id="aclasscocoon_1_1_image_html"><div class="ttname"><a href="classcocoon_1_1_image.html">cocoon::Image</a></div><div class="ttdoc">An image (NSImage).</div><div class="ttdef"><b>Definition</b> image.h:50</div></div>
+<div class="ttc" id="aclasscocoon_1_1_image_html"><div class="ttname"><a href="classcocoon_1_1_image.html">cocoon::Image</a></div><div class="ttdoc">An image (NSImage).</div><div class="ttdef"><b>Definition</b> image.h:51</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/appkit/nscolorpickertouchbaritem">https://developer.apple.com/documentation/appkit/nscolorpickertouchbaritem</a> </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>

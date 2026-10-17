@@ -4,11 +4,11 @@
 namespace cocoon
 {
     PortMessage::PortMessage(const Port& send_port, const Port& reply_port, const std::vector<Object>& components) : PortMessage(Adopt{cocoon::internal::retain([[::NSPortMessage alloc] initWithSendPort:cocoon::internal::native<::NSPort>(send_port)
-                                                                                                                                                                                receivePort:cocoon::internal::native<::NSPort>(reply_port)
-                                                                                                                                                                                 components:cocoon::internal::to_array(components, [](const Object& e) -> id
-                                                                                                                                                                                                         {
-                                                                                                                                                                                                             return cocoon::internal::native_id(e);
-                                                                                                                                                                                                         })])})
+                                                                                                                                                                                              receivePort:cocoon::internal::native<::NSPort>(reply_port)
+                                                                                                                                                                                               components:cocoon::internal::to_array(components, [](const Object& e) -> id
+                                                                                                                                                                                                                                     {
+                                                                                                                                                                                                                                         return cocoon::internal::native_id(e);
+                                                                                                                                                                                                                                     })])})
     {
     }
 
@@ -32,9 +32,9 @@ namespace cocoon
     std::vector<Object> PortMessage::components() const
     {
         return cocoon::internal::from_array<Object>([cocoon::internal::ns<::NSPortMessage>(this) components], [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     unsigned int PortMessage::msgid() const

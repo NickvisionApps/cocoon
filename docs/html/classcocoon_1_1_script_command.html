@@ -20,6 +20,7 @@
   <td id="projectalign">
    <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
    </div>
+   <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
  </tr>
  </tbody>
@@ -164,7 +165,7 @@ Static Public Member Functions</h2></td></tr>
 <dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;cocoon.h&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_class" href="classcocoon_1_1_script_command.html">cocoon::ScriptCommand</a> script_command;</div>
-<div class="ttc" id="aclasscocoon_1_1_script_command_html"><div class="ttname"><a href="classcocoon_1_1_script_command.html">cocoon::ScriptCommand</a></div><div class="ttdoc">C++ handle for the Objective-C class NSScriptCommand (Foundation).</div><div class="ttdef"><b>Definition</b> script_command.h:44</div></div>
+<div class="ttc" id="aclasscocoon_1_1_script_command_html"><div class="ttname"><a href="classcocoon_1_1_script_command.html">cocoon::ScriptCommand</a></div><div class="ttdoc">C++ handle for the Objective-C class NSScriptCommand (Foundation).</div><div class="ttdef"><b>Definition</b> script_command.h:45</div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_script_command.html">cocoon::ScriptCommand</a> script_command{};</div>
 <div class="line">script_command.<a class="code hl_function" href="#aa48881b7c650a7553da16b6137b3274f">set_receivers_specifier</a>(<a class="code hl_class" href="classcocoon_1_1_script_object_specifier.html">cocoon::ScriptObjectSpecifier</a>());</div>
@@ -177,7 +178,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">script_command.<a class="code hl_function" href="#a7343c488233266f69e79506a47a0b5a9">execute_command</a>();</div>
 <div class="line">script_command.<a class="code hl_function" href="#a47adf542288146cc72ca3e7db8cdeeac">perform_default_implementation</a>();</div>
 <div class="line">script_command.<a class="code hl_function" href="#a06f4cd3920d017aebcf16b9d3b6289a5">suspend_execution</a>();</div>
-<div class="ttc" id="aclasscocoon_1_1_apple_event_descriptor_html"><div class="ttname"><a href="classcocoon_1_1_apple_event_descriptor.html">cocoon::AppleEventDescriptor</a></div><div class="ttdoc">C++ handle for the Objective-C class NSAppleEventDescriptor (Foundation).</div><div class="ttdef"><b>Definition</b> apple_event_descriptor.h:38</div></div>
+<div class="ttc" id="aclasscocoon_1_1_apple_event_descriptor_html"><div class="ttname"><a href="classcocoon_1_1_apple_event_descriptor.html">cocoon::AppleEventDescriptor</a></div><div class="ttdoc">C++ handle for the Objective-C class NSAppleEventDescriptor (Foundation).</div><div class="ttdef"><b>Definition</b> apple_event_descriptor.h:39</div></div>
 <div class="ttc" id="aclasscocoon_1_1_script_command_html_a06f4cd3920d017aebcf16b9d3b6289a5"><div class="ttname"><a href="#a06f4cd3920d017aebcf16b9d3b6289a5">cocoon::ScriptCommand::suspend_execution</a></div><div class="ttdeci">void suspend_execution() const</div><div class="ttdoc">Calls -[NSScriptCommand suspendExecution].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_script_command_html_a08a99bac2b5cfbd000d47e554bc4b82c"><div class="ttname"><a href="#a08a99bac2b5cfbd000d47e554bc4b82c">cocoon::ScriptCommand::current_command</a></div><div class="ttdeci">static ScriptCommand current_command()</div><div class="ttdoc">Calls +[NSScriptCommand currentCommand].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_script_command_html_a0c20bfc9a143c2e1f85461a1b6ba897c"><div class="ttname"><a href="#a0c20bfc9a143c2e1f85461a1b6ba897c">cocoon::ScriptCommand::set_script_error_expected_type_descriptor</a></div><div class="ttdeci">void set_script_error_expected_type_descriptor(const AppleEventDescriptor &amp;value) const</div><div class="ttdoc">Sets the scriptErrorExpectedTypeDescriptor property of NSScriptCommand.</div></div>
@@ -188,7 +189,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="ttc" id="aclasscocoon_1_1_script_command_html_aa48881b7c650a7553da16b6137b3274f"><div class="ttname"><a href="#aa48881b7c650a7553da16b6137b3274f">cocoon::ScriptCommand::set_receivers_specifier</a></div><div class="ttdeci">void set_receivers_specifier(const ScriptObjectSpecifier &amp;value) const</div><div class="ttdoc">Sets the receiversSpecifier property of NSScriptCommand.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_script_command_html_ac7d6ab7ac03871551945456d32d9be40"><div class="ttname"><a href="#ac7d6ab7ac03871551945456d32d9be40">cocoon::ScriptCommand::set_script_error_number</a></div><div class="ttdeci">void set_script_error_number(std::int64_t value) const</div><div class="ttdoc">Sets the scriptErrorNumber property of NSScriptCommand.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_script_command_html_ad1c74dc9c8907a94cdb8d2ce63e7963c"><div class="ttname"><a href="#ad1c74dc9c8907a94cdb8d2ce63e7963c">cocoon::ScriptCommand::receivers_specifier</a></div><div class="ttdeci">ScriptObjectSpecifier receivers_specifier() const</div><div class="ttdoc">Returns the receiversSpecifier property of NSScriptCommand.</div></div>
-<div class="ttc" id="aclasscocoon_1_1_script_object_specifier_html"><div class="ttname"><a href="classcocoon_1_1_script_object_specifier.html">cocoon::ScriptObjectSpecifier</a></div><div class="ttdoc">C++ handle for the Objective-C class NSScriptObjectSpecifier (Foundation).</div><div class="ttdef"><b>Definition</b> script_object_specifier.h:41</div></div>
+<div class="ttc" id="aclasscocoon_1_1_script_object_specifier_html"><div class="ttname"><a href="classcocoon_1_1_script_object_specifier.html">cocoon::ScriptObjectSpecifier</a></div><div class="ttdoc">C++ handle for the Objective-C class NSScriptObjectSpecifier (Foundation).</div><div class="ttdef"><b>Definition</b> script_object_specifier.h:42</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/foundation/nsscriptcommand">https://developer.apple.com/documentation/foundation/nsscriptcommand</a> </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>

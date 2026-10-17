@@ -4,11 +4,11 @@
 namespace cocoon
 {
     URLCredential::URLCredential(const SecIdentity& identity, const std::vector<Object>& cert_array, URLCredentialPersistence persistence) : URLCredential(Adopt{cocoon::internal::retain([[::NSURLCredential alloc] initWithIdentity:((::SecIdentityRef)(identity).handle())
-                                                                                                                                                                                                           certificates:cocoon::internal::to_array(cert_array, [](const Object& e) -> id
-                                                                                                                                                                                                                                     {
-                                                                                                                                                                                                                                         return cocoon::internal::native_id(e);
-                                                                                                                                                                                                                                     })
-                                                                                                                                                                                                            persistence:static_cast<::NSURLCredentialPersistence>(persistence)])})
+                                                                                                                                                                                                                         certificates:cocoon::internal::to_array(cert_array, [](const Object& e) -> id
+                                                                                                                                                                                                                                                                 {
+                                                                                                                                                                                                                                                                     return cocoon::internal::native_id(e);
+                                                                                                                                                                                                                                                                 })
+                                                                                                                                                                                                                          persistence:static_cast<::NSURLCredentialPersistence>(persistence)])})
     {
     }
 
@@ -40,11 +40,11 @@ namespace cocoon
     URLCredential URLCredential::credential_with_identity(const SecIdentity& identity, const std::vector<Object>& cert_array, URLCredentialPersistence persistence)
     {
         return cocoon::internal::wrap<URLCredential>([::NSURLCredential credentialWithIdentity:((::SecIdentityRef)(identity).handle())
-                                                                    certificates:cocoon::internal::to_array(cert_array, [](const Object& e) -> id
-                                                                                              {
-                                                                                                  return cocoon::internal::native_id(e);
-                                                                                              })
-                                                                     persistence:static_cast<::NSURLCredentialPersistence>(persistence)]);
+                                                                                  certificates:cocoon::internal::to_array(cert_array, [](const Object& e) -> id
+                                                                                                                          {
+                                                                                                                              return cocoon::internal::native_id(e);
+                                                                                                                          })
+                                                                                   persistence:static_cast<::NSURLCredentialPersistence>(persistence)]);
     }
 
     URLCredential URLCredential::credential_with_user(const std::string& user, const std::string& password, URLCredentialPersistence persistence)
@@ -55,9 +55,9 @@ namespace cocoon
     std::vector<Object> URLCredential::certificates() const
     {
         return cocoon::internal::from_array<Object>([cocoon::internal::ns<::NSURLCredential>(this) certificates], [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     bool URLCredential::has_password() const

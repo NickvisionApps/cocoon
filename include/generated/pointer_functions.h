@@ -1,5 +1,6 @@
 #pragma once
 
+#include "generated/availability.h"
 #include "generated/enums.h"
 #include "generated/structs.h"
 #include "object.h"
@@ -23,10 +24,6 @@ namespace cocoon
      * Snippets built from this class's own members (values are placeholders).
      * @code
      * cocoon::PointerFunctions pointer_functions{};
-     * pointer_functions.set_uses_strong_write_barrier(true);
-     * auto uses_strong_write_barrier = pointer_functions.uses_strong_write_barrier();
-     * pointer_functions.set_uses_weak_read_and_write_barriers(true);
-     * auto uses_weak_read_and_write_barriers = pointer_functions.uses_weak_read_and_write_barriers();
      * auto made_0 = cocoon::PointerFunctions::pointer_functions_with_options(cocoon::PointerFunctionsOptions::StrongMemory);
      * @endcode
      * @see https://developer.apple.com/documentation/foundation/nspointerfunctions
@@ -121,29 +118,5 @@ namespace cocoon
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_size_function(std::uint64_t (*value)(void*)) const;
-        /**
-     * @brief Returns the `usesStrongWriteBarrier` property of `NSPointerFunctions`.
-     * @details Specifies whether, in a garbage collected environment, pointers should be assigned using a strong write barrier. If you use garbage collection, read and write barrier functions must be used when pointers are from memory scanned by the collector.
-     * @return The converted Objective-C result.
-     */
-        bool uses_strong_write_barrier() const;
-        /**
-     * @brief Sets the `usesStrongWriteBarrier` property of `NSPointerFunctions`.
-     * @details Specifies whether, in a garbage collected environment, pointers should be assigned using a strong write barrier. If you use garbage collection, read and write barrier functions must be used when pointers are from memory scanned by the collector.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
-        void set_uses_strong_write_barrier(bool value) const;
-        /**
-     * @brief Returns the `usesWeakReadAndWriteBarriers` property of `NSPointerFunctions`.
-     * @details Specifies whether, in a garbage collected environment, pointers should use weak read and write barriers. If you use garbage collection, read and write barrier functions must be used when pointers are from memory scanned by the collector.
-     * @return The converted Objective-C result.
-     */
-        bool uses_weak_read_and_write_barriers() const;
-        /**
-     * @brief Sets the `usesWeakReadAndWriteBarriers` property of `NSPointerFunctions`.
-     * @details Specifies whether, in a garbage collected environment, pointers should use weak read and write barriers. If you use garbage collection, read and write barrier functions must be used when pointers are from memory scanned by the collector.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
-        void set_uses_weak_read_and_write_barriers(bool value) const;
     };
 }

@@ -100,17 +100,17 @@ namespace cocoon
     std::vector<Object> WindowController::preview_representable_activity_items() const
     {
         return cocoon::internal::from_array<Object>([cocoon::internal::ns<::NSWindowController>(this) previewRepresentableActivityItems], [](id e) -> Object
-                                      {
-                                          return cocoon::internal::wrap<Object>(e);
-                                      });
+                                                    {
+                                                        return cocoon::internal::wrap<Object>(e);
+                                                    });
     }
 
     void WindowController::set_preview_representable_activity_items(const std::vector<Object>& value) const
     {
         [cocoon::internal::ns<::NSWindowController>(this) setPreviewRepresentableActivityItems:cocoon::internal::to_array(value, [](const Object& e) -> id
-                                                                                              {
-                                                                                                  return cocoon::internal::native_id(e);
-                                                                                              })];
+                                                                                                                          {
+                                                                                                                              return cocoon::internal::native_id(e);
+                                                                                                                          })];
     }
 
     bool WindowController::should_cascade_windows() const

@@ -155,9 +155,9 @@ namespace cocoon
     std::vector<std::string> Sound::sound_unfiltered_types()
     {
         return cocoon::internal::from_array<std::string>([::NSSound soundUnfilteredTypes], [](id e) -> std::string
-                                           {
-                                               return cocoon::internal::from((NSString*)e);
-                                           });
+                                                         {
+                                                             return cocoon::internal::from((NSString*)e);
+                                                         });
     }
 
     float Sound::volume() const

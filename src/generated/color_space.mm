@@ -30,9 +30,9 @@ namespace cocoon
     std::vector<ColorSpace> ColorSpace::available_color_spaces_with_model(ColorSpaceModel model)
     {
         return cocoon::internal::from_array<ColorSpace>([::NSColorSpace availableColorSpacesWithModel:static_cast<::NSColorSpaceModel>(model)], [](id e) -> ColorSpace
-                                          {
-                                              return cocoon::internal::wrap<ColorSpace>((::NSColorSpace*)e);
-                                          });
+                                                        {
+                                                            return cocoon::internal::wrap<ColorSpace>((::NSColorSpace*)e);
+                                                        });
     }
 
     CGColorSpace ColorSpace::cg_color_space() const

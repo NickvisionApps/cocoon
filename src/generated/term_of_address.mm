@@ -28,10 +28,10 @@ namespace cocoon
     TermOfAddress TermOfAddress::localized_for_language_identifier(const std::string& language, const std::vector<MorphologyPronoun>& pronouns)
     {
         return cocoon::internal::wrap<TermOfAddress>([::NSTermOfAddress localizedForLanguageIdentifier:cocoon::internal::to(language)
-                                                                            withPronouns:cocoon::internal::to_array(pronouns, [](const MorphologyPronoun& e) -> id
-                                                                                                      {
-                                                                                                          return cocoon::internal::native<::NSMorphologyPronoun>(e);
-                                                                                                      })]);
+                                                                                          withPronouns:cocoon::internal::to_array(pronouns, [](const MorphologyPronoun& e) -> id
+                                                                                                                                  {
+                                                                                                                                      return cocoon::internal::native<::NSMorphologyPronoun>(e);
+                                                                                                                                  })]);
     }
 
     TermOfAddress TermOfAddress::masculine()
@@ -52,8 +52,8 @@ namespace cocoon
     std::vector<MorphologyPronoun> TermOfAddress::pronouns() const
     {
         return cocoon::internal::from_array<MorphologyPronoun>([cocoon::internal::ns<::NSTermOfAddress>(this) pronouns], [](id e) -> MorphologyPronoun
-                                                 {
-                                                     return cocoon::internal::wrap<MorphologyPronoun>((::NSMorphologyPronoun*)e);
-                                                 });
+                                                               {
+                                                                   return cocoon::internal::wrap<MorphologyPronoun>((::NSMorphologyPronoun*)e);
+                                                               });
     }
 }

@@ -20,6 +20,7 @@
   <td id="projectalign">
    <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
    </div>
+   <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
  </tr>
  </tbody>
@@ -144,14 +145,14 @@ Static Public Member Functions</h2></td></tr>
 <dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;cocoon.h&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_class" href="classcocoon_1_1_regular_expression.html">cocoon::RegularExpression</a> regular_expression;</div>
-<div class="ttc" id="aclasscocoon_1_1_regular_expression_html"><div class="ttname"><a href="classcocoon_1_1_regular_expression.html">cocoon::RegularExpression</a></div><div class="ttdoc">C++ handle for the Objective-C class NSRegularExpression (Foundation).</div><div class="ttdef"><b>Definition</b> regular_expression.h:34</div></div>
+<div class="ttc" id="aclasscocoon_1_1_regular_expression_html"><div class="ttname"><a href="classcocoon_1_1_regular_expression.html">cocoon::RegularExpression</a></div><div class="ttdoc">C++ handle for the Objective-C class NSRegularExpression (Foundation).</div><div class="ttdef"><b>Definition</b> regular_expression.h:35</div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_regular_expression.html">cocoon::RegularExpression</a> regular_expression{};</div>
 <div class="line"><span class="keyword">auto</span> made_0 = <a class="code hl_function" href="#ac8182b64afab27471ae4a2dc7e4c66c7">cocoon::RegularExpression::regular_expression_with_pattern</a>(<span class="stringliteral">&quot;text&quot;</span>, <a class="code hl_enumvalue" href="namespacecocoon.html#a813fbbf46235a143f5a59db07d59d9e3a6bd9264ca00b6021a8d75a68895c1ba1">cocoon::RegularExpressionOptions::CaseInsensitive</a>);</div>
 <div class="line">regular_expression.<a class="code hl_function" href="#aa3d08df27f65541113ba37857cf3d0ae">replacement_string_for_result</a>(<a class="code hl_class" href="classcocoon_1_1_text_checking_result.html">cocoon::TextCheckingResult</a>(), <span class="stringliteral">&quot;text&quot;</span>, 1, <span class="stringliteral">&quot;text&quot;</span>);</div>
 <div class="ttc" id="aclasscocoon_1_1_regular_expression_html_aa3d08df27f65541113ba37857cf3d0ae"><div class="ttname"><a href="#aa3d08df27f65541113ba37857cf3d0ae">cocoon::RegularExpression::replacement_string_for_result</a></div><div class="ttdeci">std::string replacement_string_for_result(const TextCheckingResult &amp;result, const std::string &amp;string, std::int64_t offset, const std::string &amp;templ) const</div><div class="ttdoc">Calls -[NSRegularExpression replacementStringForResult:inString:offset:template:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_regular_expression_html_ac8182b64afab27471ae4a2dc7e4c66c7"><div class="ttname"><a href="#ac8182b64afab27471ae4a2dc7e4c66c7">cocoon::RegularExpression::regular_expression_with_pattern</a></div><div class="ttdeci">static RegularExpression regular_expression_with_pattern(const std::string &amp;pattern, RegularExpressionOptions options)</div><div class="ttdoc">Calls +[NSRegularExpression regularExpressionWithPattern:options:error:].</div></div>
-<div class="ttc" id="aclasscocoon_1_1_text_checking_result_html"><div class="ttname"><a href="classcocoon_1_1_text_checking_result.html">cocoon::TextCheckingResult</a></div><div class="ttdoc">C++ handle for the Objective-C class NSTextCheckingResult (Foundation).</div><div class="ttdef"><b>Definition</b> text_checking_result.h:39</div></div>
+<div class="ttc" id="aclasscocoon_1_1_text_checking_result_html"><div class="ttname"><a href="classcocoon_1_1_text_checking_result.html">cocoon::TextCheckingResult</a></div><div class="ttdoc">C++ handle for the Objective-C class NSTextCheckingResult (Foundation).</div><div class="ttdef"><b>Definition</b> text_checking_result.h:40</div></div>
 <div class="ttc" id="anamespacecocoon_html_a813fbbf46235a143f5a59db07d59d9e3a6bd9264ca00b6021a8d75a68895c1ba1"><div class="ttname"><a href="namespacecocoon.html#a813fbbf46235a143f5a59db07d59d9e3a6bd9264ca00b6021a8d75a68895c1ba1">cocoon::RegularExpressionOptions::CaseInsensitive</a></div><div class="ttdeci">@ CaseInsensitive</div><div class="ttdef"><b>Definition</b> enums.h:3404</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/foundation/nsregularexpression">https://developer.apple.com/documentation/foundation/nsregularexpression</a> </dd></dl>

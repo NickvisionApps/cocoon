@@ -1,5 +1,6 @@
 #pragma once
 
+#include "generated/availability.h"
 #include "generated/enums.h"
 #include "generated/structs.h"
 #include "generated/text.h"
@@ -363,6 +364,7 @@ namespace cocoon
      * @brief Calls `+[NSTextView registerForServices]`.
      */
         static void register_for_services();
+#ifdef COCOON_MACOS_27
         /**
      * @brief Calls `-[NSTextView registerTextAttachmentViewProviderReusePolicy:forTextAttachmentViewProviderType:]`.
      * @details Register the NSTextAttachmentViewProviderReusePolicy for all instances of a particular subclass of NSTextAttachmentViewProvider.
@@ -370,6 +372,8 @@ namespace cocoon
      * @param view_provider_type Argument converted to the Objective-C parameter of the same role.
      */
         void register_text_attachment_view_provider_reuse_policy(TextAttachmentViewProviderReusePolicy policy, const std::string& view_provider_type) const;
+#endif
+
         /**
      * @brief Calls `-[NSTextView replaceTextContainer:]`.
      * @param new_container Argument converted to the Objective-C parameter of the same role.
@@ -534,6 +538,7 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         static TextView text_view_using_text_layout_manager(bool using_text_layout_manager);
+#ifdef COCOON_MACOS_27
         /**
      * @brief Calls `-[NSTextView textViewportLayoutController:configureRenderingSurfaceForTextLayoutFragment:]`.
      * @details 'NSTextViewportLayoutControllerDelegate' method that the framework calls when the layout controller lays out a text layout fragment in the UI. Requires a call to super.
@@ -541,24 +546,35 @@ namespace cocoon
      * @param text_layout_fragment Argument converted to the Objective-C parameter of the same role.
      */
         void text_viewport_layout_controller(const TextViewportLayoutController& text_viewport_layout_controller, const TextLayoutFragment& text_layout_fragment) const;
+#endif
+
+#ifdef COCOON_MACOS_27
         /**
      * @brief Calls `-[NSTextView textViewportLayoutControllerDidLayout:]`.
      * @details 'NSTextViewportLayoutControllerDelegate' method that the framework calls when the text viewport layout controller finishes its layout process. Requires a call to super.
      * @param text_viewport_layout_controller Argument converted to the Objective-C parameter of the same role.
      */
         void text_viewport_layout_controller_did_layout(const TextViewportLayoutController& text_viewport_layout_controller) const;
+#endif
+
+#ifdef COCOON_MACOS_27
         /**
      * @brief Calls `-[NSTextView textViewportLayoutControllerReceivedSetNeedsLayout:]`.
      * @details 'NSTextViewportLayoutControllerDelegate' method that the framework calls when the text viewport layout controller receives a 'setNeedsLayout' call. Requires a call to super.
      * @param text_viewport_layout_controller Argument converted to the Objective-C parameter of the same role.
      */
         void text_viewport_layout_controller_received_set_needs_layout(const TextViewportLayoutController& text_viewport_layout_controller) const;
+#endif
+
+#ifdef COCOON_MACOS_27
         /**
      * @brief Calls `-[NSTextView textViewportLayoutControllerWillLayout:]`.
      * @details 'NSTextViewportLayoutControllerDelegate' method that the framework calls when the text viewport layout controller starts its layout process. Requires a call to super.
      * @param text_viewport_layout_controller Argument converted to the Objective-C parameter of the same role.
      */
         void text_viewport_layout_controller_will_layout(const TextViewportLayoutController& text_viewport_layout_controller) const;
+#endif
+
         /**
      * @brief Calls `-[NSTextView tightenKerning:]`.
      * @param sender Argument converted to the Objective-C parameter of the same role.
@@ -686,6 +702,7 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         Object valid_requestor_for_send_type(const std::string& send_type, const std::string& return_type) const;
+#ifdef COCOON_MACOS_27
         /**
      * @brief Calls `-[NSTextView viewportBoundsForTextViewportLayoutController:]`.
      * @details 'NSTextViewportLayoutControllerDelegate' method that the framework calls to request the current viewport, which is the view visible bounds plus the overdraw area. Requires a call to super.
@@ -693,6 +710,8 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         Rect viewport_bounds_for_text_viewport_layout_controller(const TextViewportLayoutController& text_viewport_layout_controller) const;
+#endif
+
         /**
      * @brief Calls `-[NSTextView writeSelectionToPasteboard:type:]`.
      * @param pboard Argument converted to the Objective-C parameter of the same role.

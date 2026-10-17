@@ -138,14 +138,14 @@ namespace cocoon
     Font Font::preferred_font_for_text_style(const std::string& style, const std::map<std::string, Object>& options)
     {
         return cocoon::internal::wrap<Font>([::NSFont preferredFontForTextStyle:cocoon::internal::to(style)
-                                                          options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
-                                                                                    {
-                                                                                        return cocoon::internal::to(k);
-                                                                                    },
-                                                                                    [](const Object& v) -> id
-                                                                                    {
-                                                                                        return cocoon::internal::native_id(v);
-                                                                                    })]);
+                                                                        options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
+                                                                                                                {
+                                                                                                                    return cocoon::internal::to(k);
+                                                                                                                },
+                                                                                                                [](const Object& v) -> id
+                                                                                                                {
+                                                                                                                    return cocoon::internal::native_id(v);
+                                                                                                                })]);
     }
 
     Font Font::screen_font_with_rendering_mode(FontRenderingMode rendering_mode) const

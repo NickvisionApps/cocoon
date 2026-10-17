@@ -222,28 +222,28 @@ namespace cocoon
     Menu Menu::palette_menu_with_colors(const std::vector<Color>& colors, const std::vector<std::string>& item_titles, std::function<void(Menu)> on_selection_change)
     {
         return cocoon::internal::wrap<Menu>([::NSMenu paletteMenuWithColors:cocoon::internal::to_array(colors, [](const Color& e) -> id
-                                                                           {
-                                                                               return cocoon::internal::native<::NSColor>(e);
-                                                                           })
-                                                       titles:cocoon::internal::to_array(item_titles, [](const std::string& e) -> id
-                                                                           {
-                                                                               return cocoon::internal::to(e);
-                                                                           })
-                                             selectionHandler:(on_selection_change ? (void (^)(::NSMenu*)) ^ void(::NSMenu * a63_0) { on_selection_change(cocoon::internal::wrap<Menu>(a63_0)); } : (void (^)(::NSMenu*))nil)]);
+                                                                                                       {
+                                                                                                           return cocoon::internal::native<::NSColor>(e);
+                                                                                                       })
+                                                                     titles:cocoon::internal::to_array(item_titles, [](const std::string& e) -> id
+                                                                                                       {
+                                                                                                           return cocoon::internal::to(e);
+                                                                                                       })
+                                                           selectionHandler:(on_selection_change ? (void (^)(::NSMenu*)) ^ void(::NSMenu * a63_0) { on_selection_change(cocoon::internal::wrap<Menu>(a63_0)); } : (void (^)(::NSMenu*))nil)]);
     }
 
     Menu Menu::palette_menu_with_colors(const std::vector<Color>& colors, const std::vector<std::string>& item_titles, const Image& image, std::function<void(Menu)> on_selection_change)
     {
         return cocoon::internal::wrap<Menu>([::NSMenu paletteMenuWithColors:cocoon::internal::to_array(colors, [](const Color& e) -> id
-                                                                           {
-                                                                               return cocoon::internal::native<::NSColor>(e);
-                                                                           })
-                                                       titles:cocoon::internal::to_array(item_titles, [](const std::string& e) -> id
-                                                                           {
-                                                                               return cocoon::internal::to(e);
-                                                                           })
-                                                templateImage:cocoon::internal::native<::NSImage>(image)
-                                             selectionHandler:(on_selection_change ? (void (^)(::NSMenu*)) ^ void(::NSMenu * a64_0) { on_selection_change(cocoon::internal::wrap<Menu>(a64_0)); } : (void (^)(::NSMenu*))nil)]);
+                                                                                                       {
+                                                                                                           return cocoon::internal::native<::NSColor>(e);
+                                                                                                       })
+                                                                     titles:cocoon::internal::to_array(item_titles, [](const std::string& e) -> id
+                                                                                                       {
+                                                                                                           return cocoon::internal::to(e);
+                                                                                                       })
+                                                              templateImage:cocoon::internal::native<::NSImage>(image)
+                                                           selectionHandler:(on_selection_change ? (void (^)(::NSMenu*)) ^ void(::NSMenu * a64_0) { on_selection_change(cocoon::internal::wrap<Menu>(a64_0)); } : (void (^)(::NSMenu*))nil)]);
     }
 
     void Menu::perform_action_for_item_at_index(std::int64_t index) const
@@ -354,17 +354,17 @@ namespace cocoon
     std::vector<MenuItem> Menu::item_array() const
     {
         return cocoon::internal::from_array<MenuItem>([cocoon::internal::ns<::NSMenu>(this) itemArray], [](id e) -> MenuItem
-                                        {
-                                            return cocoon::internal::wrap<MenuItem>((::NSMenuItem*)e);
-                                        });
+                                                      {
+                                                          return cocoon::internal::wrap<MenuItem>((::NSMenuItem*)e);
+                                                      });
     }
 
     void Menu::set_item_array(const std::vector<MenuItem>& value) const
     {
         [cocoon::internal::ns<::NSMenu>(this) setItemArray:cocoon::internal::to_array(value, [](const MenuItem& e) -> id
-                                                          {
-                                                              return cocoon::internal::native<::NSMenuItem>(e);
-                                                          })];
+                                                                                      {
+                                                                                          return cocoon::internal::native<::NSMenuItem>(e);
+                                                                                      })];
     }
 
     double Menu::menu_bar_height() const
@@ -405,17 +405,17 @@ namespace cocoon
     std::vector<MenuItem> Menu::selected_items() const
     {
         return cocoon::internal::from_array<MenuItem>([cocoon::internal::ns<::NSMenu>(this) selectedItems], [](id e) -> MenuItem
-                                        {
-                                            return cocoon::internal::wrap<MenuItem>((::NSMenuItem*)e);
-                                        });
+                                                      {
+                                                          return cocoon::internal::wrap<MenuItem>((::NSMenuItem*)e);
+                                                      });
     }
 
     void Menu::set_selected_items(const std::vector<MenuItem>& value) const
     {
         [cocoon::internal::ns<::NSMenu>(this) setSelectedItems:cocoon::internal::to_array(value, [](const MenuItem& e) -> id
-                                                              {
-                                                                  return cocoon::internal::native<::NSMenuItem>(e);
-                                                              })];
+                                                                                          {
+                                                                                              return cocoon::internal::native<::NSMenuItem>(e);
+                                                                                          })];
     }
 
     MenuSelectionMode Menu::selection_mode() const

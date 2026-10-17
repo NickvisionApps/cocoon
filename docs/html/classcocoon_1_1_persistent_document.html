@@ -20,6 +20,7 @@
   <td id="projectalign">
    <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
    </div>
+   <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
  </tr>
  </tbody>
@@ -452,8 +453,8 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"> </div>
 <div class="line"><a class="code hl_class" href="classcocoon_1_1_persistent_document.html">cocoon::PersistentDocument</a> persistent_document;</div>
 <div class="line">persistent_document.<a class="code hl_function" href="#a82b06f4a577c4e195d5030d8ba62754f">set_managed_object_context</a>(<a class="code hl_class" href="classcocoon_1_1_managed_object_context.html">cocoon::ManagedObjectContext</a>());</div>
-<div class="ttc" id="aclasscocoon_1_1_managed_object_context_html"><div class="ttname"><a href="classcocoon_1_1_managed_object_context.html">cocoon::ManagedObjectContext</a></div><div class="ttdoc">C++ handle for the Objective-C class NSManagedObjectContext (AppKit).</div><div class="ttdef"><b>Definition</b> managed_object_context.h:42</div></div>
-<div class="ttc" id="aclasscocoon_1_1_persistent_document_html"><div class="ttname"><a href="classcocoon_1_1_persistent_document.html">cocoon::PersistentDocument</a></div><div class="ttdoc">C++ handle for the Objective-C class NSPersistentDocument (AppKit).</div><div class="ttdef"><b>Definition</b> persistent_document.h:39</div></div>
+<div class="ttc" id="aclasscocoon_1_1_managed_object_context_html"><div class="ttname"><a href="classcocoon_1_1_managed_object_context.html">cocoon::ManagedObjectContext</a></div><div class="ttdoc">C++ handle for the Objective-C class NSManagedObjectContext (AppKit).</div><div class="ttdef"><b>Definition</b> managed_object_context.h:43</div></div>
+<div class="ttc" id="aclasscocoon_1_1_persistent_document_html"><div class="ttname"><a href="classcocoon_1_1_persistent_document.html">cocoon::PersistentDocument</a></div><div class="ttdoc">C++ handle for the Objective-C class NSPersistentDocument (AppKit).</div><div class="ttdef"><b>Definition</b> persistent_document.h:40</div></div>
 <div class="ttc" id="aclasscocoon_1_1_persistent_document_html_a82b06f4a577c4e195d5030d8ba62754f"><div class="ttname"><a href="#a82b06f4a577c4e195d5030d8ba62754f">cocoon::PersistentDocument::set_managed_object_context</a></div><div class="ttdeci">void set_managed_object_context(const ManagedObjectContext &amp;value) const</div><div class="ttdoc">Sets the managedObjectContext property of NSPersistentDocument.</div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_persistent_document.html">cocoon::PersistentDocument</a> persistent_document{};</div>
@@ -466,7 +467,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="ttc" id="aclasscocoon_1_1_persistent_document_html_a4e3466bcdaa0ca37536cb0e7a20259e2"><div class="ttname"><a href="#a4e3466bcdaa0ca37536cb0e7a20259e2">cocoon::PersistentDocument::revert_to_contents_of_url</a></div><div class="ttdeci">bool revert_to_contents_of_url(const URL &amp;in_absolute_url, const std::string &amp;in_type_name) const</div><div class="ttdoc">Calls -[NSPersistentDocument revertToContentsOfURL:ofType:error:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_persistent_document_html_a546f3bcbf101ce355690902bab83469f"><div class="ttname"><a href="#a546f3bcbf101ce355690902bab83469f">cocoon::PersistentDocument::persistent_store_type_for_file_type</a></div><div class="ttdeci">std::string persistent_store_type_for_file_type(const std::string &amp;file_type) const</div><div class="ttdoc">Calls -[NSPersistentDocument persistentStoreTypeForFileType:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_persistent_document_html_afa31193f1205c4e1ac6c0108401f680c"><div class="ttname"><a href="#afa31193f1205c4e1ac6c0108401f680c">cocoon::PersistentDocument::read_from_url</a></div><div class="ttdeci">bool read_from_url(const URL &amp;absolute_url, const std::string &amp;type_name) const</div><div class="ttdoc">Calls -[NSPersistentDocument readFromURL:ofType:error:].</div></div>
-<div class="ttc" id="aclasscocoon_1_1_u_r_l_html"><div class="ttname"><a href="classcocoon_1_1_u_r_l.html">cocoon::URL</a></div><div class="ttdoc">C++ handle for the Objective-C class NSURL (Foundation).</div><div class="ttdef"><b>Definition</b> url.h:38</div></div>
+<div class="ttc" id="aclasscocoon_1_1_u_r_l_html"><div class="ttname"><a href="classcocoon_1_1_u_r_l.html">cocoon::URL</a></div><div class="ttdoc">C++ handle for the Objective-C class NSURL (Foundation).</div><div class="ttdef"><b>Definition</b> url.h:39</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/appkit/nspersistentdocument">https://developer.apple.com/documentation/appkit/nspersistentdocument</a> </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>

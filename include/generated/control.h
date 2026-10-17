@@ -1,5 +1,6 @@
 #pragma once
 
+#include "generated/availability.h"
 #include "generated/enums.h"
 #include "generated/structs.h"
 #include "generated/view.h"
@@ -61,6 +62,7 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         bool abort_editing() const;
+#ifdef COCOON_MACOS_27
         /**
      * @brief Calls `-[NSControl addTarget:action:forControlEvents:]`.
      * @details Associates a target object and action method with one or more control events. You can call this method multiple times to specify multiple target-action pairs for a particular event. Passing 'nil' as the target routes the action message up the responder chain. The control does not retain the target.
@@ -69,6 +71,8 @@ namespace cocoon
      * @param control_events Argument converted to the Objective-C parameter of the same role.
      */
         void add_target(const Object& target, const std::string& action, ControlEvents control_events) const;
+#endif
+
         /**
      * @brief Calls `-[NSControl currentEditor]`.
      * @return The converted Objective-C result.
@@ -121,6 +125,7 @@ namespace cocoon
      * @param sender Argument converted to the Objective-C parameter of the same role.
      */
         void perform_click(const Object& sender) const;
+#ifdef COCOON_MACOS_27
         /**
      * @brief Calls `-[NSControl removeTarget:action:forControlEvents:]`.
      * @details Stops the delivery of the specified events to the given target object. Pass 'nil' as the action to remove all actions for the target.
@@ -129,6 +134,8 @@ namespace cocoon
      * @param control_events Argument converted to the Objective-C parameter of the same role.
      */
         void remove_target(const Object& target, const std::string& action, ControlEvents control_events) const;
+#endif
+
         /**
      * @brief Calls `-[NSControl selectCell:]`.
      * @param cell Argument converted to the Objective-C parameter of the same role.

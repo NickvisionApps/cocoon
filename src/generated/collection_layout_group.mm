@@ -28,10 +28,10 @@ namespace cocoon
     CollectionLayoutGroup CollectionLayoutGroup::horizontal_group_with_layout_size(const CollectionLayoutSize& layout_size, const std::vector<CollectionLayoutItem>& subitems)
     {
         return cocoon::internal::wrap<CollectionLayoutGroup>([::NSCollectionLayoutGroup horizontalGroupWithLayoutSize:cocoon::internal::native<::NSCollectionLayoutSize>(layout_size)
-                                                                                               subitems:cocoon::internal::to_array(subitems, [](const CollectionLayoutItem& e) -> id
-                                                                                                                     {
-                                                                                                                         return cocoon::internal::native<::NSCollectionLayoutItem>(e);
-                                                                                                                     })]);
+                                                                                                             subitems:cocoon::internal::to_array(subitems, [](const CollectionLayoutItem& e) -> id
+                                                                                                                                                 {
+                                                                                                                                                     return cocoon::internal::native<::NSCollectionLayoutItem>(e);
+                                                                                                                                                 })]);
     }
 
     CollectionLayoutGroup CollectionLayoutGroup::vertical_group_with_layout_size(const CollectionLayoutSize& layout_size, const CollectionLayoutItem& subitem, std::int64_t count)
@@ -42,10 +42,10 @@ namespace cocoon
     CollectionLayoutGroup CollectionLayoutGroup::vertical_group_with_layout_size(const CollectionLayoutSize& layout_size, const std::vector<CollectionLayoutItem>& subitems)
     {
         return cocoon::internal::wrap<CollectionLayoutGroup>([::NSCollectionLayoutGroup verticalGroupWithLayoutSize:cocoon::internal::native<::NSCollectionLayoutSize>(layout_size)
-                                                                                             subitems:cocoon::internal::to_array(subitems, [](const CollectionLayoutItem& e) -> id
-                                                                                                                   {
-                                                                                                                       return cocoon::internal::native<::NSCollectionLayoutItem>(e);
-                                                                                                                   })]);
+                                                                                                           subitems:cocoon::internal::to_array(subitems, [](const CollectionLayoutItem& e) -> id
+                                                                                                                                               {
+                                                                                                                                                   return cocoon::internal::native<::NSCollectionLayoutItem>(e);
+                                                                                                                                               })]);
     }
 
     std::string CollectionLayoutGroup::visual_description() const
@@ -66,24 +66,24 @@ namespace cocoon
     std::vector<CollectionLayoutItem> CollectionLayoutGroup::subitems() const
     {
         return cocoon::internal::from_array<CollectionLayoutItem>([cocoon::internal::ns<::NSCollectionLayoutGroup>(this) subitems], [](id e) -> CollectionLayoutItem
-                                                    {
-                                                        return cocoon::internal::wrap<CollectionLayoutItem>((::NSCollectionLayoutItem*)e);
-                                                    });
+                                                                  {
+                                                                      return cocoon::internal::wrap<CollectionLayoutItem>((::NSCollectionLayoutItem*)e);
+                                                                  });
     }
 
     std::vector<CollectionLayoutSupplementaryItem> CollectionLayoutGroup::supplementary_items() const
     {
         return cocoon::internal::from_array<CollectionLayoutSupplementaryItem>([cocoon::internal::ns<::NSCollectionLayoutGroup>(this) supplementaryItems], [](id e) -> CollectionLayoutSupplementaryItem
-                                                                 {
-                                                                     return cocoon::internal::wrap<CollectionLayoutSupplementaryItem>((::NSCollectionLayoutSupplementaryItem*)e);
-                                                                 });
+                                                                               {
+                                                                                   return cocoon::internal::wrap<CollectionLayoutSupplementaryItem>((::NSCollectionLayoutSupplementaryItem*)e);
+                                                                               });
     }
 
     void CollectionLayoutGroup::set_supplementary_items(const std::vector<CollectionLayoutSupplementaryItem>& value) const
     {
         [cocoon::internal::ns<::NSCollectionLayoutGroup>(this) setSupplementaryItems:cocoon::internal::to_array(value, [](const CollectionLayoutSupplementaryItem& e) -> id
-                                                                                    {
-                                                                                        return cocoon::internal::native<::NSCollectionLayoutSupplementaryItem>(e);
-                                                                                    })];
+                                                                                                                {
+                                                                                                                    return cocoon::internal::native<::NSCollectionLayoutSupplementaryItem>(e);
+                                                                                                                })];
     }
 }

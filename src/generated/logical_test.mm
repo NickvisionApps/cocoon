@@ -4,9 +4,9 @@
 namespace cocoon
 {
     LogicalTest::LogicalTest(const std::vector<SpecifierTest>& sub_tests) : LogicalTest(Adopt{cocoon::internal::retain([[::NSLogicalTest alloc] initAndTestWithTests:cocoon::internal::to_array(sub_tests, [](const SpecifierTest& e) -> id
-                                                                                                                                                                    {
-                                                                                                                                                                        return cocoon::internal::native<::NSSpecifierTest>(e);
-                                                                                                                                                                    })])})
+                                                                                                                                                                                                {
+                                                                                                                                                                                                    return cocoon::internal::native<::NSSpecifierTest>(e);
+                                                                                                                                                                                                })])})
     {
     }
 

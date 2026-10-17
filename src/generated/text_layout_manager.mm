@@ -40,23 +40,24 @@
         return {};
     }
     auto __r = cocoon::Signal<cocoon::TextLayoutManager, std::map<std::string, cocoon::Object>(cocoon::Object, cocoon::Object, std::map<std::string, cocoon::Object>)>::emit((__bridge void*)strongHost, "rendering_attributes_for_link_at_location_default_attributes", cocoon::internal::wrap<cocoon::Object>(link), cocoon::internal::wrap<cocoon::Object>(location), cocoon::internal::from_dictionary<std::map<std::string, cocoon::Object>>(renderingAttributes, [](id k) -> std::string
-                                                                                                                                                                                                                                                                                                                                                                                                        {
-                                                                                                                                                                                                                                                                                                                                                                                                            return cocoon::internal::from((NSString*)k);
-                                                                                                                                                                                                                                                                                                                                                                                                        },
-                                                                                                                                                                                                                                                                                                                                                                                                        [](id v) -> cocoon::Object
-                                                                                                                                                                                                                                                                                                                                                                                                        {
-                                                                                                                                                                                                                                                                                                                                                                                                            return cocoon::internal::wrap<cocoon::Object>(v);
-                                                                                                                                                                                                                                                                                                                                                                                                        }));
+                                                                                                                                                                                                                                                                                                                                                                                                                                                  {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                      return cocoon::internal::from((NSString*)k);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                  },
+                                                                                                                                                                                                                                                                                                                                                                                                                                                  [](id v) -> cocoon::Object
+                                                                                                                                                                                                                                                                                                                                                                                                                                                  {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                      return cocoon::internal::wrap<cocoon::Object>(v);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                  }));
     return cocoon::internal::to_dictionary(__r, [](const std::string& k) -> id
-                             {
-                                 return cocoon::internal::to(k);
-                             },
-                             [](const cocoon::Object& v) -> id
-                             {
-                                 return cocoon::internal::native_id(v);
-                             });
+                                           {
+                                               return cocoon::internal::to(k);
+                                           },
+                                           [](const cocoon::Object& v) -> id
+                                           {
+                                               return cocoon::internal::native_id(v);
+                                           });
 }
 
+#ifdef COCOON_MACOS_27
 - (void)textLayoutManager:(NSTextLayoutManager*)textLayoutManager cacheTextAttachmentViewProvider:(NSTextAttachmentViewProvider*)viewProvider forTextAttachment:(NSTextAttachment*)textAttachment
 {
     id strongHost = host;
@@ -67,6 +68,9 @@
     cocoon::Signal<cocoon::TextLayoutManager, void(cocoon::TextAttachmentViewProvider, cocoon::TextAttachment)>::emit((__bridge void*)strongHost, "cache_text_attachment_view_provider_for_text_attachment", cocoon::internal::wrap<cocoon::TextAttachmentViewProvider>(viewProvider), cocoon::internal::wrap<cocoon::TextAttachment>(textAttachment));
 }
 
+#endif
+
+#ifdef COCOON_MACOS_27
 - (NSTextAttachmentViewProvider*)textLayoutManager:(NSTextLayoutManager*)textLayoutManager retrieveCachedTextAttachmentViewProviderForTextAttachment:(NSTextAttachment*)attachment
 {
     id strongHost = host;
@@ -77,6 +81,8 @@
     auto __r = cocoon::Signal<cocoon::TextLayoutManager, cocoon::TextAttachmentViewProvider(cocoon::TextAttachment)>::emit((__bridge void*)strongHost, "retrieve_cached_text_attachment_view_provider_for_text_attachment", cocoon::internal::wrap<cocoon::TextAttachment>(attachment));
     return cocoon::internal::native<::NSTextAttachmentViewProvider>(__r);
 }
+
+#endif
 
 - (BOOL)respondsToSelector:(SEL)selector
 {
@@ -93,14 +99,20 @@
     {
         return strongHost && cocoon::Signal<cocoon::TextLayoutManager, std::map<std::string, cocoon::Object>(cocoon::Object, cocoon::Object, std::map<std::string, cocoon::Object>)>::connected((__bridge void*)strongHost, "rendering_attributes_for_link_at_location_default_attributes");
     }
+#ifdef COCOON_MACOS_27
     if (selector == @selector(textLayoutManager:cacheTextAttachmentViewProvider:forTextAttachment:))
     {
         return strongHost && cocoon::Signal<cocoon::TextLayoutManager, void(cocoon::TextAttachmentViewProvider, cocoon::TextAttachment)>::connected((__bridge void*)strongHost, "cache_text_attachment_view_provider_for_text_attachment");
     }
+#endif
+
+#ifdef COCOON_MACOS_27
     if (selector == @selector(textLayoutManager:retrieveCachedTextAttachmentViewProviderForTextAttachment:))
     {
         return strongHost && cocoon::Signal<cocoon::TextLayoutManager, cocoon::TextAttachmentViewProvider(cocoon::TextAttachment)>::connected((__bridge void*)strongHost, "retrieve_cached_text_attachment_view_provider_for_text_attachment");
     }
+#endif
+
     return [super respondsToSelector:selector];
 }
 
@@ -169,13 +181,13 @@ namespace cocoon
     std::map<std::string, Object> TextLayoutManager::rendering_attributes_for_link(const Object& link, const Object& location) const
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([cocoon::internal::ns<::NSTextLayoutManager>(this) renderingAttributesForLink:cocoon::internal::native_id(link) atLocation:cocoon::internal::native_id(location)], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     void TextLayoutManager::replace_contents_in_range(const TextRange& range, const AttributedString& attributed_string) const
@@ -186,10 +198,10 @@ namespace cocoon
     void TextLayoutManager::replace_contents_in_range(const TextRange& range, const std::vector<TextElement>& text_elements) const
     {
         [cocoon::internal::ns<::NSTextLayoutManager>(this) replaceContentsInRange:cocoon::internal::native<::NSTextRange>(range)
-                                                   withTextElements:cocoon::internal::to_array(text_elements, [](const TextElement& e) -> id
-                                                                                 {
-                                                                                     return cocoon::internal::native<::NSTextElement>(e);
-                                                                                 })];
+                                                                 withTextElements:cocoon::internal::to_array(text_elements, [](const TextElement& e) -> id
+                                                                                                             {
+                                                                                                                 return cocoon::internal::native<::NSTextElement>(e);
+                                                                                                             })];
     }
 
     void TextLayoutManager::replace_text_content_manager(const TextContentManager& text_content_manager) const
@@ -200,14 +212,14 @@ namespace cocoon
     void TextLayoutManager::set_rendering_attributes(const std::map<std::string, Object>& rendering_attributes, const TextRange& text_range) const
     {
         [cocoon::internal::ns<::NSTextLayoutManager>(this) setRenderingAttributes:cocoon::internal::to_dictionary(rendering_attributes, [](const std::string& k) -> id
-                                                                                      {
-                                                                                          return cocoon::internal::to(k);
-                                                                                      },
-                                                                                      [](const Object& v) -> id
-                                                                                      {
-                                                                                          return cocoon::internal::native_id(v);
-                                                                                      })
-                                                       forTextRange:cocoon::internal::native<::NSTextRange>(text_range)];
+                                                                                                                  {
+                                                                                                                      return cocoon::internal::to(k);
+                                                                                                                  },
+                                                                                                                  [](const Object& v) -> id
+                                                                                                                  {
+                                                                                                                      return cocoon::internal::native_id(v);
+                                                                                                                  })
+                                                                     forTextRange:cocoon::internal::native<::NSTextRange>(text_range)];
     }
 
     TextLayoutFragment TextLayoutManager::text_layout_fragment_for_location(const Object& location) const
@@ -243,13 +255,13 @@ namespace cocoon
     std::map<std::string, Object> TextLayoutManager::link_rendering_attributes()
     {
         return cocoon::internal::from_dictionary<std::map<std::string, Object>>([::NSTextLayoutManager linkRenderingAttributes], [](id k) -> std::string
-                                                                  {
-                                                                      return cocoon::internal::from((NSString*)k);
-                                                                  },
-                                                                  [](id v) -> Object
-                                                                  {
-                                                                      return cocoon::internal::wrap<Object>(v);
-                                                                  });
+                                                                                {
+                                                                                    return cocoon::internal::from((NSString*)k);
+                                                                                },
+                                                                                [](id v) -> Object
+                                                                                {
+                                                                                    return cocoon::internal::wrap<Object>(v);
+                                                                                });
     }
 
     std::function<void(TextLayoutManager, TextLayoutFragment)> TextLayoutManager::rendering_attributes_validator() const
@@ -311,17 +323,17 @@ namespace cocoon
     std::vector<TextSelection> TextLayoutManager::text_selections() const
     {
         return cocoon::internal::from_array<TextSelection>([cocoon::internal::ns<::NSTextLayoutManager>(this) textSelections], [](id e) -> TextSelection
-                                             {
-                                                 return cocoon::internal::wrap<TextSelection>((::NSTextSelection*)e);
-                                             });
+                                                           {
+                                                               return cocoon::internal::wrap<TextSelection>((::NSTextSelection*)e);
+                                                           });
     }
 
     void TextLayoutManager::set_text_selections(const std::vector<TextSelection>& value) const
     {
         [cocoon::internal::ns<::NSTextLayoutManager>(this) setTextSelections:cocoon::internal::to_array(value, [](const TextSelection& e) -> id
-                                                                            {
-                                                                                return cocoon::internal::native<::NSTextSelection>(e);
-                                                                            })];
+                                                                                                        {
+                                                                                                            return cocoon::internal::native<::NSTextSelection>(e);
+                                                                                                        })];
     }
 
     TextViewportLayoutController TextLayoutManager::text_viewport_layout_controller() const

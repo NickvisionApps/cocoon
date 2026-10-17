@@ -38,15 +38,15 @@ namespace cocoon
     void NotificationCenter::post_notification_name(const std::string& a_name, const Object& an_object, const std::vector<std::pair<Object, Object>>& a_user_info) const
     {
         [cocoon::internal::ns<::NSNotificationCenter>(this) postNotificationName:cocoon::internal::to(a_name)
-                                                            object:cocoon::internal::native_id(an_object)
-                                                          userInfo:cocoon::internal::to_dictionary(a_user_info, [](const Object& k) -> id
-                                                                                     {
-                                                                                         return cocoon::internal::native_id(k);
-                                                                                     },
-                                                                                     [](const Object& v) -> id
-                                                                                     {
-                                                                                         return cocoon::internal::native_id(v);
-                                                                                     })];
+                                                                          object:cocoon::internal::native_id(an_object)
+                                                                        userInfo:cocoon::internal::to_dictionary(a_user_info, [](const Object& k) -> id
+                                                                                                                 {
+                                                                                                                     return cocoon::internal::native_id(k);
+                                                                                                                 },
+                                                                                                                 [](const Object& v) -> id
+                                                                                                                 {
+                                                                                                                     return cocoon::internal::native_id(v);
+                                                                                                                 })];
     }
 
     void NotificationCenter::remove_observer(const Object& observer) const
