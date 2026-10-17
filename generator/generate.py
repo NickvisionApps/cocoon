@@ -186,6 +186,13 @@ def parm_list(decl, to_snake=True):
     return result
 
 
+def signature_type(q):
+    text = clean(q)
+    if re.match(r"\s*const\b", q) and text.endswith("*") and not text.startswith("const"):
+        return "const " + text
+    return text
+
+
 def log_skip(model, what, reason):
     key = "unmapped " + reason.split("unmapped", 1)[1].strip().split(" ")[0] if "unmapped" in reason else reason
     SKIPPED[key].append(f"{model.ns}.{what}")
@@ -580,7 +587,7 @@ def build_delegate_block(model, d, signal_defs):
             ret_q = clean(decl["returnType"]["qualType"])
             parts = selector.split(":")
             if parms:
-                sig_text = f"- ({ret_q})" + " ".join(f"{parts[i]}:({clean(parms[i][1]['qualType'])}){parms[i][0]}" for i in range(len(parms)))
+                sig_text = f"- ({ret_q})" + " ".join(f"{parts[i]}:({signature_type(parms[i][1]['qualType'])}){parms[i][0]}" for i in range(len(parms)))
             else:
                 sig_text = f"- ({ret_q}){selector}"
             pre, post, emit_args = [], [], []

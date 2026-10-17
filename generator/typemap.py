@@ -497,14 +497,24 @@ def raw_pointer(inner, is_const):
               f"{const}{inner.objc} *", "ptr", inner=inner)
 
 
+def protocol_qualified(q):
+    match = re.search(r"\w\s*<([^<>*]*)>\s*\*", q)
+    if not match:
+        return False
+    names = [n.strip() for n in match.group(1).split(",")]
+    return all(re.fullmatch(r"[A-Za-z_]\w*", n) and n != "id" and n not in S.current_tparams for n in names)
+
+
 def with_cast(ti, q):
     if ti.kind in ("ptr", "fnptr"):
         cast = clean_cast(q)
         ti.to = f"({cast})(@@)"
     elif ti.kind == "data" and "NSMutableData" in q:
         ti.to = "cocoon::internal::to_mutable_data(@@)"
-    elif ti.kind == "handle" and re.search(r"\w\s*<[^>]*>\s*\*", q):
+    elif ti.kind == "handle" and protocol_qualified(q):
         ti.to = f"cocoon::internal::native<{clean_cast(q).rstrip(' *')}>(@@)"
+    elif ti.kind in ("string", "vector", "map") and re.match(r"\s*(?:const\s+)?NSMutable(String|Array|Dictionary|Set|OrderedSet)\b", q):
+        ti.to = f"[{ti.to} mutableCopy]"
     return ti
 
 

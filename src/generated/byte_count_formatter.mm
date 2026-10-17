@@ -32,12 +32,12 @@ namespace cocoon
 
     std::string ByteCountFormatter::string_from_measurement(const MeasurementBase& measurement) const
     {
-        return cocoon::internal::from([cocoon::internal::ns<::NSByteCountFormatter>(this) stringFromMeasurement:cocoon::internal::native<NSMeasurement<NSUnitInformationStorage*>>(measurement)]);
+        return cocoon::internal::from([cocoon::internal::ns<::NSByteCountFormatter>(this) stringFromMeasurement:cocoon::internal::native<::NSMeasurement>(measurement)]);
     }
 
     std::string ByteCountFormatter::string_from_measurement(const MeasurementBase& measurement, ByteCountFormatterCountStyle count_style)
     {
-        return cocoon::internal::from([::NSByteCountFormatter stringFromMeasurement:cocoon::internal::native<NSMeasurement<NSUnitInformationStorage*>>(measurement) countStyle:static_cast<::NSByteCountFormatterCountStyle>(count_style)]);
+        return cocoon::internal::from([::NSByteCountFormatter stringFromMeasurement:cocoon::internal::native<::NSMeasurement>(measurement) countStyle:static_cast<::NSByteCountFormatterCountStyle>(count_style)]);
     }
 
     bool ByteCountFormatter::is_adaptive() const

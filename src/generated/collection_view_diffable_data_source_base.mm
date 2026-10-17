@@ -21,7 +21,7 @@ namespace cocoon
 
     void CollectionViewDiffableDataSourceBase::apply_snapshot(const DiffableDataSourceSnapshotBase& snapshot, bool animating_differences) const
     {
-        [cocoon::internal::ns<::NSCollectionViewDiffableDataSource>(this) applySnapshot:cocoon::internal::native<NSDiffableDataSourceSnapshot<id, id>>(snapshot) animatingDifferences:static_cast<::BOOL>(animating_differences)];
+        [cocoon::internal::ns<::NSCollectionViewDiffableDataSource>(this) applySnapshot:cocoon::internal::native<::NSDiffableDataSourceSnapshot>(snapshot) animatingDifferences:static_cast<::BOOL>(animating_differences)];
     }
 
     IndexPath CollectionViewDiffableDataSourceBase::index_path_for_item_identifier(const Object& identifier) const

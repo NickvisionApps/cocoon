@@ -10,7 +10,7 @@
 
 @implementation AKLayoutManagerDelegate
 
-- (NSUInteger)layoutManager:(NSLayoutManager*)layoutManager shouldGenerateGlyphs:(CGGlyph*)glyphs properties:(NSGlyphProperty*)props characterIndexes:(NSUInteger*)charIndexes font:(NSFont*)aFont forGlyphRange:(NSRange)glyphRange
+- (NSUInteger)layoutManager:(NSLayoutManager*)layoutManager shouldGenerateGlyphs:(const CGGlyph*)glyphs properties:(const NSGlyphProperty*)props characterIndexes:(const NSUInteger*)charIndexes font:(NSFont*)aFont forGlyphRange:(NSRange)glyphRange
 {
     id strongHost = host;
     if (!strongHost)

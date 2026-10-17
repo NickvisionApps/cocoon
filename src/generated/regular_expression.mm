@@ -79,7 +79,7 @@ namespace cocoon
 
     std::uint64_t RegularExpression::replace_matches_in_string(const std::string& string, MatchingOptions options, const Range& range, const std::string& templ) const
     {
-        return static_cast<std::uint64_t>([cocoon::internal::ns<::NSRegularExpression>(this) replaceMatchesInString:cocoon::internal::to(string) options:static_cast<::NSMatchingOptions>(options) range:cocoon::internal::to(range) withTemplate:cocoon::internal::to(templ)]);
+        return static_cast<std::uint64_t>([cocoon::internal::ns<::NSRegularExpression>(this) replaceMatchesInString:[cocoon::internal::to(string) mutableCopy] options:static_cast<::NSMatchingOptions>(options) range:cocoon::internal::to(range) withTemplate:cocoon::internal::to(templ)]);
     }
 
     std::string RegularExpression::replacement_string_for_result(const TextCheckingResult& result, const std::string& string, std::int64_t offset, const std::string& templ) const

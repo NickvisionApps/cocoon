@@ -17,32 +17,32 @@ namespace cocoon
 
     LayoutConstraint LayoutAnchorBase::constraint_equal_to_anchor(const LayoutAnchorBase& anchor) const
     {
-        return cocoon::internal::wrap<LayoutConstraint>([cocoon::internal::ns<::NSLayoutAnchor>(this) constraintEqualToAnchor:cocoon::internal::native<NSLayoutAnchor<id>>(anchor)]);
+        return cocoon::internal::wrap<LayoutConstraint>([cocoon::internal::ns<::NSLayoutAnchor>(this) constraintEqualToAnchor:cocoon::internal::native<::NSLayoutAnchor>(anchor)]);
     }
 
     LayoutConstraint LayoutAnchorBase::constraint_equal_to_anchor(const LayoutAnchorBase& anchor, double c) const
     {
-        return cocoon::internal::wrap<LayoutConstraint>([cocoon::internal::ns<::NSLayoutAnchor>(this) constraintEqualToAnchor:cocoon::internal::native<NSLayoutAnchor<id>>(anchor) constant:static_cast<::CGFloat>(c)]);
+        return cocoon::internal::wrap<LayoutConstraint>([cocoon::internal::ns<::NSLayoutAnchor>(this) constraintEqualToAnchor:cocoon::internal::native<::NSLayoutAnchor>(anchor) constant:static_cast<::CGFloat>(c)]);
     }
 
     LayoutConstraint LayoutAnchorBase::constraint_greater_than_or_equal_to_anchor(const LayoutAnchorBase& anchor) const
     {
-        return cocoon::internal::wrap<LayoutConstraint>([cocoon::internal::ns<::NSLayoutAnchor>(this) constraintGreaterThanOrEqualToAnchor:cocoon::internal::native<NSLayoutAnchor<id>>(anchor)]);
+        return cocoon::internal::wrap<LayoutConstraint>([cocoon::internal::ns<::NSLayoutAnchor>(this) constraintGreaterThanOrEqualToAnchor:cocoon::internal::native<::NSLayoutAnchor>(anchor)]);
     }
 
     LayoutConstraint LayoutAnchorBase::constraint_greater_than_or_equal_to_anchor(const LayoutAnchorBase& anchor, double c) const
     {
-        return cocoon::internal::wrap<LayoutConstraint>([cocoon::internal::ns<::NSLayoutAnchor>(this) constraintGreaterThanOrEqualToAnchor:cocoon::internal::native<NSLayoutAnchor<id>>(anchor) constant:static_cast<::CGFloat>(c)]);
+        return cocoon::internal::wrap<LayoutConstraint>([cocoon::internal::ns<::NSLayoutAnchor>(this) constraintGreaterThanOrEqualToAnchor:cocoon::internal::native<::NSLayoutAnchor>(anchor) constant:static_cast<::CGFloat>(c)]);
     }
 
     LayoutConstraint LayoutAnchorBase::constraint_less_than_or_equal_to_anchor(const LayoutAnchorBase& anchor) const
     {
-        return cocoon::internal::wrap<LayoutConstraint>([cocoon::internal::ns<::NSLayoutAnchor>(this) constraintLessThanOrEqualToAnchor:cocoon::internal::native<NSLayoutAnchor<id>>(anchor)]);
+        return cocoon::internal::wrap<LayoutConstraint>([cocoon::internal::ns<::NSLayoutAnchor>(this) constraintLessThanOrEqualToAnchor:cocoon::internal::native<::NSLayoutAnchor>(anchor)]);
     }
 
     LayoutConstraint LayoutAnchorBase::constraint_less_than_or_equal_to_anchor(const LayoutAnchorBase& anchor, double c) const
     {
-        return cocoon::internal::wrap<LayoutConstraint>([cocoon::internal::ns<::NSLayoutAnchor>(this) constraintLessThanOrEqualToAnchor:cocoon::internal::native<NSLayoutAnchor<id>>(anchor) constant:static_cast<::CGFloat>(c)]);
+        return cocoon::internal::wrap<LayoutConstraint>([cocoon::internal::ns<::NSLayoutAnchor>(this) constraintLessThanOrEqualToAnchor:cocoon::internal::native<::NSLayoutAnchor>(anchor) constant:static_cast<::CGFloat>(c)]);
     }
 
     std::vector<LayoutConstraint> LayoutAnchorBase::constraints_affecting_layout() const

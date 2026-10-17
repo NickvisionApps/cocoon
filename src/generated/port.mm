@@ -53,10 +53,10 @@ namespace cocoon
     bool Port::send_before_date(const Date& limit_date, const std::vector<Object>& components, const Port& receive_port, std::uint64_t header_space_reserved) const
     {
         return static_cast<bool>([cocoon::internal::ns<::NSPort>(this) sendBeforeDate:cocoon::internal::native<::NSDate>(limit_date)
-                                                                           components:cocoon::internal::to_array(components, [](const Object& e) -> id
-                                                                                                                 {
-                                                                                                                     return cocoon::internal::native_id(e);
-                                                                                                                 })
+                                                                           components:[cocoon::internal::to_array(components, [](const Object& e) -> id
+                                                                                                                  {
+                                                                                                                      return cocoon::internal::native_id(e);
+                                                                                                                  }) mutableCopy]
                                                                                  from:cocoon::internal::native<::NSPort>(receive_port)
                                                                              reserved:static_cast<::NSUInteger>(header_space_reserved)]);
     }
@@ -65,10 +65,10 @@ namespace cocoon
     {
         return static_cast<bool>([cocoon::internal::ns<::NSPort>(this) sendBeforeDate:cocoon::internal::native<::NSDate>(limit_date)
                                                                                 msgid:static_cast<::NSUInteger>(msg_id)
-                                                                           components:cocoon::internal::to_array(components, [](const Object& e) -> id
-                                                                                                                 {
-                                                                                                                     return cocoon::internal::native_id(e);
-                                                                                                                 })
+                                                                           components:[cocoon::internal::to_array(components, [](const Object& e) -> id
+                                                                                                                  {
+                                                                                                                      return cocoon::internal::native_id(e);
+                                                                                                                  }) mutableCopy]
                                                                                  from:cocoon::internal::native<::NSPort>(receive_port)
                                                                              reserved:static_cast<::NSUInteger>(header_space_reserved)]);
     }
