@@ -40,8 +40,20 @@ jobs:
             exit 1
           fi
       - name: "Configure"
-        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DCOCOON_BUILD_EXAMPLES=OFF
-      - name: "Build library"
-        run: cmake --build build --target cocoon --parallel "$(sysctl -n hw.ncpu)"
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DCOCOON_BUILD_EXAMPLES=ON
+      - name: "Build library and examples"
+        run: cmake --build build --parallel "$(sysctl -n hw.ncpu)"
       - name: "Check library"
         run: test -f build/libcocoon.a
+      - name: "Package examples"
+        run: |
+          mkdir -p dist
+          for app in build/examples/*/*.app; do
+            ditto -c -k --sequesterRsrc --keepParent "${app}" "dist/$(basename "${app}").zip"
+          done
+          ls dist
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cocoon-examples-${{ matrix.variant.arch }}
+          path: dist/*.zip
+          if-no-files-found: error
