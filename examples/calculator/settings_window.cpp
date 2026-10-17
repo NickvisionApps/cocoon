@@ -5,7 +5,7 @@ using namespace cocoon;
 namespace calculator
 {
     SettingsWindow::SettingsWindow(const Application& application)
-        : Window{"Settings", {360, 100}, WindowStyle::Titled | WindowStyle::Closable | WindowStyle::Miniaturizable}
+        : Window{"General", {480, 140}, WindowStyle::Titled | WindowStyle::Closable | WindowStyle::Miniaturizable}
     {
         HStack row;
         row.set_spacing(12);
@@ -35,8 +35,28 @@ namespace calculator
         page.add_subview(row);
         LayoutConstraint::activate_constraints({
             row.center_x_anchor().constraint_equal_to_anchor(page.center_x_anchor()),
-            row.center_y_anchor().constraint_equal_to_anchor(page.center_y_anchor()),
+            row.top_anchor().constraint_equal_to_anchor(page.top_anchor(), 24),
         });
-        set_content(page);
+
+        TabView pages;
+        pages.set_tab_view_type(TabViewType::NoTabsNoBorder);
+        pages.set_draws_background(false);
+        pages.add_tab("general", page);
+        set_content(pages);
+
+        ToolbarItem general{"general", "General", "gearshape"};
+        Toolbar toolbar{"com.cocoon.calculator.settings.toolbar"};
+        toolbar.set_allows_user_customization(false);
+        toolbar.set_autosaves_configuration(false);
+        toolbar.add_flexible_space();
+        toolbar.add_item(general);
+        toolbar.add_flexible_space();
+        toolbar.selectable_item_identifiers().connect([]
+        {
+            return std::vector<std::string>{"general"};
+        });
+        set_toolbar(toolbar);
+        set_toolbar_style(ToolbarStyle::Preference);
+        toolbar.set_selected_item_identifier("general");
     }
 }
