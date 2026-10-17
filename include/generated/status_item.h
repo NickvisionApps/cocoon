@@ -165,18 +165,24 @@ namespace cocoon
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_visible(bool value) const;
+#ifdef COCOON_MACOS_27
         /// @brief Signal for the delegate/data-source method behind `did_begin_expanded_interface_session`; connect a callback with `did_begin_expanded_interface_session().connect(...)`.
         Signal<StatusItem, void(StatusItemExpandedInterfaceSession)> did_begin_expanded_interface_session() const
         {
             return Signal<StatusItem, void(StatusItemExpandedInterfaceSession)>(handle(), "did_begin_expanded_interface_session");
         }
+#endif
+#ifdef COCOON_MACOS_27
         /// @brief Signal for the delegate/data-source method behind `did_end_expanded_interface_session_animated`; connect a callback with `did_end_expanded_interface_session_animated().connect(...)`.
         Signal<StatusItem, void(bool)> did_end_expanded_interface_session_animated() const
         {
             return Signal<StatusItem, void(bool)>(handle(), "did_end_expanded_interface_session_animated");
         }
+#endif
 
     protected:
+#ifdef COCOON_MACOS_27
         static void install_expanded_interface_delegate_delegate_(void* native);
+#endif
     };
 }

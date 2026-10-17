@@ -362,6 +362,7 @@ def collect_delegate_property(model, prop):
     if prop.get("class"):
         return False
     q = clean(prop["type"]["qualType"])
+    model.delegate_majors[prop["name"]] = future_major(A.availability(prop).introduced)
     if prop.get("readonly") and re.fullmatch(r"id<[\w, ]+>", q):
         return True
     m = re.fullmatch(r"id<([\w, ]+)>", q)
@@ -513,7 +514,7 @@ def process_delegates():
     for model in ALL_MODELS:
         model.delegates = []
         for prop, protocols in model.delegate_props.items():
-            model.delegates.append({"prop": prop, "protocols": protocols, "methods": protocol_methods(protocols), "built": [], "cls": None, "text": ""})
+            model.delegates.append({"prop": prop, "protocols": protocols, "methods": protocol_methods(protocols), "built": [], "cls": None, "text": "", "major": model.delegate_majors.get(prop, 0)})
     for model in ALL_MODELS:
         for d in model.delegates:
             for selector, (decl, protocol) in d["methods"].items():
@@ -561,7 +562,7 @@ def process_delegates():
                     taken.add(name)
                     sig = f"{ret.cpp}({', '.join(a[0] for a in args)})"
                     signal_defs[(model.ns, d["prop"], selector)] = {"name": name, "sig": sig}
-                    model.signals.append({"name": name, "sig": sig, "origin": "delegate"})
+                    model.signals.append({"name": name, "sig": sig, "origin": "delegate", "major": d["major"]})
                 except Skip as e:
                     log_skip(model, selector, "delegate " + str(e))
                 except Unmappable as e:
@@ -833,7 +834,7 @@ def ctor_bind_lines(model):
         for d in m.delegates:
             if d["cls"] and d["prop"] not in seen:
                 seen.add(d["prop"])
-                lines.append(f"    {m.name}::install_{snake(d['prop'])}_delegate_(handle());")
+                lines.append(macro_guard(d["major"], f"    {m.name}::install_{snake(d['prop'])}_delegate_(handle());"))
     if model.curated.get("ctorBody"):
         lines.append(f"    {convert_cpp(model.curated['ctorBody'])}")
     return lines
@@ -943,7 +944,9 @@ def emit_model(model, signal_defs):
         doc_signals.append((key, sig))
     for s in model.signals:
         if s["origin"] == "delegate":
-            other_decls.append(f"    /// @brief Signal for the delegate/data-source method behind `{s['name']}`; connect a callback with `{s['name']}().connect(...)`.\n    Signal<{name}, {s['sig']}> {s['name']}() const {{ return Signal<{name}, {s['sig']}>(handle(), \"{s['name']}\"); }}")
+            signal_major = max([s.get("major", 0)] + [v for k, v in future_classes.items() if re.search(r"\b" + re.escape(k) + r"\b", s["sig"])])
+            other_decls.append(macro_guard(signal_major, f"    /// @brief Signal for the delegate/data-source method behind `{s['name']}`; connect a callback with `{s['name']}().connect(...)`.\n    Signal<{name}, {s['sig']}> {s['name']}() const {{ return Signal<{name}, {s['sig']}>(handle(), \"{s['name']}\"); }}"))
+            name_major[s["name"]] = signal_major
             signal_names.add(s["name"])
             doc_signals.append((s["name"], s["sig"]))
     using = []
@@ -983,10 +986,10 @@ def emit_model(model, signal_defs):
     for d in model.delegates:
         if not d["cls"]:
             continue
-        delegate_text += d["text"]
+        delegate_text += macro_guard(d["major"], d["text"])
         prop, cls = d["prop"], d["cls"]
-        protected.append(f"    static void install_{snake(prop)}_delegate_(void* native);")
-        impl.append(f"void {name}::install_{snake(prop)}_delegate_(void* native) {{\n    ::{model.ns}* host = (__bridge ::{model.ns}*)native;\n    {cls}* delegate = [[{cls} alloc] init];\n    delegate->host = host;\n    host.{prop} = delegate;\n    {d['weak']} ::{model.ns}* weakHost = host;\n    cocoon::internal::keep_delegate(host, delegate, ^{{\n        ::{model.ns}* strongHost = weakHost;\n        strongHost.{prop} = nil;\n        strongHost.{prop} = delegate;\n    }});\n}}\n")
+        protected.append(macro_guard(d["major"], f"    static void install_{snake(prop)}_delegate_(void* native);"))
+        impl.append(macro_guard(d["major"], f"void {name}::install_{snake(prop)}_delegate_(void* native) {{\n    ::{model.ns}* host = (__bridge ::{model.ns}*)native;\n    {cls}* delegate = [[{cls} alloc] init];\n    delegate->host = host;\n    host.{prop} = delegate;\n    {d['weak']} ::{model.ns}* weakHost = host;\n    cocoon::internal::keep_delegate(host, delegate, ^{{\n        ::{model.ns}* strongHost = weakHost;\n        strongHost.{prop} = nil;\n        strongHost.{prop} = delegate;\n    }});\n}}\n"))
     wrapper = ""
     if model.tparams:
         template_head = ", ".join(f"class {p}" for p in model.tparams)

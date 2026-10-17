@@ -304,6 +304,7 @@ class ClassModel:
         self.init_available = True
         self.own_init = False
         self.delegate_props = {}
+        self.delegate_majors = {}
         self.weak_unavailable = False
         self.tparams = []
         self.template_name = None
