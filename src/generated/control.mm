@@ -24,6 +24,16 @@ namespace cocoon
         return static_cast<bool>([cocoon::internal::ns<::NSControl>(this) abortEditing]);
     }
 
+#ifdef COCOON_MACOS_27
+    void Control::add_target(const Object& target, const std::string& action, ControlEvents control_events) const
+    {
+        if (@available(macOS 27.0, *))
+        {
+            [cocoon::internal::ns<::NSControl>(this) addTarget:cocoon::internal::native_id(target) action:NSSelectorFromString(cocoon::internal::to(action)) forControlEvents:static_cast<::NSControlEvents>(control_events)];
+        }
+    }
+
+#endif
     Text Control::current_editor() const
     {
         return cocoon::internal::wrap<Text>([cocoon::internal::ns<::NSControl>(this) currentEditor]);
@@ -69,6 +79,16 @@ namespace cocoon
         [cocoon::internal::ns<::NSControl>(this) performClick:cocoon::internal::native_id(sender)];
     }
 
+#ifdef COCOON_MACOS_27
+    void Control::remove_target(const Object& target, const std::string& action, ControlEvents control_events) const
+    {
+        if (@available(macOS 27.0, *))
+        {
+            [cocoon::internal::ns<::NSControl>(this) removeTarget:cocoon::internal::native_id(target) action:NSSelectorFromString(cocoon::internal::to(action)) forControlEvents:static_cast<::NSControlEvents>(control_events)];
+        }
+    }
+
+#endif
     void Control::select_cell(const Cell& cell) const
     {
         [cocoon::internal::ns<::NSControl>(this) selectCell:cocoon::internal::native<::NSCell>(cell)];

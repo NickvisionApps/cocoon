@@ -15,6 +15,10 @@ SPEC = {
         "NSWindowTitleVisibility": "NSWindowTitle",
     },
     "skipClasses": [],
+    "availabilityOverrides": {
+        "NSControl.addTarget:action:forControlEvents:": 27,
+        "NSControl.removeTarget:action:forControlEvents:": 27,
+    },
     "signalOverrides": {
         "windowDidResize:": {"name": "resized", "args": [["Size", "cocoon::internal::from([(NSWindow*)notification.object contentRectForFrameRect:((NSWindow*)notification.object).frame].size)"]]},
         "toolbar:itemForItemIdentifier:willBeInsertedIntoToolbar:": {"name": "itemForIdentifier"},

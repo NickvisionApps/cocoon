@@ -11,9 +11,9 @@ namespace cocoon
     {
         id host = cocoon::internal::obj(this);
         cocoon::internal::observe(host, ((NSScrollView*)host).documentView, NSTextDidChangeNotification, [](id host, id note)
-                    {
-                        Signal<TextEditor, void(const std::string&)>::emit((__bridge void*)host, "text_changed", cocoon::internal::from(((NSTextView*)((NSScrollView*)host).documentView).string));
-                    });
+                                  {
+                                      Signal<TextEditor, void(const std::string&)>::emit((__bridge void*)host, "text_changed", cocoon::internal::from(((NSTextView*)((NSScrollView*)host).documentView).string));
+                                  });
     }
 
     std::string TextEditor::text() const

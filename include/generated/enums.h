@@ -1084,6 +1084,40 @@ namespace cocoon
         return (static_cast<std::int64_t>(value) & static_cast<std::int64_t>(flag)) != 0;
     }
 
+    /** @brief Wraps the Objective-C option set `NSControlEvents`. Combine option sets with `|` and test them with `test_flag`. */
+    enum class ControlEvents : std::uint64_t
+    {
+        TrackingBegan = 1,
+        TrackingRepeated = 2,
+        TrackingInside = 4,
+        TrackingOutside = 8,
+        TrackingEntered = 16,
+        TrackingExited = 32,
+        TrackingEndedInside = 64,
+        TrackingEndedOutside = 128,
+        TrackingCancelled = 256,
+        ValueChanged = 4096,
+        PrimaryActionTriggered = 8192,
+        MenuActionTriggered = 16384,
+        AllTrackingEvents = 4095,
+        ApplicationReserved = 251658240,
+        SystemReserved = 4026531840,
+        AllEvents = 4294967295,
+    };
+
+    constexpr ControlEvents operator|(ControlEvents a, ControlEvents b)
+    {
+        return static_cast<ControlEvents>(static_cast<std::uint64_t>(a) | static_cast<std::uint64_t>(b));
+    }
+    constexpr ControlEvents operator&(ControlEvents a, ControlEvents b)
+    {
+        return static_cast<ControlEvents>(static_cast<std::uint64_t>(a) & static_cast<std::uint64_t>(b));
+    }
+    constexpr bool test_flag(ControlEvents value, ControlEvents flag)
+    {
+        return (static_cast<std::uint64_t>(value) & static_cast<std::uint64_t>(flag)) != 0;
+    }
+
     /** @brief Wraps the Objective-C enumeration `NSControlSize`. */
     enum class ControlSize : std::uint64_t
     {

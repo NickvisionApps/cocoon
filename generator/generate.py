@@ -24,7 +24,7 @@ S.manual_enums = {e["ns"]: e for e in SPEC.get("enums", [])}
 S.class_names = SPEC.get("classNames", {})
 SIGNAL_OVERRIDES = SPEC.get("signalOverrides", {})
 SKIP_CLASSES = set(SPEC.get("skipClasses", [])) | {"NSProxy"}
-SKIP_SELECTORS = {"alloc", "allocWithZone:", "new", "copyWithZone:", "mutableCopyWithZone:", "dealloc", "retain", "release", "autorelease", "retainCount", "zone", "class", "superclass", "self", "load", "initialize", "addTarget:action:forControlEvents:", "removeTarget:action:forControlEvents:"}
+SKIP_SELECTORS = {"alloc", "allocWithZone:", "new", "copyWithZone:", "mutableCopyWithZone:", "dealloc", "retain", "release", "autorelease", "retainCount", "zone", "class", "superclass", "self", "load", "initialize"}
 SKIP_SELECTORS_STATIC = {"alloc", "allocWithZone:", "new", "load", "initialize", "class", "superclass", "instanceMethodForSelector:", "supportsSecureCoding", "copyWithZone:"}
 
 ALL_MODELS = []
@@ -283,7 +283,8 @@ def member_from_method(model, decl, static, methods=None):
     if decl.get("variadic"):
         return variadic_member(model, decl, static, methods or {}, info)
     selector = decl["name"]
-    member = make_member(model, selector, parm_list(decl), decl["returnType"], static, info.introduced, ident(snake(selector.split(":")[0])))
+    introduced = float(SPEC.get("availabilityOverrides", {}).get(f"{model.ns}.{selector}", info.introduced or 0)) or None
+    member = make_member(model, selector, parm_list(decl), decl["returnType"], static, introduced, ident(snake(selector.split(":")[0])))
     member.sdk_doc = A.doc_comment(A.CLASS_FILES.get(model.ns, ""), decl.get("loc", {}).get("line"), selector.split(":")[0])
     return member
 
@@ -1229,7 +1230,7 @@ def main():
     emit_enums()
     emit_structs()
     emit_opaques()
-    write(OUT_INCLUDE / "availability.h", "#pragma once\n\n#include <Availability.h>\n\n" + "".join(f"#if defined(__MAC_OS_X_VERSION_MAX_ALLOWED) && __MAC_OS_X_VERSION_MAX_ALLOWED >= {major * 10000}\n#define COCOON_MACOS_{major}\n#endif\n\n" for major in range(MAJOR + 1, max(FUTURE_MAJORS | {MAJOR}) + 1)))
+    write(OUT_INCLUDE / "availability.h", "#pragma once\n\n#include <Availability.h>\n\n" + "".join(f"#if defined(COCOON_SDK_MAJOR)\n#if COCOON_SDK_MAJOR >= {major}\n#define COCOON_MACOS_{major}\n#endif\n#elif defined(__MAC_OS_X_VERSION_MAX_ALLOWED) && __MAC_OS_X_VERSION_MAX_ALLOWED >= {major * 10000}\n#define COCOON_MACOS_{major}\n#endif\n\n" for major in range(MAJOR + 1, max(FUTURE_MAJORS | {MAJOR}) + 1)))
     write(OUT_INCLUDE / "generated.h", "#pragma once\n\n" + "".join(f'#include "generated/{snake(m.name)}.h"\n' for m in sorted(ALL_MODELS, key=lambda m: snake(m.name))) + "".join(f'#include "generated/{snake(n)}.h"\n' for n in sorted(S.opaques)) + '#include "generated/constants.h"\n')
     format_files()
     report = ["Skipped members by reason"]
