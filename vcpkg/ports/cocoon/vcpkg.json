@@ -5,7 +5,7 @@
   "description": "A C++20 wrapper over modern AppKit.",
   "homepage": "https://github.com/NickvisionApps/cocoon",
   "license": "MIT",
-  "supports": "osx & static",
+  "supports": "osx & arm64 & static",
   "dependencies": [
     {
       "name": "vcpkg-cmake",

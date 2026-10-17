@@ -13,12 +13,10 @@ jobs:
         variant:
           - runner: macos-latest
             triplet: arm64-osx
-          - runner: macos-26-intel
-            triplet: x64-osx
     runs-on: ${{ matrix.variant.runner }}
     steps:
       - name: "Checkout"
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           submodules: recursive
       - name: "Build"
@@ -27,7 +25,7 @@ jobs:
         with:
           pkgs: cocoon
           triplet: ${{ matrix.variant.triplet }}
-          revision: a0b1c8d3a477c1cb4813d8e127a56961707ca42b
+          revision: a5f736224e85b32e25a8ffc52562333180396642
           token: ${{ github.token }}
           cache-key: ${{ matrix.variant.triplet }}
           vcpkg-subdir: vcpkg-tool
