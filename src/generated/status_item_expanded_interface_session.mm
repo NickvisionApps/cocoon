@@ -16,10 +16,16 @@ namespace cocoon
     {
     }
 
+#ifdef COCOON_MACOS_27
     void StatusItemExpandedInterfaceSession::cancel() const
     {
-        [cocoon::internal::ns<::NSStatusItemExpandedInterfaceSession>(this) cancel];
+        if (@available(macOS 27.0, *))
+        {
+            [cocoon::internal::ns<::NSStatusItemExpandedInterfaceSession>(this) cancel];
+        }
     }
+
+#endif
 }
 
 #endif

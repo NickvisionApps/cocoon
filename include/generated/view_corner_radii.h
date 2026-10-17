@@ -30,30 +30,41 @@ namespace cocoon
         ViewCornerRadii(std::nullptr_t);
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit ViewCornerRadii(Adopt adopt);
+#ifdef COCOON_MACOS_27
         /**
      * @brief Returns the `bottomLeft` property of `NSViewCornerRadii`.
      * @details Radius of the bottom left corner of the view.
      * @return The converted Objective-C result.
      */
         double bottom_left() const;
+#endif
+
+#ifdef COCOON_MACOS_27
         /**
      * @brief Returns the `bottomRight` property of `NSViewCornerRadii`.
      * @details Radius of the bottom right corner of the view.
      * @return The converted Objective-C result.
      */
         double bottom_right() const;
+#endif
+
+#ifdef COCOON_MACOS_27
         /**
      * @brief Returns the `topLeft` property of `NSViewCornerRadii`.
      * @details Radius of the top left corner of the view.
      * @return The converted Objective-C result.
      */
         double top_left() const;
+#endif
+
+#ifdef COCOON_MACOS_27
         /**
      * @brief Returns the `topRight` property of `NSViewCornerRadii`.
      * @details Radius of the top right corner of the view.
      * @return The converted Objective-C result.
      */
         double top_right() const;
+#endif
     };
 }
 

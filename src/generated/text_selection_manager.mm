@@ -368,18 +368,29 @@ namespace cocoon
     {
     }
 
+#ifdef COCOON_MACOS_27
     std::vector<GestureRecognizer> TextSelectionManager::gestures_for_failure_requirements() const
     {
-        return cocoon::internal::from_array<GestureRecognizer>([cocoon::internal::ns<::NSTextSelectionManager>(this) gesturesForFailureRequirements], [](id e) -> GestureRecognizer
-                                                               {
-                                                                   return cocoon::internal::wrap<GestureRecognizer>((::NSGestureRecognizer*)e);
-                                                               });
+        if (@available(macOS 27.0, *))
+        {
+            return cocoon::internal::from_array<GestureRecognizer>([cocoon::internal::ns<::NSTextSelectionManager>(this) gesturesForFailureRequirements], [](id e) -> GestureRecognizer
+                                                                   {
+                                                                       return cocoon::internal::wrap<GestureRecognizer>((::NSGestureRecognizer*)e);
+                                                                   });
+        }
+        return {};
     }
+
+#endif
 
 #ifdef COCOON_MACOS_27
     TextSelectionMode TextSelectionManager::text_selection_mode() const
     {
-        return static_cast<TextSelectionMode>([cocoon::internal::ns<::NSTextSelectionManager>(this) textSelectionMode]);
+        if (@available(macOS 27.0, *))
+        {
+            return static_cast<TextSelectionMode>([cocoon::internal::ns<::NSTextSelectionManager>(this) textSelectionMode]);
+        }
+        return {};
     }
 
 #endif
@@ -387,7 +398,10 @@ namespace cocoon
 #ifdef COCOON_MACOS_27
     void TextSelectionManager::set_text_selection_mode(TextSelectionMode value) const
     {
-        [cocoon::internal::ns<::NSTextSelectionManager>(this) setTextSelectionMode:static_cast<::NSTextSelectionMode>(value)];
+        if (@available(macOS 27.0, *))
+        {
+            [cocoon::internal::ns<::NSTextSelectionManager>(this) setTextSelectionMode:static_cast<::NSTextSelectionMode>(value)];
+        }
     }
 
 #endif

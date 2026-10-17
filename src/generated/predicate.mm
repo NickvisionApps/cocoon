@@ -22,13 +22,17 @@ namespace cocoon
 
     bool Predicate::allow_evaluation_with_validator(const Object& validator) const
     {
-        NSError* __error = nil;
-        auto __r = [cocoon::internal::ns<::NSPredicate>(this) allowEvaluationWithValidator:cocoon::internal::native_id(validator) error:&__error];
-        if (__error)
+        if (@available(macOS 26.4, *))
         {
-            throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
+            NSError* __error = nil;
+            auto __r = [cocoon::internal::ns<::NSPredicate>(this) allowEvaluationWithValidator:cocoon::internal::native_id(validator) error:&__error];
+            if (__error)
+            {
+                throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
+            }
+            return static_cast<bool>(__r);
         }
-        return static_cast<bool>(__r);
+        return {};
     }
 
     bool Predicate::evaluate_with_object(const Object& object) const

@@ -182,27 +182,6 @@ namespace cocoon
         [cocoon::internal::ns<::NSKeyedUnarchiver>(this) setClass:NSClassFromString(cocoon::internal::to(cls)) forClassName:cocoon::internal::to(coded_name)];
     }
 
-    Object KeyedUnarchiver::unarchive_object_with_data(const std::vector<std::uint8_t>& data)
-    {
-        return cocoon::internal::wrap<Object>([::NSKeyedUnarchiver unarchiveObjectWithData:cocoon::internal::to_data(data)]);
-    }
-
-    Object KeyedUnarchiver::unarchive_object_with_file(const std::string& path)
-    {
-        return cocoon::internal::wrap<Object>([::NSKeyedUnarchiver unarchiveObjectWithFile:cocoon::internal::to(path)]);
-    }
-
-    Object KeyedUnarchiver::unarchive_top_level_object_with_data(const std::vector<std::uint8_t>& data)
-    {
-        NSError* __error = nil;
-        auto __r = [::NSKeyedUnarchiver unarchiveTopLevelObjectWithData:cocoon::internal::to_data(data) error:&__error];
-        if (__error)
-        {
-            throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
-        }
-        return cocoon::internal::wrap<Object>(__r);
-    }
-
     std::vector<Object> KeyedUnarchiver::unarchived_array_of_objects_of_class(const std::string& cls, const std::vector<std::uint8_t>& data)
     {
         NSError* __error = nil;

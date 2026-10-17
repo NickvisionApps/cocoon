@@ -178,7 +178,11 @@ def future_types():
 
 
 def taint(text):
-    return max([0] + [v for k, v in future_types().items() if re.search(r"\b" + re.escape(k) + r"\b", text)])
+    known = future_types()
+    result = [v for k, v in known.items() if re.search(r"\b" + re.escape(k) + r"\b", text)]
+    for name in set(re.findall(r"\bNS[A-Z]\w*\b", text)) - set(known):
+        result.append(future_major(A.type_introduced(name)))
+    return max([0] + result)
 
 
 def macro_guard(major, text):
@@ -268,6 +272,7 @@ def make_body(model, static, selector, params, ret_type, since):
 
 
 def make_member(model, selector, params, ret_type, static, since, cpp_name):
+    since = max([s for s in (since, model.since) if s], default=None)
     ret, cpp_params, lines = make_body(model, static, selector, params, ret_type, since)
     key = (static, cpp_name, tuple(norm_type(t) for t, _ in cpp_params))
     member = Member(cpp_name, ret.cpp, cpp_params, lines, key, static)
@@ -332,10 +337,11 @@ def members_from_property(model, prop):
     t = prop["type"]
     getter = prop.get("getter", {}).get("name", prop["name"])
     sdk_doc = A.doc_comment(A.CLASS_FILES.get(model.ns, ""), prop.get("loc", {}).get("line"), prop["name"])
-    result = [make_member(model, getter, [], t, static, info.introduced, ident(snake(getter)))]
+    introduced = float(SPEC.get("availabilityOverrides", {}).get(f"{model.ns}.{prop['name']}", info.introduced or 0)) or None
+    result = [make_member(model, getter, [], t, static, introduced, ident(snake(getter)))]
     if not prop.get("readonly"):
         setter = prop.get("setter", {}).get("name") or "set" + prop["name"][:1].upper() + prop["name"][1:] + ":"
-        result.append(make_member(model, setter, [("value", t)], {"qualType": "void"}, static, info.introduced, ident(snake(setter.rstrip(":")))))
+        result.append(make_member(model, setter, [("value", t)], {"qualType": "void"}, static, introduced, ident(snake(setter.rstrip(":")))))
         result[1].role = "setter"
         result[1].prop = prop["name"]
         result[1].sdk_doc = sdk_doc

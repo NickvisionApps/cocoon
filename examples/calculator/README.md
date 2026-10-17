@@ -18,6 +18,7 @@ open build/examples/calculator/calculator.app
 - Liquid Glass buttons (`BezelStyle::Glass`) with tinted operator keys;
 - a monospaced digit display `Label`;
 - button `clicked()` signals capturing handles and shared state;
+- a settings window (Cmd+,) with a System/Light/Dark theme picker applied through `Application::set_appearance`;
 - UI-independent logic in a plain C++ class (`Engine`).
 
 ## Source
@@ -26,4 +27,6 @@ open build/examples/calculator/calculator.app
 |---|---|
 | `main.cpp` | Application setup and run loop |
 | `main_window.*` | The window, display and keypad |
+| `main_menu.*` | Menu bar with the Settings item |
+| `settings_window.*` | Settings window with the theme picker |
 | `engine.*` | Calculator state and arithmetic |

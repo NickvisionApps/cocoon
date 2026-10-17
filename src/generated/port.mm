@@ -15,11 +15,6 @@ namespace cocoon
     {
     }
 
-    void Port::add_connection(const Connection& conn, const RunLoop& run_loop, const std::string& mode) const
-    {
-        [cocoon::internal::ns<::NSPort>(this) addConnection:cocoon::internal::native<::NSConnection>(conn) toRunLoop:cocoon::internal::native<::NSRunLoop>(run_loop) forMode:cocoon::internal::to(mode)];
-    }
-
     Object Port::delegate() const
     {
         return cocoon::internal::wrap<Object>([cocoon::internal::ns<::NSPort>(this) delegate]);
@@ -33,11 +28,6 @@ namespace cocoon
     Port Port::port()
     {
         return cocoon::internal::wrap<Port>([::NSPort port]);
-    }
-
-    void Port::remove_connection(const Connection& conn, const RunLoop& run_loop, const std::string& mode) const
-    {
-        [cocoon::internal::ns<::NSPort>(this) removeConnection:cocoon::internal::native<::NSConnection>(conn) fromRunLoop:cocoon::internal::native<::NSRunLoop>(run_loop) forMode:cocoon::internal::to(mode)];
     }
 
     void Port::remove_from_run_loop(const RunLoop& run_loop, const std::string& mode) const

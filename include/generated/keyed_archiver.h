@@ -44,8 +44,6 @@ namespace cocoon
     {
     public:
         /// @brief Creates a new `NSKeyedArchiver` instance and returns a handle to it.
-        explicit KeyedArchiver(const std::vector<std::uint8_t>& data);
-        /// @brief Creates a new `NSKeyedArchiver` instance and returns a handle to it.
         explicit KeyedArchiver(bool requires_secure_coding);
         /// @brief Creates a new `NSKeyedArchiver` instance and returns a handle to it.
         explicit KeyedArchiver();
@@ -63,21 +61,6 @@ namespace cocoon
         using Coder::encode_int64;
         using Coder::encode_object;
         using Coder::requires_secure_coding;
-        /**
-     * @brief Calls `+[NSKeyedArchiver archiveRootObject:toFile:]`.
-     * @details Archives an object graph rooted at a given object to a file at a given path. \@DeprecationSummary { Use ''NSKeyedArchiver/archivedDataWithRootObject:requiringSecureCoding:error:'' and '-writeToURL:options:error:' instead. } This method archives the graph formed by the root object to a data object, then atomically writes it to the given path. The format of the archive is 'NSPropertyListBinaryFormat_v1_0'.
-     * @param root_object Argument converted to the Objective-C parameter of the same role.
-     * @param path Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static bool archive_root_object(const Object& root_object, const std::string& path);
-        /**
-     * @brief Calls `+[NSKeyedArchiver archivedDataWithRootObject:]`.
-     * @details Returns a data object that contains the encoded form of the object graph formed by the given root object. \@DeprecationSummary { Use ''NSKeyedArchiver/archivedDataWithRootObject:requiringSecureCoding:error:'' instead. } The format of the archive is 'NSPropertyListBinaryFormat_v1_0'.
-     * @param root_object Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static std::vector<std::uint8_t> archived_data_with_root_object(const Object& root_object);
         /**
      * @brief Calls `+[NSKeyedArchiver archivedDataWithRootObject:requiringSecureCoding:error:]`.
      * @details Returns an \\c NSData object containing the encoded form of the object graph whose root object is given, optionally disabling secure coding. If \\c NSSecureCoding cannot be used, \\c requiresSecureCoding may be turned off here; for improved security, however, \\c requiresSecureCoding should be left enabled whenever possible. \\c requiresSecureCoding ensures that all encoded objects conform to \\c NSSecureCoding, preventing the possibility of encoding objects which cannot be decoded later. If the object graph cannot be encoded, returns \\c nil and sets the \\c error out parameter.

@@ -420,11 +420,6 @@ namespace cocoon
         return cocoon::internal::from([cocoon::internal::ns<::NSURL>(this) lastPathComponent]);
     }
 
-    std::string URL::parameter_string() const
-    {
-        return cocoon::internal::from([cocoon::internal::ns<::NSURL>(this) parameterString]);
-    }
-
     std::string URL::password() const
     {
         return cocoon::internal::from([cocoon::internal::ns<::NSURL>(this) password]);

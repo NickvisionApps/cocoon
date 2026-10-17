@@ -33,9 +33,9 @@ namespace cocoon
      * auto name = managed_object_context.name();
      * managed_object_context.set_parent_context(cocoon::ManagedObjectContext());
      * auto parent_context = managed_object_context.parent_context();
-     * managed_object_context.lock();
      * managed_object_context.merge_changes_from_context_did_save_notification(cocoon::Notification());
      * managed_object_context.process_pending_changes();
+     * managed_object_context.redo();
      * @endcode
      * @see https://developer.apple.com/documentation/appkit/nsmanagedobjectcontext
      */
@@ -95,10 +95,6 @@ namespace cocoon
      * @param object Argument converted to the Objective-C parameter of the same role.
      */
         void insert_object(const Object& object) const;
-        /**
-     * @brief Calls `-[NSManagedObjectContext lock]`.
-     */
-        void lock() const;
         /**
      * @brief Calls `-[NSManagedObjectContext mergeChangesFromContextDidSaveNotification:]`.
      * @param notification Argument converted to the Objective-C parameter of the same role.
@@ -184,18 +180,9 @@ namespace cocoon
      */
         bool set_query_generation_from_token(const Object& generation) const;
         /**
-     * @brief Calls `-[NSManagedObjectContext tryLock]`.
-     * @return The converted Objective-C result.
-     */
-        bool try_lock() const;
-        /**
      * @brief Calls `-[NSManagedObjectContext undo]`.
      */
         void undo() const;
-        /**
-     * @brief Calls `-[NSManagedObjectContext unlock]`.
-     */
-        void unlock() const;
         /**
      * @brief Returns the `automaticallyMergesChangesFromParent` property of `NSManagedObjectContext`.
      * @return The converted Objective-C result.

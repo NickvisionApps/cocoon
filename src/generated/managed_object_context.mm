@@ -86,11 +86,6 @@ namespace cocoon
         [cocoon::internal::ns<::NSManagedObjectContext>(this) insertObject:cocoon::internal::native_id(object)];
     }
 
-    void ManagedObjectContext::lock() const
-    {
-        [cocoon::internal::ns<::NSManagedObjectContext>(this) lock];
-    }
-
     void ManagedObjectContext::merge_changes_from_context_did_save_notification(const Notification& notification) const
     {
         [cocoon::internal::ns<::NSManagedObjectContext>(this) mergeChangesFromContextDidSaveNotification:cocoon::internal::native<::NSNotification>(notification)];
@@ -214,19 +209,9 @@ namespace cocoon
         return static_cast<bool>(__r);
     }
 
-    bool ManagedObjectContext::try_lock() const
-    {
-        return static_cast<bool>([cocoon::internal::ns<::NSManagedObjectContext>(this) tryLock]);
-    }
-
     void ManagedObjectContext::undo() const
     {
         [cocoon::internal::ns<::NSManagedObjectContext>(this) undo];
-    }
-
-    void ManagedObjectContext::unlock() const
-    {
-        [cocoon::internal::ns<::NSManagedObjectContext>(this) unlock];
     }
 
     bool ManagedObjectContext::automatically_merges_changes_from_parent() const

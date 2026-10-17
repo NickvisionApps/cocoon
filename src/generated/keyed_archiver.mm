@@ -91,11 +91,6 @@
 
 namespace cocoon
 {
-    KeyedArchiver::KeyedArchiver(const std::vector<std::uint8_t>& data) : KeyedArchiver(Adopt{cocoon::internal::retain([[::NSKeyedArchiver alloc] initForWritingWithMutableData:cocoon::internal::to_mutable_data(data)])})
-    {
-        KeyedArchiver::install_delegate_delegate_(handle());
-    }
-
     KeyedArchiver::KeyedArchiver(bool requires_secure_coding) : KeyedArchiver(Adopt{cocoon::internal::retain([[::NSKeyedArchiver alloc] initRequiringSecureCoding:static_cast<::BOOL>(requires_secure_coding)])})
     {
         KeyedArchiver::install_delegate_delegate_(handle());
@@ -112,16 +107,6 @@ namespace cocoon
 
     KeyedArchiver::KeyedArchiver(Adopt adopt) : Coder(adopt)
     {
-    }
-
-    bool KeyedArchiver::archive_root_object(const Object& root_object, const std::string& path)
-    {
-        return static_cast<bool>([::NSKeyedArchiver archiveRootObject:cocoon::internal::native_id(root_object) toFile:cocoon::internal::to(path)]);
-    }
-
-    std::vector<std::uint8_t> KeyedArchiver::archived_data_with_root_object(const Object& root_object)
-    {
-        return cocoon::internal::from_data([::NSKeyedArchiver archivedDataWithRootObject:cocoon::internal::native_id(root_object)]);
     }
 
     std::vector<std::uint8_t> KeyedArchiver::archived_data_with_root_object(const Object& object, bool requires_secure_coding)

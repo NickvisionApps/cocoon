@@ -48,12 +48,15 @@ namespace cocoon
         TextSelectionManager(std::nullptr_t);
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit TextSelectionManager(Adopt adopt);
+#ifdef COCOON_MACOS_27
         /**
      * @brief Returns the `gesturesForFailureRequirements` property of `NSTextSelectionManager`.
      * @details The gesture recognizers managed by the selection manager. Other gesture recognizers in the view hierarchy can declare dependencies on these gestures using 'requireGestureRecognizerToFail:' to ensure proper gesture recognition precedence.
      * @return The converted Objective-C result.
      */
         std::vector<GestureRecognizer> gestures_for_failure_requirements() const;
+#endif
+
 #ifdef COCOON_MACOS_27
         /**
      * @brief Returns the `textSelectionMode` property of `NSTextSelectionManager`.

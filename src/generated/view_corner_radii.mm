@@ -16,25 +16,53 @@ namespace cocoon
     {
     }
 
+#ifdef COCOON_MACOS_27
     double ViewCornerRadii::bottom_left() const
     {
-        return static_cast<double>([cocoon::internal::ns<::NSViewCornerRadii>(this) bottomLeft]);
+        if (@available(macOS 27.0, *))
+        {
+            return static_cast<double>([cocoon::internal::ns<::NSViewCornerRadii>(this) bottomLeft]);
+        }
+        return {};
     }
 
+#endif
+
+#ifdef COCOON_MACOS_27
     double ViewCornerRadii::bottom_right() const
     {
-        return static_cast<double>([cocoon::internal::ns<::NSViewCornerRadii>(this) bottomRight]);
+        if (@available(macOS 27.0, *))
+        {
+            return static_cast<double>([cocoon::internal::ns<::NSViewCornerRadii>(this) bottomRight]);
+        }
+        return {};
     }
 
+#endif
+
+#ifdef COCOON_MACOS_27
     double ViewCornerRadii::top_left() const
     {
-        return static_cast<double>([cocoon::internal::ns<::NSViewCornerRadii>(this) topLeft]);
+        if (@available(macOS 27.0, *))
+        {
+            return static_cast<double>([cocoon::internal::ns<::NSViewCornerRadii>(this) topLeft]);
+        }
+        return {};
     }
 
+#endif
+
+#ifdef COCOON_MACOS_27
     double ViewCornerRadii::top_right() const
     {
-        return static_cast<double>([cocoon::internal::ns<::NSViewCornerRadii>(this) topRight]);
+        if (@available(macOS 27.0, *))
+        {
+            return static_cast<double>([cocoon::internal::ns<::NSViewCornerRadii>(this) topRight]);
+        }
+        return {};
     }
+
+#endif
 }
 
 #endif

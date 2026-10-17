@@ -8,7 +8,6 @@
 
 namespace cocoon
 {
-    class Connection;
     class Date;
     class RunLoop;
 
@@ -29,9 +28,9 @@ namespace cocoon
      * @code
      * cocoon::Port port{};
      * auto made_0 = cocoon::Port::port();
-     * port.add_connection(cocoon::Connection(), cocoon::RunLoop(), "text");
      * port.delegate();
      * port.invalidate();
+     * port.remove_from_run_loop(cocoon::RunLoop(), "text");
      * @endcode
      * @see https://developer.apple.com/documentation/foundation/nsport
      */
@@ -44,14 +43,6 @@ namespace cocoon
         Port(std::nullptr_t);
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit Port(Adopt adopt);
-        /**
-     * @brief Calls `-[NSPort addConnection:toRunLoop:forMode:]`.
-     * @details Adds a given connection to the receiver in a given run loop mode.
-     * @param conn Argument converted to the Objective-C parameter of the same role.
-     * @param run_loop Argument converted to the Objective-C parameter of the same role.
-     * @param mode Argument converted to the Objective-C parameter of the same role.
-     */
-        void add_connection(const Connection& conn, const RunLoop& run_loop, const std::string& mode) const;
         /**
      * @brief Calls `-[NSPort delegate]`.
      * @details Returns the receiver's delegate.
@@ -69,14 +60,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         static Port port();
-        /**
-     * @brief Calls `-[NSPort removeConnection:fromRunLoop:forMode:]`.
-     * @details Removes a given connection from the receiver in a given run loop mode.
-     * @param conn Argument converted to the Objective-C parameter of the same role.
-     * @param run_loop Argument converted to the Objective-C parameter of the same role.
-     * @param mode Argument converted to the Objective-C parameter of the same role.
-     */
-        void remove_connection(const Connection& conn, const RunLoop& run_loop, const std::string& mode) const;
         /**
      * @brief Calls `-[NSPort removeFromRunLoop:forMode:]`.
      * @details Removes the receiver from the run loop mode of the given run loop. You should not directly invoke this method. Instead, you should remove the port from the run loop.

@@ -17,16 +17,28 @@ namespace cocoon
 
     ScrollEdgeEffectStyle ScrollEdgeEffectStyle::automatic_style()
     {
-        return cocoon::internal::wrap<ScrollEdgeEffectStyle>([::NSScrollEdgeEffectStyle automaticStyle]);
+        if (@available(macOS 26.1, *))
+        {
+            return cocoon::internal::wrap<ScrollEdgeEffectStyle>([::NSScrollEdgeEffectStyle automaticStyle]);
+        }
+        return ScrollEdgeEffectStyle(nullptr);
     }
 
     ScrollEdgeEffectStyle ScrollEdgeEffectStyle::hard_style()
     {
-        return cocoon::internal::wrap<ScrollEdgeEffectStyle>([::NSScrollEdgeEffectStyle hardStyle]);
+        if (@available(macOS 26.1, *))
+        {
+            return cocoon::internal::wrap<ScrollEdgeEffectStyle>([::NSScrollEdgeEffectStyle hardStyle]);
+        }
+        return ScrollEdgeEffectStyle(nullptr);
     }
 
     ScrollEdgeEffectStyle ScrollEdgeEffectStyle::soft_style()
     {
-        return cocoon::internal::wrap<ScrollEdgeEffectStyle>([::NSScrollEdgeEffectStyle softStyle]);
+        if (@available(macOS 26.1, *))
+        {
+            return cocoon::internal::wrap<ScrollEdgeEffectStyle>([::NSScrollEdgeEffectStyle softStyle]);
+        }
+        return ScrollEdgeEffectStyle(nullptr);
     }
 }
