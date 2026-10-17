@@ -76,8 +76,7 @@ namespace calculator
         VStack content;
         content.set_spacing(8);
         content.set_alignment(LayoutAttribute::Width);
-        content.add_arranged_subview(display);
-        content.add_arranged_subview(grid);
+        content.add_arranged_subviews({display, grid});
         LayoutConstraint::activate_constraints({
             grid.leading_anchor().constraint_equal_to_anchor(content.leading_anchor()),
             grid.trailing_anchor().constraint_equal_to_anchor(content.trailing_anchor()),

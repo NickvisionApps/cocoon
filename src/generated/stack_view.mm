@@ -18,9 +18,9 @@
         return;
     }
     cocoon::Signal<cocoon::StackView, void(std::vector<cocoon::View>)>::emit((__bridge void*)strongHost, "will_detach_views", cocoon::internal::from_array<cocoon::View>(views, [](id e) -> cocoon::View
-                                                                                                                                                           {
-                                                                                                                                                               return cocoon::internal::wrap<cocoon::View>((::NSView*)e);
-                                                                                                                                                           }));
+                                                                                                                                                                         {
+                                                                                                                                                                             return cocoon::internal::wrap<cocoon::View>((::NSView*)e);
+                                                                                                                                                                         }));
 }
 
 - (void)stackView:(NSStackView*)stackView didReattachViews:(NSArray<NSView*>*)views
@@ -31,9 +31,9 @@
         return;
     }
     cocoon::Signal<cocoon::StackView, void(std::vector<cocoon::View>)>::emit((__bridge void*)strongHost, "did_reattach_views", cocoon::internal::from_array<cocoon::View>(views, [](id e) -> cocoon::View
-                                                                                                                                                            {
-                                                                                                                                                                return cocoon::internal::wrap<cocoon::View>((::NSView*)e);
-                                                                                                                                                            }));
+                                                                                                                                                                          {
+                                                                                                                                                                              return cocoon::internal::wrap<cocoon::View>((::NSView*)e);
+                                                                                                                                                                          }));
 }
 
 - (BOOL)respondsToSelector:(SEL)selector
@@ -130,10 +130,10 @@ namespace cocoon
     void StackView::set_views(const std::vector<View>& views, StackViewGravity gravity) const
     {
         [cocoon::internal::ns<::NSStackView>(this) setViews:cocoon::internal::to_array(views, [](const View& e) -> id
-                                                           {
-                                                               return cocoon::internal::native<::NSView>(e);
-                                                           })
-                                    inGravity:static_cast<::NSStackViewGravity>(gravity)];
+                                                                                       {
+                                                                                           return cocoon::internal::native<::NSView>(e);
+                                                                                       })
+                                                  inGravity:static_cast<::NSStackViewGravity>(gravity)];
     }
 
     void StackView::set_visibility_priority(float priority, const View& view) const
@@ -144,17 +144,17 @@ namespace cocoon
     StackView StackView::stack_view_with_views(const std::vector<View>& views)
     {
         return cocoon::internal::wrap<StackView>([::NSStackView stackViewWithViews:cocoon::internal::to_array(views, [](const View& e) -> id
-                                                                                  {
-                                                                                      return cocoon::internal::native<::NSView>(e);
-                                                                                  })]);
+                                                                                                              {
+                                                                                                                  return cocoon::internal::native<::NSView>(e);
+                                                                                                              })]);
     }
 
     std::vector<View> StackView::views_in_gravity(StackViewGravity gravity) const
     {
         return cocoon::internal::from_array<View>([cocoon::internal::ns<::NSStackView>(this) viewsInGravity:static_cast<::NSStackViewGravity>(gravity)], [](id e) -> View
-                                    {
-                                        return cocoon::internal::wrap<View>((::NSView*)e);
-                                    });
+                                                  {
+                                                      return cocoon::internal::wrap<View>((::NSView*)e);
+                                                  });
     }
 
     float StackView::visibility_priority_for_view(const View& view) const
@@ -175,17 +175,17 @@ namespace cocoon
     std::vector<View> StackView::arranged_subviews() const
     {
         return cocoon::internal::from_array<View>([cocoon::internal::ns<::NSStackView>(this) arrangedSubviews], [](id e) -> View
-                                    {
-                                        return cocoon::internal::wrap<View>((::NSView*)e);
-                                    });
+                                                  {
+                                                      return cocoon::internal::wrap<View>((::NSView*)e);
+                                                  });
     }
 
     std::vector<View> StackView::detached_views() const
     {
         return cocoon::internal::from_array<View>([cocoon::internal::ns<::NSStackView>(this) detachedViews], [](id e) -> View
-                                    {
-                                        return cocoon::internal::wrap<View>((::NSView*)e);
-                                    });
+                                                  {
+                                                      return cocoon::internal::wrap<View>((::NSView*)e);
+                                                  });
     }
 
     bool StackView::detaches_hidden_views() const
@@ -241,9 +241,17 @@ namespace cocoon
     std::vector<View> StackView::views() const
     {
         return cocoon::internal::from_array<View>([cocoon::internal::ns<::NSStackView>(this) views], [](id e) -> View
-                                    {
-                                        return cocoon::internal::wrap<View>((::NSView*)e);
-                                    });
+                                                  {
+                                                      return cocoon::internal::wrap<View>((::NSView*)e);
+                                                  });
+    }
+
+    void StackView::add_arranged_subviews(const std::vector<View>& views) const
+    {
+        for (const View& view : views)
+        {
+            [cocoon::internal::ns<NSStackView>(this) addArrangedSubview:cocoon::internal::native<NSView>(view)];
+        }
     }
 
     void StackView::install_delegate_delegate_(void* native)

@@ -38,8 +38,7 @@ namespace gallery
         PopUpButton theme;
         theme.add_items_with_titles({"System", "Light", "Dark"});
         theme.select_item_at_index(0);
-        row.add_arranged_subview(label);
-        row.add_arranged_subview(theme);
+        row.add_arranged_subviews({label, theme});
         pane.add_arranged_subview(row);
 
         theme.selection_changed().connect([application](std::int64_t index)

@@ -262,6 +262,15 @@ SPEC = {
         {
             "name": "StackView", "ns": "NSStackView", "base": "View",
             "ctors": [{"objc": "[[NSStackView alloc] init]"}],
+            "extra": [
+                {"decl": "void addArrangedSubviews(const std::vector<View>& views);",
+                 "impl": """void {cls}::addArrangedSubviews(const std::vector<View>& views)
+{
+    for (const View& view : views) {
+        [cocoon::internal::ns<NSStackView>(this) addArrangedSubview:cocoon::internal::native<NSView>(view)];
+    }
+}"""},
+            ],
         },
         {
             "name": "VStack", "alias": True, "ns": "NSStackView", "base": "StackView",
