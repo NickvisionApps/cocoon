@@ -500,8 +500,10 @@ def with_cast(ti, q):
     if ti.kind in ("ptr", "fnptr"):
         cast = clean_cast(q)
         ti.to = f"({cast})(@@)"
-    elif (ti.kind == "data" and "NSMutableData" in q) or (ti.kind == "handle" and re.search(r"\w\s*<[^>]*>\s*\*", q)):
-        ti.to = f"({clean_cast(q)})({ti.to})"
+    elif ti.kind == "data" and "NSMutableData" in q:
+        ti.to = "cocoon::internal::to_mutable_data(@@)"
+    elif ti.kind == "handle" and re.search(r"\w\s*<[^>]*>\s*\*", q):
+        ti.to = f"cocoon::internal::native<{clean_cast(q).rstrip(' *')}>(@@)"
     return ti
 
 

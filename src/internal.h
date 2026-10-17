@@ -116,6 +116,8 @@ namespace cocoon::internal
     }
 
     NSData* to_data(const std::vector<std::uint8_t>& value);
+
+    NSMutableData* to_mutable_data(const std::vector<std::uint8_t>& value);
     std::vector<std::uint8_t> from_data(NSData* value);
 
     std::vector<std::uint64_t> pack_var_args(const std::vector<cocoon::VarArg>& args);
