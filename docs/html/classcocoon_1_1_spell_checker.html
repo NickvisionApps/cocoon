@@ -104,8 +104,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aac6ce12ec217d04d59162ec929034532"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">-[NSSpellChecker guessesForWordRange:inString:language:inSpellDocumentWithTag:]</span>.  <br /></td></tr>
 <tr class="memitem:abe5678bc705b6a825b557d485556a86a" id="r_abe5678bc705b6a825b557d485556a86a"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#abe5678bc705b6a825b557d485556a86a">has_learned_word</a> (const std::string &amp;word) const</td></tr>
 <tr class="memdesc:abe5678bc705b6a825b557d485556a86a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">-[NSSpellChecker hasLearnedWord:]</span>.  <br /></td></tr>
-<tr class="memitem:a55004b124c576d1a2f2610673078c475" id="r_a55004b124c576d1a2f2610673078c475"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a55004b124c576d1a2f2610673078c475">ignore_grammar_range</a> (const <a class="el" href="structcocoon_1_1_range.html">Range</a> &amp;grammar_range, const std::string &amp;sentence, std::int64_t tag) const</td></tr>
-<tr class="memdesc:a55004b124c576d1a2f2610673078c475"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">-[NSSpellChecker ignoreGrammarRange:inSentence:inSpellDocumentWithTag:]</span>.  <br /></td></tr>
 <tr class="memitem:a44775a5bf9df4c98c0ff328b6b64cb65" id="r_a44775a5bf9df4c98c0ff328b6b64cb65"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a44775a5bf9df4c98c0ff328b6b64cb65">ignore_word</a> (const std::string &amp;word_to_ignore, std::int64_t tag) const</td></tr>
 <tr class="memdesc:a44775a5bf9df4c98c0ff328b6b64cb65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">-[NSSpellChecker ignoreWord:inSpellDocumentWithTag:]</span>.  <br /></td></tr>
 <tr class="memitem:aafa4be0dbc00610643ef6d42fdd792bf" id="r_aafa4be0dbc00610643ef6d42fdd792bf"><td class="memItemLeft">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight"><a class="el" href="#aafa4be0dbc00610643ef6d42fdd792bf">ignored_words_in_spell_document_with_tag</a> (std::int64_t tag) const</td></tr>
@@ -226,9 +224,9 @@ Static Public Member Functions</h2></td></tr>
 <div class="line"> </div>
 <div class="line"><a class="code hl_class" href="classcocoon_1_1_spell_checker.html">cocoon::SpellChecker</a> spell_checker;</div>
 <div class="line">spell_checker.<a class="code hl_function" href="#afdb31792f2d4d79a2c095d4049d67709">set_accessory_view</a>(<a class="code hl_class" href="classcocoon_1_1_view.html">cocoon::View</a>());</div>
-<div class="ttc" id="aclasscocoon_1_1_spell_checker_html"><div class="ttname"><a href="classcocoon_1_1_spell_checker.html">cocoon::SpellChecker</a></div><div class="ttdoc">C++ handle for the Objective-C class NSSpellChecker (AppKit).</div><div class="ttdef"><b>Definition</b> spell_checker.h:47</div></div>
+<div class="ttc" id="aclasscocoon_1_1_spell_checker_html"><div class="ttname"><a href="classcocoon_1_1_spell_checker.html">cocoon::SpellChecker</a></div><div class="ttdoc">C++ handle for the Objective-C class NSSpellChecker (AppKit).</div><div class="ttdef"><b>Definition</b> spell_checker.h:48</div></div>
 <div class="ttc" id="aclasscocoon_1_1_spell_checker_html_afdb31792f2d4d79a2c095d4049d67709"><div class="ttname"><a href="#afdb31792f2d4d79a2c095d4049d67709">cocoon::SpellChecker::set_accessory_view</a></div><div class="ttdeci">void set_accessory_view(const View &amp;value) const</div><div class="ttdoc">Sets the accessoryView property of NSSpellChecker.</div></div>
-<div class="ttc" id="aclasscocoon_1_1_view_html"><div class="ttname"><a href="classcocoon_1_1_view.html">cocoon::View</a></div><div class="ttdoc">The base of all views (NSView): hierarchy, geometry, Auto Layout helpers and appearance.</div><div class="ttdef"><b>Definition</b> view.h:76</div></div>
+<div class="ttc" id="aclasscocoon_1_1_view_html"><div class="ttname"><a href="classcocoon_1_1_view.html">cocoon::View</a></div><div class="ttdoc">The base of all views (NSView): hierarchy, geometry, Auto Layout helpers and appearance.</div><div class="ttdef"><b>Definition</b> view.h:77</div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_spell_checker.html">cocoon::SpellChecker</a> spell_checker{};</div>
 <div class="line">spell_checker.<a class="code hl_function" href="#afdb31792f2d4d79a2c095d4049d67709">set_accessory_view</a>(<a class="code hl_class" href="classcocoon_1_1_view.html">cocoon::View</a>());</div>
@@ -248,7 +246,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="ttc" id="aclasscocoon_1_1_spell_checker_html_ac383e7282d37b471c095dd83985fb775"><div class="ttname"><a href="#ac383e7282d37b471c095dd83985fb775">cocoon::SpellChecker::accessory_view</a></div><div class="ttdeci">View accessory_view() const</div><div class="ttdoc">Returns the accessoryView property of NSSpellChecker.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_spell_checker_html_ad862890e9963dbca6ca5cda74d2f8b14"><div class="ttname"><a href="#ad862890e9963dbca6ca5cda74d2f8b14">cocoon::SpellChecker::automatically_identifies_languages</a></div><div class="ttdeci">bool automatically_identifies_languages() const</div><div class="ttdoc">Returns the automaticallyIdentifiesLanguages property of NSSpellChecker.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_spell_checker_html_ada82c1578bc377c6933c511d41941d06"><div class="ttname"><a href="#ada82c1578bc377c6933c511d41941d06">cocoon::SpellChecker::set_automatically_identifies_languages</a></div><div class="ttdeci">void set_automatically_identifies_languages(bool value) const</div><div class="ttdoc">Sets the automaticallyIdentifiesLanguages property of NSSpellChecker.</div></div>
-<div class="ttc" id="aclasscocoon_1_1_view_controller_html"><div class="ttname"><a href="classcocoon_1_1_view_controller.html">cocoon::ViewController</a></div><div class="ttdoc">A view controller (NSViewController).</div><div class="ttdef"><b>Definition</b> view_controller.h:45</div></div>
+<div class="ttc" id="aclasscocoon_1_1_view_controller_html"><div class="ttname"><a href="classcocoon_1_1_view_controller.html">cocoon::ViewController</a></div><div class="ttdoc">A view controller (NSViewController).</div><div class="ttdef"><b>Definition</b> view_controller.h:46</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/appkit/nsspellchecker">https://developer.apple.com/documentation/appkit/nsspellchecker</a> </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -858,42 +856,6 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a55004b124c576d1a2f2610673078c475" name="a55004b124c576d1a2f2610673078c475"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a55004b124c576d1a2f2610673078c475">&#9670;&#160;</a></span>ignore_grammar_range()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void cocoon::SpellChecker::ignore_grammar_range </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structcocoon_1_1_range.html">Range</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>grammar_range</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>sentence</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::int64_t</td>          <td class="paramname"><span class="paramname"><em>tag</em></span>&#160;) const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">-[NSSpellChecker ignoreGrammarRange:inSentence:inSpellDocumentWithTag:]</span>. </p>
-<p>This method should be called to ignore a particular grammar issue. The sentence should be the portion of the text corresponding to the range of an NSTextCheckingResult of grammar type. The grammarRange should be the range within that sentence of an individual issue, taken from the NSGrammarRange entry of one of the grammarDetails of the same NSTextCheckingResult. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">grammar_range</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">sentence</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">tag</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
