@@ -34,9 +34,9 @@
                                                                                                                                                                                        {
                                                                                                                                                                                            return {};
                                                                                                                                                                                        }
-                                                                                                                                                                                       return [blk](cocoon::URLSessionAuthChallengeDisposition a286_0, cocoon::URLCredential a286_1) -> void
+                                                                                                                                                                                       return [blk](cocoon::URLSessionAuthChallengeDisposition a280_0, cocoon::URLCredential a280_1) -> void
                                                                                                                                                                                        {
-                                                                                                                                                                                           blk(static_cast<::NSURLSessionAuthChallengeDisposition>(a286_0), cocoon::internal::native<::NSURLCredential>(a286_1));
+                                                                                                                                                                                           blk(static_cast<::NSURLSessionAuthChallengeDisposition>(a280_0), cocoon::internal::native<::NSURLCredential>(a280_1));
                                                                                                                                                                                        };
                                                                                                                                                                                    }());
 }
@@ -75,9 +75,9 @@
                                                                                                                                                                                              {
                                                                                                                                                                                                  return {};
                                                                                                                                                                                              }
-                                                                                                                                                                                             return [blk](cocoon::URLSessionDelayedRequestDisposition a287_0, cocoon::URLRequest a287_1) -> void
+                                                                                                                                                                                             return [blk](cocoon::URLSessionDelayedRequestDisposition a281_0, cocoon::URLRequest a281_1) -> void
                                                                                                                                                                                              {
-                                                                                                                                                                                                 blk(static_cast<::NSURLSessionDelayedRequestDisposition>(a287_0), cocoon::internal::native<::NSURLRequest>(a287_1));
+                                                                                                                                                                                                 blk(static_cast<::NSURLSessionDelayedRequestDisposition>(a281_0), cocoon::internal::native<::NSURLRequest>(a281_1));
                                                                                                                                                                                              };
                                                                                                                                                                                          }());
 }
@@ -106,9 +106,9 @@
                                                                                                                                                                          {
                                                                                                                                                                              return {};
                                                                                                                                                                          }
-                                                                                                                                                                         return [blk](cocoon::URLRequest a288_0) -> void
+                                                                                                                                                                         return [blk](cocoon::URLRequest a282_0) -> void
                                                                                                                                                                          {
-                                                                                                                                                                             blk(cocoon::internal::native<::NSURLRequest>(a288_0));
+                                                                                                                                                                             blk(cocoon::internal::native<::NSURLRequest>(a282_0));
                                                                                                                                                                          };
                                                                                                                                                                      }());
 }
@@ -127,9 +127,9 @@
                                                                                                                                                                                                                {
                                                                                                                                                                                                                    return {};
                                                                                                                                                                                                                }
-                                                                                                                                                                                                               return [blk](cocoon::URLSessionAuthChallengeDisposition a289_0, cocoon::URLCredential a289_1) -> void
+                                                                                                                                                                                                               return [blk](cocoon::URLSessionAuthChallengeDisposition a283_0, cocoon::URLCredential a283_1) -> void
                                                                                                                                                                                                                {
-                                                                                                                                                                                                                   blk(static_cast<::NSURLSessionAuthChallengeDisposition>(a289_0), cocoon::internal::native<::NSURLCredential>(a289_1));
+                                                                                                                                                                                                                   blk(static_cast<::NSURLSessionAuthChallengeDisposition>(a283_0), cocoon::internal::native<::NSURLCredential>(a283_1));
                                                                                                                                                                                                                };
                                                                                                                                                                                                            }());
 }
@@ -148,9 +148,9 @@
                                                                                                                              {
                                                                                                                                  return {};
                                                                                                                              }
-                                                                                                                             return [blk](cocoon::InputStream a290_0) -> void
+                                                                                                                             return [blk](cocoon::InputStream a284_0) -> void
                                                                                                                              {
-                                                                                                                                 blk(cocoon::internal::native<::NSInputStream>(a290_0));
+                                                                                                                                 blk(cocoon::internal::native<::NSInputStream>(a284_0));
                                                                                                                              };
                                                                                                                          }());
 }
@@ -169,9 +169,9 @@
                                                                                                                                            {
                                                                                                                                                return {};
                                                                                                                                            }
-                                                                                                                                           return [blk](cocoon::InputStream a291_0) -> void
+                                                                                                                                           return [blk](cocoon::InputStream a285_0) -> void
                                                                                                                                            {
-                                                                                                                                               blk(cocoon::internal::native<::NSInputStream>(a291_0));
+                                                                                                                                               blk(cocoon::internal::native<::NSInputStream>(a285_0));
                                                                                                                                            };
                                                                                                                                        }());
 }

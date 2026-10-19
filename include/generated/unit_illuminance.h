@@ -10,7 +10,6 @@ namespace cocoon
 {
     /**
      * @brief C++ handle for the Objective-C class `NSUnitIlluminance` (Foundation).
-     * @details A unit of measure for illuminance. You typically use instances of ''NSUnitIlluminance'' to represent specific quantities of illuminance using the ''NSMeasurement'' class. \#\#\# Illuminance Illuminance is the luminous flux incident on a surface. The SI unit for illuminance is the lux (lx), which is derived as one lumen per square meter (1lm / 1m2). The ''NSUnitIlluminance'' class defines its ''Dimension/baseUnit()'' as ''lux''. | Name | Method | Symbol | |---|---|---| | Lux | ''lux'' | lx |
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      * Inherits from @ref Dimension.
      *
@@ -32,7 +31,7 @@ namespace cocoon
         explicit UnitIlluminance(Adopt adopt);
         /**
      * @brief Returns the `lux` property of `NSUnitIlluminance`.
-     * @details The lux unit of illuminance.
+     * @details Base unit - lux
      * @return The converted Objective-C result.
      */
         static UnitIlluminance lux();

@@ -12,7 +12,6 @@ namespace cocoon
 
     /**
      * @brief C++ handle for the Objective-C class `NSMessagePortNameServer` (Foundation).
-     * @details \@DeprecationSummary { Use ''NSXPCConnection'' instead. } A server takes and returns message ports. This port name server takes and returns instances of ''MessagePort''. Port removal functionality is not supported in ''NSMessagePortNameServer''; if you want to cancel a service, you have to destroy the port (invalidate the ''MessagePort'' object given to ''NSPortNameServer/registerPort:name:'').
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      * Inherits from @ref PortNameServer.
      *
@@ -44,14 +43,12 @@ namespace cocoon
         using PortNameServer::port_for_name;
         /**
      * @brief Calls `-[NSMessagePortNameServer portForName:]`.
-     * @details Looks up and returns the port registered under the specified name.
      * @param name Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
      */
         Port port_for_name(const std::string& name) const;
         /**
      * @brief Calls `-[NSMessagePortNameServer portForName:host:]`.
-     * @details Looks up and returns the port registered under the specified name on a given host. This name server is a local-only server; the host parameter must be an empty string or 'nil'.
      * @param name Argument converted to the Objective-C parameter of the same role.
      * @param host Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
@@ -59,7 +56,6 @@ namespace cocoon
         Port port_for_name(const std::string& name, const std::string& host) const;
         /**
      * @brief Calls `+[NSMessagePortNameServer sharedInstance]`.
-     * @details Returns the shared instance of the message port name server.
      * @return The converted Objective-C result.
      */
         static Object shared_instance();

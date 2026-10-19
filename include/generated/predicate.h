@@ -10,7 +10,6 @@ namespace cocoon
 {
     /**
      * @brief C++ handle for the Objective-C class `NSPredicate` (Foundation).
-     * @details A definition of logical conditions for constraining a search for a fetch or for in-memory filtering. Predicates represent logical conditions, which you can use to filter collections of objects. Although it's common to create predicates directly from instances of ''NSComparisonPredicate'', ''NSCompoundPredicate'', and ''NSExpression'', you often create predicates from a format string that the class methods parse on ''NSPredicate''. Examples of predicate format strings include: - Simple comparisons, such as 'grade == "7"' or 'firstName like "Juan"' - Case- and diacritic-insensitive lookups, such as 'name contains[cd] "stein"' - Logical operations, such as '(firstName like "Mei") OR (lastName like "Chen")' - Temporal range constraints, such as 'date between {$YESTERDAY, $TOMORROW}' - Relational conditions, such as 'group.name like "work"' - Aggregate operations, such as '\@sum.items.price \< 1000' For a complete syntax reference, refer to the [Predicate Programming Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Predicates/AdditionalChapters/Introduction.html\#//apple_ref/doc/uid/TP40001789). You can also create predicates that include variables using the ''evaluate(with:substitutionVariables:)'' method so that you can predefine the predicate before substituting concrete values at runtime.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      *
      * @par Example
@@ -41,7 +40,6 @@ namespace cocoon
         explicit Predicate(Adopt adopt);
         /**
      * @brief Calls `-[NSPredicate allowEvaluation]`.
-     * @details Forces a securely decoded predicate to allow evaluation. When securely decoding 'NSPredicate' objects encoded using 'NSSecureCoding', evaluation is disabled because it is potentially unsafe to evaluate predicates you get out of an archive. Before you enable evaluation, you should validate key paths, selectors, and other details to ensure no erroneous or malicious code will be executed. Once you've verified the predicate, you can enable the receiver for evaluation by calling 'allowEvaluation'.
      */
         void allow_evaluation() const;
         /**
@@ -52,14 +50,12 @@ namespace cocoon
         bool allow_evaluation_with_validator(const Object& validator) const;
         /**
      * @brief Calls `-[NSPredicate evaluateWithObject:]`.
-     * @details Returns a Boolean value that indicates whether the specified object matches the conditions that the predicate specifies.
      * @param object Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
      */
         bool evaluate_with_object(const Object& object) const;
         /**
      * @brief Calls `-[NSPredicate evaluateWithObject:substitutionVariables:]`.
-     * @details Returns a Boolean value that indicates whether the specified object matches the conditions that the predicate specifies after substituting in the values from a specified variables dictionary. This method returns the same result as the two step process of first invoking 'predicateWithSubstitutionVariables:' on the predicate and then invoking 'evaluateWithObject:' on the returned value. This method is optimized for situations which require repeatedly evaluating a predicate with substitution variables with different variable substitutions.
      * @param object Argument converted to the Objective-C parameter of the same role.
      * @param bindings Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
@@ -67,14 +63,12 @@ namespace cocoon
         bool evaluate_with_object(const Object& object, const std::map<std::string, Object>& bindings) const;
         /**
      * @brief Calls `+[NSPredicate predicateFromMetadataQueryString:]`.
-     * @details Creates a predicate with a metadata query string.
      * @param query_string Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
      */
         static Predicate predicate_from_metadata_query_string(const std::string& query_string);
         /**
      * @brief Calls `+[NSPredicate predicateWithBlock:]`.
-     * @details Creates a predicate that evaluates using a specified block object and bindings dictionary. In macOS 10.6 and later, Core Data supports block-based predicates in the in-memory and atomic stores, but not in the SQLite-based store.
      * @param block Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
      */
@@ -93,7 +87,6 @@ namespace cocoon
         static Predicate predicate_with_format_(const std::string& predicate_format, const std::vector<VarArg>& args);
         /**
      * @brief Calls `+[NSPredicate predicateWithFormat:argumentArray:]`.
-     * @details Parse predicateFormat and return an appropriate predicate
      * @param predicate_format Argument converted to the Objective-C parameter of the same role.
      * @param arguments Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
@@ -101,7 +94,6 @@ namespace cocoon
         static Predicate predicate_with_format(const std::string& predicate_format, const std::vector<Object>& arguments);
         /**
      * @brief Calls `+[NSPredicate predicateWithFormat:arguments:]`.
-     * @details Creates a predicate by substituting the values in an argument list into a format string and parsing the result.
      * @param predicate_format Argument converted to the Objective-C parameter of the same role.
      * @param arg_list Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
@@ -109,21 +101,18 @@ namespace cocoon
         static Predicate predicate_with_format(const std::string& predicate_format, char* arg_list);
         /**
      * @brief Calls `-[NSPredicate predicateWithSubstitutionVariables:]`.
-     * @details Returns a copy of the predicate and substitutes the predicates variables with specified values from a specified substitution variables dictionary. The predicate itself is not modified by this method, so you can reuse it for any number of substitutions.
      * @param variables Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
      */
         Predicate predicate_with_substitution_variables(const std::map<std::string, Object>& variables) const;
         /**
      * @brief Calls `+[NSPredicate predicateWithValue:]`.
-     * @details Creates and returns a predicate that always evaluates to a specified Boolean value.
      * @param value Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
      */
         static Predicate predicate_with_value(bool value);
         /**
      * @brief Returns the `predicateFormat` property of `NSPredicate`.
-     * @details The predicate's format string. The return value of this property is not guaranteed to be the same as the string used to create the predicate using 'predicateWithFormat:' or similar methods.
      * @return The converted Objective-C result.
      */
         std::string predicate_format() const;

@@ -12,7 +12,6 @@ namespace cocoon
 
     /**
      * @brief C++ handle for the Objective-C class `NSSetCommand` (Foundation).
-     * @details A command that sets one or more attributes or relationships to one or more values. An instance of 'NSSetCommand' sets one or more attributes or relationships to one or more values; for example, it may set the (x, y) coordinates for a window's position or set the name of a document. 'NSSetCommand' is part of Cocoa's built-in scripting support. It works automatically to support the 'set' command through key-value coding. Most applications don't need to subclass 'NSSetCommand' or call its methods. 'NSSetCommand' uses available scripting class descriptions to determine whether it should set a value for an attribute (or property), or set a value for all elements (to-many objects). For the latter, it invokes \<doc://com.apple.documentation/documentation/objectivec/nsobject-swift.class/replacevalue(at:inpropertywithkey:withvalue:)>; for the former, it invokes \<doc://com.apple.documentation/documentation/objectivec/nsobject-swift.class/setvalue(:forkey:)> (or, if the receiver overrides \<doc://com.apple.documentation/documentation/objectivec/nsobject-swift.class/takevalue(:forkey:)>, it invokes that method, to support backward binary compatibility.) For information on working with 'set' commands, see [Getting and Setting Properties and Elements](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ScriptableCocoaApplications/SApps_get_set/SAppsGetSet.html\#//apple_ref/doc/uid/TP40002164-CH18) in [Cocoa Scripting Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ScriptableCocoaApplications/SApps_intro/SAppsIntro.html\#//apple_ref/doc/uid/TP40002164).
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      * Inherits from @ref ScriptCommand.
      *
@@ -43,13 +42,11 @@ namespace cocoon
         using ScriptCommand::set_receivers_specifier;
         /**
      * @brief Calls `-[NSSetCommand setReceiversSpecifier:]`.
-     * @details Splits off the inner-most child specifier from the receivers specifier.
      * @param receivers_ref Argument converted to the Objective-C parameter of the same role.
      */
         void set_receivers_specifier(const ScriptObjectSpecifier& receivers_ref) const;
         /**
      * @brief Returns the `keySpecifier` property of `NSSetCommand`.
-     * @details The key specifier for the set operation.
      * @return The converted Objective-C result.
      */
         ScriptObjectSpecifier key_specifier() const;

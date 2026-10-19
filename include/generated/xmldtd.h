@@ -14,7 +14,7 @@ namespace cocoon
 
     /**
      * @brief C++ handle for the Objective-C class `NSXMLDTD` (Foundation).
-     * @details A representation of a Document Type Definition. An instance of the ''XMLDTD'' class is held as a property of an ''XMLDocument'' instance, accessed through the ''XMLDocument'' property ''XMLDocument/dtd''. In the data model, an ''XMLDTD'' object is conceptually similar to namespace and attribute nodes: it is not considered to be a child of the ''XMLDocument'' object although it is closely associated with it. It is at the "root" of a shallow tree consisting primarily of nodes representing DTD declarations. Acceptable child nodes are instances of the ''XMLDTDNode'' class as well as ''XMLNode'' objects representing comment nodes and processing-instruction nodes. You create an 'NSXMLDTD' object in one of three ways: - By processing an XML document with its own internal (in-line) DTD - By process a standalone (external) DTD - Programmatically Once an ''XMLDTD'' instance is in place, you can add, remove, and change the ''XMLDTDNode'' objects representing various DTD declarations. When you write the document out as XML, the new or modified internal DTD is included (assuming you set the DTD in the ''XMLDocument'' instance). You may also programmatically create an external DTD and write that out to its own file.
+     * @details \@class NSXMLDTD \@abstract Defines the order, repetition, and allowable values for a document
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      * Inherits from @ref XMLNode.
      *
@@ -55,13 +55,13 @@ namespace cocoon
         explicit XMLDTD(Adopt adopt);
         /**
      * @brief Calls `-[NSXMLDTD addChild:]`.
-     * @details Adds a child node to the end of the list of existing children. - Parameter child: The node object to add to the existing children.
+     * @details \@method addChild: \@abstract Adds a child to the end of the existing children.
      * @param child Argument converted to the Objective-C parameter of the same role.
      */
         void add_child(const XMLNode& child) const;
         /**
      * @brief Calls `-[NSXMLDTD attributeDeclarationForName:elementName:]`.
-     * @details Returns the DTD node representing an attribute-list declaration for a given attribute and its element. - Parameters: - name: A string object identifying the name of an attribute. - elementName: A string object identifying the name of an element. - Returns: An autoreleased ''XMLDTDNode'' object, or 'nil' if there is no matching attribute-list declaration. For example, in the attribute-list declaration '\<!ATTLIST person idnum CDATA "0000">', "idnum" would correspond to 'attrName' and "person" would correspond to 'elementName'.
+     * @details \@method attributeDeclarationForName: \@abstract Returns the attribute declaration matching this name.
      * @param name Argument converted to the Objective-C parameter of the same role.
      * @param element_name Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
@@ -69,86 +69,86 @@ namespace cocoon
         XMLDTDNode attribute_declaration_for_name(const std::string& name, const std::string& element_name) const;
         /**
      * @brief Calls `-[NSXMLDTD elementDeclarationForName:]`.
-     * @details Returns the DTD node representing an element declaration for a specified element. - Parameter name: A string that is the name of an element. - Returns: An autoreleased ''XMLDTDNode'' object, or 'nil' if there is no match.
+     * @details \@method elementDeclarationForName: \@abstract Returns the element declaration matching this name.
      * @param name Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
      */
         XMLDTDNode element_declaration_for_name(const std::string& name) const;
         /**
      * @brief Calls `-[NSXMLDTD entityDeclarationForName:]`.
-     * @details Returns the DTD node representing the entity declaration matching this name. - Parameter name: A string that is the name of an entity. - Returns: An autoreleased ''XMLDTDNode'' object, or 'nil' if there is no match.
+     * @details \@method entityDeclarationForName: \@abstract Returns the entity declaration matching this name.
      * @param name Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
      */
         XMLDTDNode entity_declaration_for_name(const std::string& name) const;
         /**
      * @brief Calls `-[NSXMLDTD insertChild:atIndex:]`.
-     * @details Inserts a child node in the receiver's list of children at a specific location in the list. - Parameters: - child: An XML-node object that represents the child to insert. - index: An integer identifying the location in the receiver's list of children to insert 'child'. The indices of subsequent children in the list are incremented by one.
+     * @details \@method insertChild:atIndex: \@abstract Inserts a child at a particular index.
      * @param child Argument converted to the Objective-C parameter of the same role.
      * @param index Argument converted to the Objective-C parameter of the same role.
      */
         void insert_child(const XMLNode& child, std::uint64_t index) const;
         /**
      * @brief Calls `-[NSXMLDTD insertChildren:atIndex:]`.
-     * @details Inserts an array of child nodes at a specified location in the receiver's list of children. - Parameters: - children: An array of ''XMLNode'' objects to insert as children of the receiver. - index: An integer identifying the location in the list of current children to make the insertion. The indices of subsequent children in the list are incremented by the number of inserted children.
+     * @details \@method insertChildren:atIndex: \@abstract Insert several children at a particular index.
      * @param children Argument converted to the Objective-C parameter of the same role.
      * @param index Argument converted to the Objective-C parameter of the same role.
      */
         void insert_children(const std::vector<XMLNode>& children, std::uint64_t index) const;
         /**
      * @brief Calls `-[NSXMLDTD notationDeclarationForName:]`.
-     * @details Returns the DTD node representing the notation declaration identified by the specified notation name. - Parameter name: A string that is the name of a notation. - Returns: An autoreleased ''XMLDTDNode'' object, or 'nil' if there is no match.
+     * @details \@method notationDeclarationForName: \@abstract Returns the notation declaration matching this name.
      * @param name Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
      */
         XMLDTDNode notation_declaration_for_name(const std::string& name) const;
         /**
      * @brief Calls `+[NSXMLDTD predefinedEntityDeclarationForName:]`.
-     * @details Returns a DTD node representing the predefined entity declaration with the specified name. - Parameter name: A string identifying a predefined entity declaration. - Returns: An autoreleased ''XMLDTDNode'' object, or 'nil' if there is no match for 'name'. The five predefined entity references (or character references) are '&lt;' (less-than sign), '&gt;' (greater-than sign), '&amp;' (ampersand), '&quot;' (quotation mark), and '&apos;' (apostrophe).
+     * @details \@method predefinedEntityDeclarationForName: \@abstract Returns the predefined entity declaration matching this name. \@discussion The five predefined entities are \<ul>\<li>&amp;lt; - &lt;\</li>\<li>&amp;gt; - &gt;\</li>\<li>&amp;amp; - &amp;\</li>\<li>&amp;quot; - &quot;\</li>\<li>&amp;apos; - &amp;\</li>\</ul>
      * @param name Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
      */
         static XMLDTDNode predefined_entity_declaration_for_name(const std::string& name);
         /**
      * @brief Calls `-[NSXMLDTD removeChildAtIndex:]`.
-     * @details Removes the child node at a particular location in the receiver's list of children. - Parameter index: An integer identifying the child node to remove. The indices of subsequent children in the list are decremented by one. The removed child node is released.
+     * @details \@method removeChildAtIndex: \@abstract Removes a child at a particular index.
      * @param index Argument converted to the Objective-C parameter of the same role.
      */
         void remove_child_at_index(std::uint64_t index) const;
         /**
      * @brief Calls `-[NSXMLDTD replaceChildAtIndex:withNode:]`.
-     * @details Replaces a child at a particular index with another child. - Parameters: - index: An integer identifying the position of a node in the receiver's list of child nodes. - node: An ''XMLNode'' object to replace the object at 'index'. The replaced child node is released.
+     * @details \@method replaceChildAtIndex:withNode: \@abstract Replaces a child at a particular index with another child.
      * @param index Argument converted to the Objective-C parameter of the same role.
      * @param node Argument converted to the Objective-C parameter of the same role.
      */
         void replace_child_at_index(std::uint64_t index, const XMLNode& node) const;
         /**
      * @brief Calls `-[NSXMLDTD setChildren:]`.
-     * @details Removes all existing children of the receiver and replaces them with an array of new child nodes. - Parameter children: An array of ''XMLNode'' objects. To remove all existing children, pass in 'nil'. Replaced or removed child nodes are released.
+     * @details \@method setChildren: \@abstract Removes all existing children and replaces them with the new children. Set children to nil to simply remove all children.
      * @param children Argument converted to the Objective-C parameter of the same role.
      */
         void set_children(const std::vector<XMLNode>& children) const;
         /**
      * @brief Returns the `publicID` property of `NSXMLDTD`.
-     * @details Returns the receiver's public identifier. This identifier should be in the default catalog in '/etc/xml/catalog' or in a path specified by the environment variable 'XML_CATALOG_FILES'. When the public id is set the system id must also be set.
+     * @details \@abstract Sets the public id. This identifier should be in the default catalog in /etc/xml/catalog or in a path specified by the environment variable XML_CATALOG_FILES. When the public id is set the system id must also be set.
      * @return The converted Objective-C result.
      */
         std::string public_id() const;
         /**
      * @brief Sets the `publicID` property of `NSXMLDTD`.
-     * @details Returns the receiver's public identifier. This identifier should be in the default catalog in '/etc/xml/catalog' or in a path specified by the environment variable 'XML_CATALOG_FILES'. When the public id is set the system id must also be set.
+     * @details \@abstract Sets the public id. This identifier should be in the default catalog in /etc/xml/catalog or in a path specified by the environment variable XML_CATALOG_FILES. When the public id is set the system id must also be set.
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_public_id(const std::string& value) const;
         /**
      * @brief Returns the `systemID` property of `NSXMLDTD`.
-     * @details Returns the receiver's system identifier. This should be a URL that points to a valid DTD.
+     * @details \@abstract Sets the system id. This should be a URL that points to a valid DTD.
      * @return The converted Objective-C result.
      */
         std::string system_id() const;
         /**
      * @brief Sets the `systemID` property of `NSXMLDTD`.
-     * @details Returns the receiver's system identifier. This should be a URL that points to a valid DTD.
+     * @details \@abstract Sets the system id. This should be a URL that points to a valid DTD.
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_system_id(const std::string& value) const;

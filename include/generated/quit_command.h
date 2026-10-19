@@ -10,7 +10,6 @@ namespace cocoon
 {
     /**
      * @brief C++ handle for the Objective-C class `NSQuitCommand` (Foundation).
-     * @details A command that quits the specified app. The quit command may optionally specify how to handle modified documents (automatically save changes, don't save them, or ask the user). For details, see the description for the 'quit' command in "Apple Events Sent By the Mac OS" in [How Cocoa Applications Handle Apple Events](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ScriptableCocoaApplications/SApps_handle_AEs/SAppsHandleAEs.html\#//apple_ref/doc/uid/20001239) in [Cocoa Scripting Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ScriptableCocoaApplications/SApps_intro/SAppsIntro.html\#//apple_ref/doc/uid/TP40002164). 'NSQuitCommand' is part of Cocoa's built-in scripting support. Most applications don't need to subclass 'NSQuitCommand' or call its methods.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      * Inherits from @ref ScriptCommand.
      *
@@ -33,7 +32,6 @@ namespace cocoon
         explicit QuitCommand(Adopt adopt);
         /**
      * @brief Returns the `saveOptions` property of `NSQuitCommand`.
-     * @details The save options specified by the command.
      * @return The converted Objective-C result.
      */
         SaveOptions save_options() const;

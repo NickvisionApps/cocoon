@@ -10,7 +10,6 @@ namespace cocoon
 {
     /**
      * @brief C++ handle for the Objective-C class `NSMetadataQueryResultGroup` (Foundation).
-     * @details The 'NSMetadataQueryResultGroup' class represents a collection of grouped attribute results returned by an ''NSMetadataQuery'' object.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      *
      * @par Example
@@ -39,38 +38,32 @@ namespace cocoon
         explicit MetadataQueryResultGroup(Adopt adopt);
         /**
      * @brief Calls `-[NSMetadataQueryResultGroup resultAtIndex:]`.
-     * @details Returns the result at the specified index within this group.
      * @param idx Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
      */
         Object result_at_index(std::uint64_t idx) const;
         /**
      * @brief Returns the `attribute` property of `NSMetadataQueryResultGroup`.
-     * @details The attribute name for this result group.
      * @return The converted Objective-C result.
      */
         std::string attribute() const;
         /**
      * @brief Returns the `resultCount` property of `NSMetadataQueryResultGroup`.
-     * @details The number of results in this group.
      * @return The converted Objective-C result.
      */
         std::uint64_t result_count() const;
         /**
      * @brief Returns the `results` property of `NSMetadataQueryResultGroup`.
-     * @details An array containing the results in this group. This is for K-V Bindings, and causes side-effects on the query.
      * @return The converted Objective-C result.
      */
         std::vector<Object> results() const;
         /**
      * @brief Returns the `subgroups` property of `NSMetadataQueryResultGroup`.
-     * @details An array of subgroups for this result group, or nil if this is a leaf group.
      * @return The converted Objective-C result.
      */
         std::vector<MetadataQueryResultGroup> subgroups() const;
         /**
      * @brief Returns the `value` property of `NSMetadataQueryResultGroup`.
-     * @details The attribute value for this result group.
      * @return The converted Objective-C result.
      */
         Object value() const;

@@ -2037,8 +2037,6 @@ namespace cocoon
         static std::string source_text_scaling_document_attribute();
         /// @brief Value of the SDK constant `NSCocoaVersionDocumentAttribute`.
         static std::string cocoa_version_document_attribute();
-        /// @brief Value of the SDK constant `NSPaperMarginDocumentAttribute`.
-        static std::string paper_margin_document_attribute();
         /// @brief Value of the SDK constant `NSConvertedDocumentAttribute`.
         static std::string converted_document_attribute();
         /// @brief Value of the SDK constant `NSFileTypeDocumentAttribute`.
@@ -3618,10 +3616,6 @@ namespace cocoon
         static std::string text_checking_selected_range_key();
         /// @brief Value of the SDK constant `NSTextCheckingGenerateInlinePredictionsKey`.
         static std::string text_checking_generate_inline_predictions_key();
-        /// @brief Value of the SDK constant `NSTextCheckingAutomaticCapitalizationEnabledKey`.
-        static std::string text_checking_automatic_capitalization_enabled_key();
-        /// @brief Value of the SDK constant `NSTextCheckingWaitForAllGrammarCheckingResultsKey`.
-        static std::string text_checking_wait_for_all_grammar_checking_results_key();
     };
 
     /** @brief Named constants of type `NSTextContentType`; each function reads the SDK symbol at runtime. */

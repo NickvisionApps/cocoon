@@ -13,7 +13,7 @@ namespace cocoon
 
     /**
      * @brief C++ handle for the Objective-C class `NSSpellServer` (Foundation).
-     * @details A server that your app uses to provide a spell checker service to other apps running in the system. A service provider is an application that declares its availability in a standard way, so that any other applications that wish to use it can do so. If you build a spelling checker that makes use of the ''NSSpellServer'' class and list it as an available service, then users of any application that makes use of \<doc://com.apple.documentation/documentation/appkit/nsspellchecker> or includes a Services menu will see your spelling checker as one of the available dictionaries.
+     * @details The server just handles all the checking in and IAC and delegates the real work to its delegate. A single server can handle more than one language. Services is used to rendezvous applications with servers.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      *
      * @par Example
@@ -48,7 +48,7 @@ namespace cocoon
         explicit SpellServer(Adopt adopt);
         /**
      * @brief Calls `-[NSSpellServer isWordInUserDictionaries:caseSensitive:]`.
-     * @details Indicates whether a given word is in the user's list of learned words, regardless of the language.
+     * @details Way to query user's private dictionary(ies).
      * @param word Argument converted to the Objective-C parameter of the same role.
      * @param flag Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
@@ -56,7 +56,7 @@ namespace cocoon
         bool is_word_in_user_dictionaries(const std::string& word, bool flag) const;
         /**
      * @brief Calls `-[NSSpellServer registerLanguage:byVendor:]`.
-     * @details Registers the given language for the receiver with the given vendor name.
+     * @details Used to check in
      * @param language Argument converted to the Objective-C parameter of the same role.
      * @param vendor Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
@@ -64,7 +64,7 @@ namespace cocoon
         bool register_language(const std::string& language, const std::string& vendor) const;
         /**
      * @brief Calls `-[NSSpellServer run]`.
-     * @details Causes the receiver to start listening for spell-checking requests.
+     * @details Waits for spell-check request to come in.
      */
         void run() const;
         /// @brief Signal for the delegate/data-source method behind `find_misspelled_word_in_string_language_word_count_count_only`; connect a callback with `find_misspelled_word_in_string_language_word_count_count_only().connect(...)`.

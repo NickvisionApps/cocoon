@@ -11,8 +11,6 @@ namespace cocoon
     class Menu;
     class StatusBar;
     class StatusBarButton;
-    class StatusItemExpandedInterfaceSession;
-    class View;
 
     /**
      * @brief C++ handle for the Objective-C class `NSStatusItem` (AppKit).
@@ -23,22 +21,19 @@ namespace cocoon
      * #include <cocoon.h>
      *
      * cocoon::StatusItem status_item;
-     * status_item.set_action("text");
-     * status_item.did_begin_expanded_interface_session().connect([](auto&&...) {});
+     * status_item.set_autosave_name("text");
      * @endcode
      *
      * @par Common tasks
      * Snippets built from this class's own members (values are placeholders).
      * @code
      * cocoon::StatusItem status_item{};
-     * status_item.set_action("text");
-     * auto action = status_item.action();
      * status_item.set_autosave_name("text");
      * auto autosave_name = status_item.autosave_name();
      * status_item.set_behavior(cocoon::StatusItemBehavior::RemovalAllowed);
      * auto behavior = status_item.behavior();
-     * status_item.did_begin_expanded_interface_session().connect([](cocoon::StatusItemExpandedInterfaceSession a0) {});
-     * status_item.did_end_expanded_interface_session_animated().connect([](bool a0) {});
+     * status_item.set_length(1);
+     * auto length = status_item.length();
      * @endcode
      * @see https://developer.apple.com/documentation/appkit/nsstatusitem
      */
@@ -51,16 +46,6 @@ namespace cocoon
         StatusItem(std::nullptr_t);
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit StatusItem(Adopt adopt);
-        /**
-     * @brief Returns the `action` property of `NSStatusItem`.
-     * @return The converted Objective-C result.
-     */
-        std::string action() const;
-        /**
-     * @brief Sets the `action` property of `NSStatusItem`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
-        void set_action(const std::string& value) const;
         /**
      * @brief Returns the `autosaveName` property of `NSStatusItem`.
      * @details Specifies a unique name for persisting visibility information. If none is specified, one is automatically chosen. Apps with multiple status bar items should set an autosave after creation. Setting to nil resets the automatically chosen name and clears saved information.
@@ -91,15 +76,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         StatusBarButton button() const;
-#ifdef COCOON_MACOS_27
-        /**
-     * @brief Returns the `expandedInterfaceSession` property of `NSStatusItem`.
-     * @details A session object tracking the lifecycle of a currently showing expanded interface, if any. Will be set to a valid session object before invocation of -statusItem:didBeginExpandedInterfaceSession:, and cleared to nil before invocation of -statusItemDidEndExpandedInterfaceSession:animated: on the expandedInterfaceDelegate.
-     * @return The converted Objective-C result.
-     */
-        StatusItemExpandedInterfaceSession expanded_interface_session() const;
-#endif
-
         /**
      * @brief Returns the `length` property of `NSStatusItem`.
      * @details The amount of space in the status bar that should be allocated to the receiver. \\c NSVariableStatusItemLength will adjust the length to the size of the status item's contents and \\c NSSquareStatusItemLength will keep the length the same as the status bar's height.
@@ -131,30 +107,6 @@ namespace cocoon
      */
         StatusBar status_bar() const;
         /**
-     * @brief Returns the `target` property of `NSStatusItem`.
-     * @details An optional target/action to be invoked when using a custom view rather than -button. Status items with no -expandedInterfaceDelegate and which use -view will receive this when interacted with.
-     * @return The converted Objective-C result.
-     */
-        Object target() const;
-        /**
-     * @brief Sets the `target` property of `NSStatusItem`.
-     * @details An optional target/action to be invoked when using a custom view rather than -button. Status items with no -expandedInterfaceDelegate and which use -view will receive this when interacted with.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
-        void set_target(const Object& value) const;
-        /**
-     * @brief Returns the `view` property of `NSStatusItem`.
-     * @details An optional view to display in the status bar instead of -button. -button is preferred in most cases as it can alter its appearance automatically.
-     * @return The converted Objective-C result.
-     */
-        View view() const;
-        /**
-     * @brief Sets the `view` property of `NSStatusItem`.
-     * @details An optional view to display in the status bar instead of -button. -button is preferred in most cases as it can alter its appearance automatically.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
-        void set_view(const View& value) const;
-        /**
      * @brief Returns the `visible` property of `NSStatusItem`.
      * @details Specifies if the status item is currently visible in the status bar, even if it is obscured by the application menu. Defaults to YES. Persisted based on the -autosaveName. This is observable through KVO.
      * @return The converted Objective-C result.
@@ -166,25 +118,5 @@ namespace cocoon
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_visible(bool value) const;
-#ifdef COCOON_MACOS_27
-        /// @brief Signal for the delegate/data-source method behind `did_begin_expanded_interface_session`; connect a callback with `did_begin_expanded_interface_session().connect(...)`.
-        Signal<StatusItem, void(StatusItemExpandedInterfaceSession)> did_begin_expanded_interface_session() const
-        {
-            return Signal<StatusItem, void(StatusItemExpandedInterfaceSession)>(handle(), "did_begin_expanded_interface_session");
-        }
-#endif
-
-#ifdef COCOON_MACOS_27
-        /// @brief Signal for the delegate/data-source method behind `did_end_expanded_interface_session_animated`; connect a callback with `did_end_expanded_interface_session_animated().connect(...)`.
-        Signal<StatusItem, void(bool)> did_end_expanded_interface_session_animated() const
-        {
-            return Signal<StatusItem, void(bool)>(handle(), "did_end_expanded_interface_session_animated");
-        }
-#endif
-
-    protected:
-#ifdef COCOON_MACOS_27
-        static void install_expanded_interface_delegate_delegate_(void* native);
-#endif
     };
 }

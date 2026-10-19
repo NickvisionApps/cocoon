@@ -57,7 +57,6 @@ namespace cocoon
         void add_layout_manager(const LayoutManager& a_layout_manager) const;
         /**
      * @brief Calls `-[NSTextStorage edited:range:changeInLength:]`.
-     * @details Tracks changes made to the text storage object, allowing the text storage to record the full extent of changes. If there are no outstanding 'beginEditing' calls, this method calls ''processEditing'' to trigger post-editing processes. This method has to be called by the primitives after changes are made if subclassed and overridden. 'editedRange' is the range in the original string (before the edit). - Parameters: - editedMask: The type of edit (attributes, characters, or both). - editedRange: The range in the original string before the edit. - delta: The change in length resulting from the edit.
      * @param edited_mask Argument converted to the Objective-C parameter of the same role.
      * @param edited_range Argument converted to the Objective-C parameter of the same role.
      * @param delta Argument converted to the Objective-C parameter of the same role.
@@ -65,19 +64,16 @@ namespace cocoon
         void edited(TextStorageEditActions edited_mask, const Range& edited_range, std::int64_t delta) const;
         /**
      * @brief Calls `-[NSTextStorage ensureAttributesAreFixedInRange:]`.
-     * @details Ensures all attributes in the range are validated and ready to be used. A lazy 'NSTextStorage' is required to call this method before accessing any attributes. This gives the attribute fixing a chance to occur if necessary. Subclasses that wish to support laziness must call it from all attribute accessors that they implement. - Parameters: - range: The range to ensure attributes are fixed in.
      * @param range Argument converted to the Objective-C parameter of the same role.
      */
         void ensure_attributes_are_fixed_in_range(const Range& range) const;
         /**
      * @brief Calls `-[NSTextStorage invalidateAttributesInRange:]`.
-     * @details Notes the range of attributes that requires validation. If the 'NSTextStorage' is not lazy this just calls 'fixAttributesInRange:'. If it is lazy this instead just records the range needing fixing in order to do it later. - Parameters: - range: The range of attributes to invalidate.
      * @param range Argument converted to the Objective-C parameter of the same role.
      */
         void invalidate_attributes_in_range(const Range& range) const;
         /**
      * @brief Calls `-[NSTextStorage processEditing]`.
-     * @details Sends out delegate notifications, fixes the attributes, and notifies text storage observer of the change. Sends '-textStorage:willProcessEditing', fixes the attributes, sends '-textStorage:didProcessEditing', and notifies the text storage observer of change with '-processEditingForTextStorage:edited:range:changeInLength:invalidatedRange:'. Invoked from ''edited:range:changeInLength:'' or 'endEditing'.
      */
         void process_editing() const;
         /**
@@ -97,7 +93,6 @@ namespace cocoon
         void set_attribute_runs(const std::vector<TextStorage>& value) const;
         /**
      * @brief Returns the `changeInLength` property of `NSTextStorage`.
-     * @details The difference between the current length of the edited range and its length before editing.
      * @return The converted Objective-C result.
      */
         std::int64_t change_in_length() const;
@@ -113,19 +108,16 @@ namespace cocoon
         void set_characters(const std::vector<TextStorage>& value) const;
         /**
      * @brief Returns the `editedMask` property of `NSTextStorage`.
-     * @details A mask that describes the kinds of edits pending for the text storage object.
      * @return The converted Objective-C result.
      */
         TextStorageEditActions edited_mask() const;
         /**
      * @brief Returns the `editedRange` property of `NSTextStorage`.
-     * @details The range of text that contains changes. '{NSNotFound, 0}' when there is no pending changes.
      * @return The converted Objective-C result.
      */
         Range edited_range() const;
         /**
      * @brief Returns the `fixesAttributesLazily` property of `NSTextStorage`.
-     * @details A Boolean value that indicates whether the receiver fixes invalidated attributes lazily. The concrete UIKit subclass fixes attributes lazily by default. The abstract class (hence, all custom subclasses) is not lazy.
      * @return The converted Objective-C result.
      */
         bool fixes_attributes_lazily() const;
@@ -166,13 +158,11 @@ namespace cocoon
         void set_paragraphs(const std::vector<TextStorage>& value) const;
         /**
      * @brief Returns the `textStorageObserver` property of `NSTextStorage`.
-     * @details An object conforming to 'NSTextStorageObserving' that observes and retains the text storage.
      * @return The converted Objective-C result.
      */
         Object text_storage_observer() const;
         /**
      * @brief Sets the `textStorageObserver` property of `NSTextStorage`.
-     * @details An object conforming to 'NSTextStorageObserving' that observes and retains the text storage.
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_text_storage_observer(const Object& value) const;

@@ -48,37 +48,31 @@ namespace cocoon
         explicit TextViewportLayoutController(Adopt adopt);
         /**
      * @brief Calls `-[NSTextViewportLayoutController adjustViewportByVerticalOffset:]`.
-     * @details Adjusts the viewport rect by the specified offset if needed. This is used to artificially move the viewport without affecting viewport content. The offset can be both positive and negative. - Parameters: - verticalOffset: The vertical offset to adjust by.
      * @param vertical_offset Argument converted to the Objective-C parameter of the same role.
      */
         void adjust_viewport_by_vertical_offset(double vertical_offset) const;
         /**
      * @brief Calls `-[NSTextViewportLayoutController layoutViewport]`.
-     * @details Performs layout in the viewport.
      */
         void layout_viewport() const;
         /**
      * @brief Calls `-[NSTextViewportLayoutController relocateViewportToTextLocation:]`.
-     * @details Relocates the viewport to start with the specified location. This is used to programmatically scroll to the specified location. - Parameters: - textLocation: The document location to scroll to. - Returns: The suggested viewport anchor point.
      * @param text_location Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
      */
         double relocate_viewport_to_text_location(const Object& text_location) const;
         /**
      * @brief Returns the `textLayoutManager` property of `NSTextViewportLayoutController`.
-     * @details The text layout manager for this viewport layout controller.
      * @return The converted Objective-C result.
      */
         TextLayoutManager text_layout_manager() const;
         /**
      * @brief Returns the `viewportBounds` property of `NSTextViewportLayoutController`.
-     * @details The visible bounds of the view, plus the overdraw area. Not KVO-compliant.
      * @return The converted Objective-C result.
      */
         Rect viewport_bounds() const;
         /**
      * @brief Returns the `viewportRange` property of `NSTextViewportLayoutController`.
-     * @details The text range of the current viewport layout. Not KVO-compliant.
      * @return The converted Objective-C result.
      */
         TextRange viewport_range() const;
@@ -101,24 +95,6 @@ namespace cocoon
         Signal<TextViewportLayoutController, void()> did_layout() const
         {
             return Signal<TextViewportLayoutController, void()>(handle(), "did_layout");
-        }
-#ifdef COCOON_MACOS_27
-        /// @brief Signal for the delegate/data-source method behind `cache_rendering_surface_for_key`; connect a callback with `cache_rendering_surface_for_key().connect(...)`.
-        Signal<TextViewportLayoutController, void(Object, Object)> cache_rendering_surface_for_key() const
-        {
-            return Signal<TextViewportLayoutController, void(Object, Object)>(handle(), "cache_rendering_surface_for_key");
-        }
-#endif
-
-        /// @brief Signal for the delegate/data-source method behind `retrieve_cached_rendering_surface_for_key`; connect a callback with `retrieve_cached_rendering_surface_for_key().connect(...)`.
-        Signal<TextViewportLayoutController, Object(Object)> retrieve_cached_rendering_surface_for_key() const
-        {
-            return Signal<TextViewportLayoutController, Object(Object)>(handle(), "retrieve_cached_rendering_surface_for_key");
-        }
-        /// @brief Signal for the delegate/data-source method behind `received_set_needs_layout`; connect a callback with `received_set_needs_layout().connect(...)`.
-        Signal<TextViewportLayoutController, void()> received_set_needs_layout() const
-        {
-            return Signal<TextViewportLayoutController, void()>(handle(), "received_set_needs_layout");
         }
 
     protected:

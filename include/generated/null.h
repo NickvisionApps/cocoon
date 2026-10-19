@@ -10,7 +10,6 @@ namespace cocoon
 {
     /**
      * @brief C++ handle for the Objective-C class `NSNull` (Foundation).
-     * @details A singleton object used to represent null values in collection objects that don't allow 'nil' values. ''NSNull'' is "toll-free bridged" with its Core Foundation counterpart, \<doc://com.apple.documentation/documentation/corefoundation/cfnull>. See [Toll-Free Bridging](https://developer.apple.com/library/archive/documentation/General/Conceptual/CocoaEncyclopedia/Toll-FreeBridgin/Toll-FreeBridgin.html\#//apple_ref/doc/uid/TP40010810-CH2) for more information on toll-free bridging.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      *
      * @par Example
@@ -39,7 +38,6 @@ namespace cocoon
         explicit Null(Adopt adopt);
         /**
      * @brief Calls `+[NSNull null]`.
-     * @details Returns the singleton instance of 'NSNull'.
      * @return The converted Objective-C result.
      */
         static Null null();

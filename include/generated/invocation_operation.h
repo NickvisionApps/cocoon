@@ -12,7 +12,6 @@ namespace cocoon
 
     /**
      * @brief C++ handle for the Objective-C class `NSInvocationOperation` (Foundation).
-     * @details An operation that manages the execution of a single encapsulated task specified as an invocation. The ''NSInvocationOperation'' class is a concrete subclass of ''Operation'' that you use to initiate an operation that consists of invoking a selector on a specified object. This class implements a non-concurrent operation. For more information on concurrent versus non-concurrent operations, see ''Operation''.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      * Inherits from @ref Operation.
      *
@@ -39,13 +38,11 @@ namespace cocoon
         explicit InvocationOperation(Adopt adopt);
         /**
      * @brief Returns the `invocation` property of `NSInvocationOperation`.
-     * @details The receiver's invocation object. The invocation object identifying the target object, selector, and parameters to use to execute the operation's task.
      * @return The converted Objective-C result.
      */
         Invocation invocation() const;
         /**
      * @brief Returns the `result` property of `NSInvocationOperation`.
-     * @details The result of the invocation or method. The object returned by the method or an 'NSValue' object containing the return value if it is not an object. 'nil' if the method or invocation is not finished executing.
      * @return The converted Objective-C result.
      */
         Object result() const;

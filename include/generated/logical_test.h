@@ -13,7 +13,6 @@ namespace cocoon
 
     /**
      * @brief C++ handle for the Objective-C class `NSLogicalTest` (Foundation).
-     * @details A script whose test that combines other tests using logical AND, OR, or NOT operations.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      * Inherits from @ref ScriptWhoseTest.
      *

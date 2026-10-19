@@ -122,23 +122,6 @@ namespace cocoon
                                                                                                                     source:cocoon::internal::native_id(source)]);
     }
 
-#ifdef COCOON_MACOS_27
-    DraggingSession View::begin_dragging_session_with_items(const std::vector<DraggingItem>& items, const GestureRecognizer& gesture, const Object& source) const
-    {
-        if (@available(macOS 27.0, *))
-        {
-            return cocoon::internal::wrap<DraggingSession>([cocoon::internal::ns<::NSView>(this) beginDraggingSessionWithItems:cocoon::internal::to_array(items, [](const DraggingItem& e) -> id
-                                                                                                                                                          {
-                                                                                                                                                              return cocoon::internal::native<::NSDraggingItem>(e);
-                                                                                                                                                          })
-                                                                                                                       gesture:cocoon::internal::native<::NSGestureRecognizer>(gesture)
-                                                                                                                        source:cocoon::internal::native_id(source)]);
-        }
-        return DraggingSession(nullptr);
-    }
-
-#endif
-
     void View::begin_page_in_rect(const Rect& rect, const Point& location) const
     {
         [cocoon::internal::ns<::NSView>(this) beginPageInRect:cocoon::internal::to(rect) atPlacement:cocoon::internal::to(location)];
@@ -401,17 +384,6 @@ namespace cocoon
     {
         return cocoon::internal::wrap<View>([cocoon::internal::ns<::NSView>(this) hitTest:cocoon::internal::to(point)]);
     }
-
-#ifdef COCOON_MACOS_27
-    void View::invalidate_corner_configuration() const
-    {
-        if (@available(macOS 27.0, *))
-        {
-            [cocoon::internal::ns<::NSView>(this) invalidateCornerConfiguration];
-        }
-    }
-
-#endif
 
     void View::invalidate_intrinsic_content_size() const
     {
@@ -769,17 +741,6 @@ namespace cocoon
         [cocoon::internal::ns<::NSView>(this) viewDidChangeEffectiveAppearance];
     }
 
-#ifdef COCOON_MACOS_27
-    void View::view_did_change_effective_corner_radii() const
-    {
-        if (@available(macOS 27.0, *))
-        {
-            [cocoon::internal::ns<::NSView>(this) viewDidChangeEffectiveCornerRadii];
-        }
-    }
-
-#endif
-
     void View::view_did_end_live_resize() const
     {
         [cocoon::internal::ns<::NSView>(this) viewDidEndLiveResize];
@@ -1045,18 +1006,6 @@ namespace cocoon
                                                                                            })];
     }
 
-#ifdef COCOON_MACOS_27
-    ViewCornerConfiguration View::corner_configuration() const
-    {
-        if (@available(macOS 27.0, *))
-        {
-            return cocoon::internal::wrap<ViewCornerConfiguration>([cocoon::internal::ns<::NSView>(this) cornerConfiguration]);
-        }
-        return ViewCornerConfiguration(nullptr);
-    }
-
-#endif
-
     FocusRingType View::default_focus_ring_type()
     {
         return static_cast<FocusRingType>([::NSView defaultFocusRingType]);
@@ -1072,18 +1021,6 @@ namespace cocoon
         return static_cast<bool>([cocoon::internal::ns<::NSView>(this) isDrawingFindIndicator]);
     }
 
-#ifdef COCOON_MACOS_27
-    ViewCornerRadii View::effective_corner_radii() const
-    {
-        if (@available(macOS 27.0, *))
-        {
-            return cocoon::internal::wrap<ViewCornerRadii>([cocoon::internal::ns<::NSView>(this) effectiveCornerRadii]);
-        }
-        return ViewCornerRadii(nullptr);
-    }
-
-#endif
-
     MenuItem View::enclosing_menu_item() const
     {
         return cocoon::internal::wrap<MenuItem>([cocoon::internal::ns<::NSView>(this) enclosingMenuItem]);
@@ -1093,29 +1030,6 @@ namespace cocoon
     {
         return cocoon::internal::wrap<ScrollView>([cocoon::internal::ns<::NSView>(this) enclosingScrollView]);
     }
-
-#ifdef COCOON_MACOS_27
-    ViewExclusiveGestureBehavior View::exclusive_gesture_behavior() const
-    {
-        if (@available(macOS 27.0, *))
-        {
-            return static_cast<ViewExclusiveGestureBehavior>([cocoon::internal::ns<::NSView>(this) exclusiveGestureBehavior]);
-        }
-        return {};
-    }
-
-#endif
-
-#ifdef COCOON_MACOS_27
-    void View::set_exclusive_gesture_behavior(ViewExclusiveGestureBehavior value) const
-    {
-        if (@available(macOS 27.0, *))
-        {
-            [cocoon::internal::ns<::NSView>(this) setExclusiveGestureBehavior:static_cast<::NSViewExclusiveGestureBehavior>(value)];
-        }
-    }
-
-#endif
 
     LayoutYAxisAnchor View::first_baseline_anchor() const
     {
@@ -1564,29 +1478,6 @@ namespace cocoon
     {
         return static_cast<std::int64_t>([cocoon::internal::ns<::NSView>(this) tag]);
     }
-
-#ifdef COCOON_MACOS_27
-    TextSelectionManager View::text_selection_manager() const
-    {
-        if (@available(macOS 27.0, *))
-        {
-            return cocoon::internal::wrap<TextSelectionManager>([cocoon::internal::ns<::NSView>(this) textSelectionManager]);
-        }
-        return TextSelectionManager(nullptr);
-    }
-
-#endif
-
-#ifdef COCOON_MACOS_27
-    void View::set_text_selection_manager(const TextSelectionManager& value) const
-    {
-        if (@available(macOS 27.0, *))
-        {
-            [cocoon::internal::ns<::NSView>(this) setTextSelectionManager:cocoon::internal::native<::NSTextSelectionManager>(value)];
-        }
-    }
-
-#endif
 
     std::string View::tool_tip() const
     {

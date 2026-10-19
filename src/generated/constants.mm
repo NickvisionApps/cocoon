@@ -3800,10 +3800,6 @@ namespace cocoon
     {
         return cocoon::internal::from(cocoon::internal::load_symbol<NSString*>("NSCocoaVersionDocumentAttribute", nil));
     }
-    std::string AttributedStringDocumentAttributeKey::paper_margin_document_attribute()
-    {
-        return cocoon::internal::from(cocoon::internal::load_symbol<NSString*>("NSPaperMarginDocumentAttribute", nil));
-    }
     std::string AttributedStringDocumentAttributeKey::converted_document_attribute()
     {
         return cocoon::internal::from(cocoon::internal::load_symbol<NSString*>("NSConvertedDocumentAttribute", nil));
@@ -6466,14 +6462,6 @@ namespace cocoon
     std::string TextCheckingOptionKey::text_checking_generate_inline_predictions_key()
     {
         return cocoon::internal::from(cocoon::internal::load_symbol<NSString*>("NSTextCheckingGenerateInlinePredictionsKey", nil));
-    }
-    std::string TextCheckingOptionKey::text_checking_automatic_capitalization_enabled_key()
-    {
-        return cocoon::internal::from(cocoon::internal::load_symbol<NSString*>("NSTextCheckingAutomaticCapitalizationEnabledKey", nil));
-    }
-    std::string TextCheckingOptionKey::text_checking_wait_for_all_grammar_checking_results_key()
-    {
-        return cocoon::internal::from(cocoon::internal::load_symbol<NSString*>("NSTextCheckingWaitForAllGrammarCheckingResultsKey", nil));
     }
 
     std::string TextContentType::username()

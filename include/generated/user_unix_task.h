@@ -13,7 +13,7 @@ namespace cocoon
 
     /**
      * @brief C++ handle for the Objective-C class `NSUserUnixTask` (Foundation).
-     * @details An object that executes unix applications. The ''NSUserUnixTask'' class is intended to run unix applications, typically a shell script, from your application. It is intended to execute user-supplied scripts, and will execute them outside of the application's sandbox, if any. The class is not intended to execute scripts built into an application; for that, use one of the ''Process'', ''NSAppleScript'', or \<doc://com.apple.documentation/documentation/automator/amworkflow> classes. If the application is sandboxed, then the script must be in the ''FileManager/SearchPathDirectory/applicationScriptsDirectory'' folder. A sandboxed application may read from, but not write to, this folder. If you simply need to execute unix scripts without regard to input or output, use ''NSUserScriptTask'', which can execute any of the specific types. If you need specific control over the input to, or output from, or the error stream of the script, use this class.
+     * @details NSUserUnixTask: a Unix executable file, typically a shell script.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      * Inherits from @ref UserScriptTask.
      *
@@ -55,37 +55,31 @@ namespace cocoon
         void execute_with_arguments(const std::vector<std::string>& arguments, std::function<void(Error)> handler) const;
         /**
      * @brief Returns the `standardError` property of `NSUserUnixTask`.
-     * @details The standard error stream. Setting to 'nil' will bind the stream to '/dev/null'. The default is 'nil'.
      * @return The converted Objective-C result.
      */
         FileHandle standard_error() const;
         /**
      * @brief Sets the `standardError` property of `NSUserUnixTask`.
-     * @details The standard error stream. Setting to 'nil' will bind the stream to '/dev/null'. The default is 'nil'.
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_standard_error(const FileHandle& value) const;
         /**
      * @brief Returns the `standardInput` property of `NSUserUnixTask`.
-     * @details The standard input stream. Setting to 'nil' will bind the stream to '/dev/null'. The default is 'nil'.
      * @return The converted Objective-C result.
      */
         FileHandle standard_input() const;
         /**
      * @brief Sets the `standardInput` property of `NSUserUnixTask`.
-     * @details The standard input stream. Setting to 'nil' will bind the stream to '/dev/null'. The default is 'nil'.
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_standard_input(const FileHandle& value) const;
         /**
      * @brief Returns the `standardOutput` property of `NSUserUnixTask`.
-     * @details The standard output stream. Setting to 'nil' will bind the stream to '/dev/null'. The default is 'nil'.
      * @return The converted Objective-C result.
      */
         FileHandle standard_output() const;
         /**
      * @brief Sets the `standardOutput` property of `NSUserUnixTask`.
-     * @details The standard output stream. Setting to 'nil' will bind the stream to '/dev/null'. The default is 'nil'.
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_standard_output(const FileHandle& value) const;

@@ -930,17 +930,6 @@ namespace cocoon
         [::NSTextView registerForServices];
     }
 
-#ifdef COCOON_MACOS_27
-    void TextView::register_text_attachment_view_provider_reuse_policy(TextAttachmentViewProviderReusePolicy policy, const std::string& view_provider_type) const
-    {
-        if (@available(macOS 27.0, *))
-        {
-            [cocoon::internal::ns<::NSTextView>(this) registerTextAttachmentViewProviderReusePolicy:static_cast<::NSTextAttachmentViewProviderReusePolicy>(policy) forTextAttachmentViewProviderType:NSClassFromString(cocoon::internal::to(view_provider_type))];
-        }
-    }
-
-#endif
-
     void TextView::replace_text_container(const TextContainer& new_container) const
     {
         [cocoon::internal::ns<::NSTextView>(this) replaceTextContainer:cocoon::internal::native<::NSTextContainer>(new_container)];
@@ -1092,50 +1081,6 @@ namespace cocoon
         return cocoon::internal::wrap<TextView>([::NSTextView textViewUsingTextLayoutManager:static_cast<::BOOL>(using_text_layout_manager)]);
     }
 
-#ifdef COCOON_MACOS_27
-    void TextView::text_viewport_layout_controller(const TextViewportLayoutController& text_viewport_layout_controller, const TextLayoutFragment& text_layout_fragment) const
-    {
-        if (@available(macOS 27.0, *))
-        {
-            [cocoon::internal::ns<::NSTextView>(this) textViewportLayoutController:cocoon::internal::native<::NSTextViewportLayoutController>(text_viewport_layout_controller) configureRenderingSurfaceForTextLayoutFragment:cocoon::internal::native<::NSTextLayoutFragment>(text_layout_fragment)];
-        }
-    }
-
-#endif
-
-#ifdef COCOON_MACOS_27
-    void TextView::text_viewport_layout_controller_did_layout(const TextViewportLayoutController& text_viewport_layout_controller) const
-    {
-        if (@available(macOS 27.0, *))
-        {
-            [cocoon::internal::ns<::NSTextView>(this) textViewportLayoutControllerDidLayout:cocoon::internal::native<::NSTextViewportLayoutController>(text_viewport_layout_controller)];
-        }
-    }
-
-#endif
-
-#ifdef COCOON_MACOS_27
-    void TextView::text_viewport_layout_controller_received_set_needs_layout(const TextViewportLayoutController& text_viewport_layout_controller) const
-    {
-        if (@available(macOS 27.0, *))
-        {
-            [cocoon::internal::ns<::NSTextView>(this) textViewportLayoutControllerReceivedSetNeedsLayout:cocoon::internal::native<::NSTextViewportLayoutController>(text_viewport_layout_controller)];
-        }
-    }
-
-#endif
-
-#ifdef COCOON_MACOS_27
-    void TextView::text_viewport_layout_controller_will_layout(const TextViewportLayoutController& text_viewport_layout_controller) const
-    {
-        if (@available(macOS 27.0, *))
-        {
-            [cocoon::internal::ns<::NSTextView>(this) textViewportLayoutControllerWillLayout:cocoon::internal::native<::NSTextViewportLayoutController>(text_viewport_layout_controller)];
-        }
-    }
-
-#endif
-
     void TextView::tighten_kerning(const Object& sender) const
     {
         [cocoon::internal::ns<::NSTextView>(this) tightenKerning:cocoon::internal::native_id(sender)];
@@ -1265,18 +1210,6 @@ namespace cocoon
     {
         return cocoon::internal::wrap<Object>([cocoon::internal::ns<::NSTextView>(this) validRequestorForSendType:cocoon::internal::to(send_type) returnType:cocoon::internal::to(return_type)]);
     }
-
-#ifdef COCOON_MACOS_27
-    Rect TextView::viewport_bounds_for_text_viewport_layout_controller(const TextViewportLayoutController& text_viewport_layout_controller) const
-    {
-        if (@available(macOS 27.0, *))
-        {
-            return cocoon::internal::from([cocoon::internal::ns<::NSTextView>(this) viewportBoundsForTextViewportLayoutController:cocoon::internal::native<::NSTextViewportLayoutController>(text_viewport_layout_controller)]);
-        }
-        return {};
-    }
-
-#endif
 
     bool TextView::write_selection_to_pasteboard(const Pasteboard& pboard, const std::string& type) const
     {

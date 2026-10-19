@@ -10,7 +10,6 @@ namespace cocoon
 {
     /**
      * @brief C++ handle for the Objective-C class `NSEnumerator` (Foundation).
-     * @details An abstract class whose subclasses enumerate collections of objects, such as arrays and dictionaries.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      * Use the typed template @ref Enumerator to supply ObjectType.
      *
@@ -40,13 +39,11 @@ namespace cocoon
         explicit EnumeratorBase(Adopt adopt);
         /**
      * @brief Calls `-[NSEnumerator nextObject]`.
-     * @details Returns the next object from the collection being enumerated.
      * @return The converted Objective-C result.
      */
         Object next_object() const;
         /**
      * @brief Returns the `allObjects` property of `NSEnumerator`.
-     * @details The array of unenumerated objects.
      * @return The converted Objective-C result.
      */
         std::vector<Object> all_objects() const;

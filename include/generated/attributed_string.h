@@ -21,7 +21,6 @@ namespace cocoon
 
     /**
      * @brief C++ handle for the Objective-C class `NSAttributedString` (Foundation).
-     * @details A string of text that manages data, layout, and stylistic information for ranges of characters to support rendering. ''NSAttributedString'' is a type you use to manage strings of stylized Unicode text. In addition to text, an attributed string contains key-value pairs known as attributes that specify additional information to apply to ranges of characters within the string. Attributed strings support many different kinds of attributes, including: - Rendering attributes that specify font, color, kern, ligature, and other details - Attributes for attachments and adaptive image glyphs - Semantic attributes such as link URLs or tool-tip information - Language attributes to support automatic gender agreement and text layout - Accessibility attributes that provide information for assistive technologies - Attributes that summarize details of the Markdown import process - Custom attributes you define for your app Use attributed strings anywhere you need styled text, or when you need to associate additional information with your text. Because ''NSAttributedString'' is an immutable type, you specify all of the text and attributes for it at creation time and can't change them later. You can create attributed strings directly from a string of characters and a dictionary of attributes. You can also create attributed strings from the contents of a file, including files that contain RTF, RTFD, HTML, Markdown, or other file formats. If you need to modify the contents of an attributed string later, use the ''NSMutableAttributedString'' type instead. If you create an ''NSAttributedString'' without any font information, the string's default font is Helvetica 12-point, which might differ from the default system font for the platform. To change the font, specify a font attribute at creation time. \#\#\# Persistence Be aware of how you persist attributed strings to and from the disk. RTF and RTFD are the preferred format for attributed strings because they offer the best fidelity for reading and writing attribute data. The RTF formats support a large number of standard attributes, and Apple extends the formats to support many Apple-specific attributes. If you define custom attributes for ranges of characters, store them separately alongside the RTF file for your text. If you work extensively with HTML content, validate the results and performance of import and export operations during testing. WebKit handles the conversion between HTML markup and attributed strings. If an HTML file contains tags or constructs that attributed strings don't support, the import process ignores them and imports what it can. When you create an attributed string from Markdown, the system adds presentation intent attributes with information about the original Markdown content. The system doesn't add style attributes to match the Markdown elements, but the system applies default style information when it renders a string with intent attributes. To change the rendering behavior of your Markdown content, remove the intent attributes and add the style attributes you prefer. > Important: > When reading or writing attributed strings, choose methods that return or throw an error, and check any errors you receive. Handling errors is the best way to detect issues with the import or export process and take corrective action. The methods for reading and writing common file formats also support document attributes. Document attributes aren't part of the attributed string itself, but accompany the text when you save it to a file. When you read a file, the system returns any document attributes that it finds. Similarly, when you write an attributed string to a file, you can specify the attributes to include. For more information about document attributes, see ''DocumentAttributeKey'' and ''DocumentReadingOptionKey''. \#\#\# System framework interoperability \<doc://com.apple.documentation/documentation/uikit/textkit> and \<doc://com.apple.documentation/documentation/coretext> use attributed strings extensively during the layout and rendering processes. These technologies use the string's text and rendering-related attributes to calculate the text metrics needed during layout. Similarly, these technologies apply those same attributes during rendering to give the text its styled appearance. The technologies use only attributes that directly affect the appearance of the text, and ignore most other attributes. For some attributes, the text system adds attributes during rendering as needed. For example, the text system provides default style attributes for text with the ''Key/link'' attribute. \<doc://com.apple.documentation/documentation/appkit> and \<doc://com.apple.documentation/documentation/uikit> also support attributed strings in several ways. Some views and controls in these frameworks have APIs that accept attributed strings, and render the string with its style information. The frameworks also add methods to the ''NSAttributedString'' class that let you draw a styled string directly in one of your custom views. Because these methods use TextKit to draw the string, they recognize the same rendering-related attributes as that technology. The ''NSAttributedString'' class and its Core Foundation counterpart, \<doc://com.apple.documentation/documentation/corefoundation/cfattributedstring>, are toll-free bridged, which means you can use the two types interchangeably in your code without losing any text or attribute information.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      *
      * @par Example
@@ -98,7 +97,6 @@ namespace cocoon
         std::vector<std::uint8_t> rtf_from_range(const Range& range, const std::map<std::string, Object>& dict) const;
         /**
      * @brief Calls `-[NSAttributedString attribute:atIndex:effectiveRange:]`.
-     * @details Returns the value for an attribute with the specified name of the character at the specified index and, by reference, the range where the attribute applies. Raises an 'NSRangeException' if 'location' lies beyond the end of the receiver's characters. - Parameters: - attrName: The name of an attribute. - location: The index for which to return attributes. This value must not exceed the bounds of the receiver. - range: If non-'NULL', upon return contains a range over which the named attribute's value applies, or a range over which the attribute does not exist. The range isn't necessarily the maximum range covered by 'attrName', and its extent is implementation-dependent. If you need the maximum range, use 'attribute:atIndex:longestEffectiveRange:inRange:'. If you don't need this value, pass 'NULL'. - Returns: The value for the attribute named 'attrName' of the character at 'location', or 'nil' if there is no such attribute.
      * @param attr_name Argument converted to the Objective-C parameter of the same role.
      * @param location Argument converted to the Objective-C parameter of the same role.
      * @param range Argument converted to the Objective-C parameter of the same role.
@@ -107,7 +105,6 @@ namespace cocoon
         Object attribute(const std::string& attr_name, std::uint64_t location, Range* range) const;
         /**
      * @brief Calls `-[NSAttributedString attribute:atIndex:longestEffectiveRange:inRange:]`.
-     * @details Returns the value for the attribute with the specified name of the character at the specified index and, by reference, the range where the attribute applies. Raises an 'NSRangeException' if 'location' or any part of 'rangeLimit' lies beyond the end of the receiver's characters. If you don't need the longest effective range, it's far more efficient to use 'attribute:atIndex:effectiveRange:' to retrieve the attribute value. - Parameters: - attrName: The name of an attribute. - location: The index at which to test for 'attrName'. - range: If non-'NULL', upon return contains the full range over which the value of the named attribute is the same as that at 'location', clipped to 'rangeLimit', or the full range over which the attribute does not exist. If you don't need this value, pass 'NULL'. - rangeLimit: The range over which to search for continuous presence of 'attrName'. This value must not exceed the bounds of the receiver. - Returns: The value for the attribute named 'attrName' of the character at 'location', or 'nil' if there is no such attribute.
      * @param attr_name Argument converted to the Objective-C parameter of the same role.
      * @param location Argument converted to the Objective-C parameter of the same role.
      * @param range Argument converted to the Objective-C parameter of the same role.
@@ -143,14 +140,12 @@ namespace cocoon
         static AttributedString attributed_string_with_attachment(const TextAttachment& attachment, const std::map<std::string, Object>& attributes);
         /**
      * @brief Calls `-[NSAttributedString attributedSubstringFromRange:]`.
-     * @details Returns an attributed string consisting of the characters and attributes within the specified range in the attributed string. Raises an 'NSRangeException' if any part of 'range' lies beyond the end of the receiver's characters. This method treats the length of the string as a valid range value that returns an empty string. - Parameter range: The range from which to create a new attributed string. 'range' must lie within the bounds of the receiver. - Returns: An 'NSAttributedString' object consisting of the characters and attributes within 'range' in the receiver.
      * @param range Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
      */
         AttributedString attributed_substring_from_range(const Range& range) const;
         /**
      * @brief Calls `-[NSAttributedString attributesAtIndex:effectiveRange:]`.
-     * @details Returns the attributes for the character at the specified index. Raises an 'NSRangeException' if 'location' lies beyond the end of the receiver's characters. - Parameters: - location: The index for which to return attributes. This value must lie within the bounds of the receiver. - range: Upon return, the range over which the attributes and values are the same as those at 'location'. This range isn't necessarily the maximum range covered, and its extent is implementation-dependent. If you need the maximum range, use 'attributesAtIndex:longestEffectiveRange:inRange:'. If you don't need this value, pass 'NULL'. - Returns: The attributes for the character at 'location'.
      * @param location Argument converted to the Objective-C parameter of the same role.
      * @param range Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
@@ -158,7 +153,6 @@ namespace cocoon
         std::map<std::string, Object> attributes_at_index(std::uint64_t location, Range* range) const;
         /**
      * @brief Calls `-[NSAttributedString attributesAtIndex:longestEffectiveRange:inRange:]`.
-     * @details Returns the attributes for the character at the specified index and, by reference, the range where the attributes apply. Raises an 'NSRangeException' if 'location' or any part of 'rangeLimit' lies beyond the end of the receiver's characters. If you don't need the range information, it's far more efficient to use 'attributesAtIndex:effectiveRange:' to retrieve the attribute value. - Parameters: - location: The index for which to return attributes. This value must not exceed the bounds of the receiver. - range: If non-'NULL', upon return contains the maximum range over which the attributes and values are the same as those at 'location', clipped to 'rangeLimit'. - rangeLimit: The range over which to search for continuous presence of the attributes at 'location'. This value must not exceed the bounds of the receiver.
      * @param location Argument converted to the Objective-C parameter of the same role.
      * @param range Argument converted to the Objective-C parameter of the same role.
      * @param range_limit Argument converted to the Objective-C parameter of the same role.
@@ -231,7 +225,6 @@ namespace cocoon
         void draw_with_rect(const Rect& rect, StringDrawingOptions options, const StringDrawingContext& context) const;
         /**
      * @brief Calls `-[NSAttributedString enumerateAttribute:inRange:options:usingBlock:]`.
-     * @details Executes the specified block for each range of a particular attribute in the attributed string. If this method is called by an instance of 'NSMutableAttributedString', mutation (deletion, addition, or change) is allowed only if the mutation is within the range provided to the block. After a mutation, the enumeration continues with the range immediately following the processed range, adjusting for any change in length caused by the mutation. - Parameters: - attrName: The name of the attribute to enumerate. - enumerationRange: The range over which the attribute values are enumerated. - opts: The options used by the enumeration. - block: A block to apply to ranges of the specified attribute in the attributed string.
      * @param attr_name Argument converted to the Objective-C parameter of the same role.
      * @param enumeration_range Argument converted to the Objective-C parameter of the same role.
      * @param opts Argument converted to the Objective-C parameter of the same role.
@@ -240,7 +233,6 @@ namespace cocoon
         void enumerate_attribute(const std::string& attr_name, const Range& enumeration_range, AttributedStringEnumerationOptions opts, std::function<void(Object, Range, bool&)> block) const;
         /**
      * @brief Calls `-[NSAttributedString enumerateAttributesInRange:options:usingBlock:]`.
-     * @details Executes the specified block for each range of attributes in the attributed string. If this method is called by an instance of 'NSMutableAttributedString', mutation (deletion, addition, or change) is allowed only if the mutation is within the range provided to the block. After a mutation, the enumeration continues with the range immediately following the processed range, adjusting for any change in length caused by the mutation. - Parameters: - enumerationRange: The range over which the attributes are enumerated. - opts: The options used by the enumeration. - block: The block to apply to ranges of attributes in the attributed string.
      * @param enumeration_range Argument converted to the Objective-C parameter of the same role.
      * @param opts Argument converted to the Objective-C parameter of the same role.
      * @param block Argument converted to the Objective-C parameter of the same role.
@@ -261,7 +253,6 @@ namespace cocoon
         std::map<std::string, Object> font_attributes_in_range(const Range& range) const;
         /**
      * @brief Calls `-[NSAttributedString isEqualToAttributedString:]`.
-     * @details Returns a Boolean value that indicates whether the attributed string is equal to the specified string. This method performs a character-by-character comparison of the string and its attributes. The character and its attributes must be the same in both strings for the method to return 'YES'. - Parameter other: The attributed string with which to compare the receiver. - Returns: 'YES' if the text and attributes in the current string and 'other' are the same, otherwise 'NO'.
      * @param other Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
      */
@@ -339,13 +330,11 @@ namespace cocoon
         bool contains_attachments() const;
         /**
      * @brief Returns the `length` property of `NSAttributedString`.
-     * @details The length of the attributed string.
      * @return The converted Objective-C result.
      */
         std::uint64_t length() const;
         /**
      * @brief Returns the `string` property of `NSAttributedString`.
-     * @details The character contents of the receiver as a string.
      * @return The converted Objective-C result.
      */
         std::string string() const;

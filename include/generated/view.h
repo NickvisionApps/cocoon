@@ -35,10 +35,7 @@ namespace cocoon
     class ScrollView;
     class Shadow;
     class TextInputContext;
-    class TextSelectionManager;
     class TrackingArea;
-    class ViewCornerConfiguration;
-    class ViewCornerRadii;
     class ViewLayoutRegion;
     class Window;
     class WritingToolsCoordinator;
@@ -103,7 +100,7 @@ namespace cocoon
         void add_constraints(const std::vector<LayoutConstraint>& constraints) const;
         /**
      * @brief Calls `-[NSView addCursorRect:cursor:]`.
-     * @details The following methods are soft deprecated. Use the above NSTrackingArea API instead.
+     * @details The following methods are soft deprecated. Use the above NSTrackingArea API instead
      * @param rect Argument converted to the Objective-C parameter of the same role.
      * @param object Argument converted to the Objective-C parameter of the same role.
      */
@@ -135,7 +132,7 @@ namespace cocoon
         std::int64_t add_tool_tip_rect(const Rect& rect, const Object& owner, void* data) const;
         /**
      * @brief Calls `-[NSView addTrackingArea:]`.
-     * @details The following methods are meant to be invoked, and probably don't need to be overridden.
+     * @details The following methods are meant to be invoked, and probably don't need to be overridden
      * @param tracking_area Argument converted to the Objective-C parameter of the same role.
      */
         void add_tracking_area(const TrackingArea& tracking_area) const;
@@ -202,25 +199,13 @@ namespace cocoon
         void begin_document() const;
         /**
      * @brief Calls `-[NSView beginDraggingSessionWithItems:event:source:]`.
-     * @details Starts a dragging session with an array of NSDraggingItems. The frame property of each NSDraggingItem must be in the view's coordinate system. The images may animate (flock) from their initial layout into a system defined formation. Flocking may or may not be done immediately (see NSDraggingSession's flockOnBeginDrag). The visible area of the view is used as the clip rect.
+     * @details Starts a dragging session with a group of NSDraggingItems. The frame property of each NSDraggingItem must be in the view's coordinate system. The images may animate (flock) from thier initial layout into a system defined formation. Flocking or may not be done immediately. (see NSDraggingSession's flockOnBeginDrag. The visible area of the view is used as the clip rect.
      * @param items Argument converted to the Objective-C parameter of the same role.
      * @param event Argument converted to the Objective-C parameter of the same role.
      * @param source Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
      */
         DraggingSession begin_dragging_session_with_items(const std::vector<DraggingItem>& items, const Event& event, const Object& source) const;
-#ifdef COCOON_MACOS_27
-        /**
-     * @brief Calls `-[NSView beginDraggingSessionWithItems:gesture:source:]`.
-     * @details Starts a gesture based dragging session with an array of 'NSDraggingItems'. The frame property of each NSDraggingItem must be in the view's coordinate system. The images may animate (flock) from their initial layout into a system defined formation. Flocking may not be done immediately (see NSDraggingSession's flockOnBeginDrag). The visible area of the view is used as the clip rect. \@returns If the drag begins, returns the dragging session. If the drag fails to begin, returns 'nil'.
-     * @param items Argument converted to the Objective-C parameter of the same role.
-     * @param gesture Argument converted to the Objective-C parameter of the same role.
-     * @param source Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        DraggingSession begin_dragging_session_with_items(const std::vector<DraggingItem>& items, const GestureRecognizer& gesture, const Object& source) const;
-#endif
-
         /**
      * @brief Calls `-[NSView beginPageInRect:atPlacement:]`.
      * @param rect Argument converted to the Objective-C parameter of the same role.
@@ -501,14 +486,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         View hit_test(const Point& point) const;
-#ifdef COCOON_MACOS_27
-        /**
-     * @brief Calls `-[NSView invalidateCornerConfiguration]`.
-     * @details Invalidates the corner configuration, causing both the configuration and its dependencies to be recomputed.
-     */
-        void invalidate_corner_configuration() const;
-#endif
-
         /**
      * @brief Calls `-[NSView invalidateIntrinsicContentSize]`.
      */
@@ -823,7 +800,7 @@ namespace cocoon
         void show_definition_for_attributed_string(const AttributedString& attr_string, const Point& text_baseline_origin) const;
         /**
      * @brief Calls `-[NSView showDefinitionForAttributedString:range:options:baselineOriginProvider:]`.
-     * @details Takes a whole attributed string with the target range (normally, this is the selected range), and shows a window displaying the definition of the specified range. The caller can pass a zero-length range and the appropriate range will be auto-detected around the range's offset. That's the recommended approach when there is no selection. This method also takes an 'options' dictionary containing options described below as key-value pairs (can be nil). Except when NSDefinitionPresentationTypeKey with NSDefinitionPresentationTypeDictionaryApplication is specified in options, the caller must supply an originProvider Block which returns the baseline origin of the first character at proposed adjustedRange in the receiver view coordinate system. If the receiver is an NSTextView, both attrString and originProvider may be nil, in which case the text view will automatically supply values suitable for displaying definitions for the specified range within its text content. This method does not cause scrolling, so clients should perform any necessary scrolling before calling this method.
+     * @details Takes a whole attributed string with the target range (normally, this is the selected range), and shows a window displaying the definition of the specified range. The caller can pass a zero-length range and the appropriate range will be auto-detected around the range's offset. That's the recommended approach when there is no selection. This method also an 'options' dictionary containing options described below as key-value pairs (can be nil). Except when NSDefinitionPresentationTypeKey with NSDefinitionPresentationTypeDictionaryApplication is specified in options, the caller must supply an originProvider Block which returns the baseline origin of the first character at proposed adjustedRange in the receiver view coordinate system. If the receiver is an NSTextView, both attrString and originProvider may be nil, in which case the text view will automatically supply values suitable for displaying definitions for the specified range within its text content. This method does not cause scrolling, so clients should perform any necessary scrolling before calling this method.
      * @param attr_string Argument converted to the Objective-C parameter of the same role.
      * @param target_range Argument converted to the Objective-C parameter of the same role.
      * @param options Argument converted to the Objective-C parameter of the same role.
@@ -861,7 +838,7 @@ namespace cocoon
         void update_constraints_for_subtree_if_needed() const;
         /**
      * @brief Calls `-[NSView updateLayer]`.
-     * @details Layer Backed Views: If the view responds YES to wantsUpdateLayer, then updateLayer will be called as opposed to drawRect:. This method should be used for better performance; it is faster to directly set the layer.contents with a shared image and inform it how to stretch with the layer.contentsCenter property instead of drawing into a context with drawRect:. In general, one should also set the layerContentsRedrawPolicy to an appropriate value in the init method (frequently NSViewLayerContentsRedrawOnSetNeedsDisplay is desired). To signal a refresh of the layer contents, one will then call [view setNeedsDisplay:YES], and -updateLayer will be lazily called when the layer needs its contents. One should not alter geometry or add/remove subviews (or layers) during this method. To add subviews (or layers) use -layout. -layout will still be called even if Auto Layout is not enabled, and wantsUpdateLayer returns YES.
+     * @details Layer Backed Views: If the view responds YES to wantsUpdateLayer, then updateLayer will be called as opposed to drawRect:. This method should be used for better performance; it is faster to directly set the layer.contents with a shared image and inform it how to stretch with the layer.contentsCenter property instead of drawing into a context with drawRect:. In general, one should also set the layerContentsRedrawPolicy to an appropriate value in the init method (frequently NSViewLayerContentsRedrawOnSetNeedsDisplay is desired). To signal a refresh of the layer contents, one will then call [view setNeedsDisplay:YES], and -updateLayer will be lazily called when the layer needs its contents. One should not alter geometry or add/remove subviews (or layers) during this method. To add subviews (or layers) use -layout. -layout will still be called even if autolayout is not enabled, and wantsUpdateLayer returns YES.
      */
         void update_layer() const;
         /**
@@ -878,17 +855,9 @@ namespace cocoon
      * @details Override point for reacting to the effective appearance of the receiver changing. At this point 'effectiveAppearance' property reflects the new appearance.
      */
         void view_did_change_effective_appearance() const;
-#ifdef COCOON_MACOS_27
-        /**
-     * @brief Calls `-[NSView viewDidChangeEffectiveCornerRadii]`.
-     * @details Informs the view that its effective corner radii changed. This method should be overridden to apply the corner radii to the view as required.
-     */
-        void view_did_change_effective_corner_radii() const;
-#endif
-
         /**
      * @brief Calls `-[NSView viewDidEndLiveResize]`.
-     * @details A view receives viewDidEndLiveResize after the frame is last changed for a live resize. It is important to call [super viewDidEndLiveResize].
+     * @details A view receives viewWillEndLiveResize after the frame is last changed for a live resize. It is important to call [super viewDidEndLiveResize].
      */
         void view_did_end_live_resize() const;
         /**
@@ -1082,13 +1051,13 @@ namespace cocoon
         void set_can_draw_concurrently(bool value) const;
         /**
      * @brief Returns the `canDrawSubviewsIntoLayer` property of `NSView`.
-     * @details When canDrawSubviewsIntoLayer is set to YES, and the view is layer-backed (either explicitly with -wantsLayer=YES, or by having a parent view that is layer-backed), the layer will draw all subviews into this view's layer, and each subview will not get an individual layer (the exception to this is a subview which has wantsLayer explicitly set to YES). This is useful for layer-backing a complex set of views that cannot be refactored to take advantage of proper resizing and -wantsUpdateLayer==YES. If canDrawSubviewsIntoLayer is YES, the value returned from wantsUpdateLayer will be ignored, and the layer will always have drawRect: invoked to get the layer's contents. The default value is NO. NOTE: These methods should NOT be overridden, and the setter should always be used.
+     * @details When canDrawSubviewsIntoLayer is set to YES, and the view is layer-backed (either explicitly with -wantsLayer=YES, or by having a parent view that is layer-backed), the layer will draw all subviews into this view's layer, and each subview will not get an individual layer (the exception to this is a subview which has wantsLayer explicitly set to YES). This is useful for layer-backing a complex set of views that can not be refactored to take advantage of proper resizing and -wantsUpdateLayer==YES. If canDrawSubviewsIntoLayer is YES, the value returned from wantsUpdateLayer will be ignored, and the layer will always have drawRect: invoked to get the layer's contents. The default value is NO. NOTE: These methods should NOT be overridden, and the setter should always be used.
      * @return The converted Objective-C result.
      */
         bool can_draw_subviews_into_layer() const;
         /**
      * @brief Sets the `canDrawSubviewsIntoLayer` property of `NSView`.
-     * @details When canDrawSubviewsIntoLayer is set to YES, and the view is layer-backed (either explicitly with -wantsLayer=YES, or by having a parent view that is layer-backed), the layer will draw all subviews into this view's layer, and each subview will not get an individual layer (the exception to this is a subview which has wantsLayer explicitly set to YES). This is useful for layer-backing a complex set of views that cannot be refactored to take advantage of proper resizing and -wantsUpdateLayer==YES. If canDrawSubviewsIntoLayer is YES, the value returned from wantsUpdateLayer will be ignored, and the layer will always have drawRect: invoked to get the layer's contents. The default value is NO. NOTE: These methods should NOT be overridden, and the setter should always be used.
+     * @details When canDrawSubviewsIntoLayer is set to YES, and the view is layer-backed (either explicitly with -wantsLayer=YES, or by having a parent view that is layer-backed), the layer will draw all subviews into this view's layer, and each subview will not get an individual layer (the exception to this is a subview which has wantsLayer explicitly set to YES). This is useful for layer-backing a complex set of views that can not be refactored to take advantage of proper resizing and -wantsUpdateLayer==YES. If canDrawSubviewsIntoLayer is YES, the value returned from wantsUpdateLayer will be ignored, and the layer will always have drawRect: invoked to get the layer's contents. The default value is NO. NOTE: These methods should NOT be overridden, and the setter should always be used.
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_can_draw_subviews_into_layer(bool value) const;
@@ -1121,7 +1090,7 @@ namespace cocoon
         void set_clips_to_bounds(bool value) const;
         /**
      * @brief Returns the `compatibleWithResponsiveScrolling` property of `NSView`.
-     * @details A subclass of any NSScrollView, NSClipView or the NSScrollView's documentView can override this method to verify that its customizations are compatible with 10.9's responsive scrolling behavior. By default, AppKit assumes that a scroll view is responsive scrolling compatible if it and its clip view and document view do not override certain methods such as -scrollWheel: (see documentation for the expanded list). However, these views may still opt into responsive scrolling if they work with the new scrolling behavior by overriding and returning YES for this method. Likewise, the same set of views may return NO to explicitly opt out of responsive scrolling.
+     * @details A subclass of any NSScrollView, NSClipView or the NSScrollView's documentView can override this method to verify that its customizations are compatible with 10.9's responsive scrolling behavior. By default, AppKit assumes that a ScrollView is responsive scrolling compatible if it and its clipview and document view do not override certain methods such as -scrollWheel: (See documentation for the expanded list). However, these views may still opt into responsive scrolling if they work with the new scrolling behavior by overriding and returning YES for this method. Likewise, the same set of views may return NO to explicitly opt out of responsive scrolling.
      * @return The converted Objective-C result.
      */
         static bool is_compatible_with_responsive_scrolling();
@@ -1150,15 +1119,6 @@ namespace cocoon
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_content_filters(const std::vector<Object>& value) const;
-#ifdef COCOON_MACOS_27
-        /**
-     * @brief Returns the `cornerConfiguration` property of `NSView`.
-     * @details Defines the corner styles (e.g., square, capsule, concentric, etc) for the view’s corners.
-     * @return The converted Objective-C result.
-     */
-        ViewCornerConfiguration corner_configuration() const;
-#endif
-
         /**
      * @brief Returns the `defaultFocusRingType` property of `NSView`.
      * @return The converted Objective-C result.
@@ -1175,15 +1135,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         bool is_drawing_find_indicator() const;
-#ifdef COCOON_MACOS_27
-        /**
-     * @brief Returns the `effectiveCornerRadii` property of `NSView`.
-     * @details The effective radius of each corner in the view, calculated based on the corner configuration ('cornerConfiguration'). This value is 'nil' when the corner configuration is 'nil'.
-     * @return The converted Objective-C result.
-     */
-        ViewCornerRadii effective_corner_radii() const;
-#endif
-
         /**
      * @brief Returns the `enclosingMenuItem` property of `NSView`.
      * @return The converted Objective-C result.
@@ -1195,24 +1146,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         ScrollView enclosing_scroll_view() const;
-#ifdef COCOON_MACOS_27
-        /**
-     * @brief Returns the `exclusiveGestureBehavior` property of `NSView`.
-     * @details Declares whether gesture recognizers should be exclusive in this view and its subviews. When a view is set to '.exclusive', and one or more of its gesture recognizers is active, a second input event will not activate any further gesture recognizers, unless that event hit tests to this view or its subviews. Defaults to '.inherit'.
-     * @return The converted Objective-C result.
-     */
-        ViewExclusiveGestureBehavior exclusive_gesture_behavior() const;
-#endif
-
-#ifdef COCOON_MACOS_27
-        /**
-     * @brief Sets the `exclusiveGestureBehavior` property of `NSView`.
-     * @details Declares whether gesture recognizers should be exclusive in this view and its subviews. When a view is set to '.exclusive', and one or more of its gesture recognizers is active, a second input event will not activate any further gesture recognizers, unless that event hit tests to this view or its subviews. Defaults to '.inherit'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
-        void set_exclusive_gesture_behavior(ViewExclusiveGestureBehavior value) const;
-#endif
-
         /**
      * @brief Returns the `firstBaselineAnchor` property of `NSView`.
      * @return The converted Objective-C result.
@@ -1346,7 +1279,7 @@ namespace cocoon
         bool in_live_resize() const;
         /**
      * @brief Returns the `inputContext` property of `NSView`.
-     * @details Returns an 'NSTextInputContext' object for the receiver. Returns 'nil' if the receiver doesn’t conform to the 'NSTextInputClient' protocol.
+     * @details Returns NSTextInputContext object for the receiver. Returns nil if the receiver doesn't conform to NSTextInputClient protocol.
      * @return The converted Objective-C result.
      */
         TextInputContext input_context() const;
@@ -1530,13 +1463,13 @@ namespace cocoon
         void set_posts_frame_changed_notifications(bool value) const;
         /**
      * @brief Returns the `prefersCompactControlSizeMetrics` property of `NSView`.
-     * @details When this property is 'YES', any 'NSControl's in the view or its descendants will be sized with compact metrics compatible with macOS 15.0 and earlier. Defaults to 'NO'.
+     * @details When this property is true, any NSControls in the view or its descendants will be sized with compact metrics compatible with macOS 15 and earlier. Defaults to false
      * @return The converted Objective-C result.
      */
         bool prefers_compact_control_size_metrics() const;
         /**
      * @brief Sets the `prefersCompactControlSizeMetrics` property of `NSView`.
-     * @details When this property is 'YES', any 'NSControl's in the view or its descendants will be sized with compact metrics compatible with macOS 15.0 and earlier. Defaults to 'NO'.
+     * @details When this property is true, any NSControls in the view or its descendants will be sized with compact metrics compatible with macOS 15 and earlier. Defaults to false
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_prefers_compact_control_size_metrics(bool value) const;
@@ -1554,7 +1487,7 @@ namespace cocoon
         void set_prepared_content_rect(const Rect& value) const;
         /**
      * @brief Returns the `preservesContentDuringLiveResize` property of `NSView`.
-     * @details A view that returns YES for -preservesContentDuringLiveResize is responsible for invalidating its own dirty rects during live resize.
+     * @details A view that returns YES for -preservesContentDuringLiveResize is responsible for invalidating its own dirty rects during live resize
      * @return The converted Objective-C result.
      */
         bool preserves_content_during_live_resize() const;
@@ -1586,7 +1519,7 @@ namespace cocoon
         std::string print_job_title() const;
         /**
      * @brief Returns the `rectPreservedDuringLiveResize` property of `NSView`.
-     * @details -rectPreservedDuringLiveResize indicates the rect the view previously occupied, in the current coordinate system of the view.
+     * @details -rectPreservedDuringLiveResize indicates the rect the view previously occupied, in the current coordinate system of the view
      * @return The converted Objective-C result.
      */
         Rect rect_preserved_during_live_resize() const;
@@ -1617,13 +1550,13 @@ namespace cocoon
         bool is_rotated_or_scaled_from_base() const;
         /**
      * @brief Returns the `safeAreaInsets` property of `NSView`.
-     * @details Indicates the potentially-obscured distance from each edge of the view (e.g., not behind the window title bar, etc., if present).
+     * @details Indicates the potentially-obscured distance from each edge of the view (e.g, not behind the window title bar, etc., if present).
      * @return The converted Objective-C result.
      */
         Insets safe_area_insets() const;
         /**
      * @brief Returns the `safeAreaLayoutGuide` property of `NSView`.
-     * @details This layout guide reflects the safe area for this view (i.e., the frame minus safeAreaInsets), and provides a convenient way to arrange content relative to the safe area using Auto Layout.
+     * @details This layout guide reflects the safe area for this view (i.e., the frame minus safeAreaInsets), and provides a convenient way to arrange content relative to the safe area using auto layout.
      * @return The converted Objective-C result.
      */
         LayoutGuide safe_area_layout_guide() const;
@@ -1663,22 +1596,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         std::int64_t tag() const;
-#ifdef COCOON_MACOS_27
-        /**
-     * @brief Returns the `textSelectionManager` property of `NSView`.
-     * @return The converted Objective-C result.
-     */
-        TextSelectionManager text_selection_manager() const;
-#endif
-
-#ifdef COCOON_MACOS_27
-        /**
-     * @brief Sets the `textSelectionManager` property of `NSView`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
-        void set_text_selection_manager(const TextSelectionManager& value) const;
-#endif
-
         /**
      * @brief Returns the `toolTip` property of `NSView`.
      * @return The converted Objective-C result.
@@ -1761,13 +1678,13 @@ namespace cocoon
         void set_wants_layer(bool value) const;
         /**
      * @brief Returns the `wantsRestingTouches` property of `NSView`.
-     * @details In some cases, the user may rest a thumb or other touch on the device. By default, these touches are not delivered and are not included in the event's set of touches. Touches may transition in and out of resting at any time. Unless the view wants restingTouches, began / ended events are simulated as touches transition from resting to active and vice versa.
+     * @details In some cases, the user may rest a thumb or other touch on the device. By default, these touches are not delivered and are not included in the event's set of touches. Touches may transition in and out of resting at any time. Unless the view wants restingTouches, began / ended events are simlulated as touches transition from resting to active and vice versa.
      * @return The converted Objective-C result.
      */
         bool wants_resting_touches() const;
         /**
      * @brief Sets the `wantsRestingTouches` property of `NSView`.
-     * @details In some cases, the user may rest a thumb or other touch on the device. By default, these touches are not delivered and are not included in the event's set of touches. Touches may transition in and out of resting at any time. Unless the view wants restingTouches, began / ended events are simulated as touches transition from resting to active and vice versa.
+     * @details In some cases, the user may rest a thumb or other touch on the device. By default, these touches are not delivered and are not included in the event's set of touches. Touches may transition in and out of resting at any time. Unless the view wants restingTouches, began / ended events are simlulated as touches transition from resting to active and vice versa.
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_wants_resting_touches(bool value) const;

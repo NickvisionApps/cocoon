@@ -43,7 +43,7 @@ deprecated: 556
   NSCell.isEntryAcceptable:
   ...
 
-unavailable/deprecated: 98
+unavailable/deprecated: 101
   NSAppearance.currentAppearance
   NSApplication.context
   NSBox.borderType
@@ -86,7 +86,7 @@ unavailable/deprecated: 98
   NSOpenGLContext.view
   ...
 
-skipped selector: 49
+skipped selector: 45
   NSCollectionViewCompositionalLayout.new
   NSCollectionLayoutSection.new
   NSCollectionLayoutItem.new
@@ -109,12 +109,8 @@ skipped selector: 49
   NSTextRange.new
   NSTextSelectionNavigation.new
   NSTextViewportLayoutController.new
-  NSViewCornerConfiguration.new
-  NSViewCornerRadii.new
-  NSViewCornerRadius.new
   NSViewLayoutRegion.new
   NSBundle.load
-  NSError.new
   NSKeyValueSharedObserversSnapshot.new
   NSKeyValueSharedObservers.new
   NSLocalizedNumberFormatRule.new
@@ -127,9 +123,13 @@ skipped selector: 49
   NSURLSessionDownloadTask.new
   NSURLSessionStreamTask.new
   NSURLSessionWebSocketMessage.new
+  NSURLSessionWebSocketTask.new
+  NSURLSessionConfiguration.new
+  NSURLSessionTaskTransactionMetrics.new
+  NSURLSessionTaskMetrics.new
   ...
 
-unavailable: 43
+unavailable: 42
   NSBitmapImageRep.initWithFocusedViewRect:
   NSCursor.initWithImage:foregroundColorHint:backgroundColorHint:hotSpot:
   NSDatePickerCell.initImageCell:
@@ -148,7 +148,6 @@ unavailable: 43
   NSSpeechSynthesizer.initWithVoice:
   NSTextFieldCell.initImageCell:
   NSTextListElement.initWithAttributedString:
-  NSTextViewportLayoutController.renderingSurfaceForKey:
   NSWindow.initWithWindowRef:
   NSUnarchiver.objectZone
   NSUnarchiver.setObjectZone:
@@ -170,6 +169,7 @@ unavailable: 43
   NSURLDownload.initWithRequest:delegate:
   NSURLDownload.initWithResumeData:delegate:path:
   NSXMLDTD.initWithKind:options:
+  CIImage.initWithCGLayer:
   ...
 
 unmapped pointer: 11

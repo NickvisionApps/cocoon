@@ -113,17 +113,6 @@ namespace cocoon
         return static_cast<bool>([cocoon::internal::ns<::NSSpellChecker>(this) hasLearnedWord:cocoon::internal::to(word)]);
     }
 
-#ifdef COCOON_MACOS_27
-    void SpellChecker::ignore_grammar_range(const Range& grammar_range, const std::string& sentence, std::int64_t tag) const
-    {
-        if (@available(macOS 27.0, *))
-        {
-            [cocoon::internal::ns<::NSSpellChecker>(this) ignoreGrammarRange:cocoon::internal::to(grammar_range) inSentence:cocoon::internal::to(sentence) inSpellDocumentWithTag:static_cast<::NSInteger>(tag)];
-        }
-    }
-
-#endif
-
     void SpellChecker::ignore_word(const std::string& word_to_ignore, std::int64_t tag) const
     {
         [cocoon::internal::ns<::NSSpellChecker>(this) ignoreWord:cocoon::internal::to(word_to_ignore) inSpellDocumentWithTag:static_cast<::NSInteger>(tag)];

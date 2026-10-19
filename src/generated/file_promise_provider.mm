@@ -35,9 +35,9 @@
                                                                                                                  {
                                                                                                                      return {};
                                                                                                                  }
-                                                                                                                 return [blk](cocoon::Error a282_0) -> void
+                                                                                                                 return [blk](cocoon::Error a279_0) -> void
                                                                                                                  {
-                                                                                                                     blk(cocoon::internal::native<::NSError>(a282_0));
+                                                                                                                     blk(cocoon::internal::native<::NSError>(a279_0));
                                                                                                                  };
                                                                                                              }());
 }

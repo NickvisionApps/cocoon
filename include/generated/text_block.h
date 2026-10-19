@@ -15,6 +15,7 @@ namespace cocoon
 
     /**
      * @brief C++ handle for the Objective-C class `NSTextBlock` (AppKit).
+     * @details NSTextBlock is the basic object for text block layout, and the superclass of the other classes.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      *
      * @par Example
@@ -31,11 +32,11 @@ namespace cocoon
      * cocoon::TextBlock text_block{};
      * text_block.set_background_color(cocoon::Color());
      * auto background_color = text_block.background_color();
-     * text_block.set_vertical_alignment(cocoon::TextBlockVerticalAlignment::Top);
+     * text_block.set_vertical_alignment(cocoon::TextBlockVerticalAlignment::TopAlignment);
      * auto vertical_alignment = text_block.vertical_alignment();
      * text_block.border_color_for_edge(cocoon::RectEdge::MinX);
-     * text_block.border_color_for_rect_edge(cocoon::CGRectEdge::MinXEdge);
      * text_block.set_border_color(cocoon::Color());
+     * text_block.set_border_color(cocoon::Color(), cocoon::RectEdge::MinX);
      * @endcode
      * @see https://developer.apple.com/documentation/appkit/nstextblock
      */
@@ -54,15 +55,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         Color border_color_for_edge(RectEdge edge) const;
-#ifdef COCOON_MACOS_27
-        /**
-     * @brief Calls `-[NSTextBlock borderColorForRectEdge:]`.
-     * @param rect_edge Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        Color border_color_for_rect_edge(CGRectEdge rect_edge) const;
-#endif
-
         /**
      * @brief Calls `-[NSTextBlock boundsRectForContentRect:inRect:textContainer:characterRange:]`.
      * @param content_rect Argument converted to the Objective-C parameter of the same role.
@@ -102,57 +94,37 @@ namespace cocoon
      * @param edge Argument converted to the Objective-C parameter of the same role.
      */
         void set_border_color(const Color& color, RectEdge edge) const;
-#ifdef COCOON_MACOS_27
-        /**
-     * @brief Calls `-[NSTextBlock setBorderColor:rectEdge:]`.
-     * @param border_color Argument converted to the Objective-C parameter of the same role.
-     * @param rect_edge Argument converted to the Objective-C parameter of the same role.
-     */
-        void set_border_color(const Color& border_color, CGRectEdge rect_edge) const;
-#endif
-
         /**
      * @brief Calls `-[NSTextBlock setContentWidth:type:]`.
      * @details Convenience methods for content width in particular, using the above methods with dimension == NSTextBlockWidth
-     * @param content_width Argument converted to the Objective-C parameter of the same role.
+     * @param val Argument converted to the Objective-C parameter of the same role.
      * @param type Argument converted to the Objective-C parameter of the same role.
      */
-        void set_content_width(double content_width, TextBlockValueType type) const;
+        void set_content_width(double val, TextBlockValueType type) const;
         /**
      * @brief Calls `-[NSTextBlock setValue:type:forDimension:]`.
      * @details Content size
-     * @param value Argument converted to the Objective-C parameter of the same role.
+     * @param val Argument converted to the Objective-C parameter of the same role.
      * @param type Argument converted to the Objective-C parameter of the same role.
      * @param dimension Argument converted to the Objective-C parameter of the same role.
      */
-        void set_value(double value, TextBlockValueType type, TextBlockDimension dimension) const;
+        void set_value(double val, TextBlockValueType type, TextBlockDimension dimension) const;
         /**
      * @brief Calls `-[NSTextBlock setWidth:type:forLayer:]`.
-     * @details Margin, border, and padding
-     * @param width Argument converted to the Objective-C parameter of the same role.
+     * @param val Argument converted to the Objective-C parameter of the same role.
      * @param type Argument converted to the Objective-C parameter of the same role.
      * @param layer Argument converted to the Objective-C parameter of the same role.
      */
-        void set_width(double width, TextBlockValueType type, TextBlockLayer layer) const;
+        void set_width(double val, TextBlockValueType type, TextBlockLayer layer) const;
         /**
      * @brief Calls `-[NSTextBlock setWidth:type:forLayer:edge:]`.
+     * @details Margin, border, and padding
      * @param val Argument converted to the Objective-C parameter of the same role.
      * @param type Argument converted to the Objective-C parameter of the same role.
      * @param layer Argument converted to the Objective-C parameter of the same role.
      * @param edge Argument converted to the Objective-C parameter of the same role.
      */
         void set_width(double val, TextBlockValueType type, TextBlockLayer layer, RectEdge edge) const;
-#ifdef COCOON_MACOS_27
-        /**
-     * @brief Calls `-[NSTextBlock setWidth:type:forLayer:rectEdge:]`.
-     * @param width Argument converted to the Objective-C parameter of the same role.
-     * @param type Argument converted to the Objective-C parameter of the same role.
-     * @param layer Argument converted to the Objective-C parameter of the same role.
-     * @param rect_edge Argument converted to the Objective-C parameter of the same role.
-     */
-        void set_width(double width, TextBlockValueType type, TextBlockLayer layer, CGRectEdge rect_edge) const;
-#endif
-
         /**
      * @brief Calls `-[NSTextBlock valueForDimension:]`.
      * @param dimension Argument converted to the Objective-C parameter of the same role.
@@ -172,16 +144,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         double width_for_layer(TextBlockLayer layer, RectEdge edge) const;
-#ifdef COCOON_MACOS_27
-        /**
-     * @brief Calls `-[NSTextBlock widthForLayer:rectEdge:]`.
-     * @param layer Argument converted to the Objective-C parameter of the same role.
-     * @param rect_edge Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        double width_for_layer(TextBlockLayer layer, CGRectEdge rect_edge) const;
-#endif
-
         /**
      * @brief Calls `-[NSTextBlock widthValueTypeForLayer:edge:]`.
      * @param layer Argument converted to the Objective-C parameter of the same role.
@@ -189,16 +151,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         TextBlockValueType width_value_type_for_layer(TextBlockLayer layer, RectEdge edge) const;
-#ifdef COCOON_MACOS_27
-        /**
-     * @brief Calls `-[NSTextBlock widthValueTypeForLayer:rectEdge:]`.
-     * @param layer Argument converted to the Objective-C parameter of the same role.
-     * @param rect_edge Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        TextBlockValueType width_value_type_for_layer(TextBlockLayer layer, CGRectEdge rect_edge) const;
-#endif
-
         /**
      * @brief Returns the `backgroundColor` property of `NSTextBlock`.
      * @details Colors

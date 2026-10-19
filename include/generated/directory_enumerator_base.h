@@ -10,7 +10,6 @@ namespace cocoon
 {
     /**
      * @brief C++ handle for the Objective-C class `NSDirectoryEnumerator` (Foundation).
-     * @details An object that enumerates the contents of a directory. You obtain a directory enumerator using ''NSFileManager'''s 'enumeratorAtPath:' method. The enumeration provides the pathnames of all files and directories contained within that directory. These pathnames are relative to the directory. An enumeration is recursive, including the files of all subdirectories, and crosses device boundaries. An enumeration does not resolve symbolic links, or attempt to traverse symbolic links that point to directories.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      * Inherits from @ref EnumeratorBase.
      * Use the typed template @ref DirectoryEnumerator to supply ObjectType.
@@ -42,23 +41,21 @@ namespace cocoon
         explicit DirectoryEnumeratorBase(Adopt adopt);
         /**
      * @brief Calls `-[NSDirectoryEnumerator skipDescendants]`.
-     * @details Causes the receiver to skip recursion into the most recently obtained subdirectory. This method is identical to 'skipDescendents' except for the spelling.
+     * @details This method is spelled correctly.
      */
         void skip_descendants() const;
         /**
      * @brief Calls `-[NSDirectoryEnumerator skipDescendents]`.
-     * @details Causes the receiver to skip recursion into the most recently obtained subdirectory.
      */
         void skip_descendents() const;
         /**
      * @brief Returns the `directoryAttributes` property of `NSDirectoryEnumerator`.
-     * @details A dictionary with the attributes of the directory at which enumeration started. See the description of the 'fileAttributesAtPath:traverseLink:' method of ''NSFileManager'' for details on obtaining the attributes from the dictionary.
      * @return The converted Objective-C result.
      */
         std::map<std::string, Object> directory_attributes() const;
         /**
      * @brief Returns the `fileAttributes` property of `NSDirectoryEnumerator`.
-     * @details A dictionary with the attributes of the most recently returned file or subdirectory (as referenced by the pathname). See the description of the 'fileAttributesAtPath:traverseLink:' method of ''NSFileManager'' for details on obtaining the attributes from the dictionary.
+     * @details For NSDirectoryEnumerators created with -enumeratorAtPath:, the -fileAttributes and -directoryAttributes methods return an NSDictionary containing the keys listed below. For NSDirectoryEnumerators created with -enumeratorAtURL:includingPropertiesForKeys:options:errorHandler:, these two methods return nil.
      * @return The converted Objective-C result.
      */
         std::map<std::string, Object> file_attributes() const;
@@ -70,7 +67,7 @@ namespace cocoon
         bool is_enumerating_directory_post_order() const;
         /**
      * @brief Returns the `level` property of `NSDirectoryEnumerator`.
-     * @details The number of levels deep the current object is in the directory hierarchy being enumerated. The number of levels, with the directory passed to 'enumeratorAtURL:includingPropertiesForKeys:options:errorHandler:' considered to be level '0'.
+     * @details This method returns the number of levels deep the current object is in the directory hierarchy being enumerated. The directory passed to -enumeratorAtURL:includingPropertiesForKeys:options:errorHandler: is considered to be level 0.
      * @return The converted Objective-C result.
      */
         std::uint64_t level() const;

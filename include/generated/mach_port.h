@@ -13,7 +13,6 @@ namespace cocoon
 
     /**
      * @brief C++ handle for the Objective-C class `NSMachPort` (Foundation).
-     * @details A port that can be used as an endpoint for distributed object connections (or raw messaging). ''NSMachPort'' is a subclass of ''NSPort'' that wraps a Mach port, the fundamental communication port in macOS. ''NSMachPort'' allows for local (on the same machine) communication only.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      * Inherits from @ref Port.
      *
@@ -53,20 +52,17 @@ namespace cocoon
         using Port::set_delegate;
         /**
      * @brief Calls `-[NSMachPort delegate]`.
-     * @details Returns the receiver's delegate.
      * @return The converted Objective-C result.
      */
         Object delegate() const;
         /**
      * @brief Calls `+[NSMachPort portWithMachPort:]`.
-     * @details Creates and returns a port object with a given Mach port.
      * @param mach_port Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
      */
         static Port port_with_mach_port(unsigned int mach_port);
         /**
      * @brief Calls `+[NSMachPort portWithMachPort:options:]`.
-     * @details Creates and returns a port object with a given Mach port and the specified options.
      * @param mach_port Argument converted to the Objective-C parameter of the same role.
      * @param f Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
@@ -74,27 +70,23 @@ namespace cocoon
         static Port port_with_mach_port(unsigned int mach_port, MachPortOptions f);
         /**
      * @brief Calls `-[NSMachPort removeFromRunLoop:forMode:]`.
-     * @details Removes the port from a given run loop.
      * @param run_loop Argument converted to the Objective-C parameter of the same role.
      * @param mode Argument converted to the Objective-C parameter of the same role.
      */
         void remove_from_run_loop(const RunLoop& run_loop, const std::string& mode) const;
         /**
      * @brief Calls `-[NSMachPort scheduleInRunLoop:forMode:]`.
-     * @details Schedules the port on a given run loop.
      * @param run_loop Argument converted to the Objective-C parameter of the same role.
      * @param mode Argument converted to the Objective-C parameter of the same role.
      */
         void schedule_in_run_loop(const RunLoop& run_loop, const std::string& mode) const;
         /**
      * @brief Calls `-[NSMachPort setDelegate:]`.
-     * @details Sets the receiver's delegate to a given object.
      * @param an_object Argument converted to the Objective-C parameter of the same role.
      */
         void set_delegate(const Object& an_object) const;
         /**
      * @brief Returns the `machPort` property of `NSMachPort`.
-     * @details The Mach port used by the receiver.
      * @return The converted Objective-C result.
      */
         unsigned int mach_port() const;

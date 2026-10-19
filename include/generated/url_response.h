@@ -12,7 +12,7 @@ namespace cocoon
 
     /**
      * @brief C++ handle for the Objective-C class `NSURLResponse` (Foundation).
-     * @details The metadata associated with the response to a URL load request, independent of protocol and URL scheme. The related ''HTTPURLResponse'' class is a commonly used subclass of ''URLResponse'' whose objects represent a response to an HTTP URL load request and store additional protocol-specific information such as the response headers. Whenever you make an HTTP request, the ''URLResponse'' object you get back is actually an instance of the ''HTTPURLResponse'' class. > Note: > ''URLResponse'' objects don't contain the actual bytes representing the content of a URL. Instead, the data is returned either a piece at a time through delegate calls or in its entirety when the request completes, depending on the method and class used to initiate the request. > > Read \<doc:fetching-website-data-into-memory> to learn various ways to receive the content data from a URL load.
+     * @details \@class NSURLResponse \@abstract An NSURLResponse object represents a URL load response in a manner independent of protocol and URL scheme. \@discussion NSURLResponse encapsulates the metadata associated with a URL load. Note that NSURLResponse objects do not contain the actual bytes representing the content of a URL. See NSURLConnection and NSURLConnectionDelegate for more information about receiving the content data for a URL load.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      *
      * @par Example
@@ -36,31 +36,31 @@ namespace cocoon
         explicit URLResponse(Adopt adopt);
         /**
      * @brief Returns the `MIMEType` property of `NSURLResponse`.
-     * @details The MIME type of the response. The MIME type is often provided by the response's originating source. However, that value may be changed or corrected by a protocol implementation if it can be determined that the response's source reported the information incorrectly. If the response's originating source does not provide a MIME type, an attempt to guess the MIME type may be made.
+     * @details \@abstract Returns the MIME type of the receiver. \@discussion The MIME type is based on the information provided from an origin source. However, that value may be changed or corrected by a protocol implementation if it can be determined that the origin server or source reported the information incorrectly or imprecisely. An attempt to guess the MIME type may be made if the origin source did not report any such information. \@result The MIME type of the receiver.
      * @return The converted Objective-C result.
      */
         std::string mime_type() const;
         /**
      * @brief Returns the `URL` property of `NSURLResponse`.
-     * @details The URL for the response.
+     * @details \@abstract Returns the URL of the receiver. \@result The URL of the receiver.
      * @return The converted Objective-C result.
      */
         URL url() const;
         /**
      * @brief Returns the `expectedContentLength` property of `NSURLResponse`.
-     * @details The expected length of the response's content. This property's value is 'NSURLResponseUnknownLength' if the length can't be determined. Some protocol implementations report the content length as part of the response, but not all protocols guarantee to deliver that amount of data. Your app should be prepared to deal with more or less data.
+     * @details \@abstract Returns the expected content length of the receiver. \@discussion Some protocol implementations report a content length as part of delivering load metadata, but not all protocols guarantee the amount of data that will be delivered in actuality. Hence, this method returns an expected amount. Clients should use this value as an advisory, and should be prepared to deal with either more or less data. \@result The expected content length of the receiver, or -1 if there is no expectation that can be arrived at regarding expected content length.
      * @return The converted Objective-C result.
      */
         std::int64_t expected_content_length() const;
         /**
      * @brief Returns the `suggestedFilename` property of `NSURLResponse`.
-     * @details A suggested filename for the response data. Accessing this property attempts to generate a filename using the following information, in order: 1. A filename specified using the content disposition header. 2. The last path component of the URL. 3. The host of the URL. If the host of URL can't be converted to a valid filename, the filename '"unknown"' is used. In most cases, this property appends the proper file extension based on the MIME type. Accessing this property always returns a valid filename regardless of whether the resource is saved to disk.
+     * @details \@abstract Returns a suggested filename if the resource were saved to disk. \@discussion The method first checks if the server has specified a filename using the content disposition header. If no valid filename is specified using that mechanism, this method checks the last path component of the URL. If no valid filename can be obtained using the last path component, this method uses the URL's host as the filename. If the URL's host can't be converted to a valid filename, the filename "unknown" is used. In most cases, this method appends the proper file extension based on the MIME type. This method always returns a valid filename. \@result A suggested filename to use if saving the resource to disk.
      * @return The converted Objective-C result.
      */
         std::string suggested_filename() const;
         /**
      * @brief Returns the `textEncodingName` property of `NSURLResponse`.
-     * @details The name of the text encoding provided by the response's originating source. If no text encoding was provided by the protocol, this property's value is 'nil'. You can convert this string to a 'CFStringEncoding' value by calling 'CFStringConvertIANACharSetNameToEncoding(:)'. You can subsequently convert that value to an 'NSStringEncoding' value by calling 'CFStringConvertEncodingToNSStringEncoding(:)'.
+     * @details \@abstract Returns the name of the text encoding of the receiver. \@discussion This name will be the actual string reported by the origin source during the course of performing a protocol-specific URL load. Clients can inspect this string and convert it to an NSStringEncoding or CFStringEncoding using the methods and functions made available in the appropriate framework. \@result The name of the text encoding of the receiver, or nil if no text encoding was specified.
      * @return The converted Objective-C result.
      */
         std::string text_encoding_name() const;

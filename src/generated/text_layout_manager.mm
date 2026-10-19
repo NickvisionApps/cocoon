@@ -57,33 +57,6 @@
                                            });
 }
 
-#ifdef COCOON_MACOS_27
-- (void)textLayoutManager:(NSTextLayoutManager*)textLayoutManager cacheTextAttachmentViewProvider:(NSTextAttachmentViewProvider*)viewProvider forTextAttachment:(NSTextAttachment*)textAttachment
-{
-    id strongHost = host;
-    if (!strongHost)
-    {
-        return;
-    }
-    cocoon::Signal<cocoon::TextLayoutManager, void(cocoon::TextAttachmentViewProvider, cocoon::TextAttachment)>::emit((__bridge void*)strongHost, "cache_text_attachment_view_provider_for_text_attachment", cocoon::internal::wrap<cocoon::TextAttachmentViewProvider>(viewProvider), cocoon::internal::wrap<cocoon::TextAttachment>(textAttachment));
-}
-
-#endif
-
-#ifdef COCOON_MACOS_27
-- (NSTextAttachmentViewProvider*)textLayoutManager:(NSTextLayoutManager*)textLayoutManager retrieveCachedTextAttachmentViewProviderForTextAttachment:(NSTextAttachment*)attachment
-{
-    id strongHost = host;
-    if (!strongHost)
-    {
-        return {};
-    }
-    auto __r = cocoon::Signal<cocoon::TextLayoutManager, cocoon::TextAttachmentViewProvider(cocoon::TextAttachment)>::emit((__bridge void*)strongHost, "retrieve_cached_text_attachment_view_provider_for_text_attachment", cocoon::internal::wrap<cocoon::TextAttachment>(attachment));
-    return cocoon::internal::native<::NSTextAttachmentViewProvider>(__r);
-}
-
-#endif
-
 - (BOOL)respondsToSelector:(SEL)selector
 {
     id strongHost = host;
@@ -99,20 +72,6 @@
     {
         return strongHost && cocoon::Signal<cocoon::TextLayoutManager, std::map<std::string, cocoon::Object>(cocoon::Object, cocoon::Object, std::map<std::string, cocoon::Object>)>::connected((__bridge void*)strongHost, "rendering_attributes_for_link_at_location_default_attributes");
     }
-#ifdef COCOON_MACOS_27
-    if (selector == @selector(textLayoutManager:cacheTextAttachmentViewProvider:forTextAttachment:))
-    {
-        return strongHost && cocoon::Signal<cocoon::TextLayoutManager, void(cocoon::TextAttachmentViewProvider, cocoon::TextAttachment)>::connected((__bridge void*)strongHost, "cache_text_attachment_view_provider_for_text_attachment");
-    }
-#endif
-
-#ifdef COCOON_MACOS_27
-    if (selector == @selector(textLayoutManager:retrieveCachedTextAttachmentViewProviderForTextAttachment:))
-    {
-        return strongHost && cocoon::Signal<cocoon::TextLayoutManager, cocoon::TextAttachmentViewProvider(cocoon::TextAttachment)>::connected((__bridge void*)strongHost, "retrieve_cached_text_attachment_view_provider_for_text_attachment");
-    }
-#endif
-
     return [super respondsToSelector:selector];
 }
 

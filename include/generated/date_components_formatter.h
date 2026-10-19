@@ -14,7 +14,7 @@ namespace cocoon
 
     /**
      * @brief C++ handle for the Objective-C class `NSDateComponentsFormatter` (Foundation).
-     * @details A formatter that creates string representations of quantities of time. An ''DateComponentsFormatter'' object takes quantities of time and formats them as a user-readable string. Use a date components formatter to create strings for your app's interface. The formatter object has many options for creating both abbreviated and expanded strings. The formatter takes the current user's locale and language into account when generating strings. To use this class, create an instance, configure its properties, and call one of its methods to generate an appropriate string. The properties of this class let you configure the calendar and specify the date and time units you want displayed in the resulting string. The listing below shows how to configure a formatter to create the string "About 5 minutes remaining". \@TabNavigator { \@Tab("Swift") { '''swift let formatter = DateComponentsFormatter() formatter.unitsStyle = .full formatter.includesApproximationPhrase = true formatter.includesTimeRemainingPhrase = true formatter.allowedUnits = [.minute] // Use the configured formatter to generate the string. let outputString = formatter.string(from: 300.0) ''' } \@Tab("Objective-C") { '''objc NSDateComponentsFormatter formatter = [[NSDateComponentsFormatter alloc] init]; formatter.unitsStyle = NSDateComponentsFormatterUnitsStyleFull; formatter.includesApproximationPhrase = YES; formatter.includesTimeRemainingPhrase = YES; formatter.allowedUnits = NSCalendarUnitMinute; // Use the configured formatter to generate the string. NSString outputString = [formatter stringFromTimeInterval:300.0]; ''' } } The methods of this class may be called safely from any thread of your app. It is also safe to share a single instance of this class from multiple threads, with the caveat that you should not change the configuration of the object while another thread is using it to generate a string. > Tip: > In Swift, you can use ''Date/RelativeFormatStyle'' rather than ''DateComponentsFormatter''. The ''FormatStyle'' API offers a declarative idiom for customizing the formatting of various types. Also, Foundation caches identical ''FormatStyle'' instances, so you don't need to pass them around your app, or risk wasting memory with duplicate formatters.
+     * @details NSDateComponentsFormatter provides locale-correct and flexible string formatting of quantities of time, such as "1 day" or "1h 10m", as specified by NSDateComponents. For formatting intervals of time (such as "2PM to 5PM"), see NSDateIntervalFormatter. NSDateComponentsFormatter is thread-safe, in that calling methods on it from multiple threads will not cause crashes or incorrect results, but it makes no attempt to prevent confusion when one thread sets something and another thread isn't expecting it to change.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      * Inherits from @ref Formatter.
      *
@@ -54,7 +54,6 @@ namespace cocoon
         using Formatter::string_for_object_value;
         /**
      * @brief Calls `+[NSDateComponentsFormatter localizedStringFromDateComponents:unitsStyle:]`.
-     * @details Returns a localized string based on the specified date components and style option. Use this convenience method to format a string using the default formatter values, with the exception of the 'unitsStyle' value. \@param components The value to format. \@param unitsStyle The style for the resulting units. Use this parameter to specify whether you want the resulting string to use an abbreviated or more spelled out format. \@return A string containing the localized date and time information.
      * @param components Argument converted to the Objective-C parameter of the same role.
      * @param units_style Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
@@ -62,14 +61,14 @@ namespace cocoon
         static std::string localized_string_from_date_components(const DateComponents& components, DateComponentsFormatterUnitsStyle units_style);
         /**
      * @brief Calls `-[NSDateComponentsFormatter stringForObjectValue:]`.
-     * @details Returns a formatted string based on the date information in the specified object. \@param obj An object containing the date and time information to format. The object in this parameter must be an instance of 'NSDateComponents'. \@return A formatted string representing the specified date information.
+     * @details 'obj' must be an instance of NSDateComponents.
      * @param obj Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
      */
         std::string string_for_object_value(const Object& obj) const;
         /**
      * @brief Calls `-[NSDateComponentsFormatter stringFromDate:toDate:]`.
-     * @details Returns a formatted string based on the time difference between two dates. This method calculates the elapsed time between the 'startDate' and 'endDate' values and uses that information to generate the string. For example, if there is exactly one hour and ten minutes difference between the start and end dates, generating an abbreviated string would result in a string of "1h 10m". Note that this is still formatting the quantity of time between the dates, not the pair of dates itself. For strings like "Feb 22nd - Feb 28th", use 'NSDateIntervalFormatter'. \@param startDate The start time. This parameter must not be 'nil'. \@param endDate The end time. This parameter must not be 'nil'. \@return A formatted string representing the specified time information.
+     * @details Normally, NSDateComponentsFormatter will calculate as though counting from referenceDate (e.g. in February, 1 month formatted as a number of days will be 28). -stringFromDate:toDate: calculates from the passed-in startDate instead. See 'allowedUnits' for how the default set of allowed units differs from -stringFromDateComponents:. Note that this is still formatting the quantity of time between the dates, not the pair of dates itself. For strings like "Feb 22nd - Feb 28th", use NSDateIntervalFormatter.
      * @param start_date Argument converted to the Objective-C parameter of the same role.
      * @param end_date Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
@@ -77,63 +76,63 @@ namespace cocoon
         std::string string_from_date(const Date& start_date, const Date& end_date) const;
         /**
      * @brief Calls `-[NSDateComponentsFormatter stringFromDateComponents:]`.
-     * @details Returns a formatted string based on the specified date component information. Use this method to format date information that is already broken down into the component day and time values. \@param components A date components object containing the date and time information to format. The 'allowedUnits' property determines which date components are actually used to generate the string. All other date components are ignored. This parameter must not be 'nil'. \@return A formatted string representing the specified date information.
+     * @details Convenience method for formatting an NSDateComponents object. This calculates the count of the unit(s) starting from referenceDate.
      * @param components Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
      */
         std::string string_from_date_components(const DateComponents& components) const;
         /**
      * @brief Calls `-[NSDateComponentsFormatter stringFromTimeInterval:]`.
-     * @details Returns a formatted string based on the specified number of seconds. This method formats the specified number of seconds into the appropriate units. For example, if the formatter allows the display of minutes and seconds, creating an abbreviated string for the value 70 seconds results in the string "1m 10s". \@param ti The time interval, measured in seconds. The value must be a finite number. Negative numbers are treated as positive numbers when creating the string. \@return A formatted string representing the specified time interval.
+     * @details Convenience method for formatting a number of seconds. See 'allowedUnits' for how the default set of allowed units differs from -stringFromDateComponents:. This calculates the count of the unit(s) from referenceDate to the passed-in time interval.
      * @param ti Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
      */
         std::string string_from_time_interval(double ti) const;
         /**
      * @brief Returns the `allowedUnits` property of `NSDateComponentsFormatter`.
-     * @details The bitmask of calendrical units such as day and month to include in the output string. The allowed calendar units are: - 'NSCalendarUnitYear' - 'NSCalendarUnitMonth' - 'NSCalendarUnitWeekOfMonth' (used to mean "quantity of weeks") - 'NSCalendarUnitDay' - 'NSCalendarUnitHour' - 'NSCalendarUnitMinute' - 'NSCalendarUnitSecond' Assigning any other calendar units to this property results in an exception.
+     * @details Bitmask of units to include. Set to 0 to get the default behavior. Note that, especially if the maximum number of units is low, unit collapsing is on, or zero dropping is on, not all allowed units may actually be used for a given NSDateComponents. Default value is the components of the passed-in NSDateComponents object, or years | months | weeks | days | hours | minutes | seconds if passed an NSTimeInterval or pair of NSDates. Allowed units are: NSCalendarUnitYear NSCalendarUnitMonth NSCalendarUnitWeekOfMonth (used to mean "quantity of weeks") NSCalendarUnitDay NSCalendarUnitHour NSCalendarUnitMinute NSCalendarUnitSecond Specifying any other NSCalendarUnits will result in an exception.
      * @return The converted Objective-C result.
      */
         CalendarUnit allowed_units() const;
         /**
      * @brief Sets the `allowedUnits` property of `NSDateComponentsFormatter`.
-     * @details The bitmask of calendrical units such as day and month to include in the output string. The allowed calendar units are: - 'NSCalendarUnitYear' - 'NSCalendarUnitMonth' - 'NSCalendarUnitWeekOfMonth' (used to mean "quantity of weeks") - 'NSCalendarUnitDay' - 'NSCalendarUnitHour' - 'NSCalendarUnitMinute' - 'NSCalendarUnitSecond' Assigning any other calendar units to this property results in an exception.
+     * @details Bitmask of units to include. Set to 0 to get the default behavior. Note that, especially if the maximum number of units is low, unit collapsing is on, or zero dropping is on, not all allowed units may actually be used for a given NSDateComponents. Default value is the components of the passed-in NSDateComponents object, or years | months | weeks | days | hours | minutes | seconds if passed an NSTimeInterval or pair of NSDates. Allowed units are: NSCalendarUnitYear NSCalendarUnitMonth NSCalendarUnitWeekOfMonth (used to mean "quantity of weeks") NSCalendarUnitDay NSCalendarUnitHour NSCalendarUnitMinute NSCalendarUnitSecond Specifying any other NSCalendarUnits will result in an exception.
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_allowed_units(CalendarUnit value) const;
         /**
      * @brief Returns the `allowsFractionalUnits` property of `NSDateComponentsFormatter`.
-     * @details A Boolean indicating whether non-integer units may be used for values. Fractional units may be used when a value cannot be exactly represented using the available units. For example, if minutes are not allowed, the value "1h 30m" could be formatted as "1.5h". The default value of this property is 'NO'.
+     * @details Choose whether non-integer units should be used to handle display of values that can't be exactly represented with the allowed units. For example, if minutes aren't allowed, then "1h 30m" could be formatted as "1.5h". Default is NO.
      * @return The converted Objective-C result.
      */
         bool allows_fractional_units() const;
         /**
      * @brief Sets the `allowsFractionalUnits` property of `NSDateComponentsFormatter`.
-     * @details A Boolean indicating whether non-integer units may be used for values. Fractional units may be used when a value cannot be exactly represented using the available units. For example, if minutes are not allowed, the value "1h 30m" could be formatted as "1.5h". The default value of this property is 'NO'.
+     * @details Choose whether non-integer units should be used to handle display of values that can't be exactly represented with the allowed units. For example, if minutes aren't allowed, then "1h 30m" could be formatted as "1.5h". Default is NO.
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_allows_fractional_units(bool value) const;
         /**
      * @brief Returns the `calendar` property of `NSDateComponentsFormatter`.
-     * @details The default calendar to use when formatting date components. The formatter uses the calendar in this property to format values that do not have an inherent calendar of their own. For example, the formatter uses this calendar when formatting an 'NSTimeInterval' value. The default value of this property is the autoupdating current calendar. Setting this property to 'nil' causes the formatter to use the Gregorian calendar with the 'en_US_POSIX' locale.
+     * @details Specifies the locale and calendar to use for formatting date components that do not themselves have calendars. Defaults to NSAutoupdatingCurrentCalendar. If set to nil, uses the gregorian calendar with the en_US_POSIX locale.
      * @return The converted Objective-C result.
      */
         Calendar calendar() const;
         /**
      * @brief Sets the `calendar` property of `NSDateComponentsFormatter`.
-     * @details The default calendar to use when formatting date components. The formatter uses the calendar in this property to format values that do not have an inherent calendar of their own. For example, the formatter uses this calendar when formatting an 'NSTimeInterval' value. The default value of this property is the autoupdating current calendar. Setting this property to 'nil' causes the formatter to use the Gregorian calendar with the 'en_US_POSIX' locale.
+     * @details Specifies the locale and calendar to use for formatting date components that do not themselves have calendars. Defaults to NSAutoupdatingCurrentCalendar. If set to nil, uses the gregorian calendar with the en_US_POSIX locale.
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_calendar(const Calendar& value) const;
         /**
      * @brief Returns the `collapsesLargestUnit` property of `NSDateComponentsFormatter`.
-     * @details A Boolean value indicating whether to collapse the largest unit into smaller units when a certain threshold is met. An example of when this property might apply is when expressing 63 seconds worth of time. When this property is set to 'YES', the formatted value would be "63s". When the value of this property is 'NO', the formatted value would be "1m 3s". The default value of this property is 'NO'.
+     * @details Choose whether to express largest units just above the threshold for the next lowest unit as a larger quantity of the lower unit. For example: "1m 3s" vs "63s". Default is NO.
      * @return The converted Objective-C result.
      */
         bool collapses_largest_unit() const;
         /**
      * @brief Sets the `collapsesLargestUnit` property of `NSDateComponentsFormatter`.
-     * @details A Boolean value indicating whether to collapse the largest unit into smaller units when a certain threshold is met. An example of when this property might apply is when expressing 63 seconds worth of time. When this property is set to 'YES', the formatted value would be "63s". When the value of this property is 'NO', the formatted value would be "1m 3s". The default value of this property is 'NO'.
+     * @details Choose whether to express largest units just above the threshold for the next lowest unit as a larger quantity of the lower unit. For example: "1m 3s" vs "63s". Default is NO.
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_collapses_largest_unit(bool value) const;
@@ -151,73 +150,73 @@ namespace cocoon
         void set_formatting_context(FormattingContext value) const;
         /**
      * @brief Returns the `includesApproximationPhrase` property of `NSDateComponentsFormatter`.
-     * @details A Boolean value indicating whether the resulting phrase reflects an inexact time value. Setting the value of this property to 'YES' adds phrasing to output strings to reflect that the given time value is approximate and not exact. Using this property yields more correct phrasing than simply prepending the string "About" to an output string. The default value of this property is 'NO'.
+     * @details Choose whether to indicate that the allowed units/insignificant units choices lead to inexact results. In some languages, simply prepending "about " to the string will produce incorrect results; this handles those cases correctly. Default is NO.
      * @return The converted Objective-C result.
      */
         bool includes_approximation_phrase() const;
         /**
      * @brief Sets the `includesApproximationPhrase` property of `NSDateComponentsFormatter`.
-     * @details A Boolean value indicating whether the resulting phrase reflects an inexact time value. Setting the value of this property to 'YES' adds phrasing to output strings to reflect that the given time value is approximate and not exact. Using this property yields more correct phrasing than simply prepending the string "About" to an output string. The default value of this property is 'NO'.
+     * @details Choose whether to indicate that the allowed units/insignificant units choices lead to inexact results. In some languages, simply prepending "about " to the string will produce incorrect results; this handles those cases correctly. Default is NO.
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_includes_approximation_phrase(bool value) const;
         /**
      * @brief Returns the `includesTimeRemainingPhrase` property of `NSDateComponentsFormatter`.
-     * @details A Boolean value indicating whether output strings reflect the amount of time remaining. Setting this property to 'YES' results in output strings like "30 minutes remaining". The default value of this property is 'NO'.
+     * @details Choose whether to produce strings like "35 minutes remaining". Default is NO.
      * @return The converted Objective-C result.
      */
         bool includes_time_remaining_phrase() const;
         /**
      * @brief Sets the `includesTimeRemainingPhrase` property of `NSDateComponentsFormatter`.
-     * @details A Boolean value indicating whether output strings reflect the amount of time remaining. Setting this property to 'YES' results in output strings like "30 minutes remaining". The default value of this property is 'NO'.
+     * @details Choose whether to produce strings like "35 minutes remaining". Default is NO.
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_includes_time_remaining_phrase(bool value) const;
         /**
      * @brief Returns the `maximumUnitCount` property of `NSDateComponentsFormatter`.
-     * @details The maximum number of time units to include in the output string. Use this property to limit the number of units displayed in the resulting string. For example, with this property set to 2, instead of "1h 10m, 30s", the resulting string would be "1h 10m". Use this property when you are constrained for space or want to round up values to the nearest large unit. The default value of this property is '0', which does not cause the elimination of any units.
+     * @details Choose whether or not, and at which point, to round small units in large values to zero. Examples: 1h 10m 30s, maximumUnitCount set to 0: "1h 10m 30s" 1h 10m 30s, maximumUnitCount set to 2: "1h 10m" 10m 30s, maximumUnitCount set to 0: "10m 30s" 10m 30s, maximumUnitCount set to 2: "10m 30s" Default is 0, which is interpreted as unlimited.
      * @return The converted Objective-C result.
      */
         std::int64_t maximum_unit_count() const;
         /**
      * @brief Sets the `maximumUnitCount` property of `NSDateComponentsFormatter`.
-     * @details The maximum number of time units to include in the output string. Use this property to limit the number of units displayed in the resulting string. For example, with this property set to 2, instead of "1h 10m, 30s", the resulting string would be "1h 10m". Use this property when you are constrained for space or want to round up values to the nearest large unit. The default value of this property is '0', which does not cause the elimination of any units.
+     * @details Choose whether or not, and at which point, to round small units in large values to zero. Examples: 1h 10m 30s, maximumUnitCount set to 0: "1h 10m 30s" 1h 10m 30s, maximumUnitCount set to 2: "1h 10m" 10m 30s, maximumUnitCount set to 0: "10m 30s" 10m 30s, maximumUnitCount set to 2: "10m 30s" Default is 0, which is interpreted as unlimited.
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_maximum_unit_count(std::int64_t value) const;
         /**
      * @brief Returns the `referenceDate` property of `NSDateComponentsFormatter`.
-     * @details Where units have variable length (number of days in a month, number of hours in a day, etc.), 'NSDateComponentsFormatter' will calculate as though counting from the date specified by the 'referenceDate' in the appropriate calendar. Defaults to '[NSDate dateWithTimeIntervalSinceReferenceDate:0]' at the time of the '-stringForObjectValue:' call if not set. Set to 'nil' to get the default behavior.
+     * @details Where units have variable length (number of days in a month, number of hours in a day, etc...), NSDateComponentsFormatter will calculate as though counting from the date specified by the referenceDate in the appropriate calendar. Defaults to [NSDate dateWithTimeIntervalSinceReferenceDate:0] at the time of the -stringForObjectValue: call if not set. Set to nil to get the default behavior.
      * @return The converted Objective-C result.
      */
         Date reference_date() const;
         /**
      * @brief Sets the `referenceDate` property of `NSDateComponentsFormatter`.
-     * @details Where units have variable length (number of days in a month, number of hours in a day, etc.), 'NSDateComponentsFormatter' will calculate as though counting from the date specified by the 'referenceDate' in the appropriate calendar. Defaults to '[NSDate dateWithTimeIntervalSinceReferenceDate:0]' at the time of the '-stringForObjectValue:' call if not set. Set to 'nil' to get the default behavior.
+     * @details Where units have variable length (number of days in a month, number of hours in a day, etc...), NSDateComponentsFormatter will calculate as though counting from the date specified by the referenceDate in the appropriate calendar. Defaults to [NSDate dateWithTimeIntervalSinceReferenceDate:0] at the time of the -stringForObjectValue: call if not set. Set to nil to get the default behavior.
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_reference_date(const Date& value) const;
         /**
      * @brief Returns the `unitsStyle` property of `NSDateComponentsFormatter`.
-     * @details The formatting style for unit names. Configures the strings to use (if any) for unit names such as days, hours, minutes, and seconds. Use this property to specify whether you want abbreviated or shortened versions of unit names---for example, "hrs" instead of "hours". The default value of this property is 'NSDateComponentsFormatterUnitsStylePositional'.
+     * @details Choose how to indicate units. For example, 1h 10m vs 1:10. Default is NSDateComponentsFormatterUnitsStylePositional.
      * @return The converted Objective-C result.
      */
         DateComponentsFormatterUnitsStyle units_style() const;
         /**
      * @brief Sets the `unitsStyle` property of `NSDateComponentsFormatter`.
-     * @details The formatting style for unit names. Configures the strings to use (if any) for unit names such as days, hours, minutes, and seconds. Use this property to specify whether you want abbreviated or shortened versions of unit names---for example, "hrs" instead of "hours". The default value of this property is 'NSDateComponentsFormatterUnitsStylePositional'.
+     * @details Choose how to indicate units. For example, 1h 10m vs 1:10. Default is NSDateComponentsFormatterUnitsStylePositional.
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_units_style(DateComponentsFormatterUnitsStyle value) const;
         /**
      * @brief Returns the `zeroFormattingBehavior` property of `NSDateComponentsFormatter`.
-     * @details The formatting style for units whose value is 0. When the value for a particular unit is 0, the zero formatting behavior determines whether that value is retained or omitted from any resulting strings. For example, when the formatting behavior is 'NSDateComponentsFormatterZeroFormattingBehaviorDropTrailing', the value of one hour, ten minutes, and zero seconds would omit the mention of seconds. The default value of this property is 'NSDateComponentsFormatterZeroFormattingBehaviorDefault'.
+     * @details Bitmask specifying how to handle zeros in units. This includes both padding and dropping zeros so that a consistent number digits are displayed, causing updating displays to remain more stable. Default is NSDateComponentsFormatterZeroFormattingBehaviorDefault. If the combination of zero formatting behavior and style would lead to ambiguous date formats (for example, 1:10 meaning 1 hour, 10 seconds), NSDateComponentsFormatter will throw an exception.
      * @return The converted Objective-C result.
      */
         DateComponentsFormatterZeroFormattingBehavior zero_formatting_behavior() const;
         /**
      * @brief Sets the `zeroFormattingBehavior` property of `NSDateComponentsFormatter`.
-     * @details The formatting style for units whose value is 0. When the value for a particular unit is 0, the zero formatting behavior determines whether that value is retained or omitted from any resulting strings. For example, when the formatting behavior is 'NSDateComponentsFormatterZeroFormattingBehaviorDropTrailing', the value of one hour, ten minutes, and zero seconds would omit the mention of seconds. The default value of this property is 'NSDateComponentsFormatterZeroFormattingBehaviorDefault'.
+     * @details Bitmask specifying how to handle zeros in units. This includes both padding and dropping zeros so that a consistent number digits are displayed, causing updating displays to remain more stable. Default is NSDateComponentsFormatterZeroFormattingBehaviorDefault. If the combination of zero formatting behavior and style would lead to ambiguous date formats (for example, 1:10 meaning 1 hour, 10 seconds), NSDateComponentsFormatter will throw an exception.
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_zero_formatting_behavior(DateComponentsFormatterZeroFormattingBehavior value) const;

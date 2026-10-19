@@ -377,18 +377,6 @@ namespace cocoon
         return static_cast<double>([cocoon::internal::ns<::NSEvent>(this) timestamp]);
     }
 
-#ifdef COCOON_MACOS_27
-    bool Event::is_touch_swipe_navigation_enabled()
-    {
-        if (@available(macOS 27.0, *))
-        {
-            return static_cast<bool>([::NSEvent isTouchSwipeNavigationEnabled]);
-        }
-        return {};
-    }
-
-#endif
-
     TrackingArea Event::tracking_area() const
     {
         return cocoon::internal::wrap<TrackingArea>([cocoon::internal::ns<::NSEvent>(this) trackingArea]);

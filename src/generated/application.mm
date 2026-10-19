@@ -284,9 +284,9 @@
                                                                                                                                            {
                                                                                                                                                return {};
                                                                                                                                            }
-                                                                                                                                           return [blk](std::vector<cocoon::Object> a281_0) -> void
+                                                                                                                                           return [blk](std::vector<cocoon::Object> a278_0) -> void
                                                                                                                                            {
-                                                                                                                                               blk(cocoon::internal::to_array(a281_0, [](const cocoon::Object& e) -> id
+                                                                                                                                               blk(cocoon::internal::to_array(a278_0, [](const cocoon::Object& e) -> id
                                                                                                                                                                               {
                                                                                                                                                                                   return cocoon::internal::native_id(e);
                                                                                                                                                                               }));

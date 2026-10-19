@@ -3,19 +3,6 @@
 
 namespace cocoon
 {
-    TextTab::TextTab(TextAlignment alignment, double loc, const std::map<std::string, Object>& options) : TextTab(Adopt{cocoon::internal::retain([[::NSTextTab alloc] initWithTextAlignment:static_cast<::NSTextAlignment>(alignment)
-                                                                                                                                                                                   location:static_cast<::CGFloat>(loc)
-                                                                                                                                                                                    options:cocoon::internal::to_dictionary(options, [](const std::string& k) -> id
-                                                                                                                                                                                                                            {
-                                                                                                                                                                                                                                return cocoon::internal::to(k);
-                                                                                                                                                                                                                            },
-                                                                                                                                                                                                                            [](const Object& v) -> id
-                                                                                                                                                                                                                            {
-                                                                                                                                                                                                                                return cocoon::internal::native_id(v);
-                                                                                                                                                                                                                            })])})
-    {
-    }
-
     TextTab::TextTab(TextTabType type, double loc) : TextTab(Adopt{cocoon::internal::retain([[::NSTextTab alloc] initWithType:static_cast<::NSTextTabType>(type) location:static_cast<::CGFloat>(loc)])})
     {
     }
@@ -35,11 +22,6 @@ namespace cocoon
     CharacterSet TextTab::column_terminators_for_locale(const Locale& a_locale)
     {
         return cocoon::internal::wrap<CharacterSet>([::NSTextTab columnTerminatorsForLocale:cocoon::internal::native<::NSLocale>(a_locale)]);
-    }
-
-    TextAlignment TextTab::alignment() const
-    {
-        return static_cast<TextAlignment>([cocoon::internal::ns<::NSTextTab>(this) alignment]);
     }
 
     double TextTab::location() const

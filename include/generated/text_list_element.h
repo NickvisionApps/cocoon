@@ -40,7 +40,6 @@ namespace cocoon
         using TextParagraph::attributed_string;
         /**
      * @brief Calls `+[NSTextListElement textListElementWithChildElements:textList:nestingLevel:]`.
-     * @details Creates a text list element with the list elements and nesting level you provide. Raises an exception when 'nestingLevel \< 0'. - Parameters: - children: An array of ''NSTextListElement'' elements. - textList: The ''NSTextList'' to add elements to. - nestingLevel: An integer value that describes the level of nesting of these elements. - Returns: 'nil' if 'children.count' is zero.
      * @param children Argument converted to the Objective-C parameter of the same role.
      * @param text_list Argument converted to the Objective-C parameter of the same role.
      * @param nesting_level Argument converted to the Objective-C parameter of the same role.
@@ -49,7 +48,6 @@ namespace cocoon
         static TextListElement text_list_element_with_child_elements(const std::vector<TextListElement>& children, const TextList& text_list, std::int64_t nesting_level);
         /**
      * @brief Calls `+[NSTextListElement textListElementWithContents:markerAttributes:textList:childElements:]`.
-     * @details Creates a text list element with the list elements, nesting level, and marker attributes you provide. - Parameters: - contents: An \<doc://com.apple.documentation/documentation/foundation/nsattributedstring> that contains the contents of the text list element. - markerAttributes: A dictionary of \<doc://com.apple.documentation/documentation/foundation/nsattributedstring/key> keys and values that describe the marker attributes. - textList: The ''NSTextList'' to add elements to. - children: An array of ''NSTextListElement'' elements.
      * @param contents Argument converted to the Objective-C parameter of the same role.
      * @param marker_attributes Argument converted to the Objective-C parameter of the same role.
      * @param text_list Argument converted to the Objective-C parameter of the same role.
@@ -59,37 +57,31 @@ namespace cocoon
         static TextListElement text_list_element_with_contents(const AttributedString& contents, const std::map<std::string, Object>& marker_attributes, const TextList& text_list, const std::vector<TextListElement>& children);
         /**
      * @brief Returns the `attributedString` property of `NSTextListElement`.
-     * @details An attributed string that represents the string the framework displays for this element taking into account markers and the indentation level of the list element. Derived from ''contents'' and ''textList'' configured with the text list element's position inside the tree. Overrides 'NSTextParagraph.attributedString'.
      * @return The converted Objective-C result.
      */
         AttributedString attributed_string() const;
         /**
      * @brief Returns the `childElements` property of `NSTextListElement`.
-     * @details An array that contains child text elements.
      * @return The converted Objective-C result.
      */
         std::vector<TextListElement> child_elements() const;
         /**
      * @brief Returns the `contents` property of `NSTextListElement`.
-     * @details The text list element contents without markers and formatting.
      * @return The converted Objective-C result.
      */
         AttributedString contents() const;
         /**
      * @brief Returns the `markerAttributes` property of `NSTextListElement`.
-     * @details A dictionary of attributed string keys and values that represent the list's marker attributes.
      * @return The converted Objective-C result.
      */
         std::map<std::string, Object> marker_attributes() const;
         /**
      * @brief Returns the `parentElement` property of `NSTextListElement`.
-     * @details A text list element that refers to the enclosing text list element.
      * @return The converted Objective-C result.
      */
         TextListElement parent_element() const;
         /**
      * @brief Returns the `textList` property of `NSTextListElement`.
-     * @details The value that represents the text list.
      * @return The converted Objective-C result.
      */
         TextList text_list() const;

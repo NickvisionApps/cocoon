@@ -283,29 +283,6 @@ namespace cocoon
         [cocoon::internal::ns<::NSGestureRecognizer>(this) setAllowedTouchTypes:static_cast<::NSTouchTypeMask>(value)];
     }
 
-#ifdef COCOON_MACOS_27
-    bool GestureRecognizer::is_cancellable_by_scroll_gesture() const
-    {
-        if (@available(macOS 27.0, *))
-        {
-            return static_cast<bool>([cocoon::internal::ns<::NSGestureRecognizer>(this) isCancellableByScrollGesture]);
-        }
-        return {};
-    }
-
-#endif
-
-#ifdef COCOON_MACOS_27
-    void GestureRecognizer::set_cancellable_by_scroll_gesture(bool value) const
-    {
-        if (@available(macOS 27.0, *))
-        {
-            [cocoon::internal::ns<::NSGestureRecognizer>(this) setCancellableByScrollGesture:static_cast<::BOOL>(value)];
-        }
-    }
-
-#endif
-
     bool GestureRecognizer::delays_key_events() const
     {
         return static_cast<bool>([cocoon::internal::ns<::NSGestureRecognizer>(this) delaysKeyEvents]);

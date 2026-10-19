@@ -13,7 +13,7 @@ namespace cocoon
 
     /**
      * @brief C++ handle for the Objective-C class `NSURLCredential` (Foundation).
-     * @details An authentication credential consisting of information specific to the type of credential and the type of persistent storage to use, if any. The URL Loading System supports password-based user credentials, certificate-based user credentials, and certificate-based server credentials. When you create a credential, you can specify it for a single request, persist it temporarily (until your app quits), or persist it permanently. Permanent persistence can be local persistence in the keychain, or synchronized persistence across the user's devices, based on their Apple ID. > Note: > Permanent storage of credentials is only available for password-based credentials. TLS credentials are never stored permanently by ''URLCredentialStorage''. In general, use for-session persistence for TLS credentials.
+     * @details \@class NSURLCredential \@discussion This class is an immutable object representing an authentication credential. The actual type of the credential is determined by the constructor called in the categories declared below.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      *
      * @par Example
@@ -48,14 +48,14 @@ namespace cocoon
         explicit URLCredential(Adopt adopt);
         /**
      * @brief Calls `+[NSURLCredential credentialForTrust:]`.
-     * @details Creates a URL credential instance for server trust authentication with a given accepted trust. Before creating a server trust credential, it is the responsibility of the delegate of an ''NSURLConnection'' instance or an ''NSURLDownload'' instance to evaluate the trust. Do this by calling 'SecTrustEvaluate', passing it the trust obtained from the 'serverTrust' method of the server's ''NSURLProtectionSpace'' instance. If the trust is invalid, the authentication challenge should be cancelled with the ''NSURLAuthenticationChallengeSender'' protocol's 'cancelAuthenticationChallenge:' method. - Parameter trust: The accepted trust. - Returns: A new URL credential object, containing the accepted server trust.
+     * @details \@method credentialForTrust: \@abstract Create a new NSURLCredential which specifies that a handshake has been trusted. \@result The new autoreleased NSURLCredential
      * @param trust Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
      */
         static URLCredential credential_for_trust(const SecTrust& trust);
         /**
      * @brief Calls `+[NSURLCredential credentialWithIdentity:certificates:persistence:]`.
-     * @details Creates a new 'NSURLCredential' with an identity and certificate array. - Parameter identity: A 'SecIdentityRef' object. - Parameter certArray: An array containing at least one 'SecCertificateRef' objects. - Parameter persistence: A value indicating whether the credential should be stored permanently, for the duration of the current session, or not at all. - Returns: The new autoreleased 'NSURLCredential'.
+     * @details \@method credentialWithIdentity:certificates:persistence: \@abstract Create a new NSURLCredential with an identity and certificate array \@param identity a SecIdentityRef object \@param certArray an array containing at least one SecCertificateRef objects \@param persistence enum that says to store per session, permanently or not at all \@result The new autoreleased NSURLCredential
      * @param identity Argument converted to the Objective-C parameter of the same role.
      * @param cert_array Argument converted to the Objective-C parameter of the same role.
      * @param persistence Argument converted to the Objective-C parameter of the same role.
@@ -64,7 +64,7 @@ namespace cocoon
         static URLCredential credential_with_identity(const SecIdentity& identity, const std::vector<Object>& cert_array, URLCredentialPersistence persistence);
         /**
      * @brief Calls `+[NSURLCredential credentialWithUser:password:persistence:]`.
-     * @details Creates a new 'NSURLCredential' with a user and password. - Parameter user: The user for the credential. - Parameter password: The password for 'user'. - Parameter persistence: A value indicating whether the credential should be stored permanently, for the duration of the current session, or not at all. - Returns: The new autoreleased 'NSURLCredential'.
+     * @details \@method credentialWithUser:password:persistence: \@abstract Create a new NSURLCredential with a user and password \@param user the username \@param password the password \@param persistence enum that says to store per session, permanently or not at all \@result The new autoreleased NSURLCredential
      * @param user Argument converted to the Objective-C parameter of the same role.
      * @param password Argument converted to the Objective-C parameter of the same role.
      * @param persistence Argument converted to the Objective-C parameter of the same role.
@@ -73,37 +73,37 @@ namespace cocoon
         static URLCredential credential_with_user(const std::string& user, const std::string& password, URLCredentialPersistence persistence);
         /**
      * @brief Returns the `certificates` property of `NSURLCredential`.
-     * @details The intermediate certificates of the credential, if it is a client certificate credential. The certificates are 'SecCertificateRef' objects. This value is 'nil' if this is not a client certificate credential.
+     * @details \@abstract Returns an NSArray of SecCertificateRef objects representing the client certificate for this credential, if this credential was created with an identity and certificate. \@result an NSArray of SecCertificateRef or NULL if this is a username/password credential
      * @return The converted Objective-C result.
      */
         std::vector<Object> certificates() const;
         /**
      * @brief Returns the `hasPassword` property of `NSURLCredential`.
-     * @details A Boolean value that indicates whether the credential has a password. This method does not attempt to retrieve the password. If this credential's password is stored in the user's keychain, the 'password' property may return 'nil' even if this method returns 'YES' -- getting the password may fail, or the user may refuse access.
+     * @details \@abstract Find out if this credential has a password, without trying to get it \@result YES if this credential has a password, otherwise NO \@discussion If this credential's password is actually kept in an external store, the password method may return nil even if this method returns YES, since getting the password may fail, or the user may refuse access.
      * @return The converted Objective-C result.
      */
         bool has_password() const;
         /**
      * @brief Returns the `identity` property of `NSURLCredential`.
-     * @details The identity of this credential if it is a client certificate credential. This value is 'nil' if the credential is not a client certificate credential.
+     * @details \@abstract Returns the SecIdentityRef of this credential, if it was created with a certificate and identity \@result A SecIdentityRef or NULL if this is a username/password credential
      * @return The converted Objective-C result.
      */
         SecIdentity identity() const;
         /**
      * @brief Returns the `password` property of `NSURLCredential`.
-     * @details The credential's password. You should only access this property if you need the actual password value. If you only need to know if there is a password, use 'hasPassword'. Accessing this property may result in prompting the user for access.
+     * @details \@abstract Get the password \@result The password string \@discussion This method might actually attempt to retrieve the password from an external store, possible resulting in prompting, so do not call it unless needed.
      * @return The converted Objective-C result.
      */
         std::string password() const;
         /**
      * @brief Returns the `persistence` property of `NSURLCredential`.
-     * @details The credential's persistence setting.
+     * @details \@abstract Determine whether this credential is or should be stored persistently \@result A value indicating whether this credential is stored permanently, per session or not at all.
      * @return The converted Objective-C result.
      */
         URLCredentialPersistence persistence() const;
         /**
      * @brief Returns the `user` property of `NSURLCredential`.
-     * @details The credential's user name.
+     * @details \@abstract Get the username \@result The user string
      * @return The converted Objective-C result.
      */
         std::string user() const;

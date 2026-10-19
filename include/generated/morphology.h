@@ -10,7 +10,6 @@ namespace cocoon
 {
     /**
      * @brief C++ handle for the Objective-C class `NSMorphology` (Foundation).
-     * @details A description of the grammatical properties of a string.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      *
      * @par Example
@@ -75,13 +74,11 @@ namespace cocoon
         void set_grammatical_case(GrammaticalCase value) const;
         /**
      * @brief Returns the `grammaticalGender` property of `NSMorphology`.
-     * @details The grammatical gender used for inflecting strings.
      * @return The converted Objective-C result.
      */
         GrammaticalGender grammatical_gender() const;
         /**
      * @brief Sets the `grammaticalGender` property of `NSMorphology`.
-     * @details The grammatical gender used for inflecting strings.
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_grammatical_gender(GrammaticalGender value) const;
@@ -97,25 +94,21 @@ namespace cocoon
         void set_grammatical_person(GrammaticalPerson value) const;
         /**
      * @brief Returns the `number` property of `NSMorphology`.
-     * @details The grammatical number used for inflecting strings.
      * @return The converted Objective-C result.
      */
         GrammaticalNumber number() const;
         /**
      * @brief Sets the `number` property of `NSMorphology`.
-     * @details The grammatical number used for inflecting strings.
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_number(GrammaticalNumber value) const;
         /**
      * @brief Returns the `partOfSpeech` property of `NSMorphology`.
-     * @details The grammatical part of speech used for inflecting strings.
      * @return The converted Objective-C result.
      */
         GrammaticalPartOfSpeech part_of_speech() const;
         /**
      * @brief Sets the `partOfSpeech` property of `NSMorphology`.
-     * @details The grammatical part of speech used for inflecting strings.
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_part_of_speech(GrammaticalPartOfSpeech value) const;
@@ -131,13 +124,11 @@ namespace cocoon
         void set_pronoun_type(GrammaticalPronounType value) const;
         /**
      * @brief Returns the `unspecified` property of `NSMorphology`.
-     * @details A Boolean value that indicates whether the morphology has no specific settings.
      * @return The converted Objective-C result.
      */
         bool is_unspecified() const;
         /**
      * @brief Returns the `userMorphology` property of `NSMorphology`.
-     * @details The current user's morphology.
      * @return The converted Objective-C result.
      */
         static Morphology user_morphology();

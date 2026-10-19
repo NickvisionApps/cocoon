@@ -211,29 +211,6 @@ namespace cocoon
         return cocoon::internal::wrap<MenuItem>([cocoon::internal::ns<::NSMenuItem>(this) parentItem]);
     }
 
-#ifdef COCOON_MACOS_27
-    MenuItemImageVisibility MenuItem::preferred_image_visibility() const
-    {
-        if (@available(macOS 27.0, *))
-        {
-            return static_cast<MenuItemImageVisibility>([cocoon::internal::ns<::NSMenuItem>(this) preferredImageVisibility]);
-        }
-        return {};
-    }
-
-#endif
-
-#ifdef COCOON_MACOS_27
-    void MenuItem::set_preferred_image_visibility(MenuItemImageVisibility value) const
-    {
-        if (@available(macOS 27.0, *))
-        {
-            [cocoon::internal::ns<::NSMenuItem>(this) setPreferredImageVisibility:static_cast<::NSMenuItemImageVisibility>(value)];
-        }
-    }
-
-#endif
-
     Object MenuItem::represented_object() const
     {
         return cocoon::internal::wrap<Object>([cocoon::internal::ns<::NSMenuItem>(this) representedObject]);

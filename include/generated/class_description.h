@@ -10,7 +10,6 @@ namespace cocoon
 {
     /**
      * @brief C++ handle for the Objective-C class `NSClassDescription` (Foundation).
-     * @details An abstract class that provides the interface for querying the relationships and properties of a class.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      *
      * @par Example
@@ -40,45 +39,38 @@ namespace cocoon
         explicit ClassDescription(Adopt adopt);
         /**
      * @brief Calls `+[NSClassDescription classDescriptionForClass:]`.
-     * @details Returns the class description for a given class.
      * @param a_class Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
      */
         static ClassDescription class_description_for_class(const std::string& a_class);
         /**
      * @brief Calls `+[NSClassDescription invalidateClassDescriptionCache]`.
-     * @details Removes all ''NSClassDescription'' objects from the cache.
      */
         static void invalidate_class_description_cache();
         /**
      * @brief Calls `-[NSClassDescription inverseForRelationshipKey:]`.
-     * @details Returns the name of the inverse relationship from a relationship specified by a given key.
      * @param relationship_key Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
      */
         std::string inverse_for_relationship_key(const std::string& relationship_key) const;
         /**
      * @brief Calls `+[NSClassDescription registerClassDescription:forClass:]`.
-     * @details Registers an ''NSClassDescription'' object for a given class in the ''NSClassDescription'' cache.
      * @param description Argument converted to the Objective-C parameter of the same role.
      * @param a_class Argument converted to the Objective-C parameter of the same role.
      */
         static void register_class_description(const ClassDescription& description, const std::string& a_class);
         /**
      * @brief Returns the `attributeKeys` property of `NSClassDescription`.
-     * @details An array of ''NSString'' objects representing the receiver's attribute keys.
      * @return The converted Objective-C result.
      */
         std::vector<std::string> attribute_keys() const;
         /**
      * @brief Returns the `toManyRelationshipKeys` property of `NSClassDescription`.
-     * @details An array of ''NSString'' objects representing the keys for the receiver's to-many relationships.
      * @return The converted Objective-C result.
      */
         std::vector<std::string> to_many_relationship_keys() const;
         /**
      * @brief Returns the `toOneRelationshipKeys` property of `NSClassDescription`.
-     * @details An array of ''NSString'' objects representing the keys for the receiver's to-one relationships.
      * @return The converted Objective-C result.
      */
         std::vector<std::string> to_one_relationship_keys() const;

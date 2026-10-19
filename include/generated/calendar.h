@@ -15,7 +15,6 @@ namespace cocoon
 
     /**
      * @brief C++ handle for the Objective-C class `NSCalendar` (Foundation).
-     * @details A definition of the relationships between calendar units and absolute points in time, providing features for calculation and comparison of dates. In Swift, this object bridges to ''Calendar''; use ''NSCalendar'' when you need reference semantics or other Foundation-specific behavior. ''NSCalendar'' objects encapsulate information about systems of reckoning time in which the beginning, length, and divisions of a year are defined. They provide information about the calendar and support for calendrical computations such as determining the range of a given calendrical unit and adding units to a given absolute time. ''NSCalendar'' is toll-free bridged with its Core Foundation counterpart, \<doc://com.apple.documentation/documentation/corefoundation/cfcalendar>. See [Toll-Free Bridging](https://developer.apple.com/library/archive/documentation/General/Conceptual/CocoaEncyclopedia/Toll-FreeBridgin/Toll-FreeBridgin.html\#//apple_ref/doc/uid/TP40010810-CH2) for more information on toll-free bridging. > Important: > The Swift overlay to the Foundation framework provides the ''Calendar'' structure, which bridges to the ''NSCalendar'' class. For more information about value types, see \<doc://com.apple.documentation/documentation/swift/working-with-foundation-types>. \#\#\# Locales and Calendars Most locales use the most widely used civil calendar, called the Gregorian calendar (''Identifier/gregorian''), but there remain exceptions to this trend. For example: - In Saudi Arabia, some locales use primarily the Islamic Umm al-Qura calendar (''Identifier/islamicUmmAlQura''). - In Ethiopia, some locales use primarily the Ethiopian calendar (''Identifier/ethiopicAmeteMihret'' or ''Identifier/ethiopicAmeteAlem''). - In Iran and Afghanistan, some locales use primarily the Persian calendar (''Identifier/persian''). - In Thailand, some locales use primarily the Buddhist calendar (''Identifier/buddhist''). Other locales use another calendar alongside the Gregorian calendar. For example: - India also uses the Indian national calendar (''Identifier/indian''). - Israel also uses the Hebrew calendar (''Identifier/hebrew''). - China mainland and other regions also use the Chinese calendar (''Identifier/chinese''), primarily to calculate astronomical date and Chinese traditional holidays. - Japan also uses the Japanese calendar (''Identifier/japanese''), primarily to add year names. Independent of any particular locale, certain calendars are used primarily to calculate dates for religious observances. Among these are the Buddhist (''Identifier/buddhist''), Coptic (''Identifier/coptic''), Hebrew (''Identifier/hebrew''), and Islamic (''Identifier/islamic'') calendars. \#\#\# How NSCalendar Models the Gregorian Calendar The Gregorian calendar was first introduced in 1582, as a replacement for the Julian Calendar. According to the Julian calendar, a leap day is added to February for any year with a number divisible by 4, which results in an annual disparity of 11 minutes, or 1 day every 128 years. The Gregorian calendar revised the rules for leap day calculation, by skipping the leap day for any year with a number divisible by 100, unless that year number is also divisible by 400, resulting in an annual disparity of only 26 seconds, or 1 day every 3323 years. To transition from the Julian calendar to the Gregorian calendar, 10 days were dropped from the Gregorian calendar (October 5–14). After the Gregorian calendar was introduced, many regions continued to use the Julian calendar, with Turkey being the last country or region to adopt the Gregorian calendar, in 1926. As a result of the staggered adoption, the transition period for regions at the time of adoption have different start dates and a different number of skipped days to account for the additional disparity from leap day calculations. ''NSCalendar'' models the behavior of a proleptic Gregorian calendar (as defined by ISO 8601:2004), which extends the Gregorian calendar backward in time from the date of its introduction. This behavior should be taken into account when working with dates created before the transition period of the affected locales. \#\#\# Calendar Arithmetic To do calendar arithmetic, you use ''NSDate'' objects in conjunction with a calendar. For example, to convert between a decomposed date in one calendar and another calendar, you must first convert the decomposed elements into a date using the first calendar, then decompose it using the second. ''NSDate'' provides the absolute scale and epoch (reference point) for dates and times, which can then be rendered into a particular calendar, for calendrical computations or user display. Two ''NSCalendar'' methods that return a date object, ''date(from:)'', ''date(byAdding:to:options:)'', take as a parameter an ''NSDateComponents'' object that describes the calendrical components required for the computation. You can provide as many components as you need (or choose to). When there is incomplete information to compute an absolute time, default values similar to '0' and '1' are usually chosen by a calendar, but this is a calendar-specific choice. If you provide inconsistent information, calendar-specific disambiguation is performed (which may involve ignoring one or more of the parameters). Related methods (''components(:from:)'' and ''components(:from:to:options:)-84y5w'') take a bit mask parameter that specifies which components to calculate when returning an ''NSDateComponents'' object. The bit mask is composed of ''Unit'' constants (see 'Constants'). In a calendar, day, week, weekday, month, and year numbers are generally 1-based, but there may be calendar-specific exceptions. Ordinal numbers, where they occur, are 1-based. Some calendars represented by this API may have to map their basic unit concepts into year/month/week/day/… nomenclature. For example, a calendar composed of 4 quarters in a year instead of 12 months uses the month unit to represent quarters. The particular values of the unit are defined by each calendar, and are not necessarily consistent with values for that unit in another calendar.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      *
      * @par Example
@@ -53,7 +52,7 @@ namespace cocoon
         explicit Calendar(Adopt adopt);
         /**
      * @brief Calls `+[NSCalendar calendarWithIdentifier:]`.
-     * @details Creates a new calendar specified by a given identifier. - Parameters: - calendarIdentifierConstant: The identifier for the new calendar. For valid identifiers, see 'Calendar Identifiers'. - Returns: The initialized calendar, or 'nil' if the identifier is unknown (if, for example, it is either an unrecognized string or the calendar is not supported by the current version of the operating system). The returned calendar defaults to the current locale and default time zone.
+     * @details This method returns a new autoreleased calendar object of the given type, specified by a calendar identifier constant. The calendar defaults to having the current locale and default time zone, for those properties.
      * @param calendar_identifier_constant Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
      */
@@ -77,7 +76,6 @@ namespace cocoon
         std::int64_t component(CalendarUnit unit, const Date& date) const;
         /**
      * @brief Calls `-[NSCalendar components:fromDate:]`.
-     * @details The date components representing a given date.
      * @param unit_flags Argument converted to the Objective-C parameter of the same role.
      * @param date Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
@@ -85,7 +83,6 @@ namespace cocoon
         DateComponents components(CalendarUnit unit_flags, const Date& date) const;
         /**
      * @brief Calls `-[NSCalendar components:fromDate:toDate:options:]`.
-     * @details Returns the difference between two supplied dates as date components. The result is lossy if there is not a small enough unit requested to hold the full precision of the difference. Some operations can be ambiguous, and the behavior of the computation is calendar-specific, but generally larger components will be computed before smaller components; for example, in the Gregorian calendar a result might be 1 month and 5 days instead of, for example, 0 months and 35 days. The resulting component values may be negative if 'resultDate' is before 'startDate'. Note that some computations can take a relatively long time. - Parameters: - unitFlags: Specifies the components for the returned 'NSDateComponents' object. - startingDate: The start date for the calculation. - resultDate: The end date for the calculation. - opts: Options for the calculation. If you specify ''NSCalendar/Options/wrapComponents'', the specified components are incremented and wrap around to zero/one on overflow, but do not cause higher units to be incremented. - Returns: An 'NSDateComponents' object whose components are specified by 'unitFlags' and calculated from the difference between the 'resultDate' and 'startDate'. Returns 'nil' if either date falls outside the defined range of the receiver or if the computation cannot be performed.
      * @param unit_flags Argument converted to the Objective-C parameter of the same role.
      * @param starting_date Argument converted to the Objective-C parameter of the same role.
      * @param result_date Argument converted to the Objective-C parameter of the same role.
@@ -95,7 +92,7 @@ namespace cocoon
         DateComponents components(CalendarUnit unit_flags, const Date& starting_date, const Date& result_date, CalendarOptions opts) const;
         /**
      * @brief Calls `-[NSCalendar components:fromDateComponents:toDateComponents:options:]`.
-     * @details Returns the difference between start and end dates given as date components. If an 'NSDateComponents' object does not specify a value for a calendar unit required to determine an absolute date, the base value of that unit is assumed. For example, given an 'NSDateComponents' object with only a 'year' and a 'month' specified, the resulting 'NSDate' object would be constructed using a 'day' value of '1' and 'hour', 'minute', 'second' and 'nanosecond' values of '0'. Passing an 'NSDateComponents' argument with an unspecified 'era' or 'year' value is not advised. If an 'NSDateComponents' object's 'timeZone' property is set, the time zone property value will be used in the calculation. If an 'NSDateComponents' object's 'calendar' property is set, the calendar property value will be used instead of the receiving calendar. If both an 'NSDateComponents' object's 'timeZone' and 'calendar' properties are set, the time zone property value overrides the time zone of the calendar property value. - Parameters: - unitFlags: Specifies the components for the returned 'NSDateComponents' object. - startingDateComp: The start date for the calculation as an 'NSDateComponents' object. - resultDateComp: The end date for the calculation as an 'NSDateComponents' object. - options: The options parameter is currently unused. - Returns: An 'NSDateComponents' object whose components are specified by 'unitFlags' and calculated from the difference between the 'startingDateComp' and 'resultDateComp'. Returns 'nil' if either date falls outside the defined range of the receiver or if the computation cannot be performed.
+     * @details This API returns the difference between two dates specified as date components. For units which are not specified in each NSDateComponents, but required to specify an absolute date, the base value of the unit is assumed. For example, for an NSDateComponents with just a Year and a Month specified, a Day of 1, and an Hour, Minute, Second, and Nanosecond of 0 are assumed. Calendrical calculations with unspecified Year or Year value prior to the start of a calendar are not advised. For each date components object, if its time zone property is set, that time zone is used for it; if the calendar property is set, that is used rather than the receiving calendar, and if both the calendar and time zone are set, the time zone property value overrides the time zone of the calendar property. No options are currently defined; pass 0.
      * @param unit_flags Argument converted to the Objective-C parameter of the same role.
      * @param starting_date_comp Argument converted to the Objective-C parameter of the same role.
      * @param result_date_comp Argument converted to the Objective-C parameter of the same role.
@@ -121,7 +118,6 @@ namespace cocoon
         bool date(const Date& date, const DateComponents& components) const;
         /**
      * @brief Calls `-[NSCalendar dateByAddingComponents:toDate:options:]`.
-     * @details A date representing the absolute time calculated by adding given components to a given date.
      * @param comps Argument converted to the Objective-C parameter of the same role.
      * @param date Argument converted to the Objective-C parameter of the same role.
      * @param opts Argument converted to the Objective-C parameter of the same role.
@@ -151,7 +147,7 @@ namespace cocoon
         Date date_by_setting_hour(std::int64_t h, std::int64_t m, std::int64_t s, const Date& date, CalendarOptions opts) const;
         /**
      * @brief Calls `-[NSCalendar dateBySettingUnit:value:ofDate:options:]`.
-     * @details Returns a new date representing the date calculated by setting a specific component of a given date to a given value, while trying to keep lower components the same. Changing a component's value often requires higher or coupled components to change as well. For example, setting the 'weekday' to "Thursday" will require the 'day' component to change its value, and possibly the 'month' and 'year' as well. If no such time exists, the next available date is returned, which may be on a different calendar day. - Parameters: - unit: The unit to set with the given value. For possible values, see ''NSCalendar/Unit''. - v: The value to set for the given calendar unit. - date: The date to use to perform the calculation. - opts: Options for the calculation. For possible values, see ''NSCalendar/Options''. - Returns: A new 'NSDate' instance representing the date calculated by setting a specific component of a given date to a given value. If the unit already has that value, this may result in a date which is the same as the given date.
+     * @details This API returns a new NSDate object representing the date calculated by setting a specific component to a given time, and trying to keep lower components the same. If the unit already has that value, this may result in a date which is the same as the given date. Changing a component's value often will require higher or coupled components to change as well. For example, setting the Weekday to Thursday usually will require the Day component to change its value, and possibly the Month and Year as well. If no such time exists, the next available time is returned (which could, for example, be in a different day, week, month, ... than the nominal target date). Setting a component to something which would be inconsistent forces other units to change; for example, setting the Weekday to Thursday probably shifts the Day and possibly Month and Year. The specific behaviors here are as yet unspecified; for example, if I change the weekday to Thursday, does that move forward to the next, backward to the previous, or to the nearest Thursday? A likely rule is that the algorithm will try to produce a result which is in the next-larger unit to the one given (there's a table of this mapping at the top of this document). So for the "set to Thursday" example, find the Thursday in the Week in which the given date resides (which could be a forwards or backwards move, and not necessarily the nearest Thursday). For forwards or backwards behavior, one can use the -nextDateAfterDate:matchingUnit:value:options: method above.
      * @param unit Argument converted to the Objective-C parameter of the same role.
      * @param v Argument converted to the Objective-C parameter of the same role.
      * @param date Argument converted to the Objective-C parameter of the same role.
@@ -161,7 +157,6 @@ namespace cocoon
         Date date_by_setting_unit(CalendarUnit unit, std::int64_t v, const Date& date, CalendarOptions opts) const;
         /**
      * @brief Calls `-[NSCalendar dateFromComponents:]`.
-     * @details A date created from the specified components.
      * @param comps Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
      */
@@ -182,7 +177,7 @@ namespace cocoon
         Date date_with_era(std::int64_t era_value, std::int64_t year_value, std::int64_t month_value, std::int64_t day_value, std::int64_t hour_value, std::int64_t minute_value, std::int64_t second_value, std::int64_t nanosecond_value) const;
         /**
      * @brief Calls `-[NSCalendar enumerateDatesStartingAfterDate:matchingComponents:options:usingBlock:]`.
-     * @details Computes the dates that match (or most closely match) a given set of components, and calls the block once for each of them, until the enumeration is stopped. If you specify a strict matching option (''NSCalendar/Options/matchStrictly''), this method searches as far as necessary looking for a match, up to an implementation-defined limit. If an exact match is not possible, 'nil' is passed to the 'date' argument of the block, and the enumeration is stopped. Otherwise, this method searches as far as the next instance of the next highest calendar unit in the given 'NSDateComponents' object. If you do not specify a strict matching option, you must specify one of ''NSCalendar/Options/matchPreviousTimePreservingSmallerUnits'', ''NSCalendar/Options/matchNextTimePreservingSmallerUnits'', or ''NSCalendar/Options/matchNextTime'', or an illegal argument exception will be thrown. - Parameters: - start: The date for which to perform the calculation. - comps: The date components to match. If no components are specified, the enumeration will not be executed. - opts: Options for the enumeration. For possible values, see ''NSCalendar/Options''. - block: The block to apply to each enumerated date. The block takes three arguments: the enumerated date, whether the date exactly matches the specified date components, and a reference to a Boolean value that the block can set to 'YES' to stop the enumeration.
+     * @details This method computes the dates which match (or most closely match) a given set of components, and calls the block once for each of them, until the enumeration is stopped. There will be at least one intervening date which does not match all the components (or the given date itself must not match) between the given date and any result. If the NSCalendarSearchBackwards option is used, this method finds the previous match before the given date. The intent is that the same matches as for a forwards search will be found (that is, if you are enumerating forwards or backwards for each hour with minute "27", the seconds in the date you will get in forwards search would obviously be 00, and the same will be true in a backwards search in order to implement this rule. Similarly for DST backwards jumps which repeats times, you'll get the first match by default, where "first" is defined from the point of view of searching forwards. So, when searching backwards looking for a particular hour, with no minute and second specified, you don't get a minute and second of 59:59 for the matching hour (which would be the nominal first match within a given hour, given the other rules here, when searching backwards). If the NSCalendarMatchStrictly option is used, the algorithm travels as far forward or backward as necessary looking for a match, but there are ultimately implementation-defined limits in how far distant the search will go. If the NSCalendarMatchStrictly option is not specified, the algorithm searches up to the end of the next instance of the next higher unit to the highest specified unit in the NSDateComponents argument. If you want to find the next Feb 29 in the Gregorian calendar, for example, you have to specify the NSCalendarMatchStrictly option to guarantee finding it. If an exact match is not possible, and requested with the NSCalendarMatchStrictly option, nil is passed to the block and the enumeration ends. (Logically, since an exact match searches indefinitely into the future, if no match is found there's no point in continuing the enumeration.) If the NSCalendarMatchStrictly option is NOT used, exactly one option from the set {NSCalendarMatchPreviousTimePreservingSmallerUnits, NSCalendarMatchNextTimePreservingSmallerUnits, NSCalendarMatchNextTime} must be specified, or an illegal argument exception will be thrown. If the NSCalendarMatchPreviousTimePreservingSmallerUnits option is specified, and there is no matching time before the end of the next instance of the next higher unit to the highest specified unit in the NSDateComponents argument, the method will return the previous existing value of the missing unit and preserves the lower units' values (e.g., no 2:37am results in 1:37am, if that exists). If the NSCalendarMatchNextTimePreservingSmallerUnits option is specified, and there is no matching time before the end of the next instance of the next higher unit to the highest specified unit in the NSDateComponents argument, the method will return the next existing value of the missing unit and preserves the lower units' values (e.g., no 2:37am results in 3:37am, if that exists). If the NSCalendarMatchNextTime option is specified, and there is no matching time before the end of the next instance of the next higher unit to the highest specified unit in the NSDateComponents argument, the method will return the next existing time which exists (e.g., no 2:37am results in 3:00am, if that exists). If the NSCalendarMatchFirst option is specified, and there are two or more matching times (all the components are the same, including isLeapMonth) before the end of the next instance of the next higher unit to the highest specified unit in the NSDateComponents argument, the method will return the first occurrence. If the NSCalendarMatchLast option is specified, and there are two or more matching times (all the components are the same, including isLeapMonth) before the end of the next instance of the next higher unit to the highest specified unit in the NSDateComponents argument, the method will return the last occurrence. If neither the NSCalendarMatchFirst or NSCalendarMatchLast option is specified, the default behavior is to act as if NSCalendarMatchFirst was specified. There is no option to return middle occurrences of more than two occurrences of a matching time, if such exist. Result dates have an integer number of seconds (as if 0 was specified for the nanoseconds property of the NSDateComponents matching parameter), unless a value was set in the nanoseconds property, in which case the result date will have that number of nanoseconds (or as close as possible with floating point numbers). The enumeration is stopped by setting stop = YES in the block and return. It is not necessary to set stop to NO to keep the enumeration going.
      * @param start Argument converted to the Objective-C parameter of the same role.
      * @param comps Argument converted to the Objective-C parameter of the same role.
      * @param opts Argument converted to the Objective-C parameter of the same role.
@@ -191,7 +186,7 @@ namespace cocoon
         void enumerate_dates_starting_after_date(const Date& start, const DateComponents& comps, CalendarOptions opts, std::function<void(Date, bool, bool&)> block) const;
         /**
      * @brief Calls `-[NSCalendar getEra:year:month:day:fromDate:]`.
-     * @details Returns the era, year, month, and day of a given date. Pass 'NULL' for a 'NSInteger' pointer parameter if you don't care about that value.
+     * @details This API is a convenience for getting era, year, month, and day of a given date. Pass NULL for a NSInteger pointer parameter if you don't care about that value.
      * @param era_value_pointer Argument converted to the Objective-C parameter of the same role.
      * @param year_value_pointer Argument converted to the Objective-C parameter of the same role.
      * @param month_value_pointer Argument converted to the Objective-C parameter of the same role.
@@ -201,7 +196,7 @@ namespace cocoon
         void get_era(std::int64_t* era_value_pointer, std::int64_t* year_value_pointer, std::int64_t* month_value_pointer, std::int64_t* day_value_pointer, const Date& date) const;
         /**
      * @brief Calls `-[NSCalendar getHour:minute:second:nanosecond:fromDate:]`.
-     * @details Returns the hour, minute, second, and nanoseconds of a given date. Pass 'NULL' for a 'NSInteger' pointer parameter if you don't care about that value.
+     * @details This API is a convenience for getting hour, minute, second, and nanoseconds of a given date. Pass NULL for a NSInteger pointer parameter if you don't care about that value.
      * @param hour_value_pointer Argument converted to the Objective-C parameter of the same role.
      * @param minute_value_pointer Argument converted to the Objective-C parameter of the same role.
      * @param second_value_pointer Argument converted to the Objective-C parameter of the same role.
@@ -211,7 +206,6 @@ namespace cocoon
         void get_hour(std::int64_t* hour_value_pointer, std::int64_t* minute_value_pointer, std::int64_t* second_value_pointer, std::int64_t* nanosecond_value_pointer, const Date& date) const;
         /**
      * @brief Calls `-[NSCalendar initWithCalendarIdentifier:]`.
-     * @details Initializes a calendar according to a given identifier. - Parameters: - ident: The identifier for the new calendar. For valid identifiers, see 'Calendar Identifiers'. - Returns: The initialized calendar, or 'nil' if the identifier is unknown (if, for example, it is either an unrecognized string or the calendar is not supported by the current version of the operating system).
      * @param ident Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
      */
@@ -263,14 +257,12 @@ namespace cocoon
         bool is_date_in_yesterday(const Date& date) const;
         /**
      * @brief Calls `-[NSCalendar maximumRangeOfUnit:]`.
-     * @details The maximum range limits of the values that a given unit can take on.
      * @param unit Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
      */
         Range maximum_range_of_unit(CalendarUnit unit) const;
         /**
      * @brief Calls `-[NSCalendar minimumRangeOfUnit:]`.
-     * @details The minimum range limits of the values that a given unit can take on.
      * @param unit Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
      */
@@ -307,7 +299,7 @@ namespace cocoon
         Date next_date_after_date(const Date& date, CalendarUnit unit, std::int64_t value, CalendarOptions options) const;
         /**
      * @brief Calls `-[NSCalendar nextWeekendStartDate:interval:options:afterDate:]`.
-     * @details Returns by reference the starting date and time interval range of the next weekend period after a given date. Note that a particular calendar day may not necessarily fall entirely within a weekend period, as weekends can start in the middle of a day in some calendars and locales. The 'NSCalendarSearchBackwards' option can be used to find the previous weekend range strictly before the date. Returns 'NO' if there are no such things as weekends in the calendar and its locale. - Parameters: - datep: Upon return, contains the starting date of the next weekend period. - tip: Upon return, contains the time interval of the next weekend period. - options: Options for the calculation. If you specify ''NSCalendar/Options/searchBackwards'', the starting date and time interval range of the preceding weekend period will be returned by reference instead. - date: The date for which to perform the calculation. - Returns: 'NO' if the calendar and locale do not have the concept of a weekend, otherwise 'YES'.
+     * @details Returns the range of the next weekend, via two by-reference parameters, which starts strictly after the given date. The NSCalendarSearchBackwards option can be used to find the previous weekend range strictly before the date. Returns NO if there are no such things as weekend in the calendar and its locale. Note that a given entire Day within a calendar is not necessarily all in a weekend or not; weekends can start in the middle of a Day in some calendars and locales.
      * @param datep Argument converted to the Objective-C parameter of the same role.
      * @param tip Argument converted to the Objective-C parameter of the same role.
      * @param options Argument converted to the Objective-C parameter of the same role.
@@ -317,7 +309,6 @@ namespace cocoon
         bool next_weekend_start_date(Date& datep, double* tip, CalendarOptions options, const Date& date) const;
         /**
      * @brief Calls `-[NSCalendar ordinalityOfUnit:inUnit:forDate:]`.
-     * @details The ordinal number of a smaller calendar unit within a specified larger calendar unit for a specified absolute time.
      * @param smaller Argument converted to the Objective-C parameter of the same role.
      * @param larger Argument converted to the Objective-C parameter of the same role.
      * @param date Argument converted to the Objective-C parameter of the same role.
@@ -326,7 +317,6 @@ namespace cocoon
         std::uint64_t ordinality_of_unit(CalendarUnit smaller, CalendarUnit larger, const Date& date) const;
         /**
      * @brief Calls `-[NSCalendar rangeOfUnit:inUnit:forDate:]`.
-     * @details The range of absolute time values that a smaller calendar unit can take on in a larger calendar unit for a specified absolute time.
      * @param smaller Argument converted to the Objective-C parameter of the same role.
      * @param larger Argument converted to the Objective-C parameter of the same role.
      * @param date Argument converted to the Objective-C parameter of the same role.
@@ -335,7 +325,6 @@ namespace cocoon
         Range range_of_unit(CalendarUnit smaller, CalendarUnit larger, const Date& date) const;
         /**
      * @brief Calls `-[NSCalendar rangeOfUnit:startDate:interval:forDate:]`.
-     * @details The starting time and duration of a given calendar unit that contains a given date.
      * @param unit Argument converted to the Objective-C parameter of the same role.
      * @param datep Argument converted to the Objective-C parameter of the same role.
      * @param tip Argument converted to the Objective-C parameter of the same role.
@@ -345,7 +334,7 @@ namespace cocoon
         bool range_of_unit(CalendarUnit unit, Date& datep, double* tip, const Date& date) const;
         /**
      * @brief Calls `-[NSCalendar rangeOfWeekendStartDate:interval:containingDate:]`.
-     * @details Returns whether a given date falls within a weekend period, and if so, returns by reference the start date and time interval of the weekend range. Note that a particular calendar day may not necessarily fall entirely within a weekend period, as weekends can start in the middle of a day in some calendars and locales. - Parameters: - datep: Upon return, contains the starting date of the weekend period. - tip: Upon return, contains the time interval of the weekend period. - date: The date to use to perform the calculation. - Returns: 'YES' if the given date falls within a weekend period, otherwise 'NO'.
+     * @details Find the range of the weekend around the given date, returned via two by-reference parameters. Returns NO if the given date is not in a weekend. Note that a given entire Day within a calendar is not necessarily all in a weekend or not; weekends can start in the middle of a Day in some calendars and locales.
      * @param datep Argument converted to the Objective-C parameter of the same role.
      * @param tip Argument converted to the Objective-C parameter of the same role.
      * @param date Argument converted to the Objective-C parameter of the same role.
@@ -361,187 +350,156 @@ namespace cocoon
         Date start_of_day_for_date(const Date& date) const;
         /**
      * @brief Returns the `AMSymbol` property of `NSCalendar`.
-     * @details The AM symbol for this calendar.
      * @return The converted Objective-C result.
      */
         std::string am_symbol() const;
         /**
      * @brief Returns the `PMSymbol` property of `NSCalendar`.
-     * @details The PM symbol for this calendar.
      * @return The converted Objective-C result.
      */
         std::string pm_symbol() const;
         /**
      * @brief Returns the `autoupdatingCurrentCalendar` property of `NSCalendar`.
-     * @details A calendar that tracks changes to user's preferred calendar. Settings you get from this calendar do change as the user's settings change. Note that if you cache values based on the calendar or related information those caches will of course not be automatically updated by the updating of the calendar object.
      * @return The converted Objective-C result.
      */
         static Calendar autoupdating_current_calendar();
         /**
      * @brief Returns the `calendarIdentifier` property of `NSCalendar`.
-     * @details An identifier for the calendar.
      * @return The converted Objective-C result.
      */
         std::string calendar_identifier() const;
         /**
      * @brief Returns the `currentCalendar` property of `NSCalendar`.
-     * @details The user's current calendar. The returned calendar is formed from the settings for the current user's chosen system locale overlaid with any custom settings the user has specified in System Preferences. Settings you get from this calendar do not change as System Preferences are changed.
      * @return The converted Objective-C result.
      */
         static Calendar current_calendar();
         /**
      * @brief Returns the `eraSymbols` property of `NSCalendar`.
-     * @details A list of era symbols for this calendar.
      * @return The converted Objective-C result.
      */
         std::vector<std::string> era_symbols() const;
         /**
      * @brief Returns the `firstWeekday` property of `NSCalendar`.
-     * @details The index of the first weekday for the calendar.
      * @return The converted Objective-C result.
      */
         std::uint64_t first_weekday() const;
         /**
      * @brief Sets the `firstWeekday` property of `NSCalendar`.
-     * @details The index of the first weekday for the calendar.
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_first_weekday(std::uint64_t value) const;
         /**
      * @brief Returns the `locale` property of `NSCalendar`.
-     * @details The locale for the calendar.
      * @return The converted Objective-C result.
      */
         Locale locale() const;
         /**
      * @brief Sets the `locale` property of `NSCalendar`.
-     * @details The locale for the calendar.
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_locale(const Locale& value) const;
         /**
      * @brief Returns the `longEraSymbols` property of `NSCalendar`.
-     * @details The long era symbols for this calendar.
      * @return The converted Objective-C result.
      */
         std::vector<std::string> long_era_symbols() const;
         /**
      * @brief Returns the `minimumDaysInFirstWeek` property of `NSCalendar`.
-     * @details The minimum number of days in the first week of the calendar.
      * @return The converted Objective-C result.
      */
         std::uint64_t minimum_days_in_first_week() const;
         /**
      * @brief Sets the `minimumDaysInFirstWeek` property of `NSCalendar`.
-     * @details The minimum number of days in the first week of the calendar.
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_minimum_days_in_first_week(std::uint64_t value) const;
         /**
      * @brief Returns the `monthSymbols` property of `NSCalendar`.
-     * @details The list of month symbols for this calendar.
      * @return The converted Objective-C result.
      */
         std::vector<std::string> month_symbols() const;
         /**
      * @brief Returns the `quarterSymbols` property of `NSCalendar`.
-     * @details The list of quarter symbols for this calendar.
      * @return The converted Objective-C result.
      */
         std::vector<std::string> quarter_symbols() const;
         /**
      * @brief Returns the `shortMonthSymbols` property of `NSCalendar`.
-     * @details The list of short month symbols for this calendar.
      * @return The converted Objective-C result.
      */
         std::vector<std::string> short_month_symbols() const;
         /**
      * @brief Returns the `shortQuarterSymbols` property of `NSCalendar`.
-     * @details The list of short quarter symbols for this calendar.
      * @return The converted Objective-C result.
      */
         std::vector<std::string> short_quarter_symbols() const;
         /**
      * @brief Returns the `shortStandaloneMonthSymbols` property of `NSCalendar`.
-     * @details The list of short standalone month symbols for this calendar.
      * @return The converted Objective-C result.
      */
         std::vector<std::string> short_standalone_month_symbols() const;
         /**
      * @brief Returns the `shortStandaloneQuarterSymbols` property of `NSCalendar`.
-     * @details The list of short standalone quarter symbols for this calendar.
      * @return The converted Objective-C result.
      */
         std::vector<std::string> short_standalone_quarter_symbols() const;
         /**
      * @brief Returns the `shortStandaloneWeekdaySymbols` property of `NSCalendar`.
-     * @details The list of short standalone weekday symbols for this calendar.
      * @return The converted Objective-C result.
      */
         std::vector<std::string> short_standalone_weekday_symbols() const;
         /**
      * @brief Returns the `shortWeekdaySymbols` property of `NSCalendar`.
-     * @details The list of short weekday symbols for this calendar.
      * @return The converted Objective-C result.
      */
         std::vector<std::string> short_weekday_symbols() const;
         /**
      * @brief Returns the `standaloneMonthSymbols` property of `NSCalendar`.
-     * @details The list of standalone month symbols for this calendar.
      * @return The converted Objective-C result.
      */
         std::vector<std::string> standalone_month_symbols() const;
         /**
      * @brief Returns the `standaloneQuarterSymbols` property of `NSCalendar`.
-     * @details The list of standalone quarter symbols for this calendar.
      * @return The converted Objective-C result.
      */
         std::vector<std::string> standalone_quarter_symbols() const;
         /**
      * @brief Returns the `standaloneWeekdaySymbols` property of `NSCalendar`.
-     * @details The list of standalone weekday symbols for this calendar.
      * @return The converted Objective-C result.
      */
         std::vector<std::string> standalone_weekday_symbols() const;
         /**
      * @brief Returns the `timeZone` property of `NSCalendar`.
-     * @details The time zone for the calendar.
      * @return The converted Objective-C result.
      */
         TimeZone time_zone() const;
         /**
      * @brief Sets the `timeZone` property of `NSCalendar`.
-     * @details The time zone for the calendar.
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_time_zone(const TimeZone& value) const;
         /**
      * @brief Returns the `veryShortMonthSymbols` property of `NSCalendar`.
-     * @details The list of very short month symbols for this calendar.
      * @return The converted Objective-C result.
      */
         std::vector<std::string> very_short_month_symbols() const;
         /**
      * @brief Returns the `veryShortStandaloneMonthSymbols` property of `NSCalendar`.
-     * @details The list of very short standalone month symbols for this calendar.
      * @return The converted Objective-C result.
      */
         std::vector<std::string> very_short_standalone_month_symbols() const;
         /**
      * @brief Returns the `veryShortStandaloneWeekdaySymbols` property of `NSCalendar`.
-     * @details The list of very short standalone weekday symbols for this calendar.
      * @return The converted Objective-C result.
      */
         std::vector<std::string> very_short_standalone_weekday_symbols() const;
         /**
      * @brief Returns the `veryShortWeekdaySymbols` property of `NSCalendar`.
-     * @details The list of very short weekday symbols for this calendar.
      * @return The converted Objective-C result.
      */
         std::vector<std::string> very_short_weekday_symbols() const;
         /**
      * @brief Returns the `weekdaySymbols` property of `NSCalendar`.
-     * @details The list of weekday symbols for this calendar.
      * @return The converted Objective-C result.
      */
         std::vector<std::string> weekday_symbols() const;

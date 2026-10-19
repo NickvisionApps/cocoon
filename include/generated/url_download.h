@@ -12,7 +12,7 @@ namespace cocoon
 
     /**
      * @brief C++ handle for the Objective-C class `NSURLDownload` (Foundation).
-     * @details An object that downloads a resource asynchronously and saves the data to a file. > Important: > This API is considered legacy. Use ''URLSession'' instead. The interface for ''NSURLDownload'' provides methods to initialize a download, set the destination path and cancel loading the request. The delegate object assigned to each instance of this class should implement the methods defined by the ''NSURLDownloadDelegate'' protocol. These methods provide the delegate with the current status of in-progress asynchronous downloads and allow the delegate to customize the URL loading process. These delegate methods are called on the thread that started the asynchronous load operation for the associated ''NSURLDownload'' object.
+     * @details \@class NSURLDownload \@discussion A NSURLDownload loads a request and saves the downloaded data to a file. The progress of the download is reported via the NSURLDownloadDelegate protocol. Note: The word "download" is used to refer to the process of loading data off a network, decoding the data if necessary and saving the data to a file.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      *
      * @par Example
@@ -45,44 +45,44 @@ namespace cocoon
         explicit URLDownload(Adopt adopt);
         /**
      * @brief Calls `+[NSURLDownload canResumeDownloadDecodedWithEncodingMIMEType:]`.
-     * @details Returns whether a URL download object can resume a download that was decoded with the specified MIME type. The MIME type of a file, in conjunction with the value returned by the 'download:shouldDecodeSourceDataOfMIMEType:' delegate method, determines whether the 'NSURLDownload' class should decode or decompress the incoming data as it is received. Some compression techniques, such as the 'DEFLATE' algorithm ('gzip') use symbol dictionaries that vary during the compression process, making it impractical to decompress only a portion of the data starting in the middle. For this reason, this method returns 'NO' unless both of the following conditions are met: - The MIME type is of a type that the 'NSURLDownload' class knows how to decompress or decode. - The decoding can be safely resumed. In practice, this method returns 'YES' for MacBinary and BinHex, otherwise 'NO'. If your app needs to be able to resume file downloads in 'gzip' format, your 'download:shouldDecodeSourceDataOfMIMEType:' method must return 'NO', and you must decode the resulting file yourself after you finish downloading it in its entirety. - Parameter MIMEType: The MIME type the caller wants to know about. - Returns: 'YES' if the URL download object can resume a download that was decoded with the specified MIME type, 'NO' otherwise.
+     * @details \@method canResumeDownloadDecodedWithEncodingMIMEType: \@abstract Returns whether or not NSURLDownload can resume a download that was decoded with a given encoding MIME type. \@param MIMEType The encoding MIME type. \@description canResumeDownloadDecodedWithEncodingMIMEType: returns whether or not NSURLDownload can resume a download that was decoded with a given encoding MIME type. NSURLDownload cannot resume a download that was partially decoded in the gzip format for example. In order to ensure that a download can be later resumed, canResumeDownloadDecodedWithEncodingMIMEType: should be used when download:shouldDecodeSourceDataOfMIMEType: is called.
      * @param mime_type Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
      */
         static bool can_resume_download_decoded_with_encoding_mime_type(const std::string& mime_type);
         /**
      * @brief Calls `-[NSURLDownload cancel]`.
-     * @details Cancels the receiver's download and deletes the downloaded file. This method deletes the partially downloaded file unless you have previously called ''deletesFileUponFailure'', passing 'NO'.
+     * @details \@method cancel \@abstract Cancels the download and deletes the downloaded file.
      */
         void cancel() const;
         /**
      * @brief Calls `-[NSURLDownload setDestination:allowOverwrite:]`.
-     * @details Sets the destination path of the downloaded file. If 'allowOverwrite' is 'NO' and a file already exists at 'path', a unique filename will be created by appending a number to the filename. The delegate can implement ''NSURLDownloadDelegate/download(:didCreateDestination:)'' to determine the filename used when the file is written to disk. An 'NSURLDownload' instance ignores multiple calls to this method. - Parameters: - path: The path for the downloaded file. - allowOverwrite: 'YES' if an existing file at 'path' can be replaced, 'NO' otherwise.
+     * @details \@method setDestination:allowOverwrite: \@abstract Sets the destination path of the downloaded file. \@param path The destination path of the downloaded file. \@param allowOverwrite Allows a file of the same path to be overwritten. \@discussion This method can be called after the download is created or in response to the decideDestinationWithSuggestedFilename: delegate method. It should only be called once. If NO is passed for allowOverwrite and a file of the same path exists, a number will be appended to the filename to prevent the overwrite. Because of this, use the path passed with didCreateDestination: to determine the actual path of the downloaded file.
      * @param path Argument converted to the Objective-C parameter of the same role.
      * @param allow_overwrite Argument converted to the Objective-C parameter of the same role.
      */
         void set_destination(const std::string& path, bool allow_overwrite) const;
         /**
      * @brief Returns the `deletesFileUponFailure` property of `NSURLDownload`.
-     * @details Whether the receiver deletes partially downloaded files when a download stops prematurely. The default value is 'YES'. To allow the download to be resumed in case the download ends prematurely, set this property to 'NO' as soon as possible to prevent the downloaded file from being deleted.
+     * @details \@abstract Sets whether or not the downloaded file should be deleted upon failure. 1 \@description To allow the download to be resumed in case the download ends prematurely, deletesFileUponFailure must be set to NO as soon as possible to prevent the downloaded file from being deleted. deletesFileUponFailure is YES by default.
      * @return The converted Objective-C result.
      */
         bool deletes_file_upon_failure() const;
         /**
      * @brief Sets the `deletesFileUponFailure` property of `NSURLDownload`.
-     * @details Whether the receiver deletes partially downloaded files when a download stops prematurely. The default value is 'YES'. To allow the download to be resumed in case the download ends prematurely, set this property to 'NO' as soon as possible to prevent the downloaded file from being deleted.
+     * @details \@abstract Sets whether or not the downloaded file should be deleted upon failure. 1 \@description To allow the download to be resumed in case the download ends prematurely, deletesFileUponFailure must be set to NO as soon as possible to prevent the downloaded file from being deleted. deletesFileUponFailure is YES by default.
      * @param value Argument converted to the Objective-C parameter of the same role.
      */
         void set_deletes_file_upon_failure(bool value) const;
         /**
      * @brief Returns the `request` property of `NSURLDownload`.
-     * @details The URL request that initiated the receiver's download.
+     * @details \@abstract Returns the request of the download. \@result The request of the download.
      * @return The converted Objective-C result.
      */
         URLRequest request() const;
         /**
      * @brief Returns the `resumeData` property of `NSURLDownload`.
-     * @details The resume data for a download that is not yet complete. This data represents the necessary state information that an 'NSURLDownload' object needs to resume a download. The resume data can later be used when initializing a download with 'initWithResumeData:delegate:path:'. Returns 'nil' if the download is not able to be resumed. Resume data is returned only if both the protocol and the server support resuming.
+     * @details \@abstract Returns the resume data of a download that is incomplete. \@result The resume data. \@description resumeData returns the resume data of a download that is incomplete. This data represents the necessary state information that NSURLDownload needs to resume a download. The resume data can later be used when initializing a download with initWithResumeData:delegate:path:. Non-nil is returned if resuming the download seems possible. Non-nil is returned if the download was cancelled or ended in error after some but not all data has been received. The protocol of the download as well as the server must support resuming for non-nil to be returned. In order to later resume a download, be sure to call setDeletesFileUponFailure: with NO.
      * @return The converted Objective-C result.
      */
         std::vector<std::uint8_t> resume_data() const;
