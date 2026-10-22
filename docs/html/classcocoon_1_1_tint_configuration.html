@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -74,6 +74,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a724ad1b9d1e024071379f4cedadb1ec7" id="r_a724ad1b9d1e024071379f4cedadb1ec7"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a724ad1b9d1e024071379f4cedadb1ec7">TintConfiguration</a> (const <a class="el" href="classcocoon_1_1_color.html">Color</a> &amp;color)</td></tr>
+<tr class="memdesc:a724ad1b9d1e024071379f4cedadb1ec7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSTintConfiguration</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:a8e8d884ef4f06c64b6c28e0837a9e0e3" id="r_a8e8d884ef4f06c64b6c28e0837a9e0e3"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a8e8d884ef4f06c64b6c28e0837a9e0e3">TintConfiguration</a> ()</td></tr>
 <tr class="memdesc:a8e8d884ef4f06c64b6c28e0837a9e0e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSTintConfiguration</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:a987aa77be299bf963e16bff117e6e2ec" id="r_a987aa77be299bf963e16bff117e6e2ec"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a987aa77be299bf963e16bff117e6e2ec">TintConfiguration</a> (std::nullptr_t)</td></tr>
@@ -114,13 +116,9 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a6d45f7ec3a316e04a0253a608ec57875" id="r_a6d45f7ec3a316e04a0253a608ec57875"><td class="memItemLeft">static <a class="el" href="#a8e8d884ef4f06c64b6c28e0837a9e0e3">TintConfiguration</a>&#160;</td><td class="memItemRight"><a class="el" href="#a6d45f7ec3a316e04a0253a608ec57875">tint_configuration_with_fixed_color</a> (const <a class="el" href="classcocoon_1_1_color.html">Color</a> &amp;color)</td></tr>
-<tr class="memdesc:a6d45f7ec3a316e04a0253a608ec57875"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSTintConfiguration tintConfigurationWithFixedColor:]</span>.  <br /></td></tr>
-<tr class="memitem:a9bd1e73458dd98038b2df3baa43fbe08" id="r_a9bd1e73458dd98038b2df3baa43fbe08"><td class="memItemLeft">static <a class="el" href="#a8e8d884ef4f06c64b6c28e0837a9e0e3">TintConfiguration</a>&#160;</td><td class="memItemRight"><a class="el" href="#a9bd1e73458dd98038b2df3baa43fbe08">tint_configuration_with_preferred_color</a> (const <a class="el" href="classcocoon_1_1_color.html">Color</a> &amp;color)</td></tr>
-<tr class="memdesc:a9bd1e73458dd98038b2df3baa43fbe08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSTintConfiguration tintConfigurationWithPreferredColor:]</span>.  <br /></td></tr>
-<tr class="memitem:aef3ec0e25fc9e9d524dbec56a753a8a9" id="r_aef3ec0e25fc9e9d524dbec56a753a8a9"><td class="memItemLeft">static <a class="el" href="#a8e8d884ef4f06c64b6c28e0837a9e0e3">TintConfiguration</a>&#160;</td><td class="memItemRight"><a class="el" href="#aef3ec0e25fc9e9d524dbec56a753a8a9">default_tint_configuration</a> ()</td></tr>
+<tr class="memitem:aef3ec0e25fc9e9d524dbec56a753a8a9" id="r_aef3ec0e25fc9e9d524dbec56a753a8a9"><td class="memItemLeft">static <a class="el" href="#a724ad1b9d1e024071379f4cedadb1ec7">TintConfiguration</a>&#160;</td><td class="memItemRight"><a class="el" href="#aef3ec0e25fc9e9d524dbec56a753a8a9">default_tint_configuration</a> ()</td></tr>
 <tr class="memdesc:aef3ec0e25fc9e9d524dbec56a753a8a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">defaultTintConfiguration</span> property of <span class="tt">NSTintConfiguration</span>.  <br /></td></tr>
-<tr class="memitem:aa05dd8dc3b5ec8274c088a53e4f6c63c" id="r_aa05dd8dc3b5ec8274c088a53e4f6c63c"><td class="memItemLeft">static <a class="el" href="#a8e8d884ef4f06c64b6c28e0837a9e0e3">TintConfiguration</a>&#160;</td><td class="memItemRight"><a class="el" href="#aa05dd8dc3b5ec8274c088a53e4f6c63c">monochrome_tint_configuration</a> ()</td></tr>
+<tr class="memitem:aa05dd8dc3b5ec8274c088a53e4f6c63c" id="r_aa05dd8dc3b5ec8274c088a53e4f6c63c"><td class="memItemLeft">static <a class="el" href="#a724ad1b9d1e024071379f4cedadb1ec7">TintConfiguration</a>&#160;</td><td class="memItemRight"><a class="el" href="#aa05dd8dc3b5ec8274c088a53e4f6c63c">monochrome_tint_configuration</a> ()</td></tr>
 <tr class="memdesc:aa05dd8dc3b5ec8274c088a53e4f6c63c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">monochromeTintConfiguration</span> property of <span class="tt">NSTintConfiguration</span>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
@@ -129,19 +127,39 @@ Static Public Member Functions</h2></td></tr>
 <dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;cocoon.h&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_class" href="classcocoon_1_1_tint_configuration.html">cocoon::TintConfiguration</a> tint_configuration;</div>
-<div class="ttc" id="aclasscocoon_1_1_tint_configuration_html"><div class="ttname"><a href="classcocoon_1_1_tint_configuration.html">cocoon::TintConfiguration</a></div><div class="ttdoc">C++ handle for the Objective-C class NSTintConfiguration (AppKit).</div><div class="ttdef"><b>Definition</b> tint_configuration.h:34</div></div>
-</div><!-- fragment --></dd></dl>
-<dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_tint_configuration.html">cocoon::TintConfiguration</a> tint_configuration{};</div>
-<div class="line"><span class="keyword">auto</span> made_0 = <a class="code hl_function" href="#a6d45f7ec3a316e04a0253a608ec57875">cocoon::TintConfiguration::tint_configuration_with_fixed_color</a>(<a class="code hl_class" href="classcocoon_1_1_color.html">cocoon::Color</a>());</div>
-<div class="line"><span class="keyword">auto</span> made_1 = <a class="code hl_function" href="#a9bd1e73458dd98038b2df3baa43fbe08">cocoon::TintConfiguration::tint_configuration_with_preferred_color</a>(<a class="code hl_class" href="classcocoon_1_1_color.html">cocoon::Color</a>());</div>
-<div class="ttc" id="aclasscocoon_1_1_color_html"><div class="ttname"><a href="classcocoon_1_1_color.html">cocoon::Color</a></div><div class="ttdoc">A color (NSColor).</div><div class="ttdef"><b>Definition</b> color.h:42</div></div>
-<div class="ttc" id="aclasscocoon_1_1_tint_configuration_html_a6d45f7ec3a316e04a0253a608ec57875"><div class="ttname"><a href="#a6d45f7ec3a316e04a0253a608ec57875">cocoon::TintConfiguration::tint_configuration_with_fixed_color</a></div><div class="ttdeci">static TintConfiguration tint_configuration_with_fixed_color(const Color &amp;color)</div><div class="ttdoc">Calls +[NSTintConfiguration tintConfigurationWithFixedColor:].</div></div>
-<div class="ttc" id="aclasscocoon_1_1_tint_configuration_html_a9bd1e73458dd98038b2df3baa43fbe08"><div class="ttname"><a href="#a9bd1e73458dd98038b2df3baa43fbe08">cocoon::TintConfiguration::tint_configuration_with_preferred_color</a></div><div class="ttdeci">static TintConfiguration tint_configuration_with_preferred_color(const Color &amp;color)</div><div class="ttdoc">Calls +[NSTintConfiguration tintConfigurationWithPreferredColor:].</div></div>
+<div class="ttc" id="aclasscocoon_1_1_tint_configuration_html"><div class="ttname"><a href="classcocoon_1_1_tint_configuration.html">cocoon::TintConfiguration</a></div><div class="ttdoc">C++ handle for the Objective-C class NSTintConfiguration (AppKit).</div><div class="ttdef"><b>Definition</b> tint_configuration.h:26</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/appkit/nstintconfiguration">https://developer.apple.com/documentation/appkit/nstintconfiguration</a> </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a724ad1b9d1e024071379f4cedadb1ec7" name="a724ad1b9d1e024071379f4cedadb1ec7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a724ad1b9d1e024071379f4cedadb1ec7">&#9670;&#160;</a></span>TintConfiguration() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::TintConfiguration::TintConfiguration </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcocoon_1_1_color.html">Color</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>color</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSTintConfiguration</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
 <a id="a8e8d884ef4f06c64b6c28e0837a9e0e3" name="a8e8d884ef4f06c64b6c28e0837a9e0e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e8d884ef4f06c64b6c28e0837a9e0e3">&#9670;&#160;</a></span>TintConfiguration() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e8d884ef4f06c64b6c28e0837a9e0e3">&#9670;&#160;</a></span>TintConfiguration() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -168,7 +186,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a987aa77be299bf963e16bff117e6e2ec" name="a987aa77be299bf963e16bff117e6e2ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a987aa77be299bf963e16bff117e6e2ec">&#9670;&#160;</a></span>TintConfiguration() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a987aa77be299bf963e16bff117e6e2ec">&#9670;&#160;</a></span>TintConfiguration() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -187,7 +205,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a1767c55f8de8bd5c8af798f69883497e" name="a1767c55f8de8bd5c8af798f69883497e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1767c55f8de8bd5c8af798f69883497e">&#9670;&#160;</a></span>TintConfiguration() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1767c55f8de8bd5c8af798f69883497e">&#9670;&#160;</a></span>TintConfiguration() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -264,7 +282,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a8e8d884ef4f06c64b6c28e0837a9e0e3">TintConfiguration</a> cocoon::TintConfiguration::default_tint_configuration </td>
+          <td class="memname"><a class="el" href="#a724ad1b9d1e024071379f4cedadb1ec7">TintConfiguration</a> cocoon::TintConfiguration::default_tint_configuration </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -312,7 +330,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a8e8d884ef4f06c64b6c28e0837a9e0e3">TintConfiguration</a> cocoon::TintConfiguration::monochrome_tint_configuration </td>
+          <td class="memname"><a class="el" href="#a724ad1b9d1e024071379f4cedadb1ec7">TintConfiguration</a> cocoon::TintConfiguration::monochrome_tint_configuration </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -327,74 +345,6 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Returns the <span class="tt">monochromeTintConfiguration</span> property of <span class="tt">NSTintConfiguration</span>. </p>
 <p>Specifies that content should prefer a monochrome appearance. Monochrome content remains monochrome regardless of the system Accent <a class="el" href="classcocoon_1_1_color.html" title="A color (NSColor).">Color</a>. </p><dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a6d45f7ec3a316e04a0253a608ec57875" name="a6d45f7ec3a316e04a0253a608ec57875"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6d45f7ec3a316e04a0253a608ec57875">&#9670;&#160;</a></span>tint_configuration_with_fixed_color()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a8e8d884ef4f06c64b6c28e0837a9e0e3">TintConfiguration</a> cocoon::TintConfiguration::tint_configuration_with_fixed_color </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_color.html">Color</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>color</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSTintConfiguration tintConfigurationWithFixedColor:]</span>. </p>
-<p>Specifies that content should be tinted with a specific color value. The specified color value is used regardless of the system Accent <a class="el" href="classcocoon_1_1_color.html" title="A color (NSColor).">Color</a>. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">color</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a9bd1e73458dd98038b2df3baa43fbe08" name="a9bd1e73458dd98038b2df3baa43fbe08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9bd1e73458dd98038b2df3baa43fbe08">&#9670;&#160;</a></span>tint_configuration_with_preferred_color()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a8e8d884ef4f06c64b6c28e0837a9e0e3">TintConfiguration</a> cocoon::TintConfiguration::tint_configuration_with_preferred_color </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_color.html">Color</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>color</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSTintConfiguration tintConfigurationWithPreferredColor:]</span>. </p>
-<p>Specifies that content should be tinted with a particular color whenever the app's preferred Accent <a class="el" href="classcocoon_1_1_color.html" title="A color (NSColor).">Color</a> is in use, i.e. when the system Accent <a class="el" href="classcocoon_1_1_color.html" title="A color (NSColor).">Color</a> is configured to "Multicolor". If the system Accent <a class="el" href="classcocoon_1_1_color.html" title="A color (NSColor).">Color</a> is configured to any other color, this tint configuration defers to the Accent <a class="el" href="classcocoon_1_1_color.html" title="A color (NSColor).">Color</a>. This type of configuration should be used for custom colors that are designed to match an app-specific Accent <a class="el" href="classcocoon_1_1_color.html" title="A color (NSColor).">Color</a>, but would mismatch a user-selected color. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">color</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
 
 </div>
 </div>

@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -70,14 +70,13 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Thrown when an Objective-C method reports failure through an <span class="tt">NSError**</span> out parameter. </p>
 <dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line"><span class="keywordflow">try</span> {</div>
-<div class="line">    <a class="code hl_class" href="classcocoon_1_1_open_panel.html">cocoon::OpenPanel</a> panel = <a class="code hl_function" href="classcocoon_1_1_open_panel.html#a25f2f16048e49a277755949f52a5899e">cocoon::OpenPanel::open_panel</a>();</div>
+<div class="line">    <a class="code hl_class" href="classcocoon_1_1_open_panel.html">cocoon::OpenPanel</a> panel = cocoon::OpenPanel::open_panel();</div>
 <div class="line">    panel.<a class="code hl_function" href="classcocoon_1_1_save_panel.html#a123c303f632ffbf92c840c168b2c29b5">run_modal</a>();   <span class="comment">// methods with an NSError** parameter throw on failure</span></div>
 <div class="line">} <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_class" href="classcocoon_1_1_native_error.html">cocoon::NativeError</a>&amp; error) {</div>
 <div class="line">    std::string message = error.what();</div>
 <div class="line">}</div>
 <div class="ttc" id="aclasscocoon_1_1_native_error_html"><div class="ttname"><a href="classcocoon_1_1_native_error.html">cocoon::NativeError</a></div><div class="ttdoc">Thrown when an Objective-C method reports failure through an NSError** out parameter.</div><div class="ttdef"><b>Definition</b> errors.h:20</div></div>
-<div class="ttc" id="aclasscocoon_1_1_open_panel_html"><div class="ttname"><a href="classcocoon_1_1_open_panel.html">cocoon::OpenPanel</a></div><div class="ttdoc">C++ handle for the Objective-C class NSOpenPanel (AppKit).</div><div class="ttdef"><b>Definition</b> open_panel.h:41</div></div>
-<div class="ttc" id="aclasscocoon_1_1_open_panel_html_a25f2f16048e49a277755949f52a5899e"><div class="ttname"><a href="classcocoon_1_1_open_panel.html#a25f2f16048e49a277755949f52a5899e">cocoon::OpenPanel::open_panel</a></div><div class="ttdeci">static OpenPanel open_panel()</div><div class="ttdoc">Calls +[NSOpenPanel openPanel].</div></div>
+<div class="ttc" id="aclasscocoon_1_1_open_panel_html"><div class="ttname"><a href="classcocoon_1_1_open_panel.html">cocoon::OpenPanel</a></div><div class="ttdoc">C++ handle for the Objective-C class NSOpenPanel (AppKit).</div><div class="ttdef"><b>Definition</b> open_panel.h:40</div></div>
 <div class="ttc" id="aclasscocoon_1_1_save_panel_html_a123c303f632ffbf92c840c168b2c29b5"><div class="ttname"><a href="classcocoon_1_1_save_panel.html#a123c303f632ffbf92c840c168b2c29b5">cocoon::SavePanel::run_modal</a></div><div class="ttdeci">std::int64_t run_modal() const</div><div class="ttdoc">Calls -[NSSavePanel runModal].</div></div>
 </div><!-- fragment --> </dd></dl>
 </div></div><!-- contents -->

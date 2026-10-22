@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -61,7 +61,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classcocoon_1_1_notification-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">cocoon::Notification Class Reference</div></div>
 </div><!--header-->
@@ -76,6 +75,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad2e66f87de2819b2c04e7b4a4e875057" id="r_ad2e66f87de2819b2c04e7b4a4e875057"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ad2e66f87de2819b2c04e7b4a4e875057">Notification</a> (const std::string &amp;name, const <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &amp;object, const std::vector&lt; std::pair&lt; <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a>, <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &gt; &gt; &amp;user_info)</td></tr>
 <tr class="memdesc:ad2e66f87de2819b2c04e7b4a4e875057"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSNotification</span> instance and returns a handle to it.  <br /></td></tr>
+<tr class="memitem:a5e12099e3dece4b04fbd7dc0f9ef2e2e" id="r_a5e12099e3dece4b04fbd7dc0f9ef2e2e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a5e12099e3dece4b04fbd7dc0f9ef2e2e">Notification</a> (const std::string &amp;a_name, const <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &amp;an_object)</td></tr>
+<tr class="memdesc:a5e12099e3dece4b04fbd7dc0f9ef2e2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSNotification</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:a1cc605eb0e73f2e9aafe36bcf3bc847c" id="r_a1cc605eb0e73f2e9aafe36bcf3bc847c"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a1cc605eb0e73f2e9aafe36bcf3bc847c">Notification</a> ()</td></tr>
 <tr class="memdesc:a1cc605eb0e73f2e9aafe36bcf3bc847c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSNotification</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:a561df82ced6c8fe3cb7205a19c35c994" id="r_a561df82ced6c8fe3cb7205a19c35c994"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a561df82ced6c8fe3cb7205a19c35c994">Notification</a> (std::nullptr_t)</td></tr>
@@ -113,13 +114,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object" id="r_a53f4ad0e6a86173a96668457725eb369"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
 <tr class="memitem:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object template"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_object.html#a53f4ad0e6a86173a96668457725eb369">as</a> () const</td></tr>
 <tr class="memdesc:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reinterprets the native object as handle type <span class="tt">T</span> (no runtime type check).  <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a50d5db70cd53f3bbb4f9b8845476fda6" id="r_a50d5db70cd53f3bbb4f9b8845476fda6"><td class="memItemLeft">static <a class="el" href="#ad2e66f87de2819b2c04e7b4a4e875057">Notification</a>&#160;</td><td class="memItemRight"><a class="el" href="#a50d5db70cd53f3bbb4f9b8845476fda6">notification_with_name</a> (const std::string &amp;a_name, const <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &amp;an_object)</td></tr>
-<tr class="memdesc:a50d5db70cd53f3bbb4f9b8845476fda6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSNotification notificationWithName:object:]</span>.  <br /></td></tr>
-<tr class="memitem:a520bfadde3eb27886a97473b16c1b82a" id="r_a520bfadde3eb27886a97473b16c1b82a"><td class="memItemLeft">static <a class="el" href="#ad2e66f87de2819b2c04e7b4a4e875057">Notification</a>&#160;</td><td class="memItemRight"><a class="el" href="#a520bfadde3eb27886a97473b16c1b82a">notification_with_name</a> (const std::string &amp;a_name, const <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &amp;an_object, const std::vector&lt; std::pair&lt; <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a>, <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &gt; &gt; &amp;a_user_info)</td></tr>
-<tr class="memdesc:a520bfadde3eb27886a97473b16c1b82a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSNotification notificationWithName:object:userInfo:]</span>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>C++ handle for the Objective-C class <span class="tt">NSNotification</span> (Foundation). </p>
@@ -132,7 +126,7 @@ Static Public Member Functions</h2></td></tr>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/foundation/nsnotification">https://developer.apple.com/documentation/foundation/nsnotification</a> </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad2e66f87de2819b2c04e7b4a4e875057" name="ad2e66f87de2819b2c04e7b4a4e875057"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad2e66f87de2819b2c04e7b4a4e875057">&#9670;&#160;</a></span>Notification() <span class="overload">[1/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2e66f87de2819b2c04e7b4a4e875057">&#9670;&#160;</a></span>Notification() <span class="overload">[1/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -167,8 +161,39 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a5e12099e3dece4b04fbd7dc0f9ef2e2e" name="a5e12099e3dece4b04fbd7dc0f9ef2e2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e12099e3dece4b04fbd7dc0f9ef2e2e">&#9670;&#160;</a></span>Notification() <span class="overload">[2/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::Notification::Notification </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>a_name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>an_object</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSNotification</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
 <a id="a1cc605eb0e73f2e9aafe36bcf3bc847c" name="a1cc605eb0e73f2e9aafe36bcf3bc847c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1cc605eb0e73f2e9aafe36bcf3bc847c">&#9670;&#160;</a></span>Notification() <span class="overload">[2/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cc605eb0e73f2e9aafe36bcf3bc847c">&#9670;&#160;</a></span>Notification() <span class="overload">[3/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -195,7 +220,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a561df82ced6c8fe3cb7205a19c35c994" name="a561df82ced6c8fe3cb7205a19c35c994"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a561df82ced6c8fe3cb7205a19c35c994">&#9670;&#160;</a></span>Notification() <span class="overload">[3/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a561df82ced6c8fe3cb7205a19c35c994">&#9670;&#160;</a></span>Notification() <span class="overload">[4/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -214,7 +239,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="ac7cd72bfd99f1ec3bf69ac45234ada89" name="ac7cd72bfd99f1ec3bf69ac45234ada89"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac7cd72bfd99f1ec3bf69ac45234ada89">&#9670;&#160;</a></span>Notification() <span class="overload">[4/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7cd72bfd99f1ec3bf69ac45234ada89">&#9670;&#160;</a></span>Notification() <span class="overload">[5/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -258,90 +283,6 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Returns the <span class="tt"><a class="el" href="#ade0dd83fd634ff78759591829521b42d" title="Returns the name property of NSNotification.">name</a></span> property of <span class="tt">NSNotification</span>. </p>
 <p>The name of the notification. Typically you use this property to find out what kind of notification you are dealing with when you receive a notification. <a class="el" href="classcocoon_1_1_notification.html" title="C++ handle for the Objective-C class NSNotification (Foundation).">Notification</a> names can be any string. To avoid name collisions, you might want to use a prefix that's specific to your application. </p><dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a50d5db70cd53f3bbb4f9b8845476fda6" name="a50d5db70cd53f3bbb4f9b8845476fda6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a50d5db70cd53f3bbb4f9b8845476fda6">&#9670;&#160;</a></span>notification_with_name() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#ad2e66f87de2819b2c04e7b4a4e875057">Notification</a> cocoon::Notification::notification_with_name </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>a_name</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>an_object</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSNotification notificationWithName:object:]</span>. </p>
-<p>Returns a new notification object with a specified name and object. - Parameters: - aName: The name for the new notification. May not be 'nil'. - anObject: The object for the new notification. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">a_name</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">an_object</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a520bfadde3eb27886a97473b16c1b82a" name="a520bfadde3eb27886a97473b16c1b82a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a520bfadde3eb27886a97473b16c1b82a">&#9670;&#160;</a></span>notification_with_name() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#ad2e66f87de2819b2c04e7b4a4e875057">Notification</a> cocoon::Notification::notification_with_name </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>a_name</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>an_object</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; std::pair&lt; <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a>, <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>a_user_info</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSNotification notificationWithName:object:userInfo:]</span>. </p>
-<p>Returns a notification object with a specified name, object, and user information. - Parameters: - aName: The name for the new notification. May not be 'nil'. - anObject: The object for the new notification. - aUserInfo: The user information dictionary for the new notification. May be 'nil'. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">a_name</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">an_object</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">a_user_info</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
 
 </div>
 </div>

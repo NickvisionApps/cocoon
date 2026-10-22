@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -61,7 +61,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classcocoon_1_1_tree_node-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">cocoon::TreeNode Class Reference</div></div>
 </div><!--header-->
@@ -123,11 +122,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object" id="r_a53f4ad0e6a86173a96668457725eb369"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
 <tr class="memitem:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object template"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_object.html#a53f4ad0e6a86173a96668457725eb369">as</a> () const</td></tr>
 <tr class="memdesc:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reinterprets the native object as handle type <span class="tt">T</span> (no runtime type check).  <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ab0bb4e483661f9f8237a790710520990" id="r_ab0bb4e483661f9f8237a790710520990"><td class="memItemLeft">static <a class="el" href="#a317942f7f50abedef40377903aa47477">TreeNode</a>&#160;</td><td class="memItemRight"><a class="el" href="#ab0bb4e483661f9f8237a790710520990">tree_node_with_represented_object</a> (const <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &amp;model_object)</td></tr>
-<tr class="memdesc:ab0bb4e483661f9f8237a790710520990"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSTreeNode treeNodeWithRepresentedObject:]</span>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>C++ handle for the Objective-C class <span class="tt">NSTreeNode</span> (AppKit). </p>
@@ -139,7 +133,7 @@ Static Public Member Functions</h2></td></tr>
 </div><!-- fragment --></dd></dl>
 <dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_tree_node.html">cocoon::TreeNode</a> tree_node{};</div>
 <div class="line">tree_node.<a class="code hl_function" href="#aa69f8af497cf6b339ff15eb1ace68e49">descendant_node_at_index_path</a>(<a class="code hl_class" href="classcocoon_1_1_index_path.html">cocoon::IndexPath</a>());</div>
-<div class="ttc" id="aclasscocoon_1_1_index_path_html"><div class="ttname"><a href="classcocoon_1_1_index_path.html">cocoon::IndexPath</a></div><div class="ttdoc">C++ handle for the Objective-C class NSIndexPath (Foundation).</div><div class="ttdef"><b>Definition</b> index_path.h:36</div></div>
+<div class="ttc" id="aclasscocoon_1_1_index_path_html"><div class="ttname"><a href="classcocoon_1_1_index_path.html">cocoon::IndexPath</a></div><div class="ttdoc">C++ handle for the Objective-C class NSIndexPath (Foundation).</div><div class="ttdef"><b>Definition</b> index_path.h:35</div></div>
 <div class="ttc" id="aclasscocoon_1_1_tree_node_html_aa69f8af497cf6b339ff15eb1ace68e49"><div class="ttname"><a href="#aa69f8af497cf6b339ff15eb1ace68e49">cocoon::TreeNode::descendant_node_at_index_path</a></div><div class="ttdeci">TreeNode descendant_node_at_index_path(const IndexPath &amp;index_path) const</div><div class="ttdoc">Calls -[NSTreeNode descendantNodeAtIndexPath:].</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/appkit/nstreenode">https://developer.apple.com/documentation/appkit/nstreenode</a> </dd></dl>
@@ -418,40 +412,6 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="ab0bb4e483661f9f8237a790710520990" name="ab0bb4e483661f9f8237a790710520990"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab0bb4e483661f9f8237a790710520990">&#9670;&#160;</a></span>tree_node_with_represented_object()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a317942f7f50abedef40377903aa47477">TreeNode</a> cocoon::TreeNode::tree_node_with_represented_object </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>model_object</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSTreeNode treeNodeWithRepresentedObject:]</span>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">model_object</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
 
 </div>
 </div>

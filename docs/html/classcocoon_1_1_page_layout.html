@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -61,7 +61,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classcocoon_1_1_page_layout-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">cocoon::PageLayout Class Reference</div></div>
 </div><!--header-->
@@ -121,26 +120,19 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object" id="r_a53f4ad0e6a86173a96668457725eb369"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
 <tr class="memitem:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object template"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_object.html#a53f4ad0e6a86173a96668457725eb369">as</a> () const</td></tr>
 <tr class="memdesc:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reinterprets the native object as handle type <span class="tt">T</span> (no runtime type check).  <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a9ad5d6540e049b9c52c995a835f5eb92" id="r_a9ad5d6540e049b9c52c995a835f5eb92"><td class="memItemLeft">static <a class="el" href="#a5dbaf17dad9e2cf26c9410ffe13a82fe">PageLayout</a>&#160;</td><td class="memItemRight"><a class="el" href="#a9ad5d6540e049b9c52c995a835f5eb92">page_layout</a> ()</td></tr>
-<tr class="memdesc:a9ad5d6540e049b9c52c995a835f5eb92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSPageLayout pageLayout]</span>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>C++ handle for the Objective-C class <span class="tt">NSPageLayout</span> (AppKit). </p>
 <p>Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.</p>
 <dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;cocoon.h&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_class" href="classcocoon_1_1_page_layout.html">cocoon::PageLayout</a> <a class="code hl_function" href="#a9ad5d6540e049b9c52c995a835f5eb92">page_layout</a>;</div>
-<div class="ttc" id="aclasscocoon_1_1_page_layout_html"><div class="ttname"><a href="classcocoon_1_1_page_layout.html">cocoon::PageLayout</a></div><div class="ttdoc">C++ handle for the Objective-C class NSPageLayout (AppKit).</div><div class="ttdef"><b>Definition</b> page_layout.h:38</div></div>
-<div class="ttc" id="aclasscocoon_1_1_page_layout_html_a9ad5d6540e049b9c52c995a835f5eb92"><div class="ttname"><a href="#a9ad5d6540e049b9c52c995a835f5eb92">cocoon::PageLayout::page_layout</a></div><div class="ttdeci">static PageLayout page_layout()</div><div class="ttdoc">Calls +[NSPageLayout pageLayout].</div></div>
+<div class="line"><a class="code hl_class" href="classcocoon_1_1_page_layout.html">cocoon::PageLayout</a> page_layout;</div>
+<div class="ttc" id="aclasscocoon_1_1_page_layout_html"><div class="ttname"><a href="classcocoon_1_1_page_layout.html">cocoon::PageLayout</a></div><div class="ttdoc">C++ handle for the Objective-C class NSPageLayout (AppKit).</div><div class="ttdef"><b>Definition</b> page_layout.h:37</div></div>
 </div><!-- fragment --></dd></dl>
-<dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_page_layout.html">cocoon::PageLayout</a> <a class="code hl_function" href="#a9ad5d6540e049b9c52c995a835f5eb92">page_layout</a>{};</div>
-<div class="line"><span class="keyword">auto</span> made_0 = <a class="code hl_function" href="#a9ad5d6540e049b9c52c995a835f5eb92">cocoon::PageLayout::page_layout</a>();</div>
-<div class="line"><a class="code hl_function" href="#a9ad5d6540e049b9c52c995a835f5eb92">page_layout</a>.<a class="code hl_function" href="#ab6f57c369991ea042eacadbbc1e6ac41">add_accessory_controller</a>(<a class="code hl_class" href="classcocoon_1_1_view_controller.html">cocoon::ViewController</a>());</div>
-<div class="line"><a class="code hl_function" href="#a9ad5d6540e049b9c52c995a835f5eb92">page_layout</a>.<a class="code hl_function" href="#a3994f425fce4b46cc09a80e2e8a68a76">remove_accessory_controller</a>(<a class="code hl_class" href="classcocoon_1_1_view_controller.html">cocoon::ViewController</a>());</div>
-<div class="line"><a class="code hl_function" href="#a9ad5d6540e049b9c52c995a835f5eb92">page_layout</a>.<a class="code hl_function" href="#aa7d95ca2ac22907f8103398d23cdc0bf">run_modal</a>();</div>
+<dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_page_layout.html">cocoon::PageLayout</a> page_layout{};</div>
+<div class="line">page_layout.<a class="code hl_function" href="#ab6f57c369991ea042eacadbbc1e6ac41">add_accessory_controller</a>(<a class="code hl_class" href="classcocoon_1_1_view_controller.html">cocoon::ViewController</a>());</div>
+<div class="line">page_layout.<a class="code hl_function" href="#a3994f425fce4b46cc09a80e2e8a68a76">remove_accessory_controller</a>(<a class="code hl_class" href="classcocoon_1_1_view_controller.html">cocoon::ViewController</a>());</div>
+<div class="line">page_layout.<a class="code hl_function" href="#aa7d95ca2ac22907f8103398d23cdc0bf">run_modal</a>();</div>
 <div class="ttc" id="aclasscocoon_1_1_page_layout_html_a3994f425fce4b46cc09a80e2e8a68a76"><div class="ttname"><a href="#a3994f425fce4b46cc09a80e2e8a68a76">cocoon::PageLayout::remove_accessory_controller</a></div><div class="ttdeci">void remove_accessory_controller(const ViewController &amp;accessory_controller) const</div><div class="ttdoc">Calls -[NSPageLayout removeAccessoryController:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_page_layout_html_aa7d95ca2ac22907f8103398d23cdc0bf"><div class="ttname"><a href="#aa7d95ca2ac22907f8103398d23cdc0bf">cocoon::PageLayout::run_modal</a></div><div class="ttdeci">std::int64_t run_modal() const</div><div class="ttdoc">Calls -[NSPageLayout runModal].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_page_layout_html_ab6f57c369991ea042eacadbbc1e6ac41"><div class="ttname"><a href="#ab6f57c369991ea042eacadbbc1e6ac41">cocoon::PageLayout::add_accessory_controller</a></div><div class="ttdeci">void add_accessory_controller(const ViewController &amp;accessory_controller) const</div><div class="ttdoc">Calls -[NSPageLayout addAccessoryController:].</div></div>
@@ -348,34 +340,6 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="a9ad5d6540e049b9c52c995a835f5eb92" name="a9ad5d6540e049b9c52c995a835f5eb92"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9ad5d6540e049b9c52c995a835f5eb92">&#9670;&#160;</a></span>page_layout()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a5dbaf17dad9e2cf26c9410ffe13a82fe">PageLayout</a> cocoon::PageLayout::page_layout </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSPageLayout pageLayout]</span>. </p>
-<p>Create a new NSPageLayout. </p><dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
 
 </div>
 </div>

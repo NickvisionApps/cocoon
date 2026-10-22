@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -61,7 +61,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classcocoon_1_1_input_stream-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">cocoon::InputStream Class Reference</div></div>
 </div><!--header-->
@@ -143,22 +142,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object template"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_object.html#a53f4ad0e6a86173a96668457725eb369">as</a> () const</td></tr>
 <tr class="memdesc:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reinterprets the native object as handle type <span class="tt">T</span> (no runtime type check).  <br /></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a287670b3f5f2561c79a2ae8cb8273455" id="r_a287670b3f5f2561c79a2ae8cb8273455"><td class="memItemLeft">static <a class="el" href="#a4c03846bd93c04c127d8dd1139924be0">InputStream</a>&#160;</td><td class="memItemRight"><a class="el" href="#a287670b3f5f2561c79a2ae8cb8273455">input_stream_with_data</a> (const std::vector&lt; std::uint8_t &gt; &amp;data)</td></tr>
-<tr class="memdesc:a287670b3f5f2561c79a2ae8cb8273455"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSInputStream inputStreamWithData:]</span>.  <br /></td></tr>
-<tr class="memitem:abc665097ca8e707acb68d75f3d19fcc9" id="r_abc665097ca8e707acb68d75f3d19fcc9"><td class="memItemLeft">static <a class="el" href="#a4c03846bd93c04c127d8dd1139924be0">InputStream</a>&#160;</td><td class="memItemRight"><a class="el" href="#abc665097ca8e707acb68d75f3d19fcc9">input_stream_with_file_at_path</a> (const std::string &amp;path)</td></tr>
-<tr class="memdesc:abc665097ca8e707acb68d75f3d19fcc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSInputStream inputStreamWithFileAtPath:]</span>.  <br /></td></tr>
-<tr class="memitem:a26f49714bae78cd6d03a6f51ad16cfe0" id="r_a26f49714bae78cd6d03a6f51ad16cfe0"><td class="memItemLeft">static <a class="el" href="#a4c03846bd93c04c127d8dd1139924be0">InputStream</a>&#160;</td><td class="memItemRight"><a class="el" href="#a26f49714bae78cd6d03a6f51ad16cfe0">input_stream_with_url</a> (const <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a> &amp;url)</td></tr>
-<tr class="memdesc:a26f49714bae78cd6d03a6f51ad16cfe0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSInputStream inputStreamWithURL:]</span>.  <br /></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_static_methods_classcocoon_1_1_stream"><td colspan="2">Static Public Member Functions inherited from <a class="el" href="classcocoon_1_1_stream.html">cocoon::Stream</a></td></tr>
 <tr class="memitem:a6a4c1acc927d02c12c243a11735016de pub_static_methods_classcocoon_1_1_stream" id="r_a6a4c1acc927d02c12c243a11735016de"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_stream.html#a6a4c1acc927d02c12c243a11735016de">get_bound_streams_with_buffer_size</a> (std::uint64_t buffer_size, <a class="el" href="classcocoon_1_1_input_stream.html">InputStream</a> &amp;input_stream, <a class="el" href="classcocoon_1_1_output_stream.html">OutputStream</a> &amp;output_stream)</td></tr>
 <tr class="memdesc:a6a4c1acc927d02c12c243a11735016de pub_static_methods_classcocoon_1_1_stream"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSStream getBoundStreamsWithBufferSize:inputStream:outputStream:]</span>.  <br /></td></tr>
 <tr class="memitem:afe7052f7a8ee41ef27cf71aa692c9b55 pub_static_methods_classcocoon_1_1_stream" id="r_afe7052f7a8ee41ef27cf71aa692c9b55"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_stream.html#afe7052f7a8ee41ef27cf71aa692c9b55">get_streams_to_host_with_name</a> (const std::string &amp;hostname, std::int64_t port, <a class="el" href="classcocoon_1_1_input_stream.html">InputStream</a> &amp;input_stream, <a class="el" href="classcocoon_1_1_output_stream.html">OutputStream</a> &amp;output_stream)</td></tr>
 <tr class="memdesc:afe7052f7a8ee41ef27cf71aa692c9b55 pub_static_methods_classcocoon_1_1_stream"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSStream getStreamsToHostWithName:port:inputStream:outputStream:]</span>.  <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_static_methods_classcocoon_1_1_stream"><td colspan="2">Static Protected Member Functions inherited from <a class="el" href="classcocoon_1_1_stream.html">cocoon::Stream</a></td></tr>
 <tr class="memitem:a063dc03b14e74efc67f3afd68553a2ac pro_static_methods_classcocoon_1_1_stream" id="r_a063dc03b14e74efc67f3afd68553a2ac"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_stream.html#a063dc03b14e74efc67f3afd68553a2ac">install_delegate_delegate_</a> (void *native)</td></tr>
 </table>
@@ -168,14 +158,7 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;cocoon.h&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_class" href="classcocoon_1_1_input_stream.html">cocoon::InputStream</a> input_stream;</div>
-<div class="ttc" id="aclasscocoon_1_1_input_stream_html"><div class="ttname"><a href="classcocoon_1_1_input_stream.html">cocoon::InputStream</a></div><div class="ttdoc">C++ handle for the Objective-C class NSInputStream (Foundation).</div><div class="ttdef"><b>Definition</b> input_stream.h:36</div></div>
-</div><!-- fragment --></dd></dl>
-<dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_input_stream.html">cocoon::InputStream</a> input_stream{};</div>
-<div class="line"><span class="keyword">auto</span> made_0 = <a class="code hl_function" href="#abc665097ca8e707acb68d75f3d19fcc9">cocoon::InputStream::input_stream_with_file_at_path</a>(<span class="stringliteral">&quot;text&quot;</span>);</div>
-<div class="line"><span class="keyword">auto</span> made_1 = <a class="code hl_function" href="#a26f49714bae78cd6d03a6f51ad16cfe0">cocoon::InputStream::input_stream_with_url</a>(<a class="code hl_class" href="classcocoon_1_1_u_r_l.html">cocoon::URL</a>());</div>
-<div class="ttc" id="aclasscocoon_1_1_input_stream_html_a26f49714bae78cd6d03a6f51ad16cfe0"><div class="ttname"><a href="#a26f49714bae78cd6d03a6f51ad16cfe0">cocoon::InputStream::input_stream_with_url</a></div><div class="ttdeci">static InputStream input_stream_with_url(const URL &amp;url)</div><div class="ttdoc">Calls +[NSInputStream inputStreamWithURL:].</div></div>
-<div class="ttc" id="aclasscocoon_1_1_input_stream_html_abc665097ca8e707acb68d75f3d19fcc9"><div class="ttname"><a href="#abc665097ca8e707acb68d75f3d19fcc9">cocoon::InputStream::input_stream_with_file_at_path</a></div><div class="ttdeci">static InputStream input_stream_with_file_at_path(const std::string &amp;path)</div><div class="ttdoc">Calls +[NSInputStream inputStreamWithFileAtPath:].</div></div>
-<div class="ttc" id="aclasscocoon_1_1_u_r_l_html"><div class="ttname"><a href="classcocoon_1_1_u_r_l.html">cocoon::URL</a></div><div class="ttdoc">C++ handle for the Objective-C class NSURL (Foundation).</div><div class="ttdef"><b>Definition</b> url.h:39</div></div>
+<div class="ttc" id="aclasscocoon_1_1_input_stream_html"><div class="ttname"><a href="classcocoon_1_1_input_stream.html">cocoon::InputStream</a></div><div class="ttdoc">C++ handle for the Objective-C class NSInputStream (Foundation).</div><div class="ttdef"><b>Definition</b> input_stream.h:28</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/foundation/nsinputstream">https://developer.apple.com/documentation/foundation/nsinputstream</a> </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -382,108 +365,6 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Returns the <span class="tt">hasBytesAvailable</span> property of <span class="tt">NSInputStream</span>. </p>
 <p>A Boolean value that indicates whether the receiver has bytes available to read. 'YES' if the stream has bytes available or if it is impossible to tell without actually doing the read. </p><dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a287670b3f5f2561c79a2ae8cb8273455" name="a287670b3f5f2561c79a2ae8cb8273455"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a287670b3f5f2561c79a2ae8cb8273455">&#9670;&#160;</a></span>input_stream_with_data()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a4c03846bd93c04c127d8dd1139924be0">InputStream</a> cocoon::InputStream::input_stream_with_data </td>
-          <td>(</td>
-          <td class="paramtype">const std::vector&lt; std::uint8_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSInputStream inputStreamWithData:]</span>. </p>
-<p>Creates and returns an initialized 'NSInputStream' object for reading from a given 'NSData' object. The stream must be opened before it can be used. - Parameter data: The data object from which to read. The contents of 'data' are copied. - Returns: An initialized 'NSInputStream' object for reading from 'data'. If 'data' is not an 'NSData' object, this method returns 'nil'. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">data</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="abc665097ca8e707acb68d75f3d19fcc9" name="abc665097ca8e707acb68d75f3d19fcc9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc665097ca8e707acb68d75f3d19fcc9">&#9670;&#160;</a></span>input_stream_with_file_at_path()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a4c03846bd93c04c127d8dd1139924be0">InputStream</a> cocoon::InputStream::input_stream_with_file_at_path </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSInputStream inputStreamWithFileAtPath:]</span>. </p>
-<p>Creates and returns an initialized 'NSInputStream' object that reads data from the file at a given path. The stream must be opened before it can be used. - Parameter path: The path to the file. - Returns: An initialized 'NSInputStream' object that reads data from the file at 'path'. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">path</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a26f49714bae78cd6d03a6f51ad16cfe0" name="a26f49714bae78cd6d03a6f51ad16cfe0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a26f49714bae78cd6d03a6f51ad16cfe0">&#9670;&#160;</a></span>input_stream_with_url()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a4c03846bd93c04c127d8dd1139924be0">InputStream</a> cocoon::InputStream::input_stream_with_url </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>url</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSInputStream inputStreamWithURL:]</span>. </p>
-<p>Creates and returns an initialized 'NSInputStream' object that reads data from the file at a given <a class="el" href="classcocoon_1_1_u_r_l.html" title="C++ handle for the Objective-C class NSURL (Foundation).">URL</a>. The stream must be opened before it can be used. - Parameter url: The <a class="el" href="classcocoon_1_1_u_r_l.html" title="C++ handle for the Objective-C class NSURL (Foundation).">URL</a> to the file. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">url</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
 
 </div>
 </div>

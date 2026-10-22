@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -61,7 +61,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classcocoon_1_1_text_list_element-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">cocoon::TextListElement Class Reference</div></div>
 </div><!--header-->
@@ -76,6 +75,10 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a76fb207f45d6ebcb92a97d69b59fc21b" id="r_a76fb207f45d6ebcb92a97d69b59fc21b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a76fb207f45d6ebcb92a97d69b59fc21b">TextListElement</a> (const TextListElement &amp;parent, const <a class="el" href="classcocoon_1_1_text_list.html">TextList</a> &amp;text_list, const <a class="el" href="classcocoon_1_1_attributed_string.html">AttributedString</a> &amp;contents, const std::map&lt; std::string, <a class="el" href="classcocoon_1_1_object.html">Object</a> &gt; &amp;marker_attributes, const std::vector&lt; TextListElement &gt; &amp;children)</td></tr>
 <tr class="memdesc:a76fb207f45d6ebcb92a97d69b59fc21b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSTextListElement</span> instance and returns a handle to it.  <br /></td></tr>
+<tr class="memitem:a113fab44f9361039cc0e34c22d95a004" id="r_a113fab44f9361039cc0e34c22d95a004"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a113fab44f9361039cc0e34c22d95a004">TextListElement</a> (const std::vector&lt; TextListElement &gt; &amp;children, const <a class="el" href="classcocoon_1_1_text_list.html">TextList</a> &amp;text_list, std::int64_t nesting_level)</td></tr>
+<tr class="memdesc:a113fab44f9361039cc0e34c22d95a004"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSTextListElement</span> instance and returns a handle to it.  <br /></td></tr>
+<tr class="memitem:a7794cbf3d93d22e86ee7ee8a8db20768" id="r_a7794cbf3d93d22e86ee7ee8a8db20768"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a7794cbf3d93d22e86ee7ee8a8db20768">TextListElement</a> (const <a class="el" href="classcocoon_1_1_attributed_string.html">AttributedString</a> &amp;contents, const std::map&lt; std::string, <a class="el" href="classcocoon_1_1_object.html">Object</a> &gt; &amp;marker_attributes, const <a class="el" href="classcocoon_1_1_text_list.html">TextList</a> &amp;text_list, const std::vector&lt; TextListElement &gt; &amp;children)</td></tr>
+<tr class="memdesc:a7794cbf3d93d22e86ee7ee8a8db20768"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSTextListElement</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:a515f34e0a4de2d1764db061573585217" id="r_a515f34e0a4de2d1764db061573585217"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a515f34e0a4de2d1764db061573585217">TextListElement</a> ()</td></tr>
 <tr class="memdesc:a515f34e0a4de2d1764db061573585217"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSTextListElement</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:a211960c0131348697ef4dae899a3bc76" id="r_a211960c0131348697ef4dae899a3bc76"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a211960c0131348697ef4dae899a3bc76">TextListElement</a> (std::nullptr_t)</td></tr>
@@ -157,13 +160,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object" id="r_a53f4ad0e6a86173a96668457725eb369"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
 <tr class="memitem:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object template"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_object.html#a53f4ad0e6a86173a96668457725eb369">as</a> () const</td></tr>
 <tr class="memdesc:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reinterprets the native object as handle type <span class="tt">T</span> (no runtime type check).  <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:aec74c2d18094a77324cfcc9db562a165" id="r_aec74c2d18094a77324cfcc9db562a165"><td class="memItemLeft">static <a class="el" href="#a76fb207f45d6ebcb92a97d69b59fc21b">TextListElement</a>&#160;</td><td class="memItemRight"><a class="el" href="#aec74c2d18094a77324cfcc9db562a165">text_list_element_with_child_elements</a> (const std::vector&lt; <a class="el" href="#a76fb207f45d6ebcb92a97d69b59fc21b">TextListElement</a> &gt; &amp;children, const <a class="el" href="classcocoon_1_1_text_list.html">TextList</a> &amp;text_list, std::int64_t nesting_level)</td></tr>
-<tr class="memdesc:aec74c2d18094a77324cfcc9db562a165"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSTextListElement textListElementWithChildElements:textList:nestingLevel:]</span>.  <br /></td></tr>
-<tr class="memitem:a6b8f28fa2fcf99fa67c20b948cfb1435" id="r_a6b8f28fa2fcf99fa67c20b948cfb1435"><td class="memItemLeft">static <a class="el" href="#a76fb207f45d6ebcb92a97d69b59fc21b">TextListElement</a>&#160;</td><td class="memItemRight"><a class="el" href="#a6b8f28fa2fcf99fa67c20b948cfb1435">text_list_element_with_contents</a> (const <a class="el" href="classcocoon_1_1_attributed_string.html">AttributedString</a> &amp;contents, const std::map&lt; std::string, <a class="el" href="classcocoon_1_1_object.html">Object</a> &gt; &amp;marker_attributes, const <a class="el" href="classcocoon_1_1_text_list.html">TextList</a> &amp;text_list, const std::vector&lt; <a class="el" href="#a76fb207f45d6ebcb92a97d69b59fc21b">TextListElement</a> &gt; &amp;children)</td></tr>
-<tr class="memdesc:a6b8f28fa2fcf99fa67c20b948cfb1435"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSTextListElement textListElementWithContents:markerAttributes:textList:childElements:]</span>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>C++ handle for the Objective-C class <span class="tt">NSTextListElement</span> (AppKit). </p>
@@ -176,7 +172,7 @@ Static Public Member Functions</h2></td></tr>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/appkit/nstextlistelement">https://developer.apple.com/documentation/appkit/nstextlistelement</a> </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a76fb207f45d6ebcb92a97d69b59fc21b" name="a76fb207f45d6ebcb92a97d69b59fc21b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a76fb207f45d6ebcb92a97d69b59fc21b">&#9670;&#160;</a></span>TextListElement() <span class="overload">[1/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a76fb207f45d6ebcb92a97d69b59fc21b">&#9670;&#160;</a></span>TextListElement() <span class="overload">[1/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -221,8 +217,85 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a113fab44f9361039cc0e34c22d95a004" name="a113fab44f9361039cc0e34c22d95a004"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a113fab44f9361039cc0e34c22d95a004">&#9670;&#160;</a></span>TextListElement() <span class="overload">[2/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::TextListElement::TextListElement </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; TextListElement &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>children</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcocoon_1_1_text_list.html">TextList</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text_list</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::int64_t</td>          <td class="paramname"><span class="paramname"><em>nesting_level</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSTextListElement</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
+<a id="a7794cbf3d93d22e86ee7ee8a8db20768" name="a7794cbf3d93d22e86ee7ee8a8db20768"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7794cbf3d93d22e86ee7ee8a8db20768">&#9670;&#160;</a></span>TextListElement() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::TextListElement::TextListElement </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcocoon_1_1_attributed_string.html">AttributedString</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>contents</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::map&lt; std::string, <a class="el" href="classcocoon_1_1_object.html">Object</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>marker_attributes</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcocoon_1_1_text_list.html">TextList</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text_list</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; TextListElement &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>children</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSTextListElement</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
 <a id="a515f34e0a4de2d1764db061573585217" name="a515f34e0a4de2d1764db061573585217"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a515f34e0a4de2d1764db061573585217">&#9670;&#160;</a></span>TextListElement() <span class="overload">[2/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a515f34e0a4de2d1764db061573585217">&#9670;&#160;</a></span>TextListElement() <span class="overload">[4/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -249,7 +322,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a211960c0131348697ef4dae899a3bc76" name="a211960c0131348697ef4dae899a3bc76"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a211960c0131348697ef4dae899a3bc76">&#9670;&#160;</a></span>TextListElement() <span class="overload">[3/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a211960c0131348697ef4dae899a3bc76">&#9670;&#160;</a></span>TextListElement() <span class="overload">[5/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -268,7 +341,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a85021ebf8a818ebc6c74f1dfa4b76cc0" name="a85021ebf8a818ebc6c74f1dfa4b76cc0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a85021ebf8a818ebc6c74f1dfa4b76cc0">&#9670;&#160;</a></span>TextListElement() <span class="overload">[4/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a85021ebf8a818ebc6c74f1dfa4b76cc0">&#9670;&#160;</a></span>TextListElement() <span class="overload">[6/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -412,102 +485,6 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Returns the <span class="tt">textList</span> property of <span class="tt">NSTextListElement</span>. </p>
 <p>The value that represents the text list. </p><dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="aec74c2d18094a77324cfcc9db562a165" name="aec74c2d18094a77324cfcc9db562a165"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec74c2d18094a77324cfcc9db562a165">&#9670;&#160;</a></span>text_list_element_with_child_elements()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a76fb207f45d6ebcb92a97d69b59fc21b">TextListElement</a> cocoon::TextListElement::text_list_element_with_child_elements </td>
-          <td>(</td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="#a76fb207f45d6ebcb92a97d69b59fc21b">TextListElement</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>children</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_text_list.html">TextList</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text_list</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::int64_t</td>          <td class="paramname"><span class="paramname"><em>nesting_level</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSTextListElement textListElementWithChildElements:textList:nestingLevel:]</span>. </p>
-<p>Creates a text list element with the list elements and nesting level you provide. Raises an exception when 'nestingLevel &lt; 0'. - Parameters: - children: An array of ''NSTextListElement'' elements. - textList: The ''NSTextList'' to add elements to. - nestingLevel: An integer value that describes the level of nesting of these elements. - Returns: 'nil' if 'children.count' is zero. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">children</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">text_list</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">nesting_level</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a6b8f28fa2fcf99fa67c20b948cfb1435" name="a6b8f28fa2fcf99fa67c20b948cfb1435"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6b8f28fa2fcf99fa67c20b948cfb1435">&#9670;&#160;</a></span>text_list_element_with_contents()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a76fb207f45d6ebcb92a97d69b59fc21b">TextListElement</a> cocoon::TextListElement::text_list_element_with_contents </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_attributed_string.html">AttributedString</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>contents</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::map&lt; std::string, <a class="el" href="classcocoon_1_1_object.html">Object</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>marker_attributes</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_text_list.html">TextList</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text_list</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="#a76fb207f45d6ebcb92a97d69b59fc21b">TextListElement</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>children</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSTextListElement textListElementWithContents:markerAttributes:textList:childElements:]</span>. </p>
-<p>Creates a text list element with the list elements, nesting level, and marker attributes you provide. - Parameters: - contents: An &lt;doc://com.apple.documentation/documentation/foundation/nsattributedstring&gt; that contains the contents of the text list element. - markerAttributes: A dictionary of &lt;doc://com.apple.documentation/documentation/foundation/nsattributedstring/key&gt; keys and values that describe the marker attributes. - textList: The ''NSTextList'' to add elements to. - children: An array of ''NSTextListElement'' elements. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">contents</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">marker_attributes</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">text_list</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">children</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
 
 </div>
 </div>

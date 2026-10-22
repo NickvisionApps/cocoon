@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -61,7 +61,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classcocoon_1_1_sort_descriptor-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">cocoon::SortDescriptor Class Reference</div></div>
 </div><!--header-->
@@ -125,15 +124,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object" id="r_a53f4ad0e6a86173a96668457725eb369"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
 <tr class="memitem:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object template"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_object.html#a53f4ad0e6a86173a96668457725eb369">as</a> () const</td></tr>
 <tr class="memdesc:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reinterprets the native object as handle type <span class="tt">T</span> (no runtime type check).  <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a3fc103df846ef42adedf1ec2abfa422d" id="r_a3fc103df846ef42adedf1ec2abfa422d"><td class="memItemLeft">static <a class="el" href="#a48d74e18724a3582b7030c899e56d9dc">SortDescriptor</a>&#160;</td><td class="memItemRight"><a class="el" href="#a3fc103df846ef42adedf1ec2abfa422d">sort_descriptor_with_key</a> (const std::string &amp;key, bool ascending)</td></tr>
-<tr class="memdesc:a3fc103df846ef42adedf1ec2abfa422d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSSortDescriptor sortDescriptorWithKey:ascending:]</span>.  <br /></td></tr>
-<tr class="memitem:aa951ad0606c9d471ad2bd167d3ab41e0" id="r_aa951ad0606c9d471ad2bd167d3ab41e0"><td class="memItemLeft">static <a class="el" href="#a48d74e18724a3582b7030c899e56d9dc">SortDescriptor</a>&#160;</td><td class="memItemRight"><a class="el" href="#aa951ad0606c9d471ad2bd167d3ab41e0">sort_descriptor_with_key</a> (const std::string &amp;key, bool ascending, std::function&lt; <a class="el" href="namespacecocoon.html#a9837321477e542d4c95845127ee28747">ComparisonResult</a>(<a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a>, <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a>)&gt; cmptr)</td></tr>
-<tr class="memdesc:aa951ad0606c9d471ad2bd167d3ab41e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSSortDescriptor sortDescriptorWithKey:ascending:comparator:]</span>.  <br /></td></tr>
-<tr class="memitem:ac84cb1b1a1f290d64190a2378fa31905" id="r_ac84cb1b1a1f290d64190a2378fa31905"><td class="memItemLeft">static <a class="el" href="#a48d74e18724a3582b7030c899e56d9dc">SortDescriptor</a>&#160;</td><td class="memItemRight"><a class="el" href="#ac84cb1b1a1f290d64190a2378fa31905">sort_descriptor_with_key</a> (const std::string &amp;key, bool ascending, const std::string &amp;selector)</td></tr>
-<tr class="memdesc:ac84cb1b1a1f290d64190a2378fa31905"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSSortDescriptor sortDescriptorWithKey:ascending:selector:]</span>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>C++ handle for the Objective-C class <span class="tt">NSSortDescriptor</span> (Foundation). </p>
@@ -141,13 +131,10 @@ Static Public Member Functions</h2></td></tr>
 <dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;cocoon.h&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_class" href="classcocoon_1_1_sort_descriptor.html">cocoon::SortDescriptor</a> sort_descriptor;</div>
-<div class="ttc" id="aclasscocoon_1_1_sort_descriptor_html"><div class="ttname"><a href="classcocoon_1_1_sort_descriptor.html">cocoon::SortDescriptor</a></div><div class="ttdoc">C++ handle for the Objective-C class NSSortDescriptor (Foundation).</div><div class="ttdef"><b>Definition</b> sort_descriptor.h:34</div></div>
+<div class="ttc" id="aclasscocoon_1_1_sort_descriptor_html"><div class="ttname"><a href="classcocoon_1_1_sort_descriptor.html">cocoon::SortDescriptor</a></div><div class="ttdoc">C++ handle for the Objective-C class NSSortDescriptor (Foundation).</div><div class="ttdef"><b>Definition</b> sort_descriptor.h:32</div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_sort_descriptor.html">cocoon::SortDescriptor</a> sort_descriptor{};</div>
-<div class="line"><span class="keyword">auto</span> made_0 = <a class="code hl_function" href="#a3fc103df846ef42adedf1ec2abfa422d">cocoon::SortDescriptor::sort_descriptor_with_key</a>(<span class="stringliteral">&quot;text&quot;</span>, <span class="keyword">true</span>);</div>
-<div class="line"><span class="keyword">auto</span> made_1 = <a class="code hl_function" href="#a3fc103df846ef42adedf1ec2abfa422d">cocoon::SortDescriptor::sort_descriptor_with_key</a>(<span class="stringliteral">&quot;text&quot;</span>, <span class="keyword">true</span>, <span class="stringliteral">&quot;text&quot;</span>);</div>
 <div class="line">sort_descriptor.<a class="code hl_function" href="#a6c7e9255df6e421d9b6d3a279cea1a34">allow_evaluation</a>();</div>
-<div class="ttc" id="aclasscocoon_1_1_sort_descriptor_html_a3fc103df846ef42adedf1ec2abfa422d"><div class="ttname"><a href="#a3fc103df846ef42adedf1ec2abfa422d">cocoon::SortDescriptor::sort_descriptor_with_key</a></div><div class="ttdeci">static SortDescriptor sort_descriptor_with_key(const std::string &amp;key, bool ascending)</div><div class="ttdoc">Calls +[NSSortDescriptor sortDescriptorWithKey:ascending:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_sort_descriptor_html_a6c7e9255df6e421d9b6d3a279cea1a34"><div class="ttname"><a href="#a6c7e9255df6e421d9b6d3a279cea1a34">cocoon::SortDescriptor::allow_evaluation</a></div><div class="ttdeci">void allow_evaluation() const</div><div class="ttdoc">Calls -[NSSortDescriptor allowEvaluation].</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/foundation/nssortdescriptor">https://developer.apple.com/documentation/foundation/nssortdescriptor</a> </dd></dl>
@@ -477,135 +464,6 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Returns the <span class="tt"><a class="el" href="#abe08d814b4ea7dab39b57fbb6431f0c6" title="Returns the selector property of NSSortDescriptor.">selector</a></span> property of <span class="tt">NSSortDescriptor</span>. </p>
 <p>The selector for comparing objects. </p><dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a3fc103df846ef42adedf1ec2abfa422d" name="a3fc103df846ef42adedf1ec2abfa422d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3fc103df846ef42adedf1ec2abfa422d">&#9670;&#160;</a></span>sort_descriptor_with_key() <span class="overload">[1/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a48d74e18724a3582b7030c899e56d9dc">SortDescriptor</a> cocoon::SortDescriptor::sort_descriptor_with_key </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>key</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>ascending</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSSortDescriptor sortDescriptorWithKey:ascending:]</span>. </p>
-<p>Creates and returns a sort descriptor with the specified key path and ordering. - Parameters: - key: The key path to use when performing a comparison. - ascending: 'YES' if the receiver specifies sorting in ascending order, otherwise 'NO'. - Returns: A sort descriptor initialized with the specified key path and sort order, and the default comparison selector ('compare:'). </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">key</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">ascending</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="ac84cb1b1a1f290d64190a2378fa31905" name="ac84cb1b1a1f290d64190a2378fa31905"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac84cb1b1a1f290d64190a2378fa31905">&#9670;&#160;</a></span>sort_descriptor_with_key() <span class="overload">[2/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a48d74e18724a3582b7030c899e56d9dc">SortDescriptor</a> cocoon::SortDescriptor::sort_descriptor_with_key </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>key</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>ascending</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>selector</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSSortDescriptor sortDescriptorWithKey:ascending:selector:]</span>. </p>
-<p>Creates a sort descriptor with the specified key path, ordering, and comparison selector. - Parameters: - key: The key path for performing a comparison. - ascending: 'YES' if the receiver specifies sorting in ascending order; otherwise, 'NO'. - selector: The method to use when comparing the properties of objects. The selector must specify a method implemented by the value of the property identified by the key path. The selector used for the comparison is passed a single parameter, the object to compare against, and it returns the appropriate 'NSComparisonResult' constant. - Returns: A sort descriptor initialized with the specified key path, sort order, and comparison selector. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">key</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">ascending</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">selector</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="aa951ad0606c9d471ad2bd167d3ab41e0" name="aa951ad0606c9d471ad2bd167d3ab41e0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa951ad0606c9d471ad2bd167d3ab41e0">&#9670;&#160;</a></span>sort_descriptor_with_key() <span class="overload">[3/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a48d74e18724a3582b7030c899e56d9dc">SortDescriptor</a> cocoon::SortDescriptor::sort_descriptor_with_key </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>key</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>ascending</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::function&lt; <a class="el" href="namespacecocoon.html#a9837321477e542d4c95845127ee28747">ComparisonResult</a>(<a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a>, <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a>)&gt;</td>          <td class="paramname"><span class="paramname"><em>cmptr</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSSortDescriptor sortDescriptorWithKey:ascending:comparator:]</span>. </p>
-<p>Creates and returns a sort descriptor initialized with the specified key path and ordering, and a comparator block. - Parameters: - key: The property for performing a comparison. - ascending: 'YES' if the receiver specifies sorting in ascending order; otherwise, 'NO'. - cmptr: A comparator block. - Returns: A sort descriptor initialized with the specified key, ordering, and comparator. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">key</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">ascending</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">cmptr</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
 
 </div>
 </div>

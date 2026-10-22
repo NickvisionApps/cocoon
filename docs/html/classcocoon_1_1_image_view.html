@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -1123,8 +1123,6 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:aa497d93c79caac11936576bcaf3ece93" id="r_aa497d93c79caac11936576bcaf3ece93"><td class="memItemLeft">static <a class="el" href="#a754e8a22f4aee17a7f415a1a66a4dfc2">ImageView</a>&#160;</td><td class="memItemRight"><a class="el" href="#aa497d93c79caac11936576bcaf3ece93">image_view_with_image</a> (const <a class="el" href="classcocoon_1_1_image.html">Image</a> &amp;image)</td></tr>
-<tr class="memdesc:aa497d93c79caac11936576bcaf3ece93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSImageView imageViewWithImage:]</span>.  <br /></td></tr>
 <tr class="memitem:adff177a11e3bf8fae75c5ed21374df84" id="r_adff177a11e3bf8fae75c5ed21374df84"><td class="memItemLeft">static <a class="el" href="namespacecocoon.html#a601450a7eff09309954cf1a008dac6b3">ImageDynamicRange</a>&#160;</td><td class="memItemRight"><a class="el" href="#adff177a11e3bf8fae75c5ed21374df84">default_preferred_image_dynamic_range</a> ()</td></tr>
 <tr class="memdesc:adff177a11e3bf8fae75c5ed21374df84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">defaultPreferredImageDynamicRange</span> property of <span class="tt">NSImageView</span>.  <br /></td></tr>
 <tr class="memitem:a78d9669346527da9fd491ef8605152aa" id="r_a78d9669346527da9fd491ef8605152aa"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a78d9669346527da9fd491ef8605152aa">set_default_preferred_image_dynamic_range</a> (<a class="el" href="namespacecocoon.html#a601450a7eff09309954cf1a008dac6b3">ImageDynamicRange</a> value)</td></tr>
@@ -1158,7 +1156,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">view.set_content_tint_color(<a class="code hl_function" href="classcocoon_1_1_color.html#a93f08a78e21ff380bebb3d32af2b107a">cocoon::Color::system_yellow_color</a>());</div>
 <div class="ttc" id="aclasscocoon_1_1_color_html_a93f08a78e21ff380bebb3d32af2b107a"><div class="ttname"><a href="classcocoon_1_1_color.html#a93f08a78e21ff380bebb3d32af2b107a">cocoon::Color::system_yellow_color</a></div><div class="ttdeci">static Color system_yellow_color()</div><div class="ttdoc">Returns the systemYellowColor property of NSColor.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_image_html_abca5113110802abff8412c2075f2347e"><div class="ttname"><a href="classcocoon_1_1_image.html#abca5113110802abff8412c2075f2347e">cocoon::Image::symbol</a></div><div class="ttdeci">static Image symbol(const std::string &amp;name, const std::string &amp;description={})</div><div class="ttdoc">Convenience helper symbol provided by cocoon.</div></div>
-<div class="ttc" id="aclasscocoon_1_1_image_view_html"><div class="ttname"><a href="classcocoon_1_1_image_view.html">cocoon::ImageView</a></div><div class="ttdoc">A view displaying an image.</div><div class="ttdef"><b>Definition</b> image_view.h:47</div></div>
+<div class="ttc" id="aclasscocoon_1_1_image_view_html"><div class="ttname"><a href="classcocoon_1_1_image_view.html">cocoon::ImageView</a></div><div class="ttdoc">A view displaying an image.</div><div class="ttdef"><b>Definition</b> image_view.h:46</div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_image_view.html">cocoon::ImageView</a> image_view{<a class="code hl_enumvalue" href="namespacecocoon.html#aa53359c544d7aa2c9dbc0fa4fc92b7e0abe53a0541a6d36f6ecb879fa2c584b08">cocoon::Image</a>()};</div>
 <div class="line">image_view.<a class="code hl_function" href="#a48becaed283b16a87b596df52396bed3">set_allows_cut_copy_paste</a>(<span class="keyword">true</span>);</div>
@@ -1167,19 +1165,16 @@ Static Public Member Functions</h2></td></tr>
 <div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#a301ffaddd047e8c9527866011172c855">animates</a> = image_view.<a class="code hl_function" href="#a301ffaddd047e8c9527866011172c855">animates</a>();</div>
 <div class="line">image_view.<a class="code hl_function" href="#aa2510e8ac3e7eb655dfb118798555370">set_content_tint_color</a>(<a class="code hl_class" href="classcocoon_1_1_color.html">cocoon::Color</a>());</div>
 <div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#a18efacde0b636e36faac638a4c825163">content_tint_color</a> = image_view.<a class="code hl_function" href="#a18efacde0b636e36faac638a4c825163">content_tint_color</a>();</div>
-<div class="line"><span class="keyword">auto</span> made_0 = <a class="code hl_function" href="#aa497d93c79caac11936576bcaf3ece93">cocoon::ImageView::image_view_with_image</a>(<a class="code hl_class" href="classcocoon_1_1_image.html">cocoon::Image</a>());</div>
 <div class="line">image_view.<a class="code hl_function" href="#aad9a11287b4159b5d1b60873811ba894">add_symbol_effect</a>(<a class="code hl_class" href="classcocoon_1_1_symbol_effect.html">cocoon::SymbolEffect</a>());</div>
 <div class="line">image_view.<a class="code hl_function" href="#aad9a11287b4159b5d1b60873811ba894">add_symbol_effect</a>(<a class="code hl_class" href="classcocoon_1_1_symbol_effect.html">cocoon::SymbolEffect</a>(), <a class="code hl_class" href="classcocoon_1_1_symbol_effect_options.html">cocoon::SymbolEffectOptions</a>());</div>
 <div class="line">image_view.<a class="code hl_function" href="#aad9a11287b4159b5d1b60873811ba894">add_symbol_effect</a>(<a class="code hl_class" href="classcocoon_1_1_symbol_effect.html">cocoon::SymbolEffect</a>(), <a class="code hl_class" href="classcocoon_1_1_symbol_effect_options.html">cocoon::SymbolEffectOptions</a>(), <span class="keyword">true</span>);</div>
 <div class="ttc" id="aclasscocoon_1_1_color_html"><div class="ttname"><a href="classcocoon_1_1_color.html">cocoon::Color</a></div><div class="ttdoc">A color (NSColor).</div><div class="ttdef"><b>Definition</b> color.h:42</div></div>
-<div class="ttc" id="aclasscocoon_1_1_image_html"><div class="ttname"><a href="classcocoon_1_1_image.html">cocoon::Image</a></div><div class="ttdoc">An image (NSImage).</div><div class="ttdef"><b>Definition</b> image.h:51</div></div>
 <div class="ttc" id="aclasscocoon_1_1_image_view_html_a18efacde0b636e36faac638a4c825163"><div class="ttname"><a href="#a18efacde0b636e36faac638a4c825163">cocoon::ImageView::content_tint_color</a></div><div class="ttdeci">Color content_tint_color() const</div><div class="ttdoc">Returns the contentTintColor property of NSImageView.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_image_view_html_a27f12cda6cf0035d9337468c22d450d5"><div class="ttname"><a href="#a27f12cda6cf0035d9337468c22d450d5">cocoon::ImageView::set_animates</a></div><div class="ttdeci">void set_animates(bool value) const</div><div class="ttdoc">Sets the animates property of NSImageView.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_image_view_html_a301ffaddd047e8c9527866011172c855"><div class="ttname"><a href="#a301ffaddd047e8c9527866011172c855">cocoon::ImageView::animates</a></div><div class="ttdeci">bool animates() const</div><div class="ttdoc">Returns the animates property of NSImageView.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_image_view_html_a48becaed283b16a87b596df52396bed3"><div class="ttname"><a href="#a48becaed283b16a87b596df52396bed3">cocoon::ImageView::set_allows_cut_copy_paste</a></div><div class="ttdeci">void set_allows_cut_copy_paste(bool value) const</div><div class="ttdoc">Sets the allowsCutCopyPaste property of NSImageView.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_image_view_html_a8359e09bcbddf27fe00fa236f985fd6e"><div class="ttname"><a href="#a8359e09bcbddf27fe00fa236f985fd6e">cocoon::ImageView::allows_cut_copy_paste</a></div><div class="ttdeci">bool allows_cut_copy_paste() const</div><div class="ttdoc">Returns the allowsCutCopyPaste property of NSImageView.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_image_view_html_aa2510e8ac3e7eb655dfb118798555370"><div class="ttname"><a href="#aa2510e8ac3e7eb655dfb118798555370">cocoon::ImageView::set_content_tint_color</a></div><div class="ttdeci">void set_content_tint_color(const Color &amp;value) const</div><div class="ttdoc">Sets the contentTintColor property of NSImageView.</div></div>
-<div class="ttc" id="aclasscocoon_1_1_image_view_html_aa497d93c79caac11936576bcaf3ece93"><div class="ttname"><a href="#aa497d93c79caac11936576bcaf3ece93">cocoon::ImageView::image_view_with_image</a></div><div class="ttdeci">static ImageView image_view_with_image(const Image &amp;image)</div><div class="ttdoc">Calls +[NSImageView imageViewWithImage:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_image_view_html_aad9a11287b4159b5d1b60873811ba894"><div class="ttname"><a href="#aad9a11287b4159b5d1b60873811ba894">cocoon::ImageView::add_symbol_effect</a></div><div class="ttdeci">void add_symbol_effect(const SymbolEffect &amp;symbol_effect) const</div><div class="ttdoc">Calls -[NSImageView addSymbolEffect:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_symbol_effect_html"><div class="ttname"><a href="classcocoon_1_1_symbol_effect.html">cocoon::SymbolEffect</a></div><div class="ttdoc">C++ handle for the Objective-C class NSSymbolEffect (AppKit).</div><div class="ttdef"><b>Definition</b> symbol_effect.h:24</div></div>
 <div class="ttc" id="aclasscocoon_1_1_symbol_effect_options_html"><div class="ttname"><a href="classcocoon_1_1_symbol_effect_options.html">cocoon::SymbolEffectOptions</a></div><div class="ttdoc">C++ handle for the Objective-C class NSSymbolEffectOptions (AppKit).</div><div class="ttdef"><b>Definition</b> symbol_effect_options.h:34</div></div>
@@ -1536,40 +1531,6 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the <span class="tt">imageScaling</span> property of <span class="tt">NSImageView</span>. </p>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="aa497d93c79caac11936576bcaf3ece93" name="aa497d93c79caac11936576bcaf3ece93"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa497d93c79caac11936576bcaf3ece93">&#9670;&#160;</a></span>image_view_with_image()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a754e8a22f4aee17a7f415a1a66a4dfc2">ImageView</a> cocoon::ImageView::image_view_with_image </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_image.html">Image</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>image</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSImageView imageViewWithImage:]</span>. </p>
-<p>Creates a non-editable image view containing the provided image. The image is scaled proportionally down to fit the view, and is centered within the view. @param image The image to display within the view. @return An initialized image view. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">image</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
 
 </div>

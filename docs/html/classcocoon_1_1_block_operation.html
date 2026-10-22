@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -61,7 +61,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classcocoon_1_1_block_operation-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">cocoon::BlockOperation Class Reference</div></div>
 </div><!--header-->
@@ -74,6 +73,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a053a5a82fe843e5eab543895e0e4a397" id="r_a053a5a82fe843e5eab543895e0e4a397"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a053a5a82fe843e5eab543895e0e4a397">BlockOperation</a> (std::function&lt; void()&gt; block)</td></tr>
+<tr class="memdesc:a053a5a82fe843e5eab543895e0e4a397"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSBlockOperation</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:ad8aa0ffe896b6371d0eef276a5611e63" id="r_ad8aa0ffe896b6371d0eef276a5611e63"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ad8aa0ffe896b6371d0eef276a5611e63">BlockOperation</a> ()</td></tr>
 <tr class="memdesc:ad8aa0ffe896b6371d0eef276a5611e63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSBlockOperation</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:ae6557a4f5fe1d35b9edc19f3bb416320" id="r_ae6557a4f5fe1d35b9edc19f3bb416320"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ae6557a4f5fe1d35b9edc19f3bb416320">BlockOperation</a> (std::nullptr_t)</td></tr>
@@ -156,11 +157,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object" id="r_a53f4ad0e6a86173a96668457725eb369"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
 <tr class="memitem:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object template"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_object.html#a53f4ad0e6a86173a96668457725eb369">as</a> () const</td></tr>
 <tr class="memdesc:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reinterprets the native object as handle type <span class="tt">T</span> (no runtime type check).  <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:adb485b03ce2ed167f14edc23769f621d" id="r_adb485b03ce2ed167f14edc23769f621d"><td class="memItemLeft">static <a class="el" href="#ad8aa0ffe896b6371d0eef276a5611e63">BlockOperation</a>&#160;</td><td class="memItemRight"><a class="el" href="#adb485b03ce2ed167f14edc23769f621d">block_operation_with_block</a> (std::function&lt; void()&gt; block)</td></tr>
-<tr class="memdesc:adb485b03ce2ed167f14edc23769f621d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSBlockOperation blockOperationWithBlock:]</span>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>C++ handle for the Objective-C class <span class="tt">NSBlockOperation</span> (Foundation). </p>
@@ -172,8 +168,35 @@ Static Public Member Functions</h2></td></tr>
 </div><!-- fragment --> </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/foundation/nsblockoperation">https://developer.apple.com/documentation/foundation/nsblockoperation</a> </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a053a5a82fe843e5eab543895e0e4a397" name="a053a5a82fe843e5eab543895e0e4a397"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a053a5a82fe843e5eab543895e0e4a397">&#9670;&#160;</a></span>BlockOperation() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::BlockOperation::BlockOperation </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; void()&gt;</td>          <td class="paramname"><span class="paramname"><em>block</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSBlockOperation</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
 <a id="ad8aa0ffe896b6371d0eef276a5611e63" name="ad8aa0ffe896b6371d0eef276a5611e63"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad8aa0ffe896b6371d0eef276a5611e63">&#9670;&#160;</a></span>BlockOperation() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8aa0ffe896b6371d0eef276a5611e63">&#9670;&#160;</a></span>BlockOperation() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -200,7 +223,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="ae6557a4f5fe1d35b9edc19f3bb416320" name="ae6557a4f5fe1d35b9edc19f3bb416320"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6557a4f5fe1d35b9edc19f3bb416320">&#9670;&#160;</a></span>BlockOperation() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6557a4f5fe1d35b9edc19f3bb416320">&#9670;&#160;</a></span>BlockOperation() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -219,7 +242,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a14906290307f286749e2c666d2ec45d3" name="a14906290307f286749e2c666d2ec45d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a14906290307f286749e2c666d2ec45d3">&#9670;&#160;</a></span>BlockOperation() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a14906290307f286749e2c666d2ec45d3">&#9670;&#160;</a></span>BlockOperation() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -268,40 +291,6 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="adb485b03ce2ed167f14edc23769f621d" name="adb485b03ce2ed167f14edc23769f621d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb485b03ce2ed167f14edc23769f621d">&#9670;&#160;</a></span>block_operation_with_block()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#ad8aa0ffe896b6371d0eef276a5611e63">BlockOperation</a> cocoon::BlockOperation::block_operation_with_block </td>
-          <td>(</td>
-          <td class="paramtype">std::function&lt; void()&gt;</td>          <td class="paramname"><span class="paramname"><em>block</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSBlockOperation blockOperationWithBlock:]</span>. </p>
-<p>Creates and returns an 'NSBlockOperation' object and adds the specified block to it. - Parameter block: The block to add to the new block operation object's list. The block should take no parameters and have no return value. - Returns: A new block operation object. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">block</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
 
 </div>
 </div>

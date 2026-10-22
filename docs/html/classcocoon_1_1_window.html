@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -81,6 +81,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a4353b9eaf7ec0849a70c81f76b5b69e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSWindow</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:a971572ac9bfa47c5af97718ba0b16e18" id="r_a971572ac9bfa47c5af97718ba0b16e18"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a971572ac9bfa47c5af97718ba0b16e18">Window</a> (const <a class="el" href="structcocoon_1_1_rect.html">Rect</a> &amp;content_rect, <a class="el" href="namespacecocoon.html#a9415710f205508692cc0a58e3bf54f48">WindowStyle</a> style, <a class="el" href="namespacecocoon.html#a2a4b9e2a6e5bb0c59e2ef2195b9b212a">BackingStoreType</a> backing_store_type, bool flag, const <a class="el" href="classcocoon_1_1_screen.html">Screen</a> &amp;screen)</td></tr>
 <tr class="memdesc:a971572ac9bfa47c5af97718ba0b16e18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSWindow</span> instance and returns a handle to it.  <br /></td></tr>
+<tr class="memitem:a43cd68180f2330057e42922669108f23" id="r_a43cd68180f2330057e42922669108f23"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a43cd68180f2330057e42922669108f23">Window</a> (const <a class="el" href="classcocoon_1_1_view_controller.html">ViewController</a> &amp;content_view_controller)</td></tr>
+<tr class="memdesc:a43cd68180f2330057e42922669108f23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSWindow</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:a0dc2e74181a2d6c2c853109a89fa545c" id="r_a0dc2e74181a2d6c2c853109a89fa545c"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a0dc2e74181a2d6c2c853109a89fa545c">Window</a> (std::nullptr_t)</td></tr>
 <tr class="memdesc:a0dc2e74181a2d6c2c853109a89fa545c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a null handle that refers to no native object.  <br /></td></tr>
 <tr class="memitem:a9e5df16dea7145bbec92247017928685" id="r_a9e5df16dea7145bbec92247017928685"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a9e5df16dea7145bbec92247017928685">Window</a> (<a class="el" href="structcocoon_1_1_adopt.html">Adopt</a> adopt)</td></tr>
@@ -996,8 +998,6 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:ac7d6d5fa929e154d088ac261d9e94159"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSWindow windowNumberAtPoint:belowWindowWithWindowNumber:]</span>.  <br /></td></tr>
 <tr class="memitem:aa16c8b7822f2fc2cc966b8624051ff3f" id="r_aa16c8b7822f2fc2cc966b8624051ff3f"><td class="memItemLeft">static std::vector&lt; <a class="el" href="classcocoon_1_1_number.html">Number</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#aa16c8b7822f2fc2cc966b8624051ff3f">window_numbers_with_options</a> (<a class="el" href="namespacecocoon.html#aae7636774380f14530abfb2282dd8af9">WindowNumberListOptions</a> options)</td></tr>
 <tr class="memdesc:aa16c8b7822f2fc2cc966b8624051ff3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSWindow windowNumbersWithOptions:]</span>.  <br /></td></tr>
-<tr class="memitem:a861b35b00a8e763a5c5aa58e8124c32f" id="r_a861b35b00a8e763a5c5aa58e8124c32f"><td class="memItemLeft">static <a class="el" href="#aaf76e2d435dfaf98c301287802eb2f04">Window</a>&#160;</td><td class="memItemRight"><a class="el" href="#a861b35b00a8e763a5c5aa58e8124c32f">window_with_content_view_controller</a> (const <a class="el" href="classcocoon_1_1_view_controller.html">ViewController</a> &amp;content_view_controller)</td></tr>
-<tr class="memdesc:a861b35b00a8e763a5c5aa58e8124c32f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSWindow windowWithContentViewController:]</span>.  <br /></td></tr>
 <tr class="memitem:ae4ea8c093d729ce60937edfae0524b97" id="r_ae4ea8c093d729ce60937edfae0524b97"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#ae4ea8c093d729ce60937edfae0524b97">allows_automatic_window_tabbing</a> ()</td></tr>
 <tr class="memdesc:ae4ea8c093d729ce60937edfae0524b97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">allowsAutomaticWindowTabbing</span> property of <span class="tt">NSWindow</span>.  <br /></td></tr>
 <tr class="memitem:a5f2b8b734671d93413286d90057073be" id="r_a5f2b8b734671d93413286d90057073be"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a5f2b8b734671d93413286d90057073be">set_allows_automatic_window_tabbing</a> (bool value)</td></tr>
@@ -1027,17 +1027,16 @@ Static Protected Member Functions</h2></td></tr>
 <div class="line">window.show();</div>
 <div class="ttc" id="aclasscocoon_1_1_notification_html"><div class="ttname"><a href="classcocoon_1_1_notification.html">cocoon::Notification</a></div><div class="ttdoc">C++ handle for the Objective-C class NSNotification (Foundation).</div><div class="ttdef"><b>Definition</b> notification.h:25</div></div>
 <div class="ttc" id="aclasscocoon_1_1_v_stack_html"><div class="ttname"><a href="classcocoon_1_1_v_stack.html">cocoon::VStack</a></div><div class="ttdoc">A vertical stack view.</div><div class="ttdef"><b>Definition</b> v_stack.h:26</div></div>
-<div class="ttc" id="aclasscocoon_1_1_window_html"><div class="ttname"><a href="classcocoon_1_1_window.html">cocoon::Window</a></div><div class="ttdoc">A window (NSWindow).</div><div class="ttdef"><b>Definition</b> window.h:80</div></div>
+<div class="ttc" id="aclasscocoon_1_1_window_html"><div class="ttname"><a href="classcocoon_1_1_window.html">cocoon::Window</a></div><div class="ttdoc">A window (NSWindow).</div><div class="ttdef"><b>Definition</b> window.h:79</div></div>
 <div class="ttc" id="anamespacecocoon_html_a20d9d016857f723a17f5e1ed164302f9a1dbd464eef96e9cc4151734185a50c7a"><div class="ttname"><a href="namespacecocoon.html#a20d9d016857f723a17f5e1ed164302f9a1dbd464eef96e9cc4151734185a50c7a">cocoon::ToolbarStyle::Unified</a></div><div class="ttdeci">@ Unified</div><div class="ttdef"><b>Definition</b> enums.h:5345</div></div>
 </div><!-- fragment --></dd></dl>
-<dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_window.html">cocoon::Window</a> window{<span class="stringliteral">&quot;text&quot;</span>, {100, 100}, <a class="code hl_enumvalue" href="namespacecocoon.html#a9415710f205508692cc0a58e3bf54f48a78f0192ac55eba33ee88d026452952e5">cocoon::WindowStyle::Borderless</a>};</div>
+<dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_window.html">cocoon::Window</a> window{<a class="code hl_class" href="classcocoon_1_1_view_controller.html">cocoon::ViewController</a>()};</div>
 <div class="line">window.<a class="code hl_function" href="#abdd26e3c8da25fb100f125b11b83991c">set_accepts_mouse_moved_events</a>(<span class="keyword">true</span>);</div>
 <div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#ad910945e02390b810a0447bc68fdf3b3">accepts_mouse_moved_events</a> = window.<a class="code hl_function" href="#ad910945e02390b810a0447bc68fdf3b3">accepts_mouse_moved_events</a>();</div>
 <div class="line">window.<a class="code hl_function" href="#a5f2b8b734671d93413286d90057073be">set_allows_automatic_window_tabbing</a>(<span class="keyword">true</span>);</div>
 <div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#ae4ea8c093d729ce60937edfae0524b97">allows_automatic_window_tabbing</a> = window.<a class="code hl_function" href="#ae4ea8c093d729ce60937edfae0524b97">allows_automatic_window_tabbing</a>();</div>
 <div class="line">window.<a class="code hl_function" href="#a8314b6de54b1f8cd27a97ceab4247142">set_allows_concurrent_view_drawing</a>(<span class="keyword">true</span>);</div>
 <div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#aeb0c96b6d6154730a0353f48ed9cec33">allows_concurrent_view_drawing</a> = window.<a class="code hl_function" href="#aeb0c96b6d6154730a0353f48ed9cec33">allows_concurrent_view_drawing</a>();</div>
-<div class="line"><span class="keyword">auto</span> made_0 = <a class="code hl_function" href="#a861b35b00a8e763a5c5aa58e8124c32f">cocoon::Window::window_with_content_view_controller</a>(<a class="code hl_class" href="classcocoon_1_1_view_controller.html">cocoon::ViewController</a>());</div>
 <div class="line">window.<a class="code hl_function" href="#a8b85251d3d71fdd7555b31dd5136fa11">add_child_window</a>(<a class="code hl_class" href="classcocoon_1_1_window.html">cocoon::Window</a>(), <a class="code hl_enumvalue" href="namespacecocoon.html#acb1721d9e94778bd4284dcd77ca77c2ea5b469fd01889ec12f1e84c6e66829fc1">cocoon::WindowOrderingMode::Above</a>);</div>
 <div class="line">window.<a class="code hl_function" href="#aea859e01159208f20891c7b3bd79c50e">add_tabbed_window</a>(<a class="code hl_class" href="classcocoon_1_1_window.html">cocoon::Window</a>(), <a class="code hl_enumvalue" href="namespacecocoon.html#acb1721d9e94778bd4284dcd77ca77c2ea5b469fd01889ec12f1e84c6e66829fc1">cocoon::WindowOrderingMode::Above</a>);</div>
 <div class="line">window.<a class="code hl_function" href="#a855bdb30636aad00ea80aae768a02210">add_titlebar_accessory_view_controller</a>(<a class="code hl_class" href="classcocoon_1_1_titlebar_accessory_view_controller.html">cocoon::TitlebarAccessoryViewController</a>());</div>
@@ -1046,26 +1045,24 @@ Static Protected Member Functions</h2></td></tr>
 <div class="line">window.<a class="code hl_function" href="#aa0691afa6db56ee8348061173ccfda5e">start_custom_animation_to_exit_full_screen_with_duration</a>().connect([](<span class="keywordtype">double</span> a0) {});</div>
 <div class="ttc" id="aclasscocoon_1_1_titlebar_accessory_view_controller_html"><div class="ttname"><a href="classcocoon_1_1_titlebar_accessory_view_controller.html">cocoon::TitlebarAccessoryViewController</a></div><div class="ttdoc">C++ handle for the Objective-C class NSTitlebarAccessoryViewController (AppKit).</div><div class="ttdef"><b>Definition</b> titlebar_accessory_view_controller.h:44</div></div>
 <div class="ttc" id="aclasscocoon_1_1_view_controller_html"><div class="ttname"><a href="classcocoon_1_1_view_controller.html">cocoon::ViewController</a></div><div class="ttdoc">A view controller (NSViewController).</div><div class="ttdef"><b>Definition</b> view_controller.h:46</div></div>
-<div class="ttc" id="aclasscocoon_1_1_window_html_a540fd1406527c760f99692ac81681000"><div class="ttname"><a href="#a540fd1406527c760f99692ac81681000">cocoon::Window::start_custom_animation_to_enter_full_screen_with_duration</a></div><div class="ttdeci">Signal&lt; Window, void(double)&gt; start_custom_animation_to_enter_full_screen_with_duration() const</div><div class="ttdoc">Signal for the delegate/data-source method behind start_custom_animation_to_enter_full_screen_with_du...</div><div class="ttdef"><b>Definition</b> window.h:1863</div></div>
+<div class="ttc" id="aclasscocoon_1_1_window_html_a540fd1406527c760f99692ac81681000"><div class="ttname"><a href="#a540fd1406527c760f99692ac81681000">cocoon::Window::start_custom_animation_to_enter_full_screen_with_duration</a></div><div class="ttdeci">Signal&lt; Window, void(double)&gt; start_custom_animation_to_enter_full_screen_with_duration() const</div><div class="ttdoc">Signal for the delegate/data-source method behind start_custom_animation_to_enter_full_screen_with_du...</div><div class="ttdef"><b>Definition</b> window.h:1857</div></div>
 <div class="ttc" id="aclasscocoon_1_1_window_html_a5f2b8b734671d93413286d90057073be"><div class="ttname"><a href="#a5f2b8b734671d93413286d90057073be">cocoon::Window::set_allows_automatic_window_tabbing</a></div><div class="ttdeci">static void set_allows_automatic_window_tabbing(bool value)</div><div class="ttdoc">Sets the allowsAutomaticWindowTabbing property of NSWindow.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_window_html_a8314b6de54b1f8cd27a97ceab4247142"><div class="ttname"><a href="#a8314b6de54b1f8cd27a97ceab4247142">cocoon::Window::set_allows_concurrent_view_drawing</a></div><div class="ttdeci">void set_allows_concurrent_view_drawing(bool value) const</div><div class="ttdoc">Sets the allowsConcurrentViewDrawing property of NSWindow.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_window_html_a855bdb30636aad00ea80aae768a02210"><div class="ttname"><a href="#a855bdb30636aad00ea80aae768a02210">cocoon::Window::add_titlebar_accessory_view_controller</a></div><div class="ttdeci">void add_titlebar_accessory_view_controller(const TitlebarAccessoryViewController &amp;child_view_controller) const</div><div class="ttdoc">Calls -[NSWindow addTitlebarAccessoryViewController:].</div></div>
-<div class="ttc" id="aclasscocoon_1_1_window_html_a861b35b00a8e763a5c5aa58e8124c32f"><div class="ttname"><a href="#a861b35b00a8e763a5c5aa58e8124c32f">cocoon::Window::window_with_content_view_controller</a></div><div class="ttdeci">static Window window_with_content_view_controller(const ViewController &amp;content_view_controller)</div><div class="ttdoc">Calls +[NSWindow windowWithContentViewController:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_window_html_a8b85251d3d71fdd7555b31dd5136fa11"><div class="ttname"><a href="#a8b85251d3d71fdd7555b31dd5136fa11">cocoon::Window::add_child_window</a></div><div class="ttdeci">void add_child_window(const Window &amp;child_win, WindowOrderingMode place) const</div><div class="ttdoc">Calls -[NSWindow addChildWindow:ordered:].</div></div>
-<div class="ttc" id="aclasscocoon_1_1_window_html_a92103143139144a4f040c5aa8460a674"><div class="ttname"><a href="#a92103143139144a4f040c5aa8460a674">cocoon::Window::did_fail_to_enter_full_screen</a></div><div class="ttdeci">Signal&lt; Window, void()&gt; did_fail_to_enter_full_screen() const</div><div class="ttdoc">Signal for the delegate/data-source method behind did_fail_to_enter_full_screen; connect a callback w...</div><div class="ttdef"><b>Definition</b> window.h:1868</div></div>
-<div class="ttc" id="aclasscocoon_1_1_window_html_aa0691afa6db56ee8348061173ccfda5e"><div class="ttname"><a href="#aa0691afa6db56ee8348061173ccfda5e">cocoon::Window::start_custom_animation_to_exit_full_screen_with_duration</a></div><div class="ttdeci">Signal&lt; Window, void(double)&gt; start_custom_animation_to_exit_full_screen_with_duration() const</div><div class="ttdoc">Signal for the delegate/data-source method behind start_custom_animation_to_exit_full_screen_with_dur...</div><div class="ttdef"><b>Definition</b> window.h:1878</div></div>
+<div class="ttc" id="aclasscocoon_1_1_window_html_a92103143139144a4f040c5aa8460a674"><div class="ttname"><a href="#a92103143139144a4f040c5aa8460a674">cocoon::Window::did_fail_to_enter_full_screen</a></div><div class="ttdeci">Signal&lt; Window, void()&gt; did_fail_to_enter_full_screen() const</div><div class="ttdoc">Signal for the delegate/data-source method behind did_fail_to_enter_full_screen; connect a callback w...</div><div class="ttdef"><b>Definition</b> window.h:1862</div></div>
+<div class="ttc" id="aclasscocoon_1_1_window_html_aa0691afa6db56ee8348061173ccfda5e"><div class="ttname"><a href="#aa0691afa6db56ee8348061173ccfda5e">cocoon::Window::start_custom_animation_to_exit_full_screen_with_duration</a></div><div class="ttdeci">Signal&lt; Window, void(double)&gt; start_custom_animation_to_exit_full_screen_with_duration() const</div><div class="ttdoc">Signal for the delegate/data-source method behind start_custom_animation_to_exit_full_screen_with_dur...</div><div class="ttdef"><b>Definition</b> window.h:1872</div></div>
 <div class="ttc" id="aclasscocoon_1_1_window_html_abdd26e3c8da25fb100f125b11b83991c"><div class="ttname"><a href="#abdd26e3c8da25fb100f125b11b83991c">cocoon::Window::set_accepts_mouse_moved_events</a></div><div class="ttdeci">void set_accepts_mouse_moved_events(bool value) const</div><div class="ttdoc">Sets the acceptsMouseMovedEvents property of NSWindow.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_window_html_ad910945e02390b810a0447bc68fdf3b3"><div class="ttname"><a href="#ad910945e02390b810a0447bc68fdf3b3">cocoon::Window::accepts_mouse_moved_events</a></div><div class="ttdeci">bool accepts_mouse_moved_events() const</div><div class="ttdoc">Returns the acceptsMouseMovedEvents property of NSWindow.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_window_html_ae4ea8c093d729ce60937edfae0524b97"><div class="ttname"><a href="#ae4ea8c093d729ce60937edfae0524b97">cocoon::Window::allows_automatic_window_tabbing</a></div><div class="ttdeci">static bool allows_automatic_window_tabbing()</div><div class="ttdoc">Returns the allowsAutomaticWindowTabbing property of NSWindow.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_window_html_aea859e01159208f20891c7b3bd79c50e"><div class="ttname"><a href="#aea859e01159208f20891c7b3bd79c50e">cocoon::Window::add_tabbed_window</a></div><div class="ttdeci">void add_tabbed_window(const Window &amp;window, WindowOrderingMode ordered) const</div><div class="ttdoc">Calls -[NSWindow addTabbedWindow:ordered:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_window_html_aeb0c96b6d6154730a0353f48ed9cec33"><div class="ttname"><a href="#aeb0c96b6d6154730a0353f48ed9cec33">cocoon::Window::allows_concurrent_view_drawing</a></div><div class="ttdeci">bool allows_concurrent_view_drawing() const</div><div class="ttdoc">Returns the allowsConcurrentViewDrawing property of NSWindow.</div></div>
-<div class="ttc" id="anamespacecocoon_html_a9415710f205508692cc0a58e3bf54f48a78f0192ac55eba33ee88d026452952e5"><div class="ttname"><a href="namespacecocoon.html#a9415710f205508692cc0a58e3bf54f48a78f0192ac55eba33ee88d026452952e5">cocoon::WindowStyle::Borderless</a></div><div class="ttdeci">@ Borderless</div><div class="ttdef"><b>Definition</b> enums.h:5296</div></div>
 <div class="ttc" id="anamespacecocoon_html_acb1721d9e94778bd4284dcd77ca77c2ea5b469fd01889ec12f1e84c6e66829fc1"><div class="ttname"><a href="namespacecocoon.html#acb1721d9e94778bd4284dcd77ca77c2ea5b469fd01889ec12f1e84c6e66829fc1">cocoon::WindowOrderingMode::Above</a></div><div class="ttdeci">@ Above</div><div class="ttdef"><b>Definition</b> enums.h:5281</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/appkit/nswindow">https://developer.apple.com/documentation/appkit/nswindow</a> </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aaf76e2d435dfaf98c301287802eb2f04" name="aaf76e2d435dfaf98c301287802eb2f04"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf76e2d435dfaf98c301287802eb2f04">&#9670;&#160;</a></span>Window() <span class="overload">[1/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf76e2d435dfaf98c301287802eb2f04">&#9670;&#160;</a></span>Window() <span class="overload">[1/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1101,7 +1098,7 @@ Static Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a4353b9eaf7ec0849a70c81f76b5b69e8" name="a4353b9eaf7ec0849a70c81f76b5b69e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4353b9eaf7ec0849a70c81f76b5b69e8">&#9670;&#160;</a></span>Window() <span class="overload">[2/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4353b9eaf7ec0849a70c81f76b5b69e8">&#9670;&#160;</a></span>Window() <span class="overload">[2/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1142,7 +1139,7 @@ Static Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a971572ac9bfa47c5af97718ba0b16e18" name="a971572ac9bfa47c5af97718ba0b16e18"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a971572ac9bfa47c5af97718ba0b16e18">&#9670;&#160;</a></span>Window() <span class="overload">[3/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a971572ac9bfa47c5af97718ba0b16e18">&#9670;&#160;</a></span>Window() <span class="overload">[3/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1187,8 +1184,35 @@ Static Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a43cd68180f2330057e42922669108f23" name="a43cd68180f2330057e42922669108f23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43cd68180f2330057e42922669108f23">&#9670;&#160;</a></span>Window() <span class="overload">[4/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::Window::Window </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcocoon_1_1_view_controller.html">ViewController</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>content_view_controller</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSWindow</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
 <a id="a0dc2e74181a2d6c2c853109a89fa545c" name="a0dc2e74181a2d6c2c853109a89fa545c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0dc2e74181a2d6c2c853109a89fa545c">&#9670;&#160;</a></span>Window() <span class="overload">[4/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dc2e74181a2d6c2c853109a89fa545c">&#9670;&#160;</a></span>Window() <span class="overload">[5/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1207,7 +1231,7 @@ Static Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a9e5df16dea7145bbec92247017928685" name="a9e5df16dea7145bbec92247017928685"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e5df16dea7145bbec92247017928685">&#9670;&#160;</a></span>Window() <span class="overload">[5/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e5df16dea7145bbec92247017928685">&#9670;&#160;</a></span>Window() <span class="overload">[6/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -10179,40 +10203,6 @@ Static Protected Member Functions</h2></td></tr>
 
 <p>Returns the <span class="tt">windowTitlebarLayoutDirection</span> property of <span class="tt">NSWindow</span>. </p>
 <p>Retrieve the layout direction of the window titlebar: this includes the standard window buttons (close/minimize/maximize buttons) and the title for this window. In general, this will return "right to left" (RTL) if the primary system language is RTL. The layout direction may be RTL even in applications that do not have a RTL language localization. This value should be utilized if an application uses titlebarAppearsTransparent and places controls underneath the titlebar. </p><dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a861b35b00a8e763a5c5aa58e8124c32f" name="a861b35b00a8e763a5c5aa58e8124c32f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a861b35b00a8e763a5c5aa58e8124c32f">&#9670;&#160;</a></span>window_with_content_view_controller()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#aaf76e2d435dfaf98c301287802eb2f04">Window</a> cocoon::Window::window_with_content_view_controller </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_view_controller.html">ViewController</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>content_view_controller</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSWindow windowWithContentViewController:]</span>. </p>
-<p>Convenience method for creating an autoreleased titled window with the given contentViewController. A basic NSWindow with the following attributes is made: titled, closable, resizable, miniaturizable. The window's title is automatically bound to the contentViewController's title. The size of the window can easily be controlled by utilizing autolayout and applying size constraints to the view (or its subviews). The window has isReleasedWhenClosed set to NO, and it must be explicitly retained to keep the window instance alive. To have it automatically be freed when it is closed, do the following: [window retain] and [window setReleasedWhenClosed:YES]. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">content_view_controller</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
 
 </div>
 </div>

@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -76,6 +76,12 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a4f9cbeee478be865d9ca9776d50f37dc" id="r_a4f9cbeee478be865d9ca9776d50f37dc"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a4f9cbeee478be865d9ca9776d50f37dc">BezierPath</a> ()</td></tr>
 <tr class="memdesc:a4f9cbeee478be865d9ca9776d50f37dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSBezierPath</span> instance and returns a handle to it.  <br /></td></tr>
+<tr class="memitem:afca062f621161de64d6400d78cb880c1" id="r_afca062f621161de64d6400d78cb880c1"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#afca062f621161de64d6400d78cb880c1">BezierPath</a> (const <a class="el" href="classcocoon_1_1_c_g_path.html">CGPath</a> &amp;cg_path)</td></tr>
+<tr class="memdesc:afca062f621161de64d6400d78cb880c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSBezierPath</span> instance and returns a handle to it.  <br /></td></tr>
+<tr class="memitem:a6fd2c94f68d5a1a310e576182dcb6b25" id="r_a6fd2c94f68d5a1a310e576182dcb6b25"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a6fd2c94f68d5a1a310e576182dcb6b25">BezierPath</a> (const <a class="el" href="structcocoon_1_1_rect.html">Rect</a> &amp;rect)</td></tr>
+<tr class="memdesc:a6fd2c94f68d5a1a310e576182dcb6b25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSBezierPath</span> instance and returns a handle to it.  <br /></td></tr>
+<tr class="memitem:af22ebc3d22f014d064ed596a22f21571" id="r_af22ebc3d22f014d064ed596a22f21571"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af22ebc3d22f014d064ed596a22f21571">BezierPath</a> (const <a class="el" href="structcocoon_1_1_rect.html">Rect</a> &amp;rect, double x_radius, double y_radius)</td></tr>
+<tr class="memdesc:af22ebc3d22f014d064ed596a22f21571"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSBezierPath</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:abc4b4b818e3ee0f74426b0bb43732031" id="r_abc4b4b818e3ee0f74426b0bb43732031"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#abc4b4b818e3ee0f74426b0bb43732031">BezierPath</a> (std::nullptr_t)</td></tr>
 <tr class="memdesc:abc4b4b818e3ee0f74426b0bb43732031"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a null handle that refers to no native object.  <br /></td></tr>
 <tr class="memitem:a9d4ba2f6e5d7a719102b4c0dd842e848" id="r_a9d4ba2f6e5d7a719102b4c0dd842e848"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a9d4ba2f6e5d7a719102b4c0dd842e848">BezierPath</a> (<a class="el" href="structcocoon_1_1_adopt.html">Adopt</a> adopt)</td></tr>
@@ -212,16 +218,6 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:abf8ae237eb7a955aa7f12af3ce3b359b" id="r_abf8ae237eb7a955aa7f12af3ce3b359b"><td class="memItemLeft">static <a class="el" href="#a4f9cbeee478be865d9ca9776d50f37dc">BezierPath</a>&#160;</td><td class="memItemRight"><a class="el" href="#abf8ae237eb7a955aa7f12af3ce3b359b">bezier_path</a> ()</td></tr>
-<tr class="memdesc:abf8ae237eb7a955aa7f12af3ce3b359b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSBezierPath bezierPath]</span>.  <br /></td></tr>
-<tr class="memitem:a4eb8731d417049d5bd942d4222bace78" id="r_a4eb8731d417049d5bd942d4222bace78"><td class="memItemLeft">static <a class="el" href="#a4f9cbeee478be865d9ca9776d50f37dc">BezierPath</a>&#160;</td><td class="memItemRight"><a class="el" href="#a4eb8731d417049d5bd942d4222bace78">bezier_path_with_cg_path</a> (const <a class="el" href="classcocoon_1_1_c_g_path.html">CGPath</a> &amp;cg_path)</td></tr>
-<tr class="memdesc:a4eb8731d417049d5bd942d4222bace78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSBezierPath bezierPathWithCGPath:]</span>.  <br /></td></tr>
-<tr class="memitem:a630652ac1c11c1ee25ec0f59922d746c" id="r_a630652ac1c11c1ee25ec0f59922d746c"><td class="memItemLeft">static <a class="el" href="#a4f9cbeee478be865d9ca9776d50f37dc">BezierPath</a>&#160;</td><td class="memItemRight"><a class="el" href="#a630652ac1c11c1ee25ec0f59922d746c">bezier_path_with_oval_in_rect</a> (const <a class="el" href="structcocoon_1_1_rect.html">Rect</a> &amp;rect)</td></tr>
-<tr class="memdesc:a630652ac1c11c1ee25ec0f59922d746c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSBezierPath bezierPathWithOvalInRect:]</span>.  <br /></td></tr>
-<tr class="memitem:af490086c640211bac6c524ae55cf1674" id="r_af490086c640211bac6c524ae55cf1674"><td class="memItemLeft">static <a class="el" href="#a4f9cbeee478be865d9ca9776d50f37dc">BezierPath</a>&#160;</td><td class="memItemRight"><a class="el" href="#af490086c640211bac6c524ae55cf1674">bezier_path_with_rect</a> (const <a class="el" href="structcocoon_1_1_rect.html">Rect</a> &amp;rect)</td></tr>
-<tr class="memdesc:af490086c640211bac6c524ae55cf1674"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSBezierPath bezierPathWithRect:]</span>.  <br /></td></tr>
-<tr class="memitem:a7c86e246cd25b1ed5a7368f1cdb7f21c" id="r_a7c86e246cd25b1ed5a7368f1cdb7f21c"><td class="memItemLeft">static <a class="el" href="#a4f9cbeee478be865d9ca9776d50f37dc">BezierPath</a>&#160;</td><td class="memItemRight"><a class="el" href="#a7c86e246cd25b1ed5a7368f1cdb7f21c">bezier_path_with_rounded_rect</a> (const <a class="el" href="structcocoon_1_1_rect.html">Rect</a> &amp;rect, double x_radius, double y_radius)</td></tr>
-<tr class="memdesc:a7c86e246cd25b1ed5a7368f1cdb7f21c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSBezierPath bezierPathWithRoundedRect:xRadius:yRadius:]</span>.  <br /></td></tr>
 <tr class="memitem:ad9aa1b7702badc30b8962aa0c54e6b2e" id="r_ad9aa1b7702badc30b8962aa0c54e6b2e"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ad9aa1b7702badc30b8962aa0c54e6b2e">clip_rect</a> (const <a class="el" href="structcocoon_1_1_rect.html">Rect</a> &amp;rect)</td></tr>
 <tr class="memdesc:ad9aa1b7702badc30b8962aa0c54e6b2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSBezierPath clipRect:]</span>.  <br /></td></tr>
 <tr class="memitem:ae5170555fb8827660d0dc9ddb28e5e59" id="r_ae5170555fb8827660d0dc9ddb28e5e59"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ae5170555fb8827660d0dc9ddb28e5e59">draw_packed_glyphs</a> (const std::string &amp;packed_glyphs, const <a class="el" href="structcocoon_1_1_point.html">Point</a> &amp;point)</td></tr>
@@ -262,26 +258,22 @@ Static Public Member Functions</h2></td></tr>
 <p>Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.</p>
 <dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;cocoon.h&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_class" href="classcocoon_1_1_bezier_path.html">cocoon::BezierPath</a> <a class="code hl_function" href="#abf8ae237eb7a955aa7f12af3ce3b359b">bezier_path</a>;</div>
-<div class="ttc" id="aclasscocoon_1_1_bezier_path_html"><div class="ttname"><a href="classcocoon_1_1_bezier_path.html">cocoon::BezierPath</a></div><div class="ttdoc">C++ handle for the Objective-C class NSBezierPath (AppKit).</div><div class="ttdef"><b>Definition</b> bezier_path.h:45</div></div>
-<div class="ttc" id="aclasscocoon_1_1_bezier_path_html_abf8ae237eb7a955aa7f12af3ce3b359b"><div class="ttname"><a href="#abf8ae237eb7a955aa7f12af3ce3b359b">cocoon::BezierPath::bezier_path</a></div><div class="ttdeci">static BezierPath bezier_path()</div><div class="ttdoc">Calls +[NSBezierPath bezierPath].</div></div>
+<div class="line"><a class="code hl_class" href="classcocoon_1_1_bezier_path.html">cocoon::BezierPath</a> bezier_path;</div>
+<div class="ttc" id="aclasscocoon_1_1_bezier_path_html"><div class="ttname"><a href="classcocoon_1_1_bezier_path.html">cocoon::BezierPath</a></div><div class="ttdoc">C++ handle for the Objective-C class NSBezierPath (AppKit).</div><div class="ttdef"><b>Definition</b> bezier_path.h:43</div></div>
 </div><!-- fragment --></dd></dl>
-<dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_bezier_path.html">cocoon::BezierPath</a> <a class="code hl_function" href="#abf8ae237eb7a955aa7f12af3ce3b359b">bezier_path</a>{};</div>
-<div class="line"><a class="code hl_function" href="#abf8ae237eb7a955aa7f12af3ce3b359b">bezier_path</a>.<a class="code hl_function" href="#ac8fa8a48058a10e3d6ae8de0b6790940">set_default_flatness</a>(1);</div>
-<div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#a3ca82497ece55258a78de7eb4f95bf38">default_flatness</a> = <a class="code hl_function" href="#abf8ae237eb7a955aa7f12af3ce3b359b">bezier_path</a>.<a class="code hl_function" href="#a3ca82497ece55258a78de7eb4f95bf38">default_flatness</a>();</div>
-<div class="line"><a class="code hl_function" href="#abf8ae237eb7a955aa7f12af3ce3b359b">bezier_path</a>.<a class="code hl_function" href="#ad1a9e8a0d0aed9db968382429a92692f">set_default_line_cap_style</a>(<a class="code hl_enumvalue" href="namespacecocoon.html#a0a82508a0ed96142ec0e13f8c7ef6e08ab2635ed1075287dea1eb1598a90df1fe">cocoon::LineCapStyle::Butt</a>);</div>
-<div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#af01d41e2eed3eaf5f35f6972a45342d4">default_line_cap_style</a> = <a class="code hl_function" href="#abf8ae237eb7a955aa7f12af3ce3b359b">bezier_path</a>.<a class="code hl_function" href="#af01d41e2eed3eaf5f35f6972a45342d4">default_line_cap_style</a>();</div>
-<div class="line"><a class="code hl_function" href="#abf8ae237eb7a955aa7f12af3ce3b359b">bezier_path</a>.<a class="code hl_function" href="#a1cda25dafbfd625736cab83e18a23bbd">set_default_line_join_style</a>(<a class="code hl_enumvalue" href="namespacecocoon.html#a0d4c1583a47e049da640c3f37db7b1bdae4396f81cd926bb129ccf3c147c64514">cocoon::LineJoinStyle::Miter</a>);</div>
-<div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#afb9567e720bbf1c768af108dfbb68cd1">default_line_join_style</a> = <a class="code hl_function" href="#abf8ae237eb7a955aa7f12af3ce3b359b">bezier_path</a>.<a class="code hl_function" href="#afb9567e720bbf1c768af108dfbb68cd1">default_line_join_style</a>();</div>
-<div class="line"><span class="keyword">auto</span> made_0 = <a class="code hl_function" href="#abf8ae237eb7a955aa7f12af3ce3b359b">cocoon::BezierPath::bezier_path</a>();</div>
-<div class="line"><span class="keyword">auto</span> made_1 = <a class="code hl_function" href="#a630652ac1c11c1ee25ec0f59922d746c">cocoon::BezierPath::bezier_path_with_oval_in_rect</a>({{0, 0}, {100, 100}});</div>
-<div class="line"><a class="code hl_function" href="#abf8ae237eb7a955aa7f12af3ce3b359b">bezier_path</a>.<a class="code hl_function" href="#a2a643d2d7ca12490f0f40bb3e293a8b1">add_clip</a>();</div>
-<div class="line"><a class="code hl_function" href="#abf8ae237eb7a955aa7f12af3ce3b359b">bezier_path</a>.<a class="code hl_function" href="#abc1950e14f205459a27fee6698b704af">append_bezier_path</a>(cocoon::BezierPath());</div>
-<div class="line"><a class="code hl_function" href="#abf8ae237eb7a955aa7f12af3ce3b359b">bezier_path</a>.<a class="code hl_function" href="#af3b4883b2373653eaa2f935063bd776e">append_bezier_path_with_arc_from_point</a>({0, 0}, {0, 0}, 1);</div>
+<dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_bezier_path.html">cocoon::BezierPath</a> bezier_path{};</div>
+<div class="line">bezier_path.<a class="code hl_function" href="#ac8fa8a48058a10e3d6ae8de0b6790940">set_default_flatness</a>(1);</div>
+<div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#a3ca82497ece55258a78de7eb4f95bf38">default_flatness</a> = bezier_path.<a class="code hl_function" href="#a3ca82497ece55258a78de7eb4f95bf38">default_flatness</a>();</div>
+<div class="line">bezier_path.<a class="code hl_function" href="#ad1a9e8a0d0aed9db968382429a92692f">set_default_line_cap_style</a>(<a class="code hl_enumvalue" href="namespacecocoon.html#a0a82508a0ed96142ec0e13f8c7ef6e08ab2635ed1075287dea1eb1598a90df1fe">cocoon::LineCapStyle::Butt</a>);</div>
+<div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#af01d41e2eed3eaf5f35f6972a45342d4">default_line_cap_style</a> = bezier_path.<a class="code hl_function" href="#af01d41e2eed3eaf5f35f6972a45342d4">default_line_cap_style</a>();</div>
+<div class="line">bezier_path.<a class="code hl_function" href="#a1cda25dafbfd625736cab83e18a23bbd">set_default_line_join_style</a>(<a class="code hl_enumvalue" href="namespacecocoon.html#a0d4c1583a47e049da640c3f37db7b1bdae4396f81cd926bb129ccf3c147c64514">cocoon::LineJoinStyle::Miter</a>);</div>
+<div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#afb9567e720bbf1c768af108dfbb68cd1">default_line_join_style</a> = bezier_path.<a class="code hl_function" href="#afb9567e720bbf1c768af108dfbb68cd1">default_line_join_style</a>();</div>
+<div class="line">bezier_path.<a class="code hl_function" href="#a2a643d2d7ca12490f0f40bb3e293a8b1">add_clip</a>();</div>
+<div class="line">bezier_path.<a class="code hl_function" href="#abc1950e14f205459a27fee6698b704af">append_bezier_path</a>(<a class="code hl_class" href="classcocoon_1_1_bezier_path.html">cocoon::BezierPath</a>());</div>
+<div class="line">bezier_path.<a class="code hl_function" href="#af3b4883b2373653eaa2f935063bd776e">append_bezier_path_with_arc_from_point</a>({0, 0}, {0, 0}, 1);</div>
 <div class="ttc" id="aclasscocoon_1_1_bezier_path_html_a1cda25dafbfd625736cab83e18a23bbd"><div class="ttname"><a href="#a1cda25dafbfd625736cab83e18a23bbd">cocoon::BezierPath::set_default_line_join_style</a></div><div class="ttdeci">static void set_default_line_join_style(LineJoinStyle value)</div><div class="ttdoc">Sets the defaultLineJoinStyle property of NSBezierPath.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_bezier_path_html_a2a643d2d7ca12490f0f40bb3e293a8b1"><div class="ttname"><a href="#a2a643d2d7ca12490f0f40bb3e293a8b1">cocoon::BezierPath::add_clip</a></div><div class="ttdeci">void add_clip() const</div><div class="ttdoc">Calls -[NSBezierPath addClip].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_bezier_path_html_a3ca82497ece55258a78de7eb4f95bf38"><div class="ttname"><a href="#a3ca82497ece55258a78de7eb4f95bf38">cocoon::BezierPath::default_flatness</a></div><div class="ttdeci">static double default_flatness()</div><div class="ttdoc">Returns the defaultFlatness property of NSBezierPath.</div></div>
-<div class="ttc" id="aclasscocoon_1_1_bezier_path_html_a630652ac1c11c1ee25ec0f59922d746c"><div class="ttname"><a href="#a630652ac1c11c1ee25ec0f59922d746c">cocoon::BezierPath::bezier_path_with_oval_in_rect</a></div><div class="ttdeci">static BezierPath bezier_path_with_oval_in_rect(const Rect &amp;rect)</div><div class="ttdoc">Calls +[NSBezierPath bezierPathWithOvalInRect:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_bezier_path_html_abc1950e14f205459a27fee6698b704af"><div class="ttname"><a href="#abc1950e14f205459a27fee6698b704af">cocoon::BezierPath::append_bezier_path</a></div><div class="ttdeci">void append_bezier_path(const BezierPath &amp;path) const</div><div class="ttdoc">Calls -[NSBezierPath appendBezierPath:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_bezier_path_html_ac8fa8a48058a10e3d6ae8de0b6790940"><div class="ttname"><a href="#ac8fa8a48058a10e3d6ae8de0b6790940">cocoon::BezierPath::set_default_flatness</a></div><div class="ttdeci">static void set_default_flatness(double value)</div><div class="ttdoc">Sets the defaultFlatness property of NSBezierPath.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_bezier_path_html_ad1a9e8a0d0aed9db968382429a92692f"><div class="ttname"><a href="#ad1a9e8a0d0aed9db968382429a92692f">cocoon::BezierPath::set_default_line_cap_style</a></div><div class="ttdeci">static void set_default_line_cap_style(LineCapStyle value)</div><div class="ttdoc">Sets the defaultLineCapStyle property of NSBezierPath.</div></div>
@@ -294,7 +286,7 @@ Static Public Member Functions</h2></td></tr>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/appkit/nsbezierpath">https://developer.apple.com/documentation/appkit/nsbezierpath</a> </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a4f9cbeee478be865d9ca9776d50f37dc" name="a4f9cbeee478be865d9ca9776d50f37dc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4f9cbeee478be865d9ca9776d50f37dc">&#9670;&#160;</a></span>BezierPath() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f9cbeee478be865d9ca9776d50f37dc">&#9670;&#160;</a></span>BezierPath() <span class="overload">[1/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -320,8 +312,98 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="afca062f621161de64d6400d78cb880c1" name="afca062f621161de64d6400d78cb880c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afca062f621161de64d6400d78cb880c1">&#9670;&#160;</a></span>BezierPath() <span class="overload">[2/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::BezierPath::BezierPath </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcocoon_1_1_c_g_path.html">CGPath</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>cg_path</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSBezierPath</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
+<a id="a6fd2c94f68d5a1a310e576182dcb6b25" name="a6fd2c94f68d5a1a310e576182dcb6b25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fd2c94f68d5a1a310e576182dcb6b25">&#9670;&#160;</a></span>BezierPath() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::BezierPath::BezierPath </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structcocoon_1_1_rect.html">Rect</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>rect</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSBezierPath</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
+<a id="af22ebc3d22f014d064ed596a22f21571" name="af22ebc3d22f014d064ed596a22f21571"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af22ebc3d22f014d064ed596a22f21571">&#9670;&#160;</a></span>BezierPath() <span class="overload">[4/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::BezierPath::BezierPath </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structcocoon_1_1_rect.html">Rect</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>rect</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>x_radius</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>y_radius</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSBezierPath</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
 <a id="abc4b4b818e3ee0f74426b0bb43732031" name="abc4b4b818e3ee0f74426b0bb43732031"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc4b4b818e3ee0f74426b0bb43732031">&#9670;&#160;</a></span>BezierPath() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#abc4b4b818e3ee0f74426b0bb43732031">&#9670;&#160;</a></span>BezierPath() <span class="overload">[5/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -340,7 +422,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a9d4ba2f6e5d7a719102b4c0dd842e848" name="a9d4ba2f6e5d7a719102b4c0dd842e848"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d4ba2f6e5d7a719102b4c0dd842e848">&#9670;&#160;</a></span>BezierPath() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d4ba2f6e5d7a719102b4c0dd842e848">&#9670;&#160;</a></span>BezierPath() <span class="overload">[6/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -719,34 +801,6 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="abf8ae237eb7a955aa7f12af3ce3b359b" name="abf8ae237eb7a955aa7f12af3ce3b359b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abf8ae237eb7a955aa7f12af3ce3b359b">&#9670;&#160;</a></span>bezier_path()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a4f9cbeee478be865d9ca9776d50f37dc">BezierPath</a> cocoon::BezierPath::bezier_path </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSBezierPath bezierPath]</span>. </p>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
 <a id="a6833232a30a67581f50ce397d6fc724d" name="a6833232a30a67581f50ce397d6fc724d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6833232a30a67581f50ce397d6fc724d">&#9670;&#160;</a></span>bezier_path_by_flattening_path()</h2>
 
@@ -783,153 +837,6 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the <span class="tt">bezierPathByReversingPath</span> property of <span class="tt">NSBezierPath</span>. </p>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a4eb8731d417049d5bd942d4222bace78" name="a4eb8731d417049d5bd942d4222bace78"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4eb8731d417049d5bd942d4222bace78">&#9670;&#160;</a></span>bezier_path_with_cg_path()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a4f9cbeee478be865d9ca9776d50f37dc">BezierPath</a> cocoon::BezierPath::bezier_path_with_cg_path </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_c_g_path.html">CGPath</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>cg_path</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSBezierPath bezierPathWithCGPath:]</span>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">cg_path</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a630652ac1c11c1ee25ec0f59922d746c" name="a630652ac1c11c1ee25ec0f59922d746c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a630652ac1c11c1ee25ec0f59922d746c">&#9670;&#160;</a></span>bezier_path_with_oval_in_rect()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a4f9cbeee478be865d9ca9776d50f37dc">BezierPath</a> cocoon::BezierPath::bezier_path_with_oval_in_rect </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structcocoon_1_1_rect.html">Rect</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>rect</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSBezierPath bezierPathWithOvalInRect:]</span>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">rect</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="af490086c640211bac6c524ae55cf1674" name="af490086c640211bac6c524ae55cf1674"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af490086c640211bac6c524ae55cf1674">&#9670;&#160;</a></span>bezier_path_with_rect()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a4f9cbeee478be865d9ca9776d50f37dc">BezierPath</a> cocoon::BezierPath::bezier_path_with_rect </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structcocoon_1_1_rect.html">Rect</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>rect</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSBezierPath bezierPathWithRect:]</span>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">rect</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a7c86e246cd25b1ed5a7368f1cdb7f21c" name="a7c86e246cd25b1ed5a7368f1cdb7f21c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7c86e246cd25b1ed5a7368f1cdb7f21c">&#9670;&#160;</a></span>bezier_path_with_rounded_rect()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a4f9cbeee478be865d9ca9776d50f37dc">BezierPath</a> cocoon::BezierPath::bezier_path_with_rounded_rect </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structcocoon_1_1_rect.html">Rect</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>rect</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>x_radius</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>y_radius</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSBezierPath bezierPathWithRoundedRect:xRadius:yRadius:]</span>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">rect</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">x_radius</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">y_radius</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
 
 </div>

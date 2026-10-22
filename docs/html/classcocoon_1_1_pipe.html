@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -61,7 +61,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classcocoon_1_1_pipe-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">cocoon::Pipe Class Reference</div></div>
 </div><!--header-->
@@ -109,23 +108,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object" id="r_a53f4ad0e6a86173a96668457725eb369"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
 <tr class="memitem:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object template"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_object.html#a53f4ad0e6a86173a96668457725eb369">as</a> () const</td></tr>
 <tr class="memdesc:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reinterprets the native object as handle type <span class="tt">T</span> (no runtime type check).  <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ae5ee13adb7fa8a464caa7011d84c0f0d" id="r_ae5ee13adb7fa8a464caa7011d84c0f0d"><td class="memItemLeft">static <a class="el" href="#a22b1599adbc5d001bc6b38c959943b54">Pipe</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae5ee13adb7fa8a464caa7011d84c0f0d">pipe</a> ()</td></tr>
-<tr class="memdesc:ae5ee13adb7fa8a464caa7011d84c0f0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSPipe <a class="el" href="#ae5ee13adb7fa8a464caa7011d84c0f0d" title="Calls +[NSPipe pipe].">pipe</a>]</span>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>C++ handle for the Objective-C class <span class="tt">NSPipe</span> (Foundation). </p>
 <p>A one-way communications channel between related processes. ''<a class="el" href="classcocoon_1_1_pipe.html" title="C++ handle for the Objective-C class NSPipe (Foundation).">Pipe</a>'' objects provide an object-oriented interface for accessing pipes. An ''<a class="el" href="classcocoon_1_1_pipe.html" title="C++ handle for the Objective-C class NSPipe (Foundation).">Pipe</a>'' object represents both ends of a pipe and enables communication through the pipe. A pipe is a one-way communications channel between related processes; one process writes data, while the other process reads that data. The data that passes through the pipe is buffered; the size of the buffer is determined by the underlying operating system. ''<a class="el" href="classcocoon_1_1_pipe.html" title="C++ handle for the Objective-C class NSPipe (Foundation).">Pipe</a>'' is an abstract class, the public interface of a class cluster. Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.</p>
 <dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;cocoon.h&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_class" href="classcocoon_1_1_pipe.html">cocoon::Pipe</a> <a class="code hl_function" href="#ae5ee13adb7fa8a464caa7011d84c0f0d">pipe</a>;</div>
-<div class="ttc" id="aclasscocoon_1_1_pipe_html"><div class="ttname"><a href="classcocoon_1_1_pipe.html">cocoon::Pipe</a></div><div class="ttdoc">C++ handle for the Objective-C class NSPipe (Foundation).</div><div class="ttdef"><b>Definition</b> pipe.h:34</div></div>
-<div class="ttc" id="aclasscocoon_1_1_pipe_html_ae5ee13adb7fa8a464caa7011d84c0f0d"><div class="ttname"><a href="#ae5ee13adb7fa8a464caa7011d84c0f0d">cocoon::Pipe::pipe</a></div><div class="ttdeci">static Pipe pipe()</div><div class="ttdoc">Calls +[NSPipe pipe].</div></div>
-</div><!-- fragment --></dd></dl>
-<dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_pipe.html">cocoon::Pipe</a> <a class="code hl_function" href="#ae5ee13adb7fa8a464caa7011d84c0f0d">pipe</a>{};</div>
-<div class="line"><span class="keyword">auto</span> made_0 = <a class="code hl_function" href="#ae5ee13adb7fa8a464caa7011d84c0f0d">cocoon::Pipe::pipe</a>();</div>
+<div class="line"><a class="code hl_class" href="classcocoon_1_1_pipe.html">cocoon::Pipe</a> pipe;</div>
+<div class="ttc" id="aclasscocoon_1_1_pipe_html"><div class="ttname"><a href="classcocoon_1_1_pipe.html">cocoon::Pipe</a></div><div class="ttdoc">C++ handle for the Objective-C class NSPipe (Foundation).</div><div class="ttdef"><b>Definition</b> pipe.h:27</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/foundation/nspipe">https://developer.apple.com/documentation/foundation/nspipe</a> </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -240,34 +230,6 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Returns the <span class="tt">fileHandleForWriting</span> property of <span class="tt">NSPipe</span>. </p>
 <p>The receiver's write file handle. </p><dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="ae5ee13adb7fa8a464caa7011d84c0f0d" name="ae5ee13adb7fa8a464caa7011d84c0f0d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae5ee13adb7fa8a464caa7011d84c0f0d">&#9670;&#160;</a></span>pipe()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a22b1599adbc5d001bc6b38c959943b54">Pipe</a> cocoon::Pipe::pipe </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSPipe <a class="el" href="#ae5ee13adb7fa8a464caa7011d84c0f0d" title="Calls +[NSPipe pipe].">pipe</a>]</span>. </p>
-<p>Returns a new 'NSPipe' object. </p><dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
 
 </div>
 </div>

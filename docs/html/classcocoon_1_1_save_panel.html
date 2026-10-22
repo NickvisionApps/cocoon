@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -61,7 +61,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-static-methods">Static Protected Member Functions</a> &#124;
 <a href="classcocoon_1_1_save_panel-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">cocoon::SavePanel Class Reference</div></div>
@@ -213,6 +212,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a4353b9eaf7ec0849a70c81f76b5b69e8 pub_methods_classcocoon_1_1_window"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSWindow</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:a971572ac9bfa47c5af97718ba0b16e18 pub_methods_classcocoon_1_1_window" id="r_a971572ac9bfa47c5af97718ba0b16e18"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_window.html#a971572ac9bfa47c5af97718ba0b16e18">Window</a> (const <a class="el" href="structcocoon_1_1_rect.html">Rect</a> &amp;content_rect, <a class="el" href="namespacecocoon.html#a9415710f205508692cc0a58e3bf54f48">WindowStyle</a> style, <a class="el" href="namespacecocoon.html#a2a4b9e2a6e5bb0c59e2ef2195b9b212a">BackingStoreType</a> backing_store_type, bool flag, const <a class="el" href="classcocoon_1_1_screen.html">Screen</a> &amp;screen)</td></tr>
 <tr class="memdesc:a971572ac9bfa47c5af97718ba0b16e18 pub_methods_classcocoon_1_1_window"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSWindow</span> instance and returns a handle to it.  <br /></td></tr>
+<tr class="memitem:a43cd68180f2330057e42922669108f23 pub_methods_classcocoon_1_1_window" id="r_a43cd68180f2330057e42922669108f23"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_window.html#a43cd68180f2330057e42922669108f23">Window</a> (const <a class="el" href="classcocoon_1_1_view_controller.html">ViewController</a> &amp;content_view_controller)</td></tr>
+<tr class="memdesc:a43cd68180f2330057e42922669108f23 pub_methods_classcocoon_1_1_window"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSWindow</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:a0dc2e74181a2d6c2c853109a89fa545c pub_methods_classcocoon_1_1_window" id="r_a0dc2e74181a2d6c2c853109a89fa545c"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_window.html#a0dc2e74181a2d6c2c853109a89fa545c">Window</a> (std::nullptr_t)</td></tr>
 <tr class="memdesc:a0dc2e74181a2d6c2c853109a89fa545c pub_methods_classcocoon_1_1_window"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a null handle that refers to no native object.  <br /></td></tr>
 <tr class="memitem:a9e5df16dea7145bbec92247017928685 pub_methods_classcocoon_1_1_window" id="r_a9e5df16dea7145bbec92247017928685"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_window.html#a9e5df16dea7145bbec92247017928685">Window</a> (<a class="el" href="structcocoon_1_1_adopt.html">Adopt</a> adopt)</td></tr>
@@ -1112,10 +1113,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object template"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_object.html#a53f4ad0e6a86173a96668457725eb369">as</a> () const</td></tr>
 <tr class="memdesc:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reinterprets the native object as handle type <span class="tt">T</span> (no runtime type check).  <br /></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a4d8cbc62a6f25461f43ca30f67841be2" id="r_a4d8cbc62a6f25461f43ca30f67841be2"><td class="memItemLeft">static <a class="el" href="#a487a75eb2a1ecff4538de469af11d9d2">SavePanel</a>&#160;</td><td class="memItemRight"><a class="el" href="#a4d8cbc62a6f25461f43ca30f67841be2">save_panel</a> ()</td></tr>
-<tr class="memdesc:a4d8cbc62a6f25461f43ca30f67841be2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSSavePanel savePanel]</span>.  <br /></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-pro-static-methods" class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:af1ea8b855aeee3c9b0be1a3195eb8350" id="r_af1ea8b855aeee3c9b0be1a3195eb8350"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#af1ea8b855aeee3c9b0be1a3195eb8350">install_delegate_delegate_</a> (void *native)</td></tr>
+<tr class="inherit_header pro_static_methods_classcocoon_1_1_window"><td colspan="2">Static Protected Member Functions inherited from <a class="el" href="classcocoon_1_1_window.html">cocoon::Window</a></td></tr>
+<tr class="memitem:acca30578b4ef3663812531b9426ef230 pro_static_methods_classcocoon_1_1_window" id="r_acca30578b4ef3663812531b9426ef230"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_window.html#acca30578b4ef3663812531b9426ef230">install_delegate_delegate_</a> (void *native)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_static_methods_classcocoon_1_1_window"><td colspan="2">Static Public Member Functions inherited from <a class="el" href="classcocoon_1_1_window.html">cocoon::Window</a></td></tr>
 <tr class="memitem:a2eece50669a3a9730426814948f356c8 pub_static_methods_classcocoon_1_1_window" id="r_a2eece50669a3a9730426814948f356c8"><td class="memItemLeft">static <a class="el" href="structcocoon_1_1_rect.html">Rect</a>&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_window.html#a2eece50669a3a9730426814948f356c8">content_rect_for_frame_rect</a> (const <a class="el" href="structcocoon_1_1_rect.html">Rect</a> &amp;f_rect, <a class="el" href="namespacecocoon.html#a9415710f205508692cc0a58e3bf54f48">WindowStyle</a> style)</td></tr>
 <tr class="memdesc:a2eece50669a3a9730426814948f356c8 pub_static_methods_classcocoon_1_1_window"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSWindow contentRectForFrameRect:styleMask:]</span>.  <br /></td></tr>
@@ -1131,8 +1136,6 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:ac7d6d5fa929e154d088ac261d9e94159 pub_static_methods_classcocoon_1_1_window"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSWindow windowNumberAtPoint:belowWindowWithWindowNumber:]</span>.  <br /></td></tr>
 <tr class="memitem:aa16c8b7822f2fc2cc966b8624051ff3f pub_static_methods_classcocoon_1_1_window" id="r_aa16c8b7822f2fc2cc966b8624051ff3f"><td class="memItemLeft">static std::vector&lt; <a class="el" href="classcocoon_1_1_number.html">Number</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_window.html#aa16c8b7822f2fc2cc966b8624051ff3f">window_numbers_with_options</a> (<a class="el" href="namespacecocoon.html#aae7636774380f14530abfb2282dd8af9">WindowNumberListOptions</a> options)</td></tr>
 <tr class="memdesc:aa16c8b7822f2fc2cc966b8624051ff3f pub_static_methods_classcocoon_1_1_window"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSWindow windowNumbersWithOptions:]</span>.  <br /></td></tr>
-<tr class="memitem:a861b35b00a8e763a5c5aa58e8124c32f pub_static_methods_classcocoon_1_1_window" id="r_a861b35b00a8e763a5c5aa58e8124c32f"><td class="memItemLeft">static <a class="el" href="classcocoon_1_1_window.html#aaf76e2d435dfaf98c301287802eb2f04">Window</a>&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_window.html#a861b35b00a8e763a5c5aa58e8124c32f">window_with_content_view_controller</a> (const <a class="el" href="classcocoon_1_1_view_controller.html">ViewController</a> &amp;content_view_controller)</td></tr>
-<tr class="memdesc:a861b35b00a8e763a5c5aa58e8124c32f pub_static_methods_classcocoon_1_1_window"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSWindow windowWithContentViewController:]</span>.  <br /></td></tr>
 <tr class="memitem:ae4ea8c093d729ce60937edfae0524b97 pub_static_methods_classcocoon_1_1_window" id="r_ae4ea8c093d729ce60937edfae0524b97"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_window.html#ae4ea8c093d729ce60937edfae0524b97">allows_automatic_window_tabbing</a> ()</td></tr>
 <tr class="memdesc:ae4ea8c093d729ce60937edfae0524b97 pub_static_methods_classcocoon_1_1_window"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">allowsAutomaticWindowTabbing</span> property of <span class="tt">NSWindow</span>.  <br /></td></tr>
 <tr class="memitem:a5f2b8b734671d93413286d90057073be pub_static_methods_classcocoon_1_1_window" id="r_a5f2b8b734671d93413286d90057073be"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_window.html#a5f2b8b734671d93413286d90057073be">set_allows_automatic_window_tabbing</a> (bool value)</td></tr>
@@ -1146,47 +1149,39 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:acf3f611cc422eadcf4268ddb971c7db4 pub_static_methods_classcocoon_1_1_responder"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSResponder allowedClassesForRestorableStateKeyPath:]</span>.  <br /></td></tr>
 <tr class="memitem:a439082ad610d2fefdbe46079e94d78ca pub_static_methods_classcocoon_1_1_responder" id="r_a439082ad610d2fefdbe46079e94d78ca"><td class="memItemLeft">static std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_responder.html#a439082ad610d2fefdbe46079e94d78ca">restorable_state_key_paths</a> ()</td></tr>
 <tr class="memdesc:a439082ad610d2fefdbe46079e94d78ca pub_static_methods_classcocoon_1_1_responder"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">restorableStateKeyPaths</span> property of <span class="tt">NSResponder</span>.  <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pro-static-methods" class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
-Static Protected Member Functions</h2></td></tr>
-<tr class="memitem:af1ea8b855aeee3c9b0be1a3195eb8350" id="r_af1ea8b855aeee3c9b0be1a3195eb8350"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#af1ea8b855aeee3c9b0be1a3195eb8350">install_delegate_delegate_</a> (void *native)</td></tr>
-<tr class="inherit_header pro_static_methods_classcocoon_1_1_window"><td colspan="2">Static Protected Member Functions inherited from <a class="el" href="classcocoon_1_1_window.html">cocoon::Window</a></td></tr>
-<tr class="memitem:acca30578b4ef3663812531b9426ef230 pro_static_methods_classcocoon_1_1_window" id="r_acca30578b4ef3663812531b9426ef230"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_window.html#acca30578b4ef3663812531b9426ef230">install_delegate_delegate_</a> (void *native)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>C++ handle for the Objective-C class <span class="tt">NSSavePanel</span> (AppKit). </p>
 <p>Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance. Inherits from <a class="el" href="classcocoon_1_1_panel.html" title="Panel">Panel</a>.</p>
 <dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;cocoon.h&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_class" href="classcocoon_1_1_save_panel.html">cocoon::SavePanel</a> <a class="code hl_function" href="#a4d8cbc62a6f25461f43ca30f67841be2">save_panel</a>;</div>
-<div class="line"><a class="code hl_function" href="#a4d8cbc62a6f25461f43ca30f67841be2">save_panel</a>.<a class="code hl_function" href="#a3c0371067eefd8e5f94467df38768099">set_accessory_view</a>(<a class="code hl_class" href="classcocoon_1_1_view.html">cocoon::View</a>());</div>
-<div class="line"><a class="code hl_function" href="#a4d8cbc62a6f25461f43ca30f67841be2">save_panel</a>.<a class="code hl_function" href="#abcd0789c29b45e3ff5b586b5d5ac0d73">panel_did_change_to_directory_url</a>().connect([](<span class="keyword">auto</span>&amp;&amp;...) {});</div>
-<div class="ttc" id="aclasscocoon_1_1_save_panel_html"><div class="ttname"><a href="classcocoon_1_1_save_panel.html">cocoon::SavePanel</a></div><div class="ttdoc">C++ handle for the Objective-C class NSSavePanel (AppKit).</div><div class="ttdef"><b>Definition</b> save_panel.h:49</div></div>
+<div class="line"><a class="code hl_class" href="classcocoon_1_1_save_panel.html">cocoon::SavePanel</a> save_panel;</div>
+<div class="line">save_panel.<a class="code hl_function" href="#a3c0371067eefd8e5f94467df38768099">set_accessory_view</a>(<a class="code hl_class" href="classcocoon_1_1_view.html">cocoon::View</a>());</div>
+<div class="line">save_panel.<a class="code hl_function" href="#abcd0789c29b45e3ff5b586b5d5ac0d73">panel_did_change_to_directory_url</a>().connect([](<span class="keyword">auto</span>&amp;&amp;...) {});</div>
+<div class="ttc" id="aclasscocoon_1_1_save_panel_html"><div class="ttname"><a href="classcocoon_1_1_save_panel.html">cocoon::SavePanel</a></div><div class="ttdoc">C++ handle for the Objective-C class NSSavePanel (AppKit).</div><div class="ttdef"><b>Definition</b> save_panel.h:48</div></div>
 <div class="ttc" id="aclasscocoon_1_1_save_panel_html_a3c0371067eefd8e5f94467df38768099"><div class="ttname"><a href="#a3c0371067eefd8e5f94467df38768099">cocoon::SavePanel::set_accessory_view</a></div><div class="ttdeci">void set_accessory_view(const View &amp;value) const</div><div class="ttdoc">Sets the accessoryView property of NSSavePanel.</div></div>
-<div class="ttc" id="aclasscocoon_1_1_save_panel_html_a4d8cbc62a6f25461f43ca30f67841be2"><div class="ttname"><a href="#a4d8cbc62a6f25461f43ca30f67841be2">cocoon::SavePanel::save_panel</a></div><div class="ttdeci">static SavePanel save_panel()</div><div class="ttdoc">Calls +[NSSavePanel savePanel].</div></div>
-<div class="ttc" id="aclasscocoon_1_1_save_panel_html_abcd0789c29b45e3ff5b586b5d5ac0d73"><div class="ttname"><a href="#abcd0789c29b45e3ff5b586b5d5ac0d73">cocoon::SavePanel::panel_did_change_to_directory_url</a></div><div class="ttdeci">Signal&lt; SavePanel, void(URL)&gt; panel_did_change_to_directory_url() const</div><div class="ttdoc">Signal for the delegate/data-source method behind panel_did_change_to_directory_url; connect a callba...</div><div class="ttdef"><b>Definition</b> save_panel.h:345</div></div>
+<div class="ttc" id="aclasscocoon_1_1_save_panel_html_abcd0789c29b45e3ff5b586b5d5ac0d73"><div class="ttname"><a href="#abcd0789c29b45e3ff5b586b5d5ac0d73">cocoon::SavePanel::panel_did_change_to_directory_url</a></div><div class="ttdeci">Signal&lt; SavePanel, void(URL)&gt; panel_did_change_to_directory_url() const</div><div class="ttdoc">Signal for the delegate/data-source method behind panel_did_change_to_directory_url; connect a callba...</div><div class="ttdef"><b>Definition</b> save_panel.h:338</div></div>
 <div class="ttc" id="aclasscocoon_1_1_view_html"><div class="ttname"><a href="classcocoon_1_1_view.html">cocoon::View</a></div><div class="ttdoc">The base of all views (NSView): hierarchy, geometry, Auto Layout helpers and appearance.</div><div class="ttdef"><b>Definition</b> view.h:77</div></div>
 </div><!-- fragment --></dd></dl>
-<dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_save_panel.html">cocoon::SavePanel</a> <a class="code hl_function" href="#a4d8cbc62a6f25461f43ca30f67841be2">save_panel</a>{};</div>
-<div class="line"><a class="code hl_function" href="#a4d8cbc62a6f25461f43ca30f67841be2">save_panel</a>.<a class="code hl_function" href="#a3c0371067eefd8e5f94467df38768099">set_accessory_view</a>(<a class="code hl_class" href="classcocoon_1_1_view.html">cocoon::View</a>());</div>
-<div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#aa30d297c627ad37c5e76ccb57400f2b2">accessory_view</a> = <a class="code hl_function" href="#a4d8cbc62a6f25461f43ca30f67841be2">save_panel</a>.<a class="code hl_function" href="#aa30d297c627ad37c5e76ccb57400f2b2">accessory_view</a>();</div>
-<div class="line"><a class="code hl_function" href="#a4d8cbc62a6f25461f43ca30f67841be2">save_panel</a>.<a class="code hl_function" href="#a0d9541e537ae7dc07bf45def98c25649">set_allows_other_file_types</a>(<span class="keyword">true</span>);</div>
-<div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#af200e70cce7a6569f774b1ca7e73b8d6">allows_other_file_types</a> = <a class="code hl_function" href="#a4d8cbc62a6f25461f43ca30f67841be2">save_panel</a>.<a class="code hl_function" href="#af200e70cce7a6569f774b1ca7e73b8d6">allows_other_file_types</a>();</div>
-<div class="line"><a class="code hl_function" href="#a4d8cbc62a6f25461f43ca30f67841be2">save_panel</a>.<a class="code hl_function" href="#a0e849e901c6b6bf6fd1f74c733d72334">set_can_create_directories</a>(<span class="keyword">true</span>);</div>
-<div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#afc8cadb16c05aae12e3207b79e09c580">can_create_directories</a> = <a class="code hl_function" href="#a4d8cbc62a6f25461f43ca30f67841be2">save_panel</a>.<a class="code hl_function" href="#afc8cadb16c05aae12e3207b79e09c580">can_create_directories</a>();</div>
-<div class="line"><span class="keyword">auto</span> made_0 = <a class="code hl_function" href="#a4d8cbc62a6f25461f43ca30f67841be2">cocoon::SavePanel::save_panel</a>();</div>
-<div class="line"><a class="code hl_function" href="#a4d8cbc62a6f25461f43ca30f67841be2">save_panel</a>.<a class="code hl_function" href="#a123c303f632ffbf92c840c168b2c29b5">run_modal</a>();</div>
-<div class="line"><a class="code hl_function" href="#a4d8cbc62a6f25461f43ca30f67841be2">save_panel</a>.<a class="code hl_function" href="#accec71f0bfb6c0da923dcc7f3d970bd7">validate_visible_columns</a>();</div>
-<div class="line"><a class="code hl_function" href="#a4d8cbc62a6f25461f43ca30f67841be2">save_panel</a>.<a class="code hl_function" href="#abcd0789c29b45e3ff5b586b5d5ac0d73">panel_did_change_to_directory_url</a>().connect([](<a class="code hl_class" href="classcocoon_1_1_u_r_l.html">cocoon::URL</a> a0) {});</div>
-<div class="line"><a class="code hl_function" href="#a4d8cbc62a6f25461f43ca30f67841be2">save_panel</a>.<a class="code hl_function" href="#a70fde657dd7889ad6a908fc76d5a884d">panel_will_expand</a>().connect([](<span class="keywordtype">bool</span> a0) {});</div>
-<div class="line"><a class="code hl_function" href="#a4d8cbc62a6f25461f43ca30f67841be2">save_panel</a>.<a class="code hl_function" href="#ae713fe0962b87af6f0c917aec06e5d12">panel_selection_did_change</a>().connect([]() {});</div>
+<dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_save_panel.html">cocoon::SavePanel</a> save_panel{};</div>
+<div class="line">save_panel.<a class="code hl_function" href="#a3c0371067eefd8e5f94467df38768099">set_accessory_view</a>(<a class="code hl_class" href="classcocoon_1_1_view.html">cocoon::View</a>());</div>
+<div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#aa30d297c627ad37c5e76ccb57400f2b2">accessory_view</a> = save_panel.<a class="code hl_function" href="#aa30d297c627ad37c5e76ccb57400f2b2">accessory_view</a>();</div>
+<div class="line">save_panel.<a class="code hl_function" href="#a0d9541e537ae7dc07bf45def98c25649">set_allows_other_file_types</a>(<span class="keyword">true</span>);</div>
+<div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#af200e70cce7a6569f774b1ca7e73b8d6">allows_other_file_types</a> = save_panel.<a class="code hl_function" href="#af200e70cce7a6569f774b1ca7e73b8d6">allows_other_file_types</a>();</div>
+<div class="line">save_panel.<a class="code hl_function" href="#a0e849e901c6b6bf6fd1f74c733d72334">set_can_create_directories</a>(<span class="keyword">true</span>);</div>
+<div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#afc8cadb16c05aae12e3207b79e09c580">can_create_directories</a> = save_panel.<a class="code hl_function" href="#afc8cadb16c05aae12e3207b79e09c580">can_create_directories</a>();</div>
+<div class="line">save_panel.<a class="code hl_function" href="#a123c303f632ffbf92c840c168b2c29b5">run_modal</a>();</div>
+<div class="line">save_panel.<a class="code hl_function" href="#accec71f0bfb6c0da923dcc7f3d970bd7">validate_visible_columns</a>();</div>
+<div class="line">save_panel.<a class="code hl_function" href="#abcd0789c29b45e3ff5b586b5d5ac0d73">panel_did_change_to_directory_url</a>().connect([](<a class="code hl_class" href="classcocoon_1_1_u_r_l.html">cocoon::URL</a> a0) {});</div>
+<div class="line">save_panel.<a class="code hl_function" href="#a70fde657dd7889ad6a908fc76d5a884d">panel_will_expand</a>().connect([](<span class="keywordtype">bool</span> a0) {});</div>
+<div class="line">save_panel.<a class="code hl_function" href="#ae713fe0962b87af6f0c917aec06e5d12">panel_selection_did_change</a>().connect([]() {});</div>
 <div class="ttc" id="aclasscocoon_1_1_save_panel_html_a0d9541e537ae7dc07bf45def98c25649"><div class="ttname"><a href="#a0d9541e537ae7dc07bf45def98c25649">cocoon::SavePanel::set_allows_other_file_types</a></div><div class="ttdeci">void set_allows_other_file_types(bool value) const</div><div class="ttdoc">Sets the allowsOtherFileTypes property of NSSavePanel.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_save_panel_html_a0e849e901c6b6bf6fd1f74c733d72334"><div class="ttname"><a href="#a0e849e901c6b6bf6fd1f74c733d72334">cocoon::SavePanel::set_can_create_directories</a></div><div class="ttdeci">void set_can_create_directories(bool value) const</div><div class="ttdoc">Sets the canCreateDirectories property of NSSavePanel.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_save_panel_html_a123c303f632ffbf92c840c168b2c29b5"><div class="ttname"><a href="#a123c303f632ffbf92c840c168b2c29b5">cocoon::SavePanel::run_modal</a></div><div class="ttdeci">std::int64_t run_modal() const</div><div class="ttdoc">Calls -[NSSavePanel runModal].</div></div>
-<div class="ttc" id="aclasscocoon_1_1_save_panel_html_a70fde657dd7889ad6a908fc76d5a884d"><div class="ttname"><a href="#a70fde657dd7889ad6a908fc76d5a884d">cocoon::SavePanel::panel_will_expand</a></div><div class="ttdeci">Signal&lt; SavePanel, void(bool)&gt; panel_will_expand() const</div><div class="ttdoc">Signal for the delegate/data-source method behind panel_will_expand; connect a callback with panel_wi...</div><div class="ttdef"><b>Definition</b> save_panel.h:355</div></div>
+<div class="ttc" id="aclasscocoon_1_1_save_panel_html_a70fde657dd7889ad6a908fc76d5a884d"><div class="ttname"><a href="#a70fde657dd7889ad6a908fc76d5a884d">cocoon::SavePanel::panel_will_expand</a></div><div class="ttdeci">Signal&lt; SavePanel, void(bool)&gt; panel_will_expand() const</div><div class="ttdoc">Signal for the delegate/data-source method behind panel_will_expand; connect a callback with panel_wi...</div><div class="ttdef"><b>Definition</b> save_panel.h:348</div></div>
 <div class="ttc" id="aclasscocoon_1_1_save_panel_html_aa30d297c627ad37c5e76ccb57400f2b2"><div class="ttname"><a href="#aa30d297c627ad37c5e76ccb57400f2b2">cocoon::SavePanel::accessory_view</a></div><div class="ttdeci">View accessory_view() const</div><div class="ttdoc">Returns the accessoryView property of NSSavePanel.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_save_panel_html_accec71f0bfb6c0da923dcc7f3d970bd7"><div class="ttname"><a href="#accec71f0bfb6c0da923dcc7f3d970bd7">cocoon::SavePanel::validate_visible_columns</a></div><div class="ttdeci">void validate_visible_columns() const</div><div class="ttdoc">Calls -[NSSavePanel validateVisibleColumns].</div></div>
-<div class="ttc" id="aclasscocoon_1_1_save_panel_html_ae713fe0962b87af6f0c917aec06e5d12"><div class="ttname"><a href="#ae713fe0962b87af6f0c917aec06e5d12">cocoon::SavePanel::panel_selection_did_change</a></div><div class="ttdeci">Signal&lt; SavePanel, void()&gt; panel_selection_did_change() const</div><div class="ttdoc">Signal for the delegate/data-source method behind panel_selection_did_change; connect a callback with...</div><div class="ttdef"><b>Definition</b> save_panel.h:360</div></div>
+<div class="ttc" id="aclasscocoon_1_1_save_panel_html_ae713fe0962b87af6f0c917aec06e5d12"><div class="ttname"><a href="#ae713fe0962b87af6f0c917aec06e5d12">cocoon::SavePanel::panel_selection_did_change</a></div><div class="ttdeci">Signal&lt; SavePanel, void()&gt; panel_selection_did_change() const</div><div class="ttdoc">Signal for the delegate/data-source method behind panel_selection_did_change; connect a callback with...</div><div class="ttdef"><b>Definition</b> save_panel.h:353</div></div>
 <div class="ttc" id="aclasscocoon_1_1_save_panel_html_af200e70cce7a6569f774b1ca7e73b8d6"><div class="ttname"><a href="#af200e70cce7a6569f774b1ca7e73b8d6">cocoon::SavePanel::allows_other_file_types</a></div><div class="ttdeci">bool allows_other_file_types() const</div><div class="ttdoc">Returns the allowsOtherFileTypes property of NSSavePanel.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_save_panel_html_afc8cadb16c05aae12e3207b79e09c580"><div class="ttname"><a href="#afc8cadb16c05aae12e3207b79e09c580">cocoon::SavePanel::can_create_directories</a></div><div class="ttdeci">bool can_create_directories() const</div><div class="ttdoc">Returns the canCreateDirectories property of NSSavePanel.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_u_r_l_html"><div class="ttname"><a href="classcocoon_1_1_u_r_l.html">cocoon::URL</a></div><div class="ttdoc">C++ handle for the Objective-C class NSURL (Foundation).</div><div class="ttdef"><b>Definition</b> url.h:39</div></div>
@@ -1883,34 +1878,6 @@ Static Protected Member Functions</h2></td></tr>
 
 <p>Calls <span class="tt">-[NSSavePanel runModal]</span>. </p>
 <p>'NSSavePanel'/'NSOpenPanel': Presents the panel as an application modal window. Returns after the user has closed the panel. - Returns: 'NSModalResponseOK', 'NSModalResponseCancel' or if the panel fails to display, 'NSModalResponseAbort'. </p><dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a4d8cbc62a6f25461f43ca30f67841be2" name="a4d8cbc62a6f25461f43ca30f67841be2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d8cbc62a6f25461f43ca30f67841be2">&#9670;&#160;</a></span>save_panel()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a487a75eb2a1ecff4538de469af11d9d2">SavePanel</a> cocoon::SavePanel::save_panel </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSSavePanel savePanel]</span>. </p>
-<p>Creates a new instance of the NSSavePanel. This class is not a singleton. </p><dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
 
 </div>
 </div>

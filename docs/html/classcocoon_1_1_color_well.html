@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -61,7 +61,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-static-methods">Static Protected Member Functions</a> &#124;
 <a href="classcocoon_1_1_color_well-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">cocoon::ColorWell Class Reference</div></div>
@@ -77,6 +76,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aed50528f9209a8121edbd84e21543028" id="r_aed50528f9209a8121edbd84e21543028"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aed50528f9209a8121edbd84e21543028">ColorWell</a> ()</td></tr>
 <tr class="memdesc:aed50528f9209a8121edbd84e21543028"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSColorWell</span> instance and returns a handle to it.  <br /></td></tr>
+<tr class="memitem:ae6018a16e6f67b73650147498da50f13" id="r_ae6018a16e6f67b73650147498da50f13"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ae6018a16e6f67b73650147498da50f13">ColorWell</a> (<a class="el" href="namespacecocoon.html#a6ca5fa0c8d8eb2b1a4b4143f89b050ec">ColorWellStyle</a> style)</td></tr>
+<tr class="memdesc:ae6018a16e6f67b73650147498da50f13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSColorWell</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:a838fbaa07bc6aa9dae1209f7316ce733" id="r_a838fbaa07bc6aa9dae1209f7316ce733"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a838fbaa07bc6aa9dae1209f7316ce733">ColorWell</a> (std::nullptr_t)</td></tr>
 <tr class="memdesc:a838fbaa07bc6aa9dae1209f7316ce733"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a null handle that refers to no native object.  <br /></td></tr>
 <tr class="memitem:a0ee5568a2fb88be335773dd07b6697e7" id="r_a0ee5568a2fb88be335773dd07b6697e7"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a0ee5568a2fb88be335773dd07b6697e7">ColorWell</a> (<a class="el" href="structcocoon_1_1_adopt.html">Adopt</a> adopt)</td></tr>
@@ -1102,10 +1103,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object template"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_object.html#a53f4ad0e6a86173a96668457725eb369">as</a> () const</td></tr>
 <tr class="memdesc:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reinterprets the native object as handle type <span class="tt">T</span> (no runtime type check).  <br /></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a75154615697ca8a6d0d542ce2a7e3d3d" id="r_a75154615697ca8a6d0d542ce2a7e3d3d"><td class="memItemLeft">static <a class="el" href="#aed50528f9209a8121edbd84e21543028">ColorWell</a>&#160;</td><td class="memItemRight"><a class="el" href="#a75154615697ca8a6d0d542ce2a7e3d3d">color_well_with_style</a> (<a class="el" href="namespacecocoon.html#a6ca5fa0c8d8eb2b1a4b4143f89b050ec">ColorWellStyle</a> style)</td></tr>
-<tr class="memdesc:a75154615697ca8a6d0d542ce2a7e3d3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSColorWell colorWellWithStyle:]</span>.  <br /></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-pro-static-methods" class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:a8dd121ce1eba3064e22c509afd96fa20" id="r_a8dd121ce1eba3064e22c509afd96fa20"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a8dd121ce1eba3064e22c509afd96fa20">bind_action_</a> (void *native)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_static_methods_classcocoon_1_1_control"><td colspan="2">Static Public Member Functions inherited from <a class="el" href="classcocoon_1_1_control.html">cocoon::Control</a></td></tr>
 <tr class="memitem:aa9bd1d1711669a968c07b8b277de5554 pub_static_methods_classcocoon_1_1_control" id="r_aa9bd1d1711669a968c07b8b277de5554"><td class="memItemLeft">static std::string&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_control.html#aa9bd1d1711669a968c07b8b277de5554">cell_class</a> ()</td></tr>
 <tr class="memdesc:aa9bd1d1711669a968c07b8b277de5554 pub_static_methods_classcocoon_1_1_control"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">cellClass</span> property of <span class="tt">NSControl</span>.  <br /></td></tr>
@@ -1127,10 +1130,6 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:acf3f611cc422eadcf4268ddb971c7db4 pub_static_methods_classcocoon_1_1_responder"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSResponder allowedClassesForRestorableStateKeyPath:]</span>.  <br /></td></tr>
 <tr class="memitem:a439082ad610d2fefdbe46079e94d78ca pub_static_methods_classcocoon_1_1_responder" id="r_a439082ad610d2fefdbe46079e94d78ca"><td class="memItemLeft">static std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_responder.html#a439082ad610d2fefdbe46079e94d78ca">restorable_state_key_paths</a> ()</td></tr>
 <tr class="memdesc:a439082ad610d2fefdbe46079e94d78ca pub_static_methods_classcocoon_1_1_responder"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">restorableStateKeyPaths</span> property of <span class="tt">NSResponder</span>.  <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pro-static-methods" class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
-Static Protected Member Functions</h2></td></tr>
-<tr class="memitem:a8dd121ce1eba3064e22c509afd96fa20" id="r_a8dd121ce1eba3064e22c509afd96fa20"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a8dd121ce1eba3064e22c509afd96fa20">bind_action_</a> (void *native)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A color selection well. </p>
@@ -1138,9 +1137,9 @@ Static Protected Member Functions</h2></td></tr>
 <dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_color_well.html">cocoon::ColorWell</a> well;</div>
 <div class="line">well.<a class="code hl_function" href="#aec44f71950243c409301588abec3e2b6">color_changed</a>().connect([](<a class="code hl_class" href="classcocoon_1_1_color.html">cocoon::Color</a> <a class="code hl_function" href="#ae4f2075f2712e2fc106580982a002c3d">color</a>) {});</div>
 <div class="ttc" id="aclasscocoon_1_1_color_html"><div class="ttname"><a href="classcocoon_1_1_color.html">cocoon::Color</a></div><div class="ttdoc">A color (NSColor).</div><div class="ttdef"><b>Definition</b> color.h:42</div></div>
-<div class="ttc" id="aclasscocoon_1_1_color_well_html"><div class="ttname"><a href="classcocoon_1_1_color_well.html">cocoon::ColorWell</a></div><div class="ttdoc">A color selection well.</div><div class="ttdef"><b>Definition</b> color_well.h:44</div></div>
+<div class="ttc" id="aclasscocoon_1_1_color_well_html"><div class="ttname"><a href="classcocoon_1_1_color_well.html">cocoon::ColorWell</a></div><div class="ttdoc">A color selection well.</div><div class="ttdef"><b>Definition</b> color_well.h:43</div></div>
 <div class="ttc" id="aclasscocoon_1_1_color_well_html_ae4f2075f2712e2fc106580982a002c3d"><div class="ttname"><a href="#ae4f2075f2712e2fc106580982a002c3d">cocoon::ColorWell::color</a></div><div class="ttdeci">Color color() const</div><div class="ttdoc">Returns the color property of NSColorWell.</div></div>
-<div class="ttc" id="aclasscocoon_1_1_color_well_html_aec44f71950243c409301588abec3e2b6"><div class="ttname"><a href="#aec44f71950243c409301588abec3e2b6">cocoon::ColorWell::color_changed</a></div><div class="ttdeci">Signal&lt; ColorWell, void(Color)&gt; color_changed() const</div><div class="ttdoc">Signal color_changed: connect a callback with color_changed().connect(...).</div><div class="ttdef"><b>Definition</b> color_well.h:167</div></div>
+<div class="ttc" id="aclasscocoon_1_1_color_well_html_aec44f71950243c409301588abec3e2b6"><div class="ttname"><a href="#aec44f71950243c409301588abec3e2b6">cocoon::ColorWell::color_changed</a></div><div class="ttdeci">Signal&lt; ColorWell, void(Color)&gt; color_changed() const</div><div class="ttdoc">Signal color_changed: connect a callback with color_changed().connect(...).</div><div class="ttdef"><b>Definition</b> color_well.h:162</div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_color_well.html">cocoon::ColorWell</a> color_well{};</div>
 <div class="line">color_well.<a class="code hl_function" href="#a4d653aaf586a686088d58d457f6c8c1a">set_bordered</a>(<span class="keyword">true</span>);</div>
@@ -1149,7 +1148,6 @@ Static Protected Member Functions</h2></td></tr>
 <div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#ae4f2075f2712e2fc106580982a002c3d">color</a> = color_well.<a class="code hl_function" href="#ae4f2075f2712e2fc106580982a002c3d">color</a>();</div>
 <div class="line">color_well.<a class="code hl_function" href="#a00a7088b023ed3da439a6bbfe9460f3f">set_color_well_style</a>(<a class="code hl_enumvalue" href="namespacecocoon.html#a6ca5fa0c8d8eb2b1a4b4143f89b050eca7a1920d61156abc05a60135aefe8bc67">cocoon::ColorWellStyle::Default</a>);</div>
 <div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#a72965fa4088eb139e84f0f2ef803c765">color_well_style</a> = color_well.<a class="code hl_function" href="#a72965fa4088eb139e84f0f2ef803c765">color_well_style</a>();</div>
-<div class="line"><span class="keyword">auto</span> made_0 = <a class="code hl_function" href="#a75154615697ca8a6d0d542ce2a7e3d3d">cocoon::ColorWell::color_well_with_style</a>(<a class="code hl_enumvalue" href="namespacecocoon.html#a6ca5fa0c8d8eb2b1a4b4143f89b050eca7a1920d61156abc05a60135aefe8bc67">cocoon::ColorWellStyle::Default</a>);</div>
 <div class="line">color_well.<a class="code hl_function" href="#ab3179021ed307c216aa10b28a3bdd8f9">activate</a>(<span class="keyword">true</span>);</div>
 <div class="line">color_well.<a class="code hl_function" href="#aacfb4b066f3be11809d6795eda284fd2">deactivate</a>();</div>
 <div class="line">color_well.<a class="code hl_function" href="#a33dc41043ffb256d4f61af8d18ae3f27">draw_well_inside</a>({{0, 0}, {100, 100}});</div>
@@ -1159,7 +1157,6 @@ Static Protected Member Functions</h2></td></tr>
 <div class="ttc" id="aclasscocoon_1_1_color_well_html_a44edee5517f6b774b9dc7b4e1197ee84"><div class="ttname"><a href="#a44edee5517f6b774b9dc7b4e1197ee84">cocoon::ColorWell::is_bordered</a></div><div class="ttdeci">bool is_bordered() const</div><div class="ttdoc">Returns the bordered property of NSColorWell.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_color_well_html_a4d653aaf586a686088d58d457f6c8c1a"><div class="ttname"><a href="#a4d653aaf586a686088d58d457f6c8c1a">cocoon::ColorWell::set_bordered</a></div><div class="ttdeci">void set_bordered(bool value) const</div><div class="ttdoc">Sets the bordered property of NSColorWell.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_color_well_html_a72965fa4088eb139e84f0f2ef803c765"><div class="ttname"><a href="#a72965fa4088eb139e84f0f2ef803c765">cocoon::ColorWell::color_well_style</a></div><div class="ttdeci">ColorWellStyle color_well_style() const</div><div class="ttdoc">Returns the colorWellStyle property of NSColorWell.</div></div>
-<div class="ttc" id="aclasscocoon_1_1_color_well_html_a75154615697ca8a6d0d542ce2a7e3d3d"><div class="ttname"><a href="#a75154615697ca8a6d0d542ce2a7e3d3d">cocoon::ColorWell::color_well_with_style</a></div><div class="ttdeci">static ColorWell color_well_with_style(ColorWellStyle style)</div><div class="ttdoc">Calls +[NSColorWell colorWellWithStyle:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_color_well_html_aacfb4b066f3be11809d6795eda284fd2"><div class="ttname"><a href="#aacfb4b066f3be11809d6795eda284fd2">cocoon::ColorWell::deactivate</a></div><div class="ttdeci">void deactivate() const</div><div class="ttdoc">Calls -[NSColorWell deactivate].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_color_well_html_ab3179021ed307c216aa10b28a3bdd8f9"><div class="ttname"><a href="#ab3179021ed307c216aa10b28a3bdd8f9">cocoon::ColorWell::activate</a></div><div class="ttdeci">void activate(bool exclusive) const</div><div class="ttdoc">Calls -[NSColorWell activate:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_color_well_html_ac7300b6672bcb4e6c2c19b58bc9d7b7f"><div class="ttname"><a href="#ac7300b6672bcb4e6c2c19b58bc9d7b7f">cocoon::ColorWell::set_color</a></div><div class="ttdeci">void set_color(const Color &amp;value) const</div><div class="ttdoc">Sets the color property of NSColorWell.</div></div>
@@ -1169,7 +1166,7 @@ Static Protected Member Functions</h2></td></tr>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/appkit/nscolorwell">https://developer.apple.com/documentation/appkit/nscolorwell</a> </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aed50528f9209a8121edbd84e21543028" name="aed50528f9209a8121edbd84e21543028"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed50528f9209a8121edbd84e21543028">&#9670;&#160;</a></span>ColorWell() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aed50528f9209a8121edbd84e21543028">&#9670;&#160;</a></span>ColorWell() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1195,8 +1192,35 @@ Static Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ae6018a16e6f67b73650147498da50f13" name="ae6018a16e6f67b73650147498da50f13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6018a16e6f67b73650147498da50f13">&#9670;&#160;</a></span>ColorWell() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::ColorWell::ColorWell </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacecocoon.html#a6ca5fa0c8d8eb2b1a4b4143f89b050ec">ColorWellStyle</a></td>          <td class="paramname"><span class="paramname"><em>style</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSColorWell</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
 <a id="a838fbaa07bc6aa9dae1209f7316ce733" name="a838fbaa07bc6aa9dae1209f7316ce733"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a838fbaa07bc6aa9dae1209f7316ce733">&#9670;&#160;</a></span>ColorWell() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a838fbaa07bc6aa9dae1209f7316ce733">&#9670;&#160;</a></span>ColorWell() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1215,7 +1239,7 @@ Static Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a0ee5568a2fb88be335773dd07b6697e7" name="a0ee5568a2fb88be335773dd07b6697e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ee5568a2fb88be335773dd07b6697e7">&#9670;&#160;</a></span>ColorWell() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ee5568a2fb88be335773dd07b6697e7">&#9670;&#160;</a></span>ColorWell() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1355,40 +1379,6 @@ Static Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the <span class="tt">colorWellStyle</span> property of <span class="tt">NSColorWell</span>. </p>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a75154615697ca8a6d0d542ce2a7e3d3d" name="a75154615697ca8a6d0d542ce2a7e3d3d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a75154615697ca8a6d0d542ce2a7e3d3d">&#9670;&#160;</a></span>color_well_with_style()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#aed50528f9209a8121edbd84e21543028">ColorWell</a> cocoon::ColorWell::color_well_with_style </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacecocoon.html#a6ca5fa0c8d8eb2b1a4b4143f89b050ec">ColorWellStyle</a></td>          <td class="paramname"><span class="paramname"><em>style</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSColorWell colorWellWithStyle:]</span>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">style</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
 
 </div>

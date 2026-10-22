@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -218,12 +218,6 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:ad1b144bddf03ece75dce6a3972d6ab4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSBundle URLsForResourcesWithExtension:subdirectory:inBundleWithURL:]</span>.  <br /></td></tr>
 <tr class="memitem:a3a80b6a4865207bac0daf0c8cb3bc75e" id="r_a3a80b6a4865207bac0daf0c8cb3bc75e"><td class="memItemLeft">static <a class="el" href="#a4db489ab23ab945177c2c8b002c75193">Bundle</a>&#160;</td><td class="memItemRight"><a class="el" href="#a3a80b6a4865207bac0daf0c8cb3bc75e">bundle_for_class</a> (const std::string &amp;a_class)</td></tr>
 <tr class="memdesc:a3a80b6a4865207bac0daf0c8cb3bc75e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSBundle bundleForClass:]</span>.  <br /></td></tr>
-<tr class="memitem:af83ff4df7edd62f38d5befa7bb446499" id="r_af83ff4df7edd62f38d5befa7bb446499"><td class="memItemLeft">static <a class="el" href="#a4db489ab23ab945177c2c8b002c75193">Bundle</a>&#160;</td><td class="memItemRight"><a class="el" href="#af83ff4df7edd62f38d5befa7bb446499">bundle_with_identifier</a> (const std::string &amp;identifier)</td></tr>
-<tr class="memdesc:af83ff4df7edd62f38d5befa7bb446499"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSBundle bundleWithIdentifier:]</span>.  <br /></td></tr>
-<tr class="memitem:ab788dbfd3ea43697bc5cdbc46e1127e9" id="r_ab788dbfd3ea43697bc5cdbc46e1127e9"><td class="memItemLeft">static <a class="el" href="#a4db489ab23ab945177c2c8b002c75193">Bundle</a>&#160;</td><td class="memItemRight"><a class="el" href="#ab788dbfd3ea43697bc5cdbc46e1127e9">bundle_with_path</a> (const std::string &amp;path)</td></tr>
-<tr class="memdesc:ab788dbfd3ea43697bc5cdbc46e1127e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSBundle bundleWithPath:]</span>.  <br /></td></tr>
-<tr class="memitem:adb21639b38cd1e2ba8002da4c42fdd87" id="r_adb21639b38cd1e2ba8002da4c42fdd87"><td class="memItemLeft">static <a class="el" href="#a4db489ab23ab945177c2c8b002c75193">Bundle</a>&#160;</td><td class="memItemRight"><a class="el" href="#adb21639b38cd1e2ba8002da4c42fdd87">bundle_with_url</a> (const <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a> &amp;url)</td></tr>
-<tr class="memdesc:adb21639b38cd1e2ba8002da4c42fdd87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSBundle bundleWithURL:]</span>.  <br /></td></tr>
 <tr class="memitem:a3a8ddbdfa5cbb6a79864f62bc66794cb" id="r_a3a8ddbdfa5cbb6a79864f62bc66794cb"><td class="memItemLeft">static std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a3a8ddbdfa5cbb6a79864f62bc66794cb">preferred_localizations_from_array</a> (const std::vector&lt; std::string &gt; &amp;localizations_array)</td></tr>
 <tr class="memdesc:a3a8ddbdfa5cbb6a79864f62bc66794cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSBundle preferredLocalizationsFromArray:]</span>.  <br /></td></tr>
 <tr class="memitem:afdc2c130deab3fc0c004ff1a3157171f" id="r_afdc2c130deab3fc0c004ff1a3157171f"><td class="memItemLeft">static std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight"><a class="el" href="#afdc2c130deab3fc0c004ff1a3157171f">preferred_localizations_from_array</a> (const std::vector&lt; std::string &gt; &amp;localizations_array, const std::vector&lt; std::string &gt; &amp;preferences_array)</td></tr>
@@ -241,11 +235,10 @@ Static Public Member Functions</h2></td></tr>
 <dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;cocoon.h&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_class" href="classcocoon_1_1_bundle.html">cocoon::Bundle</a> bundle;</div>
-<div class="ttc" id="aclasscocoon_1_1_bundle_html"><div class="ttname"><a href="classcocoon_1_1_bundle.html">cocoon::Bundle</a></div><div class="ttdoc">C++ handle for the Objective-C class NSBundle (Foundation).</div><div class="ttdef"><b>Definition</b> bundle.h:41</div></div>
+<div class="ttc" id="aclasscocoon_1_1_bundle_html"><div class="ttname"><a href="classcocoon_1_1_bundle.html">cocoon::Bundle</a></div><div class="ttdoc">C++ handle for the Objective-C class NSBundle (Foundation).</div><div class="ttdef"><b>Definition</b> bundle.h:40</div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_bundle.html">cocoon::Bundle</a> bundle{};</div>
 <div class="line"><span class="keyword">auto</span> made_0 = <a class="code hl_function" href="#a3a80b6a4865207bac0daf0c8cb3bc75e">cocoon::Bundle::bundle_for_class</a>(<span class="stringliteral">&quot;text&quot;</span>);</div>
-<div class="line"><span class="keyword">auto</span> made_1 = <a class="code hl_function" href="#af83ff4df7edd62f38d5befa7bb446499">cocoon::Bundle::bundle_with_identifier</a>(<span class="stringliteral">&quot;text&quot;</span>);</div>
 <div class="line">bundle.<a class="code hl_function" href="#a38acbe173aeb8516a993ae822fc8a13e">url_for_auxiliary_executable</a>(<span class="stringliteral">&quot;text&quot;</span>);</div>
 <div class="line">bundle.<a class="code hl_function" href="#a2a1dae18f07cbe2e2b961e1f8e8291ad">url_for_image_resource</a>(<span class="stringliteral">&quot;text&quot;</span>);</div>
 <div class="line">bundle.<a class="code hl_function" href="#a18280da7816d55ade89c1f0e0b25047e">url_for_resource</a>(<span class="stringliteral">&quot;text&quot;</span>, <span class="stringliteral">&quot;text&quot;</span>);</div>
@@ -253,7 +246,6 @@ Static Public Member Functions</h2></td></tr>
 <div class="ttc" id="aclasscocoon_1_1_bundle_html_a2a1dae18f07cbe2e2b961e1f8e8291ad"><div class="ttname"><a href="#a2a1dae18f07cbe2e2b961e1f8e8291ad">cocoon::Bundle::url_for_image_resource</a></div><div class="ttdeci">URL url_for_image_resource(const std::string &amp;name) const</div><div class="ttdoc">Calls -[NSBundle URLForImageResource:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_bundle_html_a38acbe173aeb8516a993ae822fc8a13e"><div class="ttname"><a href="#a38acbe173aeb8516a993ae822fc8a13e">cocoon::Bundle::url_for_auxiliary_executable</a></div><div class="ttdeci">URL url_for_auxiliary_executable(const std::string &amp;executable_name) const</div><div class="ttdoc">Calls -[NSBundle URLForAuxiliaryExecutable:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_bundle_html_a3a80b6a4865207bac0daf0c8cb3bc75e"><div class="ttname"><a href="#a3a80b6a4865207bac0daf0c8cb3bc75e">cocoon::Bundle::bundle_for_class</a></div><div class="ttdeci">static Bundle bundle_for_class(const std::string &amp;a_class)</div><div class="ttdoc">Calls +[NSBundle bundleForClass:].</div></div>
-<div class="ttc" id="aclasscocoon_1_1_bundle_html_af83ff4df7edd62f38d5befa7bb446499"><div class="ttname"><a href="#af83ff4df7edd62f38d5befa7bb446499">cocoon::Bundle::bundle_with_identifier</a></div><div class="ttdeci">static Bundle bundle_with_identifier(const std::string &amp;identifier)</div><div class="ttdoc">Calls +[NSBundle bundleWithIdentifier:].</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/foundation/nsbundle">https://developer.apple.com/documentation/foundation/nsbundle</a> </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -592,108 +584,6 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Returns the <span class="tt">bundleURL</span> property of <span class="tt">NSBundle</span>. </p>
 <p>The full <a class="el" href="classcocoon_1_1_u_r_l.html" title="C++ handle for the Objective-C class NSURL (Foundation).">URL</a> of the receiver's bundle directory. </p><dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="af83ff4df7edd62f38d5befa7bb446499" name="af83ff4df7edd62f38d5befa7bb446499"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af83ff4df7edd62f38d5befa7bb446499">&#9670;&#160;</a></span>bundle_with_identifier()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a4db489ab23ab945177c2c8b002c75193">Bundle</a> cocoon::Bundle::bundle_with_identifier </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>identifier</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSBundle bundleWithIdentifier:]</span>. </p>
-<p>Returns the 'NSBundle' instance that has the specified bundle identifier. This method is typically used by frameworks and plug-ins to locate their own bundle at runtime. It may be somewhat more efficient than trying to locate the bundle using @c bundleForClass:. However, if the initial lookup fails, this method uses potentially time-consuming heuristics to attempt to locate the bundle. @param identifier The identifier for an existing 'NSBundle' instance. @return The previously allocated 'NSBundle' object with the bundle identifier @c identifier, or @c nil if the requested bundle is not found. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">identifier</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="ab788dbfd3ea43697bc5cdbc46e1127e9" name="ab788dbfd3ea43697bc5cdbc46e1127e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab788dbfd3ea43697bc5cdbc46e1127e9">&#9670;&#160;</a></span>bundle_with_path()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a4db489ab23ab945177c2c8b002c75193">Bundle</a> cocoon::Bundle::bundle_with_path </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSBundle bundleWithPath:]</span>. </p>
-<p>Creates and returns an 'NSBundle' object that corresponds to the specified directory. @param path The path to a directory. This must be a full pathname for a directory; if it contains any symbolic links, they must be resolvable. @return An 'NSBundle' object that corresponds to @c path. Returns @c nil if @c path does not exist or the user doesn't have access to it. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">path</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="adb21639b38cd1e2ba8002da4c42fdd87" name="adb21639b38cd1e2ba8002da4c42fdd87"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb21639b38cd1e2ba8002da4c42fdd87">&#9670;&#160;</a></span>bundle_with_url()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a4db489ab23ab945177c2c8b002c75193">Bundle</a> cocoon::Bundle::bundle_with_url </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>url</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSBundle bundleWithURL:]</span>. </p>
-<p>Creates and returns an 'NSBundle' object that corresponds to the specified file <a class="el" href="classcocoon_1_1_u_r_l.html" title="C++ handle for the Objective-C class NSURL (Foundation).">URL</a>. @param url The file <a class="el" href="classcocoon_1_1_u_r_l.html" title="C++ handle for the Objective-C class NSURL (Foundation).">URL</a> to a directory. This must be a full <a class="el" href="classcocoon_1_1_u_r_l.html" title="C++ handle for the Objective-C class NSURL (Foundation).">URL</a> for a directory; if it contains any symbolic links, they must be resolvable. @return An 'NSBundle' object that corresponds to @c url. Returns @c nil if @c url does not exist or the user doesn't have access to it. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">url</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
 
 </div>
 </div>

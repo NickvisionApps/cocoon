@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -74,6 +74,14 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:aab3687ce147f8426147b2d2c6c461ef2" id="r_aab3687ce147f8426147b2d2c6c461ef2"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aab3687ce147f8426147b2d2c6c461ef2">Predicate</a> (std::function&lt; bool(<a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a>, std::map&lt; std::string, <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &gt;)&gt; block)</td></tr>
+<tr class="memdesc:aab3687ce147f8426147b2d2c6c461ef2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSPredicate</span> instance and returns a handle to it.  <br /></td></tr>
+<tr class="memitem:aaf5085055612316cfc6d513745e9113d" id="r_aaf5085055612316cfc6d513745e9113d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aaf5085055612316cfc6d513745e9113d">Predicate</a> (const std::string &amp;predicate_format, const std::vector&lt; <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &gt; &amp;arguments)</td></tr>
+<tr class="memdesc:aaf5085055612316cfc6d513745e9113d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSPredicate</span> instance and returns a handle to it.  <br /></td></tr>
+<tr class="memitem:a680ff01f1d4caf537829ba8910603d1c" id="r_a680ff01f1d4caf537829ba8910603d1c"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a680ff01f1d4caf537829ba8910603d1c">Predicate</a> (const std::string &amp;predicate_format, char *arg_list)</td></tr>
+<tr class="memdesc:a680ff01f1d4caf537829ba8910603d1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSPredicate</span> instance and returns a handle to it.  <br /></td></tr>
+<tr class="memitem:a0cf6bbaa57f3e28e935a991292b83945" id="r_a0cf6bbaa57f3e28e935a991292b83945"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a0cf6bbaa57f3e28e935a991292b83945">Predicate</a> (bool value)</td></tr>
+<tr class="memdesc:a0cf6bbaa57f3e28e935a991292b83945"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSPredicate</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:a0ef32ea6f187c1d01bbbb1de552b58be" id="r_a0ef32ea6f187c1d01bbbb1de552b58be"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a0ef32ea6f187c1d01bbbb1de552b58be">Predicate</a> ()</td></tr>
 <tr class="memdesc:a0ef32ea6f187c1d01bbbb1de552b58be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSPredicate</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:a30c837b41d97f510b4e500cdb4bb19f5" id="r_a30c837b41d97f510b4e500cdb4bb19f5"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a30c837b41d97f510b4e500cdb4bb19f5">Predicate</a> (std::nullptr_t)</td></tr>
@@ -88,7 +96,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:acbb67cf94a63898ad4ce5363ccc382ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">-[NSPredicate evaluateWithObject:]</span>.  <br /></td></tr>
 <tr class="memitem:a768d8116d8b0875eeb43fabb4192e217" id="r_a768d8116d8b0875eeb43fabb4192e217"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a768d8116d8b0875eeb43fabb4192e217">evaluate_with_object</a> (const <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &amp;object, const std::map&lt; std::string, <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &gt; &amp;bindings) const</td></tr>
 <tr class="memdesc:a768d8116d8b0875eeb43fabb4192e217"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">-[NSPredicate evaluateWithObject:substitutionVariables:]</span>.  <br /></td></tr>
-<tr class="memitem:af9511a71e16f8243815babd1d41d49ff" id="r_af9511a71e16f8243815babd1d41d49ff"><td class="memItemLeft"><a class="el" href="#a0ef32ea6f187c1d01bbbb1de552b58be">Predicate</a>&#160;</td><td class="memItemRight"><a class="el" href="#af9511a71e16f8243815babd1d41d49ff">predicate_with_substitution_variables</a> (const std::map&lt; std::string, <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &gt; &amp;variables) const</td></tr>
+<tr class="memitem:af9511a71e16f8243815babd1d41d49ff" id="r_af9511a71e16f8243815babd1d41d49ff"><td class="memItemLeft"><a class="el" href="#aab3687ce147f8426147b2d2c6c461ef2">Predicate</a>&#160;</td><td class="memItemRight"><a class="el" href="#af9511a71e16f8243815babd1d41d49ff">predicate_with_substitution_variables</a> (const std::map&lt; std::string, <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &gt; &amp;variables) const</td></tr>
 <tr class="memdesc:af9511a71e16f8243815babd1d41d49ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">-[NSPredicate predicateWithSubstitutionVariables:]</span>.  <br /></td></tr>
 <tr class="memitem:a1597d48ffc613934be45167697e721f0" id="r_a1597d48ffc613934be45167697e721f0"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a1597d48ffc613934be45167697e721f0">predicate_format</a> () const</td></tr>
 <tr class="memdesc:a1597d48ffc613934be45167697e721f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">predicateFormat</span> property of <span class="tt">NSPredicate</span>.  <br /></td></tr>
@@ -120,20 +128,8 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a59af4c1e6e24dbf6e984fc5de9f5af38" id="r_a59af4c1e6e24dbf6e984fc5de9f5af38"><td class="memItemLeft">static <a class="el" href="#a0ef32ea6f187c1d01bbbb1de552b58be">Predicate</a>&#160;</td><td class="memItemRight"><a class="el" href="#a59af4c1e6e24dbf6e984fc5de9f5af38">predicate_from_metadata_query_string</a> (const std::string &amp;query_string)</td></tr>
+<tr class="memitem:a59af4c1e6e24dbf6e984fc5de9f5af38" id="r_a59af4c1e6e24dbf6e984fc5de9f5af38"><td class="memItemLeft">static <a class="el" href="#aab3687ce147f8426147b2d2c6c461ef2">Predicate</a>&#160;</td><td class="memItemRight"><a class="el" href="#a59af4c1e6e24dbf6e984fc5de9f5af38">predicate_from_metadata_query_string</a> (const std::string &amp;query_string)</td></tr>
 <tr class="memdesc:a59af4c1e6e24dbf6e984fc5de9f5af38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSPredicate predicateFromMetadataQueryString:]</span>.  <br /></td></tr>
-<tr class="memitem:a7c038621af936e7c0402315677e1c92c" id="r_a7c038621af936e7c0402315677e1c92c"><td class="memItemLeft">static <a class="el" href="#a0ef32ea6f187c1d01bbbb1de552b58be">Predicate</a>&#160;</td><td class="memItemRight"><a class="el" href="#a7c038621af936e7c0402315677e1c92c">predicate_with_block</a> (std::function&lt; bool(<a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a>, std::map&lt; std::string, <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &gt;)&gt; block)</td></tr>
-<tr class="memdesc:a7c038621af936e7c0402315677e1c92c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSPredicate predicateWithBlock:]</span>.  <br /></td></tr>
-<tr class="memitem:a58d5c8d1fae5b119016c857ac5ce98cf" id="r_a58d5c8d1fae5b119016c857ac5ce98cf"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
-<tr class="memitem:a58d5c8d1fae5b119016c857ac5ce98cf template"><td class="memItemLeft">static <a class="el" href="#a0ef32ea6f187c1d01bbbb1de552b58be">Predicate</a>&#160;</td><td class="memItemRight"><a class="el" href="#a58d5c8d1fae5b119016c857ac5ce98cf">predicate_with_format</a> (const std::string &amp;predicate_format, const Args &amp;... args)</td></tr>
-<tr class="memitem:a243c1c6bd1f567fffba3d30c84da2647" id="r_a243c1c6bd1f567fffba3d30c84da2647"><td class="memItemLeft">static <a class="el" href="#a0ef32ea6f187c1d01bbbb1de552b58be">Predicate</a>&#160;</td><td class="memItemRight"><a class="el" href="#a243c1c6bd1f567fffba3d30c84da2647">predicate_with_format_</a> (const std::string &amp;predicate_format, const std::vector&lt; <a class="el" href="classcocoon_1_1_var_arg.html">VarArg</a> &gt; &amp;args)</td></tr>
-<tr class="memdesc:a243c1c6bd1f567fffba3d30c84da2647"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSPredicate ]</span>.  <br /></td></tr>
-<tr class="memitem:af67dfe82ad8ed80563a6b5d7f8e44313" id="r_af67dfe82ad8ed80563a6b5d7f8e44313"><td class="memItemLeft">static <a class="el" href="#a0ef32ea6f187c1d01bbbb1de552b58be">Predicate</a>&#160;</td><td class="memItemRight"><a class="el" href="#af67dfe82ad8ed80563a6b5d7f8e44313">predicate_with_format</a> (const std::string &amp;predicate_format, const std::vector&lt; <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &gt; &amp;arguments)</td></tr>
-<tr class="memdesc:af67dfe82ad8ed80563a6b5d7f8e44313"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSPredicate predicateWithFormat:argumentArray:]</span>.  <br /></td></tr>
-<tr class="memitem:ae85ab210c4b43ff4d64ff7bf506283da" id="r_ae85ab210c4b43ff4d64ff7bf506283da"><td class="memItemLeft">static <a class="el" href="#a0ef32ea6f187c1d01bbbb1de552b58be">Predicate</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae85ab210c4b43ff4d64ff7bf506283da">predicate_with_format</a> (const std::string &amp;predicate_format, char *arg_list)</td></tr>
-<tr class="memdesc:ae85ab210c4b43ff4d64ff7bf506283da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSPredicate predicateWithFormat:arguments:]</span>.  <br /></td></tr>
-<tr class="memitem:a6e7c72bd1356bf9041b0e1a485928722" id="r_a6e7c72bd1356bf9041b0e1a485928722"><td class="memItemLeft">static <a class="el" href="#a0ef32ea6f187c1d01bbbb1de552b58be">Predicate</a>&#160;</td><td class="memItemRight"><a class="el" href="#a6e7c72bd1356bf9041b0e1a485928722">predicate_with_value</a> (bool value)</td></tr>
-<tr class="memdesc:a6e7c72bd1356bf9041b0e1a485928722"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSPredicate predicateWithValue:]</span>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>C++ handle for the Objective-C class <span class="tt">NSPredicate</span> (Foundation). </p>
@@ -141,20 +137,134 @@ Static Public Member Functions</h2></td></tr>
 <dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;cocoon.h&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_class" href="classcocoon_1_1_predicate.html">cocoon::Predicate</a> predicate;</div>
-<div class="ttc" id="aclasscocoon_1_1_predicate_html"><div class="ttname"><a href="classcocoon_1_1_predicate.html">cocoon::Predicate</a></div><div class="ttdoc">C++ handle for the Objective-C class NSPredicate (Foundation).</div><div class="ttdef"><b>Definition</b> predicate.h:34</div></div>
+<div class="ttc" id="aclasscocoon_1_1_predicate_html"><div class="ttname"><a href="classcocoon_1_1_predicate.html">cocoon::Predicate</a></div><div class="ttdoc">C++ handle for the Objective-C class NSPredicate (Foundation).</div><div class="ttdef"><b>Definition</b> predicate.h:33</div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_predicate.html">cocoon::Predicate</a> predicate{};</div>
 <div class="line"><span class="keyword">auto</span> made_0 = <a class="code hl_function" href="#a59af4c1e6e24dbf6e984fc5de9f5af38">cocoon::Predicate::predicate_from_metadata_query_string</a>(<span class="stringliteral">&quot;text&quot;</span>);</div>
-<div class="line"><span class="keyword">auto</span> made_1 = <a class="code hl_function" href="#a6e7c72bd1356bf9041b0e1a485928722">cocoon::Predicate::predicate_with_value</a>(<span class="keyword">true</span>);</div>
 <div class="line">predicate.<a class="code hl_function" href="#a2cda6a88041f95b513644a6ff381de7f">allow_evaluation</a>();</div>
 <div class="ttc" id="aclasscocoon_1_1_predicate_html_a2cda6a88041f95b513644a6ff381de7f"><div class="ttname"><a href="#a2cda6a88041f95b513644a6ff381de7f">cocoon::Predicate::allow_evaluation</a></div><div class="ttdeci">void allow_evaluation() const</div><div class="ttdoc">Calls -[NSPredicate allowEvaluation].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_predicate_html_a59af4c1e6e24dbf6e984fc5de9f5af38"><div class="ttname"><a href="#a59af4c1e6e24dbf6e984fc5de9f5af38">cocoon::Predicate::predicate_from_metadata_query_string</a></div><div class="ttdeci">static Predicate predicate_from_metadata_query_string(const std::string &amp;query_string)</div><div class="ttdoc">Calls +[NSPredicate predicateFromMetadataQueryString:].</div></div>
-<div class="ttc" id="aclasscocoon_1_1_predicate_html_a6e7c72bd1356bf9041b0e1a485928722"><div class="ttname"><a href="#a6e7c72bd1356bf9041b0e1a485928722">cocoon::Predicate::predicate_with_value</a></div><div class="ttdeci">static Predicate predicate_with_value(bool value)</div><div class="ttdoc">Calls +[NSPredicate predicateWithValue:].</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/foundation/nspredicate">https://developer.apple.com/documentation/foundation/nspredicate</a> </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aab3687ce147f8426147b2d2c6c461ef2" name="aab3687ce147f8426147b2d2c6c461ef2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab3687ce147f8426147b2d2c6c461ef2">&#9670;&#160;</a></span>Predicate() <span class="overload">[1/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::Predicate::Predicate </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; bool(<a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a>, std::map&lt; std::string, <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &gt;)&gt;</td>          <td class="paramname"><span class="paramname"><em>block</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSPredicate</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
+<a id="aaf5085055612316cfc6d513745e9113d" name="aaf5085055612316cfc6d513745e9113d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf5085055612316cfc6d513745e9113d">&#9670;&#160;</a></span>Predicate() <span class="overload">[2/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::Predicate::Predicate </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>predicate_format</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>arguments</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSPredicate</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
+<a id="a680ff01f1d4caf537829ba8910603d1c" name="a680ff01f1d4caf537829ba8910603d1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a680ff01f1d4caf537829ba8910603d1c">&#9670;&#160;</a></span>Predicate() <span class="overload">[3/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::Predicate::Predicate </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>predicate_format</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>arg_list</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSPredicate</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
+<a id="a0cf6bbaa57f3e28e935a991292b83945" name="a0cf6bbaa57f3e28e935a991292b83945"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cf6bbaa57f3e28e935a991292b83945">&#9670;&#160;</a></span>Predicate() <span class="overload">[4/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::Predicate::Predicate </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSPredicate</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
 <a id="a0ef32ea6f187c1d01bbbb1de552b58be" name="a0ef32ea6f187c1d01bbbb1de552b58be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ef32ea6f187c1d01bbbb1de552b58be">&#9670;&#160;</a></span>Predicate() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ef32ea6f187c1d01bbbb1de552b58be">&#9670;&#160;</a></span>Predicate() <span class="overload">[5/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -181,7 +291,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a30c837b41d97f510b4e500cdb4bb19f5" name="a30c837b41d97f510b4e500cdb4bb19f5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30c837b41d97f510b4e500cdb4bb19f5">&#9670;&#160;</a></span>Predicate() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a30c837b41d97f510b4e500cdb4bb19f5">&#9670;&#160;</a></span>Predicate() <span class="overload">[6/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -200,7 +310,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a77f1bab0e9809a6b81d82922dcb6a765" name="a77f1bab0e9809a6b81d82922dcb6a765"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a77f1bab0e9809a6b81d82922dcb6a765">&#9670;&#160;</a></span>Predicate() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a77f1bab0e9809a6b81d82922dcb6a765">&#9670;&#160;</a></span>Predicate() <span class="overload">[7/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -360,7 +470,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a0ef32ea6f187c1d01bbbb1de552b58be">Predicate</a> cocoon::Predicate::predicate_from_metadata_query_string </td>
+          <td class="memname"><a class="el" href="#aab3687ce147f8426147b2d2c6c461ef2">Predicate</a> cocoon::Predicate::predicate_from_metadata_query_string </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>query_string</em></span></td><td>)</td>
           <td></td>
@@ -384,188 +494,6 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a7c038621af936e7c0402315677e1c92c" name="a7c038621af936e7c0402315677e1c92c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7c038621af936e7c0402315677e1c92c">&#9670;&#160;</a></span>predicate_with_block()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a0ef32ea6f187c1d01bbbb1de552b58be">Predicate</a> cocoon::Predicate::predicate_with_block </td>
-          <td>(</td>
-          <td class="paramtype">std::function&lt; bool(<a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a>, std::map&lt; std::string, <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &gt;)&gt;</td>          <td class="paramname"><span class="paramname"><em>block</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSPredicate predicateWithBlock:]</span>. </p>
-<p>Creates a predicate that evaluates using a specified block object and bindings dictionary. In macOS 10.6 and later, Core Data supports block-based predicates in the in-memory and atomic stores, but not in the SQLite-based store. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">block</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="ae85ab210c4b43ff4d64ff7bf506283da" name="ae85ab210c4b43ff4d64ff7bf506283da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae85ab210c4b43ff4d64ff7bf506283da">&#9670;&#160;</a></span>predicate_with_format() <span class="overload">[1/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a0ef32ea6f187c1d01bbbb1de552b58be">Predicate</a> cocoon::Predicate::predicate_with_format </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>predicate_format</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>arg_list</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSPredicate predicateWithFormat:arguments:]</span>. </p>
-<p>Creates a predicate by substituting the values in an argument list into a format string and parsing the result. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">predicate_format</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">arg_list</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a58d5c8d1fae5b119016c857ac5ce98cf" name="a58d5c8d1fae5b119016c857ac5ce98cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a58d5c8d1fae5b119016c857ac5ce98cf">&#9670;&#160;</a></span>predicate_with_format() <span class="overload">[2/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class... Args&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a0ef32ea6f187c1d01bbbb1de552b58be">Predicate</a> cocoon::Predicate::predicate_with_format </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>predicate_format</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Args &amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="af67dfe82ad8ed80563a6b5d7f8e44313" name="af67dfe82ad8ed80563a6b5d7f8e44313"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af67dfe82ad8ed80563a6b5d7f8e44313">&#9670;&#160;</a></span>predicate_with_format() <span class="overload">[3/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a0ef32ea6f187c1d01bbbb1de552b58be">Predicate</a> cocoon::Predicate::predicate_with_format </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>predicate_format</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>arguments</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSPredicate predicateWithFormat:argumentArray:]</span>. </p>
-<p>Parse predicateFormat and return an appropriate predicate </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">predicate_format</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">arguments</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a243c1c6bd1f567fffba3d30c84da2647" name="a243c1c6bd1f567fffba3d30c84da2647"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a243c1c6bd1f567fffba3d30c84da2647">&#9670;&#160;</a></span>predicate_with_format_()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a0ef32ea6f187c1d01bbbb1de552b58be">Predicate</a> cocoon::Predicate::predicate_with_format_ </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>predicate_format</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="classcocoon_1_1_var_arg.html">VarArg</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSPredicate ]</span>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">predicate_format</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">args</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
 <a id="af9511a71e16f8243815babd1d41d49ff" name="af9511a71e16f8243815babd1d41d49ff"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af9511a71e16f8243815babd1d41d49ff">&#9670;&#160;</a></span>predicate_with_substitution_variables()</h2>
 
@@ -573,7 +501,7 @@ template&lt;class... Args&gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a0ef32ea6f187c1d01bbbb1de552b58be">Predicate</a> cocoon::Predicate::predicate_with_substitution_variables </td>
+          <td class="memname"><a class="el" href="#aab3687ce147f8426147b2d2c6c461ef2">Predicate</a> cocoon::Predicate::predicate_with_substitution_variables </td>
           <td>(</td>
           <td class="paramtype">const std::map&lt; std::string, <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>variables</em></span></td><td>)</td>
           <td> const</td>
@@ -585,40 +513,6 @@ template&lt;class... Args&gt; </div>
 <p>Returns a copy of the predicate and substitutes the predicates variables with specified values from a specified substitution variables dictionary. The predicate itself is not modified by this method, so you can reuse it for any number of substitutions. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">variables</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a6e7c72bd1356bf9041b0e1a485928722" name="a6e7c72bd1356bf9041b0e1a485928722"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6e7c72bd1356bf9041b0e1a485928722">&#9670;&#160;</a></span>predicate_with_value()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a0ef32ea6f187c1d01bbbb1de552b58be">Predicate</a> cocoon::Predicate::predicate_with_value </td>
-          <td>(</td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSPredicate predicateWithValue:]</span>. </p>
-<p>Creates and returns a predicate that always evaluates to a specified Boolean value. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
   </table>
   </dd>
 </dl>

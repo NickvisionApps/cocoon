@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -77,6 +77,10 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a4bd26f805d3ad3277babd4d1401eb723" id="r_a4bd26f805d3ad3277babd4d1401eb723"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a4bd26f805d3ad3277babd4d1401eb723">Connection</a> (const <a class="el" href="classcocoon_1_1_port.html">Port</a> &amp;receive_port, const <a class="el" href="classcocoon_1_1_port.html">Port</a> &amp;send_port)</td></tr>
 <tr class="memdesc:a4bd26f805d3ad3277babd4d1401eb723"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSConnection</span> instance and returns a handle to it.  <br /></td></tr>
+<tr class="memitem:a31cad8f4387bf28baa5463bacbe246d7" id="r_a31cad8f4387bf28baa5463bacbe246d7"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a31cad8f4387bf28baa5463bacbe246d7">Connection</a> (const std::string &amp;name, const std::string &amp;host_name)</td></tr>
+<tr class="memdesc:a31cad8f4387bf28baa5463bacbe246d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSConnection</span> instance and returns a handle to it.  <br /></td></tr>
+<tr class="memitem:a052624d1c361880bd4aa6304eaa7ddcb" id="r_a052624d1c361880bd4aa6304eaa7ddcb"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a052624d1c361880bd4aa6304eaa7ddcb">Connection</a> (const std::string &amp;name, const std::string &amp;host_name, const <a class="el" href="classcocoon_1_1_port_name_server.html">PortNameServer</a> &amp;server)</td></tr>
+<tr class="memdesc:a052624d1c361880bd4aa6304eaa7ddcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSConnection</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:a1f9ba27aef977b10330d039512d9300c" id="r_a1f9ba27aef977b10330d039512d9300c"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a1f9ba27aef977b10330d039512d9300c">Connection</a> ()</td></tr>
 <tr class="memdesc:a1f9ba27aef977b10330d039512d9300c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSConnection</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:a2dbe10957a7036b1eb4310d386494f13" id="r_a2dbe10957a7036b1eb4310d386494f13"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a2dbe10957a7036b1eb4310d386494f13">Connection</a> (std::nullptr_t)</td></tr>
@@ -177,12 +181,6 @@ Public Member Functions</h2></td></tr>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ab0944da32d72495ae0e6c39f53a04328" id="r_ab0944da32d72495ae0e6c39f53a04328"><td class="memItemLeft">static std::vector&lt; <a class="el" href="#a4bd26f805d3ad3277babd4d1401eb723">Connection</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ab0944da32d72495ae0e6c39f53a04328">all_connections</a> ()</td></tr>
 <tr class="memdesc:ab0944da32d72495ae0e6c39f53a04328"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSConnection allConnections]</span>.  <br /></td></tr>
-<tr class="memitem:af59891b8e7f56b0588c72d41b8df4fbf" id="r_af59891b8e7f56b0588c72d41b8df4fbf"><td class="memItemLeft">static <a class="el" href="#a4bd26f805d3ad3277babd4d1401eb723">Connection</a>&#160;</td><td class="memItemRight"><a class="el" href="#af59891b8e7f56b0588c72d41b8df4fbf">connection_with_receive_port</a> (const <a class="el" href="classcocoon_1_1_port.html">Port</a> &amp;receive_port, const <a class="el" href="classcocoon_1_1_port.html">Port</a> &amp;send_port)</td></tr>
-<tr class="memdesc:af59891b8e7f56b0588c72d41b8df4fbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSConnection connectionWithReceivePort:sendPort:]</span>.  <br /></td></tr>
-<tr class="memitem:a5a593b9beab1c76d89fee82d58685049" id="r_a5a593b9beab1c76d89fee82d58685049"><td class="memItemLeft">static <a class="el" href="#a4bd26f805d3ad3277babd4d1401eb723">Connection</a>&#160;</td><td class="memItemRight"><a class="el" href="#a5a593b9beab1c76d89fee82d58685049">connection_with_registered_name</a> (const std::string &amp;name, const std::string &amp;host_name)</td></tr>
-<tr class="memdesc:a5a593b9beab1c76d89fee82d58685049"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSConnection connectionWithRegisteredName:host:]</span>.  <br /></td></tr>
-<tr class="memitem:aae8ab6eb590eee119d82b6d5e9886cfa" id="r_aae8ab6eb590eee119d82b6d5e9886cfa"><td class="memItemLeft">static <a class="el" href="#a4bd26f805d3ad3277babd4d1401eb723">Connection</a>&#160;</td><td class="memItemRight"><a class="el" href="#aae8ab6eb590eee119d82b6d5e9886cfa">connection_with_registered_name</a> (const std::string &amp;name, const std::string &amp;host_name, const <a class="el" href="classcocoon_1_1_port_name_server.html">PortNameServer</a> &amp;server)</td></tr>
-<tr class="memdesc:aae8ab6eb590eee119d82b6d5e9886cfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSConnection connectionWithRegisteredName:host:usingNameServer:]</span>.  <br /></td></tr>
 <tr class="memitem:a1dbb1ed44092fa0021b637f72a7db3a8" id="r_a1dbb1ed44092fa0021b637f72a7db3a8"><td class="memItemLeft">static <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a>&#160;</td><td class="memItemRight"><a class="el" href="#a1dbb1ed44092fa0021b637f72a7db3a8">current_conversation</a> ()</td></tr>
 <tr class="memdesc:a1dbb1ed44092fa0021b637f72a7db3a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSConnection currentConversation]</span>.  <br /></td></tr>
 <tr class="memitem:aa696632d8af788aa6057af7a587285e2" id="r_aa696632d8af788aa6057af7a587285e2"><td class="memItemLeft">static <a class="el" href="#a4bd26f805d3ad3277babd4d1401eb723">Connection</a>&#160;</td><td class="memItemRight"><a class="el" href="#aa696632d8af788aa6057af7a587285e2">service_connection_with_name</a> (const std::string &amp;name, const <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &amp;root)</td></tr>
@@ -201,7 +199,7 @@ Static Protected Member Functions</h2></td></tr>
 <div class="line"> </div>
 <div class="line"><a class="code hl_class" href="classcocoon_1_1_connection.html">cocoon::Connection</a> connection;</div>
 <div class="line">connection.<a class="code hl_function" href="#aa67eca2909bd88ebf3c94ab97c25126b">set_independent_conversation_queueing</a>(<span class="keyword">true</span>);</div>
-<div class="ttc" id="aclasscocoon_1_1_connection_html"><div class="ttname"><a href="classcocoon_1_1_connection.html">cocoon::Connection</a></div><div class="ttdoc">C++ handle for the Objective-C class NSConnection (Foundation).</div><div class="ttdef"><b>Definition</b> connection.h:49</div></div>
+<div class="ttc" id="aclasscocoon_1_1_connection_html"><div class="ttname"><a href="classcocoon_1_1_connection.html">cocoon::Connection</a></div><div class="ttdoc">C++ handle for the Objective-C class NSConnection (Foundation).</div><div class="ttdef"><b>Definition</b> connection.h:47</div></div>
 <div class="ttc" id="aclasscocoon_1_1_connection_html_aa67eca2909bd88ebf3c94ab97c25126b"><div class="ttname"><a href="#aa67eca2909bd88ebf3c94ab97c25126b">cocoon::Connection::set_independent_conversation_queueing</a></div><div class="ttdeci">void set_independent_conversation_queueing(bool value) const</div><div class="ttdoc">Sets the independentConversationQueueing property of NSConnection.</div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_connection.html">cocoon::Connection</a> connection{};</div>
@@ -211,8 +209,6 @@ Static Protected Member Functions</h2></td></tr>
 <div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#aa76abb2786c316239d81c2a65977d2e2">reply_timeout</a> = connection.<a class="code hl_function" href="#aa76abb2786c316239d81c2a65977d2e2">reply_timeout</a>();</div>
 <div class="line">connection.<a class="code hl_function" href="#a255175ea4faddcac8d30ff8f0eadc2a6">set_request_timeout</a>(1);</div>
 <div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#a38fa4589ad5651d0edae926a14e4df4c">request_timeout</a> = connection.<a class="code hl_function" href="#a38fa4589ad5651d0edae926a14e4df4c">request_timeout</a>();</div>
-<div class="line"><span class="keyword">auto</span> made_0 = <a class="code hl_function" href="#af59891b8e7f56b0588c72d41b8df4fbf">cocoon::Connection::connection_with_receive_port</a>(<a class="code hl_class" href="classcocoon_1_1_port.html">cocoon::Port</a>(), <a class="code hl_class" href="classcocoon_1_1_port.html">cocoon::Port</a>());</div>
-<div class="line"><span class="keyword">auto</span> made_1 = <a class="code hl_function" href="#a5a593b9beab1c76d89fee82d58685049">cocoon::Connection::connection_with_registered_name</a>(<span class="stringliteral">&quot;text&quot;</span>, <span class="stringliteral">&quot;text&quot;</span>);</div>
 <div class="line">connection.<a class="code hl_function" href="#a9d64792adfa6e54e2018746b235dc62d">add_request_mode</a>(<span class="stringliteral">&quot;text&quot;</span>);</div>
 <div class="line">connection.<a class="code hl_function" href="#a4e9afc6a562ab55e396b0f6017887584">add_run_loop</a>(<a class="code hl_class" href="classcocoon_1_1_run_loop.html">cocoon::RunLoop</a>());</div>
 <div class="line">connection.<a class="code hl_function" href="#a6495eb9e760867a8e60ce96a59bc80cf">enable_multiple_threads</a>();</div>
@@ -220,19 +216,16 @@ Static Protected Member Functions</h2></td></tr>
 <div class="ttc" id="aclasscocoon_1_1_connection_html_a255175ea4faddcac8d30ff8f0eadc2a6"><div class="ttname"><a href="#a255175ea4faddcac8d30ff8f0eadc2a6">cocoon::Connection::set_request_timeout</a></div><div class="ttdeci">void set_request_timeout(double value) const</div><div class="ttdoc">Sets the requestTimeout property of NSConnection.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_connection_html_a38fa4589ad5651d0edae926a14e4df4c"><div class="ttname"><a href="#a38fa4589ad5651d0edae926a14e4df4c">cocoon::Connection::request_timeout</a></div><div class="ttdeci">double request_timeout() const</div><div class="ttdoc">Returns the requestTimeout property of NSConnection.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_connection_html_a4e9afc6a562ab55e396b0f6017887584"><div class="ttname"><a href="#a4e9afc6a562ab55e396b0f6017887584">cocoon::Connection::add_run_loop</a></div><div class="ttdeci">void add_run_loop(const RunLoop &amp;runloop) const</div><div class="ttdoc">Calls -[NSConnection addRunLoop:].</div></div>
-<div class="ttc" id="aclasscocoon_1_1_connection_html_a5a593b9beab1c76d89fee82d58685049"><div class="ttname"><a href="#a5a593b9beab1c76d89fee82d58685049">cocoon::Connection::connection_with_registered_name</a></div><div class="ttdeci">static Connection connection_with_registered_name(const std::string &amp;name, const std::string &amp;host_name)</div><div class="ttdoc">Calls +[NSConnection connectionWithRegisteredName:host:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_connection_html_a6495eb9e760867a8e60ce96a59bc80cf"><div class="ttname"><a href="#a6495eb9e760867a8e60ce96a59bc80cf">cocoon::Connection::enable_multiple_threads</a></div><div class="ttdeci">void enable_multiple_threads() const</div><div class="ttdoc">Calls -[NSConnection enableMultipleThreads].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_connection_html_a7226bf674ac25962e80e6e703781d817"><div class="ttname"><a href="#a7226bf674ac25962e80e6e703781d817">cocoon::Connection::independent_conversation_queueing</a></div><div class="ttdeci">bool independent_conversation_queueing() const</div><div class="ttdoc">Returns the independentConversationQueueing property of NSConnection.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_connection_html_a9d64792adfa6e54e2018746b235dc62d"><div class="ttname"><a href="#a9d64792adfa6e54e2018746b235dc62d">cocoon::Connection::add_request_mode</a></div><div class="ttdeci">void add_request_mode(const std::string &amp;rmode) const</div><div class="ttdoc">Calls -[NSConnection addRequestMode:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_connection_html_aa76abb2786c316239d81c2a65977d2e2"><div class="ttname"><a href="#aa76abb2786c316239d81c2a65977d2e2">cocoon::Connection::reply_timeout</a></div><div class="ttdeci">double reply_timeout() const</div><div class="ttdoc">Returns the replyTimeout property of NSConnection.</div></div>
-<div class="ttc" id="aclasscocoon_1_1_connection_html_af59891b8e7f56b0588c72d41b8df4fbf"><div class="ttname"><a href="#af59891b8e7f56b0588c72d41b8df4fbf">cocoon::Connection::connection_with_receive_port</a></div><div class="ttdeci">static Connection connection_with_receive_port(const Port &amp;receive_port, const Port &amp;send_port)</div><div class="ttdoc">Calls +[NSConnection connectionWithReceivePort:sendPort:].</div></div>
-<div class="ttc" id="aclasscocoon_1_1_port_html"><div class="ttname"><a href="classcocoon_1_1_port.html">cocoon::Port</a></div><div class="ttdoc">C++ handle for the Objective-C class NSPort (Foundation).</div><div class="ttdef"><b>Definition</b> port.h:38</div></div>
 <div class="ttc" id="aclasscocoon_1_1_run_loop_html"><div class="ttname"><a href="classcocoon_1_1_run_loop.html">cocoon::RunLoop</a></div><div class="ttdoc">C++ handle for the Objective-C class NSRunLoop (Foundation).</div><div class="ttdef"><b>Definition</b> run_loop.h:39</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/foundation/nsconnection">https://developer.apple.com/documentation/foundation/nsconnection</a> </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a4bd26f805d3ad3277babd4d1401eb723" name="a4bd26f805d3ad3277babd4d1401eb723"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4bd26f805d3ad3277babd4d1401eb723">&#9670;&#160;</a></span>Connection() <span class="overload">[1/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bd26f805d3ad3277babd4d1401eb723">&#9670;&#160;</a></span>Connection() <span class="overload">[1/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -262,8 +255,75 @@ Static Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a31cad8f4387bf28baa5463bacbe246d7" name="a31cad8f4387bf28baa5463bacbe246d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31cad8f4387bf28baa5463bacbe246d7">&#9670;&#160;</a></span>Connection() <span class="overload">[2/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::Connection::Connection </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>host_name</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSConnection</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
+<a id="a052624d1c361880bd4aa6304eaa7ddcb" name="a052624d1c361880bd4aa6304eaa7ddcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a052624d1c361880bd4aa6304eaa7ddcb">&#9670;&#160;</a></span>Connection() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::Connection::Connection </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>host_name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcocoon_1_1_port_name_server.html">PortNameServer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>server</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSConnection</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
 <a id="a1f9ba27aef977b10330d039512d9300c" name="a1f9ba27aef977b10330d039512d9300c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1f9ba27aef977b10330d039512d9300c">&#9670;&#160;</a></span>Connection() <span class="overload">[2/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f9ba27aef977b10330d039512d9300c">&#9670;&#160;</a></span>Connection() <span class="overload">[4/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -290,7 +350,7 @@ Static Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a2dbe10957a7036b1eb4310d386494f13" name="a2dbe10957a7036b1eb4310d386494f13"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2dbe10957a7036b1eb4310d386494f13">&#9670;&#160;</a></span>Connection() <span class="overload">[3/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dbe10957a7036b1eb4310d386494f13">&#9670;&#160;</a></span>Connection() <span class="overload">[5/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -309,7 +369,7 @@ Static Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="acad4f59da5b9a2b161362369e12f7e63" name="acad4f59da5b9a2b161362369e12f7e63"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acad4f59da5b9a2b161362369e12f7e63">&#9670;&#160;</a></span>Connection() <span class="overload">[4/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#acad4f59da5b9a2b161362369e12f7e63">&#9670;&#160;</a></span>Connection() <span class="overload">[6/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -465,129 +525,6 @@ Static Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p><a class="el" href="classcocoon_1_1_signal.html" title="Callback registration point for an event, bound to one native object.">Signal</a> for the delegate/data-source method behind <span class="tt"><a class="el" href="#a9c32be0a4cdddaea41b711d6bae2501d" title="Signal for the delegate/data-source method behind authentication_data_for_components; connect a callb...">authentication_data_for_components</a></span>; connect a callback with <span class="tt"><a class="el" href="#a9c32be0a4cdddaea41b711d6bae2501d" title="Signal for the delegate/data-source method behind authentication_data_for_components; connect a callb...">authentication_data_for_components()</a>.connect(...)</span>. </p>
-
-</div>
-</div>
-<a id="af59891b8e7f56b0588c72d41b8df4fbf" name="af59891b8e7f56b0588c72d41b8df4fbf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af59891b8e7f56b0588c72d41b8df4fbf">&#9670;&#160;</a></span>connection_with_receive_port()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a4bd26f805d3ad3277babd4d1401eb723">Connection</a> cocoon::Connection::connection_with_receive_port </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_port.html">Port</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>receive_port</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_port.html">Port</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>send_port</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSConnection connectionWithReceivePort:sendPort:]</span>. </p>
-<p>Returns an 'NSConnection' object initialized with the specified send and receive ports. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">receive_port</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">send_port</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a5a593b9beab1c76d89fee82d58685049" name="a5a593b9beab1c76d89fee82d58685049"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a593b9beab1c76d89fee82d58685049">&#9670;&#160;</a></span>connection_with_registered_name() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a4bd26f805d3ad3277babd4d1401eb723">Connection</a> cocoon::Connection::connection_with_registered_name </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>host_name</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSConnection connectionWithRegisteredName:host:]</span>. </p>
-<p>Returns an 'NSConnection' object for the specified registered name and host. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">name</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">host_name</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="aae8ab6eb590eee119d82b6d5e9886cfa" name="aae8ab6eb590eee119d82b6d5e9886cfa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae8ab6eb590eee119d82b6d5e9886cfa">&#9670;&#160;</a></span>connection_with_registered_name() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a4bd26f805d3ad3277babd4d1401eb723">Connection</a> cocoon::Connection::connection_with_registered_name </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>host_name</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_port_name_server.html">PortNameServer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>server</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSConnection connectionWithRegisteredName:host:usingNameServer:]</span>. </p>
-<p>Returns an 'NSConnection' object for the specified registered name, host, and name server. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">name</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">host_name</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">server</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
 
 </div>
 </div>

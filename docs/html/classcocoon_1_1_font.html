@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -74,6 +74,14 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a3f67c1ad91ffecec7670d7285e340162" id="r_a3f67c1ad91ffecec7670d7285e340162"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a> (const <a class="el" href="classcocoon_1_1_font_descriptor.html">FontDescriptor</a> &amp;font_descriptor, double font_size)</td></tr>
+<tr class="memdesc:a3f67c1ad91ffecec7670d7285e340162"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSFont</span> instance and returns a handle to it.  <br /></td></tr>
+<tr class="memitem:a70108219228297df288d5af5f3f5f19c" id="r_a70108219228297df288d5af5f3f5f19c"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a70108219228297df288d5af5f3f5f19c">Font</a> (const <a class="el" href="classcocoon_1_1_font_descriptor.html">FontDescriptor</a> &amp;font_descriptor, const <a class="el" href="classcocoon_1_1_affine_transform.html">AffineTransform</a> &amp;text_transform)</td></tr>
+<tr class="memdesc:a70108219228297df288d5af5f3f5f19c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSFont</span> instance and returns a handle to it.  <br /></td></tr>
+<tr class="memitem:a60089b3889cbfa54662724bf88c6556d" id="r_a60089b3889cbfa54662724bf88c6556d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a60089b3889cbfa54662724bf88c6556d">Font</a> (const std::string &amp;font_name, const double *font_matrix)</td></tr>
+<tr class="memdesc:a60089b3889cbfa54662724bf88c6556d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSFont</span> instance and returns a handle to it.  <br /></td></tr>
+<tr class="memitem:aaaffdd73541e05c80fff24f11f8ad62a" id="r_aaaffdd73541e05c80fff24f11f8ad62a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aaaffdd73541e05c80fff24f11f8ad62a">Font</a> (const std::string &amp;font_name, double font_size)</td></tr>
+<tr class="memdesc:aaaffdd73541e05c80fff24f11f8ad62a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSFont</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:a947e91633cced12168eeeb7ae487cd56" id="r_a947e91633cced12168eeeb7ae487cd56"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a> ()</td></tr>
 <tr class="memdesc:a947e91633cced12168eeeb7ae487cd56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSFont</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:aeb541861bcccf566f6659fccf02917d4" id="r_aeb541861bcccf566f6659fccf02917d4"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aeb541861bcccf566f6659fccf02917d4">Font</a> (std::nullptr_t)</td></tr>
@@ -88,7 +96,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a7bce1310651b837be09d229a9ff670c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">-[NSFont boundingRectForCGGlyph:]</span>.  <br /></td></tr>
 <tr class="memitem:a46f7e4f80160e17c438374165646644d" id="r_a46f7e4f80160e17c438374165646644d"><td class="memItemLeft"><a class="el" href="structcocoon_1_1_rect.html">Rect</a>&#160;</td><td class="memItemRight"><a class="el" href="#a46f7e4f80160e17c438374165646644d">bounding_rect_for_glyph</a> (unsigned int glyph) const</td></tr>
 <tr class="memdesc:a46f7e4f80160e17c438374165646644d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">-[NSFont boundingRectForGlyph:]</span>.  <br /></td></tr>
-<tr class="memitem:a24f5e0b4b6b15c8bcc8bbbd96e4033ad" id="r_a24f5e0b4b6b15c8bcc8bbbd96e4033ad"><td class="memItemLeft"><a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#a24f5e0b4b6b15c8bcc8bbbd96e4033ad">font_with_size</a> (double font_size) const</td></tr>
+<tr class="memitem:a24f5e0b4b6b15c8bcc8bbbd96e4033ad" id="r_a24f5e0b4b6b15c8bcc8bbbd96e4033ad"><td class="memItemLeft"><a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#a24f5e0b4b6b15c8bcc8bbbd96e4033ad">font_with_size</a> (double font_size) const</td></tr>
 <tr class="memdesc:a24f5e0b4b6b15c8bcc8bbbd96e4033ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">-[NSFont fontWithSize:]</span>.  <br /></td></tr>
 <tr class="memitem:ad2d6a411d5b3587bd9a5258b0fb929da" id="r_ad2d6a411d5b3587bd9a5258b0fb929da"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad2d6a411d5b3587bd9a5258b0fb929da">get_advancements</a> (<a class="el" href="structcocoon_1_1_size.html">Size</a> *advancements, const std::uint16_t *glyphs, std::uint64_t glyph_count) const</td></tr>
 <tr class="memdesc:ad2d6a411d5b3587bd9a5258b0fb929da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">-[NSFont getAdvancements:forCGGlyphs:count:]</span>.  <br /></td></tr>
@@ -102,7 +110,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a44614e622e9110cc085adaf8861aea8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">-[NSFont getBoundingRects:forGlyphs:count:]</span>.  <br /></td></tr>
 <tr class="memitem:afe4324c20e181ad816c6d62b3b015ce6" id="r_afe4324c20e181ad816c6d62b3b015ce6"><td class="memItemLeft">unsigned int&#160;</td><td class="memItemRight"><a class="el" href="#afe4324c20e181ad816c6d62b3b015ce6">glyph_with_name</a> (const std::string &amp;name) const</td></tr>
 <tr class="memdesc:afe4324c20e181ad816c6d62b3b015ce6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">-[NSFont glyphWithName:]</span>.  <br /></td></tr>
-<tr class="memitem:ae505ad6ef00ffe8dcb8b804198228272" id="r_ae505ad6ef00ffe8dcb8b804198228272"><td class="memItemLeft"><a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae505ad6ef00ffe8dcb8b804198228272">screen_font_with_rendering_mode</a> (<a class="el" href="namespacecocoon.html#aa9bc3b940c053aecd535339e616f8512">FontRenderingMode</a> rendering_mode) const</td></tr>
+<tr class="memitem:ae505ad6ef00ffe8dcb8b804198228272" id="r_ae505ad6ef00ffe8dcb8b804198228272"><td class="memItemLeft"><a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae505ad6ef00ffe8dcb8b804198228272">screen_font_with_rendering_mode</a> (<a class="el" href="namespacecocoon.html#aa9bc3b940c053aecd535339e616f8512">FontRenderingMode</a> rendering_mode) const</td></tr>
 <tr class="memdesc:ae505ad6ef00ffe8dcb8b804198228272"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">-[NSFont screenFontWithRenderingMode:]</span>.  <br /></td></tr>
 <tr class="memitem:ab3e67f0c6388ed8b9c62378720ccb8d2" id="r_ab3e67f0c6388ed8b9c62378720ccb8d2"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab3e67f0c6388ed8b9c62378720ccb8d2">set</a> () const</td></tr>
 <tr class="memdesc:ab3e67f0c6388ed8b9c62378720ccb8d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">-[NSFont <a class="el" href="#ab3e67f0c6388ed8b9c62378720ccb8d2" title="Calls -[NSFont set].">set</a>]</span>.  <br /></td></tr>
@@ -142,11 +150,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:afa4bea87f63855a7f6ef2b229ed7249d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">numberOfGlyphs</span> property of <span class="tt">NSFont</span>.  <br /></td></tr>
 <tr class="memitem:a1e4bd5855bef87bf496be66064dc83d5" id="r_a1e4bd5855bef87bf496be66064dc83d5"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a1e4bd5855bef87bf496be66064dc83d5">point_size</a> () const</td></tr>
 <tr class="memdesc:a1e4bd5855bef87bf496be66064dc83d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">pointSize</span> property of <span class="tt">NSFont</span>.  <br /></td></tr>
-<tr class="memitem:a918f53333bedb205c0b04e1ad8683cad" id="r_a918f53333bedb205c0b04e1ad8683cad"><td class="memItemLeft"><a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#a918f53333bedb205c0b04e1ad8683cad">printer_font</a> () const</td></tr>
+<tr class="memitem:a918f53333bedb205c0b04e1ad8683cad" id="r_a918f53333bedb205c0b04e1ad8683cad"><td class="memItemLeft"><a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#a918f53333bedb205c0b04e1ad8683cad">printer_font</a> () const</td></tr>
 <tr class="memdesc:a918f53333bedb205c0b04e1ad8683cad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">printerFont</span> property of <span class="tt">NSFont</span>.  <br /></td></tr>
 <tr class="memitem:a903bcdff0dfd5431cb47baa73cf719b8" id="r_a903bcdff0dfd5431cb47baa73cf719b8"><td class="memItemLeft"><a class="el" href="namespacecocoon.html#aa9bc3b940c053aecd535339e616f8512">FontRenderingMode</a>&#160;</td><td class="memItemRight"><a class="el" href="#a903bcdff0dfd5431cb47baa73cf719b8">rendering_mode</a> () const</td></tr>
 <tr class="memdesc:a903bcdff0dfd5431cb47baa73cf719b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">renderingMode</span> property of <span class="tt">NSFont</span>.  <br /></td></tr>
-<tr class="memitem:ae055a1785ff217dd25259779b567d364" id="r_ae055a1785ff217dd25259779b567d364"><td class="memItemLeft"><a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae055a1785ff217dd25259779b567d364">screen_font</a> () const</td></tr>
+<tr class="memitem:ae055a1785ff217dd25259779b567d364" id="r_ae055a1785ff217dd25259779b567d364"><td class="memItemLeft"><a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae055a1785ff217dd25259779b567d364">screen_font</a> () const</td></tr>
 <tr class="memdesc:ae055a1785ff217dd25259779b567d364"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">screenFont</span> property of <span class="tt">NSFont</span>.  <br /></td></tr>
 <tr class="memitem:a7481d8b4af0d34fffa18509fe5401572" id="r_a7481d8b4af0d34fffa18509fe5401572"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_affine_transform.html">AffineTransform</a>&#160;</td><td class="memItemRight"><a class="el" href="#a7481d8b4af0d34fffa18509fe5401572">text_transform</a> () const</td></tr>
 <tr class="memdesc:a7481d8b4af0d34fffa18509fe5401572"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">textTransform</span> property of <span class="tt">NSFont</span>.  <br /></td></tr>
@@ -156,7 +164,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aa4f7ee2461c975e773d4656fdd1421b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">underlineThickness</span> property of <span class="tt">NSFont</span>.  <br /></td></tr>
 <tr class="memitem:a8461165711d69b79e8b0fa945f2c6f20" id="r_a8461165711d69b79e8b0fa945f2c6f20"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a8461165711d69b79e8b0fa945f2c6f20">is_vertical</a> () const</td></tr>
 <tr class="memdesc:a8461165711d69b79e8b0fa945f2c6f20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">vertical</span> property of <span class="tt">NSFont</span>.  <br /></td></tr>
-<tr class="memitem:abce21aa36e641d9acda08b9579e1147a" id="r_abce21aa36e641d9acda08b9579e1147a"><td class="memItemLeft"><a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#abce21aa36e641d9acda08b9579e1147a">vertical_font</a> () const</td></tr>
+<tr class="memitem:abce21aa36e641d9acda08b9579e1147a" id="r_abce21aa36e641d9acda08b9579e1147a"><td class="memItemLeft"><a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#abce21aa36e641d9acda08b9579e1147a">vertical_font</a> () const</td></tr>
 <tr class="memdesc:abce21aa36e641d9acda08b9579e1147a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">verticalFont</span> property of <span class="tt">NSFont</span>.  <br /></td></tr>
 <tr class="memitem:af40c3d2fd9c2714515917702269e06c9" id="r_af40c3d2fd9c2714515917702269e06c9"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#af40c3d2fd9c2714515917702269e06c9">x_height</a> () const</td></tr>
 <tr class="memdesc:af40c3d2fd9c2714515917702269e06c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">xHeight</span> property of <span class="tt">NSFont</span>.  <br /></td></tr>
@@ -188,53 +196,45 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a9a24f8b9eed347fe5c1ec4cc9e6e3fcd" id="r_a9a24f8b9eed347fe5c1ec4cc9e6e3fcd"><td class="memItemLeft">static <a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#a9a24f8b9eed347fe5c1ec4cc9e6e3fcd">bold_system_font_of_size</a> (double font_size)</td></tr>
+<tr class="memitem:a9a24f8b9eed347fe5c1ec4cc9e6e3fcd" id="r_a9a24f8b9eed347fe5c1ec4cc9e6e3fcd"><td class="memItemLeft">static <a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#a9a24f8b9eed347fe5c1ec4cc9e6e3fcd">bold_system_font_of_size</a> (double font_size)</td></tr>
 <tr class="memdesc:a9a24f8b9eed347fe5c1ec4cc9e6e3fcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSFont boldSystemFontOfSize:]</span>.  <br /></td></tr>
-<tr class="memitem:a572f9ba7aa1718c4da39aff5b44b12ff" id="r_a572f9ba7aa1718c4da39aff5b44b12ff"><td class="memItemLeft">static <a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#a572f9ba7aa1718c4da39aff5b44b12ff">control_content_font_of_size</a> (double font_size)</td></tr>
+<tr class="memitem:a572f9ba7aa1718c4da39aff5b44b12ff" id="r_a572f9ba7aa1718c4da39aff5b44b12ff"><td class="memItemLeft">static <a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#a572f9ba7aa1718c4da39aff5b44b12ff">control_content_font_of_size</a> (double font_size)</td></tr>
 <tr class="memdesc:a572f9ba7aa1718c4da39aff5b44b12ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSFont controlContentFontOfSize:]</span>.  <br /></td></tr>
-<tr class="memitem:a08ae93490993c6d67af971d4f432dfd3" id="r_a08ae93490993c6d67af971d4f432dfd3"><td class="memItemLeft">static <a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#a08ae93490993c6d67af971d4f432dfd3">font_with_descriptor</a> (const <a class="el" href="classcocoon_1_1_font_descriptor.html">FontDescriptor</a> &amp;font_descriptor, double font_size)</td></tr>
-<tr class="memdesc:a08ae93490993c6d67af971d4f432dfd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSFont fontWithDescriptor:size:]</span>.  <br /></td></tr>
-<tr class="memitem:aa4aae0b70c0d72eca937cc7a829488a6" id="r_aa4aae0b70c0d72eca937cc7a829488a6"><td class="memItemLeft">static <a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#aa4aae0b70c0d72eca937cc7a829488a6">font_with_descriptor</a> (const <a class="el" href="classcocoon_1_1_font_descriptor.html">FontDescriptor</a> &amp;font_descriptor, const <a class="el" href="classcocoon_1_1_affine_transform.html">AffineTransform</a> &amp;text_transform)</td></tr>
-<tr class="memdesc:aa4aae0b70c0d72eca937cc7a829488a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSFont fontWithDescriptor:textTransform:]</span>.  <br /></td></tr>
-<tr class="memitem:ae03331992ae76f38af2003ccae2e4851" id="r_ae03331992ae76f38af2003ccae2e4851"><td class="memItemLeft">static <a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae03331992ae76f38af2003ccae2e4851">font_with_name</a> (const std::string &amp;font_name, const double *font_matrix)</td></tr>
-<tr class="memdesc:ae03331992ae76f38af2003ccae2e4851"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSFont fontWithName:matrix:]</span>.  <br /></td></tr>
-<tr class="memitem:ab709a19541620c0dbd41dab510f68ea3" id="r_ab709a19541620c0dbd41dab510f68ea3"><td class="memItemLeft">static <a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#ab709a19541620c0dbd41dab510f68ea3">font_with_name</a> (const std::string &amp;font_name, double font_size)</td></tr>
-<tr class="memdesc:ab709a19541620c0dbd41dab510f68ea3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSFont fontWithName:size:]</span>.  <br /></td></tr>
-<tr class="memitem:a1d374d59ece4d510c9e4805469fab075" id="r_a1d374d59ece4d510c9e4805469fab075"><td class="memItemLeft">static <a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#a1d374d59ece4d510c9e4805469fab075">label_font_of_size</a> (double font_size)</td></tr>
+<tr class="memitem:a1d374d59ece4d510c9e4805469fab075" id="r_a1d374d59ece4d510c9e4805469fab075"><td class="memItemLeft">static <a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#a1d374d59ece4d510c9e4805469fab075">label_font_of_size</a> (double font_size)</td></tr>
 <tr class="memdesc:a1d374d59ece4d510c9e4805469fab075"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSFont labelFontOfSize:]</span>.  <br /></td></tr>
-<tr class="memitem:a8f0251121ab10bd17f4b634157072e5a" id="r_a8f0251121ab10bd17f4b634157072e5a"><td class="memItemLeft">static <a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#a8f0251121ab10bd17f4b634157072e5a">menu_bar_font_of_size</a> (double font_size)</td></tr>
+<tr class="memitem:a8f0251121ab10bd17f4b634157072e5a" id="r_a8f0251121ab10bd17f4b634157072e5a"><td class="memItemLeft">static <a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#a8f0251121ab10bd17f4b634157072e5a">menu_bar_font_of_size</a> (double font_size)</td></tr>
 <tr class="memdesc:a8f0251121ab10bd17f4b634157072e5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSFont menuBarFontOfSize:]</span>.  <br /></td></tr>
-<tr class="memitem:a18e57c1098dc51662f4e9f40c8d71338" id="r_a18e57c1098dc51662f4e9f40c8d71338"><td class="memItemLeft">static <a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#a18e57c1098dc51662f4e9f40c8d71338">menu_font_of_size</a> (double font_size)</td></tr>
+<tr class="memitem:a18e57c1098dc51662f4e9f40c8d71338" id="r_a18e57c1098dc51662f4e9f40c8d71338"><td class="memItemLeft">static <a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#a18e57c1098dc51662f4e9f40c8d71338">menu_font_of_size</a> (double font_size)</td></tr>
 <tr class="memdesc:a18e57c1098dc51662f4e9f40c8d71338"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSFont menuFontOfSize:]</span>.  <br /></td></tr>
-<tr class="memitem:ad35a388127fcbcee87b9c8a0d8fe1954" id="r_ad35a388127fcbcee87b9c8a0d8fe1954"><td class="memItemLeft">static <a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#ad35a388127fcbcee87b9c8a0d8fe1954">message_font_of_size</a> (double font_size)</td></tr>
+<tr class="memitem:ad35a388127fcbcee87b9c8a0d8fe1954" id="r_ad35a388127fcbcee87b9c8a0d8fe1954"><td class="memItemLeft">static <a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#ad35a388127fcbcee87b9c8a0d8fe1954">message_font_of_size</a> (double font_size)</td></tr>
 <tr class="memdesc:ad35a388127fcbcee87b9c8a0d8fe1954"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSFont messageFontOfSize:]</span>.  <br /></td></tr>
-<tr class="memitem:aa24897d61fbd0ced4dfc4489442ae8d3" id="r_aa24897d61fbd0ced4dfc4489442ae8d3"><td class="memItemLeft">static <a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#aa24897d61fbd0ced4dfc4489442ae8d3">monospaced_digit_system_font_of_size</a> (double font_size, double weight)</td></tr>
+<tr class="memitem:aa24897d61fbd0ced4dfc4489442ae8d3" id="r_aa24897d61fbd0ced4dfc4489442ae8d3"><td class="memItemLeft">static <a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#aa24897d61fbd0ced4dfc4489442ae8d3">monospaced_digit_system_font_of_size</a> (double font_size, double weight)</td></tr>
 <tr class="memdesc:aa24897d61fbd0ced4dfc4489442ae8d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSFont monospacedDigitSystemFontOfSize:weight:]</span>.  <br /></td></tr>
-<tr class="memitem:a53caa61bd628c801a7bec79ad69ebafd" id="r_a53caa61bd628c801a7bec79ad69ebafd"><td class="memItemLeft">static <a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#a53caa61bd628c801a7bec79ad69ebafd">monospaced_system_font_of_size</a> (double font_size, double weight)</td></tr>
+<tr class="memitem:a53caa61bd628c801a7bec79ad69ebafd" id="r_a53caa61bd628c801a7bec79ad69ebafd"><td class="memItemLeft">static <a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#a53caa61bd628c801a7bec79ad69ebafd">monospaced_system_font_of_size</a> (double font_size, double weight)</td></tr>
 <tr class="memdesc:a53caa61bd628c801a7bec79ad69ebafd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSFont monospacedSystemFontOfSize:weight:]</span>.  <br /></td></tr>
-<tr class="memitem:ac19d1205f875bafc877dfcb98b7d71a6" id="r_ac19d1205f875bafc877dfcb98b7d71a6"><td class="memItemLeft">static <a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#ac19d1205f875bafc877dfcb98b7d71a6">palette_font_of_size</a> (double font_size)</td></tr>
+<tr class="memitem:ac19d1205f875bafc877dfcb98b7d71a6" id="r_ac19d1205f875bafc877dfcb98b7d71a6"><td class="memItemLeft">static <a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#ac19d1205f875bafc877dfcb98b7d71a6">palette_font_of_size</a> (double font_size)</td></tr>
 <tr class="memdesc:ac19d1205f875bafc877dfcb98b7d71a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSFont paletteFontOfSize:]</span>.  <br /></td></tr>
-<tr class="memitem:ac880d57b098cc138bcc10d6ef46d8e14" id="r_ac880d57b098cc138bcc10d6ef46d8e14"><td class="memItemLeft">static <a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#ac880d57b098cc138bcc10d6ef46d8e14">preferred_font_for_text_style</a> (const std::string &amp;style, const std::map&lt; std::string, <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &gt; &amp;options)</td></tr>
+<tr class="memitem:ac880d57b098cc138bcc10d6ef46d8e14" id="r_ac880d57b098cc138bcc10d6ef46d8e14"><td class="memItemLeft">static <a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#ac880d57b098cc138bcc10d6ef46d8e14">preferred_font_for_text_style</a> (const std::string &amp;style, const std::map&lt; std::string, <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &gt; &amp;options)</td></tr>
 <tr class="memdesc:ac880d57b098cc138bcc10d6ef46d8e14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSFont preferredFontForTextStyle:options:]</span>.  <br /></td></tr>
-<tr class="memitem:aee6d562cca0b05e99a82509abdc89bf1" id="r_aee6d562cca0b05e99a82509abdc89bf1"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#aee6d562cca0b05e99a82509abdc89bf1">set_user_fixed_pitch_font</a> (const <a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a> &amp;font)</td></tr>
+<tr class="memitem:aee6d562cca0b05e99a82509abdc89bf1" id="r_aee6d562cca0b05e99a82509abdc89bf1"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#aee6d562cca0b05e99a82509abdc89bf1">set_user_fixed_pitch_font</a> (const <a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a> &amp;font)</td></tr>
 <tr class="memdesc:aee6d562cca0b05e99a82509abdc89bf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSFont setUserFixedPitchFont:]</span>.  <br /></td></tr>
-<tr class="memitem:a6df744afa0e24c88c226e34b384c1579" id="r_a6df744afa0e24c88c226e34b384c1579"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a6df744afa0e24c88c226e34b384c1579">set_user_font</a> (const <a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a> &amp;font)</td></tr>
+<tr class="memitem:a6df744afa0e24c88c226e34b384c1579" id="r_a6df744afa0e24c88c226e34b384c1579"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a6df744afa0e24c88c226e34b384c1579">set_user_font</a> (const <a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a> &amp;font)</td></tr>
 <tr class="memdesc:a6df744afa0e24c88c226e34b384c1579"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSFont setUserFont:]</span>.  <br /></td></tr>
-<tr class="memitem:a2bcbac1e23ecf4502b1ae458e0a04ba7" id="r_a2bcbac1e23ecf4502b1ae458e0a04ba7"><td class="memItemLeft">static <a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#a2bcbac1e23ecf4502b1ae458e0a04ba7">system_font_of_size</a> (double font_size)</td></tr>
+<tr class="memitem:a2bcbac1e23ecf4502b1ae458e0a04ba7" id="r_a2bcbac1e23ecf4502b1ae458e0a04ba7"><td class="memItemLeft">static <a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#a2bcbac1e23ecf4502b1ae458e0a04ba7">system_font_of_size</a> (double font_size)</td></tr>
 <tr class="memdesc:a2bcbac1e23ecf4502b1ae458e0a04ba7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSFont systemFontOfSize:]</span>.  <br /></td></tr>
-<tr class="memitem:ac71fedad461fef24baedda614ae60341" id="r_ac71fedad461fef24baedda614ae60341"><td class="memItemLeft">static <a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#ac71fedad461fef24baedda614ae60341">system_font_of_size</a> (double font_size, double weight)</td></tr>
+<tr class="memitem:ac71fedad461fef24baedda614ae60341" id="r_ac71fedad461fef24baedda614ae60341"><td class="memItemLeft">static <a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#ac71fedad461fef24baedda614ae60341">system_font_of_size</a> (double font_size, double weight)</td></tr>
 <tr class="memdesc:ac71fedad461fef24baedda614ae60341"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSFont systemFontOfSize:weight:]</span>.  <br /></td></tr>
-<tr class="memitem:a0ab749513a55f655892e9218c8bfd339" id="r_a0ab749513a55f655892e9218c8bfd339"><td class="memItemLeft">static <a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#a0ab749513a55f655892e9218c8bfd339">system_font_of_size</a> (double font_size, double weight, double width)</td></tr>
+<tr class="memitem:a0ab749513a55f655892e9218c8bfd339" id="r_a0ab749513a55f655892e9218c8bfd339"><td class="memItemLeft">static <a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#a0ab749513a55f655892e9218c8bfd339">system_font_of_size</a> (double font_size, double weight, double width)</td></tr>
 <tr class="memdesc:a0ab749513a55f655892e9218c8bfd339"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSFont systemFontOfSize:weight:width:]</span>.  <br /></td></tr>
 <tr class="memitem:aafe68cc341008687e87c78e1675f13a3" id="r_aafe68cc341008687e87c78e1675f13a3"><td class="memItemLeft">static double&#160;</td><td class="memItemRight"><a class="el" href="#aafe68cc341008687e87c78e1675f13a3">system_font_size_for_control_size</a> (<a class="el" href="namespacecocoon.html#ac58372adb399e19f38842d09f25c35a1">ControlSize</a> control_size)</td></tr>
 <tr class="memdesc:aafe68cc341008687e87c78e1675f13a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSFont systemFontSizeForControlSize:]</span>.  <br /></td></tr>
-<tr class="memitem:a2738199955348b010a9bce5c901a161f" id="r_a2738199955348b010a9bce5c901a161f"><td class="memItemLeft">static <a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#a2738199955348b010a9bce5c901a161f">title_bar_font_of_size</a> (double font_size)</td></tr>
+<tr class="memitem:a2738199955348b010a9bce5c901a161f" id="r_a2738199955348b010a9bce5c901a161f"><td class="memItemLeft">static <a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#a2738199955348b010a9bce5c901a161f">title_bar_font_of_size</a> (double font_size)</td></tr>
 <tr class="memdesc:a2738199955348b010a9bce5c901a161f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSFont titleBarFontOfSize:]</span>.  <br /></td></tr>
-<tr class="memitem:a52030ad440bc1ef9ed860cc01913ebf7" id="r_a52030ad440bc1ef9ed860cc01913ebf7"><td class="memItemLeft">static <a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#a52030ad440bc1ef9ed860cc01913ebf7">tool_tips_font_of_size</a> (double font_size)</td></tr>
+<tr class="memitem:a52030ad440bc1ef9ed860cc01913ebf7" id="r_a52030ad440bc1ef9ed860cc01913ebf7"><td class="memItemLeft">static <a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#a52030ad440bc1ef9ed860cc01913ebf7">tool_tips_font_of_size</a> (double font_size)</td></tr>
 <tr class="memdesc:a52030ad440bc1ef9ed860cc01913ebf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSFont toolTipsFontOfSize:]</span>.  <br /></td></tr>
-<tr class="memitem:aad56fc541a1a9c5d411e5d39f4c893a6" id="r_aad56fc541a1a9c5d411e5d39f4c893a6"><td class="memItemLeft">static <a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#aad56fc541a1a9c5d411e5d39f4c893a6">user_fixed_pitch_font_of_size</a> (double font_size)</td></tr>
+<tr class="memitem:aad56fc541a1a9c5d411e5d39f4c893a6" id="r_aad56fc541a1a9c5d411e5d39f4c893a6"><td class="memItemLeft">static <a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#aad56fc541a1a9c5d411e5d39f4c893a6">user_fixed_pitch_font_of_size</a> (double font_size)</td></tr>
 <tr class="memdesc:aad56fc541a1a9c5d411e5d39f4c893a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSFont userFixedPitchFontOfSize:]</span>.  <br /></td></tr>
-<tr class="memitem:abe24f55aff85bd059d8ae3e558c882c8" id="r_abe24f55aff85bd059d8ae3e558c882c8"><td class="memItemLeft">static <a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#abe24f55aff85bd059d8ae3e558c882c8">user_font_of_size</a> (double font_size)</td></tr>
+<tr class="memitem:abe24f55aff85bd059d8ae3e558c882c8" id="r_abe24f55aff85bd059d8ae3e558c882c8"><td class="memItemLeft">static <a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a>&#160;</td><td class="memItemRight"><a class="el" href="#abe24f55aff85bd059d8ae3e558c882c8">user_font_of_size</a> (double font_size)</td></tr>
 <tr class="memdesc:abe24f55aff85bd059d8ae3e558c882c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSFont userFontOfSize:]</span>.  <br /></td></tr>
 <tr class="memitem:ada9c253ef9a6f97721fb8ac95f0cdd73" id="r_ada9c253ef9a6f97721fb8ac95f0cdd73"><td class="memItemLeft">static double&#160;</td><td class="memItemRight"><a class="el" href="#ada9c253ef9a6f97721fb8ac95f0cdd73">label_font_size</a> ()</td></tr>
 <tr class="memdesc:ada9c253ef9a6f97721fb8ac95f0cdd73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">labelFontSize</span> property of <span class="tt">NSFont</span>.  <br /></td></tr>
@@ -265,8 +265,132 @@ Static Public Member Functions</h2></td></tr>
 </div><!-- fragment --> </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/appkit/nsfont">https://developer.apple.com/documentation/appkit/nsfont</a> </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a3f67c1ad91ffecec7670d7285e340162" name="a3f67c1ad91ffecec7670d7285e340162"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f67c1ad91ffecec7670d7285e340162">&#9670;&#160;</a></span>Font() <span class="overload">[1/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::Font::Font </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcocoon_1_1_font_descriptor.html">FontDescriptor</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>font_descriptor</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>font_size</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSFont</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
+<a id="a70108219228297df288d5af5f3f5f19c" name="a70108219228297df288d5af5f3f5f19c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70108219228297df288d5af5f3f5f19c">&#9670;&#160;</a></span>Font() <span class="overload">[2/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::Font::Font </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcocoon_1_1_font_descriptor.html">FontDescriptor</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>font_descriptor</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcocoon_1_1_affine_transform.html">AffineTransform</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text_transform</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSFont</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
+<a id="a60089b3889cbfa54662724bf88c6556d" name="a60089b3889cbfa54662724bf88c6556d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60089b3889cbfa54662724bf88c6556d">&#9670;&#160;</a></span>Font() <span class="overload">[3/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::Font::Font </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>font_name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *</td>          <td class="paramname"><span class="paramname"><em>font_matrix</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSFont</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
+<a id="aaaffdd73541e05c80fff24f11f8ad62a" name="aaaffdd73541e05c80fff24f11f8ad62a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaaffdd73541e05c80fff24f11f8ad62a">&#9670;&#160;</a></span>Font() <span class="overload">[4/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::Font::Font </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>font_name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>font_size</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSFont</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
 <a id="a947e91633cced12168eeeb7ae487cd56" name="a947e91633cced12168eeeb7ae487cd56"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a947e91633cced12168eeeb7ae487cd56">&#9670;&#160;</a></span>Font() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a947e91633cced12168eeeb7ae487cd56">&#9670;&#160;</a></span>Font() <span class="overload">[5/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -293,7 +417,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="aeb541861bcccf566f6659fccf02917d4" name="aeb541861bcccf566f6659fccf02917d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeb541861bcccf566f6659fccf02917d4">&#9670;&#160;</a></span>Font() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb541861bcccf566f6659fccf02917d4">&#9670;&#160;</a></span>Font() <span class="overload">[6/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -312,7 +436,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a27108e3dfe72030bdad4361742dfd06b" name="a27108e3dfe72030bdad4361742dfd06b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a27108e3dfe72030bdad4361742dfd06b">&#9670;&#160;</a></span>Font() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a27108e3dfe72030bdad4361742dfd06b">&#9670;&#160;</a></span>Font() <span class="overload">[7/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -421,7 +545,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a> cocoon::Font::bold_system_font_of_size </td>
+          <td class="memname"><a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a> cocoon::Font::bold_system_font_of_size </td>
           <td>(</td>
           <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>font_size</em></span></td><td>)</td>
           <td></td>
@@ -547,7 +671,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a> cocoon::Font::control_content_font_of_size </td>
+          <td class="memname"><a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a> cocoon::Font::control_content_font_of_size </td>
           <td>(</td>
           <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>font_size</em></span></td><td>)</td>
           <td></td>
@@ -691,162 +815,6 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aa4aae0b70c0d72eca937cc7a829488a6" name="aa4aae0b70c0d72eca937cc7a829488a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa4aae0b70c0d72eca937cc7a829488a6">&#9670;&#160;</a></span>font_with_descriptor() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a> cocoon::Font::font_with_descriptor </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_font_descriptor.html">FontDescriptor</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>font_descriptor</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_affine_transform.html">AffineTransform</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text_transform</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSFont fontWithDescriptor:textTransform:]</span>. </p>
-<p>Instantiates an NSFont object matching fontDescriptor. If textTransform is non-nil, it has precedence over NSFontMatrixAttribute in fontDescriptor. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">font_descriptor</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">text_transform</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a08ae93490993c6d67af971d4f432dfd3" name="a08ae93490993c6d67af971d4f432dfd3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08ae93490993c6d67af971d4f432dfd3">&#9670;&#160;</a></span>font_with_descriptor() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a> cocoon::Font::font_with_descriptor </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_font_descriptor.html">FontDescriptor</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>font_descriptor</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>font_size</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSFont fontWithDescriptor:size:]</span>. </p>
-<p>Instantiates an NSFont object matching fontDescriptor. If fontSize is greater than 0.0, it has precedence over NSFontSizeAttribute in fontDescriptor. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">font_descriptor</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">font_size</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="ae03331992ae76f38af2003ccae2e4851" name="ae03331992ae76f38af2003ccae2e4851"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae03331992ae76f38af2003ccae2e4851">&#9670;&#160;</a></span>font_with_name() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a> cocoon::Font::font_with_name </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>font_name</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const double *</td>          <td class="paramname"><span class="paramname"><em>font_matrix</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSFont fontWithName:matrix:]</span>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">font_name</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">font_matrix</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="ab709a19541620c0dbd41dab510f68ea3" name="ab709a19541620c0dbd41dab510f68ea3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab709a19541620c0dbd41dab510f68ea3">&#9670;&#160;</a></span>font_with_name() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a> cocoon::Font::font_with_name </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>font_name</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>font_size</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSFont fontWithName:size:]</span>. </p>
-<p>Factory </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">font_name</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">font_size</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
 <a id="a24f5e0b4b6b15c8bcc8bbbd96e4033ad" name="a24f5e0b4b6b15c8bcc8bbbd96e4033ad"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a24f5e0b4b6b15c8bcc8bbbd96e4033ad">&#9670;&#160;</a></span>font_with_size()</h2>
 
@@ -854,7 +822,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a> cocoon::Font::font_with_size </td>
+          <td class="memname"><a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a> cocoon::Font::font_with_size </td>
           <td>(</td>
           <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>font_size</em></span></td><td>)</td>
           <td> const</td>
@@ -1149,7 +1117,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a> cocoon::Font::label_font_of_size </td>
+          <td class="memname"><a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a> cocoon::Font::label_font_of_size </td>
           <td>(</td>
           <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>font_size</em></span></td><td>)</td>
           <td></td>
@@ -1271,7 +1239,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a> cocoon::Font::menu_bar_font_of_size </td>
+          <td class="memname"><a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a> cocoon::Font::menu_bar_font_of_size </td>
           <td>(</td>
           <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>font_size</em></span></td><td>)</td>
           <td></td>
@@ -1305,7 +1273,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a> cocoon::Font::menu_font_of_size </td>
+          <td class="memname"><a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a> cocoon::Font::menu_font_of_size </td>
           <td>(</td>
           <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>font_size</em></span></td><td>)</td>
           <td></td>
@@ -1339,7 +1307,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a> cocoon::Font::message_font_of_size </td>
+          <td class="memname"><a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a> cocoon::Font::message_font_of_size </td>
           <td>(</td>
           <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>font_size</em></span></td><td>)</td>
           <td></td>
@@ -1373,7 +1341,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a> cocoon::Font::monospaced_digit_system_font_of_size </td>
+          <td class="memname"><a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a> cocoon::Font::monospaced_digit_system_font_of_size </td>
           <td>(</td>
           <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>font_size</em></span>, </td>
         </tr>
@@ -1412,7 +1380,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a> cocoon::Font::monospaced_system_font_of_size </td>
+          <td class="memname"><a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a> cocoon::Font::monospaced_system_font_of_size </td>
           <td>(</td>
           <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>font_size</em></span>, </td>
         </tr>
@@ -1491,7 +1459,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a> cocoon::Font::palette_font_of_size </td>
+          <td class="memname"><a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a> cocoon::Font::palette_font_of_size </td>
           <td>(</td>
           <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>font_size</em></span></td><td>)</td>
           <td></td>
@@ -1545,7 +1513,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a> cocoon::Font::preferred_font_for_text_style </td>
+          <td class="memname"><a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a> cocoon::Font::preferred_font_for_text_style </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>style</em></span>, </td>
         </tr>
@@ -1581,7 +1549,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a> cocoon::Font::printer_font </td>
+          <td class="memname"><a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a> cocoon::Font::printer_font </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -1621,7 +1589,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a> cocoon::Font::screen_font </td>
+          <td class="memname"><a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a> cocoon::Font::screen_font </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -1641,7 +1609,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a> cocoon::Font::screen_font_with_rendering_mode </td>
+          <td class="memname"><a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a> cocoon::Font::screen_font_with_rendering_mode </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespacecocoon.html#aa9bc3b940c053aecd535339e616f8512">FontRenderingMode</a></td>          <td class="paramname"><span class="paramname"><em>rendering_mode</em></span></td><td>)</td>
           <td> const</td>
@@ -1717,7 +1685,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void cocoon::Font::set_user_fixed_pitch_font </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>font</em></span></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>font</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1750,7 +1718,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void cocoon::Font::set_user_font </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>font</em></span></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>font</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1809,7 +1777,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a> cocoon::Font::system_font_of_size </td>
+          <td class="memname"><a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a> cocoon::Font::system_font_of_size </td>
           <td>(</td>
           <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>font_size</em></span></td><td>)</td>
           <td></td>
@@ -1843,7 +1811,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a> cocoon::Font::system_font_of_size </td>
+          <td class="memname"><a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a> cocoon::Font::system_font_of_size </td>
           <td>(</td>
           <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>font_size</em></span>, </td>
         </tr>
@@ -1882,7 +1850,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a> cocoon::Font::system_font_of_size </td>
+          <td class="memname"><a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a> cocoon::Font::system_font_of_size </td>
           <td>(</td>
           <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>font_size</em></span>, </td>
         </tr>
@@ -2009,7 +1977,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a> cocoon::Font::title_bar_font_of_size </td>
+          <td class="memname"><a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a> cocoon::Font::title_bar_font_of_size </td>
           <td>(</td>
           <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>font_size</em></span></td><td>)</td>
           <td></td>
@@ -2043,7 +2011,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a> cocoon::Font::tool_tips_font_of_size </td>
+          <td class="memname"><a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a> cocoon::Font::tool_tips_font_of_size </td>
           <td>(</td>
           <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>font_size</em></span></td><td>)</td>
           <td></td>
@@ -2117,7 +2085,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a> cocoon::Font::user_fixed_pitch_font_of_size </td>
+          <td class="memname"><a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a> cocoon::Font::user_fixed_pitch_font_of_size </td>
           <td>(</td>
           <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>font_size</em></span></td><td>)</td>
           <td></td>
@@ -2151,7 +2119,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a> cocoon::Font::user_font_of_size </td>
+          <td class="memname"><a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a> cocoon::Font::user_font_of_size </td>
           <td>(</td>
           <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>font_size</em></span></td><td>)</td>
           <td></td>
@@ -2182,7 +2150,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a947e91633cced12168eeeb7ae487cd56">Font</a> cocoon::Font::vertical_font </td>
+          <td class="memname"><a class="el" href="#a3f67c1ad91ffecec7670d7285e340162">Font</a> cocoon::Font::vertical_font </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>

@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -74,6 +74,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a53f351598dd0e26347e6cd1f06f0e739" id="r_a53f351598dd0e26347e6cd1f06f0e739"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a53f351598dd0e26347e6cd1f06f0e739">Calendar</a> (const std::string &amp;ident)</td></tr>
+<tr class="memdesc:a53f351598dd0e26347e6cd1f06f0e739"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSCalendar</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:a7e86a9c09b2e61d5aa55f7a3cf1035a4" id="r_a7e86a9c09b2e61d5aa55f7a3cf1035a4"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a7e86a9c09b2e61d5aa55f7a3cf1035a4">Calendar</a> ()</td></tr>
 <tr class="memitem:a7ed79d1291d178b1065295c0e9cd1e78" id="r_a7ed79d1291d178b1065295c0e9cd1e78"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a7ed79d1291d178b1065295c0e9cd1e78">Calendar</a> (std::nullptr_t)</td></tr>
 <tr class="memdesc:a7ed79d1291d178b1065295c0e9cd1e78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a null handle that refers to no native object.  <br /></td></tr>
@@ -111,8 +113,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a0c5c290ce26deabad5b0b9c564bc7a9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">-[NSCalendar getEra:year:month:day:fromDate:]</span>.  <br /></td></tr>
 <tr class="memitem:af439b1ba90f92bb49e0b75bbf71d92b8" id="r_af439b1ba90f92bb49e0b75bbf71d92b8"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#af439b1ba90f92bb49e0b75bbf71d92b8">get_hour</a> (std::int64_t *hour_value_pointer, std::int64_t *minute_value_pointer, std::int64_t *second_value_pointer, std::int64_t *nanosecond_value_pointer, const <a class="el" href="classcocoon_1_1_date.html">Date</a> &amp;date) const</td></tr>
 <tr class="memdesc:af439b1ba90f92bb49e0b75bbf71d92b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">-[NSCalendar getHour:minute:second:nanosecond:fromDate:]</span>.  <br /></td></tr>
-<tr class="memitem:aadd1131c12058f076ea96b7e86768bdb" id="r_aadd1131c12058f076ea96b7e86768bdb"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a>&#160;</td><td class="memItemRight"><a class="el" href="#aadd1131c12058f076ea96b7e86768bdb">init_with_calendar_identifier</a> (const std::string &amp;ident) const</td></tr>
-<tr class="memdesc:aadd1131c12058f076ea96b7e86768bdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">-[NSCalendar initWithCalendarIdentifier:]</span>.  <br /></td></tr>
 <tr class="memitem:acff519f25be0610462a6b4bc59e34d23" id="r_acff519f25be0610462a6b4bc59e34d23"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#acff519f25be0610462a6b4bc59e34d23">is_date</a> (const <a class="el" href="classcocoon_1_1_date.html">Date</a> &amp;date1, const <a class="el" href="classcocoon_1_1_date.html">Date</a> &amp;date2, <a class="el" href="namespacecocoon.html#aefb0306381ac63a2246215dab2ab8b7f">CalendarUnit</a> unit) const</td></tr>
 <tr class="memdesc:acff519f25be0610462a6b4bc59e34d23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">-[NSCalendar isDate:equalToDate:toUnitGranularity:]</span>.  <br /></td></tr>
 <tr class="memitem:ad20906a6dc63938d8a442d0c68beea95" id="r_ad20906a6dc63938d8a442d0c68beea95"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ad20906a6dc63938d8a442d0c68beea95">is_date</a> (const <a class="el" href="classcocoon_1_1_date.html">Date</a> &amp;date1, const <a class="el" href="classcocoon_1_1_date.html">Date</a> &amp;date2) const</td></tr>
@@ -233,11 +233,9 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a28ef31f24766ad7f112ca048e70b8cb9" id="r_a28ef31f24766ad7f112ca048e70b8cb9"><td class="memItemLeft">static <a class="el" href="#a7e86a9c09b2e61d5aa55f7a3cf1035a4">Calendar</a>&#160;</td><td class="memItemRight"><a class="el" href="#a28ef31f24766ad7f112ca048e70b8cb9">calendar_with_identifier</a> (const std::string &amp;calendar_identifier_constant)</td></tr>
-<tr class="memdesc:a28ef31f24766ad7f112ca048e70b8cb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSCalendar calendarWithIdentifier:]</span>.  <br /></td></tr>
-<tr class="memitem:ae72d9b60dd40d763669e595515fd03d2" id="r_ae72d9b60dd40d763669e595515fd03d2"><td class="memItemLeft">static <a class="el" href="#a7e86a9c09b2e61d5aa55f7a3cf1035a4">Calendar</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae72d9b60dd40d763669e595515fd03d2">autoupdating_current_calendar</a> ()</td></tr>
+<tr class="memitem:ae72d9b60dd40d763669e595515fd03d2" id="r_ae72d9b60dd40d763669e595515fd03d2"><td class="memItemLeft">static <a class="el" href="#a53f351598dd0e26347e6cd1f06f0e739">Calendar</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae72d9b60dd40d763669e595515fd03d2">autoupdating_current_calendar</a> ()</td></tr>
 <tr class="memdesc:ae72d9b60dd40d763669e595515fd03d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">autoupdatingCurrentCalendar</span> property of <span class="tt">NSCalendar</span>.  <br /></td></tr>
-<tr class="memitem:aedebd72cc63d764fc2836b4f6236eda1" id="r_aedebd72cc63d764fc2836b4f6236eda1"><td class="memItemLeft">static <a class="el" href="#a7e86a9c09b2e61d5aa55f7a3cf1035a4">Calendar</a>&#160;</td><td class="memItemRight"><a class="el" href="#aedebd72cc63d764fc2836b4f6236eda1">current_calendar</a> ()</td></tr>
+<tr class="memitem:aedebd72cc63d764fc2836b4f6236eda1" id="r_aedebd72cc63d764fc2836b4f6236eda1"><td class="memItemLeft">static <a class="el" href="#a53f351598dd0e26347e6cd1f06f0e739">Calendar</a>&#160;</td><td class="memItemRight"><a class="el" href="#aedebd72cc63d764fc2836b4f6236eda1">current_calendar</a> ()</td></tr>
 <tr class="memdesc:aedebd72cc63d764fc2836b4f6236eda1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">currentCalendar</span> property of <span class="tt">NSCalendar</span>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
@@ -245,33 +243,64 @@ Static Public Member Functions</h2></td></tr>
 <p>A definition of the relationships between calendar units and absolute points in time, providing features for calculation and comparison of dates. In Swift, this object bridges to ''<a class="el" href="classcocoon_1_1_calendar.html" title="C++ handle for the Objective-C class NSCalendar (Foundation).">Calendar</a>''; use ''NSCalendar'' when you need reference semantics or other Foundation-specific behavior. ''NSCalendar'' objects encapsulate information about systems of reckoning time in which the beginning, length, and divisions of a year are defined. They provide information about the calendar and support for calendrical computations such as determining the range of a given calendrical unit and adding units to a given absolute time. ''NSCalendar'' is toll-free bridged with its Core Foundation counterpart, &lt;doc://com.apple.documentation/documentation/corefoundation/cfcalendar&gt;. See <a href="https://developer.apple.com/library/archive/documentation/General/Conceptual/CocoaEncyclopedia/Toll-FreeBridgin/Toll-FreeBridgin.html\#//apple_ref/doc/uid/TP40010810-CH2">Toll-Free Bridging</a> for more information on toll-free bridging. &gt; Important: &gt; The Swift overlay to the Foundation framework provides the ''<a class="el" href="classcocoon_1_1_calendar.html" title="C++ handle for the Objective-C class NSCalendar (Foundation).">Calendar</a>'' structure, which bridges to the ''NSCalendar'' class. For more information about value types, see &lt;doc://com.apple.documentation/documentation/swift/working-with-foundation-types&gt;. ### Locales and Calendars Most locales use the most widely used civil calendar, called the Gregorian calendar (''Identifier/gregorian''), but there remain exceptions to this trend. For example: - In Saudi Arabia, some locales use primarily the Islamic Umm al-Qura calendar (''Identifier/islamicUmmAlQura''). - In Ethiopia, some locales use primarily the Ethiopian calendar (''Identifier/ethiopicAmeteMihret'' or ''Identifier/ethiopicAmeteAlem''). - In Iran and Afghanistan, some locales use primarily the Persian calendar (''Identifier/persian''). - In Thailand, some locales use primarily the Buddhist calendar (''Identifier/buddhist''). Other locales use another calendar alongside the Gregorian calendar. For example: - India also uses the Indian national calendar (''Identifier/indian''). - Israel also uses the Hebrew calendar (''Identifier/hebrew''). - China mainland and other regions also use the Chinese calendar (''Identifier/chinese''), primarily to calculate astronomical date and Chinese traditional holidays. - Japan also uses the Japanese calendar (''Identifier/japanese''), primarily to add year names. Independent of any particular locale, certain calendars are used primarily to calculate dates for religious observances. Among these are the Buddhist (''Identifier/buddhist''), Coptic (''Identifier/coptic''), Hebrew (''Identifier/hebrew''), and Islamic (''Identifier/islamic'') calendars. ### How NSCalendar Models the Gregorian <a class="el" href="classcocoon_1_1_calendar.html" title="C++ handle for the Objective-C class NSCalendar (Foundation).">Calendar</a> The Gregorian calendar was first introduced in 1582, as a replacement for the Julian <a class="el" href="classcocoon_1_1_calendar.html" title="C++ handle for the Objective-C class NSCalendar (Foundation).">Calendar</a>. According to the Julian calendar, a leap day is added to February for any year with a number divisible by 4, which results in an annual disparity of 11 minutes, or 1 day every 128 years. The Gregorian calendar revised the rules for leap day calculation, by skipping the leap day for any year with a number divisible by 100, unless that year number is also divisible by 400, resulting in an annual disparity of only 26 seconds, or 1 day every 3323 years. To transition from the Julian calendar to the Gregorian calendar, 10 days were dropped from the Gregorian calendar (October 5–14). After the Gregorian calendar was introduced, many regions continued to use the Julian calendar, with Turkey being the last country or region to adopt the Gregorian calendar, in 1926. As a result of the staggered adoption, the transition period for regions at the time of adoption have different start dates and a different number of skipped days to account for the additional disparity from leap day calculations. ''NSCalendar'' models the behavior of a proleptic Gregorian calendar (as defined by ISO 8601:2004), which extends the Gregorian calendar backward in time from the date of its introduction. This behavior should be taken into account when working with dates created before the transition period of the affected locales. ### <a class="el" href="classcocoon_1_1_calendar.html" title="C++ handle for the Objective-C class NSCalendar (Foundation).">Calendar</a> Arithmetic To do calendar arithmetic, you use ''NSDate'' objects in conjunction with a calendar. For example, to convert between a decomposed date in one calendar and another calendar, you must first convert the decomposed elements into a date using the first calendar, then decompose it using the second. ''NSDate'' provides the absolute scale and epoch (reference point) for dates and times, which can then be rendered into a particular calendar, for calendrical computations or user display. Two ''NSCalendar'' methods that return a date object, ''date(from:)'', ''date(byAdding:to:options:)'', take as a parameter an ''NSDateComponents'' object that describes the calendrical components required for the computation. You can provide as many components as you need (or choose to). When there is incomplete information to compute an absolute time, default values similar to '0' and '1' are usually chosen by a calendar, but this is a calendar-specific choice. If you provide inconsistent information, calendar-specific disambiguation is performed (which may involve ignoring one or more of the parameters). Related methods (''components(:from:)'' and ''components(:from:to:options:)-84y5w'') take a bit mask parameter that specifies which components to calculate when returning an ''NSDateComponents'' object. The bit mask is composed of ''<a class="el" href="classcocoon_1_1_unit.html" title="C++ handle for the Objective-C class NSUnit (Foundation).">Unit</a>'' constants (see 'Constants'). In a calendar, day, week, weekday, month, and year numbers are generally 1-based, but there may be calendar-specific exceptions. Ordinal numbers, where they occur, are 1-based. Some calendars represented by this API may have to map their basic unit concepts into year/month/week/day/… nomenclature. For example, a calendar composed of 4 quarters in a year instead of 12 months uses the month unit to represent quarters. The particular values of the unit are defined by each calendar, and are not necessarily consistent with values for that unit in another calendar. Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.</p>
 <dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;cocoon.h&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_class" href="classcocoon_1_1_calendar.html">cocoon::Calendar</a> calendar(<span class="keyword">nullptr</span>);  <span class="comment">// null handle; instances normally come from other API calls</span></div>
-<div class="line">calendar.set_first_weekday(1);</div>
-<div class="ttc" id="aclasscocoon_1_1_calendar_html"><div class="ttname"><a href="classcocoon_1_1_calendar.html">cocoon::Calendar</a></div><div class="ttdoc">C++ handle for the Objective-C class NSCalendar (Foundation).</div><div class="ttdef"><b>Definition</b> calendar.h:47</div></div>
+<div class="line"><a class="code hl_class" href="classcocoon_1_1_calendar.html">cocoon::Calendar</a> calendar{<span class="stringliteral">&quot;text&quot;</span>};</div>
+<div class="line">calendar.<a class="code hl_function" href="#abf0c471285d42d7292cd703bc73afafd">set_first_weekday</a>(1);</div>
+<div class="ttc" id="aclasscocoon_1_1_calendar_html"><div class="ttname"><a href="classcocoon_1_1_calendar.html">cocoon::Calendar</a></div><div class="ttdoc">C++ handle for the Objective-C class NSCalendar (Foundation).</div><div class="ttdef"><b>Definition</b> calendar.h:46</div></div>
+<div class="ttc" id="aclasscocoon_1_1_calendar_html_abf0c471285d42d7292cd703bc73afafd"><div class="ttname"><a href="#abf0c471285d42d7292cd703bc73afafd">cocoon::Calendar::set_first_weekday</a></div><div class="ttdeci">void set_first_weekday(std::uint64_t value) const</div><div class="ttdoc">Sets the firstWeekday property of NSCalendar.</div></div>
 </div><!-- fragment --></dd></dl>
-<dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_calendar.html">cocoon::Calendar</a> calendar(<span class="keyword">nullptr</span>);</div>
-<div class="line">calendar.set_first_weekday(1);</div>
-<div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#ad36dfc8c5289dd77084392536c8a4ae3">first_weekday</a> = calendar.first_weekday();</div>
-<div class="line">calendar.set_locale(<a class="code hl_class" href="classcocoon_1_1_locale.html">cocoon::Locale</a>());</div>
-<div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#a7dfa0bfb3229761dba3daedce5362397">locale</a> = calendar.locale();</div>
-<div class="line">calendar.set_minimum_days_in_first_week(1);</div>
-<div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#a75709d4afd9e8927a8259392a7b81c42">minimum_days_in_first_week</a> = calendar.minimum_days_in_first_week();</div>
-<div class="line"><span class="keyword">auto</span> made_0 = <a class="code hl_function" href="#a28ef31f24766ad7f112ca048e70b8cb9">cocoon::Calendar::calendar_with_identifier</a>(<span class="stringliteral">&quot;text&quot;</span>);</div>
-<div class="line">calendar.compare_date(<a class="code hl_class" href="classcocoon_1_1_date.html">cocoon::Date</a>(), <a class="code hl_class" href="classcocoon_1_1_date.html">cocoon::Date</a>(), <a class="code hl_enumvalue" href="namespacecocoon.html#aefb0306381ac63a2246215dab2ab8b7fa272e04f3315b5ffaa8a9ac48c454481b">cocoon::CalendarUnit::Era</a>);</div>
-<div class="line">calendar.component(<a class="code hl_enumvalue" href="namespacecocoon.html#aefb0306381ac63a2246215dab2ab8b7fa272e04f3315b5ffaa8a9ac48c454481b">cocoon::CalendarUnit::Era</a>, <a class="code hl_class" href="classcocoon_1_1_date.html">cocoon::Date</a>());</div>
-<div class="line">calendar.components(<a class="code hl_enumvalue" href="namespacecocoon.html#aefb0306381ac63a2246215dab2ab8b7fa272e04f3315b5ffaa8a9ac48c454481b">cocoon::CalendarUnit::Era</a>, <a class="code hl_class" href="classcocoon_1_1_date.html">cocoon::Date</a>());</div>
-<div class="ttc" id="aclasscocoon_1_1_calendar_html_a28ef31f24766ad7f112ca048e70b8cb9"><div class="ttname"><a href="#a28ef31f24766ad7f112ca048e70b8cb9">cocoon::Calendar::calendar_with_identifier</a></div><div class="ttdeci">static Calendar calendar_with_identifier(const std::string &amp;calendar_identifier_constant)</div><div class="ttdoc">Calls +[NSCalendar calendarWithIdentifier:].</div></div>
+<dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_calendar.html">cocoon::Calendar</a> calendar{<span class="stringliteral">&quot;text&quot;</span>};</div>
+<div class="line">calendar.<a class="code hl_function" href="#abf0c471285d42d7292cd703bc73afafd">set_first_weekday</a>(1);</div>
+<div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#ad36dfc8c5289dd77084392536c8a4ae3">first_weekday</a> = calendar.<a class="code hl_function" href="#ad36dfc8c5289dd77084392536c8a4ae3">first_weekday</a>();</div>
+<div class="line">calendar.<a class="code hl_function" href="#a5da45ef5dda060c82e3a1df472305c0b">set_locale</a>(<a class="code hl_class" href="classcocoon_1_1_locale.html">cocoon::Locale</a>());</div>
+<div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#a7dfa0bfb3229761dba3daedce5362397">locale</a> = calendar.<a class="code hl_function" href="#a7dfa0bfb3229761dba3daedce5362397">locale</a>();</div>
+<div class="line">calendar.<a class="code hl_function" href="#a6255bde9d479bb666672fce9219f4aff">set_minimum_days_in_first_week</a>(1);</div>
+<div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#a75709d4afd9e8927a8259392a7b81c42">minimum_days_in_first_week</a> = calendar.<a class="code hl_function" href="#a75709d4afd9e8927a8259392a7b81c42">minimum_days_in_first_week</a>();</div>
+<div class="line">calendar.<a class="code hl_function" href="#ac6f6f8a062423990ccdbbebf1d358173">compare_date</a>(<a class="code hl_class" href="classcocoon_1_1_date.html">cocoon::Date</a>(), <a class="code hl_class" href="classcocoon_1_1_date.html">cocoon::Date</a>(), <a class="code hl_enumvalue" href="namespacecocoon.html#aefb0306381ac63a2246215dab2ab8b7fa272e04f3315b5ffaa8a9ac48c454481b">cocoon::CalendarUnit::Era</a>);</div>
+<div class="line">calendar.<a class="code hl_function" href="#a90d1beadc5c25a4b98f93a4e82d698a4">component</a>(<a class="code hl_enumvalue" href="namespacecocoon.html#aefb0306381ac63a2246215dab2ab8b7fa272e04f3315b5ffaa8a9ac48c454481b">cocoon::CalendarUnit::Era</a>, <a class="code hl_class" href="classcocoon_1_1_date.html">cocoon::Date</a>());</div>
+<div class="line">calendar.<a class="code hl_function" href="#a7e2cadaab8f79b3d57b2c8fac32495a7">components</a>(<a class="code hl_enumvalue" href="namespacecocoon.html#aefb0306381ac63a2246215dab2ab8b7fa272e04f3315b5ffaa8a9ac48c454481b">cocoon::CalendarUnit::Era</a>, <a class="code hl_class" href="classcocoon_1_1_date.html">cocoon::Date</a>());</div>
+<div class="ttc" id="aclasscocoon_1_1_calendar_html_a5da45ef5dda060c82e3a1df472305c0b"><div class="ttname"><a href="#a5da45ef5dda060c82e3a1df472305c0b">cocoon::Calendar::set_locale</a></div><div class="ttdeci">void set_locale(const Locale &amp;value) const</div><div class="ttdoc">Sets the locale property of NSCalendar.</div></div>
+<div class="ttc" id="aclasscocoon_1_1_calendar_html_a6255bde9d479bb666672fce9219f4aff"><div class="ttname"><a href="#a6255bde9d479bb666672fce9219f4aff">cocoon::Calendar::set_minimum_days_in_first_week</a></div><div class="ttdeci">void set_minimum_days_in_first_week(std::uint64_t value) const</div><div class="ttdoc">Sets the minimumDaysInFirstWeek property of NSCalendar.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_calendar_html_a75709d4afd9e8927a8259392a7b81c42"><div class="ttname"><a href="#a75709d4afd9e8927a8259392a7b81c42">cocoon::Calendar::minimum_days_in_first_week</a></div><div class="ttdeci">std::uint64_t minimum_days_in_first_week() const</div><div class="ttdoc">Returns the minimumDaysInFirstWeek property of NSCalendar.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_calendar_html_a7dfa0bfb3229761dba3daedce5362397"><div class="ttname"><a href="#a7dfa0bfb3229761dba3daedce5362397">cocoon::Calendar::locale</a></div><div class="ttdeci">Locale locale() const</div><div class="ttdoc">Returns the locale property of NSCalendar.</div></div>
+<div class="ttc" id="aclasscocoon_1_1_calendar_html_a7e2cadaab8f79b3d57b2c8fac32495a7"><div class="ttname"><a href="#a7e2cadaab8f79b3d57b2c8fac32495a7">cocoon::Calendar::components</a></div><div class="ttdeci">DateComponents components(CalendarUnit unit_flags, const Date &amp;date) const</div><div class="ttdoc">Calls -[NSCalendar components:fromDate:].</div></div>
+<div class="ttc" id="aclasscocoon_1_1_calendar_html_a90d1beadc5c25a4b98f93a4e82d698a4"><div class="ttname"><a href="#a90d1beadc5c25a4b98f93a4e82d698a4">cocoon::Calendar::component</a></div><div class="ttdeci">std::int64_t component(CalendarUnit unit, const Date &amp;date) const</div><div class="ttdoc">Calls -[NSCalendar component:fromDate:].</div></div>
+<div class="ttc" id="aclasscocoon_1_1_calendar_html_ac6f6f8a062423990ccdbbebf1d358173"><div class="ttname"><a href="#ac6f6f8a062423990ccdbbebf1d358173">cocoon::Calendar::compare_date</a></div><div class="ttdeci">ComparisonResult compare_date(const Date &amp;date1, const Date &amp;date2, CalendarUnit unit) const</div><div class="ttdoc">Calls -[NSCalendar compareDate:toDate:toUnitGranularity:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_calendar_html_ad36dfc8c5289dd77084392536c8a4ae3"><div class="ttname"><a href="#ad36dfc8c5289dd77084392536c8a4ae3">cocoon::Calendar::first_weekday</a></div><div class="ttdeci">std::uint64_t first_weekday() const</div><div class="ttdoc">Returns the firstWeekday property of NSCalendar.</div></div>
-<div class="ttc" id="aclasscocoon_1_1_date_html"><div class="ttname"><a href="classcocoon_1_1_date.html">cocoon::Date</a></div><div class="ttdoc">C++ handle for the Objective-C class NSDate (Foundation).</div><div class="ttdef"><b>Definition</b> date.h:36</div></div>
-<div class="ttc" id="aclasscocoon_1_1_locale_html"><div class="ttname"><a href="classcocoon_1_1_locale.html">cocoon::Locale</a></div><div class="ttdoc">C++ handle for the Objective-C class NSLocale (Foundation).</div><div class="ttdef"><b>Definition</b> locale.h:37</div></div>
+<div class="ttc" id="aclasscocoon_1_1_date_html"><div class="ttname"><a href="classcocoon_1_1_date.html">cocoon::Date</a></div><div class="ttdoc">C++ handle for the Objective-C class NSDate (Foundation).</div><div class="ttdef"><b>Definition</b> date.h:34</div></div>
+<div class="ttc" id="aclasscocoon_1_1_locale_html"><div class="ttname"><a href="classcocoon_1_1_locale.html">cocoon::Locale</a></div><div class="ttdoc">C++ handle for the Objective-C class NSLocale (Foundation).</div><div class="ttdef"><b>Definition</b> locale.h:36</div></div>
 <div class="ttc" id="anamespacecocoon_html_aefb0306381ac63a2246215dab2ab8b7fa272e04f3315b5ffaa8a9ac48c454481b"><div class="ttname"><a href="namespacecocoon.html#aefb0306381ac63a2246215dab2ab8b7fa272e04f3315b5ffaa8a9ac48c454481b">cocoon::CalendarUnit::Era</a></div><div class="ttdeci">@ Era</div><div class="ttdef"><b>Definition</b> enums.h:639</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/foundation/nscalendar">https://developer.apple.com/documentation/foundation/nscalendar</a> </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a53f351598dd0e26347e6cd1f06f0e739" name="a53f351598dd0e26347e6cd1f06f0e739"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53f351598dd0e26347e6cd1f06f0e739">&#9670;&#160;</a></span>Calendar() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::Calendar::Calendar </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>ident</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSCalendar</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
 <a id="a7e86a9c09b2e61d5aa55f7a3cf1035a4" name="a7e86a9c09b2e61d5aa55f7a3cf1035a4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e86a9c09b2e61d5aa55f7a3cf1035a4">&#9670;&#160;</a></span>Calendar() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e86a9c09b2e61d5aa55f7a3cf1035a4">&#9670;&#160;</a></span>Calendar() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -288,7 +317,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a7ed79d1291d178b1065295c0e9cd1e78" name="a7ed79d1291d178b1065295c0e9cd1e78"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ed79d1291d178b1065295c0e9cd1e78">&#9670;&#160;</a></span>Calendar() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ed79d1291d178b1065295c0e9cd1e78">&#9670;&#160;</a></span>Calendar() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -307,7 +336,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="adf9e09229fb579aac6c0cce7ca7481f9" name="adf9e09229fb579aac6c0cce7ca7481f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf9e09229fb579aac6c0cce7ca7481f9">&#9670;&#160;</a></span>Calendar() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#adf9e09229fb579aac6c0cce7ca7481f9">&#9670;&#160;</a></span>Calendar() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -364,7 +393,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a7e86a9c09b2e61d5aa55f7a3cf1035a4">Calendar</a> cocoon::Calendar::autoupdating_current_calendar </td>
+          <td class="memname"><a class="el" href="#a53f351598dd0e26347e6cd1f06f0e739">Calendar</a> cocoon::Calendar::autoupdating_current_calendar </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -399,40 +428,6 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Returns the <span class="tt">calendarIdentifier</span> property of <span class="tt">NSCalendar</span>. </p>
 <p>An identifier for the calendar. </p><dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a28ef31f24766ad7f112ca048e70b8cb9" name="a28ef31f24766ad7f112ca048e70b8cb9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28ef31f24766ad7f112ca048e70b8cb9">&#9670;&#160;</a></span>calendar_with_identifier()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a7e86a9c09b2e61d5aa55f7a3cf1035a4">Calendar</a> cocoon::Calendar::calendar_with_identifier </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>calendar_identifier_constant</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSCalendar calendarWithIdentifier:]</span>. </p>
-<p>Creates a new calendar specified by a given identifier. - Parameters: - calendarIdentifierConstant: The identifier for the new calendar. For valid identifiers, see '<a class="el" href="classcocoon_1_1_calendar.html" title="C++ handle for the Objective-C class NSCalendar (Foundation).">Calendar</a> Identifiers'. - Returns: The initialized calendar, or 'nil' if the identifier is unknown (if, for example, it is either an unrecognized string or the calendar is not supported by the current version of the operating system). The returned calendar defaults to the current locale and default time zone. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">calendar_identifier_constant</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
 
 </div>
 </div>
@@ -662,7 +657,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a7e86a9c09b2e61d5aa55f7a3cf1035a4">Calendar</a> cocoon::Calendar::current_calendar </td>
+          <td class="memname"><a class="el" href="#a53f351598dd0e26347e6cd1f06f0e739">Calendar</a> cocoon::Calendar::current_calendar </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -1151,32 +1146,6 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="aadd1131c12058f076ea96b7e86768bdb" name="aadd1131c12058f076ea96b7e86768bdb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aadd1131c12058f076ea96b7e86768bdb">&#9670;&#160;</a></span>init_with_calendar_identifier()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> cocoon::Calendar::init_with_calendar_identifier </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>ident</em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">-[NSCalendar initWithCalendarIdentifier:]</span>. </p>
-<p>Initializes a calendar according to a given identifier. - Parameters: - ident: The identifier for the new calendar. For valid identifiers, see '<a class="el" href="classcocoon_1_1_calendar.html" title="C++ handle for the Objective-C class NSCalendar (Foundation).">Calendar</a> Identifiers'. - Returns: The initialized calendar, or 'nil' if the identifier is unknown (if, for example, it is either an unrecognized string or the calendar is not supported by the current version of the operating system). </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">ident</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
 
 </div>
 </div>

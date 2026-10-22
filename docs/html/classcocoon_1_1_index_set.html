@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -61,7 +61,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classcocoon_1_1_index_set-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">cocoon::IndexSet Class Reference</div></div>
 </div><!--header-->
@@ -161,34 +160,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object" id="r_a53f4ad0e6a86173a96668457725eb369"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
 <tr class="memitem:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object template"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_object.html#a53f4ad0e6a86173a96668457725eb369">as</a> () const</td></tr>
 <tr class="memdesc:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reinterprets the native object as handle type <span class="tt">T</span> (no runtime type check).  <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:aaf22e17b9ed2f93e9704a86c7aaf1db5" id="r_aaf22e17b9ed2f93e9704a86c7aaf1db5"><td class="memItemLeft">static <a class="el" href="#a8ca3f4d9536d82880d2b81d8b69176f7">IndexSet</a>&#160;</td><td class="memItemRight"><a class="el" href="#aaf22e17b9ed2f93e9704a86c7aaf1db5">index_set</a> ()</td></tr>
-<tr class="memdesc:aaf22e17b9ed2f93e9704a86c7aaf1db5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSIndexSet indexSet]</span>.  <br /></td></tr>
-<tr class="memitem:ade3e00a4908df15e5fe487ded4a8b2ab" id="r_ade3e00a4908df15e5fe487ded4a8b2ab"><td class="memItemLeft">static <a class="el" href="#a8ca3f4d9536d82880d2b81d8b69176f7">IndexSet</a>&#160;</td><td class="memItemRight"><a class="el" href="#ade3e00a4908df15e5fe487ded4a8b2ab">index_set_with_index</a> (std::uint64_t value)</td></tr>
-<tr class="memdesc:ade3e00a4908df15e5fe487ded4a8b2ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSIndexSet indexSetWithIndex:]</span>.  <br /></td></tr>
-<tr class="memitem:a27074306bd1e5af419cb98e356245de5" id="r_a27074306bd1e5af419cb98e356245de5"><td class="memItemLeft">static <a class="el" href="#a8ca3f4d9536d82880d2b81d8b69176f7">IndexSet</a>&#160;</td><td class="memItemRight"><a class="el" href="#a27074306bd1e5af419cb98e356245de5">index_set_with_indexes_in_range</a> (const <a class="el" href="structcocoon_1_1_range.html">Range</a> &amp;range)</td></tr>
-<tr class="memdesc:a27074306bd1e5af419cb98e356245de5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSIndexSet indexSetWithIndexesInRange:]</span>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>C++ handle for the Objective-C class <span class="tt">NSIndexSet</span> (Foundation). </p>
 <p>An immutable collection of unique integer values that represent indexes in another collection. In Swift, this type bridges to ''<a class="el" href="classcocoon_1_1_index_set.html" title="C++ handle for the Objective-C class NSIndexSet (Foundation).">IndexSet</a>''; use ''NSIndexSet'' when you need reference semantics or other Foundation-specific behavior. The 'NSIndexSet' class represents an immutable collection of unique unsigned integers, known as indexes because of the way they are used. This collection is referred to as an index set. Indexes must be in the range '0 .. NSNotFound - 1'. You use index sets in your code to store indexes into some other data structure. For example, given an 'NSArray' object, you could use an index set to identify a subset of objects in that array. You should not use index sets to store an arbitrary collection of integer values because index sets store indexes as sorted ranges. This makes them more efficient than storing a collection of individual integers. It also means that each index value can only appear once in the index set. The designated initializers of the 'NSIndexSet' class are: ''init(index:)'', ''init(indexesIn:)'', and ''init(indexSet:)''. You must not subclass the 'NSIndexSet' class. The mutable subclass of 'NSIndexSet' is ''NSMutableIndexSet''. &gt; Important: &gt; The Swift overlay to the Foundation framework provides the ''<a class="el" href="classcocoon_1_1_index_set.html" title="C++ handle for the Objective-C class NSIndexSet (Foundation).">IndexSet</a>'' structure, which bridges to the ''NSIndexSet'' class and its mutable subclass, ''NSMutableIndexSet''. For more information about value types, see &lt;doc://com.apple.documentation/documentation/swift/working-with-foundation-types&gt;. Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.</p>
 <dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;cocoon.h&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_class" href="classcocoon_1_1_index_set.html">cocoon::IndexSet</a> <a class="code hl_function" href="#aaf22e17b9ed2f93e9704a86c7aaf1db5">index_set</a>;</div>
-<div class="ttc" id="aclasscocoon_1_1_index_set_html"><div class="ttname"><a href="classcocoon_1_1_index_set.html">cocoon::IndexSet</a></div><div class="ttdoc">C++ handle for the Objective-C class NSIndexSet (Foundation).</div><div class="ttdef"><b>Definition</b> index_set.h:36</div></div>
-<div class="ttc" id="aclasscocoon_1_1_index_set_html_aaf22e17b9ed2f93e9704a86c7aaf1db5"><div class="ttname"><a href="#aaf22e17b9ed2f93e9704a86c7aaf1db5">cocoon::IndexSet::index_set</a></div><div class="ttdeci">static IndexSet index_set()</div><div class="ttdoc">Calls +[NSIndexSet indexSet].</div></div>
+<div class="line"><a class="code hl_class" href="classcocoon_1_1_index_set.html">cocoon::IndexSet</a> index_set;</div>
+<div class="ttc" id="aclasscocoon_1_1_index_set_html"><div class="ttname"><a href="classcocoon_1_1_index_set.html">cocoon::IndexSet</a></div><div class="ttdoc">C++ handle for the Objective-C class NSIndexSet (Foundation).</div><div class="ttdef"><b>Definition</b> index_set.h:34</div></div>
 </div><!-- fragment --></dd></dl>
-<dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_index_set.html">cocoon::IndexSet</a> <a class="code hl_function" href="#aaf22e17b9ed2f93e9704a86c7aaf1db5">index_set</a>{};</div>
-<div class="line"><span class="keyword">auto</span> made_0 = <a class="code hl_function" href="#aaf22e17b9ed2f93e9704a86c7aaf1db5">cocoon::IndexSet::index_set</a>();</div>
-<div class="line"><span class="keyword">auto</span> made_1 = <a class="code hl_function" href="#ade3e00a4908df15e5fe487ded4a8b2ab">cocoon::IndexSet::index_set_with_index</a>(1);</div>
-<div class="line"><a class="code hl_function" href="#aaf22e17b9ed2f93e9704a86c7aaf1db5">index_set</a>.<a class="code hl_function" href="#ae56239cc301274638d0d1879726dd658">contains_index</a>(1);</div>
-<div class="line"><a class="code hl_function" href="#aaf22e17b9ed2f93e9704a86c7aaf1db5">index_set</a>.<a class="code hl_function" href="#ac0492749a7f151140045a3b721eb0224">contains_indexes</a>(<a class="code hl_class" href="classcocoon_1_1_index_set.html">cocoon::IndexSet</a>());</div>
-<div class="line"><a class="code hl_function" href="#aaf22e17b9ed2f93e9704a86c7aaf1db5">index_set</a>.<a class="code hl_function" href="#a9cb4b55d881fab5e7c75aa691ddbd4da">index_greater_than_index</a>(1);</div>
+<dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_index_set.html">cocoon::IndexSet</a> index_set{};</div>
+<div class="line">index_set.<a class="code hl_function" href="#ae56239cc301274638d0d1879726dd658">contains_index</a>(1);</div>
+<div class="line">index_set.<a class="code hl_function" href="#ac0492749a7f151140045a3b721eb0224">contains_indexes</a>(<a class="code hl_class" href="classcocoon_1_1_index_set.html">cocoon::IndexSet</a>());</div>
+<div class="line">index_set.<a class="code hl_function" href="#a9cb4b55d881fab5e7c75aa691ddbd4da">index_greater_than_index</a>(1);</div>
 <div class="ttc" id="aclasscocoon_1_1_index_set_html_a9cb4b55d881fab5e7c75aa691ddbd4da"><div class="ttname"><a href="#a9cb4b55d881fab5e7c75aa691ddbd4da">cocoon::IndexSet::index_greater_than_index</a></div><div class="ttdeci">std::uint64_t index_greater_than_index(std::uint64_t value) const</div><div class="ttdoc">Calls -[NSIndexSet indexGreaterThanIndex:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_index_set_html_ac0492749a7f151140045a3b721eb0224"><div class="ttname"><a href="#ac0492749a7f151140045a3b721eb0224">cocoon::IndexSet::contains_indexes</a></div><div class="ttdeci">bool contains_indexes(const IndexSet &amp;index_set) const</div><div class="ttdoc">Calls -[NSIndexSet containsIndexes:].</div></div>
-<div class="ttc" id="aclasscocoon_1_1_index_set_html_ade3e00a4908df15e5fe487ded4a8b2ab"><div class="ttname"><a href="#ade3e00a4908df15e5fe487ded4a8b2ab">cocoon::IndexSet::index_set_with_index</a></div><div class="ttdeci">static IndexSet index_set_with_index(std::uint64_t value)</div><div class="ttdoc">Calls +[NSIndexSet indexSetWithIndex:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_index_set_html_ae56239cc301274638d0d1879726dd658"><div class="ttname"><a href="#ae56239cc301274638d0d1879726dd658">cocoon::IndexSet::contains_index</a></div><div class="ttdeci">bool contains_index(std::uint64_t value) const</div><div class="ttdoc">Calls -[NSIndexSet containsIndex:].</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/foundation/nsindexset">https://developer.apple.com/documentation/foundation/nsindexset</a> </dd></dl>
@@ -844,102 +830,6 @@ Static Public Member Functions</h2></td></tr>
 <p>Returns the index of the first object that passes the predicate block test. - Parameter predicate: The block to apply to elements in the set. The block takes two arguments: 'idx' (the index of the object) and 'stop' (a reference to a Boolean value; set to 'YES' to stop further processing). The block returns a Boolean value that indicates whether the index passed the test. - Returns: The index of the first object that passes the predicate test. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">predicate</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="aaf22e17b9ed2f93e9704a86c7aaf1db5" name="aaf22e17b9ed2f93e9704a86c7aaf1db5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf22e17b9ed2f93e9704a86c7aaf1db5">&#9670;&#160;</a></span>index_set()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a8ca3f4d9536d82880d2b81d8b69176f7">IndexSet</a> cocoon::IndexSet::index_set </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSIndexSet indexSet]</span>. </p>
-<p>Creates an empty index set. </p><dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="ade3e00a4908df15e5fe487ded4a8b2ab" name="ade3e00a4908df15e5fe487ded4a8b2ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ade3e00a4908df15e5fe487ded4a8b2ab">&#9670;&#160;</a></span>index_set_with_index()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a8ca3f4d9536d82880d2b81d8b69176f7">IndexSet</a> cocoon::IndexSet::index_set_with_index </td>
-          <td>(</td>
-          <td class="paramtype">std::uint64_t</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSIndexSet indexSetWithIndex:]</span>. </p>
-<p>Creates an index set with an index. - Parameter value: An index. Must be in the range '0 .. NSNotFound - 1'. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a27074306bd1e5af419cb98e356245de5" name="a27074306bd1e5af419cb98e356245de5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a27074306bd1e5af419cb98e356245de5">&#9670;&#160;</a></span>index_set_with_indexes_in_range()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a8ca3f4d9536d82880d2b81d8b69176f7">IndexSet</a> cocoon::IndexSet::index_set_with_indexes_in_range </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structcocoon_1_1_range.html">Range</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>range</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSIndexSet indexSetWithIndexesInRange:]</span>. </p>
-<p>Creates an index set with an index range. - Parameter range: An index range. Must be in the range '0 .. NSNotFound - 1'. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">range</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
   </table>
   </dd>
 </dl>

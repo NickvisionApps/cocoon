@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -61,7 +61,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-static-methods">Static Protected Member Functions</a> &#124;
 <a href="classcocoon_1_1_stack_view-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">cocoon::StackView Class Reference</div></div>
@@ -77,6 +76,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a78ac943a6f08c01d80993bbde5cf9336" id="r_a78ac943a6f08c01d80993bbde5cf9336"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a78ac943a6f08c01d80993bbde5cf9336">StackView</a> ()</td></tr>
 <tr class="memdesc:a78ac943a6f08c01d80993bbde5cf9336"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSStackView</span> instance and returns a handle to it.  <br /></td></tr>
+<tr class="memitem:af22f840170689f92bc1760ddea4e9876" id="r_af22f840170689f92bc1760ddea4e9876"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af22f840170689f92bc1760ddea4e9876">StackView</a> (const std::vector&lt; <a class="el" href="classcocoon_1_1_view.html#a9126497bdb620b2bc08e249a38268a15">View</a> &gt; &amp;views)</td></tr>
+<tr class="memdesc:af22f840170689f92bc1760ddea4e9876"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSStackView</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:a684c052e9ed2cbb5fa4b15e1b627c9a2" id="r_a684c052e9ed2cbb5fa4b15e1b627c9a2"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a684c052e9ed2cbb5fa4b15e1b627c9a2">StackView</a> (std::nullptr_t)</td></tr>
 <tr class="memdesc:a684c052e9ed2cbb5fa4b15e1b627c9a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a null handle that refers to no native object.  <br /></td></tr>
 <tr class="memitem:ab5bab3ed539a0bf8ad9eebe87363f192" id="r_ab5bab3ed539a0bf8ad9eebe87363f192"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab5bab3ed539a0bf8ad9eebe87363f192">StackView</a> (<a class="el" href="structcocoon_1_1_adopt.html">Adopt</a> adopt)</td></tr>
@@ -963,10 +964,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object template"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_object.html#a53f4ad0e6a86173a96668457725eb369">as</a> () const</td></tr>
 <tr class="memdesc:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reinterprets the native object as handle type <span class="tt">T</span> (no runtime type check).  <br /></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a560fdc7cf8e2f4c1644187374097b169" id="r_a560fdc7cf8e2f4c1644187374097b169"><td class="memItemLeft">static <a class="el" href="#a78ac943a6f08c01d80993bbde5cf9336">StackView</a>&#160;</td><td class="memItemRight"><a class="el" href="#a560fdc7cf8e2f4c1644187374097b169">stack_view_with_views</a> (const std::vector&lt; <a class="el" href="classcocoon_1_1_view.html#a9126497bdb620b2bc08e249a38268a15">View</a> &gt; &amp;views)</td></tr>
-<tr class="memdesc:a560fdc7cf8e2f4c1644187374097b169"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSStackView stackViewWithViews:]</span>.  <br /></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-pro-static-methods" class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:a4095067aeba3396cd7c5d553149a30fd" id="r_a4095067aeba3396cd7c5d553149a30fd"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a4095067aeba3396cd7c5d553149a30fd">install_delegate_delegate_</a> (void *native)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_static_methods_classcocoon_1_1_view"><td colspan="2">Static Public Member Functions inherited from <a class="el" href="classcocoon_1_1_view.html">cocoon::View</a></td></tr>
 <tr class="memitem:ab2bfeadcc804b4a517c29641b2bf1d28 pub_static_methods_classcocoon_1_1_view" id="r_ab2bfeadcc804b4a517c29641b2bf1d28"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_view.html#ab2bfeadcc804b4a517c29641b2bf1d28">is_compatible_with_responsive_scrolling</a> ()</td></tr>
 <tr class="memdesc:ab2bfeadcc804b4a517c29641b2bf1d28 pub_static_methods_classcocoon_1_1_view"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">compatibleWithResponsiveScrolling</span> property of <span class="tt">NSView</span>.  <br /></td></tr>
@@ -983,10 +986,6 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:acf3f611cc422eadcf4268ddb971c7db4 pub_static_methods_classcocoon_1_1_responder"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSResponder allowedClassesForRestorableStateKeyPath:]</span>.  <br /></td></tr>
 <tr class="memitem:a439082ad610d2fefdbe46079e94d78ca pub_static_methods_classcocoon_1_1_responder" id="r_a439082ad610d2fefdbe46079e94d78ca"><td class="memItemLeft">static std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_responder.html#a439082ad610d2fefdbe46079e94d78ca">restorable_state_key_paths</a> ()</td></tr>
 <tr class="memdesc:a439082ad610d2fefdbe46079e94d78ca pub_static_methods_classcocoon_1_1_responder"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">restorableStateKeyPaths</span> property of <span class="tt">NSResponder</span>.  <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pro-static-methods" class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
-Static Protected Member Functions</h2></td></tr>
-<tr class="memitem:a4095067aeba3396cd7c5d553149a30fd" id="r_a4095067aeba3396cd7c5d553149a30fd"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a4095067aeba3396cd7c5d553149a30fd">install_delegate_delegate_</a> (void *native)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A stack of arranged subviews (NSStackView). </p>
@@ -1012,14 +1011,14 @@ Static Protected Member Functions</h2></td></tr>
 <div class="line">stack_view.<a class="code hl_function" href="#af8de0650ce9af2a9442c649b618b1670">clipping_resistance_priority_for_orientation</a>(<a class="code hl_enumvalue" href="namespacecocoon.html#a2829b8436cce6ef3eb2cb591e438dcb4ac1b5fa03ecdb95d4a45dd1c40b02527f">cocoon::ConstraintOrientation::Horizontal</a>);</div>
 <div class="line">stack_view.<a class="code hl_function" href="#a0111652533b46b4943d1e1df3e82a9f3">will_detach_views</a>().connect([](std::vector&lt;cocoon::View&gt; a0) {});</div>
 <div class="line">stack_view.<a class="code hl_function" href="#aa18ba612358423cfc5ce639176e01f5f">did_reattach_views</a>().connect([](std::vector&lt;cocoon::View&gt; a0) {});</div>
-<div class="ttc" id="aclasscocoon_1_1_stack_view_html_a0111652533b46b4943d1e1df3e82a9f3"><div class="ttname"><a href="#a0111652533b46b4943d1e1df3e82a9f3">cocoon::StackView::will_detach_views</a></div><div class="ttdeci">Signal&lt; StackView, void(std::vector&lt; View &gt;)&gt; will_detach_views() const</div><div class="ttdoc">Signal for the delegate/data-source method behind will_detach_views; connect a callback with will_det...</div><div class="ttdef"><b>Definition</b> stack_view.h:255</div></div>
+<div class="ttc" id="aclasscocoon_1_1_stack_view_html_a0111652533b46b4943d1e1df3e82a9f3"><div class="ttname"><a href="#a0111652533b46b4943d1e1df3e82a9f3">cocoon::StackView::will_detach_views</a></div><div class="ttdeci">Signal&lt; StackView, void(std::vector&lt; View &gt;)&gt; will_detach_views() const</div><div class="ttdoc">Signal for the delegate/data-source method behind will_detach_views; connect a callback with will_det...</div><div class="ttdef"><b>Definition</b> stack_view.h:251</div></div>
 <div class="ttc" id="aclasscocoon_1_1_stack_view_html_a1b0714e9f22cf61fa91e3ff84b133a33"><div class="ttname"><a href="#a1b0714e9f22cf61fa91e3ff84b133a33">cocoon::StackView::alignment</a></div><div class="ttdeci">LayoutAttribute alignment() const</div><div class="ttdoc">Returns the alignment property of NSStackView.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_stack_view_html_a33a85b3e622317535627768557eec9ab"><div class="ttname"><a href="#a33a85b3e622317535627768557eec9ab">cocoon::StackView::detaches_hidden_views</a></div><div class="ttdeci">bool detaches_hidden_views() const</div><div class="ttdoc">Returns the detachesHiddenViews property of NSStackView.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_stack_view_html_a3f289e53460709f08e22a9aaf2f49bce"><div class="ttname"><a href="#a3f289e53460709f08e22a9aaf2f49bce">cocoon::StackView::distribution</a></div><div class="ttdeci">StackViewDistribution distribution() const</div><div class="ttdoc">Returns the distribution property of NSStackView.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_stack_view_html_a60c8feca02f3fbbf9bfb69347463b17b"><div class="ttname"><a href="#a60c8feca02f3fbbf9bfb69347463b17b">cocoon::StackView::set_detaches_hidden_views</a></div><div class="ttdeci">void set_detaches_hidden_views(bool value) const</div><div class="ttdoc">Sets the detachesHiddenViews property of NSStackView.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_stack_view_html_a7a852f13de15033df8b88bfcc342f142"><div class="ttname"><a href="#a7a852f13de15033df8b88bfcc342f142">cocoon::StackView::set_distribution</a></div><div class="ttdeci">void set_distribution(StackViewDistribution value) const</div><div class="ttdoc">Sets the distribution property of NSStackView.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_stack_view_html_a8262c45cd3eaa83fad9ee688b7d5e63e"><div class="ttname"><a href="#a8262c45cd3eaa83fad9ee688b7d5e63e">cocoon::StackView::add_view</a></div><div class="ttdeci">void add_view(const View &amp;view, StackViewGravity gravity) const</div><div class="ttdoc">Calls -[NSStackView addView:inGravity:].</div></div>
-<div class="ttc" id="aclasscocoon_1_1_stack_view_html_aa18ba612358423cfc5ce639176e01f5f"><div class="ttname"><a href="#aa18ba612358423cfc5ce639176e01f5f">cocoon::StackView::did_reattach_views</a></div><div class="ttdeci">Signal&lt; StackView, void(std::vector&lt; View &gt;)&gt; did_reattach_views() const</div><div class="ttdoc">Signal for the delegate/data-source method behind did_reattach_views; connect a callback with did_rea...</div><div class="ttdef"><b>Definition</b> stack_view.h:260</div></div>
+<div class="ttc" id="aclasscocoon_1_1_stack_view_html_aa18ba612358423cfc5ce639176e01f5f"><div class="ttname"><a href="#aa18ba612358423cfc5ce639176e01f5f">cocoon::StackView::did_reattach_views</a></div><div class="ttdeci">Signal&lt; StackView, void(std::vector&lt; View &gt;)&gt; did_reattach_views() const</div><div class="ttdoc">Signal for the delegate/data-source method behind did_reattach_views; connect a callback with did_rea...</div><div class="ttdef"><b>Definition</b> stack_view.h:256</div></div>
 <div class="ttc" id="aclasscocoon_1_1_stack_view_html_aaaa6d9c659a461f9219b72a74466d55b"><div class="ttname"><a href="#aaaa6d9c659a461f9219b72a74466d55b">cocoon::StackView::set_alignment</a></div><div class="ttdeci">void set_alignment(LayoutAttribute value) const</div><div class="ttdoc">Sets the alignment property of NSStackView.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_stack_view_html_af8de0650ce9af2a9442c649b618b1670"><div class="ttname"><a href="#af8de0650ce9af2a9442c649b618b1670">cocoon::StackView::clipping_resistance_priority_for_orientation</a></div><div class="ttdeci">float clipping_resistance_priority_for_orientation(ConstraintOrientation orientation) const</div><div class="ttdoc">Calls -[NSStackView clippingResistancePriorityForOrientation:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_view_html"><div class="ttname"><a href="classcocoon_1_1_view.html">cocoon::View</a></div><div class="ttdoc">The base of all views (NSView): hierarchy, geometry, Auto Layout helpers and appearance.</div><div class="ttdef"><b>Definition</b> view.h:77</div></div>
@@ -1031,7 +1030,7 @@ Static Protected Member Functions</h2></td></tr>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/appkit/nsstackview">https://developer.apple.com/documentation/appkit/nsstackview</a> </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a78ac943a6f08c01d80993bbde5cf9336" name="a78ac943a6f08c01d80993bbde5cf9336"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a78ac943a6f08c01d80993bbde5cf9336">&#9670;&#160;</a></span>StackView() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a78ac943a6f08c01d80993bbde5cf9336">&#9670;&#160;</a></span>StackView() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1057,8 +1056,35 @@ Static Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="af22f840170689f92bc1760ddea4e9876" name="af22f840170689f92bc1760ddea4e9876"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af22f840170689f92bc1760ddea4e9876">&#9670;&#160;</a></span>StackView() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::StackView::StackView </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="classcocoon_1_1_view.html#a9126497bdb620b2bc08e249a38268a15">View</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>views</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSStackView</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
 <a id="a684c052e9ed2cbb5fa4b15e1b627c9a2" name="a684c052e9ed2cbb5fa4b15e1b627c9a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a684c052e9ed2cbb5fa4b15e1b627c9a2">&#9670;&#160;</a></span>StackView() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a684c052e9ed2cbb5fa4b15e1b627c9a2">&#9670;&#160;</a></span>StackView() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1077,7 +1103,7 @@ Static Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="ab5bab3ed539a0bf8ad9eebe87363f192" name="ab5bab3ed539a0bf8ad9eebe87363f192"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab5bab3ed539a0bf8ad9eebe87363f192">&#9670;&#160;</a></span>StackView() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5bab3ed539a0bf8ad9eebe87363f192">&#9670;&#160;</a></span>StackView() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1881,40 +1907,6 @@ Static Protected Member Functions</h2></td></tr>
 
 <p>Returns the <span class="tt"><a class="el" href="#ab45c6e5b33307b5e81f6e2767a5386fe" title="Returns the spacing property of NSStackView.">spacing</a></span> property of <span class="tt">NSStackView</span>. </p>
 <p>Default (minimum) spacing between each view </p><dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a560fdc7cf8e2f4c1644187374097b169" name="a560fdc7cf8e2f4c1644187374097b169"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a560fdc7cf8e2f4c1644187374097b169">&#9670;&#160;</a></span>stack_view_with_views()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a78ac943a6f08c01d80993bbde5cf9336">StackView</a> cocoon::StackView::stack_view_with_views </td>
-          <td>(</td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="classcocoon_1_1_view.html#a9126497bdb620b2bc08e249a38268a15">View</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>views</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSStackView stackViewWithViews:]</span>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">views</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
 
 </div>
 </div>

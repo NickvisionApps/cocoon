@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -196,8 +196,6 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a25f2a2c1cfa0796b548a3a2f8036efc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSSplitViewItem inspectorWithViewController:]</span>.  <br /></td></tr>
 <tr class="memitem:ab0282f48f0bf6b51a2d960cd7dd78611" id="r_ab0282f48f0bf6b51a2d960cd7dd78611"><td class="memItemLeft">static <a class="el" href="#a7f5b737d50359eb20ca8ef1a3811d978">SplitViewItem</a>&#160;</td><td class="memItemRight"><a class="el" href="#ab0282f48f0bf6b51a2d960cd7dd78611">sidebar_with_view_controller</a> (const <a class="el" href="classcocoon_1_1_view_controller.html">ViewController</a> &amp;view_controller)</td></tr>
 <tr class="memdesc:ab0282f48f0bf6b51a2d960cd7dd78611"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSSplitViewItem sidebarWithViewController:]</span>.  <br /></td></tr>
-<tr class="memitem:a3f00957fc5cb98ea5314813d72f956c3" id="r_a3f00957fc5cb98ea5314813d72f956c3"><td class="memItemLeft">static <a class="el" href="#a7f5b737d50359eb20ca8ef1a3811d978">SplitViewItem</a>&#160;</td><td class="memItemRight"><a class="el" href="#a3f00957fc5cb98ea5314813d72f956c3">split_view_item_with_view_controller</a> (const <a class="el" href="classcocoon_1_1_view_controller.html">ViewController</a> &amp;view_controller)</td></tr>
-<tr class="memdesc:a3f00957fc5cb98ea5314813d72f956c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSSplitViewItem splitViewItemWithViewController:]</span>.  <br /></td></tr>
 <tr class="memitem:ac1a60e13571816fa141ad5455e04f8a2" id="r_ac1a60e13571816fa141ad5455e04f8a2"><td class="memItemLeft">static <a class="el" href="#a7f5b737d50359eb20ca8ef1a3811d978">SplitViewItem</a>&#160;</td><td class="memItemRight"><a class="el" href="#ac1a60e13571816fa141ad5455e04f8a2">sidebar</a> (const <a class="el" href="classcocoon_1_1_view_controller.html">ViewController</a> &amp;controller)</td></tr>
 <tr class="memdesc:ac1a60e13571816fa141ad5455e04f8a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience helper <span class="tt"><a class="el" href="#ac1a60e13571816fa141ad5455e04f8a2" title="Convenience helper sidebar provided by cocoon.">sidebar</a></span> provided by cocoon.  <br /></td></tr>
 <tr class="memitem:a2e1c46d55f07ce6d149e3b2045de179a" id="r_a2e1c46d55f07ce6d149e3b2045de179a"><td class="memItemLeft">static <a class="el" href="#a7f5b737d50359eb20ca8ef1a3811d978">SplitViewItem</a>&#160;</td><td class="memItemRight"><a class="el" href="#a2e1c46d55f07ce6d149e3b2045de179a">inspector</a> (const <a class="el" href="classcocoon_1_1_view_controller.html">ViewController</a> &amp;controller)</td></tr>
@@ -1351,40 +1349,6 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Calls <span class="tt">+[NSSplitViewItem sidebarWithViewController:]</span>. </p>
 <p>Creates a split view item representing a sidebar for the provided <a class="el" href="classcocoon_1_1_view_controller.html" title="A view controller (NSViewController).">ViewController</a>. Sidebars have standard system behavior, specifically: - Translucent material background - The ability to collapse/uncollapse on split view size changes - The ability to overlay at small split view sizes when in fullscreen - canCollapse is set to YES - minimumThickness and maximumThickness are set to the standard minimum and maximum sidebar size - preferredThicknessFraction is set to the standard fraction for sidebars (0.15) - springLoaded is set to YES \param viewController The view controller used to set the viewController property \return An autoreleased <a class="el" href="classcocoon_1_1_split_view_item.html" title="One pane of a SplitViewController.">SplitViewItem</a> that acts as a sidebar. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">view_controller</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a3f00957fc5cb98ea5314813d72f956c3" name="a3f00957fc5cb98ea5314813d72f956c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f00957fc5cb98ea5314813d72f956c3">&#9670;&#160;</a></span>split_view_item_with_view_controller()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a7f5b737d50359eb20ca8ef1a3811d978">SplitViewItem</a> cocoon::SplitViewItem::split_view_item_with_view_controller </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_view_controller.html">ViewController</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>view_controller</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSSplitViewItem splitViewItemWithViewController:]</span>. </p>
-<p>Creates an autoreleased <a class="el" href="classcocoon_1_1_split_view_item.html" title="One pane of a SplitViewController.">SplitViewItem</a> that represents the provided <a class="el" href="classcocoon_1_1_view_controller.html" title="A view controller (NSViewController).">ViewController</a>. All other properties are left at their default. \param viewController The view controller used to set the viewController property \return An autoreleased <a class="el" href="classcocoon_1_1_split_view_item.html" title="One pane of a SplitViewController.">SplitViewItem</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">view_controller</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
   </table>

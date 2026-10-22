@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -75,6 +75,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:aa1f54bb5bd9704ee278e9af90840a48a" id="r_aa1f54bb5bd9704ee278e9af90840a48a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa1f54bb5bd9704ee278e9af90840a48a">FileManager</a> (const <a class="el" href="classcocoon_1_1_workspace_authorization.html">WorkspaceAuthorization</a> &amp;authorization)</td></tr>
+<tr class="memdesc:aa1f54bb5bd9704ee278e9af90840a48a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSFileManager</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:ad67c332688121a38a3e730126500cc28" id="r_ad67c332688121a38a3e730126500cc28"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ad67c332688121a38a3e730126500cc28">FileManager</a> ()</td></tr>
 <tr class="memdesc:ad67c332688121a38a3e730126500cc28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSFileManager</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:a65a880f47f3017570326bc79880c55e5" id="r_a65a880f47f3017570326bc79880c55e5"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a65a880f47f3017570326bc79880c55e5">FileManager</a> (std::nullptr_t)</td></tr>
@@ -201,37 +203,37 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:abaab3e0b3ae9fab8fd96151b621f0a74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">homeDirectoryForCurrentUser</span> property of <span class="tt">NSFileManager</span>.  <br /></td></tr>
 <tr class="memitem:a78ffb4f8117a246d79b7b4fda5f928bf" id="r_a78ffb4f8117a246d79b7b4fda5f928bf"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>&#160;</td><td class="memItemRight"><a class="el" href="#a78ffb4f8117a246d79b7b4fda5f928bf">temporary_directory</a> () const</td></tr>
 <tr class="memdesc:a78ffb4f8117a246d79b7b4fda5f928bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">temporaryDirectory</span> property of <span class="tt">NSFileManager</span>.  <br /></td></tr>
-<tr class="memitem:aa36dc36a11abc07a52a1d5d30b23e18c" id="r_aa36dc36a11abc07a52a1d5d30b23e18c"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#ad67c332688121a38a3e730126500cc28">FileManager</a>, bool(std::string, std::string)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#aa36dc36a11abc07a52a1d5d30b23e18c">should_copy_item_at_path_to_path</a> () const</td></tr>
+<tr class="memitem:aa36dc36a11abc07a52a1d5d30b23e18c" id="r_aa36dc36a11abc07a52a1d5d30b23e18c"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#aa1f54bb5bd9704ee278e9af90840a48a">FileManager</a>, bool(std::string, std::string)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#aa36dc36a11abc07a52a1d5d30b23e18c">should_copy_item_at_path_to_path</a> () const</td></tr>
 <tr class="memdesc:aa36dc36a11abc07a52a1d5d30b23e18c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classcocoon_1_1_signal.html" title="Callback registration point for an event, bound to one native object.">Signal</a> for the delegate/data-source method behind <span class="tt"><a class="el" href="#aa36dc36a11abc07a52a1d5d30b23e18c" title="Signal for the delegate/data-source method behind should_copy_item_at_path_to_path; connect a callbac...">should_copy_item_at_path_to_path</a></span>; connect a callback with <span class="tt"><a class="el" href="#aa36dc36a11abc07a52a1d5d30b23e18c" title="Signal for the delegate/data-source method behind should_copy_item_at_path_to_path; connect a callbac...">should_copy_item_at_path_to_path()</a>.connect(...)</span>.  <br /></td></tr>
-<tr class="memitem:a39d1d5d934d36121b1df13811911c688" id="r_a39d1d5d934d36121b1df13811911c688"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#ad67c332688121a38a3e730126500cc28">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>, <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#a39d1d5d934d36121b1df13811911c688">should_copy_item_at_url_to_url</a> () const</td></tr>
+<tr class="memitem:a39d1d5d934d36121b1df13811911c688" id="r_a39d1d5d934d36121b1df13811911c688"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#aa1f54bb5bd9704ee278e9af90840a48a">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>, <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#a39d1d5d934d36121b1df13811911c688">should_copy_item_at_url_to_url</a> () const</td></tr>
 <tr class="memdesc:a39d1d5d934d36121b1df13811911c688"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classcocoon_1_1_signal.html" title="Callback registration point for an event, bound to one native object.">Signal</a> for the delegate/data-source method behind <span class="tt"><a class="el" href="#a39d1d5d934d36121b1df13811911c688" title="Signal for the delegate/data-source method behind should_copy_item_at_url_to_url; connect a callback ...">should_copy_item_at_url_to_url</a></span>; connect a callback with <span class="tt"><a class="el" href="#a39d1d5d934d36121b1df13811911c688" title="Signal for the delegate/data-source method behind should_copy_item_at_url_to_url; connect a callback ...">should_copy_item_at_url_to_url()</a>.connect(...)</span>.  <br /></td></tr>
-<tr class="memitem:a794d4ea6b55a04f6512405b4c453d26c" id="r_a794d4ea6b55a04f6512405b4c453d26c"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#ad67c332688121a38a3e730126500cc28">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_error.html">Error</a>, std::string, std::string)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#a794d4ea6b55a04f6512405b4c453d26c">should_proceed_after_error_copying_item_at_path_to_path</a> () const</td></tr>
+<tr class="memitem:a794d4ea6b55a04f6512405b4c453d26c" id="r_a794d4ea6b55a04f6512405b4c453d26c"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#aa1f54bb5bd9704ee278e9af90840a48a">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_error.html">Error</a>, std::string, std::string)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#a794d4ea6b55a04f6512405b4c453d26c">should_proceed_after_error_copying_item_at_path_to_path</a> () const</td></tr>
 <tr class="memdesc:a794d4ea6b55a04f6512405b4c453d26c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classcocoon_1_1_signal.html" title="Callback registration point for an event, bound to one native object.">Signal</a> for the delegate/data-source method behind <span class="tt"><a class="el" href="#a794d4ea6b55a04f6512405b4c453d26c" title="Signal for the delegate/data-source method behind should_proceed_after_error_copying_item_at_path_to_...">should_proceed_after_error_copying_item_at_path_to_path</a></span>; connect a callback with <span class="tt"><a class="el" href="#a794d4ea6b55a04f6512405b4c453d26c" title="Signal for the delegate/data-source method behind should_proceed_after_error_copying_item_at_path_to_...">should_proceed_after_error_copying_item_at_path_to_path()</a>.connect(...)</span>.  <br /></td></tr>
-<tr class="memitem:ae51d85692accdd79d47750580d49e454" id="r_ae51d85692accdd79d47750580d49e454"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#ad67c332688121a38a3e730126500cc28">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_error.html">Error</a>, <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>, <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#ae51d85692accdd79d47750580d49e454">should_proceed_after_error_copying_item_at_url_to_url</a> () const</td></tr>
+<tr class="memitem:ae51d85692accdd79d47750580d49e454" id="r_ae51d85692accdd79d47750580d49e454"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#aa1f54bb5bd9704ee278e9af90840a48a">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_error.html">Error</a>, <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>, <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#ae51d85692accdd79d47750580d49e454">should_proceed_after_error_copying_item_at_url_to_url</a> () const</td></tr>
 <tr class="memdesc:ae51d85692accdd79d47750580d49e454"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classcocoon_1_1_signal.html" title="Callback registration point for an event, bound to one native object.">Signal</a> for the delegate/data-source method behind <span class="tt"><a class="el" href="#ae51d85692accdd79d47750580d49e454" title="Signal for the delegate/data-source method behind should_proceed_after_error_copying_item_at_url_to_u...">should_proceed_after_error_copying_item_at_url_to_url</a></span>; connect a callback with <span class="tt"><a class="el" href="#ae51d85692accdd79d47750580d49e454" title="Signal for the delegate/data-source method behind should_proceed_after_error_copying_item_at_url_to_u...">should_proceed_after_error_copying_item_at_url_to_url()</a>.connect(...)</span>.  <br /></td></tr>
-<tr class="memitem:a6d35856b98e1a4122fb2d963547e07c2" id="r_a6d35856b98e1a4122fb2d963547e07c2"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#ad67c332688121a38a3e730126500cc28">FileManager</a>, bool(std::string, std::string)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#a6d35856b98e1a4122fb2d963547e07c2">should_move_item_at_path_to_path</a> () const</td></tr>
+<tr class="memitem:a6d35856b98e1a4122fb2d963547e07c2" id="r_a6d35856b98e1a4122fb2d963547e07c2"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#aa1f54bb5bd9704ee278e9af90840a48a">FileManager</a>, bool(std::string, std::string)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#a6d35856b98e1a4122fb2d963547e07c2">should_move_item_at_path_to_path</a> () const</td></tr>
 <tr class="memdesc:a6d35856b98e1a4122fb2d963547e07c2"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classcocoon_1_1_signal.html" title="Callback registration point for an event, bound to one native object.">Signal</a> for the delegate/data-source method behind <span class="tt"><a class="el" href="#a6d35856b98e1a4122fb2d963547e07c2" title="Signal for the delegate/data-source method behind should_move_item_at_path_to_path; connect a callbac...">should_move_item_at_path_to_path</a></span>; connect a callback with <span class="tt"><a class="el" href="#a6d35856b98e1a4122fb2d963547e07c2" title="Signal for the delegate/data-source method behind should_move_item_at_path_to_path; connect a callbac...">should_move_item_at_path_to_path()</a>.connect(...)</span>.  <br /></td></tr>
-<tr class="memitem:ae2281df7520f6f8e4cddb6ffd8774151" id="r_ae2281df7520f6f8e4cddb6ffd8774151"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#ad67c332688121a38a3e730126500cc28">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>, <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#ae2281df7520f6f8e4cddb6ffd8774151">should_move_item_at_url_to_url</a> () const</td></tr>
+<tr class="memitem:ae2281df7520f6f8e4cddb6ffd8774151" id="r_ae2281df7520f6f8e4cddb6ffd8774151"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#aa1f54bb5bd9704ee278e9af90840a48a">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>, <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#ae2281df7520f6f8e4cddb6ffd8774151">should_move_item_at_url_to_url</a> () const</td></tr>
 <tr class="memdesc:ae2281df7520f6f8e4cddb6ffd8774151"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classcocoon_1_1_signal.html" title="Callback registration point for an event, bound to one native object.">Signal</a> for the delegate/data-source method behind <span class="tt"><a class="el" href="#ae2281df7520f6f8e4cddb6ffd8774151" title="Signal for the delegate/data-source method behind should_move_item_at_url_to_url; connect a callback ...">should_move_item_at_url_to_url</a></span>; connect a callback with <span class="tt"><a class="el" href="#ae2281df7520f6f8e4cddb6ffd8774151" title="Signal for the delegate/data-source method behind should_move_item_at_url_to_url; connect a callback ...">should_move_item_at_url_to_url()</a>.connect(...)</span>.  <br /></td></tr>
-<tr class="memitem:a0e83425e672a5b7683052f08181f7d02" id="r_a0e83425e672a5b7683052f08181f7d02"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#ad67c332688121a38a3e730126500cc28">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_error.html">Error</a>, std::string, std::string)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#a0e83425e672a5b7683052f08181f7d02">should_proceed_after_error_moving_item_at_path_to_path</a> () const</td></tr>
+<tr class="memitem:a0e83425e672a5b7683052f08181f7d02" id="r_a0e83425e672a5b7683052f08181f7d02"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#aa1f54bb5bd9704ee278e9af90840a48a">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_error.html">Error</a>, std::string, std::string)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#a0e83425e672a5b7683052f08181f7d02">should_proceed_after_error_moving_item_at_path_to_path</a> () const</td></tr>
 <tr class="memdesc:a0e83425e672a5b7683052f08181f7d02"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classcocoon_1_1_signal.html" title="Callback registration point for an event, bound to one native object.">Signal</a> for the delegate/data-source method behind <span class="tt"><a class="el" href="#a0e83425e672a5b7683052f08181f7d02" title="Signal for the delegate/data-source method behind should_proceed_after_error_moving_item_at_path_to_p...">should_proceed_after_error_moving_item_at_path_to_path</a></span>; connect a callback with <span class="tt"><a class="el" href="#a0e83425e672a5b7683052f08181f7d02" title="Signal for the delegate/data-source method behind should_proceed_after_error_moving_item_at_path_to_p...">should_proceed_after_error_moving_item_at_path_to_path()</a>.connect(...)</span>.  <br /></td></tr>
-<tr class="memitem:a903b96dca8d671724f4bae565924fb27" id="r_a903b96dca8d671724f4bae565924fb27"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#ad67c332688121a38a3e730126500cc28">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_error.html">Error</a>, <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>, <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#a903b96dca8d671724f4bae565924fb27">should_proceed_after_error_moving_item_at_url_to_url</a> () const</td></tr>
+<tr class="memitem:a903b96dca8d671724f4bae565924fb27" id="r_a903b96dca8d671724f4bae565924fb27"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#aa1f54bb5bd9704ee278e9af90840a48a">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_error.html">Error</a>, <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>, <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#a903b96dca8d671724f4bae565924fb27">should_proceed_after_error_moving_item_at_url_to_url</a> () const</td></tr>
 <tr class="memdesc:a903b96dca8d671724f4bae565924fb27"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classcocoon_1_1_signal.html" title="Callback registration point for an event, bound to one native object.">Signal</a> for the delegate/data-source method behind <span class="tt"><a class="el" href="#a903b96dca8d671724f4bae565924fb27" title="Signal for the delegate/data-source method behind should_proceed_after_error_moving_item_at_url_to_ur...">should_proceed_after_error_moving_item_at_url_to_url</a></span>; connect a callback with <span class="tt"><a class="el" href="#a903b96dca8d671724f4bae565924fb27" title="Signal for the delegate/data-source method behind should_proceed_after_error_moving_item_at_url_to_ur...">should_proceed_after_error_moving_item_at_url_to_url()</a>.connect(...)</span>.  <br /></td></tr>
-<tr class="memitem:a8d360355f5a5c3727e69aeec9ee660fb" id="r_a8d360355f5a5c3727e69aeec9ee660fb"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#ad67c332688121a38a3e730126500cc28">FileManager</a>, bool(std::string, std::string)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#a8d360355f5a5c3727e69aeec9ee660fb">should_link_item_at_path_to_path</a> () const</td></tr>
+<tr class="memitem:a8d360355f5a5c3727e69aeec9ee660fb" id="r_a8d360355f5a5c3727e69aeec9ee660fb"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#aa1f54bb5bd9704ee278e9af90840a48a">FileManager</a>, bool(std::string, std::string)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#a8d360355f5a5c3727e69aeec9ee660fb">should_link_item_at_path_to_path</a> () const</td></tr>
 <tr class="memdesc:a8d360355f5a5c3727e69aeec9ee660fb"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classcocoon_1_1_signal.html" title="Callback registration point for an event, bound to one native object.">Signal</a> for the delegate/data-source method behind <span class="tt"><a class="el" href="#a8d360355f5a5c3727e69aeec9ee660fb" title="Signal for the delegate/data-source method behind should_link_item_at_path_to_path; connect a callbac...">should_link_item_at_path_to_path</a></span>; connect a callback with <span class="tt"><a class="el" href="#a8d360355f5a5c3727e69aeec9ee660fb" title="Signal for the delegate/data-source method behind should_link_item_at_path_to_path; connect a callbac...">should_link_item_at_path_to_path()</a>.connect(...)</span>.  <br /></td></tr>
-<tr class="memitem:a84b4e1fd275aefd4503d7e1a602ad455" id="r_a84b4e1fd275aefd4503d7e1a602ad455"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#ad67c332688121a38a3e730126500cc28">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>, <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#a84b4e1fd275aefd4503d7e1a602ad455">should_link_item_at_url_to_url</a> () const</td></tr>
+<tr class="memitem:a84b4e1fd275aefd4503d7e1a602ad455" id="r_a84b4e1fd275aefd4503d7e1a602ad455"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#aa1f54bb5bd9704ee278e9af90840a48a">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>, <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#a84b4e1fd275aefd4503d7e1a602ad455">should_link_item_at_url_to_url</a> () const</td></tr>
 <tr class="memdesc:a84b4e1fd275aefd4503d7e1a602ad455"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classcocoon_1_1_signal.html" title="Callback registration point for an event, bound to one native object.">Signal</a> for the delegate/data-source method behind <span class="tt"><a class="el" href="#a84b4e1fd275aefd4503d7e1a602ad455" title="Signal for the delegate/data-source method behind should_link_item_at_url_to_url; connect a callback ...">should_link_item_at_url_to_url</a></span>; connect a callback with <span class="tt"><a class="el" href="#a84b4e1fd275aefd4503d7e1a602ad455" title="Signal for the delegate/data-source method behind should_link_item_at_url_to_url; connect a callback ...">should_link_item_at_url_to_url()</a>.connect(...)</span>.  <br /></td></tr>
-<tr class="memitem:a5360701451c955d0df0c20a01defc906" id="r_a5360701451c955d0df0c20a01defc906"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#ad67c332688121a38a3e730126500cc28">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_error.html">Error</a>, std::string, std::string)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#a5360701451c955d0df0c20a01defc906">should_proceed_after_error_linking_item_at_path_to_path</a> () const</td></tr>
+<tr class="memitem:a5360701451c955d0df0c20a01defc906" id="r_a5360701451c955d0df0c20a01defc906"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#aa1f54bb5bd9704ee278e9af90840a48a">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_error.html">Error</a>, std::string, std::string)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#a5360701451c955d0df0c20a01defc906">should_proceed_after_error_linking_item_at_path_to_path</a> () const</td></tr>
 <tr class="memdesc:a5360701451c955d0df0c20a01defc906"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classcocoon_1_1_signal.html" title="Callback registration point for an event, bound to one native object.">Signal</a> for the delegate/data-source method behind <span class="tt"><a class="el" href="#a5360701451c955d0df0c20a01defc906" title="Signal for the delegate/data-source method behind should_proceed_after_error_linking_item_at_path_to_...">should_proceed_after_error_linking_item_at_path_to_path</a></span>; connect a callback with <span class="tt"><a class="el" href="#a5360701451c955d0df0c20a01defc906" title="Signal for the delegate/data-source method behind should_proceed_after_error_linking_item_at_path_to_...">should_proceed_after_error_linking_item_at_path_to_path()</a>.connect(...)</span>.  <br /></td></tr>
-<tr class="memitem:aaa4dfd3a081fefa2d361199441a91bfc" id="r_aaa4dfd3a081fefa2d361199441a91bfc"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#ad67c332688121a38a3e730126500cc28">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_error.html">Error</a>, <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>, <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#aaa4dfd3a081fefa2d361199441a91bfc">should_proceed_after_error_linking_item_at_url_to_url</a> () const</td></tr>
+<tr class="memitem:aaa4dfd3a081fefa2d361199441a91bfc" id="r_aaa4dfd3a081fefa2d361199441a91bfc"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#aa1f54bb5bd9704ee278e9af90840a48a">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_error.html">Error</a>, <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>, <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#aaa4dfd3a081fefa2d361199441a91bfc">should_proceed_after_error_linking_item_at_url_to_url</a> () const</td></tr>
 <tr class="memdesc:aaa4dfd3a081fefa2d361199441a91bfc"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classcocoon_1_1_signal.html" title="Callback registration point for an event, bound to one native object.">Signal</a> for the delegate/data-source method behind <span class="tt"><a class="el" href="#aaa4dfd3a081fefa2d361199441a91bfc" title="Signal for the delegate/data-source method behind should_proceed_after_error_linking_item_at_url_to_u...">should_proceed_after_error_linking_item_at_url_to_url</a></span>; connect a callback with <span class="tt"><a class="el" href="#aaa4dfd3a081fefa2d361199441a91bfc" title="Signal for the delegate/data-source method behind should_proceed_after_error_linking_item_at_url_to_u...">should_proceed_after_error_linking_item_at_url_to_url()</a>.connect(...)</span>.  <br /></td></tr>
-<tr class="memitem:a802baed4e33a026d93492c117cce61e6" id="r_a802baed4e33a026d93492c117cce61e6"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#ad67c332688121a38a3e730126500cc28">FileManager</a>, bool(std::string)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#a802baed4e33a026d93492c117cce61e6">should_remove_item_at_path</a> () const</td></tr>
+<tr class="memitem:a802baed4e33a026d93492c117cce61e6" id="r_a802baed4e33a026d93492c117cce61e6"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#aa1f54bb5bd9704ee278e9af90840a48a">FileManager</a>, bool(std::string)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#a802baed4e33a026d93492c117cce61e6">should_remove_item_at_path</a> () const</td></tr>
 <tr class="memdesc:a802baed4e33a026d93492c117cce61e6"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classcocoon_1_1_signal.html" title="Callback registration point for an event, bound to one native object.">Signal</a> for the delegate/data-source method behind <span class="tt"><a class="el" href="#a802baed4e33a026d93492c117cce61e6" title="Signal for the delegate/data-source method behind should_remove_item_at_path; connect a callback with...">should_remove_item_at_path</a></span>; connect a callback with <span class="tt"><a class="el" href="#a802baed4e33a026d93492c117cce61e6" title="Signal for the delegate/data-source method behind should_remove_item_at_path; connect a callback with...">should_remove_item_at_path()</a>.connect(...)</span>.  <br /></td></tr>
-<tr class="memitem:a4f5e6aa8400a03c8eb518f9adfc48b16" id="r_a4f5e6aa8400a03c8eb518f9adfc48b16"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#ad67c332688121a38a3e730126500cc28">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#a4f5e6aa8400a03c8eb518f9adfc48b16">should_remove_item_at_url</a> () const</td></tr>
+<tr class="memitem:a4f5e6aa8400a03c8eb518f9adfc48b16" id="r_a4f5e6aa8400a03c8eb518f9adfc48b16"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#aa1f54bb5bd9704ee278e9af90840a48a">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#a4f5e6aa8400a03c8eb518f9adfc48b16">should_remove_item_at_url</a> () const</td></tr>
 <tr class="memdesc:a4f5e6aa8400a03c8eb518f9adfc48b16"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classcocoon_1_1_signal.html" title="Callback registration point for an event, bound to one native object.">Signal</a> for the delegate/data-source method behind <span class="tt"><a class="el" href="#a4f5e6aa8400a03c8eb518f9adfc48b16" title="Signal for the delegate/data-source method behind should_remove_item_at_url; connect a callback with ...">should_remove_item_at_url</a></span>; connect a callback with <span class="tt"><a class="el" href="#a4f5e6aa8400a03c8eb518f9adfc48b16" title="Signal for the delegate/data-source method behind should_remove_item_at_url; connect a callback with ...">should_remove_item_at_url()</a>.connect(...)</span>.  <br /></td></tr>
-<tr class="memitem:ada0293a84697c995ddcb9e20a32694ea" id="r_ada0293a84697c995ddcb9e20a32694ea"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#ad67c332688121a38a3e730126500cc28">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_error.html">Error</a>, std::string)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#ada0293a84697c995ddcb9e20a32694ea">should_proceed_after_error_removing_item_at_path</a> () const</td></tr>
+<tr class="memitem:ada0293a84697c995ddcb9e20a32694ea" id="r_ada0293a84697c995ddcb9e20a32694ea"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#aa1f54bb5bd9704ee278e9af90840a48a">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_error.html">Error</a>, std::string)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#ada0293a84697c995ddcb9e20a32694ea">should_proceed_after_error_removing_item_at_path</a> () const</td></tr>
 <tr class="memdesc:ada0293a84697c995ddcb9e20a32694ea"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classcocoon_1_1_signal.html" title="Callback registration point for an event, bound to one native object.">Signal</a> for the delegate/data-source method behind <span class="tt"><a class="el" href="#ada0293a84697c995ddcb9e20a32694ea" title="Signal for the delegate/data-source method behind should_proceed_after_error_removing_item_at_path; c...">should_proceed_after_error_removing_item_at_path</a></span>; connect a callback with <span class="tt"><a class="el" href="#ada0293a84697c995ddcb9e20a32694ea" title="Signal for the delegate/data-source method behind should_proceed_after_error_removing_item_at_path; c...">should_proceed_after_error_removing_item_at_path()</a>.connect(...)</span>.  <br /></td></tr>
-<tr class="memitem:a0a3dc54646b9ee4ae10174bb4fc15500" id="r_a0a3dc54646b9ee4ae10174bb4fc15500"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#ad67c332688121a38a3e730126500cc28">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_error.html">Error</a>, <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#a0a3dc54646b9ee4ae10174bb4fc15500">should_proceed_after_error_removing_item_at_url</a> () const</td></tr>
+<tr class="memitem:a0a3dc54646b9ee4ae10174bb4fc15500" id="r_a0a3dc54646b9ee4ae10174bb4fc15500"><td class="memItemLeft"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#aa1f54bb5bd9704ee278e9af90840a48a">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_error.html">Error</a>, <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#a0a3dc54646b9ee4ae10174bb4fc15500">should_proceed_after_error_removing_item_at_url</a> () const</td></tr>
 <tr class="memdesc:a0a3dc54646b9ee4ae10174bb4fc15500"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classcocoon_1_1_signal.html" title="Callback registration point for an event, bound to one native object.">Signal</a> for the delegate/data-source method behind <span class="tt"><a class="el" href="#a0a3dc54646b9ee4ae10174bb4fc15500" title="Signal for the delegate/data-source method behind should_proceed_after_error_removing_item_at_url; co...">should_proceed_after_error_removing_item_at_url</a></span>; connect a callback with <span class="tt"><a class="el" href="#a0a3dc54646b9ee4ae10174bb4fc15500" title="Signal for the delegate/data-source method behind should_proceed_after_error_removing_item_at_url; co...">should_proceed_after_error_removing_item_at_url()</a>.connect(...)</span>.  <br /></td></tr>
 <tr class="inherit_header pub_methods_classcocoon_1_1_object"><td colspan="2">Public Member Functions inherited from <a class="el" href="classcocoon_1_1_object.html">cocoon::Object</a></td></tr>
 <tr class="memitem:aa304a07e1fdfe52a0452420b27c893f5 pub_methods_classcocoon_1_1_object" id="r_aa304a07e1fdfe52a0452420b27c893f5"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> ()=default</td></tr>
@@ -261,9 +263,7 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a56b989f113651439ff9550588c2ef029" id="r_a56b989f113651439ff9550588c2ef029"><td class="memItemLeft">static <a class="el" href="#ad67c332688121a38a3e730126500cc28">FileManager</a>&#160;</td><td class="memItemRight"><a class="el" href="#a56b989f113651439ff9550588c2ef029">file_manager_with_authorization</a> (const <a class="el" href="classcocoon_1_1_workspace_authorization.html">WorkspaceAuthorization</a> &amp;authorization)</td></tr>
-<tr class="memdesc:a56b989f113651439ff9550588c2ef029"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSFileManager fileManagerWithAuthorization:]</span>.  <br /></td></tr>
-<tr class="memitem:a5fae0dc97f2acbeeccaed30ff7a6c65a" id="r_a5fae0dc97f2acbeeccaed30ff7a6c65a"><td class="memItemLeft">static <a class="el" href="#ad67c332688121a38a3e730126500cc28">FileManager</a>&#160;</td><td class="memItemRight"><a class="el" href="#a5fae0dc97f2acbeeccaed30ff7a6c65a">default_manager</a> ()</td></tr>
+<tr class="memitem:a5fae0dc97f2acbeeccaed30ff7a6c65a" id="r_a5fae0dc97f2acbeeccaed30ff7a6c65a"><td class="memItemLeft">static <a class="el" href="#aa1f54bb5bd9704ee278e9af90840a48a">FileManager</a>&#160;</td><td class="memItemRight"><a class="el" href="#a5fae0dc97f2acbeeccaed30ff7a6c65a">default_manager</a> ()</td></tr>
 <tr class="memdesc:a5fae0dc97f2acbeeccaed30ff7a6c65a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">defaultManager</span> property of <span class="tt">NSFileManager</span>.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-static-methods" class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
@@ -276,26 +276,50 @@ Static Protected Member Functions</h2></td></tr>
 <dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;cocoon.h&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_class" href="classcocoon_1_1_file_manager.html">cocoon::FileManager</a> file_manager;</div>
-<div class="ttc" id="aclasscocoon_1_1_file_manager_html"><div class="ttname"><a href="classcocoon_1_1_file_manager.html">cocoon::FileManager</a></div><div class="ttdoc">C++ handle for the Objective-C class NSFileManager (Foundation).</div><div class="ttdef"><b>Definition</b> file_manager.h:43</div></div>
+<div class="ttc" id="aclasscocoon_1_1_file_manager_html"><div class="ttname"><a href="classcocoon_1_1_file_manager.html">cocoon::FileManager</a></div><div class="ttdoc">C++ handle for the Objective-C class NSFileManager (Foundation).</div><div class="ttdef"><b>Definition</b> file_manager.h:42</div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_file_manager.html">cocoon::FileManager</a> file_manager{};</div>
-<div class="line"><span class="keyword">auto</span> made_0 = <a class="code hl_function" href="#a56b989f113651439ff9550588c2ef029">cocoon::FileManager::file_manager_with_authorization</a>(<a class="code hl_class" href="classcocoon_1_1_workspace_authorization.html">cocoon::WorkspaceAuthorization</a>());</div>
 <div class="line">file_manager.<a class="code hl_function" href="#a8b55ea039d8c45e7a2f823c823d83806">url_for_directory</a>(<a class="code hl_enumvalue" href="namespacecocoon.html#a7c028637610ae1b7658ce94cc77cd610a9edeb1bea050e1e223cb9dd27097b2f9">cocoon::SearchPathDirectory::ApplicationDirectory</a>, <a class="code hl_enumvalue" href="namespacecocoon.html#a0995e298f0ff4cff44cb3bf23d9c3b54a495add3a68836ab8763d1f11a5b3fb04">cocoon::SearchPathDomainMask::UserDomainMask</a>, <a class="code hl_class" href="classcocoon_1_1_u_r_l.html">cocoon::URL</a>(), <span class="keyword">true</span>);</div>
 <div class="line">file_manager.<a class="code hl_function" href="#af941a22c4ea631f5ae7040487aeee39e">url_for_ubiquity_container_identifier</a>(<span class="stringliteral">&quot;text&quot;</span>);</div>
 <div class="line">file_manager.<a class="code hl_function" href="#ad1c8fa8ebe53a625a25ecdcc1319959c">ur_ls_for_directory</a>(<a class="code hl_enumvalue" href="namespacecocoon.html#a7c028637610ae1b7658ce94cc77cd610a9edeb1bea050e1e223cb9dd27097b2f9">cocoon::SearchPathDirectory::ApplicationDirectory</a>, <a class="code hl_enumvalue" href="namespacecocoon.html#a0995e298f0ff4cff44cb3bf23d9c3b54a495add3a68836ab8763d1f11a5b3fb04">cocoon::SearchPathDomainMask::UserDomainMask</a>);</div>
-<div class="ttc" id="aclasscocoon_1_1_file_manager_html_a56b989f113651439ff9550588c2ef029"><div class="ttname"><a href="#a56b989f113651439ff9550588c2ef029">cocoon::FileManager::file_manager_with_authorization</a></div><div class="ttdeci">static FileManager file_manager_with_authorization(const WorkspaceAuthorization &amp;authorization)</div><div class="ttdoc">Calls +[NSFileManager fileManagerWithAuthorization:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_file_manager_html_a8b55ea039d8c45e7a2f823c823d83806"><div class="ttname"><a href="#a8b55ea039d8c45e7a2f823c823d83806">cocoon::FileManager::url_for_directory</a></div><div class="ttdeci">URL url_for_directory(SearchPathDirectory directory, SearchPathDomainMask domain, const URL &amp;url, bool should_create) const</div><div class="ttdoc">Calls -[NSFileManager URLForDirectory:inDomain:appropriateForURL:create:error:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_file_manager_html_ad1c8fa8ebe53a625a25ecdcc1319959c"><div class="ttname"><a href="#ad1c8fa8ebe53a625a25ecdcc1319959c">cocoon::FileManager::ur_ls_for_directory</a></div><div class="ttdeci">std::vector&lt; URL &gt; ur_ls_for_directory(SearchPathDirectory directory, SearchPathDomainMask domain_mask) const</div><div class="ttdoc">Calls -[NSFileManager URLsForDirectory:inDomains:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_file_manager_html_af941a22c4ea631f5ae7040487aeee39e"><div class="ttname"><a href="#af941a22c4ea631f5ae7040487aeee39e">cocoon::FileManager::url_for_ubiquity_container_identifier</a></div><div class="ttdeci">URL url_for_ubiquity_container_identifier(const std::string &amp;container_identifier) const</div><div class="ttdoc">Calls -[NSFileManager URLForUbiquityContainerIdentifier:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_u_r_l_html"><div class="ttname"><a href="classcocoon_1_1_u_r_l.html">cocoon::URL</a></div><div class="ttdoc">C++ handle for the Objective-C class NSURL (Foundation).</div><div class="ttdef"><b>Definition</b> url.h:39</div></div>
-<div class="ttc" id="aclasscocoon_1_1_workspace_authorization_html"><div class="ttname"><a href="classcocoon_1_1_workspace_authorization.html">cocoon::WorkspaceAuthorization</a></div><div class="ttdoc">C++ handle for the Objective-C class NSWorkspaceAuthorization (AppKit).</div><div class="ttdef"><b>Definition</b> workspace_authorization.h:24</div></div>
 <div class="ttc" id="anamespacecocoon_html_a0995e298f0ff4cff44cb3bf23d9c3b54a495add3a68836ab8763d1f11a5b3fb04"><div class="ttname"><a href="namespacecocoon.html#a0995e298f0ff4cff44cb3bf23d9c3b54a495add3a68836ab8763d1f11a5b3fb04">cocoon::SearchPathDomainMask::UserDomainMask</a></div><div class="ttdeci">@ UserDomainMask</div><div class="ttdef"><b>Definition</b> enums.h:3644</div></div>
 <div class="ttc" id="anamespacecocoon_html_a7c028637610ae1b7658ce94cc77cd610a9edeb1bea050e1e223cb9dd27097b2f9"><div class="ttname"><a href="namespacecocoon.html#a7c028637610ae1b7658ce94cc77cd610a9edeb1bea050e1e223cb9dd27097b2f9">cocoon::SearchPathDirectory::ApplicationDirectory</a></div><div class="ttdeci">@ ApplicationDirectory</div><div class="ttdef"><b>Definition</b> enums.h:3612</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/foundation/nsfilemanager">https://developer.apple.com/documentation/foundation/nsfilemanager</a> </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aa1f54bb5bd9704ee278e9af90840a48a" name="aa1f54bb5bd9704ee278e9af90840a48a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1f54bb5bd9704ee278e9af90840a48a">&#9670;&#160;</a></span>FileManager() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::FileManager::FileManager </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcocoon_1_1_workspace_authorization.html">WorkspaceAuthorization</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>authorization</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSFileManager</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
 <a id="ad67c332688121a38a3e730126500cc28" name="ad67c332688121a38a3e730126500cc28"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad67c332688121a38a3e730126500cc28">&#9670;&#160;</a></span>FileManager() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad67c332688121a38a3e730126500cc28">&#9670;&#160;</a></span>FileManager() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -322,7 +346,7 @@ Static Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a65a880f47f3017570326bc79880c55e5" name="a65a880f47f3017570326bc79880c55e5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a65a880f47f3017570326bc79880c55e5">&#9670;&#160;</a></span>FileManager() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a65a880f47f3017570326bc79880c55e5">&#9670;&#160;</a></span>FileManager() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -341,7 +365,7 @@ Static Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a002584242a14a54b872d6b24cb62f0ee" name="a002584242a14a54b872d6b24cb62f0ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a002584242a14a54b872d6b24cb62f0ee">&#9670;&#160;</a></span>FileManager() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a002584242a14a54b872d6b24cb62f0ee">&#9670;&#160;</a></span>FileManager() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -883,7 +907,7 @@ Static Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#ad67c332688121a38a3e730126500cc28">FileManager</a> cocoon::FileManager::default_manager </td>
+          <td class="memname"><a class="el" href="#aa1f54bb5bd9704ee278e9af90840a48a">FileManager</a> cocoon::FileManager::default_manager </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -898,6 +922,8 @@ Static Protected Member Functions</h2></td></tr>
 
 <p>Returns the <span class="tt">defaultManager</span> property of <span class="tt">NSFileManager</span>. </p>
 <p>The shared file manager object for the process. This method always represents the same file manager object. If you plan to use a delegate with the file manager to receive notifications about the completion of file-based operations, you should create a new instance of ''<a class="el" href="classcocoon_1_1_file_manager.html" title="C++ handle for the Objective-C class NSFileManager (Foundation).">FileManager</a>'' rather than using the shared object. </p><dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="home_tray_2main_8cpp-example.html#_a10">home_tray/main.cpp</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -1128,40 +1154,6 @@ Static Protected Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">path</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
     <tr><td class="paramname">is_directory</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a56b989f113651439ff9550588c2ef029" name="a56b989f113651439ff9550588c2ef029"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a56b989f113651439ff9550588c2ef029">&#9670;&#160;</a></span>file_manager_with_authorization()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#ad67c332688121a38a3e730126500cc28">FileManager</a> cocoon::FileManager::file_manager_with_authorization </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_workspace_authorization.html">WorkspaceAuthorization</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>authorization</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSFileManager fileManagerWithAuthorization:]</span>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">authorization</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1906,7 +1898,7 @@ Static Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#ad67c332688121a38a3e730126500cc28">FileManager</a>, bool(std::string, std::string)&gt; cocoon::FileManager::should_copy_item_at_path_to_path </td>
+          <td class="memname"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#aa1f54bb5bd9704ee278e9af90840a48a">FileManager</a>, bool(std::string, std::string)&gt; cocoon::FileManager::should_copy_item_at_path_to_path </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -1933,7 +1925,7 @@ Static Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#ad67c332688121a38a3e730126500cc28">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>, <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>)&gt; cocoon::FileManager::should_copy_item_at_url_to_url </td>
+          <td class="memname"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#aa1f54bb5bd9704ee278e9af90840a48a">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>, <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>)&gt; cocoon::FileManager::should_copy_item_at_url_to_url </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -1960,7 +1952,7 @@ Static Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#ad67c332688121a38a3e730126500cc28">FileManager</a>, bool(std::string, std::string)&gt; cocoon::FileManager::should_link_item_at_path_to_path </td>
+          <td class="memname"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#aa1f54bb5bd9704ee278e9af90840a48a">FileManager</a>, bool(std::string, std::string)&gt; cocoon::FileManager::should_link_item_at_path_to_path </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -1987,7 +1979,7 @@ Static Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#ad67c332688121a38a3e730126500cc28">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>, <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>)&gt; cocoon::FileManager::should_link_item_at_url_to_url </td>
+          <td class="memname"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#aa1f54bb5bd9704ee278e9af90840a48a">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>, <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>)&gt; cocoon::FileManager::should_link_item_at_url_to_url </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -2014,7 +2006,7 @@ Static Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#ad67c332688121a38a3e730126500cc28">FileManager</a>, bool(std::string, std::string)&gt; cocoon::FileManager::should_move_item_at_path_to_path </td>
+          <td class="memname"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#aa1f54bb5bd9704ee278e9af90840a48a">FileManager</a>, bool(std::string, std::string)&gt; cocoon::FileManager::should_move_item_at_path_to_path </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -2041,7 +2033,7 @@ Static Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#ad67c332688121a38a3e730126500cc28">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>, <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>)&gt; cocoon::FileManager::should_move_item_at_url_to_url </td>
+          <td class="memname"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#aa1f54bb5bd9704ee278e9af90840a48a">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>, <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>)&gt; cocoon::FileManager::should_move_item_at_url_to_url </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -2068,7 +2060,7 @@ Static Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#ad67c332688121a38a3e730126500cc28">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_error.html">Error</a>, std::string, std::string)&gt; cocoon::FileManager::should_proceed_after_error_copying_item_at_path_to_path </td>
+          <td class="memname"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#aa1f54bb5bd9704ee278e9af90840a48a">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_error.html">Error</a>, std::string, std::string)&gt; cocoon::FileManager::should_proceed_after_error_copying_item_at_path_to_path </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -2095,7 +2087,7 @@ Static Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#ad67c332688121a38a3e730126500cc28">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_error.html">Error</a>, <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>, <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>)&gt; cocoon::FileManager::should_proceed_after_error_copying_item_at_url_to_url </td>
+          <td class="memname"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#aa1f54bb5bd9704ee278e9af90840a48a">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_error.html">Error</a>, <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>, <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>)&gt; cocoon::FileManager::should_proceed_after_error_copying_item_at_url_to_url </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -2122,7 +2114,7 @@ Static Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#ad67c332688121a38a3e730126500cc28">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_error.html">Error</a>, std::string, std::string)&gt; cocoon::FileManager::should_proceed_after_error_linking_item_at_path_to_path </td>
+          <td class="memname"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#aa1f54bb5bd9704ee278e9af90840a48a">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_error.html">Error</a>, std::string, std::string)&gt; cocoon::FileManager::should_proceed_after_error_linking_item_at_path_to_path </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -2149,7 +2141,7 @@ Static Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#ad67c332688121a38a3e730126500cc28">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_error.html">Error</a>, <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>, <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>)&gt; cocoon::FileManager::should_proceed_after_error_linking_item_at_url_to_url </td>
+          <td class="memname"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#aa1f54bb5bd9704ee278e9af90840a48a">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_error.html">Error</a>, <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>, <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>)&gt; cocoon::FileManager::should_proceed_after_error_linking_item_at_url_to_url </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -2176,7 +2168,7 @@ Static Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#ad67c332688121a38a3e730126500cc28">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_error.html">Error</a>, std::string, std::string)&gt; cocoon::FileManager::should_proceed_after_error_moving_item_at_path_to_path </td>
+          <td class="memname"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#aa1f54bb5bd9704ee278e9af90840a48a">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_error.html">Error</a>, std::string, std::string)&gt; cocoon::FileManager::should_proceed_after_error_moving_item_at_path_to_path </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -2203,7 +2195,7 @@ Static Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#ad67c332688121a38a3e730126500cc28">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_error.html">Error</a>, <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>, <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>)&gt; cocoon::FileManager::should_proceed_after_error_moving_item_at_url_to_url </td>
+          <td class="memname"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#aa1f54bb5bd9704ee278e9af90840a48a">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_error.html">Error</a>, <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>, <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>)&gt; cocoon::FileManager::should_proceed_after_error_moving_item_at_url_to_url </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -2230,7 +2222,7 @@ Static Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#ad67c332688121a38a3e730126500cc28">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_error.html">Error</a>, std::string)&gt; cocoon::FileManager::should_proceed_after_error_removing_item_at_path </td>
+          <td class="memname"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#aa1f54bb5bd9704ee278e9af90840a48a">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_error.html">Error</a>, std::string)&gt; cocoon::FileManager::should_proceed_after_error_removing_item_at_path </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -2257,7 +2249,7 @@ Static Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#ad67c332688121a38a3e730126500cc28">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_error.html">Error</a>, <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>)&gt; cocoon::FileManager::should_proceed_after_error_removing_item_at_url </td>
+          <td class="memname"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#aa1f54bb5bd9704ee278e9af90840a48a">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_error.html">Error</a>, <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>)&gt; cocoon::FileManager::should_proceed_after_error_removing_item_at_url </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -2284,7 +2276,7 @@ Static Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#ad67c332688121a38a3e730126500cc28">FileManager</a>, bool(std::string)&gt; cocoon::FileManager::should_remove_item_at_path </td>
+          <td class="memname"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#aa1f54bb5bd9704ee278e9af90840a48a">FileManager</a>, bool(std::string)&gt; cocoon::FileManager::should_remove_item_at_path </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -2311,7 +2303,7 @@ Static Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#ad67c332688121a38a3e730126500cc28">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>)&gt; cocoon::FileManager::should_remove_item_at_url </td>
+          <td class="memname"><a class="el" href="classcocoon_1_1_signal.html">Signal</a>&lt; <a class="el" href="#aa1f54bb5bd9704ee278e9af90840a48a">FileManager</a>, bool(<a class="el" href="classcocoon_1_1_u_r_l.html">URL</a>)&gt; cocoon::FileManager::should_remove_item_at_url </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>

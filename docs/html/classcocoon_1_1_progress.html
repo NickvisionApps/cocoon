@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -76,6 +76,10 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ada9ba80729d064f4559dfa9346a3788a" id="r_ada9ba80729d064f4559dfa9346a3788a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ada9ba80729d064f4559dfa9346a3788a">Progress</a> (const Progress &amp;parent_progress_or_nil, const std::map&lt; std::string, <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &gt; &amp;user_info_or_nil)</td></tr>
 <tr class="memdesc:ada9ba80729d064f4559dfa9346a3788a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSProgress</span> instance and returns a handle to it.  <br /></td></tr>
+<tr class="memitem:a9561a85766135ee7a64b6713e79d1ded" id="r_a9561a85766135ee7a64b6713e79d1ded"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a9561a85766135ee7a64b6713e79d1ded">Progress</a> (std::int64_t unit_count)</td></tr>
+<tr class="memdesc:a9561a85766135ee7a64b6713e79d1ded"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSProgress</span> instance and returns a handle to it.  <br /></td></tr>
+<tr class="memitem:a6476c4b9326179822b519c6b0a0e57f0" id="r_a6476c4b9326179822b519c6b0a0e57f0"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a6476c4b9326179822b519c6b0a0e57f0">Progress</a> (std::int64_t unit_count, const Progress &amp;parent, std::int64_t portion_of_parent_total_unit_count)</td></tr>
+<tr class="memdesc:a6476c4b9326179822b519c6b0a0e57f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSProgress</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:a67c5ccdf3ced747cc0b2928d6c966b0a" id="r_a67c5ccdf3ced747cc0b2928d6c966b0a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a67c5ccdf3ced747cc0b2928d6c966b0a">Progress</a> ()</td></tr>
 <tr class="memdesc:a67c5ccdf3ced747cc0b2928d6c966b0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSProgress</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:af021b128dcb962b664237d33a361cd75" id="r_af021b128dcb962b664237d33a361cd75"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af021b128dcb962b664237d33a361cd75">Progress</a> (std::nullptr_t)</td></tr>
@@ -214,10 +218,6 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a686c4013f0fe86a9595fab121553a0ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSProgress currentProgress]</span>.  <br /></td></tr>
 <tr class="memitem:acbdde8c67b2e9c66d4e3057d9ff0ea4f" id="r_acbdde8c67b2e9c66d4e3057d9ff0ea4f"><td class="memItemLeft">static <a class="el" href="#ada9ba80729d064f4559dfa9346a3788a">Progress</a>&#160;</td><td class="memItemRight"><a class="el" href="#acbdde8c67b2e9c66d4e3057d9ff0ea4f">discrete_progress_with_total_unit_count</a> (std::int64_t unit_count)</td></tr>
 <tr class="memdesc:acbdde8c67b2e9c66d4e3057d9ff0ea4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSProgress discreteProgressWithTotalUnitCount:]</span>.  <br /></td></tr>
-<tr class="memitem:a0208449f41df9b658422c68d8d461b28" id="r_a0208449f41df9b658422c68d8d461b28"><td class="memItemLeft">static <a class="el" href="#ada9ba80729d064f4559dfa9346a3788a">Progress</a>&#160;</td><td class="memItemRight"><a class="el" href="#a0208449f41df9b658422c68d8d461b28">progress_with_total_unit_count</a> (std::int64_t unit_count)</td></tr>
-<tr class="memdesc:a0208449f41df9b658422c68d8d461b28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSProgress progressWithTotalUnitCount:]</span>.  <br /></td></tr>
-<tr class="memitem:ac8c839abbaf0fee0ce079caae1ac926c" id="r_ac8c839abbaf0fee0ce079caae1ac926c"><td class="memItemLeft">static <a class="el" href="#ada9ba80729d064f4559dfa9346a3788a">Progress</a>&#160;</td><td class="memItemRight"><a class="el" href="#ac8c839abbaf0fee0ce079caae1ac926c">progress_with_total_unit_count</a> (std::int64_t unit_count, const <a class="el" href="#ada9ba80729d064f4559dfa9346a3788a">Progress</a> &amp;parent, std::int64_t portion_of_parent_total_unit_count)</td></tr>
-<tr class="memdesc:ac8c839abbaf0fee0ce079caae1ac926c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSProgress progressWithTotalUnitCount:parent:pendingUnitCount:]</span>.  <br /></td></tr>
 <tr class="memitem:a6edc864dd1634ca6ff513a557ab9b559" id="r_a6edc864dd1634ca6ff513a557ab9b559"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a6edc864dd1634ca6ff513a557ab9b559">remove_subscriber</a> (const <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &amp;subscriber)</td></tr>
 <tr class="memdesc:a6edc864dd1634ca6ff513a557ab9b559"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSProgress removeSubscriber:]</span>.  <br /></td></tr>
 </table>
@@ -243,7 +243,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">progress.<a class="code hl_function" href="#ab293b69f485ae779fda02683c4d8f57c">add_child</a>(<a class="code hl_class" href="classcocoon_1_1_progress.html">cocoon::Progress</a>(), 1);</div>
 <div class="line">progress.<a class="code hl_function" href="#a1592494c9440d4ee4da55ddaaaef473d">become_current_with_pending_unit_count</a>(1);</div>
 <div class="line">progress.<a class="code hl_function" href="#a09480bdd939816cb6661dab2ff2cc90a">cancel</a>();</div>
-<div class="ttc" id="aclasscocoon_1_1_number_html"><div class="ttname"><a href="classcocoon_1_1_number.html">cocoon::Number</a></div><div class="ttdoc">C++ handle for the Objective-C class NSNumber (Foundation).</div><div class="ttdef"><b>Definition</b> number.h:36</div></div>
+<div class="ttc" id="aclasscocoon_1_1_number_html"><div class="ttname"><a href="classcocoon_1_1_number.html">cocoon::Number</a></div><div class="ttdoc">C++ handle for the Objective-C class NSNumber (Foundation).</div><div class="ttdef"><b>Definition</b> number.h:34</div></div>
 <div class="ttc" id="aclasscocoon_1_1_progress_html_a09480bdd939816cb6661dab2ff2cc90a"><div class="ttname"><a href="#a09480bdd939816cb6661dab2ff2cc90a">cocoon::Progress::cancel</a></div><div class="ttdeci">void cancel() const</div><div class="ttdoc">Calls -[NSProgress cancel].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_progress_html_a0a4cf23163410ec95b9b541ecd8baeda"><div class="ttname"><a href="#a0a4cf23163410ec95b9b541ecd8baeda">cocoon::Progress::completed_unit_count</a></div><div class="ttdeci">std::int64_t completed_unit_count() const</div><div class="ttdoc">Returns the completedUnitCount property of NSProgress.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_progress_html_a1592494c9440d4ee4da55ddaaaef473d"><div class="ttname"><a href="#a1592494c9440d4ee4da55ddaaaef473d">cocoon::Progress::become_current_with_pending_unit_count</a></div><div class="ttdeci">void become_current_with_pending_unit_count(std::int64_t unit_count) const</div><div class="ttdoc">Calls -[NSProgress becomeCurrentWithPendingUnitCount:].</div></div>
@@ -258,7 +258,7 @@ Static Public Member Functions</h2></td></tr>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/foundation/nsprogress">https://developer.apple.com/documentation/foundation/nsprogress</a> </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ada9ba80729d064f4559dfa9346a3788a" name="ada9ba80729d064f4559dfa9346a3788a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ada9ba80729d064f4559dfa9346a3788a">&#9670;&#160;</a></span>Progress() <span class="overload">[1/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ada9ba80729d064f4559dfa9346a3788a">&#9670;&#160;</a></span>Progress() <span class="overload">[1/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -288,8 +288,71 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a9561a85766135ee7a64b6713e79d1ded" name="a9561a85766135ee7a64b6713e79d1ded"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9561a85766135ee7a64b6713e79d1ded">&#9670;&#160;</a></span>Progress() <span class="overload">[2/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::Progress::Progress </td>
+          <td>(</td>
+          <td class="paramtype">std::int64_t</td>          <td class="paramname"><span class="paramname"><em>unit_count</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSProgress</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
+<a id="a6476c4b9326179822b519c6b0a0e57f0" name="a6476c4b9326179822b519c6b0a0e57f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6476c4b9326179822b519c6b0a0e57f0">&#9670;&#160;</a></span>Progress() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::Progress::Progress </td>
+          <td>(</td>
+          <td class="paramtype">std::int64_t</td>          <td class="paramname"><span class="paramname"><em>unit_count</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Progress &amp;</td>          <td class="paramname"><span class="paramname"><em>parent</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::int64_t</td>          <td class="paramname"><span class="paramname"><em>portion_of_parent_total_unit_count</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSProgress</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
 <a id="a67c5ccdf3ced747cc0b2928d6c966b0a" name="a67c5ccdf3ced747cc0b2928d6c966b0a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a67c5ccdf3ced747cc0b2928d6c966b0a">&#9670;&#160;</a></span>Progress() <span class="overload">[2/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a67c5ccdf3ced747cc0b2928d6c966b0a">&#9670;&#160;</a></span>Progress() <span class="overload">[4/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -316,7 +379,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="af021b128dcb962b664237d33a361cd75" name="af021b128dcb962b664237d33a361cd75"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af021b128dcb962b664237d33a361cd75">&#9670;&#160;</a></span>Progress() <span class="overload">[3/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af021b128dcb962b664237d33a361cd75">&#9670;&#160;</a></span>Progress() <span class="overload">[5/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -335,7 +398,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a3ca75b0b9586ef681a97ee3e433ec413" name="a3ca75b0b9586ef681a97ee3e433ec413"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ca75b0b9586ef681a97ee3e433ec413">&#9670;&#160;</a></span>Progress() <span class="overload">[4/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ca75b0b9586ef681a97ee3e433ec413">&#9670;&#160;</a></span>Progress() <span class="overload">[6/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -965,85 +1028,6 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="a0208449f41df9b658422c68d8d461b28" name="a0208449f41df9b658422c68d8d461b28"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0208449f41df9b658422c68d8d461b28">&#9670;&#160;</a></span>progress_with_total_unit_count() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#ada9ba80729d064f4559dfa9346a3788a">Progress</a> cocoon::Progress::progress_with_total_unit_count </td>
-          <td>(</td>
-          <td class="paramtype">std::int64_t</td>          <td class="paramname"><span class="paramname"><em>unit_count</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSProgress progressWithTotalUnitCount:]</span>. </p>
-<p>Creates and returns a progress instance. - Parameter unitCount: The total number of units of work to assign to the progress instance. If a current progress object exists, the initializer uses it to set the value of the 'totalUnitCount' property. In many cases, you can precede code that does a substantial amount of work with an invocation of this method, then repeatedly set the 'completedUnitCount' or 'isCancelled' property in the loop that does the work. You can invoke this method on one thread and then message the returned 'NSProgress' on another thread. For example, you can capture the created progress instance in a block that you pass to 'dispatch_async()'. In that block, you can invoke methods like '-becomeCurrentWithPendingUnitCount:' or '-resignCurrent', and set the 'completedUnitCount' or 'isCancelled' properties as your app finishes its work. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">unit_count</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="ac8c839abbaf0fee0ce079caae1ac926c" name="ac8c839abbaf0fee0ce079caae1ac926c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac8c839abbaf0fee0ce079caae1ac926c">&#9670;&#160;</a></span>progress_with_total_unit_count() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#ada9ba80729d064f4559dfa9346a3788a">Progress</a> cocoon::Progress::progress_with_total_unit_count </td>
-          <td>(</td>
-          <td class="paramtype">std::int64_t</td>          <td class="paramname"><span class="paramname"><em>unit_count</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="#ada9ba80729d064f4559dfa9346a3788a">Progress</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>parent</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::int64_t</td>          <td class="paramname"><span class="paramname"><em>portion_of_parent_total_unit_count</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSProgress progressWithTotalUnitCount:parent:pendingUnitCount:]</span>. </p>
-<p>Creates a progress instance for the specified progress object with a unit count that's a portion of the containing object's total unit count. - Parameters: - unitCount: The total number of units of work to assign to the progress instance. - parent: The containing progress object for the created progress object. - portionOfParentTotalUnitCount: The unit count for the progress object. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">unit_count</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">parent</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">portion_of_parent_total_unit_count</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
 
 </div>
 </div>
