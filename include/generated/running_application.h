@@ -28,7 +28,6 @@ namespace cocoon
      * Snippets built from this class's own members (values are placeholders).
      * @code
      * cocoon::RunningApplication running_application{};
-     * auto made_0 = cocoon::RunningApplication::running_application_with_process_identifier(1);
      * running_application.activate_from_application(cocoon::RunningApplication(), cocoon::ApplicationActivationOptions::AllWindows);
      * running_application.activate_with_options(cocoon::ApplicationActivationOptions::AllWindows);
      * running_application.force_terminate();
@@ -38,6 +37,8 @@ namespace cocoon
     class RunningApplication : public Object
     {
     public:
+        /// @brief Creates a new `NSRunningApplication` instance and returns a handle to it.
+        explicit RunningApplication(int pid);
         /// @brief Creates a new `NSRunningApplication` instance and returns a handle to it.
         explicit RunningApplication();
         /// @brief Creates a null handle that refers to no native object.
@@ -71,13 +72,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         bool hide() const;
-        /**
-     * @brief Calls `+[NSRunningApplication runningApplicationWithProcessIdentifier:]`.
-     * @details \@return The running application with the given process identifier, or nil if no application has that pid. Applications that do not have PIDs cannot be returned from this method.
-     * @param pid Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static RunningApplication running_application_with_process_identifier(int pid);
         /**
      * @brief Calls `+[NSRunningApplication runningApplicationsWithBundleIdentifier:]`.
      * @details \@return An array of currently running applications with the given bundle identifier, or an empty array if no apps match.

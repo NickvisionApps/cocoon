@@ -46,6 +46,8 @@ namespace cocoon
     public:
         /// @brief Creates a new `NSStackView` instance and returns a handle to it.
         explicit StackView();
+        /// @brief Creates a new `NSStackView` instance and returns a handle to it.
+        explicit StackView(const std::vector<View>& views);
         /// @brief Creates a null handle that refers to no native object.
         StackView(std::nullptr_t);
         /// @brief Wraps an existing retained native object without creating a new one.
@@ -141,12 +143,6 @@ namespace cocoon
      * @param view Argument converted to the Objective-C parameter of the same role.
      */
         void set_visibility_priority(float priority, const View& view) const;
-        /**
-     * @brief Calls `+[NSStackView stackViewWithViews:]`.
-     * @param views Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static StackView stack_view_with_views(const std::vector<View>& views);
         /**
      * @brief Calls `-[NSStackView viewsInGravity:]`.
      * @param gravity Argument converted to the Objective-C parameter of the same role.

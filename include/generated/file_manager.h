@@ -32,7 +32,6 @@ namespace cocoon
      * Snippets built from this class's own members (values are placeholders).
      * @code
      * cocoon::FileManager file_manager{};
-     * auto made_0 = cocoon::FileManager::file_manager_with_authorization(cocoon::WorkspaceAuthorization());
      * file_manager.url_for_directory(cocoon::SearchPathDirectory::ApplicationDirectory, cocoon::SearchPathDomainMask::UserDomainMask, cocoon::URL(), true);
      * file_manager.url_for_ubiquity_container_identifier("text");
      * file_manager.ur_ls_for_directory(cocoon::SearchPathDirectory::ApplicationDirectory, cocoon::SearchPathDomainMask::UserDomainMask);
@@ -42,6 +41,8 @@ namespace cocoon
     class FileManager : public Object
     {
     public:
+        /// @brief Creates a new `NSFileManager` instance and returns a handle to it.
+        explicit FileManager(const WorkspaceAuthorization& authorization);
         /// @brief Creates a new `NSFileManager` instance and returns a handle to it.
         explicit FileManager();
         /// @brief Creates a null handle that refers to no native object.
@@ -266,12 +267,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         bool file_exists_at_path(const std::string& path, bool* is_directory) const;
-        /**
-     * @brief Calls `+[NSFileManager fileManagerWithAuthorization:]`.
-     * @param authorization Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static FileManager file_manager_with_authorization(const WorkspaceAuthorization& authorization);
         /**
      * @brief Calls `-[NSFileManager fileSystemRepresentationWithPath:]`.
      * @details Returns a C-string representation of a given path that properly encodes Unicode strings for use by the file system. - Parameters: - path: A string object containing a path to a file. This parameter must not be 'nil' or contain the empty string. - Returns: A C-string representation of 'path' that properly encodes Unicode strings for use by the file system. Use this method if your code calls system routines that expect C-string path arguments. If you use the C string beyond the scope of the current autorelease pool, you must copy it. This method raises an exception if 'path' is 'nil' or contains the empty string. This method also throws an exception if the conversion of the string fails.

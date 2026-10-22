@@ -48,6 +48,10 @@ namespace cocoon
         /// @brief Creates a new `NSProgress` instance and returns a handle to it.
         explicit Progress(const Progress& parent_progress_or_nil, const std::map<std::string, Object>& user_info_or_nil);
         /// @brief Creates a new `NSProgress` instance and returns a handle to it.
+        explicit Progress(std::int64_t unit_count);
+        /// @brief Creates a new `NSProgress` instance and returns a handle to it.
+        explicit Progress(std::int64_t unit_count, const Progress& parent, std::int64_t portion_of_parent_total_unit_count);
+        /// @brief Creates a new `NSProgress` instance and returns a handle to it.
         explicit Progress();
         /// @brief Creates a null handle that refers to no native object.
         Progress(std::nullptr_t);
@@ -104,22 +108,6 @@ namespace cocoon
      * @param work Argument converted to the Objective-C parameter of the same role.
      */
         void perform_as_current_with_pending_unit_count(std::int64_t unit_count, std::function<void()> work) const;
-        /**
-     * @brief Calls `+[NSProgress progressWithTotalUnitCount:]`.
-     * @details Creates and returns a progress instance. - Parameter unitCount: The total number of units of work to assign to the progress instance. If a current progress object exists, the initializer uses it to set the value of the 'totalUnitCount' property. In many cases, you can precede code that does a substantial amount of work with an invocation of this method, then repeatedly set the 'completedUnitCount' or 'isCancelled' property in the loop that does the work. You can invoke this method on one thread and then message the returned 'NSProgress' on another thread. For example, you can capture the created progress instance in a block that you pass to 'dispatch_async()'. In that block, you can invoke methods like '-becomeCurrentWithPendingUnitCount:' or '-resignCurrent', and set the 'completedUnitCount' or 'isCancelled' properties as your app finishes its work.
-     * @param unit_count Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Progress progress_with_total_unit_count(std::int64_t unit_count);
-        /**
-     * @brief Calls `+[NSProgress progressWithTotalUnitCount:parent:pendingUnitCount:]`.
-     * @details Creates a progress instance for the specified progress object with a unit count that's a portion of the containing object's total unit count. - Parameters: - unitCount: The total number of units of work to assign to the progress instance. - parent: The containing progress object for the created progress object. - portionOfParentTotalUnitCount: The unit count for the progress object.
-     * @param unit_count Argument converted to the Objective-C parameter of the same role.
-     * @param parent Argument converted to the Objective-C parameter of the same role.
-     * @param portion_of_parent_total_unit_count Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Progress progress_with_total_unit_count(std::int64_t unit_count, const Progress& parent, std::int64_t portion_of_parent_total_unit_count);
         /**
      * @brief Calls `-[NSProgress publish]`.
      * @details Publishes the progress object for other processes to observe it. Entries in the user info dictionary determine whether another process can discover the progress object to observe it, and how it does that. For example, an 'NSProgressFileURLKey' entry makes a progress object discoverable by corresponding invokers of '+addSubscriberForFileURL:withPublishingHandler:'. When you make a progress object observable by other processes, you must ensure that at least 'localizedDescription', 'isIndeterminate', and 'fractionCompleted' always work when you send proxies of your progress object in other processes. You make 'isIndeterminate' and 'fractionCompleted' work by accurately setting the total and completed unit counts of the progress. You make 'localizedDescription' work by setting the value of the kind property to something valid, like 'NSProgressKindFile', and then fulfilling the requirements for that kind of progress. You can publish an instance of 'NSProgress' one time only.

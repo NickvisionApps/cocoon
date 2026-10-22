@@ -11,7 +11,7 @@ namespace cocoon
     {
     }
 
-    IndexSet::IndexSet() : IndexSet(Adopt{cocoon::internal::retain([[::NSIndexSet alloc] init])})
+    IndexSet::IndexSet() : IndexSet(Adopt{cocoon::internal::retain([::NSIndexSet indexSet])})
     {
     }
 
@@ -106,21 +106,6 @@ namespace cocoon
     std::uint64_t IndexSet::index_passing_test(std::function<bool(std::uint64_t, bool&)> predicate) const
     {
         return static_cast<std::uint64_t>([cocoon::internal::ns<::NSIndexSet>(this) indexPassingTest:(predicate ? (BOOL(^)(::NSUInteger, BOOL*)) ^ ::BOOL(::NSUInteger a164_0, ::BOOL * a164_1) { bool __o164_1 = a164_1 ? static_cast<bool>(*a164_1) : bool(); auto __r = predicate(static_cast<std::uint64_t>(a164_0), __o164_1); if (a164_1) { *a164_1 = static_cast<::BOOL>(__o164_1); } return static_cast<::BOOL>(__r); } : (BOOL(^)(::NSUInteger, BOOL*))nil)]);
-    }
-
-    IndexSet IndexSet::index_set()
-    {
-        return cocoon::internal::wrap<IndexSet>([::NSIndexSet indexSet]);
-    }
-
-    IndexSet IndexSet::index_set_with_index(std::uint64_t value)
-    {
-        return cocoon::internal::wrap<IndexSet>([::NSIndexSet indexSetWithIndex:static_cast<::NSUInteger>(value)]);
-    }
-
-    IndexSet IndexSet::index_set_with_indexes_in_range(const Range& range)
-    {
-        return cocoon::internal::wrap<IndexSet>([::NSIndexSet indexSetWithIndexesInRange:cocoon::internal::to(range)]);
     }
 
     std::uint64_t IndexSet::index_with_options(EnumerationOptions opts, std::function<bool(std::uint64_t, bool&)> predicate) const

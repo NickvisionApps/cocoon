@@ -24,8 +24,6 @@ namespace cocoon
      * Snippets built from this class's own members (values are placeholders).
      * @code
      * cocoon::Date date{};
-     * auto made_0 = cocoon::Date::date();
-     * auto made_1 = cocoon::Date::date_with_time_interval(1, cocoon::Date());
      * date.compare(cocoon::Date());
      * date.date_by_adding_time_interval(1);
      * date.earlier_date(cocoon::Date());
@@ -53,47 +51,12 @@ namespace cocoon
      */
         ComparisonResult compare(const Date& other) const;
         /**
-     * @brief Calls `+[NSDate date]`.
-     * @details Creates and returns a new date object set to the current date and time. This method uses the default initializer method for the class, 'init'.
-     * @return The converted Objective-C result.
-     */
-        static Date date();
-        /**
      * @brief Calls `-[NSDate dateByAddingTimeInterval:]`.
      * @details Returns a new date object that is set to a given number of seconds relative to the receiver. - Parameter ti: The number of seconds to add to the receiver. Use a negative value for seconds to have the returned object specify a date before the receiver. - Returns: A new 'NSDate' object that is set to 'seconds' seconds relative to the receiver. The date returned might have a representation different from the receiver's.
      * @param ti Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
      */
         Date date_by_adding_time_interval(double ti) const;
-        /**
-     * @brief Calls `+[NSDate dateWithTimeInterval:sinceDate:]`.
-     * @details Creates and returns a date object set to a given number of seconds from the specified date. - Parameter secsToBeAdded: The number of seconds to add to 'date'. Use a negative argument to specify a date and time before 'date'. - Parameter date: The date. - Returns: An 'NSDate' object set to 'secsToBeAdded' seconds from 'date'.
-     * @param secs_to_be_added Argument converted to the Objective-C parameter of the same role.
-     * @param date Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Date date_with_time_interval(double secs_to_be_added, const Date& date);
-        /**
-     * @brief Calls `+[NSDate dateWithTimeIntervalSince1970:]`.
-     * @details Creates and returns a date object set to the given number of seconds from 00:00:00 UTC on 1 January 1970. - Parameter secs: The number of seconds from the reference date (00:00:00 UTC on 1 January 1970) for the new date. Use a negative argument to specify a date and time before the reference date. - Returns: An 'NSDate' object set to 'secs' seconds from the reference date. This method is useful for creating 'NSDate' objects from 'time_t' values returned by BSD system functions.
-     * @param secs Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Date date_with_time_interval_since1970(double secs);
-        /**
-     * @brief Calls `+[NSDate dateWithTimeIntervalSinceNow:]`.
-     * @details Creates and returns a date object set to a given number of seconds from the current date and time. - Parameter secs: The number of seconds from the current date and time for the new date. Use a negative value to specify a date before the current date. - Returns: An 'NSDate' object set to 'secs' seconds from the current date and time.
-     * @param secs Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Date date_with_time_interval_since_now(double secs);
-        /**
-     * @brief Calls `+[NSDate dateWithTimeIntervalSinceReferenceDate:]`.
-     * @details Creates and returns a date object set to a given number of seconds from 00:00:00 UTC on 1 January 2001. - Parameter ti: The number of seconds from the absolute reference date (00:00:00 UTC on 1 January 2001) for the new date. Use a negative argument to specify a date and time before the reference date. - Returns: An 'NSDate' object set to 'ti' seconds from the absolute reference date.
-     * @param ti Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Date date_with_time_interval_since_reference_date(double ti);
         /**
      * @brief Calls `-[NSDate descriptionWithLocale:]`.
      * @details Returns a string representation of the date using the given locale. - Parameter locale: An 'NSLocale' object. If you pass 'nil', 'NSDate' formats the date in the same way as the 'description' property. - Returns: A string representation of the receiver, using the given locale, or if the locale argument is 'nil', in the international format 'YYYY-MM-DD HH:MM:SS +/-HHMM', where '+/-HHMM' represents the time zone offset in hours and minutes from UTC (for example, "2001-03-24 10:45:32 +0600").

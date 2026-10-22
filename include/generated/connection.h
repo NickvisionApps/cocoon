@@ -37,8 +37,6 @@ namespace cocoon
      * auto reply_timeout = connection.reply_timeout();
      * connection.set_request_timeout(1);
      * auto request_timeout = connection.request_timeout();
-     * auto made_0 = cocoon::Connection::connection_with_receive_port(cocoon::Port(), cocoon::Port());
-     * auto made_1 = cocoon::Connection::connection_with_registered_name("text", "text");
      * connection.add_request_mode("text");
      * connection.add_run_loop(cocoon::RunLoop());
      * connection.enable_multiple_threads();
@@ -50,6 +48,10 @@ namespace cocoon
     public:
         /// @brief Creates a new `NSConnection` instance and returns a handle to it.
         explicit Connection(const Port& receive_port, const Port& send_port);
+        /// @brief Creates a new `NSConnection` instance and returns a handle to it.
+        explicit Connection(const std::string& name, const std::string& host_name);
+        /// @brief Creates a new `NSConnection` instance and returns a handle to it.
+        explicit Connection(const std::string& name, const std::string& host_name, const PortNameServer& server);
         /// @brief Creates a new `NSConnection` instance and returns a handle to it.
         explicit Connection();
         /// @brief Creates a null handle that refers to no native object.
@@ -74,31 +76,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         static std::vector<Connection> all_connections();
-        /**
-     * @brief Calls `+[NSConnection connectionWithReceivePort:sendPort:]`.
-     * @details Returns an 'NSConnection' object initialized with the specified send and receive ports.
-     * @param receive_port Argument converted to the Objective-C parameter of the same role.
-     * @param send_port Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Connection connection_with_receive_port(const Port& receive_port, const Port& send_port);
-        /**
-     * @brief Calls `+[NSConnection connectionWithRegisteredName:host:]`.
-     * @details Returns an 'NSConnection' object for the specified registered name and host.
-     * @param name Argument converted to the Objective-C parameter of the same role.
-     * @param host_name Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Connection connection_with_registered_name(const std::string& name, const std::string& host_name);
-        /**
-     * @brief Calls `+[NSConnection connectionWithRegisteredName:host:usingNameServer:]`.
-     * @details Returns an 'NSConnection' object for the specified registered name, host, and name server.
-     * @param name Argument converted to the Objective-C parameter of the same role.
-     * @param host_name Argument converted to the Objective-C parameter of the same role.
-     * @param server Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Connection connection_with_registered_name(const std::string& name, const std::string& host_name, const PortNameServer& server);
         /**
      * @brief Calls `+[NSConnection currentConversation]`.
      * @details Returns an object representing an ongoing conversation triggered by a received message.

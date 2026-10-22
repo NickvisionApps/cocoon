@@ -36,7 +36,6 @@ namespace cocoon
      * auto animates = image_view.animates();
      * image_view.set_content_tint_color(cocoon::Color());
      * auto content_tint_color = image_view.content_tint_color();
-     * auto made_0 = cocoon::ImageView::image_view_with_image(cocoon::Image());
      * image_view.add_symbol_effect(cocoon::SymbolEffect());
      * image_view.add_symbol_effect(cocoon::SymbolEffect(), cocoon::SymbolEffectOptions());
      * image_view.add_symbol_effect(cocoon::SymbolEffect(), cocoon::SymbolEffectOptions(), true);
@@ -73,13 +72,6 @@ namespace cocoon
      * @param animated Argument converted to the Objective-C parameter of the same role.
      */
         void add_symbol_effect(const SymbolEffect& symbol_effect, const SymbolEffectOptions& options, bool animated) const;
-        /**
-     * @brief Calls `+[NSImageView imageViewWithImage:]`.
-     * @details Creates a non-editable image view containing the provided image. The image is scaled proportionally down to fit the view, and is centered within the view. \@param image The image to display within the view. \@return An initialized image view.
-     * @param image Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static ImageView image_view_with_image(const Image& image);
         /**
      * @brief Calls `-[NSImageView removeAllSymbolEffects]`.
      * @details Removes all symbol effects from the image view with default options and animation.

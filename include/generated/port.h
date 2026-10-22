@@ -27,7 +27,6 @@ namespace cocoon
      * Snippets built from this class's own members (values are placeholders).
      * @code
      * cocoon::Port port{};
-     * auto made_0 = cocoon::Port::port();
      * port.delegate();
      * port.invalidate();
      * port.remove_from_run_loop(cocoon::RunLoop(), "text");
@@ -54,12 +53,6 @@ namespace cocoon
      * @details Marks the receiver as invalid and posts an ''NSPortDidBecomeInvalidNotification'' to the default notification center.
      */
         void invalidate() const;
-        /**
-     * @brief Calls `+[NSPort port]`.
-     * @details Creates and returns a new ''NSPort'' object capable of both sending and receiving messages.
-     * @return The converted Objective-C result.
-     */
-        static Port port();
         /**
      * @brief Calls `-[NSPort removeFromRunLoop:forMode:]`.
      * @details Removes the receiver from the run loop mode of the given run loop. You should not directly invoke this method. Instead, you should remove the port from the run loop.

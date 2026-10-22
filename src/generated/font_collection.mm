@@ -3,6 +3,25 @@
 
 namespace cocoon
 {
+    FontCollection::FontCollection(const std::vector<FontDescriptor>& query_descriptors) : FontCollection(Adopt{cocoon::internal::retain([::NSFontCollection fontCollectionWithDescriptors:cocoon::internal::to_array(query_descriptors, [](const FontDescriptor& e) -> id
+                                                                                                                                                                                                                      {
+                                                                                                                                                                                                                          return cocoon::internal::native<::NSFontDescriptor>(e);
+                                                                                                                                                                                                                      })])})
+    {
+    }
+
+    FontCollection::FontCollection(const Locale& locale) : FontCollection(Adopt{cocoon::internal::retain([::NSFontCollection fontCollectionWithLocale:cocoon::internal::native<::NSLocale>(locale)])})
+    {
+    }
+
+    FontCollection::FontCollection(const std::string& name) : FontCollection(Adopt{cocoon::internal::retain([::NSFontCollection fontCollectionWithName:cocoon::internal::to(name)])})
+    {
+    }
+
+    FontCollection::FontCollection(const std::string& name, FontCollectionVisibility visibility) : FontCollection(Adopt{cocoon::internal::retain([::NSFontCollection fontCollectionWithName:cocoon::internal::to(name) visibility:static_cast<::NSFontCollectionVisibility>(visibility)])})
+    {
+    }
+
     FontCollection::FontCollection() : FontCollection(Adopt{cocoon::internal::retain([[::NSFontCollection alloc] init])})
     {
     }
@@ -13,29 +32,6 @@ namespace cocoon
 
     FontCollection::FontCollection(Adopt adopt) : Object(adopt)
     {
-    }
-
-    FontCollection FontCollection::font_collection_with_descriptors(const std::vector<FontDescriptor>& query_descriptors)
-    {
-        return cocoon::internal::wrap<FontCollection>([::NSFontCollection fontCollectionWithDescriptors:cocoon::internal::to_array(query_descriptors, [](const FontDescriptor& e) -> id
-                                                                                                                                   {
-                                                                                                                                       return cocoon::internal::native<::NSFontDescriptor>(e);
-                                                                                                                                   })]);
-    }
-
-    FontCollection FontCollection::font_collection_with_locale(const Locale& locale)
-    {
-        return cocoon::internal::wrap<FontCollection>([::NSFontCollection fontCollectionWithLocale:cocoon::internal::native<::NSLocale>(locale)]);
-    }
-
-    FontCollection FontCollection::font_collection_with_name(const std::string& name)
-    {
-        return cocoon::internal::wrap<FontCollection>([::NSFontCollection fontCollectionWithName:cocoon::internal::to(name)]);
-    }
-
-    FontCollection FontCollection::font_collection_with_name(const std::string& name, FontCollectionVisibility visibility)
-    {
-        return cocoon::internal::wrap<FontCollection>([::NSFontCollection fontCollectionWithName:cocoon::internal::to(name) visibility:static_cast<::NSFontCollectionVisibility>(visibility)]);
     }
 
     bool FontCollection::hide_font_collection_with_name(const std::string& name, FontCollectionVisibility visibility)

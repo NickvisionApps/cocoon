@@ -11,6 +11,20 @@ namespace cocoon
     {
     }
 
+    GridView::GridView(std::int64_t column_count, std::int64_t row_count) : GridView(Adopt{cocoon::internal::retain([::NSGridView gridViewWithNumberOfColumns:static_cast<::NSInteger>(column_count) rows:static_cast<::NSInteger>(row_count)])})
+    {
+    }
+
+    GridView::GridView(const std::vector<std::vector<View>>& rows) : GridView(Adopt{cocoon::internal::retain([::NSGridView gridViewWithViews:cocoon::internal::to_array(rows, [](const std::vector<View>& e) -> id
+                                                                                                                                                                        {
+                                                                                                                                                                            return cocoon::internal::to_array(e, [](const View& e) -> id
+                                                                                                                                                                                                              {
+                                                                                                                                                                                                                  return cocoon::internal::native<::NSView>(e);
+                                                                                                                                                                                                              });
+                                                                                                                                                                        })])})
+    {
+    }
+
     GridView::GridView(std::nullptr_t) : View(nullptr)
     {
     }
@@ -48,22 +62,6 @@ namespace cocoon
     GridColumn GridView::column_at_index(std::int64_t index) const
     {
         return cocoon::internal::wrap<GridColumn>([cocoon::internal::ns<::NSGridView>(this) columnAtIndex:static_cast<::NSInteger>(index)]);
-    }
-
-    GridView GridView::grid_view_with_number_of_columns(std::int64_t column_count, std::int64_t row_count)
-    {
-        return cocoon::internal::wrap<GridView>([::NSGridView gridViewWithNumberOfColumns:static_cast<::NSInteger>(column_count) rows:static_cast<::NSInteger>(row_count)]);
-    }
-
-    GridView GridView::grid_view_with_views(const std::vector<std::vector<View>>& rows)
-    {
-        return cocoon::internal::wrap<GridView>([::NSGridView gridViewWithViews:cocoon::internal::to_array(rows, [](const std::vector<View>& e) -> id
-                                                                                                           {
-                                                                                                               return cocoon::internal::to_array(e, [](const View& e) -> id
-                                                                                                                                                 {
-                                                                                                                                                     return cocoon::internal::native<::NSView>(e);
-                                                                                                                                                 });
-                                                                                                           })]);
     }
 
     std::int64_t GridView::index_of_column(const GridColumn& column) const

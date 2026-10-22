@@ -24,8 +24,6 @@ namespace cocoon
      * Snippets built from this class's own members (values are placeholders).
      * @code
      * cocoon::SortDescriptor sort_descriptor{};
-     * auto made_0 = cocoon::SortDescriptor::sort_descriptor_with_key("text", true);
-     * auto made_1 = cocoon::SortDescriptor::sort_descriptor_with_key("text", true, "text");
      * sort_descriptor.allow_evaluation();
      * @endcode
      * @see https://developer.apple.com/documentation/foundation/nssortdescriptor
@@ -58,32 +56,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         ComparisonResult compare_object(const Object& object1, const Object& object2) const;
-        /**
-     * @brief Calls `+[NSSortDescriptor sortDescriptorWithKey:ascending:]`.
-     * @details Creates and returns a sort descriptor with the specified key path and ordering. - Parameters: - key: The key path to use when performing a comparison. - ascending: 'YES' if the receiver specifies sorting in ascending order, otherwise 'NO'. - Returns: A sort descriptor initialized with the specified key path and sort order, and the default comparison selector ('compare:').
-     * @param key Argument converted to the Objective-C parameter of the same role.
-     * @param ascending Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static SortDescriptor sort_descriptor_with_key(const std::string& key, bool ascending);
-        /**
-     * @brief Calls `+[NSSortDescriptor sortDescriptorWithKey:ascending:comparator:]`.
-     * @details Creates and returns a sort descriptor initialized with the specified key path and ordering, and a comparator block. - Parameters: - key: The property for performing a comparison. - ascending: 'YES' if the receiver specifies sorting in ascending order; otherwise, 'NO'. - cmptr: A comparator block. - Returns: A sort descriptor initialized with the specified key, ordering, and comparator.
-     * @param key Argument converted to the Objective-C parameter of the same role.
-     * @param ascending Argument converted to the Objective-C parameter of the same role.
-     * @param cmptr Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static SortDescriptor sort_descriptor_with_key(const std::string& key, bool ascending, std::function<ComparisonResult(Object, Object)> cmptr);
-        /**
-     * @brief Calls `+[NSSortDescriptor sortDescriptorWithKey:ascending:selector:]`.
-     * @details Creates a sort descriptor with the specified key path, ordering, and comparison selector. - Parameters: - key: The key path for performing a comparison. - ascending: 'YES' if the receiver specifies sorting in ascending order; otherwise, 'NO'. - selector: The method to use when comparing the properties of objects. The selector must specify a method implemented by the value of the property identified by the key path. The selector used for the comparison is passed a single parameter, the object to compare against, and it returns the appropriate 'NSComparisonResult' constant. - Returns: A sort descriptor initialized with the specified key path, sort order, and comparison selector.
-     * @param key Argument converted to the Objective-C parameter of the same role.
-     * @param ascending Argument converted to the Objective-C parameter of the same role.
-     * @param selector Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static SortDescriptor sort_descriptor_with_key(const std::string& key, bool ascending, const std::string& selector);
         /**
      * @brief Returns the `ascending` property of `NSSortDescriptor`.
      * @details A Boolean value that indicates whether the receiver specifies sorting in ascending order. 'YES' if the receiver specifies sorting in ascending order, otherwise 'NO'.

@@ -20,57 +20,25 @@ namespace cocoon
      *
      * cocoon::GlyphInfo glyph_info;
      * @endcode
-     *
-     * @par Common tasks
-     * Snippets built from this class's own members (values are placeholders).
-     * @code
-     * cocoon::GlyphInfo glyph_info{};
-     * auto made_0 = cocoon::GlyphInfo::glyph_info_with_cg_glyph(1, cocoon::Font(), "text");
-     * auto made_1 = cocoon::GlyphInfo::glyph_info_with_character_identifier(1, cocoon::CharacterCollection::IdentityMappingCharacterCollection, "text");
-     * @endcode
      * @see https://developer.apple.com/documentation/appkit/nsglyphinfo
      */
     class GlyphInfo : public Object
     {
     public:
         /// @brief Creates a new `NSGlyphInfo` instance and returns a handle to it.
+        explicit GlyphInfo(std::uint16_t glyph, const Font& font, const std::string& string);
+        /// @brief Creates a new `NSGlyphInfo` instance and returns a handle to it.
+        explicit GlyphInfo(std::uint64_t cid, CharacterCollection character_collection, const std::string& string);
+        /// @brief Creates a new `NSGlyphInfo` instance and returns a handle to it.
+        explicit GlyphInfo(unsigned int glyph, const Font& font, const std::string& string);
+        /// @brief Creates a new `NSGlyphInfo` instance and returns a handle to it.
+        explicit GlyphInfo(const std::string& glyph_name, const Font& font, const std::string& string);
+        /// @brief Creates a new `NSGlyphInfo` instance and returns a handle to it.
         explicit GlyphInfo();
         /// @brief Creates a null handle that refers to no native object.
         GlyphInfo(std::nullptr_t);
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit GlyphInfo(Adopt adopt);
-        /**
-     * @brief Calls `+[NSGlyphInfo glyphInfoWithCGGlyph:forFont:baseString:]`.
-     * @param glyph Argument converted to the Objective-C parameter of the same role.
-     * @param font Argument converted to the Objective-C parameter of the same role.
-     * @param string Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static GlyphInfo glyph_info_with_cg_glyph(std::uint16_t glyph, const Font& font, const std::string& string);
-        /**
-     * @brief Calls `+[NSGlyphInfo glyphInfoWithCharacterIdentifier:collection:baseString:]`.
-     * @param cid Argument converted to the Objective-C parameter of the same role.
-     * @param character_collection Argument converted to the Objective-C parameter of the same role.
-     * @param string Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static GlyphInfo glyph_info_with_character_identifier(std::uint64_t cid, CharacterCollection character_collection, const std::string& string);
-        /**
-     * @brief Calls `+[NSGlyphInfo glyphInfoWithGlyph:forFont:baseString:]`.
-     * @param glyph Argument converted to the Objective-C parameter of the same role.
-     * @param font Argument converted to the Objective-C parameter of the same role.
-     * @param string Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static GlyphInfo glyph_info_with_glyph(unsigned int glyph, const Font& font, const std::string& string);
-        /**
-     * @brief Calls `+[NSGlyphInfo glyphInfoWithGlyphName:forFont:baseString:]`.
-     * @param glyph_name Argument converted to the Objective-C parameter of the same role.
-     * @param font Argument converted to the Objective-C parameter of the same role.
-     * @param string Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static GlyphInfo glyph_info_with_glyph_name(const std::string& glyph_name, const Font& font, const std::string& string);
         /**
      * @brief Returns the `baseString` property of `NSGlyphInfo`.
      * @return The converted Objective-C result.

@@ -7,6 +7,38 @@ namespace cocoon
     {
     }
 
+    Value::Value(const CATransform3D& t) : Value(Adopt{cocoon::internal::retain([::NSValue valueWithCATransform3D:cocoon::internal::to(t)])})
+    {
+    }
+
+    Value::Value(const Insets& insets) : Value(Adopt{cocoon::internal::retain([::NSValue valueWithEdgeInsets:cocoon::internal::to(insets)])})
+    {
+    }
+
+    Value::Value(const Object& an_object) : Value(Adopt{cocoon::internal::retain([::NSValue valueWithNonretainedObject:cocoon::internal::native_id(an_object)])})
+    {
+    }
+
+    Value::Value(const Point& point) : Value(Adopt{cocoon::internal::retain([::NSValue valueWithPoint:cocoon::internal::to(point)])})
+    {
+    }
+
+    Value::Value(const void* pointer) : Value(Adopt{cocoon::internal::retain([::NSValue valueWithPointer:pointer])})
+    {
+    }
+
+    Value::Value(const Range& range) : Value(Adopt{cocoon::internal::retain([::NSValue valueWithRange:cocoon::internal::to(range)])})
+    {
+    }
+
+    Value::Value(const Rect& rect) : Value(Adopt{cocoon::internal::retain([::NSValue valueWithRect:cocoon::internal::to(rect)])})
+    {
+    }
+
+    Value::Value(const Size& size) : Value(Adopt{cocoon::internal::retain([::NSValue valueWithSize:cocoon::internal::to(size)])})
+    {
+    }
+
     Value::Value() : Value(Adopt{cocoon::internal::retain([[::NSValue alloc] init])})
     {
     }
@@ -32,56 +64,6 @@ namespace cocoon
     bool Value::is_equal_to_value(const Value& value) const
     {
         return static_cast<bool>([cocoon::internal::ns<::NSValue>(this) isEqualToValue:cocoon::internal::native<::NSValue>(value)]);
-    }
-
-    Value Value::value(const void* value, const std::string& type)
-    {
-        return cocoon::internal::wrap<Value>([::NSValue value:value withObjCType:type.c_str()]);
-    }
-
-    Value Value::value_with_bytes(const void* value, const std::string& type)
-    {
-        return cocoon::internal::wrap<Value>([::NSValue valueWithBytes:value objCType:type.c_str()]);
-    }
-
-    Value Value::value_with_ca_transform3_d(const CATransform3D& t)
-    {
-        return cocoon::internal::wrap<Value>([::NSValue valueWithCATransform3D:cocoon::internal::to(t)]);
-    }
-
-    Value Value::value_with_edge_insets(const Insets& insets)
-    {
-        return cocoon::internal::wrap<Value>([::NSValue valueWithEdgeInsets:cocoon::internal::to(insets)]);
-    }
-
-    Value Value::value_with_nonretained_object(const Object& an_object)
-    {
-        return cocoon::internal::wrap<Value>([::NSValue valueWithNonretainedObject:cocoon::internal::native_id(an_object)]);
-    }
-
-    Value Value::value_with_point(const Point& point)
-    {
-        return cocoon::internal::wrap<Value>([::NSValue valueWithPoint:cocoon::internal::to(point)]);
-    }
-
-    Value Value::value_with_pointer(const void* pointer)
-    {
-        return cocoon::internal::wrap<Value>([::NSValue valueWithPointer:pointer]);
-    }
-
-    Value Value::value_with_range(const Range& range)
-    {
-        return cocoon::internal::wrap<Value>([::NSValue valueWithRange:cocoon::internal::to(range)]);
-    }
-
-    Value Value::value_with_rect(const Rect& rect)
-    {
-        return cocoon::internal::wrap<Value>([::NSValue valueWithRect:cocoon::internal::to(rect)]);
-    }
-
-    Value Value::value_with_size(const Size& size)
-    {
-        return cocoon::internal::wrap<Value>([::NSValue valueWithSize:cocoon::internal::to(size)]);
     }
 
     CATransform3D Value::ca_transform3_d_value() const

@@ -63,14 +63,6 @@ namespace cocoon
      */
         std::vector<std::string> languages_for_script(const std::string& script) const;
         /**
-     * @brief Calls `+[NSOrthography orthographyWithDominantScript:languageMap:]`.
-     * @details Creates and returns an orthography object with the specified dominant script and language map. - Parameter script: The dominant script. - Parameter map: A dictionary mapping ISO 15924 script codes to arrays of BCP-47 language tags.
-     * @param script Argument converted to the Objective-C parameter of the same role.
-     * @param map Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Orthography orthography_with_dominant_script(const std::string& script, const std::map<std::string, std::vector<std::string>>& map);
-        /**
      * @brief Returns the `allLanguages` property of `NSOrthography`.
      * @details The languages appearing in values of the language map.
      * @return The converted Objective-C result.

@@ -70,14 +70,6 @@ namespace cocoon
      */
         static OutputStream output_stream_to_memory();
         /**
-     * @brief Calls `+[NSOutputStream outputStreamWithURL:append:]`.
-     * @details Creates and returns an initialized output stream for writing to a specified URL. The stream must be opened before it can be used. - Parameters: - url: The URL to the file the output stream will write to. - shouldAppend: 'YES' if newly written data should be appended to any existing file contents, otherwise 'NO'.
-     * @param url Argument converted to the Objective-C parameter of the same role.
-     * @param should_append Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static OutputStream output_stream_with_url(const URL& url, bool should_append);
-        /**
      * @brief Calls `-[NSOutputStream write:maxLength:]`.
      * @details Writes the contents of a provided data buffer to the receiver. - Parameters: - buffer: The data to write. - len: The length of the data buffer, in bytes. The behavior of this method is undefined if you pass a negative or zero number. - Returns: A positive number indicates the number of bytes written; '0' indicates that a fixed-length stream has reached its capacity; '-1' means that the operation failed (more information about the error can be obtained with 'streamError').
      * @param buffer Argument converted to the Objective-C parameter of the same role.

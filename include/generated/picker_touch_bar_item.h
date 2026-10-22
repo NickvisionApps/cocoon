@@ -43,6 +43,10 @@ namespace cocoon
     class PickerTouchBarItem : public TouchBarItem
     {
     public:
+        /// @brief Creates a new `NSPickerTouchBarItem` instance and returns a handle to it.
+        explicit PickerTouchBarItem(const std::string& identifier, const std::vector<Image>& images, PickerTouchBarItemSelectionMode selection_mode, const Object& target, const std::string& action);
+        /// @brief Creates a new `NSPickerTouchBarItem` instance and returns a handle to it.
+        explicit PickerTouchBarItem(const std::string& identifier, const std::vector<std::string>& labels, PickerTouchBarItemSelectionMode selection_mode, const Object& target, const std::string& action);
         PickerTouchBarItem();
         /// @brief Creates a null handle that refers to no native object.
         PickerTouchBarItem(std::nullptr_t);
@@ -67,27 +71,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         std::string label_at_index(std::int64_t index) const;
-        /**
-     * @brief Calls `+[NSPickerTouchBarItem pickerTouchBarItemWithIdentifier:images:selectionMode:target:action:]`.
-     * @param identifier Argument converted to the Objective-C parameter of the same role.
-     * @param images Argument converted to the Objective-C parameter of the same role.
-     * @param selection_mode Argument converted to the Objective-C parameter of the same role.
-     * @param target Argument converted to the Objective-C parameter of the same role.
-     * @param action Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static PickerTouchBarItem picker_touch_bar_item_with_identifier(const std::string& identifier, const std::vector<Image>& images, PickerTouchBarItemSelectionMode selection_mode, const Object& target, const std::string& action);
-        /**
-     * @brief Calls `+[NSPickerTouchBarItem pickerTouchBarItemWithIdentifier:labels:selectionMode:target:action:]`.
-     * @details Creates a standard item with an NSSegmentedControl appropriate for use in an NSTouchBar
-     * @param identifier Argument converted to the Objective-C parameter of the same role.
-     * @param labels Argument converted to the Objective-C parameter of the same role.
-     * @param selection_mode Argument converted to the Objective-C parameter of the same role.
-     * @param target Argument converted to the Objective-C parameter of the same role.
-     * @param action Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static PickerTouchBarItem picker_touch_bar_item_with_identifier(const std::string& identifier, const std::vector<std::string>& labels, PickerTouchBarItemSelectionMode selection_mode, const Object& target, const std::string& action);
         /**
      * @brief Calls `-[NSPickerTouchBarItem setEnabled:atIndex:]`.
      * @param enabled Argument converted to the Objective-C parameter of the same role.

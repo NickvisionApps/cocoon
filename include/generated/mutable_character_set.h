@@ -46,10 +46,6 @@ namespace cocoon
         explicit MutableCharacterSet(Adopt adopt);
         using CharacterSet::alphanumeric_character_set;
         using CharacterSet::capitalized_letter_character_set;
-        using CharacterSet::character_set_with_bitmap_representation;
-        using CharacterSet::character_set_with_characters_in_string;
-        using CharacterSet::character_set_with_contents_of_file;
-        using CharacterSet::character_set_with_range;
         using CharacterSet::control_character_set;
         using CharacterSet::decimal_digit_character_set;
         using CharacterSet::decomposable_character_set;

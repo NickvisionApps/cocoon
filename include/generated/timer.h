@@ -33,7 +33,6 @@ namespace cocoon
      * timer.set_tolerance(1);
      * auto tolerance = timer.tolerance();
      * auto made_0 = cocoon::Timer::scheduled_timer_with_time_interval(1, cocoon::Invocation(), true);
-     * auto made_1 = cocoon::Timer::timer_with_time_interval(1, cocoon::Invocation(), true);
      * timer.fire();
      * timer.invalidate();
      * @endcode
@@ -46,6 +45,12 @@ namespace cocoon
         explicit Timer(const Date& date, double interval, bool repeats, std::function<void(Timer)> block);
         /// @brief Creates a new `NSTimer` instance and returns a handle to it.
         explicit Timer(const Date& date, double ti, const Object& t, const std::string& s, const Object& ui, bool rep);
+        /// @brief Creates a new `NSTimer` instance and returns a handle to it.
+        explicit Timer(double ti, const Invocation& invocation, bool yes_or_no);
+        /// @brief Creates a new `NSTimer` instance and returns a handle to it.
+        explicit Timer(double interval, bool repeats, std::function<void(Timer)> block);
+        /// @brief Creates a new `NSTimer` instance and returns a handle to it.
+        explicit Timer(double ti, const Object& a_target, const std::string& a_selector, const Object& user_info, bool yes_or_no);
         /// @brief Creates a new `NSTimer` instance and returns a handle to it.
         explicit Timer();
         /// @brief Creates a null handle that refers to no native object.
@@ -91,35 +96,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         static Timer scheduled_timer_with_time_interval(double ti, const Object& a_target, const std::string& a_selector, const Object& user_info, bool yes_or_no);
-        /**
-     * @brief Calls `+[NSTimer timerWithTimeInterval:invocation:repeats:]`.
-     * @details Initializes a timer object with the specified invocation object. You must add the new timer to a run loop, using -[NSRunLoop addTimer:forMode:]. Then, after 'ti' seconds have elapsed, the timer fires, invoking 'invocation'. (If the timer is configured to repeat, there is no need to subsequently re-add the timer to the run loop.) - Parameters: - ti: The number of seconds between firings of the timer. If 'ti' is less than or equal to '0.0', this method chooses the nonnegative value of '0.0001' seconds instead. - invocation: The invocation to use when the timer fires. The timer instructs the invocation object to maintain a strong reference to its arguments. - yesOrNo: If 'YES', the timer will repeatedly reschedule itself until invalidated. If 'NO', the timer will be invalidated after it fires. - Returns: A new 'NSTimer' object, configured according to the specified parameters.
-     * @param ti Argument converted to the Objective-C parameter of the same role.
-     * @param invocation Argument converted to the Objective-C parameter of the same role.
-     * @param yes_or_no Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Timer timer_with_time_interval(double ti, const Invocation& invocation, bool yes_or_no);
-        /**
-     * @brief Calls `+[NSTimer timerWithTimeInterval:repeats:block:]`.
-     * @details Creates and returns a new NSTimer object initialized with the specified block object. This timer needs to be scheduled on a run loop (via -[NSRunLoop addTimer:]) before it will fire. - parameter: timeInterval The number of seconds between firings of the timer. If seconds is less than or equal to 0.0, this method chooses the nonnegative value of 0.1 milliseconds instead - parameter: repeats If YES, the timer will repeatedly reschedule itself until invalidated. If NO, the timer will be invalidated after it fires. - parameter: block The execution body of the timer; the timer itself is passed as the parameter to this block when executed to aid in avoiding cyclical references
-     * @param interval Argument converted to the Objective-C parameter of the same role.
-     * @param repeats Argument converted to the Objective-C parameter of the same role.
-     * @param block Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Timer timer_with_time_interval(double interval, bool repeats, std::function<void(Timer)> block);
-        /**
-     * @brief Calls `+[NSTimer timerWithTimeInterval:target:selector:userInfo:repeats:]`.
-     * @details Initializes a timer object with the specified object and selector. You must add the new timer to a run loop, using -[NSRunLoop addTimer:forMode:]. Then, after 'ti' seconds have elapsed, the timer fires, sending the message 'aSelector' to 'target'. (If the timer is configured to repeat, there is no need to subsequently re-add the timer to the run loop.) - Parameters: - ti: The number of seconds between firings of the timer. If 'ti' is less than or equal to '0.0', this method chooses the nonnegative value of '0.0001' seconds instead. - aTarget: The object to which to send the message specified by 'aSelector' when the timer fires. The timer maintains a strong reference to this object until it (the timer) is invalidated. - aSelector: The message to send to 'target' when the timer fires. - userInfo: Custom user info for the timer. The timer maintains a strong reference to this object until it (the timer) is invalidated. This parameter may be 'nil'. - yesOrNo: If 'YES', the timer will repeatedly reschedule itself until invalidated. If 'NO', the timer will be invalidated after it fires. - Returns: A new 'NSTimer' object, configured according to the specified parameters.
-     * @param ti Argument converted to the Objective-C parameter of the same role.
-     * @param a_target Argument converted to the Objective-C parameter of the same role.
-     * @param a_selector Argument converted to the Objective-C parameter of the same role.
-     * @param user_info Argument converted to the Objective-C parameter of the same role.
-     * @param yes_or_no Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Timer timer_with_time_interval(double ti, const Object& a_target, const std::string& a_selector, const Object& user_info, bool yes_or_no);
         /**
      * @brief Returns the `fireDate` property of `NSTimer`.
      * @details The date at which the timer will fire. If the timer is no longer valid, the last date at which the timer fired. You can set this property to adjust the firing time of a repeating timer. Although resetting a timer's next firing time is a relatively expensive operation, it may be more efficient in some situations. For example, you could use it in situations where you want to repeat an action multiple times in the future, but at irregular time intervals. Adjusting the firing time of a single timer would likely incur less expense than creating multiple timer objects, scheduling each one on a run loop, and then destroying them. You should not change the fire date of a timer that has been invalidated, which includes non-repeating timers that have already fired. You could potentially change the fire date of a non-repeating timer that had not yet fired, although you should always do so from the thread to which the timer is attached to avoid potential race conditions.

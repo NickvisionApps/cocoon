@@ -3,7 +3,7 @@
 
 namespace cocoon
 {
-    Pipe::Pipe() : Pipe(Adopt{cocoon::internal::retain([[::NSPipe alloc] init])})
+    Pipe::Pipe() : Pipe(Adopt{cocoon::internal::retain([::NSPipe pipe])})
     {
     }
 
@@ -13,11 +13,6 @@ namespace cocoon
 
     Pipe::Pipe(Adopt adopt) : Object(adopt)
     {
-    }
-
-    Pipe Pipe::pipe()
-    {
-        return cocoon::internal::wrap<Pipe>([::NSPipe pipe]);
     }
 
     FileHandle Pipe::file_handle_for_reading() const

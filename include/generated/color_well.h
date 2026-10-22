@@ -32,7 +32,6 @@ namespace cocoon
      * auto color = color_well.color();
      * color_well.set_color_well_style(cocoon::ColorWellStyle::Default);
      * auto color_well_style = color_well.color_well_style();
-     * auto made_0 = cocoon::ColorWell::color_well_with_style(cocoon::ColorWellStyle::Default);
      * color_well.activate(true);
      * color_well.deactivate();
      * color_well.draw_well_inside({{0, 0}, {100, 100}});
@@ -45,6 +44,8 @@ namespace cocoon
     public:
         /// @brief Creates a new `NSColorWell` instance and returns a handle to it.
         explicit ColorWell();
+        /// @brief Creates a new `NSColorWell` instance and returns a handle to it.
+        explicit ColorWell(ColorWellStyle style);
         /// @brief Creates a null handle that refers to no native object.
         ColorWell(std::nullptr_t);
         /// @brief Wraps an existing retained native object without creating a new one.
@@ -54,12 +55,6 @@ namespace cocoon
      * @param exclusive Argument converted to the Objective-C parameter of the same role.
      */
         void activate(bool exclusive) const;
-        /**
-     * @brief Calls `+[NSColorWell colorWellWithStyle:]`.
-     * @param style Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static ColorWell color_well_with_style(ColorWellStyle style);
         /**
      * @brief Calls `-[NSColorWell deactivate]`.
      */

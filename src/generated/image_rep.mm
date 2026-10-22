@@ -3,6 +3,18 @@
 
 namespace cocoon
 {
+    ImageRep::ImageRep(const std::string& filename) : ImageRep(Adopt{cocoon::internal::retain([::NSImageRep imageRepWithContentsOfFile:cocoon::internal::to(filename)])})
+    {
+    }
+
+    ImageRep::ImageRep(const URL& url) : ImageRep(Adopt{cocoon::internal::retain([::NSImageRep imageRepWithContentsOfURL:cocoon::internal::native<::NSURL>(url)])})
+    {
+    }
+
+    ImageRep::ImageRep(const Pasteboard& pasteboard) : ImageRep(Adopt{cocoon::internal::retain([::NSImageRep imageRepWithPasteboard:cocoon::internal::native<::NSPasteboard>(pasteboard)])})
+    {
+    }
+
     ImageRep::ImageRep() : ImageRep(Adopt{cocoon::internal::retain([[::NSImageRep alloc] init])})
     {
     }
@@ -79,21 +91,6 @@ namespace cocoon
     std::string ImageRep::image_rep_class_for_type(const std::string& type)
     {
         return cocoon::internal::from(NSStringFromClass([::NSImageRep imageRepClassForType:cocoon::internal::to(type)]));
-    }
-
-    ImageRep ImageRep::image_rep_with_contents_of_file(const std::string& filename)
-    {
-        return cocoon::internal::wrap<ImageRep>([::NSImageRep imageRepWithContentsOfFile:cocoon::internal::to(filename)]);
-    }
-
-    ImageRep ImageRep::image_rep_with_contents_of_url(const URL& url)
-    {
-        return cocoon::internal::wrap<ImageRep>([::NSImageRep imageRepWithContentsOfURL:cocoon::internal::native<::NSURL>(url)]);
-    }
-
-    ImageRep ImageRep::image_rep_with_pasteboard(const Pasteboard& pasteboard)
-    {
-        return cocoon::internal::wrap<ImageRep>([::NSImageRep imageRepWithPasteboard:cocoon::internal::native<::NSPasteboard>(pasteboard)]);
     }
 
     std::vector<ImageRep> ImageRep::image_reps_with_contents_of_file(const std::string& filename)

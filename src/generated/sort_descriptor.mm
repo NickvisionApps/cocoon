@@ -37,21 +37,6 @@ namespace cocoon
         return static_cast<ComparisonResult>([cocoon::internal::ns<::NSSortDescriptor>(this) compareObject:cocoon::internal::native_id(object1) toObject:cocoon::internal::native_id(object2)]);
     }
 
-    SortDescriptor SortDescriptor::sort_descriptor_with_key(const std::string& key, bool ascending)
-    {
-        return cocoon::internal::wrap<SortDescriptor>([::NSSortDescriptor sortDescriptorWithKey:cocoon::internal::to(key) ascending:static_cast<::BOOL>(ascending)]);
-    }
-
-    SortDescriptor SortDescriptor::sort_descriptor_with_key(const std::string& key, bool ascending, std::function<ComparisonResult(Object, Object)> cmptr)
-    {
-        return cocoon::internal::wrap<SortDescriptor>([::NSSortDescriptor sortDescriptorWithKey:cocoon::internal::to(key) ascending:static_cast<::BOOL>(ascending) comparator:(cmptr ? (::NSComparator) ^ ::NSComparisonResult(id a218_0, id a218_1) { auto __r = cmptr(cocoon::internal::wrap<Object>(a218_0), cocoon::internal::wrap<Object>(a218_1)); return static_cast<::NSComparisonResult>(__r); } : (::NSComparator)nil)]);
-    }
-
-    SortDescriptor SortDescriptor::sort_descriptor_with_key(const std::string& key, bool ascending, const std::string& selector)
-    {
-        return cocoon::internal::wrap<SortDescriptor>([::NSSortDescriptor sortDescriptorWithKey:cocoon::internal::to(key) ascending:static_cast<::BOOL>(ascending) selector:NSSelectorFromString(cocoon::internal::to(selector))]);
-    }
-
     bool SortDescriptor::ascending() const
     {
         return static_cast<bool>([cocoon::internal::ns<::NSSortDescriptor>(this) ascending]);

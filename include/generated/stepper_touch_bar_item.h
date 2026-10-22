@@ -19,49 +19,36 @@ namespace cocoon
      * @code
      * #include <cocoon.h>
      *
-     * cocoon::StepperTouchBarItem stepper_touch_bar_item(nullptr);  // null handle; instances normally come from other API calls
+     * cocoon::StepperTouchBarItem stepper_touch_bar_item{"text", cocoon::Formatter()};
      * stepper_touch_bar_item.set_action("text");
      * @endcode
      *
      * @par Common tasks
      * Snippets built from this class's own members (values are placeholders).
      * @code
-     * cocoon::StepperTouchBarItem stepper_touch_bar_item(nullptr);
+     * cocoon::StepperTouchBarItem stepper_touch_bar_item{"text", cocoon::Formatter()};
      * stepper_touch_bar_item.set_action("text");
      * auto action = stepper_touch_bar_item.action();
      * stepper_touch_bar_item.set_customization_label("text");
      * auto customization_label = stepper_touch_bar_item.customization_label();
      * stepper_touch_bar_item.set_increment(1);
      * auto increment = stepper_touch_bar_item.increment();
-     * auto made_0 = cocoon::StepperTouchBarItem::stepper_touch_bar_item_with_identifier("text", cocoon::Formatter());
      * @endcode
      * @see https://developer.apple.com/documentation/appkit/nssteppertouchbaritem
      */
     class StepperTouchBarItem : public TouchBarItem
     {
     public:
+        /// @brief Creates a new `NSStepperTouchBarItem` instance and returns a handle to it.
+        explicit StepperTouchBarItem(const std::string& identifier, std::function<void(Rect, double)> drawing_handler);
+        /// @brief Creates a new `NSStepperTouchBarItem` instance and returns a handle to it.
+        explicit StepperTouchBarItem(const std::string& identifier, const Formatter& formatter);
         StepperTouchBarItem();
         /// @brief Creates a null handle that refers to no native object.
         StepperTouchBarItem(std::nullptr_t);
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit StepperTouchBarItem(Adopt adopt);
         using TouchBarItem::customization_label;
-        /**
-     * @brief Calls `+[NSStepperTouchBarItem stepperTouchBarItemWithIdentifier:drawingHandler:]`.
-     * @details Creates a 'NSStepperTouchBarItem' using the result of 'drawingHandler' to display the stepper's value as an image. \@param drawingHandler A block that draws a graphical representation of the stepper's value in the specified rectangle. The coordinates of this rectangle are specified in points.
-     * @param identifier Argument converted to the Objective-C parameter of the same role.
-     * @param drawing_handler Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static StepperTouchBarItem stepper_touch_bar_item_with_identifier(const std::string& identifier, std::function<void(Rect, double)> drawing_handler);
-        /**
-     * @brief Calls `+[NSStepperTouchBarItem stepperTouchBarItemWithIdentifier:formatter:]`.
-     * @details Creates a 'NSStepperTouchBarItem' with a 'formatter' to display the stepper's value as text. \@param formatter A formatter used to display a textual representation of the stepper's value
-     * @param identifier Argument converted to the Objective-C parameter of the same role.
-     * @param formatter Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static StepperTouchBarItem stepper_touch_bar_item_with_identifier(const std::string& identifier, const Formatter& formatter);
         /**
      * @brief Returns the `action` property of `NSStepperTouchBarItem`.
      * @details The action-message selector associated with the stepper.

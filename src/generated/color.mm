@@ -7,6 +7,42 @@ namespace cocoon
     {
     }
 
+    Color::Color(const CGColor& cg_color) : Color(Adopt{cocoon::internal::retain([::NSColor colorWithCGColor:((::CGColorRef)(cg_color).handle())])})
+    {
+    }
+
+    Color::Color(const CIColor& color) : Color(Adopt{cocoon::internal::retain([::NSColor colorWithCIColor:cocoon::internal::native<::CIColor>(color)])})
+    {
+    }
+
+    Color::Color(double white, double alpha) : Color(Adopt{cocoon::internal::retain([::NSColor colorWithCalibratedWhite:static_cast<::CGFloat>(white) alpha:static_cast<::CGFloat>(alpha)])})
+    {
+    }
+
+    Color::Color(const std::string& list_name, const std::string& color_name) : Color(Adopt{cocoon::internal::retain([::NSColor colorWithCatalogName:cocoon::internal::to(list_name) colorName:cocoon::internal::to(color_name)])})
+    {
+    }
+
+    Color::Color(const ColorSpace& space, const double* components, std::int64_t number_of_components) : Color(Adopt{cocoon::internal::retain([::NSColor colorWithColorSpace:cocoon::internal::native<::NSColorSpace>(space) components:(const ::CGFloat*)(components)count:static_cast<::NSInteger>(number_of_components)])})
+    {
+    }
+
+    Color::Color(const ColorSpace& space, double hue, double saturation, double brightness, double alpha) : Color(Adopt{cocoon::internal::retain([::NSColor colorWithColorSpace:cocoon::internal::native<::NSColorSpace>(space) hue:static_cast<::CGFloat>(hue) saturation:static_cast<::CGFloat>(saturation) brightness:static_cast<::CGFloat>(brightness) alpha:static_cast<::CGFloat>(alpha)])})
+    {
+    }
+
+    Color::Color(double cyan, double magenta, double yellow, double black, double alpha) : Color(Adopt{cocoon::internal::retain([::NSColor colorWithDeviceCyan:static_cast<::CGFloat>(cyan) magenta:static_cast<::CGFloat>(magenta) yellow:static_cast<::CGFloat>(yellow) black:static_cast<::CGFloat>(black) alpha:static_cast<::CGFloat>(alpha)])})
+    {
+    }
+
+    Color::Color(const std::string& color_name, std::function<Color(Appearance)> dynamic_provider) : Color(Adopt{cocoon::internal::retain([::NSColor colorWithName:cocoon::internal::to(color_name) dynamicProvider:(dynamic_provider ? (::NSColor * (^)(::NSAppearance*)) ^ ::NSColor * (::NSAppearance * a19_0) { auto __r = dynamic_provider(cocoon::internal::wrap<Appearance>(a19_0)); return cocoon::internal::native<::NSColor>(__r); } : (::NSColor * (^)(::NSAppearance*)) nil)])})
+    {
+    }
+
+    Color::Color(const Image& image) : Color(Adopt{cocoon::internal::retain([::NSColor colorWithPatternImage:cocoon::internal::native<::NSImage>(image)])})
+    {
+    }
+
     Color::Color() : Color(Adopt{cocoon::internal::retain([[::NSColor alloc] init])})
     {
     }
@@ -59,114 +95,9 @@ namespace cocoon
         return cocoon::internal::wrap<Color>([cocoon::internal::ns<::NSColor>(this) colorWithAlphaComponent:static_cast<::CGFloat>(alpha)]);
     }
 
-    Color Color::color_with_cg_color(const CGColor& cg_color)
-    {
-        return cocoon::internal::wrap<Color>([::NSColor colorWithCGColor:((::CGColorRef)(cg_color).handle())]);
-    }
-
-    Color Color::color_with_ci_color(const CIColor& color)
-    {
-        return cocoon::internal::wrap<Color>([::NSColor colorWithCIColor:cocoon::internal::native<::CIColor>(color)]);
-    }
-
-    Color Color::color_with_calibrated_hue(double hue, double saturation, double brightness, double alpha)
-    {
-        return cocoon::internal::wrap<Color>([::NSColor colorWithCalibratedHue:static_cast<::CGFloat>(hue) saturation:static_cast<::CGFloat>(saturation) brightness:static_cast<::CGFloat>(brightness) alpha:static_cast<::CGFloat>(alpha)]);
-    }
-
-    Color Color::color_with_calibrated_red(double red, double green, double blue, double alpha)
-    {
-        return cocoon::internal::wrap<Color>([::NSColor colorWithCalibratedRed:static_cast<::CGFloat>(red) green:static_cast<::CGFloat>(green) blue:static_cast<::CGFloat>(blue) alpha:static_cast<::CGFloat>(alpha)]);
-    }
-
-    Color Color::color_with_calibrated_white(double white, double alpha)
-    {
-        return cocoon::internal::wrap<Color>([::NSColor colorWithCalibratedWhite:static_cast<::CGFloat>(white) alpha:static_cast<::CGFloat>(alpha)]);
-    }
-
-    Color Color::color_with_catalog_name(const std::string& list_name, const std::string& color_name)
-    {
-        return cocoon::internal::wrap<Color>([::NSColor colorWithCatalogName:cocoon::internal::to(list_name) colorName:cocoon::internal::to(color_name)]);
-    }
-
-    Color Color::color_with_color_space(const ColorSpace& space, const double* components, std::int64_t number_of_components)
-    {
-        return cocoon::internal::wrap<Color>([::NSColor colorWithColorSpace:cocoon::internal::native<::NSColorSpace>(space) components:(const ::CGFloat*)(components)count:static_cast<::NSInteger>(number_of_components)]);
-    }
-
-    Color Color::color_with_color_space(const ColorSpace& space, double hue, double saturation, double brightness, double alpha)
-    {
-        return cocoon::internal::wrap<Color>([::NSColor colorWithColorSpace:cocoon::internal::native<::NSColorSpace>(space) hue:static_cast<::CGFloat>(hue) saturation:static_cast<::CGFloat>(saturation) brightness:static_cast<::CGFloat>(brightness) alpha:static_cast<::CGFloat>(alpha)]);
-    }
-
-    Color Color::color_with_device_cyan(double cyan, double magenta, double yellow, double black, double alpha)
-    {
-        return cocoon::internal::wrap<Color>([::NSColor colorWithDeviceCyan:static_cast<::CGFloat>(cyan) magenta:static_cast<::CGFloat>(magenta) yellow:static_cast<::CGFloat>(yellow) black:static_cast<::CGFloat>(black) alpha:static_cast<::CGFloat>(alpha)]);
-    }
-
-    Color Color::color_with_device_hue(double hue, double saturation, double brightness, double alpha)
-    {
-        return cocoon::internal::wrap<Color>([::NSColor colorWithDeviceHue:static_cast<::CGFloat>(hue) saturation:static_cast<::CGFloat>(saturation) brightness:static_cast<::CGFloat>(brightness) alpha:static_cast<::CGFloat>(alpha)]);
-    }
-
-    Color Color::color_with_device_red(double red, double green, double blue, double alpha)
-    {
-        return cocoon::internal::wrap<Color>([::NSColor colorWithDeviceRed:static_cast<::CGFloat>(red) green:static_cast<::CGFloat>(green) blue:static_cast<::CGFloat>(blue) alpha:static_cast<::CGFloat>(alpha)]);
-    }
-
-    Color Color::color_with_device_white(double white, double alpha)
-    {
-        return cocoon::internal::wrap<Color>([::NSColor colorWithDeviceWhite:static_cast<::CGFloat>(white) alpha:static_cast<::CGFloat>(alpha)]);
-    }
-
-    Color Color::color_with_display_p3_red(double red, double green, double blue, double alpha)
-    {
-        return cocoon::internal::wrap<Color>([::NSColor colorWithDisplayP3Red:static_cast<::CGFloat>(red) green:static_cast<::CGFloat>(green) blue:static_cast<::CGFloat>(blue) alpha:static_cast<::CGFloat>(alpha)]);
-    }
-
-    Color Color::color_with_generic_gamma22_white(double white, double alpha)
-    {
-        return cocoon::internal::wrap<Color>([::NSColor colorWithGenericGamma22White:static_cast<::CGFloat>(white) alpha:static_cast<::CGFloat>(alpha)]);
-    }
-
-    Color Color::color_with_hue(double hue, double saturation, double brightness, double alpha)
-    {
-        return cocoon::internal::wrap<Color>([::NSColor colorWithHue:static_cast<::CGFloat>(hue) saturation:static_cast<::CGFloat>(saturation) brightness:static_cast<::CGFloat>(brightness) alpha:static_cast<::CGFloat>(alpha)]);
-    }
-
-    Color Color::color_with_name(const std::string& color_name, std::function<Color(Appearance)> dynamic_provider)
-    {
-        return cocoon::internal::wrap<Color>([::NSColor colorWithName:cocoon::internal::to(color_name) dynamicProvider:(dynamic_provider ? (::NSColor * (^)(::NSAppearance*)) ^ ::NSColor * (::NSAppearance * a19_0) { auto __r = dynamic_provider(cocoon::internal::wrap<Appearance>(a19_0)); return cocoon::internal::native<::NSColor>(__r); } : (::NSColor * (^)(::NSAppearance*)) nil)]);
-    }
-
-    Color Color::color_with_pattern_image(const Image& image)
-    {
-        return cocoon::internal::wrap<Color>([::NSColor colorWithPatternImage:cocoon::internal::native<::NSImage>(image)]);
-    }
-
-    Color Color::color_with_red(double red, double green, double blue, double alpha)
-    {
-        return cocoon::internal::wrap<Color>([::NSColor colorWithRed:static_cast<::CGFloat>(red) green:static_cast<::CGFloat>(green) blue:static_cast<::CGFloat>(blue) alpha:static_cast<::CGFloat>(alpha)]);
-    }
-
-    Color Color::color_with_red(double red, double green, double blue, double alpha, double exposure)
-    {
-        return cocoon::internal::wrap<Color>([::NSColor colorWithRed:static_cast<::CGFloat>(red) green:static_cast<::CGFloat>(green) blue:static_cast<::CGFloat>(blue) alpha:static_cast<::CGFloat>(alpha) exposure:static_cast<::CGFloat>(exposure)]);
-    }
-
-    Color Color::color_with_srgb_red(double red, double green, double blue, double alpha)
-    {
-        return cocoon::internal::wrap<Color>([::NSColor colorWithSRGBRed:static_cast<::CGFloat>(red) green:static_cast<::CGFloat>(green) blue:static_cast<::CGFloat>(blue) alpha:static_cast<::CGFloat>(alpha)]);
-    }
-
     Color Color::color_with_system_effect(ColorSystemEffect system_effect) const
     {
         return cocoon::internal::wrap<Color>([cocoon::internal::ns<::NSColor>(this) colorWithSystemEffect:static_cast<::NSColorSystemEffect>(system_effect)]);
-    }
-
-    Color Color::color_with_white(double white, double alpha)
-    {
-        return cocoon::internal::wrap<Color>([::NSColor colorWithWhite:static_cast<::CGFloat>(white) alpha:static_cast<::CGFloat>(alpha)]);
     }
 
     void Color::draw_swatch_in_rect(const Rect& rect) const

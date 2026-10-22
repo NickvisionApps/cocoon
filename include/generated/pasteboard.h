@@ -39,6 +39,8 @@ namespace cocoon
     {
     public:
         /// @brief Creates a new `NSPasteboard` instance and returns a handle to it.
+        explicit Pasteboard(const std::string& name);
+        /// @brief Creates a new `NSPasteboard` instance and returns a handle to it.
         explicit Pasteboard();
         /// @brief Creates a null handle that refers to no native object.
         Pasteboard(std::nullptr_t);
@@ -141,17 +143,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         static Pasteboard pasteboard_by_filtering_types_in_pasteboard(const Pasteboard& pboard);
-        /**
-     * @brief Calls `+[NSPasteboard pasteboardWithName:]`.
-     * @param name Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Pasteboard pasteboard_with_name(const std::string& name);
-        /**
-     * @brief Calls `+[NSPasteboard pasteboardWithUniqueName]`.
-     * @return The converted Objective-C result.
-     */
-        static Pasteboard pasteboard_with_unique_name();
         /**
      * @brief Calls `-[NSPasteboard prepareForNewContentsWithOptions:]`.
      * @details Prepares the pasteboard for new contents, clearing the existing contents of the pasteboard. This is the first step in providing data on the pasteboard. Any options specified will persist until prepareForNewContentsWithOptions: or clearContents is called. Returns the change count of the pasteboard.

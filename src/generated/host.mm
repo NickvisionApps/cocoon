@@ -3,6 +3,10 @@
 
 namespace cocoon
 {
+    Host::Host(const std::string& address) : Host(Adopt{cocoon::internal::retain([::NSHost hostWithAddress:cocoon::internal::to(address)])})
+    {
+    }
+
     Host::Host() : Host(Adopt{cocoon::internal::retain([[::NSHost alloc] init])})
     {
     }
@@ -18,16 +22,6 @@ namespace cocoon
     Host Host::current_host()
     {
         return cocoon::internal::wrap<Host>([::NSHost currentHost]);
-    }
-
-    Host Host::host_with_address(const std::string& address)
-    {
-        return cocoon::internal::wrap<Host>([::NSHost hostWithAddress:cocoon::internal::to(address)]);
-    }
-
-    Host Host::host_with_name(const std::string& name)
-    {
-        return cocoon::internal::wrap<Host>([::NSHost hostWithName:cocoon::internal::to(name)]);
     }
 
     bool Host::is_equal_to_host(const Host& a_host) const

@@ -42,15 +42,6 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit Exception(Adopt adopt);
         /**
-     * @brief Calls `+[NSException exceptionWithName:reason:userInfo:]`.
-     * @details Creates and returns an exception object with the specified name, reason, and user info dictionary.
-     * @param name Argument converted to the Objective-C parameter of the same role.
-     * @param reason Argument converted to the Objective-C parameter of the same role.
-     * @param user_info Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Exception exception_with_name(const std::string& name, const std::string& reason, const std::vector<std::pair<Object, Object>>& user_info);
-        /**
      * @brief Calls `-[NSException raise]`.
      * @details Raises the receiver, causing program flow to jump to the local exception handler.
      */

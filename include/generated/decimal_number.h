@@ -27,8 +27,6 @@ namespace cocoon
      * Snippets built from this class's own members (values are placeholders).
      * @code
      * cocoon::DecimalNumber decimal_number{};
-     * auto made_0 = cocoon::DecimalNumber::decimal_number_with_mantissa(1, 1, true);
-     * auto made_1 = cocoon::DecimalNumber::decimal_number_with_string("text");
      * decimal_number.compare(cocoon::Number());
      * decimal_number.decimal_number_by_adding(cocoon::DecimalNumber());
      * decimal_number.decimal_number_by_dividing_by(cocoon::DecimalNumber());
@@ -161,37 +159,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         DecimalNumber decimal_number_by_subtracting(const DecimalNumber& decimal_number, const Object& behavior) const;
-        /**
-     * @brief Calls `+[NSDecimalNumber decimalNumberWithDecimal:]`.
-     * @details Creates and returns a decimal number equivalent to the given decimal structure.
-     * @param dcm Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static DecimalNumber decimal_number_with_decimal(const Decimal& dcm);
-        /**
-     * @brief Calls `+[NSDecimalNumber decimalNumberWithMantissa:exponent:isNegative:]`.
-     * @details Creates and returns a decimal number using the given mantissa, exponent, and sign.
-     * @param mantissa Argument converted to the Objective-C parameter of the same role.
-     * @param exponent Argument converted to the Objective-C parameter of the same role.
-     * @param flag Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static DecimalNumber decimal_number_with_mantissa(std::uint64_t mantissa, std::int16_t exponent, bool flag);
-        /**
-     * @brief Calls `+[NSDecimalNumber decimalNumberWithString:]`.
-     * @details Creates and returns a decimal number equivalent to the given numeric string.
-     * @param number_value Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static DecimalNumber decimal_number_with_string(const std::string& number_value);
-        /**
-     * @brief Calls `+[NSDecimalNumber decimalNumberWithString:locale:]`.
-     * @details Creates and returns a decimal number equivalent to the given numeric string, interpreted using the given locale.
-     * @param number_value Argument converted to the Objective-C parameter of the same role.
-     * @param locale Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static DecimalNumber decimal_number_with_string(const std::string& number_value, const Object& locale);
         /**
      * @brief Calls `-[NSDecimalNumber descriptionWithLocale:]`.
      * @details Returns a string that represents the contents of the decimal number for a given locale. - Parameter locale: An object containing locale information with which to format the description. - Returns: A string that represents the contents of the decimal number formatted using the locale information in 'locale'.

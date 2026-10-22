@@ -41,6 +41,12 @@ namespace cocoon
     {
     public:
         /// @brief Creates a new `NSComboButton` instance and returns a handle to it.
+        explicit ComboButton(const Image& image, const Menu& menu, const Object& target, const std::string& action);
+        /// @brief Creates a new `NSComboButton` instance and returns a handle to it.
+        explicit ComboButton(const std::string& title, const Image& image, const Menu& menu, const Object& target, const std::string& action);
+        /// @brief Creates a new `NSComboButton` instance and returns a handle to it.
+        explicit ComboButton(const std::string& title, const Menu& menu, const Object& target, const std::string& action);
+        /// @brief Creates a new `NSComboButton` instance and returns a handle to it.
         explicit ComboButton();
         /// @brief Creates a null handle that refers to no native object.
         ComboButton(std::nullptr_t);
@@ -48,37 +54,6 @@ namespace cocoon
         explicit ComboButton(Adopt adopt);
         using Responder::menu;
         using Responder::set_menu;
-        /**
-     * @brief Calls `+[NSComboButton comboButtonWithImage:menu:target:action:]`.
-     * @details Creates a standard combo button with a image, menu, and primary action. \@param image The image to display in the body of the button. \@param menu The additional menu to display on the button. \@param target The target object that receives primary action messages from the control. \@param action The action message sent by the primary action portion of the control.
-     * @param image Argument converted to the Objective-C parameter of the same role.
-     * @param menu Argument converted to the Objective-C parameter of the same role.
-     * @param target Argument converted to the Objective-C parameter of the same role.
-     * @param action Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static ComboButton combo_button_with_image(const Image& image, const Menu& menu, const Object& target, const std::string& action);
-        /**
-     * @brief Calls `+[NSComboButton comboButtonWithTitle:image:menu:target:action:]`.
-     * @details Creates a standard combo button with a title, image, menu, and primary action. \@param title The localized title string that is displayed on the button. \@param image The image to display in the body of the button. \@param menu The additional menu to display on the button. \@param target The target object that receives primary action messages from the control. \@param action The action message sent by the primary action portion of the control.
-     * @param title Argument converted to the Objective-C parameter of the same role.
-     * @param image Argument converted to the Objective-C parameter of the same role.
-     * @param menu Argument converted to the Objective-C parameter of the same role.
-     * @param target Argument converted to the Objective-C parameter of the same role.
-     * @param action Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static ComboButton combo_button_with_title(const std::string& title, const Image& image, const Menu& menu, const Object& target, const std::string& action);
-        /**
-     * @brief Calls `+[NSComboButton comboButtonWithTitle:menu:target:action:]`.
-     * @details Creates a standard combo button with a title, menu, and primary action. \@param title The localized title string that is displayed on the button. \@param menu The additional menu to display on the button. \@param target The target object that receives primary action messages from the control. \@param action The action message sent by the primary action portion of the control.
-     * @param title Argument converted to the Objective-C parameter of the same role.
-     * @param menu Argument converted to the Objective-C parameter of the same role.
-     * @param target Argument converted to the Objective-C parameter of the same role.
-     * @param action Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static ComboButton combo_button_with_title(const std::string& title, const Menu& menu, const Object& target, const std::string& action);
         /**
      * @brief Returns the `image` property of `NSComboButton`.
      * @details The image displayed on the control. The default value is 'nil'.

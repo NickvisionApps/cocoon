@@ -3,6 +3,10 @@
 
 namespace cocoon
 {
+    Invocation::Invocation(const MethodSignature& sig) : Invocation(Adopt{cocoon::internal::retain([::NSInvocation invocationWithMethodSignature:cocoon::internal::native<::NSMethodSignature>(sig)])})
+    {
+    }
+
     Invocation::Invocation() : Invocation(Adopt{cocoon::internal::retain([[::NSInvocation alloc] init])})
     {
     }
@@ -23,11 +27,6 @@ namespace cocoon
     void Invocation::get_return_value(void* ret_loc) const
     {
         [cocoon::internal::ns<::NSInvocation>(this) getReturnValue:ret_loc];
-    }
-
-    Invocation Invocation::invocation_with_method_signature(const MethodSignature& sig)
-    {
-        return cocoon::internal::wrap<Invocation>([::NSInvocation invocationWithMethodSignature:cocoon::internal::native<::NSMethodSignature>(sig)]);
     }
 
     void Invocation::invoke() const

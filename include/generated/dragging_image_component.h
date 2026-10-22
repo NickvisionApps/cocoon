@@ -27,7 +27,6 @@ namespace cocoon
      * auto frame = dragging_image_component.frame();
      * dragging_image_component.set_key("text");
      * auto key = dragging_image_component.key();
-     * auto made_0 = cocoon::DraggingImageComponent::dragging_image_component_with_key("text");
      * @endcode
      * @see https://developer.apple.com/documentation/appkit/nsdraggingimagecomponent
      */
@@ -41,12 +40,6 @@ namespace cocoon
         DraggingImageComponent(std::nullptr_t);
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit DraggingImageComponent(Adopt adopt);
-        /**
-     * @brief Calls `+[NSDraggingImageComponent draggingImageComponentWithKey:]`.
-     * @param key Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static DraggingImageComponent dragging_image_component_with_key(const std::string& key);
         /**
      * @brief Returns the `contents` property of `NSDraggingImageComponent`.
      * @details An object providing the image contents of the component, typically you set an NSImage, but may be anything CALayer accepts.

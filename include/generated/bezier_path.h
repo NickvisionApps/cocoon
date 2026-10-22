@@ -33,8 +33,6 @@ namespace cocoon
      * auto default_line_cap_style = bezier_path.default_line_cap_style();
      * bezier_path.set_default_line_join_style(cocoon::LineJoinStyle::Miter);
      * auto default_line_join_style = bezier_path.default_line_join_style();
-     * auto made_0 = cocoon::BezierPath::bezier_path();
-     * auto made_1 = cocoon::BezierPath::bezier_path_with_oval_in_rect({{0, 0}, {100, 100}});
      * bezier_path.add_clip();
      * bezier_path.append_bezier_path(cocoon::BezierPath());
      * bezier_path.append_bezier_path_with_arc_from_point({0, 0}, {0, 0}, 1);
@@ -46,6 +44,12 @@ namespace cocoon
     public:
         /// @brief Creates a new `NSBezierPath` instance and returns a handle to it.
         explicit BezierPath();
+        /// @brief Creates a new `NSBezierPath` instance and returns a handle to it.
+        explicit BezierPath(const CGPath& cg_path);
+        /// @brief Creates a new `NSBezierPath` instance and returns a handle to it.
+        explicit BezierPath(const Rect& rect);
+        /// @brief Creates a new `NSBezierPath` instance and returns a handle to it.
+        explicit BezierPath(const Rect& rect, double x_radius, double y_radius);
         /// @brief Creates a null handle that refers to no native object.
         BezierPath(std::nullptr_t);
         /// @brief Wraps an existing retained native object without creating a new one.
@@ -120,37 +124,6 @@ namespace cocoon
      * @param y_radius Argument converted to the Objective-C parameter of the same role.
      */
         void append_bezier_path_with_rounded_rect(const Rect& rect, double x_radius, double y_radius) const;
-        /**
-     * @brief Calls `+[NSBezierPath bezierPath]`.
-     * @return The converted Objective-C result.
-     */
-        static BezierPath bezier_path();
-        /**
-     * @brief Calls `+[NSBezierPath bezierPathWithCGPath:]`.
-     * @param cg_path Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static BezierPath bezier_path_with_cg_path(const CGPath& cg_path);
-        /**
-     * @brief Calls `+[NSBezierPath bezierPathWithOvalInRect:]`.
-     * @param rect Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static BezierPath bezier_path_with_oval_in_rect(const Rect& rect);
-        /**
-     * @brief Calls `+[NSBezierPath bezierPathWithRect:]`.
-     * @param rect Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static BezierPath bezier_path_with_rect(const Rect& rect);
-        /**
-     * @brief Calls `+[NSBezierPath bezierPathWithRoundedRect:xRadius:yRadius:]`.
-     * @param rect Argument converted to the Objective-C parameter of the same role.
-     * @param x_radius Argument converted to the Objective-C parameter of the same role.
-     * @param y_radius Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static BezierPath bezier_path_with_rounded_rect(const Rect& rect, double x_radius, double y_radius);
         /**
      * @brief Calls `+[NSBezierPath clipRect:]`.
      * @param rect Argument converted to the Objective-C parameter of the same role.

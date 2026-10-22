@@ -192,6 +192,34 @@ namespace cocoon
     {
     }
 
+    AttributedString::AttributedString(const AdaptiveImageGlyph& adaptive_image_glyph, const std::map<std::string, Object>& attributes) : AttributedString(Adopt{cocoon::internal::retain([::NSAttributedString attributedStringWithAdaptiveImageGlyph:cocoon::internal::native<::NSAdaptiveImageGlyph>(adaptive_image_glyph)
+                                                                                                                                                                                                                                            attributes:cocoon::internal::to_dictionary(attributes, [](const std::string& k) -> id
+                                                                                                                                                                                                                                                                                       {
+                                                                                                                                                                                                                                                                                           return cocoon::internal::to(k);
+                                                                                                                                                                                                                                                                                       },
+                                                                                                                                                                                                                                                                                       [](const Object& v) -> id
+                                                                                                                                                                                                                                                                                       {
+                                                                                                                                                                                                                                                                                           return cocoon::internal::native_id(v);
+                                                                                                                                                                                                                                                                                       })])})
+    {
+    }
+
+    AttributedString::AttributedString(const TextAttachment& attachment) : AttributedString(Adopt{cocoon::internal::retain([::NSAttributedString attributedStringWithAttachment:cocoon::internal::native<::NSTextAttachment>(attachment)])})
+    {
+    }
+
+    AttributedString::AttributedString(const TextAttachment& attachment, const std::map<std::string, Object>& attributes) : AttributedString(Adopt{cocoon::internal::retain([::NSAttributedString attributedStringWithAttachment:cocoon::internal::native<::NSTextAttachment>(attachment)
+                                                                                                                                                                                                                      attributes:cocoon::internal::to_dictionary(attributes, [](const std::string& k) -> id
+                                                                                                                                                                                                                                                                 {
+                                                                                                                                                                                                                                                                     return cocoon::internal::to(k);
+                                                                                                                                                                                                                                                                 },
+                                                                                                                                                                                                                                                                 [](const Object& v) -> id
+                                                                                                                                                                                                                                                                 {
+                                                                                                                                                                                                                                                                     return cocoon::internal::native_id(v);
+                                                                                                                                                                                                                                                                 })])})
+    {
+    }
+
     AttributedString::AttributedString() : AttributedString(Adopt{cocoon::internal::retain([[::NSAttributedString alloc] init])})
     {
     }
@@ -256,37 +284,6 @@ namespace cocoon
     AttributedString AttributedString::attributed_string_by_inflecting_string() const
     {
         return cocoon::internal::wrap<AttributedString>([cocoon::internal::ns<::NSAttributedString>(this) attributedStringByInflectingString]);
-    }
-
-    AttributedString AttributedString::attributed_string_with_adaptive_image_glyph(const AdaptiveImageGlyph& adaptive_image_glyph, const std::map<std::string, Object>& attributes)
-    {
-        return cocoon::internal::wrap<AttributedString>([::NSAttributedString attributedStringWithAdaptiveImageGlyph:cocoon::internal::native<::NSAdaptiveImageGlyph>(adaptive_image_glyph)
-                                                                                                          attributes:cocoon::internal::to_dictionary(attributes, [](const std::string& k) -> id
-                                                                                                                                                     {
-                                                                                                                                                         return cocoon::internal::to(k);
-                                                                                                                                                     },
-                                                                                                                                                     [](const Object& v) -> id
-                                                                                                                                                     {
-                                                                                                                                                         return cocoon::internal::native_id(v);
-                                                                                                                                                     })]);
-    }
-
-    AttributedString AttributedString::attributed_string_with_attachment(const TextAttachment& attachment)
-    {
-        return cocoon::internal::wrap<AttributedString>([::NSAttributedString attributedStringWithAttachment:cocoon::internal::native<::NSTextAttachment>(attachment)]);
-    }
-
-    AttributedString AttributedString::attributed_string_with_attachment(const TextAttachment& attachment, const std::map<std::string, Object>& attributes)
-    {
-        return cocoon::internal::wrap<AttributedString>([::NSAttributedString attributedStringWithAttachment:cocoon::internal::native<::NSTextAttachment>(attachment)
-                                                                                                  attributes:cocoon::internal::to_dictionary(attributes, [](const std::string& k) -> id
-                                                                                                                                             {
-                                                                                                                                                 return cocoon::internal::to(k);
-                                                                                                                                             },
-                                                                                                                                             [](const Object& v) -> id
-                                                                                                                                             {
-                                                                                                                                                 return cocoon::internal::native_id(v);
-                                                                                                                                             })]);
     }
 
     AttributedString AttributedString::attributed_substring_from_range(const Range& range) const

@@ -49,6 +49,10 @@ namespace cocoon
     {
     public:
         /// @brief Creates a new `NSPrintOperation` instance and returns a handle to it.
+        explicit PrintOperation(const View& view);
+        /// @brief Creates a new `NSPrintOperation` instance and returns a handle to it.
+        explicit PrintOperation(const View& view, const PrintInfo& print_info);
+        /// @brief Creates a new `NSPrintOperation` instance and returns a handle to it.
         explicit PrintOperation();
         /// @brief Creates a null handle that refers to no native object.
         PrintOperation(std::nullptr_t);
@@ -125,21 +129,6 @@ namespace cocoon
      * @brief Calls `-[NSPrintOperation destroyContext]`.
      */
         void destroy_context() const;
-        /**
-     * @brief Calls `+[NSPrintOperation printOperationWithView:]`.
-     * @details Slight conveniences, for use when the application's global NSPrintInfo is appropriate. Each of these methods invokes [NSPrintInfo sharedPrintInfo] and then invokes the like-named method listed above.
-     * @param view Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static PrintOperation print_operation_with_view(const View& view);
-        /**
-     * @brief Calls `+[NSPrintOperation printOperationWithView:printInfo:]`.
-     * @details Factory methods that create a new NSPrintOperation for printing, copying to Portable Document Format, or copying to Encapsulated PostScript. The passed-in NSPrintInfo is copied, and the copy is retained by the new NSPrintOperation. (So, no need to copy the NSPrintInfo you pass to these.) You can get the copy with -printInfo.
-     * @param view Argument converted to the Objective-C parameter of the same role.
-     * @param print_info Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static PrintOperation print_operation_with_view(const View& view, const PrintInfo& print_info);
         /**
      * @brief Calls `-[NSPrintOperation runOperation]`.
      * @details Do the print operation, with application-modal panels. Return YES if the operation completed successfully, NO if there was an error or the user cancelled the operation. This can only be invoked once. Create a new NSPrintOperation instance for each operation. When this method completes, the object is removed from being the current operation if it is the current operation.

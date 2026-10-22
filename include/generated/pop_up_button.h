@@ -50,6 +50,8 @@ namespace cocoon
         explicit PopUpButton();
         /// @brief Creates a new `NSPopUpButton` instance and returns a handle to it.
         explicit PopUpButton(const Rect& button_frame, bool flag);
+        /// @brief Creates a new `NSPopUpButton` instance and returns a handle to it.
+        explicit PopUpButton(const Menu& menu, const Object& target, const std::string& action);
         /// @brief Creates a null handle that refers to no native object.
         PopUpButton(std::nullptr_t);
         /// @brief Wraps an existing retained native object without creating a new one.
@@ -123,15 +125,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         MenuItem item_with_title(const std::string& title) const;
-        /**
-     * @brief Calls `+[NSPopUpButton popUpButtonWithMenu:target:action:]`.
-     * @details Creates a standard pop-up button with a menu, target, and action. \@param menu A menu presented by the pop-up button, containing items that the user can choose between. \@param target The target object that receives action messages from the control. \@param action The action message sent by the control. \@discussion If 'menu' is non-empty, the pop-up button uses the first item for its initial selection. \@return An initialized pop-up button object.
-     * @param menu Argument converted to the Objective-C parameter of the same role.
-     * @param target Argument converted to the Objective-C parameter of the same role.
-     * @param action Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static PopUpButton pop_up_button_with_menu(const Menu& menu, const Object& target, const std::string& action);
         /**
      * @brief Calls `+[NSPopUpButton pullDownButtonWithImage:menu:]`.
      * @details Creates a standard pull-down button with an image and menu. \@param image The icon that is displayed on the button. \@param menu The pull-down menu to present when interacting with the button. \@discussion Pull-down buttons created using this method have the 'usesItemFromMenu' property set to 'NO'. \@return An initialized pull-down button object.

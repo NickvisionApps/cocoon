@@ -806,6 +806,11 @@ namespace cocoon
         Window::install_delegate_delegate_(handle());
     }
 
+    Window::Window(const ViewController& content_view_controller) : Window(Adopt{cocoon::internal::retain([::NSWindow windowWithContentViewController:cocoon::internal::native<::NSViewController>(content_view_controller)])})
+    {
+        Window::install_delegate_delegate_(handle());
+    }
+
     Window::Window(std::nullptr_t) : Responder(nullptr)
     {
     }
@@ -1451,11 +1456,6 @@ namespace cocoon
                                                     {
                                                         return cocoon::internal::wrap<Number>((::NSNumber*)e);
                                                     });
-    }
-
-    Window Window::window_with_content_view_controller(const ViewController& content_view_controller)
-    {
-        return cocoon::internal::wrap<Window>([::NSWindow windowWithContentViewController:cocoon::internal::native<::NSViewController>(content_view_controller)]);
     }
 
     void Window::zoom(const Object& sender) const

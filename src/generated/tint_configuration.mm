@@ -3,6 +3,10 @@
 
 namespace cocoon
 {
+    TintConfiguration::TintConfiguration(const Color& color) : TintConfiguration(Adopt{cocoon::internal::retain([::NSTintConfiguration tintConfigurationWithFixedColor:cocoon::internal::native<::NSColor>(color)])})
+    {
+    }
+
     TintConfiguration::TintConfiguration() : TintConfiguration(Adopt{cocoon::internal::retain([[::NSTintConfiguration alloc] init])})
     {
     }
@@ -13,16 +17,6 @@ namespace cocoon
 
     TintConfiguration::TintConfiguration(Adopt adopt) : Object(adopt)
     {
-    }
-
-    TintConfiguration TintConfiguration::tint_configuration_with_fixed_color(const Color& color)
-    {
-        return cocoon::internal::wrap<TintConfiguration>([::NSTintConfiguration tintConfigurationWithFixedColor:cocoon::internal::native<::NSColor>(color)]);
-    }
-
-    TintConfiguration TintConfiguration::tint_configuration_with_preferred_color(const Color& color)
-    {
-        return cocoon::internal::wrap<TintConfiguration>([::NSTintConfiguration tintConfigurationWithPreferredColor:cocoon::internal::native<::NSColor>(color)]);
     }
 
     bool TintConfiguration::adapts_to_user_accent_color() const

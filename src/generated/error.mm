@@ -28,20 +28,6 @@ namespace cocoon
     {
     }
 
-    Error Error::error_with_domain(const std::string& domain, std::int64_t code, const std::map<std::string, Object>& dict)
-    {
-        return cocoon::internal::wrap<Error>([::NSError errorWithDomain:cocoon::internal::to(domain)
-                                                                   code:static_cast<::NSInteger>(code)
-                                                               userInfo:cocoon::internal::to_dictionary(dict, [](const std::string& k) -> id
-                                                                                                        {
-                                                                                                            return cocoon::internal::to(k);
-                                                                                                        },
-                                                                                                        [](const Object& v) -> id
-                                                                                                        {
-                                                                                                            return cocoon::internal::native_id(v);
-                                                                                                        })]);
-    }
-
     void Error::set_user_info_value_provider_for_domain(const std::string& error_domain, std::function<Object(Error, std::string)> provider)
     {
         [::NSError setUserInfoValueProviderForDomain:cocoon::internal::to(error_domain) provider:(provider ? (id(^)(::NSError*, ::NSErrorUserInfoKey)) ^ id(::NSError * a130_0, NSString * a130_1) { auto __r = provider(cocoon::internal::wrap<Error>(a130_0), cocoon::internal::from(a130_1)); return cocoon::internal::native_id(__r); } : (id(^)(::NSError*, ::NSErrorUserInfoKey))nil)];

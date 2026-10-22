@@ -25,8 +25,6 @@ namespace cocoon
      * Snippets built from this class's own members (values are placeholders).
      * @code
      * cocoon::Number number{};
-     * auto made_0 = cocoon::Number::number_with_bool(true);
-     * auto made_1 = cocoon::Number::number_with_char(1);
      * number.compare(cocoon::Number());
      * number.is_equal_to_number(cocoon::Number());
      * @endcode
@@ -84,111 +82,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         bool is_equal_to_number(const Number& number) const;
-        /**
-     * @brief Calls `+[NSNumber numberWithBool:]`.
-     * @details Creates and returns an 'NSNumber' object containing a given value, treating it as a 'BOOL'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Number number_with_bool(bool value);
-        /**
-     * @brief Calls `+[NSNumber numberWithChar:]`.
-     * @details Creates and returns an 'NSNumber' object containing a given value, treating it as a 'char'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Number number_with_char(std::int8_t value);
-        /**
-     * @brief Calls `+[NSNumber numberWithDouble:]`.
-     * @details Creates and returns an 'NSNumber' object containing a given value, treating it as a 'double'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Number number_with_double(double value);
-        /**
-     * @brief Calls `+[NSNumber numberWithFloat:]`.
-     * @details Creates and returns an 'NSNumber' object containing a given value, treating it as a 'float'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Number number_with_float(float value);
-        /**
-     * @brief Calls `+[NSNumber numberWithInt:]`.
-     * @details Creates and returns an 'NSNumber' object containing a given value, treating it as an 'int'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Number number_with_int(int value);
-        /**
-     * @brief Calls `+[NSNumber numberWithInteger:]`.
-     * @details Creates and returns an 'NSNumber' object containing a given value, treating it as an 'NSInteger'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Number number_with_integer(std::int64_t value);
-        /**
-     * @brief Calls `+[NSNumber numberWithLong:]`.
-     * @details Creates and returns an 'NSNumber' object containing a given value, treating it as a 'long'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Number number_with_long(std::int64_t value);
-        /**
-     * @brief Calls `+[NSNumber numberWithLongLong:]`.
-     * @details Creates and returns an 'NSNumber' object containing a given value, treating it as a 'long long'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Number number_with_long_long(std::int64_t value);
-        /**
-     * @brief Calls `+[NSNumber numberWithShort:]`.
-     * @details Creates and returns an 'NSNumber' object containing a given value, treating it as a 'short'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Number number_with_short(std::int16_t value);
-        /**
-     * @brief Calls `+[NSNumber numberWithUnsignedChar:]`.
-     * @details Creates and returns an 'NSNumber' object containing a given value, treating it as an 'unsigned char'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Number number_with_unsigned_char(std::uint8_t value);
-        /**
-     * @brief Calls `+[NSNumber numberWithUnsignedInt:]`.
-     * @details Creates and returns an 'NSNumber' object containing a given value, treating it as an 'unsigned int'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Number number_with_unsigned_int(unsigned int value);
-        /**
-     * @brief Calls `+[NSNumber numberWithUnsignedInteger:]`.
-     * @details Creates and returns an 'NSNumber' object containing a given value, treating it as an 'NSUInteger'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Number number_with_unsigned_integer(std::uint64_t value);
-        /**
-     * @brief Calls `+[NSNumber numberWithUnsignedLong:]`.
-     * @details Creates and returns an 'NSNumber' object containing a given value, treating it as an 'unsigned long'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Number number_with_unsigned_long(std::uint64_t value);
-        /**
-     * @brief Calls `+[NSNumber numberWithUnsignedLongLong:]`.
-     * @details Creates and returns an 'NSNumber' object containing a given value, treating it as an 'unsigned long long'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Number number_with_unsigned_long_long(std::uint64_t value);
-        /**
-     * @brief Calls `+[NSNumber numberWithUnsignedShort:]`.
-     * @details Creates and returns an 'NSNumber' object containing a given value, treating it as an 'unsigned short'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Number number_with_unsigned_short(std::uint16_t value);
         /**
      * @brief Returns the `boolValue` property of `NSNumber`.
      * @details The number object's value expressed as a Boolean value. A '0' value always means 'NO', and any nonzero value is interpreted as 'YES'.

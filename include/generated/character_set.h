@@ -24,8 +24,6 @@ namespace cocoon
      * Snippets built from this class's own members (values are placeholders).
      * @code
      * cocoon::CharacterSet character_set{};
-     * auto made_0 = cocoon::CharacterSet::character_set_with_characters_in_string("text");
-     * auto made_1 = cocoon::CharacterSet::character_set_with_contents_of_file("text");
      * character_set.character_is_member(1);
      * character_set.has_member_in_plane(1);
      * character_set.is_superset_of_set(cocoon::CharacterSet());
@@ -35,6 +33,12 @@ namespace cocoon
     class CharacterSet : public Object
     {
     public:
+        /// @brief Creates a new `NSCharacterSet` instance and returns a handle to it.
+        explicit CharacterSet(const std::vector<std::uint8_t>& data);
+        /// @brief Creates a new `NSCharacterSet` instance and returns a handle to it.
+        explicit CharacterSet(const std::string& a_string);
+        /// @brief Creates a new `NSCharacterSet` instance and returns a handle to it.
+        explicit CharacterSet(const Range& a_range);
         /// @brief Creates a new `NSCharacterSet` instance and returns a handle to it.
         explicit CharacterSet();
         /// @brief Creates a null handle that refers to no native object.
@@ -48,34 +52,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         bool character_is_member(std::uint16_t a_character) const;
-        /**
-     * @brief Calls `+[NSCharacterSet characterSetWithBitmapRepresentation:]`.
-     * @details Returns a character set containing characters determined by a given bitmap representation. This method is useful for creating a character set object with data from a file or other external data source. A raw bitmap representation of a character set is a byte array with the first 2^16 bits (that is, 8192 bytes) representing the code point range of the Basic Multilingual Plane (BMP), such that the value of the bit at position n represents the presence in the character set of the character with decimal Unicode value n. A bitmap representation may contain zero to sixteen additional 8192 byte segments for each additional Unicode plane containing a character in a character set, with each 8192 byte segment prepended with a single plane index byte. To add a character in the Basic Multilingual Plane (BMP) with decimal Unicode value n to a raw bitmap representation, you might do the following: '''objc unsigned char bitmapRep[8192]; bitmapRep[n >> 3] |= (((unsigned int)1) \<\< (n & 7)); ''' To remove that character: '''objc bitmapRep[n >> 3] &= ~(((unsigned int)1) \<\< (n & 7)); ''' - Parameter data: A bitmap representation of a character set. - Returns: A character set containing characters determined by 'data'.
-     * @param data Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static CharacterSet character_set_with_bitmap_representation(const std::vector<std::uint8_t>& data);
-        /**
-     * @brief Calls `+[NSCharacterSet characterSetWithCharactersInString:]`.
-     * @details Returns a character set containing the characters in a given string. - Parameter aString: A string containing characters for the new character set. - Returns: A character set containing the characters in 'aString'. Returns an empty character set if 'aString' is empty.
-     * @param a_string Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static CharacterSet character_set_with_characters_in_string(const std::string& a_string);
-        /**
-     * @brief Calls `+[NSCharacterSet characterSetWithContentsOfFile:]`.
-     * @details Returns a character set read from the bitmap representation stored in the file at a given path. This method doesn't use filenames to check for the uniqueness of the character sets it creates. To prevent duplication of character sets in memory, cache them and make them available through an API that checks whether the requested set has already been loaded. To read a bitmap representation from any file, use the 'NSData' method 'dataWithContentsOfFile:options:error:' and pass the result to ''characterSetWithBitmapRepresentation:''. - Parameter fName: A path to a file containing a bitmap representation of a character set. The path name must end with the extension '.bitmap'. - Returns: A character set read from the bitmap representation stored in the file at 'fName'.
-     * @param f_name Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static CharacterSet character_set_with_contents_of_file(const std::string& f_name);
-        /**
-     * @brief Calls `+[NSCharacterSet characterSetWithRange:]`.
-     * @details Returns a character set containing characters with Unicode values in a given range. This code excerpt creates a character set object containing the lowercase English alphabetic characters: '''objc NSRange lcEnglishRange; NSCharacterSet lcEnglishLetters; lcEnglishRange.location = (unsigned int)'a'; lcEnglishRange.length = 26; lcEnglishLetters = [NSCharacterSet characterSetWithRange:lcEnglishRange]; ''' - Parameter aRange: A range of Unicode values. 'aRange.location' is the value of the first character to return; 'aRange.location + aRange.length - 1' is the value of the last. - Returns: A character set containing characters whose Unicode values are given by 'aRange'. If 'aRange.length' is '0', returns an empty character set.
-     * @param a_range Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static CharacterSet character_set_with_range(const Range& a_range);
         /**
      * @brief Calls `-[NSCharacterSet hasMemberInPlane:]`.
      * @details Returns a Boolean value that indicates whether the receiver has at least one member in a given character plane. This method makes it easier to find the plane containing the members of the current character set. The Basic Multilingual Plane (BMP) is plane '0'. - Parameter thePlane: A character plane. - Returns: 'YES' if the receiver has at least one member in 'thePlane', otherwise 'NO'.

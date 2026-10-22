@@ -30,7 +30,6 @@ namespace cocoon
      * @code
      * cocoon::Bundle bundle{};
      * auto made_0 = cocoon::Bundle::bundle_for_class("text");
-     * auto made_1 = cocoon::Bundle::bundle_with_identifier("text");
      * bundle.url_for_auxiliary_executable("text");
      * bundle.url_for_image_resource("text");
      * bundle.url_for_resource("text", "text");
@@ -133,27 +132,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         static Bundle bundle_for_class(const std::string& a_class);
-        /**
-     * @brief Calls `+[NSBundle bundleWithIdentifier:]`.
-     * @details Returns the 'NSBundle' instance that has the specified bundle identifier. This method is typically used by frameworks and plug-ins to locate their own bundle at runtime. It may be somewhat more efficient than trying to locate the bundle using \@c bundleForClass:. However, if the initial lookup fails, this method uses potentially time-consuming heuristics to attempt to locate the bundle. \@param identifier The identifier for an existing 'NSBundle' instance. \@return The previously allocated 'NSBundle' object with the bundle identifier \@c identifier, or \@c nil if the requested bundle is not found.
-     * @param identifier Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Bundle bundle_with_identifier(const std::string& identifier);
-        /**
-     * @brief Calls `+[NSBundle bundleWithPath:]`.
-     * @details Creates and returns an 'NSBundle' object that corresponds to the specified directory. \@param path The path to a directory. This must be a full pathname for a directory; if it contains any symbolic links, they must be resolvable. \@return An 'NSBundle' object that corresponds to \@c path. Returns \@c nil if \@c path does not exist or the user doesn't have access to it.
-     * @param path Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Bundle bundle_with_path(const std::string& path);
-        /**
-     * @brief Calls `+[NSBundle bundleWithURL:]`.
-     * @details Creates and returns an 'NSBundle' object that corresponds to the specified file URL. \@param url The file URL to a directory. This must be a full URL for a directory; if it contains any symbolic links, they must be resolvable. \@return An 'NSBundle' object that corresponds to \@c url. Returns \@c nil if \@c url does not exist or the user doesn't have access to it.
-     * @param url Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Bundle bundle_with_url(const URL& url);
         /**
      * @brief Calls `-[NSBundle classNamed:]`.
      * @details Returns the \@c Class object for the specified name. If the bundle's executable code is not yet loaded, this method dynamically loads it into memory. \@param className The name of a class. \@return The \@c Class object for \@c className. Returns \@c nil if \@c className is not one of the classes associated with the receiver or if there is an error loading the executable code.

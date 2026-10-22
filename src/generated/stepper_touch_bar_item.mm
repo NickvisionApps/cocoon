@@ -3,6 +3,14 @@
 
 namespace cocoon
 {
+    StepperTouchBarItem::StepperTouchBarItem(const std::string& identifier, std::function<void(Rect, double)> drawing_handler) : StepperTouchBarItem(Adopt{cocoon::internal::retain([::NSStepperTouchBarItem stepperTouchBarItemWithIdentifier:cocoon::internal::to(identifier) drawingHandler:(drawing_handler ? (void (^)(::NSRect, double)) ^ void(::NSRect a82_0, double a82_1) { drawing_handler(cocoon::internal::from(a82_0), static_cast<double>(a82_1)); } : (void (^)(::NSRect, double))nil)])})
+    {
+    }
+
+    StepperTouchBarItem::StepperTouchBarItem(const std::string& identifier, const Formatter& formatter) : StepperTouchBarItem(Adopt{cocoon::internal::retain([::NSStepperTouchBarItem stepperTouchBarItemWithIdentifier:cocoon::internal::to(identifier) formatter:cocoon::internal::native<::NSFormatter>(formatter)])})
+    {
+    }
+
     StepperTouchBarItem::StepperTouchBarItem() : TouchBarItem(nullptr)
     {
     }
@@ -13,16 +21,6 @@ namespace cocoon
 
     StepperTouchBarItem::StepperTouchBarItem(Adopt adopt) : TouchBarItem(adopt)
     {
-    }
-
-    StepperTouchBarItem StepperTouchBarItem::stepper_touch_bar_item_with_identifier(const std::string& identifier, std::function<void(Rect, double)> drawing_handler)
-    {
-        return cocoon::internal::wrap<StepperTouchBarItem>([::NSStepperTouchBarItem stepperTouchBarItemWithIdentifier:cocoon::internal::to(identifier) drawingHandler:(drawing_handler ? (void (^)(::NSRect, double)) ^ void(::NSRect a82_0, double a82_1) { drawing_handler(cocoon::internal::from(a82_0), static_cast<double>(a82_1)); } : (void (^)(::NSRect, double))nil)]);
-    }
-
-    StepperTouchBarItem StepperTouchBarItem::stepper_touch_bar_item_with_identifier(const std::string& identifier, const Formatter& formatter)
-    {
-        return cocoon::internal::wrap<StepperTouchBarItem>([::NSStepperTouchBarItem stepperTouchBarItemWithIdentifier:cocoon::internal::to(identifier) formatter:cocoon::internal::native<::NSFormatter>(formatter)]);
     }
 
     std::string StepperTouchBarItem::action() const

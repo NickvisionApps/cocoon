@@ -36,7 +36,6 @@ namespace cocoon
      * auto image = tab_view_item.image();
      * tab_view_item.set_initial_first_responder(cocoon::View());
      * auto initial_first_responder = tab_view_item.initial_first_responder();
-     * auto made_0 = cocoon::TabViewItem::tab_view_item_with_view_controller(cocoon::ViewController());
      * tab_view_item.draw_label(true, {{0, 0}, {100, 100}});
      * tab_view_item.size_of_label(true);
      * @endcode
@@ -47,6 +46,8 @@ namespace cocoon
     public:
         /// @brief Creates a new `NSTabViewItem` instance and returns a handle to it.
         explicit TabViewItem(const Object& identifier);
+        /// @brief Creates a new `NSTabViewItem` instance and returns a handle to it.
+        explicit TabViewItem(const ViewController& view_controller);
         /// @brief Creates a new `NSTabViewItem` instance and returns a handle to it.
         explicit TabViewItem();
         /// @brief Creates a null handle that refers to no native object.
@@ -67,13 +68,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         Size size_of_label(bool compute_min) const;
-        /**
-     * @brief Calls `+[NSTabViewItem tabViewItemWithViewController:]`.
-     * @details Creates an autoreleased 'TabViewItem' that wraps the provided view controller. The view controller is set as the tab view item’s 'viewController' property, which sets several of the tab view item’s other properties. \\param viewController The view controller to wrap, used to set the 'viewController' property
-     * @param view_controller Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static TabViewItem tab_view_item_with_view_controller(const ViewController& view_controller);
         /**
      * @brief Returns the `color` property of `NSTabViewItem`.
      * @return The converted Objective-C result.

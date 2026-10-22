@@ -33,11 +33,6 @@ namespace cocoon
                                                               recursively:static_cast<::BOOL>(recursively)];
     }
 
-    TreeNode TreeNode::tree_node_with_represented_object(const Object& model_object)
-    {
-        return cocoon::internal::wrap<TreeNode>([::NSTreeNode treeNodeWithRepresentedObject:cocoon::internal::native_id(model_object)]);
-    }
-
     std::vector<TreeNode> TreeNode::child_nodes() const
     {
         return cocoon::internal::from_array<TreeNode>([cocoon::internal::ns<::NSTreeNode>(this) childNodes], [](id e) -> TreeNode

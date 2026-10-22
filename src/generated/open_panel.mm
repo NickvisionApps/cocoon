@@ -3,7 +3,7 @@
 
 namespace cocoon
 {
-    OpenPanel::OpenPanel() : OpenPanel(Adopt{cocoon::internal::retain([[::NSOpenPanel alloc] init])})
+    OpenPanel::OpenPanel() : OpenPanel(Adopt{cocoon::internal::retain([::NSOpenPanel openPanel])})
     {
         SavePanel::install_delegate_delegate_(handle());
     }
@@ -14,11 +14,6 @@ namespace cocoon
 
     OpenPanel::OpenPanel(Adopt adopt) : SavePanel(adopt)
     {
-    }
-
-    OpenPanel OpenPanel::open_panel()
-    {
-        return cocoon::internal::wrap<OpenPanel>([::NSOpenPanel openPanel]);
     }
 
     std::vector<URL> OpenPanel::urls() const

@@ -35,7 +35,6 @@ namespace cocoon
      * Snippets built from this class's own members (values are placeholders).
      * @code
      * cocoon::AttributedString attributed_string{};
-     * auto made_0 = cocoon::AttributedString::attributed_string_with_attachment(cocoon::TextAttachment());
      * attributed_string.attributed_string_by_inflecting_string();
      * attributed_string.bounding_rect_with_size({100, 100}, cocoon::StringDrawingOptions::UsesLineFragmentOrigin);
      * attributed_string.bounding_rect_with_size({100, 100}, cocoon::StringDrawingOptions::UsesLineFragmentOrigin, cocoon::StringDrawingContext());
@@ -69,6 +68,12 @@ namespace cocoon
         explicit AttributedString(const std::string& str, const std::map<std::string, Object>& attrs);
         /// @brief Creates a new `NSAttributedString` instance and returns a handle to it.
         explicit AttributedString(const URL& url, const std::map<std::string, Object>& options, std::map<std::string, Object>& dict);
+        /// @brief Creates a new `NSAttributedString` instance and returns a handle to it.
+        explicit AttributedString(const AdaptiveImageGlyph& adaptive_image_glyph, const std::map<std::string, Object>& attributes);
+        /// @brief Creates a new `NSAttributedString` instance and returns a handle to it.
+        explicit AttributedString(const TextAttachment& attachment);
+        /// @brief Creates a new `NSAttributedString` instance and returns a handle to it.
+        explicit AttributedString(const TextAttachment& attachment, const std::map<std::string, Object>& attributes);
         /// @brief Creates a new `NSAttributedString` instance and returns a handle to it.
         explicit AttributedString();
         /// @brief Creates a null handle that refers to no native object.
@@ -121,26 +126,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         AttributedString attributed_string_by_inflecting_string() const;
-        /**
-     * @brief Calls `+[NSAttributedString attributedStringWithAdaptiveImageGlyph:attributes:]`.
-     * @param adaptive_image_glyph Argument converted to the Objective-C parameter of the same role.
-     * @param attributes Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static AttributedString attributed_string_with_adaptive_image_glyph(const AdaptiveImageGlyph& adaptive_image_glyph, const std::map<std::string, Object>& attributes);
-        /**
-     * @brief Calls `+[NSAttributedString attributedStringWithAttachment:]`.
-     * @param attachment Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static AttributedString attributed_string_with_attachment(const TextAttachment& attachment);
-        /**
-     * @brief Calls `+[NSAttributedString attributedStringWithAttachment:attributes:]`.
-     * @param attachment Argument converted to the Objective-C parameter of the same role.
-     * @param attributes Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static AttributedString attributed_string_with_attachment(const TextAttachment& attachment, const std::map<std::string, Object>& attributes);
         /**
      * @brief Calls `-[NSAttributedString attributedSubstringFromRange:]`.
      * @details Returns an attributed string consisting of the characters and attributes within the specified range in the attributed string. Raises an 'NSRangeException' if any part of 'range' lies beyond the end of the receiver's characters. This method treats the length of the string as a valid range value that returns an empty string. - Parameter range: The range from which to create a new attributed string. 'range' must lie within the bounds of the receiver. - Returns: An 'NSAttributedString' object consisting of the characters and attributes within 'range' in the receiver.

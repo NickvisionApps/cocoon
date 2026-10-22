@@ -8,27 +8,27 @@ namespace cocoon
         Button::bind_action_(handle());
     }
 
+    Button::Button(const Image& image, const Object& target, const std::string& action) : Button(Adopt{cocoon::internal::retain([::NSButton buttonWithImage:cocoon::internal::native<::NSImage>(image) target:cocoon::internal::native_id(target) action:NSSelectorFromString(cocoon::internal::to(action))])})
+    {
+        Button::bind_action_(handle());
+    }
+
+    Button::Button(const std::string& title, const Image& image, const Object& target, const std::string& action) : Button(Adopt{cocoon::internal::retain([::NSButton buttonWithTitle:cocoon::internal::to(title) image:cocoon::internal::native<::NSImage>(image) target:cocoon::internal::native_id(target) action:NSSelectorFromString(cocoon::internal::to(action))])})
+    {
+        Button::bind_action_(handle());
+    }
+
+    Button::Button(const std::string& title, const Object& target, const std::string& action) : Button(Adopt{cocoon::internal::retain([::NSButton buttonWithTitle:cocoon::internal::to(title) target:cocoon::internal::native_id(target) action:NSSelectorFromString(cocoon::internal::to(action))])})
+    {
+        Button::bind_action_(handle());
+    }
+
     Button::Button(std::nullptr_t) : Control(nullptr)
     {
     }
 
     Button::Button(Adopt adopt) : Control(adopt)
     {
-    }
-
-    Button Button::button_with_image(const Image& image, const Object& target, const std::string& action)
-    {
-        return cocoon::internal::wrap<Button>([::NSButton buttonWithImage:cocoon::internal::native<::NSImage>(image) target:cocoon::internal::native_id(target) action:NSSelectorFromString(cocoon::internal::to(action))]);
-    }
-
-    Button Button::button_with_title(const std::string& title, const Image& image, const Object& target, const std::string& action)
-    {
-        return cocoon::internal::wrap<Button>([::NSButton buttonWithTitle:cocoon::internal::to(title) image:cocoon::internal::native<::NSImage>(image) target:cocoon::internal::native_id(target) action:NSSelectorFromString(cocoon::internal::to(action))]);
-    }
-
-    Button Button::button_with_title(const std::string& title, const Object& target, const std::string& action)
-    {
-        return cocoon::internal::wrap<Button>([::NSButton buttonWithTitle:cocoon::internal::to(title) target:cocoon::internal::native_id(target) action:NSSelectorFromString(cocoon::internal::to(action))]);
     }
 
     Button Button::checkbox_with_title(const std::string& title, const Object& target, const std::string& action)

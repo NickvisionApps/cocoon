@@ -33,7 +33,6 @@ namespace cocoon
      * auto compositing_operation = graphics_context.compositing_operation();
      * graphics_context.set_current_context(cocoon::GraphicsContext());
      * auto current_context = graphics_context.current_context();
-     * auto made_0 = cocoon::GraphicsContext::graphics_context_with_bitmap_image_rep(cocoon::BitmapImageRep());
      * graphics_context.flush_graphics();
      * graphics_context.restore_graphics_state();
      * graphics_context.save_graphics_state();
@@ -43,6 +42,12 @@ namespace cocoon
     class GraphicsContext : public Object
     {
     public:
+        /// @brief Creates a new `NSGraphicsContext` instance and returns a handle to it.
+        explicit GraphicsContext(const std::map<std::string, Object>& attributes);
+        /// @brief Creates a new `NSGraphicsContext` instance and returns a handle to it.
+        explicit GraphicsContext(const BitmapImageRep& bitmap_rep);
+        /// @brief Creates a new `NSGraphicsContext` instance and returns a handle to it.
+        explicit GraphicsContext(const CGContext& graphics_port, bool initial_flipped_state);
         /// @brief Creates a new `NSGraphicsContext` instance and returns a handle to it.
         explicit GraphicsContext();
         /// @brief Creates a null handle that refers to no native object.
@@ -58,27 +63,6 @@ namespace cocoon
      * @brief Calls `-[NSGraphicsContext flushGraphics]`.
      */
         void flush_graphics() const;
-        /**
-     * @brief Calls `+[NSGraphicsContext graphicsContextWithAttributes:]`.
-     * @param attributes Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static GraphicsContext graphics_context_with_attributes(const std::map<std::string, Object>& attributes);
-        /**
-     * @brief Calls `+[NSGraphicsContext graphicsContextWithBitmapImageRep:]`.
-     * @details Convenience cover method for [NSGraphicsContext graphicsContextWithAttributes:[NSDictionary dictionaryWithObject:\<NSBitmapImageRep instance> forKey:NSGraphicsContextDestinationAttributeName]]. Only NSBitmapImageRep instances with isPlanar == NO are supported.
-     * @param bitmap_rep Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static GraphicsContext graphics_context_with_bitmap_image_rep(const BitmapImageRep& bitmap_rep);
-        /**
-     * @brief Calls `+[NSGraphicsContext graphicsContextWithCGContext:flipped:]`.
-     * @details Instantiates from a CGContextRef. initialFlippedState is used to determine the return value from -isFlipped when no view is focused in the context.
-     * @param graphics_port Argument converted to the Objective-C parameter of the same role.
-     * @param initial_flipped_state Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static GraphicsContext graphics_context_with_cg_context(const CGContext& graphics_port, bool initial_flipped_state);
         /**
      * @brief Calls `-[NSGraphicsContext restoreGraphicsState]`.
      */

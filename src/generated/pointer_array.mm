@@ -38,16 +38,6 @@ namespace cocoon
         [cocoon::internal::ns<::NSPointerArray>(this) insertPointer:item atIndex:static_cast<::NSUInteger>(index)];
     }
 
-    PointerArray PointerArray::pointer_array_with_options(PointerFunctionsOptions options)
-    {
-        return cocoon::internal::wrap<PointerArray>([::NSPointerArray pointerArrayWithOptions:static_cast<::NSPointerFunctionsOptions>(options)]);
-    }
-
-    PointerArray PointerArray::pointer_array_with_pointer_functions(const PointerFunctions& functions)
-    {
-        return cocoon::internal::wrap<PointerArray>([::NSPointerArray pointerArrayWithPointerFunctions:cocoon::internal::native<::NSPointerFunctions>(functions)]);
-    }
-
     void* PointerArray::pointer_at_index(std::uint64_t index) const
     {
         return [cocoon::internal::ns<::NSPointerArray>(this) pointerAtIndex:static_cast<::NSUInteger>(index)];

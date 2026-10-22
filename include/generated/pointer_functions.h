@@ -19,13 +19,6 @@ namespace cocoon
      *
      * cocoon::PointerFunctions pointer_functions;
      * @endcode
-     *
-     * @par Common tasks
-     * Snippets built from this class's own members (values are placeholders).
-     * @code
-     * cocoon::PointerFunctions pointer_functions{};
-     * auto made_0 = cocoon::PointerFunctions::pointer_functions_with_options(cocoon::PointerFunctionsOptions::StrongMemory);
-     * @endcode
      * @see https://developer.apple.com/documentation/foundation/nspointerfunctions
      */
     class PointerFunctions : public Object
@@ -39,13 +32,6 @@ namespace cocoon
         PointerFunctions(std::nullptr_t);
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit PointerFunctions(Adopt adopt);
-        /**
-     * @brief Calls `+[NSPointerFunctions pointerFunctionsWithOptions:]`.
-     * @details Returns a new 'NSPointerFunctions' object initialized with the given options. - Parameter options: The options for the new 'NSPointerFunctions' object. - Returns: A new 'NSPointerFunctions' object initialized with the given options.
-     * @param options Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static PointerFunctions pointer_functions_with_options(PointerFunctionsOptions options);
         /**
      * @brief Returns the `acquireFunction` property of `NSPointerFunctions`.
      * @details The function used to acquire memory. This specifies the function to use for copy-in operations.

@@ -40,7 +40,6 @@ namespace cocoon
      * image.set_background_color(cocoon::Color());
      * auto background_color = image.background_color();
      * auto made_0 = cocoon::Image::image_named("text");
-     * auto made_1 = cocoon::Image::image_with_symbol_name("text", cocoon::Bundle(), 1);
      * image.tiff_representation_using_compression(cocoon::TIFFCompression::None, 1);
      * image.add_representation(cocoon::ImageRep());
      * image.draw_at_point({0, 0}, {{0, 0}, {100, 100}}, cocoon::CompositingOperation::Clear, 1);
@@ -62,6 +61,16 @@ namespace cocoon
         explicit Image(const Pasteboard& pasteboard);
         /// @brief Creates a new `NSImage` instance and returns a handle to it.
         explicit Image(const Size& size);
+        /// @brief Creates a new `NSImage` instance and returns a handle to it.
+        explicit Image(const Size& size, bool drawing_handler_should_be_called_with_flipped_context, std::function<bool(Rect)> drawing_handler);
+        /// @brief Creates a new `NSImage` instance and returns a handle to it.
+        explicit Image(const std::string& name, const Bundle& bundle, double value);
+        /// @brief Creates a new `NSImage` instance and returns a handle to it.
+        explicit Image(const std::string& name, double value);
+        /// @brief Creates a new `NSImage` instance and returns a handle to it.
+        explicit Image(const std::string& name, const std::string& description);
+        /// @brief Creates a new `NSImage` instance and returns a handle to it.
+        explicit Image(const std::string& name, double value, const std::string& description);
         /// @brief Creates a new `NSImage` instance and returns a handle to it.
         explicit Image();
         /// @brief Creates a null handle that refers to no native object.
@@ -174,53 +183,11 @@ namespace cocoon
      */
         Image image_with_locale(const Locale& locale) const;
         /**
-     * @brief Calls `+[NSImage imageWithSize:flipped:drawingHandler:]`.
-     * @param size Argument converted to the Objective-C parameter of the same role.
-     * @param drawing_handler_should_be_called_with_flipped_context Argument converted to the Objective-C parameter of the same role.
-     * @param drawing_handler Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Image image_with_size(const Size& size, bool drawing_handler_should_be_called_with_flipped_context, std::function<bool(Rect)> drawing_handler);
-        /**
      * @brief Calls `-[NSImage imageWithSymbolConfiguration:]`.
      * @param configuration Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
      */
         Image image_with_symbol_configuration(const ImageSymbolConfiguration& configuration) const;
-        /**
-     * @brief Calls `+[NSImage imageWithSymbolName:bundle:variableValue:]`.
-     * @details Creates a symbol image with the specified name and value. The 'value' argument is only accommodated if the symbol supports variable rendering. \@param name A name of a symbol image file in the main bundle’s catalog \@param bundle The bundle containing the image file or asset catalog. Specify 'nil' to search the app’s main bundle. \@param value The value represented by the symbol. The value should be between 0 and 1 inclusive ([0,1]). \@note Values less than 0 or greater than 1 will be clamped to 0 and 1, respectively.
-     * @param name Argument converted to the Objective-C parameter of the same role.
-     * @param bundle Argument converted to the Objective-C parameter of the same role.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Image image_with_symbol_name(const std::string& name, const Bundle& bundle, double value);
-        /**
-     * @brief Calls `+[NSImage imageWithSymbolName:variableValue:]`.
-     * @details Creates a symbol image with the specified name and value. The 'value' argument is only accommodated if the symbol supports variable rendering. \@param name A name of a symbol image file in the main bundle’s catalog \@param value The value represented by the symbol. The value should be between 0 and 1 inclusive ([0,1]). \@note Values less than 0 or greater than 1 will be clamped to 0 and 1, respectively.
-     * @param name Argument converted to the Objective-C parameter of the same role.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Image image_with_symbol_name(const std::string& name, double value);
-        /**
-     * @brief Calls `+[NSImage imageWithSystemSymbolName:accessibilityDescription:]`.
-     * @details Creates a system symbol image with the specified name and value \@param name A name from the system’s SF Symbols catalog \@param description The image’s accessibility description. This description is used automatically by interface elements that display images. Like all accessibility descriptions, use a short localized string that does not include the name of the interface element. For instance, “delete” rather than “delete button”.
-     * @param name Argument converted to the Objective-C parameter of the same role.
-     * @param description Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Image image_with_system_symbol_name(const std::string& name, const std::string& description);
-        /**
-     * @brief Calls `+[NSImage imageWithSystemSymbolName:variableValue:accessibilityDescription:]`.
-     * @details Creates a system symbol image with the specified name and value. The 'value' argument is only accommodated if the symbol supports variable rendering. \@param name A name from the system’s SF Symbols catalog \@param value The value represented by the symbol. The value should be between 0 and 1 inclusive ([0,1]). \@param description The image’s accessibility description. This description is used automatically by interface elements that display images. Like all accessibility descriptions, use a short localized string that does not include the name of the interface element. For instance, “delete” rather than “delete button”. \@note Values less than 0 or greater than 1 will be clamped to 0 and 1, respectively.
-     * @param name Argument converted to the Objective-C parameter of the same role.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     * @param description Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Image image_with_system_symbol_name(const std::string& name, double value, const std::string& description);
         /**
      * @brief Calls `-[NSImage layerContentsForContentsScale:]`.
      * @param layer_contents_scale Argument converted to the Objective-C parameter of the same role.

@@ -35,7 +35,6 @@ namespace cocoon
      * auto row_alignment = grid_view.row_alignment();
      * grid_view.set_row_spacing(1);
      * auto row_spacing = grid_view.row_spacing();
-     * auto made_0 = cocoon::GridView::grid_view_with_number_of_columns(1, 1);
      * grid_view.cell_at_column_index(1, 1);
      * grid_view.cell_for_view(cocoon::View());
      * grid_view.column_at_index(1);
@@ -49,6 +48,10 @@ namespace cocoon
         explicit GridView();
         /// @brief Creates a new `NSGridView` instance and returns a handle to it.
         explicit GridView(const Rect& frame_rect);
+        /// @brief Creates a new `NSGridView` instance and returns a handle to it.
+        explicit GridView(std::int64_t column_count, std::int64_t row_count);
+        /// @brief Creates a new `NSGridView` instance and returns a handle to it.
+        explicit GridView(const std::vector<std::vector<View>>& rows);
         /// @brief Creates a null handle that refers to no native object.
         GridView(std::nullptr_t);
         /// @brief Wraps an existing retained native object without creating a new one.
@@ -84,19 +87,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         GridColumn column_at_index(std::int64_t index) const;
-        /**
-     * @brief Calls `+[NSGridView gridViewWithNumberOfColumns:rows:]`.
-     * @param column_count Argument converted to the Objective-C parameter of the same role.
-     * @param row_count Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static GridView grid_view_with_number_of_columns(std::int64_t column_count, std::int64_t row_count);
-        /**
-     * @brief Calls `+[NSGridView gridViewWithViews:]`.
-     * @param rows Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static GridView grid_view_with_views(const std::vector<std::vector<View>>& rows);
         /**
      * @brief Calls `-[NSGridView indexOfColumn:]`.
      * @param column Argument converted to the Objective-C parameter of the same role.

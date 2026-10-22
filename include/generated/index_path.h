@@ -25,7 +25,6 @@ namespace cocoon
      * @code
      * cocoon::IndexPath index_path{};
      * auto made_0 = cocoon::IndexPath::index_path_for_item(1, 1);
-     * auto made_1 = cocoon::IndexPath::index_path_with_index(1);
      * index_path.compare(cocoon::IndexPath());
      * index_path.index_at_position(1);
      * index_path.index_path_by_adding_index(1);
@@ -92,21 +91,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         static IndexPath index_path_for_item(std::int64_t item, std::int64_t section);
-        /**
-     * @brief Calls `+[NSIndexPath indexPathWithIndex:]`.
-     * @details Creates a one-node index path. - Parameter index: Index of the item in node 0 to point to. - Returns: One-node index path with 'index'.
-     * @param index Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static IndexPath index_path_with_index(std::uint64_t index);
-        /**
-     * @brief Calls `+[NSIndexPath indexPathWithIndexes:length:]`.
-     * @details Creates an index path with one or more nodes. - Parameters: - indexes: Array of indexes to make up the index path. - length: Number of nodes to include in the index path. - Returns: Index path with 'indexes' up to 'length'.
-     * @param indexes Argument converted to the Objective-C parameter of the same role.
-     * @param length Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static IndexPath index_path_with_indexes(const std::uint64_t* indexes, std::uint64_t length);
         /**
      * @brief Returns the `item` property of `NSIndexPath`.
      * @return The converted Objective-C result.

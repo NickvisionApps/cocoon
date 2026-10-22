@@ -15,6 +15,14 @@ namespace cocoon
     {
     }
 
+    Progress::Progress(std::int64_t unit_count) : Progress(Adopt{cocoon::internal::retain([::NSProgress progressWithTotalUnitCount:static_cast<::int64_t>(unit_count)])})
+    {
+    }
+
+    Progress::Progress(std::int64_t unit_count, const Progress& parent, std::int64_t portion_of_parent_total_unit_count) : Progress(Adopt{cocoon::internal::retain([::NSProgress progressWithTotalUnitCount:static_cast<::int64_t>(unit_count) parent:cocoon::internal::native<::NSProgress>(parent) pendingUnitCount:static_cast<::int64_t>(portion_of_parent_total_unit_count)])})
+    {
+    }
+
     Progress::Progress() : Progress(Adopt{cocoon::internal::retain([[::NSProgress alloc] init])})
     {
     }
@@ -65,16 +73,6 @@ namespace cocoon
     void Progress::perform_as_current_with_pending_unit_count(std::int64_t unit_count, std::function<void()> work) const
     {
         [cocoon::internal::ns<::NSProgress>(this) performAsCurrentWithPendingUnitCount:static_cast<::int64_t>(unit_count) usingBlock:(work ? (void (^)(void)) ^ void() { work(); } : (void (^)(void))nil)];
-    }
-
-    Progress Progress::progress_with_total_unit_count(std::int64_t unit_count)
-    {
-        return cocoon::internal::wrap<Progress>([::NSProgress progressWithTotalUnitCount:static_cast<::int64_t>(unit_count)]);
-    }
-
-    Progress Progress::progress_with_total_unit_count(std::int64_t unit_count, const Progress& parent, std::int64_t portion_of_parent_total_unit_count)
-    {
-        return cocoon::internal::wrap<Progress>([::NSProgress progressWithTotalUnitCount:static_cast<::int64_t>(unit_count) parent:cocoon::internal::native<::NSProgress>(parent) pendingUnitCount:static_cast<::int64_t>(portion_of_parent_total_unit_count)]);
     }
 
     void Progress::publish() const

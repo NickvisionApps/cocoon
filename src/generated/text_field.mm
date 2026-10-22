@@ -273,11 +273,6 @@ namespace cocoon
         [cocoon::internal::ns<::NSTextField>(this) textDidEndEditing:cocoon::internal::native<::NSNotification>(notification)];
     }
 
-    TextField TextField::text_field_with_string(const std::string& string_value)
-    {
-        return cocoon::internal::wrap<TextField>([::NSTextField textFieldWithString:cocoon::internal::to(string_value)]);
-    }
-
     bool TextField::text_should_begin_editing(const Text& text_object) const
     {
         return static_cast<bool>([cocoon::internal::ns<::NSTextField>(this) textShouldBeginEditing:cocoon::internal::native<::NSText>(text_object)]);

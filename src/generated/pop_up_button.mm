@@ -13,6 +13,11 @@ namespace cocoon
         PopUpButton::bind_action_(handle());
     }
 
+    PopUpButton::PopUpButton(const Menu& menu, const Object& target, const std::string& action) : PopUpButton(Adopt{cocoon::internal::retain([::NSPopUpButton popUpButtonWithMenu:cocoon::internal::native<::NSMenu>(menu) target:cocoon::internal::native_id(target) action:NSSelectorFromString(cocoon::internal::to(action))])})
+    {
+        PopUpButton::bind_action_(handle());
+    }
+
     PopUpButton::PopUpButton(std::nullptr_t) : Button(nullptr)
     {
     }
@@ -77,11 +82,6 @@ namespace cocoon
     MenuItem PopUpButton::item_with_title(const std::string& title) const
     {
         return cocoon::internal::wrap<MenuItem>([cocoon::internal::ns<::NSPopUpButton>(this) itemWithTitle:cocoon::internal::to(title)]);
-    }
-
-    PopUpButton PopUpButton::pop_up_button_with_menu(const Menu& menu, const Object& target, const std::string& action)
-    {
-        return cocoon::internal::wrap<PopUpButton>([::NSPopUpButton popUpButtonWithMenu:cocoon::internal::native<::NSMenu>(menu) target:cocoon::internal::native_id(target) action:NSSelectorFromString(cocoon::internal::to(action))]);
     }
 
     PopUpButton PopUpButton::pull_down_button_with_image(const Image& image, const Menu& menu)

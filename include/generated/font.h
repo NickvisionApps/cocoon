@@ -39,6 +39,14 @@ namespace cocoon
     {
     public:
         /// @brief Creates a new `NSFont` instance and returns a handle to it.
+        explicit Font(const FontDescriptor& font_descriptor, double font_size);
+        /// @brief Creates a new `NSFont` instance and returns a handle to it.
+        explicit Font(const FontDescriptor& font_descriptor, const AffineTransform& text_transform);
+        /// @brief Creates a new `NSFont` instance and returns a handle to it.
+        explicit Font(const std::string& font_name, const double* font_matrix);
+        /// @brief Creates a new `NSFont` instance and returns a handle to it.
+        explicit Font(const std::string& font_name, double font_size);
+        /// @brief Creates a new `NSFont` instance and returns a handle to it.
         explicit Font();
         /// @brief Creates a null handle that refers to no native object.
         Font(std::nullptr_t);
@@ -81,37 +89,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         static Font control_content_font_of_size(double font_size);
-        /**
-     * @brief Calls `+[NSFont fontWithDescriptor:size:]`.
-     * @details Instantiates an NSFont object matching fontDescriptor. If fontSize is greater than 0.0, it has precedence over NSFontSizeAttribute in fontDescriptor.
-     * @param font_descriptor Argument converted to the Objective-C parameter of the same role.
-     * @param font_size Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Font font_with_descriptor(const FontDescriptor& font_descriptor, double font_size);
-        /**
-     * @brief Calls `+[NSFont fontWithDescriptor:textTransform:]`.
-     * @details Instantiates an NSFont object matching fontDescriptor. If textTransform is non-nil, it has precedence over NSFontMatrixAttribute in fontDescriptor.
-     * @param font_descriptor Argument converted to the Objective-C parameter of the same role.
-     * @param text_transform Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Font font_with_descriptor(const FontDescriptor& font_descriptor, const AffineTransform& text_transform);
-        /**
-     * @brief Calls `+[NSFont fontWithName:matrix:]`.
-     * @param font_name Argument converted to the Objective-C parameter of the same role.
-     * @param font_matrix Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Font font_with_name(const std::string& font_name, const double* font_matrix);
-        /**
-     * @brief Calls `+[NSFont fontWithName:size:]`.
-     * @details Factory
-     * @param font_name Argument converted to the Objective-C parameter of the same role.
-     * @param font_size Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Font font_with_name(const std::string& font_name, double font_size);
         /**
      * @brief Calls `-[NSFont fontWithSize:]`.
      * @param font_size Argument converted to the Objective-C parameter of the same role.

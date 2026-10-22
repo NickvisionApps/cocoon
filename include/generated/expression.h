@@ -38,6 +38,10 @@ namespace cocoon
         /// @brief Creates a new `NSExpression` instance and returns a handle to it.
         explicit Expression(ExpressionType type);
         /// @brief Creates a new `NSExpression` instance and returns a handle to it.
+        explicit Expression(const std::string& expression_format, const std::vector<Object>& arguments);
+        /// @brief Creates a new `NSExpression` instance and returns a handle to it.
+        explicit Expression(const std::string& expression_format, char* arg_list);
+        /// @brief Creates a new `NSExpression` instance and returns a handle to it.
         explicit Expression();
         /// @brief Creates a null handle that refers to no native object.
         Expression(std::nullptr_t);
@@ -163,34 +167,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         Object expression_value_with_object(const Object& object, const std::vector<std::pair<Object, Object>>& context) const;
-        template <class... Args>
-        static Expression expression_with_format(const std::string& expression_format, const Args&... args)
-        {
-            return expression_with_format_(expression_format, std::vector<VarArg>{VarArg(args)...});
-        }
-        /**
-     * @brief Calls `+[NSExpression ]`.
-     * @param expression_format Argument converted to the Objective-C parameter of the same role.
-     * @param args Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Expression expression_with_format_(const std::string& expression_format, const std::vector<VarArg>& args);
-        /**
-     * @brief Calls `+[NSExpression expressionWithFormat:argumentArray:]`.
-     * @details Creates the expression with the specified expression arguments.
-     * @param expression_format Argument converted to the Objective-C parameter of the same role.
-     * @param arguments Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Expression expression_with_format(const std::string& expression_format, const std::vector<Object>& arguments);
-        /**
-     * @brief Calls `+[NSExpression expressionWithFormat:arguments:]`.
-     * @details Creates the expression with the specified expression arguments.
-     * @param expression_format Argument converted to the Objective-C parameter of the same role.
-     * @param arg_list Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Expression expression_with_format(const std::string& expression_format, char* arg_list);
         /**
      * @brief Returns the `arguments` property of `NSExpression`.
      * @details The arguments for the expression. The array of expressions which will be passed as parameters during invocation of the selector on the operand of a function expression.

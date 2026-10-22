@@ -21,13 +21,6 @@ namespace cocoon
      *
      * cocoon::Pipe pipe;
      * @endcode
-     *
-     * @par Common tasks
-     * Snippets built from this class's own members (values are placeholders).
-     * @code
-     * cocoon::Pipe pipe{};
-     * auto made_0 = cocoon::Pipe::pipe();
-     * @endcode
      * @see https://developer.apple.com/documentation/foundation/nspipe
      */
     class Pipe : public Object
@@ -39,12 +32,6 @@ namespace cocoon
         Pipe(std::nullptr_t);
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit Pipe(Adopt adopt);
-        /**
-     * @brief Calls `+[NSPipe pipe]`.
-     * @details Returns a new 'NSPipe' object.
-     * @return The converted Objective-C result.
-     */
-        static Pipe pipe();
         /**
      * @brief Returns the `fileHandleForReading` property of `NSPipe`.
      * @details The receiver's read file handle.

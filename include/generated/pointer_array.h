@@ -29,8 +29,8 @@ namespace cocoon
      * cocoon::PointerArray pointer_array{};
      * pointer_array.set_count(1);
      * auto count = pointer_array.count();
-     * auto made_0 = cocoon::PointerArray::pointer_array_with_options(cocoon::PointerFunctionsOptions::StrongMemory);
-     * auto made_1 = cocoon::PointerArray::pointer_array_with_pointer_functions(cocoon::PointerFunctions());
+     * auto made_0 = cocoon::PointerArray::strong_objects_pointer_array();
+     * auto made_1 = cocoon::PointerArray::weak_objects_pointer_array();
      * pointer_array.compact();
      * pointer_array.pointer_at_index(1);
      * pointer_array.remove_pointer_at_index(1);
@@ -68,20 +68,6 @@ namespace cocoon
      * @param index Argument converted to the Objective-C parameter of the same role.
      */
         void insert_pointer(void* item, std::uint64_t index) const;
-        /**
-     * @brief Calls `+[NSPointerArray pointerArrayWithOptions:]`.
-     * @details Returns a new pointer array initialized to use the given options. - Parameter options: The pointer functions options for the new instance. - Returns: A new pointer array initialized to use the given options.
-     * @param options Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static PointerArray pointer_array_with_options(PointerFunctionsOptions options);
-        /**
-     * @brief Calls `+[NSPointerArray pointerArrayWithPointerFunctions:]`.
-     * @details A new pointer array initialized to use the given functions. - Parameter functions: The pointer functions for the new instance. - Returns: A new pointer array initialized to use the given pointer functions.
-     * @param functions Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static PointerArray pointer_array_with_pointer_functions(const PointerFunctions& functions);
         /**
      * @brief Calls `-[NSPointerArray pointerAtIndex:]`.
      * @details Returns the pointer at a given index. The returned value may be 'NULL'. - Parameter index: The index of an element in the receiver. This value must be less than the count of the receiver. - Returns: The pointer at 'index'.

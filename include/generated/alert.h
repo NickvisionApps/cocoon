@@ -31,14 +31,13 @@ namespace cocoon
      * @par Common tasks
      * Snippets built from this class's own members (values are placeholders).
      * @code
-     * cocoon::Alert alert{"text", "text", cocoon::AlertStyle::Warning};
+     * cocoon::Alert alert{cocoon::Error()};
      * alert.set_accessory_view(cocoon::View());
      * auto accessory_view = alert.accessory_view();
      * alert.set_alert_style(cocoon::AlertStyle::Warning);
      * auto alert_style = alert.alert_style();
      * alert.set_help_anchor("text");
      * auto help_anchor = alert.help_anchor();
-     * auto made_0 = cocoon::Alert::alert_with_error(cocoon::Error());
      * alert.add_button_with_title("text");
      * alert.layout();
      * alert.run_modal();
@@ -50,6 +49,8 @@ namespace cocoon
     public:
         /// @brief Creates a new `NSAlert` instance and returns a handle to it.
         explicit Alert(const std::string& message = "", const std::string& informative_text = "", AlertStyle style = AlertStyle::Informational);
+        /// @brief Creates a new `NSAlert` instance and returns a handle to it.
+        explicit Alert(const Error& error);
         /// @brief Creates a null handle that refers to no native object.
         Alert(std::nullptr_t);
         /// @brief Wraps an existing retained native object without creating a new one.
@@ -61,13 +62,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         Button add_button_with_title(const std::string& title) const;
-        /**
-     * @brief Calls `+[NSAlert alertWithError:]`.
-     * @details Returns an alert initialized from information in an error object. - Parameter error: Error information to display. - Returns: An initialized alert. - Note: The 'NSAlert' class extracts the localized error description, recovery suggestion, and recovery options from the error parameter and uses them as the alert’s message text, informative text, and button titles, respectively.
-     * @param error Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Alert alert_with_error(const Error& error);
         /**
      * @brief Calls `-[NSAlert beginSheetModalForWindow:completionHandler:]`.
      * @details Runs the alert modally as a sheet attached to the specified window. - Parameters: - sheetWindow: The window on which to display the sheet. - handler: The completion handler that gets called when the sheet’s modal session ends. This method uses the 'NSWindow' sheet methods to display the alert. If the alert has an alert style of 'NSCriticalAlertStyle', it is presented as a critical sheet, which means that it can display on top of other sheets that might already be attached to the window. Otherwise, it is presented--or queued for presentation--as a standard sheet. Note that '-orderOut:' no longer needs to be called in the completion handler. If the alert isn’t don’t dismiss the alert, it will be done for you after the completion handler finishes.

@@ -3,6 +3,10 @@
 
 namespace cocoon
 {
+    Storyboard::Storyboard(const std::string& name, const Bundle& storyboard_bundle_or_nil) : Storyboard(Adopt{cocoon::internal::retain([::NSStoryboard storyboardWithName:cocoon::internal::to(name) bundle:cocoon::internal::native<::NSBundle>(storyboard_bundle_or_nil)])})
+    {
+    }
+
     Storyboard::Storyboard() : Storyboard(Adopt{cocoon::internal::retain([[::NSStoryboard alloc] init])})
     {
     }
@@ -33,11 +37,6 @@ namespace cocoon
     Object Storyboard::instantiate_initial_controller_with_creator(std::function<Object(Coder)> block) const
     {
         return cocoon::internal::wrap<Object>([cocoon::internal::ns<::NSStoryboard>(this) instantiateInitialControllerWithCreator:(block ? (::NSStoryboardControllerCreator) ^ id(::NSCoder * a84_0) { auto __r = block(cocoon::internal::wrap<Coder>(a84_0)); return cocoon::internal::native_id(__r); } : (::NSStoryboardControllerCreator)nil)]);
-    }
-
-    Storyboard Storyboard::storyboard_with_name(const std::string& name, const Bundle& storyboard_bundle_or_nil)
-    {
-        return cocoon::internal::wrap<Storyboard>([::NSStoryboard storyboardWithName:cocoon::internal::to(name) bundle:cocoon::internal::native<::NSBundle>(storyboard_bundle_or_nil)]);
     }
 
     Storyboard Storyboard::main_storyboard()

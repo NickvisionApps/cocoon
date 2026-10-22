@@ -101,26 +101,6 @@ namespace cocoon
         return cocoon::internal::wrap<DecimalNumber>([cocoon::internal::ns<::NSDecimalNumber>(this) decimalNumberBySubtracting:cocoon::internal::native<::NSDecimalNumber>(decimal_number) withBehavior:cocoon::internal::native_id(behavior)]);
     }
 
-    DecimalNumber DecimalNumber::decimal_number_with_decimal(const Decimal& dcm)
-    {
-        return cocoon::internal::wrap<DecimalNumber>([::NSDecimalNumber decimalNumberWithDecimal:cocoon::internal::to(dcm)]);
-    }
-
-    DecimalNumber DecimalNumber::decimal_number_with_mantissa(std::uint64_t mantissa, std::int16_t exponent, bool flag)
-    {
-        return cocoon::internal::wrap<DecimalNumber>([::NSDecimalNumber decimalNumberWithMantissa:static_cast<unsigned long long>(mantissa) exponent:static_cast<short>(exponent) isNegative:static_cast<::BOOL>(flag)]);
-    }
-
-    DecimalNumber DecimalNumber::decimal_number_with_string(const std::string& number_value)
-    {
-        return cocoon::internal::wrap<DecimalNumber>([::NSDecimalNumber decimalNumberWithString:cocoon::internal::to(number_value)]);
-    }
-
-    DecimalNumber DecimalNumber::decimal_number_with_string(const std::string& number_value, const Object& locale)
-    {
-        return cocoon::internal::wrap<DecimalNumber>([::NSDecimalNumber decimalNumberWithString:cocoon::internal::to(number_value) locale:cocoon::internal::native_id(locale)]);
-    }
-
     std::string DecimalNumber::description_with_locale(const Object& locale) const
     {
         return cocoon::internal::from([cocoon::internal::ns<::NSDecimalNumber>(this) descriptionWithLocale:cocoon::internal::native_id(locale)]);

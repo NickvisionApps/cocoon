@@ -82,21 +82,6 @@ namespace cocoon
         return cocoon::internal::wrap<Bundle>([::NSBundle bundleForClass:NSClassFromString(cocoon::internal::to(a_class))]);
     }
 
-    Bundle Bundle::bundle_with_identifier(const std::string& identifier)
-    {
-        return cocoon::internal::wrap<Bundle>([::NSBundle bundleWithIdentifier:cocoon::internal::to(identifier)]);
-    }
-
-    Bundle Bundle::bundle_with_path(const std::string& path)
-    {
-        return cocoon::internal::wrap<Bundle>([::NSBundle bundleWithPath:cocoon::internal::to(path)]);
-    }
-
-    Bundle Bundle::bundle_with_url(const URL& url)
-    {
-        return cocoon::internal::wrap<Bundle>([::NSBundle bundleWithURL:cocoon::internal::native<::NSURL>(url)]);
-    }
-
     std::string Bundle::class_named(const std::string& class_name) const
     {
         return cocoon::internal::from(NSStringFromClass([cocoon::internal::ns<::NSBundle>(this) classNamed:cocoon::internal::to(class_name)]));

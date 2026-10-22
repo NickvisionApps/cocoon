@@ -58,16 +58,6 @@ namespace cocoon
         return cocoon::internal::wrap<IndexPath>([::NSIndexPath indexPathForItem:static_cast<::NSInteger>(item) inSection:static_cast<::NSInteger>(section)]);
     }
 
-    IndexPath IndexPath::index_path_with_index(std::uint64_t index)
-    {
-        return cocoon::internal::wrap<IndexPath>([::NSIndexPath indexPathWithIndex:static_cast<::NSUInteger>(index)]);
-    }
-
-    IndexPath IndexPath::index_path_with_indexes(const std::uint64_t* indexes, std::uint64_t length)
-    {
-        return cocoon::internal::wrap<IndexPath>([::NSIndexPath indexPathWithIndexes:(const ::NSUInteger*)(indexes) length:static_cast<::NSUInteger>(length)]);
-    }
-
     std::int64_t IndexPath::item() const
     {
         return static_cast<std::int64_t>([cocoon::internal::ns<::NSIndexPath>(this) item]);

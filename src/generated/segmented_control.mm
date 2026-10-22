@@ -8,6 +8,28 @@ namespace cocoon
         SegmentedControl::bind_action_(handle());
     }
 
+    SegmentedControl::SegmentedControl(const std::vector<Image>& images, SegmentSwitchTracking tracking_mode, const Object& target, const std::string& action) : SegmentedControl(Adopt{cocoon::internal::retain([::NSSegmentedControl segmentedControlWithImages:cocoon::internal::to_array(images, [](const Image& e) -> id
+                                                                                                                                                                                                                                                                                             {
+                                                                                                                                                                                                                                                                                                 return cocoon::internal::native<::NSImage>(e);
+                                                                                                                                                                                                                                                                                             })
+                                                                                                                                                                                                                                                     trackingMode:static_cast<::NSSegmentSwitchTracking>(tracking_mode)
+                                                                                                                                                                                                                                                           target:cocoon::internal::native_id(target)
+                                                                                                                                                                                                                                                           action:NSSelectorFromString(cocoon::internal::to(action))])})
+    {
+        SegmentedControl::bind_action_(handle());
+    }
+
+    SegmentedControl::SegmentedControl(const std::vector<std::string>& labels, SegmentSwitchTracking tracking_mode, const Object& target, const std::string& action) : SegmentedControl(Adopt{cocoon::internal::retain([::NSSegmentedControl segmentedControlWithLabels:cocoon::internal::to_array(labels, [](const std::string& e) -> id
+                                                                                                                                                                                                                                                                                                   {
+                                                                                                                                                                                                                                                                                                       return cocoon::internal::to(e);
+                                                                                                                                                                                                                                                                                                   })
+                                                                                                                                                                                                                                                           trackingMode:static_cast<::NSSegmentSwitchTracking>(tracking_mode)
+                                                                                                                                                                                                                                                                 target:cocoon::internal::native_id(target)
+                                                                                                                                                                                                                                                                 action:NSSelectorFromString(cocoon::internal::to(action))])})
+    {
+        SegmentedControl::bind_action_(handle());
+    }
+
     SegmentedControl::SegmentedControl(std::nullptr_t) : Control(nullptr)
     {
     }
@@ -65,28 +87,6 @@ namespace cocoon
                                                                                                                                                                 {
                                                                                                                                                                     return cocoon::internal::native<::NSUserInterfaceCompressionOptions>(e);
                                                                                                                                                                 })]);
-    }
-
-    SegmentedControl SegmentedControl::segmented_control_with_images(const std::vector<Image>& images, SegmentSwitchTracking tracking_mode, const Object& target, const std::string& action)
-    {
-        return cocoon::internal::wrap<SegmentedControl>([::NSSegmentedControl segmentedControlWithImages:cocoon::internal::to_array(images, [](const Image& e) -> id
-                                                                                                                                    {
-                                                                                                                                        return cocoon::internal::native<::NSImage>(e);
-                                                                                                                                    })
-                                                                                            trackingMode:static_cast<::NSSegmentSwitchTracking>(tracking_mode)
-                                                                                                  target:cocoon::internal::native_id(target)
-                                                                                                  action:NSSelectorFromString(cocoon::internal::to(action))]);
-    }
-
-    SegmentedControl SegmentedControl::segmented_control_with_labels(const std::vector<std::string>& labels, SegmentSwitchTracking tracking_mode, const Object& target, const std::string& action)
-    {
-        return cocoon::internal::wrap<SegmentedControl>([::NSSegmentedControl segmentedControlWithLabels:cocoon::internal::to_array(labels, [](const std::string& e) -> id
-                                                                                                                                    {
-                                                                                                                                        return cocoon::internal::to(e);
-                                                                                                                                    })
-                                                                                            trackingMode:static_cast<::NSSegmentSwitchTracking>(tracking_mode)
-                                                                                                  target:cocoon::internal::native_id(target)
-                                                                                                  action:NSSelectorFromString(cocoon::internal::to(action))]);
     }
 
     bool SegmentedControl::select_segment_with_tag(std::int64_t tag) const

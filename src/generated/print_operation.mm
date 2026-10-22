@@ -3,6 +3,14 @@
 
 namespace cocoon
 {
+    PrintOperation::PrintOperation(const View& view) : PrintOperation(Adopt{cocoon::internal::retain([::NSPrintOperation printOperationWithView:cocoon::internal::native<::NSView>(view)])})
+    {
+    }
+
+    PrintOperation::PrintOperation(const View& view, const PrintInfo& print_info) : PrintOperation(Adopt{cocoon::internal::retain([::NSPrintOperation printOperationWithView:cocoon::internal::native<::NSView>(view) printInfo:cocoon::internal::native<::NSPrintInfo>(print_info)])})
+    {
+    }
+
     PrintOperation::PrintOperation() : PrintOperation(Adopt{cocoon::internal::retain([[::NSPrintOperation alloc] init])})
     {
     }
@@ -63,16 +71,6 @@ namespace cocoon
     void PrintOperation::destroy_context() const
     {
         [cocoon::internal::ns<::NSPrintOperation>(this) destroyContext];
-    }
-
-    PrintOperation PrintOperation::print_operation_with_view(const View& view)
-    {
-        return cocoon::internal::wrap<PrintOperation>([::NSPrintOperation printOperationWithView:cocoon::internal::native<::NSView>(view)]);
-    }
-
-    PrintOperation PrintOperation::print_operation_with_view(const View& view, const PrintInfo& print_info)
-    {
-        return cocoon::internal::wrap<PrintOperation>([::NSPrintOperation printOperationWithView:cocoon::internal::native<::NSView>(view) printInfo:cocoon::internal::native<::NSPrintInfo>(print_info)]);
     }
 
     bool PrintOperation::run_operation() const

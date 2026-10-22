@@ -25,8 +25,6 @@ namespace cocoon
      * Snippets built from this class's own members (values are placeholders).
      * @code
      * cocoon::FontDescriptor font_descriptor{};
-     * auto made_0 = cocoon::FontDescriptor::font_descriptor_with_name("text", cocoon::AffineTransform());
-     * auto made_1 = cocoon::FontDescriptor::font_descriptor_with_name("text", 1);
      * font_descriptor.font_descriptor_with_design("text");
      * font_descriptor.font_descriptor_with_face("text");
      * font_descriptor.font_descriptor_with_family("text");
@@ -38,6 +36,10 @@ namespace cocoon
     public:
         /// @brief Creates a new `NSFontDescriptor` instance and returns a handle to it.
         explicit FontDescriptor(const std::map<std::string, Object>& attributes);
+        /// @brief Creates a new `NSFontDescriptor` instance and returns a handle to it.
+        explicit FontDescriptor(const std::string& font_name, const AffineTransform& matrix);
+        /// @brief Creates a new `NSFontDescriptor` instance and returns a handle to it.
+        explicit FontDescriptor(const std::string& font_name, double size);
         /// @brief Creates a new `NSFontDescriptor` instance and returns a handle to it.
         explicit FontDescriptor();
         /// @brief Creates a null handle that refers to no native object.
@@ -69,32 +71,11 @@ namespace cocoon
      */
         FontDescriptor font_descriptor_with_family(const std::string& new_family) const;
         /**
-     * @brief Calls `+[NSFontDescriptor fontDescriptorWithFontAttributes:]`.
-     * @details Instantiation
-     * @param attributes Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static FontDescriptor font_descriptor_with_font_attributes(const std::map<std::string, Object>& attributes);
-        /**
      * @brief Calls `-[NSFontDescriptor fontDescriptorWithMatrix:]`.
      * @param matrix Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
      */
         FontDescriptor font_descriptor_with_matrix(const AffineTransform& matrix) const;
-        /**
-     * @brief Calls `+[NSFontDescriptor fontDescriptorWithName:matrix:]`.
-     * @param font_name Argument converted to the Objective-C parameter of the same role.
-     * @param matrix Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static FontDescriptor font_descriptor_with_name(const std::string& font_name, const AffineTransform& matrix);
-        /**
-     * @brief Calls `+[NSFontDescriptor fontDescriptorWithName:size:]`.
-     * @param font_name Argument converted to the Objective-C parameter of the same role.
-     * @param size Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static FontDescriptor font_descriptor_with_name(const std::string& font_name, double size);
         /**
      * @brief Calls `-[NSFontDescriptor fontDescriptorWithSize:]`.
      * @param new_point_size Argument converted to the Objective-C parameter of the same role.

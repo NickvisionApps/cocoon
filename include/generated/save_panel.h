@@ -36,7 +36,6 @@ namespace cocoon
      * auto allows_other_file_types = save_panel.allows_other_file_types();
      * save_panel.set_can_create_directories(true);
      * auto can_create_directories = save_panel.can_create_directories();
-     * auto made_0 = cocoon::SavePanel::save_panel();
      * save_panel.run_modal();
      * save_panel.validate_visible_columns();
      * save_panel.panel_did_change_to_directory_url().connect([](cocoon::URL a0) {});
@@ -85,12 +84,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         std::int64_t run_modal() const;
-        /**
-     * @brief Calls `+[NSSavePanel savePanel]`.
-     * @details Creates a new instance of the NSSavePanel. This class is not a singleton.
-     * @return The converted Objective-C result.
-     */
-        static SavePanel save_panel();
         /**
      * @brief Calls `-[NSSavePanel validateVisibleColumns]`.
      * @details Refreshes the open or save panel's contents.

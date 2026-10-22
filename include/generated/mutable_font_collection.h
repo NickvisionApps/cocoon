@@ -44,9 +44,6 @@ namespace cocoon
         explicit MutableFontCollection(Adopt adopt);
         using FontCollection::exclusion_descriptors;
         using FontCollection::font_collection_with_all_available_descriptors;
-        using FontCollection::font_collection_with_descriptors;
-        using FontCollection::font_collection_with_locale;
-        using FontCollection::font_collection_with_name;
         using FontCollection::query_descriptors;
         /**
      * @brief Calls `-[NSMutableFontCollection addQueryForDescriptors:]`.

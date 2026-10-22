@@ -44,6 +44,10 @@ namespace cocoon
     public:
         /// @brief Creates a new `NSSlider` instance and returns a handle to it.
         explicit Slider(double min_value = 0, double max_value = 1, double value = 0);
+        /// @brief Creates a new `NSSlider` instance and returns a handle to it.
+        explicit Slider(const Object& target, const std::string& action);
+        /// @brief Creates a new `NSSlider` instance and returns a handle to it.
+        explicit Slider(double value, double min_value, double max_value, const Object& target, const std::string& action);
         /// @brief Creates a null handle that refers to no native object.
         Slider(std::nullptr_t);
         /// @brief Wraps an existing retained native object without creating a new one.
@@ -73,25 +77,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         Rect rect_of_tick_mark_at_index(std::int64_t index) const;
-        /**
-     * @brief Calls `+[NSSlider sliderWithTarget:action:]`.
-     * @details Creates a continuous horizontal slider over the range 0.0 to 1.0. The default value is 0.0. \@param target The target object that receives action messages from the control. \@param action The action message sent by the control. \@return An initialized slider control.
-     * @param target Argument converted to the Objective-C parameter of the same role.
-     * @param action Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Slider slider_with_target(const Object& target, const std::string& action);
-        /**
-     * @brief Calls `+[NSSlider sliderWithValue:minValue:maxValue:target:action:]`.
-     * @details Creates a continuous horizontal slider that represents values over a specified range. \@param value The initial value displayed by the control. \@param minValue The minimum value represented by the control. \@param maxValue The maximum value represented by the control. \@param target The target object that receives action messages from the control. \@param action The action message sent by the control. \@return An initialized slider control.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     * @param min_value Argument converted to the Objective-C parameter of the same role.
-     * @param max_value Argument converted to the Objective-C parameter of the same role.
-     * @param target Argument converted to the Objective-C parameter of the same role.
-     * @param action Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Slider slider_with_value(double value, double min_value, double max_value, const Object& target, const std::string& action);
         /**
      * @brief Calls `-[NSSlider tickMarkValueAtIndex:]`.
      * @param index Argument converted to the Objective-C parameter of the same role.

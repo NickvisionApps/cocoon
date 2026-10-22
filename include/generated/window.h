@@ -59,14 +59,13 @@ namespace cocoon
      * @par Common tasks
      * Snippets built from this class's own members (values are placeholders).
      * @code
-     * cocoon::Window window{"text", {100, 100}, cocoon::WindowStyle::Borderless};
+     * cocoon::Window window{cocoon::ViewController()};
      * window.set_accepts_mouse_moved_events(true);
      * auto accepts_mouse_moved_events = window.accepts_mouse_moved_events();
      * window.set_allows_automatic_window_tabbing(true);
      * auto allows_automatic_window_tabbing = window.allows_automatic_window_tabbing();
      * window.set_allows_concurrent_view_drawing(true);
      * auto allows_concurrent_view_drawing = window.allows_concurrent_view_drawing();
-     * auto made_0 = cocoon::Window::window_with_content_view_controller(cocoon::ViewController());
      * window.add_child_window(cocoon::Window(), cocoon::WindowOrderingMode::Above);
      * window.add_tabbed_window(cocoon::Window(), cocoon::WindowOrderingMode::Above);
      * window.add_titlebar_accessory_view_controller(cocoon::TitlebarAccessoryViewController());
@@ -85,6 +84,8 @@ namespace cocoon
         explicit Window(const Rect& content_rect, WindowStyle style, BackingStoreType backing_store_type, bool flag);
         /// @brief Creates a new `NSWindow` instance and returns a handle to it.
         explicit Window(const Rect& content_rect, WindowStyle style, BackingStoreType backing_store_type, bool flag, const Screen& screen);
+        /// @brief Creates a new `NSWindow` instance and returns a handle to it.
+        explicit Window(const ViewController& content_view_controller);
         /// @brief Creates a null handle that refers to no native object.
         Window(std::nullptr_t);
         /// @brief Wraps an existing retained native object without creating a new one.
@@ -804,13 +805,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         static std::vector<Number> window_numbers_with_options(WindowNumberListOptions options);
-        /**
-     * @brief Calls `+[NSWindow windowWithContentViewController:]`.
-     * @details Convenience method for creating an autoreleased titled window with the given contentViewController. A basic NSWindow with the following attributes is made: titled, closable, resizable, miniaturizable. The window's title is automatically bound to the contentViewController's title. The size of the window can easily be controlled by utilizing autolayout and applying size constraints to the view (or its subviews). The window has isReleasedWhenClosed set to NO, and it must be explicitly retained to keep the window instance alive. To have it automatically be freed when it is closed, do the following: [window retain] and [window setReleasedWhenClosed:YES].
-     * @param content_view_controller Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Window window_with_content_view_controller(const ViewController& content_view_controller);
         /**
      * @brief Calls `-[NSWindow zoom:]`.
      * @param sender Argument converted to the Objective-C parameter of the same role.

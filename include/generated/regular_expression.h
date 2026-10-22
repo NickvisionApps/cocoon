@@ -26,7 +26,6 @@ namespace cocoon
      * Snippets built from this class's own members (values are placeholders).
      * @code
      * cocoon::RegularExpression regular_expression{};
-     * auto made_0 = cocoon::RegularExpression::regular_expression_with_pattern("text", cocoon::RegularExpressionOptions::CaseInsensitive);
      * regular_expression.replacement_string_for_result(cocoon::TextCheckingResult(), "text", 1, "text");
      * @endcode
      * @see https://developer.apple.com/documentation/foundation/nsregularexpression
@@ -101,14 +100,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         Range range_of_first_match_in_string(const std::string& string, MatchingOptions options, const Range& range) const;
-        /**
-     * @brief Calls `+[NSRegularExpression regularExpressionWithPattern:options:error:]`.
-     * @details Creates an NSRegularExpression instance with the specified regular expression pattern and options. - Parameter pattern: The regular expression pattern to compile. - Parameter options: The matching options. See 'NSRegularExpressionOptions' for possible values. The values can be combined using the C-bitwise 'OR' operator. - Parameter error: An out value that returns any error encountered during initialization. Returns an 'NSError' object if the regular expression pattern is invalid; otherwise returns 'nil'. - Returns: An instance of 'NSRegularExpression' for the specified regular expression and options.
-     * @param pattern Argument converted to the Objective-C parameter of the same role.
-     * @param options Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static RegularExpression regular_expression_with_pattern(const std::string& pattern, RegularExpressionOptions options);
         /**
      * @brief Calls `-[NSRegularExpression replaceMatchesInString:options:range:withTemplate:]`.
      * @details Replaces regular expression matches within the mutable string using the template string. - Parameter string: The mutable string to search and replace values within. - Parameter options: The matching options to use. See 'NSMatchingOptions' for possible values. - Parameter range: The range of the string to search. - Parameter templ: The substitution template used when replacing matching instances. - Returns: The number of matches.

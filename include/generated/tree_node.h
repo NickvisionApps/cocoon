@@ -54,12 +54,6 @@ namespace cocoon
      */
         void sort_with_sort_descriptors(const std::vector<SortDescriptor>& sort_descriptors, bool recursively) const;
         /**
-     * @brief Calls `+[NSTreeNode treeNodeWithRepresentedObject:]`.
-     * @param model_object Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static TreeNode tree_node_with_represented_object(const Object& model_object);
-        /**
      * @brief Returns the `childNodes` property of `NSTreeNode`.
      * @return The converted Objective-C result.
      */

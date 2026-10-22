@@ -27,7 +27,6 @@ namespace cocoon
      * Snippets built from this class's own members (values are placeholders).
      * @code
      * cocoon::PageLayout page_layout{};
-     * auto made_0 = cocoon::PageLayout::page_layout();
      * page_layout.add_accessory_controller(cocoon::ViewController());
      * page_layout.remove_accessory_controller(cocoon::ViewController());
      * page_layout.run_modal();
@@ -67,12 +66,6 @@ namespace cocoon
      * @param context_info Argument converted to the Objective-C parameter of the same role.
      */
         void begin_sheet_with_print_info(const PrintInfo& print_info, const Window& doc_window, const Object& delegate, const std::string& did_end_selector, void* context_info) const;
-        /**
-     * @brief Calls `+[NSPageLayout pageLayout]`.
-     * @details Create a new NSPageLayout.
-     * @return The converted Objective-C result.
-     */
-        static PageLayout page_layout();
         /**
      * @brief Calls `-[NSPageLayout removeAccessoryController:]`.
      * @param accessory_controller Argument converted to the Objective-C parameter of the same role.

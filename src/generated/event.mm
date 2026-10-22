@@ -3,6 +3,14 @@
 
 namespace cocoon
 {
+    Event::Event(const CGEvent& cg_event) : Event(Adopt{cocoon::internal::retain([::NSEvent eventWithCGEvent:((::CGEventRef)(cg_event).handle())])})
+    {
+    }
+
+    Event::Event(const void* event_ref) : Event(Adopt{cocoon::internal::retain([::NSEvent eventWithEventRef:event_ref])})
+    {
+    }
+
     Event::Event() : Event(Adopt{cocoon::internal::retain([[::NSEvent alloc] init])})
     {
     }
@@ -49,16 +57,6 @@ namespace cocoon
     Event Event::enter_exit_event_with_type(EventType type, const Point& location, EventModifierFlags flags, double time, std::int64_t w_num, const GraphicsContext& unused_pass_nil, std::int64_t e_num, std::int64_t t_num, void* data)
     {
         return cocoon::internal::wrap<Event>([::NSEvent enterExitEventWithType:static_cast<::NSEventType>(type) location:cocoon::internal::to(location) modifierFlags:static_cast<::NSEventModifierFlags>(flags) timestamp:static_cast<::NSTimeInterval>(time) windowNumber:static_cast<::NSInteger>(w_num) context:cocoon::internal::native<::NSGraphicsContext>(unused_pass_nil) eventNumber:static_cast<::NSInteger>(e_num) trackingNumber:static_cast<::NSInteger>(t_num) userData:data]);
-    }
-
-    Event Event::event_with_cg_event(const CGEvent& cg_event)
-    {
-        return cocoon::internal::wrap<Event>([::NSEvent eventWithCGEvent:((::CGEventRef)(cg_event).handle())]);
-    }
-
-    Event Event::event_with_event_ref(const void* event_ref)
-    {
-        return cocoon::internal::wrap<Event>([::NSEvent eventWithEventRef:event_ref]);
     }
 
     Event Event::key_event_with_type(EventType type, const Point& location, EventModifierFlags flags, double time, std::int64_t w_num, const GraphicsContext& unused_pass_nil, const std::string& keys, const std::string& ukeys, bool flag, std::uint16_t code)

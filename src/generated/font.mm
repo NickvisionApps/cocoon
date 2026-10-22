@@ -3,6 +3,22 @@
 
 namespace cocoon
 {
+    Font::Font(const FontDescriptor& font_descriptor, double font_size) : Font(Adopt{cocoon::internal::retain([::NSFont fontWithDescriptor:cocoon::internal::native<::NSFontDescriptor>(font_descriptor) size:static_cast<::CGFloat>(font_size)])})
+    {
+    }
+
+    Font::Font(const FontDescriptor& font_descriptor, const AffineTransform& text_transform) : Font(Adopt{cocoon::internal::retain([::NSFont fontWithDescriptor:cocoon::internal::native<::NSFontDescriptor>(font_descriptor) textTransform:cocoon::internal::native<::NSAffineTransform>(text_transform)])})
+    {
+    }
+
+    Font::Font(const std::string& font_name, const double* font_matrix) : Font(Adopt{cocoon::internal::retain([::NSFont fontWithName:cocoon::internal::to(font_name) matrix:(const ::CGFloat*)(font_matrix)])})
+    {
+    }
+
+    Font::Font(const std::string& font_name, double font_size) : Font(Adopt{cocoon::internal::retain([::NSFont fontWithName:cocoon::internal::to(font_name) size:static_cast<::CGFloat>(font_size)])})
+    {
+    }
+
     Font::Font() : Font(Adopt{cocoon::internal::retain([[::NSFont alloc] init])})
     {
     }
@@ -43,26 +59,6 @@ namespace cocoon
     Font Font::control_content_font_of_size(double font_size)
     {
         return cocoon::internal::wrap<Font>([::NSFont controlContentFontOfSize:static_cast<::CGFloat>(font_size)]);
-    }
-
-    Font Font::font_with_descriptor(const FontDescriptor& font_descriptor, double font_size)
-    {
-        return cocoon::internal::wrap<Font>([::NSFont fontWithDescriptor:cocoon::internal::native<::NSFontDescriptor>(font_descriptor) size:static_cast<::CGFloat>(font_size)]);
-    }
-
-    Font Font::font_with_descriptor(const FontDescriptor& font_descriptor, const AffineTransform& text_transform)
-    {
-        return cocoon::internal::wrap<Font>([::NSFont fontWithDescriptor:cocoon::internal::native<::NSFontDescriptor>(font_descriptor) textTransform:cocoon::internal::native<::NSAffineTransform>(text_transform)]);
-    }
-
-    Font Font::font_with_name(const std::string& font_name, const double* font_matrix)
-    {
-        return cocoon::internal::wrap<Font>([::NSFont fontWithName:cocoon::internal::to(font_name) matrix:(const ::CGFloat*)(font_matrix)]);
-    }
-
-    Font Font::font_with_name(const std::string& font_name, double font_size)
-    {
-        return cocoon::internal::wrap<Font>([::NSFont fontWithName:cocoon::internal::to(font_name) size:static_cast<::CGFloat>(font_size)]);
     }
 
     Font Font::font_with_size(double font_size) const

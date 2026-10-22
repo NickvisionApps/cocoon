@@ -33,7 +33,6 @@ namespace cocoon
      * auto characters_to_be_skipped = scanner.characters_to_be_skipped();
      * scanner.set_scan_location(1);
      * auto scan_location = scanner.scan_location();
-     * auto made_0 = cocoon::Scanner::scanner_with_string("text");
      * @endcode
      * @see https://developer.apple.com/documentation/foundation/nsscanner
      */
@@ -163,13 +162,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         bool scan_up_to_string(const std::string& string, std::string& result) const;
-        /**
-     * @brief Calls `+[NSScanner scannerWithString:]`.
-     * @details Returns an 'NSScanner' object that scans a given string.
-     * @param string Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Scanner scanner_with_string(const std::string& string);
         /**
      * @brief Returns the `atEnd` property of `NSScanner`.
      * @details Flag that indicates whether the receiver has exhausted all significant characters. 'YES' if the receiver has exhausted all significant characters in its string, otherwise 'NO'. If only characters from the set to be skipped remain, returns 'YES'.

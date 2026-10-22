@@ -29,7 +29,6 @@ namespace cocoon
      * cocoon::Invocation invocation{};
      * invocation.set_selector("text");
      * auto selector = invocation.selector();
-     * auto made_0 = cocoon::Invocation::invocation_with_method_signature(cocoon::MethodSignature());
      * invocation.invoke();
      * invocation.retain_arguments();
      * @endcode
@@ -38,6 +37,8 @@ namespace cocoon
     class Invocation : public Object
     {
     public:
+        /// @brief Creates a new `NSInvocation` instance and returns a handle to it.
+        explicit Invocation(const MethodSignature& sig);
         /// @brief Creates a new `NSInvocation` instance and returns a handle to it.
         explicit Invocation();
         /// @brief Creates a null handle that refers to no native object.
@@ -57,13 +58,6 @@ namespace cocoon
      * @param ret_loc Argument converted to the Objective-C parameter of the same role.
      */
         void get_return_value(void* ret_loc) const;
-        /**
-     * @brief Calls `+[NSInvocation invocationWithMethodSignature:]`.
-     * @details Returns an 'NSInvocation' object able to construct messages using a given method signature. The new object must have its selector set and its arguments set with 'setArgument:atIndex:' before it can be invoked. Do not use the 'alloc'/'init' approach to create 'NSInvocation' objects. - Parameter sig: An object encapsulating a method signature.
-     * @param sig Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Invocation invocation_with_method_signature(const MethodSignature& sig);
         /**
      * @brief Calls `-[NSInvocation invoke]`.
      * @details Sends the receiver's message (with arguments) to its target and sets the return value. You must set the receiver's target, selector, and argument values before calling this method.

@@ -25,7 +25,6 @@ namespace cocoon
      * @code
      * cocoon::Host host{};
      * auto made_0 = cocoon::Host::current_host();
-     * auto made_1 = cocoon::Host::host_with_address("text");
      * host.is_equal_to_host(cocoon::Host());
      * @endcode
      * @see https://developer.apple.com/documentation/foundation/nshost
@@ -33,6 +32,8 @@ namespace cocoon
     class Host : public Object
     {
     public:
+        /// @brief Creates a new `NSHost` instance and returns a handle to it.
+        explicit Host(const std::string& address);
         /// @brief Creates a new `NSHost` instance and returns a handle to it.
         explicit Host();
         /// @brief Creates a null handle that refers to no native object.
@@ -45,20 +46,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         static Host current_host();
-        /**
-     * @brief Calls `+[NSHost hostWithAddress:]`.
-     * @details Returns the 'NSHost' with the Internet address 'address'. - Parameters: - address: Network address to look up. For example, '"127.0.0.1"' or '"fe80::1"'. - Returns: The host for 'address'.
-     * @param address Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Host host_with_address(const std::string& address);
-        /**
-     * @brief Calls `+[NSHost hostWithName:]`.
-     * @details Returns a host with a specific name. - Parameters: - name: Name of the host to look up. Can be either a simple hostname, such as '"sales"', or a fully qualified domain name, such as '"sales.anycorp.com"'. - Returns: The host named 'name'.
-     * @param name Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Host host_with_name(const std::string& name);
         /**
      * @brief Calls `-[NSHost isEqualToHost:]`.
      * @details Indicates whether the receiver represents the same host as another 'NSHost' object. - Parameters: - aHost: Host to compare the receiver to. - Returns: 'YES' when the receiver and 'aHost' share at least one network address; 'NO' otherwise.

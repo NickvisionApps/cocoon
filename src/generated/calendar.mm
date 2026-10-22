@@ -3,6 +3,10 @@
 
 namespace cocoon
 {
+    Calendar::Calendar(const std::string& ident) : Calendar(Adopt{cocoon::internal::retain([[::NSCalendar alloc] initWithCalendarIdentifier:cocoon::internal::to(ident)])})
+    {
+    }
+
     Calendar::Calendar() : Object(nullptr)
     {
     }
@@ -13,11 +17,6 @@ namespace cocoon
 
     Calendar::Calendar(Adopt adopt) : Object(adopt)
     {
-    }
-
-    Calendar Calendar::calendar_with_identifier(const std::string& calendar_identifier_constant)
-    {
-        return cocoon::internal::wrap<Calendar>([::NSCalendar calendarWithIdentifier:cocoon::internal::to(calendar_identifier_constant)]);
     }
 
     ComparisonResult Calendar::compare_date(const Date& date1, const Date& date2, CalendarUnit unit) const
@@ -98,11 +97,6 @@ namespace cocoon
     void Calendar::get_hour(std::int64_t* hour_value_pointer, std::int64_t* minute_value_pointer, std::int64_t* second_value_pointer, std::int64_t* nanosecond_value_pointer, const Date& date) const
     {
         [cocoon::internal::ns<::NSCalendar>(this) getHour:(::NSInteger*)(hour_value_pointer) minute:(::NSInteger*)(minute_value_pointer)second:(::NSInteger*)(second_value_pointer)nanosecond:(::NSInteger*)(nanosecond_value_pointer)fromDate:cocoon::internal::native<::NSDate>(date)];
-    }
-
-    Object Calendar::init_with_calendar_identifier(const std::string& ident) const
-    {
-        return cocoon::internal::wrap<Object>([cocoon::internal::ns<::NSCalendar>(this) initWithCalendarIdentifier:cocoon::internal::to(ident)]);
     }
 
     bool Calendar::is_date(const Date& date1, const Date& date2, CalendarUnit unit) const

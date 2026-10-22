@@ -59,6 +59,14 @@ namespace cocoon
         StackView::install_delegate_delegate_(handle());
     }
 
+    StackView::StackView(const std::vector<View>& views) : StackView(Adopt{cocoon::internal::retain([::NSStackView stackViewWithViews:cocoon::internal::to_array(views, [](const View& e) -> id
+                                                                                                                                                                 {
+                                                                                                                                                                     return cocoon::internal::native<::NSView>(e);
+                                                                                                                                                                 })])})
+    {
+        StackView::install_delegate_delegate_(handle());
+    }
+
     StackView::StackView(std::nullptr_t) : View(nullptr)
     {
     }
@@ -139,14 +147,6 @@ namespace cocoon
     void StackView::set_visibility_priority(float priority, const View& view) const
     {
         [cocoon::internal::ns<::NSStackView>(this) setVisibilityPriority:static_cast<::NSStackViewVisibilityPriority>(priority) forView:cocoon::internal::native<::NSView>(view)];
-    }
-
-    StackView StackView::stack_view_with_views(const std::vector<View>& views)
-    {
-        return cocoon::internal::wrap<StackView>([::NSStackView stackViewWithViews:cocoon::internal::to_array(views, [](const View& e) -> id
-                                                                                                              {
-                                                                                                                  return cocoon::internal::native<::NSView>(e);
-                                                                                                              })]);
     }
 
     std::vector<View> StackView::views_in_gravity(StackViewGravity gravity) const

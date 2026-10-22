@@ -109,13 +109,6 @@ namespace cocoon
      */
         static SplitViewItem sidebar_with_view_controller(const ViewController& view_controller);
         /**
-     * @brief Calls `+[NSSplitViewItem splitViewItemWithViewController:]`.
-     * @details Creates an autoreleased SplitViewItem that represents the provided ViewController. All other properties are left at their default. \\param viewController The view controller used to set the viewController property \\return An autoreleased SplitViewItem.
-     * @param view_controller Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static SplitViewItem split_view_item_with_view_controller(const ViewController& view_controller);
-        /**
      * @brief Returns the `allowsFullHeightLayout` property of `NSSplitViewItem`.
      * @details Whether or not a sidebar or inspector is allowed to be full height in the window when the 'NSFullSizeContentViewWindowMask' style mask is also set. Only applies to NSSplitViewItemBehaviorSidebar and NSSplitViewItemBehaviorInspector. Defaults to YES.
      * @return The converted Objective-C result.

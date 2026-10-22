@@ -31,7 +31,6 @@ namespace cocoon
      * time_zone.set_default_time_zone(cocoon::TimeZone());
      * auto default_time_zone = time_zone.default_time_zone();
      * auto made_0 = cocoon::TimeZone::time_zone_for_seconds_from_gmt(1);
-     * auto made_1 = cocoon::TimeZone::time_zone_with_abbreviation("text");
      * time_zone.abbreviation_for_date(cocoon::Date());
      * time_zone.daylight_saving_time_offset_for_date(cocoon::Date());
      * time_zone.is_daylight_saving_time_for_date(cocoon::Date());
@@ -118,28 +117,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         static TimeZone time_zone_for_seconds_from_gmt(std::int64_t seconds);
-        /**
-     * @brief Calls `+[NSTimeZone timeZoneWithAbbreviation:]`.
-     * @details Returns the time zone object identified by a given abbreviation. - Parameter abbreviation: An abbreviation for a time zone. - Returns: The time zone object identified by 'abbreviation' determined by resolving the abbreviation to a name using the abbreviation dictionary and then returning the time zone for that name. Returns 'nil' if there is no match for 'abbreviation'. In general, you are discouraged from using abbreviations except for unique instances such as "GMT". Time Zone abbreviations are not standardized and so a given abbreviation may have multiple meanings--for example, "EST" refers to Eastern Time in both the United States and Australia.
-     * @param abbreviation Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static TimeZone time_zone_with_abbreviation(const std::string& abbreviation);
-        /**
-     * @brief Calls `+[NSTimeZone timeZoneWithName:]`.
-     * @details Returns the time zone object identified by a given identifier. - Parameter tzName: The ID for the time zone. - Returns: The time zone in the information directory with a name matching 'tzName'. Returns 'nil' if there is no match for the name.
-     * @param tz_name Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static TimeZone time_zone_with_name(const std::string& tz_name);
-        /**
-     * @brief Calls `+[NSTimeZone timeZoneWithName:data:]`.
-     * @details Returns the time zone with a given identifier whose data has been initialized using given data. - Parameter tzName: The ID for the time zone. - Parameter aData: This parameter is ignored. - Returns: The time zone with the ID 'tzName'. As of macOS 10.6, the underlying implementation of this method has been changed to ignore the specified 'data' parameter. You should not use this method. Instead, use 'timeZoneWithName:' to get the time zone object for a given name.
-     * @param tz_name Argument converted to the Objective-C parameter of the same role.
-     * @param a_data Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static TimeZone time_zone_with_name(const std::string& tz_name, const std::vector<std::uint8_t>& a_data);
         /**
      * @brief Returns the `abbreviation` property of `NSTimeZone`.
      * @details The abbreviation for the receiver, such as "EDT" (Eastern Daylight Time). Invokes 'abbreviationForDate:' with the current date as the argument.

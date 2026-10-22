@@ -28,8 +28,6 @@ namespace cocoon
      * Snippets built from this class's own members (values are placeholders).
      * @code
      * cocoon::FontCollection font_collection{};
-     * auto made_0 = cocoon::FontCollection::font_collection_with_locale(cocoon::Locale());
-     * auto made_1 = cocoon::FontCollection::font_collection_with_name("text");
      * font_collection.matching_descriptors_for_family("text");
      * @endcode
      * @see https://developer.apple.com/documentation/appkit/nsfontcollection
@@ -38,36 +36,19 @@ namespace cocoon
     {
     public:
         /// @brief Creates a new `NSFontCollection` instance and returns a handle to it.
+        explicit FontCollection(const std::vector<FontDescriptor>& query_descriptors);
+        /// @brief Creates a new `NSFontCollection` instance and returns a handle to it.
+        explicit FontCollection(const Locale& locale);
+        /// @brief Creates a new `NSFontCollection` instance and returns a handle to it.
+        explicit FontCollection(const std::string& name);
+        /// @brief Creates a new `NSFontCollection` instance and returns a handle to it.
+        explicit FontCollection(const std::string& name, FontCollectionVisibility visibility);
+        /// @brief Creates a new `NSFontCollection` instance and returns a handle to it.
         explicit FontCollection();
         /// @brief Creates a null handle that refers to no native object.
         FontCollection(std::nullptr_t);
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit FontCollection(Adopt adopt);
-        /**
-     * @brief Calls `+[NSFontCollection fontCollectionWithDescriptors:]`.
-     * @param query_descriptors Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static FontCollection font_collection_with_descriptors(const std::vector<FontDescriptor>& query_descriptors);
-        /**
-     * @brief Calls `+[NSFontCollection fontCollectionWithLocale:]`.
-     * @param locale Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static FontCollection font_collection_with_locale(const Locale& locale);
-        /**
-     * @brief Calls `+[NSFontCollection fontCollectionWithName:]`.
-     * @param name Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static FontCollection font_collection_with_name(const std::string& name);
-        /**
-     * @brief Calls `+[NSFontCollection fontCollectionWithName:visibility:]`.
-     * @param name Argument converted to the Objective-C parameter of the same role.
-     * @param visibility Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static FontCollection font_collection_with_name(const std::string& name, FontCollectionVisibility visibility);
         /**
      * @brief Calls `+[NSFontCollection hideFontCollectionWithName:visibility:error:]`.
      * @param name Argument converted to the Objective-C parameter of the same role.

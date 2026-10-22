@@ -26,7 +26,6 @@ namespace cocoon
      * Snippets built from this class's own members (values are placeholders).
      * @code
      * cocoon::Locale locale{"text"};
-     * auto made_0 = cocoon::Locale::locale_with_locale_identifier("text");
      * locale.localized_string_for_calendar_identifier("text");
      * locale.localized_string_for_collation_identifier("text");
      * locale.localized_string_for_collator_identifier("text");
@@ -100,13 +99,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         static std::string locale_identifier_from_windows_locale_code(unsigned int lcid);
-        /**
-     * @brief Calls `+[NSLocale localeWithLocaleIdentifier:]`.
-     * @details Creates and returns a locale initialized with the given locale identifier.
-     * @param ident Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Locale locale_with_locale_identifier(const std::string& ident);
         /**
      * @brief Calls `-[NSLocale localizedStringForCalendarIdentifier:]`.
      * @details Returns a localized string for the specified calendar identifier.

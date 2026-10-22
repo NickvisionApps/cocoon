@@ -34,7 +34,6 @@ namespace cocoon
      * auto job_style_hint = print_panel.job_style_hint();
      * print_panel.set_options(cocoon::PrintPanelOptions::Copies);
      * auto options = print_panel.options();
-     * auto made_0 = cocoon::PrintPanel::print_panel();
      * print_panel.add_accessory_controller(cocoon::ViewController());
      * print_panel.default_button_title();
      * print_panel.remove_accessory_controller(cocoon::ViewController());
@@ -79,12 +78,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         std::string default_button_title() const;
-        /**
-     * @brief Calls `+[NSPrintPanel printPanel]`.
-     * @details Create a new NSPrintPanel.
-     * @return The converted Objective-C result.
-     */
-        static PrintPanel print_panel();
         /**
      * @brief Calls `-[NSPrintPanel removeAccessoryController:]`.
      * @param accessory_controller Argument converted to the Objective-C parameter of the same role.

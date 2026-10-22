@@ -49,6 +49,10 @@ namespace cocoon
     public:
         /// @brief Creates a new `NSSegmentedControl` instance and returns a handle to it.
         explicit SegmentedControl();
+        /// @brief Creates a new `NSSegmentedControl` instance and returns a handle to it.
+        explicit SegmentedControl(const std::vector<Image>& images, SegmentSwitchTracking tracking_mode, const Object& target, const std::string& action);
+        /// @brief Creates a new `NSSegmentedControl` instance and returns a handle to it.
+        explicit SegmentedControl(const std::vector<std::string>& labels, SegmentSwitchTracking tracking_mode, const Object& target, const std::string& action);
         /// @brief Creates a null handle that refers to no native object.
         SegmentedControl(std::nullptr_t);
         /// @brief Wraps an existing retained native object without creating a new one.
@@ -111,26 +115,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         Size minimum_size_with_prioritized_compression_options(const std::vector<UserInterfaceCompressionOptions>& prioritized_options) const;
-        /**
-     * @brief Calls `+[NSSegmentedControl segmentedControlWithImages:trackingMode:target:action:]`.
-     * @details Creates a standard segmented control containing one segment for each of the provided images. To ensure accessibility for this control, set the 'accessibilityDescription' property on each of the provided images. \@param images An array of image objects to use for the control's segments. \@param trackingMode The selection mode for the control. The NSSegmentSwitchTracking enum describes the possible values and their effects. \@param target The target object that receives action messages from the control. \@param action The action message sent by the control. \@return An initialized segmented control.
-     * @param images Argument converted to the Objective-C parameter of the same role.
-     * @param tracking_mode Argument converted to the Objective-C parameter of the same role.
-     * @param target Argument converted to the Objective-C parameter of the same role.
-     * @param action Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static SegmentedControl segmented_control_with_images(const std::vector<Image>& images, SegmentSwitchTracking tracking_mode, const Object& target, const std::string& action);
-        /**
-     * @brief Calls `+[NSSegmentedControl segmentedControlWithLabels:trackingMode:target:action:]`.
-     * @details Creates a standard segmented control containing one segment for each of the provided labels. \@param labels An array of localized label strings to use for the control's segments. \@param trackingMode The selection mode for the control. The NSSegmentSwitchTracking enum describes the possible values and their effects. \@param target The target object that receives action messages from the control. \@param action The action message sent by the control. \@return An initialized segmented control.
-     * @param labels Argument converted to the Objective-C parameter of the same role.
-     * @param tracking_mode Argument converted to the Objective-C parameter of the same role.
-     * @param target Argument converted to the Objective-C parameter of the same role.
-     * @param action Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static SegmentedControl segmented_control_with_labels(const std::vector<std::string>& labels, SegmentSwitchTracking tracking_mode, const Object& target, const std::string& action);
         /**
      * @brief Calls `-[NSSegmentedControl selectSegmentWithTag:]`.
      * @param tag Argument converted to the Objective-C parameter of the same role.

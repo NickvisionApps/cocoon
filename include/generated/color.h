@@ -44,6 +44,24 @@ namespace cocoon
         /// @brief Creates a new `NSColor` instance and returns a handle to it.
         explicit Color(double red, double green, double blue, double alpha = 1.0);
         /// @brief Creates a new `NSColor` instance and returns a handle to it.
+        explicit Color(const CGColor& cg_color);
+        /// @brief Creates a new `NSColor` instance and returns a handle to it.
+        explicit Color(const CIColor& color);
+        /// @brief Creates a new `NSColor` instance and returns a handle to it.
+        explicit Color(double white, double alpha);
+        /// @brief Creates a new `NSColor` instance and returns a handle to it.
+        explicit Color(const std::string& list_name, const std::string& color_name);
+        /// @brief Creates a new `NSColor` instance and returns a handle to it.
+        explicit Color(const ColorSpace& space, const double* components, std::int64_t number_of_components);
+        /// @brief Creates a new `NSColor` instance and returns a handle to it.
+        explicit Color(const ColorSpace& space, double hue, double saturation, double brightness, double alpha);
+        /// @brief Creates a new `NSColor` instance and returns a handle to it.
+        explicit Color(double cyan, double magenta, double yellow, double black, double alpha);
+        /// @brief Creates a new `NSColor` instance and returns a handle to it.
+        explicit Color(const std::string& color_name, std::function<Color(Appearance)> dynamic_provider);
+        /// @brief Creates a new `NSColor` instance and returns a handle to it.
+        explicit Color(const Image& image);
+        /// @brief Creates a new `NSColor` instance and returns a handle to it.
         explicit Color();
         /// @brief Creates a null handle that refers to no native object.
         Color(std::nullptr_t);
@@ -107,193 +125,12 @@ namespace cocoon
      */
         Color color_with_alpha_component(double alpha) const;
         /**
-     * @brief Calls `+[NSColor colorWithCGColor:]`.
-     * @details Convert to and from CGColorRef.
-     * @param cg_color Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Color color_with_cg_color(const CGColor& cg_color);
-        /**
-     * @brief Calls `+[NSColor colorWithCIColor:]`.
-     * @param color Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Color color_with_ci_color(const CIColor& color);
-        /**
-     * @brief Calls `+[NSColor colorWithCalibratedHue:saturation:brightness:alpha:]`.
-     * @param hue Argument converted to the Objective-C parameter of the same role.
-     * @param saturation Argument converted to the Objective-C parameter of the same role.
-     * @param brightness Argument converted to the Objective-C parameter of the same role.
-     * @param alpha Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Color color_with_calibrated_hue(double hue, double saturation, double brightness, double alpha);
-        /**
-     * @brief Calls `+[NSColor colorWithCalibratedRed:green:blue:alpha:]`.
-     * @param red Argument converted to the Objective-C parameter of the same role.
-     * @param green Argument converted to the Objective-C parameter of the same role.
-     * @param blue Argument converted to the Objective-C parameter of the same role.
-     * @param alpha Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Color color_with_calibrated_red(double red, double green, double blue, double alpha);
-        /**
-     * @brief Calls `+[NSColor colorWithCalibratedWhite:alpha:]`.
-     * @details Create component-based colors in NSCalibratedWhiteColorSpace or NSCalibratedRGBColorSpace color spaces. In general it's best to avoid these methods, since sRGB or P3 colors are preferred over the calibrated (aka "generic") color spaces.
-     * @param white Argument converted to the Objective-C parameter of the same role.
-     * @param alpha Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Color color_with_calibrated_white(double white, double alpha);
-        /**
-     * @brief Calls `+[NSColor colorWithCatalogName:colorName:]`.
-     * @details Look up and return catalog colors from standard color catalogs, or from NSColorList whose name matches the specified catalog name.
-     * @param list_name Argument converted to the Objective-C parameter of the same role.
-     * @param color_name Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Color color_with_catalog_name(const std::string& list_name, const std::string& color_name);
-        /**
-     * @brief Calls `+[NSColor colorWithColorSpace:components:count:]`.
-     * @details Create component-based colors with arbitrary colorspace. The colorspace should be component-based, and the number of components in the provided array should match the number dictated by the specified colorspace, plus one for alpha (supply 1.0 for opaque colors); otherwise an exception will be raised.
-     * @param space Argument converted to the Objective-C parameter of the same role.
-     * @param components Argument converted to the Objective-C parameter of the same role.
-     * @param number_of_components Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Color color_with_color_space(const ColorSpace& space, const double* components, std::int64_t number_of_components);
-        /**
-     * @brief Calls `+[NSColor colorWithColorSpace:hue:saturation:brightness:alpha:]`.
-     * @details Create a RGB-based color using HSB component values. An exception will be raised if the color model of the provided color space is not RGB.
-     * @param space Argument converted to the Objective-C parameter of the same role.
-     * @param hue Argument converted to the Objective-C parameter of the same role.
-     * @param saturation Argument converted to the Objective-C parameter of the same role.
-     * @param brightness Argument converted to the Objective-C parameter of the same role.
-     * @param alpha Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Color color_with_color_space(const ColorSpace& space, double hue, double saturation, double brightness, double alpha);
-        /**
-     * @brief Calls `+[NSColor colorWithDeviceCyan:magenta:yellow:black:alpha:]`.
-     * @param cyan Argument converted to the Objective-C parameter of the same role.
-     * @param magenta Argument converted to the Objective-C parameter of the same role.
-     * @param yellow Argument converted to the Objective-C parameter of the same role.
-     * @param black Argument converted to the Objective-C parameter of the same role.
-     * @param alpha Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Color color_with_device_cyan(double cyan, double magenta, double yellow, double black, double alpha);
-        /**
-     * @brief Calls `+[NSColor colorWithDeviceHue:saturation:brightness:alpha:]`.
-     * @param hue Argument converted to the Objective-C parameter of the same role.
-     * @param saturation Argument converted to the Objective-C parameter of the same role.
-     * @param brightness Argument converted to the Objective-C parameter of the same role.
-     * @param alpha Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Color color_with_device_hue(double hue, double saturation, double brightness, double alpha);
-        /**
-     * @brief Calls `+[NSColor colorWithDeviceRed:green:blue:alpha:]`.
-     * @param red Argument converted to the Objective-C parameter of the same role.
-     * @param green Argument converted to the Objective-C parameter of the same role.
-     * @param blue Argument converted to the Objective-C parameter of the same role.
-     * @param alpha Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Color color_with_device_red(double red, double green, double blue, double alpha);
-        /**
-     * @brief Calls `+[NSColor colorWithDeviceWhite:alpha:]`.
-     * @details Create component-based colors in various device color spaces.
-     * @param white Argument converted to the Objective-C parameter of the same role.
-     * @param alpha Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Color color_with_device_white(double white, double alpha);
-        /**
-     * @brief Calls `+[NSColor colorWithDisplayP3Red:green:blue:alpha:]`.
-     * @param red Argument converted to the Objective-C parameter of the same role.
-     * @param green Argument converted to the Objective-C parameter of the same role.
-     * @param blue Argument converted to the Objective-C parameter of the same role.
-     * @param alpha Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Color color_with_display_p3_red(double red, double green, double blue, double alpha);
-        /**
-     * @brief Calls `+[NSColor colorWithGenericGamma22White:alpha:]`.
-     * @param white Argument converted to the Objective-C parameter of the same role.
-     * @param alpha Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Color color_with_generic_gamma22_white(double white, double alpha);
-        /**
-     * @brief Calls `+[NSColor colorWithHue:saturation:brightness:alpha:]`.
-     * @param hue Argument converted to the Objective-C parameter of the same role.
-     * @param saturation Argument converted to the Objective-C parameter of the same role.
-     * @param brightness Argument converted to the Objective-C parameter of the same role.
-     * @param alpha Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Color color_with_hue(double hue, double saturation, double brightness, double alpha);
-        /**
-     * @brief Calls `+[NSColor colorWithName:dynamicProvider:]`.
-     * @details Create a dynamic catalog color with a provider that is used to lazily resolve the exact color value. When methods are called on this color that need color component values, the provider is called with +NSAppearance.currentAppearance. The provider can use the appearance to return another color to be used for drawing. As much as possible, use the given appearance to make that decision, not other state. The 'colorName' should be universally unique and equates to the identity of the color, if nil is provided a unique name will be generated. The name and the Aqua appearance color fallback will be encoded as part of the color. The decoded color is also able to 'join' to a color that gets registered with the same name and become dynamic again.
-     * @param color_name Argument converted to the Objective-C parameter of the same role.
-     * @param dynamic_provider Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Color color_with_name(const std::string& color_name, std::function<Color(Appearance)> dynamic_provider);
-        /**
-     * @brief Calls `+[NSColor colorWithPatternImage:]`.
-     * @details Create pattern colors that paint with the specified image.
-     * @param image Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Color color_with_pattern_image(const Image& image);
-        /**
-     * @brief Calls `+[NSColor colorWithRed:green:blue:alpha:]`.
-     * @param red Argument converted to the Objective-C parameter of the same role.
-     * @param green Argument converted to the Objective-C parameter of the same role.
-     * @param blue Argument converted to the Objective-C parameter of the same role.
-     * @param alpha Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Color color_with_red(double red, double green, double blue, double alpha);
-        /**
-     * @brief Calls `+[NSColor colorWithRed:green:blue:alpha:exposure:]`.
-     * @details Generates an HDR color in the extended sRGB colorspace by applying an exposure to the SDR color defined by the red, green, and blue components. The 'red', 'green', and 'blue' components have a nominal range of [0..1], 'exposure' is a value >= 0. To produce an HDR color, we process the given color in a linear color space, multiplying component values by '2^exposure'. The produced color will have a 'contentHeadroom' equal to the linearized exposure value. Each whole value of exposure produces a color that is twice as bright.
-     * @param red Argument converted to the Objective-C parameter of the same role.
-     * @param green Argument converted to the Objective-C parameter of the same role.
-     * @param blue Argument converted to the Objective-C parameter of the same role.
-     * @param alpha Argument converted to the Objective-C parameter of the same role.
-     * @param exposure Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Color color_with_red(double red, double green, double blue, double alpha, double exposure);
-        /**
-     * @brief Calls `+[NSColor colorWithSRGBRed:green:blue:alpha:]`.
-     * @details Create component-based colors in the sRGB, GenericGamma22Gray, or P3 colorspaces.
-     * @param red Argument converted to the Objective-C parameter of the same role.
-     * @param green Argument converted to the Objective-C parameter of the same role.
-     * @param blue Argument converted to the Objective-C parameter of the same role.
-     * @param alpha Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Color color_with_srgb_red(double red, double green, double blue, double alpha);
-        /**
      * @brief Calls `-[NSColor colorWithSystemEffect:]`.
      * @details Returns a color representing the base color with a system defined effect applied to it. This color is safe to create before draw time, as the resolution of the final color only happens when being '-set', retrieving its 'CGColor', resolving with '-colorWithType:', etc. The return color type is '.named'.
      * @param system_effect Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.
      */
         Color color_with_system_effect(ColorSystemEffect system_effect) const;
-        /**
-     * @brief Calls `+[NSColor colorWithWhite:alpha:]`.
-     * @details Create component-based colors that are compatible with sRGB colorspace; these methods are effectively same as colorWithSRGBRed:... or colorWithGenericGamma22White:..., but provided for easier reuse of code that uses UIColor on iOS. If red, green, blue, or saturation, brightness, or white values are outside of the 0..1 range, these will create colors in the extended sRGB (or for colorWithWhite:alpha:, extendedGenericGamma22GrayColorSpace) color spaces. This behavior is compatible with iOS UIColor.
-     * @param white Argument converted to the Objective-C parameter of the same role.
-     * @param alpha Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Color color_with_white(double white, double alpha);
         /**
      * @brief Calls `-[NSColor drawSwatchInRect:]`.
      * @details Draws the color and adorns it to indicate the type of color. Used by colorwells, swatches, and other UI objects that need to display colors. Implementation in NSColor simply draws the color (with an indication of transparency if the color isn't fully opaque); subclassers can draw more stuff as they see fit.

@@ -33,7 +33,6 @@ namespace cocoon
      * auto allows_multiple_selection = open_panel.allows_multiple_selection();
      * open_panel.set_can_choose_directories(true);
      * auto can_choose_directories = open_panel.can_choose_directories();
-     * auto made_0 = cocoon::OpenPanel::open_panel();
      * @endcode
      * @see https://developer.apple.com/documentation/appkit/nsopenpanel
      */
@@ -46,12 +45,6 @@ namespace cocoon
         OpenPanel(std::nullptr_t);
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit OpenPanel(Adopt adopt);
-        /**
-     * @brief Calls `+[NSOpenPanel openPanel]`.
-     * @details Creates a new instance of the NSOpenPanel. This class is not a singleton.
-     * @return The converted Objective-C result.
-     */
-        static OpenPanel open_panel();
         /**
      * @brief Returns the `URLs` property of `NSOpenPanel`.
      * @return The converted Objective-C result.

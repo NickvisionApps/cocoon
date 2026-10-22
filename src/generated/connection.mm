@@ -115,6 +115,16 @@ namespace cocoon
         Connection::install_delegate_delegate_(handle());
     }
 
+    Connection::Connection(const std::string& name, const std::string& host_name) : Connection(Adopt{cocoon::internal::retain([::NSConnection connectionWithRegisteredName:cocoon::internal::to(name) host:cocoon::internal::to(host_name)])})
+    {
+        Connection::install_delegate_delegate_(handle());
+    }
+
+    Connection::Connection(const std::string& name, const std::string& host_name, const PortNameServer& server) : Connection(Adopt{cocoon::internal::retain([::NSConnection connectionWithRegisteredName:cocoon::internal::to(name) host:cocoon::internal::to(host_name) usingNameServer:cocoon::internal::native<::NSPortNameServer>(server)])})
+    {
+        Connection::install_delegate_delegate_(handle());
+    }
+
     Connection::Connection() : Connection(Adopt{cocoon::internal::retain([[::NSConnection alloc] init])})
     {
         Connection::install_delegate_delegate_(handle());
@@ -144,21 +154,6 @@ namespace cocoon
                                                         {
                                                             return cocoon::internal::wrap<Connection>((::NSConnection*)e);
                                                         });
-    }
-
-    Connection Connection::connection_with_receive_port(const Port& receive_port, const Port& send_port)
-    {
-        return cocoon::internal::wrap<Connection>([::NSConnection connectionWithReceivePort:cocoon::internal::native<::NSPort>(receive_port) sendPort:cocoon::internal::native<::NSPort>(send_port)]);
-    }
-
-    Connection Connection::connection_with_registered_name(const std::string& name, const std::string& host_name)
-    {
-        return cocoon::internal::wrap<Connection>([::NSConnection connectionWithRegisteredName:cocoon::internal::to(name) host:cocoon::internal::to(host_name)]);
-    }
-
-    Connection Connection::connection_with_registered_name(const std::string& name, const std::string& host_name, const PortNameServer& server)
-    {
-        return cocoon::internal::wrap<Connection>([::NSConnection connectionWithRegisteredName:cocoon::internal::to(name) host:cocoon::internal::to(host_name) usingNameServer:cocoon::internal::native<::NSPortNameServer>(server)]);
     }
 
     Object Connection::current_conversation()

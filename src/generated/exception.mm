@@ -28,20 +28,6 @@ namespace cocoon
     {
     }
 
-    Exception Exception::exception_with_name(const std::string& name, const std::string& reason, const std::vector<std::pair<Object, Object>>& user_info)
-    {
-        return cocoon::internal::wrap<Exception>([::NSException exceptionWithName:cocoon::internal::to(name)
-                                                                           reason:cocoon::internal::to(reason)
-                                                                         userInfo:cocoon::internal::to_dictionary(user_info, [](const Object& k) -> id
-                                                                                                                  {
-                                                                                                                      return cocoon::internal::native_id(k);
-                                                                                                                  },
-                                                                                                                  [](const Object& v) -> id
-                                                                                                                  {
-                                                                                                                      return cocoon::internal::native_id(v);
-                                                                                                                  })]);
-    }
-
     void Exception::raise() const
     {
         [cocoon::internal::ns<::NSException>(this) raise];

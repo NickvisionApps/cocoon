@@ -24,8 +24,6 @@ namespace cocoon
      * Snippets built from this class's own members (values are placeholders).
      * @code
      * cocoon::Value value{};
-     * auto made_0 = cocoon::Value::value_with_edge_insets(cocoon::Insets(8));
-     * auto made_1 = cocoon::Value::value_with_point({0, 0});
      * value.is_equal_to_value(cocoon::Value());
      * @endcode
      * @see https://developer.apple.com/documentation/foundation/nsvalue
@@ -35,6 +33,22 @@ namespace cocoon
     public:
         /// @brief Creates a new `NSValue` instance and returns a handle to it.
         explicit Value(const void* value, const std::string& type);
+        /// @brief Creates a new `NSValue` instance and returns a handle to it.
+        explicit Value(const CATransform3D& t);
+        /// @brief Creates a new `NSValue` instance and returns a handle to it.
+        explicit Value(const Insets& insets);
+        /// @brief Creates a new `NSValue` instance and returns a handle to it.
+        explicit Value(const Object& an_object);
+        /// @brief Creates a new `NSValue` instance and returns a handle to it.
+        explicit Value(const Point& point);
+        /// @brief Creates a new `NSValue` instance and returns a handle to it.
+        explicit Value(const void* pointer);
+        /// @brief Creates a new `NSValue` instance and returns a handle to it.
+        explicit Value(const Range& range);
+        /// @brief Creates a new `NSValue` instance and returns a handle to it.
+        explicit Value(const Rect& rect);
+        /// @brief Creates a new `NSValue` instance and returns a handle to it.
+        explicit Value(const Size& size);
         /// @brief Creates a new `NSValue` instance and returns a handle to it.
         explicit Value();
         /// @brief Creates a null handle that refers to no native object.
@@ -61,72 +75,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         bool is_equal_to_value(const Value& value) const;
-        /**
-     * @brief Calls `+[NSValue value:withObjCType:]`.
-     * @details Creates a value object containing the specified value, interpreted with the specified Objective-C type. \@DeprecationSummary { Use ''NSValue/valueWithBytes:objCType:'' instead. }
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     * @param type Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Value value(const void* value, const std::string& type);
-        /**
-     * @brief Calls `+[NSValue valueWithBytes:objCType:]`.
-     * @details Creates a value object containing the specified value, interpreted with the specified Objective-C type. - Parameters: - value: A pointer to data to be stored in the new value object. - type: The Objective-C type of 'value', as provided by the '\@encode()' compiler directive. Do not hard-code this parameter as a C string. - Returns: A new value object that contains 'value', which is interpreted as being of the Objective-C type 'type'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     * @param type Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Value value_with_bytes(const void* value, const std::string& type);
-        /**
-     * @brief Calls `+[NSValue valueWithCATransform3D:]`.
-     * @param t Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Value value_with_ca_transform3_d(const CATransform3D& t);
-        /**
-     * @brief Calls `+[NSValue valueWithEdgeInsets:]`.
-     * @param insets Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Value value_with_edge_insets(const Insets& insets);
-        /**
-     * @brief Calls `+[NSValue valueWithNonretainedObject:]`.
-     * @details Creates a value object containing the specified object without retaining it. - Parameter anObject: The value for the new object. - Returns: A new value object that contains 'anObject'. Accessing 'nonretainedObjectValue' on the result will return 'anObject' itself (as opposed to a copy). This method is useful for preventing an object from being retained when it's added to a collection object (such as an 'NSArray' or 'NSDictionary' instance).
-     * @param an_object Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Value value_with_nonretained_object(const Object& an_object);
-        /**
-     * @brief Calls `+[NSValue valueWithPoint:]`.
-     * @param point Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Value value_with_point(const Point& point);
-        /**
-     * @brief Calls `+[NSValue valueWithPointer:]`.
-     * @details Creates a value object containing the specified pointer. - Parameter pointer: The value for the new object. - Returns: A new value object that contains 'aPointer'. This method does not copy the data that 'pointer' points to.
-     * @param pointer Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Value value_with_pointer(const void* pointer);
-        /**
-     * @brief Calls `+[NSValue valueWithRange:]`.
-     * @param range Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Value value_with_range(const Range& range);
-        /**
-     * @brief Calls `+[NSValue valueWithRect:]`.
-     * @param rect Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Value value_with_rect(const Rect& rect);
-        /**
-     * @brief Calls `+[NSValue valueWithSize:]`.
-     * @param size Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Value value_with_size(const Size& size);
         /**
      * @brief Returns the `CATransform3DValue` property of `NSValue`.
      * @return The converted Objective-C result.

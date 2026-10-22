@@ -33,15 +33,6 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit Error(Adopt adopt);
         /**
-     * @brief Calls `+[NSError errorWithDomain:code:userInfo:]`.
-     * @details Creates and initializes an \@c NSError object for a given domain and code with a given \@c userInfo dictionary. \@param domain The error domain---this can be one of the predefined \@c NSError domains, or an arbitrary string describing a custom domain. \@param code The error code for the error. \@param dict The \@c userInfo dictionary for the error. May be \@c nil. \@return An \@c NSError object for \@c domain with the specified error \@c code and the dictionary of arbitrary data \@c userInfo.
-     * @param domain Argument converted to the Objective-C parameter of the same role.
-     * @param code Argument converted to the Objective-C parameter of the same role.
-     * @param dict Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Error error_with_domain(const std::string& domain, std::int64_t code, const std::map<std::string, Object>& dict);
-        /**
      * @brief Calls `+[NSError setUserInfoValueProviderForDomain:provider:]`.
      * @details Specifies a block to call when the corresponding property is not present in the user info dictionary. The provider is called synchronously from the implementations of \@c localizedDescription, \@c localizedFailureReason, \@c localizedRecoverySuggestion, \@c localizedRecoveryOptions, \@c recoveryAttempter, \@c helpAnchor, and \@c debugDescription when the underlying value is not present in the \@c userInfo dictionary of NSError instances with the specified domain. The provider should return \@c nil for any keys it is not able to provide and any keys it does not recognize. The results are not cached. It is expected that only the “owner” of an NSError domain specifies the provider, and this is done once. This facility is not meant for consumers of errors to customize the userInfo entries. This facility should not be used to customize the behaviors of error domains provided by the system. If an appropriate result for the requested key cannot be provided, return nil rather than choosing to manufacture a generic fallback response such as "Operation could not be completed, error 42." 'NSError' will take care of the fallback cases. \@param errorDomain The error domain of the provider. \@param provider A block to be executed synchronously at the time a corresponding property is accessed.
      * @param error_domain Argument converted to the Objective-C parameter of the same role.

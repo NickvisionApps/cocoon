@@ -48,22 +48,6 @@ namespace cocoon
                                                          });
     }
 
-    Orthography Orthography::orthography_with_dominant_script(const std::string& script, const std::map<std::string, std::vector<std::string>>& map)
-    {
-        return cocoon::internal::wrap<Orthography>([::NSOrthography orthographyWithDominantScript:cocoon::internal::to(script)
-                                                                                      languageMap:cocoon::internal::to_dictionary(map, [](const std::string& k) -> id
-                                                                                                                                  {
-                                                                                                                                      return cocoon::internal::to(k);
-                                                                                                                                  },
-                                                                                                                                  [](const std::vector<std::string>& v) -> id
-                                                                                                                                  {
-                                                                                                                                      return cocoon::internal::to_array(v, [](const std::string& e) -> id
-                                                                                                                                                                        {
-                                                                                                                                                                            return cocoon::internal::to(e);
-                                                                                                                                                                        });
-                                                                                                                                  })]);
-    }
-
     std::vector<std::string> Orthography::all_languages() const
     {
         return cocoon::internal::from_array<std::string>([cocoon::internal::ns<::NSOrthography>(this) allLanguages], [](id e) -> std::string

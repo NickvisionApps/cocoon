@@ -40,41 +40,18 @@ namespace cocoon
     class ButtonTouchBarItem : public TouchBarItem
     {
     public:
+        /// @brief Creates a new `NSButtonTouchBarItem` instance and returns a handle to it.
+        explicit ButtonTouchBarItem(const std::string& identifier, const Image& image, const Object& target, const std::string& action);
+        /// @brief Creates a new `NSButtonTouchBarItem` instance and returns a handle to it.
+        explicit ButtonTouchBarItem(const std::string& identifier, const std::string& title, const Image& image, const Object& target, const std::string& action);
+        /// @brief Creates a new `NSButtonTouchBarItem` instance and returns a handle to it.
+        explicit ButtonTouchBarItem(const std::string& identifier, const std::string& title, const Object& target, const std::string& action);
         ButtonTouchBarItem();
         /// @brief Creates a null handle that refers to no native object.
         ButtonTouchBarItem(std::nullptr_t);
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit ButtonTouchBarItem(Adopt adopt);
         using TouchBarItem::customization_label;
-        /**
-     * @brief Calls `+[NSButtonTouchBarItem buttonTouchBarItemWithIdentifier:image:target:action:]`.
-     * @param identifier Argument converted to the Objective-C parameter of the same role.
-     * @param image Argument converted to the Objective-C parameter of the same role.
-     * @param target Argument converted to the Objective-C parameter of the same role.
-     * @param action Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static ButtonTouchBarItem button_touch_bar_item_with_identifier(const std::string& identifier, const Image& image, const Object& target, const std::string& action);
-        /**
-     * @brief Calls `+[NSButtonTouchBarItem buttonTouchBarItemWithIdentifier:title:image:target:action:]`.
-     * @param identifier Argument converted to the Objective-C parameter of the same role.
-     * @param title Argument converted to the Objective-C parameter of the same role.
-     * @param image Argument converted to the Objective-C parameter of the same role.
-     * @param target Argument converted to the Objective-C parameter of the same role.
-     * @param action Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static ButtonTouchBarItem button_touch_bar_item_with_identifier(const std::string& identifier, const std::string& title, const Image& image, const Object& target, const std::string& action);
-        /**
-     * @brief Calls `+[NSButtonTouchBarItem buttonTouchBarItemWithIdentifier:title:target:action:]`.
-     * @details Creates a standard item with an button appropriate for use in an NSTouchBar
-     * @param identifier Argument converted to the Objective-C parameter of the same role.
-     * @param title Argument converted to the Objective-C parameter of the same role.
-     * @param target Argument converted to the Objective-C parameter of the same role.
-     * @param action Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static ButtonTouchBarItem button_touch_bar_item_with_identifier(const std::string& identifier, const std::string& title, const Object& target, const std::string& action);
         /**
      * @brief Returns the `action` property of `NSButtonTouchBarItem`.
      * @return The converted Objective-C result.

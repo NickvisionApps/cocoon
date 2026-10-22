@@ -23,8 +23,6 @@ namespace cocoon
      * Snippets built from this class's own members (values are placeholders).
      * @code
      * cocoon::Printer printer{};
-     * auto made_0 = cocoon::Printer::printer_with_name("text");
-     * auto made_1 = cocoon::Printer::printer_with_type("text");
      * printer.page_size_for_paper("text");
      * @endcode
      * @see https://developer.apple.com/documentation/appkit/nsprinter
@@ -32,6 +30,8 @@ namespace cocoon
     class Printer : public Object
     {
     public:
+        /// @brief Creates a new `NSPrinter` instance and returns a handle to it.
+        explicit Printer(const std::string& name);
         /// @brief Creates a new `NSPrinter` instance and returns a handle to it.
         explicit Printer();
         /// @brief Creates a null handle that refers to no native object.
@@ -45,20 +45,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         Size page_size_for_paper(const std::string& paper_name) const;
-        /**
-     * @brief Calls `+[NSPrinter printerWithName:]`.
-     * @details Given a human-readable printer name of the sort that appears in a Print panel's "Printer:" popup menu, return an instance of NSPrinter if the named printer is available, nil otherwise.
-     * @param name Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Printer printer_with_name(const std::string& name);
-        /**
-     * @brief Calls `+[NSPrinter printerWithType:]`.
-     * @details Given a string of the sort returned by +printerTypes:, return the first printer whose description matches, or nil if no available printer matches.
-     * @param type Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Printer printer_with_type(const std::string& type);
         /**
      * @brief Returns the `deviceDescription` property of `NSPrinter`.
      * @details Return a dictionary that describes the printing device using entries keyed by the NSDevice... strings declared in NSGraphics.h. The only entry that is guaranteed to exist in the returned dictionary is NSDeviceIsPrinter.

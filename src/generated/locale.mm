@@ -73,11 +73,6 @@ namespace cocoon
         return cocoon::internal::from([::NSLocale localeIdentifierFromWindowsLocaleCode:static_cast<::uint32_t>(lcid)]);
     }
 
-    Locale Locale::locale_with_locale_identifier(const std::string& ident)
-    {
-        return cocoon::internal::wrap<Locale>([::NSLocale localeWithLocaleIdentifier:cocoon::internal::to(ident)]);
-    }
-
     std::string Locale::localized_string_for_calendar_identifier(const std::string& calendar_identifier) const
     {
         return cocoon::internal::from([cocoon::internal::ns<::NSLocale>(this) localizedStringForCalendarIdentifier:cocoon::internal::to(calendar_identifier)]);

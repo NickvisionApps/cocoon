@@ -65,6 +65,31 @@ namespace cocoon
         Image::install_delegate_delegate_(handle());
     }
 
+    Image::Image(const Size& size, bool drawing_handler_should_be_called_with_flipped_context, std::function<bool(Rect)> drawing_handler) : Image(Adopt{cocoon::internal::retain([::NSImage imageWithSize:cocoon::internal::to(size) flipped:static_cast<::BOOL>(drawing_handler_should_be_called_with_flipped_context) drawingHandler:(drawing_handler ? (BOOL(^)(::NSRect)) ^ ::BOOL(::NSRect a62_0) { auto __r = drawing_handler(cocoon::internal::from(a62_0)); return static_cast<::BOOL>(__r); } : (BOOL(^)(::NSRect))nil)])})
+    {
+        Image::install_delegate_delegate_(handle());
+    }
+
+    Image::Image(const std::string& name, const Bundle& bundle, double value) : Image(Adopt{cocoon::internal::retain([::NSImage imageWithSymbolName:cocoon::internal::to(name) bundle:cocoon::internal::native<::NSBundle>(bundle) variableValue:static_cast<double>(value)])})
+    {
+        Image::install_delegate_delegate_(handle());
+    }
+
+    Image::Image(const std::string& name, double value) : Image(Adopt{cocoon::internal::retain([::NSImage imageWithSymbolName:cocoon::internal::to(name) variableValue:static_cast<double>(value)])})
+    {
+        Image::install_delegate_delegate_(handle());
+    }
+
+    Image::Image(const std::string& name, const std::string& description) : Image(Adopt{cocoon::internal::retain([::NSImage imageWithSystemSymbolName:cocoon::internal::to(name) accessibilityDescription:cocoon::internal::to(description)])})
+    {
+        Image::install_delegate_delegate_(handle());
+    }
+
+    Image::Image(const std::string& name, double value, const std::string& description) : Image(Adopt{cocoon::internal::retain([::NSImage imageWithSystemSymbolName:cocoon::internal::to(name) variableValue:static_cast<double>(value) accessibilityDescription:cocoon::internal::to(description)])})
+    {
+        Image::install_delegate_delegate_(handle());
+    }
+
     Image::Image() : Image(Adopt{cocoon::internal::retain([[::NSImage alloc] init])})
     {
         Image::install_delegate_delegate_(handle());
@@ -192,34 +217,9 @@ namespace cocoon
         return cocoon::internal::wrap<Image>([cocoon::internal::ns<::NSImage>(this) imageWithLocale:cocoon::internal::native<::NSLocale>(locale)]);
     }
 
-    Image Image::image_with_size(const Size& size, bool drawing_handler_should_be_called_with_flipped_context, std::function<bool(Rect)> drawing_handler)
-    {
-        return cocoon::internal::wrap<Image>([::NSImage imageWithSize:cocoon::internal::to(size) flipped:static_cast<::BOOL>(drawing_handler_should_be_called_with_flipped_context) drawingHandler:(drawing_handler ? (BOOL(^)(::NSRect)) ^ ::BOOL(::NSRect a62_0) { auto __r = drawing_handler(cocoon::internal::from(a62_0)); return static_cast<::BOOL>(__r); } : (BOOL(^)(::NSRect))nil)]);
-    }
-
     Image Image::image_with_symbol_configuration(const ImageSymbolConfiguration& configuration) const
     {
         return cocoon::internal::wrap<Image>([cocoon::internal::ns<::NSImage>(this) imageWithSymbolConfiguration:cocoon::internal::native<::NSImageSymbolConfiguration>(configuration)]);
-    }
-
-    Image Image::image_with_symbol_name(const std::string& name, const Bundle& bundle, double value)
-    {
-        return cocoon::internal::wrap<Image>([::NSImage imageWithSymbolName:cocoon::internal::to(name) bundle:cocoon::internal::native<::NSBundle>(bundle) variableValue:static_cast<double>(value)]);
-    }
-
-    Image Image::image_with_symbol_name(const std::string& name, double value)
-    {
-        return cocoon::internal::wrap<Image>([::NSImage imageWithSymbolName:cocoon::internal::to(name) variableValue:static_cast<double>(value)]);
-    }
-
-    Image Image::image_with_system_symbol_name(const std::string& name, const std::string& description)
-    {
-        return cocoon::internal::wrap<Image>([::NSImage imageWithSystemSymbolName:cocoon::internal::to(name) accessibilityDescription:cocoon::internal::to(description)]);
-    }
-
-    Image Image::image_with_system_symbol_name(const std::string& name, double value, const std::string& description)
-    {
-        return cocoon::internal::wrap<Image>([::NSImage imageWithSystemSymbolName:cocoon::internal::to(name) variableValue:static_cast<double>(value) accessibilityDescription:cocoon::internal::to(description)]);
     }
 
     Object Image::layer_contents_for_contents_scale(double layer_contents_scale) const

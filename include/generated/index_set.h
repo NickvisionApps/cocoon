@@ -24,8 +24,6 @@ namespace cocoon
      * Snippets built from this class's own members (values are placeholders).
      * @code
      * cocoon::IndexSet index_set{};
-     * auto made_0 = cocoon::IndexSet::index_set();
-     * auto made_1 = cocoon::IndexSet::index_set_with_index(1);
      * index_set.contains_index(1);
      * index_set.contains_indexes(cocoon::IndexSet());
      * index_set.index_greater_than_index(1);
@@ -168,26 +166,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         std::uint64_t index_passing_test(std::function<bool(std::uint64_t, bool&)> predicate) const;
-        /**
-     * @brief Calls `+[NSIndexSet indexSet]`.
-     * @details Creates an empty index set.
-     * @return The converted Objective-C result.
-     */
-        static IndexSet index_set();
-        /**
-     * @brief Calls `+[NSIndexSet indexSetWithIndex:]`.
-     * @details Creates an index set with an index. - Parameter value: An index. Must be in the range '0 .. NSNotFound - 1'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static IndexSet index_set_with_index(std::uint64_t value);
-        /**
-     * @brief Calls `+[NSIndexSet indexSetWithIndexesInRange:]`.
-     * @details Creates an index set with an index range. - Parameter range: An index range. Must be in the range '0 .. NSNotFound - 1'.
-     * @param range Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static IndexSet index_set_with_indexes_in_range(const Range& range);
         /**
      * @brief Calls `-[NSIndexSet indexWithOptions:passingTest:]`.
      * @details Returns the index of the first object that passes the predicate block test using the specified enumeration options. - Parameters: - opts: A bitmask that specifies the options for the enumeration (whether it should be performed concurrently and whether it should be performed in reverse order). - predicate: The block to apply to elements in the set. The block takes two arguments: 'idx' (the index of the object) and 'stop' (a reference to a Boolean value; set to 'YES' to stop further processing). The block returns a Boolean value that indicates whether the index passed the test. - Returns: The index of the first object that passes the predicate test.

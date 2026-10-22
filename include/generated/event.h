@@ -45,6 +45,10 @@ namespace cocoon
     {
     public:
         /// @brief Creates a new `NSEvent` instance and returns a handle to it.
+        explicit Event(const CGEvent& cg_event);
+        /// @brief Creates a new `NSEvent` instance and returns a handle to it.
+        explicit Event(const void* event_ref);
+        /// @brief Creates a new `NSEvent` instance and returns a handle to it.
         explicit Event();
         /// @brief Creates a null handle that refers to no native object.
         Event(std::nullptr_t);
@@ -99,20 +103,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         static Event enter_exit_event_with_type(EventType type, const Point& location, EventModifierFlags flags, double time, std::int64_t w_num, const GraphicsContext& unused_pass_nil, std::int64_t e_num, std::int64_t t_num, void* data);
-        /**
-     * @brief Calls `+[NSEvent eventWithCGEvent:]`.
-     * @details +eventWithCGEvent: returns an autoreleased NSEvent corresponding to the CGEventRef. The CGEventRef is retained by the NSEvent and will be released when the NSEvent is freed. If there is no NSEvent corresponding to the CGEventRef, +eventWithEventRef will return nil.
-     * @param cg_event Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Event event_with_cg_event(const CGEvent& cg_event);
-        /**
-     * @brief Calls `+[NSEvent eventWithEventRef:]`.
-     * @details +eventWithEventRef: returns an autoreleased NSEvent corresponding to the EventRef. The EventRef is retained by the NSEvent and will be released when the NSEvent is freed. If there is no NSEvent corresponding to the EventRef, +eventWithEventRef will return nil.
-     * @param event_ref Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Event event_with_event_ref(const void* event_ref);
         /**
      * @brief Calls `+[NSEvent keyEventWithType:location:modifierFlags:timestamp:windowNumber:context:characters:charactersIgnoringModifiers:isARepeat:keyCode:]`.
      * @param type Argument converted to the Objective-C parameter of the same role.

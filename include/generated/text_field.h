@@ -95,13 +95,6 @@ namespace cocoon
      */
         void text_did_end_editing(const Notification& notification) const;
         /**
-     * @brief Calls `+[NSTextField textFieldWithString:]`.
-     * @details Creates a non-wrapping editable text field. \@param stringValue The initial contents of the text field, or empty string for an initially empty text field. \@return An initialized text field object.
-     * @param string_value Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static TextField text_field_with_string(const std::string& string_value);
-        /**
      * @brief Calls `-[NSTextField textShouldBeginEditing:]`.
      * @param text_object Argument converted to the Objective-C parameter of the same role.
      * @return The converted Objective-C result.

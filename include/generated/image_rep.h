@@ -35,8 +35,6 @@ namespace cocoon
      * auto bits_per_sample = image_rep.bits_per_sample();
      * image_rep.set_color_space_name("text");
      * auto color_space_name = image_rep.color_space_name();
-     * auto made_0 = cocoon::ImageRep::image_rep_with_contents_of_file("text");
-     * auto made_1 = cocoon::ImageRep::image_rep_with_contents_of_url(cocoon::URL());
      * image_rep.draw();
      * image_rep.draw_at_point({0, 0});
      * image_rep.draw_in_rect({{0, 0}, {100, 100}});
@@ -46,6 +44,12 @@ namespace cocoon
     class ImageRep : public Object
     {
     public:
+        /// @brief Creates a new `NSImageRep` instance and returns a handle to it.
+        explicit ImageRep(const std::string& filename);
+        /// @brief Creates a new `NSImageRep` instance and returns a handle to it.
+        explicit ImageRep(const URL& url);
+        /// @brief Creates a new `NSImageRep` instance and returns a handle to it.
+        explicit ImageRep(const Pasteboard& pasteboard);
         /// @brief Creates a new `NSImageRep` instance and returns a handle to it.
         explicit ImageRep();
         /// @brief Creates a null handle that refers to no native object.
@@ -116,24 +120,6 @@ namespace cocoon
      * @return The converted Objective-C result.
      */
         static std::string image_rep_class_for_type(const std::string& type);
-        /**
-     * @brief Calls `+[NSImageRep imageRepWithContentsOfFile:]`.
-     * @param filename Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static ImageRep image_rep_with_contents_of_file(const std::string& filename);
-        /**
-     * @brief Calls `+[NSImageRep imageRepWithContentsOfURL:]`.
-     * @param url Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static ImageRep image_rep_with_contents_of_url(const URL& url);
-        /**
-     * @brief Calls `+[NSImageRep imageRepWithPasteboard:]`.
-     * @param pasteboard Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static ImageRep image_rep_with_pasteboard(const Pasteboard& pasteboard);
         /**
      * @brief Calls `+[NSImageRep imageRepsWithContentsOfFile:]`.
      * @details Convenience methods: Checks to see if the provided file or pasteboard types can be understood by a registered imagerep class after filtering; if so, calls imageRepsWithData: or imageRepWithData:. If sent to a subclass, does this just for the types understood by that subclass.

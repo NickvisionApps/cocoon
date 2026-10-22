@@ -36,21 +36,6 @@ namespace cocoon
         return static_cast<bool>([cocoon::internal::ns<::NSInputStream>(this) getBuffer:(::uint8_t**)(buffer) length:(::NSUInteger*)(len)]);
     }
 
-    InputStream InputStream::input_stream_with_data(const std::vector<std::uint8_t>& data)
-    {
-        return cocoon::internal::wrap<InputStream>([::NSInputStream inputStreamWithData:cocoon::internal::to_data(data)]);
-    }
-
-    InputStream InputStream::input_stream_with_file_at_path(const std::string& path)
-    {
-        return cocoon::internal::wrap<InputStream>([::NSInputStream inputStreamWithFileAtPath:cocoon::internal::to(path)]);
-    }
-
-    InputStream InputStream::input_stream_with_url(const URL& url)
-    {
-        return cocoon::internal::wrap<InputStream>([::NSInputStream inputStreamWithURL:cocoon::internal::native<::NSURL>(url)]);
-    }
-
     std::int64_t InputStream::read(std::uint8_t* buffer, std::uint64_t len) const
     {
         return static_cast<std::int64_t>([cocoon::internal::ns<::NSInputStream>(this) read:(::uint8_t*)(buffer) maxLength:static_cast<::NSUInteger>(len)]);

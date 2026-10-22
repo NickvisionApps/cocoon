@@ -22,21 +22,20 @@ namespace cocoon
      * @code
      * #include <cocoon.h>
      *
-     * cocoon::Calendar calendar(nullptr);  // null handle; instances normally come from other API calls
+     * cocoon::Calendar calendar{"text"};
      * calendar.set_first_weekday(1);
      * @endcode
      *
      * @par Common tasks
      * Snippets built from this class's own members (values are placeholders).
      * @code
-     * cocoon::Calendar calendar(nullptr);
+     * cocoon::Calendar calendar{"text"};
      * calendar.set_first_weekday(1);
      * auto first_weekday = calendar.first_weekday();
      * calendar.set_locale(cocoon::Locale());
      * auto locale = calendar.locale();
      * calendar.set_minimum_days_in_first_week(1);
      * auto minimum_days_in_first_week = calendar.minimum_days_in_first_week();
-     * auto made_0 = cocoon::Calendar::calendar_with_identifier("text");
      * calendar.compare_date(cocoon::Date(), cocoon::Date(), cocoon::CalendarUnit::Era);
      * calendar.component(cocoon::CalendarUnit::Era, cocoon::Date());
      * calendar.components(cocoon::CalendarUnit::Era, cocoon::Date());
@@ -46,18 +45,13 @@ namespace cocoon
     class Calendar : public Object
     {
     public:
+        /// @brief Creates a new `NSCalendar` instance and returns a handle to it.
+        explicit Calendar(const std::string& ident);
         Calendar();
         /// @brief Creates a null handle that refers to no native object.
         Calendar(std::nullptr_t);
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit Calendar(Adopt adopt);
-        /**
-     * @brief Calls `+[NSCalendar calendarWithIdentifier:]`.
-     * @details Creates a new calendar specified by a given identifier. - Parameters: - calendarIdentifierConstant: The identifier for the new calendar. For valid identifiers, see 'Calendar Identifiers'. - Returns: The initialized calendar, or 'nil' if the identifier is unknown (if, for example, it is either an unrecognized string or the calendar is not supported by the current version of the operating system). The returned calendar defaults to the current locale and default time zone.
-     * @param calendar_identifier_constant Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Calendar calendar_with_identifier(const std::string& calendar_identifier_constant);
         /**
      * @brief Calls `-[NSCalendar compareDate:toDate:toUnitGranularity:]`.
      * @details This API compares the given dates down to the given unit, reporting them equal if they are the same in the given unit and all larger units, otherwise either less than or greater than.
@@ -209,13 +203,6 @@ namespace cocoon
      * @param date Argument converted to the Objective-C parameter of the same role.
      */
         void get_hour(std::int64_t* hour_value_pointer, std::int64_t* minute_value_pointer, std::int64_t* second_value_pointer, std::int64_t* nanosecond_value_pointer, const Date& date) const;
-        /**
-     * @brief Calls `-[NSCalendar initWithCalendarIdentifier:]`.
-     * @details Initializes a calendar according to a given identifier. - Parameters: - ident: The identifier for the new calendar. For valid identifiers, see 'Calendar Identifiers'. - Returns: The initialized calendar, or 'nil' if the identifier is unknown (if, for example, it is either an unrecognized string or the calendar is not supported by the current version of the operating system).
-     * @param ident Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        Object init_with_calendar_identifier(const std::string& ident) const;
         /**
      * @brief Calls `-[NSCalendar isDate:equalToDate:toUnitGranularity:]`.
      * @details This API compares the given dates down to the given unit, reporting them equal if they are the same in the given unit and all larger units.

@@ -3,6 +3,10 @@
 
 namespace cocoon
 {
+    Printer::Printer(const std::string& name) : Printer(Adopt{cocoon::internal::retain([::NSPrinter printerWithName:cocoon::internal::to(name)])})
+    {
+    }
+
     Printer::Printer() : Printer(Adopt{cocoon::internal::retain([[::NSPrinter alloc] init])})
     {
     }
@@ -18,16 +22,6 @@ namespace cocoon
     Size Printer::page_size_for_paper(const std::string& paper_name) const
     {
         return cocoon::internal::from([cocoon::internal::ns<::NSPrinter>(this) pageSizeForPaper:cocoon::internal::to(paper_name)]);
-    }
-
-    Printer Printer::printer_with_name(const std::string& name)
-    {
-        return cocoon::internal::wrap<Printer>([::NSPrinter printerWithName:cocoon::internal::to(name)]);
-    }
-
-    Printer Printer::printer_with_type(const std::string& type)
-    {
-        return cocoon::internal::wrap<Printer>([::NSPrinter printerWithType:cocoon::internal::to(type)]);
     }
 
     std::map<std::string, Object> Printer::device_description() const

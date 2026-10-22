@@ -50,40 +50,18 @@ namespace cocoon
     public:
         /// @brief Creates a new `NSButton` instance and returns a handle to it.
         explicit Button(const std::string& title = "");
+        /// @brief Creates a new `NSButton` instance and returns a handle to it.
+        explicit Button(const Image& image, const Object& target, const std::string& action);
+        /// @brief Creates a new `NSButton` instance and returns a handle to it.
+        explicit Button(const std::string& title, const Image& image, const Object& target, const std::string& action);
+        /// @brief Creates a new `NSButton` instance and returns a handle to it.
+        explicit Button(const std::string& title, const Object& target, const std::string& action);
         /// @brief Creates a null handle that refers to no native object.
         Button(std::nullptr_t);
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit Button(Adopt adopt);
         using Control::perform_click;
         using View::perform_key_equivalent;
-        /**
-     * @brief Calls `+[NSButton buttonWithImage:target:action:]`.
-     * @details Creates a standard push button with the provided image. Set the image's accessibilityDescription property to ensure accessibility for this control. \@param image The image to display in the body of the button. \@param target The target object that receives action messages from the control. \@param action The action message sent by the control. \@return An initialized button object.
-     * @param image Argument converted to the Objective-C parameter of the same role.
-     * @param target Argument converted to the Objective-C parameter of the same role.
-     * @param action Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Button button_with_image(const Image& image, const Object& target, const std::string& action);
-        /**
-     * @brief Calls `+[NSButton buttonWithTitle:image:target:action:]`.
-     * @details Creates a standard push button with a title and image. \@param title The localized title string that is displayed on the button. \@param image The image that is displayed alongside the title. In left-to-right localizations, the image is displayed to the left of the title. In right-to-left localizations, it is displayed to the right. \@param target The target object that receives action messages from the control. \@param action The action message sent by the control. \@return An initialized button object.
-     * @param title Argument converted to the Objective-C parameter of the same role.
-     * @param image Argument converted to the Objective-C parameter of the same role.
-     * @param target Argument converted to the Objective-C parameter of the same role.
-     * @param action Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Button button_with_title(const std::string& title, const Image& image, const Object& target, const std::string& action);
-        /**
-     * @brief Calls `+[NSButton buttonWithTitle:target:action:]`.
-     * @details Creates a standard push button with the provided title. \@param title The localized title string that is displayed on the button. \@param target The target object that receives action messages from the control. \@param action The action message sent by the control. \@return An initialized button object.
-     * @param title Argument converted to the Objective-C parameter of the same role.
-     * @param target Argument converted to the Objective-C parameter of the same role.
-     * @param action Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Button button_with_title(const std::string& title, const Object& target, const std::string& action);
         /**
      * @brief Calls `+[NSButton checkboxWithTitle:target:action:]`.
      * @details Creates a standard checkbox with the provided title. \@param title The localized title string that is displayed alongside the checkbox. \@param target The target object that receives action messages from the control. \@param action The action message sent by the control. \@return An initialized button object.
