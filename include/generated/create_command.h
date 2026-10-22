@@ -34,16 +34,16 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit CreateCommand(Adopt adopt);
         /**
-     * @brief Returns the `createClassDescription` property of `NSCreateCommand`.
-     * @details The class description for the class that is to be created.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `createClassDescription` property of `NSCreateCommand`.
+         * @details The class description for the class that is to be created.
+         * @return The converted Objective-C result.
+         */
         ScriptClassDescription create_class_description() const;
         /**
-     * @brief Returns the `resolvedKeyDictionary` property of `NSCreateCommand`.
-     * @details The key dictionary with Apple event codes resolved to actual key names.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `resolvedKeyDictionary` property of `NSCreateCommand`.
+         * @details The key dictionary with Apple event codes resolved to actual key names.
+         * @return The converted Objective-C result.
+         */
         std::map<std::string, Object> resolved_key_dictionary() const;
     };
 }

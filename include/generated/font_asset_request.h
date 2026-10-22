@@ -36,22 +36,22 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit FontAssetRequest(Adopt adopt);
         /**
-     * @brief Calls `-[NSFontAssetRequest downloadFontAssetsWithCompletionHandler:]`.
-     * @details Start the download process. completionHandler will be called whenever encounters any error, or when all download has been completed without error. completionHandler should return NO if you wish to stop downloading from that point, or YES if you wish to continue trying downloading the next font.
-     * @param completion_handler Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSFontAssetRequest downloadFontAssetsWithCompletionHandler:]`.
+         * @details Start the download process. completionHandler will be called whenever encounters any error, or when all download has been completed without error. completionHandler should return NO if you wish to stop downloading from that point, or YES if you wish to continue trying downloading the next font.
+         * @param completion_handler Argument converted to the Objective-C parameter of the same role.
+         */
         void download_font_assets_with_completion_handler(std::function<bool(Error)> completion_handler) const;
         /**
-     * @brief Returns the `downloadedFontDescriptors` property of `NSFontAssetRequest`.
-     * @details The downloaded font descriptors up to this point.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `downloadedFontDescriptors` property of `NSFontAssetRequest`.
+         * @details The downloaded font descriptors up to this point.
+         * @return The converted Objective-C result.
+         */
         std::vector<FontDescriptor> downloaded_font_descriptors() const;
         /**
-     * @brief Returns the `progress` property of `NSFontAssetRequest`.
-     * @details Progress for the request. The progress object will be valid at initialization and begin updating after the -downloadFontAssetsWithCompletionHandler: method is called.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `progress` property of `NSFontAssetRequest`.
+         * @details Progress for the request. The progress object will be valid at initialization and begin updating after the -downloadFontAssetsWithCompletionHandler: method is called.
+         * @return The converted Objective-C result.
+         */
         Progress progress() const;
     };
 }

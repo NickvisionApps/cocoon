@@ -35,30 +35,30 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit TextTableBlock(Adopt adopt);
         /**
-     * @brief Returns the `columnSpan` property of `NSTextTableBlock`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `columnSpan` property of `NSTextTableBlock`.
+         * @return The converted Objective-C result.
+         */
         std::int64_t column_span() const;
         /**
-     * @brief Returns the `rowSpan` property of `NSTextTableBlock`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `rowSpan` property of `NSTextTableBlock`.
+         * @return The converted Objective-C result.
+         */
         std::int64_t row_span() const;
         /**
-     * @brief Returns the `startingColumn` property of `NSTextTableBlock`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `startingColumn` property of `NSTextTableBlock`.
+         * @return The converted Objective-C result.
+         */
         std::int64_t starting_column() const;
         /**
-     * @brief Returns the `startingRow` property of `NSTextTableBlock`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `startingRow` property of `NSTextTableBlock`.
+         * @return The converted Objective-C result.
+         */
         std::int64_t starting_row() const;
         /**
-     * @brief Returns the `table` property of `NSTextTableBlock`.
-     * @details These methods determine the block's role in its enclosing table.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `table` property of `NSTextTableBlock`.
+         * @details These methods determine the block's role in its enclosing table.
+         * @return The converted Objective-C result.
+         */
         TextTable table() const;
     };
 }

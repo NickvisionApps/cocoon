@@ -31,10 +31,10 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit AssertionHandler(Adopt adopt);
         /**
-     * @brief Returns the `currentHandler` property of `NSAssertionHandler`.
-     * @details Returns the 'NSAssertionHandler' object associated with the current thread. If no assertion handler is associated with the current thread, this method creates one and assigns it to the thread.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `currentHandler` property of `NSAssertionHandler`.
+         * @details Returns the 'NSAssertionHandler' object associated with the current thread. If no assertion handler is associated with the current thread, this method creates one and assigns it to the thread.
+         * @return The converted Objective-C result.
+         */
         static AssertionHandler current_handler();
     };
 }

@@ -37,27 +37,27 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit CollectionLayoutGroupCustomItem(Adopt adopt);
         /**
-     * @brief Calls `+[NSCollectionLayoutGroupCustomItem customItemWithFrame:]`.
-     * @param frame Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSCollectionLayoutGroupCustomItem customItemWithFrame:]`.
+         * @param frame Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static CollectionLayoutGroupCustomItem custom_item_with_frame(const Rect& frame);
         /**
-     * @brief Calls `+[NSCollectionLayoutGroupCustomItem customItemWithFrame:zIndex:]`.
-     * @param frame Argument converted to the Objective-C parameter of the same role.
-     * @param z_index Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSCollectionLayoutGroupCustomItem customItemWithFrame:zIndex:]`.
+         * @param frame Argument converted to the Objective-C parameter of the same role.
+         * @param z_index Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static CollectionLayoutGroupCustomItem custom_item_with_frame(const Rect& frame, std::int64_t z_index);
         /**
-     * @brief Returns the `frame` property of `NSCollectionLayoutGroupCustomItem`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `frame` property of `NSCollectionLayoutGroupCustomItem`.
+         * @return The converted Objective-C result.
+         */
         Rect frame() const;
         /**
-     * @brief Returns the `zIndex` property of `NSCollectionLayoutGroupCustomItem`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `zIndex` property of `NSCollectionLayoutGroupCustomItem`.
+         * @return The converted Objective-C result.
+         */
         std::int64_t z_index() const;
     };
 }

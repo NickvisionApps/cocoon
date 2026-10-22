@@ -29,22 +29,22 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit ScrollEdgeEffectStyle(Adopt adopt);
         /**
-     * @brief Returns the `automaticStyle` property of `NSScrollEdgeEffectStyle`.
-     * @details The automatic scroll edge effect style.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `automaticStyle` property of `NSScrollEdgeEffectStyle`.
+         * @details The automatic scroll edge effect style.
+         * @return The converted Objective-C result.
+         */
         static ScrollEdgeEffectStyle automatic_style();
         /**
-     * @brief Returns the `hardStyle` property of `NSScrollEdgeEffectStyle`.
-     * @details A scroll edge effect with a hard cutoff.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `hardStyle` property of `NSScrollEdgeEffectStyle`.
+         * @details A scroll edge effect with a hard cutoff.
+         * @return The converted Objective-C result.
+         */
         static ScrollEdgeEffectStyle hard_style();
         /**
-     * @brief Returns the `softStyle` property of `NSScrollEdgeEffectStyle`.
-     * @details A scroll edge effect with a soft edge.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `softStyle` property of `NSScrollEdgeEffectStyle`.
+         * @details A scroll edge effect with a soft edge.
+         * @return The converted Objective-C result.
+         */
         static ScrollEdgeEffectStyle soft_style();
     };
 }

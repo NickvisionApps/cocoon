@@ -38,16 +38,16 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit Switch(Adopt adopt);
         /**
-     * @brief Returns the `state` property of `NSSwitch`.
-     * @details The current position of the switch. The values 'NSControlStateValueOff' and 'NSControlStateValueOn' indicate that the switch is in either the off or on position respectively. If the state property is set to any other value, it is interpreted as on. If set through the animator proxy, the switch animates to the new value.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `state` property of `NSSwitch`.
+         * @details The current position of the switch. The values 'NSControlStateValueOff' and 'NSControlStateValueOn' indicate that the switch is in either the off or on position respectively. If the state property is set to any other value, it is interpreted as on. If set through the animator proxy, the switch animates to the new value.
+         * @return The converted Objective-C result.
+         */
         ControlState state() const;
         /**
-     * @brief Sets the `state` property of `NSSwitch`.
-     * @details The current position of the switch. The values 'NSControlStateValueOff' and 'NSControlStateValueOn' indicate that the switch is in either the off or on position respectively. If the state property is set to any other value, it is interpreted as on. If set through the animator proxy, the switch animates to the new value.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `state` property of `NSSwitch`.
+         * @details The current position of the switch. The values 'NSControlStateValueOff' and 'NSControlStateValueOn' indicate that the switch is in either the off or on position respectively. If the state property is set to any other value, it is interpreted as on. If set through the animator proxy, the switch animates to the new value.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_state(ControlState value) const;
         /// @brief Convenience helper `is_on` provided by cocoon.
         bool is_on() const;

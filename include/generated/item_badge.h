@@ -39,30 +39,30 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit ItemBadge(Adopt adopt);
         /**
-     * @brief Calls `+[NSItemBadge badgeWithCount:]`.
-     * @details Creates a badge displaying a localized numerical count. \@param count The integer value to localize and display in the badge. \@return A new NSItemBadge instance with the localized specified count.
-     * @param count Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSItemBadge badgeWithCount:]`.
+         * @details Creates a badge displaying a localized numerical count. \@param count The integer value to localize and display in the badge. \@return A new NSItemBadge instance with the localized specified count.
+         * @param count Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static ItemBadge badge_with_count(std::int64_t count);
         /**
-     * @brief Calls `+[NSItemBadge badgeWithText:]`.
-     * @details Creates a badge displaying a text. \@param text The text to be displayed inside the badge. \@return A new 'NSItemBadge' instance with the specified text.
-     * @param text Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSItemBadge badgeWithText:]`.
+         * @details Creates a badge displaying a text. \@param text The text to be displayed inside the badge. \@return A new 'NSItemBadge' instance with the specified text.
+         * @param text Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static ItemBadge badge_with_text(const std::string& text);
         /**
-     * @brief Calls `+[NSItemBadge indicatorBadge]`.
-     * @details Creates a badge styled as an indicator. In this context, an indicator is simply a badge without any text. \@return A new 'NSItemBadge' instance styled as an indicator.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSItemBadge indicatorBadge]`.
+         * @details Creates a badge styled as an indicator. In this context, an indicator is simply a badge without any text. \@return A new 'NSItemBadge' instance styled as an indicator.
+         * @return The converted Objective-C result.
+         */
         static ItemBadge indicator_badge();
         /**
-     * @brief Returns the `text` property of `NSItemBadge`.
-     * @details The text to be displayed within the badge.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `text` property of `NSItemBadge`.
+         * @details The text to be displayed within the badge.
+         * @return The converted Objective-C result.
+         */
         std::string text() const;
     };
 }

@@ -58,347 +58,347 @@ namespace cocoon
         explicit Text(Adopt adopt);
         using View::set_background_color;
         /**
-     * @brief Calls `-[NSText RTFDFromRange:]`.
-     * @param range Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSText RTFDFromRange:]`.
+         * @param range Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::vector<std::uint8_t> rtfd_from_range(const Range& range) const;
         /**
-     * @brief Calls `-[NSText RTFFromRange:]`.
-     * @param range Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSText RTFFromRange:]`.
+         * @param range Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::vector<std::uint8_t> rtf_from_range(const Range& range) const;
         /**
-     * @brief Calls `-[NSText alignCenter:]`.
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSText alignCenter:]`.
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void align_center(const Object& sender) const;
         /**
-     * @brief Calls `-[NSText alignLeft:]`.
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSText alignLeft:]`.
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void align_left(const Object& sender) const;
         /**
-     * @brief Calls `-[NSText alignRight:]`.
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSText alignRight:]`.
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void align_right(const Object& sender) const;
         /**
-     * @brief Calls `-[NSText changeFont:]`.
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSText changeFont:]`.
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void change_font(const Object& sender) const;
         /**
-     * @brief Calls `-[NSText checkSpelling:]`.
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSText checkSpelling:]`.
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void check_spelling(const Object& sender) const;
         /**
-     * @brief Calls `-[NSText copy:]`.
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSText copy:]`.
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void copy(const Object& sender) const;
         /**
-     * @brief Calls `-[NSText copyFont:]`.
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSText copyFont:]`.
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void copy_font(const Object& sender) const;
         /**
-     * @brief Calls `-[NSText copyRuler:]`.
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSText copyRuler:]`.
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void copy_ruler(const Object& sender) const;
         /**
-     * @brief Calls `-[NSText cut:]`.
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSText cut:]`.
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void cut(const Object& sender) const;
         /**
-     * @brief Calls `-[NSText delete:]`.
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSText delete:]`.
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void delete_(const Object& sender) const;
         /**
-     * @brief Calls `-[NSText paste:]`.
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSText paste:]`.
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void paste(const Object& sender) const;
         /**
-     * @brief Calls `-[NSText pasteFont:]`.
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSText pasteFont:]`.
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void paste_font(const Object& sender) const;
         /**
-     * @brief Calls `-[NSText pasteRuler:]`.
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSText pasteRuler:]`.
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void paste_ruler(const Object& sender) const;
         /**
-     * @brief Calls `-[NSText readRTFDFromFile:]`.
-     * @param path Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSText readRTFDFromFile:]`.
+         * @param path Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool read_rtfd_from_file(const std::string& path) const;
         /**
-     * @brief Calls `-[NSText replaceCharactersInRange:withRTF:]`.
-     * @param range Argument converted to the Objective-C parameter of the same role.
-     * @param rtf_data Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSText replaceCharactersInRange:withRTF:]`.
+         * @param range Argument converted to the Objective-C parameter of the same role.
+         * @param rtf_data Argument converted to the Objective-C parameter of the same role.
+         */
         void replace_characters_in_range(const Range& range, const std::vector<std::uint8_t>& rtf_data) const;
         /**
-     * @brief Calls `-[NSText replaceCharactersInRange:withString:]`.
-     * @param range Argument converted to the Objective-C parameter of the same role.
-     * @param string Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSText replaceCharactersInRange:withString:]`.
+         * @param range Argument converted to the Objective-C parameter of the same role.
+         * @param string Argument converted to the Objective-C parameter of the same role.
+         */
         void replace_characters_in_range(const Range& range, const std::string& string) const;
         /**
-     * @brief Calls `-[NSText scrollRangeToVisible:]`.
-     * @param range Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSText scrollRangeToVisible:]`.
+         * @param range Argument converted to the Objective-C parameter of the same role.
+         */
         void scroll_range_to_visible(const Range& range) const;
         /**
-     * @brief Calls `-[NSText selectAll:]`.
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSText selectAll:]`.
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void select_all(const Object& sender) const;
         /**
-     * @brief Calls `-[NSText setFont:range:]`.
-     * @param font Argument converted to the Objective-C parameter of the same role.
-     * @param range Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSText setFont:range:]`.
+         * @param font Argument converted to the Objective-C parameter of the same role.
+         * @param range Argument converted to the Objective-C parameter of the same role.
+         */
         void set_font(const Font& font, const Range& range) const;
         /**
-     * @brief Calls `-[NSText setTextColor:range:]`.
-     * @param color Argument converted to the Objective-C parameter of the same role.
-     * @param range Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSText setTextColor:range:]`.
+         * @param color Argument converted to the Objective-C parameter of the same role.
+         * @param range Argument converted to the Objective-C parameter of the same role.
+         */
         void set_text_color(const Color& color, const Range& range) const;
         /**
-     * @brief Calls `-[NSText showGuessPanel:]`.
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSText showGuessPanel:]`.
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void show_guess_panel(const Object& sender) const;
         /**
-     * @brief Calls `-[NSText sizeToFit]`.
-     */
+         * @brief Calls `-[NSText sizeToFit]`.
+         */
         void size_to_fit() const;
         /**
-     * @brief Calls `-[NSText subscript:]`.
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSText subscript:]`.
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void subscript(const Object& sender) const;
         /**
-     * @brief Calls `-[NSText superscript:]`.
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSText superscript:]`.
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void superscript(const Object& sender) const;
         /**
-     * @brief Calls `-[NSText toggleRuler:]`.
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSText toggleRuler:]`.
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void toggle_ruler(const Object& sender) const;
         /**
-     * @brief Calls `-[NSText underline:]`.
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSText underline:]`.
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void underline(const Object& sender) const;
         /**
-     * @brief Calls `-[NSText unscript:]`.
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSText unscript:]`.
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void unscript(const Object& sender) const;
         /**
-     * @brief Calls `-[NSText writeRTFDToFile:atomically:]`.
-     * @param path Argument converted to the Objective-C parameter of the same role.
-     * @param flag Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSText writeRTFDToFile:atomically:]`.
+         * @param path Argument converted to the Objective-C parameter of the same role.
+         * @param flag Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool write_rtfd_to_file(const std::string& path, bool flag) const;
         /**
-     * @brief Returns the `alignment` property of `NSText`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `alignment` property of `NSText`.
+         * @return The converted Objective-C result.
+         */
         TextAlignment alignment() const;
         /**
-     * @brief Sets the `alignment` property of `NSText`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `alignment` property of `NSText`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_alignment(TextAlignment value) const;
         /**
-     * @brief Returns the `backgroundColor` property of `NSText`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `backgroundColor` property of `NSText`.
+         * @return The converted Objective-C result.
+         */
         Color background_color() const;
         /**
-     * @brief Sets the `backgroundColor` property of `NSText`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `backgroundColor` property of `NSText`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_background_color(const Color& value) const;
         /**
-     * @brief Returns the `baseWritingDirection` property of `NSText`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `baseWritingDirection` property of `NSText`.
+         * @return The converted Objective-C result.
+         */
         WritingDirection base_writing_direction() const;
         /**
-     * @brief Sets the `baseWritingDirection` property of `NSText`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `baseWritingDirection` property of `NSText`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_base_writing_direction(WritingDirection value) const;
         /**
-     * @brief Returns the `drawsBackground` property of `NSText`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `drawsBackground` property of `NSText`.
+         * @return The converted Objective-C result.
+         */
         bool draws_background() const;
         /**
-     * @brief Sets the `drawsBackground` property of `NSText`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `drawsBackground` property of `NSText`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_draws_background(bool value) const;
         /**
-     * @brief Returns the `editable` property of `NSText`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `editable` property of `NSText`.
+         * @return The converted Objective-C result.
+         */
         bool is_editable() const;
         /**
-     * @brief Sets the `editable` property of `NSText`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `editable` property of `NSText`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_editable(bool value) const;
         /**
-     * @brief Returns the `fieldEditor` property of `NSText`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `fieldEditor` property of `NSText`.
+         * @return The converted Objective-C result.
+         */
         bool is_field_editor() const;
         /**
-     * @brief Sets the `fieldEditor` property of `NSText`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `fieldEditor` property of `NSText`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_field_editor(bool value) const;
         /**
-     * @brief Returns the `font` property of `NSText`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `font` property of `NSText`.
+         * @return The converted Objective-C result.
+         */
         Font font() const;
         /**
-     * @brief Sets the `font` property of `NSText`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `font` property of `NSText`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_font(const Font& value) const;
         /**
-     * @brief Returns the `horizontallyResizable` property of `NSText`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `horizontallyResizable` property of `NSText`.
+         * @return The converted Objective-C result.
+         */
         bool is_horizontally_resizable() const;
         /**
-     * @brief Sets the `horizontallyResizable` property of `NSText`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `horizontallyResizable` property of `NSText`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_horizontally_resizable(bool value) const;
         /**
-     * @brief Returns the `importsGraphics` property of `NSText`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `importsGraphics` property of `NSText`.
+         * @return The converted Objective-C result.
+         */
         bool imports_graphics() const;
         /**
-     * @brief Sets the `importsGraphics` property of `NSText`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `importsGraphics` property of `NSText`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_imports_graphics(bool value) const;
         /**
-     * @brief Returns the `maxSize` property of `NSText`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `maxSize` property of `NSText`.
+         * @return The converted Objective-C result.
+         */
         Size max_size() const;
         /**
-     * @brief Sets the `maxSize` property of `NSText`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `maxSize` property of `NSText`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_max_size(const Size& value) const;
         /**
-     * @brief Returns the `minSize` property of `NSText`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `minSize` property of `NSText`.
+         * @return The converted Objective-C result.
+         */
         Size min_size() const;
         /**
-     * @brief Sets the `minSize` property of `NSText`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `minSize` property of `NSText`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_min_size(const Size& value) const;
         /**
-     * @brief Returns the `richText` property of `NSText`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `richText` property of `NSText`.
+         * @return The converted Objective-C result.
+         */
         bool is_rich_text() const;
         /**
-     * @brief Sets the `richText` property of `NSText`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `richText` property of `NSText`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_rich_text(bool value) const;
         /**
-     * @brief Returns the `rulerVisible` property of `NSText`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `rulerVisible` property of `NSText`.
+         * @return The converted Objective-C result.
+         */
         bool is_ruler_visible() const;
         /**
-     * @brief Returns the `selectable` property of `NSText`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `selectable` property of `NSText`.
+         * @return The converted Objective-C result.
+         */
         bool is_selectable() const;
         /**
-     * @brief Sets the `selectable` property of `NSText`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `selectable` property of `NSText`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_selectable(bool value) const;
         /**
-     * @brief Returns the `selectedRange` property of `NSText`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `selectedRange` property of `NSText`.
+         * @return The converted Objective-C result.
+         */
         Range selected_range() const;
         /**
-     * @brief Sets the `selectedRange` property of `NSText`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `selectedRange` property of `NSText`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_selected_range(const Range& value) const;
         /**
-     * @brief Returns the `string` property of `NSText`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `string` property of `NSText`.
+         * @return The converted Objective-C result.
+         */
         std::string string() const;
         /**
-     * @brief Sets the `string` property of `NSText`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `string` property of `NSText`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_string(const std::string& value) const;
         /**
-     * @brief Returns the `textColor` property of `NSText`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `textColor` property of `NSText`.
+         * @return The converted Objective-C result.
+         */
         Color text_color() const;
         /**
-     * @brief Sets the `textColor` property of `NSText`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `textColor` property of `NSText`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_text_color(const Color& value) const;
         /**
-     * @brief Returns the `usesFontPanel` property of `NSText`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `usesFontPanel` property of `NSText`.
+         * @return The converted Objective-C result.
+         */
         bool uses_font_panel() const;
         /**
-     * @brief Sets the `usesFontPanel` property of `NSText`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `usesFontPanel` property of `NSText`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_uses_font_panel(bool value) const;
         /**
-     * @brief Returns the `verticallyResizable` property of `NSText`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `verticallyResizable` property of `NSText`.
+         * @return The converted Objective-C result.
+         */
         bool is_vertically_resizable() const;
         /**
-     * @brief Sets the `verticallyResizable` property of `NSText`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `verticallyResizable` property of `NSText`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_vertically_resizable(bool value) const;
         /// @brief Signal for the delegate/data-source method behind `should_begin_editing`; connect a callback with `should_begin_editing().connect(...)`.
         Signal<Text, bool()> should_begin_editing() const

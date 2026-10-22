@@ -51,164 +51,164 @@ namespace cocoon
         explicit DatePicker(Adopt adopt);
         using View::set_background_color;
         /**
-     * @brief Returns the `backgroundColor` property of `NSDatePicker`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `backgroundColor` property of `NSDatePicker`.
+         * @return The converted Objective-C result.
+         */
         Color background_color() const;
         /**
-     * @brief Sets the `backgroundColor` property of `NSDatePicker`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `backgroundColor` property of `NSDatePicker`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_background_color(const Color& value) const;
         /**
-     * @brief Returns the `bezeled` property of `NSDatePicker`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `bezeled` property of `NSDatePicker`.
+         * @return The converted Objective-C result.
+         */
         bool is_bezeled() const;
         /**
-     * @brief Sets the `bezeled` property of `NSDatePicker`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `bezeled` property of `NSDatePicker`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_bezeled(bool value) const;
         /**
-     * @brief Returns the `bordered` property of `NSDatePicker`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `bordered` property of `NSDatePicker`.
+         * @return The converted Objective-C result.
+         */
         bool is_bordered() const;
         /**
-     * @brief Sets the `bordered` property of `NSDatePicker`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `bordered` property of `NSDatePicker`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_bordered(bool value) const;
         /**
-     * @brief Returns the `calendar` property of `NSDatePicker`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `calendar` property of `NSDatePicker`.
+         * @return The converted Objective-C result.
+         */
         Calendar calendar() const;
         /**
-     * @brief Sets the `calendar` property of `NSDatePicker`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `calendar` property of `NSDatePicker`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_calendar(const Calendar& value) const;
         /**
-     * @brief Returns the `datePickerElements` property of `NSDatePicker`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `datePickerElements` property of `NSDatePicker`.
+         * @return The converted Objective-C result.
+         */
         DatePickerElementFlags date_picker_elements() const;
         /**
-     * @brief Sets the `datePickerElements` property of `NSDatePicker`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `datePickerElements` property of `NSDatePicker`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_date_picker_elements(DatePickerElementFlags value) const;
         /**
-     * @brief Returns the `datePickerMode` property of `NSDatePicker`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `datePickerMode` property of `NSDatePicker`.
+         * @return The converted Objective-C result.
+         */
         DatePickerMode date_picker_mode() const;
         /**
-     * @brief Sets the `datePickerMode` property of `NSDatePicker`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `datePickerMode` property of `NSDatePicker`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_date_picker_mode(DatePickerMode value) const;
         /**
-     * @brief Returns the `datePickerStyle` property of `NSDatePicker`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `datePickerStyle` property of `NSDatePicker`.
+         * @return The converted Objective-C result.
+         */
         DatePickerStyle date_picker_style() const;
         /**
-     * @brief Sets the `datePickerStyle` property of `NSDatePicker`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `datePickerStyle` property of `NSDatePicker`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_date_picker_style(DatePickerStyle value) const;
         /**
-     * @brief Returns the `dateValue` property of `NSDatePicker`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `dateValue` property of `NSDatePicker`.
+         * @return The converted Objective-C result.
+         */
         Date date_value() const;
         /**
-     * @brief Sets the `dateValue` property of `NSDatePicker`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `dateValue` property of `NSDatePicker`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_date_value(const Date& value) const;
         /**
-     * @brief Returns the `drawsBackground` property of `NSDatePicker`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `drawsBackground` property of `NSDatePicker`.
+         * @return The converted Objective-C result.
+         */
         bool draws_background() const;
         /**
-     * @brief Sets the `drawsBackground` property of `NSDatePicker`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `drawsBackground` property of `NSDatePicker`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_draws_background(bool value) const;
         /**
-     * @brief Returns the `locale` property of `NSDatePicker`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `locale` property of `NSDatePicker`.
+         * @return The converted Objective-C result.
+         */
         Locale locale() const;
         /**
-     * @brief Sets the `locale` property of `NSDatePicker`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `locale` property of `NSDatePicker`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_locale(const Locale& value) const;
         /**
-     * @brief Returns the `maxDate` property of `NSDatePicker`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `maxDate` property of `NSDatePicker`.
+         * @return The converted Objective-C result.
+         */
         Date max_date() const;
         /**
-     * @brief Sets the `maxDate` property of `NSDatePicker`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `maxDate` property of `NSDatePicker`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_max_date(const Date& value) const;
         /**
-     * @brief Returns the `minDate` property of `NSDatePicker`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `minDate` property of `NSDatePicker`.
+         * @return The converted Objective-C result.
+         */
         Date min_date() const;
         /**
-     * @brief Sets the `minDate` property of `NSDatePicker`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `minDate` property of `NSDatePicker`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_min_date(const Date& value) const;
         /**
-     * @brief Returns the `presentsCalendarOverlay` property of `NSDatePicker`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `presentsCalendarOverlay` property of `NSDatePicker`.
+         * @return The converted Objective-C result.
+         */
         bool presents_calendar_overlay() const;
         /**
-     * @brief Sets the `presentsCalendarOverlay` property of `NSDatePicker`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `presentsCalendarOverlay` property of `NSDatePicker`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_presents_calendar_overlay(bool value) const;
         /**
-     * @brief Returns the `textColor` property of `NSDatePicker`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `textColor` property of `NSDatePicker`.
+         * @return The converted Objective-C result.
+         */
         Color text_color() const;
         /**
-     * @brief Sets the `textColor` property of `NSDatePicker`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `textColor` property of `NSDatePicker`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_text_color(const Color& value) const;
         /**
-     * @brief Returns the `timeInterval` property of `NSDatePicker`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `timeInterval` property of `NSDatePicker`.
+         * @return The converted Objective-C result.
+         */
         double time_interval() const;
         /**
-     * @brief Sets the `timeInterval` property of `NSDatePicker`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `timeInterval` property of `NSDatePicker`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_time_interval(double value) const;
         /**
-     * @brief Returns the `timeZone` property of `NSDatePicker`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `timeZone` property of `NSDatePicker`.
+         * @return The converted Objective-C result.
+         */
         TimeZone time_zone() const;
         /**
-     * @brief Sets the `timeZone` property of `NSDatePicker`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `timeZone` property of `NSDatePicker`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_time_zone(const TimeZone& value) const;
         /// @brief Convenience helper `timestamp` provided by cocoon.
         double timestamp() const;

@@ -32,10 +32,10 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit SecureUnarchiveFromDataTransformer(Adopt adopt);
         /**
-     * @brief Returns the `allowedTopLevelClasses` property of `NSSecureUnarchiveFromDataTransformer`.
-     * @details The list of allowable classes which the top-level object in the archive must conform to on encoding and decoding. Returns the result of \\c +transformedValueClass if not \\c Nil; otherwise, currently returns \\c NSArray, \\c NSDictionary, \\c NSSet, \\c NSString, \\c NSNumber, \\c NSDate, \\c NSData, \\c NSURL, \\c NSUUID, and \\c NSNull. Can be overridden by subclasses to provide an expanded or different set of allowed transformation classes.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `allowedTopLevelClasses` property of `NSSecureUnarchiveFromDataTransformer`.
+         * @details The list of allowable classes which the top-level object in the archive must conform to on encoding and decoding. Returns the result of \\c +transformedValueClass if not \\c Nil; otherwise, currently returns \\c NSArray, \\c NSDictionary, \\c NSSet, \\c NSString, \\c NSNumber, \\c NSDate, \\c NSData, \\c NSURL, \\c NSUUID, and \\c NSNull. Can be overridden by subclasses to provide an expanded or different set of allowed transformation classes.
+         * @return The converted Objective-C result.
+         */
         static std::vector<std::string> allowed_top_level_classes();
     };
 }

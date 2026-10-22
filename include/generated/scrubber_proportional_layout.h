@@ -43,16 +43,16 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit ScrubberProportionalLayout(Adopt adopt);
         /**
-     * @brief Returns the `numberOfVisibleItems` property of `NSScrubberProportionalLayout`.
-     * @details The number of items that should fit within the scrubber's viewport at once.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `numberOfVisibleItems` property of `NSScrubberProportionalLayout`.
+         * @details The number of items that should fit within the scrubber's viewport at once.
+         * @return The converted Objective-C result.
+         */
         std::int64_t number_of_visible_items() const;
         /**
-     * @brief Sets the `numberOfVisibleItems` property of `NSScrubberProportionalLayout`.
-     * @details The number of items that should fit within the scrubber's viewport at once.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `numberOfVisibleItems` property of `NSScrubberProportionalLayout`.
+         * @details The number of items that should fit within the scrubber's viewport at once.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_number_of_visible_items(std::int64_t value) const;
     };
 }

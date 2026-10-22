@@ -49,91 +49,91 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit LayoutGuide(Adopt adopt);
         /**
-     * @brief Calls `-[NSLayoutGuide constraintsAffectingLayoutForOrientation:]`.
-     * @param orientation Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSLayoutGuide constraintsAffectingLayoutForOrientation:]`.
+         * @param orientation Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::vector<LayoutConstraint> constraints_affecting_layout_for_orientation(ConstraintOrientation orientation) const;
         /**
-     * @brief Returns the `bottomAnchor` property of `NSLayoutGuide`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `bottomAnchor` property of `NSLayoutGuide`.
+         * @return The converted Objective-C result.
+         */
         LayoutYAxisAnchor bottom_anchor() const;
         /**
-     * @brief Returns the `centerXAnchor` property of `NSLayoutGuide`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `centerXAnchor` property of `NSLayoutGuide`.
+         * @return The converted Objective-C result.
+         */
         LayoutXAxisAnchor center_x_anchor() const;
         /**
-     * @brief Returns the `centerYAnchor` property of `NSLayoutGuide`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `centerYAnchor` property of `NSLayoutGuide`.
+         * @return The converted Objective-C result.
+         */
         LayoutYAxisAnchor center_y_anchor() const;
         /**
-     * @brief Returns the `frame` property of `NSLayoutGuide`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `frame` property of `NSLayoutGuide`.
+         * @return The converted Objective-C result.
+         */
         Rect frame() const;
         /**
-     * @brief Returns the `hasAmbiguousLayout` property of `NSLayoutGuide`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `hasAmbiguousLayout` property of `NSLayoutGuide`.
+         * @return The converted Objective-C result.
+         */
         bool has_ambiguous_layout() const;
         /**
-     * @brief Returns the `heightAnchor` property of `NSLayoutGuide`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `heightAnchor` property of `NSLayoutGuide`.
+         * @return The converted Objective-C result.
+         */
         LayoutDimension height_anchor() const;
         /**
-     * @brief Returns the `identifier` property of `NSLayoutGuide`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `identifier` property of `NSLayoutGuide`.
+         * @return The converted Objective-C result.
+         */
         std::string identifier() const;
         /**
-     * @brief Sets the `identifier` property of `NSLayoutGuide`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `identifier` property of `NSLayoutGuide`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_identifier(const std::string& value) const;
         /**
-     * @brief Returns the `leadingAnchor` property of `NSLayoutGuide`.
-     * @details These properties aid concise creation of constraints. Layout guides can be constrained using simple code like the following: [view.topAnchor constraintEqualTo:someLayoutGuide.topAnchor constant:10]; See NSLayoutAnchor.h for more details.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `leadingAnchor` property of `NSLayoutGuide`.
+         * @details These properties aid concise creation of constraints. Layout guides can be constrained using simple code like the following: [view.topAnchor constraintEqualTo:someLayoutGuide.topAnchor constant:10]; See NSLayoutAnchor.h for more details.
+         * @return The converted Objective-C result.
+         */
         LayoutXAxisAnchor leading_anchor() const;
         /**
-     * @brief Returns the `leftAnchor` property of `NSLayoutGuide`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `leftAnchor` property of `NSLayoutGuide`.
+         * @return The converted Objective-C result.
+         */
         LayoutXAxisAnchor left_anchor() const;
         /**
-     * @brief Returns the `owningView` property of `NSLayoutGuide`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `owningView` property of `NSLayoutGuide`.
+         * @return The converted Objective-C result.
+         */
         View owning_view() const;
         /**
-     * @brief Sets the `owningView` property of `NSLayoutGuide`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `owningView` property of `NSLayoutGuide`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_owning_view(const View& value) const;
         /**
-     * @brief Returns the `rightAnchor` property of `NSLayoutGuide`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `rightAnchor` property of `NSLayoutGuide`.
+         * @return The converted Objective-C result.
+         */
         LayoutXAxisAnchor right_anchor() const;
         /**
-     * @brief Returns the `topAnchor` property of `NSLayoutGuide`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `topAnchor` property of `NSLayoutGuide`.
+         * @return The converted Objective-C result.
+         */
         LayoutYAxisAnchor top_anchor() const;
         /**
-     * @brief Returns the `trailingAnchor` property of `NSLayoutGuide`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `trailingAnchor` property of `NSLayoutGuide`.
+         * @return The converted Objective-C result.
+         */
         LayoutXAxisAnchor trailing_anchor() const;
         /**
-     * @brief Returns the `widthAnchor` property of `NSLayoutGuide`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `widthAnchor` property of `NSLayoutGuide`.
+         * @return The converted Objective-C result.
+         */
         LayoutDimension width_anchor() const;
     };
 }

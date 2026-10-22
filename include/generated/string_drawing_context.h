@@ -39,24 +39,24 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit StringDrawingContext(Adopt adopt);
         /**
-     * @brief Returns the `actualScaleFactor` property of `NSStringDrawingContext`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `actualScaleFactor` property of `NSStringDrawingContext`.
+         * @return The converted Objective-C result.
+         */
         double actual_scale_factor() const;
         /**
-     * @brief Returns the `minimumScaleFactor` property of `NSStringDrawingContext`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `minimumScaleFactor` property of `NSStringDrawingContext`.
+         * @return The converted Objective-C result.
+         */
         double minimum_scale_factor() const;
         /**
-     * @brief Sets the `minimumScaleFactor` property of `NSStringDrawingContext`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `minimumScaleFactor` property of `NSStringDrawingContext`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_minimum_scale_factor(double value) const;
         /**
-     * @brief Returns the `totalBounds` property of `NSStringDrawingContext`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `totalBounds` property of `NSStringDrawingContext`.
+         * @return The converted Objective-C result.
+         */
         Rect total_bounds() const;
     };
 }

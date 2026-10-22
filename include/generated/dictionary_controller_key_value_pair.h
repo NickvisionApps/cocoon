@@ -40,39 +40,39 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit DictionaryControllerKeyValuePair(Adopt adopt);
         /**
-     * @brief Returns the `explicitlyIncluded` property of `NSDictionaryControllerKeyValuePair`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `explicitlyIncluded` property of `NSDictionaryControllerKeyValuePair`.
+         * @return The converted Objective-C result.
+         */
         bool is_explicitly_included() const;
         /**
-     * @brief Returns the `key` property of `NSDictionaryControllerKeyValuePair`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `key` property of `NSDictionaryControllerKeyValuePair`.
+         * @return The converted Objective-C result.
+         */
         std::string key() const;
         /**
-     * @brief Sets the `key` property of `NSDictionaryControllerKeyValuePair`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `key` property of `NSDictionaryControllerKeyValuePair`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_key(const std::string& value) const;
         /**
-     * @brief Returns the `localizedKey` property of `NSDictionaryControllerKeyValuePair`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `localizedKey` property of `NSDictionaryControllerKeyValuePair`.
+         * @return The converted Objective-C result.
+         */
         std::string localized_key() const;
         /**
-     * @brief Sets the `localizedKey` property of `NSDictionaryControllerKeyValuePair`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `localizedKey` property of `NSDictionaryControllerKeyValuePair`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_localized_key(const std::string& value) const;
         /**
-     * @brief Returns the `value` property of `NSDictionaryControllerKeyValuePair`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `value` property of `NSDictionaryControllerKeyValuePair`.
+         * @return The converted Objective-C result.
+         */
         Object value() const;
         /**
-     * @brief Sets the `value` property of `NSDictionaryControllerKeyValuePair`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `value` property of `NSDictionaryControllerKeyValuePair`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_value(const Object& value) const;
     };
 }

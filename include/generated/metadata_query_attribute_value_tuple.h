@@ -31,22 +31,22 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit MetadataQueryAttributeValueTuple(Adopt adopt);
         /**
-     * @brief Returns the `attribute` property of `NSMetadataQueryAttributeValueTuple`.
-     * @details The attribute name for the tuple.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `attribute` property of `NSMetadataQueryAttributeValueTuple`.
+         * @details The attribute name for the tuple.
+         * @return The converted Objective-C result.
+         */
         std::string attribute() const;
         /**
-     * @brief Returns the `count` property of `NSMetadataQueryAttributeValueTuple`.
-     * @details The number of results with the given attribute value.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `count` property of `NSMetadataQueryAttributeValueTuple`.
+         * @details The number of results with the given attribute value.
+         * @return The converted Objective-C result.
+         */
         std::uint64_t count() const;
         /**
-     * @brief Returns the `value` property of `NSMetadataQueryAttributeValueTuple`.
-     * @details The attribute value for the tuple.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `value` property of `NSMetadataQueryAttributeValueTuple`.
+         * @details The attribute value for the tuple.
+         * @return The converted Objective-C result.
+         */
         Object value() const;
     };
 }

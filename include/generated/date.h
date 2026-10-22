@@ -44,95 +44,95 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit Date(Adopt adopt);
         /**
-     * @brief Calls `-[NSDate compare:]`.
-     * @details Indicates the temporal ordering of the receiver and another given date. - Parameter other: The date with which to compare the receiver. This value must not be 'nil'. If the value is 'nil', the behavior is undefined and may change in future versions of macOS. - Returns: 'NSOrderedSame' if the two dates are exactly equal, 'NSOrderedDescending' if the receiver is later in time than 'other', and 'NSOrderedAscending' if the receiver is earlier in time than 'other'. This method detects sub-second differences between dates. If you want to compare dates with a less fine granularity, use 'timeIntervalSinceDate:' to compare the two dates.
-     * @param other Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSDate compare:]`.
+         * @details Indicates the temporal ordering of the receiver and another given date. - Parameter other: The date with which to compare the receiver. This value must not be 'nil'. If the value is 'nil', the behavior is undefined and may change in future versions of macOS. - Returns: 'NSOrderedSame' if the two dates are exactly equal, 'NSOrderedDescending' if the receiver is later in time than 'other', and 'NSOrderedAscending' if the receiver is earlier in time than 'other'. This method detects sub-second differences between dates. If you want to compare dates with a less fine granularity, use 'timeIntervalSinceDate:' to compare the two dates.
+         * @param other Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         ComparisonResult compare(const Date& other) const;
         /**
-     * @brief Calls `-[NSDate dateByAddingTimeInterval:]`.
-     * @details Returns a new date object that is set to a given number of seconds relative to the receiver. - Parameter ti: The number of seconds to add to the receiver. Use a negative value for seconds to have the returned object specify a date before the receiver. - Returns: A new 'NSDate' object that is set to 'seconds' seconds relative to the receiver. The date returned might have a representation different from the receiver's.
-     * @param ti Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSDate dateByAddingTimeInterval:]`.
+         * @details Returns a new date object that is set to a given number of seconds relative to the receiver. - Parameter ti: The number of seconds to add to the receiver. Use a negative value for seconds to have the returned object specify a date before the receiver. - Returns: A new 'NSDate' object that is set to 'seconds' seconds relative to the receiver. The date returned might have a representation different from the receiver's.
+         * @param ti Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Date date_by_adding_time_interval(double ti) const;
         /**
-     * @brief Calls `-[NSDate descriptionWithLocale:]`.
-     * @details Returns a string representation of the date using the given locale. - Parameter locale: An 'NSLocale' object. If you pass 'nil', 'NSDate' formats the date in the same way as the 'description' property. - Returns: A string representation of the receiver, using the given locale, or if the locale argument is 'nil', in the international format 'YYYY-MM-DD HH:MM:SS +/-HHMM', where '+/-HHMM' represents the time zone offset in hours and minutes from UTC (for example, "2001-03-24 10:45:32 +0600").
-     * @param locale Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSDate descriptionWithLocale:]`.
+         * @details Returns a string representation of the date using the given locale. - Parameter locale: An 'NSLocale' object. If you pass 'nil', 'NSDate' formats the date in the same way as the 'description' property. - Returns: A string representation of the receiver, using the given locale, or if the locale argument is 'nil', in the international format 'YYYY-MM-DD HH:MM:SS +/-HHMM', where '+/-HHMM' represents the time zone offset in hours and minutes from UTC (for example, "2001-03-24 10:45:32 +0600").
+         * @param locale Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::string description_with_locale(const Object& locale) const;
         /**
-     * @brief Calls `-[NSDate earlierDate:]`.
-     * @details Returns the earlier of the receiver and another given date. - Parameter anotherDate: The date with which to compare the receiver. - Returns: The earlier of the receiver and 'anotherDate', determined using 'timeIntervalSinceDate:'. If the receiver and 'anotherDate' represent the same date, returns the receiver.
-     * @param another_date Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSDate earlierDate:]`.
+         * @details Returns the earlier of the receiver and another given date. - Parameter anotherDate: The date with which to compare the receiver. - Returns: The earlier of the receiver and 'anotherDate', determined using 'timeIntervalSinceDate:'. If the receiver and 'anotherDate' represent the same date, returns the receiver.
+         * @param another_date Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Date earlier_date(const Date& another_date) const;
         /**
-     * @brief Calls `-[NSDate isEqualToDate:]`.
-     * @details Returns a Boolean value that indicates whether a given object is a date that is exactly equal the receiver. - Parameter otherDate: The date to compare with the receiver. - Returns: 'YES' if the 'otherDate' is an 'NSDate' object and is exactly equal to the receiver, otherwise 'NO'. This method detects sub-second differences between dates. If you want to compare dates with a less fine granularity, use 'timeIntervalSinceDate:' to compare the two dates.
-     * @param other_date Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSDate isEqualToDate:]`.
+         * @details Returns a Boolean value that indicates whether a given object is a date that is exactly equal the receiver. - Parameter otherDate: The date to compare with the receiver. - Returns: 'YES' if the 'otherDate' is an 'NSDate' object and is exactly equal to the receiver, otherwise 'NO'. This method detects sub-second differences between dates. If you want to compare dates with a less fine granularity, use 'timeIntervalSinceDate:' to compare the two dates.
+         * @param other_date Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool is_equal_to_date(const Date& other_date) const;
         /**
-     * @brief Calls `-[NSDate laterDate:]`.
-     * @details Returns the later of the receiver and another given date. - Parameter anotherDate: The date with which to compare the receiver. - Returns: The later of the receiver and 'anotherDate', determined using 'timeIntervalSinceDate:'. If the receiver and 'anotherDate' represent the same date, returns the receiver.
-     * @param another_date Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSDate laterDate:]`.
+         * @details Returns the later of the receiver and another given date. - Parameter anotherDate: The date with which to compare the receiver. - Returns: The later of the receiver and 'anotherDate', determined using 'timeIntervalSinceDate:'. If the receiver and 'anotherDate' represent the same date, returns the receiver.
+         * @param another_date Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Date later_date(const Date& another_date) const;
         /**
-     * @brief Calls `-[NSDate timeIntervalSinceDate:]`.
-     * @details Returns the interval between the receiver and another given date. - Parameter anotherDate: The date with which to compare the receiver. You must pass a non-'nil' date object. - Returns: The interval between the receiver and the 'anotherDate' parameter. If the receiver is earlier than 'anotherDate', the return value is negative. If 'anotherDate' is 'nil', the results are undefined.
-     * @param another_date Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSDate timeIntervalSinceDate:]`.
+         * @details Returns the interval between the receiver and another given date. - Parameter anotherDate: The date with which to compare the receiver. You must pass a non-'nil' date object. - Returns: The interval between the receiver and the 'anotherDate' parameter. If the receiver is earlier than 'anotherDate', the return value is negative. If 'anotherDate' is 'nil', the results are undefined.
+         * @param another_date Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         double time_interval_since_date(const Date& another_date) const;
         /**
-     * @brief Returns the `description` property of `NSDate`.
-     * @details A string representation of the date object. The representation is useful for debugging only. There are a number of options to acquire a formatted string for a date including: date formatters (see 'NSDateFormatter'), and the 'NSDate' methods 'descriptionWithLocale:'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `description` property of `NSDate`.
+         * @details A string representation of the date object. The representation is useful for debugging only. There are a number of options to acquire a formatted string for a date including: date formatters (see 'NSDateFormatter'), and the 'NSDate' methods 'descriptionWithLocale:'.
+         * @return The converted Objective-C result.
+         */
         std::string description() const;
         /**
-     * @brief Returns the `distantFuture` property of `NSDate`.
-     * @details A date object representing a date in the distant future. You can pass this value when an 'NSDate' object is required to have the date argument essentially ignored. For example, the 'NSWindow' method 'nextEventMatchingMask:untilDate:inMode:dequeue:' returns 'nil' if an event specified in the event mask does not happen before the specified date. You can use the object returned by 'distantFuture' as the date argument to wait indefinitely for the event to occur.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `distantFuture` property of `NSDate`.
+         * @details A date object representing a date in the distant future. You can pass this value when an 'NSDate' object is required to have the date argument essentially ignored. For example, the 'NSWindow' method 'nextEventMatchingMask:untilDate:inMode:dequeue:' returns 'nil' if an event specified in the event mask does not happen before the specified date. You can use the object returned by 'distantFuture' as the date argument to wait indefinitely for the event to occur.
+         * @return The converted Objective-C result.
+         */
         static Date distant_future();
         /**
-     * @brief Returns the `distantPast` property of `NSDate`.
-     * @details A date object representing a date in the distant past. You can use this object as a control date, a guaranteed temporal boundary.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `distantPast` property of `NSDate`.
+         * @details A date object representing a date in the distant past. You can use this object as a control date, a guaranteed temporal boundary.
+         * @return The converted Objective-C result.
+         */
         static Date distant_past();
         /**
-     * @brief Returns the `now` property of `NSDate`.
-     * @details The current date and time, as of the time of access. This is equivalent to initializing a new instance with 'NSDate()' (or '[[NSDate alloc] init]' in Objective-C). The 'NSDate' instance doesn't automatically update its time after you retrieve it.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `now` property of `NSDate`.
+         * @details The current date and time, as of the time of access. This is equivalent to initializing a new instance with 'NSDate()' (or '[[NSDate alloc] init]' in Objective-C). The 'NSDate' instance doesn't automatically update its time after you retrieve it.
+         * @return The converted Objective-C result.
+         */
         static Date now();
         /**
-     * @brief Returns the `timeIntervalSince1970` property of `NSDate`.
-     * @details The interval between the date object and 00:00:00 UTC on 1 January 1970. This property's value is negative if the date object is earlier than 00:00:00 UTC on 1 January 1970.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `timeIntervalSince1970` property of `NSDate`.
+         * @details The interval between the date object and 00:00:00 UTC on 1 January 1970. This property's value is negative if the date object is earlier than 00:00:00 UTC on 1 January 1970.
+         * @return The converted Objective-C result.
+         */
         double time_interval_since1970() const;
         /**
-     * @brief Returns the `timeIntervalSinceNow` property of `NSDate`.
-     * @details The interval between the date object and the current date and time. If the date object is earlier than the current date and time, this property's value is negative.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `timeIntervalSinceNow` property of `NSDate`.
+         * @details The interval between the date object and the current date and time. If the date object is earlier than the current date and time, this property's value is negative.
+         * @return The converted Objective-C result.
+         */
         double time_interval_since_now() const;
         /**
-     * @brief Returns the `timeIntervalSinceReferenceDate` property of `NSDate`.
-     * @details The interval between the date object and 00:00:00 UTC on 1 January 2001. This property's value is negative if the date object is earlier than the system's absolute reference date (00:00:00 UTC on 1 January 2001).
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `timeIntervalSinceReferenceDate` property of `NSDate`.
+         * @details The interval between the date object and 00:00:00 UTC on 1 January 2001. This property's value is negative if the date object is earlier than the system's absolute reference date (00:00:00 UTC on 1 January 2001).
+         * @return The converted Objective-C result.
+         */
         double time_interval_since_reference_date() const;
     };
 }

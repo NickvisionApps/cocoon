@@ -37,37 +37,37 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit CollectionLayoutAnchor(Adopt adopt);
         /**
-     * @brief Calls `+[NSCollectionLayoutAnchor layoutAnchorWithEdges:]`.
-     * @param edges Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSCollectionLayoutAnchor layoutAnchorWithEdges:]`.
+         * @param edges Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static CollectionLayoutAnchor layout_anchor_with_edges(DirectionalRectEdge edges);
         /**
-     * @brief Calls `+[NSCollectionLayoutAnchor layoutAnchorWithEdges:absoluteOffset:]`.
-     * @param edges Argument converted to the Objective-C parameter of the same role.
-     * @param absolute_offset Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSCollectionLayoutAnchor layoutAnchorWithEdges:absoluteOffset:]`.
+         * @param edges Argument converted to the Objective-C parameter of the same role.
+         * @param absolute_offset Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static CollectionLayoutAnchor layout_anchor_with_edges(DirectionalRectEdge edges, const Point& absolute_offset);
         /**
-     * @brief Returns the `edges` property of `NSCollectionLayoutAnchor`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `edges` property of `NSCollectionLayoutAnchor`.
+         * @return The converted Objective-C result.
+         */
         DirectionalRectEdge edges() const;
         /**
-     * @brief Returns the `isAbsoluteOffset` property of `NSCollectionLayoutAnchor`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `isAbsoluteOffset` property of `NSCollectionLayoutAnchor`.
+         * @return The converted Objective-C result.
+         */
         bool is_absolute_offset() const;
         /**
-     * @brief Returns the `isFractionalOffset` property of `NSCollectionLayoutAnchor`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `isFractionalOffset` property of `NSCollectionLayoutAnchor`.
+         * @return The converted Objective-C result.
+         */
         bool is_fractional_offset() const;
         /**
-     * @brief Returns the `offset` property of `NSCollectionLayoutAnchor`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `offset` property of `NSCollectionLayoutAnchor`.
+         * @return The converted Objective-C result.
+         */
         Point offset() const;
     };
 }

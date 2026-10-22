@@ -43,137 +43,137 @@ namespace cocoon
         explicit ViewCornerConfiguration(Adopt adopt);
 #ifdef COCOON_MACOS_27
         /**
-     * @brief Calls `+[NSViewCornerConfiguration capsuleCornerConfigurationWithMaximumRadius:]`.
-     * @details A configuration where the container is to take on a capsule shape, scaling with the view’s size. and clamped to the 'maximumRadius'. - Parameters maximumRadius: Maximum radius for the capsule.
-     * @param maximum_radius Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSViewCornerConfiguration capsuleCornerConfigurationWithMaximumRadius:]`.
+         * @details A configuration where the container is to take on a capsule shape, scaling with the view’s size. and clamped to the 'maximumRadius'. - Parameters maximumRadius: Maximum radius for the capsule.
+         * @param maximum_radius Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static ViewCornerConfiguration capsule_corner_configuration_with_maximum_radius(double maximum_radius);
 #endif
 
 #ifdef COCOON_MACOS_27
         /**
-     * @brief Calls `+[NSViewCornerConfiguration configurationWithRadius:]`.
-     * @details A configuration that applies the given radius independently to all corners. When used with a container concentric radius, this allows each individual corner to resolve to different radii.
-     * @param radius Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSViewCornerConfiguration configurationWithRadius:]`.
+         * @details A configuration that applies the given radius independently to all corners. When used with a container concentric radius, this allows each individual corner to resolve to different radii.
+         * @param radius Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static ViewCornerConfiguration configuration_with_radius(const ViewCornerRadius& radius);
 #endif
 
 #ifdef COCOON_MACOS_27
         /**
-     * @brief Calls `+[NSViewCornerConfiguration configurationWithTopLeftRadius:topRightRadius:bottomLeftRadius:bottomRightRadius:]`.
-     * @details A configuration with independent radii for each corner. - Parameters: - topLeftRadius: Radius of top left corner. - topRightRadius: Radius of top right corner. - bottomLeftRadius: Radius of bottom left corner. - bottomRightRadius: Radius of bottom right corner.
-     * @param top_left_radius Argument converted to the Objective-C parameter of the same role.
-     * @param top_right_radius Argument converted to the Objective-C parameter of the same role.
-     * @param bottom_left_radius Argument converted to the Objective-C parameter of the same role.
-     * @param bottom_right_radius Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSViewCornerConfiguration configurationWithTopLeftRadius:topRightRadius:bottomLeftRadius:bottomRightRadius:]`.
+         * @details A configuration with independent radii for each corner. - Parameters: - topLeftRadius: Radius of top left corner. - topRightRadius: Radius of top right corner. - bottomLeftRadius: Radius of bottom left corner. - bottomRightRadius: Radius of bottom right corner.
+         * @param top_left_radius Argument converted to the Objective-C parameter of the same role.
+         * @param top_right_radius Argument converted to the Objective-C parameter of the same role.
+         * @param bottom_left_radius Argument converted to the Objective-C parameter of the same role.
+         * @param bottom_right_radius Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static ViewCornerConfiguration configuration_with_top_left_radius(const ViewCornerRadius& top_left_radius, const ViewCornerRadius& top_right_radius, const ViewCornerRadius& bottom_left_radius, const ViewCornerRadius& bottom_right_radius);
 #endif
 
 #ifdef COCOON_MACOS_27
         /**
-     * @brief Calls `+[NSViewCornerConfiguration configurationWithUniformBottomRadius:topLeftRadius:topRightRadius:]`.
-     * @details A configuration that applies the 'bottomRadius' uniformly to the bottom-left and bottom-right corners, with optional independent radii for the top-left and top-right corners. When the uniform corners differ, it uses the largest of the resolved corner radii. - Parameters: - bottomRadius: Radius for bottom edge. - topLeftRadius: Radius for the top left corner. - topRightRadius: Radius for the top right corner.
-     * @param bottom_radius Argument converted to the Objective-C parameter of the same role.
-     * @param top_left_radius Argument converted to the Objective-C parameter of the same role.
-     * @param top_right_radius Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSViewCornerConfiguration configurationWithUniformBottomRadius:topLeftRadius:topRightRadius:]`.
+         * @details A configuration that applies the 'bottomRadius' uniformly to the bottom-left and bottom-right corners, with optional independent radii for the top-left and top-right corners. When the uniform corners differ, it uses the largest of the resolved corner radii. - Parameters: - bottomRadius: Radius for bottom edge. - topLeftRadius: Radius for the top left corner. - topRightRadius: Radius for the top right corner.
+         * @param bottom_radius Argument converted to the Objective-C parameter of the same role.
+         * @param top_left_radius Argument converted to the Objective-C parameter of the same role.
+         * @param top_right_radius Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static ViewCornerConfiguration configuration_with_uniform_bottom_radius(const ViewCornerRadius& bottom_radius, const ViewCornerRadius& top_left_radius, const ViewCornerRadius& top_right_radius);
 #endif
 
 #ifdef COCOON_MACOS_27
         /**
-     * @brief Calls `+[NSViewCornerConfiguration configurationWithUniformLeftRadius:rightRadius:]`.
-     * @details A configuration that applies the 'leftRadius' uniformly to the top-left and bottom-left corners, and the 'rightRadius' uniformly to the top-right and bottom-right corners. When the uniform corners differ, it uses the largest of the resolved corner radii. - Parameters: - leftRadius: Radius for left edge. - rightRadius: Radius for the right edge.
-     * @param left_radius Argument converted to the Objective-C parameter of the same role.
-     * @param right_radius Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSViewCornerConfiguration configurationWithUniformLeftRadius:rightRadius:]`.
+         * @details A configuration that applies the 'leftRadius' uniformly to the top-left and bottom-left corners, and the 'rightRadius' uniformly to the top-right and bottom-right corners. When the uniform corners differ, it uses the largest of the resolved corner radii. - Parameters: - leftRadius: Radius for left edge. - rightRadius: Radius for the right edge.
+         * @param left_radius Argument converted to the Objective-C parameter of the same role.
+         * @param right_radius Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static ViewCornerConfiguration configuration_with_uniform_left_radius(const ViewCornerRadius& left_radius, const ViewCornerRadius& right_radius);
 #endif
 
 #ifdef COCOON_MACOS_27
         /**
-     * @brief Calls `+[NSViewCornerConfiguration configurationWithUniformLeftRadius:topRightRadius:bottomRightRadius:]`.
-     * @details A configuration that applies the 'leftRadius' uniformly to the top-left and bottom-left corners, with optional independent radii for the top-right and bottom-right corners. When the uniform corners differ, it uses the largest of the resolved corner radii. - Parameters: - leftRadius: Radius for left edge. - topRightRadius: Radius for the top right corner. - bottomRightRadius: Radius for the bottom right corner.
-     * @param left_radius Argument converted to the Objective-C parameter of the same role.
-     * @param top_right_radius Argument converted to the Objective-C parameter of the same role.
-     * @param bottom_right_radius Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSViewCornerConfiguration configurationWithUniformLeftRadius:topRightRadius:bottomRightRadius:]`.
+         * @details A configuration that applies the 'leftRadius' uniformly to the top-left and bottom-left corners, with optional independent radii for the top-right and bottom-right corners. When the uniform corners differ, it uses the largest of the resolved corner radii. - Parameters: - leftRadius: Radius for left edge. - topRightRadius: Radius for the top right corner. - bottomRightRadius: Radius for the bottom right corner.
+         * @param left_radius Argument converted to the Objective-C parameter of the same role.
+         * @param top_right_radius Argument converted to the Objective-C parameter of the same role.
+         * @param bottom_right_radius Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static ViewCornerConfiguration configuration_with_uniform_left_radius(const ViewCornerRadius& left_radius, const ViewCornerRadius& top_right_radius, const ViewCornerRadius& bottom_right_radius);
 #endif
 
 #ifdef COCOON_MACOS_27
         /**
-     * @brief Calls `+[NSViewCornerConfiguration configurationWithUniformRadius:]`.
-     * @details A configuration that applies the given radius uniformly to all corners, using the largest of the resolved corner radii when they differ. - Parameters radius: Radius for all corners.
-     * @param radius Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSViewCornerConfiguration configurationWithUniformRadius:]`.
+         * @details A configuration that applies the given radius uniformly to all corners, using the largest of the resolved corner radii when they differ. - Parameters radius: Radius for all corners.
+         * @param radius Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static ViewCornerConfiguration configuration_with_uniform_radius(const ViewCornerRadius& radius);
 #endif
 
 #ifdef COCOON_MACOS_27
         /**
-     * @brief Calls `+[NSViewCornerConfiguration configurationWithUniformRadius:topLeftRadius:topRightRadius:bottomLeftRadius:bottomRightRadius:]`.
-     * @details A configuration that applies the given uniform radius uniformly to all corners that are otherwise unspecified. Any specified corner is independent of the others. - Parameters: - radius: Uniform radius for all unspecified corners. - topLeftRadius: Radius of top left corner. - topRightRadius: Radius of top right corner. - bottomLeftRadius: Radius of bottom left corner. - bottomRightRadius: Radius of bottom right corner.
-     * @param radius Argument converted to the Objective-C parameter of the same role.
-     * @param top_left_radius Argument converted to the Objective-C parameter of the same role.
-     * @param top_right_radius Argument converted to the Objective-C parameter of the same role.
-     * @param bottom_left_radius Argument converted to the Objective-C parameter of the same role.
-     * @param bottom_right_radius Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSViewCornerConfiguration configurationWithUniformRadius:topLeftRadius:topRightRadius:bottomLeftRadius:bottomRightRadius:]`.
+         * @details A configuration that applies the given uniform radius uniformly to all corners that are otherwise unspecified. Any specified corner is independent of the others. - Parameters: - radius: Uniform radius for all unspecified corners. - topLeftRadius: Radius of top left corner. - topRightRadius: Radius of top right corner. - bottomLeftRadius: Radius of bottom left corner. - bottomRightRadius: Radius of bottom right corner.
+         * @param radius Argument converted to the Objective-C parameter of the same role.
+         * @param top_left_radius Argument converted to the Objective-C parameter of the same role.
+         * @param top_right_radius Argument converted to the Objective-C parameter of the same role.
+         * @param bottom_left_radius Argument converted to the Objective-C parameter of the same role.
+         * @param bottom_right_radius Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static ViewCornerConfiguration configuration_with_uniform_radius(const ViewCornerRadius& radius, const ViewCornerRadius& top_left_radius, const ViewCornerRadius& top_right_radius, const ViewCornerRadius& bottom_left_radius, const ViewCornerRadius& bottom_right_radius);
 #endif
 
 #ifdef COCOON_MACOS_27
         /**
-     * @brief Calls `+[NSViewCornerConfiguration configurationWithUniformRightRadius:topLeftRadius:bottomLeftRadius:]`.
-     * @details A configuration that applies the 'rightRadius' uniformly to the top-right and bottom-right corners, with optional independent radii for the top-left and bottom-left corners. When the uniform corners differ, it uses the largest of the resolved corner radii. - Parameters: - rightRadius: Radius for right edge. - topLeftRadius: Radius for the top left corner. - bottomLeftRadius: Radius for the bottom left corner.
-     * @param right_radius Argument converted to the Objective-C parameter of the same role.
-     * @param top_left_radius Argument converted to the Objective-C parameter of the same role.
-     * @param bottom_left_radius Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSViewCornerConfiguration configurationWithUniformRightRadius:topLeftRadius:bottomLeftRadius:]`.
+         * @details A configuration that applies the 'rightRadius' uniformly to the top-right and bottom-right corners, with optional independent radii for the top-left and bottom-left corners. When the uniform corners differ, it uses the largest of the resolved corner radii. - Parameters: - rightRadius: Radius for right edge. - topLeftRadius: Radius for the top left corner. - bottomLeftRadius: Radius for the bottom left corner.
+         * @param right_radius Argument converted to the Objective-C parameter of the same role.
+         * @param top_left_radius Argument converted to the Objective-C parameter of the same role.
+         * @param bottom_left_radius Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static ViewCornerConfiguration configuration_with_uniform_right_radius(const ViewCornerRadius& right_radius, const ViewCornerRadius& top_left_radius, const ViewCornerRadius& bottom_left_radius);
 #endif
 
 #ifdef COCOON_MACOS_27
         /**
-     * @brief Calls `+[NSViewCornerConfiguration configurationWithUniformTopRadius:bottomLeftRadius:bottomRightRadius:]`.
-     * @details A configuration that applies the 'topRadius' uniformly to the top-left and top-right corners, with optional independent radii for the bottom-left and bottom-right corners. When the uniform corners differ, it uses the largest of the resolved corner radii. - Parameters: - topRadius: Radius for top edge. - bottomLeftRadius: Radius for the bottom left corner. - bottomRightRadius: Radius for the bottom right corner.
-     * @param top_radius Argument converted to the Objective-C parameter of the same role.
-     * @param bottom_left_radius Argument converted to the Objective-C parameter of the same role.
-     * @param bottom_right_radius Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSViewCornerConfiguration configurationWithUniformTopRadius:bottomLeftRadius:bottomRightRadius:]`.
+         * @details A configuration that applies the 'topRadius' uniformly to the top-left and top-right corners, with optional independent radii for the bottom-left and bottom-right corners. When the uniform corners differ, it uses the largest of the resolved corner radii. - Parameters: - topRadius: Radius for top edge. - bottomLeftRadius: Radius for the bottom left corner. - bottomRightRadius: Radius for the bottom right corner.
+         * @param top_radius Argument converted to the Objective-C parameter of the same role.
+         * @param bottom_left_radius Argument converted to the Objective-C parameter of the same role.
+         * @param bottom_right_radius Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static ViewCornerConfiguration configuration_with_uniform_top_radius(const ViewCornerRadius& top_radius, const ViewCornerRadius& bottom_left_radius, const ViewCornerRadius& bottom_right_radius);
 #endif
 
 #ifdef COCOON_MACOS_27
         /**
-     * @brief Calls `+[NSViewCornerConfiguration configurationWithUniformTopRadius:bottomRadius:]`.
-     * @details A configuration that applies the 'topRadius' uniformly to the top-left and top-right corners, and the 'bottomRadius' uniformly to the bottom-left and bottom-right corners. When the uniform corners differ, it uses the largest of the resolved corner radii. - Parameters: - topRadius: Radius for top edge. - bottomRadius: Radius for the bottom edge.
-     * @param top_radius Argument converted to the Objective-C parameter of the same role.
-     * @param bottom_radius Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSViewCornerConfiguration configurationWithUniformTopRadius:bottomRadius:]`.
+         * @details A configuration that applies the 'topRadius' uniformly to the top-left and top-right corners, and the 'bottomRadius' uniformly to the bottom-left and bottom-right corners. When the uniform corners differ, it uses the largest of the resolved corner radii. - Parameters: - topRadius: Radius for top edge. - bottomRadius: Radius for the bottom edge.
+         * @param top_radius Argument converted to the Objective-C parameter of the same role.
+         * @param bottom_radius Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static ViewCornerConfiguration configuration_with_uniform_top_radius(const ViewCornerRadius& top_radius, const ViewCornerRadius& bottom_radius);
 #endif
 
 #ifdef COCOON_MACOS_27
         /**
-     * @brief Returns the `capsuleCornerConfiguration` property of `NSViewCornerConfiguration`.
-     * @details A configuration where the container is to take on a capsule shape, scaling with the view’s size.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `capsuleCornerConfiguration` property of `NSViewCornerConfiguration`.
+         * @details A configuration where the container is to take on a capsule shape, scaling with the view’s size.
+         * @return The converted Objective-C result.
+         */
         static ViewCornerConfiguration capsule_corner_configuration();
 #endif
     };

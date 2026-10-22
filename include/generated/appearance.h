@@ -42,39 +42,39 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit Appearance(Adopt adopt);
         /**
-     * @brief Calls `+[NSAppearance appearanceNamed:]`.
-     * @details Finds and returns an NSAppearance based on the name. For standard appearances such as NSAppearanceNameAqua, a built-in appearance is returned. For other names, the main bundle is searched.
-     * @param name Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSAppearance appearanceNamed:]`.
+         * @details Finds and returns an NSAppearance based on the name. For standard appearances such as NSAppearanceNameAqua, a built-in appearance is returned. For other names, the main bundle is searched.
+         * @param name Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static Appearance appearance_named(const std::string& name);
         /**
-     * @brief Calls `-[NSAppearance bestMatchFromAppearancesWithNames:]`.
-     * @details Given a list of appearance names, returns the one that best matches the receiver
-     * @param appearances Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSAppearance bestMatchFromAppearancesWithNames:]`.
+         * @details Given a list of appearance names, returns the one that best matches the receiver
+         * @param appearances Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::string best_match_from_appearances_with_names(const std::vector<std::string>& appearances) const;
         /**
-     * @brief Calls `-[NSAppearance performAsCurrentDrawingAppearance:]`.
-     * @param block Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSAppearance performAsCurrentDrawingAppearance:]`.
+         * @param block Argument converted to the Objective-C parameter of the same role.
+         */
         void perform_as_current_drawing_appearance(std::function<void()> block) const;
         /**
-     * @brief Returns the `allowsVibrancy` property of `NSAppearance`.
-     * @details Query allowsVibrancy to see if the given appearance actually needs vibrant drawing. You may want to draw differently if the current apperance is vibrant.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `allowsVibrancy` property of `NSAppearance`.
+         * @details Query allowsVibrancy to see if the given appearance actually needs vibrant drawing. You may want to draw differently if the current apperance is vibrant.
+         * @return The converted Objective-C result.
+         */
         bool allows_vibrancy() const;
         /**
-     * @brief Returns the `currentDrawingAppearance` property of `NSAppearance`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `currentDrawingAppearance` property of `NSAppearance`.
+         * @return The converted Objective-C result.
+         */
         static Appearance current_drawing_appearance();
         /**
-     * @brief Returns the `name` property of `NSAppearance`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `name` property of `NSAppearance`.
+         * @return The converted Objective-C result.
+         */
         std::string name() const;
     };
 }

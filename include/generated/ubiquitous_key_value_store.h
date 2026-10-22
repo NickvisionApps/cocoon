@@ -40,140 +40,140 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit UbiquitousKeyValueStore(Adopt adopt);
         /**
-     * @brief Calls `-[NSUbiquitousKeyValueStore arrayForKey:]`.
-     * @details Returns the array associated with the specified key.
-     * @param a_key Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSUbiquitousKeyValueStore arrayForKey:]`.
+         * @details Returns the array associated with the specified key.
+         * @param a_key Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::vector<Object> array_for_key(const std::string& a_key) const;
         /**
-     * @brief Calls `-[NSUbiquitousKeyValueStore boolForKey:]`.
-     * @details Returns the Boolean value associated with the specified key.
-     * @param a_key Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSUbiquitousKeyValueStore boolForKey:]`.
+         * @details Returns the Boolean value associated with the specified key.
+         * @param a_key Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool bool_for_key(const std::string& a_key) const;
         /**
-     * @brief Calls `-[NSUbiquitousKeyValueStore dataForKey:]`.
-     * @details Returns the data object associated with the specified key.
-     * @param a_key Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSUbiquitousKeyValueStore dataForKey:]`.
+         * @details Returns the data object associated with the specified key.
+         * @param a_key Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::vector<std::uint8_t> data_for_key(const std::string& a_key) const;
         /**
-     * @brief Calls `-[NSUbiquitousKeyValueStore dictionaryForKey:]`.
-     * @details Returns the dictionary object associated with the specified key.
-     * @param a_key Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSUbiquitousKeyValueStore dictionaryForKey:]`.
+         * @details Returns the dictionary object associated with the specified key.
+         * @param a_key Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::map<std::string, Object> dictionary_for_key(const std::string& a_key) const;
         /**
-     * @brief Calls `-[NSUbiquitousKeyValueStore doubleForKey:]`.
-     * @details Returns the 'double' value associated with the specified key.
-     * @param a_key Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSUbiquitousKeyValueStore doubleForKey:]`.
+         * @details Returns the 'double' value associated with the specified key.
+         * @param a_key Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         double double_for_key(const std::string& a_key) const;
         /**
-     * @brief Calls `-[NSUbiquitousKeyValueStore longLongForKey:]`.
-     * @details Returns the 64-bit integer value associated with the specified key.
-     * @param a_key Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSUbiquitousKeyValueStore longLongForKey:]`.
+         * @details Returns the 64-bit integer value associated with the specified key.
+         * @param a_key Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::int64_t long_long_for_key(const std::string& a_key) const;
         /**
-     * @brief Calls `-[NSUbiquitousKeyValueStore objectForKey:]`.
-     * @details Returns the object associated with the specified key. - Parameter aKey: The key to retrieve from the iCloud key-value store. - Returns: The object associated with 'aKey', or 'nil' if the key isn't present.
-     * @param a_key Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSUbiquitousKeyValueStore objectForKey:]`.
+         * @details Returns the object associated with the specified key. - Parameter aKey: The key to retrieve from the iCloud key-value store. - Returns: The object associated with 'aKey', or 'nil' if the key isn't present.
+         * @param a_key Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Object object_for_key(const std::string& a_key) const;
         /**
-     * @brief Calls `-[NSUbiquitousKeyValueStore removeObjectForKey:]`.
-     * @details Removes the value for the specified key from the iCloud key-value store.
-     * @param a_key Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSUbiquitousKeyValueStore removeObjectForKey:]`.
+         * @details Removes the value for the specified key from the iCloud key-value store.
+         * @param a_key Argument converted to the Objective-C parameter of the same role.
+         */
         void remove_object_for_key(const std::string& a_key) const;
         /**
-     * @brief Calls `-[NSUbiquitousKeyValueStore setArray:forKey:]`.
-     * @details Sets the value of the specified key to an array of property list objects.
-     * @param an_array Argument converted to the Objective-C parameter of the same role.
-     * @param a_key Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSUbiquitousKeyValueStore setArray:forKey:]`.
+         * @details Sets the value of the specified key to an array of property list objects.
+         * @param an_array Argument converted to the Objective-C parameter of the same role.
+         * @param a_key Argument converted to the Objective-C parameter of the same role.
+         */
         void set_array(const std::vector<Object>& an_array, const std::string& a_key) const;
         /**
-     * @brief Calls `-[NSUbiquitousKeyValueStore setBool:forKey:]`.
-     * @details Sets the value of the specified key to a Boolean value.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     * @param a_key Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSUbiquitousKeyValueStore setBool:forKey:]`.
+         * @details Sets the value of the specified key to a Boolean value.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         * @param a_key Argument converted to the Objective-C parameter of the same role.
+         */
         void set_bool(bool value, const std::string& a_key) const;
         /**
-     * @brief Calls `-[NSUbiquitousKeyValueStore setData:forKey:]`.
-     * @details Sets the value of the specified key to a data object.
-     * @param a_data Argument converted to the Objective-C parameter of the same role.
-     * @param a_key Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSUbiquitousKeyValueStore setData:forKey:]`.
+         * @details Sets the value of the specified key to a data object.
+         * @param a_data Argument converted to the Objective-C parameter of the same role.
+         * @param a_key Argument converted to the Objective-C parameter of the same role.
+         */
         void set_data(const std::vector<std::uint8_t>& a_data, const std::string& a_key) const;
         /**
-     * @brief Calls `-[NSUbiquitousKeyValueStore setDictionary:forKey:]`.
-     * @details Sets the value of the specified key to a dictionary of property list objects.
-     * @param a_dictionary Argument converted to the Objective-C parameter of the same role.
-     * @param a_key Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSUbiquitousKeyValueStore setDictionary:forKey:]`.
+         * @details Sets the value of the specified key to a dictionary of property list objects.
+         * @param a_dictionary Argument converted to the Objective-C parameter of the same role.
+         * @param a_key Argument converted to the Objective-C parameter of the same role.
+         */
         void set_dictionary(const std::map<std::string, Object>& a_dictionary, const std::string& a_key) const;
         /**
-     * @brief Calls `-[NSUbiquitousKeyValueStore setDouble:forKey:]`.
-     * @details Sets the value of the specified key to a double value.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     * @param a_key Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSUbiquitousKeyValueStore setDouble:forKey:]`.
+         * @details Sets the value of the specified key to a double value.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         * @param a_key Argument converted to the Objective-C parameter of the same role.
+         */
         void set_double(double value, const std::string& a_key) const;
         /**
-     * @brief Calls `-[NSUbiquitousKeyValueStore setLongLong:forKey:]`.
-     * @details Sets the value of the specified key to a 64-bit integer value.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     * @param a_key Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSUbiquitousKeyValueStore setLongLong:forKey:]`.
+         * @details Sets the value of the specified key to a 64-bit integer value.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         * @param a_key Argument converted to the Objective-C parameter of the same role.
+         */
         void set_long_long(std::int64_t value, const std::string& a_key) const;
         /**
-     * @brief Calls `-[NSUbiquitousKeyValueStore setObject:forKey:]`.
-     * @details Sets the value of the specified key to a property list object.
-     * @param an_object Argument converted to the Objective-C parameter of the same role.
-     * @param a_key Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSUbiquitousKeyValueStore setObject:forKey:]`.
+         * @details Sets the value of the specified key to a property list object.
+         * @param an_object Argument converted to the Objective-C parameter of the same role.
+         * @param a_key Argument converted to the Objective-C parameter of the same role.
+         */
         void set_object(const Object& an_object, const std::string& a_key) const;
         /**
-     * @brief Calls `-[NSUbiquitousKeyValueStore setString:forKey:]`.
-     * @details Sets the value of the specified key to a string value.
-     * @param a_string Argument converted to the Objective-C parameter of the same role.
-     * @param a_key Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSUbiquitousKeyValueStore setString:forKey:]`.
+         * @details Sets the value of the specified key to a string value.
+         * @param a_string Argument converted to the Objective-C parameter of the same role.
+         * @param a_key Argument converted to the Objective-C parameter of the same role.
+         */
         void set_string(const std::string& a_string, const std::string& a_key) const;
         /**
-     * @brief Calls `-[NSUbiquitousKeyValueStore stringForKey:]`.
-     * @details Returns the string associated with the specified key.
-     * @param a_key Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSUbiquitousKeyValueStore stringForKey:]`.
+         * @details Returns the string associated with the specified key.
+         * @param a_key Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::string string_for_key(const std::string& a_key) const;
         /**
-     * @brief Calls `-[NSUbiquitousKeyValueStore synchronize]`.
-     * @details Synchronizes the in-memory keys and values with the ones stored in iCloud. - Returns: 'YES' if the in-memory and iCloud keys are synchronized, or 'NO' if an error occurred.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSUbiquitousKeyValueStore synchronize]`.
+         * @details Synchronizes the in-memory keys and values with the ones stored in iCloud. - Returns: 'YES' if the in-memory and iCloud keys are synchronized, or 'NO' if an error occurred.
+         * @return The converted Objective-C result.
+         */
         bool synchronize() const;
         /**
-     * @brief Returns the `defaultStore` property of `NSUbiquitousKeyValueStore`.
-     * @details The shared iCloud key-value store object. Use this object to access the shared iCloud key-value store tied to your app and the current person.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `defaultStore` property of `NSUbiquitousKeyValueStore`.
+         * @details The shared iCloud key-value store object. Use this object to access the shared iCloud key-value store tied to your app and the current person.
+         * @return The converted Objective-C result.
+         */
         static UbiquitousKeyValueStore default_store();
         /**
-     * @brief Returns the `dictionaryRepresentation` property of `NSUbiquitousKeyValueStore`.
-     * @details A dictionary with all of the key-value pairs in the iCloud key-value store.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `dictionaryRepresentation` property of `NSUbiquitousKeyValueStore`.
+         * @details A dictionary with all of the key-value pairs in the iCloud key-value store.
+         * @return The converted Objective-C result.
+         */
         std::map<std::string, Object> dictionary_representation() const;
     };
 }

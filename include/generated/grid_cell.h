@@ -48,69 +48,69 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit GridCell(Adopt adopt);
         /**
-     * @brief Returns the `column` property of `NSGridCell`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `column` property of `NSGridCell`.
+         * @return The converted Objective-C result.
+         */
         GridColumn column() const;
         /**
-     * @brief Returns the `contentView` property of `NSGridCell`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `contentView` property of `NSGridCell`.
+         * @return The converted Objective-C result.
+         */
         View content_view() const;
         /**
-     * @brief Sets the `contentView` property of `NSGridCell`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `contentView` property of `NSGridCell`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_content_view(const View& value) const;
         /**
-     * @brief Returns the `customPlacementConstraints` property of `NSGridCell`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `customPlacementConstraints` property of `NSGridCell`.
+         * @return The converted Objective-C result.
+         */
         std::vector<LayoutConstraint> custom_placement_constraints() const;
         /**
-     * @brief Sets the `customPlacementConstraints` property of `NSGridCell`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `customPlacementConstraints` property of `NSGridCell`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_custom_placement_constraints(const std::vector<LayoutConstraint>& value) const;
         /**
-     * @brief Returns the `emptyContentView` property of `NSGridCell`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `emptyContentView` property of `NSGridCell`.
+         * @return The converted Objective-C result.
+         */
         static View empty_content_view();
         /**
-     * @brief Returns the `row` property of `NSGridCell`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `row` property of `NSGridCell`.
+         * @return The converted Objective-C result.
+         */
         GridRow row() const;
         /**
-     * @brief Returns the `rowAlignment` property of `NSGridCell`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `rowAlignment` property of `NSGridCell`.
+         * @return The converted Objective-C result.
+         */
         GridRowAlignment row_alignment() const;
         /**
-     * @brief Sets the `rowAlignment` property of `NSGridCell`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `rowAlignment` property of `NSGridCell`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_row_alignment(GridRowAlignment value) const;
         /**
-     * @brief Returns the `xPlacement` property of `NSGridCell`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `xPlacement` property of `NSGridCell`.
+         * @return The converted Objective-C result.
+         */
         GridCellPlacement x_placement() const;
         /**
-     * @brief Sets the `xPlacement` property of `NSGridCell`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `xPlacement` property of `NSGridCell`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_x_placement(GridCellPlacement value) const;
         /**
-     * @brief Returns the `yPlacement` property of `NSGridCell`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `yPlacement` property of `NSGridCell`.
+         * @return The converted Objective-C result.
+         */
         GridCellPlacement y_placement() const;
         /**
-     * @brief Sets the `yPlacement` property of `NSGridCell`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `yPlacement` property of `NSGridCell`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_y_placement(GridCellPlacement value) const;
     };
 }

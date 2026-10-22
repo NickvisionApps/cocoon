@@ -41,16 +41,16 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit StatusBarButton(Adopt adopt);
         /**
-     * @brief Returns the `appearsDisabled` property of `NSStatusBarButton`.
-     * @details Determines whether the status bar icon has a disabled/off appearance while still being functional, such as allowing selection and actions. The default value is 'false'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `appearsDisabled` property of `NSStatusBarButton`.
+         * @details Determines whether the status bar icon has a disabled/off appearance while still being functional, such as allowing selection and actions. The default value is 'false'.
+         * @return The converted Objective-C result.
+         */
         bool appears_disabled() const;
         /**
-     * @brief Sets the `appearsDisabled` property of `NSStatusBarButton`.
-     * @details Determines whether the status bar icon has a disabled/off appearance while still being functional, such as allowing selection and actions. The default value is 'false'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `appearsDisabled` property of `NSStatusBarButton`.
+         * @details Determines whether the status bar icon has a disabled/off appearance while still being functional, such as allowing selection and actions. The default value is 'false'.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_appears_disabled(bool value) const;
     };
 }

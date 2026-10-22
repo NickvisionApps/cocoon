@@ -33,20 +33,20 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit PICTImageRep(Adopt adopt);
         /**
-     * @brief Calls `+[NSPICTImageRep imageRepWithData:]`.
-     * @param pict_data Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSPICTImageRep imageRepWithData:]`.
+         * @param pict_data Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static PICTImageRep image_rep_with_data(const std::vector<std::uint8_t>& pict_data);
         /**
-     * @brief Returns the `PICTRepresentation` property of `NSPICTImageRep`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `PICTRepresentation` property of `NSPICTImageRep`.
+         * @return The converted Objective-C result.
+         */
         std::vector<std::uint8_t> pict_representation() const;
         /**
-     * @brief Returns the `boundingBox` property of `NSPICTImageRep`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `boundingBox` property of `NSPICTImageRep`.
+         * @return The converted Objective-C result.
+         */
         Rect bounding_box() const;
     };
 }

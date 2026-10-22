@@ -51,64 +51,64 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit WhoseSpecifier(Adopt adopt);
         /**
-     * @brief Returns the `endSubelementIdentifier` property of `NSWhoseSpecifier`.
-     * @details The identifier for the end subelement.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `endSubelementIdentifier` property of `NSWhoseSpecifier`.
+         * @details The identifier for the end subelement.
+         * @return The converted Objective-C result.
+         */
         WhoseSubelementIdentifier end_subelement_identifier() const;
         /**
-     * @brief Sets the `endSubelementIdentifier` property of `NSWhoseSpecifier`.
-     * @details The identifier for the end subelement.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `endSubelementIdentifier` property of `NSWhoseSpecifier`.
+         * @details The identifier for the end subelement.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_end_subelement_identifier(WhoseSubelementIdentifier value) const;
         /**
-     * @brief Returns the `endSubelementIndex` property of `NSWhoseSpecifier`.
-     * @details The index of the end subelement. Only used if 'endSubelementIdentifier' is 'NSIndexSubelement'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `endSubelementIndex` property of `NSWhoseSpecifier`.
+         * @details The index of the end subelement. Only used if 'endSubelementIdentifier' is 'NSIndexSubelement'.
+         * @return The converted Objective-C result.
+         */
         std::int64_t end_subelement_index() const;
         /**
-     * @brief Sets the `endSubelementIndex` property of `NSWhoseSpecifier`.
-     * @details The index of the end subelement. Only used if 'endSubelementIdentifier' is 'NSIndexSubelement'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `endSubelementIndex` property of `NSWhoseSpecifier`.
+         * @details The index of the end subelement. Only used if 'endSubelementIdentifier' is 'NSIndexSubelement'.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_end_subelement_index(std::int64_t value) const;
         /**
-     * @brief Returns the `startSubelementIdentifier` property of `NSWhoseSpecifier`.
-     * @details The identifier for the start subelement.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `startSubelementIdentifier` property of `NSWhoseSpecifier`.
+         * @details The identifier for the start subelement.
+         * @return The converted Objective-C result.
+         */
         WhoseSubelementIdentifier start_subelement_identifier() const;
         /**
-     * @brief Sets the `startSubelementIdentifier` property of `NSWhoseSpecifier`.
-     * @details The identifier for the start subelement.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `startSubelementIdentifier` property of `NSWhoseSpecifier`.
+         * @details The identifier for the start subelement.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_start_subelement_identifier(WhoseSubelementIdentifier value) const;
         /**
-     * @brief Returns the `startSubelementIndex` property of `NSWhoseSpecifier`.
-     * @details The index of the start subelement. Only used if 'startSubelementIdentifier' is 'NSIndexSubelement'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `startSubelementIndex` property of `NSWhoseSpecifier`.
+         * @details The index of the start subelement. Only used if 'startSubelementIdentifier' is 'NSIndexSubelement'.
+         * @return The converted Objective-C result.
+         */
         std::int64_t start_subelement_index() const;
         /**
-     * @brief Sets the `startSubelementIndex` property of `NSWhoseSpecifier`.
-     * @details The index of the start subelement. Only used if 'startSubelementIdentifier' is 'NSIndexSubelement'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `startSubelementIndex` property of `NSWhoseSpecifier`.
+         * @details The index of the start subelement. Only used if 'startSubelementIdentifier' is 'NSIndexSubelement'.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_start_subelement_index(std::int64_t value) const;
         /**
-     * @brief Returns the `test` property of `NSWhoseSpecifier`.
-     * @details The test used to qualify the objects.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `test` property of `NSWhoseSpecifier`.
+         * @details The test used to qualify the objects.
+         * @return The converted Objective-C result.
+         */
         ScriptWhoseTest test() const;
         /**
-     * @brief Sets the `test` property of `NSWhoseSpecifier`.
-     * @details The test used to qualify the objects.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `test` property of `NSWhoseSpecifier`.
+         * @details The test used to qualify the objects.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_test(const ScriptWhoseTest& value) const;
     };
 }

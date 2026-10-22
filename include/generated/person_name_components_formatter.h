@@ -52,70 +52,70 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit PersonNameComponentsFormatter(Adopt adopt);
         /**
-     * @brief Calls `-[NSPersonNameComponentsFormatter annotatedStringFromPersonNameComponents:]`.
-     * @details Returns an attributed string with annotations for each component. For each range, attributes can be obtained by querying dictionary key 'NSPersonNameComponentKey', using 'NSPersonNameComponent' constant values.
-     * @param components Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSPersonNameComponentsFormatter annotatedStringFromPersonNameComponents:]`.
+         * @details Returns an attributed string with annotations for each component. For each range, attributes can be obtained by querying dictionary key 'NSPersonNameComponentKey', using 'NSPersonNameComponent' constant values.
+         * @param components Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         AttributedString annotated_string_from_person_name_components(const PersonNameComponents& components) const;
         /**
-     * @brief Calls `+[NSPersonNameComponentsFormatter localizedStringFromPersonNameComponents:style:options:]`.
-     * @details Returns a formatted string from the given person name components using the specified style and options. Shortcut for converting an 'NSPersonNameComponents' object into a string without explicitly creating an instance. Create an instance for greater customizability.
-     * @param components Argument converted to the Objective-C parameter of the same role.
-     * @param name_format_style Argument converted to the Objective-C parameter of the same role.
-     * @param name_options Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSPersonNameComponentsFormatter localizedStringFromPersonNameComponents:style:options:]`.
+         * @details Returns a formatted string from the given person name components using the specified style and options. Shortcut for converting an 'NSPersonNameComponents' object into a string without explicitly creating an instance. Create an instance for greater customizability.
+         * @param components Argument converted to the Objective-C parameter of the same role.
+         * @param name_format_style Argument converted to the Objective-C parameter of the same role.
+         * @param name_options Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static std::string localized_string_from_person_name_components(const PersonNameComponents& components, PersonNameComponentsFormatterStyle name_format_style, PersonNameComponentsFormatterOptions name_options);
         /**
-     * @brief Calls `-[NSPersonNameComponentsFormatter personNameComponentsFromString:]`.
-     * @details Returns an 'NSPersonNameComponents' object representing the name components found in the provided string.
-     * @param string Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSPersonNameComponentsFormatter personNameComponentsFromString:]`.
+         * @details Returns an 'NSPersonNameComponents' object representing the name components found in the provided string.
+         * @param string Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         PersonNameComponents person_name_components_from_string(const std::string& string) const;
         /**
-     * @brief Calls `-[NSPersonNameComponentsFormatter stringFromPersonNameComponents:]`.
-     * @details Returns a string containing the formatted value of the provided components object.
-     * @param components Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSPersonNameComponentsFormatter stringFromPersonNameComponents:]`.
+         * @details Returns a string containing the formatted value of the provided components object.
+         * @param components Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::string string_from_person_name_components(const PersonNameComponents& components) const;
         /**
-     * @brief Returns the `locale` property of `NSPersonNameComponentsFormatter`.
-     * @details Specifies the locale to format names. Defaults to 'autoupdatingCurrentLocale'. Also resets to 'autoupdatingCurrentLocale' on assignment of 'nil'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `locale` property of `NSPersonNameComponentsFormatter`.
+         * @details Specifies the locale to format names. Defaults to 'autoupdatingCurrentLocale'. Also resets to 'autoupdatingCurrentLocale' on assignment of 'nil'.
+         * @return The converted Objective-C result.
+         */
         Locale locale() const;
         /**
-     * @brief Sets the `locale` property of `NSPersonNameComponentsFormatter`.
-     * @details Specifies the locale to format names. Defaults to 'autoupdatingCurrentLocale'. Also resets to 'autoupdatingCurrentLocale' on assignment of 'nil'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `locale` property of `NSPersonNameComponentsFormatter`.
+         * @details Specifies the locale to format names. Defaults to 'autoupdatingCurrentLocale'. Also resets to 'autoupdatingCurrentLocale' on assignment of 'nil'.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_locale(const Locale& value) const;
         /**
-     * @brief Returns the `phonetic` property of `NSPersonNameComponentsFormatter`.
-     * @details Specify that the formatter should only format the components object's phoneticRepresentation.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `phonetic` property of `NSPersonNameComponentsFormatter`.
+         * @details Specify that the formatter should only format the components object's phoneticRepresentation.
+         * @return The converted Objective-C result.
+         */
         bool is_phonetic() const;
         /**
-     * @brief Sets the `phonetic` property of `NSPersonNameComponentsFormatter`.
-     * @details Specify that the formatter should only format the components object's phoneticRepresentation.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `phonetic` property of `NSPersonNameComponentsFormatter`.
+         * @details Specify that the formatter should only format the components object's phoneticRepresentation.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_phonetic(bool value) const;
         /**
-     * @brief Returns the `style` property of `NSPersonNameComponentsFormatter`.
-     * @details The formatting style for the formatted string on an instance. 'ShortStyle' will fall back to user preferences and language-specific defaults.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `style` property of `NSPersonNameComponentsFormatter`.
+         * @details The formatting style for the formatted string on an instance. 'ShortStyle' will fall back to user preferences and language-specific defaults.
+         * @return The converted Objective-C result.
+         */
         PersonNameComponentsFormatterStyle style() const;
         /**
-     * @brief Sets the `style` property of `NSPersonNameComponentsFormatter`.
-     * @details The formatting style for the formatted string on an instance. 'ShortStyle' will fall back to user preferences and language-specific defaults.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `style` property of `NSPersonNameComponentsFormatter`.
+         * @details The formatting style for the formatted string on an instance. 'ShortStyle' will fall back to user preferences and language-specific defaults.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_style(PersonNameComponentsFormatterStyle value) const;
     };
 }

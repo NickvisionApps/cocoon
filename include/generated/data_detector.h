@@ -34,10 +34,10 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit DataDetector(Adopt adopt);
         /**
-     * @brief Returns the `checkingTypes` property of `NSDataDetector`.
-     * @details The checking types for the data detector. The supported subset of checking types are specified in ''NSTextCheckingResult/CheckingType''. Those constants can be combined using the C-bitwise OR operator. Currently, the supported data detector checking types are: ''NSTextCheckingResult/CheckingType/date'', ''NSTextCheckingResult/CheckingType/address'', ''NSTextCheckingResult/CheckingType/link'', phone number, and transit information.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `checkingTypes` property of `NSDataDetector`.
+         * @details The checking types for the data detector. The supported subset of checking types are specified in ''NSTextCheckingResult/CheckingType''. Those constants can be combined using the C-bitwise OR operator. Currently, the supported data detector checking types are: ''NSTextCheckingResult/CheckingType/date'', ''NSTextCheckingResult/CheckingType/address'', ''NSTextCheckingResult/CheckingType/link'', phone number, and transit information.
+         * @return The converted Objective-C result.
+         */
         std::uint64_t checking_types() const;
     };
 }

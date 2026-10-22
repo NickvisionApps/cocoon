@@ -41,26 +41,26 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit FileAccessIntent(Adopt adopt);
         /**
-     * @brief Calls `+[NSFileAccessIntent readingIntentWithURL:options:]`.
-     * @details Returns a file access intent object for reading the given URL with the provided options. When calling a file coordinator's ''NSFileCoordinator/coordinate(with:queue:byAccessor:)'' method, you pass an array of file access intent objects. Each intent object represents a specific read or write operation on a single document or directory. Use this method to create an intent object suitable for reading. - Parameters: - url: The URL of the document you intend to read from. - options: The coordinated reading options. For a list of valid values, see ''NSFileCoordinator/ReadingOptions'' in the ''NSFileCoordinator''. - Returns: A newly instantiated and configured file access intent object.
-     * @param url Argument converted to the Objective-C parameter of the same role.
-     * @param options Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSFileAccessIntent readingIntentWithURL:options:]`.
+         * @details Returns a file access intent object for reading the given URL with the provided options. When calling a file coordinator's ''NSFileCoordinator/coordinate(with:queue:byAccessor:)'' method, you pass an array of file access intent objects. Each intent object represents a specific read or write operation on a single document or directory. Use this method to create an intent object suitable for reading. - Parameters: - url: The URL of the document you intend to read from. - options: The coordinated reading options. For a list of valid values, see ''NSFileCoordinator/ReadingOptions'' in the ''NSFileCoordinator''. - Returns: A newly instantiated and configured file access intent object.
+         * @param url Argument converted to the Objective-C parameter of the same role.
+         * @param options Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static FileAccessIntent reading_intent_with_url(const URL& url, FileCoordinatorReadingOptions options);
         /**
-     * @brief Calls `+[NSFileAccessIntent writingIntentWithURL:options:]`.
-     * @details Returns a file access intent object for writing to the given URL with the provided options. When calling a file coordinator's ''NSFileCoordinator/coordinate(with:queue:byAccessor:)'' method, you pass an array of file access intent objects. Each intent object represents a specific read or write operation on a single document or directory. Use this method to create an intent object suitable for writing. - Parameters: - url: The URL of the document you intend to write to. - options: The coordinated writing options. For a list of valid values, see ''NSFileCoordinator/WritingOptions'' in the ''NSFileCoordinator''. - Returns: A newly instantiated and configured file access intent object.
-     * @param url Argument converted to the Objective-C parameter of the same role.
-     * @param options Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSFileAccessIntent writingIntentWithURL:options:]`.
+         * @details Returns a file access intent object for writing to the given URL with the provided options. When calling a file coordinator's ''NSFileCoordinator/coordinate(with:queue:byAccessor:)'' method, you pass an array of file access intent objects. Each intent object represents a specific read or write operation on a single document or directory. Use this method to create an intent object suitable for writing. - Parameters: - url: The URL of the document you intend to write to. - options: The coordinated writing options. For a list of valid values, see ''NSFileCoordinator/WritingOptions'' in the ''NSFileCoordinator''. - Returns: A newly instantiated and configured file access intent object.
+         * @param url Argument converted to the Objective-C parameter of the same role.
+         * @param options Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static FileAccessIntent writing_intent_with_url(const URL& url, FileCoordinatorWritingOptions options);
         /**
-     * @brief Returns the `URL` property of `NSFileAccessIntent`.
-     * @details The URL of the item. Use this URL within the accessor block. This property may change from its original value in response to actions from other writers.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `URL` property of `NSFileAccessIntent`.
+         * @details The URL of the item. Use this URL within the accessor block. This property may change from its original value in response to actions from other writers.
+         * @return The converted Objective-C result.
+         */
         URL url() const;
     };
 }

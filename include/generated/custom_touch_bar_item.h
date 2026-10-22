@@ -49,40 +49,40 @@ namespace cocoon
         using TouchBarItem::view;
         using TouchBarItem::view_controller;
         /**
-     * @brief Returns the `customizationLabel` property of `NSCustomTouchBarItem`.
-     * @details The localized string labelling this item during user customization. The default value is the empty string. This property is archived.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `customizationLabel` property of `NSCustomTouchBarItem`.
+         * @details The localized string labelling this item during user customization. The default value is the empty string. This property is archived.
+         * @return The converted Objective-C result.
+         */
         std::string customization_label() const;
         /**
-     * @brief Sets the `customizationLabel` property of `NSCustomTouchBarItem`.
-     * @details The localized string labelling this item during user customization. The default value is the empty string. This property is archived.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `customizationLabel` property of `NSCustomTouchBarItem`.
+         * @details The localized string labelling this item during user customization. The default value is the empty string. This property is archived.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_customization_label(const std::string& value) const;
         /**
-     * @brief Returns the `view` property of `NSCustomTouchBarItem`.
-     * @details A view to be displayed in the NSTouchBar in the location corresponding to this item. By default, the getter for this property will return this item's view controller's view. If this property is set explicitly, the view controller will be set to nil. This property is archived.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `view` property of `NSCustomTouchBarItem`.
+         * @details A view to be displayed in the NSTouchBar in the location corresponding to this item. By default, the getter for this property will return this item's view controller's view. If this property is set explicitly, the view controller will be set to nil. This property is archived.
+         * @return The converted Objective-C result.
+         */
         View view() const;
         /**
-     * @brief Sets the `view` property of `NSCustomTouchBarItem`.
-     * @details A view to be displayed in the NSTouchBar in the location corresponding to this item. By default, the getter for this property will return this item's view controller's view. If this property is set explicitly, the view controller will be set to nil. This property is archived.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `view` property of `NSCustomTouchBarItem`.
+         * @details A view to be displayed in the NSTouchBar in the location corresponding to this item. By default, the getter for this property will return this item's view controller's view. If this property is set explicitly, the view controller will be set to nil. This property is archived.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_view(const View& value) const;
         /**
-     * @brief Returns the `viewController` property of `NSCustomTouchBarItem`.
-     * @details A view controller whose view is to be displayed in the NSTouchBar in the location corresponding to this item. By default, this property is nil. When set, this item's view property will automatically return the view associated with this view controller. This property is archived.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `viewController` property of `NSCustomTouchBarItem`.
+         * @details A view controller whose view is to be displayed in the NSTouchBar in the location corresponding to this item. By default, this property is nil. When set, this item's view property will automatically return the view associated with this view controller. This property is archived.
+         * @return The converted Objective-C result.
+         */
         ViewController view_controller() const;
         /**
-     * @brief Sets the `viewController` property of `NSCustomTouchBarItem`.
-     * @details A view controller whose view is to be displayed in the NSTouchBar in the location corresponding to this item. By default, this property is nil. When set, this item's view property will automatically return the view associated with this view controller. This property is archived.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `viewController` property of `NSCustomTouchBarItem`.
+         * @details A view controller whose view is to be displayed in the NSTouchBar in the location corresponding to this item. By default, this property is nil. When set, this item's view property will automatically return the view associated with this view controller. This property is archived.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_view_controller(const ViewController& value) const;
     };
 }

@@ -33,10 +33,10 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit DecimalNumberHandler(Adopt adopt);
         /**
-     * @brief Returns the `defaultDecimalNumberHandler` property of `NSDecimalNumberHandler`.
-     * @details Returns the default instance of 'NSDecimalNumberHandler'. The default handler rounds to closest possible return value (''NSRoundPlain''), assumes precision up to 38 significant digits, and raises on overflow, underflow, and divide by zero.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `defaultDecimalNumberHandler` property of `NSDecimalNumberHandler`.
+         * @details Returns the default instance of 'NSDecimalNumberHandler'. The default handler rounds to closest possible return value (''NSRoundPlain''), assumes precision up to 38 significant digits, and raises on overflow, underflow, and divide by zero.
+         * @return The converted Objective-C result.
+         */
         static DecimalNumberHandler default_decimal_number_handler();
     };
 }

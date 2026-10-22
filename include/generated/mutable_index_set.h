@@ -43,52 +43,52 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit MutableIndexSet(Adopt adopt);
         /**
-     * @brief Calls `-[NSMutableIndexSet addIndex:]`.
-     * @details Adds an index to the receiver. - Parameter value: Index to add. Must be in the range '0 .. NSNotFound - 1'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSMutableIndexSet addIndex:]`.
+         * @details Adds an index to the receiver. - Parameter value: Index to add. Must be in the range '0 .. NSNotFound - 1'.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void add_index(std::uint64_t value) const;
         /**
-     * @brief Calls `-[NSMutableIndexSet addIndexes:]`.
-     * @details Adds the indexes in an index set to the receiver. - Parameter indexSet: Index set to add.
-     * @param index_set Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSMutableIndexSet addIndexes:]`.
+         * @details Adds the indexes in an index set to the receiver. - Parameter indexSet: Index set to add.
+         * @param index_set Argument converted to the Objective-C parameter of the same role.
+         */
         void add_indexes(const IndexSet& index_set) const;
         /**
-     * @brief Calls `-[NSMutableIndexSet addIndexesInRange:]`.
-     * @details Adds the indexes in an index range to the receiver. This method raises an 'NSRangeException' when 'range' would add an index that exceeds the maximum allowed value for unsigned integers. - Parameter range: Index range to add. Must be in the range '0 .. NSNotFound - 1'.
-     * @param range Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSMutableIndexSet addIndexesInRange:]`.
+         * @details Adds the indexes in an index range to the receiver. This method raises an 'NSRangeException' when 'range' would add an index that exceeds the maximum allowed value for unsigned integers. - Parameter range: Index range to add. Must be in the range '0 .. NSNotFound - 1'.
+         * @param range Argument converted to the Objective-C parameter of the same role.
+         */
         void add_indexes_in_range(const Range& range) const;
         /**
-     * @brief Calls `-[NSMutableIndexSet removeAllIndexes]`.
-     * @details Removes the receiver's indexes.
-     */
+         * @brief Calls `-[NSMutableIndexSet removeAllIndexes]`.
+         * @details Removes the receiver's indexes.
+         */
         void remove_all_indexes() const;
         /**
-     * @brief Calls `-[NSMutableIndexSet removeIndex:]`.
-     * @details Removes an index from the receiver. - Parameter value: Index to remove.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSMutableIndexSet removeIndex:]`.
+         * @details Removes an index from the receiver. - Parameter value: Index to remove.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void remove_index(std::uint64_t value) const;
         /**
-     * @brief Calls `-[NSMutableIndexSet removeIndexes:]`.
-     * @details Removes the indexes in an index set from the receiver. - Parameter indexSet: Index set to remove.
-     * @param index_set Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSMutableIndexSet removeIndexes:]`.
+         * @details Removes the indexes in an index set from the receiver. - Parameter indexSet: Index set to remove.
+         * @param index_set Argument converted to the Objective-C parameter of the same role.
+         */
         void remove_indexes(const IndexSet& index_set) const;
         /**
-     * @brief Calls `-[NSMutableIndexSet removeIndexesInRange:]`.
-     * @details Removes the indexes in an index range from the receiver. - Parameter range: Index range to remove.
-     * @param range Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSMutableIndexSet removeIndexesInRange:]`.
+         * @details Removes the indexes in an index range from the receiver. - Parameter range: Index range to remove.
+         * @param range Argument converted to the Objective-C parameter of the same role.
+         */
         void remove_indexes_in_range(const Range& range) const;
         /**
-     * @brief Calls `-[NSMutableIndexSet shiftIndexesStartingAtIndex:by:]`.
-     * @details Shifts a group of indexes to the left or the right within the receiver. The group of indexes shifted is made up by 'index' and the indexes that follow it in the set. A left shift deletes the indexes in a range the length of 'delta' preceding 'index' from the set. A right shift inserts empty space in the range '(index, delta)' in the receiver. The resulting indexes must all be in the range '0 .. NSNotFound - 1'. - Parameters: - index: Head of the group of indexes to shift. - delta: Amount and direction of the shift. Positive integers shift the indexes to the right. Negative integers shift the indexes to the left.
-     * @param index Argument converted to the Objective-C parameter of the same role.
-     * @param delta Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSMutableIndexSet shiftIndexesStartingAtIndex:by:]`.
+         * @details Shifts a group of indexes to the left or the right within the receiver. The group of indexes shifted is made up by 'index' and the indexes that follow it in the set. A left shift deletes the indexes in a range the length of 'delta' preceding 'index' from the set. A right shift inserts empty space in the range '(index, delta)' in the receiver. The resulting indexes must all be in the range '0 .. NSNotFound - 1'. - Parameters: - index: Head of the group of indexes to shift. - delta: Amount and direction of the shift. Positive integers shift the indexes to the right. Negative integers shift the indexes to the left.
+         * @param index Argument converted to the Objective-C parameter of the same role.
+         * @param delta Argument converted to the Objective-C parameter of the same role.
+         */
         void shift_indexes_starting_at_index(std::uint64_t index, std::int64_t delta) const;
     };
 }

@@ -45,96 +45,96 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit TextCheckingController(Adopt adopt);
         /**
-     * @brief Calls `-[NSTextCheckingController changeSpelling:]`.
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSTextCheckingController changeSpelling:]`.
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void change_spelling(const Object& sender) const;
         /**
-     * @brief Calls `-[NSTextCheckingController checkSpelling:]`.
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSTextCheckingController checkSpelling:]`.
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void check_spelling(const Object& sender) const;
         /**
-     * @brief Calls `-[NSTextCheckingController checkTextInDocument:]`.
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSTextCheckingController checkTextInDocument:]`.
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void check_text_in_document(const Object& sender) const;
         /**
-     * @brief Calls `-[NSTextCheckingController checkTextInRange:types:options:]`.
-     * @param range Argument converted to the Objective-C parameter of the same role.
-     * @param checking_types Argument converted to the Objective-C parameter of the same role.
-     * @param options Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSTextCheckingController checkTextInRange:types:options:]`.
+         * @param range Argument converted to the Objective-C parameter of the same role.
+         * @param checking_types Argument converted to the Objective-C parameter of the same role.
+         * @param options Argument converted to the Objective-C parameter of the same role.
+         */
         void check_text_in_range(const Range& range, std::uint64_t checking_types, const std::map<std::string, Object>& options) const;
         /**
-     * @brief Calls `-[NSTextCheckingController checkTextInSelection:]`.
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSTextCheckingController checkTextInSelection:]`.
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void check_text_in_selection(const Object& sender) const;
         /**
-     * @brief Calls `-[NSTextCheckingController considerTextCheckingForRange:]`.
-     * @param range Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSTextCheckingController considerTextCheckingForRange:]`.
+         * @param range Argument converted to the Objective-C parameter of the same role.
+         */
         void consider_text_checking_for_range(const Range& range) const;
         /**
-     * @brief Calls `-[NSTextCheckingController didChangeSelectedRange]`.
-     */
+         * @brief Calls `-[NSTextCheckingController didChangeSelectedRange]`.
+         */
         void did_change_selected_range() const;
         /**
-     * @brief Calls `-[NSTextCheckingController didChangeTextInRange:]`.
-     * @param range Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSTextCheckingController didChangeTextInRange:]`.
+         * @param range Argument converted to the Objective-C parameter of the same role.
+         */
         void did_change_text_in_range(const Range& range) const;
         /**
-     * @brief Calls `-[NSTextCheckingController ignoreSpelling:]`.
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSTextCheckingController ignoreSpelling:]`.
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void ignore_spelling(const Object& sender) const;
         /**
-     * @brief Calls `-[NSTextCheckingController insertedTextInRange:]`.
-     * @param range Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSTextCheckingController insertedTextInRange:]`.
+         * @param range Argument converted to the Objective-C parameter of the same role.
+         */
         void inserted_text_in_range(const Range& range) const;
         /**
-     * @brief Calls `-[NSTextCheckingController invalidate]`.
-     */
+         * @brief Calls `-[NSTextCheckingController invalidate]`.
+         */
         void invalidate() const;
         /**
-     * @brief Calls `-[NSTextCheckingController menuAtIndex:clickedOnSelection:effectiveRange:]`.
-     * @param location Argument converted to the Objective-C parameter of the same role.
-     * @param clicked_on_selection Argument converted to the Objective-C parameter of the same role.
-     * @param effective_range Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSTextCheckingController menuAtIndex:clickedOnSelection:effectiveRange:]`.
+         * @param location Argument converted to the Objective-C parameter of the same role.
+         * @param clicked_on_selection Argument converted to the Objective-C parameter of the same role.
+         * @param effective_range Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Menu menu_at_index(std::uint64_t location, bool clicked_on_selection, Range* effective_range) const;
         /**
-     * @brief Calls `-[NSTextCheckingController orderFrontSubstitutionsPanel:]`.
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSTextCheckingController orderFrontSubstitutionsPanel:]`.
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void order_front_substitutions_panel(const Object& sender) const;
         /**
-     * @brief Calls `-[NSTextCheckingController showGuessPanel:]`.
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSTextCheckingController showGuessPanel:]`.
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void show_guess_panel(const Object& sender) const;
         /**
-     * @brief Calls `-[NSTextCheckingController updateCandidates]`.
-     */
+         * @brief Calls `-[NSTextCheckingController updateCandidates]`.
+         */
         void update_candidates() const;
         /**
-     * @brief Calls `-[NSTextCheckingController validAnnotations]`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSTextCheckingController validAnnotations]`.
+         * @return The converted Objective-C result.
+         */
         std::vector<std::string> valid_annotations() const;
         /**
-     * @brief Returns the `spellCheckerDocumentTag` property of `NSTextCheckingController`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `spellCheckerDocumentTag` property of `NSTextCheckingController`.
+         * @return The converted Objective-C result.
+         */
         std::int64_t spell_checker_document_tag() const;
         /**
-     * @brief Sets the `spellCheckerDocumentTag` property of `NSTextCheckingController`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `spellCheckerDocumentTag` property of `NSTextCheckingController`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_spell_checker_document_tag(std::int64_t value) const;
     };
 }

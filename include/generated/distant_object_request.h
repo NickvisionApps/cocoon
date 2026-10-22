@@ -42,28 +42,28 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit DistantObjectRequest(Adopt adopt);
         /**
-     * @brief Calls `-[NSDistantObjectRequest replyWithException:]`.
-     * @details Sends a reply back to the sender of the request, signaling an exception if one is provided.
-     * @param exception Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSDistantObjectRequest replyWithException:]`.
+         * @details Sends a reply back to the sender of the request, signaling an exception if one is provided.
+         * @param exception Argument converted to the Objective-C parameter of the same role.
+         */
         void reply_with_exception(const Exception& exception) const;
         /**
-     * @brief Returns the `connection` property of `NSDistantObjectRequest`.
-     * @details The connection over which the request was received.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `connection` property of `NSDistantObjectRequest`.
+         * @details The connection over which the request was received.
+         * @return The converted Objective-C result.
+         */
         Connection connection() const;
         /**
-     * @brief Returns the `conversation` property of `NSDistantObjectRequest`.
-     * @details The token object representing the conversation in which the request was received.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `conversation` property of `NSDistantObjectRequest`.
+         * @details The token object representing the conversation in which the request was received.
+         * @return The converted Objective-C result.
+         */
         Object conversation() const;
         /**
-     * @brief Returns the `invocation` property of `NSDistantObjectRequest`.
-     * @details The invocation object for the request.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `invocation` property of `NSDistantObjectRequest`.
+         * @details The invocation object for the request.
+         * @return The converted Objective-C result.
+         */
         Invocation invocation() const;
     };
 }

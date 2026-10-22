@@ -32,10 +32,10 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit Unit(Adopt adopt);
         /**
-     * @brief Returns the `symbol` property of `NSUnit`.
-     * @details The symbolic representation of the unit. The symbol of a unit is a string that can be used to designate a number as a quantity of a particular unit in user-readable representations. Units typically have symbols that are abbreviated and standardized, so as to be easily and unambiguously conveyed. For example, the 'milePerHour' unit has the symbol 'mph'. If a unit does not have a standardized or well-understood symbol, the lowercase name of the unit can be used. For example, the 'metricCup' unit has the symbol 'metric cup'. Unit symbols may incorporate a metric prefix to indicate a multiple or fraction of existing unit symbols. For example, the 'kilogram' unit has the symbol 'kg', which uses the SI prefix k for kilo- to indicate a magnitude of 10^3 for the 'gram' unit, and the 'microgram' unit has the symbol 'µg', which uses the SI prefix µ for micro- to indicate a magnitude of 10^-6 for the 'gram' unit.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `symbol` property of `NSUnit`.
+         * @details The symbolic representation of the unit. The symbol of a unit is a string that can be used to designate a number as a quantity of a particular unit in user-readable representations. Units typically have symbols that are abbreviated and standardized, so as to be easily and unambiguously conveyed. For example, the 'milePerHour' unit has the symbol 'mph'. If a unit does not have a standardized or well-understood symbol, the lowercase name of the unit can be used. For example, the 'metricCup' unit has the symbol 'metric cup'. Unit symbols may incorporate a metric prefix to indicate a multiple or fraction of existing unit symbols. For example, the 'kilogram' unit has the symbol 'kg', which uses the SI prefix k for kilo- to indicate a magnitude of 10^3 for the 'gram' unit, and the 'microgram' unit has the symbol 'µg', which uses the SI prefix µ for micro- to indicate a magnitude of 10^-6 for the 'gram' unit.
+         * @return The converted Objective-C result.
+         */
         std::string symbol() const;
     };
 }

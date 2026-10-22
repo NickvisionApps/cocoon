@@ -38,27 +38,27 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit ScriptCoercionHandler(Adopt adopt);
         /**
-     * @brief Calls `-[NSScriptCoercionHandler coerceValue:toClass:]`.
-     * @details Attempts to coerce the given value to the given class.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     * @param to_class Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSScriptCoercionHandler coerceValue:toClass:]`.
+         * @details Attempts to coerce the given value to the given class.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         * @param to_class Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Object coerce_value(const Object& value, const std::string& to_class) const;
         /**
-     * @brief Calls `-[NSScriptCoercionHandler registerCoercer:selector:toConvertFromClass:toClass:]`.
-     * @details Registers a coercer to convert values from one class to another. The selector should take two arguments: the first is the value to be converted, and the second is the class to convert it to. The coercer should typically be a class object and the selector a factory method.
-     * @param coercer Argument converted to the Objective-C parameter of the same role.
-     * @param selector Argument converted to the Objective-C parameter of the same role.
-     * @param from_class Argument converted to the Objective-C parameter of the same role.
-     * @param to_class Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSScriptCoercionHandler registerCoercer:selector:toConvertFromClass:toClass:]`.
+         * @details Registers a coercer to convert values from one class to another. The selector should take two arguments: the first is the value to be converted, and the second is the class to convert it to. The coercer should typically be a class object and the selector a factory method.
+         * @param coercer Argument converted to the Objective-C parameter of the same role.
+         * @param selector Argument converted to the Objective-C parameter of the same role.
+         * @param from_class Argument converted to the Objective-C parameter of the same role.
+         * @param to_class Argument converted to the Objective-C parameter of the same role.
+         */
         void register_coercer(const Object& coercer, const std::string& selector, const std::string& from_class, const std::string& to_class) const;
         /**
-     * @brief Calls `+[NSScriptCoercionHandler sharedCoercionHandler]`.
-     * @details Returns the shared coercion handler.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSScriptCoercionHandler sharedCoercionHandler]`.
+         * @details Returns the shared coercion handler.
+         * @return The converted Objective-C result.
+         */
         static ScriptCoercionHandler shared_coercion_handler();
     };
 }

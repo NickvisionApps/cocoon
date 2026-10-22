@@ -35,64 +35,64 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit URLProtectionSpace(Adopt adopt);
         /**
-     * @brief Returns the `authenticationMethod` property of `NSURLProtectionSpace`.
-     * @details The authentication method used by the receiver.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `authenticationMethod` property of `NSURLProtectionSpace`.
+         * @details The authentication method used by the receiver.
+         * @return The converted Objective-C result.
+         */
         std::string authentication_method() const;
         /**
-     * @brief Returns the `distinguishedNames` property of `NSURLProtectionSpace`.
-     * @details The acceptable certificate-issuing authorities for client certificate authentication. Issuers are identified by their distinguished name and returned as DER encoded data. This value is 'nil' if the authentication method is not 'NSURLAuthenticationMethodClientCertificate'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `distinguishedNames` property of `NSURLProtectionSpace`.
+         * @details The acceptable certificate-issuing authorities for client certificate authentication. Issuers are identified by their distinguished name and returned as DER encoded data. This value is 'nil' if the authentication method is not 'NSURLAuthenticationMethodClientCertificate'.
+         * @return The converted Objective-C result.
+         */
         std::vector<std::vector<std::uint8_t>> distinguished_names() const;
         /**
-     * @brief Returns the `host` property of `NSURLProtectionSpace`.
-     * @details The receiver's host.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `host` property of `NSURLProtectionSpace`.
+         * @details The receiver's host.
+         * @return The converted Objective-C result.
+         */
         std::string host() const;
         /**
-     * @brief Returns the `isProxy` property of `NSURLProtectionSpace`.
-     * @details A Boolean value that indicates whether this authenticating protection space is a proxy server.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `isProxy` property of `NSURLProtectionSpace`.
+         * @details A Boolean value that indicates whether this authenticating protection space is a proxy server.
+         * @return The converted Objective-C result.
+         */
         bool is_proxy() const;
         /**
-     * @brief Returns the `port` property of `NSURLProtectionSpace`.
-     * @details The receiver's port.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `port` property of `NSURLProtectionSpace`.
+         * @details The receiver's port.
+         * @return The converted Objective-C result.
+         */
         std::int64_t port() const;
         /**
-     * @brief Returns the `protocol` property of `NSURLProtectionSpace`.
-     * @details The receiver's protocol. This value is 'nil' if the receiver represents a proxy protection space.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `protocol` property of `NSURLProtectionSpace`.
+         * @details The receiver's protocol. This value is 'nil' if the receiver represents a proxy protection space.
+         * @return The converted Objective-C result.
+         */
         std::string protocol() const;
         /**
-     * @brief Returns the `proxyType` property of `NSURLProtectionSpace`.
-     * @details The receiver's proxy type. This value is 'nil' if the receiver does not represent a proxy protection space.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `proxyType` property of `NSURLProtectionSpace`.
+         * @details The receiver's proxy type. This value is 'nil' if the receiver does not represent a proxy protection space.
+         * @return The converted Objective-C result.
+         */
         std::string proxy_type() const;
         /**
-     * @brief Returns the `realm` property of `NSURLProtectionSpace`.
-     * @details The receiver's authentication realm. This value is 'nil' if no realm has been set. A realm is generally only specified for HTTP and HTTPS authentication.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `realm` property of `NSURLProtectionSpace`.
+         * @details The receiver's authentication realm. This value is 'nil' if no realm has been set. A realm is generally only specified for HTTP and HTTPS authentication.
+         * @return The converted Objective-C result.
+         */
         std::string realm() const;
         /**
-     * @brief Returns the `receivesCredentialSecurely` property of `NSURLProtectionSpace`.
-     * @details A Boolean value that indicates whether the credentials for the protection space can be sent securely.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `receivesCredentialSecurely` property of `NSURLProtectionSpace`.
+         * @details A Boolean value that indicates whether the credentials for the protection space can be sent securely.
+         * @return The converted Objective-C result.
+         */
         bool receives_credential_securely() const;
         /**
-     * @brief Returns the `serverTrust` property of `NSURLProtectionSpace`.
-     * @details A representation of the server's SSL transaction state. This value is 'nil' if the authentication method is not 'NSURLAuthenticationMethodServerTrust'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `serverTrust` property of `NSURLProtectionSpace`.
+         * @details A representation of the server's SSL transaction state. This value is 'nil' if the authentication method is not 'NSURLAuthenticationMethodServerTrust'.
+         * @return The converted Objective-C result.
+         */
         SecTrust server_trust() const;
     };
 }

@@ -47,50 +47,50 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit Predicate(Adopt adopt);
         /**
-     * @brief Calls `-[NSPredicate allowEvaluation]`.
-     * @details Forces a securely decoded predicate to allow evaluation. When securely decoding 'NSPredicate' objects encoded using 'NSSecureCoding', evaluation is disabled because it is potentially unsafe to evaluate predicates you get out of an archive. Before you enable evaluation, you should validate key paths, selectors, and other details to ensure no erroneous or malicious code will be executed. Once you've verified the predicate, you can enable the receiver for evaluation by calling 'allowEvaluation'.
-     */
+         * @brief Calls `-[NSPredicate allowEvaluation]`.
+         * @details Forces a securely decoded predicate to allow evaluation. When securely decoding 'NSPredicate' objects encoded using 'NSSecureCoding', evaluation is disabled because it is potentially unsafe to evaluate predicates you get out of an archive. Before you enable evaluation, you should validate key paths, selectors, and other details to ensure no erroneous or malicious code will be executed. Once you've verified the predicate, you can enable the receiver for evaluation by calling 'allowEvaluation'.
+         */
         void allow_evaluation() const;
         /**
-     * @brief Calls `-[NSPredicate allowEvaluationWithValidator:error:]`.
-     * @param validator Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSPredicate allowEvaluationWithValidator:error:]`.
+         * @param validator Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool allow_evaluation_with_validator(const Object& validator) const;
         /**
-     * @brief Calls `-[NSPredicate evaluateWithObject:]`.
-     * @details Returns a Boolean value that indicates whether the specified object matches the conditions that the predicate specifies.
-     * @param object Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSPredicate evaluateWithObject:]`.
+         * @details Returns a Boolean value that indicates whether the specified object matches the conditions that the predicate specifies.
+         * @param object Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool evaluate_with_object(const Object& object) const;
         /**
-     * @brief Calls `-[NSPredicate evaluateWithObject:substitutionVariables:]`.
-     * @details Returns a Boolean value that indicates whether the specified object matches the conditions that the predicate specifies after substituting in the values from a specified variables dictionary. This method returns the same result as the two step process of first invoking 'predicateWithSubstitutionVariables:' on the predicate and then invoking 'evaluateWithObject:' on the returned value. This method is optimized for situations which require repeatedly evaluating a predicate with substitution variables with different variable substitutions.
-     * @param object Argument converted to the Objective-C parameter of the same role.
-     * @param bindings Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSPredicate evaluateWithObject:substitutionVariables:]`.
+         * @details Returns a Boolean value that indicates whether the specified object matches the conditions that the predicate specifies after substituting in the values from a specified variables dictionary. This method returns the same result as the two step process of first invoking 'predicateWithSubstitutionVariables:' on the predicate and then invoking 'evaluateWithObject:' on the returned value. This method is optimized for situations which require repeatedly evaluating a predicate with substitution variables with different variable substitutions.
+         * @param object Argument converted to the Objective-C parameter of the same role.
+         * @param bindings Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool evaluate_with_object(const Object& object, const std::map<std::string, Object>& bindings) const;
         /**
-     * @brief Calls `+[NSPredicate predicateFromMetadataQueryString:]`.
-     * @details Creates a predicate with a metadata query string.
-     * @param query_string Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSPredicate predicateFromMetadataQueryString:]`.
+         * @details Creates a predicate with a metadata query string.
+         * @param query_string Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static Predicate predicate_from_metadata_query_string(const std::string& query_string);
         /**
-     * @brief Calls `-[NSPredicate predicateWithSubstitutionVariables:]`.
-     * @details Returns a copy of the predicate and substitutes the predicates variables with specified values from a specified substitution variables dictionary. The predicate itself is not modified by this method, so you can reuse it for any number of substitutions.
-     * @param variables Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSPredicate predicateWithSubstitutionVariables:]`.
+         * @details Returns a copy of the predicate and substitutes the predicates variables with specified values from a specified substitution variables dictionary. The predicate itself is not modified by this method, so you can reuse it for any number of substitutions.
+         * @param variables Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Predicate predicate_with_substitution_variables(const std::map<std::string, Object>& variables) const;
         /**
-     * @brief Returns the `predicateFormat` property of `NSPredicate`.
-     * @details The predicate's format string. The return value of this property is not guaranteed to be the same as the string used to create the predicate using 'predicateWithFormat:' or similar methods.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `predicateFormat` property of `NSPredicate`.
+         * @details The predicate's format string. The return value of this property is not guaranteed to be the same as the string used to create the predicate using 'predicateWithFormat:' or similar methods.
+         * @return The converted Objective-C result.
+         */
         std::string predicate_format() const;
     };
 }

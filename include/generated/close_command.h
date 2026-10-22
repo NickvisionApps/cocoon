@@ -32,10 +32,10 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit CloseCommand(Adopt adopt);
         /**
-     * @brief Returns the `saveOptions` property of `NSCloseCommand`.
-     * @details The save options specified by the command.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `saveOptions` property of `NSCloseCommand`.
+         * @details The save options specified by the command.
+         * @return The converted Objective-C result.
+         */
         SaveOptions save_options() const;
     };
 }

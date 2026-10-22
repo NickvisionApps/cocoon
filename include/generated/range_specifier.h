@@ -48,28 +48,28 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit RangeSpecifier(Adopt adopt);
         /**
-     * @brief Returns the `endSpecifier` property of `NSRangeSpecifier`.
-     * @details The specifier for the end of the range.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `endSpecifier` property of `NSRangeSpecifier`.
+         * @details The specifier for the end of the range.
+         * @return The converted Objective-C result.
+         */
         ScriptObjectSpecifier end_specifier() const;
         /**
-     * @brief Sets the `endSpecifier` property of `NSRangeSpecifier`.
-     * @details The specifier for the end of the range.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `endSpecifier` property of `NSRangeSpecifier`.
+         * @details The specifier for the end of the range.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_end_specifier(const ScriptObjectSpecifier& value) const;
         /**
-     * @brief Returns the `startSpecifier` property of `NSRangeSpecifier`.
-     * @details The specifier for the beginning of the range.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `startSpecifier` property of `NSRangeSpecifier`.
+         * @details The specifier for the beginning of the range.
+         * @return The converted Objective-C result.
+         */
         ScriptObjectSpecifier start_specifier() const;
         /**
-     * @brief Sets the `startSpecifier` property of `NSRangeSpecifier`.
-     * @details The specifier for the beginning of the range.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `startSpecifier` property of `NSRangeSpecifier`.
+         * @details The specifier for the beginning of the range.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_start_specifier(const ScriptObjectSpecifier& value) const;
     };
 }

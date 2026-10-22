@@ -35,22 +35,22 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit Notification(Adopt adopt);
         /**
-     * @brief Returns the `name` property of `NSNotification`.
-     * @details The name of the notification. Typically you use this property to find out what kind of notification you are dealing with when you receive a notification. Notification names can be any string. To avoid name collisions, you might want to use a prefix that's specific to your application.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `name` property of `NSNotification`.
+         * @details The name of the notification. Typically you use this property to find out what kind of notification you are dealing with when you receive a notification. Notification names can be any string. To avoid name collisions, you might want to use a prefix that's specific to your application.
+         * @return The converted Objective-C result.
+         */
         std::string name() const;
         /**
-     * @brief Returns the `object` property of `NSNotification`.
-     * @details The object associated with the notification. This is often the object that posted this notification. It may be 'nil'. Typically you use this method to find out what object a notification applies to when you receive a notification.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `object` property of `NSNotification`.
+         * @details The object associated with the notification. This is often the object that posted this notification. It may be 'nil'. Typically you use this method to find out what object a notification applies to when you receive a notification.
+         * @return The converted Objective-C result.
+         */
         Object object() const;
         /**
-     * @brief Returns the `userInfo` property of `NSNotification`.
-     * @details The user information dictionary associated with the notification. This may be 'nil'. The user information dictionary stores any additional objects that objects receiving the notification might use.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `userInfo` property of `NSNotification`.
+         * @details The user information dictionary associated with the notification. This may be 'nil'. The user information dictionary stores any additional objects that objects receiving the notification might use.
+         * @return The converted Objective-C result.
+         */
         std::vector<std::pair<Object, Object>> user_info() const;
     };
 }

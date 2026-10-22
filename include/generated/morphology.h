@@ -44,102 +44,102 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit Morphology(Adopt adopt);
         /**
-     * @brief Returns the `definiteness` property of `NSMorphology`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `definiteness` property of `NSMorphology`.
+         * @return The converted Objective-C result.
+         */
         GrammaticalDefiniteness definiteness() const;
         /**
-     * @brief Sets the `definiteness` property of `NSMorphology`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `definiteness` property of `NSMorphology`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_definiteness(GrammaticalDefiniteness value) const;
         /**
-     * @brief Returns the `determination` property of `NSMorphology`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `determination` property of `NSMorphology`.
+         * @return The converted Objective-C result.
+         */
         GrammaticalDetermination determination() const;
         /**
-     * @brief Sets the `determination` property of `NSMorphology`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `determination` property of `NSMorphology`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_determination(GrammaticalDetermination value) const;
         /**
-     * @brief Returns the `grammaticalCase` property of `NSMorphology`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `grammaticalCase` property of `NSMorphology`.
+         * @return The converted Objective-C result.
+         */
         GrammaticalCase grammatical_case() const;
         /**
-     * @brief Sets the `grammaticalCase` property of `NSMorphology`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `grammaticalCase` property of `NSMorphology`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_grammatical_case(GrammaticalCase value) const;
         /**
-     * @brief Returns the `grammaticalGender` property of `NSMorphology`.
-     * @details The grammatical gender used for inflecting strings.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `grammaticalGender` property of `NSMorphology`.
+         * @details The grammatical gender used for inflecting strings.
+         * @return The converted Objective-C result.
+         */
         GrammaticalGender grammatical_gender() const;
         /**
-     * @brief Sets the `grammaticalGender` property of `NSMorphology`.
-     * @details The grammatical gender used for inflecting strings.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `grammaticalGender` property of `NSMorphology`.
+         * @details The grammatical gender used for inflecting strings.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_grammatical_gender(GrammaticalGender value) const;
         /**
-     * @brief Returns the `grammaticalPerson` property of `NSMorphology`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `grammaticalPerson` property of `NSMorphology`.
+         * @return The converted Objective-C result.
+         */
         GrammaticalPerson grammatical_person() const;
         /**
-     * @brief Sets the `grammaticalPerson` property of `NSMorphology`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `grammaticalPerson` property of `NSMorphology`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_grammatical_person(GrammaticalPerson value) const;
         /**
-     * @brief Returns the `number` property of `NSMorphology`.
-     * @details The grammatical number used for inflecting strings.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `number` property of `NSMorphology`.
+         * @details The grammatical number used for inflecting strings.
+         * @return The converted Objective-C result.
+         */
         GrammaticalNumber number() const;
         /**
-     * @brief Sets the `number` property of `NSMorphology`.
-     * @details The grammatical number used for inflecting strings.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `number` property of `NSMorphology`.
+         * @details The grammatical number used for inflecting strings.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_number(GrammaticalNumber value) const;
         /**
-     * @brief Returns the `partOfSpeech` property of `NSMorphology`.
-     * @details The grammatical part of speech used for inflecting strings.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `partOfSpeech` property of `NSMorphology`.
+         * @details The grammatical part of speech used for inflecting strings.
+         * @return The converted Objective-C result.
+         */
         GrammaticalPartOfSpeech part_of_speech() const;
         /**
-     * @brief Sets the `partOfSpeech` property of `NSMorphology`.
-     * @details The grammatical part of speech used for inflecting strings.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `partOfSpeech` property of `NSMorphology`.
+         * @details The grammatical part of speech used for inflecting strings.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_part_of_speech(GrammaticalPartOfSpeech value) const;
         /**
-     * @brief Returns the `pronounType` property of `NSMorphology`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `pronounType` property of `NSMorphology`.
+         * @return The converted Objective-C result.
+         */
         GrammaticalPronounType pronoun_type() const;
         /**
-     * @brief Sets the `pronounType` property of `NSMorphology`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `pronounType` property of `NSMorphology`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_pronoun_type(GrammaticalPronounType value) const;
         /**
-     * @brief Returns the `unspecified` property of `NSMorphology`.
-     * @details A Boolean value that indicates whether the morphology has no specific settings.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `unspecified` property of `NSMorphology`.
+         * @details A Boolean value that indicates whether the morphology has no specific settings.
+         * @return The converted Objective-C result.
+         */
         bool is_unspecified() const;
         /**
-     * @brief Returns the `userMorphology` property of `NSMorphology`.
-     * @details The current user's morphology.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `userMorphology` property of `NSMorphology`.
+         * @details The current user's morphology.
+         * @return The converted Objective-C result.
+         */
         static Morphology user_morphology();
     };
 }

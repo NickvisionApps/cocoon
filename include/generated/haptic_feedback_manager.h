@@ -30,10 +30,10 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit HapticFeedbackManager(Adopt adopt);
         /**
-     * @brief Returns the `defaultPerformer` property of `NSHapticFeedbackManager`.
-     * @details The most appropriate feedback performer for the current input device, accessibility settings and user preferences. Note: This device may change during the life of your application. Always request the defaultPerformer when you need perform feedback.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `defaultPerformer` property of `NSHapticFeedbackManager`.
+         * @details The most appropriate feedback performer for the current input device, accessibility settings and user preferences. Note: This device may change during the life of your application. Always request the defaultPerformer when you need perform feedback.
+         * @return The converted Objective-C result.
+         */
         static Object default_performer();
     };
 }

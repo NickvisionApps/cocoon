@@ -58,252 +58,252 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit URLSession(Adopt adopt);
         /**
-     * @brief Calls `-[NSURLSession dataTaskWithRequest:]`.
-     * @details Creates a task that retrieves the contents of a URL based on the specified URL request object. By creating a task based on a request object, you can tune various aspects of the task's behavior, including the cache policy and timeout interval. After you create the task, you must start it by calling its '-resume' method. - Parameter request: A URL request object that provides request-specific information such as the URL, cache policy, request type, and body data or body stream. - Returns: The new session data task.
-     * @param request Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSURLSession dataTaskWithRequest:]`.
+         * @details Creates a task that retrieves the contents of a URL based on the specified URL request object. By creating a task based on a request object, you can tune various aspects of the task's behavior, including the cache policy and timeout interval. After you create the task, you must start it by calling its '-resume' method. - Parameter request: A URL request object that provides request-specific information such as the URL, cache policy, request type, and body data or body stream. - Returns: The new session data task.
+         * @param request Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         URLSessionDataTask data_task_with_request(const URLRequest& request) const;
         /**
-     * @brief Calls `-[NSURLSession dataTaskWithRequest:completionHandler:]`.
-     * @details Creates a task that retrieves the contents of a URL based on the specified URL request object, and calls a handler upon completion. By creating a task based on a request object, you can tune various aspects of the task's behavior, including the cache policy and timeout interval. By using the completion handler, the task bypasses calls to delegate methods for response and data delivery, and instead provides any resulting 'NSData', 'NSURLResponse', and 'NSError' objects inside the completion handler. Delegate methods for handling authentication challenges, however, are still called. After you create the task, you must start it by calling its '-resume' method. - Parameter request: A URL request object that provides the URL, cache policy, request type, body data or body stream, and so on. - Parameter completionHandler: The completion handler to call when the load request is complete. This handler is executed on the delegate queue.
-     * @param request Argument converted to the Objective-C parameter of the same role.
-     * @param completion_handler Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSURLSession dataTaskWithRequest:completionHandler:]`.
+         * @details Creates a task that retrieves the contents of a URL based on the specified URL request object, and calls a handler upon completion. By creating a task based on a request object, you can tune various aspects of the task's behavior, including the cache policy and timeout interval. By using the completion handler, the task bypasses calls to delegate methods for response and data delivery, and instead provides any resulting 'NSData', 'NSURLResponse', and 'NSError' objects inside the completion handler. Delegate methods for handling authentication challenges, however, are still called. After you create the task, you must start it by calling its '-resume' method. - Parameter request: A URL request object that provides the URL, cache policy, request type, body data or body stream, and so on. - Parameter completionHandler: The completion handler to call when the load request is complete. This handler is executed on the delegate queue.
+         * @param request Argument converted to the Objective-C parameter of the same role.
+         * @param completion_handler Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         URLSessionDataTask data_task_with_request(const URLRequest& request, std::function<void(std::vector<std::uint8_t>, URLResponse, Error)> completion_handler) const;
         /**
-     * @brief Calls `-[NSURLSession dataTaskWithURL:]`.
-     * @details Creates a task that retrieves the contents of the specified URL. After you create the task, you must start it by calling its '-resume' method. The task calls methods on the session's delegate to provide you with the response metadata, response data, and so on. - Parameter url: The URL to be retrieved. - Returns: The new session data task.
-     * @param url Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSURLSession dataTaskWithURL:]`.
+         * @details Creates a task that retrieves the contents of the specified URL. After you create the task, you must start it by calling its '-resume' method. The task calls methods on the session's delegate to provide you with the response metadata, response data, and so on. - Parameter url: The URL to be retrieved. - Returns: The new session data task.
+         * @param url Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         URLSessionDataTask data_task_with_url(const URL& url) const;
         /**
-     * @brief Calls `-[NSURLSession dataTaskWithURL:completionHandler:]`.
-     * @details Creates a task that retrieves the contents of the specified URL, then calls a handler upon completion. After you create the task, you must start it by calling its '-resume' method. By using the completion handler, the task bypasses calls to delegate methods for response and data delivery, and instead provides any resulting 'NSData', 'NSURLResponse', and 'NSError' objects inside the completion handler. Delegate methods for handling authentication challenges, however, are still called. - Parameter url: The URL to be retrieved. - Parameter completionHandler: The completion handler to call when the load request is complete. This handler is executed on the delegate queue.
-     * @param url Argument converted to the Objective-C parameter of the same role.
-     * @param completion_handler Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSURLSession dataTaskWithURL:completionHandler:]`.
+         * @details Creates a task that retrieves the contents of the specified URL, then calls a handler upon completion. After you create the task, you must start it by calling its '-resume' method. By using the completion handler, the task bypasses calls to delegate methods for response and data delivery, and instead provides any resulting 'NSData', 'NSURLResponse', and 'NSError' objects inside the completion handler. Delegate methods for handling authentication challenges, however, are still called. - Parameter url: The URL to be retrieved. - Parameter completionHandler: The completion handler to call when the load request is complete. This handler is executed on the delegate queue.
+         * @param url Argument converted to the Objective-C parameter of the same role.
+         * @param completion_handler Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         URLSessionDataTask data_task_with_url(const URL& url, std::function<void(std::vector<std::uint8_t>, URLResponse, Error)> completion_handler) const;
         /**
-     * @brief Calls `-[NSURLSession downloadTaskWithRequest:]`.
-     * @details Creates a download task that retrieves the contents of a URL based on the specified URL request object and saves the results to a file. By creating a task based on a request object, you can tune various aspects of the task's behavior, including the cache policy and timeout interval. After you create the task, you must start it by calling its '-resume' method. The task calls methods on the session's delegate to provide you with progress notifications, the location of the resulting temporary file, and so on. - Parameter request: A URL request object that provides the URL, cache policy, request type, body data or body stream, and so on. - Returns: The new session download task.
-     * @param request Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSURLSession downloadTaskWithRequest:]`.
+         * @details Creates a download task that retrieves the contents of a URL based on the specified URL request object and saves the results to a file. By creating a task based on a request object, you can tune various aspects of the task's behavior, including the cache policy and timeout interval. After you create the task, you must start it by calling its '-resume' method. The task calls methods on the session's delegate to provide you with progress notifications, the location of the resulting temporary file, and so on. - Parameter request: A URL request object that provides the URL, cache policy, request type, body data or body stream, and so on. - Returns: The new session download task.
+         * @param request Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         URLSessionDownloadTask download_task_with_request(const URLRequest& request) const;
         /**
-     * @brief Calls `-[NSURLSession downloadTaskWithRequest:completionHandler:]`.
-     * @details Creates a download task that retrieves the contents of a URL based on the specified URL request object, saves the results to a file, and calls a handler upon completion. By creating a task based on a request object, you can tune various aspects of the task's behavior, including the cache policy and timeout interval. After you create the task, you must start it by calling its '-resume' method. - Parameter request: A URL request object that provides the URL, cache policy, request type, body data or body stream, and so on. - Parameter completionHandler: The completion handler to call when the load request is complete. This handler is executed on the delegate queue.
-     * @param request Argument converted to the Objective-C parameter of the same role.
-     * @param completion_handler Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSURLSession downloadTaskWithRequest:completionHandler:]`.
+         * @details Creates a download task that retrieves the contents of a URL based on the specified URL request object, saves the results to a file, and calls a handler upon completion. By creating a task based on a request object, you can tune various aspects of the task's behavior, including the cache policy and timeout interval. After you create the task, you must start it by calling its '-resume' method. - Parameter request: A URL request object that provides the URL, cache policy, request type, body data or body stream, and so on. - Parameter completionHandler: The completion handler to call when the load request is complete. This handler is executed on the delegate queue.
+         * @param request Argument converted to the Objective-C parameter of the same role.
+         * @param completion_handler Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         URLSessionDownloadTask download_task_with_request(const URLRequest& request, std::function<void(URL, URLResponse, Error)> completion_handler) const;
         /**
-     * @brief Calls `-[NSURLSession downloadTaskWithResumeData:]`.
-     * @details Creates a download task to resume a previously canceled or failed download. After you create the task, you must start it by calling its '-resume' method. This method is equivalent to '-downloadTaskWithResumeData:completionHandler:' with a 'nil' completion handler. For detailed usage information, including ways to obtain a resume data object, see that method. - Parameter resumeData: A data object that provides the data necessary to resume a download. - Returns: The new session download task.
-     * @param resume_data Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSURLSession downloadTaskWithResumeData:]`.
+         * @details Creates a download task to resume a previously canceled or failed download. After you create the task, you must start it by calling its '-resume' method. This method is equivalent to '-downloadTaskWithResumeData:completionHandler:' with a 'nil' completion handler. For detailed usage information, including ways to obtain a resume data object, see that method. - Parameter resumeData: A data object that provides the data necessary to resume a download. - Returns: The new session download task.
+         * @param resume_data Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         URLSessionDownloadTask download_task_with_resume_data(const std::vector<std::uint8_t>& resume_data) const;
         /**
-     * @brief Calls `-[NSURLSession downloadTaskWithResumeData:completionHandler:]`.
-     * @details Creates a download task to resume a previously canceled or failed download and calls a handler upon completion. Your app can obtain a 'resumeData' object in two ways: - If your app cancels an existing transfer by calling '-cancelByProducingResumeData:', the session object passes a 'resumeData' object to the completion handler that you provided in that call. - If a transfer fails, the session object provides an 'NSError' object either to its delegate or to the task's completion handler. In that object, the 'NSURLSessionDownloadTaskResumeData' key in the 'userInfo' dictionary contains a 'resumeData' object. After you create the task, you must start it by calling its '-resume' method. > Note: A download can be resumed only if it is an HTTP or HTTPS 'GET' request, and only > if the remote server supports byte-range requests (with the 'Range' header) and provides > the 'ETag' or 'Last-Modified' header in its responses. - Parameter resumeData: A data object that provides the data necessary to resume the download. - Parameter completionHandler: The completion handler to call when the load request is complete. This handler is executed on the delegate queue.
-     * @param resume_data Argument converted to the Objective-C parameter of the same role.
-     * @param completion_handler Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSURLSession downloadTaskWithResumeData:completionHandler:]`.
+         * @details Creates a download task to resume a previously canceled or failed download and calls a handler upon completion. Your app can obtain a 'resumeData' object in two ways: - If your app cancels an existing transfer by calling '-cancelByProducingResumeData:', the session object passes a 'resumeData' object to the completion handler that you provided in that call. - If a transfer fails, the session object provides an 'NSError' object either to its delegate or to the task's completion handler. In that object, the 'NSURLSessionDownloadTaskResumeData' key in the 'userInfo' dictionary contains a 'resumeData' object. After you create the task, you must start it by calling its '-resume' method. > Note: A download can be resumed only if it is an HTTP or HTTPS 'GET' request, and only > if the remote server supports byte-range requests (with the 'Range' header) and provides > the 'ETag' or 'Last-Modified' header in its responses. - Parameter resumeData: A data object that provides the data necessary to resume the download. - Parameter completionHandler: The completion handler to call when the load request is complete. This handler is executed on the delegate queue.
+         * @param resume_data Argument converted to the Objective-C parameter of the same role.
+         * @param completion_handler Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         URLSessionDownloadTask download_task_with_resume_data(const std::vector<std::uint8_t>& resume_data, std::function<void(URL, URLResponse, Error)> completion_handler) const;
         /**
-     * @brief Calls `-[NSURLSession downloadTaskWithURL:]`.
-     * @details Creates a download task that retrieves the contents of the specified URL and saves the results to a file. After you create the task, you must start it by calling its '-resume' method. - Parameter url: The URL to download. - Returns: The new session download task.
-     * @param url Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSURLSession downloadTaskWithURL:]`.
+         * @details Creates a download task that retrieves the contents of the specified URL and saves the results to a file. After you create the task, you must start it by calling its '-resume' method. - Parameter url: The URL to download. - Returns: The new session download task.
+         * @param url Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         URLSessionDownloadTask download_task_with_url(const URL& url) const;
         /**
-     * @brief Calls `-[NSURLSession downloadTaskWithURL:completionHandler:]`.
-     * @details Creates a download task that retrieves the contents of the specified URL, saves the results to a file, and calls a handler upon completion. After you create the task, you must start it by calling its '-resume' method. - Parameter url: The URL to download. - Parameter completionHandler: The completion handler to call when the load request is complete. This handler is executed on the delegate queue.
-     * @param url Argument converted to the Objective-C parameter of the same role.
-     * @param completion_handler Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSURLSession downloadTaskWithURL:completionHandler:]`.
+         * @details Creates a download task that retrieves the contents of the specified URL, saves the results to a file, and calls a handler upon completion. After you create the task, you must start it by calling its '-resume' method. - Parameter url: The URL to download. - Parameter completionHandler: The completion handler to call when the load request is complete. This handler is executed on the delegate queue.
+         * @param url Argument converted to the Objective-C parameter of the same role.
+         * @param completion_handler Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         URLSessionDownloadTask download_task_with_url(const URL& url, std::function<void(URL, URLResponse, Error)> completion_handler) const;
         /**
-     * @brief Calls `-[NSURLSession finishTasksAndInvalidate]`.
-     * @details Invalidates the session, allowing any outstanding tasks to finish. This method returns immediately without waiting for tasks to finish. Once a session is invalidated, new tasks cannot be created in the session, but existing tasks continue until completion. After the last task finishes and the session makes the last delegate call related to those tasks, the session calls the 'URLSession:didBecomeInvalidWithError:' method on its delegate, then breaks references to the delegate and callback objects. After invalidation, session objects cannot be reused. To cancel all outstanding tasks, call '-invalidateAndCancel' instead. > Important: Calling this method on the shared session has no effect. When invalidating a background session, it is not safe to create another background session with the same identifier until 'URLSession:didBecomeInvalidWithError:' has been issued.
-     */
+         * @brief Calls `-[NSURLSession finishTasksAndInvalidate]`.
+         * @details Invalidates the session, allowing any outstanding tasks to finish. This method returns immediately without waiting for tasks to finish. Once a session is invalidated, new tasks cannot be created in the session, but existing tasks continue until completion. After the last task finishes and the session makes the last delegate call related to those tasks, the session calls the 'URLSession:didBecomeInvalidWithError:' method on its delegate, then breaks references to the delegate and callback objects. After invalidation, session objects cannot be reused. To cancel all outstanding tasks, call '-invalidateAndCancel' instead. > Important: Calling this method on the shared session has no effect. When invalidating a background session, it is not safe to create another background session with the same identifier until 'URLSession:didBecomeInvalidWithError:' has been issued.
+         */
         void finish_tasks_and_invalidate() const;
         /**
-     * @brief Calls `-[NSURLSession flushWithCompletionHandler:]`.
-     * @details Flushes cookies and credentials to disk, clears transient caches, and ensures that future requests occur on a new TCP connection. - Parameter completionHandler: The completion handler to call when the flush operation is complete. This handler is executed on the delegate queue.
-     * @param completion_handler Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSURLSession flushWithCompletionHandler:]`.
+         * @details Flushes cookies and credentials to disk, clears transient caches, and ensures that future requests occur on a new TCP connection. - Parameter completionHandler: The completion handler to call when the flush operation is complete. This handler is executed on the delegate queue.
+         * @param completion_handler Argument converted to the Objective-C parameter of the same role.
+         */
         void flush_with_completion_handler(std::function<void()> completion_handler) const;
         /**
-     * @brief Calls `-[NSURLSession getAllTasksWithCompletionHandler:]`.
-     * @details Asynchronously calls a completion callback with all tasks in a session. - Parameter completionHandler: The completion handler to call with the list of tasks.
-     * @param completion_handler Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSURLSession getAllTasksWithCompletionHandler:]`.
+         * @details Asynchronously calls a completion callback with all tasks in a session. - Parameter completionHandler: The completion handler to call with the list of tasks.
+         * @param completion_handler Argument converted to the Objective-C parameter of the same role.
+         */
         void get_all_tasks_with_completion_handler(std::function<void(std::vector<URLSessionTask>)> completion_handler) const;
         /**
-     * @brief Calls `-[NSURLSession getTasksWithCompletionHandler:]`.
-     * @details Asynchronously calls a completion callback with all data, upload, and download tasks in a session. - Parameter completionHandler: The completion handler to call with the list of tasks. This handler is executed on the delegate queue. The arrays passed to the completion handler contain any tasks that you have created within the session, not including any tasks that have been invalidated after completing, failing, or being cancelled.
-     * @param completion_handler Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSURLSession getTasksWithCompletionHandler:]`.
+         * @details Asynchronously calls a completion callback with all data, upload, and download tasks in a session. - Parameter completionHandler: The completion handler to call with the list of tasks. This handler is executed on the delegate queue. The arrays passed to the completion handler contain any tasks that you have created within the session, not including any tasks that have been invalidated after completing, failing, or being cancelled.
+         * @param completion_handler Argument converted to the Objective-C parameter of the same role.
+         */
         void get_tasks_with_completion_handler(std::function<void(std::vector<URLSessionDataTask>, std::vector<URLSessionUploadTask>, std::vector<URLSessionDownloadTask>)> completion_handler) const;
         /**
-     * @brief Calls `-[NSURLSession invalidateAndCancel]`.
-     * @details Cancels all outstanding tasks and then invalidates the session. Once invalidated, references to the delegate and callback objects are broken. After invalidation, session objects cannot be reused. To allow outstanding tasks to run until completion, call '-finishTasksAndInvalidate' instead. > Important: Calling this method on the shared session has no effect.
-     */
+         * @brief Calls `-[NSURLSession invalidateAndCancel]`.
+         * @details Cancels all outstanding tasks and then invalidates the session. Once invalidated, references to the delegate and callback objects are broken. After invalidation, session objects cannot be reused. To allow outstanding tasks to run until completion, call '-finishTasksAndInvalidate' instead. > Important: Calling this method on the shared session has no effect.
+         */
         void invalidate_and_cancel() const;
         /**
-     * @brief Calls `-[NSURLSession resetWithCompletionHandler:]`.
-     * @details Empties all cookies, caches and credential stores, removes disk files, flushes in-progress downloads to disk, and ensures that future requests occur on a new socket. - Parameter completionHandler: The completion handler to call when the reset operation is complete. This handler is executed on the delegate queue.
-     * @param completion_handler Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSURLSession resetWithCompletionHandler:]`.
+         * @details Empties all cookies, caches and credential stores, removes disk files, flushes in-progress downloads to disk, and ensures that future requests occur on a new socket. - Parameter completionHandler: The completion handler to call when the reset operation is complete. This handler is executed on the delegate queue.
+         * @param completion_handler Argument converted to the Objective-C parameter of the same role.
+         */
         void reset_with_completion_handler(std::function<void()> completion_handler) const;
         /**
-     * @brief Calls `+[NSURLSession sessionWithConfiguration:]`.
-     * @details Creates a session with the specified session configuration. - Parameter configuration: A configuration object that specifies certain behaviors, such as caching policies, timeouts, proxies, pipelining, TLS versions to support, cookie policies, credential storage, and so on. See 'NSURLSessionConfiguration' for more information. Calling this method is equivalent to calling '+sessionWithConfiguration:delegate:delegateQueue:' with a 'nil' delegate and queue.
-     * @param configuration Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSURLSession sessionWithConfiguration:]`.
+         * @details Creates a session with the specified session configuration. - Parameter configuration: A configuration object that specifies certain behaviors, such as caching policies, timeouts, proxies, pipelining, TLS versions to support, cookie policies, credential storage, and so on. See 'NSURLSessionConfiguration' for more information. Calling this method is equivalent to calling '+sessionWithConfiguration:delegate:delegateQueue:' with a 'nil' delegate and queue.
+         * @param configuration Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static URLSession session_with_configuration(const URLSessionConfiguration& configuration);
         /**
-     * @brief Calls `+[NSURLSession sessionWithConfiguration:delegate:delegateQueue:]`.
-     * @details Creates a session with the specified session configuration, delegate, and operation queue. - Parameter configuration: A configuration object that specifies certain behaviors, such as caching policies, timeouts, proxies, pipelining, TLS versions to support, cookie policies, and credential storage. See 'NSURLSessionConfiguration' for more information. - Parameter delegate: A session delegate object that handles requests for authentication and other session-related events. This delegate object is responsible for handling authentication challenges, for making caching decisions, and for handling other session-related events. If 'nil', the class should be used only with methods that take completion handlers. The session object keeps a strong reference to the delegate until your app exits or explicitly invalidates the session. If you do not invalidate the session by calling '-invalidateAndCancel' or '-finishTasksAndInvalidate', your app leaks memory until it exits. - Parameter queue: An operation queue for scheduling the delegate calls and completion handlers. The queue should be a serial queue, in order to ensure the correct ordering of callbacks. If 'nil', the session creates a serial operation queue for performing all delegate method calls and completion handler calls.
-     * @param configuration Argument converted to the Objective-C parameter of the same role.
-     * @param delegate Argument converted to the Objective-C parameter of the same role.
-     * @param queue Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSURLSession sessionWithConfiguration:delegate:delegateQueue:]`.
+         * @details Creates a session with the specified session configuration, delegate, and operation queue. - Parameter configuration: A configuration object that specifies certain behaviors, such as caching policies, timeouts, proxies, pipelining, TLS versions to support, cookie policies, and credential storage. See 'NSURLSessionConfiguration' for more information. - Parameter delegate: A session delegate object that handles requests for authentication and other session-related events. This delegate object is responsible for handling authentication challenges, for making caching decisions, and for handling other session-related events. If 'nil', the class should be used only with methods that take completion handlers. The session object keeps a strong reference to the delegate until your app exits or explicitly invalidates the session. If you do not invalidate the session by calling '-invalidateAndCancel' or '-finishTasksAndInvalidate', your app leaks memory until it exits. - Parameter queue: An operation queue for scheduling the delegate calls and completion handlers. The queue should be a serial queue, in order to ensure the correct ordering of callbacks. If 'nil', the session creates a serial operation queue for performing all delegate method calls and completion handler calls.
+         * @param configuration Argument converted to the Objective-C parameter of the same role.
+         * @param delegate Argument converted to the Objective-C parameter of the same role.
+         * @param queue Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static URLSession session_with_configuration(const URLSessionConfiguration& configuration, const Object& delegate, const OperationQueue& queue);
         /**
-     * @brief Calls `-[NSURLSession streamTaskWithHostName:port:]`.
-     * @details Creates a task that establishes a bidirectional TCP/IP connection to a specified hostname and port. After you create the task, you must start it by calling its '-resume' method. - Parameter hostname: The hostname of the connection endpoint. - Parameter port: The port of the connection endpoint. - Returns: The new session stream task.
-     * @param hostname Argument converted to the Objective-C parameter of the same role.
-     * @param port Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSURLSession streamTaskWithHostName:port:]`.
+         * @details Creates a task that establishes a bidirectional TCP/IP connection to a specified hostname and port. After you create the task, you must start it by calling its '-resume' method. - Parameter hostname: The hostname of the connection endpoint. - Parameter port: The port of the connection endpoint. - Returns: The new session stream task.
+         * @param hostname Argument converted to the Objective-C parameter of the same role.
+         * @param port Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         URLSessionStreamTask stream_task_with_host_name(const std::string& hostname, std::int64_t port) const;
         /**
-     * @brief Calls `-[NSURLSession streamTaskWithNetService:]`.
-     * @details Creates a task that establishes a bidirectional TCP/IP connection using a specified network service. After you create the task, you must start it by calling its '-resume' method. - Parameter service: An 'NSNetService' object used to determine the endpoint of the TCP/IP connection. This network service is resolved before any data is read or written to the resulting stream task. - Returns: The new session stream task.
-     * @param service Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSURLSession streamTaskWithNetService:]`.
+         * @details Creates a task that establishes a bidirectional TCP/IP connection using a specified network service. After you create the task, you must start it by calling its '-resume' method. - Parameter service: An 'NSNetService' object used to determine the endpoint of the TCP/IP connection. This network service is resolved before any data is read or written to the resulting stream task. - Returns: The new session stream task.
+         * @param service Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         URLSessionStreamTask stream_task_with_net_service(const NetService& service) const;
         /**
-     * @brief Calls `-[NSURLSession uploadTaskWithRequest:fromData:]`.
-     * @details Creates a task that performs an HTTP request for the specified URL request object and uploads the provided data. An HTTP upload request is any request that contains a request body, such as a 'POST' or 'PUT' request. Upload tasks require you to create a request object so that you can provide metadata for the upload, like HTTP request headers. After you create the task, you must start it by calling its '-resume' method. The task calls methods on the session's delegate to provide you with the upload's progress, response metadata, response data, and so on. - Parameter request: A URL request object that provides the URL, cache policy, request type, and so on. The body stream and body data in this request object are ignored. - Parameter bodyData: The body data for the request. - Returns: The new session upload task.
-     * @param request Argument converted to the Objective-C parameter of the same role.
-     * @param body_data Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSURLSession uploadTaskWithRequest:fromData:]`.
+         * @details Creates a task that performs an HTTP request for the specified URL request object and uploads the provided data. An HTTP upload request is any request that contains a request body, such as a 'POST' or 'PUT' request. Upload tasks require you to create a request object so that you can provide metadata for the upload, like HTTP request headers. After you create the task, you must start it by calling its '-resume' method. The task calls methods on the session's delegate to provide you with the upload's progress, response metadata, response data, and so on. - Parameter request: A URL request object that provides the URL, cache policy, request type, and so on. The body stream and body data in this request object are ignored. - Parameter bodyData: The body data for the request. - Returns: The new session upload task.
+         * @param request Argument converted to the Objective-C parameter of the same role.
+         * @param body_data Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         URLSessionUploadTask upload_task_with_request(const URLRequest& request, const std::vector<std::uint8_t>& body_data) const;
         /**
-     * @brief Calls `-[NSURLSession uploadTaskWithRequest:fromData:completionHandler:]`.
-     * @details Creates a task that performs an HTTP request for the specified URL request object, uploads the provided data, and calls a handler upon completion. - Parameter request: A URL request object that provides the URL, cache policy, request type, and so on. The body stream and body data in this request object are ignored. - Parameter bodyData: The body data for the request. - Parameter completionHandler: The completion handler to call when the load request is complete. This handler is executed on the delegate queue.
-     * @param request Argument converted to the Objective-C parameter of the same role.
-     * @param body_data Argument converted to the Objective-C parameter of the same role.
-     * @param completion_handler Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSURLSession uploadTaskWithRequest:fromData:completionHandler:]`.
+         * @details Creates a task that performs an HTTP request for the specified URL request object, uploads the provided data, and calls a handler upon completion. - Parameter request: A URL request object that provides the URL, cache policy, request type, and so on. The body stream and body data in this request object are ignored. - Parameter bodyData: The body data for the request. - Parameter completionHandler: The completion handler to call when the load request is complete. This handler is executed on the delegate queue.
+         * @param request Argument converted to the Objective-C parameter of the same role.
+         * @param body_data Argument converted to the Objective-C parameter of the same role.
+         * @param completion_handler Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         URLSessionUploadTask upload_task_with_request(const URLRequest& request, const std::vector<std::uint8_t>& body_data, std::function<void(std::vector<std::uint8_t>, URLResponse, Error)> completion_handler) const;
         /**
-     * @brief Calls `-[NSURLSession uploadTaskWithRequest:fromFile:]`.
-     * @details Creates a task that performs an HTTP request for uploading the specified file. An HTTP upload request is any request that contains a request body, such as a 'POST' or 'PUT' request. Upload tasks require you to create a request object so that you can provide metadata for the upload, like HTTP request headers. After you create the task, you must start it by calling its '-resume' method. The task calls methods on the session's delegate to provide you with the upload's progress, response metadata, response data, and so on. - Parameter request: A URL request object that provides the URL, cache policy, request type, and so on. The body stream and body data in this request object are ignored. - Parameter fileURL: The URL of the file to upload. - Returns: The new session upload task.
-     * @param request Argument converted to the Objective-C parameter of the same role.
-     * @param file_url Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSURLSession uploadTaskWithRequest:fromFile:]`.
+         * @details Creates a task that performs an HTTP request for uploading the specified file. An HTTP upload request is any request that contains a request body, such as a 'POST' or 'PUT' request. Upload tasks require you to create a request object so that you can provide metadata for the upload, like HTTP request headers. After you create the task, you must start it by calling its '-resume' method. The task calls methods on the session's delegate to provide you with the upload's progress, response metadata, response data, and so on. - Parameter request: A URL request object that provides the URL, cache policy, request type, and so on. The body stream and body data in this request object are ignored. - Parameter fileURL: The URL of the file to upload. - Returns: The new session upload task.
+         * @param request Argument converted to the Objective-C parameter of the same role.
+         * @param file_url Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         URLSessionUploadTask upload_task_with_request(const URLRequest& request, const URL& file_url) const;
         /**
-     * @brief Calls `-[NSURLSession uploadTaskWithRequest:fromFile:completionHandler:]`.
-     * @details Creates a task that performs an HTTP request for uploading the specified file, then calls a handler upon completion. - Parameter request: A URL request object that provides the URL, cache policy, request type, and so on. The body stream and body data in this request object are ignored. - Parameter fileURL: The URL of the file to upload. - Parameter completionHandler: The completion handler to call when the load request is complete. This handler is executed on the delegate queue.
-     * @param request Argument converted to the Objective-C parameter of the same role.
-     * @param file_url Argument converted to the Objective-C parameter of the same role.
-     * @param completion_handler Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSURLSession uploadTaskWithRequest:fromFile:completionHandler:]`.
+         * @details Creates a task that performs an HTTP request for uploading the specified file, then calls a handler upon completion. - Parameter request: A URL request object that provides the URL, cache policy, request type, and so on. The body stream and body data in this request object are ignored. - Parameter fileURL: The URL of the file to upload. - Parameter completionHandler: The completion handler to call when the load request is complete. This handler is executed on the delegate queue.
+         * @param request Argument converted to the Objective-C parameter of the same role.
+         * @param file_url Argument converted to the Objective-C parameter of the same role.
+         * @param completion_handler Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         URLSessionUploadTask upload_task_with_request(const URLRequest& request, const URL& file_url, std::function<void(std::vector<std::uint8_t>, URLResponse, Error)> completion_handler) const;
         /**
-     * @brief Calls `-[NSURLSession uploadTaskWithResumeData:]`.
-     * @details Creates an upload task from a resume data blob. Requires the server to support the latest resumable uploads Internet-Draft from the HTTP Working Group, found at https://datatracker.ietf.org/doc/draft-ietf-httpbis-resumable-upload/ If resuming from an upload file, the file must still exist and be unmodified. If the upload cannot be successfully resumed, URLSession:task:didCompleteWithError: will be called. - Parameter resumeData: Resume data blob from an incomplete upload, such as data returned by the cancelByProducingResumeData: method. - Returns: A new session upload task, or nil if the resumeData is invalid.
-     * @param resume_data Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSURLSession uploadTaskWithResumeData:]`.
+         * @details Creates an upload task from a resume data blob. Requires the server to support the latest resumable uploads Internet-Draft from the HTTP Working Group, found at https://datatracker.ietf.org/doc/draft-ietf-httpbis-resumable-upload/ If resuming from an upload file, the file must still exist and be unmodified. If the upload cannot be successfully resumed, URLSession:task:didCompleteWithError: will be called. - Parameter resumeData: Resume data blob from an incomplete upload, such as data returned by the cancelByProducingResumeData: method. - Returns: A new session upload task, or nil if the resumeData is invalid.
+         * @param resume_data Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         URLSessionUploadTask upload_task_with_resume_data(const std::vector<std::uint8_t>& resume_data) const;
         /**
-     * @brief Calls `-[NSURLSession uploadTaskWithResumeData:completionHandler:]`.
-     * @details Creates a URLSessionUploadTask from a resume data blob. If resuming from an upload file, the file must still exist and be unmodified. - Parameter resumeData: Resume data blob from an incomplete upload, such as data returned by the cancelByProducingResumeData: method. - Parameter completionHandler: The completion handler to call when the load request is complete. - Returns: A new session upload task, or nil if the resumeData is invalid.
-     * @param resume_data Argument converted to the Objective-C parameter of the same role.
-     * @param completion_handler Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSURLSession uploadTaskWithResumeData:completionHandler:]`.
+         * @details Creates a URLSessionUploadTask from a resume data blob. If resuming from an upload file, the file must still exist and be unmodified. - Parameter resumeData: Resume data blob from an incomplete upload, such as data returned by the cancelByProducingResumeData: method. - Parameter completionHandler: The completion handler to call when the load request is complete. - Returns: A new session upload task, or nil if the resumeData is invalid.
+         * @param resume_data Argument converted to the Objective-C parameter of the same role.
+         * @param completion_handler Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         URLSessionUploadTask upload_task_with_resume_data(const std::vector<std::uint8_t>& resume_data, std::function<void(std::vector<std::uint8_t>, URLResponse, Error)> completion_handler) const;
         /**
-     * @brief Calls `-[NSURLSession uploadTaskWithStreamedRequest:]`.
-     * @details Creates a task that performs an HTTP request for uploading data based on the specified URL request. An HTTP upload request is any request that contains a request body, such as a 'POST' or 'PUT' request. Upload tasks require you to provide a request object so that you can provide metadata for the upload, such as HTTP request headers. After you create the task, you must start it by calling its '-resume' method. The task calls methods on the session's delegate to provide you with the upload's progress, response metadata, response data, and so on. The session's delegate must have a 'URLSession:task:needNewBodyStream:' method that provides the body data to upload. - Parameter request: A URL request object that provides the URL, cache policy, request type, and so on. The body stream and body data in this request object are ignored, and the session calls its delegate's 'URLSession:task:needNewBodyStream:' method to supply an upload body. - Returns: The new session upload task.
-     * @param request Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSURLSession uploadTaskWithStreamedRequest:]`.
+         * @details Creates a task that performs an HTTP request for uploading data based on the specified URL request. An HTTP upload request is any request that contains a request body, such as a 'POST' or 'PUT' request. Upload tasks require you to provide a request object so that you can provide metadata for the upload, such as HTTP request headers. After you create the task, you must start it by calling its '-resume' method. The task calls methods on the session's delegate to provide you with the upload's progress, response metadata, response data, and so on. The session's delegate must have a 'URLSession:task:needNewBodyStream:' method that provides the body data to upload. - Parameter request: A URL request object that provides the URL, cache policy, request type, and so on. The body stream and body data in this request object are ignored, and the session calls its delegate's 'URLSession:task:needNewBodyStream:' method to supply an upload body. - Returns: The new session upload task.
+         * @param request Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         URLSessionUploadTask upload_task_with_streamed_request(const URLRequest& request) const;
         /**
-     * @brief Calls `-[NSURLSession webSocketTaskWithRequest:]`.
-     * @details Creates a WebSocket task for the provided URL request. You can modify the request's properties prior to calling '-resume' on the task. The task uses these properties during the HTTP handshake phase. To add custom protocols, add a header with the key 'Sec-WebSocket-Protocol', and a comma-separated list of protocols you want to negotiate with the server. The custom HTTP headers provided by the client remain unchanged for the handshake with the server. - Parameter request: A URL request that indicates a WebSocket endpoint with which to connect.
-     * @param request Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSURLSession webSocketTaskWithRequest:]`.
+         * @details Creates a WebSocket task for the provided URL request. You can modify the request's properties prior to calling '-resume' on the task. The task uses these properties during the HTTP handshake phase. To add custom protocols, add a header with the key 'Sec-WebSocket-Protocol', and a comma-separated list of protocols you want to negotiate with the server. The custom HTTP headers provided by the client remain unchanged for the handshake with the server. - Parameter request: A URL request that indicates a WebSocket endpoint with which to connect.
+         * @param request Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         URLSessionWebSocketTask web_socket_task_with_request(const URLRequest& request) const;
         /**
-     * @brief Calls `-[NSURLSession webSocketTaskWithURL:]`.
-     * @details Creates a WebSocket task for the provided URL. The provided URL must have a 'ws' or 'wss' scheme. - Parameter url: The WebSocket URL with which to connect.
-     * @param url Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSURLSession webSocketTaskWithURL:]`.
+         * @details Creates a WebSocket task for the provided URL. The provided URL must have a 'ws' or 'wss' scheme. - Parameter url: The WebSocket URL with which to connect.
+         * @param url Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         URLSessionWebSocketTask web_socket_task_with_url(const URL& url) const;
         /**
-     * @brief Calls `-[NSURLSession webSocketTaskWithURL:protocols:]`.
-     * @details Creates a WebSocket task given a URL and an array of protocols. During the WebSocket handshake, the task uses the provided protocols to negotiate a preferred protocol with the server. > Note: The protocol doesn't affect the WebSocket framing. More details on the protocol > are available in RFC 6455, The WebSocket Protocol. - Parameter url: The WebSocket URL with which to connect. - Parameter protocols: An array of protocols to negotiate with the server.
-     * @param url Argument converted to the Objective-C parameter of the same role.
-     * @param protocols Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSURLSession webSocketTaskWithURL:protocols:]`.
+         * @details Creates a WebSocket task given a URL and an array of protocols. During the WebSocket handshake, the task uses the provided protocols to negotiate a preferred protocol with the server. > Note: The protocol doesn't affect the WebSocket framing. More details on the protocol > are available in RFC 6455, The WebSocket Protocol. - Parameter url: The WebSocket URL with which to connect. - Parameter protocols: An array of protocols to negotiate with the server.
+         * @param url Argument converted to the Objective-C parameter of the same role.
+         * @param protocols Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         URLSessionWebSocketTask web_socket_task_with_url(const URL& url, const std::vector<std::string>& protocols) const;
         /**
-     * @brief Returns the `configuration` property of `NSURLSession`.
-     * @details A copy of the configuration object for this session. Beginning in iOS 9 and OS X 10.11, 'NSURLSession' objects store a copy of the 'NSURLSessionConfiguration' object passed to their initializers, such that a session's configuration is immutable after initialization. Any further changes to mutable properties on the configuration object passed to a session's initializer or the value returned from a session's configuration property do not affect the behavior of that session. However, you can create a new session with the modified configuration object.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `configuration` property of `NSURLSession`.
+         * @details A copy of the configuration object for this session. Beginning in iOS 9 and OS X 10.11, 'NSURLSession' objects store a copy of the 'NSURLSessionConfiguration' object passed to their initializers, such that a session's configuration is immutable after initialization. Any further changes to mutable properties on the configuration object passed to a session's initializer or the value returned from a session's configuration property do not affect the behavior of that session. However, you can create a new session with the modified configuration object.
+         * @return The converted Objective-C result.
+         */
         URLSessionConfiguration configuration() const;
         /**
-     * @brief Returns the `delegateQueue` property of `NSURLSession`.
-     * @details The operation queue provided when this object was created. All delegate method calls and completion handlers related to the session are performed on this queue. The session object keeps a strong reference to this queue until your app exits or the session object is deallocated. If you do not invalidate the session, your app leaks memory until it exits. > Note: This queue must be set at object creation time and may not be changed.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `delegateQueue` property of `NSURLSession`.
+         * @details The operation queue provided when this object was created. All delegate method calls and completion handlers related to the session are performed on this queue. The session object keeps a strong reference to this queue until your app exits or the session object is deallocated. If you do not invalidate the session, your app leaks memory until it exits. > Note: This queue must be set at object creation time and may not be changed.
+         * @return The converted Objective-C result.
+         */
         OperationQueue delegate_queue() const;
         /**
-     * @brief Returns the `sessionDescription` property of `NSURLSession`.
-     * @details An app-defined descriptive label for the session. This property contains a human-readable string that you can use for debugging purposes. This value may be 'nil' and defaults to 'nil'. The value is ignored by the session.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `sessionDescription` property of `NSURLSession`.
+         * @details An app-defined descriptive label for the session. This property contains a human-readable string that you can use for debugging purposes. This value may be 'nil' and defaults to 'nil'. The value is ignored by the session.
+         * @return The converted Objective-C result.
+         */
         std::string session_description() const;
         /**
-     * @brief Sets the `sessionDescription` property of `NSURLSession`.
-     * @details An app-defined descriptive label for the session. This property contains a human-readable string that you can use for debugging purposes. This value may be 'nil' and defaults to 'nil'. The value is ignored by the session.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `sessionDescription` property of `NSURLSession`.
+         * @details An app-defined descriptive label for the session. This property contains a human-readable string that you can use for debugging purposes. This value may be 'nil' and defaults to 'nil'. The value is ignored by the session.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_session_description(const std::string& value) const;
         /**
-     * @brief Returns the `sharedSession` property of `NSURLSession`.
-     * @details The shared singleton session object. For basic requests, the 'NSURLSession' class provides a shared singleton session object that gives you a reasonable default behavior for creating tasks. Use the shared session to fetch the contents of a URL to memory with just a few lines of code. Unlike the other session types, you don't create the shared session; you merely access it by using this property directly. As a result, you don't provide a delegate or a configuration object. Because the shared session has neither a delegate nor a customizable configuration object, the shared session has important limitations: - You can't obtain data incrementally as it arrives from the server. - You can't significantly customize the default connection behavior. - Your ability to perform authentication is limited. - You can't perform background downloads or uploads when your app isn't running. The shared session uses the shared 'NSURLCache', 'NSHTTPCookieStorage', and 'NSURLCredentialStorage' objects, uses a shared custom networking protocol list (configured with '+[NSURLProtocol registerClass:]' and '+[NSURLProtocol unregisterClass:]'), and is based on a default configuration.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `sharedSession` property of `NSURLSession`.
+         * @details The shared singleton session object. For basic requests, the 'NSURLSession' class provides a shared singleton session object that gives you a reasonable default behavior for creating tasks. Use the shared session to fetch the contents of a URL to memory with just a few lines of code. Unlike the other session types, you don't create the shared session; you merely access it by using this property directly. As a result, you don't provide a delegate or a configuration object. Because the shared session has neither a delegate nor a customizable configuration object, the shared session has important limitations: - You can't obtain data incrementally as it arrives from the server. - You can't significantly customize the default connection behavior. - Your ability to perform authentication is limited. - You can't perform background downloads or uploads when your app isn't running. The shared session uses the shared 'NSURLCache', 'NSHTTPCookieStorage', and 'NSURLCredentialStorage' objects, uses a shared custom networking protocol list (configured with '+[NSURLProtocol registerClass:]' and '+[NSURLProtocol unregisterClass:]'), and is based on a default configuration.
+         * @return The converted Objective-C result.
+         */
         static URLSession shared_session();
     };
 }

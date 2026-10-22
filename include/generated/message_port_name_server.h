@@ -43,25 +43,25 @@ namespace cocoon
         explicit MessagePortNameServer(Adopt adopt);
         using PortNameServer::port_for_name;
         /**
-     * @brief Calls `-[NSMessagePortNameServer portForName:]`.
-     * @details Looks up and returns the port registered under the specified name.
-     * @param name Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSMessagePortNameServer portForName:]`.
+         * @details Looks up and returns the port registered under the specified name.
+         * @param name Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Port port_for_name(const std::string& name) const;
         /**
-     * @brief Calls `-[NSMessagePortNameServer portForName:host:]`.
-     * @details Looks up and returns the port registered under the specified name on a given host. This name server is a local-only server; the host parameter must be an empty string or 'nil'.
-     * @param name Argument converted to the Objective-C parameter of the same role.
-     * @param host Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSMessagePortNameServer portForName:host:]`.
+         * @details Looks up and returns the port registered under the specified name on a given host. This name server is a local-only server; the host parameter must be an empty string or 'nil'.
+         * @param name Argument converted to the Objective-C parameter of the same role.
+         * @param host Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Port port_for_name(const std::string& name, const std::string& host) const;
         /**
-     * @brief Calls `+[NSMessagePortNameServer sharedInstance]`.
-     * @details Returns the shared instance of the message port name server.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSMessagePortNameServer sharedInstance]`.
+         * @details Returns the shared instance of the message port name server.
+         * @return The converted Objective-C result.
+         */
         static Object shared_instance();
     };
 }

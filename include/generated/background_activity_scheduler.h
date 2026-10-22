@@ -47,75 +47,75 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit BackgroundActivityScheduler(Adopt adopt);
         /**
-     * @brief Calls `-[NSBackgroundActivityScheduler invalidate]`.
-     * @details Prevents the background activity from being scheduled again. When 'invalidate' is used to stop an activity that is currently executing, the activity will still finish executing.
-     */
+         * @brief Calls `-[NSBackgroundActivityScheduler invalidate]`.
+         * @details Prevents the background activity from being scheduled again. When 'invalidate' is used to stop an activity that is currently executing, the activity will still finish executing.
+         */
         void invalidate() const;
         /**
-     * @brief Calls `-[NSBackgroundActivityScheduler scheduleWithBlock:]`.
-     * @details Begins scheduling the background activity. - Parameters: - block: A block of code to execute when the scheduler runs. This block will be called on a serial background queue appropriate for the level of quality of service specified. See 'qualityOfService'. When your block is called, it's passed a completion handler as an argument. Configure the block to invoke this handler, passing it a result of type 'NSBackgroundActivityResult' to indicate whether the activity finished ('NSBackgroundActivityResultFinished') or should be deferred ('NSBackgroundActivityResultDeferred') and rescheduled for a later time. Failure to invoke the completion handler results in the activity not being rescheduled. For work that will be deferred and rescheduled, the block may optionally adjust scheduler properties, such as 'interval' or 'tolerance', before calling the completion handler.
-     * @param block Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSBackgroundActivityScheduler scheduleWithBlock:]`.
+         * @details Begins scheduling the background activity. - Parameters: - block: A block of code to execute when the scheduler runs. This block will be called on a serial background queue appropriate for the level of quality of service specified. See 'qualityOfService'. When your block is called, it's passed a completion handler as an argument. Configure the block to invoke this handler, passing it a result of type 'NSBackgroundActivityResult' to indicate whether the activity finished ('NSBackgroundActivityResultFinished') or should be deferred ('NSBackgroundActivityResultDeferred') and rescheduled for a later time. Failure to invoke the completion handler results in the activity not being rescheduled. For work that will be deferred and rescheduled, the block may optionally adjust scheduler properties, such as 'interval' or 'tolerance', before calling the completion handler.
+         * @param block Argument converted to the Objective-C parameter of the same role.
+         */
         void schedule_with_block(std::function<void(std::function<void(BackgroundActivityResult)>)> block) const;
         /**
-     * @brief Returns the `identifier` property of `NSBackgroundActivityScheduler`.
-     * @details A unique reverse DNS notation string, such as 'com.example.MyApp.updatecheck', that identifies the activity. This string should remain constant for an activity across launches of your app because the system uses this unique identifier to track the number of times the activity has run and to improve the heuristics for deciding when to run it again in the future. 'nil' and zero-length strings are not allowed.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `identifier` property of `NSBackgroundActivityScheduler`.
+         * @details A unique reverse DNS notation string, such as 'com.example.MyApp.updatecheck', that identifies the activity. This string should remain constant for an activity across launches of your app because the system uses this unique identifier to track the number of times the activity has run and to improve the heuristics for deciding when to run it again in the future. 'nil' and zero-length strings are not allowed.
+         * @return The converted Objective-C result.
+         */
         std::string identifier() const;
         /**
-     * @brief Returns the `interval` property of `NSBackgroundActivityScheduler`.
-     * @details An integer providing a suggested interval between scheduling and invoking the activity. For repeating activities, the value of this property is also the suggested interval between invocations.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `interval` property of `NSBackgroundActivityScheduler`.
+         * @details An integer providing a suggested interval between scheduling and invoking the activity. For repeating activities, the value of this property is also the suggested interval between invocations.
+         * @return The converted Objective-C result.
+         */
         double interval() const;
         /**
-     * @brief Sets the `interval` property of `NSBackgroundActivityScheduler`.
-     * @details An integer providing a suggested interval between scheduling and invoking the activity. For repeating activities, the value of this property is also the suggested interval between invocations.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `interval` property of `NSBackgroundActivityScheduler`.
+         * @details An integer providing a suggested interval between scheduling and invoking the activity. For repeating activities, the value of this property is also the suggested interval between invocations.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_interval(double value) const;
         /**
-     * @brief Returns the `qualityOfService` property of `NSBackgroundActivityScheduler`.
-     * @details A value of type 'NSQualityOfService', which controls how aggressively the system schedules the activity. The default value is 'NSQualityOfServiceBackground'. If you upgrade the quality of service above this level, the system schedules the activity more aggressively. The default value is the recommended value for most activities.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `qualityOfService` property of `NSBackgroundActivityScheduler`.
+         * @details A value of type 'NSQualityOfService', which controls how aggressively the system schedules the activity. The default value is 'NSQualityOfServiceBackground'. If you upgrade the quality of service above this level, the system schedules the activity more aggressively. The default value is the recommended value for most activities.
+         * @return The converted Objective-C result.
+         */
         QualityOfService quality_of_service() const;
         /**
-     * @brief Sets the `qualityOfService` property of `NSBackgroundActivityScheduler`.
-     * @details A value of type 'NSQualityOfService', which controls how aggressively the system schedules the activity. The default value is 'NSQualityOfServiceBackground'. If you upgrade the quality of service above this level, the system schedules the activity more aggressively. The default value is the recommended value for most activities.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `qualityOfService` property of `NSBackgroundActivityScheduler`.
+         * @details A value of type 'NSQualityOfService', which controls how aggressively the system schedules the activity. The default value is 'NSQualityOfServiceBackground'. If you upgrade the quality of service above this level, the system schedules the activity more aggressively. The default value is the recommended value for most activities.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_quality_of_service(QualityOfService value) const;
         /**
-     * @brief Returns the `repeats` property of `NSBackgroundActivityScheduler`.
-     * @details A Boolean value indicating whether the activity should be rescheduled after it completes. The default value for this property is 'NO'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `repeats` property of `NSBackgroundActivityScheduler`.
+         * @details A Boolean value indicating whether the activity should be rescheduled after it completes. The default value for this property is 'NO'.
+         * @return The converted Objective-C result.
+         */
         bool repeats() const;
         /**
-     * @brief Sets the `repeats` property of `NSBackgroundActivityScheduler`.
-     * @details A Boolean value indicating whether the activity should be rescheduled after it completes. The default value for this property is 'NO'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `repeats` property of `NSBackgroundActivityScheduler`.
+         * @details A Boolean value indicating whether the activity should be rescheduled after it completes. The default value for this property is 'NO'.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_repeats(bool value) const;
         /**
-     * @brief Returns the `shouldDefer` property of `NSBackgroundActivityScheduler`.
-     * @details A Boolean value indicating whether your app should stop performing background activity and resume at a more optimal time. Your app can check the 'shouldDefer' property while executing scheduled background activity. If this property contains a value of 'YES', system conditions have changed since the time the activity started and deferral is recommended. For example, perhaps the user unplugged the Mac and it's now running on battery power. In this case, your app should finish what it's currently doing, save its state, and invoke its completion handler with a value of 'NSBackgroundActivityResultDeferred'. The system will invoke your activity again at a more optimal time, and your app can restore its previous state and resume where it left off.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `shouldDefer` property of `NSBackgroundActivityScheduler`.
+         * @details A Boolean value indicating whether your app should stop performing background activity and resume at a more optimal time. Your app can check the 'shouldDefer' property while executing scheduled background activity. If this property contains a value of 'YES', system conditions have changed since the time the activity started and deferral is recommended. For example, perhaps the user unplugged the Mac and it's now running on battery power. In this case, your app should finish what it's currently doing, save its state, and invoke its completion handler with a value of 'NSBackgroundActivityResultDeferred'. The system will invoke your activity again at a more optimal time, and your app can restore its previous state and resume where it left off.
+         * @return The converted Objective-C result.
+         */
         bool should_defer() const;
         /**
-     * @brief Returns the `tolerance` property of `NSBackgroundActivityScheduler`.
-     * @details A value of type 'NSTimeInterval', which specifies a range of time during which the background activity may occur. A nominal fire date for scheduled background activity is calculated based on a combination of the 'interval' property value and the time the activity began or the last execution date. The 'tolerance' property specifies a grace period -- a range of time before and after the nominal fire date, during which the activity may be invoked. As the activity nears the end of its grace period, the system schedules the activity more aggressively. The default tolerance period is half the value of the 'interval' property.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `tolerance` property of `NSBackgroundActivityScheduler`.
+         * @details A value of type 'NSTimeInterval', which specifies a range of time during which the background activity may occur. A nominal fire date for scheduled background activity is calculated based on a combination of the 'interval' property value and the time the activity began or the last execution date. The 'tolerance' property specifies a grace period -- a range of time before and after the nominal fire date, during which the activity may be invoked. As the activity nears the end of its grace period, the system schedules the activity more aggressively. The default tolerance period is half the value of the 'interval' property.
+         * @return The converted Objective-C result.
+         */
         double tolerance() const;
         /**
-     * @brief Sets the `tolerance` property of `NSBackgroundActivityScheduler`.
-     * @details A value of type 'NSTimeInterval', which specifies a range of time during which the background activity may occur. A nominal fire date for scheduled background activity is calculated based on a combination of the 'interval' property value and the time the activity began or the last execution date. The 'tolerance' property specifies a grace period -- a range of time before and after the nominal fire date, during which the activity may be invoked. As the activity nears the end of its grace period, the system schedules the activity more aggressively. The default tolerance period is half the value of the 'interval' property.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `tolerance` property of `NSBackgroundActivityScheduler`.
+         * @details A value of type 'NSTimeInterval', which specifies a range of time during which the background activity may occur. A nominal fire date for scheduled background activity is calculated based on a combination of the 'interval' property value and the time the activity began or the last execution date. The 'tolerance' property specifies a grace period -- a range of time before and after the nominal fire date, during which the activity may be invoked. As the activity nears the end of its grace period, the system schedules the activity more aggressively. The default tolerance period is half the value of the 'interval' property.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_tolerance(double value) const;
     };
 }

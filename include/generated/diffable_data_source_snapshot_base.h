@@ -39,118 +39,118 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit DiffableDataSourceSnapshotBase(Adopt adopt);
         /**
-     * @brief Calls `-[NSDiffableDataSourceSnapshot appendItemsWithIdentifiers:]`.
-     * @param identifiers Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSDiffableDataSourceSnapshot appendItemsWithIdentifiers:]`.
+         * @param identifiers Argument converted to the Objective-C parameter of the same role.
+         */
         void append_items_with_identifiers(const std::vector<Object>& identifiers) const;
         /**
-     * @brief Calls `-[NSDiffableDataSourceSnapshot appendItemsWithIdentifiers:intoSectionWithIdentifier:]`.
-     * @param identifiers Argument converted to the Objective-C parameter of the same role.
-     * @param section_identifier Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSDiffableDataSourceSnapshot appendItemsWithIdentifiers:intoSectionWithIdentifier:]`.
+         * @param identifiers Argument converted to the Objective-C parameter of the same role.
+         * @param section_identifier Argument converted to the Objective-C parameter of the same role.
+         */
         void append_items_with_identifiers(const std::vector<Object>& identifiers, const Object& section_identifier) const;
         /**
-     * @brief Calls `-[NSDiffableDataSourceSnapshot appendSectionsWithIdentifiers:]`.
-     * @param section_identifiers Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSDiffableDataSourceSnapshot appendSectionsWithIdentifiers:]`.
+         * @param section_identifiers Argument converted to the Objective-C parameter of the same role.
+         */
         void append_sections_with_identifiers(const std::vector<Object>& section_identifiers) const;
         /**
-     * @brief Calls `-[NSDiffableDataSourceSnapshot deleteAllItems]`.
-     */
+         * @brief Calls `-[NSDiffableDataSourceSnapshot deleteAllItems]`.
+         */
         void delete_all_items() const;
         /**
-     * @brief Calls `-[NSDiffableDataSourceSnapshot deleteItemsWithIdentifiers:]`.
-     * @param identifiers Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSDiffableDataSourceSnapshot deleteItemsWithIdentifiers:]`.
+         * @param identifiers Argument converted to the Objective-C parameter of the same role.
+         */
         void delete_items_with_identifiers(const std::vector<Object>& identifiers) const;
         /**
-     * @brief Calls `-[NSDiffableDataSourceSnapshot deleteSectionsWithIdentifiers:]`.
-     * @param section_identifiers Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSDiffableDataSourceSnapshot deleteSectionsWithIdentifiers:]`.
+         * @param section_identifiers Argument converted to the Objective-C parameter of the same role.
+         */
         void delete_sections_with_identifiers(const std::vector<Object>& section_identifiers) const;
         /**
-     * @brief Calls `-[NSDiffableDataSourceSnapshot indexOfItemIdentifier:]`.
-     * @param item_identifier Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSDiffableDataSourceSnapshot indexOfItemIdentifier:]`.
+         * @param item_identifier Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::int64_t index_of_item_identifier(const Object& item_identifier) const;
         /**
-     * @brief Calls `-[NSDiffableDataSourceSnapshot indexOfSectionIdentifier:]`.
-     * @param section_identifier Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSDiffableDataSourceSnapshot indexOfSectionIdentifier:]`.
+         * @param section_identifier Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::int64_t index_of_section_identifier(const Object& section_identifier) const;
         /**
-     * @brief Calls `-[NSDiffableDataSourceSnapshot insertItemsWithIdentifiers:afterItemWithIdentifier:]`.
-     * @param identifiers Argument converted to the Objective-C parameter of the same role.
-     * @param item_identifier Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSDiffableDataSourceSnapshot insertItemsWithIdentifiers:afterItemWithIdentifier:]`.
+         * @param identifiers Argument converted to the Objective-C parameter of the same role.
+         * @param item_identifier Argument converted to the Objective-C parameter of the same role.
+         */
         void insert_items_with_identifiers(const std::vector<Object>& identifiers, const Object& item_identifier) const;
         /**
-     * @brief Calls `-[NSDiffableDataSourceSnapshot insertSectionsWithIdentifiers:afterSectionWithIdentifier:]`.
-     * @param section_identifiers Argument converted to the Objective-C parameter of the same role.
-     * @param to_section_identifier Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSDiffableDataSourceSnapshot insertSectionsWithIdentifiers:afterSectionWithIdentifier:]`.
+         * @param section_identifiers Argument converted to the Objective-C parameter of the same role.
+         * @param to_section_identifier Argument converted to the Objective-C parameter of the same role.
+         */
         void insert_sections_with_identifiers(const std::vector<Object>& section_identifiers, const Object& to_section_identifier) const;
         /**
-     * @brief Calls `-[NSDiffableDataSourceSnapshot itemIdentifiersInSectionWithIdentifier:]`.
-     * @param section_identifier Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSDiffableDataSourceSnapshot itemIdentifiersInSectionWithIdentifier:]`.
+         * @param section_identifier Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::vector<Object> item_identifiers_in_section_with_identifier(const Object& section_identifier) const;
         /**
-     * @brief Calls `-[NSDiffableDataSourceSnapshot moveItemWithIdentifier:afterItemWithIdentifier:]`.
-     * @param from_identifier Argument converted to the Objective-C parameter of the same role.
-     * @param to_identifier Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSDiffableDataSourceSnapshot moveItemWithIdentifier:afterItemWithIdentifier:]`.
+         * @param from_identifier Argument converted to the Objective-C parameter of the same role.
+         * @param to_identifier Argument converted to the Objective-C parameter of the same role.
+         */
         void move_item_with_identifier(const Object& from_identifier, const Object& to_identifier) const;
         /**
-     * @brief Calls `-[NSDiffableDataSourceSnapshot moveSectionWithIdentifier:afterSectionWithIdentifier:]`.
-     * @param from_section_identifier Argument converted to the Objective-C parameter of the same role.
-     * @param to_section_identifier Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSDiffableDataSourceSnapshot moveSectionWithIdentifier:afterSectionWithIdentifier:]`.
+         * @param from_section_identifier Argument converted to the Objective-C parameter of the same role.
+         * @param to_section_identifier Argument converted to the Objective-C parameter of the same role.
+         */
         void move_section_with_identifier(const Object& from_section_identifier, const Object& to_section_identifier) const;
         /**
-     * @brief Calls `-[NSDiffableDataSourceSnapshot numberOfItemsInSection:]`.
-     * @param section_identifier Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSDiffableDataSourceSnapshot numberOfItemsInSection:]`.
+         * @param section_identifier Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::int64_t number_of_items_in_section(const Object& section_identifier) const;
         /**
-     * @brief Calls `-[NSDiffableDataSourceSnapshot reloadItemsWithIdentifiers:]`.
-     * @param identifiers Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSDiffableDataSourceSnapshot reloadItemsWithIdentifiers:]`.
+         * @param identifiers Argument converted to the Objective-C parameter of the same role.
+         */
         void reload_items_with_identifiers(const std::vector<Object>& identifiers) const;
         /**
-     * @brief Calls `-[NSDiffableDataSourceSnapshot reloadSectionsWithIdentifiers:]`.
-     * @param section_identifiers Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSDiffableDataSourceSnapshot reloadSectionsWithIdentifiers:]`.
+         * @param section_identifiers Argument converted to the Objective-C parameter of the same role.
+         */
         void reload_sections_with_identifiers(const std::vector<Object>& section_identifiers) const;
         /**
-     * @brief Calls `-[NSDiffableDataSourceSnapshot sectionIdentifierForSectionContainingItemIdentifier:]`.
-     * @param item_identifier Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSDiffableDataSourceSnapshot sectionIdentifierForSectionContainingItemIdentifier:]`.
+         * @param item_identifier Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Object section_identifier_for_section_containing_item_identifier(const Object& item_identifier) const;
         /**
-     * @brief Returns the `itemIdentifiers` property of `NSDiffableDataSourceSnapshot`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `itemIdentifiers` property of `NSDiffableDataSourceSnapshot`.
+         * @return The converted Objective-C result.
+         */
         std::vector<Object> item_identifiers() const;
         /**
-     * @brief Returns the `numberOfItems` property of `NSDiffableDataSourceSnapshot`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `numberOfItems` property of `NSDiffableDataSourceSnapshot`.
+         * @return The converted Objective-C result.
+         */
         std::int64_t number_of_items() const;
         /**
-     * @brief Returns the `numberOfSections` property of `NSDiffableDataSourceSnapshot`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `numberOfSections` property of `NSDiffableDataSourceSnapshot`.
+         * @return The converted Objective-C result.
+         */
         std::int64_t number_of_sections() const;
         /**
-     * @brief Returns the `sectionIdentifiers` property of `NSDiffableDataSourceSnapshot`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `sectionIdentifiers` property of `NSDiffableDataSourceSnapshot`.
+         * @return The converted Objective-C result.
+         */
         std::vector<Object> section_identifiers() const;
     };
 

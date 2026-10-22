@@ -48,73 +48,73 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit PageController(Adopt adopt);
         /**
-     * @brief Calls `-[NSPageController completeTransition]`.
-     * @details Hide the transition view used for animation and show the selectedViewController.view. Generally, this is called during pageControllerDidEndLiveTransition: in the delegate when the new contents of view is ready to be displayed.
-     */
+         * @brief Calls `-[NSPageController completeTransition]`.
+         * @details Hide the transition view used for animation and show the selectedViewController.view. Generally, this is called during pageControllerDidEndLiveTransition: in the delegate when the new contents of view is ready to be displayed.
+         */
         void complete_transition() const;
         /**
-     * @brief Calls `-[NSPageController navigateBack:]`.
-     * @details Supported IBActions - all IB actions are animated and delegate LiveTransition methods are called.
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSPageController navigateBack:]`.
+         * @details Supported IBActions - all IB actions are animated and delegate LiveTransition methods are called.
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void navigate_back(const Object& sender) const;
         /**
-     * @brief Calls `-[NSPageController navigateForward:]`.
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSPageController navigateForward:]`.
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void navigate_forward(const Object& sender) const;
         /**
-     * @brief Calls `-[NSPageController navigateForwardToObject:]`.
-     * @details Clears the arrangedObjects array after the selected index, adds the argument to the arrangedObjects array, and sets the selectedIndex to the argument.
-     * @param object Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSPageController navigateForwardToObject:]`.
+         * @details Clears the arrangedObjects array after the selected index, adds the argument to the arrangedObjects array, and sets the selectedIndex to the argument.
+         * @param object Argument converted to the Objective-C parameter of the same role.
+         */
         void navigate_forward_to_object(const Object& object) const;
         /**
-     * @brief Calls `-[NSPageController takeSelectedIndexFrom:]`.
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSPageController takeSelectedIndexFrom:]`.
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void take_selected_index_from(const Object& sender) const;
         /**
-     * @brief Returns the `arrangedObjects` property of `NSPageController`.
-     * @details Array of all displayed objects (after sorting and potentially filtering by you). The delegate will be asked for snapshots as they are needed. Alternatively, you may never directly set this array and use the -navigateForwardToRepresentedObject API to create a history as the user navigates. This property is KVO compliant.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `arrangedObjects` property of `NSPageController`.
+         * @details Array of all displayed objects (after sorting and potentially filtering by you). The delegate will be asked for snapshots as they are needed. Alternatively, you may never directly set this array and use the -navigateForwardToRepresentedObject API to create a history as the user navigates. This property is KVO compliant.
+         * @return The converted Objective-C result.
+         */
         std::vector<Object> arranged_objects() const;
         /**
-     * @brief Sets the `arrangedObjects` property of `NSPageController`.
-     * @details Array of all displayed objects (after sorting and potentially filtering by you). The delegate will be asked for snapshots as they are needed. Alternatively, you may never directly set this array and use the -navigateForwardToRepresentedObject API to create a history as the user navigates. This property is KVO compliant.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `arrangedObjects` property of `NSPageController`.
+         * @details Array of all displayed objects (after sorting and potentially filtering by you). The delegate will be asked for snapshots as they are needed. Alternatively, you may never directly set this array and use the -navigateForwardToRepresentedObject API to create a history as the user navigates. This property is KVO compliant.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_arranged_objects(const std::vector<Object>& value) const;
         /**
-     * @brief Returns the `selectedIndex` property of `NSPageController`.
-     * @details The index into the arrangedObjects that is being displayed. This property is KVO compliant. To animate a transition to a new index, use NSPageController's animator object.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `selectedIndex` property of `NSPageController`.
+         * @details The index into the arrangedObjects that is being displayed. This property is KVO compliant. To animate a transition to a new index, use NSPageController's animator object.
+         * @return The converted Objective-C result.
+         */
         std::int64_t selected_index() const;
         /**
-     * @brief Sets the `selectedIndex` property of `NSPageController`.
-     * @details The index into the arrangedObjects that is being displayed. This property is KVO compliant. To animate a transition to a new index, use NSPageController's animator object.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `selectedIndex` property of `NSPageController`.
+         * @details The index into the arrangedObjects that is being displayed. This property is KVO compliant. To animate a transition to a new index, use NSPageController's animator object.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_selected_index(std::int64_t value) const;
         /**
-     * @brief Returns the `selectedViewController` property of `NSPageController`.
-     * @details The viewController associated with the selected arrangedObject. May be nil if delegate is not supplying viewControllers.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `selectedViewController` property of `NSPageController`.
+         * @details The viewController associated with the selected arrangedObject. May be nil if delegate is not supplying viewControllers.
+         * @return The converted Objective-C result.
+         */
         ViewController selected_view_controller() const;
         /**
-     * @brief Returns the `transitionStyle` property of `NSPageController`.
-     * @details The animation style used when transitioning from one page to another. The default value is NSPageControllerTransitionStyleStackHistory
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `transitionStyle` property of `NSPageController`.
+         * @details The animation style used when transitioning from one page to another. The default value is NSPageControllerTransitionStyleStackHistory
+         * @return The converted Objective-C result.
+         */
         PageControllerTransitionStyle transition_style() const;
         /**
-     * @brief Sets the `transitionStyle` property of `NSPageController`.
-     * @details The animation style used when transitioning from one page to another. The default value is NSPageControllerTransitionStyleStackHistory
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `transitionStyle` property of `NSPageController`.
+         * @details The animation style used when transitioning from one page to another. The default value is NSPageControllerTransitionStyleStackHistory
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_transition_style(PageControllerTransitionStyle value) const;
         /// @brief Signal for the delegate/data-source method behind `identifier_for_object`; connect a callback with `identifier_for_object().connect(...)`.
         Signal<PageController, std::string(Object)> identifier_for_object() const

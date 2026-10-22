@@ -39,14 +39,14 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit PressureConfiguration(Adopt adopt);
         /**
-     * @brief Calls `-[NSPressureConfiguration set]`.
-     * @details Sets the configuration; it will automatically be reset on mouse up or gesture end. Only takes effect during a mouse drag or pressure event sequence. However, if your application is slow to respond to the mouseDown event, the user may complete the mouse click sequence before this configuration can take effect. When possible you should configure the pressure behavior before the mouse down via NSView's pressureConfiguration property.
-     */
+         * @brief Calls `-[NSPressureConfiguration set]`.
+         * @details Sets the configuration; it will automatically be reset on mouse up or gesture end. Only takes effect during a mouse drag or pressure event sequence. However, if your application is slow to respond to the mouseDown event, the user may complete the mouse click sequence before this configuration can take effect. When possible you should configure the pressure behavior before the mouse down via NSView's pressureConfiguration property.
+         */
         void set() const;
         /**
-     * @brief Returns the `pressureBehavior` property of `NSPressureConfiguration`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `pressureBehavior` property of `NSPressureConfiguration`.
+         * @return The converted Objective-C result.
+         */
         PressureBehavior pressure_behavior() const;
     };
 }

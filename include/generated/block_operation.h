@@ -34,10 +34,10 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit BlockOperation(Adopt adopt);
         /**
-     * @brief Calls `-[NSBlockOperation addExecutionBlock:]`.
-     * @details Adds the specified block to the receiver's list of blocks to perform. The specified block should not make any assumptions about its execution environment. Calling this method while the receiver is executing or has already finished causes an 'NSInvalidArgumentException' exception to be thrown. - Parameter block: The block to add to the receiver's list. The block should take no parameters and have no return value.
-     * @param block Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSBlockOperation addExecutionBlock:]`.
+         * @details Adds the specified block to the receiver's list of blocks to perform. The specified block should not make any assumptions about its execution environment. Calling this method while the receiver is executing or has already finished causes an 'NSInvalidArgumentException' exception to be thrown. - Parameter block: The block to add to the receiver's list. The block should take no parameters and have no return value.
+         * @param block Argument converted to the Objective-C parameter of the same role.
+         */
         void add_execution_block(std::function<void()> block) const;
     };
 }

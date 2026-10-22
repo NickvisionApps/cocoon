@@ -48,34 +48,34 @@ namespace cocoon
         using Cell::tag;
         using Cell::target;
         /**
-     * @brief Returns the `action` property of `NSActionCell`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `action` property of `NSActionCell`.
+         * @return The converted Objective-C result.
+         */
         std::string action() const;
         /**
-     * @brief Sets the `action` property of `NSActionCell`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `action` property of `NSActionCell`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_action(const std::string& value) const;
         /**
-     * @brief Returns the `tag` property of `NSActionCell`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `tag` property of `NSActionCell`.
+         * @return The converted Objective-C result.
+         */
         std::int64_t tag() const;
         /**
-     * @brief Sets the `tag` property of `NSActionCell`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `tag` property of `NSActionCell`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_tag(std::int64_t value) const;
         /**
-     * @brief Returns the `target` property of `NSActionCell`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `target` property of `NSActionCell`.
+         * @return The converted Objective-C result.
+         */
         Object target() const;
         /**
-     * @brief Sets the `target` property of `NSActionCell`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `target` property of `NSActionCell`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_target(const Object& value) const;
     };
 }

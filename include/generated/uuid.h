@@ -43,29 +43,29 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit UUID(Adopt adopt);
         /**
-     * @brief Calls `+[NSUUID UUID]`.
-     * @details Creates a new autoreleased NSUUID with RFC 4122 version 4 random bytes.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSUUID UUID]`.
+         * @details Creates a new autoreleased NSUUID with RFC 4122 version 4 random bytes.
+         * @return The converted Objective-C result.
+         */
         static UUID uuid();
         /**
-     * @brief Calls `-[NSUUID compare:]`.
-     * @details Compares the receiver to another NSUUID in constant time.
-     * @param other_uuid Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSUUID compare:]`.
+         * @details Compares the receiver to another NSUUID in constant time.
+         * @param other_uuid Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         ComparisonResult compare(const UUID& other_uuid) const;
         /**
-     * @brief Calls `-[NSUUID getUUIDBytes:]`.
-     * @details Gets the individual bytes of the receiver.
-     * @param uuid Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSUUID getUUIDBytes:]`.
+         * @details Gets the individual bytes of the receiver.
+         * @param uuid Argument converted to the Objective-C parameter of the same role.
+         */
         void get_uuid_bytes(std::uint8_t* uuid) const;
         /**
-     * @brief Returns the `UUIDString` property of `NSUUID`.
-     * @details The UUID as a string. A string containing a formatted UUID for example 'E621E1F8-C36C-495A-93FC-0C247A3E6E5F'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `UUIDString` property of `NSUUID`.
+         * @details The UUID as a string. A string containing a formatted UUID for example 'E621E1F8-C36C-495A-93FC-0C247A3E6E5F'.
+         * @return The converted Objective-C result.
+         */
         std::string uuid_string() const;
     };
 }

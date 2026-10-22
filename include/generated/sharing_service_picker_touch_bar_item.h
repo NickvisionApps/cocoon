@@ -49,38 +49,38 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit SharingServicePickerTouchBarItem(Adopt adopt);
         /**
-     * @brief Returns the `buttonImage` property of `NSSharingServicePickerTouchBarItem`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `buttonImage` property of `NSSharingServicePickerTouchBarItem`.
+         * @return The converted Objective-C result.
+         */
         Image button_image() const;
         /**
-     * @brief Sets the `buttonImage` property of `NSSharingServicePickerTouchBarItem`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `buttonImage` property of `NSSharingServicePickerTouchBarItem`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_button_image(const Image& value) const;
         /**
-     * @brief Returns the `buttonTitle` property of `NSSharingServicePickerTouchBarItem`.
-     * @details Get/set the button title and image. By default, the button title is an empty string, and the button image is a share picker image.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `buttonTitle` property of `NSSharingServicePickerTouchBarItem`.
+         * @details Get/set the button title and image. By default, the button title is an empty string, and the button image is a share picker image.
+         * @return The converted Objective-C result.
+         */
         std::string button_title() const;
         /**
-     * @brief Sets the `buttonTitle` property of `NSSharingServicePickerTouchBarItem`.
-     * @details Get/set the button title and image. By default, the button title is an empty string, and the button image is a share picker image.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `buttonTitle` property of `NSSharingServicePickerTouchBarItem`.
+         * @details Get/set the button title and image. By default, the button title is an empty string, and the button image is a share picker image.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_button_title(const std::string& value) const;
         /**
-     * @brief Returns the `enabled` property of `NSSharingServicePickerTouchBarItem`.
-     * @details Enables or disabled the sharing button; if the popover is shown, it will first be closed.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `enabled` property of `NSSharingServicePickerTouchBarItem`.
+         * @details Enables or disabled the sharing button; if the popover is shown, it will first be closed.
+         * @return The converted Objective-C result.
+         */
         bool is_enabled() const;
         /**
-     * @brief Sets the `enabled` property of `NSSharingServicePickerTouchBarItem`.
-     * @details Enables or disabled the sharing button; if the popover is shown, it will first be closed.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `enabled` property of `NSSharingServicePickerTouchBarItem`.
+         * @details Enables or disabled the sharing button; if the popover is shown, it will first be closed.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_enabled(bool value) const;
         /// @brief Signal for the delegate/data-source method behind `sharing_services_for_items_proposed_sharing_services`; connect a callback with `sharing_services_for_items_proposed_sharing_services().connect(...)`.
         Signal<SharingServicePickerTouchBarItem, std::vector<SharingService>(std::vector<Object>, std::vector<SharingService>)> sharing_services_for_items_proposed_sharing_services() const

@@ -52,61 +52,61 @@ namespace cocoon
         using Panel::set_works_when_modal;
         using Panel::works_when_modal;
         /**
-     * @brief Calls `-[NSFontPanel panelConvertFont:]`.
-     * @param font_obj Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSFontPanel panelConvertFont:]`.
+         * @param font_obj Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Font panel_convert_font(const Font& font_obj) const;
         /**
-     * @brief Calls `-[NSFontPanel reloadDefaultFontFamilies]`.
-     * @details This method triggers a re-load to the default state, so that the delegate will be called, and have an opportunity to scrutinize the default list of fonts to be displayed in the panel.
-     */
+         * @brief Calls `-[NSFontPanel reloadDefaultFontFamilies]`.
+         * @details This method triggers a re-load to the default state, so that the delegate will be called, and have an opportunity to scrutinize the default list of fonts to be displayed in the panel.
+         */
         void reload_default_font_families() const;
         /**
-     * @brief Calls `-[NSFontPanel setPanelFont:isMultiple:]`.
-     * @param font_obj Argument converted to the Objective-C parameter of the same role.
-     * @param flag Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSFontPanel setPanelFont:isMultiple:]`.
+         * @param font_obj Argument converted to the Objective-C parameter of the same role.
+         * @param flag Argument converted to the Objective-C parameter of the same role.
+         */
         void set_panel_font(const Font& font_obj, bool flag) const;
         /**
-     * @brief Returns the `accessoryView` property of `NSFontPanel`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `accessoryView` property of `NSFontPanel`.
+         * @return The converted Objective-C result.
+         */
         View accessory_view() const;
         /**
-     * @brief Sets the `accessoryView` property of `NSFontPanel`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `accessoryView` property of `NSFontPanel`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_accessory_view(const View& value) const;
         /**
-     * @brief Returns the `enabled` property of `NSFontPanel`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `enabled` property of `NSFontPanel`.
+         * @return The converted Objective-C result.
+         */
         bool is_enabled() const;
         /**
-     * @brief Sets the `enabled` property of `NSFontPanel`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `enabled` property of `NSFontPanel`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_enabled(bool value) const;
         /**
-     * @brief Returns the `sharedFontPanel` property of `NSFontPanel`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `sharedFontPanel` property of `NSFontPanel`.
+         * @return The converted Objective-C result.
+         */
         static FontPanel shared_font_panel();
         /**
-     * @brief Returns the `sharedFontPanelExists` property of `NSFontPanel`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `sharedFontPanelExists` property of `NSFontPanel`.
+         * @return The converted Objective-C result.
+         */
         static bool shared_font_panel_exists();
         /**
-     * @brief Returns the `worksWhenModal` property of `NSFontPanel`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `worksWhenModal` property of `NSFontPanel`.
+         * @return The converted Objective-C result.
+         */
         bool works_when_modal() const;
         /**
-     * @brief Sets the `worksWhenModal` property of `NSFontPanel`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `worksWhenModal` property of `NSFontPanel`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_works_when_modal(bool value) const;
     };
 }

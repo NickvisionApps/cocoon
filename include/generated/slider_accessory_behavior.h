@@ -39,43 +39,43 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit SliderAccessoryBehavior(Adopt adopt);
         /**
-     * @brief Calls `+[NSSliderAccessoryBehavior behaviorWithHandler:]`.
-     * @details The handler block is invoked on interaction. This variant is not codable and will assert in '-encodeWithCoder:'.
-     * @param handler Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSSliderAccessoryBehavior behaviorWithHandler:]`.
+         * @details The handler block is invoked on interaction. This variant is not codable and will assert in '-encodeWithCoder:'.
+         * @param handler Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static SliderAccessoryBehavior behavior_with_handler(std::function<void(SliderAccessory)> handler);
         /**
-     * @brief Calls `+[NSSliderAccessoryBehavior behaviorWithTarget:action:]`.
-     * @details The action is sent to the target on interaction. \@param target An optional 'NSSliderAccessory'.
-     * @param target Argument converted to the Objective-C parameter of the same role.
-     * @param action Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSSliderAccessoryBehavior behaviorWithTarget:action:]`.
+         * @details The action is sent to the target on interaction. \@param target An optional 'NSSliderAccessory'.
+         * @param target Argument converted to the Objective-C parameter of the same role.
+         * @param action Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static SliderAccessoryBehavior behavior_with_target(const Object& target, const std::string& action);
         /**
-     * @brief Calls `-[NSSliderAccessoryBehavior handleAction:]`.
-     * @details Override point for custom subclasses to handle interaction.
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSSliderAccessoryBehavior handleAction:]`.
+         * @details Override point for custom subclasses to handle interaction.
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void handle_action(const SliderAccessory& sender) const;
         /**
-     * @brief Returns the `automaticBehavior` property of `NSSliderAccessoryBehavior`.
-     * @details The behavior is automatically picked to be the system standard, given the slider's current context. For example, NSTouchBarItems have '.valueStep' behavior.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `automaticBehavior` property of `NSSliderAccessoryBehavior`.
+         * @details The behavior is automatically picked to be the system standard, given the slider's current context. For example, NSTouchBarItems have '.valueStep' behavior.
+         * @return The converted Objective-C result.
+         */
         static SliderAccessoryBehavior automatic_behavior();
         /**
-     * @brief Returns the `valueResetBehavior` property of `NSSliderAccessoryBehavior`.
-     * @details The value of the slider is reset to the associated value for the accessory.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `valueResetBehavior` property of `NSSliderAccessoryBehavior`.
+         * @details The value of the slider is reset to the associated value for the accessory.
+         * @return The converted Objective-C result.
+         */
         static SliderAccessoryBehavior value_reset_behavior();
         /**
-     * @brief Returns the `valueStepBehavior` property of `NSSliderAccessoryBehavior`.
-     * @details The value of the slider moves towards the associated value for the accessory with by a delta of the slider's 'altIncrementValue'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `valueStepBehavior` property of `NSSliderAccessoryBehavior`.
+         * @details The value of the slider moves towards the associated value for the accessory with by a delta of the slider's 'altIncrementValue'.
+         * @return The converted Objective-C result.
+         */
         static SliderAccessoryBehavior value_step_behavior();
     };
 }

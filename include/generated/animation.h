@@ -54,117 +54,117 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit Animation(Adopt adopt);
         /**
-     * @brief Calls `-[NSAnimation addProgressMark:]`.
-     * @param progress_mark Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSAnimation addProgressMark:]`.
+         * @param progress_mark Argument converted to the Objective-C parameter of the same role.
+         */
         void add_progress_mark(float progress_mark) const;
         /**
-     * @brief Calls `-[NSAnimation clearStartAnimation]`.
-     */
+         * @brief Calls `-[NSAnimation clearStartAnimation]`.
+         */
         void clear_start_animation() const;
         /**
-     * @brief Calls `-[NSAnimation clearStopAnimation]`.
-     */
+         * @brief Calls `-[NSAnimation clearStopAnimation]`.
+         */
         void clear_stop_animation() const;
         /**
-     * @brief Calls `-[NSAnimation removeProgressMark:]`.
-     * @param progress_mark Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSAnimation removeProgressMark:]`.
+         * @param progress_mark Argument converted to the Objective-C parameter of the same role.
+         */
         void remove_progress_mark(float progress_mark) const;
         /**
-     * @brief Calls `-[NSAnimation startAnimation]`.
-     */
+         * @brief Calls `-[NSAnimation startAnimation]`.
+         */
         void start_animation() const;
         /**
-     * @brief Calls `-[NSAnimation startWhenAnimation:reachesProgress:]`.
-     * @param animation Argument converted to the Objective-C parameter of the same role.
-     * @param start_progress Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSAnimation startWhenAnimation:reachesProgress:]`.
+         * @param animation Argument converted to the Objective-C parameter of the same role.
+         * @param start_progress Argument converted to the Objective-C parameter of the same role.
+         */
         void start_when_animation(const Animation& animation, float start_progress) const;
         /**
-     * @brief Calls `-[NSAnimation stopAnimation]`.
-     */
+         * @brief Calls `-[NSAnimation stopAnimation]`.
+         */
         void stop_animation() const;
         /**
-     * @brief Calls `-[NSAnimation stopWhenAnimation:reachesProgress:]`.
-     * @param animation Argument converted to the Objective-C parameter of the same role.
-     * @param stop_progress Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSAnimation stopWhenAnimation:reachesProgress:]`.
+         * @param animation Argument converted to the Objective-C parameter of the same role.
+         * @param stop_progress Argument converted to the Objective-C parameter of the same role.
+         */
         void stop_when_animation(const Animation& animation, float stop_progress) const;
         /**
-     * @brief Returns the `animating` property of `NSAnimation`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `animating` property of `NSAnimation`.
+         * @return The converted Objective-C result.
+         */
         bool is_animating() const;
         /**
-     * @brief Returns the `animationBlockingMode` property of `NSAnimation`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `animationBlockingMode` property of `NSAnimation`.
+         * @return The converted Objective-C result.
+         */
         AnimationBlockingMode animation_blocking_mode() const;
         /**
-     * @brief Sets the `animationBlockingMode` property of `NSAnimation`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `animationBlockingMode` property of `NSAnimation`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_animation_blocking_mode(AnimationBlockingMode value) const;
         /**
-     * @brief Returns the `animationCurve` property of `NSAnimation`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `animationCurve` property of `NSAnimation`.
+         * @return The converted Objective-C result.
+         */
         AnimationCurve animation_curve() const;
         /**
-     * @brief Sets the `animationCurve` property of `NSAnimation`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `animationCurve` property of `NSAnimation`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_animation_curve(AnimationCurve value) const;
         /**
-     * @brief Returns the `currentProgress` property of `NSAnimation`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `currentProgress` property of `NSAnimation`.
+         * @return The converted Objective-C result.
+         */
         float current_progress() const;
         /**
-     * @brief Sets the `currentProgress` property of `NSAnimation`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `currentProgress` property of `NSAnimation`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_current_progress(float value) const;
         /**
-     * @brief Returns the `currentValue` property of `NSAnimation`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `currentValue` property of `NSAnimation`.
+         * @return The converted Objective-C result.
+         */
         float current_value() const;
         /**
-     * @brief Returns the `duration` property of `NSAnimation`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `duration` property of `NSAnimation`.
+         * @return The converted Objective-C result.
+         */
         double duration() const;
         /**
-     * @brief Sets the `duration` property of `NSAnimation`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `duration` property of `NSAnimation`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_duration(double value) const;
         /**
-     * @brief Returns the `frameRate` property of `NSAnimation`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `frameRate` property of `NSAnimation`.
+         * @return The converted Objective-C result.
+         */
         float frame_rate() const;
         /**
-     * @brief Sets the `frameRate` property of `NSAnimation`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `frameRate` property of `NSAnimation`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_frame_rate(float value) const;
         /**
-     * @brief Returns the `progressMarks` property of `NSAnimation`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `progressMarks` property of `NSAnimation`.
+         * @return The converted Objective-C result.
+         */
         std::vector<Number> progress_marks() const;
         /**
-     * @brief Sets the `progressMarks` property of `NSAnimation`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `progressMarks` property of `NSAnimation`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_progress_marks(const std::vector<Number>& value) const;
         /**
-     * @brief Returns the `runLoopModesForAnimating` property of `NSAnimation`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `runLoopModesForAnimating` property of `NSAnimation`.
+         * @return The converted Objective-C result.
+         */
         std::vector<std::string> run_loop_modes_for_animating() const;
         /// @brief Signal for the delegate/data-source method behind `should_start`; connect a callback with `should_start().connect(...)`.
         Signal<Animation, bool()> should_start() const

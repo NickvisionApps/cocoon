@@ -44,41 +44,41 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit TableHeaderView(Adopt adopt);
         /**
-     * @brief Calls `-[NSTableHeaderView columnAtPoint:]`.
-     * @param point Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSTableHeaderView columnAtPoint:]`.
+         * @param point Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::int64_t column_at_point(const Point& point) const;
         /**
-     * @brief Calls `-[NSTableHeaderView headerRectOfColumn:]`.
-     * @param column Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSTableHeaderView headerRectOfColumn:]`.
+         * @param column Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Rect header_rect_of_column(std::int64_t column) const;
         /**
-     * @brief Returns the `draggedColumn` property of `NSTableHeaderView`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `draggedColumn` property of `NSTableHeaderView`.
+         * @return The converted Objective-C result.
+         */
         std::int64_t dragged_column() const;
         /**
-     * @brief Returns the `draggedDistance` property of `NSTableHeaderView`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `draggedDistance` property of `NSTableHeaderView`.
+         * @return The converted Objective-C result.
+         */
         double dragged_distance() const;
         /**
-     * @brief Returns the `resizedColumn` property of `NSTableHeaderView`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `resizedColumn` property of `NSTableHeaderView`.
+         * @return The converted Objective-C result.
+         */
         std::int64_t resized_column() const;
         /**
-     * @brief Returns the `tableView` property of `NSTableHeaderView`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `tableView` property of `NSTableHeaderView`.
+         * @return The converted Objective-C result.
+         */
         TableView table_view() const;
         /**
-     * @brief Sets the `tableView` property of `NSTableHeaderView`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `tableView` property of `NSTableHeaderView`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_table_view(const TableView& value) const;
     };
 }

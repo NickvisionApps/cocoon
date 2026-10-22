@@ -35,19 +35,19 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit CustomImageRep(Adopt adopt);
         /**
-     * @brief Returns the `delegate` property of `NSCustomImageRep`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `delegate` property of `NSCustomImageRep`.
+         * @return The converted Objective-C result.
+         */
         Object delegate() const;
         /**
-     * @brief Returns the `drawSelector` property of `NSCustomImageRep`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `drawSelector` property of `NSCustomImageRep`.
+         * @return The converted Objective-C result.
+         */
         std::string draw_selector() const;
         /**
-     * @brief Returns the `drawingHandler` property of `NSCustomImageRep`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `drawingHandler` property of `NSCustomImageRep`.
+         * @return The converted Objective-C result.
+         */
         std::function<bool(Rect)> drawing_handler() const;
     };
 }

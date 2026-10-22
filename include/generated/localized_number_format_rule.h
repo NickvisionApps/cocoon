@@ -36,9 +36,9 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit LocalizedNumberFormatRule(Adopt adopt);
         /**
-     * @brief Calls `+[NSLocalizedNumberFormatRule automatic]`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSLocalizedNumberFormatRule automatic]`.
+         * @return The converted Objective-C result.
+         */
         static LocalizedNumberFormatRule automatic();
     };
 }

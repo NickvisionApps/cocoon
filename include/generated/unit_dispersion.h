@@ -31,10 +31,10 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit UnitDispersion(Adopt adopt);
         /**
-     * @brief Returns the `partsPerMillion` property of `NSUnitDispersion`.
-     * @details The parts per million unit of dispersion.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `partsPerMillion` property of `NSUnitDispersion`.
+         * @details The parts per million unit of dispersion.
+         * @return The converted Objective-C result.
+         */
         static UnitDispersion parts_per_million();
     };
 }

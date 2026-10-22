@@ -33,76 +33,76 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit PointerFunctions(Adopt adopt);
         /**
-     * @brief Returns the `acquireFunction` property of `NSPointerFunctions`.
-     * @details The function used to acquire memory. This specifies the function to use for copy-in operations.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `acquireFunction` property of `NSPointerFunctions`.
+         * @details The function used to acquire memory. This specifies the function to use for copy-in operations.
+         * @return The converted Objective-C result.
+         */
         auto acquire_function() const -> void* (*)(void*, std::uint64_t (*)(void*), bool);
         /**
-     * @brief Sets the `acquireFunction` property of `NSPointerFunctions`.
-     * @details The function used to acquire memory. This specifies the function to use for copy-in operations.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `acquireFunction` property of `NSPointerFunctions`.
+         * @details The function used to acquire memory. This specifies the function to use for copy-in operations.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_acquire_function(void* (*value)(void*, std::uint64_t (*)(void*), bool)) const;
         /**
-     * @brief Returns the `descriptionFunction` property of `NSPointerFunctions`.
-     * @details The function used to describe elements. This function is used by description methods for hash and map tables.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `descriptionFunction` property of `NSPointerFunctions`.
+         * @details The function used to describe elements. This function is used by description methods for hash and map tables.
+         * @return The converted Objective-C result.
+         */
         auto description_function() const -> void* (*)(void*);
         /**
-     * @brief Sets the `descriptionFunction` property of `NSPointerFunctions`.
-     * @details The function used to describe elements. This function is used by description methods for hash and map tables.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `descriptionFunction` property of `NSPointerFunctions`.
+         * @details The function used to describe elements. This function is used by description methods for hash and map tables.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_description_function(void* (*value)(void*)) const;
         /**
-     * @brief Returns the `hashFunction` property of `NSPointerFunctions`.
-     * @details The hash function.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `hashFunction` property of `NSPointerFunctions`.
+         * @details The hash function.
+         * @return The converted Objective-C result.
+         */
         auto hash_function() const -> std::uint64_t (*)(void*, std::uint64_t (*)(void*));
         /**
-     * @brief Sets the `hashFunction` property of `NSPointerFunctions`.
-     * @details The hash function.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `hashFunction` property of `NSPointerFunctions`.
+         * @details The hash function.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_hash_function(std::uint64_t (*value)(void*, std::uint64_t (*)(void*))) const;
         /**
-     * @brief Returns the `isEqualFunction` property of `NSPointerFunctions`.
-     * @details The function used to compare pointers.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `isEqualFunction` property of `NSPointerFunctions`.
+         * @details The function used to compare pointers.
+         * @return The converted Objective-C result.
+         */
         auto is_equal_function() const -> bool (*)(void*, void*, std::uint64_t (*)(void*));
         /**
-     * @brief Sets the `isEqualFunction` property of `NSPointerFunctions`.
-     * @details The function used to compare pointers.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `isEqualFunction` property of `NSPointerFunctions`.
+         * @details The function used to compare pointers.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_is_equal_function(bool (*value)(void*, void*, std::uint64_t (*)(void*))) const;
         /**
-     * @brief Returns the `relinquishFunction` property of `NSPointerFunctions`.
-     * @details The function used to relinquish memory. This specifies the function to use when an item is removed from a table or pointer array.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `relinquishFunction` property of `NSPointerFunctions`.
+         * @details The function used to relinquish memory. This specifies the function to use when an item is removed from a table or pointer array.
+         * @return The converted Objective-C result.
+         */
         auto relinquish_function() const -> void (*)(void*, std::uint64_t (*)(void*));
         /**
-     * @brief Sets the `relinquishFunction` property of `NSPointerFunctions`.
-     * @details The function used to relinquish memory. This specifies the function to use when an item is removed from a table or pointer array.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `relinquishFunction` property of `NSPointerFunctions`.
+         * @details The function used to relinquish memory. This specifies the function to use when an item is removed from a table or pointer array.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_relinquish_function(void (*value)(void*, std::uint64_t (*)(void*))) const;
         /**
-     * @brief Returns the `sizeFunction` property of `NSPointerFunctions`.
-     * @details The function used to determine the size of pointers. This function is used for copy-in operations (unless the collection has an object personality).
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `sizeFunction` property of `NSPointerFunctions`.
+         * @details The function used to determine the size of pointers. This function is used for copy-in operations (unless the collection has an object personality).
+         * @return The converted Objective-C result.
+         */
         auto size_function() const -> std::uint64_t (*)(void*);
         /**
-     * @brief Sets the `sizeFunction` property of `NSPointerFunctions`.
-     * @details The function used to determine the size of pointers. This function is used for copy-in operations (unless the collection has an object personality).
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `sizeFunction` property of `NSPointerFunctions`.
+         * @details The function used to determine the size of pointers. This function is used for copy-in operations (unless the collection has an object personality).
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_size_function(std::uint64_t (*value)(void*)) const;
     };
 }

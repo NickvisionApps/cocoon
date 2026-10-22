@@ -39,36 +39,36 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit StoryboardSegue(Adopt adopt);
         /**
-     * @brief Calls `-[NSStoryboardSegue perform]`.
-     * @details This method is implemented by NSStoryboardSegue subclasses to present a custom transition between two controllers.
-     */
+         * @brief Calls `-[NSStoryboardSegue perform]`.
+         * @details This method is implemented by NSStoryboardSegue subclasses to present a custom transition between two controllers.
+         */
         void perform() const;
         /**
-     * @brief Calls `+[NSStoryboardSegue segueWithIdentifier:source:destination:performHandler:]`.
-     * @param identifier Argument converted to the Objective-C parameter of the same role.
-     * @param source_controller Argument converted to the Objective-C parameter of the same role.
-     * @param destination_controller Argument converted to the Objective-C parameter of the same role.
-     * @param perform_handler Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSStoryboardSegue segueWithIdentifier:source:destination:performHandler:]`.
+         * @param identifier Argument converted to the Objective-C parameter of the same role.
+         * @param source_controller Argument converted to the Objective-C parameter of the same role.
+         * @param destination_controller Argument converted to the Objective-C parameter of the same role.
+         * @param perform_handler Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static StoryboardSegue segue_with_identifier(const std::string& identifier, const Object& source_controller, const Object& destination_controller, std::function<void()> perform_handler);
         /**
-     * @brief Returns the `destinationController` property of `NSStoryboardSegue`.
-     * @details Subclasses of NSStoryboardSegue can use this property to access the destination view or window controller that's being segued to. This property is also essential for overrides of -[NSViewController prepareForSegue:sender:], which is passed to the source view controller. This property allows the receiver of -[NSViewController prepareForSegue:sender:] to access and pass configuration data to the destination controller.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `destinationController` property of `NSStoryboardSegue`.
+         * @details Subclasses of NSStoryboardSegue can use this property to access the destination view or window controller that's being segued to. This property is also essential for overrides of -[NSViewController prepareForSegue:sender:], which is passed to the source view controller. This property allows the receiver of -[NSViewController prepareForSegue:sender:] to access and pass configuration data to the destination controller.
+         * @return The converted Objective-C result.
+         */
         Object destination_controller() const;
         /**
-     * @brief Returns the `identifier` property of `NSStoryboardSegue`.
-     * @details NSStoryboardSegue instances have optional identifiers that can be assigned in Interface Builder. These identifiers can be used in overrides of -[NSViewController prepareForSegue:sender:] to differentiate segues.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `identifier` property of `NSStoryboardSegue`.
+         * @details NSStoryboardSegue instances have optional identifiers that can be assigned in Interface Builder. These identifiers can be used in overrides of -[NSViewController prepareForSegue:sender:] to differentiate segues.
+         * @return The converted Objective-C result.
+         */
         std::string identifier() const;
         /**
-     * @brief Returns the `sourceController` property of `NSStoryboardSegue`.
-     * @details Subclasses of NSStoryboardSegue can use this property to access the source view or window controller that is being segued away from.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `sourceController` property of `NSStoryboardSegue`.
+         * @details Subclasses of NSStoryboardSegue can use this property to access the source view or window controller that is being segued away from.
+         * @return The converted Objective-C result.
+         */
         Object source_controller() const;
     };
 }

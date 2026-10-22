@@ -63,265 +63,265 @@ namespace cocoon
         using Responder::set_menu;
         using View::set_tool_tip;
         /**
-     * @brief Calls `-[NSSegmentedControl alignmentForSegment:]`.
-     * @param segment Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSSegmentedControl alignmentForSegment:]`.
+         * @param segment Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         TextAlignment alignment_for_segment(std::int64_t segment) const;
         /**
-     * @brief Calls `-[NSSegmentedControl compressWithPrioritizedCompressionOptions:]`.
-     * @param prioritized_options Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSSegmentedControl compressWithPrioritizedCompressionOptions:]`.
+         * @param prioritized_options Argument converted to the Objective-C parameter of the same role.
+         */
         void compress_with_prioritized_compression_options(const std::vector<UserInterfaceCompressionOptions>& prioritized_options) const;
         /**
-     * @brief Calls `-[NSSegmentedControl imageForSegment:]`.
-     * @param segment Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSSegmentedControl imageForSegment:]`.
+         * @param segment Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Image image_for_segment(std::int64_t segment) const;
         /**
-     * @brief Calls `-[NSSegmentedControl imageScalingForSegment:]`.
-     * @param segment Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSSegmentedControl imageScalingForSegment:]`.
+         * @param segment Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         ImageScaling image_scaling_for_segment(std::int64_t segment) const;
         /**
-     * @brief Calls `-[NSSegmentedControl isEnabledForSegment:]`.
-     * @param segment Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSSegmentedControl isEnabledForSegment:]`.
+         * @param segment Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool is_enabled_for_segment(std::int64_t segment) const;
         /**
-     * @brief Calls `-[NSSegmentedControl isSelectedForSegment:]`.
-     * @param segment Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSSegmentedControl isSelectedForSegment:]`.
+         * @param segment Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool is_selected_for_segment(std::int64_t segment) const;
         /**
-     * @brief Calls `-[NSSegmentedControl labelForSegment:]`.
-     * @param segment Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSSegmentedControl labelForSegment:]`.
+         * @param segment Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::string label_for_segment(std::int64_t segment) const;
         /**
-     * @brief Calls `-[NSSegmentedControl menuForSegment:]`.
-     * @param segment Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSSegmentedControl menuForSegment:]`.
+         * @param segment Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Menu menu_for_segment(std::int64_t segment) const;
         /**
-     * @brief Calls `-[NSSegmentedControl minimumSizeWithPrioritizedCompressionOptions:]`.
-     * @param prioritized_options Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSSegmentedControl minimumSizeWithPrioritizedCompressionOptions:]`.
+         * @param prioritized_options Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Size minimum_size_with_prioritized_compression_options(const std::vector<UserInterfaceCompressionOptions>& prioritized_options) const;
         /**
-     * @brief Calls `-[NSSegmentedControl selectSegmentWithTag:]`.
-     * @param tag Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSSegmentedControl selectSegmentWithTag:]`.
+         * @param tag Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool select_segment_with_tag(std::int64_t tag) const;
         /**
-     * @brief Calls `-[NSSegmentedControl setAlignment:forSegment:]`.
-     * @param alignment Argument converted to the Objective-C parameter of the same role.
-     * @param segment Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSSegmentedControl setAlignment:forSegment:]`.
+         * @param alignment Argument converted to the Objective-C parameter of the same role.
+         * @param segment Argument converted to the Objective-C parameter of the same role.
+         */
         void set_alignment(TextAlignment alignment, std::int64_t segment) const;
         /**
-     * @brief Calls `-[NSSegmentedControl setEnabled:forSegment:]`.
-     * @param enabled Argument converted to the Objective-C parameter of the same role.
-     * @param segment Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSSegmentedControl setEnabled:forSegment:]`.
+         * @param enabled Argument converted to the Objective-C parameter of the same role.
+         * @param segment Argument converted to the Objective-C parameter of the same role.
+         */
         void set_enabled(bool enabled, std::int64_t segment) const;
         /**
-     * @brief Calls `-[NSSegmentedControl setImage:forSegment:]`.
-     * @param image Argument converted to the Objective-C parameter of the same role.
-     * @param segment Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSSegmentedControl setImage:forSegment:]`.
+         * @param image Argument converted to the Objective-C parameter of the same role.
+         * @param segment Argument converted to the Objective-C parameter of the same role.
+         */
         void set_image(const Image& image, std::int64_t segment) const;
         /**
-     * @brief Calls `-[NSSegmentedControl setImageScaling:forSegment:]`.
-     * @param scaling Argument converted to the Objective-C parameter of the same role.
-     * @param segment Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSSegmentedControl setImageScaling:forSegment:]`.
+         * @param scaling Argument converted to the Objective-C parameter of the same role.
+         * @param segment Argument converted to the Objective-C parameter of the same role.
+         */
         void set_image_scaling(ImageScaling scaling, std::int64_t segment) const;
         /**
-     * @brief Calls `-[NSSegmentedControl setLabel:forSegment:]`.
-     * @param label Argument converted to the Objective-C parameter of the same role.
-     * @param segment Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSSegmentedControl setLabel:forSegment:]`.
+         * @param label Argument converted to the Objective-C parameter of the same role.
+         * @param segment Argument converted to the Objective-C parameter of the same role.
+         */
         void set_label(const std::string& label, std::int64_t segment) const;
         /**
-     * @brief Calls `-[NSSegmentedControl setMenu:forSegment:]`.
-     * @param menu Argument converted to the Objective-C parameter of the same role.
-     * @param segment Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSSegmentedControl setMenu:forSegment:]`.
+         * @param menu Argument converted to the Objective-C parameter of the same role.
+         * @param segment Argument converted to the Objective-C parameter of the same role.
+         */
         void set_menu(const Menu& menu, std::int64_t segment) const;
         /**
-     * @brief Calls `-[NSSegmentedControl setSelected:forSegment:]`.
-     * @param selected Argument converted to the Objective-C parameter of the same role.
-     * @param segment Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSSegmentedControl setSelected:forSegment:]`.
+         * @param selected Argument converted to the Objective-C parameter of the same role.
+         * @param segment Argument converted to the Objective-C parameter of the same role.
+         */
         void set_selected(bool selected, std::int64_t segment) const;
         /**
-     * @brief Calls `-[NSSegmentedControl setShowsMenuIndicator:forSegment:]`.
-     * @param shows_menu_indicator Argument converted to the Objective-C parameter of the same role.
-     * @param segment Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSSegmentedControl setShowsMenuIndicator:forSegment:]`.
+         * @param shows_menu_indicator Argument converted to the Objective-C parameter of the same role.
+         * @param segment Argument converted to the Objective-C parameter of the same role.
+         */
         void set_shows_menu_indicator(bool shows_menu_indicator, std::int64_t segment) const;
         /**
-     * @brief Calls `-[NSSegmentedControl setTag:forSegment:]`.
-     * @param tag Argument converted to the Objective-C parameter of the same role.
-     * @param segment Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSSegmentedControl setTag:forSegment:]`.
+         * @param tag Argument converted to the Objective-C parameter of the same role.
+         * @param segment Argument converted to the Objective-C parameter of the same role.
+         */
         void set_tag(std::int64_t tag, std::int64_t segment) const;
         /**
-     * @brief Calls `-[NSSegmentedControl setToolTip:forSegment:]`.
-     * @param tool_tip Argument converted to the Objective-C parameter of the same role.
-     * @param segment Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSSegmentedControl setToolTip:forSegment:]`.
+         * @param tool_tip Argument converted to the Objective-C parameter of the same role.
+         * @param segment Argument converted to the Objective-C parameter of the same role.
+         */
         void set_tool_tip(const std::string& tool_tip, std::int64_t segment) const;
         /**
-     * @brief Calls `-[NSSegmentedControl setWidth:forSegment:]`.
-     * @param width Argument converted to the Objective-C parameter of the same role.
-     * @param segment Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSSegmentedControl setWidth:forSegment:]`.
+         * @param width Argument converted to the Objective-C parameter of the same role.
+         * @param segment Argument converted to the Objective-C parameter of the same role.
+         */
         void set_width(double width, std::int64_t segment) const;
         /**
-     * @brief Calls `-[NSSegmentedControl showsMenuIndicatorForSegment:]`.
-     * @param segment Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSSegmentedControl showsMenuIndicatorForSegment:]`.
+         * @param segment Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool shows_menu_indicator_for_segment(std::int64_t segment) const;
         /**
-     * @brief Calls `-[NSSegmentedControl tagForSegment:]`.
-     * @param segment Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSSegmentedControl tagForSegment:]`.
+         * @param segment Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::int64_t tag_for_segment(std::int64_t segment) const;
         /**
-     * @brief Calls `-[NSSegmentedControl toolTipForSegment:]`.
-     * @param segment Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSSegmentedControl toolTipForSegment:]`.
+         * @param segment Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::string tool_tip_for_segment(std::int64_t segment) const;
         /**
-     * @brief Calls `-[NSSegmentedControl widthForSegment:]`.
-     * @param segment Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSSegmentedControl widthForSegment:]`.
+         * @param segment Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         double width_for_segment(std::int64_t segment) const;
         /**
-     * @brief Returns the `activeCompressionOptions` property of `NSSegmentedControl`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `activeCompressionOptions` property of `NSSegmentedControl`.
+         * @return The converted Objective-C result.
+         */
         UserInterfaceCompressionOptions active_compression_options() const;
         /**
-     * @brief Returns the `borderShape` property of `NSSegmentedControl`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `borderShape` property of `NSSegmentedControl`.
+         * @return The converted Objective-C result.
+         */
         ControlBorderShape border_shape() const;
         /**
-     * @brief Sets the `borderShape` property of `NSSegmentedControl`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `borderShape` property of `NSSegmentedControl`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_border_shape(ControlBorderShape value) const;
         /**
-     * @brief Returns the `doubleValueForSelectedSegment` property of `NSSegmentedControl`.
-     * @details This message is valid only for trackingMode=NSSegmentSwitchTrackingMomentaryAccelerator and provides the double value for the selected segment.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `doubleValueForSelectedSegment` property of `NSSegmentedControl`.
+         * @details This message is valid only for trackingMode=NSSegmentSwitchTrackingMomentaryAccelerator and provides the double value for the selected segment.
+         * @return The converted Objective-C result.
+         */
         double double_value_for_selected_segment() const;
         /**
-     * @brief Returns the `indexOfSelectedItem` property of `NSSegmentedControl`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `indexOfSelectedItem` property of `NSSegmentedControl`.
+         * @return The converted Objective-C result.
+         */
         std::int64_t index_of_selected_item() const;
 #ifdef COCOON_MACOS_27
         /**
-     * @brief Returns the `role` property of `NSSegmentedControl`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `role` property of `NSSegmentedControl`.
+         * @return The converted Objective-C result.
+         */
         SegmentedControlRole role() const;
 #endif
 
 #ifdef COCOON_MACOS_27
         /**
-     * @brief Sets the `role` property of `NSSegmentedControl`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `role` property of `NSSegmentedControl`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_role(SegmentedControlRole value) const;
 #endif
 
         /**
-     * @brief Returns the `segmentCount` property of `NSSegmentedControl`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `segmentCount` property of `NSSegmentedControl`.
+         * @return The converted Objective-C result.
+         */
         std::int64_t segment_count() const;
         /**
-     * @brief Sets the `segmentCount` property of `NSSegmentedControl`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `segmentCount` property of `NSSegmentedControl`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_segment_count(std::int64_t value) const;
         /**
-     * @brief Returns the `segmentDistribution` property of `NSSegmentedControl`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `segmentDistribution` property of `NSSegmentedControl`.
+         * @return The converted Objective-C result.
+         */
         SegmentDistribution segment_distribution() const;
         /**
-     * @brief Sets the `segmentDistribution` property of `NSSegmentedControl`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `segmentDistribution` property of `NSSegmentedControl`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_segment_distribution(SegmentDistribution value) const;
         /**
-     * @brief Returns the `segmentStyle` property of `NSSegmentedControl`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `segmentStyle` property of `NSSegmentedControl`.
+         * @return The converted Objective-C result.
+         */
         SegmentStyle segment_style() const;
         /**
-     * @brief Sets the `segmentStyle` property of `NSSegmentedControl`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `segmentStyle` property of `NSSegmentedControl`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_segment_style(SegmentStyle value) const;
         /**
-     * @brief Returns the `selectedSegment` property of `NSSegmentedControl`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `selectedSegment` property of `NSSegmentedControl`.
+         * @return The converted Objective-C result.
+         */
         std::int64_t selected_segment() const;
         /**
-     * @brief Sets the `selectedSegment` property of `NSSegmentedControl`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `selectedSegment` property of `NSSegmentedControl`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_selected_segment(std::int64_t value) const;
         /**
-     * @brief Returns the `selectedSegmentBezelColor` property of `NSSegmentedControl`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `selectedSegmentBezelColor` property of `NSSegmentedControl`.
+         * @return The converted Objective-C result.
+         */
         Color selected_segment_bezel_color() const;
         /**
-     * @brief Sets the `selectedSegmentBezelColor` property of `NSSegmentedControl`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `selectedSegmentBezelColor` property of `NSSegmentedControl`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_selected_segment_bezel_color(const Color& value) const;
         /**
-     * @brief Returns the `springLoaded` property of `NSSegmentedControl`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `springLoaded` property of `NSSegmentedControl`.
+         * @return The converted Objective-C result.
+         */
         bool is_spring_loaded() const;
         /**
-     * @brief Sets the `springLoaded` property of `NSSegmentedControl`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `springLoaded` property of `NSSegmentedControl`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_spring_loaded(bool value) const;
         /**
-     * @brief Returns the `trackingMode` property of `NSSegmentedControl`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `trackingMode` property of `NSSegmentedControl`.
+         * @return The converted Objective-C result.
+         */
         SegmentSwitchTracking tracking_mode() const;
         /**
-     * @brief Sets the `trackingMode` property of `NSSegmentedControl`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `trackingMode` property of `NSSegmentedControl`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_tracking_mode(SegmentSwitchTracking value) const;
         /// @brief Signal `selection_changed`: connect a callback with `selection_changed().connect(...)`.
         Signal<SegmentedControl, void(std::int64_t)> selection_changed() const

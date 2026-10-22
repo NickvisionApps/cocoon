@@ -31,46 +31,46 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit UnitDuration(Adopt adopt);
         /**
-     * @brief Returns the `hours` property of `NSUnitDuration`.
-     * @details The hours unit of duration.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `hours` property of `NSUnitDuration`.
+         * @details The hours unit of duration.
+         * @return The converted Objective-C result.
+         */
         static UnitDuration hours();
         /**
-     * @brief Returns the `microseconds` property of `NSUnitDuration`.
-     * @details The microseconds unit of duration.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `microseconds` property of `NSUnitDuration`.
+         * @details The microseconds unit of duration.
+         * @return The converted Objective-C result.
+         */
         static UnitDuration microseconds();
         /**
-     * @brief Returns the `milliseconds` property of `NSUnitDuration`.
-     * @details The milliseconds unit of duration.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `milliseconds` property of `NSUnitDuration`.
+         * @details The milliseconds unit of duration.
+         * @return The converted Objective-C result.
+         */
         static UnitDuration milliseconds();
         /**
-     * @brief Returns the `minutes` property of `NSUnitDuration`.
-     * @details The minutes unit of duration.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `minutes` property of `NSUnitDuration`.
+         * @details The minutes unit of duration.
+         * @return The converted Objective-C result.
+         */
         static UnitDuration minutes();
         /**
-     * @brief Returns the `nanoseconds` property of `NSUnitDuration`.
-     * @details The nanoseconds unit of duration.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `nanoseconds` property of `NSUnitDuration`.
+         * @details The nanoseconds unit of duration.
+         * @return The converted Objective-C result.
+         */
         static UnitDuration nanoseconds();
         /**
-     * @brief Returns the `picoseconds` property of `NSUnitDuration`.
-     * @details The picoseconds unit of duration.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `picoseconds` property of `NSUnitDuration`.
+         * @details The picoseconds unit of duration.
+         * @return The converted Objective-C result.
+         */
         static UnitDuration picoseconds();
         /**
-     * @brief Returns the `seconds` property of `NSUnitDuration`.
-     * @details The seconds unit of duration.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `seconds` property of `NSUnitDuration`.
+         * @details The seconds unit of duration.
+         * @return The converted Objective-C result.
+         */
         static UnitDuration seconds();
     };
 }

@@ -37,31 +37,31 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit CollectionLayoutSpacing(Adopt adopt);
         /**
-     * @brief Calls `+[NSCollectionLayoutSpacing fixedSpacing:]`.
-     * @param fixed_spacing Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSCollectionLayoutSpacing fixedSpacing:]`.
+         * @param fixed_spacing Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static CollectionLayoutSpacing fixed_spacing(double fixed_spacing);
         /**
-     * @brief Calls `+[NSCollectionLayoutSpacing flexibleSpacing:]`.
-     * @param flexible_spacing Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSCollectionLayoutSpacing flexibleSpacing:]`.
+         * @param flexible_spacing Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static CollectionLayoutSpacing flexible_spacing(double flexible_spacing);
         /**
-     * @brief Returns the `isFixedSpacing` property of `NSCollectionLayoutSpacing`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `isFixedSpacing` property of `NSCollectionLayoutSpacing`.
+         * @return The converted Objective-C result.
+         */
         bool is_fixed_spacing() const;
         /**
-     * @brief Returns the `isFlexibleSpacing` property of `NSCollectionLayoutSpacing`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `isFlexibleSpacing` property of `NSCollectionLayoutSpacing`.
+         * @return The converted Objective-C result.
+         */
         bool is_flexible_spacing() const;
         /**
-     * @brief Returns the `spacing` property of `NSCollectionLayoutSpacing`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `spacing` property of `NSCollectionLayoutSpacing`.
+         * @return The converted Objective-C result.
+         */
         double spacing() const;
     };
 }

@@ -53,137 +53,137 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit CIColor(Adopt adopt);
         /**
-     * @brief Calls `+[CIColor colorWithCGColor:]`.
-     * @param color Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[CIColor colorWithCGColor:]`.
+         * @param color Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static CIColor color_with_cg_color(const CGColor& color);
         /**
-     * @brief Calls `+[CIColor colorWithRed:green:blue:]`.
-     * @param red Argument converted to the Objective-C parameter of the same role.
-     * @param green Argument converted to the Objective-C parameter of the same role.
-     * @param blue Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[CIColor colorWithRed:green:blue:]`.
+         * @param red Argument converted to the Objective-C parameter of the same role.
+         * @param green Argument converted to the Objective-C parameter of the same role.
+         * @param blue Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static CIColor color_with_red(double red, double green, double blue);
         /**
-     * @brief Calls `+[CIColor colorWithRed:green:blue:alpha:]`.
-     * @param red Argument converted to the Objective-C parameter of the same role.
-     * @param green Argument converted to the Objective-C parameter of the same role.
-     * @param blue Argument converted to the Objective-C parameter of the same role.
-     * @param alpha Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[CIColor colorWithRed:green:blue:alpha:]`.
+         * @param red Argument converted to the Objective-C parameter of the same role.
+         * @param green Argument converted to the Objective-C parameter of the same role.
+         * @param blue Argument converted to the Objective-C parameter of the same role.
+         * @param alpha Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static CIColor color_with_red(double red, double green, double blue, double alpha);
         /**
-     * @brief Calls `+[CIColor colorWithRed:green:blue:alpha:colorSpace:]`.
-     * @param red Argument converted to the Objective-C parameter of the same role.
-     * @param green Argument converted to the Objective-C parameter of the same role.
-     * @param blue Argument converted to the Objective-C parameter of the same role.
-     * @param alpha Argument converted to the Objective-C parameter of the same role.
-     * @param color_space Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[CIColor colorWithRed:green:blue:alpha:colorSpace:]`.
+         * @param red Argument converted to the Objective-C parameter of the same role.
+         * @param green Argument converted to the Objective-C parameter of the same role.
+         * @param blue Argument converted to the Objective-C parameter of the same role.
+         * @param alpha Argument converted to the Objective-C parameter of the same role.
+         * @param color_space Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static CIColor color_with_red(double red, double green, double blue, double alpha, const CGColorSpace& color_space);
         /**
-     * @brief Calls `+[CIColor colorWithRed:green:blue:colorSpace:]`.
-     * @param red Argument converted to the Objective-C parameter of the same role.
-     * @param green Argument converted to the Objective-C parameter of the same role.
-     * @param blue Argument converted to the Objective-C parameter of the same role.
-     * @param color_space Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[CIColor colorWithRed:green:blue:colorSpace:]`.
+         * @param red Argument converted to the Objective-C parameter of the same role.
+         * @param green Argument converted to the Objective-C parameter of the same role.
+         * @param blue Argument converted to the Objective-C parameter of the same role.
+         * @param color_space Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static CIColor color_with_red(double red, double green, double blue, const CGColorSpace& color_space);
         /**
-     * @brief Calls `+[CIColor colorWithString:]`.
-     * @param representation Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[CIColor colorWithString:]`.
+         * @param representation Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static CIColor color_with_string(const std::string& representation);
         /**
-     * @brief Returns the `alpha` property of `CIColor`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `alpha` property of `CIColor`.
+         * @return The converted Objective-C result.
+         */
         double alpha() const;
         /**
-     * @brief Returns the `blackColor` property of `CIColor`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `blackColor` property of `CIColor`.
+         * @return The converted Objective-C result.
+         */
         static CIColor black_color();
         /**
-     * @brief Returns the `blue` property of `CIColor`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `blue` property of `CIColor`.
+         * @return The converted Objective-C result.
+         */
         double blue() const;
         /**
-     * @brief Returns the `blueColor` property of `CIColor`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `blueColor` property of `CIColor`.
+         * @return The converted Objective-C result.
+         */
         static CIColor blue_color();
         /**
-     * @brief Returns the `clearColor` property of `CIColor`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `clearColor` property of `CIColor`.
+         * @return The converted Objective-C result.
+         */
         static CIColor clear_color();
         /**
-     * @brief Returns the `components` property of `CIColor`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `components` property of `CIColor`.
+         * @return The converted Objective-C result.
+         */
         const double* components() const;
         /**
-     * @brief Returns the `cyanColor` property of `CIColor`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `cyanColor` property of `CIColor`.
+         * @return The converted Objective-C result.
+         */
         static CIColor cyan_color();
         /**
-     * @brief Returns the `grayColor` property of `CIColor`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `grayColor` property of `CIColor`.
+         * @return The converted Objective-C result.
+         */
         static CIColor gray_color();
         /**
-     * @brief Returns the `green` property of `CIColor`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `green` property of `CIColor`.
+         * @return The converted Objective-C result.
+         */
         double green() const;
         /**
-     * @brief Returns the `greenColor` property of `CIColor`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `greenColor` property of `CIColor`.
+         * @return The converted Objective-C result.
+         */
         static CIColor green_color();
         /**
-     * @brief Returns the `magentaColor` property of `CIColor`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `magentaColor` property of `CIColor`.
+         * @return The converted Objective-C result.
+         */
         static CIColor magenta_color();
         /**
-     * @brief Returns the `numberOfComponents` property of `CIColor`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `numberOfComponents` property of `CIColor`.
+         * @return The converted Objective-C result.
+         */
         std::uint64_t number_of_components() const;
         /**
-     * @brief Returns the `red` property of `CIColor`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `red` property of `CIColor`.
+         * @return The converted Objective-C result.
+         */
         double red() const;
         /**
-     * @brief Returns the `redColor` property of `CIColor`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `redColor` property of `CIColor`.
+         * @return The converted Objective-C result.
+         */
         static CIColor red_color();
         /**
-     * @brief Returns the `stringRepresentation` property of `CIColor`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `stringRepresentation` property of `CIColor`.
+         * @return The converted Objective-C result.
+         */
         std::string string_representation() const;
         /**
-     * @brief Returns the `whiteColor` property of `CIColor`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `whiteColor` property of `CIColor`.
+         * @return The converted Objective-C result.
+         */
         static CIColor white_color();
         /**
-     * @brief Returns the `yellowColor` property of `CIColor`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `yellowColor` property of `CIColor`.
+         * @return The converted Objective-C result.
+         */
         static CIColor yellow_color();
     };
 }

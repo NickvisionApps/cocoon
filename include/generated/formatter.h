@@ -33,46 +33,46 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit Formatter(Adopt adopt);
         /**
-     * @brief Calls `-[NSFormatter attributedStringForObjectValue:withDefaultAttributes:]`.
-     * @details Returns an attributed string representation of a given object.
-     * @param obj Argument converted to the Objective-C parameter of the same role.
-     * @param attrs Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSFormatter attributedStringForObjectValue:withDefaultAttributes:]`.
+         * @details Returns an attributed string representation of a given object.
+         * @param obj Argument converted to the Objective-C parameter of the same role.
+         * @param attrs Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         AttributedString attributed_string_for_object_value(const Object& obj, const std::map<std::string, Object>& attrs) const;
         /**
-     * @brief Calls `-[NSFormatter editingStringForObjectValue:]`.
-     * @details Returns a string to use for editing a given object.
-     * @param obj Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSFormatter editingStringForObjectValue:]`.
+         * @details Returns a string to use for editing a given object.
+         * @param obj Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::string editing_string_for_object_value(const Object& obj) const;
         /**
-     * @brief Calls `-[NSFormatter isPartialStringValid:newEditingString:errorDescription:]`.
-     * @details Returns a Boolean value that indicates whether a partial string is valid. Compatibility method. If a subclass overrides this and does not override the new method below, this will be called as before (the new method just calls this one by default). The selection range will always be set to the end of the text with this method if replacement occurs.
-     * @param partial_string Argument converted to the Objective-C parameter of the same role.
-     * @param new_string Argument converted to the Objective-C parameter of the same role.
-     * @param error Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSFormatter isPartialStringValid:newEditingString:errorDescription:]`.
+         * @details Returns a Boolean value that indicates whether a partial string is valid. Compatibility method. If a subclass overrides this and does not override the new method below, this will be called as before (the new method just calls this one by default). The selection range will always be set to the end of the text with this method if replacement occurs.
+         * @param partial_string Argument converted to the Objective-C parameter of the same role.
+         * @param new_string Argument converted to the Objective-C parameter of the same role.
+         * @param error Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool is_partial_string_valid(const std::string& partial_string, std::string& new_string, std::string& error) const;
         /**
-     * @brief Calls `-[NSFormatter isPartialStringValid:proposedSelectedRange:originalString:originalSelectedRange:errorDescription:]`.
-     * @details This method should be implemented in subclasses that want to validate user changes to a string in a field, where the user changes are not necessarily at the end of the string, and preserve the selection (or set a different one, such as selecting the erroneous part of the string the user has typed).
-     * @param partial_string_ptr Argument converted to the Objective-C parameter of the same role.
-     * @param proposed_sel_range_ptr Argument converted to the Objective-C parameter of the same role.
-     * @param orig_string Argument converted to the Objective-C parameter of the same role.
-     * @param orig_sel_range Argument converted to the Objective-C parameter of the same role.
-     * @param error Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSFormatter isPartialStringValid:proposedSelectedRange:originalString:originalSelectedRange:errorDescription:]`.
+         * @details This method should be implemented in subclasses that want to validate user changes to a string in a field, where the user changes are not necessarily at the end of the string, and preserve the selection (or set a different one, such as selecting the erroneous part of the string the user has typed).
+         * @param partial_string_ptr Argument converted to the Objective-C parameter of the same role.
+         * @param proposed_sel_range_ptr Argument converted to the Objective-C parameter of the same role.
+         * @param orig_string Argument converted to the Objective-C parameter of the same role.
+         * @param orig_sel_range Argument converted to the Objective-C parameter of the same role.
+         * @param error Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool is_partial_string_valid(std::string& partial_string_ptr, Range* proposed_sel_range_ptr, const std::string& orig_string, const Range& orig_sel_range, std::string& error) const;
         /**
-     * @brief Calls `-[NSFormatter stringForObjectValue:]`.
-     * @details Returns a string representation of a given object.
-     * @param obj Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSFormatter stringForObjectValue:]`.
+         * @details Returns a string representation of a given object.
+         * @param obj Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::string string_for_object_value(const Object& obj) const;
     };
 }

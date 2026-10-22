@@ -42,24 +42,24 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit RotationGestureRecognizer(Adopt adopt);
         /**
-     * @brief Returns the `rotation` property of `NSRotationGestureRecognizer`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `rotation` property of `NSRotationGestureRecognizer`.
+         * @return The converted Objective-C result.
+         */
         double rotation() const;
         /**
-     * @brief Sets the `rotation` property of `NSRotationGestureRecognizer`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `rotation` property of `NSRotationGestureRecognizer`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_rotation(double value) const;
         /**
-     * @brief Returns the `rotationInDegrees` property of `NSRotationGestureRecognizer`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `rotationInDegrees` property of `NSRotationGestureRecognizer`.
+         * @return The converted Objective-C result.
+         */
         double rotation_in_degrees() const;
         /**
-     * @brief Sets the `rotationInDegrees` property of `NSRotationGestureRecognizer`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `rotationInDegrees` property of `NSRotationGestureRecognizer`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_rotation_in_degrees(double value) const;
     };
 }

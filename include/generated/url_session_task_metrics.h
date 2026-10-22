@@ -34,22 +34,22 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit URLSessionTaskMetrics(Adopt adopt);
         /**
-     * @brief Returns the `redirectCount` property of `NSURLSessionTaskMetrics`.
-     * @details The number of redirects that were recorded.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `redirectCount` property of `NSURLSessionTaskMetrics`.
+         * @details The number of redirects that were recorded.
+         * @return The converted Objective-C result.
+         */
         std::uint64_t redirect_count() const;
         /**
-     * @brief Returns the `taskInterval` property of `NSURLSessionTaskMetrics`.
-     * @details Interval from the task creation time to the task completion time. Task creation time is the time when the task was instantiated. Task completion time is the time when the task is about to change its internal state to completed.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `taskInterval` property of `NSURLSessionTaskMetrics`.
+         * @details Interval from the task creation time to the task completion time. Task creation time is the time when the task was instantiated. Task completion time is the time when the task is about to change its internal state to completed.
+         * @return The converted Objective-C result.
+         */
         DateInterval task_interval() const;
         /**
-     * @brief Returns the `transactionMetrics` property of `NSURLSessionTaskMetrics`.
-     * @details An array containing the metrics collected for every request/response transaction created during the task execution.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `transactionMetrics` property of `NSURLSessionTaskMetrics`.
+         * @details An array containing the metrics collected for every request/response transaction created during the task execution.
+         * @return The converted Objective-C result.
+         */
         std::vector<URLSessionTaskTransactionMetrics> transaction_metrics() const;
     };
 }

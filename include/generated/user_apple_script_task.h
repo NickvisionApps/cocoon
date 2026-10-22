@@ -35,10 +35,10 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit UserAppleScriptTask(Adopt adopt);
         /**
-     * @brief Calls `-[NSUserAppleScriptTask executeWithAppleEvent:completionHandler:]`.
-     * @param event Argument converted to the Objective-C parameter of the same role.
-     * @param handler Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSUserAppleScriptTask executeWithAppleEvent:completionHandler:]`.
+         * @param event Argument converted to the Objective-C parameter of the same role.
+         * @param handler Argument converted to the Objective-C parameter of the same role.
+         */
         void execute_with_apple_event(const AppleEventDescriptor& event, std::function<void(AppleEventDescriptor, Error)> handler) const;
     };
 }

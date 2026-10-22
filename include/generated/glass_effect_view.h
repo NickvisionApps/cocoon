@@ -48,70 +48,70 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit GlassEffectView(Adopt adopt);
         /**
-     * @brief Returns the `contentView` property of `NSGlassEffectView`.
-     * @details The view to embed in glass. - Important: 'NSGlassEffectView' only guarantees the 'contentView' will be placed inside the glass effect; arbitrary subviews aren't guaranteed specific behavior with regard to z-order in relation to the content view or glass effect.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `contentView` property of `NSGlassEffectView`.
+         * @details The view to embed in glass. - Important: 'NSGlassEffectView' only guarantees the 'contentView' will be placed inside the glass effect; arbitrary subviews aren't guaranteed specific behavior with regard to z-order in relation to the content view or glass effect.
+         * @return The converted Objective-C result.
+         */
         View content_view() const;
         /**
-     * @brief Sets the `contentView` property of `NSGlassEffectView`.
-     * @details The view to embed in glass. - Important: 'NSGlassEffectView' only guarantees the 'contentView' will be placed inside the glass effect; arbitrary subviews aren't guaranteed specific behavior with regard to z-order in relation to the content view or glass effect.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `contentView` property of `NSGlassEffectView`.
+         * @details The view to embed in glass. - Important: 'NSGlassEffectView' only guarantees the 'contentView' will be placed inside the glass effect; arbitrary subviews aren't guaranteed specific behavior with regard to z-order in relation to the content view or glass effect.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_content_view(const View& value) const;
         /**
-     * @brief Returns the `cornerRadius` property of `NSGlassEffectView`.
-     * @details The amount of curvature for all corners of the glass.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `cornerRadius` property of `NSGlassEffectView`.
+         * @details The amount of curvature for all corners of the glass.
+         * @return The converted Objective-C result.
+         */
         double corner_radius() const;
         /**
-     * @brief Sets the `cornerRadius` property of `NSGlassEffectView`.
-     * @details The amount of curvature for all corners of the glass.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `cornerRadius` property of `NSGlassEffectView`.
+         * @details The amount of curvature for all corners of the glass.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_corner_radius(double value) const;
 #ifdef COCOON_MACOS_27
         /**
-     * @brief Returns the `effectIsInteractive` property of `NSGlassEffectView`.
-     * @details Enables interactive glass behavior, which adds a visual response to user interactions. This should be enabled for glass that is used as the background for interactive controls or when used as the container of interactive controls. When 'YES', the glass effect will provide visual feedback when it is interacted with. When 'NO', the glass effect remains static. The default value is 'NO'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `effectIsInteractive` property of `NSGlassEffectView`.
+         * @details Enables interactive glass behavior, which adds a visual response to user interactions. This should be enabled for glass that is used as the background for interactive controls or when used as the container of interactive controls. When 'YES', the glass effect will provide visual feedback when it is interacted with. When 'NO', the glass effect remains static. The default value is 'NO'.
+         * @return The converted Objective-C result.
+         */
         bool effect_is_interactive() const;
 #endif
 
 #ifdef COCOON_MACOS_27
         /**
-     * @brief Sets the `effectIsInteractive` property of `NSGlassEffectView`.
-     * @details Enables interactive glass behavior, which adds a visual response to user interactions. This should be enabled for glass that is used as the background for interactive controls or when used as the container of interactive controls. When 'YES', the glass effect will provide visual feedback when it is interacted with. When 'NO', the glass effect remains static. The default value is 'NO'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `effectIsInteractive` property of `NSGlassEffectView`.
+         * @details Enables interactive glass behavior, which adds a visual response to user interactions. This should be enabled for glass that is used as the background for interactive controls or when used as the container of interactive controls. When 'YES', the glass effect will provide visual feedback when it is interacted with. When 'NO', the glass effect remains static. The default value is 'NO'.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_effect_is_interactive(bool value) const;
 #endif
 
         /**
-     * @brief Returns the `style` property of `NSGlassEffectView`.
-     * @details The style of glass this view uses.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `style` property of `NSGlassEffectView`.
+         * @details The style of glass this view uses.
+         * @return The converted Objective-C result.
+         */
         GlassStyle style() const;
         /**
-     * @brief Sets the `style` property of `NSGlassEffectView`.
-     * @details The style of glass this view uses.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `style` property of `NSGlassEffectView`.
+         * @details The style of glass this view uses.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_style(GlassStyle value) const;
         /**
-     * @brief Returns the `tintColor` property of `NSGlassEffectView`.
-     * @details The color the glass effect view uses to tint the background and glass effect toward.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `tintColor` property of `NSGlassEffectView`.
+         * @details The color the glass effect view uses to tint the background and glass effect toward.
+         * @return The converted Objective-C result.
+         */
         Color tint_color() const;
         /**
-     * @brief Sets the `tintColor` property of `NSGlassEffectView`.
-     * @details The color the glass effect view uses to tint the background and glass effect toward.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `tintColor` property of `NSGlassEffectView`.
+         * @details The color the glass effect view uses to tint the background and glass effect toward.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_tint_color(const Color& value) const;
     };
 }

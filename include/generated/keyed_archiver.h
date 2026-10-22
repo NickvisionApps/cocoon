@@ -62,125 +62,125 @@ namespace cocoon
         using Coder::encode_object;
         using Coder::requires_secure_coding;
         /**
-     * @brief Calls `+[NSKeyedArchiver archivedDataWithRootObject:requiringSecureCoding:error:]`.
-     * @details Returns an \\c NSData object containing the encoded form of the object graph whose root object is given, optionally disabling secure coding. If \\c NSSecureCoding cannot be used, \\c requiresSecureCoding may be turned off here; for improved security, however, \\c requiresSecureCoding should be left enabled whenever possible. \\c requiresSecureCoding ensures that all encoded objects conform to \\c NSSecureCoding, preventing the possibility of encoding objects which cannot be decoded later. If the object graph cannot be encoded, returns \\c nil and sets the \\c error out parameter.
-     * @param object Argument converted to the Objective-C parameter of the same role.
-     * @param requires_secure_coding Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSKeyedArchiver archivedDataWithRootObject:requiringSecureCoding:error:]`.
+         * @details Returns an \\c NSData object containing the encoded form of the object graph whose root object is given, optionally disabling secure coding. If \\c NSSecureCoding cannot be used, \\c requiresSecureCoding may be turned off here; for improved security, however, \\c requiresSecureCoding should be left enabled whenever possible. \\c requiresSecureCoding ensures that all encoded objects conform to \\c NSSecureCoding, preventing the possibility of encoding objects which cannot be decoded later. If the object graph cannot be encoded, returns \\c nil and sets the \\c error out parameter.
+         * @param object Argument converted to the Objective-C parameter of the same role.
+         * @param requires_secure_coding Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static std::vector<std::uint8_t> archived_data_with_root_object(const Object& object, bool requires_secure_coding);
         /**
-     * @brief Calls `-[NSKeyedArchiver classNameForClass:]`.
-     * @details Returns the class name with which this archiver encodes instances of a given class. Returns 'nil' if the receiver does not have a translation mapping for 'cls'. The class's separate translation map is not searched.
-     * @param cls Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSKeyedArchiver classNameForClass:]`.
+         * @details Returns the class name with which this archiver encodes instances of a given class. Returns 'nil' if the receiver does not have a translation mapping for 'cls'. The class's separate translation map is not searched.
+         * @param cls Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::string class_name_for_class(const std::string& cls) const;
         /**
-     * @brief Calls `-[NSKeyedArchiver encodeBool:forKey:]`.
-     * @details Encodes a given Boolean value and associates it with a key.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     * @param key Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSKeyedArchiver encodeBool:forKey:]`.
+         * @details Encodes a given Boolean value and associates it with a key.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         * @param key Argument converted to the Objective-C parameter of the same role.
+         */
         void encode_bool(bool value, const std::string& key) const;
         /**
-     * @brief Calls `-[NSKeyedArchiver encodeBytes:length:forKey:]`.
-     * @details Encodes a given number of bytes from a given C array of bytes and associates them with a key.
-     * @param bytes Argument converted to the Objective-C parameter of the same role.
-     * @param length Argument converted to the Objective-C parameter of the same role.
-     * @param key Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSKeyedArchiver encodeBytes:length:forKey:]`.
+         * @details Encodes a given number of bytes from a given C array of bytes and associates them with a key.
+         * @param bytes Argument converted to the Objective-C parameter of the same role.
+         * @param length Argument converted to the Objective-C parameter of the same role.
+         * @param key Argument converted to the Objective-C parameter of the same role.
+         */
         void encode_bytes(const std::uint8_t* bytes, std::uint64_t length, const std::string& key) const;
         /**
-     * @brief Calls `-[NSKeyedArchiver encodeConditionalObject:forKey:]`.
-     * @details Encodes a reference to a given object and associates it with a key only if it has been unconditionally encoded elsewhere in the archive.
-     * @param object Argument converted to the Objective-C parameter of the same role.
-     * @param key Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSKeyedArchiver encodeConditionalObject:forKey:]`.
+         * @details Encodes a reference to a given object and associates it with a key only if it has been unconditionally encoded elsewhere in the archive.
+         * @param object Argument converted to the Objective-C parameter of the same role.
+         * @param key Argument converted to the Objective-C parameter of the same role.
+         */
         void encode_conditional_object(const Object& object, const std::string& key) const;
         /**
-     * @brief Calls `-[NSKeyedArchiver encodeDouble:forKey:]`.
-     * @details Encodes a given 'double' value and associates it with a key.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     * @param key Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSKeyedArchiver encodeDouble:forKey:]`.
+         * @details Encodes a given 'double' value and associates it with a key.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         * @param key Argument converted to the Objective-C parameter of the same role.
+         */
         void encode_double(double value, const std::string& key) const;
         /**
-     * @brief Calls `-[NSKeyedArchiver encodeFloat:forKey:]`.
-     * @details Encodes a given 'float' value and associates it with a key.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     * @param key Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSKeyedArchiver encodeFloat:forKey:]`.
+         * @details Encodes a given 'float' value and associates it with a key.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         * @param key Argument converted to the Objective-C parameter of the same role.
+         */
         void encode_float(float value, const std::string& key) const;
         /**
-     * @brief Calls `-[NSKeyedArchiver encodeInt32:forKey:]`.
-     * @details Encodes a given 32-bit integer value and associates it with a key.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     * @param key Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSKeyedArchiver encodeInt32:forKey:]`.
+         * @details Encodes a given 32-bit integer value and associates it with a key.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         * @param key Argument converted to the Objective-C parameter of the same role.
+         */
         void encode_int32(int value, const std::string& key) const;
         /**
-     * @brief Calls `-[NSKeyedArchiver encodeInt64:forKey:]`.
-     * @details Encodes a given 64-bit integer value and associates it with a key.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     * @param key Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSKeyedArchiver encodeInt64:forKey:]`.
+         * @details Encodes a given 64-bit integer value and associates it with a key.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         * @param key Argument converted to the Objective-C parameter of the same role.
+         */
         void encode_int64(std::int64_t value, const std::string& key) const;
         /**
-     * @brief Calls `-[NSKeyedArchiver encodeInt:forKey:]`.
-     * @details Encodes a given 'int' value and associates it with a key.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     * @param key Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSKeyedArchiver encodeInt:forKey:]`.
+         * @details Encodes a given 'int' value and associates it with a key.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         * @param key Argument converted to the Objective-C parameter of the same role.
+         */
         void encode_int(int value, const std::string& key) const;
         /**
-     * @brief Calls `-[NSKeyedArchiver encodeObject:forKey:]`.
-     * @details Encodes a given object and associates it with a given key.
-     * @param object Argument converted to the Objective-C parameter of the same role.
-     * @param key Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSKeyedArchiver encodeObject:forKey:]`.
+         * @details Encodes a given object and associates it with a given key.
+         * @param object Argument converted to the Objective-C parameter of the same role.
+         * @param key Argument converted to the Objective-C parameter of the same role.
+         */
         void encode_object(const Object& object, const std::string& key) const;
         /**
-     * @brief Calls `-[NSKeyedArchiver finishEncoding]`.
-     * @details Instructs the receiver to construct the final data stream. No more values can be encoded after this method is called. You must call this method when finished.
-     */
+         * @brief Calls `-[NSKeyedArchiver finishEncoding]`.
+         * @details Instructs the receiver to construct the final data stream. No more values can be encoded after this method is called. You must call this method when finished.
+         */
         void finish_encoding() const;
         /**
-     * @brief Calls `-[NSKeyedArchiver setClassName:forClass:]`.
-     * @details Sets a mapping for this archiver to encode instances of a given class with the provided name, rather than their real name. When encoding, the receiver's translation map overrides any translation that may also be present in the class's map.
-     * @param coded_name Argument converted to the Objective-C parameter of the same role.
-     * @param cls Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSKeyedArchiver setClassName:forClass:]`.
+         * @details Sets a mapping for this archiver to encode instances of a given class with the provided name, rather than their real name. When encoding, the receiver's translation map overrides any translation that may also be present in the class's map.
+         * @param coded_name Argument converted to the Objective-C parameter of the same role.
+         * @param cls Argument converted to the Objective-C parameter of the same role.
+         */
         void set_class_name(const std::string& coded_name, const std::string& cls) const;
         /**
-     * @brief Returns the `encodedData` property of `NSKeyedArchiver`.
-     * @details If encoding has not yet finished, then invoking this property will call finishEncoding and return the data. If you initialized the keyed archiver with a specific mutable data instance, then it will be returned from this property after finishEncoding is called.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `encodedData` property of `NSKeyedArchiver`.
+         * @details If encoding has not yet finished, then invoking this property will call finishEncoding and return the data. If you initialized the keyed archiver with a specific mutable data instance, then it will be returned from this property after finishEncoding is called.
+         * @return The converted Objective-C result.
+         */
         std::vector<std::uint8_t> encoded_data() const;
         /**
-     * @brief Returns the `outputFormat` property of `NSKeyedArchiver`.
-     * @details The format in which the receiver encodes its data. The available formats are XML and binary.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `outputFormat` property of `NSKeyedArchiver`.
+         * @details The format in which the receiver encodes its data. The available formats are XML and binary.
+         * @return The converted Objective-C result.
+         */
         PropertyListFormat output_format() const;
         /**
-     * @brief Sets the `outputFormat` property of `NSKeyedArchiver`.
-     * @details The format in which the receiver encodes its data. The available formats are XML and binary.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `outputFormat` property of `NSKeyedArchiver`.
+         * @details The format in which the receiver encodes its data. The available formats are XML and binary.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_output_format(PropertyListFormat value) const;
         /**
-     * @brief Returns the `requiresSecureCoding` property of `NSKeyedArchiver`.
-     * @details Indicates whether the archiver requires all archived classes to resist object substitution attacks. If you set the archiver to require secure coding, it throws an exception if you attempt to archive a class which doesn't conform to 'NSSecureCoding'. Note that the getter is on the superclass, 'NSCoder'. See 'NSCoder' for more information about secure coding. Enabling secure coding doesn't change the output format of the archive.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `requiresSecureCoding` property of `NSKeyedArchiver`.
+         * @details Indicates whether the archiver requires all archived classes to resist object substitution attacks. If you set the archiver to require secure coding, it throws an exception if you attempt to archive a class which doesn't conform to 'NSSecureCoding'. Note that the getter is on the superclass, 'NSCoder'. See 'NSCoder' for more information about secure coding. Enabling secure coding doesn't change the output format of the archive.
+         * @return The converted Objective-C result.
+         */
         bool requires_secure_coding() const;
         /**
-     * @brief Sets the `requiresSecureCoding` property of `NSKeyedArchiver`.
-     * @details Indicates whether the archiver requires all archived classes to resist object substitution attacks. If you set the archiver to require secure coding, it throws an exception if you attempt to archive a class which doesn't conform to 'NSSecureCoding'. Note that the getter is on the superclass, 'NSCoder'. See 'NSCoder' for more information about secure coding. Enabling secure coding doesn't change the output format of the archive.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `requiresSecureCoding` property of `NSKeyedArchiver`.
+         * @details Indicates whether the archiver requires all archived classes to resist object substitution attacks. If you set the archiver to require secure coding, it throws an exception if you attempt to archive a class which doesn't conform to 'NSSecureCoding'. Note that the getter is on the superclass, 'NSCoder'. See 'NSCoder' for more information about secure coding. Enabling secure coding doesn't change the output format of the archive.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_requires_secure_coding(bool value) const;
         /// @brief Signal for the delegate/data-source method behind `archiver_will_encode_object`; connect a callback with `archiver_will_encode_object().connect(...)`.
         Signal<KeyedArchiver, Object(Object)> archiver_will_encode_object() const

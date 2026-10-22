@@ -40,34 +40,34 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit SocketPort(Adopt adopt);
         /**
-     * @brief Returns the `address` property of `NSSocketPort`.
-     * @details The receiver's socket address structure stored inside an ''NSData'' object.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `address` property of `NSSocketPort`.
+         * @details The receiver's socket address structure stored inside an ''NSData'' object.
+         * @return The converted Objective-C result.
+         */
         std::vector<std::uint8_t> address() const;
         /**
-     * @brief Returns the `protocol` property of `NSSocketPort`.
-     * @details The protocol that the receiver's socket uses.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `protocol` property of `NSSocketPort`.
+         * @details The protocol that the receiver's socket uses.
+         * @return The converted Objective-C result.
+         */
         int protocol() const;
         /**
-     * @brief Returns the `protocolFamily` property of `NSSocketPort`.
-     * @details The protocol family of the receiver's socket.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `protocolFamily` property of `NSSocketPort`.
+         * @details The protocol family of the receiver's socket.
+         * @return The converted Objective-C result.
+         */
         int protocol_family() const;
         /**
-     * @brief Returns the `socket` property of `NSSocketPort`.
-     * @details The receiver's native socket identifier on the platform.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `socket` property of `NSSocketPort`.
+         * @details The receiver's native socket identifier on the platform.
+         * @return The converted Objective-C result.
+         */
         int socket() const;
         /**
-     * @brief Returns the `socketType` property of `NSSocketPort`.
-     * @details The type of the receiver's socket.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `socketType` property of `NSSocketPort`.
+         * @details The type of the receiver's socket.
+         * @return The converted Objective-C result.
+         */
         int socket_type() const;
     };
 }

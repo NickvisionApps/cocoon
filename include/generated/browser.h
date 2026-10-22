@@ -68,625 +68,625 @@ namespace cocoon
         using Control::set_cell_class;
         using View::set_background_color;
         /**
-     * @brief Calls `-[NSBrowser addColumn]`.
-     * @details Adds a column at the end. To remove columns, use -setLastColumn:
-     */
+         * @brief Calls `-[NSBrowser addColumn]`.
+         * @details Adds a column at the end. To remove columns, use -setLastColumn:
+         */
         void add_column() const;
         /**
-     * @brief Calls `-[NSBrowser canDragRowsWithIndexes:inColumn:withEvent:]`.
-     * @details The return value indicates whether the receiver can attempt to initiate a drag for the given event. You can override this method and return NO to disallow initiating drags at the location in the given event. By default, the method will return YES if rowIndexes contains at least one item, and each item is enabled. If the equivalent delegate method is present, it will be preferred over this method, and you can safely call this method from your delegate.
-     * @param row_indexes Argument converted to the Objective-C parameter of the same role.
-     * @param column Argument converted to the Objective-C parameter of the same role.
-     * @param event Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSBrowser canDragRowsWithIndexes:inColumn:withEvent:]`.
+         * @details The return value indicates whether the receiver can attempt to initiate a drag for the given event. You can override this method and return NO to disallow initiating drags at the location in the given event. By default, the method will return YES if rowIndexes contains at least one item, and each item is enabled. If the equivalent delegate method is present, it will be preferred over this method, and you can safely call this method from your delegate.
+         * @param row_indexes Argument converted to the Objective-C parameter of the same role.
+         * @param column Argument converted to the Objective-C parameter of the same role.
+         * @param event Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool can_drag_rows_with_indexes(const IndexSet& row_indexes, std::int64_t column, const Event& event) const;
         /**
-     * @brief Calls `-[NSBrowser columnContentWidthForColumnWidth:]`.
-     * @param column_width Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSBrowser columnContentWidthForColumnWidth:]`.
+         * @param column_width Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         double column_content_width_for_column_width(double column_width) const;
         /**
-     * @brief Calls `-[NSBrowser columnWidthForColumnContentWidth:]`.
-     * @details These methods convert between column width (the column's scrollview), and the content width (the matrix in the scrollview). For example, to guarantee that 16 pixels of your browser cell are always visible, call [browser setMinColumnWidth:[browser columnWidthForColumnContentWidth:16]]
-     * @param column_content_width Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSBrowser columnWidthForColumnContentWidth:]`.
+         * @details These methods convert between column width (the column's scrollview), and the content width (the matrix in the scrollview). For example, to guarantee that 16 pixels of your browser cell are always visible, call [browser setMinColumnWidth:[browser columnWidthForColumnContentWidth:16]]
+         * @param column_content_width Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         double column_width_for_column_content_width(double column_content_width) const;
         /**
-     * @brief Calls `-[NSBrowser defaultColumnWidth]`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSBrowser defaultColumnWidth]`.
+         * @return The converted Objective-C result.
+         */
         double default_column_width() const;
         /**
-     * @brief Calls `-[NSBrowser doClick:]`.
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSBrowser doClick:]`.
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void do_click(const Object& sender) const;
         /**
-     * @brief Calls `-[NSBrowser doDoubleClick:]`.
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSBrowser doDoubleClick:]`.
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void do_double_click(const Object& sender) const;
         /**
-     * @brief Calls `-[NSBrowser draggingImageForRowsWithIndexes:inColumn:withEvent:offset:]`.
-     * @details This method computes and returns an image to use for dragging. You can override this to return a custom drag image, or call it to get the default drag image from the delegate method. 'rowIndexes' are the indexes of the cells being dragged in matrix 'column'. 'event' is a reference to the mouse down event that began the drag. 'dragImageOffset' is an in/out parameter. This method will be called with dragImageOffset set to NSZeroPoint, but it can be modified to re-position the returned image. A dragImageOffset of NSZeroPoint will cause the image to be centered under the mouse. By default, an image will be created that contain the visible cells within 'rowIndexes'. If the equivalent delegate method is present, it will be preferred over this method, and you can safely call this method from your delegate.
-     * @param row_indexes Argument converted to the Objective-C parameter of the same role.
-     * @param column Argument converted to the Objective-C parameter of the same role.
-     * @param event Argument converted to the Objective-C parameter of the same role.
-     * @param drag_image_offset Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSBrowser draggingImageForRowsWithIndexes:inColumn:withEvent:offset:]`.
+         * @details This method computes and returns an image to use for dragging. You can override this to return a custom drag image, or call it to get the default drag image from the delegate method. 'rowIndexes' are the indexes of the cells being dragged in matrix 'column'. 'event' is a reference to the mouse down event that began the drag. 'dragImageOffset' is an in/out parameter. This method will be called with dragImageOffset set to NSZeroPoint, but it can be modified to re-position the returned image. A dragImageOffset of NSZeroPoint will cause the image to be centered under the mouse. By default, an image will be created that contain the visible cells within 'rowIndexes'. If the equivalent delegate method is present, it will be preferred over this method, and you can safely call this method from your delegate.
+         * @param row_indexes Argument converted to the Objective-C parameter of the same role.
+         * @param column Argument converted to the Objective-C parameter of the same role.
+         * @param event Argument converted to the Objective-C parameter of the same role.
+         * @param drag_image_offset Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Image dragging_image_for_rows_with_indexes(const IndexSet& row_indexes, std::int64_t column, const Event& event, Point* drag_image_offset) const;
         /**
-     * @brief Calls `-[NSBrowser drawTitleOfColumn:inRect:]`.
-     * @param column Argument converted to the Objective-C parameter of the same role.
-     * @param rect Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSBrowser drawTitleOfColumn:inRect:]`.
+         * @param column Argument converted to the Objective-C parameter of the same role.
+         * @param rect Argument converted to the Objective-C parameter of the same role.
+         */
         void draw_title_of_column(std::int64_t column, const Rect& rect) const;
         /**
-     * @brief Calls `-[NSBrowser editItemAtIndexPath:withEvent:select:]`.
-     * @details Begins editing the item at the specified path. event may be nil if programmatically editing. The cell's contents will be selected if select is YES. Overriding this method will not affect the editing behavior of the browser.
-     * @param index_path Argument converted to the Objective-C parameter of the same role.
-     * @param event Argument converted to the Objective-C parameter of the same role.
-     * @param select Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSBrowser editItemAtIndexPath:withEvent:select:]`.
+         * @details Begins editing the item at the specified path. event may be nil if programmatically editing. The cell's contents will be selected if select is YES. Overriding this method will not affect the editing behavior of the browser.
+         * @param index_path Argument converted to the Objective-C parameter of the same role.
+         * @param event Argument converted to the Objective-C parameter of the same role.
+         * @param select Argument converted to the Objective-C parameter of the same role.
+         */
         void edit_item_at_index_path(const IndexPath& index_path, const Event& event, bool select) const;
         /**
-     * @brief Calls `-[NSBrowser frameOfColumn:]`.
-     * @param column Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSBrowser frameOfColumn:]`.
+         * @param column Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Rect frame_of_column(std::int64_t column) const;
         /**
-     * @brief Calls `-[NSBrowser frameOfInsideOfColumn:]`.
-     * @param column Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSBrowser frameOfInsideOfColumn:]`.
+         * @param column Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Rect frame_of_inside_of_column(std::int64_t column) const;
         /**
-     * @brief Calls `-[NSBrowser frameOfRow:inColumn:]`.
-     * @details Returns the frame of the row at 'row' / 'column' including the area for the expandable arrow. The returned NSRect is in the NSBrowser coordinate space.
-     * @param row Argument converted to the Objective-C parameter of the same role.
-     * @param column Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSBrowser frameOfRow:inColumn:]`.
+         * @details Returns the frame of the row at 'row' / 'column' including the area for the expandable arrow. The returned NSRect is in the NSBrowser coordinate space.
+         * @param row Argument converted to the Objective-C parameter of the same role.
+         * @param column Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Rect frame_of_row(std::int64_t row, std::int64_t column) const;
         /**
-     * @brief Calls `-[NSBrowser getRow:column:forPoint:]`.
-     * @details Finds the row and column located at 'point', returning YES if both can be found. If a row does not exist at 'point', then -1 is set for the row. If a column does not exist at 'point', then -1 is set for the column. 'point' is expected to be in the NSBrowser's coordinate system.
-     * @param row Argument converted to the Objective-C parameter of the same role.
-     * @param column Argument converted to the Objective-C parameter of the same role.
-     * @param point Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSBrowser getRow:column:forPoint:]`.
+         * @details Finds the row and column located at 'point', returning YES if both can be found. If a row does not exist at 'point', then -1 is set for the row. If a column does not exist at 'point', then -1 is set for the column. 'point' is expected to be in the NSBrowser's coordinate system.
+         * @param row Argument converted to the Objective-C parameter of the same role.
+         * @param column Argument converted to the Objective-C parameter of the same role.
+         * @param point Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool get_row(std::int64_t* row, std::int64_t* column, const Point& point) const;
         /**
-     * @brief Calls `-[NSBrowser indexPathForColumn:]`.
-     * @details Returns the index path of the item whose children are displayed in the given column. This method can only be used if the delegate implements the item data source methods.
-     * @param column Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSBrowser indexPathForColumn:]`.
+         * @details Returns the index path of the item whose children are displayed in the given column. This method can only be used if the delegate implements the item data source methods.
+         * @param column Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         IndexPath index_path_for_column(std::int64_t column) const;
         /**
-     * @brief Calls `-[NSBrowser isLeafItem:]`.
-     * @details Returns whether the given item is a leaf item. This method can only be used if the delegate implements the item data source methods.
-     * @param item Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSBrowser isLeafItem:]`.
+         * @details Returns whether the given item is a leaf item. This method can only be used if the delegate implements the item data source methods.
+         * @param item Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool is_leaf_item(const Object& item) const;
         /**
-     * @brief Calls `-[NSBrowser itemAtIndexPath:]`.
-     * @details Returns the item at the given index path. This method can only be used if the delegate implements the item data source methods. The indexPath must be displayable in the browser.
-     * @param index_path Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSBrowser itemAtIndexPath:]`.
+         * @details Returns the item at the given index path. This method can only be used if the delegate implements the item data source methods. The indexPath must be displayable in the browser.
+         * @param index_path Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Object item_at_index_path(const IndexPath& index_path) const;
         /**
-     * @brief Calls `-[NSBrowser itemAtRow:inColumn:]`.
-     * @details Returns the item located at 'row' in 'column'.
-     * @param row Argument converted to the Objective-C parameter of the same role.
-     * @param column Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSBrowser itemAtRow:inColumn:]`.
+         * @details Returns the item located at 'row' in 'column'.
+         * @param row Argument converted to the Objective-C parameter of the same role.
+         * @param column Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Object item_at_row(std::int64_t row, std::int64_t column) const;
         /**
-     * @brief Calls `-[NSBrowser loadColumnZero]`.
-     */
+         * @brief Calls `-[NSBrowser loadColumnZero]`.
+         */
         void load_column_zero() const;
         /**
-     * @brief Calls `-[NSBrowser loadedCellAtRow:column:]`.
-     * @param row Argument converted to the Objective-C parameter of the same role.
-     * @param col Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSBrowser loadedCellAtRow:column:]`.
+         * @param row Argument converted to the Objective-C parameter of the same role.
+         * @param col Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Object loaded_cell_at_row(std::int64_t row, std::int64_t col) const;
         /**
-     * @brief Calls `-[NSBrowser noteHeightOfRowsWithIndexesChanged:inColumn:]`.
-     * @details If the delegate implements -browser:heightOfRow:inColumn:, this method immediately re-tiles the browser columns using row heights it provides.
-     * @param index_set Argument converted to the Objective-C parameter of the same role.
-     * @param column_index Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSBrowser noteHeightOfRowsWithIndexesChanged:inColumn:]`.
+         * @details If the delegate implements -browser:heightOfRow:inColumn:, this method immediately re-tiles the browser columns using row heights it provides.
+         * @param index_set Argument converted to the Objective-C parameter of the same role.
+         * @param column_index Argument converted to the Objective-C parameter of the same role.
+         */
         void note_height_of_rows_with_indexes_changed(const IndexSet& index_set, std::int64_t column_index) const;
         /**
-     * @brief Calls `-[NSBrowser parentForItemsInColumn:]`.
-     * @details Returns the item that contains all children located in 'column'. In other words, it is the parent item for that column.
-     * @param column Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSBrowser parentForItemsInColumn:]`.
+         * @details Returns the item that contains all children located in 'column'. In other words, it is the parent item for that column.
+         * @param column Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Object parent_for_items_in_column(std::int64_t column) const;
         /**
-     * @brief Calls `-[NSBrowser path]`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSBrowser path]`.
+         * @return The converted Objective-C result.
+         */
         std::string path() const;
         /**
-     * @brief Calls `-[NSBrowser pathToColumn:]`.
-     * @param column Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSBrowser pathToColumn:]`.
+         * @param column Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::string path_to_column(std::int64_t column) const;
         /**
-     * @brief Calls `-[NSBrowser reloadColumn:]`.
-     * @param column Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSBrowser reloadColumn:]`.
+         * @param column Argument converted to the Objective-C parameter of the same role.
+         */
         void reload_column(std::int64_t column) const;
         /**
-     * @brief Calls `-[NSBrowser reloadDataForRowIndexes:inColumn:]`.
-     * @details Updates a particular set of rows in 'column'. For rows that are visible, appropriate dataSource and delegate methods will be called and the row will be redrawn. For browsers that support variable row heights, the row height will not be re-queried from the delegate. This method can only be used if the delegate implements the item data source methods.
-     * @param row_indexes Argument converted to the Objective-C parameter of the same role.
-     * @param column Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSBrowser reloadDataForRowIndexes:inColumn:]`.
+         * @details Updates a particular set of rows in 'column'. For rows that are visible, appropriate dataSource and delegate methods will be called and the row will be redrawn. For browsers that support variable row heights, the row height will not be re-queried from the delegate. This method can only be used if the delegate implements the item data source methods.
+         * @param row_indexes Argument converted to the Objective-C parameter of the same role.
+         * @param column Argument converted to the Objective-C parameter of the same role.
+         */
         void reload_data_for_row_indexes(const IndexSet& row_indexes, std::int64_t column) const;
         /**
-     * @brief Calls `+[NSBrowser removeSavedColumnsWithAutosaveName:]`.
-     * @details Removes the column data stored under name from the applications user defaults.
-     * @param name Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `+[NSBrowser removeSavedColumnsWithAutosaveName:]`.
+         * @details Removes the column data stored under name from the applications user defaults.
+         * @param name Argument converted to the Objective-C parameter of the same role.
+         */
         static void remove_saved_columns_with_autosave_name(const std::string& name);
         /**
-     * @brief Calls `-[NSBrowser scrollColumnToVisible:]`.
-     * @param column Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSBrowser scrollColumnToVisible:]`.
+         * @param column Argument converted to the Objective-C parameter of the same role.
+         */
         void scroll_column_to_visible(std::int64_t column) const;
         /**
-     * @brief Calls `-[NSBrowser scrollColumnsLeftBy:]`.
-     * @param shift_amount Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSBrowser scrollColumnsLeftBy:]`.
+         * @param shift_amount Argument converted to the Objective-C parameter of the same role.
+         */
         void scroll_columns_left_by(std::int64_t shift_amount) const;
         /**
-     * @brief Calls `-[NSBrowser scrollColumnsRightBy:]`.
-     * @param shift_amount Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSBrowser scrollColumnsRightBy:]`.
+         * @param shift_amount Argument converted to the Objective-C parameter of the same role.
+         */
         void scroll_columns_right_by(std::int64_t shift_amount) const;
         /**
-     * @brief Calls `-[NSBrowser scrollRowToVisible:inColumn:]`.
-     * @details Scrolls 'row' to be visible within 'column'. 'column' will not be scrolled visible. To scroll 'column' to visible, first call -[browser scrollColumnToVisible:column].
-     * @param row Argument converted to the Objective-C parameter of the same role.
-     * @param column Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSBrowser scrollRowToVisible:inColumn:]`.
+         * @details Scrolls 'row' to be visible within 'column'. 'column' will not be scrolled visible. To scroll 'column' to visible, first call -[browser scrollColumnToVisible:column].
+         * @param row Argument converted to the Objective-C parameter of the same role.
+         * @param column Argument converted to the Objective-C parameter of the same role.
+         */
         void scroll_row_to_visible(std::int64_t row, std::int64_t column) const;
         /**
-     * @brief Calls `-[NSBrowser selectAll:]`.
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSBrowser selectAll:]`.
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void select_all(const Object& sender) const;
         /**
-     * @brief Calls `-[NSBrowser selectRow:inColumn:]`.
-     * @param row Argument converted to the Objective-C parameter of the same role.
-     * @param column Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSBrowser selectRow:inColumn:]`.
+         * @param row Argument converted to the Objective-C parameter of the same role.
+         * @param column Argument converted to the Objective-C parameter of the same role.
+         */
         void select_row(std::int64_t row, std::int64_t column) const;
         /**
-     * @brief Calls `-[NSBrowser selectRowIndexes:inColumn:]`.
-     * @details Sets the selected row 'indexes' in the matrix located at 'column'.
-     * @param indexes Argument converted to the Objective-C parameter of the same role.
-     * @param column Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSBrowser selectRowIndexes:inColumn:]`.
+         * @details Sets the selected row 'indexes' in the matrix located at 'column'.
+         * @param indexes Argument converted to the Objective-C parameter of the same role.
+         * @param column Argument converted to the Objective-C parameter of the same role.
+         */
         void select_row_indexes(const IndexSet& indexes, std::int64_t column) const;
         /**
-     * @brief Calls `-[NSBrowser selectedCellInColumn:]`.
-     * @param column Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSBrowser selectedCellInColumn:]`.
+         * @param column Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Object selected_cell_in_column(std::int64_t column) const;
         /**
-     * @brief Calls `-[NSBrowser selectedRowInColumn:]`.
-     * @param column Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSBrowser selectedRowInColumn:]`.
+         * @param column Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::int64_t selected_row_in_column(std::int64_t column) const;
         /**
-     * @brief Calls `-[NSBrowser selectedRowIndexesInColumn:]`.
-     * @details Returns the selected cell indexes in the matrix located at 'column'.
-     * @param column Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSBrowser selectedRowIndexesInColumn:]`.
+         * @details Returns the selected cell indexes in the matrix located at 'column'.
+         * @param column Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         IndexSet selected_row_indexes_in_column(std::int64_t column) const;
         /**
-     * @brief Calls `-[NSBrowser sendAction]`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSBrowser sendAction]`.
+         * @return The converted Objective-C result.
+         */
         bool send_action() const;
         /**
-     * @brief Calls `-[NSBrowser setCellClass:]`.
-     * @param factory_id Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSBrowser setCellClass:]`.
+         * @param factory_id Argument converted to the Objective-C parameter of the same role.
+         */
         void set_cell_class(const std::string& factory_id) const;
         /**
-     * @brief Calls `-[NSBrowser setDefaultColumnWidth:]`.
-     * @details Persistently sets the default width for new columns which don't otherwise have initial width from either defaults or the delegate. This method replaces -setWidth:ofColumn: with a columnIndex of -1.
-     * @param column_width Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSBrowser setDefaultColumnWidth:]`.
+         * @details Persistently sets the default width for new columns which don't otherwise have initial width from either defaults or the delegate. This method replaces -setWidth:ofColumn: with a columnIndex of -1.
+         * @param column_width Argument converted to the Objective-C parameter of the same role.
+         */
         void set_default_column_width(double column_width) const;
         /**
-     * @brief Calls `-[NSBrowser setDraggingSourceOperationMask:forLocal:]`.
-     * @details Configures the value returned from -draggingSourceOperationMaskForLocal:. An isLocal value of YES indicates that 'mask' applies when the destination object is in the same application. By default, NSDragOperationEvery will be returned. An isLocal value of NO indicates that 'mask' applies when the destination object in an application outside the receiver's application. By default, NSDragOperationNone is returned. NSBrowser will save the values you set for each isLocal setting. You typically will invoke this method, and not override it.
-     * @param mask Argument converted to the Objective-C parameter of the same role.
-     * @param is_local Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSBrowser setDraggingSourceOperationMask:forLocal:]`.
+         * @details Configures the value returned from -draggingSourceOperationMaskForLocal:. An isLocal value of YES indicates that 'mask' applies when the destination object is in the same application. By default, NSDragOperationEvery will be returned. An isLocal value of NO indicates that 'mask' applies when the destination object in an application outside the receiver's application. By default, NSDragOperationNone is returned. NSBrowser will save the values you set for each isLocal setting. You typically will invoke this method, and not override it.
+         * @param mask Argument converted to the Objective-C parameter of the same role.
+         * @param is_local Argument converted to the Objective-C parameter of the same role.
+         */
         void set_dragging_source_operation_mask(DragOperation mask, bool is_local) const;
         /**
-     * @brief Calls `-[NSBrowser setPath:]`.
-     * @param path Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSBrowser setPath:]`.
+         * @param path Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool set_path(const std::string& path) const;
         /**
-     * @brief Calls `-[NSBrowser setTitle:ofColumn:]`.
-     * @param string Argument converted to the Objective-C parameter of the same role.
-     * @param column Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSBrowser setTitle:ofColumn:]`.
+         * @param string Argument converted to the Objective-C parameter of the same role.
+         * @param column Argument converted to the Objective-C parameter of the same role.
+         */
         void set_title(const std::string& string, std::int64_t column) const;
         /**
-     * @brief Calls `-[NSBrowser setWidth:ofColumn:]`.
-     * @details setWidth:ofColumn: does nothing if columnResizingType is NSBrowserAutoColumnResizing. Otherwise, Sets the width of the specified column. Due to binary compatibility constraints, you may still set the default width for new columns by passing a columnIndex of -1; you are encouraged to use -setDefaultColumnWidth: instead. NSBrowserColumnConfigurationDidChangeNotification will be posted (not immediately) if necessary. The receiver will autosave its column configuration if necessary.
-     * @param column_width Argument converted to the Objective-C parameter of the same role.
-     * @param column_index Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSBrowser setWidth:ofColumn:]`.
+         * @details setWidth:ofColumn: does nothing if columnResizingType is NSBrowserAutoColumnResizing. Otherwise, Sets the width of the specified column. Due to binary compatibility constraints, you may still set the default width for new columns by passing a columnIndex of -1; you are encouraged to use -setDefaultColumnWidth: instead. NSBrowserColumnConfigurationDidChangeNotification will be posted (not immediately) if necessary. The receiver will autosave its column configuration if necessary.
+         * @param column_width Argument converted to the Objective-C parameter of the same role.
+         * @param column_index Argument converted to the Objective-C parameter of the same role.
+         */
         void set_width(double column_width, std::int64_t column_index) const;
         /**
-     * @brief Calls `-[NSBrowser tile]`.
-     */
+         * @brief Calls `-[NSBrowser tile]`.
+         */
         void tile() const;
         /**
-     * @brief Calls `-[NSBrowser titleFrameOfColumn:]`.
-     * @param column Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSBrowser titleFrameOfColumn:]`.
+         * @param column Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Rect title_frame_of_column(std::int64_t column) const;
         /**
-     * @brief Calls `-[NSBrowser titleOfColumn:]`.
-     * @param column Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSBrowser titleOfColumn:]`.
+         * @param column Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::string title_of_column(std::int64_t column) const;
         /**
-     * @brief Calls `-[NSBrowser validateVisibleColumns]`.
-     */
+         * @brief Calls `-[NSBrowser validateVisibleColumns]`.
+         */
         void validate_visible_columns() const;
         /**
-     * @brief Calls `-[NSBrowser widthOfColumn:]`.
-     * @param column Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSBrowser widthOfColumn:]`.
+         * @param column Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         double width_of_column(std::int64_t column) const;
         /**
-     * @brief Returns the `allowsBranchSelection` property of `NSBrowser`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `allowsBranchSelection` property of `NSBrowser`.
+         * @return The converted Objective-C result.
+         */
         bool allows_branch_selection() const;
         /**
-     * @brief Sets the `allowsBranchSelection` property of `NSBrowser`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `allowsBranchSelection` property of `NSBrowser`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_allows_branch_selection(bool value) const;
         /**
-     * @brief Returns the `allowsEmptySelection` property of `NSBrowser`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `allowsEmptySelection` property of `NSBrowser`.
+         * @return The converted Objective-C result.
+         */
         bool allows_empty_selection() const;
         /**
-     * @brief Sets the `allowsEmptySelection` property of `NSBrowser`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `allowsEmptySelection` property of `NSBrowser`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_allows_empty_selection(bool value) const;
         /**
-     * @brief Returns the `allowsMultipleSelection` property of `NSBrowser`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `allowsMultipleSelection` property of `NSBrowser`.
+         * @return The converted Objective-C result.
+         */
         bool allows_multiple_selection() const;
         /**
-     * @brief Sets the `allowsMultipleSelection` property of `NSBrowser`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `allowsMultipleSelection` property of `NSBrowser`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_allows_multiple_selection(bool value) const;
         /**
-     * @brief Returns the `allowsTypeSelect` property of `NSBrowser`.
-     * @details Allow type selection in this NSBrowser. The default for 'allowsTypeSelect' is YES.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `allowsTypeSelect` property of `NSBrowser`.
+         * @details Allow type selection in this NSBrowser. The default for 'allowsTypeSelect' is YES.
+         * @return The converted Objective-C result.
+         */
         bool allows_type_select() const;
         /**
-     * @brief Sets the `allowsTypeSelect` property of `NSBrowser`.
-     * @details Allow type selection in this NSBrowser. The default for 'allowsTypeSelect' is YES.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `allowsTypeSelect` property of `NSBrowser`.
+         * @details Allow type selection in this NSBrowser. The default for 'allowsTypeSelect' is YES.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_allows_type_select(bool value) const;
         /**
-     * @brief Returns the `autohidesScroller` property of `NSBrowser`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `autohidesScroller` property of `NSBrowser`.
+         * @return The converted Objective-C result.
+         */
         bool autohides_scroller() const;
         /**
-     * @brief Sets the `autohidesScroller` property of `NSBrowser`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `autohidesScroller` property of `NSBrowser`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_autohides_scroller(bool value) const;
         /**
-     * @brief Returns the `backgroundColor` property of `NSBrowser`.
-     * @details The background color to be drawn. By default, it will be set [NSColor whiteColor]. You can use [NSColor clearColor] to make the background transparent. NSBrowser will return YES from isOpaque if the backgroundColor has an alphaComponent of 1.0 and it doesn't have a title, otherwise, it will return NO. Calling setBackgroundColor: will cause all NSMatrix instances have setDrawsBackground:NO be called in order for the NSBrowser's background color to show through. When drawing with the background color, NSCompositeSourceOver is used for the compositing operation.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `backgroundColor` property of `NSBrowser`.
+         * @details The background color to be drawn. By default, it will be set [NSColor whiteColor]. You can use [NSColor clearColor] to make the background transparent. NSBrowser will return YES from isOpaque if the backgroundColor has an alphaComponent of 1.0 and it doesn't have a title, otherwise, it will return NO. Calling setBackgroundColor: will cause all NSMatrix instances have setDrawsBackground:NO be called in order for the NSBrowser's background color to show through. When drawing with the background color, NSCompositeSourceOver is used for the compositing operation.
+         * @return The converted Objective-C result.
+         */
         Color background_color() const;
         /**
-     * @brief Sets the `backgroundColor` property of `NSBrowser`.
-     * @details The background color to be drawn. By default, it will be set [NSColor whiteColor]. You can use [NSColor clearColor] to make the background transparent. NSBrowser will return YES from isOpaque if the backgroundColor has an alphaComponent of 1.0 and it doesn't have a title, otherwise, it will return NO. Calling setBackgroundColor: will cause all NSMatrix instances have setDrawsBackground:NO be called in order for the NSBrowser's background color to show through. When drawing with the background color, NSCompositeSourceOver is used for the compositing operation.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `backgroundColor` property of `NSBrowser`.
+         * @details The background color to be drawn. By default, it will be set [NSColor whiteColor]. You can use [NSColor clearColor] to make the background transparent. NSBrowser will return YES from isOpaque if the backgroundColor has an alphaComponent of 1.0 and it doesn't have a title, otherwise, it will return NO. Calling setBackgroundColor: will cause all NSMatrix instances have setDrawsBackground:NO be called in order for the NSBrowser's background color to show through. When drawing with the background color, NSCompositeSourceOver is used for the compositing operation.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_background_color(const Color& value) const;
         /**
-     * @brief Returns the `cellClass` property of `NSBrowser`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `cellClass` property of `NSBrowser`.
+         * @return The converted Objective-C result.
+         */
         static std::string cell_class();
         /**
-     * @brief Returns the `cellPrototype` property of `NSBrowser`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `cellPrototype` property of `NSBrowser`.
+         * @return The converted Objective-C result.
+         */
         Object cell_prototype() const;
         /**
-     * @brief Sets the `cellPrototype` property of `NSBrowser`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `cellPrototype` property of `NSBrowser`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_cell_prototype(const Object& value) const;
         /**
-     * @brief Returns the `clickedColumn` property of `NSBrowser`.
-     * @details Returns the column and row clicked on to display a context menu. These methods will return -1 when no menu is active.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `clickedColumn` property of `NSBrowser`.
+         * @details Returns the column and row clicked on to display a context menu. These methods will return -1 when no menu is active.
+         * @return The converted Objective-C result.
+         */
         std::int64_t clicked_column() const;
         /**
-     * @brief Returns the `clickedRow` property of `NSBrowser`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `clickedRow` property of `NSBrowser`.
+         * @return The converted Objective-C result.
+         */
         std::int64_t clicked_row() const;
         /**
-     * @brief Returns the `columnResizingType` property of `NSBrowser`.
-     * @details Default is NSBrowserAutoColumnResizing. This setting is persistent.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `columnResizingType` property of `NSBrowser`.
+         * @details Default is NSBrowserAutoColumnResizing. This setting is persistent.
+         * @return The converted Objective-C result.
+         */
         BrowserColumnResizingType column_resizing_type() const;
         /**
-     * @brief Sets the `columnResizingType` property of `NSBrowser`.
-     * @details Default is NSBrowserAutoColumnResizing. This setting is persistent.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `columnResizingType` property of `NSBrowser`.
+         * @details Default is NSBrowserAutoColumnResizing. This setting is persistent.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_column_resizing_type(BrowserColumnResizingType value) const;
         /**
-     * @brief Returns the `columnsAutosaveName` property of `NSBrowser`.
-     * @details Sets the name used to automatically save the receivers column configuration. This setting is persistent. If name is different from the current name, this method also reads in the saved column configuration for the new name and applies the values to the browser. Column configuration is defined as an array of column content widths. One width is saved for each level the user has reached. That is, browser saves column width based on depth, not based on unique paths. To do more complex column persistence, you should register for NSBrowserColumnConfigurationDidChangeNotifications and handle persistence yourself.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `columnsAutosaveName` property of `NSBrowser`.
+         * @details Sets the name used to automatically save the receivers column configuration. This setting is persistent. If name is different from the current name, this method also reads in the saved column configuration for the new name and applies the values to the browser. Column configuration is defined as an array of column content widths. One width is saved for each level the user has reached. That is, browser saves column width based on depth, not based on unique paths. To do more complex column persistence, you should register for NSBrowserColumnConfigurationDidChangeNotifications and handle persistence yourself.
+         * @return The converted Objective-C result.
+         */
         std::string columns_autosave_name() const;
         /**
-     * @brief Sets the `columnsAutosaveName` property of `NSBrowser`.
-     * @details Sets the name used to automatically save the receivers column configuration. This setting is persistent. If name is different from the current name, this method also reads in the saved column configuration for the new name and applies the values to the browser. Column configuration is defined as an array of column content widths. One width is saved for each level the user has reached. That is, browser saves column width based on depth, not based on unique paths. To do more complex column persistence, you should register for NSBrowserColumnConfigurationDidChangeNotifications and handle persistence yourself.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `columnsAutosaveName` property of `NSBrowser`.
+         * @details Sets the name used to automatically save the receivers column configuration. This setting is persistent. If name is different from the current name, this method also reads in the saved column configuration for the new name and applies the values to the browser. Column configuration is defined as an array of column content widths. One width is saved for each level the user has reached. That is, browser saves column width based on depth, not based on unique paths. To do more complex column persistence, you should register for NSBrowserColumnConfigurationDidChangeNotifications and handle persistence yourself.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_columns_autosave_name(const std::string& value) const;
         /**
-     * @brief Returns the `doubleAction` property of `NSBrowser`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `doubleAction` property of `NSBrowser`.
+         * @return The converted Objective-C result.
+         */
         std::string double_action() const;
         /**
-     * @brief Sets the `doubleAction` property of `NSBrowser`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `doubleAction` property of `NSBrowser`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_double_action(const std::string& value) const;
         /**
-     * @brief Returns the `firstVisibleColumn` property of `NSBrowser`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `firstVisibleColumn` property of `NSBrowser`.
+         * @return The converted Objective-C result.
+         */
         std::int64_t first_visible_column() const;
         /**
-     * @brief Returns the `hasHorizontalScroller` property of `NSBrowser`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `hasHorizontalScroller` property of `NSBrowser`.
+         * @return The converted Objective-C result.
+         */
         bool has_horizontal_scroller() const;
         /**
-     * @brief Sets the `hasHorizontalScroller` property of `NSBrowser`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `hasHorizontalScroller` property of `NSBrowser`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_has_horizontal_scroller(bool value) const;
         /**
-     * @brief Returns the `lastColumn` property of `NSBrowser`.
-     * @details Returns the last loaded column. This is equal to the total number of columns minus 1. When setting. 'column' must be equal to or less than -lastColumn. To add more columns, use -addColumn.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `lastColumn` property of `NSBrowser`.
+         * @details Returns the last loaded column. This is equal to the total number of columns minus 1. When setting. 'column' must be equal to or less than -lastColumn. To add more columns, use -addColumn.
+         * @return The converted Objective-C result.
+         */
         std::int64_t last_column() const;
         /**
-     * @brief Sets the `lastColumn` property of `NSBrowser`.
-     * @details Returns the last loaded column. This is equal to the total number of columns minus 1. When setting. 'column' must be equal to or less than -lastColumn. To add more columns, use -addColumn.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `lastColumn` property of `NSBrowser`.
+         * @details Returns the last loaded column. This is equal to the total number of columns minus 1. When setting. 'column' must be equal to or less than -lastColumn. To add more columns, use -addColumn.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_last_column(std::int64_t value) const;
         /**
-     * @brief Returns the `lastVisibleColumn` property of `NSBrowser`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `lastVisibleColumn` property of `NSBrowser`.
+         * @return The converted Objective-C result.
+         */
         std::int64_t last_visible_column() const;
         /**
-     * @brief Returns the `loaded` property of `NSBrowser`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `loaded` property of `NSBrowser`.
+         * @return The converted Objective-C result.
+         */
         bool is_loaded() const;
         /**
-     * @brief Returns the `maxVisibleColumns` property of `NSBrowser`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `maxVisibleColumns` property of `NSBrowser`.
+         * @return The converted Objective-C result.
+         */
         std::int64_t max_visible_columns() const;
         /**
-     * @brief Sets the `maxVisibleColumns` property of `NSBrowser`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `maxVisibleColumns` property of `NSBrowser`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_max_visible_columns(std::int64_t value) const;
         /**
-     * @brief Returns the `minColumnWidth` property of `NSBrowser`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `minColumnWidth` property of `NSBrowser`.
+         * @return The converted Objective-C result.
+         */
         double min_column_width() const;
         /**
-     * @brief Sets the `minColumnWidth` property of `NSBrowser`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `minColumnWidth` property of `NSBrowser`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_min_column_width(double value) const;
         /**
-     * @brief Returns the `numberOfVisibleColumns` property of `NSBrowser`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `numberOfVisibleColumns` property of `NSBrowser`.
+         * @return The converted Objective-C result.
+         */
         std::int64_t number_of_visible_columns() const;
         /**
-     * @brief Returns the `pathSeparator` property of `NSBrowser`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `pathSeparator` property of `NSBrowser`.
+         * @return The converted Objective-C result.
+         */
         std::string path_separator() const;
         /**
-     * @brief Sets the `pathSeparator` property of `NSBrowser`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `pathSeparator` property of `NSBrowser`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_path_separator(const std::string& value) const;
         /**
-     * @brief Returns the `prefersAllColumnUserResizing` property of `NSBrowser`.
-     * @details Default is NO. This setting is persistent. This setting only applies to NSBrowserUserColumnResizing type browsers. If YES, the browser defaults to resizing all columns simultaneously, otherwise it defaults to single column resizing. Holding down the option key while resizing switches the type of resizing used.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `prefersAllColumnUserResizing` property of `NSBrowser`.
+         * @details Default is NO. This setting is persistent. This setting only applies to NSBrowserUserColumnResizing type browsers. If YES, the browser defaults to resizing all columns simultaneously, otherwise it defaults to single column resizing. Holding down the option key while resizing switches the type of resizing used.
+         * @return The converted Objective-C result.
+         */
         bool prefers_all_column_user_resizing() const;
         /**
-     * @brief Sets the `prefersAllColumnUserResizing` property of `NSBrowser`.
-     * @details Default is NO. This setting is persistent. This setting only applies to NSBrowserUserColumnResizing type browsers. If YES, the browser defaults to resizing all columns simultaneously, otherwise it defaults to single column resizing. Holding down the option key while resizing switches the type of resizing used.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `prefersAllColumnUserResizing` property of `NSBrowser`.
+         * @details Default is NO. This setting is persistent. This setting only applies to NSBrowserUserColumnResizing type browsers. If YES, the browser defaults to resizing all columns simultaneously, otherwise it defaults to single column resizing. Holding down the option key while resizing switches the type of resizing used.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_prefers_all_column_user_resizing(bool value) const;
         /**
-     * @brief Returns the `reusesColumns` property of `NSBrowser`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `reusesColumns` property of `NSBrowser`.
+         * @return The converted Objective-C result.
+         */
         bool reuses_columns() const;
         /**
-     * @brief Sets the `reusesColumns` property of `NSBrowser`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `reusesColumns` property of `NSBrowser`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_reuses_columns(bool value) const;
         /**
-     * @brief Returns the `rowHeight` property of `NSBrowser`.
-     * @details Get and set the rowHeight. The value must be greater than 0. Calling -setRowHeight: with a non-pixel aligning (fractional) value will be forced to a pixel aligning (integral) value. For variable row height browsers (ones that have the delegate implement -browser:heightOfRow:column:), -rowHeight will be used to draw alternating rows past the last row in each browser column. The default value is 17.0. Note: The rowHeight methods are only valid when using the item delegate methods introduced in Mac OS 10.6. (see NSObject(NSBrowserDelegate)). An exception is thrown if using the older matrix delegate methods
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `rowHeight` property of `NSBrowser`.
+         * @details Get and set the rowHeight. The value must be greater than 0. Calling -setRowHeight: with a non-pixel aligning (fractional) value will be forced to a pixel aligning (integral) value. For variable row height browsers (ones that have the delegate implement -browser:heightOfRow:column:), -rowHeight will be used to draw alternating rows past the last row in each browser column. The default value is 17.0. Note: The rowHeight methods are only valid when using the item delegate methods introduced in Mac OS 10.6. (see NSObject(NSBrowserDelegate)). An exception is thrown if using the older matrix delegate methods
+         * @return The converted Objective-C result.
+         */
         double row_height() const;
         /**
-     * @brief Sets the `rowHeight` property of `NSBrowser`.
-     * @details Get and set the rowHeight. The value must be greater than 0. Calling -setRowHeight: with a non-pixel aligning (fractional) value will be forced to a pixel aligning (integral) value. For variable row height browsers (ones that have the delegate implement -browser:heightOfRow:column:), -rowHeight will be used to draw alternating rows past the last row in each browser column. The default value is 17.0. Note: The rowHeight methods are only valid when using the item delegate methods introduced in Mac OS 10.6. (see NSObject(NSBrowserDelegate)). An exception is thrown if using the older matrix delegate methods
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `rowHeight` property of `NSBrowser`.
+         * @details Get and set the rowHeight. The value must be greater than 0. Calling -setRowHeight: with a non-pixel aligning (fractional) value will be forced to a pixel aligning (integral) value. For variable row height browsers (ones that have the delegate implement -browser:heightOfRow:column:), -rowHeight will be used to draw alternating rows past the last row in each browser column. The default value is 17.0. Note: The rowHeight methods are only valid when using the item delegate methods introduced in Mac OS 10.6. (see NSObject(NSBrowserDelegate)). An exception is thrown if using the older matrix delegate methods
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_row_height(double value) const;
         /**
-     * @brief Returns the `selectedCell` property of `NSBrowser`.
-     * @details For the item based browser, selectedCell returns the prepared cell at the selected row in the selected column.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `selectedCell` property of `NSBrowser`.
+         * @details For the item based browser, selectedCell returns the prepared cell at the selected row in the selected column.
+         * @return The converted Objective-C result.
+         */
         Object selected_cell() const;
         /**
-     * @brief Returns the `selectedCells` property of `NSBrowser`.
-     * @details For the item based browser, selectedCells returns a copy of all prepared cells in the selected row in the selected column
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `selectedCells` property of `NSBrowser`.
+         * @details For the item based browser, selectedCells returns a copy of all prepared cells in the selected row in the selected column
+         * @return The converted Objective-C result.
+         */
         std::vector<Cell> selected_cells() const;
         /**
-     * @brief Returns the `selectedColumn` property of `NSBrowser`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `selectedColumn` property of `NSBrowser`.
+         * @return The converted Objective-C result.
+         */
         std::int64_t selected_column() const;
         /**
-     * @brief Returns the `selectionIndexPath` property of `NSBrowser`.
-     * @details Returns the index path of the item selected in the browser, or nil if there is no selection. The setter sets the browser's selection to the item at path. Throws an exception if the path is invalid. This method can only be used if the delegate implements the item data source methods.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `selectionIndexPath` property of `NSBrowser`.
+         * @details Returns the index path of the item selected in the browser, or nil if there is no selection. The setter sets the browser's selection to the item at path. Throws an exception if the path is invalid. This method can only be used if the delegate implements the item data source methods.
+         * @return The converted Objective-C result.
+         */
         IndexPath selection_index_path() const;
         /**
-     * @brief Sets the `selectionIndexPath` property of `NSBrowser`.
-     * @details Returns the index path of the item selected in the browser, or nil if there is no selection. The setter sets the browser's selection to the item at path. Throws an exception if the path is invalid. This method can only be used if the delegate implements the item data source methods.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `selectionIndexPath` property of `NSBrowser`.
+         * @details Returns the index path of the item selected in the browser, or nil if there is no selection. The setter sets the browser's selection to the item at path. Throws an exception if the path is invalid. This method can only be used if the delegate implements the item data source methods.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_selection_index_path(const IndexPath& value) const;
         /**
-     * @brief Returns the `selectionIndexPaths` property of `NSBrowser`.
-     * @details Returns the index paths of all items selected in the browser. The setter sets the browser's selection to the specified index paths. Throws an exception if any of the paths are invalid. This method can only be used if the delegate implements the item data source methods.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `selectionIndexPaths` property of `NSBrowser`.
+         * @details Returns the index paths of all items selected in the browser. The setter sets the browser's selection to the specified index paths. Throws an exception if any of the paths are invalid. This method can only be used if the delegate implements the item data source methods.
+         * @return The converted Objective-C result.
+         */
         std::vector<IndexPath> selection_index_paths() const;
         /**
-     * @brief Sets the `selectionIndexPaths` property of `NSBrowser`.
-     * @details Returns the index paths of all items selected in the browser. The setter sets the browser's selection to the specified index paths. Throws an exception if any of the paths are invalid. This method can only be used if the delegate implements the item data source methods.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `selectionIndexPaths` property of `NSBrowser`.
+         * @details Returns the index paths of all items selected in the browser. The setter sets the browser's selection to the specified index paths. Throws an exception if any of the paths are invalid. This method can only be used if the delegate implements the item data source methods.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_selection_index_paths(const std::vector<IndexPath>& value) const;
         /**
-     * @brief Returns the `sendsActionOnArrowKeys` property of `NSBrowser`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `sendsActionOnArrowKeys` property of `NSBrowser`.
+         * @return The converted Objective-C result.
+         */
         bool sends_action_on_arrow_keys() const;
         /**
-     * @brief Sets the `sendsActionOnArrowKeys` property of `NSBrowser`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `sendsActionOnArrowKeys` property of `NSBrowser`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_sends_action_on_arrow_keys(bool value) const;
         /**
-     * @brief Returns the `separatesColumns` property of `NSBrowser`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `separatesColumns` property of `NSBrowser`.
+         * @return The converted Objective-C result.
+         */
         bool separates_columns() const;
         /**
-     * @brief Sets the `separatesColumns` property of `NSBrowser`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `separatesColumns` property of `NSBrowser`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_separates_columns(bool value) const;
         /**
-     * @brief Returns the `takesTitleFromPreviousColumn` property of `NSBrowser`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `takesTitleFromPreviousColumn` property of `NSBrowser`.
+         * @return The converted Objective-C result.
+         */
         bool takes_title_from_previous_column() const;
         /**
-     * @brief Sets the `takesTitleFromPreviousColumn` property of `NSBrowser`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `takesTitleFromPreviousColumn` property of `NSBrowser`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_takes_title_from_previous_column(bool value) const;
         /**
-     * @brief Returns the `titleHeight` property of `NSBrowser`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `titleHeight` property of `NSBrowser`.
+         * @return The converted Objective-C result.
+         */
         double title_height() const;
         /**
-     * @brief Returns the `titled` property of `NSBrowser`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `titled` property of `NSBrowser`.
+         * @return The converted Objective-C result.
+         */
         bool is_titled() const;
         /**
-     * @brief Sets the `titled` property of `NSBrowser`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `titled` property of `NSBrowser`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_titled(bool value) const;
         /// @brief Signal for the delegate/data-source method behind `number_of_rows_in_column`; connect a callback with `number_of_rows_in_column().connect(...)`.
         Signal<Browser, std::int64_t(std::int64_t)> number_of_rows_in_column() const

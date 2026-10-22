@@ -33,16 +33,16 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit Pipe(Adopt adopt);
         /**
-     * @brief Returns the `fileHandleForReading` property of `NSPipe`.
-     * @details The receiver's read file handle.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `fileHandleForReading` property of `NSPipe`.
+         * @details The receiver's read file handle.
+         * @return The converted Objective-C result.
+         */
         FileHandle file_handle_for_reading() const;
         /**
-     * @brief Returns the `fileHandleForWriting` property of `NSPipe`.
-     * @details The receiver's write file handle.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `fileHandleForWriting` property of `NSPipe`.
+         * @details The receiver's write file handle.
+         * @return The converted Objective-C result.
+         */
         FileHandle file_handle_for_writing() const;
     };
 }

@@ -62,126 +62,126 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit Number(Adopt adopt);
         /**
-     * @brief Calls `-[NSNumber compare:]`.
-     * @details Returns an 'NSComparisonResult' value that indicates whether the number object's value is greater than, equal to, or less than a given number. - Parameter otherNumber: The number to compare to the number object's value. This value must not be 'nil'. - Returns: 'NSOrderedAscending' if the value of 'otherNumber' is greater than the number object's, 'NSOrderedSame' if they're equal, and 'NSOrderedDescending' if the value of 'otherNumber' is less than the number object's. The ''NSNumber/compare:'' method follows the standard C rules for type conversion. For example, if you compare an 'NSNumber' object that has an integer value with an 'NSNumber' object that has a floating point value, the integer value is converted to a floating-point value for comparison.
-     * @param other_number Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSNumber compare:]`.
+         * @details Returns an 'NSComparisonResult' value that indicates whether the number object's value is greater than, equal to, or less than a given number. - Parameter otherNumber: The number to compare to the number object's value. This value must not be 'nil'. - Returns: 'NSOrderedAscending' if the value of 'otherNumber' is greater than the number object's, 'NSOrderedSame' if they're equal, and 'NSOrderedDescending' if the value of 'otherNumber' is less than the number object's. The ''NSNumber/compare:'' method follows the standard C rules for type conversion. For example, if you compare an 'NSNumber' object that has an integer value with an 'NSNumber' object that has a floating point value, the integer value is converted to a floating-point value for comparison.
+         * @param other_number Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         ComparisonResult compare(const Number& other_number) const;
         /**
-     * @brief Calls `-[NSNumber descriptionWithLocale:]`.
-     * @details Returns a string that represents the contents of the number object for a given locale. - Parameter locale: An object containing locale information with which to format the description. Use 'nil' if you don't want the description formatted. - Returns: A string that represents the contents of the number object formatted using the locale information in 'locale'.
-     * @param locale Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSNumber descriptionWithLocale:]`.
+         * @details Returns a string that represents the contents of the number object for a given locale. - Parameter locale: An object containing locale information with which to format the description. Use 'nil' if you don't want the description formatted. - Returns: A string that represents the contents of the number object formatted using the locale information in 'locale'.
+         * @param locale Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::string description_with_locale(const Object& locale) const;
         /**
-     * @brief Calls `-[NSNumber isEqualToNumber:]`.
-     * @details Returns a Boolean value that indicates whether the number object's value and a given number are equal. - Parameter number: The number to compare to the number object's value. - Returns: 'YES' if the number object's value and 'number' are equal; otherwise, 'NO'. Two 'NSNumber' objects are considered equal if they have the same id values or if they have equivalent values (as determined by the ''NSNumber/compare:'' method). This method is more efficient than ''NSNumber/compare:'' if you know the two objects are numbers.
-     * @param number Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSNumber isEqualToNumber:]`.
+         * @details Returns a Boolean value that indicates whether the number object's value and a given number are equal. - Parameter number: The number to compare to the number object's value. - Returns: 'YES' if the number object's value and 'number' are equal; otherwise, 'NO'. Two 'NSNumber' objects are considered equal if they have the same id values or if they have equivalent values (as determined by the ''NSNumber/compare:'' method). This method is more efficient than ''NSNumber/compare:'' if you know the two objects are numbers.
+         * @param number Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool is_equal_to_number(const Number& number) const;
         /**
-     * @brief Returns the `boolValue` property of `NSNumber`.
-     * @details The number object's value expressed as a Boolean value. A '0' value always means 'NO', and any nonzero value is interpreted as 'YES'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `boolValue` property of `NSNumber`.
+         * @details The number object's value expressed as a Boolean value. A '0' value always means 'NO', and any nonzero value is interpreted as 'YES'.
+         * @return The converted Objective-C result.
+         */
         bool bool_value() const;
         /**
-     * @brief Returns the `charValue` property of `NSNumber`.
-     * @details The number object's value expressed as a 'char'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `charValue` property of `NSNumber`.
+         * @details The number object's value expressed as a 'char'.
+         * @return The converted Objective-C result.
+         */
         std::int8_t char_value() const;
         /**
-     * @brief Returns the `decimalValue` property of `NSNumber`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `decimalValue` property of `NSNumber`.
+         * @return The converted Objective-C result.
+         */
         Decimal decimal_value() const;
         /**
-     * @brief Returns the `doubleValue` property of `NSNumber`.
-     * @details The number object's value expressed as a 'double'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `doubleValue` property of `NSNumber`.
+         * @details The number object's value expressed as a 'double'.
+         * @return The converted Objective-C result.
+         */
         double double_value() const;
         /**
-     * @brief Returns the `floatValue` property of `NSNumber`.
-     * @details The number object's value expressed as a 'float'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `floatValue` property of `NSNumber`.
+         * @details The number object's value expressed as a 'float'.
+         * @return The converted Objective-C result.
+         */
         float float_value() const;
         /**
-     * @brief Returns the `intValue` property of `NSNumber`.
-     * @details The number object's value expressed as an 'int'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `intValue` property of `NSNumber`.
+         * @details The number object's value expressed as an 'int'.
+         * @return The converted Objective-C result.
+         */
         int int_value() const;
         /**
-     * @brief Returns the `integerValue` property of `NSNumber`.
-     * @details The number object's value expressed as an 'NSInteger'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `integerValue` property of `NSNumber`.
+         * @details The number object's value expressed as an 'NSInteger'.
+         * @return The converted Objective-C result.
+         */
         std::int64_t integer_value() const;
         /**
-     * @brief Returns the `longLongValue` property of `NSNumber`.
-     * @details The number object's value expressed as a 'long long'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `longLongValue` property of `NSNumber`.
+         * @details The number object's value expressed as a 'long long'.
+         * @return The converted Objective-C result.
+         */
         std::int64_t long_long_value() const;
         /**
-     * @brief Returns the `longValue` property of `NSNumber`.
-     * @details The number object's value expressed as a 'long'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `longValue` property of `NSNumber`.
+         * @details The number object's value expressed as a 'long'.
+         * @return The converted Objective-C result.
+         */
         std::int64_t long_value() const;
         /**
-     * @brief Returns the `shortValue` property of `NSNumber`.
-     * @details The number object's value expressed as a 'short'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `shortValue` property of `NSNumber`.
+         * @details The number object's value expressed as a 'short'.
+         * @return The converted Objective-C result.
+         */
         std::int16_t short_value() const;
         /**
-     * @brief Returns the `stringValue` property of `NSNumber`.
-     * @details The number object's value expressed as a human-readable string. The string is created by invoking ''NSNumber/descriptionWithLocale:'' where locale is 'nil'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `stringValue` property of `NSNumber`.
+         * @details The number object's value expressed as a human-readable string. The string is created by invoking ''NSNumber/descriptionWithLocale:'' where locale is 'nil'.
+         * @return The converted Objective-C result.
+         */
         std::string string_value() const;
         /**
-     * @brief Returns the `unsignedCharValue` property of `NSNumber`.
-     * @details The number object's value expressed as an 'unsigned char'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `unsignedCharValue` property of `NSNumber`.
+         * @details The number object's value expressed as an 'unsigned char'.
+         * @return The converted Objective-C result.
+         */
         std::uint8_t unsigned_char_value() const;
         /**
-     * @brief Returns the `unsignedIntValue` property of `NSNumber`.
-     * @details The number object's value expressed as an 'unsigned int'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `unsignedIntValue` property of `NSNumber`.
+         * @details The number object's value expressed as an 'unsigned int'.
+         * @return The converted Objective-C result.
+         */
         unsigned int unsigned_int_value() const;
         /**
-     * @brief Returns the `unsignedIntegerValue` property of `NSNumber`.
-     * @details The number object's value expressed as an 'NSUInteger'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `unsignedIntegerValue` property of `NSNumber`.
+         * @details The number object's value expressed as an 'NSUInteger'.
+         * @return The converted Objective-C result.
+         */
         std::uint64_t unsigned_integer_value() const;
         /**
-     * @brief Returns the `unsignedLongLongValue` property of `NSNumber`.
-     * @details The number object's value expressed as an 'unsigned long long'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `unsignedLongLongValue` property of `NSNumber`.
+         * @details The number object's value expressed as an 'unsigned long long'.
+         * @return The converted Objective-C result.
+         */
         std::uint64_t unsigned_long_long_value() const;
         /**
-     * @brief Returns the `unsignedLongValue` property of `NSNumber`.
-     * @details The number object's value expressed as an 'unsigned long'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `unsignedLongValue` property of `NSNumber`.
+         * @details The number object's value expressed as an 'unsigned long'.
+         * @return The converted Objective-C result.
+         */
         std::uint64_t unsigned_long_value() const;
         /**
-     * @brief Returns the `unsignedShortValue` property of `NSNumber`.
-     * @details The number object's value expressed as an 'unsigned short'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `unsignedShortValue` property of `NSNumber`.
+         * @details The number object's value expressed as an 'unsigned short'.
+         * @return The converted Objective-C result.
+         */
         std::uint16_t unsigned_short_value() const;
     };
 }

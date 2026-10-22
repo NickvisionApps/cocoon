@@ -42,35 +42,35 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit PDFImageRep(Adopt adopt);
         /**
-     * @brief Calls `+[NSPDFImageRep imageRepWithData:]`.
-     * @param pdf_data Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSPDFImageRep imageRepWithData:]`.
+         * @param pdf_data Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static PDFImageRep image_rep_with_data(const std::vector<std::uint8_t>& pdf_data);
         /**
-     * @brief Returns the `PDFRepresentation` property of `NSPDFImageRep`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `PDFRepresentation` property of `NSPDFImageRep`.
+         * @return The converted Objective-C result.
+         */
         std::vector<std::uint8_t> pdf_representation() const;
         /**
-     * @brief Returns the `bounds` property of `NSPDFImageRep`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `bounds` property of `NSPDFImageRep`.
+         * @return The converted Objective-C result.
+         */
         Rect bounds() const;
         /**
-     * @brief Returns the `currentPage` property of `NSPDFImageRep`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `currentPage` property of `NSPDFImageRep`.
+         * @return The converted Objective-C result.
+         */
         std::int64_t current_page() const;
         /**
-     * @brief Sets the `currentPage` property of `NSPDFImageRep`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `currentPage` property of `NSPDFImageRep`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_current_page(std::int64_t value) const;
         /**
-     * @brief Returns the `pageCount` property of `NSPDFImageRep`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `pageCount` property of `NSPDFImageRep`.
+         * @return The converted Objective-C result.
+         */
         std::int64_t page_count() const;
     };
 }

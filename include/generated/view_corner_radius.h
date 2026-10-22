@@ -41,30 +41,30 @@ namespace cocoon
         explicit ViewCornerRadius(Adopt adopt);
 #ifdef COCOON_MACOS_27
         /**
-     * @brief Calls `+[NSViewCornerRadius containerConcentricRadiusWithMinimum:]`.
-     * @details A dynamic corner radius calculated based on the view’s container shape and limited to the provided minimum radius. - Parameter minimumRadius: Corner radius that’s applied when a corner of the view’s container is smaller than the specified radius.
-     * @param minimum_radius Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSViewCornerRadius containerConcentricRadiusWithMinimum:]`.
+         * @details A dynamic corner radius calculated based on the view’s container shape and limited to the provided minimum radius. - Parameter minimumRadius: Corner radius that’s applied when a corner of the view’s container is smaller than the specified radius.
+         * @param minimum_radius Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static ViewCornerRadius container_concentric_radius_with_minimum(double minimum_radius);
 #endif
 
 #ifdef COCOON_MACOS_27
         /**
-     * @brief Calls `+[NSViewCornerRadius fixedRadius:]`.
-     * @details Shorthand initializer for a configuration where all four corners are using a fixed corner radius in points. - Parameter radius: Radius for all the corners.
-     * @param radius Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSViewCornerRadius fixedRadius:]`.
+         * @details Shorthand initializer for a configuration where all four corners are using a fixed corner radius in points. - Parameter radius: Radius for all the corners.
+         * @param radius Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static ViewCornerRadius fixed_radius(double radius);
 #endif
 
 #ifdef COCOON_MACOS_27
         /**
-     * @brief Returns the `containerConcentricRadius` property of `NSViewCornerRadius`.
-     * @details A dynamic corner radius calculated based on the view’s container shape.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `containerConcentricRadius` property of `NSViewCornerRadius`.
+         * @details A dynamic corner radius calculated based on the view’s container shape.
+         * @return The converted Objective-C result.
+         */
         static ViewCornerRadius container_concentric_radius();
 #endif
     };

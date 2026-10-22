@@ -45,47 +45,47 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit TextList(Adopt adopt);
         /**
-     * @brief Calls `-[NSTextList markerForItemNumber:]`.
-     * @details Returns the computed value for a specific ordinal position in the list. - Parameters: - itemNumber: The ordinal position in the list whose computed marker value is desired. The receiver ignores this parameter if 'itemNumber' is less than 1 or ''isOrdered'' is 'false'. - Returns: The computed marker value for 'itemNumber'.
-     * @param item_number Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSTextList markerForItemNumber:]`.
+         * @details Returns the computed value for a specific ordinal position in the list. - Parameters: - itemNumber: The ordinal position in the list whose computed marker value is desired. The receiver ignores this parameter if 'itemNumber' is less than 1 or ''isOrdered'' is 'false'. - Returns: The computed marker value for 'itemNumber'.
+         * @param item_number Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::string marker_for_item_number(std::int64_t item_number) const;
         /**
-     * @brief Returns the `includesTextListMarkers` property of `NSTextList`.
-     * @details A Boolean value that indicates whether TextKit includes text list markers in the contents. The default value is 'false'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `includesTextListMarkers` property of `NSTextList`.
+         * @details A Boolean value that indicates whether TextKit includes text list markers in the contents. The default value is 'false'.
+         * @return The converted Objective-C result.
+         */
         static bool includes_text_list_markers();
         /**
-     * @brief Returns the `listOptions` property of `NSTextList`.
-     * @details The list options mask value of the receiver.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `listOptions` property of `NSTextList`.
+         * @details The list options mask value of the receiver.
+         * @return The converted Objective-C result.
+         */
         TextListOptions list_options() const;
         /**
-     * @brief Returns the `markerFormat` property of `NSTextList`.
-     * @details The marker format string used by the receiver. \#\# See Also - ''NSTextList/init(markerFormat:options:)''
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `markerFormat` property of `NSTextList`.
+         * @details The marker format string used by the receiver. \#\# See Also - ''NSTextList/init(markerFormat:options:)''
+         * @return The converted Objective-C result.
+         */
         std::string marker_format() const;
         /**
-     * @brief Returns the `ordered` property of `NSTextList`.
-     * @details A Boolean value that indicates whether the list is ordered.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `ordered` property of `NSTextList`.
+         * @details A Boolean value that indicates whether the list is ordered.
+         * @return The converted Objective-C result.
+         */
         bool is_ordered() const;
         /**
-     * @brief Returns the `startingItemNumber` property of `NSTextList`.
-     * @details The starting item number for the text list. The default value is '1'. This value will be used only for ordered lists, and ignored in other cases.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `startingItemNumber` property of `NSTextList`.
+         * @details The starting item number for the text list. The default value is '1'. This value will be used only for ordered lists, and ignored in other cases.
+         * @return The converted Objective-C result.
+         */
         std::int64_t starting_item_number() const;
         /**
-     * @brief Sets the `startingItemNumber` property of `NSTextList`.
-     * @details The starting item number for the text list. The default value is '1'. This value will be used only for ordered lists, and ignored in other cases.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `startingItemNumber` property of `NSTextList`.
+         * @details The starting item number for the text list. The default value is '1'. This value will be used only for ordered lists, and ignored in other cases.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_starting_item_number(std::int64_t value) const;
     };
 }

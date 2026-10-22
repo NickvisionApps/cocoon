@@ -52,65 +52,65 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit OpenGLView(Adopt adopt);
         /**
-     * @brief Calls `-[NSOpenGLView clearGLContext]`.
-     */
+         * @brief Calls `-[NSOpenGLView clearGLContext]`.
+         */
         void clear_gl_context() const;
         /**
-     * @brief Calls `+[NSOpenGLView defaultPixelFormat]`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSOpenGLView defaultPixelFormat]`.
+         * @return The converted Objective-C result.
+         */
         static OpenGLPixelFormat default_pixel_format();
         /**
-     * @brief Calls `-[NSOpenGLView prepareOpenGL]`.
-     */
+         * @brief Calls `-[NSOpenGLView prepareOpenGL]`.
+         */
         void prepare_open_gl() const;
         /**
-     * @brief Calls `-[NSOpenGLView reshape]`.
-     */
+         * @brief Calls `-[NSOpenGLView reshape]`.
+         */
         void reshape() const;
         /**
-     * @brief Calls `-[NSOpenGLView update]`.
-     */
+         * @brief Calls `-[NSOpenGLView update]`.
+         */
         void update() const;
         /**
-     * @brief Returns the `openGLContext` property of `NSOpenGLView`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `openGLContext` property of `NSOpenGLView`.
+         * @return The converted Objective-C result.
+         */
         OpenGLContext open_gl_context() const;
         /**
-     * @brief Sets the `openGLContext` property of `NSOpenGLView`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `openGLContext` property of `NSOpenGLView`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_open_gl_context(const OpenGLContext& value) const;
         /**
-     * @brief Returns the `pixelFormat` property of `NSOpenGLView`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `pixelFormat` property of `NSOpenGLView`.
+         * @return The converted Objective-C result.
+         */
         OpenGLPixelFormat pixel_format() const;
         /**
-     * @brief Sets the `pixelFormat` property of `NSOpenGLView`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `pixelFormat` property of `NSOpenGLView`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_pixel_format(const OpenGLPixelFormat& value) const;
         /**
-     * @brief Returns the `wantsBestResolutionOpenGLSurface` property of `NSOpenGLView`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `wantsBestResolutionOpenGLSurface` property of `NSOpenGLView`.
+         * @return The converted Objective-C result.
+         */
         bool wants_best_resolution_open_gl_surface() const;
         /**
-     * @brief Sets the `wantsBestResolutionOpenGLSurface` property of `NSOpenGLView`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `wantsBestResolutionOpenGLSurface` property of `NSOpenGLView`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_wants_best_resolution_open_gl_surface(bool value) const;
         /**
-     * @brief Returns the `wantsExtendedDynamicRangeOpenGLSurface` property of `NSOpenGLView`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `wantsExtendedDynamicRangeOpenGLSurface` property of `NSOpenGLView`.
+         * @return The converted Objective-C result.
+         */
         bool wants_extended_dynamic_range_open_gl_surface() const;
         /**
-     * @brief Sets the `wantsExtendedDynamicRangeOpenGLSurface` property of `NSOpenGLView`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `wantsExtendedDynamicRangeOpenGLSurface` property of `NSOpenGLView`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_wants_extended_dynamic_range_open_gl_surface(bool value) const;
     };
 }

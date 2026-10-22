@@ -38,24 +38,24 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit UserNotificationAction(Adopt adopt);
         /**
-     * @brief Calls `+[NSUserNotificationAction actionWithIdentifier:title:]`.
-     * @details Creates a user notification action with a specified identifier and title. - Parameters: - identifier: The identifier for the action. - title: A localized string suitable for display to the user.
-     * @param identifier Argument converted to the Objective-C parameter of the same role.
-     * @param title Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSUserNotificationAction actionWithIdentifier:title:]`.
+         * @details Creates a user notification action with a specified identifier and title. - Parameters: - identifier: The identifier for the action. - title: A localized string suitable for display to the user.
+         * @param identifier Argument converted to the Objective-C parameter of the same role.
+         * @param title Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static UserNotificationAction action_with_identifier(const std::string& identifier, const std::string& title);
         /**
-     * @brief Returns the `identifier` property of `NSUserNotificationAction`.
-     * @details The identifier for the user notification action.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `identifier` property of `NSUserNotificationAction`.
+         * @details The identifier for the user notification action.
+         * @return The converted Objective-C result.
+         */
         std::string identifier() const;
         /**
-     * @brief Returns the `title` property of `NSUserNotificationAction`.
-     * @details The localized title shown to the user.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `title` property of `NSUserNotificationAction`.
+         * @details The localized title shown to the user.
+         * @return The converted Objective-C result.
+         */
         std::string title() const;
     };
 }

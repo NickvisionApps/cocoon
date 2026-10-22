@@ -44,46 +44,46 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit CollectionLayoutSupplementaryItem(Adopt adopt);
         /**
-     * @brief Calls `+[NSCollectionLayoutSupplementaryItem supplementaryItemWithLayoutSize:elementKind:containerAnchor:]`.
-     * @param layout_size Argument converted to the Objective-C parameter of the same role.
-     * @param element_kind Argument converted to the Objective-C parameter of the same role.
-     * @param container_anchor Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSCollectionLayoutSupplementaryItem supplementaryItemWithLayoutSize:elementKind:containerAnchor:]`.
+         * @param layout_size Argument converted to the Objective-C parameter of the same role.
+         * @param element_kind Argument converted to the Objective-C parameter of the same role.
+         * @param container_anchor Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static CollectionLayoutSupplementaryItem supplementary_item_with_layout_size(const CollectionLayoutSize& layout_size, const std::string& element_kind, const CollectionLayoutAnchor& container_anchor);
         /**
-     * @brief Calls `+[NSCollectionLayoutSupplementaryItem supplementaryItemWithLayoutSize:elementKind:containerAnchor:itemAnchor:]`.
-     * @param layout_size Argument converted to the Objective-C parameter of the same role.
-     * @param element_kind Argument converted to the Objective-C parameter of the same role.
-     * @param container_anchor Argument converted to the Objective-C parameter of the same role.
-     * @param item_anchor Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSCollectionLayoutSupplementaryItem supplementaryItemWithLayoutSize:elementKind:containerAnchor:itemAnchor:]`.
+         * @param layout_size Argument converted to the Objective-C parameter of the same role.
+         * @param element_kind Argument converted to the Objective-C parameter of the same role.
+         * @param container_anchor Argument converted to the Objective-C parameter of the same role.
+         * @param item_anchor Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static CollectionLayoutSupplementaryItem supplementary_item_with_layout_size(const CollectionLayoutSize& layout_size, const std::string& element_kind, const CollectionLayoutAnchor& container_anchor, const CollectionLayoutAnchor& item_anchor);
         /**
-     * @brief Returns the `containerAnchor` property of `NSCollectionLayoutSupplementaryItem`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `containerAnchor` property of `NSCollectionLayoutSupplementaryItem`.
+         * @return The converted Objective-C result.
+         */
         CollectionLayoutAnchor container_anchor() const;
         /**
-     * @brief Returns the `elementKind` property of `NSCollectionLayoutSupplementaryItem`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `elementKind` property of `NSCollectionLayoutSupplementaryItem`.
+         * @return The converted Objective-C result.
+         */
         std::string element_kind() const;
         /**
-     * @brief Returns the `itemAnchor` property of `NSCollectionLayoutSupplementaryItem`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `itemAnchor` property of `NSCollectionLayoutSupplementaryItem`.
+         * @return The converted Objective-C result.
+         */
         CollectionLayoutAnchor item_anchor() const;
         /**
-     * @brief Returns the `zIndex` property of `NSCollectionLayoutSupplementaryItem`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `zIndex` property of `NSCollectionLayoutSupplementaryItem`.
+         * @return The converted Objective-C result.
+         */
         std::int64_t z_index() const;
         /**
-     * @brief Sets the `zIndex` property of `NSCollectionLayoutSupplementaryItem`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `zIndex` property of `NSCollectionLayoutSupplementaryItem`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_z_index(std::int64_t value) const;
     };
 }

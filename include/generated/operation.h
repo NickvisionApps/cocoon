@@ -46,126 +46,126 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit Operation(Adopt adopt);
         /**
-     * @brief Calls `-[NSOperation addDependency:]`.
-     * @details Makes the receiver dependent on the completion of the specified operation. The receiver is not considered ready to execute until all of its dependent operations have finished executing. If the receiver is already executing its task, adding dependencies has no practical effect. This method may change the 'isReady' and 'dependencies' properties of the receiver. It is a programmer error to create any circular dependencies among a set of operations. Doing so can cause a deadlock among the operations and may freeze your program. - Parameter op: The operation on which the receiver should depend. The same dependency should not be added more than once to the receiver, and the results of doing so are undefined.
-     * @param op Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSOperation addDependency:]`.
+         * @details Makes the receiver dependent on the completion of the specified operation. The receiver is not considered ready to execute until all of its dependent operations have finished executing. If the receiver is already executing its task, adding dependencies has no practical effect. This method may change the 'isReady' and 'dependencies' properties of the receiver. It is a programmer error to create any circular dependencies among a set of operations. Doing so can cause a deadlock among the operations and may freeze your program. - Parameter op: The operation on which the receiver should depend. The same dependency should not be added more than once to the receiver, and the results of doing so are undefined.
+         * @param op Argument converted to the Objective-C parameter of the same role.
+         */
         void add_dependency(const Operation& op) const;
         /**
-     * @brief Calls `-[NSOperation cancel]`.
-     * @details Advises the operation object that it should stop executing its task. This method does not force your operation code to stop. Instead, it updates the object's internal flags to reflect the change in state. If the operation has already finished executing, this method has no effect. Canceling an operation that is currently in an operation queue, but not yet executing, makes it possible to remove the operation from the queue sooner than usual.
-     */
+         * @brief Calls `-[NSOperation cancel]`.
+         * @details Advises the operation object that it should stop executing its task. This method does not force your operation code to stop. Instead, it updates the object's internal flags to reflect the change in state. If the operation has already finished executing, this method has no effect. Canceling an operation that is currently in an operation queue, but not yet executing, makes it possible to remove the operation from the queue sooner than usual.
+         */
         void cancel() const;
         /**
-     * @brief Calls `-[NSOperation main]`.
-     * @details Performs the receiver's non-concurrent task. The default implementation of this method does nothing. You should override this method to perform the desired task. In your implementation, do not invoke 'super'. This method will automatically execute within an autorelease pool provided by 'NSOperation', so you do not need to create your own autorelease pool block in your implementation. If you are implementing a concurrent operation, you are not required to override this method but may do so if you plan to call it from your custom ''start'' method.
-     */
+         * @brief Calls `-[NSOperation main]`.
+         * @details Performs the receiver's non-concurrent task. The default implementation of this method does nothing. You should override this method to perform the desired task. In your implementation, do not invoke 'super'. This method will automatically execute within an autorelease pool provided by 'NSOperation', so you do not need to create your own autorelease pool block in your implementation. If you are implementing a concurrent operation, you are not required to override this method but may do so if you plan to call it from your custom ''start'' method.
+         */
         void main_() const;
         /**
-     * @brief Calls `-[NSOperation removeDependency:]`.
-     * @details Removes the receiver's dependence on the specified operation. This method may change the 'isReady' and 'dependencies' properties of the receiver. - Parameter op: The dependent operation to be removed from the receiver.
-     * @param op Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSOperation removeDependency:]`.
+         * @details Removes the receiver's dependence on the specified operation. This method may change the 'isReady' and 'dependencies' properties of the receiver. - Parameter op: The dependent operation to be removed from the receiver.
+         * @param op Argument converted to the Objective-C parameter of the same role.
+         */
         void remove_dependency(const Operation& op) const;
         /**
-     * @brief Calls `-[NSOperation start]`.
-     * @details Begins the execution of the operation. The default implementation of this method updates the execution state of the operation and calls the receiver's ''main'' method. This method also performs several checks to ensure that the operation can actually run. For example, if the receiver was cancelled or is already finished, this method simply returns without calling ''main''. If the operation is currently executing or is not ready to execute, this method throws an 'NSInvalidArgumentException' exception. If you are implementing a concurrent operation, you must override this method and use it to initiate your operation. Your custom implementation must not call 'super' at any time. In addition to configuring the execution environment for your task, your implementation of this method must also track the state of the operation and provide appropriate state transitions. When the operation executes and subsequently finishes its work, it should generate KVO notifications for the 'isExecuting' and 'isFinished' key paths respectively. You can call this method explicitly if you want to execute your operations manually. However, it is a programmer error to call this method on an operation object that is already in an operation queue or to queue the operation after calling this method. Once you add an operation object to a queue, the queue assumes all responsibility for it.
-     */
+         * @brief Calls `-[NSOperation start]`.
+         * @details Begins the execution of the operation. The default implementation of this method updates the execution state of the operation and calls the receiver's ''main'' method. This method also performs several checks to ensure that the operation can actually run. For example, if the receiver was cancelled or is already finished, this method simply returns without calling ''main''. If the operation is currently executing or is not ready to execute, this method throws an 'NSInvalidArgumentException' exception. If you are implementing a concurrent operation, you must override this method and use it to initiate your operation. Your custom implementation must not call 'super' at any time. In addition to configuring the execution environment for your task, your implementation of this method must also track the state of the operation and provide appropriate state transitions. When the operation executes and subsequently finishes its work, it should generate KVO notifications for the 'isExecuting' and 'isFinished' key paths respectively. You can call this method explicitly if you want to execute your operations manually. However, it is a programmer error to call this method on an operation object that is already in an operation queue or to queue the operation after calling this method. Once you add an operation object to a queue, the queue assumes all responsibility for it.
+         */
         void start() const;
         /**
-     * @brief Calls `-[NSOperation waitUntilFinished]`.
-     * @details Blocks execution of the current thread until the operation object finishes its task. An operation object must never call this method on itself and should avoid calling it on any operations submitted to the same operation queue as itself. Doing so can cause the operation to deadlock. It is generally safe to call this method on an operation that is in a different operation queue, although it is still possible to create deadlocks if each operation waits on the other.
-     */
+         * @brief Calls `-[NSOperation waitUntilFinished]`.
+         * @details Blocks execution of the current thread until the operation object finishes its task. An operation object must never call this method on itself and should avoid calling it on any operations submitted to the same operation queue as itself. Doing so can cause the operation to deadlock. It is generally safe to call this method on an operation that is in a different operation queue, although it is still possible to create deadlocks if each operation waits on the other.
+         */
         void wait_until_finished() const;
         /**
-     * @brief Returns the `asynchronous` property of `NSOperation`.
-     * @details A Boolean value indicating whether the operation executes its task asynchronously. The default value of this property is 'NO'. When implementing an asynchronous operation object, you must implement this property and return 'YES'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `asynchronous` property of `NSOperation`.
+         * @details A Boolean value indicating whether the operation executes its task asynchronously. The default value of this property is 'NO'. When implementing an asynchronous operation object, you must implement this property and return 'YES'.
+         * @return The converted Objective-C result.
+         */
         bool is_asynchronous() const;
         /**
-     * @brief Returns the `cancelled` property of `NSOperation`.
-     * @details A Boolean value indicating whether the operation has been cancelled. The default value of this property is 'NO'. Calling the ''cancel'' method of this object sets the value of this property to 'YES'. Once canceled, an operation must move to the finished state. Canceling an operation does not actively stop the receiver's code from executing. An operation object is responsible for calling this method periodically and stopping itself if the method returns 'YES'. You should always check the value of this property before doing any work towards accomplishing the operation's task, which typically means checking it at the beginning of your custom ''main'' method. It is possible for an operation to be cancelled before it begins executing or at any time while it is executing.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `cancelled` property of `NSOperation`.
+         * @details A Boolean value indicating whether the operation has been cancelled. The default value of this property is 'NO'. Calling the ''cancel'' method of this object sets the value of this property to 'YES'. Once canceled, an operation must move to the finished state. Canceling an operation does not actively stop the receiver's code from executing. An operation object is responsible for calling this method periodically and stopping itself if the method returns 'YES'. You should always check the value of this property before doing any work towards accomplishing the operation's task, which typically means checking it at the beginning of your custom ''main'' method. It is possible for an operation to be cancelled before it begins executing or at any time while it is executing.
+         * @return The converted Objective-C result.
+         */
         bool is_cancelled() const;
         /**
-     * @brief Returns the `completionBlock` property of `NSOperation`.
-     * @details The block to execute after the operation's main task is completed. The completion block takes no parameters and has no return value. The exact execution context for your completion block is not guaranteed but is typically a secondary thread. Therefore, you should not use this block to do any work that requires a very specific execution context. Instead, you should shunt that work to your application's main thread or to the specific thread that is capable of doing it. Because the completion block executes after the operation indicates it has finished its task, you must not use a completion block to queue additional work considered to be part of that task. A finished operation may finish either because it was cancelled or because it successfully completed its task. You should take that fact into account when writing your block code. In iOS 8 and later and macOS 10.10 and later, this property is set to 'nil' after the completion block begins executing.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `completionBlock` property of `NSOperation`.
+         * @details The block to execute after the operation's main task is completed. The completion block takes no parameters and has no return value. The exact execution context for your completion block is not guaranteed but is typically a secondary thread. Therefore, you should not use this block to do any work that requires a very specific execution context. Instead, you should shunt that work to your application's main thread or to the specific thread that is capable of doing it. Because the completion block executes after the operation indicates it has finished its task, you must not use a completion block to queue additional work considered to be part of that task. A finished operation may finish either because it was cancelled or because it successfully completed its task. You should take that fact into account when writing your block code. In iOS 8 and later and macOS 10.10 and later, this property is set to 'nil' after the completion block begins executing.
+         * @return The converted Objective-C result.
+         */
         std::function<void()> completion_block() const;
         /**
-     * @brief Sets the `completionBlock` property of `NSOperation`.
-     * @details The block to execute after the operation's main task is completed. The completion block takes no parameters and has no return value. The exact execution context for your completion block is not guaranteed but is typically a secondary thread. Therefore, you should not use this block to do any work that requires a very specific execution context. Instead, you should shunt that work to your application's main thread or to the specific thread that is capable of doing it. Because the completion block executes after the operation indicates it has finished its task, you must not use a completion block to queue additional work considered to be part of that task. A finished operation may finish either because it was cancelled or because it successfully completed its task. You should take that fact into account when writing your block code. In iOS 8 and later and macOS 10.10 and later, this property is set to 'nil' after the completion block begins executing.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `completionBlock` property of `NSOperation`.
+         * @details The block to execute after the operation's main task is completed. The completion block takes no parameters and has no return value. The exact execution context for your completion block is not guaranteed but is typically a secondary thread. Therefore, you should not use this block to do any work that requires a very specific execution context. Instead, you should shunt that work to your application's main thread or to the specific thread that is capable of doing it. Because the completion block executes after the operation indicates it has finished its task, you must not use a completion block to queue additional work considered to be part of that task. A finished operation may finish either because it was cancelled or because it successfully completed its task. You should take that fact into account when writing your block code. In iOS 8 and later and macOS 10.10 and later, this property is set to 'nil' after the completion block begins executing.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_completion_block(std::function<void()> value) const;
         /**
-     * @brief Returns the `concurrent` property of `NSOperation`.
-     * @details A Boolean value indicating whether the operation executes its task asynchronously. Use the ''asynchronous'' property instead. The default value of this property is 'NO'. In macOS 10.6 and later, operation queues ignore the value in this property and always start operations on a separate thread.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `concurrent` property of `NSOperation`.
+         * @details A Boolean value indicating whether the operation executes its task asynchronously. Use the ''asynchronous'' property instead. The default value of this property is 'NO'. In macOS 10.6 and later, operation queues ignore the value in this property and always start operations on a separate thread.
+         * @return The converted Objective-C result.
+         */
         bool is_concurrent() const;
         /**
-     * @brief Returns the `dependencies` property of `NSOperation`.
-     * @details An array of the operation objects that must finish executing before the current object can begin executing. This property contains an array of 'NSOperation' objects. To add an object to this array, use the ''addDependency:'' method. An operation object must not execute until all of its dependent operations finish executing. Operations are not removed from this dependency list as they finish executing. You can use this list to track all dependent operations, including those that have already finished executing. The only way to remove an operation from this list is to use the ''removeDependency:'' method.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `dependencies` property of `NSOperation`.
+         * @details An array of the operation objects that must finish executing before the current object can begin executing. This property contains an array of 'NSOperation' objects. To add an object to this array, use the ''addDependency:'' method. An operation object must not execute until all of its dependent operations finish executing. Operations are not removed from this dependency list as they finish executing. You can use this list to track all dependent operations, including those that have already finished executing. The only way to remove an operation from this list is to use the ''removeDependency:'' method.
+         * @return The converted Objective-C result.
+         */
         std::vector<Operation> dependencies() const;
         /**
-     * @brief Returns the `executing` property of `NSOperation`.
-     * @details A Boolean value indicating whether the operation is currently executing. The value of this property is 'YES' if the operation is currently executing its main task or 'NO' if it is not. When implementing a concurrent operation object, you must override the implementation of this property so that you can return the execution state of your operation. In your custom implementation, you must generate KVO notifications for the 'isExecuting' key path whenever the execution state of your operation object changes.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `executing` property of `NSOperation`.
+         * @details A Boolean value indicating whether the operation is currently executing. The value of this property is 'YES' if the operation is currently executing its main task or 'NO' if it is not. When implementing a concurrent operation object, you must override the implementation of this property so that you can return the execution state of your operation. In your custom implementation, you must generate KVO notifications for the 'isExecuting' key path whenever the execution state of your operation object changes.
+         * @return The converted Objective-C result.
+         */
         bool is_executing() const;
         /**
-     * @brief Returns the `finished` property of `NSOperation`.
-     * @details A Boolean value indicating whether the operation has finished executing its task. The value of this property is 'YES' if the operation has finished its main task or 'NO' if it is executing that task or has not yet started it. When implementing a concurrent operation object, you must override the implementation of this property so that you can return the finished state of your operation. In your custom implementation, you must generate KVO notifications for the 'isFinished' key path whenever the finished state of your operation object changes.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `finished` property of `NSOperation`.
+         * @details A Boolean value indicating whether the operation has finished executing its task. The value of this property is 'YES' if the operation has finished its main task or 'NO' if it is executing that task or has not yet started it. When implementing a concurrent operation object, you must override the implementation of this property so that you can return the finished state of your operation. In your custom implementation, you must generate KVO notifications for the 'isFinished' key path whenever the finished state of your operation object changes.
+         * @return The converted Objective-C result.
+         */
         bool is_finished() const;
         /**
-     * @brief Returns the `name` property of `NSOperation`.
-     * @details The name of the operation. Assign a name to the operation object to help identify it during debugging.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `name` property of `NSOperation`.
+         * @details The name of the operation. Assign a name to the operation object to help identify it during debugging.
+         * @return The converted Objective-C result.
+         */
         std::string name() const;
         /**
-     * @brief Sets the `name` property of `NSOperation`.
-     * @details The name of the operation. Assign a name to the operation object to help identify it during debugging.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `name` property of `NSOperation`.
+         * @details The name of the operation. Assign a name to the operation object to help identify it during debugging.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_name(const std::string& value) const;
         /**
-     * @brief Returns the `qualityOfService` property of `NSOperation`.
-     * @details The relative amount of importance for granting system resources to the operation. Service levels affect the priority with which an operation object is given access to system resources such as CPU time, network resources, disk resources, and so on. Operations with a higher quality of service level are given greater priority over system resources so that they may perform their task more quickly.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `qualityOfService` property of `NSOperation`.
+         * @details The relative amount of importance for granting system resources to the operation. Service levels affect the priority with which an operation object is given access to system resources such as CPU time, network resources, disk resources, and so on. Operations with a higher quality of service level are given greater priority over system resources so that they may perform their task more quickly.
+         * @return The converted Objective-C result.
+         */
         QualityOfService quality_of_service() const;
         /**
-     * @brief Sets the `qualityOfService` property of `NSOperation`.
-     * @details The relative amount of importance for granting system resources to the operation. Service levels affect the priority with which an operation object is given access to system resources such as CPU time, network resources, disk resources, and so on. Operations with a higher quality of service level are given greater priority over system resources so that they may perform their task more quickly.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `qualityOfService` property of `NSOperation`.
+         * @details The relative amount of importance for granting system resources to the operation. Service levels affect the priority with which an operation object is given access to system resources such as CPU time, network resources, disk resources, and so on. Operations with a higher quality of service level are given greater priority over system resources so that they may perform their task more quickly.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_quality_of_service(QualityOfService value) const;
         /**
-     * @brief Returns the `queuePriority` property of `NSOperation`.
-     * @details The execution priority of the operation in an operation queue. This property contains the relative priority of the operation. This value is used to influence the order in which operations are dequeued and executed. You should use priority values only as needed to classify the relative priority of non-dependent operations. Priority values should not be used to implement dependency management among different operation objects. If you need to establish dependencies between operations, use the ''addDependency:'' method instead.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `queuePriority` property of `NSOperation`.
+         * @details The execution priority of the operation in an operation queue. This property contains the relative priority of the operation. This value is used to influence the order in which operations are dequeued and executed. You should use priority values only as needed to classify the relative priority of non-dependent operations. Priority values should not be used to implement dependency management among different operation objects. If you need to establish dependencies between operations, use the ''addDependency:'' method instead.
+         * @return The converted Objective-C result.
+         */
         OperationQueuePriority queue_priority() const;
         /**
-     * @brief Sets the `queuePriority` property of `NSOperation`.
-     * @details The execution priority of the operation in an operation queue. This property contains the relative priority of the operation. This value is used to influence the order in which operations are dequeued and executed. You should use priority values only as needed to classify the relative priority of non-dependent operations. Priority values should not be used to implement dependency management among different operation objects. If you need to establish dependencies between operations, use the ''addDependency:'' method instead.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `queuePriority` property of `NSOperation`.
+         * @details The execution priority of the operation in an operation queue. This property contains the relative priority of the operation. This value is used to influence the order in which operations are dequeued and executed. You should use priority values only as needed to classify the relative priority of non-dependent operations. Priority values should not be used to implement dependency management among different operation objects. If you need to establish dependencies between operations, use the ''addDependency:'' method instead.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_queue_priority(OperationQueuePriority value) const;
         /**
-     * @brief Returns the `ready` property of `NSOperation`.
-     * @details A Boolean value indicating whether the operation can be performed now. The readiness of operations is determined by their dependencies on other operations and potentially by custom conditions that you define. The 'NSOperation' class manages dependencies on other operations and reports the readiness of the receiver based on those dependencies. If you want to use custom conditions to define the readiness of your operation object, reimplement this property and return a value that accurately reflects the readiness of the receiver. If you do so, your custom implementation must get the default property value from 'super' and incorporate that readiness value into the new value of the property. In your custom implementation, you must generate KVO notifications for the 'isReady' key path whenever the ready state of your operation object changes.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `ready` property of `NSOperation`.
+         * @details A Boolean value indicating whether the operation can be performed now. The readiness of operations is determined by their dependencies on other operations and potentially by custom conditions that you define. The 'NSOperation' class manages dependencies on other operations and reports the readiness of the receiver based on those dependencies. If you want to use custom conditions to define the readiness of your operation object, reimplement this property and return a value that accurately reflects the readiness of the receiver. If you do so, your custom implementation must get the default property value from 'super' and incorporate that readiness value into the new value of the property. In your custom implementation, you must generate KVO notifications for the 'isReady' key path whenever the ready state of your operation object changes.
+         * @return The converted Objective-C result.
+         */
         bool is_ready() const;
     };
 }

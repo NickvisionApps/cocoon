@@ -54,191 +54,191 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit TabView(Adopt adopt);
         /**
-     * @brief Calls `-[NSTabView addTabViewItem:]`.
-     * @details Add/Remove tabs
-     * @param tab_view_item Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSTabView addTabViewItem:]`.
+         * @details Add/Remove tabs
+         * @param tab_view_item Argument converted to the Objective-C parameter of the same role.
+         */
         void add_tab_view_item(const TabViewItem& tab_view_item) const;
         /**
-     * @brief Calls `-[NSTabView indexOfTabViewItem:]`.
-     * @param tab_view_item Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSTabView indexOfTabViewItem:]`.
+         * @param tab_view_item Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::int64_t index_of_tab_view_item(const TabViewItem& tab_view_item) const;
         /**
-     * @brief Calls `-[NSTabView indexOfTabViewItemWithIdentifier:]`.
-     * @param identifier Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSTabView indexOfTabViewItemWithIdentifier:]`.
+         * @param identifier Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::int64_t index_of_tab_view_item_with_identifier(const Object& identifier) const;
         /**
-     * @brief Calls `-[NSTabView insertTabViewItem:atIndex:]`.
-     * @param tab_view_item Argument converted to the Objective-C parameter of the same role.
-     * @param index Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSTabView insertTabViewItem:atIndex:]`.
+         * @param tab_view_item Argument converted to the Objective-C parameter of the same role.
+         * @param index Argument converted to the Objective-C parameter of the same role.
+         */
         void insert_tab_view_item(const TabViewItem& tab_view_item, std::int64_t index) const;
         /**
-     * @brief Calls `-[NSTabView removeTabViewItem:]`.
-     * @param tab_view_item Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSTabView removeTabViewItem:]`.
+         * @param tab_view_item Argument converted to the Objective-C parameter of the same role.
+         */
         void remove_tab_view_item(const TabViewItem& tab_view_item) const;
         /**
-     * @brief Calls `-[NSTabView selectFirstTabViewItem:]`.
-     * @details Navigation
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSTabView selectFirstTabViewItem:]`.
+         * @details Navigation
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void select_first_tab_view_item(const Object& sender) const;
         /**
-     * @brief Calls `-[NSTabView selectLastTabViewItem:]`.
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSTabView selectLastTabViewItem:]`.
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void select_last_tab_view_item(const Object& sender) const;
         /**
-     * @brief Calls `-[NSTabView selectNextTabViewItem:]`.
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSTabView selectNextTabViewItem:]`.
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void select_next_tab_view_item(const Object& sender) const;
         /**
-     * @brief Calls `-[NSTabView selectPreviousTabViewItem:]`.
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSTabView selectPreviousTabViewItem:]`.
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void select_previous_tab_view_item(const Object& sender) const;
         /**
-     * @brief Calls `-[NSTabView selectTabViewItem:]`.
-     * @details Select
-     * @param tab_view_item Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSTabView selectTabViewItem:]`.
+         * @details Select
+         * @param tab_view_item Argument converted to the Objective-C parameter of the same role.
+         */
         void select_tab_view_item(const TabViewItem& tab_view_item) const;
         /**
-     * @brief Calls `-[NSTabView selectTabViewItemAtIndex:]`.
-     * @param index Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSTabView selectTabViewItemAtIndex:]`.
+         * @param index Argument converted to the Objective-C parameter of the same role.
+         */
         void select_tab_view_item_at_index(std::int64_t index) const;
         /**
-     * @brief Calls `-[NSTabView selectTabViewItemWithIdentifier:]`.
-     * @param identifier Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSTabView selectTabViewItemWithIdentifier:]`.
+         * @param identifier Argument converted to the Objective-C parameter of the same role.
+         */
         void select_tab_view_item_with_identifier(const Object& identifier) const;
         /**
-     * @brief Calls `-[NSTabView tabViewItemAtIndex:]`.
-     * @param index Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSTabView tabViewItemAtIndex:]`.
+         * @param index Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         TabViewItem tab_view_item_at_index(std::int64_t index) const;
         /**
-     * @brief Calls `-[NSTabView tabViewItemAtPoint:]`.
-     * @details Hit testing
-     * @param point Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSTabView tabViewItemAtPoint:]`.
+         * @details Hit testing
+         * @param point Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         TabViewItem tab_view_item_at_point(const Point& point) const;
         /**
-     * @brief Calls `-[NSTabView takeSelectedTabViewItemFromSender:]`.
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSTabView takeSelectedTabViewItemFromSender:]`.
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void take_selected_tab_view_item_from_sender(const Object& sender) const;
         /**
-     * @brief Returns the `allowsTruncatedLabels` property of `NSTabView`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `allowsTruncatedLabels` property of `NSTabView`.
+         * @return The converted Objective-C result.
+         */
         bool allows_truncated_labels() const;
         /**
-     * @brief Sets the `allowsTruncatedLabels` property of `NSTabView`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `allowsTruncatedLabels` property of `NSTabView`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_allows_truncated_labels(bool value) const;
         /**
-     * @brief Returns the `contentRect` property of `NSTabView`.
-     * @details Geometry
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `contentRect` property of `NSTabView`.
+         * @details Geometry
+         * @return The converted Objective-C result.
+         */
         Rect content_rect() const;
         /**
-     * @brief Returns the `controlSize` property of `NSTabView`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `controlSize` property of `NSTabView`.
+         * @return The converted Objective-C result.
+         */
         ControlSize control_size() const;
         /**
-     * @brief Sets the `controlSize` property of `NSTabView`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `controlSize` property of `NSTabView`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_control_size(ControlSize value) const;
         /**
-     * @brief Returns the `drawsBackground` property of `NSTabView`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `drawsBackground` property of `NSTabView`.
+         * @return The converted Objective-C result.
+         */
         bool draws_background() const;
         /**
-     * @brief Sets the `drawsBackground` property of `NSTabView`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `drawsBackground` property of `NSTabView`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_draws_background(bool value) const;
         /**
-     * @brief Returns the `font` property of `NSTabView`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `font` property of `NSTabView`.
+         * @return The converted Objective-C result.
+         */
         Font font() const;
         /**
-     * @brief Sets the `font` property of `NSTabView`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `font` property of `NSTabView`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_font(const Font& value) const;
         /**
-     * @brief Returns the `minimumSize` property of `NSTabView`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `minimumSize` property of `NSTabView`.
+         * @return The converted Objective-C result.
+         */
         Size minimum_size() const;
         /**
-     * @brief Returns the `numberOfTabViewItems` property of `NSTabView`.
-     * @details Query
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `numberOfTabViewItems` property of `NSTabView`.
+         * @details Query
+         * @return The converted Objective-C result.
+         */
         std::int64_t number_of_tab_view_items() const;
         /**
-     * @brief Returns the `selectedTabViewItem` property of `NSTabView`.
-     * @details Getters
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `selectedTabViewItem` property of `NSTabView`.
+         * @details Getters
+         * @return The converted Objective-C result.
+         */
         TabViewItem selected_tab_view_item() const;
         /**
-     * @brief Returns the `tabPosition` property of `NSTabView`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `tabPosition` property of `NSTabView`.
+         * @return The converted Objective-C result.
+         */
         TabPosition tab_position() const;
         /**
-     * @brief Sets the `tabPosition` property of `NSTabView`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `tabPosition` property of `NSTabView`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_tab_position(TabPosition value) const;
         /**
-     * @brief Returns the `tabViewBorderType` property of `NSTabView`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `tabViewBorderType` property of `NSTabView`.
+         * @return The converted Objective-C result.
+         */
         TabViewBorderType tab_view_border_type() const;
         /**
-     * @brief Sets the `tabViewBorderType` property of `NSTabView`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `tabViewBorderType` property of `NSTabView`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_tab_view_border_type(TabViewBorderType value) const;
         /**
-     * @brief Returns the `tabViewItems` property of `NSTabView`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `tabViewItems` property of `NSTabView`.
+         * @return The converted Objective-C result.
+         */
         std::vector<TabViewItem> tab_view_items() const;
         /**
-     * @brief Sets the `tabViewItems` property of `NSTabView`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `tabViewItems` property of `NSTabView`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_tab_view_items(const std::vector<TabViewItem>& value) const;
         /**
-     * @brief Returns the `tabViewType` property of `NSTabView`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `tabViewType` property of `NSTabView`.
+         * @return The converted Objective-C result.
+         */
         TabViewType tab_view_type() const;
         /**
-     * @brief Sets the `tabViewType` property of `NSTabView`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `tabViewType` property of `NSTabView`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_tab_view_type(TabViewType value) const;
         /// @brief Convenience helper `add_tab` provided by cocoon.
         int add_tab(const std::string& label, const View& content) const;

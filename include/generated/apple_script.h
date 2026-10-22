@@ -39,43 +39,43 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit AppleScript(Adopt adopt);
         /**
-     * @brief Calls `-[NSAppleScript compileAndReturnError:]`.
-     * @details Compiles the receiver, if it is not already compiled. - Parameter errorInfo: On return, if an error occurs, a pointer to an error information dictionary. - Returns: 'YES' for success or if the script was already compiled, 'NO' otherwise.
-     * @param error_info Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSAppleScript compileAndReturnError:]`.
+         * @details Compiles the receiver, if it is not already compiled. - Parameter errorInfo: On return, if an error occurs, a pointer to an error information dictionary. - Returns: 'YES' for success or if the script was already compiled, 'NO' otherwise.
+         * @param error_info Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool compile_and_return_error(std::map<std::string, Object>& error_info) const;
         /**
-     * @brief Calls `-[NSAppleScript executeAndReturnError:]`.
-     * @details Executes the receiver, compiling it first if it is not already compiled. - Parameter errorInfo: On return, if an error occurs, a pointer to an error information dictionary. - Returns: The result of executing the event, or 'nil' if an error occurs. Any changes to property values caused by executing the script do not persist.
-     * @param error_info Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSAppleScript executeAndReturnError:]`.
+         * @details Executes the receiver, compiling it first if it is not already compiled. - Parameter errorInfo: On return, if an error occurs, a pointer to an error information dictionary. - Returns: The result of executing the event, or 'nil' if an error occurs. Any changes to property values caused by executing the script do not persist.
+         * @param error_info Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         AppleEventDescriptor execute_and_return_error(std::map<std::string, Object>& error_info) const;
         /**
-     * @brief Calls `-[NSAppleScript executeAppleEvent:error:]`.
-     * @details Executes an Apple event in the context of the receiver, as a means of allowing the application to invoke a handler in the script. - Parameters: - event: The Apple event to execute. - errorInfo: On return, if an error occurs, a pointer to an error information dictionary. - Returns: The result of executing the event, or 'nil' if an error occurs. Compiles the receiver before executing it if it is not already compiled. > Important: You cannot use this method to send Apple events to other applications.
-     * @param event Argument converted to the Objective-C parameter of the same role.
-     * @param error_info Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSAppleScript executeAppleEvent:error:]`.
+         * @details Executes an Apple event in the context of the receiver, as a means of allowing the application to invoke a handler in the script. - Parameters: - event: The Apple event to execute. - errorInfo: On return, if an error occurs, a pointer to an error information dictionary. - Returns: The result of executing the event, or 'nil' if an error occurs. Compiles the receiver before executing it if it is not already compiled. > Important: You cannot use this method to send Apple events to other applications.
+         * @param event Argument converted to the Objective-C parameter of the same role.
+         * @param error_info Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         AppleEventDescriptor execute_apple_event(const AppleEventDescriptor& event, std::map<std::string, Object>& error_info) const;
         /**
-     * @brief Returns the `compiled` property of `NSAppleScript`.
-     * @details A Boolean value that indicates whether the receiver's script has been compiled.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `compiled` property of `NSAppleScript`.
+         * @details A Boolean value that indicates whether the receiver's script has been compiled.
+         * @return The converted Objective-C result.
+         */
         bool is_compiled() const;
         /**
-     * @brief Returns the `richTextSource` property of `NSAppleScript`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `richTextSource` property of `NSAppleScript`.
+         * @return The converted Objective-C result.
+         */
         AttributedString rich_text_source() const;
         /**
-     * @brief Returns the `source` property of `NSAppleScript`.
-     * @details The script source for the receiver. It is possible for an 'NSAppleScript' that has been instantiated with '-initWithContentsOfURL:error:' to be a script for which the source code is not available but is nonetheless executable.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `source` property of `NSAppleScript`.
+         * @details The script source for the receiver. It is possible for an 'NSAppleScript' that has been instantiated with '-initWithContentsOfURL:error:' to be a script for which the source code is not available but is nonetheless executable.
+         * @return The converted Objective-C result.
+         */
         std::string source() const;
     };
 }

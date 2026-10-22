@@ -49,76 +49,76 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit TextTable(Adopt adopt);
         /**
-     * @brief Calls `-[NSTextTable boundsRectForBlock:contentRect:inRect:textContainer:characterRange:]`.
-     * @param block Argument converted to the Objective-C parameter of the same role.
-     * @param content_rect Argument converted to the Objective-C parameter of the same role.
-     * @param rect Argument converted to the Objective-C parameter of the same role.
-     * @param text_container Argument converted to the Objective-C parameter of the same role.
-     * @param char_range Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSTextTable boundsRectForBlock:contentRect:inRect:textContainer:characterRange:]`.
+         * @param block Argument converted to the Objective-C parameter of the same role.
+         * @param content_rect Argument converted to the Objective-C parameter of the same role.
+         * @param rect Argument converted to the Objective-C parameter of the same role.
+         * @param text_container Argument converted to the Objective-C parameter of the same role.
+         * @param char_range Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Rect bounds_rect_for_block(const TextTableBlock& block, const Rect& content_rect, const Rect& rect, const TextContainer& text_container, const Range& char_range) const;
         /**
-     * @brief Calls `-[NSTextTable drawBackgroundForBlock:withFrame:inView:characterRange:layoutManager:]`.
-     * @param block Argument converted to the Objective-C parameter of the same role.
-     * @param frame_rect Argument converted to the Objective-C parameter of the same role.
-     * @param control_view Argument converted to the Objective-C parameter of the same role.
-     * @param char_range Argument converted to the Objective-C parameter of the same role.
-     * @param layout_manager Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSTextTable drawBackgroundForBlock:withFrame:inView:characterRange:layoutManager:]`.
+         * @param block Argument converted to the Objective-C parameter of the same role.
+         * @param frame_rect Argument converted to the Objective-C parameter of the same role.
+         * @param control_view Argument converted to the Objective-C parameter of the same role.
+         * @param char_range Argument converted to the Objective-C parameter of the same role.
+         * @param layout_manager Argument converted to the Objective-C parameter of the same role.
+         */
         void draw_background_for_block(const TextTableBlock& block, const Rect& frame_rect, const View& control_view, const Range& char_range, const LayoutManager& layout_manager) const;
         /**
-     * @brief Calls `-[NSTextTable rectForBlock:layoutAtPoint:inRect:textContainer:characterRange:]`.
-     * @details An NSTextTableBlock delegates its layout and drawing operations to its enclosing table, using the following NSTextTable methods.
-     * @param block Argument converted to the Objective-C parameter of the same role.
-     * @param starting_point Argument converted to the Objective-C parameter of the same role.
-     * @param rect Argument converted to the Objective-C parameter of the same role.
-     * @param text_container Argument converted to the Objective-C parameter of the same role.
-     * @param char_range Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSTextTable rectForBlock:layoutAtPoint:inRect:textContainer:characterRange:]`.
+         * @details An NSTextTableBlock delegates its layout and drawing operations to its enclosing table, using the following NSTextTable methods.
+         * @param block Argument converted to the Objective-C parameter of the same role.
+         * @param starting_point Argument converted to the Objective-C parameter of the same role.
+         * @param rect Argument converted to the Objective-C parameter of the same role.
+         * @param text_container Argument converted to the Objective-C parameter of the same role.
+         * @param char_range Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Rect rect_for_block(const TextTableBlock& block, const Point& starting_point, const Rect& rect, const TextContainer& text_container, const Range& char_range) const;
         /**
-     * @brief Returns the `collapsesBorders` property of `NSTextTable`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `collapsesBorders` property of `NSTextTable`.
+         * @return The converted Objective-C result.
+         */
         bool collapses_borders() const;
         /**
-     * @brief Sets the `collapsesBorders` property of `NSTextTable`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `collapsesBorders` property of `NSTextTable`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_collapses_borders(bool value) const;
         /**
-     * @brief Returns the `hidesEmptyCells` property of `NSTextTable`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `hidesEmptyCells` property of `NSTextTable`.
+         * @return The converted Objective-C result.
+         */
         bool hides_empty_cells() const;
         /**
-     * @brief Sets the `hidesEmptyCells` property of `NSTextTable`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `hidesEmptyCells` property of `NSTextTable`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_hides_empty_cells(bool value) const;
         /**
-     * @brief Returns the `layoutAlgorithm` property of `NSTextTable`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `layoutAlgorithm` property of `NSTextTable`.
+         * @return The converted Objective-C result.
+         */
         TextTableLayoutAlgorithm layout_algorithm() const;
         /**
-     * @brief Sets the `layoutAlgorithm` property of `NSTextTable`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `layoutAlgorithm` property of `NSTextTable`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_layout_algorithm(TextTableLayoutAlgorithm value) const;
         /**
-     * @brief Returns the `numberOfColumns` property of `NSTextTable`.
-     * @details These methods control the basic parameters of the table.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `numberOfColumns` property of `NSTextTable`.
+         * @details These methods control the basic parameters of the table.
+         * @return The converted Objective-C result.
+         */
         std::int64_t number_of_columns() const;
         /**
-     * @brief Sets the `numberOfColumns` property of `NSTextTable`.
-     * @details These methods control the basic parameters of the table.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `numberOfColumns` property of `NSTextTable`.
+         * @details These methods control the basic parameters of the table.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_number_of_columns(std::int64_t value) const;
     };
 }

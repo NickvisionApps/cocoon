@@ -50,76 +50,76 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit TableViewDiffableDataSourceBase(Adopt adopt);
         /**
-     * @brief Calls `-[NSTableViewDiffableDataSource applySnapshot:animatingDifferences:]`.
-     * @param snapshot Argument converted to the Objective-C parameter of the same role.
-     * @param animating_differences Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSTableViewDiffableDataSource applySnapshot:animatingDifferences:]`.
+         * @param snapshot Argument converted to the Objective-C parameter of the same role.
+         * @param animating_differences Argument converted to the Objective-C parameter of the same role.
+         */
         void apply_snapshot(const DiffableDataSourceSnapshotBase& snapshot, bool animating_differences) const;
         /**
-     * @brief Calls `-[NSTableViewDiffableDataSource applySnapshot:animatingDifferences:completion:]`.
-     * @param snapshot Argument converted to the Objective-C parameter of the same role.
-     * @param animating_differences Argument converted to the Objective-C parameter of the same role.
-     * @param completion Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSTableViewDiffableDataSource applySnapshot:animatingDifferences:completion:]`.
+         * @param snapshot Argument converted to the Objective-C parameter of the same role.
+         * @param animating_differences Argument converted to the Objective-C parameter of the same role.
+         * @param completion Argument converted to the Objective-C parameter of the same role.
+         */
         void apply_snapshot(const DiffableDataSourceSnapshotBase& snapshot, bool animating_differences, std::function<void()> completion) const;
         /**
-     * @brief Calls `-[NSTableViewDiffableDataSource itemIdentifierForRow:]`.
-     * @param row Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSTableViewDiffableDataSource itemIdentifierForRow:]`.
+         * @param row Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Object item_identifier_for_row(std::int64_t row) const;
         /**
-     * @brief Calls `-[NSTableViewDiffableDataSource rowForItemIdentifier:]`.
-     * @param identifier Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSTableViewDiffableDataSource rowForItemIdentifier:]`.
+         * @param identifier Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::int64_t row_for_item_identifier(const Object& identifier) const;
         /**
-     * @brief Calls `-[NSTableViewDiffableDataSource rowForSectionIdentifier:]`.
-     * @param identifier Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSTableViewDiffableDataSource rowForSectionIdentifier:]`.
+         * @param identifier Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::int64_t row_for_section_identifier(const Object& identifier) const;
         /**
-     * @brief Calls `-[NSTableViewDiffableDataSource sectionIdentifierForRow:]`.
-     * @param row Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSTableViewDiffableDataSource sectionIdentifierForRow:]`.
+         * @param row Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Object section_identifier_for_row(std::int64_t row) const;
         /**
-     * @brief Calls `-[NSTableViewDiffableDataSource snapshot]`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSTableViewDiffableDataSource snapshot]`.
+         * @return The converted Objective-C result.
+         */
         DiffableDataSourceSnapshotBase snapshot() const;
         /**
-     * @brief Returns the `defaultRowAnimation` property of `NSTableViewDiffableDataSource`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `defaultRowAnimation` property of `NSTableViewDiffableDataSource`.
+         * @return The converted Objective-C result.
+         */
         TableViewAnimationOptions default_row_animation() const;
         /**
-     * @brief Sets the `defaultRowAnimation` property of `NSTableViewDiffableDataSource`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `defaultRowAnimation` property of `NSTableViewDiffableDataSource`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_default_row_animation(TableViewAnimationOptions value) const;
         /**
-     * @brief Returns the `rowViewProvider` property of `NSTableViewDiffableDataSource`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `rowViewProvider` property of `NSTableViewDiffableDataSource`.
+         * @return The converted Objective-C result.
+         */
         std::function<TableRowView(TableView, std::int64_t, Object)> row_view_provider() const;
         /**
-     * @brief Sets the `rowViewProvider` property of `NSTableViewDiffableDataSource`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `rowViewProvider` property of `NSTableViewDiffableDataSource`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_row_view_provider(std::function<TableRowView(TableView, std::int64_t, Object)> value) const;
         /**
-     * @brief Returns the `sectionHeaderViewProvider` property of `NSTableViewDiffableDataSource`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `sectionHeaderViewProvider` property of `NSTableViewDiffableDataSource`.
+         * @return The converted Objective-C result.
+         */
         std::function<View(TableView, std::int64_t, Object)> section_header_view_provider() const;
         /**
-     * @brief Sets the `sectionHeaderViewProvider` property of `NSTableViewDiffableDataSource`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `sectionHeaderViewProvider` property of `NSTableViewDiffableDataSource`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_section_header_view_provider(std::function<View(TableView, std::int64_t, Object)> value) const;
     };
 

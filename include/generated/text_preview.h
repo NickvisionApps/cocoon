@@ -37,22 +37,22 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit TextPreview(Adopt adopt);
         /**
-     * @brief Returns the `candidateRects` property of `NSTextPreview`.
-     * @details Rectangles that define the specific portions of text to highlight. At initialization time, you set this property to an array of \<doc://com.apple.documentation/documentation/foundation/nsvalue> objects, each of which contains an \<doc://com.apple.documentation/documentation/foundation/nsrect> in the coordinate space of the target view. Each rectangle contains a bounding rectangle for text that is part of the preview. When applying visual effects, the system adds highlights only to the text in the specified rectangles.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `candidateRects` property of `NSTextPreview`.
+         * @details Rectangles that define the specific portions of text to highlight. At initialization time, you set this property to an array of \<doc://com.apple.documentation/documentation/foundation/nsvalue> objects, each of which contains an \<doc://com.apple.documentation/documentation/foundation/nsrect> in the coordinate space of the target view. Each rectangle contains a bounding rectangle for text that is part of the preview. When applying visual effects, the system adds highlights only to the text in the specified rectangles.
+         * @return The converted Objective-C result.
+         */
         std::vector<Value> candidate_rects() const;
         /**
-     * @brief Returns the `presentationFrame` property of `NSTextPreview`.
-     * @details The frame rectangle that places the preview image directly over the matching text. You specify this value at initialization time. The system uses it to position the preview image over the text in your view. Make sure the frame rectangle is in your view's coordinate space.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `presentationFrame` property of `NSTextPreview`.
+         * @details The frame rectangle that places the preview image directly over the matching text. You specify this value at initialization time. The system uses it to position the preview image over the text in your view. Make sure the frame rectangle is in your view's coordinate space.
+         * @return The converted Objective-C result.
+         */
         Rect presentation_frame() const;
         /**
-     * @brief Returns the `previewImage` property of `NSTextPreview`.
-     * @details The image that contains the requested text from your view. You specify this image at initialization time. The system uses it to implement any visual effects involving your view’s text. Create the image with your text on a transparent background.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `previewImage` property of `NSTextPreview`.
+         * @details The image that contains the requested text from your view. You specify this image at initialization time. The system uses it to implement any visual effects involving your view’s text. Create the image with your text on a transparent background.
+         * @return The converted Objective-C result.
+         */
         CGImage preview_image() const;
     };
 }

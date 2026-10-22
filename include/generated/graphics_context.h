@@ -55,107 +55,107 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit GraphicsContext(Adopt adopt);
         /**
-     * @brief Calls `+[NSGraphicsContext currentContextDrawingToScreen]`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSGraphicsContext currentContextDrawingToScreen]`.
+         * @return The converted Objective-C result.
+         */
         static bool current_context_drawing_to_screen();
         /**
-     * @brief Calls `-[NSGraphicsContext flushGraphics]`.
-     */
+         * @brief Calls `-[NSGraphicsContext flushGraphics]`.
+         */
         void flush_graphics() const;
         /**
-     * @brief Calls `-[NSGraphicsContext restoreGraphicsState]`.
-     */
+         * @brief Calls `-[NSGraphicsContext restoreGraphicsState]`.
+         */
         void restore_graphics_state() const;
         /**
-     * @brief Calls `-[NSGraphicsContext saveGraphicsState]`.
-     */
+         * @brief Calls `-[NSGraphicsContext saveGraphicsState]`.
+         */
         void save_graphics_state() const;
         /**
-     * @brief Returns the `CGContext` property of `NSGraphicsContext`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `CGContext` property of `NSGraphicsContext`.
+         * @return The converted Objective-C result.
+         */
         CGContext cg_context() const;
         /**
-     * @brief Returns the `CIContext` property of `NSGraphicsContext`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `CIContext` property of `NSGraphicsContext`.
+         * @return The converted Objective-C result.
+         */
         Object ci_context() const;
         /**
-     * @brief Returns the `attributes` property of `NSGraphicsContext`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `attributes` property of `NSGraphicsContext`.
+         * @return The converted Objective-C result.
+         */
         std::map<std::string, Object> attributes() const;
         /**
-     * @brief Returns the `colorRenderingIntent` property of `NSGraphicsContext`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `colorRenderingIntent` property of `NSGraphicsContext`.
+         * @return The converted Objective-C result.
+         */
         ColorRenderingIntent color_rendering_intent() const;
         /**
-     * @brief Sets the `colorRenderingIntent` property of `NSGraphicsContext`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `colorRenderingIntent` property of `NSGraphicsContext`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_color_rendering_intent(ColorRenderingIntent value) const;
         /**
-     * @brief Returns the `compositingOperation` property of `NSGraphicsContext`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `compositingOperation` property of `NSGraphicsContext`.
+         * @return The converted Objective-C result.
+         */
         CompositingOperation compositing_operation() const;
         /**
-     * @brief Sets the `compositingOperation` property of `NSGraphicsContext`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `compositingOperation` property of `NSGraphicsContext`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_compositing_operation(CompositingOperation value) const;
         /**
-     * @brief Returns the `currentContext` property of `NSGraphicsContext`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `currentContext` property of `NSGraphicsContext`.
+         * @return The converted Objective-C result.
+         */
         static GraphicsContext current_context();
         /**
-     * @brief Sets the `currentContext` property of `NSGraphicsContext`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `currentContext` property of `NSGraphicsContext`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         static void set_current_context(const GraphicsContext& value);
         /**
-     * @brief Returns the `drawingToScreen` property of `NSGraphicsContext`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `drawingToScreen` property of `NSGraphicsContext`.
+         * @return The converted Objective-C result.
+         */
         bool is_drawing_to_screen() const;
         /**
-     * @brief Returns the `flipped` property of `NSGraphicsContext`.
-     * @details Returns the flip state of the receiver. The state is determined by messaging -isFlipped to the focus view in the context. If no view has focus, returns NO unless the receiver is instantiated via graphicsContextWithGraphicsPort:drawingToScreen:flipped: with initialFlippedState == YES.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `flipped` property of `NSGraphicsContext`.
+         * @details Returns the flip state of the receiver. The state is determined by messaging -isFlipped to the focus view in the context. If no view has focus, returns NO unless the receiver is instantiated via graphicsContextWithGraphicsPort:drawingToScreen:flipped: with initialFlippedState == YES.
+         * @return The converted Objective-C result.
+         */
         bool is_flipped() const;
         /**
-     * @brief Returns the `imageInterpolation` property of `NSGraphicsContext`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `imageInterpolation` property of `NSGraphicsContext`.
+         * @return The converted Objective-C result.
+         */
         ImageInterpolation image_interpolation() const;
         /**
-     * @brief Sets the `imageInterpolation` property of `NSGraphicsContext`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `imageInterpolation` property of `NSGraphicsContext`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_image_interpolation(ImageInterpolation value) const;
         /**
-     * @brief Returns the `patternPhase` property of `NSGraphicsContext`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `patternPhase` property of `NSGraphicsContext`.
+         * @return The converted Objective-C result.
+         */
         Point pattern_phase() const;
         /**
-     * @brief Sets the `patternPhase` property of `NSGraphicsContext`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `patternPhase` property of `NSGraphicsContext`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_pattern_phase(const Point& value) const;
         /**
-     * @brief Returns the `shouldAntialias` property of `NSGraphicsContext`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `shouldAntialias` property of `NSGraphicsContext`.
+         * @return The converted Objective-C result.
+         */
         bool should_antialias() const;
         /**
-     * @brief Sets the `shouldAntialias` property of `NSGraphicsContext`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `shouldAntialias` property of `NSGraphicsContext`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_should_antialias(bool value) const;
     };
 }

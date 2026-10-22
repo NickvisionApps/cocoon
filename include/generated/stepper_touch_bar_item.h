@@ -50,88 +50,88 @@ namespace cocoon
         explicit StepperTouchBarItem(Adopt adopt);
         using TouchBarItem::customization_label;
         /**
-     * @brief Returns the `action` property of `NSStepperTouchBarItem`.
-     * @details The action-message selector associated with the stepper.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `action` property of `NSStepperTouchBarItem`.
+         * @details The action-message selector associated with the stepper.
+         * @return The converted Objective-C result.
+         */
         std::string action() const;
         /**
-     * @brief Sets the `action` property of `NSStepperTouchBarItem`.
-     * @details The action-message selector associated with the stepper.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `action` property of `NSStepperTouchBarItem`.
+         * @details The action-message selector associated with the stepper.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_action(const std::string& value) const;
         /**
-     * @brief Returns the `customizationLabel` property of `NSStepperTouchBarItem`.
-     * @details The localized string labeling this item during user customization. The default value is empty string.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `customizationLabel` property of `NSStepperTouchBarItem`.
+         * @details The localized string labeling this item during user customization. The default value is empty string.
+         * @return The converted Objective-C result.
+         */
         std::string customization_label() const;
         /**
-     * @brief Sets the `customizationLabel` property of `NSStepperTouchBarItem`.
-     * @details The localized string labeling this item during user customization. The default value is empty string.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `customizationLabel` property of `NSStepperTouchBarItem`.
+         * @details The localized string labeling this item during user customization. The default value is empty string.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_customization_label(const std::string& value) const;
         /**
-     * @brief Returns the `increment` property of `NSStepperTouchBarItem`.
-     * @details The stepper's increment value. The default value is '1.0'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `increment` property of `NSStepperTouchBarItem`.
+         * @details The stepper's increment value. The default value is '1.0'.
+         * @return The converted Objective-C result.
+         */
         double increment() const;
         /**
-     * @brief Sets the `increment` property of `NSStepperTouchBarItem`.
-     * @details The stepper's increment value. The default value is '1.0'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `increment` property of `NSStepperTouchBarItem`.
+         * @details The stepper's increment value. The default value is '1.0'.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_increment(double value) const;
         /**
-     * @brief Returns the `maxValue` property of `NSStepperTouchBarItem`.
-     * @details The stepper's maximum value. The default is '59.0'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `maxValue` property of `NSStepperTouchBarItem`.
+         * @details The stepper's maximum value. The default is '59.0'.
+         * @return The converted Objective-C result.
+         */
         double max_value() const;
         /**
-     * @brief Sets the `maxValue` property of `NSStepperTouchBarItem`.
-     * @details The stepper's maximum value. The default is '59.0'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `maxValue` property of `NSStepperTouchBarItem`.
+         * @details The stepper's maximum value. The default is '59.0'.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_max_value(double value) const;
         /**
-     * @brief Returns the `minValue` property of `NSStepperTouchBarItem`.
-     * @details The stepper's minimum value. The default is '0.0'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `minValue` property of `NSStepperTouchBarItem`.
+         * @details The stepper's minimum value. The default is '0.0'.
+         * @return The converted Objective-C result.
+         */
         double min_value() const;
         /**
-     * @brief Sets the `minValue` property of `NSStepperTouchBarItem`.
-     * @details The stepper's minimum value. The default is '0.0'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `minValue` property of `NSStepperTouchBarItem`.
+         * @details The stepper's minimum value. The default is '0.0'.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_min_value(double value) const;
         /**
-     * @brief Returns the `target` property of `NSStepperTouchBarItem`.
-     * @details The target object that receives action messages from the stepper.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `target` property of `NSStepperTouchBarItem`.
+         * @details The target object that receives action messages from the stepper.
+         * @return The converted Objective-C result.
+         */
         Object target() const;
         /**
-     * @brief Sets the `target` property of `NSStepperTouchBarItem`.
-     * @details The target object that receives action messages from the stepper.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `target` property of `NSStepperTouchBarItem`.
+         * @details The target object that receives action messages from the stepper.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_target(const Object& value) const;
         /**
-     * @brief Returns the `value` property of `NSStepperTouchBarItem`.
-     * @details The current value of the stepper.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `value` property of `NSStepperTouchBarItem`.
+         * @details The current value of the stepper.
+         * @return The converted Objective-C result.
+         */
         double value() const;
         /**
-     * @brief Sets the `value` property of `NSStepperTouchBarItem`.
-     * @details The current value of the stepper.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `value` property of `NSStepperTouchBarItem`.
+         * @details The current value of the stepper.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_value(double value) const;
     };
 }

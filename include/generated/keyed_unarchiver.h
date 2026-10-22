@@ -63,161 +63,161 @@ namespace cocoon
         using Coder::decoding_failure_policy;
         using Coder::requires_secure_coding;
         /**
-     * @brief Calls `-[NSKeyedUnarchiver classForClassName:]`.
-     * @details Returns the class from which this unarchiver instantiates an encoded object with a given class name. Returns 'nil' if the receiver does not have a translation mapping for 'codedName'. The class's separate translation map is not searched.
-     * @param coded_name Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSKeyedUnarchiver classForClassName:]`.
+         * @details Returns the class from which this unarchiver instantiates an encoded object with a given class name. Returns 'nil' if the receiver does not have a translation mapping for 'codedName'. The class's separate translation map is not searched.
+         * @param coded_name Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::string class_for_class_name(const std::string& coded_name) const;
         /**
-     * @brief Calls `-[NSKeyedUnarchiver containsValueForKey:]`.
-     * @details Returns a Boolean value that indicates whether the archive contains a value for a given key within the current decoding scope.
-     * @param key Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSKeyedUnarchiver containsValueForKey:]`.
+         * @details Returns a Boolean value that indicates whether the archive contains a value for a given key within the current decoding scope.
+         * @param key Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool contains_value_for_key(const std::string& key) const;
         /**
-     * @brief Calls `-[NSKeyedUnarchiver decodeBoolForKey:]`.
-     * @details Decodes and returns a boolean value that was previously encoded and associated with the string key.
-     * @param key Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSKeyedUnarchiver decodeBoolForKey:]`.
+         * @details Decodes and returns a boolean value that was previously encoded and associated with the string key.
+         * @param key Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool decode_bool_for_key(const std::string& key) const;
         /**
-     * @brief Calls `-[NSKeyedUnarchiver decodeBytesForKey:returnedLength:]`.
-     * @details Decodes a buffer of data that was previously encoded with 'encodeBytes:length:forKey:' and associated with the string key. The buffer's length is returned by reference in 'lengthp'. The returned bytes are immutable, and they go away with the unarchiver, not the containing autorelease pool.
-     * @param key Argument converted to the Objective-C parameter of the same role.
-     * @param lengthp Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSKeyedUnarchiver decodeBytesForKey:returnedLength:]`.
+         * @details Decodes a buffer of data that was previously encoded with 'encodeBytes:length:forKey:' and associated with the string key. The buffer's length is returned by reference in 'lengthp'. The returned bytes are immutable, and they go away with the unarchiver, not the containing autorelease pool.
+         * @param key Argument converted to the Objective-C parameter of the same role.
+         * @param lengthp Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         const std::uint8_t* decode_bytes_for_key(const std::string& key, std::uint64_t* lengthp) const;
         /**
-     * @brief Calls `-[NSKeyedUnarchiver decodeDoubleForKey:]`.
-     * @details Decodes and returns a double value that was previously encoded and associated with the string key.
-     * @param key Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSKeyedUnarchiver decodeDoubleForKey:]`.
+         * @details Decodes and returns a double value that was previously encoded and associated with the string key.
+         * @param key Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         double decode_double_for_key(const std::string& key) const;
         /**
-     * @brief Calls `-[NSKeyedUnarchiver decodeFloatForKey:]`.
-     * @details Decodes and returns a float value that was previously encoded and associated with the string key.
-     * @param key Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSKeyedUnarchiver decodeFloatForKey:]`.
+         * @details Decodes and returns a float value that was previously encoded and associated with the string key.
+         * @param key Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         float decode_float_for_key(const std::string& key) const;
         /**
-     * @brief Calls `-[NSKeyedUnarchiver decodeInt32ForKey:]`.
-     * @details Decodes and returns a 32-bit integer value that was previously encoded and associated with the string key.
-     * @param key Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSKeyedUnarchiver decodeInt32ForKey:]`.
+         * @details Decodes and returns a 32-bit integer value that was previously encoded and associated with the string key.
+         * @param key Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         int decode_int32_for_key(const std::string& key) const;
         /**
-     * @brief Calls `-[NSKeyedUnarchiver decodeInt64ForKey:]`.
-     * @details Decodes and returns a 64-bit integer value that was previously encoded and associated with the string key.
-     * @param key Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSKeyedUnarchiver decodeInt64ForKey:]`.
+         * @details Decodes and returns a 64-bit integer value that was previously encoded and associated with the string key.
+         * @param key Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::int64_t decode_int64_for_key(const std::string& key) const;
         /**
-     * @brief Calls `-[NSKeyedUnarchiver decodeIntForKey:]`.
-     * @details Decodes and returns an int value that was previously encoded and associated with the string key. If the encoded integer does not fit into the default integer size, the method raises an 'NSRangeException'.
-     * @param key Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSKeyedUnarchiver decodeIntForKey:]`.
+         * @details Decodes and returns an int value that was previously encoded and associated with the string key. If the encoded integer does not fit into the default integer size, the method raises an 'NSRangeException'.
+         * @param key Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         int decode_int_for_key(const std::string& key) const;
         /**
-     * @brief Calls `-[NSKeyedUnarchiver decodeObjectForKey:]`.
-     * @details Decodes and returns a previously-encoded object that was associated with the string key.
-     * @param key Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSKeyedUnarchiver decodeObjectForKey:]`.
+         * @details Decodes and returns a previously-encoded object that was associated with the string key.
+         * @param key Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Object decode_object_for_key(const std::string& key) const;
         /**
-     * @brief Calls `-[NSKeyedUnarchiver finishDecoding]`.
-     * @details Tells the receiver that you are finished decoding objects. Invoking this method allows the receiver to notify its delegate and to perform any final operations on the archive.
-     */
+         * @brief Calls `-[NSKeyedUnarchiver finishDecoding]`.
+         * @details Tells the receiver that you are finished decoding objects. Invoking this method allows the receiver to notify its delegate and to perform any final operations on the archive.
+         */
         void finish_decoding() const;
         /**
-     * @brief Calls `-[NSKeyedUnarchiver setClass:forClassName:]`.
-     * @details Sets a mapping for this unarchiver to decode objects encoded with a given class name as instances of a given class instead. When decoding, the receiver's translation map overrides any translation that may also be present in the class's map.
-     * @param cls Argument converted to the Objective-C parameter of the same role.
-     * @param coded_name Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSKeyedUnarchiver setClass:forClassName:]`.
+         * @details Sets a mapping for this unarchiver to decode objects encoded with a given class name as instances of a given class instead. When decoding, the receiver's translation map overrides any translation that may also be present in the class's map.
+         * @param cls Argument converted to the Objective-C parameter of the same role.
+         * @param coded_name Argument converted to the Objective-C parameter of the same role.
+         */
         void set_class(const std::string& cls, const std::string& coded_name) const;
         /**
-     * @brief Calls `+[NSKeyedUnarchiver unarchivedArrayOfObjectsOfClass:fromData:error:]`.
-     * @details Decodes the \\c NSArray root object from \\c data which should be an \\c NSArray\<cls> containing the given non-collection class (no nested arrays or arrays of dictionaries, etc) from the given archive, previously encoded by \\c NSKeyedArchiver. Enables \\c requiresSecureCoding and sets the \\c decodingFailurePolicy to \\c NSDecodingFailurePolicySetErrorAndReturn. Returns \\c nil if the given data is not valid or cannot be decoded, and sets the \\c error out parameter.
-     * @param cls Argument converted to the Objective-C parameter of the same role.
-     * @param data Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSKeyedUnarchiver unarchivedArrayOfObjectsOfClass:fromData:error:]`.
+         * @details Decodes the \\c NSArray root object from \\c data which should be an \\c NSArray\<cls> containing the given non-collection class (no nested arrays or arrays of dictionaries, etc) from the given archive, previously encoded by \\c NSKeyedArchiver. Enables \\c requiresSecureCoding and sets the \\c decodingFailurePolicy to \\c NSDecodingFailurePolicySetErrorAndReturn. Returns \\c nil if the given data is not valid or cannot be decoded, and sets the \\c error out parameter.
+         * @param cls Argument converted to the Objective-C parameter of the same role.
+         * @param data Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static std::vector<Object> unarchived_array_of_objects_of_class(const std::string& cls, const std::vector<std::uint8_t>& data);
         /**
-     * @brief Calls `+[NSKeyedUnarchiver unarchivedArrayOfObjectsOfClasses:fromData:error:]`.
-     * @details Decodes the \\c NSArray root object from \\c data which should be an \\c NSArray, containing the given non-collection classes in \\c classes (no nested arrays or arrays of dictionaries, etc) from the given archive, previously encoded by \\c NSKeyedArchiver. Enables \\c requiresSecureCoding and sets the \\c decodingFailurePolicy to \\c NSDecodingFailurePolicySetErrorAndReturn. Returns \\c nil if the given data is not valid or cannot be decoded, and sets the \\c error out parameter.
-     * @param classes Argument converted to the Objective-C parameter of the same role.
-     * @param data Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSKeyedUnarchiver unarchivedArrayOfObjectsOfClasses:fromData:error:]`.
+         * @details Decodes the \\c NSArray root object from \\c data which should be an \\c NSArray, containing the given non-collection classes in \\c classes (no nested arrays or arrays of dictionaries, etc) from the given archive, previously encoded by \\c NSKeyedArchiver. Enables \\c requiresSecureCoding and sets the \\c decodingFailurePolicy to \\c NSDecodingFailurePolicySetErrorAndReturn. Returns \\c nil if the given data is not valid or cannot be decoded, and sets the \\c error out parameter.
+         * @param classes Argument converted to the Objective-C parameter of the same role.
+         * @param data Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static std::vector<Object> unarchived_array_of_objects_of_classes(const std::vector<std::string>& classes, const std::vector<std::uint8_t>& data);
         /**
-     * @brief Calls `+[NSKeyedUnarchiver unarchivedDictionaryWithKeysOfClass:objectsOfClass:fromData:error:]`.
-     * @details Decodes the \\c NSDictionary root object from \\c data which should be an \\c NSDictionary\<keyCls,objectCls> with keys of type given in \\c keyCls and objects of the given non-collection class \\c objectCls (no nested dictionaries or other dictionaries contained in the dictionary, etc) from the given archive, previously encoded by \\c NSKeyedArchiver. Enables \\c requiresSecureCoding and sets the \\c decodingFailurePolicy to \\c NSDecodingFailurePolicySetErrorAndReturn. Returns \\c nil if the given data is not valid or cannot be decoded, and sets the \\c error out parameter.
-     * @param key_cls Argument converted to the Objective-C parameter of the same role.
-     * @param value_cls Argument converted to the Objective-C parameter of the same role.
-     * @param data Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSKeyedUnarchiver unarchivedDictionaryWithKeysOfClass:objectsOfClass:fromData:error:]`.
+         * @details Decodes the \\c NSDictionary root object from \\c data which should be an \\c NSDictionary\<keyCls,objectCls> with keys of type given in \\c keyCls and objects of the given non-collection class \\c objectCls (no nested dictionaries or other dictionaries contained in the dictionary, etc) from the given archive, previously encoded by \\c NSKeyedArchiver. Enables \\c requiresSecureCoding and sets the \\c decodingFailurePolicy to \\c NSDecodingFailurePolicySetErrorAndReturn. Returns \\c nil if the given data is not valid or cannot be decoded, and sets the \\c error out parameter.
+         * @param key_cls Argument converted to the Objective-C parameter of the same role.
+         * @param value_cls Argument converted to the Objective-C parameter of the same role.
+         * @param data Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static std::vector<std::pair<Object, Object>> unarchived_dictionary_with_keys_of_class(const std::string& key_cls, const std::string& value_cls, const std::vector<std::uint8_t>& data);
         /**
-     * @brief Calls `+[NSKeyedUnarchiver unarchivedDictionaryWithKeysOfClasses:objectsOfClasses:fromData:error:]`.
-     * @details Decodes the \\c NSDictionary root object from \\c data which should be an \\c NSDictionary, with keys of the types given in \\c keyClasses and objects of the given non-collection classes in \\c objectClasses (no nested dictionaries or other dictionaries contained in the dictionary, etc) from the given archive, previously encoded by \\c NSKeyedArchiver. Enables \\c requiresSecureCoding and sets the \\c decodingFailurePolicy to \\c NSDecodingFailurePolicySetErrorAndReturn. Returns \\c nil if the given data is not valid or cannot be decoded, and sets the \\c error out parameter.
-     * @param key_classes Argument converted to the Objective-C parameter of the same role.
-     * @param value_classes Argument converted to the Objective-C parameter of the same role.
-     * @param data Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSKeyedUnarchiver unarchivedDictionaryWithKeysOfClasses:objectsOfClasses:fromData:error:]`.
+         * @details Decodes the \\c NSDictionary root object from \\c data which should be an \\c NSDictionary, with keys of the types given in \\c keyClasses and objects of the given non-collection classes in \\c objectClasses (no nested dictionaries or other dictionaries contained in the dictionary, etc) from the given archive, previously encoded by \\c NSKeyedArchiver. Enables \\c requiresSecureCoding and sets the \\c decodingFailurePolicy to \\c NSDecodingFailurePolicySetErrorAndReturn. Returns \\c nil if the given data is not valid or cannot be decoded, and sets the \\c error out parameter.
+         * @param key_classes Argument converted to the Objective-C parameter of the same role.
+         * @param value_classes Argument converted to the Objective-C parameter of the same role.
+         * @param data Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static std::vector<std::pair<Object, Object>> unarchived_dictionary_with_keys_of_classes(const std::vector<std::string>& key_classes, const std::vector<std::string>& value_classes, const std::vector<std::uint8_t>& data);
         /**
-     * @brief Calls `+[NSKeyedUnarchiver unarchivedObjectOfClass:fromData:error:]`.
-     * @details Decodes the root object of the given class from the given archive, previously encoded by \\c NSKeyedArchiver. Enables \\c requiresSecureCoding and sets the \\c decodingFailurePolicy to \\c NSDecodingFailurePolicySetErrorAndReturn. Returns \\c nil if the given data is not valid or cannot be decoded, and sets the \\c error out parameter. \@important Make sure you have adopted \\c NSSecureCoding in the types you decode. If any call to a \\c decode -prefixed method fails, the default \\c decodingFailurePolicy sets the error rather than throwing an exception. In this case, the current and all subsequent decode calls return \\c 0 or \\c nil.
-     * @param cls Argument converted to the Objective-C parameter of the same role.
-     * @param data Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSKeyedUnarchiver unarchivedObjectOfClass:fromData:error:]`.
+         * @details Decodes the root object of the given class from the given archive, previously encoded by \\c NSKeyedArchiver. Enables \\c requiresSecureCoding and sets the \\c decodingFailurePolicy to \\c NSDecodingFailurePolicySetErrorAndReturn. Returns \\c nil if the given data is not valid or cannot be decoded, and sets the \\c error out parameter. \@important Make sure you have adopted \\c NSSecureCoding in the types you decode. If any call to a \\c decode -prefixed method fails, the default \\c decodingFailurePolicy sets the error rather than throwing an exception. In this case, the current and all subsequent decode calls return \\c 0 or \\c nil.
+         * @param cls Argument converted to the Objective-C parameter of the same role.
+         * @param data Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static Object unarchived_object_of_class(const std::string& cls, const std::vector<std::uint8_t>& data);
         /**
-     * @brief Calls `+[NSKeyedUnarchiver unarchivedObjectOfClasses:fromData:error:]`.
-     * @details Decodes the root object of one of the given classes from the given archive, previously encoded by \\c NSKeyedArchiver. Enables \\c requiresSecureCoding and sets the \\c decodingFailurePolicy to \\c NSDecodingFailurePolicySetErrorAndReturn. Returns \\c nil if the given data is not valid or cannot be decoded, and sets the \\c error out parameter. \@important Make sure you have adopted \\c NSSecureCoding in the types you decode. If any call to a \\c decode -prefixed method fails, the default \\c decodingFailurePolicy sets the error rather than throwing an exception. In this case, the current and all subsequent decode calls return \\c 0 or \\c nil.
-     * @param classes Argument converted to the Objective-C parameter of the same role.
-     * @param data Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSKeyedUnarchiver unarchivedObjectOfClasses:fromData:error:]`.
+         * @details Decodes the root object of one of the given classes from the given archive, previously encoded by \\c NSKeyedArchiver. Enables \\c requiresSecureCoding and sets the \\c decodingFailurePolicy to \\c NSDecodingFailurePolicySetErrorAndReturn. Returns \\c nil if the given data is not valid or cannot be decoded, and sets the \\c error out parameter. \@important Make sure you have adopted \\c NSSecureCoding in the types you decode. If any call to a \\c decode -prefixed method fails, the default \\c decodingFailurePolicy sets the error rather than throwing an exception. In this case, the current and all subsequent decode calls return \\c 0 or \\c nil.
+         * @param classes Argument converted to the Objective-C parameter of the same role.
+         * @param data Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static Object unarchived_object_of_classes(const std::vector<std::string>& classes, const std::vector<std::uint8_t>& data);
         /**
-     * @brief Returns the `decodingFailurePolicy` property of `NSKeyedUnarchiver`.
-     * @details The action to take when the unarchiver encounters decode failures.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `decodingFailurePolicy` property of `NSKeyedUnarchiver`.
+         * @details The action to take when the unarchiver encounters decode failures.
+         * @return The converted Objective-C result.
+         */
         DecodingFailurePolicy decoding_failure_policy() const;
         /**
-     * @brief Sets the `decodingFailurePolicy` property of `NSKeyedUnarchiver`.
-     * @details The action to take when the unarchiver encounters decode failures.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `decodingFailurePolicy` property of `NSKeyedUnarchiver`.
+         * @details The action to take when the unarchiver encounters decode failures.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_decoding_failure_policy(DecodingFailurePolicy value) const;
         /**
-     * @brief Returns the `requiresSecureCoding` property of `NSKeyedUnarchiver`.
-     * @details Indicates whether the unarchiver requires all unarchived classes to resist object substitution attacks. When enabled, unarchiving a disallowed class throws an exception. Once enabled, attempting to set 'requiresSecureCoding' to 'NO' will throw an exception. This is to prevent classes from selectively turning secure coding off. This is designed to be set once at the top level and remain on. Note that the getter is on the superclass, 'NSCoder'. See 'NSCoder' for more information about secure coding.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `requiresSecureCoding` property of `NSKeyedUnarchiver`.
+         * @details Indicates whether the unarchiver requires all unarchived classes to resist object substitution attacks. When enabled, unarchiving a disallowed class throws an exception. Once enabled, attempting to set 'requiresSecureCoding' to 'NO' will throw an exception. This is to prevent classes from selectively turning secure coding off. This is designed to be set once at the top level and remain on. Note that the getter is on the superclass, 'NSCoder'. See 'NSCoder' for more information about secure coding.
+         * @return The converted Objective-C result.
+         */
         bool requires_secure_coding() const;
         /**
-     * @brief Sets the `requiresSecureCoding` property of `NSKeyedUnarchiver`.
-     * @details Indicates whether the unarchiver requires all unarchived classes to resist object substitution attacks. When enabled, unarchiving a disallowed class throws an exception. Once enabled, attempting to set 'requiresSecureCoding' to 'NO' will throw an exception. This is to prevent classes from selectively turning secure coding off. This is designed to be set once at the top level and remain on. Note that the getter is on the superclass, 'NSCoder'. See 'NSCoder' for more information about secure coding.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `requiresSecureCoding` property of `NSKeyedUnarchiver`.
+         * @details Indicates whether the unarchiver requires all unarchived classes to resist object substitution attacks. When enabled, unarchiving a disallowed class throws an exception. Once enabled, attempting to set 'requiresSecureCoding' to 'NO' will throw an exception. This is to prevent classes from selectively turning secure coding off. This is designed to be set once at the top level and remain on. Note that the getter is on the superclass, 'NSCoder'. See 'NSCoder' for more information about secure coding.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_requires_secure_coding(bool value) const;
         /// @brief Signal for the delegate/data-source method behind `unarchiver_cannot_decode_object_of_class_name_original_classes`; connect a callback with `unarchiver_cannot_decode_object_of_class_name_original_classes().connect(...)`.
         Signal<KeyedUnarchiver, std::string(std::string, std::vector<std::string>)> unarchiver_cannot_decode_object_of_class_name_original_classes() const

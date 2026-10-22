@@ -50,28 +50,28 @@ namespace cocoon
         explicit TextSelectionManager(Adopt adopt);
 #ifdef COCOON_MACOS_27
         /**
-     * @brief Returns the `gesturesForFailureRequirements` property of `NSTextSelectionManager`.
-     * @details The gesture recognizers managed by the selection manager. Other gesture recognizers in the view hierarchy can declare dependencies on these gestures using 'requireGestureRecognizerToFail:' to ensure proper gesture recognition precedence.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `gesturesForFailureRequirements` property of `NSTextSelectionManager`.
+         * @details The gesture recognizers managed by the selection manager. Other gesture recognizers in the view hierarchy can declare dependencies on these gestures using 'requireGestureRecognizerToFail:' to ensure proper gesture recognition precedence.
+         * @return The converted Objective-C result.
+         */
         std::vector<GestureRecognizer> gestures_for_failure_requirements() const;
 #endif
 
 #ifdef COCOON_MACOS_27
         /**
-     * @brief Returns the `textSelectionMode` property of `NSTextSelectionManager`.
-     * @details The interaction mode for text selection. Determines whether text is editable, selectable only, or non-interactive. The default value is 'NSTextSelectionModeEditable'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `textSelectionMode` property of `NSTextSelectionManager`.
+         * @details The interaction mode for text selection. Determines whether text is editable, selectable only, or non-interactive. The default value is 'NSTextSelectionModeEditable'.
+         * @return The converted Objective-C result.
+         */
         TextSelectionMode text_selection_mode() const;
 #endif
 
 #ifdef COCOON_MACOS_27
         /**
-     * @brief Sets the `textSelectionMode` property of `NSTextSelectionManager`.
-     * @details The interaction mode for text selection. Determines whether text is editable, selectable only, or non-interactive. The default value is 'NSTextSelectionModeEditable'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `textSelectionMode` property of `NSTextSelectionManager`.
+         * @details The interaction mode for text selection. Determines whether text is editable, selectable only, or non-interactive. The default value is 'NSTextSelectionModeEditable'.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_text_selection_mode(TextSelectionMode value) const;
 #endif
 

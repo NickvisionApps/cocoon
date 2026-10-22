@@ -43,24 +43,24 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit MetadataItem(Adopt adopt);
         /**
-     * @brief Calls `-[NSMetadataItem valueForAttribute:]`.
-     * @details Returns the value for the specified attribute of the receiver.
-     * @param key Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSMetadataItem valueForAttribute:]`.
+         * @details Returns the value for the specified attribute of the receiver.
+         * @param key Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Object value_for_attribute(const std::string& key) const;
         /**
-     * @brief Calls `-[NSMetadataItem valuesForAttributes:]`.
-     * @details Returns a dictionary containing the specified attributes and their values.
-     * @param keys Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSMetadataItem valuesForAttributes:]`.
+         * @details Returns a dictionary containing the specified attributes and their values.
+         * @param keys Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::map<std::string, Object> values_for_attributes(const std::vector<std::string>& keys) const;
         /**
-     * @brief Returns the `attributes` property of `NSMetadataItem`.
-     * @details An array containing the attributes of the receiver.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `attributes` property of `NSMetadataItem`.
+         * @details An array containing the attributes of the receiver.
+         * @return The converted Objective-C result.
+         */
         std::vector<std::string> attributes() const;
     };
 }

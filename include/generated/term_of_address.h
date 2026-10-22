@@ -39,48 +39,48 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit TermOfAddress(Adopt adopt);
         /**
-     * @brief Calls `+[NSTermOfAddress currentUser]`.
-     * @details The term of address that should be used for addressing the user This term of address will only compare equal to another '+[NSTermOfAddress currentUser]'
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSTermOfAddress currentUser]`.
+         * @details The term of address that should be used for addressing the user This term of address will only compare equal to another '+[NSTermOfAddress currentUser]'
+         * @return The converted Objective-C result.
+         */
         static TermOfAddress current_user();
         /**
-     * @brief Calls `+[NSTermOfAddress feminine]`.
-     * @details Term of address that uses feminine pronouns (e.g. she/her/hers in English), and a feminine grammatical gender when inflecting verbs and adjectives referring to the person
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSTermOfAddress feminine]`.
+         * @details Term of address that uses feminine pronouns (e.g. she/her/hers in English), and a feminine grammatical gender when inflecting verbs and adjectives referring to the person
+         * @return The converted Objective-C result.
+         */
         static TermOfAddress feminine();
         /**
-     * @brief Calls `+[NSTermOfAddress localizedForLanguageIdentifier:withPronouns:]`.
-     * @details A term of address restricted to a given language \@param language ISO language code identifier for the language \@param pronouns A list of pronouns in the target language that can be used to refer to the person.
-     * @param language Argument converted to the Objective-C parameter of the same role.
-     * @param pronouns Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSTermOfAddress localizedForLanguageIdentifier:withPronouns:]`.
+         * @details A term of address restricted to a given language \@param language ISO language code identifier for the language \@param pronouns A list of pronouns in the target language that can be used to refer to the person.
+         * @param language Argument converted to the Objective-C parameter of the same role.
+         * @param pronouns Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static TermOfAddress localized_for_language_identifier(const std::string& language, const std::vector<MorphologyPronoun>& pronouns);
         /**
-     * @brief Calls `+[NSTermOfAddress masculine]`.
-     * @details Term of address that uses masculine pronouns (e.g. he/him/his in English), and a masculine grammatical gender when inflecting verbs and adjectives referring to the person
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSTermOfAddress masculine]`.
+         * @details Term of address that uses masculine pronouns (e.g. he/him/his in English), and a masculine grammatical gender when inflecting verbs and adjectives referring to the person
+         * @return The converted Objective-C result.
+         */
         static TermOfAddress masculine();
         /**
-     * @brief Calls `+[NSTermOfAddress neutral]`.
-     * @details Term of address that uses gender-neutral pronouns (e.g. they/them/theirs in English), and an epicene grammatical gender when inflecting verbs and adjectives referring to the person
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSTermOfAddress neutral]`.
+         * @details Term of address that uses gender-neutral pronouns (e.g. they/them/theirs in English), and an epicene grammatical gender when inflecting verbs and adjectives referring to the person
+         * @return The converted Objective-C result.
+         */
         static TermOfAddress neutral();
         /**
-     * @brief Returns the `languageIdentifier` property of `NSTermOfAddress`.
-     * @details The ISO language code if this is a localized term of address
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `languageIdentifier` property of `NSTermOfAddress`.
+         * @details The ISO language code if this is a localized term of address
+         * @return The converted Objective-C result.
+         */
         std::string language_identifier() const;
         /**
-     * @brief Returns the `pronouns` property of `NSTermOfAddress`.
-     * @details A list of pronouns for a localized term of address
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `pronouns` property of `NSTermOfAddress`.
+         * @details A list of pronouns for a localized term of address
+         * @return The converted Objective-C result.
+         */
         std::vector<MorphologyPronoun> pronouns() const;
     };
 }

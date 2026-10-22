@@ -37,28 +37,28 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit CachedURLResponse(Adopt adopt);
         /**
-     * @brief Returns the `data` property of `NSCachedURLResponse`.
-     * @details The cached response's data.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `data` property of `NSCachedURLResponse`.
+         * @details The cached response's data.
+         * @return The converted Objective-C result.
+         */
         std::vector<std::uint8_t> data() const;
         /**
-     * @brief Returns the `response` property of `NSCachedURLResponse`.
-     * @details The URL response object associated with the instance.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `response` property of `NSCachedURLResponse`.
+         * @details The URL response object associated with the instance.
+         * @return The converted Objective-C result.
+         */
         URLResponse response() const;
         /**
-     * @brief Returns the `storagePolicy` property of `NSCachedURLResponse`.
-     * @details The cached response's storage policy.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `storagePolicy` property of `NSCachedURLResponse`.
+         * @details The cached response's storage policy.
+         * @return The converted Objective-C result.
+         */
         URLCacheStoragePolicy storage_policy() const;
         /**
-     * @brief Returns the `userInfo` property of `NSCachedURLResponse`.
-     * @details The cached response's user info dictionary.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `userInfo` property of `NSCachedURLResponse`.
+         * @details The cached response's user info dictionary.
+         * @return The converted Objective-C result.
+         */
         std::vector<std::pair<Object, Object>> user_info() const;
     };
 }

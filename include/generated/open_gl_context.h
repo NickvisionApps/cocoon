@@ -49,66 +49,66 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit OpenGLContext(Adopt adopt);
         /**
-     * @brief Calls `+[NSOpenGLContext clearCurrentContext]`.
-     */
+         * @brief Calls `+[NSOpenGLContext clearCurrentContext]`.
+         */
         static void clear_current_context();
         /**
-     * @brief Calls `-[NSOpenGLContext clearDrawable]`.
-     */
+         * @brief Calls `-[NSOpenGLContext clearDrawable]`.
+         */
         void clear_drawable() const;
         /**
-     * @brief Calls `-[NSOpenGLContext flushBuffer]`.
-     * @details Flush draw buffer
-     */
+         * @brief Calls `-[NSOpenGLContext flushBuffer]`.
+         * @details Flush draw buffer
+         */
         void flush_buffer() const;
         /**
-     * @brief Calls `-[NSOpenGLContext getValues:forParameter:]`.
-     * @param vals Argument converted to the Objective-C parameter of the same role.
-     * @param param Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSOpenGLContext getValues:forParameter:]`.
+         * @param vals Argument converted to the Objective-C parameter of the same role.
+         * @param param Argument converted to the Objective-C parameter of the same role.
+         */
         void get_values(int* vals, OpenGLContextParameter param) const;
         /**
-     * @brief Calls `-[NSOpenGLContext makeCurrentContext]`.
-     * @details Current context control
-     */
+         * @brief Calls `-[NSOpenGLContext makeCurrentContext]`.
+         * @details Current context control
+         */
         void make_current_context() const;
         /**
-     * @brief Calls `-[NSOpenGLContext setValues:forParameter:]`.
-     * @details Context Parameter handling
-     * @param vals Argument converted to the Objective-C parameter of the same role.
-     * @param param Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSOpenGLContext setValues:forParameter:]`.
+         * @details Context Parameter handling
+         * @param vals Argument converted to the Objective-C parameter of the same role.
+         * @param param Argument converted to the Objective-C parameter of the same role.
+         */
         void set_values(const int* vals, OpenGLContextParameter param) const;
         /**
-     * @brief Calls `-[NSOpenGLContext update]`.
-     */
+         * @brief Calls `-[NSOpenGLContext update]`.
+         */
         void update() const;
         /**
-     * @brief Returns the `CGLContextObj` property of `NSOpenGLContext`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `CGLContextObj` property of `NSOpenGLContext`.
+         * @return The converted Objective-C result.
+         */
         CGLContextObj cgl_context_obj() const;
         /**
-     * @brief Returns the `currentContext` property of `NSOpenGLContext`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `currentContext` property of `NSOpenGLContext`.
+         * @return The converted Objective-C result.
+         */
         static OpenGLContext current_context();
         /**
-     * @brief Returns the `currentVirtualScreen` property of `NSOpenGLContext`.
-     * @details virtual screens
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `currentVirtualScreen` property of `NSOpenGLContext`.
+         * @details virtual screens
+         * @return The converted Objective-C result.
+         */
         int current_virtual_screen() const;
         /**
-     * @brief Sets the `currentVirtualScreen` property of `NSOpenGLContext`.
-     * @details virtual screens
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `currentVirtualScreen` property of `NSOpenGLContext`.
+         * @details virtual screens
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_current_virtual_screen(int value) const;
         /**
-     * @brief Returns the `pixelFormat` property of `NSOpenGLContext`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `pixelFormat` property of `NSOpenGLContext`.
+         * @return The converted Objective-C result.
+         */
         OpenGLPixelFormat pixel_format() const;
     };
 }

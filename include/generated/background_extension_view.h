@@ -45,28 +45,28 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit BackgroundExtensionView(Adopt adopt);
         /**
-     * @brief Returns the `automaticallyPlacesContentView` property of `NSBackgroundExtensionView`.
-     * @details Controls the automatic safe area placement of the 'contentView' within the container. When 'NO', the frame of the content view must be explicitly set or constraints added. The extension effect will be used to fill the container view around the content. Defaults to 'YES'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `automaticallyPlacesContentView` property of `NSBackgroundExtensionView`.
+         * @details Controls the automatic safe area placement of the 'contentView' within the container. When 'NO', the frame of the content view must be explicitly set or constraints added. The extension effect will be used to fill the container view around the content. Defaults to 'YES'.
+         * @return The converted Objective-C result.
+         */
         bool automatically_places_content_view() const;
         /**
-     * @brief Sets the `automaticallyPlacesContentView` property of `NSBackgroundExtensionView`.
-     * @details Controls the automatic safe area placement of the 'contentView' within the container. When 'NO', the frame of the content view must be explicitly set or constraints added. The extension effect will be used to fill the container view around the content. Defaults to 'YES'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `automaticallyPlacesContentView` property of `NSBackgroundExtensionView`.
+         * @details Controls the automatic safe area placement of the 'contentView' within the container. When 'NO', the frame of the content view must be explicitly set or constraints added. The extension effect will be used to fill the container view around the content. Defaults to 'YES'.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_automatically_places_content_view(bool value) const;
         /**
-     * @brief Returns the `contentView` property of `NSBackgroundExtensionView`.
-     * @details The content view to extend to fill the 'NSBackgroundExtensionView'. The content view will be added as a subview of the extension view and placed within the safe area by default. See 'automaticallyPlacesContentView' to customize the layout.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `contentView` property of `NSBackgroundExtensionView`.
+         * @details The content view to extend to fill the 'NSBackgroundExtensionView'. The content view will be added as a subview of the extension view and placed within the safe area by default. See 'automaticallyPlacesContentView' to customize the layout.
+         * @return The converted Objective-C result.
+         */
         View content_view() const;
         /**
-     * @brief Sets the `contentView` property of `NSBackgroundExtensionView`.
-     * @details The content view to extend to fill the 'NSBackgroundExtensionView'. The content view will be added as a subview of the extension view and placed within the safe area by default. See 'automaticallyPlacesContentView' to customize the layout.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `contentView` property of `NSBackgroundExtensionView`.
+         * @details The content view to extend to fill the 'NSBackgroundExtensionView'. The content view will be added as a subview of the extension view and placed within the safe area by default. See 'automaticallyPlacesContentView' to customize the layout.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_content_view(const View& value) const;
     };
 }

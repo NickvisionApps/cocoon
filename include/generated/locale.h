@@ -43,312 +43,312 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit Locale(Adopt adopt);
         /**
-     * @brief Calls `+[NSLocale canonicalLanguageIdentifierFromString:]`.
-     * @details Returns a canonical language identifier by mapping an arbitrary locale identification string to the canonical identifier.
-     * @param string Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSLocale canonicalLanguageIdentifierFromString:]`.
+         * @details Returns a canonical language identifier by mapping an arbitrary locale identification string to the canonical identifier.
+         * @param string Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static std::string canonical_language_identifier_from_string(const std::string& string);
         /**
-     * @brief Calls `+[NSLocale canonicalLocaleIdentifierFromString:]`.
-     * @details Returns the canonical identifier for a given locale identification string.
-     * @param string Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSLocale canonicalLocaleIdentifierFromString:]`.
+         * @details Returns the canonical identifier for a given locale identification string.
+         * @param string Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static std::string canonical_locale_identifier_from_string(const std::string& string);
         /**
-     * @brief Calls `+[NSLocale characterDirectionForLanguage:]`.
-     * @details Returns the direction of the sequence of characters in a line for the specified ISO language code.
-     * @param iso_lang_code Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSLocale characterDirectionForLanguage:]`.
+         * @details Returns the direction of the sequence of characters in a line for the specified ISO language code.
+         * @param iso_lang_code Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static LocaleLanguageDirection character_direction_for_language(const std::string& iso_lang_code);
         /**
-     * @brief Calls `+[NSLocale componentsFromLocaleIdentifier:]`.
-     * @details Returns a dictionary that is the result of parsing a locale ID.
-     * @param string Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSLocale componentsFromLocaleIdentifier:]`.
+         * @details Returns a dictionary that is the result of parsing a locale ID.
+         * @param string Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static std::map<std::string, std::string> components_from_locale_identifier(const std::string& string);
         /**
-     * @brief Calls `-[NSLocale displayNameForKey:value:]`.
-     * @details Returns the display name for the given locale component value.
-     * @param key Argument converted to the Objective-C parameter of the same role.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSLocale displayNameForKey:value:]`.
+         * @details Returns the display name for the given locale component value.
+         * @param key Argument converted to the Objective-C parameter of the same role.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::string display_name_for_key(const std::string& key, const Object& value) const;
         /**
-     * @brief Calls `+[NSLocale lineDirectionForLanguage:]`.
-     * @details Returns the direction of the sequence of lines for the specified ISO language code.
-     * @param iso_lang_code Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSLocale lineDirectionForLanguage:]`.
+         * @details Returns the direction of the sequence of lines for the specified ISO language code.
+         * @param iso_lang_code Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static LocaleLanguageDirection line_direction_for_language(const std::string& iso_lang_code);
         /**
-     * @brief Calls `+[NSLocale localeIdentifierFromComponents:]`.
-     * @details Returns a locale identifier from the components specified in a given dictionary.
-     * @param dict Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSLocale localeIdentifierFromComponents:]`.
+         * @details Returns a locale identifier from the components specified in a given dictionary.
+         * @param dict Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static std::string locale_identifier_from_components(const std::map<std::string, std::string>& dict);
         /**
-     * @brief Calls `+[NSLocale localeIdentifierFromWindowsLocaleCode:]`.
-     * @details Returns a locale identifier from a Windows locale code.
-     * @param lcid Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSLocale localeIdentifierFromWindowsLocaleCode:]`.
+         * @details Returns a locale identifier from a Windows locale code.
+         * @param lcid Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static std::string locale_identifier_from_windows_locale_code(unsigned int lcid);
         /**
-     * @brief Calls `-[NSLocale localizedStringForCalendarIdentifier:]`.
-     * @details Returns a localized string for the specified calendar identifier.
-     * @param calendar_identifier Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSLocale localizedStringForCalendarIdentifier:]`.
+         * @details Returns a localized string for the specified calendar identifier.
+         * @param calendar_identifier Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::string localized_string_for_calendar_identifier(const std::string& calendar_identifier) const;
         /**
-     * @brief Calls `-[NSLocale localizedStringForCollationIdentifier:]`.
-     * @details Returns a localized string for the specified collation identifier.
-     * @param collation_identifier Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSLocale localizedStringForCollationIdentifier:]`.
+         * @details Returns a localized string for the specified collation identifier.
+         * @param collation_identifier Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::string localized_string_for_collation_identifier(const std::string& collation_identifier) const;
         /**
-     * @brief Calls `-[NSLocale localizedStringForCollatorIdentifier:]`.
-     * @details Returns a localized string for the specified collator identifier.
-     * @param collator_identifier Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSLocale localizedStringForCollatorIdentifier:]`.
+         * @details Returns a localized string for the specified collator identifier.
+         * @param collator_identifier Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::string localized_string_for_collator_identifier(const std::string& collator_identifier) const;
         /**
-     * @brief Calls `-[NSLocale localizedStringForCountryCode:]`.
-     * @details Returns a localized string for the specified country or region code.
-     * @param country_code Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSLocale localizedStringForCountryCode:]`.
+         * @details Returns a localized string for the specified country or region code.
+         * @param country_code Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::string localized_string_for_country_code(const std::string& country_code) const;
         /**
-     * @brief Calls `-[NSLocale localizedStringForCurrencyCode:]`.
-     * @details Returns a localized string for the specified currency code.
-     * @param currency_code Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSLocale localizedStringForCurrencyCode:]`.
+         * @details Returns a localized string for the specified currency code.
+         * @param currency_code Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::string localized_string_for_currency_code(const std::string& currency_code) const;
         /**
-     * @brief Calls `-[NSLocale localizedStringForLanguageCode:]`.
-     * @details Returns a localized string for the specified language code.
-     * @param language_code Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSLocale localizedStringForLanguageCode:]`.
+         * @details Returns a localized string for the specified language code.
+         * @param language_code Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::string localized_string_for_language_code(const std::string& language_code) const;
         /**
-     * @brief Calls `-[NSLocale localizedStringForLocaleIdentifier:]`.
-     * @details Returns a localized string for the specified locale identifier.
-     * @param locale_identifier Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSLocale localizedStringForLocaleIdentifier:]`.
+         * @details Returns a localized string for the specified locale identifier.
+         * @param locale_identifier Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::string localized_string_for_locale_identifier(const std::string& locale_identifier) const;
         /**
-     * @brief Calls `-[NSLocale localizedStringForScriptCode:]`.
-     * @details Returns a localized string for the specified script code.
-     * @param script_code Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSLocale localizedStringForScriptCode:]`.
+         * @details Returns a localized string for the specified script code.
+         * @param script_code Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::string localized_string_for_script_code(const std::string& script_code) const;
         /**
-     * @brief Calls `-[NSLocale localizedStringForVariantCode:]`.
-     * @details Returns a localized string for the specified variant code.
-     * @param variant_code Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSLocale localizedStringForVariantCode:]`.
+         * @details Returns a localized string for the specified variant code.
+         * @param variant_code Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::string localized_string_for_variant_code(const std::string& variant_code) const;
         /**
-     * @brief Calls `-[NSLocale objectForKey:]`.
-     * @details Returns the object corresponding to the specified key.
-     * @param key Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSLocale objectForKey:]`.
+         * @details Returns the object corresponding to the specified key.
+         * @param key Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Object object_for_key(const std::string& key) const;
         /**
-     * @brief Calls `+[NSLocale windowsLocaleCodeFromLocaleIdentifier:]`.
-     * @details Returns a Windows locale code from the locale identifier.
-     * @param locale_identifier Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSLocale windowsLocaleCodeFromLocaleIdentifier:]`.
+         * @details Returns a Windows locale code from the locale identifier.
+         * @param locale_identifier Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static unsigned int windows_locale_code_from_locale_identifier(const std::string& locale_identifier);
         /**
-     * @brief Returns the `ISOCountryCodes` property of `NSLocale`.
-     * @details An array of NSString objects that represents all known legal ISO country codes.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `ISOCountryCodes` property of `NSLocale`.
+         * @details An array of NSString objects that represents all known legal ISO country codes.
+         * @return The converted Objective-C result.
+         */
         static std::vector<std::string> iso_country_codes();
         /**
-     * @brief Returns the `ISOCurrencyCodes` property of `NSLocale`.
-     * @details An array of NSString objects that represents all known legal ISO currency codes.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `ISOCurrencyCodes` property of `NSLocale`.
+         * @details An array of NSString objects that represents all known legal ISO currency codes.
+         * @return The converted Objective-C result.
+         */
         static std::vector<std::string> iso_currency_codes();
         /**
-     * @brief Returns the `ISOLanguageCodes` property of `NSLocale`.
-     * @details An array of NSString objects that represents all known legal ISO language codes.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `ISOLanguageCodes` property of `NSLocale`.
+         * @details An array of NSString objects that represents all known legal ISO language codes.
+         * @return The converted Objective-C result.
+         */
         static std::vector<std::string> iso_language_codes();
         /**
-     * @brief Returns the `alternateQuotationBeginDelimiter` property of `NSLocale`.
-     * @details The begin quotation delimiter for the locale when using alternate quotation marks.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `alternateQuotationBeginDelimiter` property of `NSLocale`.
+         * @details The begin quotation delimiter for the locale when using alternate quotation marks.
+         * @return The converted Objective-C result.
+         */
         std::string alternate_quotation_begin_delimiter() const;
         /**
-     * @brief Returns the `alternateQuotationEndDelimiter` property of `NSLocale`.
-     * @details The end quotation delimiter for the locale when using alternate quotation marks.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `alternateQuotationEndDelimiter` property of `NSLocale`.
+         * @details The end quotation delimiter for the locale when using alternate quotation marks.
+         * @return The converted Objective-C result.
+         */
         std::string alternate_quotation_end_delimiter() const;
         /**
-     * @brief Returns the `autoupdatingCurrentLocale` property of `NSLocale`.
-     * @details A locale representing the user's region settings at the time the property is read.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `autoupdatingCurrentLocale` property of `NSLocale`.
+         * @details A locale representing the user's region settings at the time the property is read.
+         * @return The converted Objective-C result.
+         */
         static Locale autoupdating_current_locale();
         /**
-     * @brief Returns the `availableLocaleIdentifiers` property of `NSLocale`.
-     * @details An array of NSString objects, each of which identifies a locale available on the system.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `availableLocaleIdentifiers` property of `NSLocale`.
+         * @details An array of NSString objects, each of which identifies a locale available on the system.
+         * @return The converted Objective-C result.
+         */
         static std::vector<std::string> available_locale_identifiers();
         /**
-     * @brief Returns the `calendarIdentifier` property of `NSLocale`.
-     * @details The calendar identifier for the locale.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `calendarIdentifier` property of `NSLocale`.
+         * @details The calendar identifier for the locale.
+         * @return The converted Objective-C result.
+         */
         std::string calendar_identifier() const;
         /**
-     * @brief Returns the `collationIdentifier` property of `NSLocale`.
-     * @details The collation identifier for the locale.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `collationIdentifier` property of `NSLocale`.
+         * @details The collation identifier for the locale.
+         * @return The converted Objective-C result.
+         */
         std::string collation_identifier() const;
         /**
-     * @brief Returns the `collatorIdentifier` property of `NSLocale`.
-     * @details The collator identifier for the locale.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `collatorIdentifier` property of `NSLocale`.
+         * @details The collator identifier for the locale.
+         * @return The converted Objective-C result.
+         */
         std::string collator_identifier() const;
         /**
-     * @brief Returns the `commonISOCurrencyCodes` property of `NSLocale`.
-     * @details An array of common ISO currency codes.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `commonISOCurrencyCodes` property of `NSLocale`.
+         * @details An array of common ISO currency codes.
+         * @return The converted Objective-C result.
+         */
         static std::vector<std::string> common_iso_currency_codes();
         /**
-     * @brief Returns the `countryCode` property of `NSLocale`.
-     * @details The country or region code for the locale.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `countryCode` property of `NSLocale`.
+         * @details The country or region code for the locale.
+         * @return The converted Objective-C result.
+         */
         std::string country_code() const;
         /**
-     * @brief Returns the `currencyCode` property of `NSLocale`.
-     * @details The currency code for the locale.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `currencyCode` property of `NSLocale`.
+         * @details The currency code for the locale.
+         * @return The converted Objective-C result.
+         */
         std::string currency_code() const;
         /**
-     * @brief Returns the `currencySymbol` property of `NSLocale`.
-     * @details The currency symbol for the locale.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `currencySymbol` property of `NSLocale`.
+         * @details The currency symbol for the locale.
+         * @return The converted Objective-C result.
+         */
         std::string currency_symbol() const;
         /**
-     * @brief Returns the `currentLocale` property of `NSLocale`.
-     * @details An object representing the user's current locale.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `currentLocale` property of `NSLocale`.
+         * @details An object representing the user's current locale.
+         * @return The converted Objective-C result.
+         */
         static Locale current_locale();
         /**
-     * @brief Returns the `decimalSeparator` property of `NSLocale`.
-     * @details The decimal separator for the locale.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `decimalSeparator` property of `NSLocale`.
+         * @details The decimal separator for the locale.
+         * @return The converted Objective-C result.
+         */
         std::string decimal_separator() const;
         /**
-     * @brief Returns the `exemplarCharacterSet` property of `NSLocale`.
-     * @details The exemplar character set for the locale.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `exemplarCharacterSet` property of `NSLocale`.
+         * @details The exemplar character set for the locale.
+         * @return The converted Objective-C result.
+         */
         CharacterSet exemplar_character_set() const;
         /**
-     * @brief Returns the `groupingSeparator` property of `NSLocale`.
-     * @details The grouping separator for the locale.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `groupingSeparator` property of `NSLocale`.
+         * @details The grouping separator for the locale.
+         * @return The converted Objective-C result.
+         */
         std::string grouping_separator() const;
         /**
-     * @brief Returns the `languageCode` property of `NSLocale`.
-     * @details The language code for the locale.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `languageCode` property of `NSLocale`.
+         * @details The language code for the locale.
+         * @return The converted Objective-C result.
+         */
         std::string language_code() const;
         /**
-     * @brief Returns the `languageIdentifier` property of `NSLocale`.
-     * @details Returns the identifier for the language part of the locale. For example, returns "en-US" for "en_US\@rg=gbzzzz" locale.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `languageIdentifier` property of `NSLocale`.
+         * @details Returns the identifier for the language part of the locale. For example, returns "en-US" for "en_US\@rg=gbzzzz" locale.
+         * @return The converted Objective-C result.
+         */
         std::string language_identifier() const;
         /**
-     * @brief Returns the `localeIdentifier` property of `NSLocale`.
-     * @details The identifier for the locale.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `localeIdentifier` property of `NSLocale`.
+         * @details The identifier for the locale.
+         * @return The converted Objective-C result.
+         */
         std::string locale_identifier() const;
         /**
-     * @brief Returns the `preferredLanguages` property of `NSLocale`.
-     * @details An ordered list of the user's preferred languages.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `preferredLanguages` property of `NSLocale`.
+         * @details An ordered list of the user's preferred languages.
+         * @return The converted Objective-C result.
+         */
         static std::vector<std::string> preferred_languages();
         /**
-     * @brief Returns the `quotationBeginDelimiter` property of `NSLocale`.
-     * @details The begin quotation delimiter for the locale.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `quotationBeginDelimiter` property of `NSLocale`.
+         * @details The begin quotation delimiter for the locale.
+         * @return The converted Objective-C result.
+         */
         std::string quotation_begin_delimiter() const;
         /**
-     * @brief Returns the `quotationEndDelimiter` property of `NSLocale`.
-     * @details The end quotation delimiter for the locale.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `quotationEndDelimiter` property of `NSLocale`.
+         * @details The end quotation delimiter for the locale.
+         * @return The converted Objective-C result.
+         */
         std::string quotation_end_delimiter() const;
         /**
-     * @brief Returns the `regionCode` property of `NSLocale`.
-     * @details Returns the region code of the locale. If the 'rg' subtag is present, the value of the subtag will be used. For example, returns "GB" for "en_US\@rg=gbzzzz" locale. If the 'localeIdentifier' doesn’t contain a region, returns 'nil'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `regionCode` property of `NSLocale`.
+         * @details Returns the region code of the locale. If the 'rg' subtag is present, the value of the subtag will be used. For example, returns "GB" for "en_US\@rg=gbzzzz" locale. If the 'localeIdentifier' doesn’t contain a region, returns 'nil'.
+         * @return The converted Objective-C result.
+         */
         std::string region_code() const;
         /**
-     * @brief Returns the `scriptCode` property of `NSLocale`.
-     * @details The script code for the locale.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `scriptCode` property of `NSLocale`.
+         * @details The script code for the locale.
+         * @return The converted Objective-C result.
+         */
         std::string script_code() const;
         /**
-     * @brief Returns the `systemLocale` property of `NSLocale`.
-     * @details The default generic root locale with little localization.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `systemLocale` property of `NSLocale`.
+         * @details The default generic root locale with little localization.
+         * @return The converted Objective-C result.
+         */
         static Locale system_locale();
         /**
-     * @brief Returns the `usesMetricSystem` property of `NSLocale`.
-     * @details A Boolean value that indicates whether the locale uses the metric system.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `usesMetricSystem` property of `NSLocale`.
+         * @details A Boolean value that indicates whether the locale uses the metric system.
+         * @return The converted Objective-C result.
+         */
         bool uses_metric_system() const;
         /**
-     * @brief Returns the `variantCode` property of `NSLocale`.
-     * @details The variant code for the locale.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `variantCode` property of `NSLocale`.
+         * @details The variant code for the locale.
+         * @return The converted Objective-C result.
+         */
         std::string variant_code() const;
     };
 }

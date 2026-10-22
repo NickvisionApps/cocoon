@@ -825,7 +825,7 @@ def member_doc(model, member):
     if member.ret != "void":
         lines.append(" * @return The converted Objective-C result.")
     lines.append(" */")
-    return "\n".join("    " + l for l in lines)
+    return "\n".join("        " + l for l in lines)
 
 
 def best_construct_args(entries):

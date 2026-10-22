@@ -56,97 +56,97 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit SharingService(Adopt adopt);
         /**
-     * @brief Calls `-[NSSharingService canPerformWithItems:]`.
-     * @details Returns whether a service can do something with all the provided items. This can be used to validate a custom UI such as a dedicated Twitter button. If items is nil, the method will return YES when the service is configured. Therefore you could call it once at launch time with nil items to check whether to display the button or not, and then with real items to enable and disable the button depending on the context or selection. The items represent the objects to be shared and must conform to the \<NSPasteboardWriting> protocol or be an NSItemProvider or an NSDocument. (e.g. NSString, NSImage, NSURL, etc.)
-     * @param items Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSSharingService canPerformWithItems:]`.
+         * @details Returns whether a service can do something with all the provided items. This can be used to validate a custom UI such as a dedicated Twitter button. If items is nil, the method will return YES when the service is configured. Therefore you could call it once at launch time with nil items to check whether to display the button or not, and then with real items to enable and disable the button depending on the context or selection. The items represent the objects to be shared and must conform to the \<NSPasteboardWriting> protocol or be an NSItemProvider or an NSDocument. (e.g. NSString, NSImage, NSURL, etc.)
+         * @param items Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool can_perform_with_items(const std::vector<Object>& items) const;
         /**
-     * @brief Calls `-[NSSharingService performWithItems:]`.
-     * @details Manually performs the service on the provided items. In most cases this will display a sharing window. The items represent the objects to be shared and must conform to the \<NSPasteboardWriting> protocol or be an NSItemProvider or an NSDocument. (e.g. NSString, NSImage, NSURL, etc.)
-     * @param items Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSSharingService performWithItems:]`.
+         * @details Manually performs the service on the provided items. In most cases this will display a sharing window. The items represent the objects to be shared and must conform to the \<NSPasteboardWriting> protocol or be an NSItemProvider or an NSDocument. (e.g. NSString, NSImage, NSURL, etc.)
+         * @param items Argument converted to the Objective-C parameter of the same role.
+         */
         void perform_with_items(const std::vector<Object>& items) const;
         /**
-     * @brief Calls `+[NSSharingService sharingServiceNamed:]`.
-     * @details Returns an NSSharingService representing one of the built-in services.
-     * @param service_name Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSSharingService sharingServiceNamed:]`.
+         * @details Returns an NSSharingService representing one of the built-in services.
+         * @param service_name Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static SharingService sharing_service_named(const std::string& service_name);
         /**
-     * @brief Returns the `accountName` property of `NSSharingService`.
-     * @details Account name used for sending on Twitter or Sina Weibo
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `accountName` property of `NSSharingService`.
+         * @details Account name used for sending on Twitter or Sina Weibo
+         * @return The converted Objective-C result.
+         */
         std::string account_name() const;
         /**
-     * @brief Returns the `alternateImage` property of `NSSharingService`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `alternateImage` property of `NSSharingService`.
+         * @return The converted Objective-C result.
+         */
         Image alternate_image() const;
         /**
-     * @brief Returns the `attachmentFileURLs` property of `NSSharingService`.
-     * @details NSArray of NSURL objects representing the files that were shared
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `attachmentFileURLs` property of `NSSharingService`.
+         * @details NSArray of NSURL objects representing the files that were shared
+         * @return The converted Objective-C result.
+         */
         std::vector<URL> attachment_file_urls() const;
         /**
-     * @brief Returns the `image` property of `NSSharingService`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `image` property of `NSSharingService`.
+         * @return The converted Objective-C result.
+         */
         Image image() const;
         /**
-     * @brief Returns the `menuItemTitle` property of `NSSharingService`.
-     * @details Title of the service in the Share menu. Can be modified.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `menuItemTitle` property of `NSSharingService`.
+         * @details Title of the service in the Share menu. Can be modified.
+         * @return The converted Objective-C result.
+         */
         std::string menu_item_title() const;
         /**
-     * @brief Sets the `menuItemTitle` property of `NSSharingService`.
-     * @details Title of the service in the Share menu. Can be modified.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `menuItemTitle` property of `NSSharingService`.
+         * @details Title of the service in the Share menu. Can be modified.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_menu_item_title(const std::string& value) const;
         /**
-     * @brief Returns the `messageBody` property of `NSSharingService`.
-     * @details Message body as string
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `messageBody` property of `NSSharingService`.
+         * @details Message body as string
+         * @return The converted Objective-C result.
+         */
         std::string message_body() const;
         /**
-     * @brief Returns the `permanentLink` property of `NSSharingService`.
-     * @details URL to access the post on Facebook, Twitter, Sina Weibo, etc. (also known as permalink)
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `permanentLink` property of `NSSharingService`.
+         * @details URL to access the post on Facebook, Twitter, Sina Weibo, etc. (also known as permalink)
+         * @return The converted Objective-C result.
+         */
         URL permanent_link() const;
         /**
-     * @brief Returns the `recipients` property of `NSSharingService`.
-     * @details NSArray of NSString objects representing handles (example: email adresses)
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `recipients` property of `NSSharingService`.
+         * @details NSArray of NSString objects representing handles (example: email adresses)
+         * @return The converted Objective-C result.
+         */
         std::vector<std::string> recipients() const;
         /**
-     * @brief Sets the `recipients` property of `NSSharingService`.
-     * @details NSArray of NSString objects representing handles (example: email adresses)
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `recipients` property of `NSSharingService`.
+         * @details NSArray of NSString objects representing handles (example: email adresses)
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_recipients(const std::vector<std::string>& value) const;
         /**
-     * @brief Returns the `subject` property of `NSSharingService`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `subject` property of `NSSharingService`.
+         * @return The converted Objective-C result.
+         */
         std::string subject() const;
         /**
-     * @brief Sets the `subject` property of `NSSharingService`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `subject` property of `NSSharingService`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_subject(const std::string& value) const;
         /**
-     * @brief Returns the `title` property of `NSSharingService`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `title` property of `NSSharingService`.
+         * @return The converted Objective-C result.
+         */
         std::string title() const;
         /// @brief Signal for the delegate/data-source method behind `will_share_items`; connect a callback with `will_share_items().connect(...)`.
         Signal<SharingService, void(std::vector<Object>)> will_share_items() const

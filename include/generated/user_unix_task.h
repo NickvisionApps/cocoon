@@ -48,46 +48,46 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit UserUnixTask(Adopt adopt);
         /**
-     * @brief Calls `-[NSUserUnixTask executeWithArguments:completionHandler:]`.
-     * @param arguments Argument converted to the Objective-C parameter of the same role.
-     * @param handler Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSUserUnixTask executeWithArguments:completionHandler:]`.
+         * @param arguments Argument converted to the Objective-C parameter of the same role.
+         * @param handler Argument converted to the Objective-C parameter of the same role.
+         */
         void execute_with_arguments(const std::vector<std::string>& arguments, std::function<void(Error)> handler) const;
         /**
-     * @brief Returns the `standardError` property of `NSUserUnixTask`.
-     * @details The standard error stream. Setting to 'nil' will bind the stream to '/dev/null'. The default is 'nil'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `standardError` property of `NSUserUnixTask`.
+         * @details The standard error stream. Setting to 'nil' will bind the stream to '/dev/null'. The default is 'nil'.
+         * @return The converted Objective-C result.
+         */
         FileHandle standard_error() const;
         /**
-     * @brief Sets the `standardError` property of `NSUserUnixTask`.
-     * @details The standard error stream. Setting to 'nil' will bind the stream to '/dev/null'. The default is 'nil'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `standardError` property of `NSUserUnixTask`.
+         * @details The standard error stream. Setting to 'nil' will bind the stream to '/dev/null'. The default is 'nil'.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_standard_error(const FileHandle& value) const;
         /**
-     * @brief Returns the `standardInput` property of `NSUserUnixTask`.
-     * @details The standard input stream. Setting to 'nil' will bind the stream to '/dev/null'. The default is 'nil'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `standardInput` property of `NSUserUnixTask`.
+         * @details The standard input stream. Setting to 'nil' will bind the stream to '/dev/null'. The default is 'nil'.
+         * @return The converted Objective-C result.
+         */
         FileHandle standard_input() const;
         /**
-     * @brief Sets the `standardInput` property of `NSUserUnixTask`.
-     * @details The standard input stream. Setting to 'nil' will bind the stream to '/dev/null'. The default is 'nil'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `standardInput` property of `NSUserUnixTask`.
+         * @details The standard input stream. Setting to 'nil' will bind the stream to '/dev/null'. The default is 'nil'.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_standard_input(const FileHandle& value) const;
         /**
-     * @brief Returns the `standardOutput` property of `NSUserUnixTask`.
-     * @details The standard output stream. Setting to 'nil' will bind the stream to '/dev/null'. The default is 'nil'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `standardOutput` property of `NSUserUnixTask`.
+         * @details The standard output stream. Setting to 'nil' will bind the stream to '/dev/null'. The default is 'nil'.
+         * @return The converted Objective-C result.
+         */
         FileHandle standard_output() const;
         /**
-     * @brief Sets the `standardOutput` property of `NSUserUnixTask`.
-     * @details The standard output stream. Setting to 'nil' will bind the stream to '/dev/null'. The default is 'nil'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `standardOutput` property of `NSUserUnixTask`.
+         * @details The standard output stream. Setting to 'nil' will bind the stream to '/dev/null'. The default is 'nil'.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_standard_output(const FileHandle& value) const;
     };
 }

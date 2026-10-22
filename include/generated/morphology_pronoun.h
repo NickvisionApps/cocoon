@@ -33,19 +33,19 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit MorphologyPronoun(Adopt adopt);
         /**
-     * @brief Returns the `dependentMorphology` property of `NSMorphologyPronoun`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `dependentMorphology` property of `NSMorphologyPronoun`.
+         * @return The converted Objective-C result.
+         */
         Morphology dependent_morphology() const;
         /**
-     * @brief Returns the `morphology` property of `NSMorphologyPronoun`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `morphology` property of `NSMorphologyPronoun`.
+         * @return The converted Objective-C result.
+         */
         Morphology morphology() const;
         /**
-     * @brief Returns the `pronoun` property of `NSMorphologyPronoun`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `pronoun` property of `NSMorphologyPronoun`.
+         * @return The converted Objective-C result.
+         */
         std::string pronoun() const;
     };
 }

@@ -45,59 +45,59 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit PDFInfo(Adopt adopt);
         /**
-     * @brief Returns the `URL` property of `NSPDFInfo`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `URL` property of `NSPDFInfo`.
+         * @return The converted Objective-C result.
+         */
         URL url() const;
         /**
-     * @brief Sets the `URL` property of `NSPDFInfo`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `URL` property of `NSPDFInfo`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_url(const URL& value) const;
         /**
-     * @brief Returns the `attributes` property of `NSPDFInfo`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `attributes` property of `NSPDFInfo`.
+         * @return The converted Objective-C result.
+         */
         std::map<std::string, Object> attributes() const;
         /**
-     * @brief Returns the `fileExtensionHidden` property of `NSPDFInfo`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `fileExtensionHidden` property of `NSPDFInfo`.
+         * @return The converted Objective-C result.
+         */
         bool is_file_extension_hidden() const;
         /**
-     * @brief Sets the `fileExtensionHidden` property of `NSPDFInfo`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `fileExtensionHidden` property of `NSPDFInfo`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_file_extension_hidden(bool value) const;
         /**
-     * @brief Returns the `orientation` property of `NSPDFInfo`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `orientation` property of `NSPDFInfo`.
+         * @return The converted Objective-C result.
+         */
         PaperOrientation orientation() const;
         /**
-     * @brief Sets the `orientation` property of `NSPDFInfo`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `orientation` property of `NSPDFInfo`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_orientation(PaperOrientation value) const;
         /**
-     * @brief Returns the `paperSize` property of `NSPDFInfo`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `paperSize` property of `NSPDFInfo`.
+         * @return The converted Objective-C result.
+         */
         Size paper_size() const;
         /**
-     * @brief Sets the `paperSize` property of `NSPDFInfo`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `paperSize` property of `NSPDFInfo`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_paper_size(const Size& value) const;
         /**
-     * @brief Returns the `tagNames` property of `NSPDFInfo`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `tagNames` property of `NSPDFInfo`.
+         * @return The converted Objective-C result.
+         */
         std::vector<std::string> tag_names() const;
         /**
-     * @brief Sets the `tagNames` property of `NSPDFInfo`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `tagNames` property of `NSPDFInfo`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_tag_names(const std::vector<std::string>& value) const;
     };
 }

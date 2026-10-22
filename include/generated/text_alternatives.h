@@ -39,19 +39,19 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit TextAlternatives(Adopt adopt);
         /**
-     * @brief Calls `-[NSTextAlternatives noteSelectedAlternativeString:]`.
-     * @param alternative_string Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSTextAlternatives noteSelectedAlternativeString:]`.
+         * @param alternative_string Argument converted to the Objective-C parameter of the same role.
+         */
         void note_selected_alternative_string(const std::string& alternative_string) const;
         /**
-     * @brief Returns the `alternativeStrings` property of `NSTextAlternatives`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `alternativeStrings` property of `NSTextAlternatives`.
+         * @return The converted Objective-C result.
+         */
         std::vector<std::string> alternative_strings() const;
         /**
-     * @brief Returns the `primaryString` property of `NSTextAlternatives`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `primaryString` property of `NSTextAlternatives`.
+         * @return The converted Objective-C result.
+         */
         std::string primary_string() const;
     };
 }

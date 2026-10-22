@@ -41,19 +41,19 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit KeyValueSharedObservers(Adopt adopt);
         /**
-     * @brief Calls `-[NSKeyValueSharedObservers addSharedObserver:forKey:options:context:]`.
-     * @details Add a new observer to the collection. This method works like '-[NSObject addObserver: forKey: options: context:]', but observations on nested and computed properties are disallowed. Observers are not registered until 'setSharedObservers' is called on the observable. - Parameter observer: The observer object to register for KVO notifications. The observer must implement the key-value observing method ''observeValue: forKeyPath: of: change: context:'' - Parameter key: key of the property being observed. This cannot be a nested key path or a computed property - Parameter options: A combination of NSKeyValueObservingOptions values that specify what is included in observation notifications. For possible values see NSKeyValueObservingOptions. - Parameter context: Arbitrary data which is passed to the observer object
-     * @param observer Argument converted to the Objective-C parameter of the same role.
-     * @param key Argument converted to the Objective-C parameter of the same role.
-     * @param options Argument converted to the Objective-C parameter of the same role.
-     * @param context Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSKeyValueSharedObservers addSharedObserver:forKey:options:context:]`.
+         * @details Add a new observer to the collection. This method works like '-[NSObject addObserver: forKey: options: context:]', but observations on nested and computed properties are disallowed. Observers are not registered until 'setSharedObservers' is called on the observable. - Parameter observer: The observer object to register for KVO notifications. The observer must implement the key-value observing method ''observeValue: forKeyPath: of: change: context:'' - Parameter key: key of the property being observed. This cannot be a nested key path or a computed property - Parameter options: A combination of NSKeyValueObservingOptions values that specify what is included in observation notifications. For possible values see NSKeyValueObservingOptions. - Parameter context: Arbitrary data which is passed to the observer object
+         * @param observer Argument converted to the Objective-C parameter of the same role.
+         * @param key Argument converted to the Objective-C parameter of the same role.
+         * @param options Argument converted to the Objective-C parameter of the same role.
+         * @param context Argument converted to the Objective-C parameter of the same role.
+         */
         void add_shared_observer(const Object& observer, const std::string& key, KeyValueObservingOptions options, void* context) const;
         /**
-     * @brief Calls `-[NSKeyValueSharedObservers snapshot]`.
-     * @details A momentary snapshot of all observers added to the collection thus far, that can be assigned to an observable using ''-[NSObject setSharedObservers:]''
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSKeyValueSharedObservers snapshot]`.
+         * @details A momentary snapshot of all observers added to the collection thus far, that can be assigned to an observable using ''-[NSObject setSharedObservers:]''
+         * @return The converted Objective-C result.
+         */
         KeyValueSharedObserversSnapshot snapshot() const;
     };
 }

@@ -40,25 +40,25 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit CollectionLayoutDecorationItem(Adopt adopt);
         /**
-     * @brief Calls `+[NSCollectionLayoutDecorationItem backgroundDecorationItemWithElementKind:]`.
-     * @param element_kind Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSCollectionLayoutDecorationItem backgroundDecorationItemWithElementKind:]`.
+         * @param element_kind Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static CollectionLayoutDecorationItem background_decoration_item_with_element_kind(const std::string& element_kind);
         /**
-     * @brief Returns the `elementKind` property of `NSCollectionLayoutDecorationItem`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `elementKind` property of `NSCollectionLayoutDecorationItem`.
+         * @return The converted Objective-C result.
+         */
         std::string element_kind() const;
         /**
-     * @brief Returns the `zIndex` property of `NSCollectionLayoutDecorationItem`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `zIndex` property of `NSCollectionLayoutDecorationItem`.
+         * @return The converted Objective-C result.
+         */
         std::int64_t z_index() const;
         /**
-     * @brief Sets the `zIndex` property of `NSCollectionLayoutDecorationItem`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `zIndex` property of `NSCollectionLayoutDecorationItem`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_z_index(std::int64_t value) const;
     };
 }

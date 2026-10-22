@@ -42,57 +42,57 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit UserNotificationCenter(Adopt adopt);
         /**
-     * @brief Calls `-[NSUserNotificationCenter deliverNotification:]`.
-     * @details Deliver the specified user notification. - Parameters: - notification: The user notification. The notification will be presented to the user (subject to the user's preferences). The 'presented' property of the 'NSUserNotification' object will always be set to 'YES' if a notification is delivered using this method.
-     * @param notification Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSUserNotificationCenter deliverNotification:]`.
+         * @details Deliver the specified user notification. - Parameters: - notification: The user notification. The notification will be presented to the user (subject to the user's preferences). The 'presented' property of the 'NSUserNotification' object will always be set to 'YES' if a notification is delivered using this method.
+         * @param notification Argument converted to the Objective-C parameter of the same role.
+         */
         void deliver_notification(const UserNotification& notification) const;
         /**
-     * @brief Calls `-[NSUserNotificationCenter removeAllDeliveredNotifications]`.
-     * @details Remove all delivered user notifications from the user notification center.
-     */
+         * @brief Calls `-[NSUserNotificationCenter removeAllDeliveredNotifications]`.
+         * @details Remove all delivered user notifications from the user notification center.
+         */
         void remove_all_delivered_notifications() const;
         /**
-     * @brief Calls `-[NSUserNotificationCenter removeDeliveredNotification:]`.
-     * @details Remove a delivered user notification from the user notification center. - Parameters: - notification: The user notification. If the user notification is not in the delivered notifications list, nothing happens.
-     * @param notification Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSUserNotificationCenter removeDeliveredNotification:]`.
+         * @details Remove a delivered user notification from the user notification center. - Parameters: - notification: The user notification. If the user notification is not in the delivered notifications list, nothing happens.
+         * @param notification Argument converted to the Objective-C parameter of the same role.
+         */
         void remove_delivered_notification(const UserNotification& notification) const;
         /**
-     * @brief Calls `-[NSUserNotificationCenter removeScheduledNotification:]`.
-     * @details Removes the specified user notification from the scheduled notifications. - Parameters: - notification: The user notification. If the user notification's 'deliveryDate' occurs before the cancellation finishes, the notification may still be delivered. If the notification is not in the scheduled list, nothing happens.
-     * @param notification Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSUserNotificationCenter removeScheduledNotification:]`.
+         * @details Removes the specified user notification from the scheduled notifications. - Parameters: - notification: The user notification. If the user notification's 'deliveryDate' occurs before the cancellation finishes, the notification may still be delivered. If the notification is not in the scheduled list, nothing happens.
+         * @param notification Argument converted to the Objective-C parameter of the same role.
+         */
         void remove_scheduled_notification(const UserNotification& notification) const;
         /**
-     * @brief Calls `-[NSUserNotificationCenter scheduleNotification:]`.
-     * @details Schedules the specified user notification. - Parameters: - notification: The user notification. Scheduled notifications are added to the end of the notification queue.
-     * @param notification Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSUserNotificationCenter scheduleNotification:]`.
+         * @details Schedules the specified user notification. - Parameters: - notification: The user notification. Scheduled notifications are added to the end of the notification queue.
+         * @param notification Argument converted to the Objective-C parameter of the same role.
+         */
         void schedule_notification(const UserNotification& notification) const;
         /**
-     * @brief Returns the `defaultUserNotificationCenter` property of `NSUserNotificationCenter`.
-     * @details Returns the default user notification center.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `defaultUserNotificationCenter` property of `NSUserNotificationCenter`.
+         * @details Returns the default user notification center.
+         * @return The converted Objective-C result.
+         */
         static UserNotificationCenter default_user_notification_center();
         /**
-     * @brief Returns the `deliveredNotifications` property of `NSUserNotificationCenter`.
-     * @details An array of all user notifications delivered to the notification center. The number of notifications the user actually sees in the user interface may be less than the size of this array. Note that these may or may not have been actually presented to the user. See the 'presented' property in the 'NSUserNotification' class.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `deliveredNotifications` property of `NSUserNotificationCenter`.
+         * @details An array of all user notifications delivered to the notification center. The number of notifications the user actually sees in the user interface may be less than the size of this array. Note that these may or may not have been actually presented to the user. See the 'presented' property in the 'NSUserNotification' class.
+         * @return The converted Objective-C result.
+         */
         std::vector<UserNotification> delivered_notifications() const;
         /**
-     * @brief Returns the `scheduledNotifications` property of `NSUserNotificationCenter`.
-     * @details Specifies an array of scheduled user notifications that have not yet been delivered. Newly scheduled notifications are added to the end of the array. You may also bulk-schedule notifications by setting this array. Bulk setting new scheduled notifications unschedules existing notifications.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `scheduledNotifications` property of `NSUserNotificationCenter`.
+         * @details Specifies an array of scheduled user notifications that have not yet been delivered. Newly scheduled notifications are added to the end of the array. You may also bulk-schedule notifications by setting this array. Bulk setting new scheduled notifications unschedules existing notifications.
+         * @return The converted Objective-C result.
+         */
         std::vector<UserNotification> scheduled_notifications() const;
         /**
-     * @brief Sets the `scheduledNotifications` property of `NSUserNotificationCenter`.
-     * @details Specifies an array of scheduled user notifications that have not yet been delivered. Newly scheduled notifications are added to the end of the array. You may also bulk-schedule notifications by setting this array. Bulk setting new scheduled notifications unschedules existing notifications.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `scheduledNotifications` property of `NSUserNotificationCenter`.
+         * @details Specifies an array of scheduled user notifications that have not yet been delivered. Newly scheduled notifications are added to the end of the array. You may also bulk-schedule notifications by setting this array. Bulk setting new scheduled notifications unschedules existing notifications.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_scheduled_notifications(const std::vector<UserNotification>& value) const;
     };
 }

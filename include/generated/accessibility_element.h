@@ -40,28 +40,28 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit AccessibilityElement(Adopt adopt);
         /**
-     * @brief Calls `-[NSAccessibilityElement accessibilityAddChildElement:]`.
-     * @param child_element Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSAccessibilityElement accessibilityAddChildElement:]`.
+         * @param child_element Argument converted to the Objective-C parameter of the same role.
+         */
         void accessibility_add_child_element(const AccessibilityElement& child_element) const;
         /**
-     * @brief Calls `+[NSAccessibilityElement accessibilityElementWithRole:frame:label:parent:]`.
-     * @param role Argument converted to the Objective-C parameter of the same role.
-     * @param frame Argument converted to the Objective-C parameter of the same role.
-     * @param label Argument converted to the Objective-C parameter of the same role.
-     * @param parent Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSAccessibilityElement accessibilityElementWithRole:frame:label:parent:]`.
+         * @param role Argument converted to the Objective-C parameter of the same role.
+         * @param frame Argument converted to the Objective-C parameter of the same role.
+         * @param label Argument converted to the Objective-C parameter of the same role.
+         * @param parent Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static Object accessibility_element_with_role(const std::string& role, const Rect& frame, const std::string& label, const Object& parent);
         /**
-     * @brief Returns the `accessibilityFrameInParentSpace` property of `NSAccessibilityElement`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `accessibilityFrameInParentSpace` property of `NSAccessibilityElement`.
+         * @return The converted Objective-C result.
+         */
         Rect accessibility_frame_in_parent_space() const;
         /**
-     * @brief Sets the `accessibilityFrameInParentSpace` property of `NSAccessibilityElement`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `accessibilityFrameInParentSpace` property of `NSAccessibilityElement`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_accessibility_frame_in_parent_space(const Rect& value) const;
     };
 }

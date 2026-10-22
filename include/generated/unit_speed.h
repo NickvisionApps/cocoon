@@ -31,28 +31,28 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit UnitSpeed(Adopt adopt);
         /**
-     * @brief Returns the `kilometersPerHour` property of `NSUnitSpeed`.
-     * @details The kilometers per hour unit of speed.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `kilometersPerHour` property of `NSUnitSpeed`.
+         * @details The kilometers per hour unit of speed.
+         * @return The converted Objective-C result.
+         */
         static UnitSpeed kilometers_per_hour();
         /**
-     * @brief Returns the `knots` property of `NSUnitSpeed`.
-     * @details The knots unit of speed.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `knots` property of `NSUnitSpeed`.
+         * @details The knots unit of speed.
+         * @return The converted Objective-C result.
+         */
         static UnitSpeed knots();
         /**
-     * @brief Returns the `metersPerSecond` property of `NSUnitSpeed`.
-     * @details The meters per second unit of speed.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `metersPerSecond` property of `NSUnitSpeed`.
+         * @details The meters per second unit of speed.
+         * @return The converted Objective-C result.
+         */
         static UnitSpeed meters_per_second();
         /**
-     * @brief Returns the `milesPerHour` property of `NSUnitSpeed`.
-     * @details The miles per hour unit of speed.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `milesPerHour` property of `NSUnitSpeed`.
+         * @details The miles per hour unit of speed.
+         * @return The converted Objective-C result.
+         */
         static UnitSpeed miles_per_hour();
     };
 }

@@ -44,50 +44,50 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit PressGestureRecognizer(Adopt adopt);
         /**
-     * @brief Returns the `allowableMovement` property of `NSPressGestureRecognizer`.
-     * @details Maximum movement in screen points allowed before the gesture fails. Once recognized (after minimumPressDuration) there is no limit on cursor movement for the remainder of the gesture tracking
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `allowableMovement` property of `NSPressGestureRecognizer`.
+         * @details Maximum movement in screen points allowed before the gesture fails. Once recognized (after minimumPressDuration) there is no limit on cursor movement for the remainder of the gesture tracking
+         * @return The converted Objective-C result.
+         */
         double allowable_movement() const;
         /**
-     * @brief Sets the `allowableMovement` property of `NSPressGestureRecognizer`.
-     * @details Maximum movement in screen points allowed before the gesture fails. Once recognized (after minimumPressDuration) there is no limit on cursor movement for the remainder of the gesture tracking
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `allowableMovement` property of `NSPressGestureRecognizer`.
+         * @details Maximum movement in screen points allowed before the gesture fails. Once recognized (after minimumPressDuration) there is no limit on cursor movement for the remainder of the gesture tracking
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_allowable_movement(double value) const;
         /**
-     * @brief Returns the `buttonMask` property of `NSPressGestureRecognizer`.
-     * @details bitfield of the button(s) required to recognize this click where bit 0 is the primary button, 1 is the secondary button, etc... NSPressGestureRecognizer dynamically returns YES to delay primary, secondary and other mouse events depending on this value.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `buttonMask` property of `NSPressGestureRecognizer`.
+         * @details bitfield of the button(s) required to recognize this click where bit 0 is the primary button, 1 is the secondary button, etc... NSPressGestureRecognizer dynamically returns YES to delay primary, secondary and other mouse events depending on this value.
+         * @return The converted Objective-C result.
+         */
         std::uint64_t button_mask() const;
         /**
-     * @brief Sets the `buttonMask` property of `NSPressGestureRecognizer`.
-     * @details bitfield of the button(s) required to recognize this click where bit 0 is the primary button, 1 is the secondary button, etc... NSPressGestureRecognizer dynamically returns YES to delay primary, secondary and other mouse events depending on this value.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `buttonMask` property of `NSPressGestureRecognizer`.
+         * @details bitfield of the button(s) required to recognize this click where bit 0 is the primary button, 1 is the secondary button, etc... NSPressGestureRecognizer dynamically returns YES to delay primary, secondary and other mouse events depending on this value.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_button_mask(std::uint64_t value) const;
         /**
-     * @brief Returns the `minimumPressDuration` property of `NSPressGestureRecognizer`.
-     * @details Time in seconds the mouse button must be held down for the gesture to be recognized
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `minimumPressDuration` property of `NSPressGestureRecognizer`.
+         * @details Time in seconds the mouse button must be held down for the gesture to be recognized
+         * @return The converted Objective-C result.
+         */
         double minimum_press_duration() const;
         /**
-     * @brief Sets the `minimumPressDuration` property of `NSPressGestureRecognizer`.
-     * @details Time in seconds the mouse button must be held down for the gesture to be recognized
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `minimumPressDuration` property of `NSPressGestureRecognizer`.
+         * @details Time in seconds the mouse button must be held down for the gesture to be recognized
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_minimum_press_duration(double value) const;
         /**
-     * @brief Returns the `numberOfTouchesRequired` property of `NSPressGestureRecognizer`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `numberOfTouchesRequired` property of `NSPressGestureRecognizer`.
+         * @return The converted Objective-C result.
+         */
         std::int64_t number_of_touches_required() const;
         /**
-     * @brief Sets the `numberOfTouchesRequired` property of `NSPressGestureRecognizer`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `numberOfTouchesRequired` property of `NSPressGestureRecognizer`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_number_of_touches_required(std::int64_t value) const;
     };
 }

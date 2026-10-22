@@ -43,44 +43,44 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit MeasurementBase(Adopt adopt);
         /**
-     * @brief Calls `-[NSMeasurement canBeConvertedToUnit:]`.
-     * @details Returns a Boolean value that indicates whether this measurement can be converted to the given unit.
-     * @param unit Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSMeasurement canBeConvertedToUnit:]`.
+         * @details Returns a Boolean value that indicates whether this measurement can be converted to the given unit.
+         * @param unit Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool can_be_converted_to_unit(const Unit& unit) const;
         /**
-     * @brief Calls `-[NSMeasurement measurementByAddingMeasurement:]`.
-     * @details Returns a new measurement by adding the receiver to the given measurement. - Parameter measurement: The measurement to add. Must be of the same dimensionality as the receiver. - Returns: A new 'NSMeasurement' with the adjusted value and the same unit as the receiver.
-     * @param measurement Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSMeasurement measurementByAddingMeasurement:]`.
+         * @details Returns a new measurement by adding the receiver to the given measurement. - Parameter measurement: The measurement to add. Must be of the same dimensionality as the receiver. - Returns: A new 'NSMeasurement' with the adjusted value and the same unit as the receiver.
+         * @param measurement Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         MeasurementBase measurement_by_adding_measurement(const MeasurementBase& measurement) const;
         /**
-     * @brief Calls `-[NSMeasurement measurementByConvertingToUnit:]`.
-     * @details Returns a measurement created by converting the receiver to the specified unit. - Parameter unit: The unit to convert to. Must be of the same dimensionality as the receiver's unit. - Returns: A new 'NSMeasurement' object with the given unit and converted value.
-     * @param unit Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSMeasurement measurementByConvertingToUnit:]`.
+         * @details Returns a measurement created by converting the receiver to the specified unit. - Parameter unit: The unit to convert to. Must be of the same dimensionality as the receiver's unit. - Returns: A new 'NSMeasurement' object with the given unit and converted value.
+         * @param unit Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         MeasurementBase measurement_by_converting_to_unit(const Unit& unit) const;
         /**
-     * @brief Calls `-[NSMeasurement measurementBySubtractingMeasurement:]`.
-     * @details Returns a new measurement by subtracting the given measurement from the receiver. - Parameter measurement: The measurement to subtract. Must be of the same dimensionality as the receiver. - Returns: A new 'NSMeasurement' with the adjusted value and the same unit as the receiver.
-     * @param measurement Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSMeasurement measurementBySubtractingMeasurement:]`.
+         * @details Returns a new measurement by subtracting the given measurement from the receiver. - Parameter measurement: The measurement to subtract. Must be of the same dimensionality as the receiver. - Returns: A new 'NSMeasurement' with the adjusted value and the same unit as the receiver.
+         * @param measurement Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         MeasurementBase measurement_by_subtracting_measurement(const MeasurementBase& measurement) const;
         /**
-     * @brief Returns the `doubleValue` property of `NSMeasurement`.
-     * @details The value component of the measurement.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `doubleValue` property of `NSMeasurement`.
+         * @details The value component of the measurement.
+         * @return The converted Objective-C result.
+         */
         double double_value() const;
         /**
-     * @brief Returns the `unit` property of `NSMeasurement`.
-     * @details The unit component of the measurement.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `unit` property of `NSMeasurement`.
+         * @details The unit component of the measurement.
+         * @return The converted Objective-C result.
+         */
         Object unit() const;
     };
 

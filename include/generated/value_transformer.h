@@ -38,50 +38,50 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit ValueTransformer(Adopt adopt);
         /**
-     * @brief Calls `+[NSValueTransformer allowsReverseTransformation]`.
-     * @details Returns a Boolean value that indicates whether the receiver can reverse a transformation.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSValueTransformer allowsReverseTransformation]`.
+         * @details Returns a Boolean value that indicates whether the receiver can reverse a transformation.
+         * @return The converted Objective-C result.
+         */
         static bool allows_reverse_transformation();
         /**
-     * @brief Calls `-[NSValueTransformer reverseTransformedValue:]`.
-     * @details Returns the result of the reverse transformation of a given value.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSValueTransformer reverseTransformedValue:]`.
+         * @details Returns the result of the reverse transformation of a given value.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Object reverse_transformed_value(const Object& value) const;
         /**
-     * @brief Calls `+[NSValueTransformer setValueTransformer:forName:]`.
-     * @details Registers the provided value transformer with a given identifier.
-     * @param transformer Argument converted to the Objective-C parameter of the same role.
-     * @param name Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `+[NSValueTransformer setValueTransformer:forName:]`.
+         * @details Registers the provided value transformer with a given identifier.
+         * @param transformer Argument converted to the Objective-C parameter of the same role.
+         * @param name Argument converted to the Objective-C parameter of the same role.
+         */
         static void set_value_transformer(const ValueTransformer& transformer, const std::string& name);
         /**
-     * @brief Calls `-[NSValueTransformer transformedValue:]`.
-     * @details Returns the result of transforming a given value.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSValueTransformer transformedValue:]`.
+         * @details Returns the result of transforming a given value.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Object transformed_value(const Object& value) const;
         /**
-     * @brief Calls `+[NSValueTransformer transformedValueClass]`.
-     * @details Returns the class of objects returned when applying the value transformer.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSValueTransformer transformedValueClass]`.
+         * @details Returns the class of objects returned when applying the value transformer.
+         * @return The converted Objective-C result.
+         */
         static std::string transformed_value_class();
         /**
-     * @brief Calls `+[NSValueTransformer valueTransformerForName:]`.
-     * @details Returns the value transformer identified by a given identifier.
-     * @param name Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSValueTransformer valueTransformerForName:]`.
+         * @details Returns the value transformer identified by a given identifier.
+         * @param name Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static ValueTransformer value_transformer_for_name(const std::string& name);
         /**
-     * @brief Calls `+[NSValueTransformer valueTransformerNames]`.
-     * @details Returns an array of all the registered value transformer names.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSValueTransformer valueTransformerNames]`.
+         * @details Returns an array of all the registered value transformer names.
+         * @return The converted Objective-C result.
+         */
         static std::vector<std::string> value_transformer_names();
     };
 }

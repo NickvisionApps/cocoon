@@ -45,40 +45,40 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit ScrubberLayoutAttributes(Adopt adopt);
         /**
-     * @brief Calls `+[NSScrubberLayoutAttributes layoutAttributesForItemAtIndex:]`.
-     * @param index Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSScrubberLayoutAttributes layoutAttributesForItemAtIndex:]`.
+         * @param index Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static ScrubberLayoutAttributes layout_attributes_for_item_at_index(std::int64_t index);
         /**
-     * @brief Returns the `alpha` property of `NSScrubberLayoutAttributes`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `alpha` property of `NSScrubberLayoutAttributes`.
+         * @return The converted Objective-C result.
+         */
         double alpha() const;
         /**
-     * @brief Sets the `alpha` property of `NSScrubberLayoutAttributes`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `alpha` property of `NSScrubberLayoutAttributes`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_alpha(double value) const;
         /**
-     * @brief Returns the `frame` property of `NSScrubberLayoutAttributes`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `frame` property of `NSScrubberLayoutAttributes`.
+         * @return The converted Objective-C result.
+         */
         Rect frame() const;
         /**
-     * @brief Sets the `frame` property of `NSScrubberLayoutAttributes`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `frame` property of `NSScrubberLayoutAttributes`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_frame(const Rect& value) const;
         /**
-     * @brief Returns the `itemIndex` property of `NSScrubberLayoutAttributes`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `itemIndex` property of `NSScrubberLayoutAttributes`.
+         * @return The converted Objective-C result.
+         */
         std::int64_t item_index() const;
         /**
-     * @brief Sets the `itemIndex` property of `NSScrubberLayoutAttributes`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `itemIndex` property of `NSScrubberLayoutAttributes`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_item_index(std::int64_t value) const;
     };
 }

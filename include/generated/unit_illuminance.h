@@ -31,10 +31,10 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit UnitIlluminance(Adopt adopt);
         /**
-     * @brief Returns the `lux` property of `NSUnitIlluminance`.
-     * @details The lux unit of illuminance.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `lux` property of `NSUnitIlluminance`.
+         * @details The lux unit of illuminance.
+         * @return The converted Objective-C result.
+         */
         static UnitIlluminance lux();
     };
 }

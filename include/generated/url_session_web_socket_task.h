@@ -43,54 +43,54 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit URLSessionWebSocketTask(Adopt adopt);
         /**
-     * @brief Calls `-[NSURLSessionWebSocketTask cancelWithCloseCode:reason:]`.
-     * @details Sends a close frame with the given close code. An optional reason can be provided while sending the close frame. Simply calling '-cancel' on the task will result in a cancellation frame being sent without any reason. - Parameter closeCode: The close code to send. - Parameter reason: An optional data object containing the close reason.
-     * @param close_code Argument converted to the Objective-C parameter of the same role.
-     * @param reason Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSURLSessionWebSocketTask cancelWithCloseCode:reason:]`.
+         * @details Sends a close frame with the given close code. An optional reason can be provided while sending the close frame. Simply calling '-cancel' on the task will result in a cancellation frame being sent without any reason. - Parameter closeCode: The close code to send. - Parameter reason: An optional data object containing the close reason.
+         * @param close_code Argument converted to the Objective-C parameter of the same role.
+         * @param reason Argument converted to the Objective-C parameter of the same role.
+         */
         void cancel_with_close_code(URLSessionWebSocketCloseCode close_code, const std::vector<std::uint8_t>& reason) const;
         /**
-     * @brief Calls `-[NSURLSessionWebSocketTask receiveMessageWithCompletionHandler:]`.
-     * @details Reads a WebSocket message once all the frames of the message are available. If the task reaches the ''maximumMessageSize'' while buffering the frames, the receive call will error out and all outstanding work will also fail, resulting in the end of the task. - Parameters: - completionHandler: A closure that receives the WebSocket message and an 'NSError' that indicates an error encountered while receiving, or 'nil' if no error occurred.
-     * @param completion_handler Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSURLSessionWebSocketTask receiveMessageWithCompletionHandler:]`.
+         * @details Reads a WebSocket message once all the frames of the message are available. If the task reaches the ''maximumMessageSize'' while buffering the frames, the receive call will error out and all outstanding work will also fail, resulting in the end of the task. - Parameters: - completionHandler: A closure that receives the WebSocket message and an 'NSError' that indicates an error encountered while receiving, or 'nil' if no error occurred.
+         * @param completion_handler Argument converted to the Objective-C parameter of the same role.
+         */
         void receive_message_with_completion_handler(std::function<void(URLSessionWebSocketMessage, Error)> completion_handler) const;
         /**
-     * @brief Calls `-[NSURLSessionWebSocketTask sendMessage:completionHandler:]`.
-     * @details Sends a WebSocket message, receiving the result in a completion handler. If an error occurs while sending the message, any outstanding work also fails. Note that invocation of the completion handler does not guarantee that the remote side has received all the bytes, only that they have been written to the kernel. - Parameters: - message: The WebSocket message to send to the other endpoint. - completionHandler: A closure that receives an 'NSError' that indicates an error encountered while sending, or 'nil' if no error occurred.
-     * @param message Argument converted to the Objective-C parameter of the same role.
-     * @param completion_handler Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSURLSessionWebSocketTask sendMessage:completionHandler:]`.
+         * @details Sends a WebSocket message, receiving the result in a completion handler. If an error occurs while sending the message, any outstanding work also fails. Note that invocation of the completion handler does not guarantee that the remote side has received all the bytes, only that they have been written to the kernel. - Parameters: - message: The WebSocket message to send to the other endpoint. - completionHandler: A closure that receives an 'NSError' that indicates an error encountered while sending, or 'nil' if no error occurred.
+         * @param message Argument converted to the Objective-C parameter of the same role.
+         * @param completion_handler Argument converted to the Objective-C parameter of the same role.
+         */
         void send_message(const URLSessionWebSocketMessage& message, std::function<void(Error)> completion_handler) const;
         /**
-     * @brief Calls `-[NSURLSessionWebSocketTask sendPingWithPongReceiveHandler:]`.
-     * @details Sends a ping frame from the client side. The 'pongReceiveHandler' is invoked when the client receives a pong from the server endpoint. If a connection is lost or an error occurs before receiving the pong from the endpoint, the handler will be invoked with an error. The handler will always be called in the order in which the pings were sent. - Parameter pongReceiveHandler: The handler to call when a pong is received or an error occurs.
-     * @param pong_receive_handler Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSURLSessionWebSocketTask sendPingWithPongReceiveHandler:]`.
+         * @details Sends a ping frame from the client side. The 'pongReceiveHandler' is invoked when the client receives a pong from the server endpoint. If a connection is lost or an error occurs before receiving the pong from the endpoint, the handler will be invoked with an error. The handler will always be called in the order in which the pings were sent. - Parameter pongReceiveHandler: The handler to call when a pong is received or an error occurs.
+         * @param pong_receive_handler Argument converted to the Objective-C parameter of the same role.
+         */
         void send_ping_with_pong_receive_handler(std::function<void(Error)> pong_receive_handler) const;
         /**
-     * @brief Returns the `closeCode` property of `NSURLSessionWebSocketTask`.
-     * @details A code that indicates the reason a connection closed. You can retrieve the close code at any time. When the task is not yet closed, this value is 'NSURLSessionWebSocketCloseCodeInvalid'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `closeCode` property of `NSURLSessionWebSocketTask`.
+         * @details A code that indicates the reason a connection closed. You can retrieve the close code at any time. When the task is not yet closed, this value is 'NSURLSessionWebSocketCloseCodeInvalid'.
+         * @return The converted Objective-C result.
+         */
         URLSessionWebSocketCloseCode close_code() const;
         /**
-     * @brief Returns the `closeReason` property of `NSURLSessionWebSocketTask`.
-     * @details The close reason received from the server. A task can be queried for its close reason at any point. A 'nil' value indicates no close reason or that the task is still running.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `closeReason` property of `NSURLSessionWebSocketTask`.
+         * @details The close reason received from the server. A task can be queried for its close reason at any point. A 'nil' value indicates no close reason or that the task is still running.
+         * @return The converted Objective-C result.
+         */
         std::vector<std::uint8_t> close_reason() const;
         /**
-     * @brief Returns the `maximumMessageSize` property of `NSURLSessionWebSocketTask`.
-     * @details The maximum number of bytes to be buffered before erroring out. This includes the sum of all bytes from continuation frames. Receive calls will error out if this value is reached.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `maximumMessageSize` property of `NSURLSessionWebSocketTask`.
+         * @details The maximum number of bytes to be buffered before erroring out. This includes the sum of all bytes from continuation frames. Receive calls will error out if this value is reached.
+         * @return The converted Objective-C result.
+         */
         std::int64_t maximum_message_size() const;
         /**
-     * @brief Sets the `maximumMessageSize` property of `NSURLSessionWebSocketTask`.
-     * @details The maximum number of bytes to be buffered before erroring out. This includes the sum of all bytes from continuation frames. Receive calls will error out if this value is reached.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `maximumMessageSize` property of `NSURLSessionWebSocketTask`.
+         * @details The maximum number of bytes to be buffered before erroring out. This includes the sum of all bytes from continuation frames. Receive calls will error out if this value is reached.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_maximum_message_size(std::int64_t value) const;
     };
 }

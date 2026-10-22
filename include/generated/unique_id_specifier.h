@@ -37,16 +37,16 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit UniqueIDSpecifier(Adopt adopt);
         /**
-     * @brief Returns the `uniqueID` property of `NSUniqueIDSpecifier`.
-     * @details The unique ID of the object to be located.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `uniqueID` property of `NSUniqueIDSpecifier`.
+         * @details The unique ID of the object to be located.
+         * @return The converted Objective-C result.
+         */
         Object unique_id() const;
         /**
-     * @brief Sets the `uniqueID` property of `NSUniqueIDSpecifier`.
-     * @details The unique ID of the object to be located.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `uniqueID` property of `NSUniqueIDSpecifier`.
+         * @details The unique ID of the object to be located.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_unique_id(const Object& value) const;
     };
 }

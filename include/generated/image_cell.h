@@ -44,34 +44,34 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit ImageCell(Adopt adopt);
         /**
-     * @brief Returns the `imageAlignment` property of `NSImageCell`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `imageAlignment` property of `NSImageCell`.
+         * @return The converted Objective-C result.
+         */
         ImageAlignment image_alignment() const;
         /**
-     * @brief Sets the `imageAlignment` property of `NSImageCell`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `imageAlignment` property of `NSImageCell`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_image_alignment(ImageAlignment value) const;
         /**
-     * @brief Returns the `imageFrameStyle` property of `NSImageCell`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `imageFrameStyle` property of `NSImageCell`.
+         * @return The converted Objective-C result.
+         */
         ImageFrameStyle image_frame_style() const;
         /**
-     * @brief Sets the `imageFrameStyle` property of `NSImageCell`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `imageFrameStyle` property of `NSImageCell`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_image_frame_style(ImageFrameStyle value) const;
         /**
-     * @brief Returns the `imageScaling` property of `NSImageCell`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `imageScaling` property of `NSImageCell`.
+         * @return The converted Objective-C result.
+         */
         ImageScaling image_scaling() const;
         /**
-     * @brief Sets the `imageScaling` property of `NSImageCell`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `imageScaling` property of `NSImageCell`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_image_scaling(ImageScaling value) const;
     };
 }

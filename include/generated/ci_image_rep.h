@@ -42,15 +42,15 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit CIImageRep(Adopt adopt);
         /**
-     * @brief Calls `+[NSCIImageRep imageRepWithCIImage:]`.
-     * @param image Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSCIImageRep imageRepWithCIImage:]`.
+         * @param image Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static CIImageRep image_rep_with_ci_image(const CIImage& image);
         /**
-     * @brief Returns the `CIImage` property of `NSCIImageRep`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `CIImage` property of `NSCIImageRep`.
+         * @return The converted Objective-C result.
+         */
         CIImage ci_image() const;
     };
 }

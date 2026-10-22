@@ -38,46 +38,46 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit ScriptExecutionContext(Adopt adopt);
         /**
-     * @brief Calls `+[NSScriptExecutionContext sharedScriptExecutionContext]`.
-     * @details Returns the shared script execution context.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSScriptExecutionContext sharedScriptExecutionContext]`.
+         * @details Returns the shared script execution context.
+         * @return The converted Objective-C result.
+         */
         static ScriptExecutionContext shared_script_execution_context();
         /**
-     * @brief Returns the `objectBeingTested` property of `NSScriptExecutionContext`.
-     * @details The object currently being tested by an 'NSWhoseSpecifier'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `objectBeingTested` property of `NSScriptExecutionContext`.
+         * @details The object currently being tested by an 'NSWhoseSpecifier'.
+         * @return The converted Objective-C result.
+         */
         Object object_being_tested() const;
         /**
-     * @brief Sets the `objectBeingTested` property of `NSScriptExecutionContext`.
-     * @details The object currently being tested by an 'NSWhoseSpecifier'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `objectBeingTested` property of `NSScriptExecutionContext`.
+         * @details The object currently being tested by an 'NSWhoseSpecifier'.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_object_being_tested(const Object& value) const;
         /**
-     * @brief Returns the `rangeContainerObject` property of `NSScriptExecutionContext`.
-     * @details The container object for the current range specifier being evaluated.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `rangeContainerObject` property of `NSScriptExecutionContext`.
+         * @details The container object for the current range specifier being evaluated.
+         * @return The converted Objective-C result.
+         */
         Object range_container_object() const;
         /**
-     * @brief Sets the `rangeContainerObject` property of `NSScriptExecutionContext`.
-     * @details The container object for the current range specifier being evaluated.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `rangeContainerObject` property of `NSScriptExecutionContext`.
+         * @details The container object for the current range specifier being evaluated.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_range_container_object(const Object& value) const;
         /**
-     * @brief Returns the `topLevelObject` property of `NSScriptExecutionContext`.
-     * @details The top-level object in the current scripting context.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `topLevelObject` property of `NSScriptExecutionContext`.
+         * @details The top-level object in the current scripting context.
+         * @return The converted Objective-C result.
+         */
         Object top_level_object() const;
         /**
-     * @brief Sets the `topLevelObject` property of `NSScriptExecutionContext`.
-     * @details The top-level object in the current scripting context.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `topLevelObject` property of `NSScriptExecutionContext`.
+         * @details The top-level object in the current scripting context.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_top_level_object(const Object& value) const;
     };
 }

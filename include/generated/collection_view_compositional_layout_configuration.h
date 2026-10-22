@@ -43,34 +43,34 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit CollectionViewCompositionalLayoutConfiguration(Adopt adopt);
         /**
-     * @brief Returns the `boundarySupplementaryItems` property of `NSCollectionViewCompositionalLayoutConfiguration`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `boundarySupplementaryItems` property of `NSCollectionViewCompositionalLayoutConfiguration`.
+         * @return The converted Objective-C result.
+         */
         std::vector<CollectionLayoutBoundarySupplementaryItem> boundary_supplementary_items() const;
         /**
-     * @brief Sets the `boundarySupplementaryItems` property of `NSCollectionViewCompositionalLayoutConfiguration`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `boundarySupplementaryItems` property of `NSCollectionViewCompositionalLayoutConfiguration`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_boundary_supplementary_items(const std::vector<CollectionLayoutBoundarySupplementaryItem>& value) const;
         /**
-     * @brief Returns the `interSectionSpacing` property of `NSCollectionViewCompositionalLayoutConfiguration`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `interSectionSpacing` property of `NSCollectionViewCompositionalLayoutConfiguration`.
+         * @return The converted Objective-C result.
+         */
         double inter_section_spacing() const;
         /**
-     * @brief Sets the `interSectionSpacing` property of `NSCollectionViewCompositionalLayoutConfiguration`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `interSectionSpacing` property of `NSCollectionViewCompositionalLayoutConfiguration`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_inter_section_spacing(double value) const;
         /**
-     * @brief Returns the `scrollDirection` property of `NSCollectionViewCompositionalLayoutConfiguration`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `scrollDirection` property of `NSCollectionViewCompositionalLayoutConfiguration`.
+         * @return The converted Objective-C result.
+         */
         CollectionViewScrollDirection scroll_direction() const;
         /**
-     * @brief Sets the `scrollDirection` property of `NSCollectionViewCompositionalLayoutConfiguration`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `scrollDirection` property of `NSCollectionViewCompositionalLayoutConfiguration`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_scroll_direction(CollectionViewScrollDirection value) const;
     };
 }

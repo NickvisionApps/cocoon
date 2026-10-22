@@ -49,71 +49,71 @@ namespace cocoon
         explicit CollectionLayoutGroup(Adopt adopt);
         using CollectionLayoutItem::supplementary_items;
         /**
-     * @brief Calls `+[NSCollectionLayoutGroup customGroupWithLayoutSize:itemProvider:]`.
-     * @param layout_size Argument converted to the Objective-C parameter of the same role.
-     * @param item_provider Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSCollectionLayoutGroup customGroupWithLayoutSize:itemProvider:]`.
+         * @param layout_size Argument converted to the Objective-C parameter of the same role.
+         * @param item_provider Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static CollectionLayoutGroup custom_group_with_layout_size(const CollectionLayoutSize& layout_size, std::function<std::vector<CollectionLayoutGroupCustomItem>(Object)> item_provider);
         /**
-     * @brief Calls `+[NSCollectionLayoutGroup horizontalGroupWithLayoutSize:subitem:count:]`.
-     * @param layout_size Argument converted to the Objective-C parameter of the same role.
-     * @param subitem Argument converted to the Objective-C parameter of the same role.
-     * @param count Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSCollectionLayoutGroup horizontalGroupWithLayoutSize:subitem:count:]`.
+         * @param layout_size Argument converted to the Objective-C parameter of the same role.
+         * @param subitem Argument converted to the Objective-C parameter of the same role.
+         * @param count Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static CollectionLayoutGroup horizontal_group_with_layout_size(const CollectionLayoutSize& layout_size, const CollectionLayoutItem& subitem, std::int64_t count);
         /**
-     * @brief Calls `+[NSCollectionLayoutGroup horizontalGroupWithLayoutSize:subitems:]`.
-     * @param layout_size Argument converted to the Objective-C parameter of the same role.
-     * @param subitems Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSCollectionLayoutGroup horizontalGroupWithLayoutSize:subitems:]`.
+         * @param layout_size Argument converted to the Objective-C parameter of the same role.
+         * @param subitems Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static CollectionLayoutGroup horizontal_group_with_layout_size(const CollectionLayoutSize& layout_size, const std::vector<CollectionLayoutItem>& subitems);
         /**
-     * @brief Calls `+[NSCollectionLayoutGroup verticalGroupWithLayoutSize:subitem:count:]`.
-     * @param layout_size Argument converted to the Objective-C parameter of the same role.
-     * @param subitem Argument converted to the Objective-C parameter of the same role.
-     * @param count Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSCollectionLayoutGroup verticalGroupWithLayoutSize:subitem:count:]`.
+         * @param layout_size Argument converted to the Objective-C parameter of the same role.
+         * @param subitem Argument converted to the Objective-C parameter of the same role.
+         * @param count Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static CollectionLayoutGroup vertical_group_with_layout_size(const CollectionLayoutSize& layout_size, const CollectionLayoutItem& subitem, std::int64_t count);
         /**
-     * @brief Calls `+[NSCollectionLayoutGroup verticalGroupWithLayoutSize:subitems:]`.
-     * @param layout_size Argument converted to the Objective-C parameter of the same role.
-     * @param subitems Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSCollectionLayoutGroup verticalGroupWithLayoutSize:subitems:]`.
+         * @param layout_size Argument converted to the Objective-C parameter of the same role.
+         * @param subitems Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static CollectionLayoutGroup vertical_group_with_layout_size(const CollectionLayoutSize& layout_size, const std::vector<CollectionLayoutItem>& subitems);
         /**
-     * @brief Calls `-[NSCollectionLayoutGroup visualDescription]`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSCollectionLayoutGroup visualDescription]`.
+         * @return The converted Objective-C result.
+         */
         std::string visual_description() const;
         /**
-     * @brief Returns the `interItemSpacing` property of `NSCollectionLayoutGroup`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `interItemSpacing` property of `NSCollectionLayoutGroup`.
+         * @return The converted Objective-C result.
+         */
         CollectionLayoutSpacing inter_item_spacing() const;
         /**
-     * @brief Sets the `interItemSpacing` property of `NSCollectionLayoutGroup`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `interItemSpacing` property of `NSCollectionLayoutGroup`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_inter_item_spacing(const CollectionLayoutSpacing& value) const;
         /**
-     * @brief Returns the `subitems` property of `NSCollectionLayoutGroup`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `subitems` property of `NSCollectionLayoutGroup`.
+         * @return The converted Objective-C result.
+         */
         std::vector<CollectionLayoutItem> subitems() const;
         /**
-     * @brief Returns the `supplementaryItems` property of `NSCollectionLayoutGroup`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `supplementaryItems` property of `NSCollectionLayoutGroup`.
+         * @return The converted Objective-C result.
+         */
         std::vector<CollectionLayoutSupplementaryItem> supplementary_items() const;
         /**
-     * @brief Sets the `supplementaryItems` property of `NSCollectionLayoutGroup`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `supplementaryItems` property of `NSCollectionLayoutGroup`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_supplementary_items(const std::vector<CollectionLayoutSupplementaryItem>& value) const;
     };
 }

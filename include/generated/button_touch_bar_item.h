@@ -53,76 +53,76 @@ namespace cocoon
         explicit ButtonTouchBarItem(Adopt adopt);
         using TouchBarItem::customization_label;
         /**
-     * @brief Returns the `action` property of `NSButtonTouchBarItem`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `action` property of `NSButtonTouchBarItem`.
+         * @return The converted Objective-C result.
+         */
         std::string action() const;
         /**
-     * @brief Sets the `action` property of `NSButtonTouchBarItem`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `action` property of `NSButtonTouchBarItem`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_action(const std::string& value) const;
         /**
-     * @brief Returns the `bezelColor` property of `NSButtonTouchBarItem`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `bezelColor` property of `NSButtonTouchBarItem`.
+         * @return The converted Objective-C result.
+         */
         Color bezel_color() const;
         /**
-     * @brief Sets the `bezelColor` property of `NSButtonTouchBarItem`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `bezelColor` property of `NSButtonTouchBarItem`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_bezel_color(const Color& value) const;
         /**
-     * @brief Returns the `customizationLabel` property of `NSButtonTouchBarItem`.
-     * @details The localized string labeling this item during user customization. The default value is empty string.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `customizationLabel` property of `NSButtonTouchBarItem`.
+         * @details The localized string labeling this item during user customization. The default value is empty string.
+         * @return The converted Objective-C result.
+         */
         std::string customization_label() const;
         /**
-     * @brief Sets the `customizationLabel` property of `NSButtonTouchBarItem`.
-     * @details The localized string labeling this item during user customization. The default value is empty string.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `customizationLabel` property of `NSButtonTouchBarItem`.
+         * @details The localized string labeling this item during user customization. The default value is empty string.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_customization_label(const std::string& value) const;
         /**
-     * @brief Returns the `enabled` property of `NSButtonTouchBarItem`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `enabled` property of `NSButtonTouchBarItem`.
+         * @return The converted Objective-C result.
+         */
         bool is_enabled() const;
         /**
-     * @brief Sets the `enabled` property of `NSButtonTouchBarItem`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `enabled` property of `NSButtonTouchBarItem`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_enabled(bool value) const;
         /**
-     * @brief Returns the `image` property of `NSButtonTouchBarItem`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `image` property of `NSButtonTouchBarItem`.
+         * @return The converted Objective-C result.
+         */
         Image image() const;
         /**
-     * @brief Sets the `image` property of `NSButtonTouchBarItem`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `image` property of `NSButtonTouchBarItem`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_image(const Image& value) const;
         /**
-     * @brief Returns the `target` property of `NSButtonTouchBarItem`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `target` property of `NSButtonTouchBarItem`.
+         * @return The converted Objective-C result.
+         */
         Object target() const;
         /**
-     * @brief Sets the `target` property of `NSButtonTouchBarItem`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `target` property of `NSButtonTouchBarItem`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_target(const Object& value) const;
         /**
-     * @brief Returns the `title` property of `NSButtonTouchBarItem`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `title` property of `NSButtonTouchBarItem`.
+         * @return The converted Objective-C result.
+         */
         std::string title() const;
         /**
-     * @brief Sets the `title` property of `NSButtonTouchBarItem`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `title` property of `NSButtonTouchBarItem`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_title(const std::string& value) const;
     };
 }

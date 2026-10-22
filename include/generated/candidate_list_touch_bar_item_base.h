@@ -53,86 +53,86 @@ namespace cocoon
         explicit CandidateListTouchBarItemBase(Adopt adopt);
         using TouchBarItem::customization_label;
         /**
-     * @brief Calls `-[NSCandidateListTouchBarItem setCandidates:forSelectedRange:inString:]`.
-     * @param candidates Argument converted to the Objective-C parameter of the same role.
-     * @param selected_range Argument converted to the Objective-C parameter of the same role.
-     * @param original_string Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSCandidateListTouchBarItem setCandidates:forSelectedRange:inString:]`.
+         * @param candidates Argument converted to the Objective-C parameter of the same role.
+         * @param selected_range Argument converted to the Objective-C parameter of the same role.
+         * @param original_string Argument converted to the Objective-C parameter of the same role.
+         */
         void set_candidates(const std::vector<Object>& candidates, const Range& selected_range, const std::string& original_string) const;
         /**
-     * @brief Calls `-[NSCandidateListTouchBarItem updateWithInsertionPointVisibility:]`.
-     * @param is_visible Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSCandidateListTouchBarItem updateWithInsertionPointVisibility:]`.
+         * @param is_visible Argument converted to the Objective-C parameter of the same role.
+         */
         void update_with_insertion_point_visibility(bool is_visible) const;
         /**
-     * @brief Returns the `allowsCollapsing` property of `NSCandidateListTouchBarItem`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `allowsCollapsing` property of `NSCandidateListTouchBarItem`.
+         * @return The converted Objective-C result.
+         */
         bool allows_collapsing() const;
         /**
-     * @brief Sets the `allowsCollapsing` property of `NSCandidateListTouchBarItem`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `allowsCollapsing` property of `NSCandidateListTouchBarItem`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_allows_collapsing(bool value) const;
         /**
-     * @brief Returns the `allowsTextInputContextCandidates` property of `NSCandidateListTouchBarItem`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `allowsTextInputContextCandidates` property of `NSCandidateListTouchBarItem`.
+         * @return The converted Objective-C result.
+         */
         bool allows_text_input_context_candidates() const;
         /**
-     * @brief Sets the `allowsTextInputContextCandidates` property of `NSCandidateListTouchBarItem`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `allowsTextInputContextCandidates` property of `NSCandidateListTouchBarItem`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_allows_text_input_context_candidates(bool value) const;
         /**
-     * @brief Returns the `attributedStringForCandidate` property of `NSCandidateListTouchBarItem`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `attributedStringForCandidate` property of `NSCandidateListTouchBarItem`.
+         * @return The converted Objective-C result.
+         */
         std::function<AttributedString(Object, std::int64_t)> attributed_string_for_candidate() const;
         /**
-     * @brief Sets the `attributedStringForCandidate` property of `NSCandidateListTouchBarItem`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `attributedStringForCandidate` property of `NSCandidateListTouchBarItem`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_attributed_string_for_candidate(std::function<AttributedString(Object, std::int64_t)> value) const;
         /**
-     * @brief Returns the `candidateListVisible` property of `NSCandidateListTouchBarItem`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `candidateListVisible` property of `NSCandidateListTouchBarItem`.
+         * @return The converted Objective-C result.
+         */
         bool is_candidate_list_visible() const;
         /**
-     * @brief Returns the `candidates` property of `NSCandidateListTouchBarItem`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `candidates` property of `NSCandidateListTouchBarItem`.
+         * @return The converted Objective-C result.
+         */
         std::vector<Object> candidates() const;
         /**
-     * @brief Returns the `client` property of `NSCandidateListTouchBarItem`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `client` property of `NSCandidateListTouchBarItem`.
+         * @return The converted Objective-C result.
+         */
         View client() const;
         /**
-     * @brief Sets the `client` property of `NSCandidateListTouchBarItem`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `client` property of `NSCandidateListTouchBarItem`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_client(const View& value) const;
         /**
-     * @brief Returns the `collapsed` property of `NSCandidateListTouchBarItem`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `collapsed` property of `NSCandidateListTouchBarItem`.
+         * @return The converted Objective-C result.
+         */
         bool is_collapsed() const;
         /**
-     * @brief Sets the `collapsed` property of `NSCandidateListTouchBarItem`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `collapsed` property of `NSCandidateListTouchBarItem`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_collapsed(bool value) const;
         /**
-     * @brief Returns the `customizationLabel` property of `NSCandidateListTouchBarItem`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `customizationLabel` property of `NSCandidateListTouchBarItem`.
+         * @return The converted Objective-C result.
+         */
         std::string customization_label() const;
         /**
-     * @brief Sets the `customizationLabel` property of `NSCandidateListTouchBarItem`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `customizationLabel` property of `NSCandidateListTouchBarItem`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_customization_label(const std::string& value) const;
         /// @brief Signal for the delegate/data-source method behind `begin_selecting_candidate_at_index`; connect a callback with `begin_selecting_candidate_at_index().connect(...)`.
         Signal<CandidateListTouchBarItemBase, void(std::int64_t)> begin_selecting_candidate_at_index() const

@@ -46,36 +46,36 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit CollectionViewTransitionLayout(Adopt adopt);
         /**
-     * @brief Calls `-[NSCollectionViewTransitionLayout updateValue:forAnimatedKey:]`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     * @param key Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSCollectionViewTransitionLayout updateValue:forAnimatedKey:]`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         * @param key Argument converted to the Objective-C parameter of the same role.
+         */
         void update_value(double value, const std::string& key) const;
         /**
-     * @brief Calls `-[NSCollectionViewTransitionLayout valueForAnimatedKey:]`.
-     * @param key Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSCollectionViewTransitionLayout valueForAnimatedKey:]`.
+         * @param key Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         double value_for_animated_key(const std::string& key) const;
         /**
-     * @brief Returns the `currentLayout` property of `NSCollectionViewTransitionLayout`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `currentLayout` property of `NSCollectionViewTransitionLayout`.
+         * @return The converted Objective-C result.
+         */
         CollectionViewLayout current_layout() const;
         /**
-     * @brief Returns the `nextLayout` property of `NSCollectionViewTransitionLayout`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `nextLayout` property of `NSCollectionViewTransitionLayout`.
+         * @return The converted Objective-C result.
+         */
         CollectionViewLayout next_layout() const;
         /**
-     * @brief Returns the `transitionProgress` property of `NSCollectionViewTransitionLayout`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `transitionProgress` property of `NSCollectionViewTransitionLayout`.
+         * @return The converted Objective-C result.
+         */
         double transition_progress() const;
         /**
-     * @brief Sets the `transitionProgress` property of `NSCollectionViewTransitionLayout`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `transitionProgress` property of `NSCollectionViewTransitionLayout`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_transition_progress(double value) const;
     };
 }

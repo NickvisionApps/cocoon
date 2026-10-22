@@ -46,16 +46,16 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit IndexSpecifier(Adopt adopt);
         /**
-     * @brief Returns the `index` property of `NSIndexSpecifier`.
-     * @details The index position of the object to be retrieved.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `index` property of `NSIndexSpecifier`.
+         * @details The index position of the object to be retrieved.
+         * @return The converted Objective-C result.
+         */
         std::int64_t index() const;
         /**
-     * @brief Sets the `index` property of `NSIndexSpecifier`.
-     * @details The index position of the object to be retrieved.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `index` property of `NSIndexSpecifier`.
+         * @details The index position of the object to be retrieved.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_index(std::int64_t value) const;
     };
 }

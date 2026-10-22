@@ -47,100 +47,100 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit CollectionViewLayoutAttributes(Adopt adopt);
         /**
-     * @brief Calls `+[NSCollectionViewLayoutAttributes layoutAttributesForDecorationViewOfKind:withIndexPath:]`.
-     * @param decoration_view_kind Argument converted to the Objective-C parameter of the same role.
-     * @param index_path Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSCollectionViewLayoutAttributes layoutAttributesForDecorationViewOfKind:withIndexPath:]`.
+         * @param decoration_view_kind Argument converted to the Objective-C parameter of the same role.
+         * @param index_path Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static CollectionViewLayoutAttributes layout_attributes_for_decoration_view_of_kind(const std::string& decoration_view_kind, const IndexPath& index_path);
         /**
-     * @brief Calls `+[NSCollectionViewLayoutAttributes layoutAttributesForInterItemGapBeforeIndexPath:]`.
-     * @param index_path Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSCollectionViewLayoutAttributes layoutAttributesForInterItemGapBeforeIndexPath:]`.
+         * @param index_path Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static CollectionViewLayoutAttributes layout_attributes_for_inter_item_gap_before_index_path(const IndexPath& index_path);
         /**
-     * @brief Calls `+[NSCollectionViewLayoutAttributes layoutAttributesForItemWithIndexPath:]`.
-     * @param index_path Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSCollectionViewLayoutAttributes layoutAttributesForItemWithIndexPath:]`.
+         * @param index_path Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static CollectionViewLayoutAttributes layout_attributes_for_item_with_index_path(const IndexPath& index_path);
         /**
-     * @brief Calls `+[NSCollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:withIndexPath:]`.
-     * @param element_kind Argument converted to the Objective-C parameter of the same role.
-     * @param index_path Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSCollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:withIndexPath:]`.
+         * @param element_kind Argument converted to the Objective-C parameter of the same role.
+         * @param index_path Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static CollectionViewLayoutAttributes layout_attributes_for_supplementary_view_of_kind(const std::string& element_kind, const IndexPath& index_path);
         /**
-     * @brief Returns the `alpha` property of `NSCollectionViewLayoutAttributes`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `alpha` property of `NSCollectionViewLayoutAttributes`.
+         * @return The converted Objective-C result.
+         */
         double alpha() const;
         /**
-     * @brief Sets the `alpha` property of `NSCollectionViewLayoutAttributes`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `alpha` property of `NSCollectionViewLayoutAttributes`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_alpha(double value) const;
         /**
-     * @brief Returns the `frame` property of `NSCollectionViewLayoutAttributes`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `frame` property of `NSCollectionViewLayoutAttributes`.
+         * @return The converted Objective-C result.
+         */
         Rect frame() const;
         /**
-     * @brief Sets the `frame` property of `NSCollectionViewLayoutAttributes`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `frame` property of `NSCollectionViewLayoutAttributes`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_frame(const Rect& value) const;
         /**
-     * @brief Returns the `hidden` property of `NSCollectionViewLayoutAttributes`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `hidden` property of `NSCollectionViewLayoutAttributes`.
+         * @return The converted Objective-C result.
+         */
         bool is_hidden() const;
         /**
-     * @brief Sets the `hidden` property of `NSCollectionViewLayoutAttributes`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `hidden` property of `NSCollectionViewLayoutAttributes`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_hidden(bool value) const;
         /**
-     * @brief Returns the `indexPath` property of `NSCollectionViewLayoutAttributes`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `indexPath` property of `NSCollectionViewLayoutAttributes`.
+         * @return The converted Objective-C result.
+         */
         IndexPath index_path() const;
         /**
-     * @brief Sets the `indexPath` property of `NSCollectionViewLayoutAttributes`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `indexPath` property of `NSCollectionViewLayoutAttributes`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_index_path(const IndexPath& value) const;
         /**
-     * @brief Returns the `representedElementCategory` property of `NSCollectionViewLayoutAttributes`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `representedElementCategory` property of `NSCollectionViewLayoutAttributes`.
+         * @return The converted Objective-C result.
+         */
         CollectionElementCategory represented_element_category() const;
         /**
-     * @brief Returns the `representedElementKind` property of `NSCollectionViewLayoutAttributes`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `representedElementKind` property of `NSCollectionViewLayoutAttributes`.
+         * @return The converted Objective-C result.
+         */
         std::string represented_element_kind() const;
         /**
-     * @brief Returns the `size` property of `NSCollectionViewLayoutAttributes`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `size` property of `NSCollectionViewLayoutAttributes`.
+         * @return The converted Objective-C result.
+         */
         Size size() const;
         /**
-     * @brief Sets the `size` property of `NSCollectionViewLayoutAttributes`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `size` property of `NSCollectionViewLayoutAttributes`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_size(const Size& value) const;
         /**
-     * @brief Returns the `zIndex` property of `NSCollectionViewLayoutAttributes`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `zIndex` property of `NSCollectionViewLayoutAttributes`.
+         * @return The converted Objective-C result.
+         */
         std::int64_t z_index() const;
         /**
-     * @brief Sets the `zIndex` property of `NSCollectionViewLayoutAttributes`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `zIndex` property of `NSCollectionViewLayoutAttributes`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_z_index(std::int64_t value) const;
     };
 }

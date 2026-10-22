@@ -40,40 +40,40 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit SharingCollaborationModeRestriction(Adopt adopt);
         /**
-     * @brief Returns the `alertDismissButtonTitle` property of `NSSharingCollaborationModeRestriction`.
-     * @details The label on the alert button which will simply confirm that the alert was viewed and dismiss it Defaults to "OK"
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `alertDismissButtonTitle` property of `NSSharingCollaborationModeRestriction`.
+         * @details The label on the alert button which will simply confirm that the alert was viewed and dismiss it Defaults to "OK"
+         * @return The converted Objective-C result.
+         */
         std::string alert_dismiss_button_title() const;
         /**
-     * @brief Returns the `alertMessage` property of `NSSharingCollaborationModeRestriction`.
-     * @details The message of the alert if a reason for disabling is provided
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `alertMessage` property of `NSSharingCollaborationModeRestriction`.
+         * @details The message of the alert if a reason for disabling is provided
+         * @return The converted Objective-C result.
+         */
         std::string alert_message() const;
         /**
-     * @brief Returns the `alertRecoverySuggestionButtonLaunchURL` property of `NSSharingCollaborationModeRestriction`.
-     * @details The URL that is opened when the user selects the recovery suggestion, if any
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `alertRecoverySuggestionButtonLaunchURL` property of `NSSharingCollaborationModeRestriction`.
+         * @details The URL that is opened when the user selects the recovery suggestion, if any
+         * @return The converted Objective-C result.
+         */
         URL alert_recovery_suggestion_button_launch_url() const;
         /**
-     * @brief Returns the `alertRecoverySuggestionButtonTitle` property of `NSSharingCollaborationModeRestriction`.
-     * @details The label on the recovery suggestion button if it is provided
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `alertRecoverySuggestionButtonTitle` property of `NSSharingCollaborationModeRestriction`.
+         * @details The label on the recovery suggestion button if it is provided
+         * @return The converted Objective-C result.
+         */
         std::string alert_recovery_suggestion_button_title() const;
         /**
-     * @brief Returns the `alertTitle` property of `NSSharingCollaborationModeRestriction`.
-     * @details The title of the alert if a reason for disabling is provided
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `alertTitle` property of `NSSharingCollaborationModeRestriction`.
+         * @details The title of the alert if a reason for disabling is provided
+         * @return The converted Objective-C result.
+         */
         std::string alert_title() const;
         /**
-     * @brief Returns the `disabledMode` property of `NSSharingCollaborationModeRestriction`.
-     * @details The type of sharing which should be disabled
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `disabledMode` property of `NSSharingCollaborationModeRestriction`.
+         * @details The type of sharing which should be disabled
+         * @return The converted Objective-C result.
+         */
         SharingCollaborationMode disabled_mode() const;
     };
 }

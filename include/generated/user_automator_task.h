@@ -34,22 +34,22 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit UserAutomatorTask(Adopt adopt);
         /**
-     * @brief Calls `-[NSUserAutomatorTask executeWithInput:completionHandler:]`.
-     * @param input Argument converted to the Objective-C parameter of the same role.
-     * @param handler Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSUserAutomatorTask executeWithInput:completionHandler:]`.
+         * @param input Argument converted to the Objective-C parameter of the same role.
+         * @param handler Argument converted to the Objective-C parameter of the same role.
+         */
         void execute_with_input(const Object& input, std::function<void(Object, Error)> handler) const;
         /**
-     * @brief Returns the `variables` property of `NSUserAutomatorTask`.
-     * @details The variables required by the Automator workflow.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `variables` property of `NSUserAutomatorTask`.
+         * @details The variables required by the Automator workflow.
+         * @return The converted Objective-C result.
+         */
         std::map<std::string, Object> variables() const;
         /**
-     * @brief Sets the `variables` property of `NSUserAutomatorTask`.
-     * @details The variables required by the Automator workflow.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `variables` property of `NSUserAutomatorTask`.
+         * @details The variables required by the Automator workflow.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_variables(const std::map<std::string, Object>& value) const;
     };
 }

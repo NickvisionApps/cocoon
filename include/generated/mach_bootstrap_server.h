@@ -45,40 +45,40 @@ namespace cocoon
         using PortNameServer::port_for_name;
         using PortNameServer::register_port;
         /**
-     * @brief Calls `-[NSMachBootstrapServer portForName:]`.
-     * @details Looks up and returns the port registered under the specified name.
-     * @param name Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSMachBootstrapServer portForName:]`.
+         * @details Looks up and returns the port registered under the specified name.
+         * @param name Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Port port_for_name(const std::string& name) const;
         /**
-     * @brief Calls `-[NSMachBootstrapServer portForName:host:]`.
-     * @details Looks up and returns the port registered under the specified name on a given host. The bootstrap server is a local-only server; the host parameter must be an empty string or 'nil'.
-     * @param name Argument converted to the Objective-C parameter of the same role.
-     * @param host Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSMachBootstrapServer portForName:host:]`.
+         * @details Looks up and returns the port registered under the specified name on a given host. The bootstrap server is a local-only server; the host parameter must be an empty string or 'nil'.
+         * @param name Argument converted to the Objective-C parameter of the same role.
+         * @param host Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Port port_for_name(const std::string& name, const std::string& host) const;
         /**
-     * @brief Calls `-[NSMachBootstrapServer registerPort:name:]`.
-     * @details Registers a given port as a network service with the specified name.
-     * @param port Argument converted to the Objective-C parameter of the same role.
-     * @param name Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSMachBootstrapServer registerPort:name:]`.
+         * @details Registers a given port as a network service with the specified name.
+         * @param port Argument converted to the Objective-C parameter of the same role.
+         * @param name Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool register_port(const Port& port, const std::string& name) const;
         /**
-     * @brief Calls `-[NSMachBootstrapServer servicePortWithName:]`.
-     * @details Returns the port for the specified service name, requesting the launch of the corresponding service if it is not already running.
-     * @param name Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSMachBootstrapServer servicePortWithName:]`.
+         * @details Returns the port for the specified service name, requesting the launch of the corresponding service if it is not already running.
+         * @param name Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Port service_port_with_name(const std::string& name) const;
         /**
-     * @brief Calls `+[NSMachBootstrapServer sharedInstance]`.
-     * @details Returns the shared instance of the Mach bootstrap server.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSMachBootstrapServer sharedInstance]`.
+         * @details Returns the shared instance of the Mach bootstrap server.
+         * @return The converted Objective-C result.
+         */
         static Object shared_instance();
     };
 }

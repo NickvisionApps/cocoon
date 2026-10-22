@@ -81,268 +81,268 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit AttributedString(Adopt adopt);
         /**
-     * @brief Calls `-[NSAttributedString RTFDFileWrapperFromRange:documentAttributes:]`.
-     * @param range Argument converted to the Objective-C parameter of the same role.
-     * @param dict Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSAttributedString RTFDFileWrapperFromRange:documentAttributes:]`.
+         * @param range Argument converted to the Objective-C parameter of the same role.
+         * @param dict Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         FileWrapper rtfd_file_wrapper_from_range(const Range& range, const std::map<std::string, Object>& dict) const;
         /**
-     * @brief Calls `-[NSAttributedString RTFDFromRange:documentAttributes:]`.
-     * @param range Argument converted to the Objective-C parameter of the same role.
-     * @param dict Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSAttributedString RTFDFromRange:documentAttributes:]`.
+         * @param range Argument converted to the Objective-C parameter of the same role.
+         * @param dict Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::vector<std::uint8_t> rtfd_from_range(const Range& range, const std::map<std::string, Object>& dict) const;
         /**
-     * @brief Calls `-[NSAttributedString RTFFromRange:documentAttributes:]`.
-     * @param range Argument converted to the Objective-C parameter of the same role.
-     * @param dict Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSAttributedString RTFFromRange:documentAttributes:]`.
+         * @param range Argument converted to the Objective-C parameter of the same role.
+         * @param dict Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::vector<std::uint8_t> rtf_from_range(const Range& range, const std::map<std::string, Object>& dict) const;
         /**
-     * @brief Calls `-[NSAttributedString attribute:atIndex:effectiveRange:]`.
-     * @details Returns the value for an attribute with the specified name of the character at the specified index and, by reference, the range where the attribute applies. Raises an 'NSRangeException' if 'location' lies beyond the end of the receiver's characters. - Parameters: - attrName: The name of an attribute. - location: The index for which to return attributes. This value must not exceed the bounds of the receiver. - range: If non-'NULL', upon return contains a range over which the named attribute's value applies, or a range over which the attribute does not exist. The range isn't necessarily the maximum range covered by 'attrName', and its extent is implementation-dependent. If you need the maximum range, use 'attribute:atIndex:longestEffectiveRange:inRange:'. If you don't need this value, pass 'NULL'. - Returns: The value for the attribute named 'attrName' of the character at 'location', or 'nil' if there is no such attribute.
-     * @param attr_name Argument converted to the Objective-C parameter of the same role.
-     * @param location Argument converted to the Objective-C parameter of the same role.
-     * @param range Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSAttributedString attribute:atIndex:effectiveRange:]`.
+         * @details Returns the value for an attribute with the specified name of the character at the specified index and, by reference, the range where the attribute applies. Raises an 'NSRangeException' if 'location' lies beyond the end of the receiver's characters. - Parameters: - attrName: The name of an attribute. - location: The index for which to return attributes. This value must not exceed the bounds of the receiver. - range: If non-'NULL', upon return contains a range over which the named attribute's value applies, or a range over which the attribute does not exist. The range isn't necessarily the maximum range covered by 'attrName', and its extent is implementation-dependent. If you need the maximum range, use 'attribute:atIndex:longestEffectiveRange:inRange:'. If you don't need this value, pass 'NULL'. - Returns: The value for the attribute named 'attrName' of the character at 'location', or 'nil' if there is no such attribute.
+         * @param attr_name Argument converted to the Objective-C parameter of the same role.
+         * @param location Argument converted to the Objective-C parameter of the same role.
+         * @param range Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Object attribute(const std::string& attr_name, std::uint64_t location, Range* range) const;
         /**
-     * @brief Calls `-[NSAttributedString attribute:atIndex:longestEffectiveRange:inRange:]`.
-     * @details Returns the value for the attribute with the specified name of the character at the specified index and, by reference, the range where the attribute applies. Raises an 'NSRangeException' if 'location' or any part of 'rangeLimit' lies beyond the end of the receiver's characters. If you don't need the longest effective range, it's far more efficient to use 'attribute:atIndex:effectiveRange:' to retrieve the attribute value. - Parameters: - attrName: The name of an attribute. - location: The index at which to test for 'attrName'. - range: If non-'NULL', upon return contains the full range over which the value of the named attribute is the same as that at 'location', clipped to 'rangeLimit', or the full range over which the attribute does not exist. If you don't need this value, pass 'NULL'. - rangeLimit: The range over which to search for continuous presence of 'attrName'. This value must not exceed the bounds of the receiver. - Returns: The value for the attribute named 'attrName' of the character at 'location', or 'nil' if there is no such attribute.
-     * @param attr_name Argument converted to the Objective-C parameter of the same role.
-     * @param location Argument converted to the Objective-C parameter of the same role.
-     * @param range Argument converted to the Objective-C parameter of the same role.
-     * @param range_limit Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSAttributedString attribute:atIndex:longestEffectiveRange:inRange:]`.
+         * @details Returns the value for the attribute with the specified name of the character at the specified index and, by reference, the range where the attribute applies. Raises an 'NSRangeException' if 'location' or any part of 'rangeLimit' lies beyond the end of the receiver's characters. If you don't need the longest effective range, it's far more efficient to use 'attribute:atIndex:effectiveRange:' to retrieve the attribute value. - Parameters: - attrName: The name of an attribute. - location: The index at which to test for 'attrName'. - range: If non-'NULL', upon return contains the full range over which the value of the named attribute is the same as that at 'location', clipped to 'rangeLimit', or the full range over which the attribute does not exist. If you don't need this value, pass 'NULL'. - rangeLimit: The range over which to search for continuous presence of 'attrName'. This value must not exceed the bounds of the receiver. - Returns: The value for the attribute named 'attrName' of the character at 'location', or 'nil' if there is no such attribute.
+         * @param attr_name Argument converted to the Objective-C parameter of the same role.
+         * @param location Argument converted to the Objective-C parameter of the same role.
+         * @param range Argument converted to the Objective-C parameter of the same role.
+         * @param range_limit Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Object attribute(const std::string& attr_name, std::uint64_t location, Range* range, const Range& range_limit) const;
         /**
-     * @brief Calls `-[NSAttributedString attributedStringByInflectingString]`.
-     * @details If the string has portions tagged with NSInflectionRuleAttributeName that have no format specifiers, create a new string with those portions inflected by following the rule in the attribute.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSAttributedString attributedStringByInflectingString]`.
+         * @details If the string has portions tagged with NSInflectionRuleAttributeName that have no format specifiers, create a new string with those portions inflected by following the rule in the attribute.
+         * @return The converted Objective-C result.
+         */
         AttributedString attributed_string_by_inflecting_string() const;
         /**
-     * @brief Calls `-[NSAttributedString attributedSubstringFromRange:]`.
-     * @details Returns an attributed string consisting of the characters and attributes within the specified range in the attributed string. Raises an 'NSRangeException' if any part of 'range' lies beyond the end of the receiver's characters. This method treats the length of the string as a valid range value that returns an empty string. - Parameter range: The range from which to create a new attributed string. 'range' must lie within the bounds of the receiver. - Returns: An 'NSAttributedString' object consisting of the characters and attributes within 'range' in the receiver.
-     * @param range Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSAttributedString attributedSubstringFromRange:]`.
+         * @details Returns an attributed string consisting of the characters and attributes within the specified range in the attributed string. Raises an 'NSRangeException' if any part of 'range' lies beyond the end of the receiver's characters. This method treats the length of the string as a valid range value that returns an empty string. - Parameter range: The range from which to create a new attributed string. 'range' must lie within the bounds of the receiver. - Returns: An 'NSAttributedString' object consisting of the characters and attributes within 'range' in the receiver.
+         * @param range Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         AttributedString attributed_substring_from_range(const Range& range) const;
         /**
-     * @brief Calls `-[NSAttributedString attributesAtIndex:effectiveRange:]`.
-     * @details Returns the attributes for the character at the specified index. Raises an 'NSRangeException' if 'location' lies beyond the end of the receiver's characters. - Parameters: - location: The index for which to return attributes. This value must lie within the bounds of the receiver. - range: Upon return, the range over which the attributes and values are the same as those at 'location'. This range isn't necessarily the maximum range covered, and its extent is implementation-dependent. If you need the maximum range, use 'attributesAtIndex:longestEffectiveRange:inRange:'. If you don't need this value, pass 'NULL'. - Returns: The attributes for the character at 'location'.
-     * @param location Argument converted to the Objective-C parameter of the same role.
-     * @param range Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSAttributedString attributesAtIndex:effectiveRange:]`.
+         * @details Returns the attributes for the character at the specified index. Raises an 'NSRangeException' if 'location' lies beyond the end of the receiver's characters. - Parameters: - location: The index for which to return attributes. This value must lie within the bounds of the receiver. - range: Upon return, the range over which the attributes and values are the same as those at 'location'. This range isn't necessarily the maximum range covered, and its extent is implementation-dependent. If you need the maximum range, use 'attributesAtIndex:longestEffectiveRange:inRange:'. If you don't need this value, pass 'NULL'. - Returns: The attributes for the character at 'location'.
+         * @param location Argument converted to the Objective-C parameter of the same role.
+         * @param range Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::map<std::string, Object> attributes_at_index(std::uint64_t location, Range* range) const;
         /**
-     * @brief Calls `-[NSAttributedString attributesAtIndex:longestEffectiveRange:inRange:]`.
-     * @details Returns the attributes for the character at the specified index and, by reference, the range where the attributes apply. Raises an 'NSRangeException' if 'location' or any part of 'rangeLimit' lies beyond the end of the receiver's characters. If you don't need the range information, it's far more efficient to use 'attributesAtIndex:effectiveRange:' to retrieve the attribute value. - Parameters: - location: The index for which to return attributes. This value must not exceed the bounds of the receiver. - range: If non-'NULL', upon return contains the maximum range over which the attributes and values are the same as those at 'location', clipped to 'rangeLimit'. - rangeLimit: The range over which to search for continuous presence of the attributes at 'location'. This value must not exceed the bounds of the receiver.
-     * @param location Argument converted to the Objective-C parameter of the same role.
-     * @param range Argument converted to the Objective-C parameter of the same role.
-     * @param range_limit Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSAttributedString attributesAtIndex:longestEffectiveRange:inRange:]`.
+         * @details Returns the attributes for the character at the specified index and, by reference, the range where the attributes apply. Raises an 'NSRangeException' if 'location' or any part of 'rangeLimit' lies beyond the end of the receiver's characters. If you don't need the range information, it's far more efficient to use 'attributesAtIndex:effectiveRange:' to retrieve the attribute value. - Parameters: - location: The index for which to return attributes. This value must not exceed the bounds of the receiver. - range: If non-'NULL', upon return contains the maximum range over which the attributes and values are the same as those at 'location', clipped to 'rangeLimit'. - rangeLimit: The range over which to search for continuous presence of the attributes at 'location'. This value must not exceed the bounds of the receiver.
+         * @param location Argument converted to the Objective-C parameter of the same role.
+         * @param range Argument converted to the Objective-C parameter of the same role.
+         * @param range_limit Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::map<std::string, Object> attributes_at_index(std::uint64_t location, Range* range, const Range& range_limit) const;
         /**
-     * @brief Calls `-[NSAttributedString boundingRectWithSize:options:]`.
-     * @param size Argument converted to the Objective-C parameter of the same role.
-     * @param options Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSAttributedString boundingRectWithSize:options:]`.
+         * @param size Argument converted to the Objective-C parameter of the same role.
+         * @param options Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Rect bounding_rect_with_size(const Size& size, StringDrawingOptions options) const;
         /**
-     * @brief Calls `-[NSAttributedString boundingRectWithSize:options:context:]`.
-     * @param size Argument converted to the Objective-C parameter of the same role.
-     * @param options Argument converted to the Objective-C parameter of the same role.
-     * @param context Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSAttributedString boundingRectWithSize:options:context:]`.
+         * @param size Argument converted to the Objective-C parameter of the same role.
+         * @param options Argument converted to the Objective-C parameter of the same role.
+         * @param context Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Rect bounding_rect_with_size(const Size& size, StringDrawingOptions options, const StringDrawingContext& context) const;
         /**
-     * @brief Calls `-[NSAttributedString containsAttachmentsInRange:]`.
-     * @param range Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSAttributedString containsAttachmentsInRange:]`.
+         * @param range Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool contains_attachments_in_range(const Range& range) const;
         /**
-     * @brief Calls `-[NSAttributedString dataFromRange:documentAttributes:error:]`.
-     * @param range Argument converted to the Objective-C parameter of the same role.
-     * @param dict Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSAttributedString dataFromRange:documentAttributes:error:]`.
+         * @param range Argument converted to the Objective-C parameter of the same role.
+         * @param dict Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::vector<std::uint8_t> data_from_range(const Range& range, const std::map<std::string, Object>& dict) const;
         /**
-     * @brief Calls `-[NSAttributedString docFormatFromRange:documentAttributes:]`.
-     * @param range Argument converted to the Objective-C parameter of the same role.
-     * @param dict Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSAttributedString docFormatFromRange:documentAttributes:]`.
+         * @param range Argument converted to the Objective-C parameter of the same role.
+         * @param dict Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::vector<std::uint8_t> doc_format_from_range(const Range& range, const std::map<std::string, Object>& dict) const;
         /**
-     * @brief Calls `-[NSAttributedString doubleClickAtIndex:]`.
-     * @param location Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSAttributedString doubleClickAtIndex:]`.
+         * @param location Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Range double_click_at_index(std::uint64_t location) const;
         /**
-     * @brief Calls `-[NSAttributedString drawAtPoint:]`.
-     * @param point Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSAttributedString drawAtPoint:]`.
+         * @param point Argument converted to the Objective-C parameter of the same role.
+         */
         void draw_at_point(const Point& point) const;
         /**
-     * @brief Calls `-[NSAttributedString drawInRect:]`.
-     * @param rect Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSAttributedString drawInRect:]`.
+         * @param rect Argument converted to the Objective-C parameter of the same role.
+         */
         void draw_in_rect(const Rect& rect) const;
         /**
-     * @brief Calls `-[NSAttributedString drawWithRect:options:]`.
-     * @param rect Argument converted to the Objective-C parameter of the same role.
-     * @param options Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSAttributedString drawWithRect:options:]`.
+         * @param rect Argument converted to the Objective-C parameter of the same role.
+         * @param options Argument converted to the Objective-C parameter of the same role.
+         */
         void draw_with_rect(const Rect& rect, StringDrawingOptions options) const;
         /**
-     * @brief Calls `-[NSAttributedString drawWithRect:options:context:]`.
-     * @param rect Argument converted to the Objective-C parameter of the same role.
-     * @param options Argument converted to the Objective-C parameter of the same role.
-     * @param context Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSAttributedString drawWithRect:options:context:]`.
+         * @param rect Argument converted to the Objective-C parameter of the same role.
+         * @param options Argument converted to the Objective-C parameter of the same role.
+         * @param context Argument converted to the Objective-C parameter of the same role.
+         */
         void draw_with_rect(const Rect& rect, StringDrawingOptions options, const StringDrawingContext& context) const;
         /**
-     * @brief Calls `-[NSAttributedString enumerateAttribute:inRange:options:usingBlock:]`.
-     * @details Executes the specified block for each range of a particular attribute in the attributed string. If this method is called by an instance of 'NSMutableAttributedString', mutation (deletion, addition, or change) is allowed only if the mutation is within the range provided to the block. After a mutation, the enumeration continues with the range immediately following the processed range, adjusting for any change in length caused by the mutation. - Parameters: - attrName: The name of the attribute to enumerate. - enumerationRange: The range over which the attribute values are enumerated. - opts: The options used by the enumeration. - block: A block to apply to ranges of the specified attribute in the attributed string.
-     * @param attr_name Argument converted to the Objective-C parameter of the same role.
-     * @param enumeration_range Argument converted to the Objective-C parameter of the same role.
-     * @param opts Argument converted to the Objective-C parameter of the same role.
-     * @param block Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSAttributedString enumerateAttribute:inRange:options:usingBlock:]`.
+         * @details Executes the specified block for each range of a particular attribute in the attributed string. If this method is called by an instance of 'NSMutableAttributedString', mutation (deletion, addition, or change) is allowed only if the mutation is within the range provided to the block. After a mutation, the enumeration continues with the range immediately following the processed range, adjusting for any change in length caused by the mutation. - Parameters: - attrName: The name of the attribute to enumerate. - enumerationRange: The range over which the attribute values are enumerated. - opts: The options used by the enumeration. - block: A block to apply to ranges of the specified attribute in the attributed string.
+         * @param attr_name Argument converted to the Objective-C parameter of the same role.
+         * @param enumeration_range Argument converted to the Objective-C parameter of the same role.
+         * @param opts Argument converted to the Objective-C parameter of the same role.
+         * @param block Argument converted to the Objective-C parameter of the same role.
+         */
         void enumerate_attribute(const std::string& attr_name, const Range& enumeration_range, AttributedStringEnumerationOptions opts, std::function<void(Object, Range, bool&)> block) const;
         /**
-     * @brief Calls `-[NSAttributedString enumerateAttributesInRange:options:usingBlock:]`.
-     * @details Executes the specified block for each range of attributes in the attributed string. If this method is called by an instance of 'NSMutableAttributedString', mutation (deletion, addition, or change) is allowed only if the mutation is within the range provided to the block. After a mutation, the enumeration continues with the range immediately following the processed range, adjusting for any change in length caused by the mutation. - Parameters: - enumerationRange: The range over which the attributes are enumerated. - opts: The options used by the enumeration. - block: The block to apply to ranges of attributes in the attributed string.
-     * @param enumeration_range Argument converted to the Objective-C parameter of the same role.
-     * @param opts Argument converted to the Objective-C parameter of the same role.
-     * @param block Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSAttributedString enumerateAttributesInRange:options:usingBlock:]`.
+         * @details Executes the specified block for each range of attributes in the attributed string. If this method is called by an instance of 'NSMutableAttributedString', mutation (deletion, addition, or change) is allowed only if the mutation is within the range provided to the block. After a mutation, the enumeration continues with the range immediately following the processed range, adjusting for any change in length caused by the mutation. - Parameters: - enumerationRange: The range over which the attributes are enumerated. - opts: The options used by the enumeration. - block: The block to apply to ranges of attributes in the attributed string.
+         * @param enumeration_range Argument converted to the Objective-C parameter of the same role.
+         * @param opts Argument converted to the Objective-C parameter of the same role.
+         * @param block Argument converted to the Objective-C parameter of the same role.
+         */
         void enumerate_attributes_in_range(const Range& enumeration_range, AttributedStringEnumerationOptions opts, std::function<void(std::map<std::string, Object>, Range, bool&)> block) const;
         /**
-     * @brief Calls `-[NSAttributedString fileWrapperFromRange:documentAttributes:error:]`.
-     * @param range Argument converted to the Objective-C parameter of the same role.
-     * @param dict Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSAttributedString fileWrapperFromRange:documentAttributes:error:]`.
+         * @param range Argument converted to the Objective-C parameter of the same role.
+         * @param dict Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         FileWrapper file_wrapper_from_range(const Range& range, const std::map<std::string, Object>& dict) const;
         /**
-     * @brief Calls `-[NSAttributedString fontAttributesInRange:]`.
-     * @param range Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSAttributedString fontAttributesInRange:]`.
+         * @param range Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::map<std::string, Object> font_attributes_in_range(const Range& range) const;
         /**
-     * @brief Calls `-[NSAttributedString isEqualToAttributedString:]`.
-     * @details Returns a Boolean value that indicates whether the attributed string is equal to the specified string. This method performs a character-by-character comparison of the string and its attributes. The character and its attributes must be the same in both strings for the method to return 'YES'. - Parameter other: The attributed string with which to compare the receiver. - Returns: 'YES' if the text and attributes in the current string and 'other' are the same, otherwise 'NO'.
-     * @param other Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSAttributedString isEqualToAttributedString:]`.
+         * @details Returns a Boolean value that indicates whether the attributed string is equal to the specified string. This method performs a character-by-character comparison of the string and its attributes. The character and its attributes must be the same in both strings for the method to return 'YES'. - Parameter other: The attributed string with which to compare the receiver. - Returns: 'YES' if the text and attributes in the current string and 'other' are the same, otherwise 'NO'.
+         * @param other Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool is_equal_to_attributed_string(const AttributedString& other) const;
         /**
-     * @brief Calls `-[NSAttributedString itemNumberInTextList:atIndex:]`.
-     * @param list Argument converted to the Objective-C parameter of the same role.
-     * @param location Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSAttributedString itemNumberInTextList:atIndex:]`.
+         * @param list Argument converted to the Objective-C parameter of the same role.
+         * @param location Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::int64_t item_number_in_text_list(const TextList& list, std::uint64_t location) const;
         /**
-     * @brief Calls `-[NSAttributedString lineBreakBeforeIndex:withinRange:]`.
-     * @param location Argument converted to the Objective-C parameter of the same role.
-     * @param a_range Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSAttributedString lineBreakBeforeIndex:withinRange:]`.
+         * @param location Argument converted to the Objective-C parameter of the same role.
+         * @param a_range Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::uint64_t line_break_before_index(std::uint64_t location, const Range& a_range) const;
         /**
-     * @brief Calls `-[NSAttributedString lineBreakByHyphenatingBeforeIndex:withinRange:]`.
-     * @param location Argument converted to the Objective-C parameter of the same role.
-     * @param a_range Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSAttributedString lineBreakByHyphenatingBeforeIndex:withinRange:]`.
+         * @param location Argument converted to the Objective-C parameter of the same role.
+         * @param a_range Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::uint64_t line_break_by_hyphenating_before_index(std::uint64_t location, const Range& a_range) const;
         /**
-     * @brief Calls `-[NSAttributedString nextWordFromIndex:forward:]`.
-     * @param location Argument converted to the Objective-C parameter of the same role.
-     * @param is_forward Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSAttributedString nextWordFromIndex:forward:]`.
+         * @param location Argument converted to the Objective-C parameter of the same role.
+         * @param is_forward Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::uint64_t next_word_from_index(std::uint64_t location, bool is_forward) const;
         /**
-     * @brief Calls `-[NSAttributedString prefersRTFDInRange:]`.
-     * @param range Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSAttributedString prefersRTFDInRange:]`.
+         * @param range Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool prefers_rtfd_in_range(const Range& range) const;
         /**
-     * @brief Calls `-[NSAttributedString rangeOfTextBlock:atIndex:]`.
-     * @param block Argument converted to the Objective-C parameter of the same role.
-     * @param location Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSAttributedString rangeOfTextBlock:atIndex:]`.
+         * @param block Argument converted to the Objective-C parameter of the same role.
+         * @param location Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Range range_of_text_block(const TextBlock& block, std::uint64_t location) const;
         /**
-     * @brief Calls `-[NSAttributedString rangeOfTextList:atIndex:]`.
-     * @param list Argument converted to the Objective-C parameter of the same role.
-     * @param location Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSAttributedString rangeOfTextList:atIndex:]`.
+         * @param list Argument converted to the Objective-C parameter of the same role.
+         * @param location Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Range range_of_text_list(const TextList& list, std::uint64_t location) const;
         /**
-     * @brief Calls `-[NSAttributedString rangeOfTextTable:atIndex:]`.
-     * @param table Argument converted to the Objective-C parameter of the same role.
-     * @param location Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSAttributedString rangeOfTextTable:atIndex:]`.
+         * @param table Argument converted to the Objective-C parameter of the same role.
+         * @param location Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Range range_of_text_table(const TextTable& table, std::uint64_t location) const;
         /**
-     * @brief Calls `-[NSAttributedString rulerAttributesInRange:]`.
-     * @param range Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSAttributedString rulerAttributesInRange:]`.
+         * @param range Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::map<std::string, Object> ruler_attributes_in_range(const Range& range) const;
         /**
-     * @brief Calls `-[NSAttributedString size]`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSAttributedString size]`.
+         * @return The converted Objective-C result.
+         */
         Size size() const;
         /**
-     * @brief Returns the `containsAttachments` property of `NSAttributedString`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `containsAttachments` property of `NSAttributedString`.
+         * @return The converted Objective-C result.
+         */
         bool contains_attachments() const;
         /**
-     * @brief Returns the `length` property of `NSAttributedString`.
-     * @details The length of the attributed string.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `length` property of `NSAttributedString`.
+         * @details The length of the attributed string.
+         * @return The converted Objective-C result.
+         */
         std::uint64_t length() const;
         /**
-     * @brief Returns the `string` property of `NSAttributedString`.
-     * @details The character contents of the receiver as a string.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `string` property of `NSAttributedString`.
+         * @details The character contents of the receiver as a string.
+         * @return The converted Objective-C result.
+         */
         std::string string() const;
         /**
-     * @brief Returns the `textTypes` property of `NSAttributedString`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `textTypes` property of `NSAttributedString`.
+         * @return The converted Objective-C result.
+         */
         static std::vector<std::string> text_types();
         /**
-     * @brief Returns the `textUnfilteredTypes` property of `NSAttributedString`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `textUnfilteredTypes` property of `NSAttributedString`.
+         * @return The converted Objective-C result.
+         */
         static std::vector<std::string> text_unfiltered_types();
     };
 }

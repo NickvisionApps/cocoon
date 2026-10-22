@@ -56,72 +56,72 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit Value(Adopt adopt);
         /**
-     * @brief Calls `-[NSValue getValue:]`.
-     * @details Copies the value into the specified buffer. \@DeprecationSummary { This method is unsafe because it could potentially cause buffer overruns. Use ''NSValue/getValue:size:'' instead. }
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSValue getValue:]`.
+         * @details Copies the value into the specified buffer. \@DeprecationSummary { This method is unsafe because it could potentially cause buffer overruns. Use ''NSValue/getValue:size:'' instead. }
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void get_value(void* value) const;
         /**
-     * @brief Calls `-[NSValue getValue:size:]`.
-     * @details Copies the value into the specified buffer. - Parameters: - value: A buffer into which to copy the value. The buffer must be large enough to hold the value. - size: The number of bytes to copy.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     * @param size Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSValue getValue:size:]`.
+         * @details Copies the value into the specified buffer. - Parameters: - value: A buffer into which to copy the value. The buffer must be large enough to hold the value. - size: The number of bytes to copy.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         * @param size Argument converted to the Objective-C parameter of the same role.
+         */
         void get_value(void* value, std::uint64_t size) const;
         /**
-     * @brief Calls `-[NSValue isEqualToValue:]`.
-     * @details Returns a Boolean value that indicates whether the value object and another value object are equal. - Parameter value: The other value object with which to compare the value object. - Returns: 'YES' if both value objects are equal; otherwise, 'NO'. The ''NSValue'' class compares the type and contents of each value object to determine equality.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSValue isEqualToValue:]`.
+         * @details Returns a Boolean value that indicates whether the value object and another value object are equal. - Parameter value: The other value object with which to compare the value object. - Returns: 'YES' if both value objects are equal; otherwise, 'NO'. The ''NSValue'' class compares the type and contents of each value object to determine equality.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool is_equal_to_value(const Value& value) const;
         /**
-     * @brief Returns the `CATransform3DValue` property of `NSValue`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `CATransform3DValue` property of `NSValue`.
+         * @return The converted Objective-C result.
+         */
         CATransform3D ca_transform3_d_value() const;
         /**
-     * @brief Returns the `edgeInsetsValue` property of `NSValue`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `edgeInsetsValue` property of `NSValue`.
+         * @return The converted Objective-C result.
+         */
         Insets edge_insets_value() const;
         /**
-     * @brief Returns the `nonretainedObjectValue` property of `NSValue`.
-     * @details The value as a non-retained pointer to an object. This method is potentially dangerous, because the returned object might have been released by the time it is used. Ensure that the object has a retained reference before using it.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `nonretainedObjectValue` property of `NSValue`.
+         * @details The value as a non-retained pointer to an object. This method is potentially dangerous, because the returned object might have been released by the time it is used. Ensure that the object has a retained reference before using it.
+         * @return The converted Objective-C result.
+         */
         Object nonretained_object_value() const;
         /**
-     * @brief Returns the `objCType` property of `NSValue`.
-     * @details A C string containing the Objective-C type of the data contained in the value object, as encoded by the '\@encode()' compiler directive.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `objCType` property of `NSValue`.
+         * @details A C string containing the Objective-C type of the data contained in the value object, as encoded by the '\@encode()' compiler directive.
+         * @return The converted Objective-C result.
+         */
         std::string obj_c_type() const;
         /**
-     * @brief Returns the `pointValue` property of `NSValue`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `pointValue` property of `NSValue`.
+         * @return The converted Objective-C result.
+         */
         Point point_value() const;
         /**
-     * @brief Returns the `pointerValue` property of `NSValue`.
-     * @details Returns the value as an untyped pointer.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `pointerValue` property of `NSValue`.
+         * @details Returns the value as an untyped pointer.
+         * @return The converted Objective-C result.
+         */
         void* pointer_value() const;
         /**
-     * @brief Returns the `rangeValue` property of `NSValue`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `rangeValue` property of `NSValue`.
+         * @return The converted Objective-C result.
+         */
         Range range_value() const;
         /**
-     * @brief Returns the `rectValue` property of `NSValue`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `rectValue` property of `NSValue`.
+         * @return The converted Objective-C result.
+         */
         Rect rect_value() const;
         /**
-     * @brief Returns the `sizeValue` property of `NSValue`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `sizeValue` property of `NSValue`.
+         * @return The converted Objective-C result.
+         */
         Size size_value() const;
     };
 }

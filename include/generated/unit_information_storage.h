@@ -31,212 +31,212 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit UnitInformationStorage(Adopt adopt);
         /**
-     * @brief Returns the `bits` property of `NSUnitInformationStorage`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `bits` property of `NSUnitInformationStorage`.
+         * @return The converted Objective-C result.
+         */
         static UnitInformationStorage bits();
         /**
-     * @brief Returns the `bytes` property of `NSUnitInformationStorage`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `bytes` property of `NSUnitInformationStorage`.
+         * @return The converted Objective-C result.
+         */
         static UnitInformationStorage bytes();
         /**
-     * @brief Returns the `exabits` property of `NSUnitInformationStorage`.
-     * @details The exabits unit of information storage.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `exabits` property of `NSUnitInformationStorage`.
+         * @details The exabits unit of information storage.
+         * @return The converted Objective-C result.
+         */
         static UnitInformationStorage exabits();
         /**
-     * @brief Returns the `exabytes` property of `NSUnitInformationStorage`.
-     * @details The exabytes unit of information storage.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `exabytes` property of `NSUnitInformationStorage`.
+         * @details The exabytes unit of information storage.
+         * @return The converted Objective-C result.
+         */
         static UnitInformationStorage exabytes();
         /**
-     * @brief Returns the `exbibits` property of `NSUnitInformationStorage`.
-     * @details The exbibits unit of information storage.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `exbibits` property of `NSUnitInformationStorage`.
+         * @details The exbibits unit of information storage.
+         * @return The converted Objective-C result.
+         */
         static UnitInformationStorage exbibits();
         /**
-     * @brief Returns the `exbibytes` property of `NSUnitInformationStorage`.
-     * @details The exbibytes unit of information storage.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `exbibytes` property of `NSUnitInformationStorage`.
+         * @details The exbibytes unit of information storage.
+         * @return The converted Objective-C result.
+         */
         static UnitInformationStorage exbibytes();
         /**
-     * @brief Returns the `gibibits` property of `NSUnitInformationStorage`.
-     * @details The gibibits unit of information storage.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `gibibits` property of `NSUnitInformationStorage`.
+         * @details The gibibits unit of information storage.
+         * @return The converted Objective-C result.
+         */
         static UnitInformationStorage gibibits();
         /**
-     * @brief Returns the `gibibytes` property of `NSUnitInformationStorage`.
-     * @details The gibibytes unit of information storage.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `gibibytes` property of `NSUnitInformationStorage`.
+         * @details The gibibytes unit of information storage.
+         * @return The converted Objective-C result.
+         */
         static UnitInformationStorage gibibytes();
         /**
-     * @brief Returns the `gigabits` property of `NSUnitInformationStorage`.
-     * @details The gigabits unit of information storage.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `gigabits` property of `NSUnitInformationStorage`.
+         * @details The gigabits unit of information storage.
+         * @return The converted Objective-C result.
+         */
         static UnitInformationStorage gigabits();
         /**
-     * @brief Returns the `gigabytes` property of `NSUnitInformationStorage`.
-     * @details The gigabytes unit of information storage.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `gigabytes` property of `NSUnitInformationStorage`.
+         * @details The gigabytes unit of information storage.
+         * @return The converted Objective-C result.
+         */
         static UnitInformationStorage gigabytes();
         /**
-     * @brief Returns the `kibibits` property of `NSUnitInformationStorage`.
-     * @details The kibibits unit of information storage.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `kibibits` property of `NSUnitInformationStorage`.
+         * @details The kibibits unit of information storage.
+         * @return The converted Objective-C result.
+         */
         static UnitInformationStorage kibibits();
         /**
-     * @brief Returns the `kibibytes` property of `NSUnitInformationStorage`.
-     * @details The kibibytes unit of information storage.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `kibibytes` property of `NSUnitInformationStorage`.
+         * @details The kibibytes unit of information storage.
+         * @return The converted Objective-C result.
+         */
         static UnitInformationStorage kibibytes();
         /**
-     * @brief Returns the `kilobits` property of `NSUnitInformationStorage`.
-     * @details The kilobits unit of information storage.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `kilobits` property of `NSUnitInformationStorage`.
+         * @details The kilobits unit of information storage.
+         * @return The converted Objective-C result.
+         */
         static UnitInformationStorage kilobits();
         /**
-     * @brief Returns the `kilobytes` property of `NSUnitInformationStorage`.
-     * @details The kilobytes unit of information storage.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `kilobytes` property of `NSUnitInformationStorage`.
+         * @details The kilobytes unit of information storage.
+         * @return The converted Objective-C result.
+         */
         static UnitInformationStorage kilobytes();
         /**
-     * @brief Returns the `mebibits` property of `NSUnitInformationStorage`.
-     * @details The mebibits unit of information storage.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `mebibits` property of `NSUnitInformationStorage`.
+         * @details The mebibits unit of information storage.
+         * @return The converted Objective-C result.
+         */
         static UnitInformationStorage mebibits();
         /**
-     * @brief Returns the `mebibytes` property of `NSUnitInformationStorage`.
-     * @details The mebibytes unit of information storage.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `mebibytes` property of `NSUnitInformationStorage`.
+         * @details The mebibytes unit of information storage.
+         * @return The converted Objective-C result.
+         */
         static UnitInformationStorage mebibytes();
         /**
-     * @brief Returns the `megabits` property of `NSUnitInformationStorage`.
-     * @details The megabits unit of information storage.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `megabits` property of `NSUnitInformationStorage`.
+         * @details The megabits unit of information storage.
+         * @return The converted Objective-C result.
+         */
         static UnitInformationStorage megabits();
         /**
-     * @brief Returns the `megabytes` property of `NSUnitInformationStorage`.
-     * @details The megabytes unit of information storage.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `megabytes` property of `NSUnitInformationStorage`.
+         * @details The megabytes unit of information storage.
+         * @return The converted Objective-C result.
+         */
         static UnitInformationStorage megabytes();
         /**
-     * @brief Returns the `nibbles` property of `NSUnitInformationStorage`.
-     * @details The nibbles unit of information storage.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `nibbles` property of `NSUnitInformationStorage`.
+         * @details The nibbles unit of information storage.
+         * @return The converted Objective-C result.
+         */
         static UnitInformationStorage nibbles();
         /**
-     * @brief Returns the `pebibits` property of `NSUnitInformationStorage`.
-     * @details The pebibits unit of information storage.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `pebibits` property of `NSUnitInformationStorage`.
+         * @details The pebibits unit of information storage.
+         * @return The converted Objective-C result.
+         */
         static UnitInformationStorage pebibits();
         /**
-     * @brief Returns the `pebibytes` property of `NSUnitInformationStorage`.
-     * @details The pebibytes unit of information storage.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `pebibytes` property of `NSUnitInformationStorage`.
+         * @details The pebibytes unit of information storage.
+         * @return The converted Objective-C result.
+         */
         static UnitInformationStorage pebibytes();
         /**
-     * @brief Returns the `petabits` property of `NSUnitInformationStorage`.
-     * @details The petabits unit of information storage.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `petabits` property of `NSUnitInformationStorage`.
+         * @details The petabits unit of information storage.
+         * @return The converted Objective-C result.
+         */
         static UnitInformationStorage petabits();
         /**
-     * @brief Returns the `petabytes` property of `NSUnitInformationStorage`.
-     * @details The petabytes unit of information storage.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `petabytes` property of `NSUnitInformationStorage`.
+         * @details The petabytes unit of information storage.
+         * @return The converted Objective-C result.
+         */
         static UnitInformationStorage petabytes();
         /**
-     * @brief Returns the `tebibits` property of `NSUnitInformationStorage`.
-     * @details The tebibits unit of information storage.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `tebibits` property of `NSUnitInformationStorage`.
+         * @details The tebibits unit of information storage.
+         * @return The converted Objective-C result.
+         */
         static UnitInformationStorage tebibits();
         /**
-     * @brief Returns the `tebibytes` property of `NSUnitInformationStorage`.
-     * @details The tebibytes unit of information storage.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `tebibytes` property of `NSUnitInformationStorage`.
+         * @details The tebibytes unit of information storage.
+         * @return The converted Objective-C result.
+         */
         static UnitInformationStorage tebibytes();
         /**
-     * @brief Returns the `terabits` property of `NSUnitInformationStorage`.
-     * @details The terabits unit of information storage.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `terabits` property of `NSUnitInformationStorage`.
+         * @details The terabits unit of information storage.
+         * @return The converted Objective-C result.
+         */
         static UnitInformationStorage terabits();
         /**
-     * @brief Returns the `terabytes` property of `NSUnitInformationStorage`.
-     * @details The terabytes unit of information storage.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `terabytes` property of `NSUnitInformationStorage`.
+         * @details The terabytes unit of information storage.
+         * @return The converted Objective-C result.
+         */
         static UnitInformationStorage terabytes();
         /**
-     * @brief Returns the `yobibits` property of `NSUnitInformationStorage`.
-     * @details The yobibits unit of information storage.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `yobibits` property of `NSUnitInformationStorage`.
+         * @details The yobibits unit of information storage.
+         * @return The converted Objective-C result.
+         */
         static UnitInformationStorage yobibits();
         /**
-     * @brief Returns the `yobibytes` property of `NSUnitInformationStorage`.
-     * @details The yobibytes unit of information storage.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `yobibytes` property of `NSUnitInformationStorage`.
+         * @details The yobibytes unit of information storage.
+         * @return The converted Objective-C result.
+         */
         static UnitInformationStorage yobibytes();
         /**
-     * @brief Returns the `yottabits` property of `NSUnitInformationStorage`.
-     * @details The yottabits unit of information storage.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `yottabits` property of `NSUnitInformationStorage`.
+         * @details The yottabits unit of information storage.
+         * @return The converted Objective-C result.
+         */
         static UnitInformationStorage yottabits();
         /**
-     * @brief Returns the `yottabytes` property of `NSUnitInformationStorage`.
-     * @details The yottabytes unit of information storage.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `yottabytes` property of `NSUnitInformationStorage`.
+         * @details The yottabytes unit of information storage.
+         * @return The converted Objective-C result.
+         */
         static UnitInformationStorage yottabytes();
         /**
-     * @brief Returns the `zebibits` property of `NSUnitInformationStorage`.
-     * @details The zebibits unit of information storage.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `zebibits` property of `NSUnitInformationStorage`.
+         * @details The zebibits unit of information storage.
+         * @return The converted Objective-C result.
+         */
         static UnitInformationStorage zebibits();
         /**
-     * @brief Returns the `zebibytes` property of `NSUnitInformationStorage`.
-     * @details The zebibytes unit of information storage.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `zebibytes` property of `NSUnitInformationStorage`.
+         * @details The zebibytes unit of information storage.
+         * @return The converted Objective-C result.
+         */
         static UnitInformationStorage zebibytes();
         /**
-     * @brief Returns the `zettabits` property of `NSUnitInformationStorage`.
-     * @details The zettabits unit of information storage.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `zettabits` property of `NSUnitInformationStorage`.
+         * @details The zettabits unit of information storage.
+         * @return The converted Objective-C result.
+         */
         static UnitInformationStorage zettabits();
         /**
-     * @brief Returns the `zettabytes` property of `NSUnitInformationStorage`.
-     * @details The zettabytes unit of information storage.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `zettabytes` property of `NSUnitInformationStorage`.
+         * @details The zettabytes unit of information storage.
+         * @return The converted Objective-C result.
+         */
         static UnitInformationStorage zettabytes();
     };
 }

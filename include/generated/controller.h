@@ -38,35 +38,35 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit Controller(Adopt adopt);
         /**
-     * @brief Calls `-[NSController commitEditing]`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSController commitEditing]`.
+         * @return The converted Objective-C result.
+         */
         bool commit_editing() const;
         /**
-     * @brief Calls `-[NSController commitEditingWithDelegate:didCommitSelector:contextInfo:]`.
-     * @param delegate Argument converted to the Objective-C parameter of the same role.
-     * @param did_commit_selector Argument converted to the Objective-C parameter of the same role.
-     * @param context_info Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSController commitEditingWithDelegate:didCommitSelector:contextInfo:]`.
+         * @param delegate Argument converted to the Objective-C parameter of the same role.
+         * @param did_commit_selector Argument converted to the Objective-C parameter of the same role.
+         * @param context_info Argument converted to the Objective-C parameter of the same role.
+         */
         void commit_editing_with_delegate(const Object& delegate, const std::string& did_commit_selector, void* context_info) const;
         /**
-     * @brief Calls `-[NSController discardEditing]`.
-     */
+         * @brief Calls `-[NSController discardEditing]`.
+         */
         void discard_editing() const;
         /**
-     * @brief Calls `-[NSController objectDidBeginEditing:]`.
-     * @param editor Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSController objectDidBeginEditing:]`.
+         * @param editor Argument converted to the Objective-C parameter of the same role.
+         */
         void object_did_begin_editing(const Object& editor) const;
         /**
-     * @brief Calls `-[NSController objectDidEndEditing:]`.
-     * @param editor Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSController objectDidEndEditing:]`.
+         * @param editor Argument converted to the Objective-C parameter of the same role.
+         */
         void object_did_end_editing(const Object& editor) const;
         /**
-     * @brief Returns the `editing` property of `NSController`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `editing` property of `NSController`.
+         * @return The converted Objective-C result.
+         */
         bool is_editing() const;
     };
 }

@@ -40,29 +40,29 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit GlyphInfo(Adopt adopt);
         /**
-     * @brief Returns the `baseString` property of `NSGlyphInfo`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `baseString` property of `NSGlyphInfo`.
+         * @return The converted Objective-C result.
+         */
         std::string base_string() const;
         /**
-     * @brief Returns the `characterCollection` property of `NSGlyphInfo`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `characterCollection` property of `NSGlyphInfo`.
+         * @return The converted Objective-C result.
+         */
         CharacterCollection character_collection() const;
         /**
-     * @brief Returns the `characterIdentifier` property of `NSGlyphInfo`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `characterIdentifier` property of `NSGlyphInfo`.
+         * @return The converted Objective-C result.
+         */
         std::uint64_t character_identifier() const;
         /**
-     * @brief Returns the `glyphID` property of `NSGlyphInfo`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `glyphID` property of `NSGlyphInfo`.
+         * @return The converted Objective-C result.
+         */
         std::uint16_t glyph_id() const;
         /**
-     * @brief Returns the `glyphName` property of `NSGlyphInfo`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `glyphName` property of `NSGlyphInfo`.
+         * @return The converted Objective-C result.
+         */
         std::string glyph_name() const;
     };
 }

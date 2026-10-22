@@ -47,72 +47,72 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit Stream(Adopt adopt);
         /**
-     * @brief Calls `-[NSStream close]`.
-     * @details Closes the receiver. Closing the stream terminates the flow of bytes and releases system resources that were reserved for the stream when it was opened. If the stream has been scheduled on a run loop, closing the stream implicitly removes the stream from the run loop. A stream that is closed can still be queried for its properties.
-     */
+         * @brief Calls `-[NSStream close]`.
+         * @details Closes the receiver. Closing the stream terminates the flow of bytes and releases system resources that were reserved for the stream when it was opened. If the stream has been scheduled on a run loop, closing the stream implicitly removes the stream from the run loop. A stream that is closed can still be queried for its properties.
+         */
         void close() const;
         /**
-     * @brief Calls `+[NSStream getBoundStreamsWithBufferSize:inputStream:outputStream:]`.
-     * @details Creates and returns by reference a bound pair of input and output streams. The created streams are bound to one another, such that any data written to 'outputStream' is received by 'inputStream'. - Parameters: - bufferSize: The size of the buffer, in bytes, used to transfer data from 'inputStream' to 'outputStream'. - inputStream: On return, contains an input stream. - outputStream: On return, contains an output stream.
-     * @param buffer_size Argument converted to the Objective-C parameter of the same role.
-     * @param input_stream Argument converted to the Objective-C parameter of the same role.
-     * @param output_stream Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `+[NSStream getBoundStreamsWithBufferSize:inputStream:outputStream:]`.
+         * @details Creates and returns by reference a bound pair of input and output streams. The created streams are bound to one another, such that any data written to 'outputStream' is received by 'inputStream'. - Parameters: - bufferSize: The size of the buffer, in bytes, used to transfer data from 'inputStream' to 'outputStream'. - inputStream: On return, contains an input stream. - outputStream: On return, contains an output stream.
+         * @param buffer_size Argument converted to the Objective-C parameter of the same role.
+         * @param input_stream Argument converted to the Objective-C parameter of the same role.
+         * @param output_stream Argument converted to the Objective-C parameter of the same role.
+         */
         static void get_bound_streams_with_buffer_size(std::uint64_t buffer_size, InputStream& input_stream, OutputStream& output_stream);
         /**
-     * @brief Calls `+[NSStream getStreamsToHostWithName:port:inputStream:outputStream:]`.
-     * @details Creates and returns by reference an 'NSInputStream' object and 'NSOutputStream' object for a socket connection with a given host on a given port. - Parameters: - hostname: The host to which to connect. - port: The port to connect to on 'host'. - inputStream: Upon return, contains the input stream. If 'nil' is passed, the stream object is not created. - outputStream: Upon return, contains the output stream. If 'nil' is passed, the stream object is not created.
-     * @param hostname Argument converted to the Objective-C parameter of the same role.
-     * @param port Argument converted to the Objective-C parameter of the same role.
-     * @param input_stream Argument converted to the Objective-C parameter of the same role.
-     * @param output_stream Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `+[NSStream getStreamsToHostWithName:port:inputStream:outputStream:]`.
+         * @details Creates and returns by reference an 'NSInputStream' object and 'NSOutputStream' object for a socket connection with a given host on a given port. - Parameters: - hostname: The host to which to connect. - port: The port to connect to on 'host'. - inputStream: Upon return, contains the input stream. If 'nil' is passed, the stream object is not created. - outputStream: Upon return, contains the output stream. If 'nil' is passed, the stream object is not created.
+         * @param hostname Argument converted to the Objective-C parameter of the same role.
+         * @param port Argument converted to the Objective-C parameter of the same role.
+         * @param input_stream Argument converted to the Objective-C parameter of the same role.
+         * @param output_stream Argument converted to the Objective-C parameter of the same role.
+         */
         static void get_streams_to_host_with_name(const std::string& hostname, std::int64_t port, InputStream& input_stream, OutputStream& output_stream);
         /**
-     * @brief Calls `-[NSStream open]`.
-     * @details Opens the receiving stream. A stream must be created before it can be opened. Once opened, a stream cannot be closed and reopened.
-     */
+         * @brief Calls `-[NSStream open]`.
+         * @details Opens the receiving stream. A stream must be created before it can be opened. Once opened, a stream cannot be closed and reopened.
+         */
         void open() const;
         /**
-     * @brief Calls `-[NSStream propertyForKey:]`.
-     * @details Returns the receiver's property for a given key. - Parameter key: The key for one of the receiver's properties. - Returns: The receiver's property for the key 'key'.
-     * @param key Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSStream propertyForKey:]`.
+         * @details Returns the receiver's property for a given key. - Parameter key: The key for one of the receiver's properties. - Returns: The receiver's property for the key 'key'.
+         * @param key Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Object property_for_key(const std::string& key) const;
         /**
-     * @brief Calls `-[NSStream removeFromRunLoop:forMode:]`.
-     * @details Removes the receiver from a given run loop running in a given mode. - Parameters: - aRunLoop: The run loop on which the receiver was scheduled. - mode: The mode for the run loop.
-     * @param a_run_loop Argument converted to the Objective-C parameter of the same role.
-     * @param mode Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSStream removeFromRunLoop:forMode:]`.
+         * @details Removes the receiver from a given run loop running in a given mode. - Parameters: - aRunLoop: The run loop on which the receiver was scheduled. - mode: The mode for the run loop.
+         * @param a_run_loop Argument converted to the Objective-C parameter of the same role.
+         * @param mode Argument converted to the Objective-C parameter of the same role.
+         */
         void remove_from_run_loop(const RunLoop& a_run_loop, const std::string& mode) const;
         /**
-     * @brief Calls `-[NSStream scheduleInRunLoop:forMode:]`.
-     * @details Schedules the receiver on a given run loop in a given mode. Unless the client is polling the stream, it is responsible for ensuring that the stream is scheduled on at least one run loop and that at least one of the run loops on which the stream is scheduled is being run. - Parameters: - aRunLoop: The run loop on which to schedule the receiver. - mode: The mode for the run loop.
-     * @param a_run_loop Argument converted to the Objective-C parameter of the same role.
-     * @param mode Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSStream scheduleInRunLoop:forMode:]`.
+         * @details Schedules the receiver on a given run loop in a given mode. Unless the client is polling the stream, it is responsible for ensuring that the stream is scheduled on at least one run loop and that at least one of the run loops on which the stream is scheduled is being run. - Parameters: - aRunLoop: The run loop on which to schedule the receiver. - mode: The mode for the run loop.
+         * @param a_run_loop Argument converted to the Objective-C parameter of the same role.
+         * @param mode Argument converted to the Objective-C parameter of the same role.
+         */
         void schedule_in_run_loop(const RunLoop& a_run_loop, const std::string& mode) const;
         /**
-     * @brief Calls `-[NSStream setProperty:forKey:]`.
-     * @details Attempts to set the value of a given property of the receiver and returns a Boolean value that indicates whether the value is accepted by the receiver. - Parameters: - property: The value for 'key'. - key: The key for one of the receiver's properties. - Returns: 'YES' if the value is accepted by the receiver, otherwise 'NO'.
-     * @param property Argument converted to the Objective-C parameter of the same role.
-     * @param key Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSStream setProperty:forKey:]`.
+         * @details Attempts to set the value of a given property of the receiver and returns a Boolean value that indicates whether the value is accepted by the receiver. - Parameters: - property: The value for 'key'. - key: The key for one of the receiver's properties. - Returns: 'YES' if the value is accepted by the receiver, otherwise 'NO'.
+         * @param property Argument converted to the Objective-C parameter of the same role.
+         * @param key Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool set_property(const Object& property, const std::string& key) const;
         /**
-     * @brief Returns the `streamError` property of `NSStream`.
-     * @details An 'NSError' object representing the stream error, or 'nil' if no error has been encountered.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `streamError` property of `NSStream`.
+         * @details An 'NSError' object representing the stream error, or 'nil' if no error has been encountered.
+         * @return The converted Objective-C result.
+         */
         Error stream_error() const;
         /**
-     * @brief Returns the `streamStatus` property of `NSStream`.
-     * @details The receiver's status.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `streamStatus` property of `NSStream`.
+         * @details The receiver's status.
+         * @return The converted Objective-C result.
+         */
         StreamStatus stream_status() const;
         /// @brief Signal for the delegate/data-source method behind `handle_event`; connect a callback with `handle_event().connect(...)`.
         Signal<Stream, void(StreamEvent)> handle_event() const

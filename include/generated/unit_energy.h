@@ -31,34 +31,34 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit UnitEnergy(Adopt adopt);
         /**
-     * @brief Returns the `calories` property of `NSUnitEnergy`.
-     * @details The calories unit of energy.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `calories` property of `NSUnitEnergy`.
+         * @details The calories unit of energy.
+         * @return The converted Objective-C result.
+         */
         static UnitEnergy calories();
         /**
-     * @brief Returns the `joules` property of `NSUnitEnergy`.
-     * @details The joules unit of energy.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `joules` property of `NSUnitEnergy`.
+         * @details The joules unit of energy.
+         * @return The converted Objective-C result.
+         */
         static UnitEnergy joules();
         /**
-     * @brief Returns the `kilocalories` property of `NSUnitEnergy`.
-     * @details The kilocalories unit of energy.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `kilocalories` property of `NSUnitEnergy`.
+         * @details The kilocalories unit of energy.
+         * @return The converted Objective-C result.
+         */
         static UnitEnergy kilocalories();
         /**
-     * @brief Returns the `kilojoules` property of `NSUnitEnergy`.
-     * @details The kilojoules unit of energy.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `kilojoules` property of `NSUnitEnergy`.
+         * @details The kilojoules unit of energy.
+         * @return The converted Objective-C result.
+         */
         static UnitEnergy kilojoules();
         /**
-     * @brief Returns the `kilowattHours` property of `NSUnitEnergy`.
-     * @details The kilowatt hours unit of energy.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `kilowattHours` property of `NSUnitEnergy`.
+         * @details The kilowatt hours unit of energy.
+         * @return The converted Objective-C result.
+         */
         static UnitEnergy kilowatt_hours();
     };
 }

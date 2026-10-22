@@ -46,28 +46,28 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit TrackingSeparatorToolbarItem(Adopt adopt);
         /**
-     * @brief Returns the `dividerIndex` property of `NSTrackingSeparatorToolbarItem`.
-     * @details The specific divider of the 'splitView' which will be tracked.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `dividerIndex` property of `NSTrackingSeparatorToolbarItem`.
+         * @details The specific divider of the 'splitView' which will be tracked.
+         * @return The converted Objective-C result.
+         */
         std::int64_t divider_index() const;
         /**
-     * @brief Sets the `dividerIndex` property of `NSTrackingSeparatorToolbarItem`.
-     * @details The specific divider of the 'splitView' which will be tracked.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `dividerIndex` property of `NSTrackingSeparatorToolbarItem`.
+         * @details The specific divider of the 'splitView' which will be tracked.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_divider_index(std::int64_t value) const;
         /**
-     * @brief Returns the `splitView` property of `NSTrackingSeparatorToolbarItem`.
-     * @details The 'splitView' must be in the same window as the toolbar containing this item by the time the toolbar is shown. Only vertical 'splitViews' are supported.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `splitView` property of `NSTrackingSeparatorToolbarItem`.
+         * @details The 'splitView' must be in the same window as the toolbar containing this item by the time the toolbar is shown. Only vertical 'splitViews' are supported.
+         * @return The converted Objective-C result.
+         */
         SplitView split_view() const;
         /**
-     * @brief Sets the `splitView` property of `NSTrackingSeparatorToolbarItem`.
-     * @details The 'splitView' must be in the same window as the toolbar containing this item by the time the toolbar is shown. Only vertical 'splitViews' are supported.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `splitView` property of `NSTrackingSeparatorToolbarItem`.
+         * @details The 'splitView' must be in the same window as the toolbar containing this item by the time the toolbar is shown. Only vertical 'splitViews' are supported.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_split_view(const SplitView& value) const;
     };
 }

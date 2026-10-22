@@ -31,40 +31,40 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit UnitAngle(Adopt adopt);
         /**
-     * @brief Returns the `arcMinutes` property of `NSUnitAngle`.
-     * @details The arc minutes unit of angle.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `arcMinutes` property of `NSUnitAngle`.
+         * @details The arc minutes unit of angle.
+         * @return The converted Objective-C result.
+         */
         static UnitAngle arc_minutes();
         /**
-     * @brief Returns the `arcSeconds` property of `NSUnitAngle`.
-     * @details The arc seconds unit of angle.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `arcSeconds` property of `NSUnitAngle`.
+         * @details The arc seconds unit of angle.
+         * @return The converted Objective-C result.
+         */
         static UnitAngle arc_seconds();
         /**
-     * @brief Returns the `degrees` property of `NSUnitAngle`.
-     * @details The degrees unit of angle.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `degrees` property of `NSUnitAngle`.
+         * @details The degrees unit of angle.
+         * @return The converted Objective-C result.
+         */
         static UnitAngle degrees();
         /**
-     * @brief Returns the `gradians` property of `NSUnitAngle`.
-     * @details The gradians unit of angle.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `gradians` property of `NSUnitAngle`.
+         * @details The gradians unit of angle.
+         * @return The converted Objective-C result.
+         */
         static UnitAngle gradians();
         /**
-     * @brief Returns the `radians` property of `NSUnitAngle`.
-     * @details The radians unit of angle.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `radians` property of `NSUnitAngle`.
+         * @details The radians unit of angle.
+         * @return The converted Objective-C result.
+         */
         static UnitAngle radians();
         /**
-     * @brief Returns the `revolutions` property of `NSUnitAngle`.
-     * @details The revolutions unit of angle.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `revolutions` property of `NSUnitAngle`.
+         * @details The revolutions unit of angle.
+         * @return The converted Objective-C result.
+         */
         static UnitAngle revolutions();
     };
 }

@@ -44,29 +44,29 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit RecursiveLock(Adopt adopt);
         /**
-     * @brief Calls `-[NSRecursiveLock lockBeforeDate:]`.
-     * @details Attempts to acquire a lock before a given date and returns a Boolean value indicating whether the attempt was successful.
-     * @param limit Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSRecursiveLock lockBeforeDate:]`.
+         * @details Attempts to acquire a lock before a given date and returns a Boolean value indicating whether the attempt was successful.
+         * @param limit Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool lock_before_date(const Date& limit) const;
         /**
-     * @brief Calls `-[NSRecursiveLock tryLock]`.
-     * @details Attempts to acquire a lock and immediately returns a Boolean value that indicates whether the attempt was successful.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSRecursiveLock tryLock]`.
+         * @details Attempts to acquire a lock and immediately returns a Boolean value that indicates whether the attempt was successful.
+         * @return The converted Objective-C result.
+         */
         bool try_lock() const;
         /**
-     * @brief Returns the `name` property of `NSRecursiveLock`.
-     * @details The name associated with the receiver.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `name` property of `NSRecursiveLock`.
+         * @details The name associated with the receiver.
+         * @return The converted Objective-C result.
+         */
         std::string name() const;
         /**
-     * @brief Sets the `name` property of `NSRecursiveLock`.
-     * @details The name associated with the receiver.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `name` property of `NSRecursiveLock`.
+         * @details The name associated with the receiver.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_name(const std::string& value) const;
     };
 }

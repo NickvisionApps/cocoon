@@ -32,19 +32,19 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit CollectionViewUpdateItem(Adopt adopt);
         /**
-     * @brief Returns the `indexPathAfterUpdate` property of `NSCollectionViewUpdateItem`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `indexPathAfterUpdate` property of `NSCollectionViewUpdateItem`.
+         * @return The converted Objective-C result.
+         */
         IndexPath index_path_after_update() const;
         /**
-     * @brief Returns the `indexPathBeforeUpdate` property of `NSCollectionViewUpdateItem`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `indexPathBeforeUpdate` property of `NSCollectionViewUpdateItem`.
+         * @return The converted Objective-C result.
+         */
         IndexPath index_path_before_update() const;
         /**
-     * @brief Returns the `updateAction` property of `NSCollectionViewUpdateItem`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `updateAction` property of `NSCollectionViewUpdateItem`.
+         * @return The converted Objective-C result.
+         */
         CollectionUpdateAction update_action() const;
     };
 }

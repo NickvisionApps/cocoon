@@ -43,40 +43,40 @@ namespace cocoon
         using TextElement::parent_element;
         using TextParagraph::attributed_string;
         /**
-     * @brief Returns the `attributedString` property of `NSTextListElement`.
-     * @details An attributed string that represents the string the framework displays for this element taking into account markers and the indentation level of the list element. Derived from ''contents'' and ''textList'' configured with the text list element's position inside the tree. Overrides 'NSTextParagraph.attributedString'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `attributedString` property of `NSTextListElement`.
+         * @details An attributed string that represents the string the framework displays for this element taking into account markers and the indentation level of the list element. Derived from ''contents'' and ''textList'' configured with the text list element's position inside the tree. Overrides 'NSTextParagraph.attributedString'.
+         * @return The converted Objective-C result.
+         */
         AttributedString attributed_string() const;
         /**
-     * @brief Returns the `childElements` property of `NSTextListElement`.
-     * @details An array that contains child text elements.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `childElements` property of `NSTextListElement`.
+         * @details An array that contains child text elements.
+         * @return The converted Objective-C result.
+         */
         std::vector<TextListElement> child_elements() const;
         /**
-     * @brief Returns the `contents` property of `NSTextListElement`.
-     * @details The text list element contents without markers and formatting.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `contents` property of `NSTextListElement`.
+         * @details The text list element contents without markers and formatting.
+         * @return The converted Objective-C result.
+         */
         AttributedString contents() const;
         /**
-     * @brief Returns the `markerAttributes` property of `NSTextListElement`.
-     * @details A dictionary of attributed string keys and values that represent the list's marker attributes.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `markerAttributes` property of `NSTextListElement`.
+         * @details A dictionary of attributed string keys and values that represent the list's marker attributes.
+         * @return The converted Objective-C result.
+         */
         std::map<std::string, Object> marker_attributes() const;
         /**
-     * @brief Returns the `parentElement` property of `NSTextListElement`.
-     * @details A text list element that refers to the enclosing text list element.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `parentElement` property of `NSTextListElement`.
+         * @details A text list element that refers to the enclosing text list element.
+         * @return The converted Objective-C result.
+         */
         TextListElement parent_element() const;
         /**
-     * @brief Returns the `textList` property of `NSTextListElement`.
-     * @details The value that represents the text list.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `textList` property of `NSTextListElement`.
+         * @details The value that represents the text list.
+         * @return The converted Objective-C result.
+         */
         TextList text_list() const;
     };
 }

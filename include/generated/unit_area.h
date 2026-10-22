@@ -31,88 +31,88 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit UnitArea(Adopt adopt);
         /**
-     * @brief Returns the `acres` property of `NSUnitArea`.
-     * @details The acres unit of area.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `acres` property of `NSUnitArea`.
+         * @details The acres unit of area.
+         * @return The converted Objective-C result.
+         */
         static UnitArea acres();
         /**
-     * @brief Returns the `ares` property of `NSUnitArea`.
-     * @details The ares unit of area.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `ares` property of `NSUnitArea`.
+         * @details The ares unit of area.
+         * @return The converted Objective-C result.
+         */
         static UnitArea ares();
         /**
-     * @brief Returns the `hectares` property of `NSUnitArea`.
-     * @details The hectares unit of area.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `hectares` property of `NSUnitArea`.
+         * @details The hectares unit of area.
+         * @return The converted Objective-C result.
+         */
         static UnitArea hectares();
         /**
-     * @brief Returns the `squareCentimeters` property of `NSUnitArea`.
-     * @details The square centimeters unit of area.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `squareCentimeters` property of `NSUnitArea`.
+         * @details The square centimeters unit of area.
+         * @return The converted Objective-C result.
+         */
         static UnitArea square_centimeters();
         /**
-     * @brief Returns the `squareFeet` property of `NSUnitArea`.
-     * @details The square feet unit of area.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `squareFeet` property of `NSUnitArea`.
+         * @details The square feet unit of area.
+         * @return The converted Objective-C result.
+         */
         static UnitArea square_feet();
         /**
-     * @brief Returns the `squareInches` property of `NSUnitArea`.
-     * @details The square inches unit of area.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `squareInches` property of `NSUnitArea`.
+         * @details The square inches unit of area.
+         * @return The converted Objective-C result.
+         */
         static UnitArea square_inches();
         /**
-     * @brief Returns the `squareKilometers` property of `NSUnitArea`.
-     * @details The square kilometers unit of area.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `squareKilometers` property of `NSUnitArea`.
+         * @details The square kilometers unit of area.
+         * @return The converted Objective-C result.
+         */
         static UnitArea square_kilometers();
         /**
-     * @brief Returns the `squareMegameters` property of `NSUnitArea`.
-     * @details The square megameters unit of area.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `squareMegameters` property of `NSUnitArea`.
+         * @details The square megameters unit of area.
+         * @return The converted Objective-C result.
+         */
         static UnitArea square_megameters();
         /**
-     * @brief Returns the `squareMeters` property of `NSUnitArea`.
-     * @details The square meters unit of area.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `squareMeters` property of `NSUnitArea`.
+         * @details The square meters unit of area.
+         * @return The converted Objective-C result.
+         */
         static UnitArea square_meters();
         /**
-     * @brief Returns the `squareMicrometers` property of `NSUnitArea`.
-     * @details The square micrometers unit of area.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `squareMicrometers` property of `NSUnitArea`.
+         * @details The square micrometers unit of area.
+         * @return The converted Objective-C result.
+         */
         static UnitArea square_micrometers();
         /**
-     * @brief Returns the `squareMiles` property of `NSUnitArea`.
-     * @details The square miles unit of area.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `squareMiles` property of `NSUnitArea`.
+         * @details The square miles unit of area.
+         * @return The converted Objective-C result.
+         */
         static UnitArea square_miles();
         /**
-     * @brief Returns the `squareMillimeters` property of `NSUnitArea`.
-     * @details The square millimeters unit of area.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `squareMillimeters` property of `NSUnitArea`.
+         * @details The square millimeters unit of area.
+         * @return The converted Objective-C result.
+         */
         static UnitArea square_millimeters();
         /**
-     * @brief Returns the `squareNanometers` property of `NSUnitArea`.
-     * @details The square nanometers unit of area.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `squareNanometers` property of `NSUnitArea`.
+         * @details The square nanometers unit of area.
+         * @return The converted Objective-C result.
+         */
         static UnitArea square_nanometers();
         /**
-     * @brief Returns the `squareYards` property of `NSUnitArea`.
-     * @details The square yards unit of area.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `squareYards` property of `NSUnitArea`.
+         * @details The square yards unit of area.
+         * @return The converted Objective-C result.
+         */
         static UnitArea square_yards();
     };
 }
