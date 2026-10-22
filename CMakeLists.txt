@@ -8,7 +8,7 @@ set(CMAKE_OSX_DEPLOYMENT_TARGET "26.0" CACHE STRING "Minimum macOS version")
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 #cocoon Definition
-project("cocoon" LANGUAGES CXX OBJCXX VERSION 0.1.0 DESCRIPTION "A C++20 wrapper over modern AppKit.")
+project("cocoon" LANGUAGES CXX OBJCXX VERSION 0.2.0 DESCRIPTION "A C++20 wrapper over modern AppKit.")
 include(CMakePackageConfigHelpers)
 include(GNUInstallDirs)
 
