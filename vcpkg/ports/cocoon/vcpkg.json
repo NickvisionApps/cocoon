@@ -1,6 +1,6 @@
 {
   "name": "cocoon",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "maintainers": "Nicholas Logozzo nlogozzo225@gmail.com",
   "description": "A C++20 wrapper over modern AppKit.",
   "homepage": "https://github.com/NickvisionApps/cocoon",
