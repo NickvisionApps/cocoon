@@ -49,70 +49,70 @@ namespace cocoon
         using PortNameServer::register_port;
         using PortNameServer::remove_port_for_name;
         /**
-     * @brief Calls `-[NSSocketPortNameServer portForName:]`.
-     * @details Looks up and returns the port registered under the specified name.
-     * @param name Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSSocketPortNameServer portForName:]`.
+         * @details Looks up and returns the port registered under the specified name.
+         * @param name Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Port port_for_name(const std::string& name) const;
         /**
-     * @brief Calls `-[NSSocketPortNameServer portForName:host:]`.
-     * @details Looks up and returns the port registered under the specified name on a given host.
-     * @param name Argument converted to the Objective-C parameter of the same role.
-     * @param host Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSSocketPortNameServer portForName:host:]`.
+         * @details Looks up and returns the port registered under the specified name on a given host.
+         * @param name Argument converted to the Objective-C parameter of the same role.
+         * @param host Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Port port_for_name(const std::string& name, const std::string& host) const;
         /**
-     * @brief Calls `-[NSSocketPortNameServer portForName:host:nameServerPortNumber:]`.
-     * @details Looks up and returns the port registered under the specified name on a given host, using the specified port number for the name server.
-     * @param name Argument converted to the Objective-C parameter of the same role.
-     * @param host Argument converted to the Objective-C parameter of the same role.
-     * @param port_number Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSSocketPortNameServer portForName:host:nameServerPortNumber:]`.
+         * @details Looks up and returns the port registered under the specified name on a given host, using the specified port number for the name server.
+         * @param name Argument converted to the Objective-C parameter of the same role.
+         * @param host Argument converted to the Objective-C parameter of the same role.
+         * @param port_number Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Port port_for_name(const std::string& name, const std::string& host, std::uint16_t port_number) const;
         /**
-     * @brief Calls `-[NSSocketPortNameServer registerPort:name:]`.
-     * @details Registers a given port as a network service with the specified name.
-     * @param port Argument converted to the Objective-C parameter of the same role.
-     * @param name Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSSocketPortNameServer registerPort:name:]`.
+         * @details Registers a given port as a network service with the specified name.
+         * @param port Argument converted to the Objective-C parameter of the same role.
+         * @param name Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool register_port(const Port& port, const std::string& name) const;
         /**
-     * @brief Calls `-[NSSocketPortNameServer registerPort:name:nameServerPortNumber:]`.
-     * @details Registers a given port as a network service with the specified name and name server port number.
-     * @param port Argument converted to the Objective-C parameter of the same role.
-     * @param name Argument converted to the Objective-C parameter of the same role.
-     * @param port_number Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSSocketPortNameServer registerPort:name:nameServerPortNumber:]`.
+         * @details Registers a given port as a network service with the specified name and name server port number.
+         * @param port Argument converted to the Objective-C parameter of the same role.
+         * @param name Argument converted to the Objective-C parameter of the same role.
+         * @param port_number Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool register_port(const Port& port, const std::string& name, std::uint16_t port_number) const;
         /**
-     * @brief Calls `-[NSSocketPortNameServer removePortForName:]`.
-     * @details Unregisters the port for a given name.
-     * @param name Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSSocketPortNameServer removePortForName:]`.
+         * @details Unregisters the port for a given name.
+         * @param name Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool remove_port_for_name(const std::string& name) const;
         /**
-     * @brief Calls `+[NSSocketPortNameServer sharedInstance]`.
-     * @details Returns the shared instance of the socket port name server.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSSocketPortNameServer sharedInstance]`.
+         * @details Returns the shared instance of the socket port name server.
+         * @return The converted Objective-C result.
+         */
         static Object shared_instance();
         /**
-     * @brief Returns the `defaultNameServerPortNumber` property of `NSSocketPortNameServer`.
-     * @details The default port number for the name server.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `defaultNameServerPortNumber` property of `NSSocketPortNameServer`.
+         * @details The default port number for the name server.
+         * @return The converted Objective-C result.
+         */
         std::uint16_t default_name_server_port_number() const;
         /**
-     * @brief Sets the `defaultNameServerPortNumber` property of `NSSocketPortNameServer`.
-     * @details The default port number for the name server.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `defaultNameServerPortNumber` property of `NSSocketPortNameServer`.
+         * @details The default port number for the name server.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_default_name_server_port_number(std::uint16_t value) const;
     };
 }

@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -149,8 +149,6 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a3822d87067c44bf31fe64ebd38a69f29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSOutputStream outputStreamToFileAtPath:append:]</span>.  <br /></td></tr>
 <tr class="memitem:a5b681aff236bfad777be32d0b1ee8cc9" id="r_a5b681aff236bfad777be32d0b1ee8cc9"><td class="memItemLeft">static <a class="el" href="#aa0757fc81182089253a0a4d294f48918">OutputStream</a>&#160;</td><td class="memItemRight"><a class="el" href="#a5b681aff236bfad777be32d0b1ee8cc9">output_stream_to_memory</a> ()</td></tr>
 <tr class="memdesc:a5b681aff236bfad777be32d0b1ee8cc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSOutputStream outputStreamToMemory]</span>.  <br /></td></tr>
-<tr class="memitem:a120de9fc615ce34dccdce833530898d3" id="r_a120de9fc615ce34dccdce833530898d3"><td class="memItemLeft">static <a class="el" href="#aa0757fc81182089253a0a4d294f48918">OutputStream</a>&#160;</td><td class="memItemRight"><a class="el" href="#a120de9fc615ce34dccdce833530898d3">output_stream_with_url</a> (const <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a> &amp;url, bool should_append)</td></tr>
-<tr class="memdesc:a120de9fc615ce34dccdce833530898d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSOutputStream outputStreamWithURL:append:]</span>.  <br /></td></tr>
 <tr class="inherit_header pub_static_methods_classcocoon_1_1_stream"><td colspan="2">Static Public Member Functions inherited from <a class="el" href="classcocoon_1_1_stream.html">cocoon::Stream</a></td></tr>
 <tr class="memitem:a6a4c1acc927d02c12c243a11735016de pub_static_methods_classcocoon_1_1_stream" id="r_a6a4c1acc927d02c12c243a11735016de"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_stream.html#a6a4c1acc927d02c12c243a11735016de">get_bound_streams_with_buffer_size</a> (std::uint64_t buffer_size, <a class="el" href="classcocoon_1_1_input_stream.html">InputStream</a> &amp;input_stream, <a class="el" href="classcocoon_1_1_output_stream.html">OutputStream</a> &amp;output_stream)</td></tr>
 <tr class="memdesc:a6a4c1acc927d02c12c243a11735016de pub_static_methods_classcocoon_1_1_stream"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSStream getBoundStreamsWithBufferSize:inputStream:outputStream:]</span>.  <br /></td></tr>
@@ -468,45 +466,6 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Calls <span class="tt">+[NSOutputStream outputStreamToMemory]</span>. </p>
 <p>Creates and returns an initialized output stream that will write stream data to memory. The stream must be opened before it can be used. You retrieve the contents of the memory stream by sending the message 'propertyForKey:' to the receiver with an argument of 'NSStreamDataWrittenToMemoryStreamKey'. </p><dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a120de9fc615ce34dccdce833530898d3" name="a120de9fc615ce34dccdce833530898d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a120de9fc615ce34dccdce833530898d3">&#9670;&#160;</a></span>output_stream_with_url()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#aa0757fc81182089253a0a4d294f48918">OutputStream</a> cocoon::OutputStream::output_stream_with_url </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>url</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>should_append</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSOutputStream outputStreamWithURL:append:]</span>. </p>
-<p>Creates and returns an initialized output stream for writing to a specified <a class="el" href="classcocoon_1_1_u_r_l.html" title="C++ handle for the Objective-C class NSURL (Foundation).">URL</a>. The stream must be opened before it can be used. - Parameters: - url: The <a class="el" href="classcocoon_1_1_u_r_l.html" title="C++ handle for the Objective-C class NSURL (Foundation).">URL</a> to the file the output stream will write to. - shouldAppend: 'YES' if newly written data should be appended to any existing file contents, otherwise 'NO'. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">url</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">should_append</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
 
 </div>
 </div>

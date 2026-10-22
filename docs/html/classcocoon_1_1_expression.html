@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -76,6 +76,10 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a70ce6ad7ab95990d4f9137bffa1cf7c6" id="r_a70ce6ad7ab95990d4f9137bffa1cf7c6"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a70ce6ad7ab95990d4f9137bffa1cf7c6">Expression</a> (<a class="el" href="namespacecocoon.html#a3842a59a1e8696a25a2b9d8157222431">ExpressionType</a> type)</td></tr>
 <tr class="memdesc:a70ce6ad7ab95990d4f9137bffa1cf7c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSExpression</span> instance and returns a handle to it.  <br /></td></tr>
+<tr class="memitem:aeb59588c7ee9c8bdda7dad6567c936dd" id="r_aeb59588c7ee9c8bdda7dad6567c936dd"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aeb59588c7ee9c8bdda7dad6567c936dd">Expression</a> (const std::string &amp;expression_format, const std::vector&lt; <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &gt; &amp;arguments)</td></tr>
+<tr class="memdesc:aeb59588c7ee9c8bdda7dad6567c936dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSExpression</span> instance and returns a handle to it.  <br /></td></tr>
+<tr class="memitem:abbc519c74b10a5c963c38761e21f5749" id="r_abbc519c74b10a5c963c38761e21f5749"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#abbc519c74b10a5c963c38761e21f5749">Expression</a> (const std::string &amp;expression_format, char *arg_list)</td></tr>
+<tr class="memdesc:abbc519c74b10a5c963c38761e21f5749"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSExpression</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:a6ba8c296fb584186e089031251e3e091" id="r_a6ba8c296fb584186e089031251e3e091"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a6ba8c296fb584186e089031251e3e091">Expression</a> ()</td></tr>
 <tr class="memdesc:a6ba8c296fb584186e089031251e3e091"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSExpression</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:a1d264efd917e5162dfba809c335c41ad" id="r_a1d264efd917e5162dfba809c335c41ad"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a1d264efd917e5162dfba809c335c41ad">Expression</a> (std::nullptr_t)</td></tr>
@@ -170,14 +174,6 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a2cc426d5a73bf0059773a4e0fb67c187"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSExpression expressionForUnionSet:with:]</span>.  <br /></td></tr>
 <tr class="memitem:a0dcbcf4cafdcd3a9aebc24c6b184e73c" id="r_a0dcbcf4cafdcd3a9aebc24c6b184e73c"><td class="memItemLeft">static <a class="el" href="#a70ce6ad7ab95990d4f9137bffa1cf7c6">Expression</a>&#160;</td><td class="memItemRight"><a class="el" href="#a0dcbcf4cafdcd3a9aebc24c6b184e73c">expression_for_variable</a> (const std::string &amp;string)</td></tr>
 <tr class="memdesc:a0dcbcf4cafdcd3a9aebc24c6b184e73c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSExpression expressionForVariable:]</span>.  <br /></td></tr>
-<tr class="memitem:a9afe03a6ec8129810b07aed84b20113e" id="r_a9afe03a6ec8129810b07aed84b20113e"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
-<tr class="memitem:a9afe03a6ec8129810b07aed84b20113e template"><td class="memItemLeft">static <a class="el" href="#a70ce6ad7ab95990d4f9137bffa1cf7c6">Expression</a>&#160;</td><td class="memItemRight"><a class="el" href="#a9afe03a6ec8129810b07aed84b20113e">expression_with_format</a> (const std::string &amp;expression_format, const Args &amp;... args)</td></tr>
-<tr class="memitem:a9c24473bf900e0013cd909fe05576c60" id="r_a9c24473bf900e0013cd909fe05576c60"><td class="memItemLeft">static <a class="el" href="#a70ce6ad7ab95990d4f9137bffa1cf7c6">Expression</a>&#160;</td><td class="memItemRight"><a class="el" href="#a9c24473bf900e0013cd909fe05576c60">expression_with_format_</a> (const std::string &amp;expression_format, const std::vector&lt; <a class="el" href="classcocoon_1_1_var_arg.html">VarArg</a> &gt; &amp;args)</td></tr>
-<tr class="memdesc:a9c24473bf900e0013cd909fe05576c60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSExpression ]</span>.  <br /></td></tr>
-<tr class="memitem:a366c46e5c467a05b34424de55c05b08a" id="r_a366c46e5c467a05b34424de55c05b08a"><td class="memItemLeft">static <a class="el" href="#a70ce6ad7ab95990d4f9137bffa1cf7c6">Expression</a>&#160;</td><td class="memItemRight"><a class="el" href="#a366c46e5c467a05b34424de55c05b08a">expression_with_format</a> (const std::string &amp;expression_format, const std::vector&lt; <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &gt; &amp;arguments)</td></tr>
-<tr class="memdesc:a366c46e5c467a05b34424de55c05b08a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSExpression expressionWithFormat:argumentArray:]</span>.  <br /></td></tr>
-<tr class="memitem:a3fecf104b11209b1b99fa7cd9ef594cf" id="r_a3fecf104b11209b1b99fa7cd9ef594cf"><td class="memItemLeft">static <a class="el" href="#a70ce6ad7ab95990d4f9137bffa1cf7c6">Expression</a>&#160;</td><td class="memItemRight"><a class="el" href="#a3fecf104b11209b1b99fa7cd9ef594cf">expression_with_format</a> (const std::string &amp;expression_format, char *arg_list)</td></tr>
-<tr class="memdesc:a3fecf104b11209b1b99fa7cd9ef594cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSExpression expressionWithFormat:arguments:]</span>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>C++ handle for the Objective-C class <span class="tt">NSExpression</span> (Foundation). </p>
@@ -194,12 +190,12 @@ Static Public Member Functions</h2></td></tr>
 <div class="ttc" id="aclasscocoon_1_1_expression_html_a7ebb742c56a6a7031facd099e3389501"><div class="ttname"><a href="#a7ebb742c56a6a7031facd099e3389501">cocoon::Expression::allow_evaluation</a></div><div class="ttdeci">void allow_evaluation() const</div><div class="ttdoc">Calls -[NSExpression allowEvaluation].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_expression_html_adf4c2c9360c1281a1e613b4f56911cf3"><div class="ttname"><a href="#adf4c2c9360c1281a1e613b4f56911cf3">cocoon::Expression::expression_for_any_key</a></div><div class="ttdeci">static Expression expression_for_any_key()</div><div class="ttdoc">Calls +[NSExpression expressionForAnyKey].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_expression_html_af4d271f6bdb3dabb1d929bc4043e6f29"><div class="ttname"><a href="#af4d271f6bdb3dabb1d929bc4043e6f29">cocoon::Expression::expression_for_conditional</a></div><div class="ttdeci">static Expression expression_for_conditional(const Predicate &amp;predicate, const Expression &amp;true_expression, const Expression &amp;false_expression)</div><div class="ttdoc">Calls +[NSExpression expressionForConditional:trueExpression:falseExpression:].</div></div>
-<div class="ttc" id="aclasscocoon_1_1_predicate_html"><div class="ttname"><a href="classcocoon_1_1_predicate.html">cocoon::Predicate</a></div><div class="ttdoc">C++ handle for the Objective-C class NSPredicate (Foundation).</div><div class="ttdef"><b>Definition</b> predicate.h:34</div></div>
+<div class="ttc" id="aclasscocoon_1_1_predicate_html"><div class="ttname"><a href="classcocoon_1_1_predicate.html">cocoon::Predicate</a></div><div class="ttdoc">C++ handle for the Objective-C class NSPredicate (Foundation).</div><div class="ttdef"><b>Definition</b> predicate.h:33</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/foundation/nsexpression">https://developer.apple.com/documentation/foundation/nsexpression</a> </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a70ce6ad7ab95990d4f9137bffa1cf7c6" name="a70ce6ad7ab95990d4f9137bffa1cf7c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a70ce6ad7ab95990d4f9137bffa1cf7c6">&#9670;&#160;</a></span>Expression() <span class="overload">[1/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a70ce6ad7ab95990d4f9137bffa1cf7c6">&#9670;&#160;</a></span>Expression() <span class="overload">[1/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -225,8 +221,70 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="aeb59588c7ee9c8bdda7dad6567c936dd" name="aeb59588c7ee9c8bdda7dad6567c936dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb59588c7ee9c8bdda7dad6567c936dd">&#9670;&#160;</a></span>Expression() <span class="overload">[2/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::Expression::Expression </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>expression_format</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>arguments</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSExpression</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
+<a id="abbc519c74b10a5c963c38761e21f5749" name="abbc519c74b10a5c963c38761e21f5749"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbc519c74b10a5c963c38761e21f5749">&#9670;&#160;</a></span>Expression() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::Expression::Expression </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>expression_format</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>arg_list</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSExpression</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
 <a id="a6ba8c296fb584186e089031251e3e091" name="a6ba8c296fb584186e089031251e3e091"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ba8c296fb584186e089031251e3e091">&#9670;&#160;</a></span>Expression() <span class="overload">[2/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ba8c296fb584186e089031251e3e091">&#9670;&#160;</a></span>Expression() <span class="overload">[4/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -253,7 +311,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a1d264efd917e5162dfba809c335c41ad" name="a1d264efd917e5162dfba809c335c41ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d264efd917e5162dfba809c335c41ad">&#9670;&#160;</a></span>Expression() <span class="overload">[3/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d264efd917e5162dfba809c335c41ad">&#9670;&#160;</a></span>Expression() <span class="overload">[5/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -272,7 +330,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="ae292588575e207c4c98f25e949d83c7f" name="ae292588575e207c4c98f25e949d83c7f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae292588575e207c4c98f25e949d83c7f">&#9670;&#160;</a></span>Expression() <span class="overload">[4/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae292588575e207c4c98f25e949d83c7f">&#9670;&#160;</a></span>Expression() <span class="overload">[6/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -965,154 +1023,6 @@ Static Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">object</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
     <tr><td class="paramname">context</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a3fecf104b11209b1b99fa7cd9ef594cf" name="a3fecf104b11209b1b99fa7cd9ef594cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3fecf104b11209b1b99fa7cd9ef594cf">&#9670;&#160;</a></span>expression_with_format() <span class="overload">[1/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a70ce6ad7ab95990d4f9137bffa1cf7c6">Expression</a> cocoon::Expression::expression_with_format </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>expression_format</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>arg_list</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSExpression expressionWithFormat:arguments:]</span>. </p>
-<p>Creates the expression with the specified expression arguments. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">expression_format</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">arg_list</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a9afe03a6ec8129810b07aed84b20113e" name="a9afe03a6ec8129810b07aed84b20113e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9afe03a6ec8129810b07aed84b20113e">&#9670;&#160;</a></span>expression_with_format() <span class="overload">[2/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class... Args&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a70ce6ad7ab95990d4f9137bffa1cf7c6">Expression</a> cocoon::Expression::expression_with_format </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>expression_format</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Args &amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a366c46e5c467a05b34424de55c05b08a" name="a366c46e5c467a05b34424de55c05b08a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a366c46e5c467a05b34424de55c05b08a">&#9670;&#160;</a></span>expression_with_format() <span class="overload">[3/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a70ce6ad7ab95990d4f9137bffa1cf7c6">Expression</a> cocoon::Expression::expression_with_format </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>expression_format</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>arguments</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSExpression expressionWithFormat:argumentArray:]</span>. </p>
-<p>Creates the expression with the specified expression arguments. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">expression_format</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">arguments</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a9c24473bf900e0013cd909fe05576c60" name="a9c24473bf900e0013cd909fe05576c60"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c24473bf900e0013cd909fe05576c60">&#9670;&#160;</a></span>expression_with_format_()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a70ce6ad7ab95990d4f9137bffa1cf7c6">Expression</a> cocoon::Expression::expression_with_format_ </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>expression_format</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="classcocoon_1_1_var_arg.html">VarArg</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSExpression ]</span>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">expression_format</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">args</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
   </table>
   </dd>
 </dl>

@@ -50,77 +50,77 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit Gradient(Adopt adopt);
         /**
-     * @brief Calls `-[NSGradient drawFromCenter:radius:toCenter:radius:options:]`.
-     * @details Draws a radial gradient between two circles defined by the center point and radius of each circle. The option flags control whether the gradient draws itself before the start point, or after the end point. The gradient is drawn in the current graphics context without performing any additinal clipping. This is the primitive method for drawing a radial gradient.
-     * @param start_center Argument converted to the Objective-C parameter of the same role.
-     * @param start_radius Argument converted to the Objective-C parameter of the same role.
-     * @param end_center Argument converted to the Objective-C parameter of the same role.
-     * @param end_radius Argument converted to the Objective-C parameter of the same role.
-     * @param options Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSGradient drawFromCenter:radius:toCenter:radius:options:]`.
+         * @details Draws a radial gradient between two circles defined by the center point and radius of each circle. The option flags control whether the gradient draws itself before the start point, or after the end point. The gradient is drawn in the current graphics context without performing any additinal clipping. This is the primitive method for drawing a radial gradient.
+         * @param start_center Argument converted to the Objective-C parameter of the same role.
+         * @param start_radius Argument converted to the Objective-C parameter of the same role.
+         * @param end_center Argument converted to the Objective-C parameter of the same role.
+         * @param end_radius Argument converted to the Objective-C parameter of the same role.
+         * @param options Argument converted to the Objective-C parameter of the same role.
+         */
         void draw_from_center(const Point& start_center, double start_radius, const Point& end_center, double end_radius, GradientDrawingOptions options) const;
         /**
-     * @brief Calls `-[NSGradient drawFromPoint:toPoint:options:]`.
-     * @details Draws a linear gradient from start point to end point. The option flags control whether the gradient draws itself before the start point, or after the end point. The gradient is drawn in the current graphics context without performing any additinal clipping. This is the primitive method for drawing a linear gradient.
-     * @param starting_point Argument converted to the Objective-C parameter of the same role.
-     * @param ending_point Argument converted to the Objective-C parameter of the same role.
-     * @param options Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSGradient drawFromPoint:toPoint:options:]`.
+         * @details Draws a linear gradient from start point to end point. The option flags control whether the gradient draws itself before the start point, or after the end point. The gradient is drawn in the current graphics context without performing any additinal clipping. This is the primitive method for drawing a linear gradient.
+         * @param starting_point Argument converted to the Objective-C parameter of the same role.
+         * @param ending_point Argument converted to the Objective-C parameter of the same role.
+         * @param options Argument converted to the Objective-C parameter of the same role.
+         */
         void draw_from_point(const Point& starting_point, const Point& ending_point, GradientDrawingOptions options) const;
         /**
-     * @brief Calls `-[NSGradient drawInBezierPath:angle:]`.
-     * @details Convenience method for drawing a linear gradient to fill a path. Draws a linear gradient clipped by the provided path. The start point and end point are calculated with respect to the provided path so that the gradient is drawn at the provided angle in degrees. The end points are located such that both the start and end color in the gradient are visible in the path.
-     * @param path Argument converted to the Objective-C parameter of the same role.
-     * @param angle Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSGradient drawInBezierPath:angle:]`.
+         * @details Convenience method for drawing a linear gradient to fill a path. Draws a linear gradient clipped by the provided path. The start point and end point are calculated with respect to the provided path so that the gradient is drawn at the provided angle in degrees. The end points are located such that both the start and end color in the gradient are visible in the path.
+         * @param path Argument converted to the Objective-C parameter of the same role.
+         * @param angle Argument converted to the Objective-C parameter of the same role.
+         */
         void draw_in_bezier_path(const BezierPath& path, double angle) const;
         /**
-     * @brief Calls `-[NSGradient drawInBezierPath:relativeCenterPosition:]`.
-     * @details Convenience method for drawing a radial gradient to fill a path. Draws a radial gradient clipped by the provided path. The starting circle is always a single point located at the center of the ending circle which encloses the drawn path. The radius of the ending circle is determined by the relative center position. The relative center position proportionally adjusts the center location of the radial gradient. It maps the four corners of the path bounding rect to (-1.0, -1.0), (1.0, -1.0), (1.0, 1.0) and (-1.0, 1.0), with (0.0, 0.0) in the center of path bounding rect. Use NSZeroPoint to center the radial gradient in the path bounding rect. The radius of the ending circle is the distance from the relative center to the opposite corner of the path bounding rect.
-     * @param path Argument converted to the Objective-C parameter of the same role.
-     * @param relative_center_position Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSGradient drawInBezierPath:relativeCenterPosition:]`.
+         * @details Convenience method for drawing a radial gradient to fill a path. Draws a radial gradient clipped by the provided path. The starting circle is always a single point located at the center of the ending circle which encloses the drawn path. The radius of the ending circle is determined by the relative center position. The relative center position proportionally adjusts the center location of the radial gradient. It maps the four corners of the path bounding rect to (-1.0, -1.0), (1.0, -1.0), (1.0, 1.0) and (-1.0, 1.0), with (0.0, 0.0) in the center of path bounding rect. Use NSZeroPoint to center the radial gradient in the path bounding rect. The radius of the ending circle is the distance from the relative center to the opposite corner of the path bounding rect.
+         * @param path Argument converted to the Objective-C parameter of the same role.
+         * @param relative_center_position Argument converted to the Objective-C parameter of the same role.
+         */
         void draw_in_bezier_path(const BezierPath& path, const Point& relative_center_position) const;
         /**
-     * @brief Calls `-[NSGradient drawInRect:angle:]`.
-     * @details Convenience method for drawing a linear gradient to fill a rectangle. Draws a linear gradient clipped to the provided rect. The start point and end point are calculated with respect to the provided rect so that the gradient is drawn at the provided angle in degrees. The end points are located such that both the start and end color in the gradient are visible in the rect.
-     * @param rect Argument converted to the Objective-C parameter of the same role.
-     * @param angle Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSGradient drawInRect:angle:]`.
+         * @details Convenience method for drawing a linear gradient to fill a rectangle. Draws a linear gradient clipped to the provided rect. The start point and end point are calculated with respect to the provided rect so that the gradient is drawn at the provided angle in degrees. The end points are located such that both the start and end color in the gradient are visible in the rect.
+         * @param rect Argument converted to the Objective-C parameter of the same role.
+         * @param angle Argument converted to the Objective-C parameter of the same role.
+         */
         void draw_in_rect(const Rect& rect, double angle) const;
         /**
-     * @brief Calls `-[NSGradient drawInRect:relativeCenterPosition:]`.
-     * @details Convenience method for drawing a radial gradient to fill a rect. Draws a radial gradient clipped by the provided rect. The starting circle is always a single point located at the center of the ending circle which encloses the drawn rect. The radius of the ending circle is determined by the relative center position. The relative center position proportionally adjusts the center location of the radial gradient. It maps the four corners of the rectangle to (-1.0, -1.0), (1.0, -1.0), (1.0, 1.0) and (-1.0, 1.0), with (0.0, 0.0) in the center of the rectangle. Use NSZeroPoint to center the radial gradient in the rect. The radius of the ending circle is the distance from the relative center to the opposite corner of the rect.
-     * @param rect Argument converted to the Objective-C parameter of the same role.
-     * @param relative_center_position Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSGradient drawInRect:relativeCenterPosition:]`.
+         * @details Convenience method for drawing a radial gradient to fill a rect. Draws a radial gradient clipped by the provided rect. The starting circle is always a single point located at the center of the ending circle which encloses the drawn rect. The radius of the ending circle is determined by the relative center position. The relative center position proportionally adjusts the center location of the radial gradient. It maps the four corners of the rectangle to (-1.0, -1.0), (1.0, -1.0), (1.0, 1.0) and (-1.0, 1.0), with (0.0, 0.0) in the center of the rectangle. Use NSZeroPoint to center the radial gradient in the rect. The radius of the ending circle is the distance from the relative center to the opposite corner of the rect.
+         * @param rect Argument converted to the Objective-C parameter of the same role.
+         * @param relative_center_position Argument converted to the Objective-C parameter of the same role.
+         */
         void draw_in_rect(const Rect& rect, const Point& relative_center_position) const;
         /**
-     * @brief Calls `-[NSGradient getColor:location:atIndex:]`.
-     * @details Returns the color and location at a particular index in the color gradient
-     * @param color Argument converted to the Objective-C parameter of the same role.
-     * @param location Argument converted to the Objective-C parameter of the same role.
-     * @param index Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSGradient getColor:location:atIndex:]`.
+         * @details Returns the color and location at a particular index in the color gradient
+         * @param color Argument converted to the Objective-C parameter of the same role.
+         * @param location Argument converted to the Objective-C parameter of the same role.
+         * @param index Argument converted to the Objective-C parameter of the same role.
+         */
         void get_color(Color& color, double* location, std::int64_t index) const;
         /**
-     * @brief Calls `-[NSGradient interpolatedColorAtLocation:]`.
-     * @details This method will return the interpolated gradient value at the given location. For example, in a two color gradient with white at location 0.0 and black at location 1.0, the interpolated color at location 0.5 would be 50\% gray. You should not need to override this method, it reports the color value of the gradient at a particular location, and does not affect the drawn color values.
-     * @param location Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSGradient interpolatedColorAtLocation:]`.
+         * @details This method will return the interpolated gradient value at the given location. For example, in a two color gradient with white at location 0.0 and black at location 1.0, the interpolated color at location 0.5 would be 50\% gray. You should not need to override this method, it reports the color value of the gradient at a particular location, and does not affect the drawn color values.
+         * @param location Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Color interpolated_color_at_location(double location) const;
         /**
-     * @brief Returns the `colorSpace` property of `NSGradient`.
-     * @details Returns the color space of the gradient
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `colorSpace` property of `NSGradient`.
+         * @details Returns the color space of the gradient
+         * @return The converted Objective-C result.
+         */
         ColorSpace color_space() const;
         /**
-     * @brief Returns the `numberOfColorStops` property of `NSGradient`.
-     * @details The number of color stops in the color gradient
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `numberOfColorStops` property of `NSGradient`.
+         * @details The number of color stops in the color gradient
+         * @return The converted Objective-C result.
+         */
         std::int64_t number_of_color_stops() const;
     };
 }

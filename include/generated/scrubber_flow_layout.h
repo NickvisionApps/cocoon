@@ -46,33 +46,33 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit ScrubberFlowLayout(Adopt adopt);
         /**
-     * @brief Calls `-[NSScrubberFlowLayout invalidateLayoutForItemsAtIndexes:]`.
-     * @param invalid_item_indexes Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSScrubberFlowLayout invalidateLayoutForItemsAtIndexes:]`.
+         * @param invalid_item_indexes Argument converted to the Objective-C parameter of the same role.
+         */
         void invalidate_layout_for_items_at_indexes(const IndexSet& invalid_item_indexes) const;
         /**
-     * @brief Returns the `itemSize` property of `NSScrubberFlowLayout`.
-     * @details The frame size for each item, if not provided by the scrubber's delegate. The default value is { 50.0, 30.0 }.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `itemSize` property of `NSScrubberFlowLayout`.
+         * @details The frame size for each item, if not provided by the scrubber's delegate. The default value is { 50.0, 30.0 }.
+         * @return The converted Objective-C result.
+         */
         Size item_size() const;
         /**
-     * @brief Sets the `itemSize` property of `NSScrubberFlowLayout`.
-     * @details The frame size for each item, if not provided by the scrubber's delegate. The default value is { 50.0, 30.0 }.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `itemSize` property of `NSScrubberFlowLayout`.
+         * @details The frame size for each item, if not provided by the scrubber's delegate. The default value is { 50.0, 30.0 }.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_item_size(const Size& value) const;
         /**
-     * @brief Returns the `itemSpacing` property of `NSScrubberFlowLayout`.
-     * @details The amount of horizontal spacing between items in points. The default value is 0.0.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `itemSpacing` property of `NSScrubberFlowLayout`.
+         * @details The amount of horizontal spacing between items in points. The default value is 0.0.
+         * @return The converted Objective-C result.
+         */
         double item_spacing() const;
         /**
-     * @brief Sets the `itemSpacing` property of `NSScrubberFlowLayout`.
-     * @details The amount of horizontal spacing between items in points. The default value is 0.0.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `itemSpacing` property of `NSScrubberFlowLayout`.
+         * @details The amount of horizontal spacing between items in points. The default value is 0.0.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_item_spacing(double value) const;
     };
 }

@@ -39,16 +39,16 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit EnumeratorBase(Adopt adopt);
         /**
-     * @brief Calls `-[NSEnumerator nextObject]`.
-     * @details Returns the next object from the collection being enumerated.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSEnumerator nextObject]`.
+         * @details Returns the next object from the collection being enumerated.
+         * @return The converted Objective-C result.
+         */
         Object next_object() const;
         /**
-     * @brief Returns the `allObjects` property of `NSEnumerator`.
-     * @details The array of unenumerated objects.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `allObjects` property of `NSEnumerator`.
+         * @details The array of unenumerated objects.
+         * @return The converted Objective-C result.
+         */
         std::vector<Object> all_objects() const;
     };
 

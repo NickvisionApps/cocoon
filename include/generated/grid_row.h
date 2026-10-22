@@ -47,85 +47,85 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit GridRow(Adopt adopt);
         /**
-     * @brief Calls `-[NSGridRow cellAtIndex:]`.
-     * @param index Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSGridRow cellAtIndex:]`.
+         * @param index Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         GridCell cell_at_index(std::int64_t index) const;
         /**
-     * @brief Calls `-[NSGridRow mergeCellsInRange:]`.
-     * @param range Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSGridRow mergeCellsInRange:]`.
+         * @param range Argument converted to the Objective-C parameter of the same role.
+         */
         void merge_cells_in_range(const Range& range) const;
         /**
-     * @brief Returns the `bottomPadding` property of `NSGridRow`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `bottomPadding` property of `NSGridRow`.
+         * @return The converted Objective-C result.
+         */
         double bottom_padding() const;
         /**
-     * @brief Sets the `bottomPadding` property of `NSGridRow`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `bottomPadding` property of `NSGridRow`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_bottom_padding(double value) const;
         /**
-     * @brief Returns the `gridView` property of `NSGridRow`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `gridView` property of `NSGridRow`.
+         * @return The converted Objective-C result.
+         */
         GridView grid_view() const;
         /**
-     * @brief Returns the `height` property of `NSGridRow`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `height` property of `NSGridRow`.
+         * @return The converted Objective-C result.
+         */
         double height() const;
         /**
-     * @brief Sets the `height` property of `NSGridRow`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `height` property of `NSGridRow`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_height(double value) const;
         /**
-     * @brief Returns the `hidden` property of `NSGridRow`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `hidden` property of `NSGridRow`.
+         * @return The converted Objective-C result.
+         */
         bool is_hidden() const;
         /**
-     * @brief Sets the `hidden` property of `NSGridRow`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `hidden` property of `NSGridRow`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_hidden(bool value) const;
         /**
-     * @brief Returns the `numberOfCells` property of `NSGridRow`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `numberOfCells` property of `NSGridRow`.
+         * @return The converted Objective-C result.
+         */
         std::int64_t number_of_cells() const;
         /**
-     * @brief Returns the `rowAlignment` property of `NSGridRow`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `rowAlignment` property of `NSGridRow`.
+         * @return The converted Objective-C result.
+         */
         GridRowAlignment row_alignment() const;
         /**
-     * @brief Sets the `rowAlignment` property of `NSGridRow`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `rowAlignment` property of `NSGridRow`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_row_alignment(GridRowAlignment value) const;
         /**
-     * @brief Returns the `topPadding` property of `NSGridRow`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `topPadding` property of `NSGridRow`.
+         * @return The converted Objective-C result.
+         */
         double top_padding() const;
         /**
-     * @brief Sets the `topPadding` property of `NSGridRow`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `topPadding` property of `NSGridRow`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_top_padding(double value) const;
         /**
-     * @brief Returns the `yPlacement` property of `NSGridRow`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `yPlacement` property of `NSGridRow`.
+         * @return The converted Objective-C result.
+         */
         GridCellPlacement y_placement() const;
         /**
-     * @brief Sets the `yPlacement` property of `NSGridRow`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `yPlacement` property of `NSGridRow`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_y_placement(GridCellPlacement value) const;
     };
 }

@@ -64,11 +64,6 @@ namespace cocoon
         return cocoon::internal::wrap<SplitViewItem>([::NSSplitViewItem sidebarWithViewController:cocoon::internal::native<::NSViewController>(view_controller)]);
     }
 
-    SplitViewItem SplitViewItem::split_view_item_with_view_controller(const ViewController& view_controller)
-    {
-        return cocoon::internal::wrap<SplitViewItem>([::NSSplitViewItem splitViewItemWithViewController:cocoon::internal::native<::NSViewController>(view_controller)]);
-    }
-
     bool SplitViewItem::allows_full_height_layout() const
     {
         return static_cast<bool>([cocoon::internal::ns<::NSSplitViewItem>(this) allowsFullHeightLayout]);

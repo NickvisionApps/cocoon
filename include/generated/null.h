@@ -19,13 +19,6 @@ namespace cocoon
      *
      * cocoon::Null null;
      * @endcode
-     *
-     * @par Common tasks
-     * Snippets built from this class's own members (values are placeholders).
-     * @code
-     * cocoon::Null null{};
-     * auto made_0 = cocoon::Null::null();
-     * @endcode
      * @see https://developer.apple.com/documentation/foundation/nsnull
      */
     class Null : public Object
@@ -37,11 +30,5 @@ namespace cocoon
         Null(std::nullptr_t);
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit Null(Adopt adopt);
-        /**
-     * @brief Calls `+[NSNull null]`.
-     * @details Returns the singleton instance of 'NSNull'.
-     * @return The converted Objective-C result.
-     */
-        static Null null();
     };
 }

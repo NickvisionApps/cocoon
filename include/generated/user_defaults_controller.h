@@ -44,59 +44,59 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit UserDefaultsController(Adopt adopt);
         /**
-     * @brief Calls `-[NSUserDefaultsController revert:]`.
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSUserDefaultsController revert:]`.
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void revert(const Object& sender) const;
         /**
-     * @brief Calls `-[NSUserDefaultsController revertToInitialValues:]`.
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSUserDefaultsController revertToInitialValues:]`.
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void revert_to_initial_values(const Object& sender) const;
         /**
-     * @brief Calls `-[NSUserDefaultsController save:]`.
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSUserDefaultsController save:]`.
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void save(const Object& sender) const;
         /**
-     * @brief Returns the `appliesImmediately` property of `NSUserDefaultsController`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `appliesImmediately` property of `NSUserDefaultsController`.
+         * @return The converted Objective-C result.
+         */
         bool applies_immediately() const;
         /**
-     * @brief Sets the `appliesImmediately` property of `NSUserDefaultsController`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `appliesImmediately` property of `NSUserDefaultsController`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_applies_immediately(bool value) const;
         /**
-     * @brief Returns the `defaults` property of `NSUserDefaultsController`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `defaults` property of `NSUserDefaultsController`.
+         * @return The converted Objective-C result.
+         */
         UserDefaults defaults() const;
         /**
-     * @brief Returns the `hasUnappliedChanges` property of `NSUserDefaultsController`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `hasUnappliedChanges` property of `NSUserDefaultsController`.
+         * @return The converted Objective-C result.
+         */
         bool has_unapplied_changes() const;
         /**
-     * @brief Returns the `initialValues` property of `NSUserDefaultsController`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `initialValues` property of `NSUserDefaultsController`.
+         * @return The converted Objective-C result.
+         */
         std::map<std::string, Object> initial_values() const;
         /**
-     * @brief Sets the `initialValues` property of `NSUserDefaultsController`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `initialValues` property of `NSUserDefaultsController`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_initial_values(const std::map<std::string, Object>& value) const;
         /**
-     * @brief Returns the `sharedUserDefaultsController` property of `NSUserDefaultsController`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `sharedUserDefaultsController` property of `NSUserDefaultsController`.
+         * @return The converted Objective-C result.
+         */
         static UserDefaultsController shared_user_defaults_controller();
         /**
-     * @brief Returns the `values` property of `NSUserDefaultsController`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `values` property of `NSUserDefaultsController`.
+         * @return The converted Objective-C result.
+         */
         Object values() const;
     };
 }

@@ -38,10 +38,10 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit ScriptWhoseTest(Adopt adopt);
         /**
-     * @brief Calls `-[NSScriptWhoseTest isTrue]`.
-     * @details Returns a Boolean value that indicates whether this test evaluates to true.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSScriptWhoseTest isTrue]`.
+         * @details Returns a Boolean value that indicates whether this test evaluates to true.
+         * @return The converted Objective-C result.
+         */
         bool is_true() const;
     };
 }

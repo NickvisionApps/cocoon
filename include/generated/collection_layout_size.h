@@ -38,21 +38,21 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit CollectionLayoutSize(Adopt adopt);
         /**
-     * @brief Calls `+[NSCollectionLayoutSize sizeWithWidthDimension:heightDimension:]`.
-     * @param width Argument converted to the Objective-C parameter of the same role.
-     * @param height Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSCollectionLayoutSize sizeWithWidthDimension:heightDimension:]`.
+         * @param width Argument converted to the Objective-C parameter of the same role.
+         * @param height Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static CollectionLayoutSize size_with_width_dimension(const CollectionLayoutDimension& width, const CollectionLayoutDimension& height);
         /**
-     * @brief Returns the `heightDimension` property of `NSCollectionLayoutSize`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `heightDimension` property of `NSCollectionLayoutSize`.
+         * @return The converted Objective-C result.
+         */
         CollectionLayoutDimension height_dimension() const;
         /**
-     * @brief Returns the `widthDimension` property of `NSCollectionLayoutSize`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `widthDimension` property of `NSCollectionLayoutSize`.
+         * @return The converted Objective-C result.
+         */
         CollectionLayoutDimension width_dimension() const;
     };
 }

@@ -42,16 +42,16 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit Dimension(Adopt adopt);
         /**
-     * @brief Calls `+[NSDimension baseUnit]`.
-     * @details Returns the base unit of the dimension. The default implementation returns 'nil' to indicate that the 'NSDimension' class should not be used directly. When implementing a subclass, you should return a unit converter that returns the inputted value for both the 'baseUnitValueFromValue:' and 'valueFromBaseUnitValue:' methods. You can create a unit converter for a base unit using the 'NSUnitConverterLinear' 'initWithCoefficient:' initializer, passing '1' as the coefficient.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSDimension baseUnit]`.
+         * @details Returns the base unit of the dimension. The default implementation returns 'nil' to indicate that the 'NSDimension' class should not be used directly. When implementing a subclass, you should return a unit converter that returns the inputted value for both the 'baseUnitValueFromValue:' and 'valueFromBaseUnitValue:' methods. You can create a unit converter for a base unit using the 'NSUnitConverterLinear' 'initWithCoefficient:' initializer, passing '1' as the coefficient.
+         * @return The converted Objective-C result.
+         */
         static Dimension base_unit();
         /**
-     * @brief Returns the `converter` property of `NSDimension`.
-     * @details The unit converter that describes how this unit converts to and from the base unit of its dimension.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `converter` property of `NSDimension`.
+         * @details The unit converter that describes how this unit converts to and from the base unit of its dimension.
+         * @return The converted Objective-C result.
+         */
         UnitConverter converter() const;
     };
 }

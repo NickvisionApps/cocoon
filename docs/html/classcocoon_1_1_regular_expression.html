@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -136,8 +136,6 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a21dd56eacfdd0a272450942ea827f798"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSRegularExpression escapedPatternForString:]</span>.  <br /></td></tr>
 <tr class="memitem:aea00a78ecbe22a105535cf34809afc42" id="r_aea00a78ecbe22a105535cf34809afc42"><td class="memItemLeft">static std::string&#160;</td><td class="memItemRight"><a class="el" href="#aea00a78ecbe22a105535cf34809afc42">escaped_template_for_string</a> (const std::string &amp;string)</td></tr>
 <tr class="memdesc:aea00a78ecbe22a105535cf34809afc42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSRegularExpression escapedTemplateForString:]</span>.  <br /></td></tr>
-<tr class="memitem:ac8182b64afab27471ae4a2dc7e4c66c7" id="r_ac8182b64afab27471ae4a2dc7e4c66c7"><td class="memItemLeft">static <a class="el" href="#a73c6bdce19908350a2040c36a82bdcb4">RegularExpression</a>&#160;</td><td class="memItemRight"><a class="el" href="#ac8182b64afab27471ae4a2dc7e4c66c7">regular_expression_with_pattern</a> (const std::string &amp;pattern, <a class="el" href="namespacecocoon.html#a813fbbf46235a143f5a59db07d59d9e3">RegularExpressionOptions</a> options)</td></tr>
-<tr class="memdesc:ac8182b64afab27471ae4a2dc7e4c66c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSRegularExpression regularExpressionWithPattern:options:error:]</span>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>C++ handle for the Objective-C class <span class="tt">NSRegularExpression</span> (Foundation). </p>
@@ -145,15 +143,12 @@ Static Public Member Functions</h2></td></tr>
 <dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;cocoon.h&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_class" href="classcocoon_1_1_regular_expression.html">cocoon::RegularExpression</a> regular_expression;</div>
-<div class="ttc" id="aclasscocoon_1_1_regular_expression_html"><div class="ttname"><a href="classcocoon_1_1_regular_expression.html">cocoon::RegularExpression</a></div><div class="ttdoc">C++ handle for the Objective-C class NSRegularExpression (Foundation).</div><div class="ttdef"><b>Definition</b> regular_expression.h:35</div></div>
+<div class="ttc" id="aclasscocoon_1_1_regular_expression_html"><div class="ttname"><a href="classcocoon_1_1_regular_expression.html">cocoon::RegularExpression</a></div><div class="ttdoc">C++ handle for the Objective-C class NSRegularExpression (Foundation).</div><div class="ttdef"><b>Definition</b> regular_expression.h:34</div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_regular_expression.html">cocoon::RegularExpression</a> regular_expression{};</div>
-<div class="line"><span class="keyword">auto</span> made_0 = <a class="code hl_function" href="#ac8182b64afab27471ae4a2dc7e4c66c7">cocoon::RegularExpression::regular_expression_with_pattern</a>(<span class="stringliteral">&quot;text&quot;</span>, <a class="code hl_enumvalue" href="namespacecocoon.html#a813fbbf46235a143f5a59db07d59d9e3a6bd9264ca00b6021a8d75a68895c1ba1">cocoon::RegularExpressionOptions::CaseInsensitive</a>);</div>
 <div class="line">regular_expression.<a class="code hl_function" href="#aa3d08df27f65541113ba37857cf3d0ae">replacement_string_for_result</a>(<a class="code hl_class" href="classcocoon_1_1_text_checking_result.html">cocoon::TextCheckingResult</a>(), <span class="stringliteral">&quot;text&quot;</span>, 1, <span class="stringliteral">&quot;text&quot;</span>);</div>
 <div class="ttc" id="aclasscocoon_1_1_regular_expression_html_aa3d08df27f65541113ba37857cf3d0ae"><div class="ttname"><a href="#aa3d08df27f65541113ba37857cf3d0ae">cocoon::RegularExpression::replacement_string_for_result</a></div><div class="ttdeci">std::string replacement_string_for_result(const TextCheckingResult &amp;result, const std::string &amp;string, std::int64_t offset, const std::string &amp;templ) const</div><div class="ttdoc">Calls -[NSRegularExpression replacementStringForResult:inString:offset:template:].</div></div>
-<div class="ttc" id="aclasscocoon_1_1_regular_expression_html_ac8182b64afab27471ae4a2dc7e4c66c7"><div class="ttname"><a href="#ac8182b64afab27471ae4a2dc7e4c66c7">cocoon::RegularExpression::regular_expression_with_pattern</a></div><div class="ttdeci">static RegularExpression regular_expression_with_pattern(const std::string &amp;pattern, RegularExpressionOptions options)</div><div class="ttdoc">Calls +[NSRegularExpression regularExpressionWithPattern:options:error:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_text_checking_result_html"><div class="ttname"><a href="classcocoon_1_1_text_checking_result.html">cocoon::TextCheckingResult</a></div><div class="ttdoc">C++ handle for the Objective-C class NSTextCheckingResult (Foundation).</div><div class="ttdef"><b>Definition</b> text_checking_result.h:40</div></div>
-<div class="ttc" id="anamespacecocoon_html_a813fbbf46235a143f5a59db07d59d9e3a6bd9264ca00b6021a8d75a68895c1ba1"><div class="ttname"><a href="namespacecocoon.html#a813fbbf46235a143f5a59db07d59d9e3a6bd9264ca00b6021a8d75a68895c1ba1">cocoon::RegularExpressionOptions::CaseInsensitive</a></div><div class="ttdeci">@ CaseInsensitive</div><div class="ttdef"><b>Definition</b> enums.h:3404</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/foundation/nsregularexpression">https://developer.apple.com/documentation/foundation/nsregularexpression</a> </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -573,45 +568,6 @@ Static Public Member Functions</h2></td></tr>
     <tr><td class="paramname">string</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
     <tr><td class="paramname">options</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
     <tr><td class="paramname">range</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="ac8182b64afab27471ae4a2dc7e4c66c7" name="ac8182b64afab27471ae4a2dc7e4c66c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac8182b64afab27471ae4a2dc7e4c66c7">&#9670;&#160;</a></span>regular_expression_with_pattern()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a73c6bdce19908350a2040c36a82bdcb4">RegularExpression</a> cocoon::RegularExpression::regular_expression_with_pattern </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>pattern</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespacecocoon.html#a813fbbf46235a143f5a59db07d59d9e3">RegularExpressionOptions</a></td>          <td class="paramname"><span class="paramname"><em>options</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSRegularExpression regularExpressionWithPattern:options:error:]</span>. </p>
-<p>Creates an NSRegularExpression instance with the specified regular expression pattern and options. - Parameter pattern: The regular expression pattern to compile. - Parameter options: The matching options. See 'NSRegularExpressionOptions' for possible values. The values can be combined using the C-bitwise 'OR' operator. - Parameter error: An out value that returns any error encountered during initialization. Returns an 'NSError' object if the regular expression pattern is invalid; otherwise returns 'nil'. - Returns: An instance of 'NSRegularExpression' for the specified regular expression and options. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pattern</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">options</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
   </table>
   </dd>
 </dl>

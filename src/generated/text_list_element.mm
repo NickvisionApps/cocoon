@@ -21,6 +21,32 @@ namespace cocoon
     {
     }
 
+    TextListElement::TextListElement(const std::vector<TextListElement>& children, const TextList& text_list, std::int64_t nesting_level) : TextListElement(Adopt{cocoon::internal::retain([::NSTextListElement textListElementWithChildElements:cocoon::internal::to_array(children, [](const TextListElement& e) -> id
+                                                                                                                                                                                                                                                                            {
+                                                                                                                                                                                                                                                                                return cocoon::internal::native<::NSTextListElement>(e);
+                                                                                                                                                                                                                                                                            })
+                                                                                                                                                                                                                                        textList:cocoon::internal::native<::NSTextList>(text_list)
+                                                                                                                                                                                                                                    nestingLevel:static_cast<::NSInteger>(nesting_level)])})
+    {
+    }
+
+    TextListElement::TextListElement(const AttributedString& contents, const std::map<std::string, Object>& marker_attributes, const TextList& text_list, const std::vector<TextListElement>& children) : TextListElement(Adopt{cocoon::internal::retain([::NSTextListElement textListElementWithContents:cocoon::internal::native<::NSAttributedString>(contents)
+                                                                                                                                                                                                                                                                                         markerAttributes:cocoon::internal::to_dictionary(marker_attributes, [](const std::string& k) -> id
+                                                                                                                                                                                                                                                                                                                                          {
+                                                                                                                                                                                                                                                                                                                                              return cocoon::internal::to(k);
+                                                                                                                                                                                                                                                                                                                                          },
+                                                                                                                                                                                                                                                                                                                                          [](const Object& v) -> id
+                                                                                                                                                                                                                                                                                                                                          {
+                                                                                                                                                                                                                                                                                                                                              return cocoon::internal::native_id(v);
+                                                                                                                                                                                                                                                                                                                                          })
+                                                                                                                                                                                                                                                                                                 textList:cocoon::internal::native<::NSTextList>(text_list)
+                                                                                                                                                                                                                                                                                            childElements:cocoon::internal::to_array(children, [](const TextListElement& e) -> id
+                                                                                                                                                                                                                                                                                                                                     {
+                                                                                                                                                                                                                                                                                                                                         return cocoon::internal::native<::NSTextListElement>(e);
+                                                                                                                                                                                                                                                                                                                                     })])})
+    {
+    }
+
     TextListElement::TextListElement() : TextListElement(Adopt{cocoon::internal::retain([[::NSTextListElement alloc] init])})
     {
     }
@@ -31,34 +57,6 @@ namespace cocoon
 
     TextListElement::TextListElement(Adopt adopt) : TextParagraph(adopt)
     {
-    }
-
-    TextListElement TextListElement::text_list_element_with_child_elements(const std::vector<TextListElement>& children, const TextList& text_list, std::int64_t nesting_level)
-    {
-        return cocoon::internal::wrap<TextListElement>([::NSTextListElement textListElementWithChildElements:cocoon::internal::to_array(children, [](const TextListElement& e) -> id
-                                                                                                                                        {
-                                                                                                                                            return cocoon::internal::native<::NSTextListElement>(e);
-                                                                                                                                        })
-                                                                                                    textList:cocoon::internal::native<::NSTextList>(text_list)
-                                                                                                nestingLevel:static_cast<::NSInteger>(nesting_level)]);
-    }
-
-    TextListElement TextListElement::text_list_element_with_contents(const AttributedString& contents, const std::map<std::string, Object>& marker_attributes, const TextList& text_list, const std::vector<TextListElement>& children)
-    {
-        return cocoon::internal::wrap<TextListElement>([::NSTextListElement textListElementWithContents:cocoon::internal::native<::NSAttributedString>(contents)
-                                                                                       markerAttributes:cocoon::internal::to_dictionary(marker_attributes, [](const std::string& k) -> id
-                                                                                                                                        {
-                                                                                                                                            return cocoon::internal::to(k);
-                                                                                                                                        },
-                                                                                                                                        [](const Object& v) -> id
-                                                                                                                                        {
-                                                                                                                                            return cocoon::internal::native_id(v);
-                                                                                                                                        })
-                                                                                               textList:cocoon::internal::native<::NSTextList>(text_list)
-                                                                                          childElements:cocoon::internal::to_array(children, [](const TextListElement& e) -> id
-                                                                                                                                   {
-                                                                                                                                       return cocoon::internal::native<::NSTextListElement>(e);
-                                                                                                                                   })]);
     }
 
     AttributedString TextListElement::attributed_string() const

@@ -50,97 +50,97 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit MapTableBase(Adopt adopt);
         /**
-     * @brief Calls `-[NSMapTable dictionaryRepresentation]`.
-     * @details Returns a dictionary representation of the map table. - Returns: A dictionary representation of the map table.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSMapTable dictionaryRepresentation]`.
+         * @details Returns a dictionary representation of the map table. - Returns: A dictionary representation of the map table.
+         * @return The converted Objective-C result.
+         */
         std::vector<std::pair<Object, Object>> dictionary_representation() const;
         /**
-     * @brief Calls `-[NSMapTable keyEnumerator]`.
-     * @details Returns an enumerator object that lets you access each key in the map table. It is more efficient to use the fast enumeration protocol (see 'NSFastEnumeration'). - Returns: An enumerator object that lets you access each key in the map table.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSMapTable keyEnumerator]`.
+         * @details Returns an enumerator object that lets you access each key in the map table. It is more efficient to use the fast enumeration protocol (see 'NSFastEnumeration'). - Returns: An enumerator object that lets you access each key in the map table.
+         * @return The converted Objective-C result.
+         */
         EnumeratorBase key_enumerator() const;
         /**
-     * @brief Calls `+[NSMapTable mapTableWithKeyOptions:valueOptions:]`.
-     * @details Returns a new map table, initialized with the given options. - Parameter keyOptions: A bit field that specifies the options for the keys in the map table. - Parameter valueOptions: A bit field that specifies the options for the values in the map table. - Returns: A new map table, initialized with the given options.
-     * @param key_options Argument converted to the Objective-C parameter of the same role.
-     * @param value_options Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSMapTable mapTableWithKeyOptions:valueOptions:]`.
+         * @details Returns a new map table, initialized with the given options. - Parameter keyOptions: A bit field that specifies the options for the keys in the map table. - Parameter valueOptions: A bit field that specifies the options for the values in the map table. - Returns: A new map table, initialized with the given options.
+         * @param key_options Argument converted to the Objective-C parameter of the same role.
+         * @param value_options Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static MapTableBase map_table_with_key_options(PointerFunctionsOptions key_options, PointerFunctionsOptions value_options);
         /**
-     * @brief Calls `-[NSMapTable objectEnumerator]`.
-     * @details Returns an enumerator object that lets you access each value in the map table. It is more efficient to use the fast enumeration protocol (see 'NSFastEnumeration'). - Returns: An enumerator object that lets you access each value in the map table.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSMapTable objectEnumerator]`.
+         * @details Returns an enumerator object that lets you access each value in the map table. It is more efficient to use the fast enumeration protocol (see 'NSFastEnumeration'). - Returns: An enumerator object that lets you access each value in the map table.
+         * @return The converted Objective-C result.
+         */
         EnumeratorBase object_enumerator() const;
         /**
-     * @brief Calls `-[NSMapTable objectForKey:]`.
-     * @details Returns the value associated with a given key. - Parameter aKey: The key for which to return the corresponding value. - Returns: The value associated with 'aKey', or 'nil' if no value is associated with 'aKey'.
-     * @param a_key Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSMapTable objectForKey:]`.
+         * @details Returns the value associated with a given key. - Parameter aKey: The key for which to return the corresponding value. - Returns: The value associated with 'aKey', or 'nil' if no value is associated with 'aKey'.
+         * @param a_key Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Object object_for_key(const Object& a_key) const;
         /**
-     * @brief Calls `-[NSMapTable removeAllObjects]`.
-     * @details Empties the map table of its entries.
-     */
+         * @brief Calls `-[NSMapTable removeAllObjects]`.
+         * @details Empties the map table of its entries.
+         */
         void remove_all_objects() const;
         /**
-     * @brief Calls `-[NSMapTable removeObjectForKey:]`.
-     * @details Removes a given key and its associated value from the map table. Does nothing if 'aKey' does not exist. - Parameter aKey: The key to remove.
-     * @param a_key Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSMapTable removeObjectForKey:]`.
+         * @details Removes a given key and its associated value from the map table. Does nothing if 'aKey' does not exist. - Parameter aKey: The key to remove.
+         * @param a_key Argument converted to the Objective-C parameter of the same role.
+         */
         void remove_object_for_key(const Object& a_key) const;
         /**
-     * @brief Calls `-[NSMapTable setObject:forKey:]`.
-     * @details Adds a given key-value pair to the map table. - Parameter anObject: The value for 'aKey'. - Parameter aKey: The key for 'anObject'.
-     * @param an_object Argument converted to the Objective-C parameter of the same role.
-     * @param a_key Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSMapTable setObject:forKey:]`.
+         * @details Adds a given key-value pair to the map table. - Parameter anObject: The value for 'aKey'. - Parameter aKey: The key for 'anObject'.
+         * @param an_object Argument converted to the Objective-C parameter of the same role.
+         * @param a_key Argument converted to the Objective-C parameter of the same role.
+         */
         void set_object(const Object& an_object, const Object& a_key) const;
         /**
-     * @brief Calls `+[NSMapTable strongToStrongObjectsMapTable]`.
-     * @details Returns a new map table object which has strong references to the keys and values.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSMapTable strongToStrongObjectsMapTable]`.
+         * @details Returns a new map table object which has strong references to the keys and values.
+         * @return The converted Objective-C result.
+         */
         static MapTableBase strong_to_strong_objects_map_table();
         /**
-     * @brief Calls `+[NSMapTable strongToWeakObjectsMapTable]`.
-     * @details Returns a new map table object which has strong references to the keys and weak references to the values.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSMapTable strongToWeakObjectsMapTable]`.
+         * @details Returns a new map table object which has strong references to the keys and weak references to the values.
+         * @return The converted Objective-C result.
+         */
         static MapTableBase strong_to_weak_objects_map_table();
         /**
-     * @brief Calls `+[NSMapTable weakToStrongObjectsMapTable]`.
-     * @details Returns a new map table object which has weak references to the keys and strong references to the values. Use of weak-to-strong map tables is not recommended. The strong values for weak keys which get zeroed out continue to be maintained until the map table resizes itself.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSMapTable weakToStrongObjectsMapTable]`.
+         * @details Returns a new map table object which has weak references to the keys and strong references to the values. Use of weak-to-strong map tables is not recommended. The strong values for weak keys which get zeroed out continue to be maintained until the map table resizes itself.
+         * @return The converted Objective-C result.
+         */
         static MapTableBase weak_to_strong_objects_map_table();
         /**
-     * @brief Calls `+[NSMapTable weakToWeakObjectsMapTable]`.
-     * @details Returns a new map table object which has weak references to the keys and values.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSMapTable weakToWeakObjectsMapTable]`.
+         * @details Returns a new map table object which has weak references to the keys and values.
+         * @return The converted Objective-C result.
+         */
         static MapTableBase weak_to_weak_objects_map_table();
         /**
-     * @brief Returns the `count` property of `NSMapTable`.
-     * @details The number of key-value pairs in the map table.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `count` property of `NSMapTable`.
+         * @details The number of key-value pairs in the map table.
+         * @return The converted Objective-C result.
+         */
         std::uint64_t count() const;
         /**
-     * @brief Returns the `keyPointerFunctions` property of `NSMapTable`.
-     * @details The pointer functions the map table uses to manage keys.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `keyPointerFunctions` property of `NSMapTable`.
+         * @details The pointer functions the map table uses to manage keys.
+         * @return The converted Objective-C result.
+         */
         PointerFunctions key_pointer_functions() const;
         /**
-     * @brief Returns the `valuePointerFunctions` property of `NSMapTable`.
-     * @details The pointer functions the map table uses to manage values.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `valuePointerFunctions` property of `NSMapTable`.
+         * @details The pointer functions the map table uses to manage values.
+         * @return The converted Objective-C result.
+         */
         PointerFunctions value_pointer_functions() const;
     };
 

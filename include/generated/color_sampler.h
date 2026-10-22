@@ -33,10 +33,10 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit ColorSampler(Adopt adopt);
         /**
-     * @brief Calls `-[NSColorSampler showSamplerWithSelectionHandler:]`.
-     * @details The primary method for NSColorSampler. Begins or attaches to an existing color sampling session which presents UI to the user for selecting a color from their screen. The handler will be called on the main thread when the user completes the session (either by selection, or cancelation). In the event of user-cancellation, 'colorSelectionHandler' will be called with 'nil'. The calling NSColorSampler instance is retained until the sampling session is completed.
-     * @param selection_handler Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSColorSampler showSamplerWithSelectionHandler:]`.
+         * @details The primary method for NSColorSampler. Begins or attaches to an existing color sampling session which presents UI to the user for selecting a color from their screen. The handler will be called on the main thread when the user completes the session (either by selection, or cancelation). In the event of user-cancellation, 'colorSelectionHandler' will be called with 'nil'. The calling NSColorSampler instance is retained until the sampling session is completed.
+         * @param selection_handler Argument converted to the Objective-C parameter of the same role.
+         */
         void show_sampler_with_selection_handler(std::function<void(Color)> selection_handler) const;
     };
 }

@@ -36,15 +36,15 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit UserScriptTask(Adopt adopt);
         /**
-     * @brief Calls `-[NSUserScriptTask executeWithCompletionHandler:]`.
-     * @param handler Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSUserScriptTask executeWithCompletionHandler:]`.
+         * @param handler Argument converted to the Objective-C parameter of the same role.
+         */
         void execute_with_completion_handler(std::function<void(Error)> handler) const;
         /**
-     * @brief Returns the `scriptURL` property of `NSUserScriptTask`.
-     * @details The URL of the script file.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `scriptURL` property of `NSUserScriptTask`.
+         * @details The URL of the script file.
+         * @return The converted Objective-C result.
+         */
         URL script_url() const;
     };
 }

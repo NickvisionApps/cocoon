@@ -44,43 +44,43 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit MenuItemBadge(Adopt adopt);
         /**
-     * @brief Calls `+[NSMenuItemBadge alertsWithCount:]`.
-     * @details Creates a badge with an integer count and a label representing the number of alerts.
-     * @param item_count Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSMenuItemBadge alertsWithCount:]`.
+         * @details Creates a badge with an integer count and a label representing the number of alerts.
+         * @param item_count Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static MenuItemBadge alerts_with_count(std::int64_t item_count);
         /**
-     * @brief Calls `+[NSMenuItemBadge newItemsWithCount:]`.
-     * @details Creates a badge with an integer count and a label representing the number of new items.
-     * @param item_count Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSMenuItemBadge newItemsWithCount:]`.
+         * @details Creates a badge with an integer count and a label representing the number of new items.
+         * @param item_count Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static MenuItemBadge new_items_with_count(std::int64_t item_count);
         /**
-     * @brief Calls `+[NSMenuItemBadge updatesWithCount:]`.
-     * @details Creates a badge with an integer count and a label representing the number of available updates.
-     * @param item_count Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSMenuItemBadge updatesWithCount:]`.
+         * @details Creates a badge with an integer count and a label representing the number of available updates.
+         * @param item_count Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static MenuItemBadge updates_with_count(std::int64_t item_count);
         /**
-     * @brief Returns the `itemCount` property of `NSMenuItemBadge`.
-     * @details The count of items the badge displays. If a custom string was used to create a badge, the value is 0.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `itemCount` property of `NSMenuItemBadge`.
+         * @details The count of items the badge displays. If a custom string was used to create a badge, the value is 0.
+         * @return The converted Objective-C result.
+         */
         std::int64_t item_count() const;
         /**
-     * @brief Returns the `stringValue` property of `NSMenuItemBadge`.
-     * @details The string representation of the badge as it would appear when the badge is displayed.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `stringValue` property of `NSMenuItemBadge`.
+         * @details The string representation of the badge as it would appear when the badge is displayed.
+         * @return The converted Objective-C result.
+         */
         std::string string_value() const;
         /**
-     * @brief Returns the `type` property of `NSMenuItemBadge`.
-     * @details The type of items the badge displays. If a custom string was used to create a badge, this value is \@c NSMenuItemBadgeTypeNone.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `type` property of `NSMenuItemBadge`.
+         * @details The type of items the badge displays. If a custom string was used to create a badge, this value is \@c NSMenuItemBadgeTypeNone.
+         * @return The converted Objective-C result.
+         */
         MenuItemBadgeType type() const;
     };
 }

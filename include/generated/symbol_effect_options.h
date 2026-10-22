@@ -39,31 +39,31 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit SymbolEffectOptions(Adopt adopt);
         /**
-     * @brief Calls `+[NSSymbolEffectOptions options]`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSSymbolEffectOptions options]`.
+         * @return The converted Objective-C result.
+         */
         static SymbolEffectOptions options();
         /**
-     * @brief Calls `-[NSSymbolEffectOptions optionsWithNonRepeating]`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSSymbolEffectOptions optionsWithNonRepeating]`.
+         * @return The converted Objective-C result.
+         */
         SymbolEffectOptions options_with_non_repeating() const;
         /**
-     * @brief Calls `-[NSSymbolEffectOptions optionsWithRepeatCount:]`.
-     * @param count Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSSymbolEffectOptions optionsWithRepeatCount:]`.
+         * @param count Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         SymbolEffectOptions options_with_repeat_count(std::int64_t count) const;
         /**
-     * @brief Calls `-[NSSymbolEffectOptions optionsWithRepeating]`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSSymbolEffectOptions optionsWithRepeating]`.
+         * @return The converted Objective-C result.
+         */
         SymbolEffectOptions options_with_repeating() const;
         /**
-     * @brief Calls `-[NSSymbolEffectOptions optionsWithSpeed:]`.
-     * @param speed Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSSymbolEffectOptions optionsWithSpeed:]`.
+         * @param speed Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         SymbolEffectOptions options_with_speed(double speed) const;
     };
 }

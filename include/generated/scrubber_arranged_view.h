@@ -45,29 +45,29 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit ScrubberArrangedView(Adopt adopt);
         /**
-     * @brief Calls `-[NSScrubberArrangedView applyLayoutAttributes:]`.
-     * @param layout_attributes Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSScrubberArrangedView applyLayoutAttributes:]`.
+         * @param layout_attributes Argument converted to the Objective-C parameter of the same role.
+         */
         void apply_layout_attributes(const ScrubberLayoutAttributes& layout_attributes) const;
         /**
-     * @brief Returns the `highlighted` property of `NSScrubberArrangedView`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `highlighted` property of `NSScrubberArrangedView`.
+         * @return The converted Objective-C result.
+         */
         bool is_highlighted() const;
         /**
-     * @brief Sets the `highlighted` property of `NSScrubberArrangedView`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `highlighted` property of `NSScrubberArrangedView`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_highlighted(bool value) const;
         /**
-     * @brief Returns the `selected` property of `NSScrubberArrangedView`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `selected` property of `NSScrubberArrangedView`.
+         * @return The converted Objective-C result.
+         */
         bool is_selected() const;
         /**
-     * @brief Sets the `selected` property of `NSScrubberArrangedView`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `selected` property of `NSScrubberArrangedView`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_selected(bool value) const;
     };
 }

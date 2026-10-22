@@ -51,66 +51,66 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit MeasurementFormatter(Adopt adopt);
         /**
-     * @brief Calls `-[NSMeasurementFormatter stringFromMeasurement:]`.
-     * @details Creates and returns a localized string representation of the provided measurement. - Parameters: - measurement: The measurement to be represented. - Returns: A user-readable string that represents the measurement.
-     * @param measurement Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSMeasurementFormatter stringFromMeasurement:]`.
+         * @details Creates and returns a localized string representation of the provided measurement. - Parameters: - measurement: The measurement to be represented. - Returns: A user-readable string that represents the measurement.
+         * @param measurement Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::string string_from_measurement(const MeasurementBase& measurement) const;
         /**
-     * @brief Calls `-[NSMeasurementFormatter stringFromUnit:]`.
-     * @details Creates and returns a localized string representation of the provided unit of measure. If the unit cannot be localized, the unit's 'symbol' value is used. - Parameters: - unit: The unit of measure to be represented. - Returns: A user-readable string that represents the unit of measure.
-     * @param unit Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSMeasurementFormatter stringFromUnit:]`.
+         * @details Creates and returns a localized string representation of the provided unit of measure. If the unit cannot be localized, the unit's 'symbol' value is used. - Parameters: - unit: The unit of measure to be represented. - Returns: A user-readable string that represents the unit of measure.
+         * @param unit Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::string string_from_unit(const Unit& unit) const;
         /**
-     * @brief Returns the `locale` property of `NSMeasurementFormatter`.
-     * @details The locale used when formatting measurements. If not specified, the locale is set to the user's current locale.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `locale` property of `NSMeasurementFormatter`.
+         * @details The locale used when formatting measurements. If not specified, the locale is set to the user's current locale.
+         * @return The converted Objective-C result.
+         */
         Locale locale() const;
         /**
-     * @brief Sets the `locale` property of `NSMeasurementFormatter`.
-     * @details The locale used when formatting measurements. If not specified, the locale is set to the user's current locale.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `locale` property of `NSMeasurementFormatter`.
+         * @details The locale used when formatting measurements. If not specified, the locale is set to the user's current locale.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_locale(const Locale& value) const;
         /**
-     * @brief Returns the `numberFormatter` property of `NSMeasurementFormatter`.
-     * @details The number formatter used to format the numeric value of a measurement. If not specified, the number formatter is set up with 'NSNumberFormatterDecimalStyle'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `numberFormatter` property of `NSMeasurementFormatter`.
+         * @details The number formatter used to format the numeric value of a measurement. If not specified, the number formatter is set up with 'NSNumberFormatterDecimalStyle'.
+         * @return The converted Objective-C result.
+         */
         NumberFormatter number_formatter() const;
         /**
-     * @brief Sets the `numberFormatter` property of `NSMeasurementFormatter`.
-     * @details The number formatter used to format the numeric value of a measurement. If not specified, the number formatter is set up with 'NSNumberFormatterDecimalStyle'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `numberFormatter` property of `NSMeasurementFormatter`.
+         * @details The number formatter used to format the numeric value of a measurement. If not specified, the number formatter is set up with 'NSNumberFormatterDecimalStyle'.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_number_formatter(const NumberFormatter& value) const;
         /**
-     * @brief Returns the `unitOptions` property of `NSMeasurementFormatter`.
-     * @details The options for how the unit is formatted. This property can be set to ensure that the formatter behaves in a way the developer expects, even if it is not standard according to the preferences of the user's locale. If not specified, 'unitOptions' defaults to localizing according to the preferences of the locale. Note that 'NSMeasurementFormatter' will handle converting measurement objects to the preferred units in a particular locale. For instance, if provided a measurement object in kilometers and the set locale is en_US, the formatter will implicitly convert the measurement object to miles and return the formatted string as the equivalent measurement in miles.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `unitOptions` property of `NSMeasurementFormatter`.
+         * @details The options for how the unit is formatted. This property can be set to ensure that the formatter behaves in a way the developer expects, even if it is not standard according to the preferences of the user's locale. If not specified, 'unitOptions' defaults to localizing according to the preferences of the locale. Note that 'NSMeasurementFormatter' will handle converting measurement objects to the preferred units in a particular locale. For instance, if provided a measurement object in kilometers and the set locale is en_US, the formatter will implicitly convert the measurement object to miles and return the formatted string as the equivalent measurement in miles.
+         * @return The converted Objective-C result.
+         */
         MeasurementFormatterUnitOptions unit_options() const;
         /**
-     * @brief Sets the `unitOptions` property of `NSMeasurementFormatter`.
-     * @details The options for how the unit is formatted. This property can be set to ensure that the formatter behaves in a way the developer expects, even if it is not standard according to the preferences of the user's locale. If not specified, 'unitOptions' defaults to localizing according to the preferences of the locale. Note that 'NSMeasurementFormatter' will handle converting measurement objects to the preferred units in a particular locale. For instance, if provided a measurement object in kilometers and the set locale is en_US, the formatter will implicitly convert the measurement object to miles and return the formatted string as the equivalent measurement in miles.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `unitOptions` property of `NSMeasurementFormatter`.
+         * @details The options for how the unit is formatted. This property can be set to ensure that the formatter behaves in a way the developer expects, even if it is not standard according to the preferences of the user's locale. If not specified, 'unitOptions' defaults to localizing according to the preferences of the locale. Note that 'NSMeasurementFormatter' will handle converting measurement objects to the preferred units in a particular locale. For instance, if provided a measurement object in kilometers and the set locale is en_US, the formatter will implicitly convert the measurement object to miles and return the formatted string as the equivalent measurement in miles.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_unit_options(MeasurementFormatterUnitOptions value) const;
         /**
-     * @brief Returns the `unitStyle` property of `NSMeasurementFormatter`.
-     * @details The unit style used when creating string representations of measurements. If not specified, 'unitStyle' is set to 'NSFormattingUnitStyleMedium'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `unitStyle` property of `NSMeasurementFormatter`.
+         * @details The unit style used when creating string representations of measurements. If not specified, 'unitStyle' is set to 'NSFormattingUnitStyleMedium'.
+         * @return The converted Objective-C result.
+         */
         FormattingUnitStyle unit_style() const;
         /**
-     * @brief Sets the `unitStyle` property of `NSMeasurementFormatter`.
-     * @details The unit style used when creating string representations of measurements. If not specified, 'unitStyle' is set to 'NSFormattingUnitStyleMedium'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `unitStyle` property of `NSMeasurementFormatter`.
+         * @details The unit style used when creating string representations of measurements. If not specified, 'unitStyle' is set to 'NSFormattingUnitStyleMedium'.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_unit_style(FormattingUnitStyle value) const;
     };
 }

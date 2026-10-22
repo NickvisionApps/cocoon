@@ -35,37 +35,37 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit XPCCoder(Adopt adopt);
         /**
-     * @brief Calls `-[NSXPCCoder decodeXPCObjectOfType:forKey:]`.
-     * @details Decodes an XPC object of the given type for the given key. This validates the type of the decoded object matches the type passed in. If they do not match, an exception is thrown (just like the rest of Secure Coding behaves). Note that this can return 'NULL', but calling an XPC function with 'NULL' will crash.
-     * @param type Argument converted to the Objective-C parameter of the same role.
-     * @param key Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSXPCCoder decodeXPCObjectOfType:forKey:]`.
+         * @details Decodes an XPC object of the given type for the given key. This validates the type of the decoded object matches the type passed in. If they do not match, an exception is thrown (just like the rest of Secure Coding behaves). Note that this can return 'NULL', but calling an XPC function with 'NULL' will crash.
+         * @param type Argument converted to the Objective-C parameter of the same role.
+         * @param key Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Object decode_xpc_object_of_type(const xpc_type_t& type, const std::string& key) const;
         /**
-     * @brief Calls `-[NSXPCCoder encodeXPCObject:forKey:]`.
-     * @details Encodes an XPC object and associates it with the given key.
-     * @param xpc_object Argument converted to the Objective-C parameter of the same role.
-     * @param key Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSXPCCoder encodeXPCObject:forKey:]`.
+         * @details Encodes an XPC object and associates it with the given key.
+         * @param xpc_object Argument converted to the Objective-C parameter of the same role.
+         * @param key Argument converted to the Objective-C parameter of the same role.
+         */
         void encode_xpc_object(const Object& xpc_object, const std::string& key) const;
         /**
-     * @brief Returns the `connection` property of `NSXPCCoder`.
-     * @details The current 'NSXPCConnection' that is encoding or decoding.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `connection` property of `NSXPCCoder`.
+         * @details The current 'NSXPCConnection' that is encoding or decoding.
+         * @return The converted Objective-C result.
+         */
         XPCConnection connection() const;
         /**
-     * @brief Returns the `userInfo` property of `NSXPCCoder`.
-     * @details User-defined information associated with this coder.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `userInfo` property of `NSXPCCoder`.
+         * @details User-defined information associated with this coder.
+         * @return The converted Objective-C result.
+         */
         Object user_info() const;
         /**
-     * @brief Sets the `userInfo` property of `NSXPCCoder`.
-     * @details User-defined information associated with this coder.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `userInfo` property of `NSXPCCoder`.
+         * @details User-defined information associated with this coder.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_user_info(const Object& value) const;
     };
 }

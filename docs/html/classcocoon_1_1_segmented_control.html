@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -61,7 +61,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-static-methods">Static Protected Member Functions</a> &#124;
 <a href="classcocoon_1_1_segmented_control-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">cocoon::SegmentedControl Class Reference</div></div>
@@ -77,6 +76,10 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a260aeca3ef1b84187a5fc742a09a2dfd" id="r_a260aeca3ef1b84187a5fc742a09a2dfd"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a260aeca3ef1b84187a5fc742a09a2dfd">SegmentedControl</a> ()</td></tr>
 <tr class="memdesc:a260aeca3ef1b84187a5fc742a09a2dfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSSegmentedControl</span> instance and returns a handle to it.  <br /></td></tr>
+<tr class="memitem:a718273563bb35216e16129c17114a121" id="r_a718273563bb35216e16129c17114a121"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a718273563bb35216e16129c17114a121">SegmentedControl</a> (const std::vector&lt; <a class="el" href="classcocoon_1_1_image.html">Image</a> &gt; &amp;images, <a class="el" href="namespacecocoon.html#a4cc2cf0a42561075d7e6a8fa0a2696cd">SegmentSwitchTracking</a> tracking_mode, const <a class="el" href="classcocoon_1_1_object.html">Object</a> &amp;target, const std::string &amp;action)</td></tr>
+<tr class="memdesc:a718273563bb35216e16129c17114a121"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSSegmentedControl</span> instance and returns a handle to it.  <br /></td></tr>
+<tr class="memitem:a40def54552a34703b775bbfe62db5098" id="r_a40def54552a34703b775bbfe62db5098"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a40def54552a34703b775bbfe62db5098">SegmentedControl</a> (const std::vector&lt; std::string &gt; &amp;labels, <a class="el" href="namespacecocoon.html#a4cc2cf0a42561075d7e6a8fa0a2696cd">SegmentSwitchTracking</a> tracking_mode, const <a class="el" href="classcocoon_1_1_object.html">Object</a> &amp;target, const std::string &amp;action)</td></tr>
+<tr class="memdesc:a40def54552a34703b775bbfe62db5098"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSSegmentedControl</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:a920cbc3d2df388381ee9af96fc213b9f" id="r_a920cbc3d2df388381ee9af96fc213b9f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a920cbc3d2df388381ee9af96fc213b9f">SegmentedControl</a> (std::nullptr_t)</td></tr>
 <tr class="memdesc:a920cbc3d2df388381ee9af96fc213b9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a null handle that refers to no native object.  <br /></td></tr>
 <tr class="memitem:adcd511190ee1192207d2898d27cce7b7" id="r_adcd511190ee1192207d2898d27cce7b7"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#adcd511190ee1192207d2898d27cce7b7">SegmentedControl</a> (<a class="el" href="structcocoon_1_1_adopt.html">Adopt</a> adopt)</td></tr>
@@ -1162,12 +1165,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object template"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_object.html#a53f4ad0e6a86173a96668457725eb369">as</a> () const</td></tr>
 <tr class="memdesc:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reinterprets the native object as handle type <span class="tt">T</span> (no runtime type check).  <br /></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a71a4b4853d7ec457a379f9fa22bcd7ee" id="r_a71a4b4853d7ec457a379f9fa22bcd7ee"><td class="memItemLeft">static <a class="el" href="#a260aeca3ef1b84187a5fc742a09a2dfd">SegmentedControl</a>&#160;</td><td class="memItemRight"><a class="el" href="#a71a4b4853d7ec457a379f9fa22bcd7ee">segmented_control_with_images</a> (const std::vector&lt; <a class="el" href="classcocoon_1_1_image.html">Image</a> &gt; &amp;images, <a class="el" href="namespacecocoon.html#a4cc2cf0a42561075d7e6a8fa0a2696cd">SegmentSwitchTracking</a> tracking_mode, const <a class="el" href="classcocoon_1_1_object.html">Object</a> &amp;target, const std::string &amp;action)</td></tr>
-<tr class="memdesc:a71a4b4853d7ec457a379f9fa22bcd7ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSSegmentedControl segmentedControlWithImages:trackingMode:target:action:]</span>.  <br /></td></tr>
-<tr class="memitem:a80352719fa22e1e53b26a2d592b67575" id="r_a80352719fa22e1e53b26a2d592b67575"><td class="memItemLeft">static <a class="el" href="#a260aeca3ef1b84187a5fc742a09a2dfd">SegmentedControl</a>&#160;</td><td class="memItemRight"><a class="el" href="#a80352719fa22e1e53b26a2d592b67575">segmented_control_with_labels</a> (const std::vector&lt; std::string &gt; &amp;labels, <a class="el" href="namespacecocoon.html#a4cc2cf0a42561075d7e6a8fa0a2696cd">SegmentSwitchTracking</a> tracking_mode, const <a class="el" href="classcocoon_1_1_object.html">Object</a> &amp;target, const std::string &amp;action)</td></tr>
-<tr class="memdesc:a80352719fa22e1e53b26a2d592b67575"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSSegmentedControl segmentedControlWithLabels:trackingMode:target:action:]</span>.  <br /></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-pro-static-methods" class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:aab2f836f87bce31ee65228e200ea4103" id="r_aab2f836f87bce31ee65228e200ea4103"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#aab2f836f87bce31ee65228e200ea4103">bind_action_</a> (void *native)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_static_methods_classcocoon_1_1_control"><td colspan="2">Static Public Member Functions inherited from <a class="el" href="classcocoon_1_1_control.html">cocoon::Control</a></td></tr>
 <tr class="memitem:aa9bd1d1711669a968c07b8b277de5554 pub_static_methods_classcocoon_1_1_control" id="r_aa9bd1d1711669a968c07b8b277de5554"><td class="memItemLeft">static std::string&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_control.html#aa9bd1d1711669a968c07b8b277de5554">cell_class</a> ()</td></tr>
 <tr class="memdesc:aa9bd1d1711669a968c07b8b277de5554 pub_static_methods_classcocoon_1_1_control"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">cellClass</span> property of <span class="tt">NSControl</span>.  <br /></td></tr>
@@ -1189,10 +1192,6 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:acf3f611cc422eadcf4268ddb971c7db4 pub_static_methods_classcocoon_1_1_responder"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSResponder allowedClassesForRestorableStateKeyPath:]</span>.  <br /></td></tr>
 <tr class="memitem:a439082ad610d2fefdbe46079e94d78ca pub_static_methods_classcocoon_1_1_responder" id="r_a439082ad610d2fefdbe46079e94d78ca"><td class="memItemLeft">static std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_responder.html#a439082ad610d2fefdbe46079e94d78ca">restorable_state_key_paths</a> ()</td></tr>
 <tr class="memdesc:a439082ad610d2fefdbe46079e94d78ca pub_static_methods_classcocoon_1_1_responder"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">restorableStateKeyPaths</span> property of <span class="tt">NSResponder</span>.  <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pro-static-methods" class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
-Static Protected Member Functions</h2></td></tr>
-<tr class="memitem:aab2f836f87bce31ee65228e200ea4103" id="r_aab2f836f87bce31ee65228e200ea4103"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#aab2f836f87bce31ee65228e200ea4103">bind_action_</a> (void *native)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A segmented control. </p>
@@ -1204,7 +1203,7 @@ Static Protected Member Functions</h2></td></tr>
 <div class="line">segments.<a class="code hl_function" href="#a6ec120a0aa3cef9b307044dccab90fe4">selection_changed</a>().connect([](std::int64_t segment) {});</div>
 <div class="ttc" id="aclasscocoon_1_1_segmented_control_html"><div class="ttname"><a href="classcocoon_1_1_segmented_control.html">cocoon::SegmentedControl</a></div><div class="ttdoc">A segmented control.</div><div class="ttdef"><b>Definition</b> segmented_control.h:48</div></div>
 <div class="ttc" id="aclasscocoon_1_1_segmented_control_html_a57d91f39b3dad2a283ddf189a068f139"><div class="ttname"><a href="#a57d91f39b3dad2a283ddf189a068f139">cocoon::SegmentedControl::set_label</a></div><div class="ttdeci">void set_label(const std::string &amp;label, std::int64_t segment) const</div><div class="ttdoc">Calls -[NSSegmentedControl setLabel:forSegment:].</div></div>
-<div class="ttc" id="aclasscocoon_1_1_segmented_control_html_a6ec120a0aa3cef9b307044dccab90fe4"><div class="ttname"><a href="#a6ec120a0aa3cef9b307044dccab90fe4">cocoon::SegmentedControl::selection_changed</a></div><div class="ttdeci">Signal&lt; SegmentedControl, void(std::int64_t)&gt; selection_changed() const</div><div class="ttdoc">Signal selection_changed: connect a callback with selection_changed().connect(...).</div><div class="ttdef"><b>Definition</b> segmented_control.h:343</div></div>
+<div class="ttc" id="aclasscocoon_1_1_segmented_control_html_a6ec120a0aa3cef9b307044dccab90fe4"><div class="ttname"><a href="#a6ec120a0aa3cef9b307044dccab90fe4">cocoon::SegmentedControl::selection_changed</a></div><div class="ttdeci">Signal&lt; SegmentedControl, void(std::int64_t)&gt; selection_changed() const</div><div class="ttdoc">Signal selection_changed: connect a callback with selection_changed().connect(...).</div><div class="ttdef"><b>Definition</b> segmented_control.h:327</div></div>
 <div class="ttc" id="aclasscocoon_1_1_segmented_control_html_ad7b2ca792e07832c0fd39a682869f47e"><div class="ttname"><a href="#ad7b2ca792e07832c0fd39a682869f47e">cocoon::SegmentedControl::set_segment_count</a></div><div class="ttdeci">void set_segment_count(std::int64_t value) const</div><div class="ttdoc">Sets the segmentCount property of NSSegmentedControl.</div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_segmented_control.html">cocoon::SegmentedControl</a> segmented_control{};</div>
@@ -1232,7 +1231,7 @@ Static Protected Member Functions</h2></td></tr>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/appkit/nssegmentedcontrol">https://developer.apple.com/documentation/appkit/nssegmentedcontrol</a> </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a260aeca3ef1b84187a5fc742a09a2dfd" name="a260aeca3ef1b84187a5fc742a09a2dfd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a260aeca3ef1b84187a5fc742a09a2dfd">&#9670;&#160;</a></span>SegmentedControl() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a260aeca3ef1b84187a5fc742a09a2dfd">&#9670;&#160;</a></span>SegmentedControl() <span class="overload">[1/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1258,8 +1257,90 @@ Static Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a718273563bb35216e16129c17114a121" name="a718273563bb35216e16129c17114a121"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a718273563bb35216e16129c17114a121">&#9670;&#160;</a></span>SegmentedControl() <span class="overload">[2/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::SegmentedControl::SegmentedControl </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="classcocoon_1_1_image.html">Image</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>images</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacecocoon.html#a4cc2cf0a42561075d7e6a8fa0a2696cd">SegmentSwitchTracking</a></td>          <td class="paramname"><span class="paramname"><em>tracking_mode</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcocoon_1_1_object.html">Object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>target</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>action</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSSegmentedControl</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
+<a id="a40def54552a34703b775bbfe62db5098" name="a40def54552a34703b775bbfe62db5098"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40def54552a34703b775bbfe62db5098">&#9670;&#160;</a></span>SegmentedControl() <span class="overload">[3/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::SegmentedControl::SegmentedControl </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>labels</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacecocoon.html#a4cc2cf0a42561075d7e6a8fa0a2696cd">SegmentSwitchTracking</a></td>          <td class="paramname"><span class="paramname"><em>tracking_mode</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcocoon_1_1_object.html">Object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>target</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>action</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSSegmentedControl</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
 <a id="a920cbc3d2df388381ee9af96fc213b9f" name="a920cbc3d2df388381ee9af96fc213b9f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a920cbc3d2df388381ee9af96fc213b9f">&#9670;&#160;</a></span>SegmentedControl() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a920cbc3d2df388381ee9af96fc213b9f">&#9670;&#160;</a></span>SegmentedControl() <span class="overload">[4/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1278,7 +1359,7 @@ Static Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="adcd511190ee1192207d2898d27cce7b7" name="adcd511190ee1192207d2898d27cce7b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adcd511190ee1192207d2898d27cce7b7">&#9670;&#160;</a></span>SegmentedControl() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#adcd511190ee1192207d2898d27cce7b7">&#9670;&#160;</a></span>SegmentedControl() <span class="overload">[5/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1739,108 +1820,6 @@ Static Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the <span class="tt">segmentStyle</span> property of <span class="tt">NSSegmentedControl</span>. </p>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a71a4b4853d7ec457a379f9fa22bcd7ee" name="a71a4b4853d7ec457a379f9fa22bcd7ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a71a4b4853d7ec457a379f9fa22bcd7ee">&#9670;&#160;</a></span>segmented_control_with_images()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a260aeca3ef1b84187a5fc742a09a2dfd">SegmentedControl</a> cocoon::SegmentedControl::segmented_control_with_images </td>
-          <td>(</td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="classcocoon_1_1_image.html">Image</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>images</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespacecocoon.html#a4cc2cf0a42561075d7e6a8fa0a2696cd">SegmentSwitchTracking</a></td>          <td class="paramname"><span class="paramname"><em>tracking_mode</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_object.html">Object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>target</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>action</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSSegmentedControl segmentedControlWithImages:trackingMode:target:action:]</span>. </p>
-<p>Creates a standard segmented control containing one segment for each of the provided images. To ensure accessibility for this control, set the 'accessibilityDescription' property on each of the provided images. @param images An array of image objects to use for the control's segments. @param trackingMode The selection mode for the control. The NSSegmentSwitchTracking enum describes the possible values and their effects. @param target The target object that receives action messages from the control. @param action The action message sent by the control. @return An initialized segmented control. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">images</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">tracking_mode</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">target</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">action</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a80352719fa22e1e53b26a2d592b67575" name="a80352719fa22e1e53b26a2d592b67575"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80352719fa22e1e53b26a2d592b67575">&#9670;&#160;</a></span>segmented_control_with_labels()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a260aeca3ef1b84187a5fc742a09a2dfd">SegmentedControl</a> cocoon::SegmentedControl::segmented_control_with_labels </td>
-          <td>(</td>
-          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>labels</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespacecocoon.html#a4cc2cf0a42561075d7e6a8fa0a2696cd">SegmentSwitchTracking</a></td>          <td class="paramname"><span class="paramname"><em>tracking_mode</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_object.html">Object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>target</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>action</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSSegmentedControl segmentedControlWithLabels:trackingMode:target:action:]</span>. </p>
-<p>Creates a standard segmented control containing one segment for each of the provided labels. @param labels An array of localized label strings to use for the control's segments. @param trackingMode The selection mode for the control. The NSSegmentSwitchTracking enum describes the possible values and their effects. @param target The target object that receives action messages from the control. @param action The action message sent by the control. @return An initialized segmented control. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">labels</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">tracking_mode</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">target</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">action</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
 
 </div>

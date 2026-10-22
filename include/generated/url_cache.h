@@ -57,103 +57,103 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit URLCache(Adopt adopt);
         /**
-     * @brief Calls `-[NSURLCache cachedResponseForRequest:]`.
-     * @details Returns the cached URL response in the cache for the specified URL request. Returns 'nil' if there is no 'NSCachedURLResponse' stored using the given request. - Parameter request: The 'NSURLRequest' to use as a key for the lookup. - Returns: The 'NSCachedURLResponse' stored in the cache with the given request, or 'nil' if there is no cached response.
-     * @param request Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSURLCache cachedResponseForRequest:]`.
+         * @details Returns the cached URL response in the cache for the specified URL request. Returns 'nil' if there is no 'NSCachedURLResponse' stored using the given request. - Parameter request: The 'NSURLRequest' to use as a key for the lookup. - Returns: The 'NSCachedURLResponse' stored in the cache with the given request, or 'nil' if there is no cached response.
+         * @param request Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         CachedURLResponse cached_response_for_request(const URLRequest& request) const;
         /**
-     * @brief Calls `-[NSURLCache getCachedResponseForDataTask:completionHandler:]`.
-     * @details Gets the cached URL response for a specified data task, passing it to a completion handler.
-     * @param data_task Argument converted to the Objective-C parameter of the same role.
-     * @param completion_handler Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSURLCache getCachedResponseForDataTask:completionHandler:]`.
+         * @details Gets the cached URL response for a specified data task, passing it to a completion handler.
+         * @param data_task Argument converted to the Objective-C parameter of the same role.
+         * @param completion_handler Argument converted to the Objective-C parameter of the same role.
+         */
         void get_cached_response_for_data_task(const URLSessionDataTask& data_task, std::function<void(CachedURLResponse)> completion_handler) const;
         /**
-     * @brief Calls `-[NSURLCache removeAllCachedResponses]`.
-     * @details Clears the cache, removing all 'NSCachedURLResponse' objects that it stores.
-     */
+         * @brief Calls `-[NSURLCache removeAllCachedResponses]`.
+         * @details Clears the cache, removing all 'NSCachedURLResponse' objects that it stores.
+         */
         void remove_all_cached_responses() const;
         /**
-     * @brief Calls `-[NSURLCache removeCachedResponseForDataTask:]`.
-     * @details Removes the cached URL response for a specified data task.
-     * @param data_task Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSURLCache removeCachedResponseForDataTask:]`.
+         * @details Removes the cached URL response for a specified data task.
+         * @param data_task Argument converted to the Objective-C parameter of the same role.
+         */
         void remove_cached_response_for_data_task(const URLSessionDataTask& data_task) const;
         /**
-     * @brief Calls `-[NSURLCache removeCachedResponseForRequest:]`.
-     * @details Removes the cached URL response for a specified request. No action is taken if there is no 'NSCachedURLResponse' stored with the given request. - Parameter request: The 'NSURLRequest' to use as a key for the lookup.
-     * @param request Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSURLCache removeCachedResponseForRequest:]`.
+         * @details Removes the cached URL response for a specified request. No action is taken if there is no 'NSCachedURLResponse' stored with the given request. - Parameter request: The 'NSURLRequest' to use as a key for the lookup.
+         * @param request Argument converted to the Objective-C parameter of the same role.
+         */
         void remove_cached_response_for_request(const URLRequest& request) const;
         /**
-     * @brief Calls `-[NSURLCache removeCachedResponsesSinceDate:]`.
-     * @details Clears the cache of any cached responses since the provided date.
-     * @param date Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSURLCache removeCachedResponsesSinceDate:]`.
+         * @details Clears the cache of any cached responses since the provided date.
+         * @param date Argument converted to the Objective-C parameter of the same role.
+         */
         void remove_cached_responses_since_date(const Date& date) const;
         /**
-     * @brief Calls `-[NSURLCache storeCachedResponse:forDataTask:]`.
-     * @details Stores a cached URL response for a specified data task.
-     * @param cached_response Argument converted to the Objective-C parameter of the same role.
-     * @param data_task Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSURLCache storeCachedResponse:forDataTask:]`.
+         * @details Stores a cached URL response for a specified data task.
+         * @param cached_response Argument converted to the Objective-C parameter of the same role.
+         * @param data_task Argument converted to the Objective-C parameter of the same role.
+         */
         void store_cached_response(const CachedURLResponse& cached_response, const URLSessionDataTask& data_task) const;
         /**
-     * @brief Calls `-[NSURLCache storeCachedResponse:forRequest:]`.
-     * @details Stores a cached URL response for a specified request. - Parameters: - cachedResponse: The cached response to store. - request: The 'NSURLRequest' to use as a key for the storage.
-     * @param cached_response Argument converted to the Objective-C parameter of the same role.
-     * @param request Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSURLCache storeCachedResponse:forRequest:]`.
+         * @details Stores a cached URL response for a specified request. - Parameters: - cachedResponse: The cached response to store. - request: The 'NSURLRequest' to use as a key for the storage.
+         * @param cached_response Argument converted to the Objective-C parameter of the same role.
+         * @param request Argument converted to the Objective-C parameter of the same role.
+         */
         void store_cached_response(const CachedURLResponse& cached_response, const URLRequest& request) const;
         /**
-     * @brief Returns the `currentDiskUsage` property of `NSURLCache`.
-     * @details The current amount of space consumed by the on-disk cache of the receiver, measured in bytes.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `currentDiskUsage` property of `NSURLCache`.
+         * @details The current amount of space consumed by the on-disk cache of the receiver, measured in bytes.
+         * @return The converted Objective-C result.
+         */
         std::uint64_t current_disk_usage() const;
         /**
-     * @brief Returns the `currentMemoryUsage` property of `NSURLCache`.
-     * @details The current amount of space consumed by the in-memory cache of the receiver, measured in bytes.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `currentMemoryUsage` property of `NSURLCache`.
+         * @details The current amount of space consumed by the in-memory cache of the receiver, measured in bytes.
+         * @return The converted Objective-C result.
+         */
         std::uint64_t current_memory_usage() const;
         /**
-     * @brief Returns the `diskCapacity` property of `NSURLCache`.
-     * @details The on-disk capacity of the receiver, measured in bytes. On mutation, the on-disk cache will truncate its contents to the size given, if necessary.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `diskCapacity` property of `NSURLCache`.
+         * @details The on-disk capacity of the receiver, measured in bytes. On mutation, the on-disk cache will truncate its contents to the size given, if necessary.
+         * @return The converted Objective-C result.
+         */
         std::uint64_t disk_capacity() const;
         /**
-     * @brief Sets the `diskCapacity` property of `NSURLCache`.
-     * @details The on-disk capacity of the receiver, measured in bytes. On mutation, the on-disk cache will truncate its contents to the size given, if necessary.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `diskCapacity` property of `NSURLCache`.
+         * @details The on-disk capacity of the receiver, measured in bytes. On mutation, the on-disk cache will truncate its contents to the size given, if necessary.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_disk_capacity(std::uint64_t value) const;
         /**
-     * @brief Returns the `memoryCapacity` property of `NSURLCache`.
-     * @details The in-memory capacity of the receiver, measured in bytes. At the time this value is set, the in-memory cache will truncate its contents to the size given, if necessary.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `memoryCapacity` property of `NSURLCache`.
+         * @details The in-memory capacity of the receiver, measured in bytes. At the time this value is set, the in-memory cache will truncate its contents to the size given, if necessary.
+         * @return The converted Objective-C result.
+         */
         std::uint64_t memory_capacity() const;
         /**
-     * @brief Sets the `memoryCapacity` property of `NSURLCache`.
-     * @details The in-memory capacity of the receiver, measured in bytes. At the time this value is set, the in-memory cache will truncate its contents to the size given, if necessary.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `memoryCapacity` property of `NSURLCache`.
+         * @details The in-memory capacity of the receiver, measured in bytes. At the time this value is set, the in-memory cache will truncate its contents to the size given, if necessary.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_memory_capacity(std::uint64_t value) const;
         /**
-     * @brief Returns the `sharedURLCache` property of `NSURLCache`.
-     * @details The shared URL cache instance. Unless set explicitly, this method returns an 'NSURLCache' instance created with the following default values: - Memory capacity: 4 megabytes (4 1024 1024 bytes) - Disk capacity: 20 megabytes (20 1024 1024 bytes) - Disk path: '(user home directory)/Library/Caches/(application bundle id)' If your app doesn't have special caching requirements or constraints, the default shared cache instance should be acceptable. Callers should take care to ensure that the setter is called at a time when no other caller has a reference to the previously-set shared URL cache.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `sharedURLCache` property of `NSURLCache`.
+         * @details The shared URL cache instance. Unless set explicitly, this method returns an 'NSURLCache' instance created with the following default values: - Memory capacity: 4 megabytes (4 1024 1024 bytes) - Disk capacity: 20 megabytes (20 1024 1024 bytes) - Disk path: '(user home directory)/Library/Caches/(application bundle id)' If your app doesn't have special caching requirements or constraints, the default shared cache instance should be acceptable. Callers should take care to ensure that the setter is called at a time when no other caller has a reference to the previously-set shared URL cache.
+         * @return The converted Objective-C result.
+         */
         static URLCache shared_url_cache();
         /**
-     * @brief Sets the `sharedURLCache` property of `NSURLCache`.
-     * @details The shared URL cache instance. Unless set explicitly, this method returns an 'NSURLCache' instance created with the following default values: - Memory capacity: 4 megabytes (4 1024 1024 bytes) - Disk capacity: 20 megabytes (20 1024 1024 bytes) - Disk path: '(user home directory)/Library/Caches/(application bundle id)' If your app doesn't have special caching requirements or constraints, the default shared cache instance should be acceptable. Callers should take care to ensure that the setter is called at a time when no other caller has a reference to the previously-set shared URL cache.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `sharedURLCache` property of `NSURLCache`.
+         * @details The shared URL cache instance. Unless set explicitly, this method returns an 'NSURLCache' instance created with the following default values: - Memory capacity: 4 megabytes (4 1024 1024 bytes) - Disk capacity: 20 megabytes (20 1024 1024 bytes) - Disk path: '(user home directory)/Library/Caches/(application bundle id)' If your app doesn't have special caching requirements or constraints, the default shared cache instance should be acceptable. Callers should take care to ensure that the setter is called at a time when no other caller has a reference to the previously-set shared URL cache.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         static void set_shared_url_cache(const URLCache& value);
     };
 }

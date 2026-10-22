@@ -1,9 +1,8 @@
 Skipped members by reason
 
-deprecated: 556
+deprecated: 535
   NSATSTypesetter.getGlyphsInRange:glyphs:characterIndexes:glyphInscriptions:elasticBits:
   NSATSTypesetter.lineFragmentRectForProposedRect:remainingRect:
-  NSAlert.alertWithMessageText:defaultButton:alternateButton:otherButton:informativeTextWithFormat:
   NSAlert.beginSheetModalForWindow:modalDelegate:didEndSelector:contextInfo:
   NSApplication.application:printFiles:
   NSApplication.beginModalSessionForWindow:relativeToWindow:
@@ -35,12 +34,13 @@ deprecated: 556
   NSButtonCell.setAlternateTitleWithMnemonic:
   NSButtonCell.setKeyEquivalentFont:size:
   NSButtonCell.setTitleWithMnemonic:
-  NSCachedImageRep.initWithSize:depth:separate:alpha:
-  NSCachedImageRep.initWithWindow:rect:
   NSCachedImageRep.rect
   NSCachedImageRep.window
   NSCell.entryType
   NSCell.isEntryAcceptable:
+  NSCell.mnemonic
+  NSCell.mnemonicLocation
+  NSCell.setEntryType:
   ...
 
 unavailable/deprecated: 98
@@ -86,6 +86,92 @@ unavailable/deprecated: 98
   NSOpenGLContext.view
   ...
 
+duplicate constructor signature: 76
+  NSBezierPath.bezierPathWithRect:
+  NSColor.colorWithCalibratedRed:green:blue:alpha:
+  NSColor.colorWithDeviceHue:saturation:brightness:alpha:
+  NSColor.colorWithDeviceRed:green:blue:alpha:
+  NSColor.colorWithDeviceWhite:alpha:
+  NSColor.colorWithDisplayP3Red:green:blue:alpha:
+  NSColor.colorWithGenericGamma22White:alpha:
+  NSColor.colorWithHue:saturation:brightness:alpha:
+  NSColor.colorWithRed:green:blue:alpha:
+  NSColor.colorWithRed:green:blue:alpha:exposure:
+  NSColor.colorWithRed:green:blue:alpha:linearExposure:
+  NSColor.colorWithSRGBRed:green:blue:alpha:
+  NSColor.colorWithWhite:alpha:
+  NSDraggingImageComponent.draggingImageComponentWithKey:
+  NSFontDescriptor.fontDescriptorWithFontAttributes:
+  NSPrinter.printerWithType:
+  NSTintConfiguration.tintConfigurationWithPreferredColor:
+  NSTreeNode.treeNodeWithRepresentedObject:
+  NSBundle.bundleWithIdentifier:
+  NSBundle.bundleWithPath:
+  NSBundle.bundleWithURL:
+  NSCalendar.calendarWithIdentifier:
+  NSCharacterSet.characterSetWithContentsOfFile:
+  NSConnection.connectionWithReceivePort:sendPort:
+  NSDate.dateWithTimeInterval:sinceDate:
+  NSDate.dateWithTimeIntervalSince1970:
+  NSDate.dateWithTimeIntervalSinceNow:
+  NSDate.dateWithTimeIntervalSinceReferenceDate:
+  NSDecimalNumber.decimalNumberWithDecimal:
+  NSDecimalNumber.decimalNumberWithMantissa:exponent:isNegative:
+  NSDecimalNumber.decimalNumberWithString:
+  NSDecimalNumber.decimalNumberWithString:locale:
+  NSDecimalNumberHandler.decimalNumberHandlerWithRoundingMode:scale:raiseOnExactness:raiseOnOverflow:raiseOnUnderflow:raiseOnDivideByZero:
+  NSError.errorWithDomain:code:userInfo:
+  NSException.exceptionWithName:reason:userInfo:
+  NSHost.hostWithName:
+  NSIndexPath.indexPathWithIndex:
+  NSIndexPath.indexPathWithIndexes:length:
+  NSIndexSet.indexSetWithIndex:
+  NSIndexSet.indexSetWithIndexesInRange:
+  ...
+
+unavailable: 66
+  NSAlert.alertWithMessageText:defaultButton:alternateButton:otherButton:informativeTextWithFormat:
+  NSBitmapImageRep.initWithFocusedViewRect:
+  NSCachedImageRep.initWithSize:depth:separate:alpha:
+  NSCachedImageRep.initWithWindow:rect:
+  NSCursor.initWithImage:foregroundColorHint:backgroundColorHint:hotSpot:
+  NSDatePickerCell.initImageCell:
+  NSDocument.initWithContentsOfFile:ofType:
+  NSDocument.initWithContentsOfURL:ofType:
+  NSFormCell.initImageCell:
+  NSGradient.initWithColorsAndLocations:
+  NSGraphicsContext.graphicsContextWithGraphicsPort:flipped:
+  NSGraphicsContext.graphicsContextWithWindow:
+  NSImage.initWithIconRef:
+  NSInputManager.initWithName:host:
+  NSInputServer.initWithDelegate:name:
+  NSMovie.initWithMovie:
+  NSNib.initWithContentsOfURL:
+  NSOpenGLPixelFormat.initWithData:
+  NSOpenGLPixelBuffer.initWithCGLPBufferObj:
+  NSOpenGLPixelBuffer.initWithTextureTarget:textureInternalFormat:textureMaxMipMapLevel:pixelsWide:pixelsHigh:
+  NSOutlineView.insertRowsAtIndexes:withAnimation:
+  NSOutlineView.moveRowAtIndex:toIndex:
+  NSOutlineView.removeRowsAtIndexes:withAnimation:
+  NSPrinter.printerWithName:domain:includeUnavailable:
+  NSSearchFieldCell.initImageCell:
+  NSSpeechSynthesizer.initWithVoice:
+  NSTextFieldCell.initImageCell:
+  NSTextListElement.initWithAttributedString:
+  NSTextViewportLayoutController.renderingSurfaceForKey:
+  NSWindow.initWithWindowRef:
+  NSUnarchiver.objectZone
+  NSUnarchiver.setObjectZone:
+  NSAttributedString.initWithFormat:options:locale:
+  NSAttributedString.initWithFormat:options:locale:context:
+  NSAttributedString.initWithPath:documentAttributes:
+  NSAttributedString.initWithURL:documentAttributes:
+  NSBundle.preservationPriorityForTag:
+  NSBundle.setPreservationPriority:forTags:
+  NSCalendarDate.initWithString:
+  NSCalendarDate.initWithString:calendarFormat:
+  ...
+
 skipped selector: 49
   NSCollectionViewCompositionalLayout.new
   NSCollectionLayoutSection.new
@@ -127,49 +213,6 @@ skipped selector: 49
   NSURLSessionDownloadTask.new
   NSURLSessionStreamTask.new
   NSURLSessionWebSocketMessage.new
-  ...
-
-unavailable: 43
-  NSBitmapImageRep.initWithFocusedViewRect:
-  NSCursor.initWithImage:foregroundColorHint:backgroundColorHint:hotSpot:
-  NSDatePickerCell.initImageCell:
-  NSFormCell.initImageCell:
-  NSGradient.initWithColorsAndLocations:
-  NSImage.initWithIconRef:
-  NSInputManager.initWithName:host:
-  NSInputServer.initWithDelegate:name:
-  NSMovie.initWithMovie:
-  NSOpenGLPixelBuffer.initWithCGLPBufferObj:
-  NSOpenGLPixelBuffer.initWithTextureTarget:textureInternalFormat:textureMaxMipMapLevel:pixelsWide:pixelsHigh:
-  NSOutlineView.insertRowsAtIndexes:withAnimation:
-  NSOutlineView.moveRowAtIndex:toIndex:
-  NSOutlineView.removeRowsAtIndexes:withAnimation:
-  NSSearchFieldCell.initImageCell:
-  NSSpeechSynthesizer.initWithVoice:
-  NSTextFieldCell.initImageCell:
-  NSTextListElement.initWithAttributedString:
-  NSTextViewportLayoutController.renderingSurfaceForKey:
-  NSWindow.initWithWindowRef:
-  NSUnarchiver.objectZone
-  NSUnarchiver.setObjectZone:
-  NSAttributedString.initWithFormat:options:locale:
-  NSAttributedString.initWithFormat:options:locale:context:
-  NSAttributedString.initWithPath:documentAttributes:
-  NSAttributedString.initWithURL:documentAttributes:
-  NSBundle.preservationPriorityForTag:
-  NSBundle.setPreservationPriority:forTags:
-  NSCoder.objectZone
-  NSCoder.setObjectZone:
-  NSKeyValueSharedObservers.addObserver:forKeyPath:options:context:
-  NSKeyedArchiver.initForWritingWithMutableData:
-  NSKeyedUnarchiver.initForReadingWithData:
-  NSProcessInfo.performExpiringActivityWithReason:usingBlock:
-  NSURL.initWithScheme:host:path:
-  NSURLConnection.initWithRequest:delegate:
-  NSURLConnection.initWithRequest:delegate:startImmediately:
-  NSURLDownload.initWithRequest:delegate:
-  NSURLDownload.initWithResumeData:delegate:path:
-  NSXMLDTD.initWithKind:options:
   ...
 
 unmapped pointer: 11

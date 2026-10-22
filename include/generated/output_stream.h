@@ -48,48 +48,40 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit OutputStream(Adopt adopt);
         /**
-     * @brief Calls `+[NSOutputStream outputStreamToBuffer:capacity:]`.
-     * @details Creates and returns an initialized output stream that can write to a provided buffer. The stream must be opened before it can be used. When the number of bytes written to 'buffer' has reached 'capacity', the stream's 'streamStatus' will return 'NSStreamStatusAtEnd'. - Parameters: - buffer: The buffer the output stream will write to. - capacity: The size of the buffer in bytes. - Returns: An initialized output stream that can write to 'buffer'.
-     * @param buffer Argument converted to the Objective-C parameter of the same role.
-     * @param capacity Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSOutputStream outputStreamToBuffer:capacity:]`.
+         * @details Creates and returns an initialized output stream that can write to a provided buffer. The stream must be opened before it can be used. When the number of bytes written to 'buffer' has reached 'capacity', the stream's 'streamStatus' will return 'NSStreamStatusAtEnd'. - Parameters: - buffer: The buffer the output stream will write to. - capacity: The size of the buffer in bytes. - Returns: An initialized output stream that can write to 'buffer'.
+         * @param buffer Argument converted to the Objective-C parameter of the same role.
+         * @param capacity Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static OutputStream output_stream_to_buffer(std::uint8_t* buffer, std::uint64_t capacity);
         /**
-     * @brief Calls `+[NSOutputStream outputStreamToFileAtPath:append:]`.
-     * @details Creates and returns an initialized output stream for writing to a specified file. The stream must be opened before it can be used. - Parameters: - path: The path to the file the output stream will write to. - shouldAppend: 'YES' if newly written data should be appended to any existing file contents, otherwise 'NO'. - Returns: An initialized output stream that can write to 'path'.
-     * @param path Argument converted to the Objective-C parameter of the same role.
-     * @param should_append Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSOutputStream outputStreamToFileAtPath:append:]`.
+         * @details Creates and returns an initialized output stream for writing to a specified file. The stream must be opened before it can be used. - Parameters: - path: The path to the file the output stream will write to. - shouldAppend: 'YES' if newly written data should be appended to any existing file contents, otherwise 'NO'. - Returns: An initialized output stream that can write to 'path'.
+         * @param path Argument converted to the Objective-C parameter of the same role.
+         * @param should_append Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static OutputStream output_stream_to_file_at_path(const std::string& path, bool should_append);
         /**
-     * @brief Calls `+[NSOutputStream outputStreamToMemory]`.
-     * @details Creates and returns an initialized output stream that will write stream data to memory. The stream must be opened before it can be used. You retrieve the contents of the memory stream by sending the message 'propertyForKey:' to the receiver with an argument of 'NSStreamDataWrittenToMemoryStreamKey'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSOutputStream outputStreamToMemory]`.
+         * @details Creates and returns an initialized output stream that will write stream data to memory. The stream must be opened before it can be used. You retrieve the contents of the memory stream by sending the message 'propertyForKey:' to the receiver with an argument of 'NSStreamDataWrittenToMemoryStreamKey'.
+         * @return The converted Objective-C result.
+         */
         static OutputStream output_stream_to_memory();
         /**
-     * @brief Calls `+[NSOutputStream outputStreamWithURL:append:]`.
-     * @details Creates and returns an initialized output stream for writing to a specified URL. The stream must be opened before it can be used. - Parameters: - url: The URL to the file the output stream will write to. - shouldAppend: 'YES' if newly written data should be appended to any existing file contents, otherwise 'NO'.
-     * @param url Argument converted to the Objective-C parameter of the same role.
-     * @param should_append Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static OutputStream output_stream_with_url(const URL& url, bool should_append);
-        /**
-     * @brief Calls `-[NSOutputStream write:maxLength:]`.
-     * @details Writes the contents of a provided data buffer to the receiver. - Parameters: - buffer: The data to write. - len: The length of the data buffer, in bytes. The behavior of this method is undefined if you pass a negative or zero number. - Returns: A positive number indicates the number of bytes written; '0' indicates that a fixed-length stream has reached its capacity; '-1' means that the operation failed (more information about the error can be obtained with 'streamError').
-     * @param buffer Argument converted to the Objective-C parameter of the same role.
-     * @param len Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSOutputStream write:maxLength:]`.
+         * @details Writes the contents of a provided data buffer to the receiver. - Parameters: - buffer: The data to write. - len: The length of the data buffer, in bytes. The behavior of this method is undefined if you pass a negative or zero number. - Returns: A positive number indicates the number of bytes written; '0' indicates that a fixed-length stream has reached its capacity; '-1' means that the operation failed (more information about the error can be obtained with 'streamError').
+         * @param buffer Argument converted to the Objective-C parameter of the same role.
+         * @param len Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::int64_t write(const std::uint8_t* buffer, std::uint64_t len) const;
         /**
-     * @brief Returns the `hasSpaceAvailable` property of `NSOutputStream`.
-     * @details A Boolean value that indicates whether the receiver can be written to. 'YES' if the stream can be written to or if a write must be attempted in order to determine if space is available, 'NO' otherwise.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `hasSpaceAvailable` property of `NSOutputStream`.
+         * @details A Boolean value that indicates whether the receiver can be written to. 'YES' if the stream can be written to or if a write must be attempted in order to determine if space is available, 'NO' otherwise.
+         * @return The converted Objective-C result.
+         */
         bool has_space_available() const;
     };
 }

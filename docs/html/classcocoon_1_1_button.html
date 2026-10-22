@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -77,6 +77,12 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad802f9414c64444b2ee4ec8295bc189f" id="r_ad802f9414c64444b2ee4ec8295bc189f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ad802f9414c64444b2ee4ec8295bc189f">Button</a> (const std::string &amp;title=&quot;&quot;)</td></tr>
 <tr class="memdesc:ad802f9414c64444b2ee4ec8295bc189f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSButton</span> instance and returns a handle to it.  <br /></td></tr>
+<tr class="memitem:a61d1305b5335e6344a073190bd1745c5" id="r_a61d1305b5335e6344a073190bd1745c5"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a61d1305b5335e6344a073190bd1745c5">Button</a> (const <a class="el" href="classcocoon_1_1_image.html">Image</a> &amp;image, const <a class="el" href="classcocoon_1_1_object.html">Object</a> &amp;target, const std::string &amp;action)</td></tr>
+<tr class="memdesc:a61d1305b5335e6344a073190bd1745c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSButton</span> instance and returns a handle to it.  <br /></td></tr>
+<tr class="memitem:a224343717467e2e393589e7c396224d9" id="r_a224343717467e2e393589e7c396224d9"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a224343717467e2e393589e7c396224d9">Button</a> (const std::string &amp;title, const <a class="el" href="classcocoon_1_1_image.html">Image</a> &amp;image, const <a class="el" href="classcocoon_1_1_object.html">Object</a> &amp;target, const std::string &amp;action)</td></tr>
+<tr class="memdesc:a224343717467e2e393589e7c396224d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSButton</span> instance and returns a handle to it.  <br /></td></tr>
+<tr class="memitem:a48431efd2634aaa5d98b4079960c67e7" id="r_a48431efd2634aaa5d98b4079960c67e7"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a48431efd2634aaa5d98b4079960c67e7">Button</a> (const std::string &amp;title, const <a class="el" href="classcocoon_1_1_object.html">Object</a> &amp;target, const std::string &amp;action)</td></tr>
+<tr class="memdesc:a48431efd2634aaa5d98b4079960c67e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSButton</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:add9b9d75f6c929bed10ec6fd830912ac" id="r_add9b9d75f6c929bed10ec6fd830912ac"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#add9b9d75f6c929bed10ec6fd830912ac">Button</a> (std::nullptr_t)</td></tr>
 <tr class="memdesc:add9b9d75f6c929bed10ec6fd830912ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a null handle that refers to no native object.  <br /></td></tr>
 <tr class="memitem:a5781496e7f027d0f18395877afadc802" id="r_a5781496e7f027d0f18395877afadc802"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a5781496e7f027d0f18395877afadc802">Button</a> (<a class="el" href="structcocoon_1_1_adopt.html">Adopt</a> adopt)</td></tr>
@@ -1188,12 +1194,6 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a7068657367922e3e441bafaa7bf4b8ed" id="r_a7068657367922e3e441bafaa7bf4b8ed"><td class="memItemLeft">static <a class="el" href="#ad802f9414c64444b2ee4ec8295bc189f">Button</a>&#160;</td><td class="memItemRight"><a class="el" href="#a7068657367922e3e441bafaa7bf4b8ed">button_with_image</a> (const <a class="el" href="classcocoon_1_1_image.html">Image</a> &amp;image, const <a class="el" href="classcocoon_1_1_object.html">Object</a> &amp;target, const std::string &amp;action)</td></tr>
-<tr class="memdesc:a7068657367922e3e441bafaa7bf4b8ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSButton buttonWithImage:target:action:]</span>.  <br /></td></tr>
-<tr class="memitem:a705c5e966684c25627efbf0aa53d560b" id="r_a705c5e966684c25627efbf0aa53d560b"><td class="memItemLeft">static <a class="el" href="#ad802f9414c64444b2ee4ec8295bc189f">Button</a>&#160;</td><td class="memItemRight"><a class="el" href="#a705c5e966684c25627efbf0aa53d560b">button_with_title</a> (const std::string &amp;title, const <a class="el" href="classcocoon_1_1_image.html">Image</a> &amp;image, const <a class="el" href="classcocoon_1_1_object.html">Object</a> &amp;target, const std::string &amp;action)</td></tr>
-<tr class="memdesc:a705c5e966684c25627efbf0aa53d560b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSButton buttonWithTitle:image:target:action:]</span>.  <br /></td></tr>
-<tr class="memitem:a9a76d2eb34926eb162d0d4fe80a76fab" id="r_a9a76d2eb34926eb162d0d4fe80a76fab"><td class="memItemLeft">static <a class="el" href="#ad802f9414c64444b2ee4ec8295bc189f">Button</a>&#160;</td><td class="memItemRight"><a class="el" href="#a9a76d2eb34926eb162d0d4fe80a76fab">button_with_title</a> (const std::string &amp;title, const <a class="el" href="classcocoon_1_1_object.html">Object</a> &amp;target, const std::string &amp;action)</td></tr>
-<tr class="memdesc:a9a76d2eb34926eb162d0d4fe80a76fab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSButton buttonWithTitle:target:action:]</span>.  <br /></td></tr>
 <tr class="memitem:add9e5c2eab29961d05980cceb33f4bd0" id="r_add9e5c2eab29961d05980cceb33f4bd0"><td class="memItemLeft">static <a class="el" href="#ad802f9414c64444b2ee4ec8295bc189f">Button</a>&#160;</td><td class="memItemRight"><a class="el" href="#add9e5c2eab29961d05980cceb33f4bd0">checkbox_with_title</a> (const std::string &amp;title, const <a class="el" href="classcocoon_1_1_object.html">Object</a> &amp;target, const std::string &amp;action)</td></tr>
 <tr class="memdesc:add9e5c2eab29961d05980cceb33f4bd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSButton checkboxWithTitle:target:action:]</span>.  <br /></td></tr>
 <tr class="memitem:ae2597b50276ce5e8a01a4fdd6702e8f7" id="r_ae2597b50276ce5e8a01a4fdd6702e8f7"><td class="memItemLeft">static <a class="el" href="#ad802f9414c64444b2ee4ec8295bc189f">Button</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae2597b50276ce5e8a01a4fdd6702e8f7">radio_button_with_title</a> (const std::string &amp;title, const <a class="el" href="classcocoon_1_1_object.html">Object</a> &amp;target, const std::string &amp;action)</td></tr>
@@ -1244,7 +1244,7 @@ Static Protected Member Functions</h2></td></tr>
 <div class="line">button.<a class="code hl_function" href="#a9e464755b6c79a4bbecebdaafa13b430">perform_key_equivalent</a>(<a class="code hl_class" href="classcocoon_1_1_event.html">cocoon::Event</a>());</div>
 <div class="line">button.<a class="code hl_function" href="#a9be36150a554b827accd7cd22db44e87">set_button_type</a>(<a class="code hl_enumvalue" href="namespacecocoon.html#ae832fa703f5fbdd536d1c5da44e1a23ead145def7b3abfa941c19c757af756eb8">cocoon::ButtonType::MomentaryLight</a>);</div>
 <div class="line">button.<a class="code hl_function" href="#a04e431813f74ae4e66e235dc6cb8811a">clicked</a>().connect([]() {});</div>
-<div class="ttc" id="aclasscocoon_1_1_button_html_a04e431813f74ae4e66e235dc6cb8811a"><div class="ttname"><a href="#a04e431813f74ae4e66e235dc6cb8811a">cocoon::Button::clicked</a></div><div class="ttdeci">Signal&lt; Button, void()&gt; clicked() const</div><div class="ttdoc">Signal clicked: connect a callback with clicked().connect(...).</div><div class="ttdef"><b>Definition</b> button.h:472</div></div>
+<div class="ttc" id="aclasscocoon_1_1_button_html_a04e431813f74ae4e66e235dc6cb8811a"><div class="ttname"><a href="#a04e431813f74ae4e66e235dc6cb8811a">cocoon::Button::clicked</a></div><div class="ttdeci">Signal&lt; Button, void()&gt; clicked() const</div><div class="ttdoc">Signal clicked: connect a callback with clicked().connect(...).</div><div class="ttdef"><b>Definition</b> button.h:450</div></div>
 <div class="ttc" id="aclasscocoon_1_1_button_html_a2f78fab5cadb9990210c063a5fb1e807"><div class="ttname"><a href="#a2f78fab5cadb9990210c063a5fb1e807">cocoon::Button::set_alternate_title</a></div><div class="ttdeci">void set_alternate_title(const std::string &amp;value) const</div><div class="ttdoc">Sets the alternateTitle property of NSButton.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_button_html_a328e75dc1acacbacb60627e963b98c2e"><div class="ttname"><a href="#a328e75dc1acacbacb60627e963b98c2e">cocoon::Button::set_allows_mixed_state</a></div><div class="ttdeci">void set_allows_mixed_state(bool value) const</div><div class="ttdoc">Sets the allowsMixedState property of NSButton.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_button_html_a4780fe0c9403d31fc4589421eb1ca8fd"><div class="ttname"><a href="#a4780fe0c9403d31fc4589421eb1ca8fd">cocoon::Button::set_alternate_image</a></div><div class="ttdeci">void set_alternate_image(const Image &amp;value) const</div><div class="ttdoc">Sets the alternateImage property of NSButton.</div></div>
@@ -1255,13 +1255,13 @@ Static Protected Member Functions</h2></td></tr>
 <div class="ttc" id="aclasscocoon_1_1_button_html_a9e464755b6c79a4bbecebdaafa13b430"><div class="ttname"><a href="#a9e464755b6c79a4bbecebdaafa13b430">cocoon::Button::perform_key_equivalent</a></div><div class="ttdeci">bool perform_key_equivalent(const Event &amp;key) const</div><div class="ttdoc">Calls -[NSButton performKeyEquivalent:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_button_html_ae9affa1e651ee1f122aa9d68c6cc9974"><div class="ttname"><a href="#ae9affa1e651ee1f122aa9d68c6cc9974">cocoon::Button::highlight</a></div><div class="ttdeci">void highlight(bool flag) const</div><div class="ttdoc">Calls -[NSButton highlight:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_event_html"><div class="ttname"><a href="classcocoon_1_1_event.html">cocoon::Event</a></div><div class="ttdoc">C++ handle for the Objective-C class NSEvent (AppKit).</div><div class="ttdef"><b>Definition</b> event.h:45</div></div>
-<div class="ttc" id="aclasscocoon_1_1_image_html"><div class="ttname"><a href="classcocoon_1_1_image.html">cocoon::Image</a></div><div class="ttdoc">An image (NSImage).</div><div class="ttdef"><b>Definition</b> image.h:51</div></div>
+<div class="ttc" id="aclasscocoon_1_1_image_html"><div class="ttname"><a href="classcocoon_1_1_image.html">cocoon::Image</a></div><div class="ttdoc">An image (NSImage).</div><div class="ttdef"><b>Definition</b> image.h:50</div></div>
 <div class="ttc" id="anamespacecocoon_html_ae832fa703f5fbdd536d1c5da44e1a23ead145def7b3abfa941c19c757af756eb8"><div class="ttname"><a href="namespacecocoon.html#ae832fa703f5fbdd536d1c5da44e1a23ead145def7b3abfa941c19c757af756eb8">cocoon::ButtonType::MomentaryLight</a></div><div class="ttdeci">@ MomentaryLight</div><div class="ttdef"><b>Definition</b> enums.h:560</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/appkit/nsbutton">https://developer.apple.com/documentation/appkit/nsbutton</a> </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad802f9414c64444b2ee4ec8295bc189f" name="ad802f9414c64444b2ee4ec8295bc189f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad802f9414c64444b2ee4ec8295bc189f">&#9670;&#160;</a></span>Button() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad802f9414c64444b2ee4ec8295bc189f">&#9670;&#160;</a></span>Button() <span class="overload">[1/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1287,8 +1287,121 @@ Static Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a61d1305b5335e6344a073190bd1745c5" name="a61d1305b5335e6344a073190bd1745c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61d1305b5335e6344a073190bd1745c5">&#9670;&#160;</a></span>Button() <span class="overload">[2/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::Button::Button </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcocoon_1_1_image.html">Image</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>image</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcocoon_1_1_object.html">Object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>target</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>action</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSButton</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
+<a id="a224343717467e2e393589e7c396224d9" name="a224343717467e2e393589e7c396224d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a224343717467e2e393589e7c396224d9">&#9670;&#160;</a></span>Button() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::Button::Button </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>title</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcocoon_1_1_image.html">Image</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>image</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcocoon_1_1_object.html">Object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>target</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>action</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSButton</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
+<a id="a48431efd2634aaa5d98b4079960c67e7" name="a48431efd2634aaa5d98b4079960c67e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48431efd2634aaa5d98b4079960c67e7">&#9670;&#160;</a></span>Button() <span class="overload">[4/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::Button::Button </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>title</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcocoon_1_1_object.html">Object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>target</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>action</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSButton</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
 <a id="add9b9d75f6c929bed10ec6fd830912ac" name="add9b9d75f6c929bed10ec6fd830912ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#add9b9d75f6c929bed10ec6fd830912ac">&#9670;&#160;</a></span>Button() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#add9b9d75f6c929bed10ec6fd830912ac">&#9670;&#160;</a></span>Button() <span class="overload">[5/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1307,7 +1420,7 @@ Static Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a5781496e7f027d0f18395877afadc802" name="a5781496e7f027d0f18395877afadc802"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5781496e7f027d0f18395877afadc802">&#9670;&#160;</a></span>Button() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5781496e7f027d0f18395877afadc802">&#9670;&#160;</a></span>Button() <span class="overload">[6/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1535,147 +1648,6 @@ Static Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the <span class="tt">borderShape</span> property of <span class="tt">NSButton</span>. </p>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a7068657367922e3e441bafaa7bf4b8ed" name="a7068657367922e3e441bafaa7bf4b8ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7068657367922e3e441bafaa7bf4b8ed">&#9670;&#160;</a></span>button_with_image()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#ad802f9414c64444b2ee4ec8295bc189f">Button</a> cocoon::Button::button_with_image </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_image.html">Image</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>image</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_object.html">Object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>target</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>action</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSButton buttonWithImage:target:action:]</span>. </p>
-<p>Creates a standard push button with the provided image. Set the image's accessibilityDescription property to ensure accessibility for this control. @param image The image to display in the body of the button. @param target The target object that receives action messages from the control. @param action The action message sent by the control. @return An initialized button object. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">image</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">target</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">action</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a705c5e966684c25627efbf0aa53d560b" name="a705c5e966684c25627efbf0aa53d560b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a705c5e966684c25627efbf0aa53d560b">&#9670;&#160;</a></span>button_with_title() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#ad802f9414c64444b2ee4ec8295bc189f">Button</a> cocoon::Button::button_with_title </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>title</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_image.html">Image</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>image</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_object.html">Object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>target</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>action</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSButton buttonWithTitle:image:target:action:]</span>. </p>
-<p>Creates a standard push button with a title and image. @param title The localized title string that is displayed on the button. @param image The image that is displayed alongside the title. In left-to-right localizations, the image is displayed to the left of the title. In right-to-left localizations, it is displayed to the right. @param target The target object that receives action messages from the control. @param action The action message sent by the control. @return An initialized button object. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">title</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">image</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">target</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">action</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a9a76d2eb34926eb162d0d4fe80a76fab" name="a9a76d2eb34926eb162d0d4fe80a76fab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a76d2eb34926eb162d0d4fe80a76fab">&#9670;&#160;</a></span>button_with_title() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#ad802f9414c64444b2ee4ec8295bc189f">Button</a> cocoon::Button::button_with_title </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>title</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_object.html">Object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>target</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>action</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSButton buttonWithTitle:target:action:]</span>. </p>
-<p>Creates a standard push button with the provided title. @param title The localized title string that is displayed on the button. @param target The target object that receives action messages from the control. @param action The action message sent by the control. @return An initialized button object. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">title</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">target</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">action</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
 
 </div>
@@ -2534,6 +2506,8 @@ Static Protected Member Functions</h2></td></tr>
     <tr><td class="paramname">value</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
   </table>
   </dd>
+</dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="home_tray_2main_8cpp-example.html#a7">home_tray/main.cpp</a>.</dd>
 </dl>
 
 </div>

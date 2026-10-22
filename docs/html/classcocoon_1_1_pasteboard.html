@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -74,6 +74,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a0ee5d9d176f76978dae20a3622c89587" id="r_a0ee5d9d176f76978dae20a3622c89587"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a0ee5d9d176f76978dae20a3622c89587">Pasteboard</a> (const std::string &amp;name)</td></tr>
+<tr class="memdesc:a0ee5d9d176f76978dae20a3622c89587"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSPasteboard</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:a73b3be40f3c73d1373d5c0769a0000df" id="r_a73b3be40f3c73d1373d5c0769a0000df"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a73b3be40f3c73d1373d5c0769a0000df">Pasteboard</a> ()</td></tr>
 <tr class="memdesc:a73b3be40f3c73d1373d5c0769a0000df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSPasteboard</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:ad27c2321a1a9cf97ce1b2684421672d0" id="r_ad27c2321a1a9cf97ce1b2684421672d0"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ad27c2321a1a9cf97ce1b2684421672d0">Pasteboard</a> (std::nullptr_t)</td></tr>
@@ -166,19 +168,15 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:af004b25fd3f55c0ccac95442e687faa5" id="r_af004b25fd3f55c0ccac95442e687faa5"><td class="memItemLeft">static <a class="el" href="#a73b3be40f3c73d1373d5c0769a0000df">Pasteboard</a>&#160;</td><td class="memItemRight"><a class="el" href="#af004b25fd3f55c0ccac95442e687faa5">pasteboard_by_filtering_data</a> (const std::vector&lt; std::uint8_t &gt; &amp;data, const std::string &amp;type)</td></tr>
+<tr class="memitem:af004b25fd3f55c0ccac95442e687faa5" id="r_af004b25fd3f55c0ccac95442e687faa5"><td class="memItemLeft">static <a class="el" href="#a0ee5d9d176f76978dae20a3622c89587">Pasteboard</a>&#160;</td><td class="memItemRight"><a class="el" href="#af004b25fd3f55c0ccac95442e687faa5">pasteboard_by_filtering_data</a> (const std::vector&lt; std::uint8_t &gt; &amp;data, const std::string &amp;type)</td></tr>
 <tr class="memdesc:af004b25fd3f55c0ccac95442e687faa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSPasteboard pasteboardByFilteringData:ofType:]</span>.  <br /></td></tr>
-<tr class="memitem:a2d131ab16ad7849157f3baf5ee389fd9" id="r_a2d131ab16ad7849157f3baf5ee389fd9"><td class="memItemLeft">static <a class="el" href="#a73b3be40f3c73d1373d5c0769a0000df">Pasteboard</a>&#160;</td><td class="memItemRight"><a class="el" href="#a2d131ab16ad7849157f3baf5ee389fd9">pasteboard_by_filtering_file</a> (const std::string &amp;filename)</td></tr>
+<tr class="memitem:a2d131ab16ad7849157f3baf5ee389fd9" id="r_a2d131ab16ad7849157f3baf5ee389fd9"><td class="memItemLeft">static <a class="el" href="#a0ee5d9d176f76978dae20a3622c89587">Pasteboard</a>&#160;</td><td class="memItemRight"><a class="el" href="#a2d131ab16ad7849157f3baf5ee389fd9">pasteboard_by_filtering_file</a> (const std::string &amp;filename)</td></tr>
 <tr class="memdesc:a2d131ab16ad7849157f3baf5ee389fd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSPasteboard pasteboardByFilteringFile:]</span>.  <br /></td></tr>
-<tr class="memitem:a29f5e35114eba555b346b2afae995d6a" id="r_a29f5e35114eba555b346b2afae995d6a"><td class="memItemLeft">static <a class="el" href="#a73b3be40f3c73d1373d5c0769a0000df">Pasteboard</a>&#160;</td><td class="memItemRight"><a class="el" href="#a29f5e35114eba555b346b2afae995d6a">pasteboard_by_filtering_types_in_pasteboard</a> (const <a class="el" href="#a73b3be40f3c73d1373d5c0769a0000df">Pasteboard</a> &amp;pboard)</td></tr>
+<tr class="memitem:a29f5e35114eba555b346b2afae995d6a" id="r_a29f5e35114eba555b346b2afae995d6a"><td class="memItemLeft">static <a class="el" href="#a0ee5d9d176f76978dae20a3622c89587">Pasteboard</a>&#160;</td><td class="memItemRight"><a class="el" href="#a29f5e35114eba555b346b2afae995d6a">pasteboard_by_filtering_types_in_pasteboard</a> (const <a class="el" href="#a0ee5d9d176f76978dae20a3622c89587">Pasteboard</a> &amp;pboard)</td></tr>
 <tr class="memdesc:a29f5e35114eba555b346b2afae995d6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSPasteboard pasteboardByFilteringTypesInPasteboard:]</span>.  <br /></td></tr>
-<tr class="memitem:a09f82769ea975b0ac9e10de91d670b70" id="r_a09f82769ea975b0ac9e10de91d670b70"><td class="memItemLeft">static <a class="el" href="#a73b3be40f3c73d1373d5c0769a0000df">Pasteboard</a>&#160;</td><td class="memItemRight"><a class="el" href="#a09f82769ea975b0ac9e10de91d670b70">pasteboard_with_name</a> (const std::string &amp;name)</td></tr>
-<tr class="memdesc:a09f82769ea975b0ac9e10de91d670b70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSPasteboard pasteboardWithName:]</span>.  <br /></td></tr>
-<tr class="memitem:a50282e29b2eb2fe353ea94a997683f76" id="r_a50282e29b2eb2fe353ea94a997683f76"><td class="memItemLeft">static <a class="el" href="#a73b3be40f3c73d1373d5c0769a0000df">Pasteboard</a>&#160;</td><td class="memItemRight"><a class="el" href="#a50282e29b2eb2fe353ea94a997683f76">pasteboard_with_unique_name</a> ()</td></tr>
-<tr class="memdesc:a50282e29b2eb2fe353ea94a997683f76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSPasteboard pasteboardWithUniqueName]</span>.  <br /></td></tr>
 <tr class="memitem:a6639ff1bcf5dac0b773f38302a329838" id="r_a6639ff1bcf5dac0b773f38302a329838"><td class="memItemLeft">static std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a6639ff1bcf5dac0b773f38302a329838">types_filterable_to</a> (const std::string &amp;type)</td></tr>
 <tr class="memdesc:a6639ff1bcf5dac0b773f38302a329838"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSPasteboard typesFilterableTo:]</span>.  <br /></td></tr>
-<tr class="memitem:a67756aefae6db48d37e7f5d557710fa1" id="r_a67756aefae6db48d37e7f5d557710fa1"><td class="memItemLeft">static <a class="el" href="#a73b3be40f3c73d1373d5c0769a0000df">Pasteboard</a>&#160;</td><td class="memItemRight"><a class="el" href="#a67756aefae6db48d37e7f5d557710fa1">general_pasteboard</a> ()</td></tr>
+<tr class="memitem:a67756aefae6db48d37e7f5d557710fa1" id="r_a67756aefae6db48d37e7f5d557710fa1"><td class="memItemLeft">static <a class="el" href="#a0ee5d9d176f76978dae20a3622c89587">Pasteboard</a>&#160;</td><td class="memItemRight"><a class="el" href="#a67756aefae6db48d37e7f5d557710fa1">general_pasteboard</a> ()</td></tr>
 <tr class="memdesc:a67756aefae6db48d37e7f5d557710fa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">generalPasteboard</span> property of <span class="tt">NSPasteboard</span>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
@@ -203,8 +201,35 @@ Static Public Member Functions</h2></td></tr>
 </div><!-- fragment --> </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/appkit/nspasteboard">https://developer.apple.com/documentation/appkit/nspasteboard</a> </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a0ee5d9d176f76978dae20a3622c89587" name="a0ee5d9d176f76978dae20a3622c89587"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ee5d9d176f76978dae20a3622c89587">&#9670;&#160;</a></span>Pasteboard() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::Pasteboard::Pasteboard </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSPasteboard</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
 <a id="a73b3be40f3c73d1373d5c0769a0000df" name="a73b3be40f3c73d1373d5c0769a0000df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a73b3be40f3c73d1373d5c0769a0000df">&#9670;&#160;</a></span>Pasteboard() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a73b3be40f3c73d1373d5c0769a0000df">&#9670;&#160;</a></span>Pasteboard() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -231,7 +256,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="ad27c2321a1a9cf97ce1b2684421672d0" name="ad27c2321a1a9cf97ce1b2684421672d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad27c2321a1a9cf97ce1b2684421672d0">&#9670;&#160;</a></span>Pasteboard() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad27c2321a1a9cf97ce1b2684421672d0">&#9670;&#160;</a></span>Pasteboard() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -250,7 +275,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="ae95b0c8383ea46b084e77ab087e37c9d" name="ae95b0c8383ea46b084e77ab087e37c9d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae95b0c8383ea46b084e77ab087e37c9d">&#9670;&#160;</a></span>Pasteboard() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae95b0c8383ea46b084e77ab087e37c9d">&#9670;&#160;</a></span>Pasteboard() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -608,7 +633,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a73b3be40f3c73d1373d5c0769a0000df">Pasteboard</a> cocoon::Pasteboard::general_pasteboard </td>
+          <td class="memname"><a class="el" href="#a0ee5d9d176f76978dae20a3622c89587">Pasteboard</a> cocoon::Pasteboard::general_pasteboard </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -682,7 +707,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a73b3be40f3c73d1373d5c0769a0000df">Pasteboard</a> cocoon::Pasteboard::pasteboard_by_filtering_data </td>
+          <td class="memname"><a class="el" href="#a0ee5d9d176f76978dae20a3622c89587">Pasteboard</a> cocoon::Pasteboard::pasteboard_by_filtering_data </td>
           <td>(</td>
           <td class="paramtype">const std::vector&lt; std::uint8_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
         </tr>
@@ -721,7 +746,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a73b3be40f3c73d1373d5c0769a0000df">Pasteboard</a> cocoon::Pasteboard::pasteboard_by_filtering_file </td>
+          <td class="memname"><a class="el" href="#a0ee5d9d176f76978dae20a3622c89587">Pasteboard</a> cocoon::Pasteboard::pasteboard_by_filtering_file </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>filename</em></span></td><td>)</td>
           <td></td>
@@ -755,9 +780,9 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a73b3be40f3c73d1373d5c0769a0000df">Pasteboard</a> cocoon::Pasteboard::pasteboard_by_filtering_types_in_pasteboard </td>
+          <td class="memname"><a class="el" href="#a0ee5d9d176f76978dae20a3622c89587">Pasteboard</a> cocoon::Pasteboard::pasteboard_by_filtering_types_in_pasteboard </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a73b3be40f3c73d1373d5c0769a0000df">Pasteboard</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>pboard</em></span></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="#a0ee5d9d176f76978dae20a3622c89587">Pasteboard</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>pboard</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -796,68 +821,6 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Returns the <span class="tt">pasteboardItems</span> property of <span class="tt">NSPasteboard</span>. </p>
 <p>Returns all pasteboard items. Returns nil if there is an error retrieving pasteboard items. </p><dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a09f82769ea975b0ac9e10de91d670b70" name="a09f82769ea975b0ac9e10de91d670b70"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a09f82769ea975b0ac9e10de91d670b70">&#9670;&#160;</a></span>pasteboard_with_name()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a73b3be40f3c73d1373d5c0769a0000df">Pasteboard</a> cocoon::Pasteboard::pasteboard_with_name </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSPasteboard pasteboardWithName:]</span>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">name</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a50282e29b2eb2fe353ea94a997683f76" name="a50282e29b2eb2fe353ea94a997683f76"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a50282e29b2eb2fe353ea94a997683f76">&#9670;&#160;</a></span>pasteboard_with_unique_name()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a73b3be40f3c73d1373d5c0769a0000df">Pasteboard</a> cocoon::Pasteboard::pasteboard_with_unique_name </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSPasteboard pasteboardWithUniqueName]</span>. </p>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
 
 </div>
 </div>

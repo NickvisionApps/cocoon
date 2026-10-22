@@ -54,170 +54,170 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit ComboBox(Adopt adopt);
         /**
-     * @brief Calls `-[NSComboBox addItemWithObjectValue:]`.
-     * @details These methods can only be used when usesDataSource is NO
-     * @param object Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSComboBox addItemWithObjectValue:]`.
+         * @details These methods can only be used when usesDataSource is NO
+         * @param object Argument converted to the Objective-C parameter of the same role.
+         */
         void add_item_with_object_value(const Object& object) const;
         /**
-     * @brief Calls `-[NSComboBox addItemsWithObjectValues:]`.
-     * @param objects Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSComboBox addItemsWithObjectValues:]`.
+         * @param objects Argument converted to the Objective-C parameter of the same role.
+         */
         void add_items_with_object_values(const std::vector<Object>& objects) const;
         /**
-     * @brief Calls `-[NSComboBox deselectItemAtIndex:]`.
-     * @param index Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSComboBox deselectItemAtIndex:]`.
+         * @param index Argument converted to the Objective-C parameter of the same role.
+         */
         void deselect_item_at_index(std::int64_t index) const;
         /**
-     * @brief Calls `-[NSComboBox indexOfItemWithObjectValue:]`.
-     * @param object Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSComboBox indexOfItemWithObjectValue:]`.
+         * @param object Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::int64_t index_of_item_with_object_value(const Object& object) const;
         /**
-     * @brief Calls `-[NSComboBox insertItemWithObjectValue:atIndex:]`.
-     * @param object Argument converted to the Objective-C parameter of the same role.
-     * @param index Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSComboBox insertItemWithObjectValue:atIndex:]`.
+         * @param object Argument converted to the Objective-C parameter of the same role.
+         * @param index Argument converted to the Objective-C parameter of the same role.
+         */
         void insert_item_with_object_value(const Object& object, std::int64_t index) const;
         /**
-     * @brief Calls `-[NSComboBox itemObjectValueAtIndex:]`.
-     * @param index Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSComboBox itemObjectValueAtIndex:]`.
+         * @param index Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Object item_object_value_at_index(std::int64_t index) const;
         /**
-     * @brief Calls `-[NSComboBox noteNumberOfItemsChanged]`.
-     */
+         * @brief Calls `-[NSComboBox noteNumberOfItemsChanged]`.
+         */
         void note_number_of_items_changed() const;
         /**
-     * @brief Calls `-[NSComboBox reloadData]`.
-     */
+         * @brief Calls `-[NSComboBox reloadData]`.
+         */
         void reload_data() const;
         /**
-     * @brief Calls `-[NSComboBox removeAllItems]`.
-     */
+         * @brief Calls `-[NSComboBox removeAllItems]`.
+         */
         void remove_all_items() const;
         /**
-     * @brief Calls `-[NSComboBox removeItemAtIndex:]`.
-     * @param index Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSComboBox removeItemAtIndex:]`.
+         * @param index Argument converted to the Objective-C parameter of the same role.
+         */
         void remove_item_at_index(std::int64_t index) const;
         /**
-     * @brief Calls `-[NSComboBox removeItemWithObjectValue:]`.
-     * @param object Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSComboBox removeItemWithObjectValue:]`.
+         * @param object Argument converted to the Objective-C parameter of the same role.
+         */
         void remove_item_with_object_value(const Object& object) const;
         /**
-     * @brief Calls `-[NSComboBox scrollItemAtIndexToTop:]`.
-     * @param index Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSComboBox scrollItemAtIndexToTop:]`.
+         * @param index Argument converted to the Objective-C parameter of the same role.
+         */
         void scroll_item_at_index_to_top(std::int64_t index) const;
         /**
-     * @brief Calls `-[NSComboBox scrollItemAtIndexToVisible:]`.
-     * @param index Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSComboBox scrollItemAtIndexToVisible:]`.
+         * @param index Argument converted to the Objective-C parameter of the same role.
+         */
         void scroll_item_at_index_to_visible(std::int64_t index) const;
         /**
-     * @brief Calls `-[NSComboBox selectItemAtIndex:]`.
-     * @param index Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSComboBox selectItemAtIndex:]`.
+         * @param index Argument converted to the Objective-C parameter of the same role.
+         */
         void select_item_at_index(std::int64_t index) const;
         /**
-     * @brief Calls `-[NSComboBox selectItemWithObjectValue:]`.
-     * @param object Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSComboBox selectItemWithObjectValue:]`.
+         * @param object Argument converted to the Objective-C parameter of the same role.
+         */
         void select_item_with_object_value(const Object& object) const;
         /**
-     * @brief Returns the `buttonBordered` property of `NSComboBox`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `buttonBordered` property of `NSComboBox`.
+         * @return The converted Objective-C result.
+         */
         bool is_button_bordered() const;
         /**
-     * @brief Sets the `buttonBordered` property of `NSComboBox`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `buttonBordered` property of `NSComboBox`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_button_bordered(bool value) const;
         /**
-     * @brief Returns the `completes` property of `NSComboBox`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `completes` property of `NSComboBox`.
+         * @return The converted Objective-C result.
+         */
         bool completes() const;
         /**
-     * @brief Sets the `completes` property of `NSComboBox`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `completes` property of `NSComboBox`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_completes(bool value) const;
         /**
-     * @brief Returns the `hasVerticalScroller` property of `NSComboBox`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `hasVerticalScroller` property of `NSComboBox`.
+         * @return The converted Objective-C result.
+         */
         bool has_vertical_scroller() const;
         /**
-     * @brief Sets the `hasVerticalScroller` property of `NSComboBox`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `hasVerticalScroller` property of `NSComboBox`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_has_vertical_scroller(bool value) const;
         /**
-     * @brief Returns the `indexOfSelectedItem` property of `NSComboBox`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `indexOfSelectedItem` property of `NSComboBox`.
+         * @return The converted Objective-C result.
+         */
         std::int64_t index_of_selected_item() const;
         /**
-     * @brief Returns the `intercellSpacing` property of `NSComboBox`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `intercellSpacing` property of `NSComboBox`.
+         * @return The converted Objective-C result.
+         */
         Size intercell_spacing() const;
         /**
-     * @brief Sets the `intercellSpacing` property of `NSComboBox`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `intercellSpacing` property of `NSComboBox`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_intercell_spacing(const Size& value) const;
         /**
-     * @brief Returns the `itemHeight` property of `NSComboBox`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `itemHeight` property of `NSComboBox`.
+         * @return The converted Objective-C result.
+         */
         double item_height() const;
         /**
-     * @brief Sets the `itemHeight` property of `NSComboBox`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `itemHeight` property of `NSComboBox`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_item_height(double value) const;
         /**
-     * @brief Returns the `numberOfItems` property of `NSComboBox`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `numberOfItems` property of `NSComboBox`.
+         * @return The converted Objective-C result.
+         */
         std::int64_t number_of_items() const;
         /**
-     * @brief Returns the `numberOfVisibleItems` property of `NSComboBox`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `numberOfVisibleItems` property of `NSComboBox`.
+         * @return The converted Objective-C result.
+         */
         std::int64_t number_of_visible_items() const;
         /**
-     * @brief Sets the `numberOfVisibleItems` property of `NSComboBox`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `numberOfVisibleItems` property of `NSComboBox`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_number_of_visible_items(std::int64_t value) const;
         /**
-     * @brief Returns the `objectValueOfSelectedItem` property of `NSComboBox`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `objectValueOfSelectedItem` property of `NSComboBox`.
+         * @return The converted Objective-C result.
+         */
         Object object_value_of_selected_item() const;
         /**
-     * @brief Returns the `objectValues` property of `NSComboBox`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `objectValues` property of `NSComboBox`.
+         * @return The converted Objective-C result.
+         */
         std::vector<Object> object_values() const;
         /**
-     * @brief Returns the `usesDataSource` property of `NSComboBox`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `usesDataSource` property of `NSComboBox`.
+         * @return The converted Objective-C result.
+         */
         bool uses_data_source() const;
         /**
-     * @brief Sets the `usesDataSource` property of `NSComboBox`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `usesDataSource` property of `NSComboBox`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_uses_data_source(bool value) const;
         /// @brief Convenience helper `add_item` provided by cocoon.
         void add_item(const std::string& item) const;

@@ -3,6 +3,11 @@
 
 namespace cocoon
 {
+    TrackingSeparatorToolbarItem::TrackingSeparatorToolbarItem(const std::string& identifier, const SplitView& split_view, std::int64_t divider_index) : TrackingSeparatorToolbarItem(Adopt{cocoon::internal::retain([::NSTrackingSeparatorToolbarItem trackingSeparatorToolbarItemWithIdentifier:cocoon::internal::to(identifier) splitView:cocoon::internal::native<::NSSplitView>(split_view) dividerIndex:static_cast<::NSInteger>(divider_index)])})
+    {
+        ToolbarItem::bind_action_(handle());
+    }
+
     TrackingSeparatorToolbarItem::TrackingSeparatorToolbarItem() : TrackingSeparatorToolbarItem(Adopt{cocoon::internal::retain([[::NSTrackingSeparatorToolbarItem alloc] init])})
     {
         ToolbarItem::bind_action_(handle());
@@ -14,11 +19,6 @@ namespace cocoon
 
     TrackingSeparatorToolbarItem::TrackingSeparatorToolbarItem(Adopt adopt) : ToolbarItem(adopt)
     {
-    }
-
-    TrackingSeparatorToolbarItem TrackingSeparatorToolbarItem::tracking_separator_toolbar_item_with_identifier(const std::string& identifier, const SplitView& split_view, std::int64_t divider_index)
-    {
-        return cocoon::internal::wrap<TrackingSeparatorToolbarItem>([::NSTrackingSeparatorToolbarItem trackingSeparatorToolbarItemWithIdentifier:cocoon::internal::to(identifier) splitView:cocoon::internal::native<::NSSplitView>(split_view) dividerIndex:static_cast<::NSInteger>(divider_index)]);
     }
 
     std::int64_t TrackingSeparatorToolbarItem::divider_index() const

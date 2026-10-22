@@ -43,41 +43,41 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit URLSessionStreamTask(Adopt adopt);
         /**
-     * @brief Calls `-[NSURLSessionStreamTask captureStreams]`.
-     * @details Completes any already enqueued reads and writes, then invokes the 'URLSession:streamTask:didBecomeInputStream:outputStream:' delegate message. When that message is received, the task object is considered completed and will not receive any more delegate messages.
-     */
+         * @brief Calls `-[NSURLSessionStreamTask captureStreams]`.
+         * @details Completes any already enqueued reads and writes, then invokes the 'URLSession:streamTask:didBecomeInputStream:outputStream:' delegate message. When that message is received, the task object is considered completed and will not receive any more delegate messages.
+         */
         void capture_streams() const;
         /**
-     * @brief Calls `-[NSURLSessionStreamTask closeRead]`.
-     * @details Enqueues a request to close the read side of the underlying socket. All outstanding IO will complete before the read side is closed. You may continue writing to the server.
-     */
+         * @brief Calls `-[NSURLSessionStreamTask closeRead]`.
+         * @details Enqueues a request to close the read side of the underlying socket. All outstanding IO will complete before the read side is closed. You may continue writing to the server.
+         */
         void close_read() const;
         /**
-     * @brief Calls `-[NSURLSessionStreamTask closeWrite]`.
-     * @details Enqueues a request to close the write end of the underlying socket. All outstanding IO will complete before the write side of the socket is closed. The server, however, may continue to write bytes back to the client, so best practice is to continue reading from the server until you receive EOF.
-     */
+         * @brief Calls `-[NSURLSessionStreamTask closeWrite]`.
+         * @details Enqueues a request to close the write end of the underlying socket. All outstanding IO will complete before the write side of the socket is closed. The server, however, may continue to write bytes back to the client, so best practice is to continue reading from the server until you receive EOF.
+         */
         void close_write() const;
         /**
-     * @brief Calls `-[NSURLSessionStreamTask readDataOfMinLength:maxLength:timeout:completionHandler:]`.
-     * @details Reads minimum 'minBytes', or at most 'maxBytes' bytes and invokes the completion handler on the session's delegate queue with the data or an error. If an error occurs, any outstanding reads will also fail, and new read requests will error out immediately. - Parameter minBytes: The minimum number of bytes to read. - Parameter maxBytes: The maximum number of bytes to read. - Parameter timeout: The timeout interval for the read operation. - Parameter completionHandler: The completion handler to call when the read operation completes.
-     * @param min_bytes Argument converted to the Objective-C parameter of the same role.
-     * @param max_bytes Argument converted to the Objective-C parameter of the same role.
-     * @param timeout Argument converted to the Objective-C parameter of the same role.
-     * @param completion_handler Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSURLSessionStreamTask readDataOfMinLength:maxLength:timeout:completionHandler:]`.
+         * @details Reads minimum 'minBytes', or at most 'maxBytes' bytes and invokes the completion handler on the session's delegate queue with the data or an error. If an error occurs, any outstanding reads will also fail, and new read requests will error out immediately. - Parameter minBytes: The minimum number of bytes to read. - Parameter maxBytes: The maximum number of bytes to read. - Parameter timeout: The timeout interval for the read operation. - Parameter completionHandler: The completion handler to call when the read operation completes.
+         * @param min_bytes Argument converted to the Objective-C parameter of the same role.
+         * @param max_bytes Argument converted to the Objective-C parameter of the same role.
+         * @param timeout Argument converted to the Objective-C parameter of the same role.
+         * @param completion_handler Argument converted to the Objective-C parameter of the same role.
+         */
         void read_data_of_min_length(std::uint64_t min_bytes, std::uint64_t max_bytes, double timeout, std::function<void(std::vector<std::uint8_t>, bool, Error)> completion_handler) const;
         /**
-     * @brief Calls `-[NSURLSessionStreamTask startSecureConnection]`.
-     * @details Begins encrypted handshake. The handshake begins after all pending IO has completed. TLS authentication callbacks are sent to the session's 'URLSession:task:didReceiveChallenge:completionHandler:' delegate method.
-     */
+         * @brief Calls `-[NSURLSessionStreamTask startSecureConnection]`.
+         * @details Begins encrypted handshake. The handshake begins after all pending IO has completed. TLS authentication callbacks are sent to the session's 'URLSession:task:didReceiveChallenge:completionHandler:' delegate method.
+         */
         void start_secure_connection() const;
         /**
-     * @brief Calls `-[NSURLSessionStreamTask writeData:timeout:completionHandler:]`.
-     * @details Writes the data completely to the underlying socket. If all the bytes have not been written by the timeout, a timeout error will occur. Note that invocation of the completion handler does not guarantee that the remote side has received all the bytes, only that they have been written to the kernel. - Parameter data: The data to write to the stream. - Parameter timeout: The timeout interval for the write operation. - Parameter completionHandler: The completion handler to call when the write operation completes.
-     * @param data Argument converted to the Objective-C parameter of the same role.
-     * @param timeout Argument converted to the Objective-C parameter of the same role.
-     * @param completion_handler Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSURLSessionStreamTask writeData:timeout:completionHandler:]`.
+         * @details Writes the data completely to the underlying socket. If all the bytes have not been written by the timeout, a timeout error will occur. Note that invocation of the completion handler does not guarantee that the remote side has received all the bytes, only that they have been written to the kernel. - Parameter data: The data to write to the stream. - Parameter timeout: The timeout interval for the write operation. - Parameter completionHandler: The completion handler to call when the write operation completes.
+         * @param data Argument converted to the Objective-C parameter of the same role.
+         * @param timeout Argument converted to the Objective-C parameter of the same role.
+         * @param completion_handler Argument converted to the Objective-C parameter of the same role.
+         */
         void write_data(const std::vector<std::uint8_t>& data, double timeout, std::function<void(Error)> completion_handler) const;
     };
 }

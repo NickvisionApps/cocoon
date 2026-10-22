@@ -49,56 +49,56 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit TextAttachmentViewProvider(Adopt adopt);
         /**
-     * @brief Calls `-[NSTextAttachmentViewProvider attachmentBoundsForAttributes:location:textContainer:proposedLineFragment:position:]`.
-     * @details Returns the layout bounds for an attachment at a specific text location that contains the text attributes you specify. - Parameters: - attributes: A dictionary that contains a list of key and attribute pairs that describe the customization of the string. - location: An ''NSTextLocation'' that indicates the location of the attachment inside the document. - textContainer: The ''NSTextContainer'' that defines the area to fill in with text. - proposedLineFragment: A \<doc://com.apple.documentation/documentation/corefoundation/cgrect> that describes the boundaries of the line fragment. - position: A \<doc://com.apple.documentation/documentation/corefoundation/cgpoint> inside 'proposedLineFragment'. - Returns: A \<doc://com.apple.documentation/documentation/corefoundation/cgrect> that describes the bounds of the attachment.
-     * @param attributes Argument converted to the Objective-C parameter of the same role.
-     * @param location Argument converted to the Objective-C parameter of the same role.
-     * @param text_container Argument converted to the Objective-C parameter of the same role.
-     * @param proposed_line_fragment Argument converted to the Objective-C parameter of the same role.
-     * @param position Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSTextAttachmentViewProvider attachmentBoundsForAttributes:location:textContainer:proposedLineFragment:position:]`.
+         * @details Returns the layout bounds for an attachment at a specific text location that contains the text attributes you specify. - Parameters: - attributes: A dictionary that contains a list of key and attribute pairs that describe the customization of the string. - location: An ''NSTextLocation'' that indicates the location of the attachment inside the document. - textContainer: The ''NSTextContainer'' that defines the area to fill in with text. - proposedLineFragment: A \<doc://com.apple.documentation/documentation/corefoundation/cgrect> that describes the boundaries of the line fragment. - position: A \<doc://com.apple.documentation/documentation/corefoundation/cgpoint> inside 'proposedLineFragment'. - Returns: A \<doc://com.apple.documentation/documentation/corefoundation/cgrect> that describes the bounds of the attachment.
+         * @param attributes Argument converted to the Objective-C parameter of the same role.
+         * @param location Argument converted to the Objective-C parameter of the same role.
+         * @param text_container Argument converted to the Objective-C parameter of the same role.
+         * @param proposed_line_fragment Argument converted to the Objective-C parameter of the same role.
+         * @param position Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Rect attachment_bounds_for_attributes(const std::map<std::string, Object>& attributes, const Object& location, const TextContainer& text_container, const Rect& proposed_line_fragment, const Point& position) const;
         /**
-     * @brief Calls `-[NSTextAttachmentViewProvider loadView]`.
-     * @details Creates the custom view hierarchy for this attachment. Use this method to create a custom view hierarchy. Don't call this method directly; the framework calls it at the appropriate time.
-     */
+         * @brief Calls `-[NSTextAttachmentViewProvider loadView]`.
+         * @details Creates the custom view hierarchy for this attachment. Use this method to create a custom view hierarchy. Don't call this method directly; the framework calls it at the appropriate time.
+         */
         void load_view() const;
         /**
-     * @brief Returns the `textAttachment` property of `NSTextAttachmentViewProvider`.
-     * @details The text attachment for this view. Specify the value of this property at initialization time using the ''NSTextAttachmentViewProvider/init(textAttachment:parentView:textLayoutManager:location:)'' initializer.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `textAttachment` property of `NSTextAttachmentViewProvider`.
+         * @details The text attachment for this view. Specify the value of this property at initialization time using the ''NSTextAttachmentViewProvider/init(textAttachment:parentView:textLayoutManager:location:)'' initializer.
+         * @return The converted Objective-C result.
+         */
         TextAttachment text_attachment() const;
         /**
-     * @brief Returns the `textLayoutManager` property of `NSTextAttachmentViewProvider`.
-     * @details The text layout manager for this view. Specify the value of this property at initialization time using the ''NSTextAttachmentViewProvider/init(textAttachment:parentView:textLayoutManager:location:)'' initializer.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `textLayoutManager` property of `NSTextAttachmentViewProvider`.
+         * @details The text layout manager for this view. Specify the value of this property at initialization time using the ''NSTextAttachmentViewProvider/init(textAttachment:parentView:textLayoutManager:location:)'' initializer.
+         * @return The converted Objective-C result.
+         */
         TextLayoutManager text_layout_manager() const;
         /**
-     * @brief Returns the `tracksTextAttachmentViewBounds` property of `NSTextAttachmentViewProvider`.
-     * @details A Boolean value that determines the text attachment's bounds policy. If 'true', the framework calls the 'textAttachment' property's ''NSTextAttachmentViewProvider/attachmentBounds(for:location:textContainer:proposedLineFragment:position:)'' method and examines the text attachment view provider to determine the bounds instead of using the 'bounds' property of this instance. Defaults to 'false'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `tracksTextAttachmentViewBounds` property of `NSTextAttachmentViewProvider`.
+         * @details A Boolean value that determines the text attachment's bounds policy. If 'true', the framework calls the 'textAttachment' property's ''NSTextAttachmentViewProvider/attachmentBounds(for:location:textContainer:proposedLineFragment:position:)'' method and examines the text attachment view provider to determine the bounds instead of using the 'bounds' property of this instance. Defaults to 'false'.
+         * @return The converted Objective-C result.
+         */
         bool tracks_text_attachment_view_bounds() const;
         /**
-     * @brief Sets the `tracksTextAttachmentViewBounds` property of `NSTextAttachmentViewProvider`.
-     * @details A Boolean value that determines the text attachment's bounds policy. If 'true', the framework calls the 'textAttachment' property's ''NSTextAttachmentViewProvider/attachmentBounds(for:location:textContainer:proposedLineFragment:position:)'' method and examines the text attachment view provider to determine the bounds instead of using the 'bounds' property of this instance. Defaults to 'false'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `tracksTextAttachmentViewBounds` property of `NSTextAttachmentViewProvider`.
+         * @details A Boolean value that determines the text attachment's bounds policy. If 'true', the framework calls the 'textAttachment' property's ''NSTextAttachmentViewProvider/attachmentBounds(for:location:textContainer:proposedLineFragment:position:)'' method and examines the text attachment view provider to determine the bounds instead of using the 'bounds' property of this instance. Defaults to 'false'.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_tracks_text_attachment_view_bounds(bool value) const;
         /**
-     * @brief Returns the `view` property of `NSTextAttachmentViewProvider`.
-     * @details The text attachment's view. The getter first invokes ''loadView'' if the view hasn't been set yet. > Important: Subclasses must call the superclass implementation if they override the setter or getter.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `view` property of `NSTextAttachmentViewProvider`.
+         * @details The text attachment's view. The getter first invokes ''loadView'' if the view hasn't been set yet. > Important: Subclasses must call the superclass implementation if they override the setter or getter.
+         * @return The converted Objective-C result.
+         */
         View view() const;
         /**
-     * @brief Sets the `view` property of `NSTextAttachmentViewProvider`.
-     * @details The text attachment's view. The getter first invokes ''loadView'' if the view hasn't been set yet. > Important: Subclasses must call the superclass implementation if they override the setter or getter.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `view` property of `NSTextAttachmentViewProvider`.
+         * @details The text attachment's view. The getter first invokes ''loadView'' if the view hasn't been set yet. > Important: Subclasses must call the superclass implementation if they override the setter or getter.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_view(const View& value) const;
     };
 }

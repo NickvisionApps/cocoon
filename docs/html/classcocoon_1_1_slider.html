@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -61,7 +61,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-static-methods">Static Protected Member Functions</a> &#124;
 <a href="classcocoon_1_1_slider-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">cocoon::Slider Class Reference</div></div>
@@ -77,6 +76,10 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a12ac0c01a4c203ee03e0c195a677f86e" id="r_a12ac0c01a4c203ee03e0c195a677f86e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a12ac0c01a4c203ee03e0c195a677f86e">Slider</a> (double min_value=0, double max_value=1, double value=0)</td></tr>
 <tr class="memdesc:a12ac0c01a4c203ee03e0c195a677f86e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSSlider</span> instance and returns a handle to it.  <br /></td></tr>
+<tr class="memitem:ad0999b4c4bf8a316d26355b967a8e58b" id="r_ad0999b4c4bf8a316d26355b967a8e58b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ad0999b4c4bf8a316d26355b967a8e58b">Slider</a> (const <a class="el" href="classcocoon_1_1_object.html">Object</a> &amp;target, const std::string &amp;action)</td></tr>
+<tr class="memdesc:ad0999b4c4bf8a316d26355b967a8e58b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSSlider</span> instance and returns a handle to it.  <br /></td></tr>
+<tr class="memitem:a4b6b7c0863e92575b6633d124b32ed11" id="r_a4b6b7c0863e92575b6633d124b32ed11"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a4b6b7c0863e92575b6633d124b32ed11">Slider</a> (double value, double min_value, double max_value, const <a class="el" href="classcocoon_1_1_object.html">Object</a> &amp;target, const std::string &amp;action)</td></tr>
+<tr class="memdesc:a4b6b7c0863e92575b6633d124b32ed11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSSlider</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:a4592b4782e35de5e0679f67d6841db7b" id="r_a4592b4782e35de5e0679f67d6841db7b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a4592b4782e35de5e0679f67d6841db7b">Slider</a> (std::nullptr_t)</td></tr>
 <tr class="memdesc:a4592b4782e35de5e0679f67d6841db7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a null handle that refers to no native object.  <br /></td></tr>
 <tr class="memitem:a817f7b0eeb3848c23929ff3716f3f01b" id="r_a817f7b0eeb3848c23929ff3716f3f01b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a817f7b0eeb3848c23929ff3716f3f01b">Slider</a> (<a class="el" href="structcocoon_1_1_adopt.html">Adopt</a> adopt)</td></tr>
@@ -1118,12 +1121,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object template"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_object.html#a53f4ad0e6a86173a96668457725eb369">as</a> () const</td></tr>
 <tr class="memdesc:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reinterprets the native object as handle type <span class="tt">T</span> (no runtime type check).  <br /></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ab0e9774d008ff14f500ac8b571c8763e" id="r_ab0e9774d008ff14f500ac8b571c8763e"><td class="memItemLeft">static <a class="el" href="#a12ac0c01a4c203ee03e0c195a677f86e">Slider</a>&#160;</td><td class="memItemRight"><a class="el" href="#ab0e9774d008ff14f500ac8b571c8763e">slider_with_target</a> (const <a class="el" href="classcocoon_1_1_object.html">Object</a> &amp;target, const std::string &amp;action)</td></tr>
-<tr class="memdesc:ab0e9774d008ff14f500ac8b571c8763e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSSlider sliderWithTarget:action:]</span>.  <br /></td></tr>
-<tr class="memitem:a8cb0f871f720bc58de895f650cf8c4a3" id="r_a8cb0f871f720bc58de895f650cf8c4a3"><td class="memItemLeft">static <a class="el" href="#a12ac0c01a4c203ee03e0c195a677f86e">Slider</a>&#160;</td><td class="memItemRight"><a class="el" href="#a8cb0f871f720bc58de895f650cf8c4a3">slider_with_value</a> (double value, double min_value, double max_value, const <a class="el" href="classcocoon_1_1_object.html">Object</a> &amp;target, const std::string &amp;action)</td></tr>
-<tr class="memdesc:a8cb0f871f720bc58de895f650cf8c4a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSSlider sliderWithValue:minValue:maxValue:target:action:]</span>.  <br /></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-pro-static-methods" class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:a7ad32dabac922e91ca4cb4d9aabf5faf" id="r_a7ad32dabac922e91ca4cb4d9aabf5faf"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a7ad32dabac922e91ca4cb4d9aabf5faf">bind_action_</a> (void *native)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_static_methods_classcocoon_1_1_control"><td colspan="2">Static Public Member Functions inherited from <a class="el" href="classcocoon_1_1_control.html">cocoon::Control</a></td></tr>
 <tr class="memitem:aa9bd1d1711669a968c07b8b277de5554 pub_static_methods_classcocoon_1_1_control" id="r_aa9bd1d1711669a968c07b8b277de5554"><td class="memItemLeft">static std::string&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_control.html#aa9bd1d1711669a968c07b8b277de5554">cell_class</a> ()</td></tr>
 <tr class="memdesc:aa9bd1d1711669a968c07b8b277de5554 pub_static_methods_classcocoon_1_1_control"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">cellClass</span> property of <span class="tt">NSControl</span>.  <br /></td></tr>
@@ -1145,10 +1148,6 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:acf3f611cc422eadcf4268ddb971c7db4 pub_static_methods_classcocoon_1_1_responder"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSResponder allowedClassesForRestorableStateKeyPath:]</span>.  <br /></td></tr>
 <tr class="memitem:a439082ad610d2fefdbe46079e94d78ca pub_static_methods_classcocoon_1_1_responder" id="r_a439082ad610d2fefdbe46079e94d78ca"><td class="memItemLeft">static std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_responder.html#a439082ad610d2fefdbe46079e94d78ca">restorable_state_key_paths</a> ()</td></tr>
 <tr class="memdesc:a439082ad610d2fefdbe46079e94d78ca pub_static_methods_classcocoon_1_1_responder"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">restorableStateKeyPaths</span> property of <span class="tt">NSResponder</span>.  <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pro-static-methods" class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
-Static Protected Member Functions</h2></td></tr>
-<tr class="memitem:a7ad32dabac922e91ca4cb4d9aabf5faf" id="r_a7ad32dabac922e91ca4cb4d9aabf5faf"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a7ad32dabac922e91ca4cb4d9aabf5faf">bind_action_</a> (void *native)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A slider control (NSSlider). </p>
@@ -1179,12 +1178,12 @@ Static Protected Member Functions</h2></td></tr>
 <div class="ttc" id="aclasscocoon_1_1_slider_html_aac95cc582d0577c75301cb665bc6f21c"><div class="ttname"><a href="#aac95cc582d0577c75301cb665bc6f21c">cocoon::Slider::set_alt_increment_value</a></div><div class="ttdeci">void set_alt_increment_value(double value) const</div><div class="ttdoc">Sets the altIncrementValue property of NSSlider.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_slider_html_ad12b8f806d9812258a27a4a61b1938b8"><div class="ttname"><a href="#ad12b8f806d9812258a27a4a61b1938b8">cocoon::Slider::max_value</a></div><div class="ttdeci">double max_value() const</div><div class="ttdoc">Returns the maxValue property of NSSlider.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_slider_html_ad4feed6247d20a12866d1b53171f043a"><div class="ttname"><a href="#ad4feed6247d20a12866d1b53171f043a">cocoon::Slider::index_of_tick_mark_at_point</a></div><div class="ttdeci">std::int64_t index_of_tick_mark_at_point(const Point &amp;point) const</div><div class="ttdoc">Calls -[NSSlider indexOfTickMarkAtPoint:].</div></div>
-<div class="ttc" id="aclasscocoon_1_1_slider_html_aee7248234d678705c6e5cf8c9707b40a"><div class="ttname"><a href="#aee7248234d678705c6e5cf8c9707b40a">cocoon::Slider::value_changed</a></div><div class="ttdeci">Signal&lt; Slider, void(double)&gt; value_changed() const</div><div class="ttdoc">Signal value_changed: connect a callback with value_changed().connect(...).</div><div class="ttdef"><b>Definition</b> slider.h:220</div></div>
+<div class="ttc" id="aclasscocoon_1_1_slider_html_aee7248234d678705c6e5cf8c9707b40a"><div class="ttname"><a href="#aee7248234d678705c6e5cf8c9707b40a">cocoon::Slider::value_changed</a></div><div class="ttdeci">Signal&lt; Slider, void(double)&gt; value_changed() const</div><div class="ttdoc">Signal value_changed: connect a callback with value_changed().connect(...).</div><div class="ttdef"><b>Definition</b> slider.h:205</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/appkit/nsslider">https://developer.apple.com/documentation/appkit/nsslider</a> </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a12ac0c01a4c203ee03e0c195a677f86e" name="a12ac0c01a4c203ee03e0c195a677f86e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a12ac0c01a4c203ee03e0c195a677f86e">&#9670;&#160;</a></span>Slider() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a12ac0c01a4c203ee03e0c195a677f86e">&#9670;&#160;</a></span>Slider() <span class="overload">[1/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1219,8 +1218,85 @@ Static Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ad0999b4c4bf8a316d26355b967a8e58b" name="ad0999b4c4bf8a316d26355b967a8e58b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0999b4c4bf8a316d26355b967a8e58b">&#9670;&#160;</a></span>Slider() <span class="overload">[2/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::Slider::Slider </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcocoon_1_1_object.html">Object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>target</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>action</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSSlider</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
+<a id="a4b6b7c0863e92575b6633d124b32ed11" name="a4b6b7c0863e92575b6633d124b32ed11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b6b7c0863e92575b6633d124b32ed11">&#9670;&#160;</a></span>Slider() <span class="overload">[3/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::Slider::Slider </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>min_value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>max_value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcocoon_1_1_object.html">Object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>target</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>action</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSSlider</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
 <a id="a4592b4782e35de5e0679f67d6841db7b" name="a4592b4782e35de5e0679f67d6841db7b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4592b4782e35de5e0679f67d6841db7b">&#9670;&#160;</a></span>Slider() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4592b4782e35de5e0679f67d6841db7b">&#9670;&#160;</a></span>Slider() <span class="overload">[4/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1239,7 +1315,7 @@ Static Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a817f7b0eeb3848c23929ff3716f3f01b" name="a817f7b0eeb3848c23929ff3716f3f01b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a817f7b0eeb3848c23929ff3716f3f01b">&#9670;&#160;</a></span>Slider() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a817f7b0eeb3848c23929ff3716f3f01b">&#9670;&#160;</a></span>Slider() <span class="overload">[5/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1840,102 +1916,6 @@ Static Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the <span class="tt">sliderType</span> property of <span class="tt">NSSlider</span>. </p>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="ab0e9774d008ff14f500ac8b571c8763e" name="ab0e9774d008ff14f500ac8b571c8763e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab0e9774d008ff14f500ac8b571c8763e">&#9670;&#160;</a></span>slider_with_target()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a12ac0c01a4c203ee03e0c195a677f86e">Slider</a> cocoon::Slider::slider_with_target </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_object.html">Object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>target</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>action</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSSlider sliderWithTarget:action:]</span>. </p>
-<p>Creates a continuous horizontal slider over the range 0.0 to 1.0. The default value is 0.0. @param target The target object that receives action messages from the control. @param action The action message sent by the control. @return An initialized slider control. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">target</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">action</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a8cb0f871f720bc58de895f650cf8c4a3" name="a8cb0f871f720bc58de895f650cf8c4a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8cb0f871f720bc58de895f650cf8c4a3">&#9670;&#160;</a></span>slider_with_value()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a12ac0c01a4c203ee03e0c195a677f86e">Slider</a> cocoon::Slider::slider_with_value </td>
-          <td>(</td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>min_value</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>max_value</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_object.html">Object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>target</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>action</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSSlider sliderWithValue:minValue:maxValue:target:action:]</span>. </p>
-<p>Creates a continuous horizontal slider that represents values over a specified range. @param value The initial value displayed by the control. @param minValue The minimum value represented by the control. @param maxValue The maximum value represented by the control. @param target The target object that receives action messages from the control. @param action The action message sent by the control. @return An initialized slider control. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">min_value</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">max_value</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">target</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">action</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
 
 </div>

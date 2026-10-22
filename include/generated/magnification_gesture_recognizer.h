@@ -40,14 +40,14 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit MagnificationGestureRecognizer(Adopt adopt);
         /**
-     * @brief Returns the `magnification` property of `NSMagnificationGestureRecognizer`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `magnification` property of `NSMagnificationGestureRecognizer`.
+         * @return The converted Objective-C result.
+         */
         double magnification() const;
         /**
-     * @brief Sets the `magnification` property of `NSMagnificationGestureRecognizer`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `magnification` property of `NSMagnificationGestureRecognizer`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_magnification(double value) const;
     };
 }

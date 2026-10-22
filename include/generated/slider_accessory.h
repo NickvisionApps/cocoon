@@ -45,34 +45,34 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit SliderAccessory(Adopt adopt);
         /**
-     * @brief Calls `+[NSSliderAccessory accessoryWithImage:]`.
-     * @param image Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSSliderAccessory accessoryWithImage:]`.
+         * @param image Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static SliderAccessory accessory_with_image(const Image& image);
         /**
-     * @brief Returns the `behavior` property of `NSSliderAccessory`.
-     * @details The effect on interaction with the accessory. The default value is 'automaticBehavior'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `behavior` property of `NSSliderAccessory`.
+         * @details The effect on interaction with the accessory. The default value is 'automaticBehavior'.
+         * @return The converted Objective-C result.
+         */
         SliderAccessoryBehavior behavior() const;
         /**
-     * @brief Sets the `behavior` property of `NSSliderAccessory`.
-     * @details The effect on interaction with the accessory. The default value is 'automaticBehavior'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `behavior` property of `NSSliderAccessory`.
+         * @details The effect on interaction with the accessory. The default value is 'automaticBehavior'.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_behavior(const SliderAccessoryBehavior& value) const;
         /**
-     * @brief Returns the `enabled` property of `NSSliderAccessory`.
-     * @details Determines whether or not the accessory is interactive and draws with an enabled appearance. Defaults to 'true'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `enabled` property of `NSSliderAccessory`.
+         * @details Determines whether or not the accessory is interactive and draws with an enabled appearance. Defaults to 'true'.
+         * @return The converted Objective-C result.
+         */
         bool is_enabled() const;
         /**
-     * @brief Sets the `enabled` property of `NSSliderAccessory`.
-     * @details Determines whether or not the accessory is interactive and draws with an enabled appearance. Defaults to 'true'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `enabled` property of `NSSliderAccessory`.
+         * @details Determines whether or not the accessory is interactive and draws with an enabled appearance. Defaults to 'true'.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_enabled(bool value) const;
     };
 }

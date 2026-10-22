@@ -32,10 +32,10 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit URLSessionUploadTask(Adopt adopt);
         /**
-     * @brief Calls `-[NSURLSessionUploadTask cancelByProducingResumeData:]`.
-     * @details Cancels an upload and calls the completion handler with resume data for later use. resumeData will be nil if the server does not support the latest resumable uploads Internet-Draft from the HTTP Working Group, found at https://datatracker.ietf.org/doc/draft-ietf-httpbis-resumable-upload/ - Parameter completionHandler: The completion handler to call when the upload has been successfully canceled.
-     * @param completion_handler Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSURLSessionUploadTask cancelByProducingResumeData:]`.
+         * @details Cancels an upload and calls the completion handler with resume data for later use. resumeData will be nil if the server does not support the latest resumable uploads Internet-Draft from the HTTP Working Group, found at https://datatracker.ietf.org/doc/draft-ietf-httpbis-resumable-upload/ - Parameter completionHandler: The completion handler to call when the upload has been successfully canceled.
+         * @param completion_handler Argument converted to the Objective-C parameter of the same role.
+         */
         void cancel_by_producing_resume_data(std::function<void(std::vector<std::uint8_t>)> completion_handler) const;
     };
 }

@@ -3,7 +3,7 @@
 
 namespace cocoon
 {
-    Null::Null() : Null(Adopt{cocoon::internal::retain([[::NSNull alloc] init])})
+    Null::Null() : Null(Adopt{cocoon::internal::retain([::NSNull null])})
     {
     }
 
@@ -13,10 +13,5 @@ namespace cocoon
 
     Null::Null(Adopt adopt) : Object(adopt)
     {
-    }
-
-    Null Null::null()
-    {
-        return cocoon::internal::wrap<Null>([::NSNull null]);
     }
 }

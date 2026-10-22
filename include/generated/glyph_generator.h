@@ -30,17 +30,17 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit GlyphGenerator(Adopt adopt);
         /**
-     * @brief Calls `-[NSGlyphGenerator generateGlyphsForGlyphStorage:desiredNumberOfCharacters:glyphIndex:characterIndex:]`.
-     * @param glyph_storage Argument converted to the Objective-C parameter of the same role.
-     * @param n_chars Argument converted to the Objective-C parameter of the same role.
-     * @param glyph_index Argument converted to the Objective-C parameter of the same role.
-     * @param char_index Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSGlyphGenerator generateGlyphsForGlyphStorage:desiredNumberOfCharacters:glyphIndex:characterIndex:]`.
+         * @param glyph_storage Argument converted to the Objective-C parameter of the same role.
+         * @param n_chars Argument converted to the Objective-C parameter of the same role.
+         * @param glyph_index Argument converted to the Objective-C parameter of the same role.
+         * @param char_index Argument converted to the Objective-C parameter of the same role.
+         */
         void generate_glyphs_for_glyph_storage(const Object& glyph_storage, std::uint64_t n_chars, std::uint64_t* glyph_index, std::uint64_t* char_index) const;
         /**
-     * @brief Returns the `sharedGlyphGenerator` property of `NSGlyphGenerator`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `sharedGlyphGenerator` property of `NSGlyphGenerator`.
+         * @return The converted Objective-C result.
+         */
         static GlyphGenerator shared_glyph_generator();
     };
 }

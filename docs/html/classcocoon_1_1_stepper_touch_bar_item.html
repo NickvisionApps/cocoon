@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -61,7 +61,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classcocoon_1_1_stepper_touch_bar_item-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">cocoon::StepperTouchBarItem Class Reference</div></div>
 </div><!--header-->
@@ -74,6 +73,10 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a7865667061a55d062b2cc4f8299f828f" id="r_a7865667061a55d062b2cc4f8299f828f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a7865667061a55d062b2cc4f8299f828f">StepperTouchBarItem</a> (const std::string &amp;identifier, std::function&lt; void(<a class="el" href="structcocoon_1_1_rect.html">Rect</a>, double)&gt; drawing_handler)</td></tr>
+<tr class="memdesc:a7865667061a55d062b2cc4f8299f828f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSStepperTouchBarItem</span> instance and returns a handle to it.  <br /></td></tr>
+<tr class="memitem:a4cddc07ba270a4170a49e6009c764dac" id="r_a4cddc07ba270a4170a49e6009c764dac"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a4cddc07ba270a4170a49e6009c764dac">StepperTouchBarItem</a> (const std::string &amp;identifier, const <a class="el" href="classcocoon_1_1_formatter.html">Formatter</a> &amp;formatter)</td></tr>
+<tr class="memdesc:a4cddc07ba270a4170a49e6009c764dac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSStepperTouchBarItem</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:a412ca894771dbef203b85d97b38ec303" id="r_a412ca894771dbef203b85d97b38ec303"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a412ca894771dbef203b85d97b38ec303">StepperTouchBarItem</a> ()</td></tr>
 <tr class="memitem:a2952d9db72432bf66b471d7436d614c6" id="r_a2952d9db72432bf66b471d7436d614c6"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a2952d9db72432bf66b471d7436d614c6">StepperTouchBarItem</a> (std::nullptr_t)</td></tr>
 <tr class="memdesc:a2952d9db72432bf66b471d7436d614c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a null handle that refers to no native object.  <br /></td></tr>
@@ -154,41 +157,97 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object" id="r_a53f4ad0e6a86173a96668457725eb369"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
 <tr class="memitem:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object template"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_object.html#a53f4ad0e6a86173a96668457725eb369">as</a> () const</td></tr>
 <tr class="memdesc:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reinterprets the native object as handle type <span class="tt">T</span> (no runtime type check).  <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ae10530f44fae6a42af74befdab1889c1" id="r_ae10530f44fae6a42af74befdab1889c1"><td class="memItemLeft">static <a class="el" href="#a412ca894771dbef203b85d97b38ec303">StepperTouchBarItem</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae10530f44fae6a42af74befdab1889c1">stepper_touch_bar_item_with_identifier</a> (const std::string &amp;identifier, std::function&lt; void(<a class="el" href="structcocoon_1_1_rect.html">Rect</a>, double)&gt; drawing_handler)</td></tr>
-<tr class="memdesc:ae10530f44fae6a42af74befdab1889c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSStepperTouchBarItem stepperTouchBarItemWithIdentifier:drawingHandler:]</span>.  <br /></td></tr>
-<tr class="memitem:ad1d3031c861f99a375db6a6a44ee87ca" id="r_ad1d3031c861f99a375db6a6a44ee87ca"><td class="memItemLeft">static <a class="el" href="#a412ca894771dbef203b85d97b38ec303">StepperTouchBarItem</a>&#160;</td><td class="memItemRight"><a class="el" href="#ad1d3031c861f99a375db6a6a44ee87ca">stepper_touch_bar_item_with_identifier</a> (const std::string &amp;identifier, const <a class="el" href="classcocoon_1_1_formatter.html">Formatter</a> &amp;formatter)</td></tr>
-<tr class="memdesc:ad1d3031c861f99a375db6a6a44ee87ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSStepperTouchBarItem stepperTouchBarItemWithIdentifier:formatter:]</span>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>C++ handle for the Objective-C class <span class="tt">NSStepperTouchBarItem</span> (AppKit). </p>
 <p>Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance. Inherits from <a class="el" href="classcocoon_1_1_touch_bar_item.html" title="TouchBarItem">TouchBarItem</a>.</p>
 <dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;cocoon.h&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_class" href="classcocoon_1_1_stepper_touch_bar_item.html">cocoon::StepperTouchBarItem</a> stepper_touch_bar_item(<span class="keyword">nullptr</span>);  <span class="comment">// null handle; instances normally come from other API calls</span></div>
-<div class="line">stepper_touch_bar_item.set_action(<span class="stringliteral">&quot;text&quot;</span>);</div>
-<div class="ttc" id="aclasscocoon_1_1_stepper_touch_bar_item_html"><div class="ttname"><a href="classcocoon_1_1_stepper_touch_bar_item.html">cocoon::StepperTouchBarItem</a></div><div class="ttdoc">C++ handle for the Objective-C class NSStepperTouchBarItem (AppKit).</div><div class="ttdef"><b>Definition</b> stepper_touch_bar_item.h:41</div></div>
-</div><!-- fragment --></dd></dl>
-<dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_stepper_touch_bar_item.html">cocoon::StepperTouchBarItem</a> stepper_touch_bar_item(<span class="keyword">nullptr</span>);</div>
-<div class="line">stepper_touch_bar_item.set_action(<span class="stringliteral">&quot;text&quot;</span>);</div>
-<div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#af38c4709d1bede84e3453df196fe84d3">action</a> = stepper_touch_bar_item.action();</div>
-<div class="line">stepper_touch_bar_item.set_customization_label(<span class="stringliteral">&quot;text&quot;</span>);</div>
-<div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#a8976435044fa174ce0cc4264cb956349">customization_label</a> = stepper_touch_bar_item.customization_label();</div>
-<div class="line">stepper_touch_bar_item.set_increment(1);</div>
-<div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#a189a01c62ae841bd4dd375f6b75e7e40">increment</a> = stepper_touch_bar_item.increment();</div>
-<div class="line"><span class="keyword">auto</span> made_0 = <a class="code hl_function" href="#ae10530f44fae6a42af74befdab1889c1">cocoon::StepperTouchBarItem::stepper_touch_bar_item_with_identifier</a>(<span class="stringliteral">&quot;text&quot;</span>, <a class="code hl_class" href="classcocoon_1_1_formatter.html">cocoon::Formatter</a>());</div>
+<div class="line"><a class="code hl_class" href="classcocoon_1_1_stepper_touch_bar_item.html">cocoon::StepperTouchBarItem</a> stepper_touch_bar_item{<span class="stringliteral">&quot;text&quot;</span>, <a class="code hl_class" href="classcocoon_1_1_formatter.html">cocoon::Formatter</a>()};</div>
+<div class="line">stepper_touch_bar_item.<a class="code hl_function" href="#ab096601f0bd32dde32a7870c594f8506">set_action</a>(<span class="stringliteral">&quot;text&quot;</span>);</div>
 <div class="ttc" id="aclasscocoon_1_1_formatter_html"><div class="ttname"><a href="classcocoon_1_1_formatter.html">cocoon::Formatter</a></div><div class="ttdoc">C++ handle for the Objective-C class NSFormatter (Foundation).</div><div class="ttdef"><b>Definition</b> formatter.h:27</div></div>
+<div class="ttc" id="aclasscocoon_1_1_stepper_touch_bar_item_html"><div class="ttname"><a href="classcocoon_1_1_stepper_touch_bar_item.html">cocoon::StepperTouchBarItem</a></div><div class="ttdoc">C++ handle for the Objective-C class NSStepperTouchBarItem (AppKit).</div><div class="ttdef"><b>Definition</b> stepper_touch_bar_item.h:40</div></div>
+<div class="ttc" id="aclasscocoon_1_1_stepper_touch_bar_item_html_ab096601f0bd32dde32a7870c594f8506"><div class="ttname"><a href="#ab096601f0bd32dde32a7870c594f8506">cocoon::StepperTouchBarItem::set_action</a></div><div class="ttdeci">void set_action(const std::string &amp;value) const</div><div class="ttdoc">Sets the action property of NSStepperTouchBarItem.</div></div>
+</div><!-- fragment --></dd></dl>
+<dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_stepper_touch_bar_item.html">cocoon::StepperTouchBarItem</a> stepper_touch_bar_item{<span class="stringliteral">&quot;text&quot;</span>, <a class="code hl_class" href="classcocoon_1_1_formatter.html">cocoon::Formatter</a>()};</div>
+<div class="line">stepper_touch_bar_item.<a class="code hl_function" href="#ab096601f0bd32dde32a7870c594f8506">set_action</a>(<span class="stringliteral">&quot;text&quot;</span>);</div>
+<div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#af38c4709d1bede84e3453df196fe84d3">action</a> = stepper_touch_bar_item.<a class="code hl_function" href="#af38c4709d1bede84e3453df196fe84d3">action</a>();</div>
+<div class="line">stepper_touch_bar_item.<a class="code hl_function" href="#ab39b37afd23c0f514c27f3a98020621f">set_customization_label</a>(<span class="stringliteral">&quot;text&quot;</span>);</div>
+<div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#a8976435044fa174ce0cc4264cb956349">customization_label</a> = stepper_touch_bar_item.<a class="code hl_function" href="#a8976435044fa174ce0cc4264cb956349">customization_label</a>();</div>
+<div class="line">stepper_touch_bar_item.<a class="code hl_function" href="#ae6a373860ddda212704b2d62b08f3c49">set_increment</a>(1);</div>
+<div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#a189a01c62ae841bd4dd375f6b75e7e40">increment</a> = stepper_touch_bar_item.<a class="code hl_function" href="#a189a01c62ae841bd4dd375f6b75e7e40">increment</a>();</div>
 <div class="ttc" id="aclasscocoon_1_1_stepper_touch_bar_item_html_a189a01c62ae841bd4dd375f6b75e7e40"><div class="ttname"><a href="#a189a01c62ae841bd4dd375f6b75e7e40">cocoon::StepperTouchBarItem::increment</a></div><div class="ttdeci">double increment() const</div><div class="ttdoc">Returns the increment property of NSStepperTouchBarItem.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_stepper_touch_bar_item_html_a8976435044fa174ce0cc4264cb956349"><div class="ttname"><a href="#a8976435044fa174ce0cc4264cb956349">cocoon::StepperTouchBarItem::customization_label</a></div><div class="ttdeci">std::string customization_label() const</div><div class="ttdoc">Returns the customizationLabel property of NSStepperTouchBarItem.</div></div>
-<div class="ttc" id="aclasscocoon_1_1_stepper_touch_bar_item_html_ae10530f44fae6a42af74befdab1889c1"><div class="ttname"><a href="#ae10530f44fae6a42af74befdab1889c1">cocoon::StepperTouchBarItem::stepper_touch_bar_item_with_identifier</a></div><div class="ttdeci">static StepperTouchBarItem stepper_touch_bar_item_with_identifier(const std::string &amp;identifier, std::function&lt; void(Rect, double)&gt; drawing_handler)</div><div class="ttdoc">Calls +[NSStepperTouchBarItem stepperTouchBarItemWithIdentifier:drawingHandler:].</div></div>
+<div class="ttc" id="aclasscocoon_1_1_stepper_touch_bar_item_html_ab39b37afd23c0f514c27f3a98020621f"><div class="ttname"><a href="#ab39b37afd23c0f514c27f3a98020621f">cocoon::StepperTouchBarItem::set_customization_label</a></div><div class="ttdeci">void set_customization_label(const std::string &amp;value) const</div><div class="ttdoc">Sets the customizationLabel property of NSStepperTouchBarItem.</div></div>
+<div class="ttc" id="aclasscocoon_1_1_stepper_touch_bar_item_html_ae6a373860ddda212704b2d62b08f3c49"><div class="ttname"><a href="#ae6a373860ddda212704b2d62b08f3c49">cocoon::StepperTouchBarItem::set_increment</a></div><div class="ttdeci">void set_increment(double value) const</div><div class="ttdoc">Sets the increment property of NSStepperTouchBarItem.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_stepper_touch_bar_item_html_af38c4709d1bede84e3453df196fe84d3"><div class="ttname"><a href="#af38c4709d1bede84e3453df196fe84d3">cocoon::StepperTouchBarItem::action</a></div><div class="ttdeci">std::string action() const</div><div class="ttdoc">Returns the action property of NSStepperTouchBarItem.</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/appkit/nssteppertouchbaritem">https://developer.apple.com/documentation/appkit/nssteppertouchbaritem</a> </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a7865667061a55d062b2cc4f8299f828f" name="a7865667061a55d062b2cc4f8299f828f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7865667061a55d062b2cc4f8299f828f">&#9670;&#160;</a></span>StepperTouchBarItem() <span class="overload">[1/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::StepperTouchBarItem::StepperTouchBarItem </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>identifier</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; void(<a class="el" href="structcocoon_1_1_rect.html">Rect</a>, double)&gt;</td>          <td class="paramname"><span class="paramname"><em>drawing_handler</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSStepperTouchBarItem</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
+<a id="a4cddc07ba270a4170a49e6009c764dac" name="a4cddc07ba270a4170a49e6009c764dac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cddc07ba270a4170a49e6009c764dac">&#9670;&#160;</a></span>StepperTouchBarItem() <span class="overload">[2/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::StepperTouchBarItem::StepperTouchBarItem </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>identifier</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcocoon_1_1_formatter.html">Formatter</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>formatter</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSStepperTouchBarItem</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
 <a id="a412ca894771dbef203b85d97b38ec303" name="a412ca894771dbef203b85d97b38ec303"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a412ca894771dbef203b85d97b38ec303">&#9670;&#160;</a></span>StepperTouchBarItem() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a412ca894771dbef203b85d97b38ec303">&#9670;&#160;</a></span>StepperTouchBarItem() <span class="overload">[3/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -205,7 +264,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a2952d9db72432bf66b471d7436d614c6" name="a2952d9db72432bf66b471d7436d614c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2952d9db72432bf66b471d7436d614c6">&#9670;&#160;</a></span>StepperTouchBarItem() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2952d9db72432bf66b471d7436d614c6">&#9670;&#160;</a></span>StepperTouchBarItem() <span class="overload">[4/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -224,7 +283,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a7686840c179e4b2decf98edc645591b7" name="a7686840c179e4b2decf98edc645591b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7686840c179e4b2decf98edc645591b7">&#9670;&#160;</a></span>StepperTouchBarItem() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7686840c179e4b2decf98edc645591b7">&#9670;&#160;</a></span>StepperTouchBarItem() <span class="overload">[5/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -523,84 +582,6 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="ad1d3031c861f99a375db6a6a44ee87ca" name="ad1d3031c861f99a375db6a6a44ee87ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad1d3031c861f99a375db6a6a44ee87ca">&#9670;&#160;</a></span>stepper_touch_bar_item_with_identifier() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a412ca894771dbef203b85d97b38ec303">StepperTouchBarItem</a> cocoon::StepperTouchBarItem::stepper_touch_bar_item_with_identifier </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>identifier</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_formatter.html">Formatter</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>formatter</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSStepperTouchBarItem stepperTouchBarItemWithIdentifier:formatter:]</span>. </p>
-<p>Creates a 'NSStepperTouchBarItem' with a 'formatter' to display the stepper's value as text. @param formatter A formatter used to display a textual representation of the stepper's value </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">identifier</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">formatter</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="ae10530f44fae6a42af74befdab1889c1" name="ae10530f44fae6a42af74befdab1889c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae10530f44fae6a42af74befdab1889c1">&#9670;&#160;</a></span>stepper_touch_bar_item_with_identifier() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a412ca894771dbef203b85d97b38ec303">StepperTouchBarItem</a> cocoon::StepperTouchBarItem::stepper_touch_bar_item_with_identifier </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>identifier</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::function&lt; void(<a class="el" href="structcocoon_1_1_rect.html">Rect</a>, double)&gt;</td>          <td class="paramname"><span class="paramname"><em>drawing_handler</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSStepperTouchBarItem stepperTouchBarItemWithIdentifier:drawingHandler:]</span>. </p>
-<p>Creates a 'NSStepperTouchBarItem' using the result of 'drawingHandler' to display the stepper's value as an image. @param drawingHandler A block that draws a graphical representation of the stepper's value in the specified rectangle. The coordinates of this rectangle are specified in points. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">identifier</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">drawing_handler</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
 
 </div>
 </div>

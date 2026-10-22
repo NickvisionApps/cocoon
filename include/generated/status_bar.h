@@ -40,30 +40,30 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit StatusBar(Adopt adopt);
         /**
-     * @brief Calls `-[NSStatusBar removeStatusItem:]`.
-     * @param item Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSStatusBar removeStatusItem:]`.
+         * @param item Argument converted to the Objective-C parameter of the same role.
+         */
         void remove_status_item(const StatusItem& item) const;
         /**
-     * @brief Calls `-[NSStatusBar statusItemWithLength:]`.
-     * @param length Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSStatusBar statusItemWithLength:]`.
+         * @param length Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         StatusItem status_item_with_length(double length) const;
         /**
-     * @brief Returns the `systemStatusBar` property of `NSStatusBar`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `systemStatusBar` property of `NSStatusBar`.
+         * @return The converted Objective-C result.
+         */
         static StatusBar system_status_bar();
         /**
-     * @brief Returns the `thickness` property of `NSStatusBar`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `thickness` property of `NSStatusBar`.
+         * @return The converted Objective-C result.
+         */
         double thickness() const;
         /**
-     * @brief Returns the `vertical` property of `NSStatusBar`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `vertical` property of `NSStatusBar`.
+         * @return The converted Objective-C result.
+         */
         bool is_vertical() const;
     };
 }

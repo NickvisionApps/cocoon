@@ -66,241 +66,241 @@ namespace cocoon
         using TableView::set_user_interface_layout_direction;
         using TableView::user_interface_layout_direction;
         /**
-     * @brief Calls `-[NSOutlineView child:ofItem:]`.
-     * @details Returns the child item for a given parent item. This is mostly useful for static outline views where the data was encoded at design time, however, it will work for both static and non-static outline views. This may call out to the datasource, if required.
-     * @param index Argument converted to the Objective-C parameter of the same role.
-     * @param item Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSOutlineView child:ofItem:]`.
+         * @details Returns the child item for a given parent item. This is mostly useful for static outline views where the data was encoded at design time, however, it will work for both static and non-static outline views. This may call out to the datasource, if required.
+         * @param index Argument converted to the Objective-C parameter of the same role.
+         * @param item Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Object child(std::int64_t index, const Object& item) const;
         /**
-     * @brief Calls `-[NSOutlineView childIndexForItem:]`.
-     * @details Returns the child index of 'item' within its parent. The performance of this method is O(1) at best and O(n) at worst.
-     * @param item Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSOutlineView childIndexForItem:]`.
+         * @details Returns the child index of 'item' within its parent. The performance of this method is O(1) at best and O(n) at worst.
+         * @param item Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::int64_t child_index_for_item(const Object& item) const;
         /**
-     * @brief Calls `-[NSOutlineView collapseItem:]`.
-     * @details Calls collapseItem:collapseChildren with 'collapseChildren == NO'
-     * @param item Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSOutlineView collapseItem:]`.
+         * @details Calls collapseItem:collapseChildren with 'collapseChildren == NO'
+         * @param item Argument converted to the Objective-C parameter of the same role.
+         */
         void collapse_item(const Object& item) const;
         /**
-     * @brief Calls `-[NSOutlineView collapseItem:collapseChildren:]`.
-     * @details Collapses 'item' and all children if 'collapseChildren' is YES. On 10.5 and higher, passing 'nil' for 'item' will collapse each item under the root.
-     * @param item Argument converted to the Objective-C parameter of the same role.
-     * @param collapse_children Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSOutlineView collapseItem:collapseChildren:]`.
+         * @details Collapses 'item' and all children if 'collapseChildren' is YES. On 10.5 and higher, passing 'nil' for 'item' will collapse each item under the root.
+         * @param item Argument converted to the Objective-C parameter of the same role.
+         * @param collapse_children Argument converted to the Objective-C parameter of the same role.
+         */
         void collapse_item(const Object& item, bool collapse_children) const;
         /**
-     * @brief Calls `-[NSOutlineView expandItem:]`.
-     * @details Calls expandItem:expandChildren with 'expandChildren == NO'
-     * @param item Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSOutlineView expandItem:]`.
+         * @details Calls expandItem:expandChildren with 'expandChildren == NO'
+         * @param item Argument converted to the Objective-C parameter of the same role.
+         */
         void expand_item(const Object& item) const;
         /**
-     * @brief Calls `-[NSOutlineView expandItem:expandChildren:]`.
-     * @details Expands 'item', if not already expanded, and all children if 'expandChildren' is YES. On 10.5 and higher, passing 'nil' for 'item' will expand each item under the root.
-     * @param item Argument converted to the Objective-C parameter of the same role.
-     * @param expand_children Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSOutlineView expandItem:expandChildren:]`.
+         * @details Expands 'item', if not already expanded, and all children if 'expandChildren' is YES. On 10.5 and higher, passing 'nil' for 'item' will expand each item under the root.
+         * @param item Argument converted to the Objective-C parameter of the same role.
+         * @param expand_children Argument converted to the Objective-C parameter of the same role.
+         */
         void expand_item(const Object& item, bool expand_children) const;
         /**
-     * @brief Calls `-[NSOutlineView frameOfOutlineCellAtRow:]`.
-     * @details Returns the frame of the outline cell for a particular row, considering the current indentation and indentationMarkerFollowsCell value. If 'row' is not an expandable row, it will return NSZeroRect. This method can be overridden by subclassers to return a custom frame for the outline button cell. If an empty rect is returned, no outline cell will be drawn for that row.
-     * @param row Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSOutlineView frameOfOutlineCellAtRow:]`.
+         * @details Returns the frame of the outline cell for a particular row, considering the current indentation and indentationMarkerFollowsCell value. If 'row' is not an expandable row, it will return NSZeroRect. This method can be overridden by subclassers to return a custom frame for the outline button cell. If an empty rect is returned, no outline cell will be drawn for that row.
+         * @param row Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Rect frame_of_outline_cell_at_row(std::int64_t row) const;
         /**
-     * @brief Calls `-[NSOutlineView insertItemsAtIndexes:inParent:withAnimation:]`.
-     * @details This method parallels TableView's -insertRowIndexes:withAnimation:, and is used in a way similar to NSMutableArray's -insertObjects:atIndexes: This method inserts a new item at 'indexes' in 'parent'. 'parent' can be nil to insert items into the root of the OutlineView. The operation will not do anything if 'parent' is not expanded. The actual item values are determined by the dataSource methods -outlineView:child:ofItem: (note that this will only be called after an -endUpdates happens to ensure dataSource integrity). Calling this method multiple times within the same beginUpdates/endUpdates block is allowed; new insertions will move previously inserted new items, just like modifying an array. Inserting an index beyond what is available will throw an exception. The "Cell Based TableView" must first call -beginUpdates before calling this method. This method can also be used when "usesStaticContents=YES".
-     * @param indexes Argument converted to the Objective-C parameter of the same role.
-     * @param parent Argument converted to the Objective-C parameter of the same role.
-     * @param animation_options Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSOutlineView insertItemsAtIndexes:inParent:withAnimation:]`.
+         * @details This method parallels TableView's -insertRowIndexes:withAnimation:, and is used in a way similar to NSMutableArray's -insertObjects:atIndexes: This method inserts a new item at 'indexes' in 'parent'. 'parent' can be nil to insert items into the root of the OutlineView. The operation will not do anything if 'parent' is not expanded. The actual item values are determined by the dataSource methods -outlineView:child:ofItem: (note that this will only be called after an -endUpdates happens to ensure dataSource integrity). Calling this method multiple times within the same beginUpdates/endUpdates block is allowed; new insertions will move previously inserted new items, just like modifying an array. Inserting an index beyond what is available will throw an exception. The "Cell Based TableView" must first call -beginUpdates before calling this method. This method can also be used when "usesStaticContents=YES".
+         * @param indexes Argument converted to the Objective-C parameter of the same role.
+         * @param parent Argument converted to the Objective-C parameter of the same role.
+         * @param animation_options Argument converted to the Objective-C parameter of the same role.
+         */
         void insert_items_at_indexes(const IndexSet& indexes, const Object& parent, TableViewAnimationOptions animation_options) const;
         /**
-     * @brief Calls `-[NSOutlineView isExpandable:]`.
-     * @details Returns YES if 'item' is expandable and can contain other items. May call out to the delegate/datasource, if required.
-     * @param item Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSOutlineView isExpandable:]`.
+         * @details Returns YES if 'item' is expandable and can contain other items. May call out to the delegate/datasource, if required.
+         * @param item Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool is_expandable(const Object& item) const;
         /**
-     * @brief Calls `-[NSOutlineView isItemExpanded:]`.
-     * @param item Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSOutlineView isItemExpanded:]`.
+         * @param item Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool is_item_expanded(const Object& item) const;
         /**
-     * @brief Calls `-[NSOutlineView itemAtRow:]`.
-     * @details Item/Row translation
-     * @param row Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSOutlineView itemAtRow:]`.
+         * @details Item/Row translation
+         * @param row Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Object item_at_row(std::int64_t row) const;
         /**
-     * @brief Calls `-[NSOutlineView levelForItem:]`.
-     * @details Indentation
-     * @param item Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSOutlineView levelForItem:]`.
+         * @details Indentation
+         * @param item Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::int64_t level_for_item(const Object& item) const;
         /**
-     * @brief Calls `-[NSOutlineView levelForRow:]`.
-     * @param row Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSOutlineView levelForRow:]`.
+         * @param row Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::int64_t level_for_row(std::int64_t row) const;
         /**
-     * @brief Calls `-[NSOutlineView moveItemAtIndex:inParent:toIndex:inParent:]`.
-     * @details This method parallels TableView's -moveRowAtIndex:toIndex:. The item located at 'fromIndex' is moved from the existing 'oldParent' to the given index in 'newParent'. 'newParent' can be the same as 'oldParent' to reorder an item within the same parent. This method can be called multiple times within the same beginUpdates/endUpdates block. Moving from an invalid index, or to an invalid index will throw an exception. The "Cell Based TableView" must first call -beginUpdates before calling this method. This method can also be used when "usesStaticContents=YES".
-     * @param from_index Argument converted to the Objective-C parameter of the same role.
-     * @param old_parent Argument converted to the Objective-C parameter of the same role.
-     * @param to_index Argument converted to the Objective-C parameter of the same role.
-     * @param new_parent Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSOutlineView moveItemAtIndex:inParent:toIndex:inParent:]`.
+         * @details This method parallels TableView's -moveRowAtIndex:toIndex:. The item located at 'fromIndex' is moved from the existing 'oldParent' to the given index in 'newParent'. 'newParent' can be the same as 'oldParent' to reorder an item within the same parent. This method can be called multiple times within the same beginUpdates/endUpdates block. Moving from an invalid index, or to an invalid index will throw an exception. The "Cell Based TableView" must first call -beginUpdates before calling this method. This method can also be used when "usesStaticContents=YES".
+         * @param from_index Argument converted to the Objective-C parameter of the same role.
+         * @param old_parent Argument converted to the Objective-C parameter of the same role.
+         * @param to_index Argument converted to the Objective-C parameter of the same role.
+         * @param new_parent Argument converted to the Objective-C parameter of the same role.
+         */
         void move_item_at_index(std::int64_t from_index, const Object& old_parent, std::int64_t to_index, const Object& new_parent) const;
         /**
-     * @brief Calls `-[NSOutlineView numberOfChildrenOfItem:]`.
-     * @details Returns the number of children for a given parent item. This is mostly useful for static outline views where the data was encoded at design time; however, it will work for both static and non-static outline views. This may call out to the datasource, if required.
-     * @param item Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSOutlineView numberOfChildrenOfItem:]`.
+         * @details Returns the number of children for a given parent item. This is mostly useful for static outline views where the data was encoded at design time; however, it will work for both static and non-static outline views. This may call out to the datasource, if required.
+         * @param item Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::int64_t number_of_children_of_item(const Object& item) const;
         /**
-     * @brief Calls `-[NSOutlineView parentForItem:]`.
-     * @details Returns the parent for 'item', or nil, if the parent is the root.
-     * @param item Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSOutlineView parentForItem:]`.
+         * @details Returns the parent for 'item', or nil, if the parent is the root.
+         * @param item Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Object parent_for_item(const Object& item) const;
         /**
-     * @brief Calls `-[NSOutlineView reloadItem:]`.
-     * @details Calls reloadItem:reloadChildren with 'reloadChildren == NO'
-     * @param item Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSOutlineView reloadItem:]`.
+         * @details Calls reloadItem:reloadChildren with 'reloadChildren == NO'
+         * @param item Argument converted to the Objective-C parameter of the same role.
+         */
         void reload_item(const Object& item) const;
         /**
-     * @brief Calls `-[NSOutlineView reloadItem:reloadChildren:]`.
-     * @details Reloads 'item' and all children if 'reloadChildren' is YES. On 10.5 and higher, passing 'nil' for 'item' will reload everything under the root item.
-     * @param item Argument converted to the Objective-C parameter of the same role.
-     * @param reload_children Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSOutlineView reloadItem:reloadChildren:]`.
+         * @details Reloads 'item' and all children if 'reloadChildren' is YES. On 10.5 and higher, passing 'nil' for 'item' will reload everything under the root item.
+         * @param item Argument converted to the Objective-C parameter of the same role.
+         * @param reload_children Argument converted to the Objective-C parameter of the same role.
+         */
         void reload_item(const Object& item, bool reload_children) const;
         /**
-     * @brief Calls `-[NSOutlineView removeItemsAtIndexes:inParent:withAnimation:]`.
-     * @details This method parallels TableView's -removeRowsAtIndexes:withAnimation:, and is used similar to NSMutableArray's -removeObjectsAtIndexes:. The items at the given indexes will be removed from the parent. The operation will not do anything if 'parent' is not expanded. If one of the children items is expanded, then all of its children rows will also be removed. Calling this method multiple times within the same beginUpdates/endUpdates block is allowed; changes work just like modifying an array. Deleting an index beyond what is available will throw an exception. The "Cell Based TableView" must first call -beginUpdates before calling this method. This method can also be used when "usesStaticContents=YES".
-     * @param indexes Argument converted to the Objective-C parameter of the same role.
-     * @param parent Argument converted to the Objective-C parameter of the same role.
-     * @param animation_options Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSOutlineView removeItemsAtIndexes:inParent:withAnimation:]`.
+         * @details This method parallels TableView's -removeRowsAtIndexes:withAnimation:, and is used similar to NSMutableArray's -removeObjectsAtIndexes:. The items at the given indexes will be removed from the parent. The operation will not do anything if 'parent' is not expanded. If one of the children items is expanded, then all of its children rows will also be removed. Calling this method multiple times within the same beginUpdates/endUpdates block is allowed; changes work just like modifying an array. Deleting an index beyond what is available will throw an exception. The "Cell Based TableView" must first call -beginUpdates before calling this method. This method can also be used when "usesStaticContents=YES".
+         * @param indexes Argument converted to the Objective-C parameter of the same role.
+         * @param parent Argument converted to the Objective-C parameter of the same role.
+         * @param animation_options Argument converted to the Objective-C parameter of the same role.
+         */
         void remove_items_at_indexes(const IndexSet& indexes, const Object& parent, TableViewAnimationOptions animation_options) const;
         /**
-     * @brief Calls `-[NSOutlineView rowForItem:]`.
-     * @param item Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSOutlineView rowForItem:]`.
+         * @param item Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::int64_t row_for_item(const Object& item) const;
         /**
-     * @brief Calls `-[NSOutlineView setDropItem:dropChildIndex:]`.
-     * @details To be used from validateDrop: in order to "re-target" the proposed drop. To specify a drop on an item I, one would specify item=I, and index=NSOutlineViewDropOnItemIndex. To specify a drop between child 2 and 3 of an item I, on would specify item=I, and index=3 (children are zero-base indexed). To specify a drop on an un-expandable item I, one would specify item=I, and index=NSOutlineViewDropOnItemIndex.
-     * @param item Argument converted to the Objective-C parameter of the same role.
-     * @param index Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSOutlineView setDropItem:dropChildIndex:]`.
+         * @details To be used from validateDrop: in order to "re-target" the proposed drop. To specify a drop on an item I, one would specify item=I, and index=NSOutlineViewDropOnItemIndex. To specify a drop between child 2 and 3 of an item I, on would specify item=I, and index=3 (children are zero-base indexed). To specify a drop on an un-expandable item I, one would specify item=I, and index=NSOutlineViewDropOnItemIndex.
+         * @param item Argument converted to the Objective-C parameter of the same role.
+         * @param index Argument converted to the Objective-C parameter of the same role.
+         */
         void set_drop_item(const Object& item, std::int64_t index) const;
         /**
-     * @brief Calls `-[NSOutlineView shouldCollapseAutoExpandedItemsForDeposited:]`.
-     * @details This method returns YES to indicate that auto expanded items should return to their original collapsed state. Override this method to provide custom behavior. 'deposited' tells wether or not the drop terminated due to a successful drop (as indicated by the return value from acceptDrop:). Note that exiting the view will be treated the same as a failed drop.
-     * @param deposited Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSOutlineView shouldCollapseAutoExpandedItemsForDeposited:]`.
+         * @details This method returns YES to indicate that auto expanded items should return to their original collapsed state. Override this method to provide custom behavior. 'deposited' tells wether or not the drop terminated due to a successful drop (as indicated by the return value from acceptDrop:). Note that exiting the view will be treated the same as a failed drop.
+         * @param deposited Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool should_collapse_auto_expanded_items_for_deposited(bool deposited) const;
         /**
-     * @brief Returns the `autoresizesOutlineColumn` property of `NSOutlineView`.
-     * @details If autoresizesOutlineColumn is YES, then the outlineTableColumn will automatically resize when there is a new expanded child at a particular depth level. The default value is YES.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `autoresizesOutlineColumn` property of `NSOutlineView`.
+         * @details If autoresizesOutlineColumn is YES, then the outlineTableColumn will automatically resize when there is a new expanded child at a particular depth level. The default value is YES.
+         * @return The converted Objective-C result.
+         */
         bool autoresizes_outline_column() const;
         /**
-     * @brief Sets the `autoresizesOutlineColumn` property of `NSOutlineView`.
-     * @details If autoresizesOutlineColumn is YES, then the outlineTableColumn will automatically resize when there is a new expanded child at a particular depth level. The default value is YES.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `autoresizesOutlineColumn` property of `NSOutlineView`.
+         * @details If autoresizesOutlineColumn is YES, then the outlineTableColumn will automatically resize when there is a new expanded child at a particular depth level. The default value is YES.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_autoresizes_outline_column(bool value) const;
         /**
-     * @brief Returns the `autosaveExpandedItems` property of `NSOutlineView`.
-     * @details Persistence. The value for autosaveExpandedItems is saved out in the nib file on Mac OS 10.5 or higher. The default value is NO. Calling setAutosaveExpandedItems:YES requires you to implement outlineView:itemForPersistentObject: and outlineView:persistentObjectForItem:.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `autosaveExpandedItems` property of `NSOutlineView`.
+         * @details Persistence. The value for autosaveExpandedItems is saved out in the nib file on Mac OS 10.5 or higher. The default value is NO. Calling setAutosaveExpandedItems:YES requires you to implement outlineView:itemForPersistentObject: and outlineView:persistentObjectForItem:.
+         * @return The converted Objective-C result.
+         */
         bool autosave_expanded_items() const;
         /**
-     * @brief Sets the `autosaveExpandedItems` property of `NSOutlineView`.
-     * @details Persistence. The value for autosaveExpandedItems is saved out in the nib file on Mac OS 10.5 or higher. The default value is NO. Calling setAutosaveExpandedItems:YES requires you to implement outlineView:itemForPersistentObject: and outlineView:persistentObjectForItem:.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `autosaveExpandedItems` property of `NSOutlineView`.
+         * @details Persistence. The value for autosaveExpandedItems is saved out in the nib file on Mac OS 10.5 or higher. The default value is NO. Calling setAutosaveExpandedItems:YES requires you to implement outlineView:itemForPersistentObject: and outlineView:persistentObjectForItem:.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_autosave_expanded_items(bool value) const;
         /**
-     * @brief Returns the `indentationMarkerFollowsCell` property of `NSOutlineView`.
-     * @details The indentation marker is the visual indicator that shows an item is expandable (i.e. disclosure triangle). The default value is YES.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `indentationMarkerFollowsCell` property of `NSOutlineView`.
+         * @details The indentation marker is the visual indicator that shows an item is expandable (i.e. disclosure triangle). The default value is YES.
+         * @return The converted Objective-C result.
+         */
         bool indentation_marker_follows_cell() const;
         /**
-     * @brief Sets the `indentationMarkerFollowsCell` property of `NSOutlineView`.
-     * @details The indentation marker is the visual indicator that shows an item is expandable (i.e. disclosure triangle). The default value is YES.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `indentationMarkerFollowsCell` property of `NSOutlineView`.
+         * @details The indentation marker is the visual indicator that shows an item is expandable (i.e. disclosure triangle). The default value is YES.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_indentation_marker_follows_cell(bool value) const;
         /**
-     * @brief Returns the `indentationPerLevel` property of `NSOutlineView`.
-     * @details Controls the amount of indentation per level. Negative values are ignored, and only integral values are accepted. The default value is 16.0. An indentationPerLevel of 0 can be used to eliminate all indentation and make an NSOutlineView appear more like an NSTableView.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `indentationPerLevel` property of `NSOutlineView`.
+         * @details Controls the amount of indentation per level. Negative values are ignored, and only integral values are accepted. The default value is 16.0. An indentationPerLevel of 0 can be used to eliminate all indentation and make an NSOutlineView appear more like an NSTableView.
+         * @return The converted Objective-C result.
+         */
         double indentation_per_level() const;
         /**
-     * @brief Sets the `indentationPerLevel` property of `NSOutlineView`.
-     * @details Controls the amount of indentation per level. Negative values are ignored, and only integral values are accepted. The default value is 16.0. An indentationPerLevel of 0 can be used to eliminate all indentation and make an NSOutlineView appear more like an NSTableView.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `indentationPerLevel` property of `NSOutlineView`.
+         * @details Controls the amount of indentation per level. Negative values are ignored, and only integral values are accepted. The default value is 16.0. An indentationPerLevel of 0 can be used to eliminate all indentation and make an NSOutlineView appear more like an NSTableView.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_indentation_per_level(double value) const;
         /**
-     * @brief Returns the `outlineTableColumn` property of `NSOutlineView`.
-     * @details The 'outlineTableColumn' is the column that displays data in a hierarchical fashion, indented one identationlevel per level, decorated with indentation marker (disclosure triangle) on rows that are expandable. A nil 'outlineTableColumn' is silently ignored. On 10.5 and higher, this value is saved in encodeWithCoder: and restored in initWithCoder:.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `outlineTableColumn` property of `NSOutlineView`.
+         * @details The 'outlineTableColumn' is the column that displays data in a hierarchical fashion, indented one identationlevel per level, decorated with indentation marker (disclosure triangle) on rows that are expandable. A nil 'outlineTableColumn' is silently ignored. On 10.5 and higher, this value is saved in encodeWithCoder: and restored in initWithCoder:.
+         * @return The converted Objective-C result.
+         */
         TableColumn outline_table_column() const;
         /**
-     * @brief Sets the `outlineTableColumn` property of `NSOutlineView`.
-     * @details The 'outlineTableColumn' is the column that displays data in a hierarchical fashion, indented one identationlevel per level, decorated with indentation marker (disclosure triangle) on rows that are expandable. A nil 'outlineTableColumn' is silently ignored. On 10.5 and higher, this value is saved in encodeWithCoder: and restored in initWithCoder:.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `outlineTableColumn` property of `NSOutlineView`.
+         * @details The 'outlineTableColumn' is the column that displays data in a hierarchical fashion, indented one identationlevel per level, decorated with indentation marker (disclosure triangle) on rows that are expandable. A nil 'outlineTableColumn' is silently ignored. On 10.5 and higher, this value is saved in encodeWithCoder: and restored in initWithCoder:.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_outline_table_column(const TableColumn& value) const;
         /**
-     * @brief Returns the `stronglyReferencesItems` property of `NSOutlineView`.
-     * @details When YES, the NSOutlineView will retain and release the objects returned to it from the dataSource (outlineView:child:ofItem:). When NO, it only treats the objects as opaque items and assume the client has a retain on them. The default value is YES for applications linked on 10.12 and later, and NO for previous applications. This value is not encoded in the nib, and must be explicitly set to NO in code if one requires the legacy behavior and is linking on 10.12 and later. In general, this is required if the items themselves create a retain cycle.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `stronglyReferencesItems` property of `NSOutlineView`.
+         * @details When YES, the NSOutlineView will retain and release the objects returned to it from the dataSource (outlineView:child:ofItem:). When NO, it only treats the objects as opaque items and assume the client has a retain on them. The default value is YES for applications linked on 10.12 and later, and NO for previous applications. This value is not encoded in the nib, and must be explicitly set to NO in code if one requires the legacy behavior and is linking on 10.12 and later. In general, this is required if the items themselves create a retain cycle.
+         * @return The converted Objective-C result.
+         */
         bool strongly_references_items() const;
         /**
-     * @brief Sets the `stronglyReferencesItems` property of `NSOutlineView`.
-     * @details When YES, the NSOutlineView will retain and release the objects returned to it from the dataSource (outlineView:child:ofItem:). When NO, it only treats the objects as opaque items and assume the client has a retain on them. The default value is YES for applications linked on 10.12 and later, and NO for previous applications. This value is not encoded in the nib, and must be explicitly set to NO in code if one requires the legacy behavior and is linking on 10.12 and later. In general, this is required if the items themselves create a retain cycle.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `stronglyReferencesItems` property of `NSOutlineView`.
+         * @details When YES, the NSOutlineView will retain and release the objects returned to it from the dataSource (outlineView:child:ofItem:). When NO, it only treats the objects as opaque items and assume the client has a retain on them. The default value is YES for applications linked on 10.12 and later, and NO for previous applications. This value is not encoded in the nib, and must be explicitly set to NO in code if one requires the legacy behavior and is linking on 10.12 and later. In general, this is required if the items themselves create a retain cycle.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_strongly_references_items(bool value) const;
         /**
-     * @brief Returns the `userInterfaceLayoutDirection` property of `NSOutlineView`.
-     * @details Get and set the user interface layout direction. When set to NSUserInterfaceLayoutDirectionRightToLeft, the Outline View will show the disclosure triangle to the right of the cell instead of the left. This method is available for NSOutlineView on 10.7 and higher.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `userInterfaceLayoutDirection` property of `NSOutlineView`.
+         * @details Get and set the user interface layout direction. When set to NSUserInterfaceLayoutDirectionRightToLeft, the Outline View will show the disclosure triangle to the right of the cell instead of the left. This method is available for NSOutlineView on 10.7 and higher.
+         * @return The converted Objective-C result.
+         */
         UserInterfaceLayoutDirection user_interface_layout_direction() const;
         /**
-     * @brief Sets the `userInterfaceLayoutDirection` property of `NSOutlineView`.
-     * @details Get and set the user interface layout direction. When set to NSUserInterfaceLayoutDirectionRightToLeft, the Outline View will show the disclosure triangle to the right of the cell instead of the left. This method is available for NSOutlineView on 10.7 and higher.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `userInterfaceLayoutDirection` property of `NSOutlineView`.
+         * @details Get and set the user interface layout direction. When set to NSUserInterfaceLayoutDirectionRightToLeft, the Outline View will show the disclosure triangle to the right of the cell instead of the left. This method is available for NSOutlineView on 10.7 and higher.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_user_interface_layout_direction(UserInterfaceLayoutDirection value) const;
         /// @brief Signal for the delegate/data-source method behind `outline_view_number_of_children_of_item`; connect a callback with `outline_view_number_of_children_of_item().connect(...)`.
         Signal<OutlineView, std::int64_t(Object)> outline_view_number_of_children_of_item() const

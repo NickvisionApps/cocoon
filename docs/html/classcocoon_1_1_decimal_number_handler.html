@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -110,8 +110,6 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a47423719b8c9df2e181815f0c3bbbbbf" id="r_a47423719b8c9df2e181815f0c3bbbbbf"><td class="memItemLeft">static <a class="el" href="#a13eaf592ce2c92f791d55bcdeb052fcf">DecimalNumberHandler</a>&#160;</td><td class="memItemRight"><a class="el" href="#a47423719b8c9df2e181815f0c3bbbbbf">decimal_number_handler_with_rounding_mode</a> (<a class="el" href="namespacecocoon.html#a97d6d80092d2d5a5b328e75d1e79f163">RoundingMode</a> rounding_mode, std::int16_t scale, bool exact, bool overflow, bool underflow, bool divide_by_zero)</td></tr>
-<tr class="memdesc:a47423719b8c9df2e181815f0c3bbbbbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSDecimalNumberHandler decimalNumberHandlerWithRoundingMode:scale:raiseOnExactness:raiseOnOverflow:raiseOnUnderflow:raiseOnDivideByZero:]</span>.  <br /></td></tr>
 <tr class="memitem:a21c6773740e68d04d779e7bf9aeed369" id="r_a21c6773740e68d04d779e7bf9aeed369"><td class="memItemLeft">static <a class="el" href="#a13eaf592ce2c92f791d55bcdeb052fcf">DecimalNumberHandler</a>&#160;</td><td class="memItemRight"><a class="el" href="#a21c6773740e68d04d779e7bf9aeed369">default_decimal_number_handler</a> ()</td></tr>
 <tr class="memdesc:a21c6773740e68d04d779e7bf9aeed369"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">defaultDecimalNumberHandler</span> property of <span class="tt">NSDecimalNumberHandler</span>.  <br /></td></tr>
 </table>
@@ -121,12 +119,7 @@ Static Public Member Functions</h2></td></tr>
 <dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;cocoon.h&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_class" href="classcocoon_1_1_decimal_number_handler.html">cocoon::DecimalNumberHandler</a> decimal_number_handler;</div>
-<div class="ttc" id="aclasscocoon_1_1_decimal_number_handler_html"><div class="ttname"><a href="classcocoon_1_1_decimal_number_handler.html">cocoon::DecimalNumberHandler</a></div><div class="ttdoc">C++ handle for the Objective-C class NSDecimalNumberHandler (Foundation).</div><div class="ttdef"><b>Definition</b> decimal_number_handler.h:32</div></div>
-</div><!-- fragment --></dd></dl>
-<dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_decimal_number_handler.html">cocoon::DecimalNumberHandler</a> decimal_number_handler{};</div>
-<div class="line"><span class="keyword">auto</span> made_0 = <a class="code hl_function" href="#a47423719b8c9df2e181815f0c3bbbbbf">cocoon::DecimalNumberHandler::decimal_number_handler_with_rounding_mode</a>(<a class="code hl_enumvalue" href="namespacecocoon.html#a97d6d80092d2d5a5b328e75d1e79f163a4cd8413207629a963225f4314b53adcd">cocoon::RoundingMode::Plain</a>, 1, <span class="keyword">true</span>, <span class="keyword">true</span>, <span class="keyword">true</span>, <span class="keyword">true</span>);</div>
-<div class="ttc" id="aclasscocoon_1_1_decimal_number_handler_html_a47423719b8c9df2e181815f0c3bbbbbf"><div class="ttname"><a href="#a47423719b8c9df2e181815f0c3bbbbbf">cocoon::DecimalNumberHandler::decimal_number_handler_with_rounding_mode</a></div><div class="ttdeci">static DecimalNumberHandler decimal_number_handler_with_rounding_mode(RoundingMode rounding_mode, std::int16_t scale, bool exact, bool overflow, bool underflow, bool divide_by_zero)</div><div class="ttdoc">Calls +[NSDecimalNumberHandler decimalNumberHandlerWithRoundingMode:scale:raiseOnExactness:raiseOnOve...</div></div>
-<div class="ttc" id="anamespacecocoon_html_a97d6d80092d2d5a5b328e75d1e79f163a4cd8413207629a963225f4314b53adcd"><div class="ttname"><a href="namespacecocoon.html#a97d6d80092d2d5a5b328e75d1e79f163a4cd8413207629a963225f4314b53adcd">cocoon::RoundingMode::Plain</a></div><div class="ttdeci">@ Plain</div><div class="ttdef"><b>Definition</b> enums.h:3481</div></div>
+<div class="ttc" id="aclasscocoon_1_1_decimal_number_handler_html"><div class="ttname"><a href="classcocoon_1_1_decimal_number_handler.html">cocoon::DecimalNumberHandler</a></div><div class="ttdoc">C++ handle for the Objective-C class NSDecimalNumberHandler (Foundation).</div><div class="ttdef"><b>Definition</b> decimal_number_handler.h:25</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/foundation/nsdecimalnumberhandler">https://developer.apple.com/documentation/foundation/nsdecimalnumberhandler</a> </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -255,69 +248,6 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a47423719b8c9df2e181815f0c3bbbbbf" name="a47423719b8c9df2e181815f0c3bbbbbf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a47423719b8c9df2e181815f0c3bbbbbf">&#9670;&#160;</a></span>decimal_number_handler_with_rounding_mode()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a13eaf592ce2c92f791d55bcdeb052fcf">DecimalNumberHandler</a> cocoon::DecimalNumberHandler::decimal_number_handler_with_rounding_mode </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacecocoon.html#a97d6d80092d2d5a5b328e75d1e79f163">RoundingMode</a></td>          <td class="paramname"><span class="paramname"><em>rounding_mode</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::int16_t</td>          <td class="paramname"><span class="paramname"><em>scale</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>exact</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>overflow</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>underflow</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>divide_by_zero</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSDecimalNumberHandler decimalNumberHandlerWithRoundingMode:scale:raiseOnExactness:raiseOnOverflow:raiseOnUnderflow:raiseOnDivideByZero:]</span>. </p>
-<p>Returns an 'NSDecimalNumberHandler' object with customized behavior. - Parameters: - roundingMode: The rounding mode to use. - scale: The number of digits a rounded value is allowed to have after its decimal point. - exact: If 'YES', raises an exception on loss of precision. - overflow: If 'YES', raises an exception on overflow. - underflow: If 'YES', raises an exception on underflow. - divideByZero: If 'YES', raises an exception on divide by zero. - Returns: An 'NSDecimalNumberHandler' object with customized behavior. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">rounding_mode</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">scale</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">exact</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">overflow</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">underflow</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">divide_by_zero</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
 <a id="a21c6773740e68d04d779e7bf9aeed369" name="a21c6773740e68d04d779e7bf9aeed369"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a21c6773740e68d04d779e7bf9aeed369">&#9670;&#160;</a></span>default_decimal_number_handler()</h2>
 

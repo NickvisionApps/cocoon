@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -134,16 +134,6 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a34f84c1bf93236b785d071e818524c05" id="r_a34f84c1bf93236b785d071e818524c05"><td class="memItemLeft">static <a class="el" href="#ad567c6411fcb93eed3c4d9f8e0cc4261">Date</a>&#160;</td><td class="memItemRight"><a class="el" href="#a34f84c1bf93236b785d071e818524c05">date</a> ()</td></tr>
-<tr class="memdesc:a34f84c1bf93236b785d071e818524c05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSDate <a class="el" href="#a34f84c1bf93236b785d071e818524c05" title="Calls +[NSDate date].">date</a>]</span>.  <br /></td></tr>
-<tr class="memitem:a9822e5fde50f0cb0a92a43db5594cfda" id="r_a9822e5fde50f0cb0a92a43db5594cfda"><td class="memItemLeft">static <a class="el" href="#ad567c6411fcb93eed3c4d9f8e0cc4261">Date</a>&#160;</td><td class="memItemRight"><a class="el" href="#a9822e5fde50f0cb0a92a43db5594cfda">date_with_time_interval</a> (double secs_to_be_added, const <a class="el" href="#ad567c6411fcb93eed3c4d9f8e0cc4261">Date</a> &amp;date)</td></tr>
-<tr class="memdesc:a9822e5fde50f0cb0a92a43db5594cfda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSDate dateWithTimeInterval:sinceDate:]</span>.  <br /></td></tr>
-<tr class="memitem:ac1dfb9ee8e05e1696c84c979947ec2e0" id="r_ac1dfb9ee8e05e1696c84c979947ec2e0"><td class="memItemLeft">static <a class="el" href="#ad567c6411fcb93eed3c4d9f8e0cc4261">Date</a>&#160;</td><td class="memItemRight"><a class="el" href="#ac1dfb9ee8e05e1696c84c979947ec2e0">date_with_time_interval_since1970</a> (double secs)</td></tr>
-<tr class="memdesc:ac1dfb9ee8e05e1696c84c979947ec2e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSDate dateWithTimeIntervalSince1970:]</span>.  <br /></td></tr>
-<tr class="memitem:a1b892b5d4945c700c2bfb5049faecbea" id="r_a1b892b5d4945c700c2bfb5049faecbea"><td class="memItemLeft">static <a class="el" href="#ad567c6411fcb93eed3c4d9f8e0cc4261">Date</a>&#160;</td><td class="memItemRight"><a class="el" href="#a1b892b5d4945c700c2bfb5049faecbea">date_with_time_interval_since_now</a> (double secs)</td></tr>
-<tr class="memdesc:a1b892b5d4945c700c2bfb5049faecbea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSDate dateWithTimeIntervalSinceNow:]</span>.  <br /></td></tr>
-<tr class="memitem:a2beafa4f2f365862eb0b4c797a8d636a" id="r_a2beafa4f2f365862eb0b4c797a8d636a"><td class="memItemLeft">static <a class="el" href="#ad567c6411fcb93eed3c4d9f8e0cc4261">Date</a>&#160;</td><td class="memItemRight"><a class="el" href="#a2beafa4f2f365862eb0b4c797a8d636a">date_with_time_interval_since_reference_date</a> (double ti)</td></tr>
-<tr class="memdesc:a2beafa4f2f365862eb0b4c797a8d636a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSDate dateWithTimeIntervalSinceReferenceDate:]</span>.  <br /></td></tr>
 <tr class="memitem:a277d405cf06f21e4a9b4929dd9ce9040" id="r_a277d405cf06f21e4a9b4929dd9ce9040"><td class="memItemLeft">static <a class="el" href="#ad567c6411fcb93eed3c4d9f8e0cc4261">Date</a>&#160;</td><td class="memItemRight"><a class="el" href="#a277d405cf06f21e4a9b4929dd9ce9040">distant_future</a> ()</td></tr>
 <tr class="memdesc:a277d405cf06f21e4a9b4929dd9ce9040"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">distantFuture</span> property of <span class="tt">NSDate</span>.  <br /></td></tr>
 <tr class="memitem:aa41b780b2d0ad3dd2bef8fdeb2d2af45" id="r_aa41b780b2d0ad3dd2bef8fdeb2d2af45"><td class="memItemLeft">static <a class="el" href="#ad567c6411fcb93eed3c4d9f8e0cc4261">Date</a>&#160;</td><td class="memItemRight"><a class="el" href="#aa41b780b2d0ad3dd2bef8fdeb2d2af45">distant_past</a> ()</td></tr>
@@ -156,20 +146,16 @@ Static Public Member Functions</h2></td></tr>
 <p>A representation of a specific point in time, independent of any calendar or time zone. In Swift, use this type when you need reference semantics or other Foundation-specific behavior. ''NSDate'' objects encapsulate a single point in time, independent of any particular calendrical system or time zone. <a class="el" href="classcocoon_1_1_date.html" title="C++ handle for the Objective-C class NSDate (Foundation).">Date</a> objects are immutable, representing an invariant time interval relative to an absolute reference date (00:00:00 UTC on 1 January 2001). The ''NSDate'' class provides methods for comparing dates, calculating the time interval between two dates, and creating a new date from a time interval relative to another date. ''NSDate'' objects can be used in conjunction with ''<a class="el" href="classcocoon_1_1_date_formatter.html" title="C++ handle for the Objective-C class NSDateFormatter (Foundation).">DateFormatter</a>'' objects to create localized representations of dates and times, as well as with ''NSCalendar'' objects to perform calendar arithmetic. ''NSDate'' is toll-free bridged with its Core Foundation counterpart, &lt;doc://com.apple.documentation/documentation/corefoundation/cfdate&gt;. See <a href="https://developer.apple.com/library/archive/documentation/General/Conceptual/CocoaEncyclopedia/Toll-FreeBridgin/Toll-FreeBridgin.html\#//apple_ref/doc/uid/TP40010810-CH2">Toll-Free Bridging</a> for more information on toll-free bridging. &gt; Important: &gt; The Swift overlay to the Foundation framework provides the ''<a class="el" href="classcocoon_1_1_date.html" title="C++ handle for the Objective-C class NSDate (Foundation).">Date</a>'' structure, which bridges to the ''NSDate'' class. For more information about value types, see &lt;doc://com.apple.documentation/documentation/swift/working-with-foundation-types&gt;. ### Subclassing Notes You might subclass ''NSDate'' in order to make it easier to work with a particular calendrical system, or to work with date and time values with a finer temporal granularity. #### Methods to Override and Other Requirements If you want to subclass ''NSDate'' to obtain behavior different than that provided by the private or public subclasses, you must: - Declare a suitable instance variable to hold the date and time value (relative to an absolute reference date) - Override the ''timeIntervalSinceReferenceDate-property'' instance method to provide the correct date and time value based on your instance variable - Override ''init(timeIntervalSinceReferenceDate:)'', one of the designated initializer methods - If creating a subclass that represents a calendrical system, define methods that partition past and future periods into the units of this calendar - Implement the methods required by the ''NSCopying'' and <a href="https://developer.apple.com/library/archive/documentation/Swift/Conceptual/BuildingCocoaApps/WritingSwiftClassesWithObjective-CBehavior.html\#//apple_ref/doc/uid/TP40014216-CH5-ID152">NSCoding</a> protocols, because ''NSDate'' adopts these protocols #### Special Considerations Your subclass may use a different reference date than the absolute reference date used by ''NSDate'' (00:00:00 UTC on 1 January 2001). If it does, it must still use the absolute reference date in its implementations of the methods ''timeIntervalSinceReferenceDate-property'' and ''init(timeIntervalSinceReferenceDate:)''. That is, the reference date referred to in the titles of these methods is the absolute reference date. If you do not use the absolute reference date in these methods, comparisons between ''NSDate'' objects of your subclass and 'NSDate' objects of a private subclass will not work. Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.</p>
 <dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;cocoon.h&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_class" href="classcocoon_1_1_date.html">cocoon::Date</a> <a class="code hl_function" href="#a34f84c1bf93236b785d071e818524c05">date</a>;</div>
-<div class="ttc" id="aclasscocoon_1_1_date_html"><div class="ttname"><a href="classcocoon_1_1_date.html">cocoon::Date</a></div><div class="ttdoc">C++ handle for the Objective-C class NSDate (Foundation).</div><div class="ttdef"><b>Definition</b> date.h:36</div></div>
-<div class="ttc" id="aclasscocoon_1_1_date_html_a34f84c1bf93236b785d071e818524c05"><div class="ttname"><a href="#a34f84c1bf93236b785d071e818524c05">cocoon::Date::date</a></div><div class="ttdeci">static Date date()</div><div class="ttdoc">Calls +[NSDate date].</div></div>
+<div class="line"><a class="code hl_class" href="classcocoon_1_1_date.html">cocoon::Date</a> date;</div>
+<div class="ttc" id="aclasscocoon_1_1_date_html"><div class="ttname"><a href="classcocoon_1_1_date.html">cocoon::Date</a></div><div class="ttdoc">C++ handle for the Objective-C class NSDate (Foundation).</div><div class="ttdef"><b>Definition</b> date.h:34</div></div>
 </div><!-- fragment --></dd></dl>
-<dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_date.html">cocoon::Date</a> <a class="code hl_function" href="#a34f84c1bf93236b785d071e818524c05">date</a>{};</div>
-<div class="line"><span class="keyword">auto</span> made_0 = <a class="code hl_function" href="#a34f84c1bf93236b785d071e818524c05">cocoon::Date::date</a>();</div>
-<div class="line"><span class="keyword">auto</span> made_1 = <a class="code hl_function" href="#a9822e5fde50f0cb0a92a43db5594cfda">cocoon::Date::date_with_time_interval</a>(1, <a class="code hl_class" href="classcocoon_1_1_date.html">cocoon::Date</a>());</div>
-<div class="line"><a class="code hl_function" href="#a34f84c1bf93236b785d071e818524c05">date</a>.<a class="code hl_function" href="#a109a17b002828b8092bc758495cc2b09">compare</a>(<a class="code hl_class" href="classcocoon_1_1_date.html">cocoon::Date</a>());</div>
-<div class="line"><a class="code hl_function" href="#a34f84c1bf93236b785d071e818524c05">date</a>.<a class="code hl_function" href="#a72504f8805bd34b35a719e6ce092ab40">date_by_adding_time_interval</a>(1);</div>
-<div class="line"><a class="code hl_function" href="#a34f84c1bf93236b785d071e818524c05">date</a>.<a class="code hl_function" href="#a8a689bfe89c87ef4cad2ff4fc644134d">earlier_date</a>(<a class="code hl_class" href="classcocoon_1_1_date.html">cocoon::Date</a>());</div>
+<dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_date.html">cocoon::Date</a> date{};</div>
+<div class="line">date.<a class="code hl_function" href="#a109a17b002828b8092bc758495cc2b09">compare</a>(<a class="code hl_class" href="classcocoon_1_1_date.html">cocoon::Date</a>());</div>
+<div class="line">date.<a class="code hl_function" href="#a72504f8805bd34b35a719e6ce092ab40">date_by_adding_time_interval</a>(1);</div>
+<div class="line">date.<a class="code hl_function" href="#a8a689bfe89c87ef4cad2ff4fc644134d">earlier_date</a>(<a class="code hl_class" href="classcocoon_1_1_date.html">cocoon::Date</a>());</div>
 <div class="ttc" id="aclasscocoon_1_1_date_html_a109a17b002828b8092bc758495cc2b09"><div class="ttname"><a href="#a109a17b002828b8092bc758495cc2b09">cocoon::Date::compare</a></div><div class="ttdeci">ComparisonResult compare(const Date &amp;other) const</div><div class="ttdoc">Calls -[NSDate compare:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_date_html_a72504f8805bd34b35a719e6ce092ab40"><div class="ttname"><a href="#a72504f8805bd34b35a719e6ce092ab40">cocoon::Date::date_by_adding_time_interval</a></div><div class="ttdeci">Date date_by_adding_time_interval(double ti) const</div><div class="ttdoc">Calls -[NSDate dateByAddingTimeInterval:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_date_html_a8a689bfe89c87ef4cad2ff4fc644134d"><div class="ttname"><a href="#a8a689bfe89c87ef4cad2ff4fc644134d">cocoon::Date::earlier_date</a></div><div class="ttdeci">Date earlier_date(const Date &amp;another_date) const</div><div class="ttdoc">Calls -[NSDate earlierDate:].</div></div>
-<div class="ttc" id="aclasscocoon_1_1_date_html_a9822e5fde50f0cb0a92a43db5594cfda"><div class="ttname"><a href="#a9822e5fde50f0cb0a92a43db5594cfda">cocoon::Date::date_with_time_interval</a></div><div class="ttdeci">static Date date_with_time_interval(double secs_to_be_added, const Date &amp;date)</div><div class="ttdoc">Calls +[NSDate dateWithTimeInterval:sinceDate:].</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/foundation/nsdate">https://developer.apple.com/documentation/foundation/nsdate</a> </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -331,34 +317,6 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a34f84c1bf93236b785d071e818524c05" name="a34f84c1bf93236b785d071e818524c05"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34f84c1bf93236b785d071e818524c05">&#9670;&#160;</a></span>date()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#ad567c6411fcb93eed3c4d9f8e0cc4261">Date</a> cocoon::Date::date </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSDate <a class="el" href="#a34f84c1bf93236b785d071e818524c05" title="Calls +[NSDate date].">date</a>]</span>. </p>
-<p>Creates and returns a new date object set to the current date and time. This method uses the default initializer method for the class, 'init'. </p><dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
 <a id="a72504f8805bd34b35a719e6ce092ab40" name="a72504f8805bd34b35a719e6ce092ab40"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a72504f8805bd34b35a719e6ce092ab40">&#9670;&#160;</a></span>date_by_adding_time_interval()</h2>
 
@@ -376,147 +334,6 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Calls <span class="tt">-[NSDate dateByAddingTimeInterval:]</span>. </p>
 <p>Returns a new date object that is set to a given number of seconds relative to the receiver. - Parameter ti: The number of seconds to add to the receiver. Use a negative value for seconds to have the returned object specify a date before the receiver. - Returns: A new 'NSDate' object that is set to 'seconds' seconds relative to the receiver. The date returned might have a representation different from the receiver's. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">ti</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a9822e5fde50f0cb0a92a43db5594cfda" name="a9822e5fde50f0cb0a92a43db5594cfda"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9822e5fde50f0cb0a92a43db5594cfda">&#9670;&#160;</a></span>date_with_time_interval()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#ad567c6411fcb93eed3c4d9f8e0cc4261">Date</a> cocoon::Date::date_with_time_interval </td>
-          <td>(</td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>secs_to_be_added</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="#ad567c6411fcb93eed3c4d9f8e0cc4261">Date</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>date</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSDate dateWithTimeInterval:sinceDate:]</span>. </p>
-<p>Creates and returns a date object set to a given number of seconds from the specified date. - Parameter secsToBeAdded: The number of seconds to add to 'date'. Use a negative argument to specify a date and time before 'date'. - Parameter date: The date. - Returns: An 'NSDate' object set to 'secsToBeAdded' seconds from 'date'. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">secs_to_be_added</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">date</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="ac1dfb9ee8e05e1696c84c979947ec2e0" name="ac1dfb9ee8e05e1696c84c979947ec2e0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac1dfb9ee8e05e1696c84c979947ec2e0">&#9670;&#160;</a></span>date_with_time_interval_since1970()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#ad567c6411fcb93eed3c4d9f8e0cc4261">Date</a> cocoon::Date::date_with_time_interval_since1970 </td>
-          <td>(</td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>secs</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSDate dateWithTimeIntervalSince1970:]</span>. </p>
-<p>Creates and returns a date object set to the given number of seconds from 00:00:00 UTC on 1 January 1970. - Parameter secs: The number of seconds from the reference date (00:00:00 UTC on 1 January 1970) for the new date. Use a negative argument to specify a date and time before the reference date. - Returns: An 'NSDate' object set to 'secs' seconds from the reference date. This method is useful for creating 'NSDate' objects from 'time_t' values returned by BSD system functions. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">secs</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a1b892b5d4945c700c2bfb5049faecbea" name="a1b892b5d4945c700c2bfb5049faecbea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1b892b5d4945c700c2bfb5049faecbea">&#9670;&#160;</a></span>date_with_time_interval_since_now()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#ad567c6411fcb93eed3c4d9f8e0cc4261">Date</a> cocoon::Date::date_with_time_interval_since_now </td>
-          <td>(</td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>secs</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSDate dateWithTimeIntervalSinceNow:]</span>. </p>
-<p>Creates and returns a date object set to a given number of seconds from the current date and time. - Parameter secs: The number of seconds from the current date and time for the new date. Use a negative value to specify a date before the current date. - Returns: An 'NSDate' object set to 'secs' seconds from the current date and time. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">secs</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a2beafa4f2f365862eb0b4c797a8d636a" name="a2beafa4f2f365862eb0b4c797a8d636a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2beafa4f2f365862eb0b4c797a8d636a">&#9670;&#160;</a></span>date_with_time_interval_since_reference_date()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#ad567c6411fcb93eed3c4d9f8e0cc4261">Date</a> cocoon::Date::date_with_time_interval_since_reference_date </td>
-          <td>(</td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>ti</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSDate dateWithTimeIntervalSinceReferenceDate:]</span>. </p>
-<p>Creates and returns a date object set to a given number of seconds from 00:00:00 UTC on 1 January 2001. - Parameter ti: The number of seconds from the absolute reference date (00:00:00 UTC on 1 January 2001) for the new date. Use a negative argument to specify a date and time before the reference date. - Returns: An 'NSDate' object set to 'ti' seconds from the absolute reference date. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ti</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
   </table>

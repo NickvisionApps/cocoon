@@ -52,134 +52,134 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit ScriptObjectSpecifier(Adopt adopt);
         /**
-     * @brief Calls `-[NSScriptObjectSpecifier indicesOfObjectsByEvaluatingWithContainer:count:]`.
-     * @details Returns the indices of the specified objects in the container.
-     * @param container Argument converted to the Objective-C parameter of the same role.
-     * @param count Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSScriptObjectSpecifier indicesOfObjectsByEvaluatingWithContainer:count:]`.
+         * @details Returns the indices of the specified objects in the container.
+         * @param container Argument converted to the Objective-C parameter of the same role.
+         * @param count Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::int64_t* indices_of_objects_by_evaluating_with_container(const Object& container, std::int64_t* count) const;
         /**
-     * @brief Calls `+[NSScriptObjectSpecifier objectSpecifierWithDescriptor:]`.
-     * @details Given a 'typeObjectSpecifier' Apple event descriptor, creates and returns an object specifier. Returns 'nil' on failure. If this is invoked and fails during the execution of a script command, information about the error that caused the failure is recorded in '[NSScriptCommand currentCommand]'.
-     * @param descriptor Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSScriptObjectSpecifier objectSpecifierWithDescriptor:]`.
+         * @details Given a 'typeObjectSpecifier' Apple event descriptor, creates and returns an object specifier. Returns 'nil' on failure. If this is invoked and fails during the execution of a script command, information about the error that caused the failure is recorded in '[NSScriptCommand currentCommand]'.
+         * @param descriptor Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static ScriptObjectSpecifier object_specifier_with_descriptor(const AppleEventDescriptor& descriptor);
         /**
-     * @brief Calls `-[NSScriptObjectSpecifier objectsByEvaluatingWithContainers:]`.
-     * @details Returns the specified objects from the given containers.
-     * @param containers Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSScriptObjectSpecifier objectsByEvaluatingWithContainers:]`.
+         * @details Returns the specified objects from the given containers.
+         * @param containers Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Object objects_by_evaluating_with_containers(const Object& containers) const;
         /**
-     * @brief Returns the `childSpecifier` property of `NSScriptObjectSpecifier`.
-     * @details The child specifier of this specifier.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `childSpecifier` property of `NSScriptObjectSpecifier`.
+         * @details The child specifier of this specifier.
+         * @return The converted Objective-C result.
+         */
         ScriptObjectSpecifier child_specifier() const;
         /**
-     * @brief Sets the `childSpecifier` property of `NSScriptObjectSpecifier`.
-     * @details The child specifier of this specifier.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `childSpecifier` property of `NSScriptObjectSpecifier`.
+         * @details The child specifier of this specifier.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_child_specifier(const ScriptObjectSpecifier& value) const;
         /**
-     * @brief Returns the `containerClassDescription` property of `NSScriptObjectSpecifier`.
-     * @details The class description for the container.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `containerClassDescription` property of `NSScriptObjectSpecifier`.
+         * @details The class description for the container.
+         * @return The converted Objective-C result.
+         */
         ScriptClassDescription container_class_description() const;
         /**
-     * @brief Sets the `containerClassDescription` property of `NSScriptObjectSpecifier`.
-     * @details The class description for the container.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `containerClassDescription` property of `NSScriptObjectSpecifier`.
+         * @details The class description for the container.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_container_class_description(const ScriptClassDescription& value) const;
         /**
-     * @brief Returns the `containerIsObjectBeingTested` property of `NSScriptObjectSpecifier`.
-     * @details A Boolean value that indicates whether the container is the object currently being tested by an 'NSWhoseSpecifier'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `containerIsObjectBeingTested` property of `NSScriptObjectSpecifier`.
+         * @details A Boolean value that indicates whether the container is the object currently being tested by an 'NSWhoseSpecifier'.
+         * @return The converted Objective-C result.
+         */
         bool container_is_object_being_tested() const;
         /**
-     * @brief Sets the `containerIsObjectBeingTested` property of `NSScriptObjectSpecifier`.
-     * @details A Boolean value that indicates whether the container is the object currently being tested by an 'NSWhoseSpecifier'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `containerIsObjectBeingTested` property of `NSScriptObjectSpecifier`.
+         * @details A Boolean value that indicates whether the container is the object currently being tested by an 'NSWhoseSpecifier'.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_container_is_object_being_tested(bool value) const;
         /**
-     * @brief Returns the `containerIsRangeContainerObject` property of `NSScriptObjectSpecifier`.
-     * @details A Boolean value that indicates whether the container is the container for the current range specifier being evaluated.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `containerIsRangeContainerObject` property of `NSScriptObjectSpecifier`.
+         * @details A Boolean value that indicates whether the container is the container for the current range specifier being evaluated.
+         * @return The converted Objective-C result.
+         */
         bool container_is_range_container_object() const;
         /**
-     * @brief Sets the `containerIsRangeContainerObject` property of `NSScriptObjectSpecifier`.
-     * @details A Boolean value that indicates whether the container is the container for the current range specifier being evaluated.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `containerIsRangeContainerObject` property of `NSScriptObjectSpecifier`.
+         * @details A Boolean value that indicates whether the container is the container for the current range specifier being evaluated.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_container_is_range_container_object(bool value) const;
         /**
-     * @brief Returns the `containerSpecifier` property of `NSScriptObjectSpecifier`.
-     * @details The container specifier of this specifier.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `containerSpecifier` property of `NSScriptObjectSpecifier`.
+         * @details The container specifier of this specifier.
+         * @return The converted Objective-C result.
+         */
         ScriptObjectSpecifier container_specifier() const;
         /**
-     * @brief Sets the `containerSpecifier` property of `NSScriptObjectSpecifier`.
-     * @details The container specifier of this specifier.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `containerSpecifier` property of `NSScriptObjectSpecifier`.
+         * @details The container specifier of this specifier.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_container_specifier(const ScriptObjectSpecifier& value) const;
         /**
-     * @brief Returns the `descriptor` property of `NSScriptObjectSpecifier`.
-     * @details An Apple event descriptor that represents this specifier.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `descriptor` property of `NSScriptObjectSpecifier`.
+         * @details An Apple event descriptor that represents this specifier.
+         * @return The converted Objective-C result.
+         */
         AppleEventDescriptor descriptor() const;
         /**
-     * @brief Returns the `evaluationErrorNumber` property of `NSScriptObjectSpecifier`.
-     * @details The error number from the most recent evaluation.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `evaluationErrorNumber` property of `NSScriptObjectSpecifier`.
+         * @details The error number from the most recent evaluation.
+         * @return The converted Objective-C result.
+         */
         std::int64_t evaluation_error_number() const;
         /**
-     * @brief Sets the `evaluationErrorNumber` property of `NSScriptObjectSpecifier`.
-     * @details The error number from the most recent evaluation.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `evaluationErrorNumber` property of `NSScriptObjectSpecifier`.
+         * @details The error number from the most recent evaluation.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_evaluation_error_number(std::int64_t value) const;
         /**
-     * @brief Returns the `evaluationErrorSpecifier` property of `NSScriptObjectSpecifier`.
-     * @details The specifier in which an evaluation error occurred.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `evaluationErrorSpecifier` property of `NSScriptObjectSpecifier`.
+         * @details The specifier in which an evaluation error occurred.
+         * @return The converted Objective-C result.
+         */
         ScriptObjectSpecifier evaluation_error_specifier() const;
         /**
-     * @brief Returns the `key` property of `NSScriptObjectSpecifier`.
-     * @details The name of the key in the container object to be accessed by this specifier.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `key` property of `NSScriptObjectSpecifier`.
+         * @details The name of the key in the container object to be accessed by this specifier.
+         * @return The converted Objective-C result.
+         */
         std::string key() const;
         /**
-     * @brief Sets the `key` property of `NSScriptObjectSpecifier`.
-     * @details The name of the key in the container object to be accessed by this specifier.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `key` property of `NSScriptObjectSpecifier`.
+         * @details The name of the key in the container object to be accessed by this specifier.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_key(const std::string& value) const;
         /**
-     * @brief Returns the `keyClassDescription` property of `NSScriptObjectSpecifier`.
-     * @details The class description for the keyed objects.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `keyClassDescription` property of `NSScriptObjectSpecifier`.
+         * @details The class description for the keyed objects.
+         * @return The converted Objective-C result.
+         */
         ScriptClassDescription key_class_description() const;
         /**
-     * @brief Returns the `objectsByEvaluatingSpecifier` property of `NSScriptObjectSpecifier`.
-     * @details The actual objects represented by this specifier.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `objectsByEvaluatingSpecifier` property of `NSScriptObjectSpecifier`.
+         * @details The actual objects represented by this specifier.
+         * @return The converted Objective-C result.
+         */
         Object objects_by_evaluating_specifier() const;
     };
 }

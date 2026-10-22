@@ -44,54 +44,54 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit Stepper(Adopt adopt);
         /**
-     * @brief Returns the `autorepeat` property of `NSStepper`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `autorepeat` property of `NSStepper`.
+         * @return The converted Objective-C result.
+         */
         bool autorepeat() const;
         /**
-     * @brief Sets the `autorepeat` property of `NSStepper`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `autorepeat` property of `NSStepper`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_autorepeat(bool value) const;
         /**
-     * @brief Returns the `increment` property of `NSStepper`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `increment` property of `NSStepper`.
+         * @return The converted Objective-C result.
+         */
         double increment() const;
         /**
-     * @brief Sets the `increment` property of `NSStepper`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `increment` property of `NSStepper`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_increment(double value) const;
         /**
-     * @brief Returns the `maxValue` property of `NSStepper`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `maxValue` property of `NSStepper`.
+         * @return The converted Objective-C result.
+         */
         double max_value() const;
         /**
-     * @brief Sets the `maxValue` property of `NSStepper`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `maxValue` property of `NSStepper`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_max_value(double value) const;
         /**
-     * @brief Returns the `minValue` property of `NSStepper`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `minValue` property of `NSStepper`.
+         * @return The converted Objective-C result.
+         */
         double min_value() const;
         /**
-     * @brief Sets the `minValue` property of `NSStepper`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `minValue` property of `NSStepper`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_min_value(double value) const;
         /**
-     * @brief Returns the `valueWraps` property of `NSStepper`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `valueWraps` property of `NSStepper`.
+         * @return The converted Objective-C result.
+         */
         bool value_wraps() const;
         /**
-     * @brief Sets the `valueWraps` property of `NSStepper`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `valueWraps` property of `NSStepper`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_value_wraps(bool value) const;
         /// @brief Convenience helper `value` provided by cocoon.
         double value() const;

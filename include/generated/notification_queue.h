@@ -45,33 +45,33 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit NotificationQueue(Adopt adopt);
         /**
-     * @brief Calls `-[NSNotificationQueue dequeueNotificationsMatching:coalesceMask:]`.
-     * @details Removes all notifications from the queue that match a provided notification using provided matching criteria.
-     * @param notification Argument converted to the Objective-C parameter of the same role.
-     * @param coalesce_mask Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSNotificationQueue dequeueNotificationsMatching:coalesceMask:]`.
+         * @details Removes all notifications from the queue that match a provided notification using provided matching criteria.
+         * @param notification Argument converted to the Objective-C parameter of the same role.
+         * @param coalesce_mask Argument converted to the Objective-C parameter of the same role.
+         */
         void dequeue_notifications_matching(const Notification& notification, std::uint64_t coalesce_mask) const;
         /**
-     * @brief Calls `-[NSNotificationQueue enqueueNotification:postingStyle:]`.
-     * @details Adds a notification to the notification queue with a specified posting style.
-     * @param notification Argument converted to the Objective-C parameter of the same role.
-     * @param posting_style Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSNotificationQueue enqueueNotification:postingStyle:]`.
+         * @details Adds a notification to the notification queue with a specified posting style.
+         * @param notification Argument converted to the Objective-C parameter of the same role.
+         * @param posting_style Argument converted to the Objective-C parameter of the same role.
+         */
         void enqueue_notification(const Notification& notification, PostingStyle posting_style) const;
         /**
-     * @brief Calls `-[NSNotificationQueue enqueueNotification:postingStyle:coalesceMask:forModes:]`.
-     * @details Adds a notification to the notification queue with a specified posting style, criteria for coalescing, and run loop mode. The notification queue will only post the notification to its notification center if the run loop is in one of the modes provided in the array. The modes parameter may be nil, in which case it defaults to NSDefaultRunLoopMode.
-     * @param notification Argument converted to the Objective-C parameter of the same role.
-     * @param posting_style Argument converted to the Objective-C parameter of the same role.
-     * @param coalesce_mask Argument converted to the Objective-C parameter of the same role.
-     * @param modes Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSNotificationQueue enqueueNotification:postingStyle:coalesceMask:forModes:]`.
+         * @details Adds a notification to the notification queue with a specified posting style, criteria for coalescing, and run loop mode. The notification queue will only post the notification to its notification center if the run loop is in one of the modes provided in the array. The modes parameter may be nil, in which case it defaults to NSDefaultRunLoopMode.
+         * @param notification Argument converted to the Objective-C parameter of the same role.
+         * @param posting_style Argument converted to the Objective-C parameter of the same role.
+         * @param coalesce_mask Argument converted to the Objective-C parameter of the same role.
+         * @param modes Argument converted to the Objective-C parameter of the same role.
+         */
         void enqueue_notification(const Notification& notification, PostingStyle posting_style, NotificationCoalescing coalesce_mask, const std::vector<std::string>& modes) const;
         /**
-     * @brief Returns the `defaultQueue` property of `NSNotificationQueue`.
-     * @details Returns the default notification queue for the current thread. This notification queue uses the default notification center.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `defaultQueue` property of `NSNotificationQueue`.
+         * @details Returns the default notification queue for the current thread. This notification queue uses the default notification center.
+         * @return The converted Objective-C result.
+         */
         static NotificationQueue default_queue();
     };
 }

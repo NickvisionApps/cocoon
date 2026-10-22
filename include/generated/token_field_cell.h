@@ -48,48 +48,48 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit TokenFieldCell(Adopt adopt);
         /**
-     * @brief Returns the `completionDelay` property of `NSTokenFieldCell`.
-     * @details Sets the auto-completion delay before the list of possible completions automatically pops up. Completions are only offered if the delegate implements the completion delegate API. A negative delay will disable completion while a delay of 0.0 will make completion UI presentation immediate.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `completionDelay` property of `NSTokenFieldCell`.
+         * @details Sets the auto-completion delay before the list of possible completions automatically pops up. Completions are only offered if the delegate implements the completion delegate API. A negative delay will disable completion while a delay of 0.0 will make completion UI presentation immediate.
+         * @return The converted Objective-C result.
+         */
         double completion_delay() const;
         /**
-     * @brief Sets the `completionDelay` property of `NSTokenFieldCell`.
-     * @details Sets the auto-completion delay before the list of possible completions automatically pops up. Completions are only offered if the delegate implements the completion delegate API. A negative delay will disable completion while a delay of 0.0 will make completion UI presentation immediate.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `completionDelay` property of `NSTokenFieldCell`.
+         * @details Sets the auto-completion delay before the list of possible completions automatically pops up. Completions are only offered if the delegate implements the completion delegate API. A negative delay will disable completion while a delay of 0.0 will make completion UI presentation immediate.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_completion_delay(double value) const;
         /**
-     * @brief Returns the `defaultCompletionDelay` property of `NSTokenFieldCell`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `defaultCompletionDelay` property of `NSTokenFieldCell`.
+         * @return The converted Objective-C result.
+         */
         static double default_completion_delay();
         /**
-     * @brief Returns the `defaultTokenizingCharacterSet` property of `NSTokenFieldCell`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `defaultTokenizingCharacterSet` property of `NSTokenFieldCell`.
+         * @return The converted Objective-C result.
+         */
         static CharacterSet default_tokenizing_character_set();
         /**
-     * @brief Returns the `tokenStyle` property of `NSTokenFieldCell`.
-     * @details Sets the default token style used for each new token. However, if the delegate implements tokenField:styleForRepresentedObject:, that return value will be used instead.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `tokenStyle` property of `NSTokenFieldCell`.
+         * @details Sets the default token style used for each new token. However, if the delegate implements tokenField:styleForRepresentedObject:, that return value will be used instead.
+         * @return The converted Objective-C result.
+         */
         TokenStyle token_style() const;
         /**
-     * @brief Sets the `tokenStyle` property of `NSTokenFieldCell`.
-     * @details Sets the default token style used for each new token. However, if the delegate implements tokenField:styleForRepresentedObject:, that return value will be used instead.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `tokenStyle` property of `NSTokenFieldCell`.
+         * @details Sets the default token style used for each new token. However, if the delegate implements tokenField:styleForRepresentedObject:, that return value will be used instead.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_token_style(TokenStyle value) const;
         /**
-     * @brief Returns the `tokenizingCharacterSet` property of `NSTokenFieldCell`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `tokenizingCharacterSet` property of `NSTokenFieldCell`.
+         * @return The converted Objective-C result.
+         */
         CharacterSet tokenizing_character_set() const;
         /**
-     * @brief Sets the `tokenizingCharacterSet` property of `NSTokenFieldCell`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `tokenizingCharacterSet` property of `NSTokenFieldCell`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_tokenizing_character_set(const CharacterSet& value) const;
         /// @brief Signal for the delegate/data-source method behind `completions_for_substring_index_of_token_index_of_selected_item`; connect a callback with `completions_for_substring_index_of_token_index_of_selected_item().connect(...)`.
         Signal<TokenFieldCell, std::vector<Object>(std::string, std::int64_t, std::int64_t*)> completions_for_substring_index_of_token_index_of_selected_item() const

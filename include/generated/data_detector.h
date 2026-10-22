@@ -20,13 +20,6 @@ namespace cocoon
      *
      * cocoon::DataDetector data_detector;
      * @endcode
-     *
-     * @par Common tasks
-     * Snippets built from this class's own members (values are placeholders).
-     * @code
-     * cocoon::DataDetector data_detector{};
-     * auto made_0 = cocoon::DataDetector::data_detector_with_types(1);
-     * @endcode
      * @see https://developer.apple.com/documentation/foundation/nsdatadetector
      */
     class DataDetector : public RegularExpression
@@ -41,17 +34,10 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit DataDetector(Adopt adopt);
         /**
-     * @brief Calls `+[NSDataDetector dataDetectorWithTypes:error:]`.
-     * @details NSDataDetector is a specialized subclass of NSRegularExpression. Instead of finding matches to regular expression patterns, it matches items identified by Data Detectors, such as dates, addresses, and URLs. The checkingTypes argument should contain one or more of the types NSTextCheckingTypeDate, NSTextCheckingTypeAddress, NSTextCheckingTypeLink, NSTextCheckingTypePhoneNumber, and NSTextCheckingTypeTransitInformation.
-     * @param checking_types Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static DataDetector data_detector_with_types(std::uint64_t checking_types);
-        /**
-     * @brief Returns the `checkingTypes` property of `NSDataDetector`.
-     * @details The checking types for the data detector. The supported subset of checking types are specified in ''NSTextCheckingResult/CheckingType''. Those constants can be combined using the C-bitwise OR operator. Currently, the supported data detector checking types are: ''NSTextCheckingResult/CheckingType/date'', ''NSTextCheckingResult/CheckingType/address'', ''NSTextCheckingResult/CheckingType/link'', phone number, and transit information.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `checkingTypes` property of `NSDataDetector`.
+         * @details The checking types for the data detector. The supported subset of checking types are specified in ''NSTextCheckingResult/CheckingType''. Those constants can be combined using the C-bitwise OR operator. Currently, the supported data detector checking types are: ''NSTextCheckingResult/CheckingType/date'', ''NSTextCheckingResult/CheckingType/address'', ''NSTextCheckingResult/CheckingType/link'', phone number, and transit information.
+         * @return The converted Objective-C result.
+         */
         std::uint64_t checking_types() const;
     };
 }

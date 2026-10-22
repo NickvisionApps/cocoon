@@ -8,6 +8,11 @@ namespace cocoon
         ColorWell::bind_action_(handle());
     }
 
+    ColorWell::ColorWell(ColorWellStyle style) : ColorWell(Adopt{cocoon::internal::retain([::NSColorWell colorWellWithStyle:static_cast<::NSColorWellStyle>(style)])})
+    {
+        ColorWell::bind_action_(handle());
+    }
+
     ColorWell::ColorWell(std::nullptr_t) : Control(nullptr)
     {
     }
@@ -19,11 +24,6 @@ namespace cocoon
     void ColorWell::activate(bool exclusive) const
     {
         [cocoon::internal::ns<::NSColorWell>(this) activate:static_cast<::BOOL>(exclusive)];
-    }
-
-    ColorWell ColorWell::color_well_with_style(ColorWellStyle style)
-    {
-        return cocoon::internal::wrap<ColorWell>([::NSColorWell colorWellWithStyle:static_cast<::NSColorWellStyle>(style)]);
     }
 
     void ColorWell::deactivate() const

@@ -43,19 +43,19 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit ScrubberTextItemView(Adopt adopt);
         /**
-     * @brief Returns the `textField` property of `NSScrubberTextItemView`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `textField` property of `NSScrubberTextItemView`.
+         * @return The converted Objective-C result.
+         */
         TextField text_field() const;
         /**
-     * @brief Returns the `title` property of `NSScrubberTextItemView`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `title` property of `NSScrubberTextItemView`.
+         * @return The converted Objective-C result.
+         */
         std::string title() const;
         /**
-     * @brief Sets the `title` property of `NSScrubberTextItemView`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `title` property of `NSScrubberTextItemView`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_title(const std::string& value) const;
     };
 }

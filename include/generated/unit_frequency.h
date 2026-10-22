@@ -31,57 +31,57 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit UnitFrequency(Adopt adopt);
         /**
-     * @brief Returns the `framesPerSecond` property of `NSUnitFrequency`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `framesPerSecond` property of `NSUnitFrequency`.
+         * @return The converted Objective-C result.
+         */
         static UnitFrequency frames_per_second();
         /**
-     * @brief Returns the `gigahertz` property of `NSUnitFrequency`.
-     * @details The gigahertz unit of frequency.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `gigahertz` property of `NSUnitFrequency`.
+         * @details The gigahertz unit of frequency.
+         * @return The converted Objective-C result.
+         */
         static UnitFrequency gigahertz();
         /**
-     * @brief Returns the `hertz` property of `NSUnitFrequency`.
-     * @details The hertz unit of frequency.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `hertz` property of `NSUnitFrequency`.
+         * @details The hertz unit of frequency.
+         * @return The converted Objective-C result.
+         */
         static UnitFrequency hertz();
         /**
-     * @brief Returns the `kilohertz` property of `NSUnitFrequency`.
-     * @details The kilohertz unit of frequency.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `kilohertz` property of `NSUnitFrequency`.
+         * @details The kilohertz unit of frequency.
+         * @return The converted Objective-C result.
+         */
         static UnitFrequency kilohertz();
         /**
-     * @brief Returns the `megahertz` property of `NSUnitFrequency`.
-     * @details The megahertz unit of frequency.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `megahertz` property of `NSUnitFrequency`.
+         * @details The megahertz unit of frequency.
+         * @return The converted Objective-C result.
+         */
         static UnitFrequency megahertz();
         /**
-     * @brief Returns the `microhertz` property of `NSUnitFrequency`.
-     * @details The microhertz unit of frequency.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `microhertz` property of `NSUnitFrequency`.
+         * @details The microhertz unit of frequency.
+         * @return The converted Objective-C result.
+         */
         static UnitFrequency microhertz();
         /**
-     * @brief Returns the `millihertz` property of `NSUnitFrequency`.
-     * @details The millihertz unit of frequency.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `millihertz` property of `NSUnitFrequency`.
+         * @details The millihertz unit of frequency.
+         * @return The converted Objective-C result.
+         */
         static UnitFrequency millihertz();
         /**
-     * @brief Returns the `nanohertz` property of `NSUnitFrequency`.
-     * @details The nanohertz unit of frequency.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `nanohertz` property of `NSUnitFrequency`.
+         * @details The nanohertz unit of frequency.
+         * @return The converted Objective-C result.
+         */
         static UnitFrequency nanohertz();
         /**
-     * @brief Returns the `terahertz` property of `NSUnitFrequency`.
-     * @details The terahertz unit of frequency.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `terahertz` property of `NSUnitFrequency`.
+         * @details The terahertz unit of frequency.
+         * @return The converted Objective-C result.
+         */
         static UnitFrequency terahertz();
     };
 }

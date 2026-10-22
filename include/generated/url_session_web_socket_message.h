@@ -34,19 +34,19 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit URLSessionWebSocketMessage(Adopt adopt);
         /**
-     * @brief Returns the `data` property of `NSURLSessionWebSocketMessage`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `data` property of `NSURLSessionWebSocketMessage`.
+         * @return The converted Objective-C result.
+         */
         std::vector<std::uint8_t> data() const;
         /**
-     * @brief Returns the `string` property of `NSURLSessionWebSocketMessage`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `string` property of `NSURLSessionWebSocketMessage`.
+         * @return The converted Objective-C result.
+         */
         std::string string() const;
         /**
-     * @brief Returns the `type` property of `NSURLSessionWebSocketMessage`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `type` property of `NSURLSessionWebSocketMessage`.
+         * @return The converted Objective-C result.
+         */
         URLSessionWebSocketMessageType type() const;
     };
 }

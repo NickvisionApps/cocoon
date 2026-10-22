@@ -22,14 +22,6 @@ namespace cocoon
      *
      * cocoon::InputStream input_stream;
      * @endcode
-     *
-     * @par Common tasks
-     * Snippets built from this class's own members (values are placeholders).
-     * @code
-     * cocoon::InputStream input_stream{};
-     * auto made_0 = cocoon::InputStream::input_stream_with_file_at_path("text");
-     * auto made_1 = cocoon::InputStream::input_stream_with_url(cocoon::URL());
-     * @endcode
      * @see https://developer.apple.com/documentation/foundation/nsinputstream
      */
     class InputStream : public Stream
@@ -48,47 +40,26 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit InputStream(Adopt adopt);
         /**
-     * @brief Calls `-[NSInputStream getBuffer:length:]`.
-     * @details Returns by reference a pointer to a read buffer and, by reference, the number of bytes available, and returns a Boolean value that indicates whether the buffer is available. This buffer is only valid until the next stream operation. Subclassers may return 'NO' for this if it is not appropriate for the stream type. This may return 'NO' if the buffer is not available. - Parameters: - buffer: Upon return, contains a pointer to a read buffer. - len: Upon return, contains the number of bytes available. - Returns: 'YES' if the buffer is available, otherwise 'NO'.
-     * @param buffer Argument converted to the Objective-C parameter of the same role.
-     * @param len Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSInputStream getBuffer:length:]`.
+         * @details Returns by reference a pointer to a read buffer and, by reference, the number of bytes available, and returns a Boolean value that indicates whether the buffer is available. This buffer is only valid until the next stream operation. Subclassers may return 'NO' for this if it is not appropriate for the stream type. This may return 'NO' if the buffer is not available. - Parameters: - buffer: Upon return, contains a pointer to a read buffer. - len: Upon return, contains the number of bytes available. - Returns: 'YES' if the buffer is available, otherwise 'NO'.
+         * @param buffer Argument converted to the Objective-C parameter of the same role.
+         * @param len Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool get_buffer(std::uint8_t** buffer, std::uint64_t* len) const;
         /**
-     * @brief Calls `+[NSInputStream inputStreamWithData:]`.
-     * @details Creates and returns an initialized 'NSInputStream' object for reading from a given 'NSData' object. The stream must be opened before it can be used. - Parameter data: The data object from which to read. The contents of 'data' are copied. - Returns: An initialized 'NSInputStream' object for reading from 'data'. If 'data' is not an 'NSData' object, this method returns 'nil'.
-     * @param data Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static InputStream input_stream_with_data(const std::vector<std::uint8_t>& data);
-        /**
-     * @brief Calls `+[NSInputStream inputStreamWithFileAtPath:]`.
-     * @details Creates and returns an initialized 'NSInputStream' object that reads data from the file at a given path. The stream must be opened before it can be used. - Parameter path: The path to the file. - Returns: An initialized 'NSInputStream' object that reads data from the file at 'path'.
-     * @param path Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static InputStream input_stream_with_file_at_path(const std::string& path);
-        /**
-     * @brief Calls `+[NSInputStream inputStreamWithURL:]`.
-     * @details Creates and returns an initialized 'NSInputStream' object that reads data from the file at a given URL. The stream must be opened before it can be used. - Parameter url: The URL to the file.
-     * @param url Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static InputStream input_stream_with_url(const URL& url);
-        /**
-     * @brief Calls `-[NSInputStream read:maxLength:]`.
-     * @details Reads up to a given number of bytes into a given buffer. - Parameters: - buffer: A data buffer. The buffer must be large enough to contain the number of bytes specified by 'len'. - len: The maximum number of bytes to read. - Returns: A positive number indicates the number of bytes read; '0' indicates that the end of the buffer was reached; '-1' means that the operation failed (more information about the error can be obtained with 'streamError').
-     * @param buffer Argument converted to the Objective-C parameter of the same role.
-     * @param len Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSInputStream read:maxLength:]`.
+         * @details Reads up to a given number of bytes into a given buffer. - Parameters: - buffer: A data buffer. The buffer must be large enough to contain the number of bytes specified by 'len'. - len: The maximum number of bytes to read. - Returns: A positive number indicates the number of bytes read; '0' indicates that the end of the buffer was reached; '-1' means that the operation failed (more information about the error can be obtained with 'streamError').
+         * @param buffer Argument converted to the Objective-C parameter of the same role.
+         * @param len Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::int64_t read(std::uint8_t* buffer, std::uint64_t len) const;
         /**
-     * @brief Returns the `hasBytesAvailable` property of `NSInputStream`.
-     * @details A Boolean value that indicates whether the receiver has bytes available to read. 'YES' if the stream has bytes available or if it is impossible to tell without actually doing the read.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `hasBytesAvailable` property of `NSInputStream`.
+         * @details A Boolean value that indicates whether the receiver has bytes available to read. 'YES' if the stream has bytes available or if it is impossible to tell without actually doing the read.
+         * @return The converted Objective-C result.
+         */
         bool has_bytes_available() const;
     };
 }

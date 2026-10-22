@@ -43,32 +43,32 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit LayoutXAxisAnchor(Adopt adopt);
         /**
-     * @brief Calls `-[NSLayoutXAxisAnchor anchorWithOffsetToAnchor:]`.
-     * @param other_anchor Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSLayoutXAxisAnchor anchorWithOffsetToAnchor:]`.
+         * @param other_anchor Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         LayoutDimension anchor_with_offset_to_anchor(const LayoutXAxisAnchor& other_anchor) const;
         /**
-     * @brief Calls `-[NSLayoutXAxisAnchor constraintEqualToSystemSpacingAfterAnchor:multiplier:]`.
-     * @details Constraints of the form, receiver [= | ≥ | ≤] 'anchor' + 'multiplier' system space, where the value of the system space is determined from information available from the anchors. The constraint affects how far the receiver will be positioned trailing 'anchor', per the effective user interface layout direction.
-     * @param anchor Argument converted to the Objective-C parameter of the same role.
-     * @param multiplier Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSLayoutXAxisAnchor constraintEqualToSystemSpacingAfterAnchor:multiplier:]`.
+         * @details Constraints of the form, receiver [= | ≥ | ≤] 'anchor' + 'multiplier' system space, where the value of the system space is determined from information available from the anchors. The constraint affects how far the receiver will be positioned trailing 'anchor', per the effective user interface layout direction.
+         * @param anchor Argument converted to the Objective-C parameter of the same role.
+         * @param multiplier Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         LayoutConstraint constraint_equal_to_system_spacing_after_anchor(const LayoutXAxisAnchor& anchor, double multiplier) const;
         /**
-     * @brief Calls `-[NSLayoutXAxisAnchor constraintGreaterThanOrEqualToSystemSpacingAfterAnchor:multiplier:]`.
-     * @param anchor Argument converted to the Objective-C parameter of the same role.
-     * @param multiplier Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSLayoutXAxisAnchor constraintGreaterThanOrEqualToSystemSpacingAfterAnchor:multiplier:]`.
+         * @param anchor Argument converted to the Objective-C parameter of the same role.
+         * @param multiplier Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         LayoutConstraint constraint_greater_than_or_equal_to_system_spacing_after_anchor(const LayoutXAxisAnchor& anchor, double multiplier) const;
         /**
-     * @brief Calls `-[NSLayoutXAxisAnchor constraintLessThanOrEqualToSystemSpacingAfterAnchor:multiplier:]`.
-     * @param anchor Argument converted to the Objective-C parameter of the same role.
-     * @param multiplier Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSLayoutXAxisAnchor constraintLessThanOrEqualToSystemSpacingAfterAnchor:multiplier:]`.
+         * @param anchor Argument converted to the Objective-C parameter of the same role.
+         * @param multiplier Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         LayoutConstraint constraint_less_than_or_equal_to_system_spacing_after_anchor(const LayoutXAxisAnchor& anchor, double multiplier) const;
     };
 }

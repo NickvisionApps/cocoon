@@ -43,66 +43,66 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit CollectionViewLayoutInvalidationContext(Adopt adopt);
         /**
-     * @brief Calls `-[NSCollectionViewLayoutInvalidationContext invalidateDecorationElementsOfKind:atIndexPaths:]`.
-     * @param element_kind Argument converted to the Objective-C parameter of the same role.
-     * @param index_paths Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSCollectionViewLayoutInvalidationContext invalidateDecorationElementsOfKind:atIndexPaths:]`.
+         * @param element_kind Argument converted to the Objective-C parameter of the same role.
+         * @param index_paths Argument converted to the Objective-C parameter of the same role.
+         */
         void invalidate_decoration_elements_of_kind(const std::string& element_kind, const std::vector<IndexPath>& index_paths) const;
         /**
-     * @brief Calls `-[NSCollectionViewLayoutInvalidationContext invalidateItemsAtIndexPaths:]`.
-     * @param index_paths Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSCollectionViewLayoutInvalidationContext invalidateItemsAtIndexPaths:]`.
+         * @param index_paths Argument converted to the Objective-C parameter of the same role.
+         */
         void invalidate_items_at_index_paths(const std::vector<IndexPath>& index_paths) const;
         /**
-     * @brief Calls `-[NSCollectionViewLayoutInvalidationContext invalidateSupplementaryElementsOfKind:atIndexPaths:]`.
-     * @param element_kind Argument converted to the Objective-C parameter of the same role.
-     * @param index_paths Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSCollectionViewLayoutInvalidationContext invalidateSupplementaryElementsOfKind:atIndexPaths:]`.
+         * @param element_kind Argument converted to the Objective-C parameter of the same role.
+         * @param index_paths Argument converted to the Objective-C parameter of the same role.
+         */
         void invalidate_supplementary_elements_of_kind(const std::string& element_kind, const std::vector<IndexPath>& index_paths) const;
         /**
-     * @brief Returns the `contentOffsetAdjustment` property of `NSCollectionViewLayoutInvalidationContext`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `contentOffsetAdjustment` property of `NSCollectionViewLayoutInvalidationContext`.
+         * @return The converted Objective-C result.
+         */
         Point content_offset_adjustment() const;
         /**
-     * @brief Sets the `contentOffsetAdjustment` property of `NSCollectionViewLayoutInvalidationContext`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `contentOffsetAdjustment` property of `NSCollectionViewLayoutInvalidationContext`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_content_offset_adjustment(const Point& value) const;
         /**
-     * @brief Returns the `contentSizeAdjustment` property of `NSCollectionViewLayoutInvalidationContext`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `contentSizeAdjustment` property of `NSCollectionViewLayoutInvalidationContext`.
+         * @return The converted Objective-C result.
+         */
         Size content_size_adjustment() const;
         /**
-     * @brief Sets the `contentSizeAdjustment` property of `NSCollectionViewLayoutInvalidationContext`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `contentSizeAdjustment` property of `NSCollectionViewLayoutInvalidationContext`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_content_size_adjustment(const Size& value) const;
         /**
-     * @brief Returns the `invalidateDataSourceCounts` property of `NSCollectionViewLayoutInvalidationContext`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `invalidateDataSourceCounts` property of `NSCollectionViewLayoutInvalidationContext`.
+         * @return The converted Objective-C result.
+         */
         bool invalidate_data_source_counts() const;
         /**
-     * @brief Returns the `invalidateEverything` property of `NSCollectionViewLayoutInvalidationContext`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `invalidateEverything` property of `NSCollectionViewLayoutInvalidationContext`.
+         * @return The converted Objective-C result.
+         */
         bool invalidate_everything() const;
         /**
-     * @brief Returns the `invalidatedDecorationIndexPaths` property of `NSCollectionViewLayoutInvalidationContext`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `invalidatedDecorationIndexPaths` property of `NSCollectionViewLayoutInvalidationContext`.
+         * @return The converted Objective-C result.
+         */
         std::map<std::string, std::vector<IndexPath>> invalidated_decoration_index_paths() const;
         /**
-     * @brief Returns the `invalidatedItemIndexPaths` property of `NSCollectionViewLayoutInvalidationContext`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `invalidatedItemIndexPaths` property of `NSCollectionViewLayoutInvalidationContext`.
+         * @return The converted Objective-C result.
+         */
         std::vector<IndexPath> invalidated_item_index_paths() const;
         /**
-     * @brief Returns the `invalidatedSupplementaryIndexPaths` property of `NSCollectionViewLayoutInvalidationContext`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `invalidatedSupplementaryIndexPaths` property of `NSCollectionViewLayoutInvalidationContext`.
+         * @return The converted Objective-C result.
+         */
         std::map<std::string, std::vector<IndexPath>> invalidated_supplementary_index_paths() const;
     };
 }

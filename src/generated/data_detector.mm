@@ -28,17 +28,6 @@ namespace cocoon
     {
     }
 
-    DataDetector DataDetector::data_detector_with_types(std::uint64_t checking_types)
-    {
-        NSError* __error = nil;
-        auto __r = [::NSDataDetector dataDetectorWithTypes:static_cast<::NSTextCheckingTypes>(checking_types) error:&__error];
-        if (__error)
-        {
-            throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
-        }
-        return cocoon::internal::wrap<DataDetector>(__r);
-    }
-
     std::uint64_t DataDetector::checking_types() const
     {
         return static_cast<std::uint64_t>([cocoon::internal::ns<::NSDataDetector>(this) checkingTypes]);

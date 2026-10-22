@@ -55,122 +55,122 @@ namespace cocoon
         using ActionCell::tag;
         using Cell::title_rect_for_bounds;
         /**
-     * @brief Calls `-[NSMenuItemCell calcSize]`.
-     */
+         * @brief Calls `-[NSMenuItemCell calcSize]`.
+         */
         void calc_size() const;
         /**
-     * @brief Calls `-[NSMenuItemCell drawBorderAndBackgroundWithFrame:inView:]`.
-     * @param cell_frame Argument converted to the Objective-C parameter of the same role.
-     * @param control_view Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSMenuItemCell drawBorderAndBackgroundWithFrame:inView:]`.
+         * @param cell_frame Argument converted to the Objective-C parameter of the same role.
+         * @param control_view Argument converted to the Objective-C parameter of the same role.
+         */
         void draw_border_and_background_with_frame(const Rect& cell_frame, const View& control_view) const;
         /**
-     * @brief Calls `-[NSMenuItemCell drawImageWithFrame:inView:]`.
-     * @param cell_frame Argument converted to the Objective-C parameter of the same role.
-     * @param control_view Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSMenuItemCell drawImageWithFrame:inView:]`.
+         * @param cell_frame Argument converted to the Objective-C parameter of the same role.
+         * @param control_view Argument converted to the Objective-C parameter of the same role.
+         */
         void draw_image_with_frame(const Rect& cell_frame, const View& control_view) const;
         /**
-     * @brief Calls `-[NSMenuItemCell drawKeyEquivalentWithFrame:inView:]`.
-     * @param cell_frame Argument converted to the Objective-C parameter of the same role.
-     * @param control_view Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSMenuItemCell drawKeyEquivalentWithFrame:inView:]`.
+         * @param cell_frame Argument converted to the Objective-C parameter of the same role.
+         * @param control_view Argument converted to the Objective-C parameter of the same role.
+         */
         void draw_key_equivalent_with_frame(const Rect& cell_frame, const View& control_view) const;
         /**
-     * @brief Calls `-[NSMenuItemCell drawSeparatorItemWithFrame:inView:]`.
-     * @param cell_frame Argument converted to the Objective-C parameter of the same role.
-     * @param control_view Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSMenuItemCell drawSeparatorItemWithFrame:inView:]`.
+         * @param cell_frame Argument converted to the Objective-C parameter of the same role.
+         * @param control_view Argument converted to the Objective-C parameter of the same role.
+         */
         void draw_separator_item_with_frame(const Rect& cell_frame, const View& control_view) const;
         /**
-     * @brief Calls `-[NSMenuItemCell drawStateImageWithFrame:inView:]`.
-     * @param cell_frame Argument converted to the Objective-C parameter of the same role.
-     * @param control_view Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSMenuItemCell drawStateImageWithFrame:inView:]`.
+         * @param cell_frame Argument converted to the Objective-C parameter of the same role.
+         * @param control_view Argument converted to the Objective-C parameter of the same role.
+         */
         void draw_state_image_with_frame(const Rect& cell_frame, const View& control_view) const;
         /**
-     * @brief Calls `-[NSMenuItemCell drawTitleWithFrame:inView:]`.
-     * @param cell_frame Argument converted to the Objective-C parameter of the same role.
-     * @param control_view Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSMenuItemCell drawTitleWithFrame:inView:]`.
+         * @param cell_frame Argument converted to the Objective-C parameter of the same role.
+         * @param control_view Argument converted to the Objective-C parameter of the same role.
+         */
         void draw_title_with_frame(const Rect& cell_frame, const View& control_view) const;
         /**
-     * @brief Calls `-[NSMenuItemCell keyEquivalentRectForBounds:]`.
-     * @param cell_frame Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSMenuItemCell keyEquivalentRectForBounds:]`.
+         * @param cell_frame Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Rect key_equivalent_rect_for_bounds(const Rect& cell_frame) const;
         /**
-     * @brief Calls `-[NSMenuItemCell stateImageRectForBounds:]`.
-     * @param cell_frame Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSMenuItemCell stateImageRectForBounds:]`.
+         * @param cell_frame Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Rect state_image_rect_for_bounds(const Rect& cell_frame) const;
         /**
-     * @brief Calls `-[NSMenuItemCell titleRectForBounds:]`.
-     * @param cell_frame Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSMenuItemCell titleRectForBounds:]`.
+         * @param cell_frame Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Rect title_rect_for_bounds(const Rect& cell_frame) const;
         /**
-     * @brief Returns the `imageWidth` property of `NSMenuItemCell`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `imageWidth` property of `NSMenuItemCell`.
+         * @return The converted Objective-C result.
+         */
         double image_width() const;
         /**
-     * @brief Returns the `keyEquivalentWidth` property of `NSMenuItemCell`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `keyEquivalentWidth` property of `NSMenuItemCell`.
+         * @return The converted Objective-C result.
+         */
         double key_equivalent_width() const;
         /**
-     * @brief Returns the `menuItem` property of `NSMenuItemCell`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `menuItem` property of `NSMenuItemCell`.
+         * @return The converted Objective-C result.
+         */
         MenuItem menu_item() const;
         /**
-     * @brief Sets the `menuItem` property of `NSMenuItemCell`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `menuItem` property of `NSMenuItemCell`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_menu_item(const MenuItem& value) const;
         /**
-     * @brief Returns the `needsDisplay` property of `NSMenuItemCell`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `needsDisplay` property of `NSMenuItemCell`.
+         * @return The converted Objective-C result.
+         */
         bool needs_display() const;
         /**
-     * @brief Sets the `needsDisplay` property of `NSMenuItemCell`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `needsDisplay` property of `NSMenuItemCell`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_needs_display(bool value) const;
         /**
-     * @brief Returns the `needsSizing` property of `NSMenuItemCell`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `needsSizing` property of `NSMenuItemCell`.
+         * @return The converted Objective-C result.
+         */
         bool needs_sizing() const;
         /**
-     * @brief Sets the `needsSizing` property of `NSMenuItemCell`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `needsSizing` property of `NSMenuItemCell`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_needs_sizing(bool value) const;
         /**
-     * @brief Returns the `stateImageWidth` property of `NSMenuItemCell`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `stateImageWidth` property of `NSMenuItemCell`.
+         * @return The converted Objective-C result.
+         */
         double state_image_width() const;
         /**
-     * @brief Returns the `tag` property of `NSMenuItemCell`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `tag` property of `NSMenuItemCell`.
+         * @return The converted Objective-C result.
+         */
         std::int64_t tag() const;
         /**
-     * @brief Sets the `tag` property of `NSMenuItemCell`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `tag` property of `NSMenuItemCell`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_tag(std::int64_t value) const;
         /**
-     * @brief Returns the `titleWidth` property of `NSMenuItemCell`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `titleWidth` property of `NSMenuItemCell`.
+         * @return The converted Objective-C result.
+         */
         double title_width() const;
     };
 }

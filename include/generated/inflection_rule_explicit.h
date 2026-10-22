@@ -35,10 +35,10 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit InflectionRuleExplicit(Adopt adopt);
         /**
-     * @brief Returns the `morphology` property of `NSInflectionRuleExplicit`.
-     * @details The morphology used by the receiver.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `morphology` property of `NSInflectionRuleExplicit`.
+         * @details The morphology used by the receiver.
+         * @return The converted Objective-C result.
+         */
         Morphology morphology() const;
     };
 }

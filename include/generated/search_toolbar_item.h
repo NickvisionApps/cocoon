@@ -48,50 +48,50 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit SearchToolbarItem(Adopt adopt);
         /**
-     * @brief Calls `-[NSSearchToolbarItem beginSearchInteraction]`.
-     * @details Starts a search interaction. If necessary, expands to the preferred width and moves the keyboard focus to the search field.
-     */
+         * @brief Calls `-[NSSearchToolbarItem beginSearchInteraction]`.
+         * @details Starts a search interaction. If necessary, expands to the preferred width and moves the keyboard focus to the search field.
+         */
         void begin_search_interaction() const;
         /**
-     * @brief Calls `-[NSSearchToolbarItem endSearchInteraction]`.
-     * @details Ends a search interaction. Gives up the first responder by calling '-endEditing:' to the search field. Adjusts to the natural available width for the toolbar item if necessary.
-     */
+         * @brief Calls `-[NSSearchToolbarItem endSearchInteraction]`.
+         * @details Ends a search interaction. Gives up the first responder by calling '-endEditing:' to the search field. Adjusts to the natural available width for the toolbar item if necessary.
+         */
         void end_search_interaction() const;
         /**
-     * @brief Returns the `preferredWidthForSearchField` property of `NSSearchToolbarItem`.
-     * @details The preferred width for the search field. This value is used to configure the search field width whenever it gets the keyboard focus. If specifying custom width constraints to the search field, they should not conflict with this value.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `preferredWidthForSearchField` property of `NSSearchToolbarItem`.
+         * @details The preferred width for the search field. This value is used to configure the search field width whenever it gets the keyboard focus. If specifying custom width constraints to the search field, they should not conflict with this value.
+         * @return The converted Objective-C result.
+         */
         double preferred_width_for_search_field() const;
         /**
-     * @brief Sets the `preferredWidthForSearchField` property of `NSSearchToolbarItem`.
-     * @details The preferred width for the search field. This value is used to configure the search field width whenever it gets the keyboard focus. If specifying custom width constraints to the search field, they should not conflict with this value.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `preferredWidthForSearchField` property of `NSSearchToolbarItem`.
+         * @details The preferred width for the search field. This value is used to configure the search field width whenever it gets the keyboard focus. If specifying custom width constraints to the search field, they should not conflict with this value.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_preferred_width_for_search_field(double value) const;
         /**
-     * @brief Returns the `resignsFirstResponderWithCancel` property of `NSSearchToolbarItem`.
-     * @details When YES, the cancel button in the field resigns the first responder status of the search field as clearing the contents. The default is YES.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `resignsFirstResponderWithCancel` property of `NSSearchToolbarItem`.
+         * @details When YES, the cancel button in the field resigns the first responder status of the search field as clearing the contents. The default is YES.
+         * @return The converted Objective-C result.
+         */
         bool resigns_first_responder_with_cancel() const;
         /**
-     * @brief Sets the `resignsFirstResponderWithCancel` property of `NSSearchToolbarItem`.
-     * @details When YES, the cancel button in the field resigns the first responder status of the search field as clearing the contents. The default is YES.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `resignsFirstResponderWithCancel` property of `NSSearchToolbarItem`.
+         * @details When YES, the cancel button in the field resigns the first responder status of the search field as clearing the contents. The default is YES.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_resigns_first_responder_with_cancel(bool value) const;
         /**
-     * @brief Returns the `searchField` property of `NSSearchToolbarItem`.
-     * @details An 'NSSearchField' displayed in the toolbar item. While inside the toolbar item, the field properties and layout constraints are managed by the item. The field should be configured before assigned. The width constraint for the field could be updated after assigned. When set to nil, will reset to a search field with the default configuration.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `searchField` property of `NSSearchToolbarItem`.
+         * @details An 'NSSearchField' displayed in the toolbar item. While inside the toolbar item, the field properties and layout constraints are managed by the item. The field should be configured before assigned. The width constraint for the field could be updated after assigned. When set to nil, will reset to a search field with the default configuration.
+         * @return The converted Objective-C result.
+         */
         SearchField search_field() const;
         /**
-     * @brief Sets the `searchField` property of `NSSearchToolbarItem`.
-     * @details An 'NSSearchField' displayed in the toolbar item. While inside the toolbar item, the field properties and layout constraints are managed by the item. The field should be configured before assigned. The width constraint for the field could be updated after assigned. When set to nil, will reset to a search field with the default configuration.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `searchField` property of `NSSearchToolbarItem`.
+         * @details An 'NSSearchField' displayed in the toolbar item. While inside the toolbar item, the field properties and layout constraints are managed by the item. The field should be configured before assigned. The width constraint for the field could be updated after assigned. When set to nil, will reset to a search field with the default configuration.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_search_field(const SearchField& value) const;
         /// @brief Signal `searched`: connect a callback with `searched().connect(...)`.
         Signal<SearchToolbarItem, void(std::string)> searched() const

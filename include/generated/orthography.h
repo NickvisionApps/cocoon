@@ -42,63 +42,55 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit Orthography(Adopt adopt);
         /**
-     * @brief Calls `+[NSOrthography defaultOrthographyForLanguage:]`.
-     * @details Creates and returns an orthography object with the default language map for the specified language. This method automatically determines the script for the specified language. - Parameter language: A BCP-47 tag identifying the language.
-     * @param language Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSOrthography defaultOrthographyForLanguage:]`.
+         * @details Creates and returns an orthography object with the default language map for the specified language. This method automatically determines the script for the specified language. - Parameter language: A BCP-47 tag identifying the language.
+         * @param language Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static Orthography default_orthography_for_language(const std::string& language);
         /**
-     * @brief Calls `-[NSOrthography dominantLanguageForScript:]`.
-     * @details Returns the dominant language for the specified script. - Parameter script: The specified script.
-     * @param script Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSOrthography dominantLanguageForScript:]`.
+         * @details Returns the dominant language for the specified script. - Parameter script: The specified script.
+         * @param script Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::string dominant_language_for_script(const std::string& script) const;
         /**
-     * @brief Calls `-[NSOrthography languagesForScript:]`.
-     * @details Returns the list of languages for the specified script. - Parameter script: The specified script.
-     * @param script Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSOrthography languagesForScript:]`.
+         * @details Returns the list of languages for the specified script. - Parameter script: The specified script.
+         * @param script Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::vector<std::string> languages_for_script(const std::string& script) const;
         /**
-     * @brief Calls `+[NSOrthography orthographyWithDominantScript:languageMap:]`.
-     * @details Creates and returns an orthography object with the specified dominant script and language map. - Parameter script: The dominant script. - Parameter map: A dictionary mapping ISO 15924 script codes to arrays of BCP-47 language tags.
-     * @param script Argument converted to the Objective-C parameter of the same role.
-     * @param map Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Orthography orthography_with_dominant_script(const std::string& script, const std::map<std::string, std::vector<std::string>>& map);
-        /**
-     * @brief Returns the `allLanguages` property of `NSOrthography`.
-     * @details The languages appearing in values of the language map.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `allLanguages` property of `NSOrthography`.
+         * @details The languages appearing in values of the language map.
+         * @return The converted Objective-C result.
+         */
         std::vector<std::string> all_languages() const;
         /**
-     * @brief Returns the `allScripts` property of `NSOrthography`.
-     * @details The scripts appearing as keys in the language map.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `allScripts` property of `NSOrthography`.
+         * @details The scripts appearing as keys in the language map.
+         * @return The converted Objective-C result.
+         */
         std::vector<std::string> all_scripts() const;
         /**
-     * @brief Returns the `dominantLanguage` property of `NSOrthography`.
-     * @details The first language in the list of languages for the dominant script.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `dominantLanguage` property of `NSOrthography`.
+         * @details The first language in the list of languages for the dominant script.
+         * @return The converted Objective-C result.
+         */
         std::string dominant_language() const;
         /**
-     * @brief Returns the `dominantScript` property of `NSOrthography`.
-     * @details The dominant script for the text. The value of this property is an ISO 15924 script code, such as '"Latn"' or '"Cyrl"', that identifies the dominant script.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `dominantScript` property of `NSOrthography`.
+         * @details The dominant script for the text. The value of this property is an ISO 15924 script code, such as '"Latn"' or '"Cyrl"', that identifies the dominant script.
+         * @return The converted Objective-C result.
+         */
         std::string dominant_script() const;
         /**
-     * @brief Returns the `languageMap` property of `NSOrthography`.
-     * @details A dictionary that maps script tags to arrays of language tags. The dictionary's keys are ISO 15924 script codes (such as '"Latn"' or '"Cyrl"') and its values are arrays of BCP-47 language tags (such as '"en"', '"fr"', or '"de"').
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `languageMap` property of `NSOrthography`.
+         * @details A dictionary that maps script tags to arrays of language tags. The dictionary's keys are ISO 15924 script codes (such as '"Latn"' or '"Cyrl"') and its values are arrays of BCP-47 language tags (such as '"en"', '"fr"', or '"de"').
+         * @return The converted Objective-C result.
+         */
         std::map<std::string, std::vector<std::string>> language_map() const;
     };
 }

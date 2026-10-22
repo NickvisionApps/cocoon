@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -132,10 +132,6 @@ Public Member Functions</h2></td></tr>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ad1732bc4a15e853087483bf0249b758e" id="r_ad1732bc4a15e853087483bf0249b758e"><td class="memItemLeft">static <a class="el" href="#aa03dae3c2749834582d286a6d8b3dc9b">IndexPath</a>&#160;</td><td class="memItemRight"><a class="el" href="#ad1732bc4a15e853087483bf0249b758e">index_path_for_item</a> (std::int64_t item, std::int64_t section)</td></tr>
 <tr class="memdesc:ad1732bc4a15e853087483bf0249b758e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSIndexPath indexPathForItem:inSection:]</span>.  <br /></td></tr>
-<tr class="memitem:a70b222296598008a05013a0933a2d4f4" id="r_a70b222296598008a05013a0933a2d4f4"><td class="memItemLeft">static <a class="el" href="#aa03dae3c2749834582d286a6d8b3dc9b">IndexPath</a>&#160;</td><td class="memItemRight"><a class="el" href="#a70b222296598008a05013a0933a2d4f4">index_path_with_index</a> (std::uint64_t index)</td></tr>
-<tr class="memdesc:a70b222296598008a05013a0933a2d4f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSIndexPath indexPathWithIndex:]</span>.  <br /></td></tr>
-<tr class="memitem:ae5fb417b6cdf3eba46e4fd3cd7cf7020" id="r_ae5fb417b6cdf3eba46e4fd3cd7cf7020"><td class="memItemLeft">static <a class="el" href="#aa03dae3c2749834582d286a6d8b3dc9b">IndexPath</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae5fb417b6cdf3eba46e4fd3cd7cf7020">index_path_with_indexes</a> (const std::uint64_t *indexes, std::uint64_t length)</td></tr>
-<tr class="memdesc:ae5fb417b6cdf3eba46e4fd3cd7cf7020"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSIndexPath indexPathWithIndexes:length:]</span>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>C++ handle for the Objective-C class <span class="tt">NSIndexPath</span> (Foundation). </p>
@@ -143,16 +139,14 @@ Static Public Member Functions</h2></td></tr>
 <dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;cocoon.h&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_class" href="classcocoon_1_1_index_path.html">cocoon::IndexPath</a> index_path;</div>
-<div class="ttc" id="aclasscocoon_1_1_index_path_html"><div class="ttname"><a href="classcocoon_1_1_index_path.html">cocoon::IndexPath</a></div><div class="ttdoc">C++ handle for the Objective-C class NSIndexPath (Foundation).</div><div class="ttdef"><b>Definition</b> index_path.h:36</div></div>
+<div class="ttc" id="aclasscocoon_1_1_index_path_html"><div class="ttname"><a href="classcocoon_1_1_index_path.html">cocoon::IndexPath</a></div><div class="ttdoc">C++ handle for the Objective-C class NSIndexPath (Foundation).</div><div class="ttdef"><b>Definition</b> index_path.h:35</div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_index_path.html">cocoon::IndexPath</a> index_path{};</div>
 <div class="line"><span class="keyword">auto</span> made_0 = <a class="code hl_function" href="#ad1732bc4a15e853087483bf0249b758e">cocoon::IndexPath::index_path_for_item</a>(1, 1);</div>
-<div class="line"><span class="keyword">auto</span> made_1 = <a class="code hl_function" href="#a70b222296598008a05013a0933a2d4f4">cocoon::IndexPath::index_path_with_index</a>(1);</div>
 <div class="line">index_path.<a class="code hl_function" href="#ad14a0a8372b3425b502ce444c590bcc0">compare</a>(<a class="code hl_class" href="classcocoon_1_1_index_path.html">cocoon::IndexPath</a>());</div>
 <div class="line">index_path.<a class="code hl_function" href="#a55c4de79d86a75e3b64b838d06139811">index_at_position</a>(1);</div>
 <div class="line">index_path.<a class="code hl_function" href="#ac72285ee03e78bf783744063ce2626ab">index_path_by_adding_index</a>(1);</div>
 <div class="ttc" id="aclasscocoon_1_1_index_path_html_a55c4de79d86a75e3b64b838d06139811"><div class="ttname"><a href="#a55c4de79d86a75e3b64b838d06139811">cocoon::IndexPath::index_at_position</a></div><div class="ttdeci">std::uint64_t index_at_position(std::uint64_t position) const</div><div class="ttdoc">Calls -[NSIndexPath indexAtPosition:].</div></div>
-<div class="ttc" id="aclasscocoon_1_1_index_path_html_a70b222296598008a05013a0933a2d4f4"><div class="ttname"><a href="#a70b222296598008a05013a0933a2d4f4">cocoon::IndexPath::index_path_with_index</a></div><div class="ttdeci">static IndexPath index_path_with_index(std::uint64_t index)</div><div class="ttdoc">Calls +[NSIndexPath indexPathWithIndex:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_index_path_html_ac72285ee03e78bf783744063ce2626ab"><div class="ttname"><a href="#ac72285ee03e78bf783744063ce2626ab">cocoon::IndexPath::index_path_by_adding_index</a></div><div class="ttdeci">IndexPath index_path_by_adding_index(std::uint64_t index) const</div><div class="ttdoc">Calls -[NSIndexPath indexPathByAddingIndex:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_index_path_html_ad14a0a8372b3425b502ce444c590bcc0"><div class="ttname"><a href="#ad14a0a8372b3425b502ce444c590bcc0">cocoon::IndexPath::compare</a></div><div class="ttdeci">ComparisonResult compare(const IndexPath &amp;other_object) const</div><div class="ttdoc">Calls -[NSIndexPath compare:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_index_path_html_ad1732bc4a15e853087483bf0249b758e"><div class="ttname"><a href="#ad1732bc4a15e853087483bf0249b758e">cocoon::IndexPath::index_path_for_item</a></div><div class="ttdeci">static IndexPath index_path_for_item(std::int64_t item, std::int64_t section)</div><div class="ttdoc">Calls +[NSIndexPath indexPathForItem:inSection:].</div></div>
@@ -476,79 +470,6 @@ Static Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">item</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
     <tr><td class="paramname">section</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a70b222296598008a05013a0933a2d4f4" name="a70b222296598008a05013a0933a2d4f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a70b222296598008a05013a0933a2d4f4">&#9670;&#160;</a></span>index_path_with_index()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#aa03dae3c2749834582d286a6d8b3dc9b">IndexPath</a> cocoon::IndexPath::index_path_with_index </td>
-          <td>(</td>
-          <td class="paramtype">std::uint64_t</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSIndexPath indexPathWithIndex:]</span>. </p>
-<p>Creates a one-node index path. - Parameter index: Index of the item in node 0 to point to. - Returns: One-node index path with 'index'. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">index</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="ae5fb417b6cdf3eba46e4fd3cd7cf7020" name="ae5fb417b6cdf3eba46e4fd3cd7cf7020"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae5fb417b6cdf3eba46e4fd3cd7cf7020">&#9670;&#160;</a></span>index_path_with_indexes()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#aa03dae3c2749834582d286a6d8b3dc9b">IndexPath</a> cocoon::IndexPath::index_path_with_indexes </td>
-          <td>(</td>
-          <td class="paramtype">const std::uint64_t *</td>          <td class="paramname"><span class="paramname"><em>indexes</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::uint64_t</td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSIndexPath indexPathWithIndexes:length:]</span>. </p>
-<p>Creates an index path with one or more nodes. - Parameters: - indexes: Array of indexes to make up the index path. - length: <a class="el" href="classcocoon_1_1_number.html" title="C++ handle for the Objective-C class NSNumber (Foundation).">Number</a> of nodes to include in the index path. - Returns: Index path with 'indexes' up to 'length'. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">indexes</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">length</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
   </table>
   </dd>
 </dl>

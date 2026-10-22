@@ -33,16 +33,16 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit PredicateEditor(Adopt adopt);
         /**
-     * @brief Returns the `rowTemplates` property of `NSPredicateEditor`.
-     * @details Getter - Returns the row templates for this NSPredicateEditor.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `rowTemplates` property of `NSPredicateEditor`.
+         * @details Getter - Returns the row templates for this NSPredicateEditor.
+         * @return The converted Objective-C result.
+         */
         std::vector<PredicateEditorRowTemplate> row_templates() const;
         /**
-     * @brief Sets the `rowTemplates` property of `NSPredicateEditor`.
-     * @details Getter - Returns the row templates for this NSPredicateEditor.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `rowTemplates` property of `NSPredicateEditor`.
+         * @details Getter - Returns the row templates for this NSPredicateEditor.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_row_templates(const std::vector<PredicateEditorRowTemplate>& value) const;
     };
 }

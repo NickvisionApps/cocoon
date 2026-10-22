@@ -66,17 +66,6 @@ namespace cocoon
         return cocoon::internal::from([cocoon::internal::ns<::NSRegularExpression>(this) rangeOfFirstMatchInString:cocoon::internal::to(string) options:static_cast<::NSMatchingOptions>(options) range:cocoon::internal::to(range)]);
     }
 
-    RegularExpression RegularExpression::regular_expression_with_pattern(const std::string& pattern, RegularExpressionOptions options)
-    {
-        NSError* __error = nil;
-        auto __r = [::NSRegularExpression regularExpressionWithPattern:cocoon::internal::to(pattern) options:static_cast<::NSRegularExpressionOptions>(options) error:&__error];
-        if (__error)
-        {
-            throw cocoon::NativeError(cocoon::internal::from(__error.localizedDescription));
-        }
-        return cocoon::internal::wrap<RegularExpression>(__r);
-    }
-
     std::uint64_t RegularExpression::replace_matches_in_string(const std::string& string, MatchingOptions options, const Range& range, const std::string& templ) const
     {
         return static_cast<std::uint64_t>([cocoon::internal::ns<::NSRegularExpression>(this) replaceMatchesInString:[cocoon::internal::to(string) mutableCopy] options:static_cast<::NSMatchingOptions>(options) range:cocoon::internal::to(range) withTemplate:cocoon::internal::to(templ)]);

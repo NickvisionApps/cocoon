@@ -30,23 +30,23 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit InflectionRule(Adopt adopt);
         /**
-     * @brief Calls `+[NSInflectionRule canInflectLanguage:]`.
-     * @details Returns a Boolean value that indicates whether inflection will work in the specified language code.
-     * @param language Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSInflectionRule canInflectLanguage:]`.
+         * @details Returns a Boolean value that indicates whether inflection will work in the specified language code.
+         * @param language Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static bool can_inflect_language(const std::string& language);
         /**
-     * @brief Returns the `automaticRule` property of `NSInflectionRule`.
-     * @details Returns a rule that performs automatic grammar agreement based on the system's current locale and language settings.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `automaticRule` property of `NSInflectionRule`.
+         * @details Returns a rule that performs automatic grammar agreement based on the system's current locale and language settings.
+         * @return The converted Objective-C result.
+         */
         static InflectionRule automatic_rule();
         /**
-     * @brief Returns the `canInflectPreferredLocalization` property of `NSInflectionRule`.
-     * @details A Boolean value that indicates whether inflection will work in the language of the main bundle's first preferred localization.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `canInflectPreferredLocalization` property of `NSInflectionRule`.
+         * @details A Boolean value that indicates whether inflection will work in the language of the main bundle's first preferred localization.
+         * @return The converted Objective-C result.
+         */
         static bool can_inflect_preferred_localization();
     };
 }

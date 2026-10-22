@@ -47,40 +47,40 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit TextViewportLayoutController(Adopt adopt);
         /**
-     * @brief Calls `-[NSTextViewportLayoutController adjustViewportByVerticalOffset:]`.
-     * @details Adjusts the viewport rect by the specified offset if needed. This is used to artificially move the viewport without affecting viewport content. The offset can be both positive and negative. - Parameters: - verticalOffset: The vertical offset to adjust by.
-     * @param vertical_offset Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSTextViewportLayoutController adjustViewportByVerticalOffset:]`.
+         * @details Adjusts the viewport rect by the specified offset if needed. This is used to artificially move the viewport without affecting viewport content. The offset can be both positive and negative. - Parameters: - verticalOffset: The vertical offset to adjust by.
+         * @param vertical_offset Argument converted to the Objective-C parameter of the same role.
+         */
         void adjust_viewport_by_vertical_offset(double vertical_offset) const;
         /**
-     * @brief Calls `-[NSTextViewportLayoutController layoutViewport]`.
-     * @details Performs layout in the viewport.
-     */
+         * @brief Calls `-[NSTextViewportLayoutController layoutViewport]`.
+         * @details Performs layout in the viewport.
+         */
         void layout_viewport() const;
         /**
-     * @brief Calls `-[NSTextViewportLayoutController relocateViewportToTextLocation:]`.
-     * @details Relocates the viewport to start with the specified location. This is used to programmatically scroll to the specified location. - Parameters: - textLocation: The document location to scroll to. - Returns: The suggested viewport anchor point.
-     * @param text_location Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSTextViewportLayoutController relocateViewportToTextLocation:]`.
+         * @details Relocates the viewport to start with the specified location. This is used to programmatically scroll to the specified location. - Parameters: - textLocation: The document location to scroll to. - Returns: The suggested viewport anchor point.
+         * @param text_location Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         double relocate_viewport_to_text_location(const Object& text_location) const;
         /**
-     * @brief Returns the `textLayoutManager` property of `NSTextViewportLayoutController`.
-     * @details The text layout manager for this viewport layout controller.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `textLayoutManager` property of `NSTextViewportLayoutController`.
+         * @details The text layout manager for this viewport layout controller.
+         * @return The converted Objective-C result.
+         */
         TextLayoutManager text_layout_manager() const;
         /**
-     * @brief Returns the `viewportBounds` property of `NSTextViewportLayoutController`.
-     * @details The visible bounds of the view, plus the overdraw area. Not KVO-compliant.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `viewportBounds` property of `NSTextViewportLayoutController`.
+         * @details The visible bounds of the view, plus the overdraw area. Not KVO-compliant.
+         * @return The converted Objective-C result.
+         */
         Rect viewport_bounds() const;
         /**
-     * @brief Returns the `viewportRange` property of `NSTextViewportLayoutController`.
-     * @details The text range of the current viewport layout. Not KVO-compliant.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `viewportRange` property of `NSTextViewportLayoutController`.
+         * @details The text range of the current viewport layout. Not KVO-compliant.
+         * @return The converted Objective-C result.
+         */
         TextRange viewport_range() const;
         /// @brief Signal for the delegate/data-source method behind `viewport_bounds_for_text_viewport_layout_controller`; connect a callback with `viewport_bounds_for_text_viewport_layout_controller().connect(...)`.
         Signal<TextViewportLayoutController, Rect()> viewport_bounds_for_text_viewport_layout_controller() const

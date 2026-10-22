@@ -25,6 +25,7 @@ S.class_names = SPEC.get("classNames", {})
 SIGNAL_OVERRIDES = SPEC.get("signalOverrides", {})
 SKIP_CLASSES = set(SPEC.get("skipClasses", [])) | {"NSProxy"}
 SKIP_SELECTORS = {"alloc", "allocWithZone:", "new", "copyWithZone:", "mutableCopyWithZone:", "dealloc", "retain", "release", "autorelease", "retainCount", "zone", "class", "superclass", "self", "load", "initialize"}
+SINGLETON_PREFIX = re.compile(r"(shared|current|main|default|standard|general|system)")
 SKIP_SELECTORS_STATIC = {"alloc", "allocWithZone:", "new", "load", "initialize", "class", "superclass", "instanceMethodForSelector:", "supportsSecureCoding", "copyWithZone:"}
 
 ALL_MODELS = []
@@ -351,7 +352,7 @@ def members_from_property(model, prop):
     return result
 
 
-def make_ctor(model, decl):
+def make_ctor(model, decl, factory=False):
     info = A.availability(decl)
     if info.unavailable or info.deprecated or decl.get("variadic"):
         raise Skip("unavailable")
@@ -378,7 +379,7 @@ def make_ctor(model, decl):
     parts = selector.split(":")
     segments = " ".join(f"{parts[i]}:{args[i]}" for i in range(len(params))) if params else selector
     decl_params = ", ".join(declare(t, n) for t, n in cpp_params)
-    expr = f"[[::{model.ns} alloc] {segments}]"
+    expr = f"[::{model.ns} {segments}]" if factory else f"[[::{model.ns} alloc] {segments}]"
     if pre or post or needs_error:
         body = (["NSError* __error = nil;"] if needs_error else []) + pre + [f"id __r = {expr};"] + post
         if needs_error:
@@ -421,6 +422,18 @@ def type_params_of(interface):
     return [c["name"] for c in interface.get("inner", []) if c["kind"] == "ObjCTypeParamDecl"]
 
 
+def is_factory(model, decl, selector):
+    if SINGLETON_PREFIX.match(selector):
+        return False
+    ret_q = clean(decl["returnType"]["qualType"])
+    if ret_q != "instancetype" and ret_q.replace(" ", "") != model.ns + "*":
+        return False
+    base = model.ns[2:] if model.ns.startswith("NS") else model.ns
+    word = base[:1].lower() + base[1:]
+    first = selector.split(":")[0]
+    return bool(word) and (first == word or first.startswith(word + "With"))
+
+
 def build_model(model):
     S.refs = model.refs
     S.allow_new = model.tier == "A"
@@ -446,6 +459,7 @@ def build_model(model):
         model.own_init = True
         model.init_available = not A.availability(own_init).unavailable
     members = {}
+    factory_ctors = []
     for (is_instance, selector), decl in sorted(methods.items(), key=lambda kv: kv[0][1]):
         try:
             if is_instance:
@@ -455,19 +469,33 @@ def build_model(model):
                     if selector in ("init", "initWithCoder:"):
                         continue
                     ret_q = clean(decl["returnType"]["qualType"])
-                    if "instancetype" in ret_q or ret_q.startswith(model.ns):
+                    if ret_q == "id" or "instancetype" in ret_q or ret_q.startswith(model.ns):
                         model.ctors.append(make_ctor(model, decl))
                         continue
                 member = member_from_method(model, decl, False, methods)
             else:
                 if selector in SKIP_SELECTORS_STATIC:
                     raise Skip("skipped selector")
+                if is_factory(model, decl, selector):
+                    factory_ctors.append(decl)
+                    continue
                 member = member_from_method(model, decl, True, methods)
             members.setdefault(member.key, member)
         except Skip as e:
             log_skip(model, selector, str(e))
         except Unmappable as e:
             log_skip(model, selector, "unmapped " + str(e))
+    for decl in factory_ctors:
+        try:
+            ctor = make_ctor(model, decl, True)
+            if all(c["key"] != ctor["key"] for c in model.ctors):
+                model.ctors.append(ctor)
+            else:
+                log_skip(model, decl["name"], "duplicate constructor signature")
+        except Skip as e:
+            log_skip(model, decl["name"], str(e))
+        except Unmappable as e:
+            log_skip(model, decl["name"], "unmapped " + str(e))
     for (is_class, name), prop in sorted(props.items(), key=lambda kv: kv[0][1]):
         try:
             if collect_delegate_property(model, prop):
@@ -797,7 +825,7 @@ def member_doc(model, member):
     if member.ret != "void":
         lines.append(" * @return The converted Objective-C result.")
     lines.append(" */")
-    return "\n".join("    " + l for l in lines)
+    return "\n".join("        " + l for l in lines)
 
 
 def best_construct_args(entries):

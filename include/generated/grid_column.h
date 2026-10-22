@@ -47,75 +47,75 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit GridColumn(Adopt adopt);
         /**
-     * @brief Calls `-[NSGridColumn cellAtIndex:]`.
-     * @param index Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSGridColumn cellAtIndex:]`.
+         * @param index Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         GridCell cell_at_index(std::int64_t index) const;
         /**
-     * @brief Calls `-[NSGridColumn mergeCellsInRange:]`.
-     * @param range Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSGridColumn mergeCellsInRange:]`.
+         * @param range Argument converted to the Objective-C parameter of the same role.
+         */
         void merge_cells_in_range(const Range& range) const;
         /**
-     * @brief Returns the `gridView` property of `NSGridColumn`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `gridView` property of `NSGridColumn`.
+         * @return The converted Objective-C result.
+         */
         GridView grid_view() const;
         /**
-     * @brief Returns the `hidden` property of `NSGridColumn`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `hidden` property of `NSGridColumn`.
+         * @return The converted Objective-C result.
+         */
         bool is_hidden() const;
         /**
-     * @brief Sets the `hidden` property of `NSGridColumn`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `hidden` property of `NSGridColumn`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_hidden(bool value) const;
         /**
-     * @brief Returns the `leadingPadding` property of `NSGridColumn`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `leadingPadding` property of `NSGridColumn`.
+         * @return The converted Objective-C result.
+         */
         double leading_padding() const;
         /**
-     * @brief Sets the `leadingPadding` property of `NSGridColumn`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `leadingPadding` property of `NSGridColumn`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_leading_padding(double value) const;
         /**
-     * @brief Returns the `numberOfCells` property of `NSGridColumn`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `numberOfCells` property of `NSGridColumn`.
+         * @return The converted Objective-C result.
+         */
         std::int64_t number_of_cells() const;
         /**
-     * @brief Returns the `trailingPadding` property of `NSGridColumn`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `trailingPadding` property of `NSGridColumn`.
+         * @return The converted Objective-C result.
+         */
         double trailing_padding() const;
         /**
-     * @brief Sets the `trailingPadding` property of `NSGridColumn`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `trailingPadding` property of `NSGridColumn`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_trailing_padding(double value) const;
         /**
-     * @brief Returns the `width` property of `NSGridColumn`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `width` property of `NSGridColumn`.
+         * @return The converted Objective-C result.
+         */
         double width() const;
         /**
-     * @brief Sets the `width` property of `NSGridColumn`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `width` property of `NSGridColumn`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_width(double value) const;
         /**
-     * @brief Returns the `xPlacement` property of `NSGridColumn`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `xPlacement` property of `NSGridColumn`.
+         * @return The converted Objective-C result.
+         */
         GridCellPlacement x_placement() const;
         /**
-     * @brief Sets the `xPlacement` property of `NSGridColumn`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `xPlacement` property of `NSGridColumn`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_x_placement(GridCellPlacement value) const;
     };
 }

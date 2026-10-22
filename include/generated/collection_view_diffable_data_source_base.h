@@ -47,37 +47,37 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit CollectionViewDiffableDataSourceBase(Adopt adopt);
         /**
-     * @brief Calls `-[NSCollectionViewDiffableDataSource applySnapshot:animatingDifferences:]`.
-     * @param snapshot Argument converted to the Objective-C parameter of the same role.
-     * @param animating_differences Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSCollectionViewDiffableDataSource applySnapshot:animatingDifferences:]`.
+         * @param snapshot Argument converted to the Objective-C parameter of the same role.
+         * @param animating_differences Argument converted to the Objective-C parameter of the same role.
+         */
         void apply_snapshot(const DiffableDataSourceSnapshotBase& snapshot, bool animating_differences) const;
         /**
-     * @brief Calls `-[NSCollectionViewDiffableDataSource indexPathForItemIdentifier:]`.
-     * @param identifier Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSCollectionViewDiffableDataSource indexPathForItemIdentifier:]`.
+         * @param identifier Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         IndexPath index_path_for_item_identifier(const Object& identifier) const;
         /**
-     * @brief Calls `-[NSCollectionViewDiffableDataSource itemIdentifierForIndexPath:]`.
-     * @param index_path Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSCollectionViewDiffableDataSource itemIdentifierForIndexPath:]`.
+         * @param index_path Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Object item_identifier_for_index_path(const IndexPath& index_path) const;
         /**
-     * @brief Calls `-[NSCollectionViewDiffableDataSource snapshot]`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSCollectionViewDiffableDataSource snapshot]`.
+         * @return The converted Objective-C result.
+         */
         DiffableDataSourceSnapshotBase snapshot() const;
         /**
-     * @brief Returns the `supplementaryViewProvider` property of `NSCollectionViewDiffableDataSource`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `supplementaryViewProvider` property of `NSCollectionViewDiffableDataSource`.
+         * @return The converted Objective-C result.
+         */
         std::function<View(CollectionView, std::string, IndexPath)> supplementary_view_provider() const;
         /**
-     * @brief Sets the `supplementaryViewProvider` property of `NSCollectionViewDiffableDataSource`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `supplementaryViewProvider` property of `NSCollectionViewDiffableDataSource`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_supplementary_view_provider(std::function<View(CollectionView, std::string, IndexPath)> value) const;
     };
 

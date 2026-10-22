@@ -3,7 +3,11 @@
 
 namespace cocoon
 {
-    Pasteboard::Pasteboard() : Pasteboard(Adopt{cocoon::internal::retain([[::NSPasteboard alloc] init])})
+    Pasteboard::Pasteboard(const std::string& name) : Pasteboard(Adopt{cocoon::internal::retain([::NSPasteboard pasteboardWithName:cocoon::internal::to(name)])})
+    {
+    }
+
+    Pasteboard::Pasteboard() : Pasteboard(Adopt{cocoon::internal::retain([::NSPasteboard pasteboardWithUniqueName])})
     {
     }
 
@@ -140,16 +144,6 @@ namespace cocoon
     Pasteboard Pasteboard::pasteboard_by_filtering_types_in_pasteboard(const Pasteboard& pboard)
     {
         return cocoon::internal::wrap<Pasteboard>([::NSPasteboard pasteboardByFilteringTypesInPasteboard:cocoon::internal::native<::NSPasteboard>(pboard)]);
-    }
-
-    Pasteboard Pasteboard::pasteboard_with_name(const std::string& name)
-    {
-        return cocoon::internal::wrap<Pasteboard>([::NSPasteboard pasteboardWithName:cocoon::internal::to(name)]);
-    }
-
-    Pasteboard Pasteboard::pasteboard_with_unique_name()
-    {
-        return cocoon::internal::wrap<Pasteboard>([::NSPasteboard pasteboardWithUniqueName]);
     }
 
     std::int64_t Pasteboard::prepare_for_new_contents_with_options(PasteboardContentsOptions options) const

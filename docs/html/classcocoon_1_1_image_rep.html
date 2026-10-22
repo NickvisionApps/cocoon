@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -74,6 +74,12 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:ab30b0de14951faf4c27acee24b3ed8ac" id="r_ab30b0de14951faf4c27acee24b3ed8ac"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab30b0de14951faf4c27acee24b3ed8ac">ImageRep</a> (const std::string &amp;filename)</td></tr>
+<tr class="memdesc:ab30b0de14951faf4c27acee24b3ed8ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSImageRep</span> instance and returns a handle to it.  <br /></td></tr>
+<tr class="memitem:a7b62b5fa2dc98fa27ccb7b2861051b4f" id="r_a7b62b5fa2dc98fa27ccb7b2861051b4f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a7b62b5fa2dc98fa27ccb7b2861051b4f">ImageRep</a> (const <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a> &amp;url)</td></tr>
+<tr class="memdesc:a7b62b5fa2dc98fa27ccb7b2861051b4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSImageRep</span> instance and returns a handle to it.  <br /></td></tr>
+<tr class="memitem:af73aa627304c9ff822af19253543aede" id="r_af73aa627304c9ff822af19253543aede"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af73aa627304c9ff822af19253543aede">ImageRep</a> (const <a class="el" href="classcocoon_1_1_pasteboard.html">Pasteboard</a> &amp;pasteboard)</td></tr>
+<tr class="memdesc:af73aa627304c9ff822af19253543aede"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSImageRep</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:a94fe9f88d6fb2e9a7d649c3c8c50d42b" id="r_a94fe9f88d6fb2e9a7d649c3c8c50d42b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a94fe9f88d6fb2e9a7d649c3c8c50d42b">ImageRep</a> ()</td></tr>
 <tr class="memdesc:a94fe9f88d6fb2e9a7d649c3c8c50d42b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSImageRep</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:aa5ce83780ee9f7909e8fbe7129edeefd" id="r_aa5ce83780ee9f7909e8fbe7129edeefd"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa5ce83780ee9f7909e8fbe7129edeefd">ImageRep</a> (std::nullptr_t)</td></tr>
@@ -158,17 +164,11 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a8c039936eea5617186ca245a95c2ff9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSImageRep imageRepClassForData:]</span>.  <br /></td></tr>
 <tr class="memitem:aae595362e0187babbd283726aef506a8" id="r_aae595362e0187babbd283726aef506a8"><td class="memItemLeft">static std::string&#160;</td><td class="memItemRight"><a class="el" href="#aae595362e0187babbd283726aef506a8">image_rep_class_for_type</a> (const std::string &amp;type)</td></tr>
 <tr class="memdesc:aae595362e0187babbd283726aef506a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSImageRep imageRepClassForType:]</span>.  <br /></td></tr>
-<tr class="memitem:afb3fa077450c1a2dcf5f63eff6d436fb" id="r_afb3fa077450c1a2dcf5f63eff6d436fb"><td class="memItemLeft">static <a class="el" href="#a94fe9f88d6fb2e9a7d649c3c8c50d42b">ImageRep</a>&#160;</td><td class="memItemRight"><a class="el" href="#afb3fa077450c1a2dcf5f63eff6d436fb">image_rep_with_contents_of_file</a> (const std::string &amp;filename)</td></tr>
-<tr class="memdesc:afb3fa077450c1a2dcf5f63eff6d436fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSImageRep imageRepWithContentsOfFile:]</span>.  <br /></td></tr>
-<tr class="memitem:aa935523215a9ccfe7cab66d6e10f69e1" id="r_aa935523215a9ccfe7cab66d6e10f69e1"><td class="memItemLeft">static <a class="el" href="#a94fe9f88d6fb2e9a7d649c3c8c50d42b">ImageRep</a>&#160;</td><td class="memItemRight"><a class="el" href="#aa935523215a9ccfe7cab66d6e10f69e1">image_rep_with_contents_of_url</a> (const <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a> &amp;url)</td></tr>
-<tr class="memdesc:aa935523215a9ccfe7cab66d6e10f69e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSImageRep imageRepWithContentsOfURL:]</span>.  <br /></td></tr>
-<tr class="memitem:aba00014e84e04cf616706f1179012fe5" id="r_aba00014e84e04cf616706f1179012fe5"><td class="memItemLeft">static <a class="el" href="#a94fe9f88d6fb2e9a7d649c3c8c50d42b">ImageRep</a>&#160;</td><td class="memItemRight"><a class="el" href="#aba00014e84e04cf616706f1179012fe5">image_rep_with_pasteboard</a> (const <a class="el" href="classcocoon_1_1_pasteboard.html">Pasteboard</a> &amp;pasteboard)</td></tr>
-<tr class="memdesc:aba00014e84e04cf616706f1179012fe5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSImageRep imageRepWithPasteboard:]</span>.  <br /></td></tr>
-<tr class="memitem:ab4d71d9acd2ca9908d9a3383100b5081" id="r_ab4d71d9acd2ca9908d9a3383100b5081"><td class="memItemLeft">static std::vector&lt; <a class="el" href="#a94fe9f88d6fb2e9a7d649c3c8c50d42b">ImageRep</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ab4d71d9acd2ca9908d9a3383100b5081">image_reps_with_contents_of_file</a> (const std::string &amp;filename)</td></tr>
+<tr class="memitem:ab4d71d9acd2ca9908d9a3383100b5081" id="r_ab4d71d9acd2ca9908d9a3383100b5081"><td class="memItemLeft">static std::vector&lt; <a class="el" href="#ab30b0de14951faf4c27acee24b3ed8ac">ImageRep</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ab4d71d9acd2ca9908d9a3383100b5081">image_reps_with_contents_of_file</a> (const std::string &amp;filename)</td></tr>
 <tr class="memdesc:ab4d71d9acd2ca9908d9a3383100b5081"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSImageRep imageRepsWithContentsOfFile:]</span>.  <br /></td></tr>
-<tr class="memitem:a8ab698345d4835ea4e0e4b394d8409fa" id="r_a8ab698345d4835ea4e0e4b394d8409fa"><td class="memItemLeft">static std::vector&lt; <a class="el" href="#a94fe9f88d6fb2e9a7d649c3c8c50d42b">ImageRep</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a8ab698345d4835ea4e0e4b394d8409fa">image_reps_with_contents_of_url</a> (const <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a> &amp;url)</td></tr>
+<tr class="memitem:a8ab698345d4835ea4e0e4b394d8409fa" id="r_a8ab698345d4835ea4e0e4b394d8409fa"><td class="memItemLeft">static std::vector&lt; <a class="el" href="#ab30b0de14951faf4c27acee24b3ed8ac">ImageRep</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a8ab698345d4835ea4e0e4b394d8409fa">image_reps_with_contents_of_url</a> (const <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a> &amp;url)</td></tr>
 <tr class="memdesc:a8ab698345d4835ea4e0e4b394d8409fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSImageRep imageRepsWithContentsOfURL:]</span>.  <br /></td></tr>
-<tr class="memitem:a5cab8774e3273e74b038b8206bdf0fe7" id="r_a5cab8774e3273e74b038b8206bdf0fe7"><td class="memItemLeft">static std::vector&lt; <a class="el" href="#a94fe9f88d6fb2e9a7d649c3c8c50d42b">ImageRep</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a5cab8774e3273e74b038b8206bdf0fe7">image_reps_with_pasteboard</a> (const <a class="el" href="classcocoon_1_1_pasteboard.html">Pasteboard</a> &amp;pasteboard)</td></tr>
+<tr class="memitem:a5cab8774e3273e74b038b8206bdf0fe7" id="r_a5cab8774e3273e74b038b8206bdf0fe7"><td class="memItemLeft">static std::vector&lt; <a class="el" href="#ab30b0de14951faf4c27acee24b3ed8ac">ImageRep</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a5cab8774e3273e74b038b8206bdf0fe7">image_reps_with_pasteboard</a> (const <a class="el" href="classcocoon_1_1_pasteboard.html">Pasteboard</a> &amp;pasteboard)</td></tr>
 <tr class="memdesc:a5cab8774e3273e74b038b8206bdf0fe7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSImageRep imageRepsWithPasteboard:]</span>.  <br /></td></tr>
 <tr class="memitem:a5abffd700bc9aec3c78c4681dae83867" id="r_a5abffd700bc9aec3c78c4681dae83867"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a5abffd700bc9aec3c78c4681dae83867">register_image_rep_class</a> (const std::string &amp;image_rep_class)</td></tr>
 <tr class="memdesc:a5abffd700bc9aec3c78c4681dae83867"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSImageRep registerImageRepClass:]</span>.  <br /></td></tr>
@@ -188,7 +188,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="line"> </div>
 <div class="line"><a class="code hl_class" href="classcocoon_1_1_image_rep.html">cocoon::ImageRep</a> image_rep;</div>
 <div class="line">image_rep.<a class="code hl_function" href="#a3639061e9ff81dc0d43aa0a4d05c0b98">set_alpha</a>(<span class="keyword">true</span>);</div>
-<div class="ttc" id="aclasscocoon_1_1_image_rep_html"><div class="ttname"><a href="classcocoon_1_1_image_rep.html">cocoon::ImageRep</a></div><div class="ttdoc">C++ handle for the Objective-C class NSImageRep (AppKit).</div><div class="ttdef"><b>Definition</b> image_rep.h:47</div></div>
+<div class="ttc" id="aclasscocoon_1_1_image_rep_html"><div class="ttname"><a href="classcocoon_1_1_image_rep.html">cocoon::ImageRep</a></div><div class="ttdoc">C++ handle for the Objective-C class NSImageRep (AppKit).</div><div class="ttdef"><b>Definition</b> image_rep.h:45</div></div>
 <div class="ttc" id="aclasscocoon_1_1_image_rep_html_a3639061e9ff81dc0d43aa0a4d05c0b98"><div class="ttname"><a href="#a3639061e9ff81dc0d43aa0a4d05c0b98">cocoon::ImageRep::set_alpha</a></div><div class="ttdeci">void set_alpha(bool value) const</div><div class="ttdoc">Sets the alpha property of NSImageRep.</div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_image_rep.html">cocoon::ImageRep</a> image_rep{};</div>
@@ -198,8 +198,6 @@ Static Public Member Functions</h2></td></tr>
 <div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#a9901e8dad606ef579c9459648705b341">bits_per_sample</a> = image_rep.<a class="code hl_function" href="#a9901e8dad606ef579c9459648705b341">bits_per_sample</a>();</div>
 <div class="line">image_rep.<a class="code hl_function" href="#a07b9036e76496cd8fedd79c3f79a73eb">set_color_space_name</a>(<span class="stringliteral">&quot;text&quot;</span>);</div>
 <div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#ad3c0718d85d1587c640b3c564585fb3e">color_space_name</a> = image_rep.<a class="code hl_function" href="#ad3c0718d85d1587c640b3c564585fb3e">color_space_name</a>();</div>
-<div class="line"><span class="keyword">auto</span> made_0 = <a class="code hl_function" href="#afb3fa077450c1a2dcf5f63eff6d436fb">cocoon::ImageRep::image_rep_with_contents_of_file</a>(<span class="stringliteral">&quot;text&quot;</span>);</div>
-<div class="line"><span class="keyword">auto</span> made_1 = <a class="code hl_function" href="#aa935523215a9ccfe7cab66d6e10f69e1">cocoon::ImageRep::image_rep_with_contents_of_url</a>(<a class="code hl_class" href="classcocoon_1_1_u_r_l.html">cocoon::URL</a>());</div>
 <div class="line">image_rep.<a class="code hl_function" href="#a13a78a47ebe7eb476c37ee441450229c">draw</a>();</div>
 <div class="line">image_rep.<a class="code hl_function" href="#a07419e14ce65eeaebd436904019ffef7">draw_at_point</a>({0, 0});</div>
 <div class="line">image_rep.<a class="code hl_function" href="#a0a6ad421f2d45287150e70621468345e">draw_in_rect</a>({{0, 0}, {100, 100}});</div>
@@ -209,16 +207,94 @@ Static Public Member Functions</h2></td></tr>
 <div class="ttc" id="aclasscocoon_1_1_image_rep_html_a13a78a47ebe7eb476c37ee441450229c"><div class="ttname"><a href="#a13a78a47ebe7eb476c37ee441450229c">cocoon::ImageRep::draw</a></div><div class="ttdeci">bool draw() const</div><div class="ttdoc">Calls -[NSImageRep draw].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_image_rep_html_a9901e8dad606ef579c9459648705b341"><div class="ttname"><a href="#a9901e8dad606ef579c9459648705b341">cocoon::ImageRep::bits_per_sample</a></div><div class="ttdeci">std::int64_t bits_per_sample() const</div><div class="ttdoc">Returns the bitsPerSample property of NSImageRep.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_image_rep_html_aa571b7e9b389d4ed2ea5c977e42f649e"><div class="ttname"><a href="#aa571b7e9b389d4ed2ea5c977e42f649e">cocoon::ImageRep::has_alpha</a></div><div class="ttdeci">bool has_alpha() const</div><div class="ttdoc">Returns the alpha property of NSImageRep.</div></div>
-<div class="ttc" id="aclasscocoon_1_1_image_rep_html_aa935523215a9ccfe7cab66d6e10f69e1"><div class="ttname"><a href="#aa935523215a9ccfe7cab66d6e10f69e1">cocoon::ImageRep::image_rep_with_contents_of_url</a></div><div class="ttdeci">static ImageRep image_rep_with_contents_of_url(const URL &amp;url)</div><div class="ttdoc">Calls +[NSImageRep imageRepWithContentsOfURL:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_image_rep_html_aba7d4d05d91c4c6a1cf0770eaaccbaca"><div class="ttname"><a href="#aba7d4d05d91c4c6a1cf0770eaaccbaca">cocoon::ImageRep::set_bits_per_sample</a></div><div class="ttdeci">void set_bits_per_sample(std::int64_t value) const</div><div class="ttdoc">Sets the bitsPerSample property of NSImageRep.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_image_rep_html_ad3c0718d85d1587c640b3c564585fb3e"><div class="ttname"><a href="#ad3c0718d85d1587c640b3c564585fb3e">cocoon::ImageRep::color_space_name</a></div><div class="ttdeci">std::string color_space_name() const</div><div class="ttdoc">Returns the colorSpaceName property of NSImageRep.</div></div>
-<div class="ttc" id="aclasscocoon_1_1_image_rep_html_afb3fa077450c1a2dcf5f63eff6d436fb"><div class="ttname"><a href="#afb3fa077450c1a2dcf5f63eff6d436fb">cocoon::ImageRep::image_rep_with_contents_of_file</a></div><div class="ttdeci">static ImageRep image_rep_with_contents_of_file(const std::string &amp;filename)</div><div class="ttdoc">Calls +[NSImageRep imageRepWithContentsOfFile:].</div></div>
-<div class="ttc" id="aclasscocoon_1_1_u_r_l_html"><div class="ttname"><a href="classcocoon_1_1_u_r_l.html">cocoon::URL</a></div><div class="ttdoc">C++ handle for the Objective-C class NSURL (Foundation).</div><div class="ttdef"><b>Definition</b> url.h:39</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/appkit/nsimagerep">https://developer.apple.com/documentation/appkit/nsimagerep</a> </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ab30b0de14951faf4c27acee24b3ed8ac" name="ab30b0de14951faf4c27acee24b3ed8ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab30b0de14951faf4c27acee24b3ed8ac">&#9670;&#160;</a></span>ImageRep() <span class="overload">[1/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::ImageRep::ImageRep </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>filename</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSImageRep</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
+<a id="a7b62b5fa2dc98fa27ccb7b2861051b4f" name="a7b62b5fa2dc98fa27ccb7b2861051b4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b62b5fa2dc98fa27ccb7b2861051b4f">&#9670;&#160;</a></span>ImageRep() <span class="overload">[2/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::ImageRep::ImageRep </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>url</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSImageRep</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
+<a id="af73aa627304c9ff822af19253543aede" name="af73aa627304c9ff822af19253543aede"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af73aa627304c9ff822af19253543aede">&#9670;&#160;</a></span>ImageRep() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::ImageRep::ImageRep </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcocoon_1_1_pasteboard.html">Pasteboard</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>pasteboard</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSImageRep</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
 <a id="a94fe9f88d6fb2e9a7d649c3c8c50d42b" name="a94fe9f88d6fb2e9a7d649c3c8c50d42b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a94fe9f88d6fb2e9a7d649c3c8c50d42b">&#9670;&#160;</a></span>ImageRep() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a94fe9f88d6fb2e9a7d649c3c8c50d42b">&#9670;&#160;</a></span>ImageRep() <span class="overload">[4/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -245,7 +321,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="aa5ce83780ee9f7909e8fbe7129edeefd" name="aa5ce83780ee9f7909e8fbe7129edeefd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa5ce83780ee9f7909e8fbe7129edeefd">&#9670;&#160;</a></span>ImageRep() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5ce83780ee9f7909e8fbe7129edeefd">&#9670;&#160;</a></span>ImageRep() <span class="overload">[5/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -264,7 +340,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a234881b2a1244ec3a4c2aa64e00ec69e" name="a234881b2a1244ec3a4c2aa64e00ec69e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a234881b2a1244ec3a4c2aa64e00ec69e">&#9670;&#160;</a></span>ImageRep() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a234881b2a1244ec3a4c2aa64e00ec69e">&#9670;&#160;</a></span>ImageRep() <span class="overload">[6/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -651,108 +727,6 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="afb3fa077450c1a2dcf5f63eff6d436fb" name="afb3fa077450c1a2dcf5f63eff6d436fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afb3fa077450c1a2dcf5f63eff6d436fb">&#9670;&#160;</a></span>image_rep_with_contents_of_file()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a94fe9f88d6fb2e9a7d649c3c8c50d42b">ImageRep</a> cocoon::ImageRep::image_rep_with_contents_of_file </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>filename</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSImageRep imageRepWithContentsOfFile:]</span>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">filename</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="aa935523215a9ccfe7cab66d6e10f69e1" name="aa935523215a9ccfe7cab66d6e10f69e1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa935523215a9ccfe7cab66d6e10f69e1">&#9670;&#160;</a></span>image_rep_with_contents_of_url()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a94fe9f88d6fb2e9a7d649c3c8c50d42b">ImageRep</a> cocoon::ImageRep::image_rep_with_contents_of_url </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>url</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSImageRep imageRepWithContentsOfURL:]</span>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">url</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="aba00014e84e04cf616706f1179012fe5" name="aba00014e84e04cf616706f1179012fe5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba00014e84e04cf616706f1179012fe5">&#9670;&#160;</a></span>image_rep_with_pasteboard()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a94fe9f88d6fb2e9a7d649c3c8c50d42b">ImageRep</a> cocoon::ImageRep::image_rep_with_pasteboard </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_pasteboard.html">Pasteboard</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>pasteboard</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSImageRep imageRepWithPasteboard:]</span>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pasteboard</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
 <a id="ab4d71d9acd2ca9908d9a3383100b5081" name="ab4d71d9acd2ca9908d9a3383100b5081"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab4d71d9acd2ca9908d9a3383100b5081">&#9670;&#160;</a></span>image_reps_with_contents_of_file()</h2>
 
@@ -763,7 +737,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; <a class="el" href="#a94fe9f88d6fb2e9a7d649c3c8c50d42b">ImageRep</a> &gt; cocoon::ImageRep::image_reps_with_contents_of_file </td>
+          <td class="memname">std::vector&lt; <a class="el" href="#ab30b0de14951faf4c27acee24b3ed8ac">ImageRep</a> &gt; cocoon::ImageRep::image_reps_with_contents_of_file </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>filename</em></span></td><td>)</td>
           <td></td>
@@ -797,7 +771,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; <a class="el" href="#a94fe9f88d6fb2e9a7d649c3c8c50d42b">ImageRep</a> &gt; cocoon::ImageRep::image_reps_with_contents_of_url </td>
+          <td class="memname">std::vector&lt; <a class="el" href="#ab30b0de14951faf4c27acee24b3ed8ac">ImageRep</a> &gt; cocoon::ImageRep::image_reps_with_contents_of_url </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classcocoon_1_1_u_r_l.html">URL</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>url</em></span></td><td>)</td>
           <td></td>
@@ -831,7 +805,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; <a class="el" href="#a94fe9f88d6fb2e9a7d649c3c8c50d42b">ImageRep</a> &gt; cocoon::ImageRep::image_reps_with_pasteboard </td>
+          <td class="memname">std::vector&lt; <a class="el" href="#ab30b0de14951faf4c27acee24b3ed8ac">ImageRep</a> &gt; cocoon::ImageRep::image_reps_with_pasteboard </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classcocoon_1_1_pasteboard.html">Pasteboard</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>pasteboard</em></span></td><td>)</td>
           <td></td>

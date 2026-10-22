@@ -3,6 +3,18 @@
 
 namespace cocoon
 {
+    ComboButton::ComboButton(const Image& image, const Menu& menu, const Object& target, const std::string& action) : ComboButton(Adopt{cocoon::internal::retain([::NSComboButton comboButtonWithImage:cocoon::internal::native<::NSImage>(image) menu:cocoon::internal::native<::NSMenu>(menu) target:cocoon::internal::native_id(target) action:NSSelectorFromString(cocoon::internal::to(action))])})
+    {
+    }
+
+    ComboButton::ComboButton(const std::string& title, const Image& image, const Menu& menu, const Object& target, const std::string& action) : ComboButton(Adopt{cocoon::internal::retain([::NSComboButton comboButtonWithTitle:cocoon::internal::to(title) image:cocoon::internal::native<::NSImage>(image) menu:cocoon::internal::native<::NSMenu>(menu) target:cocoon::internal::native_id(target) action:NSSelectorFromString(cocoon::internal::to(action))])})
+    {
+    }
+
+    ComboButton::ComboButton(const std::string& title, const Menu& menu, const Object& target, const std::string& action) : ComboButton(Adopt{cocoon::internal::retain([::NSComboButton comboButtonWithTitle:cocoon::internal::to(title) menu:cocoon::internal::native<::NSMenu>(menu) target:cocoon::internal::native_id(target) action:NSSelectorFromString(cocoon::internal::to(action))])})
+    {
+    }
+
     ComboButton::ComboButton() : ComboButton(Adopt{cocoon::internal::retain([[::NSComboButton alloc] init])})
     {
     }
@@ -13,21 +25,6 @@ namespace cocoon
 
     ComboButton::ComboButton(Adopt adopt) : Control(adopt)
     {
-    }
-
-    ComboButton ComboButton::combo_button_with_image(const Image& image, const Menu& menu, const Object& target, const std::string& action)
-    {
-        return cocoon::internal::wrap<ComboButton>([::NSComboButton comboButtonWithImage:cocoon::internal::native<::NSImage>(image) menu:cocoon::internal::native<::NSMenu>(menu) target:cocoon::internal::native_id(target) action:NSSelectorFromString(cocoon::internal::to(action))]);
-    }
-
-    ComboButton ComboButton::combo_button_with_title(const std::string& title, const Image& image, const Menu& menu, const Object& target, const std::string& action)
-    {
-        return cocoon::internal::wrap<ComboButton>([::NSComboButton comboButtonWithTitle:cocoon::internal::to(title) image:cocoon::internal::native<::NSImage>(image) menu:cocoon::internal::native<::NSMenu>(menu) target:cocoon::internal::native_id(target) action:NSSelectorFromString(cocoon::internal::to(action))]);
-    }
-
-    ComboButton ComboButton::combo_button_with_title(const std::string& title, const Menu& menu, const Object& target, const std::string& action)
-    {
-        return cocoon::internal::wrap<ComboButton>([::NSComboButton comboButtonWithTitle:cocoon::internal::to(title) menu:cocoon::internal::native<::NSMenu>(menu) target:cocoon::internal::native_id(target) action:NSSelectorFromString(cocoon::internal::to(action))]);
     }
 
     Image ComboButton::image() const

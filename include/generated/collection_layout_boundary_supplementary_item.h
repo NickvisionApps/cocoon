@@ -45,51 +45,51 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit CollectionLayoutBoundarySupplementaryItem(Adopt adopt);
         /**
-     * @brief Calls `+[NSCollectionLayoutBoundarySupplementaryItem boundarySupplementaryItemWithLayoutSize:elementKind:alignment:]`.
-     * @param layout_size Argument converted to the Objective-C parameter of the same role.
-     * @param element_kind Argument converted to the Objective-C parameter of the same role.
-     * @param alignment Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSCollectionLayoutBoundarySupplementaryItem boundarySupplementaryItemWithLayoutSize:elementKind:alignment:]`.
+         * @param layout_size Argument converted to the Objective-C parameter of the same role.
+         * @param element_kind Argument converted to the Objective-C parameter of the same role.
+         * @param alignment Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static CollectionLayoutBoundarySupplementaryItem boundary_supplementary_item_with_layout_size(const CollectionLayoutSize& layout_size, const std::string& element_kind, RectAlignment alignment);
         /**
-     * @brief Calls `+[NSCollectionLayoutBoundarySupplementaryItem boundarySupplementaryItemWithLayoutSize:elementKind:alignment:absoluteOffset:]`.
-     * @param layout_size Argument converted to the Objective-C parameter of the same role.
-     * @param element_kind Argument converted to the Objective-C parameter of the same role.
-     * @param alignment Argument converted to the Objective-C parameter of the same role.
-     * @param absolute_offset Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSCollectionLayoutBoundarySupplementaryItem boundarySupplementaryItemWithLayoutSize:elementKind:alignment:absoluteOffset:]`.
+         * @param layout_size Argument converted to the Objective-C parameter of the same role.
+         * @param element_kind Argument converted to the Objective-C parameter of the same role.
+         * @param alignment Argument converted to the Objective-C parameter of the same role.
+         * @param absolute_offset Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static CollectionLayoutBoundarySupplementaryItem boundary_supplementary_item_with_layout_size(const CollectionLayoutSize& layout_size, const std::string& element_kind, RectAlignment alignment, const Point& absolute_offset);
         /**
-     * @brief Returns the `alignment` property of `NSCollectionLayoutBoundarySupplementaryItem`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `alignment` property of `NSCollectionLayoutBoundarySupplementaryItem`.
+         * @return The converted Objective-C result.
+         */
         RectAlignment alignment() const;
         /**
-     * @brief Returns the `extendsBoundary` property of `NSCollectionLayoutBoundarySupplementaryItem`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `extendsBoundary` property of `NSCollectionLayoutBoundarySupplementaryItem`.
+         * @return The converted Objective-C result.
+         */
         bool extends_boundary() const;
         /**
-     * @brief Sets the `extendsBoundary` property of `NSCollectionLayoutBoundarySupplementaryItem`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `extendsBoundary` property of `NSCollectionLayoutBoundarySupplementaryItem`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_extends_boundary(bool value) const;
         /**
-     * @brief Returns the `offset` property of `NSCollectionLayoutBoundarySupplementaryItem`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `offset` property of `NSCollectionLayoutBoundarySupplementaryItem`.
+         * @return The converted Objective-C result.
+         */
         Point offset() const;
         /**
-     * @brief Returns the `pinToVisibleBounds` property of `NSCollectionLayoutBoundarySupplementaryItem`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `pinToVisibleBounds` property of `NSCollectionLayoutBoundarySupplementaryItem`.
+         * @return The converted Objective-C result.
+         */
         bool pin_to_visible_bounds() const;
         /**
-     * @brief Sets the `pinToVisibleBounds` property of `NSCollectionLayoutBoundarySupplementaryItem`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `pinToVisibleBounds` property of `NSCollectionLayoutBoundarySupplementaryItem`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_pin_to_visible_bounds(bool value) const;
     };
 }

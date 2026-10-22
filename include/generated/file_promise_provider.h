@@ -47,28 +47,28 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit FilePromiseProvider(Adopt adopt);
         /**
-     * @brief Returns the `fileType` property of `NSFilePromiseProvider`.
-     * @details The UTI of the promised file type. An exception is thrown if the fileType does not conform to kUTTypeData or kUTTypeDirectory
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `fileType` property of `NSFilePromiseProvider`.
+         * @details The UTI of the promised file type. An exception is thrown if the fileType does not conform to kUTTypeData or kUTTypeDirectory
+         * @return The converted Objective-C result.
+         */
         std::string file_type() const;
         /**
-     * @brief Sets the `fileType` property of `NSFilePromiseProvider`.
-     * @details The UTI of the promised file type. An exception is thrown if the fileType does not conform to kUTTypeData or kUTTypeDirectory
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `fileType` property of `NSFilePromiseProvider`.
+         * @details The UTI of the promised file type. An exception is thrown if the fileType does not conform to kUTTypeData or kUTTypeDirectory
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_file_type(const std::string& value) const;
         /**
-     * @brief Returns the `userInfo` property of `NSFilePromiseProvider`.
-     * @details When a simple string identifier is not enough. Store a pointer to an object that contains the source of the promised file data.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `userInfo` property of `NSFilePromiseProvider`.
+         * @details When a simple string identifier is not enough. Store a pointer to an object that contains the source of the promised file data.
+         * @return The converted Objective-C result.
+         */
         Object user_info() const;
         /**
-     * @brief Sets the `userInfo` property of `NSFilePromiseProvider`.
-     * @details When a simple string identifier is not enough. Store a pointer to an object that contains the source of the promised file data.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `userInfo` property of `NSFilePromiseProvider`.
+         * @details When a simple string identifier is not enough. Store a pointer to an object that contains the source of the promised file data.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_user_info(const Object& value) const;
         /// @brief Signal for the delegate/data-source method behind `file_name_for_type`; connect a callback with `file_name_for_type().connect(...)`.
         Signal<FilePromiseProvider, std::string(std::string)> file_name_for_type() const

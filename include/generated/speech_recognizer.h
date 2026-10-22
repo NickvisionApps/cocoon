@@ -47,52 +47,52 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit SpeechRecognizer(Adopt adopt);
         /**
-     * @brief Calls `-[NSSpeechRecognizer startListening]`.
-     */
+         * @brief Calls `-[NSSpeechRecognizer startListening]`.
+         */
         void start_listening() const;
         /**
-     * @brief Calls `-[NSSpeechRecognizer stopListening]`.
-     */
+         * @brief Calls `-[NSSpeechRecognizer stopListening]`.
+         */
         void stop_listening() const;
         /**
-     * @brief Returns the `blocksOtherRecognizers` property of `NSSpeechRecognizer`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `blocksOtherRecognizers` property of `NSSpeechRecognizer`.
+         * @return The converted Objective-C result.
+         */
         bool blocks_other_recognizers() const;
         /**
-     * @brief Sets the `blocksOtherRecognizers` property of `NSSpeechRecognizer`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `blocksOtherRecognizers` property of `NSSpeechRecognizer`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_blocks_other_recognizers(bool value) const;
         /**
-     * @brief Returns the `commands` property of `NSSpeechRecognizer`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `commands` property of `NSSpeechRecognizer`.
+         * @return The converted Objective-C result.
+         */
         std::vector<std::string> commands() const;
         /**
-     * @brief Sets the `commands` property of `NSSpeechRecognizer`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `commands` property of `NSSpeechRecognizer`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_commands(const std::vector<std::string>& value) const;
         /**
-     * @brief Returns the `displayedCommandsTitle` property of `NSSpeechRecognizer`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `displayedCommandsTitle` property of `NSSpeechRecognizer`.
+         * @return The converted Objective-C result.
+         */
         std::string displayed_commands_title() const;
         /**
-     * @brief Sets the `displayedCommandsTitle` property of `NSSpeechRecognizer`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `displayedCommandsTitle` property of `NSSpeechRecognizer`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_displayed_commands_title(const std::string& value) const;
         /**
-     * @brief Returns the `listensInForegroundOnly` property of `NSSpeechRecognizer`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `listensInForegroundOnly` property of `NSSpeechRecognizer`.
+         * @return The converted Objective-C result.
+         */
         bool listens_in_foreground_only() const;
         /**
-     * @brief Sets the `listensInForegroundOnly` property of `NSSpeechRecognizer`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `listensInForegroundOnly` property of `NSSpeechRecognizer`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_listens_in_foreground_only(bool value) const;
         /// @brief Signal for the delegate/data-source method behind `did_recognize_command`; connect a callback with `did_recognize_command().connect(...)`.
         Signal<SpeechRecognizer, void(std::string)> did_recognize_command() const

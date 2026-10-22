@@ -40,19 +40,19 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit ScrubberSelectionStyle(Adopt adopt);
         /**
-     * @brief Calls `-[NSScrubberSelectionStyle makeSelectionView]`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSScrubberSelectionStyle makeSelectionView]`.
+         * @return The converted Objective-C result.
+         */
         ScrubberSelectionView make_selection_view() const;
         /**
-     * @brief Returns the `outlineOverlayStyle` property of `NSScrubberSelectionStyle`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `outlineOverlayStyle` property of `NSScrubberSelectionStyle`.
+         * @return The converted Objective-C result.
+         */
         static ScrubberSelectionStyle outline_overlay_style();
         /**
-     * @brief Returns the `roundedBackgroundStyle` property of `NSScrubberSelectionStyle`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `roundedBackgroundStyle` property of `NSScrubberSelectionStyle`.
+         * @return The converted Objective-C result.
+         */
         static ScrubberSelectionStyle rounded_background_style();
     };
 }

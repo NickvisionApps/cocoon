@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -61,7 +61,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classcocoon_1_1_tab_view_item-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">cocoon::TabViewItem Class Reference</div></div>
 </div><!--header-->
@@ -76,6 +75,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac068d0a4f196cbdf8ed3151e3c1b19f3" id="r_ac068d0a4f196cbdf8ed3151e3c1b19f3"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac068d0a4f196cbdf8ed3151e3c1b19f3">TabViewItem</a> (const <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &amp;identifier)</td></tr>
 <tr class="memdesc:ac068d0a4f196cbdf8ed3151e3c1b19f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSTabViewItem</span> instance and returns a handle to it.  <br /></td></tr>
+<tr class="memitem:a66e209ea3b5a5d626bc4b9e7741c53ba" id="r_a66e209ea3b5a5d626bc4b9e7741c53ba"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a66e209ea3b5a5d626bc4b9e7741c53ba">TabViewItem</a> (const <a class="el" href="classcocoon_1_1_view_controller.html">ViewController</a> &amp;view_controller)</td></tr>
+<tr class="memdesc:a66e209ea3b5a5d626bc4b9e7741c53ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSTabViewItem</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:a210fa93fdba8a88a2e790d55237b3790" id="r_a210fa93fdba8a88a2e790d55237b3790"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a210fa93fdba8a88a2e790d55237b3790">TabViewItem</a> ()</td></tr>
 <tr class="memdesc:a210fa93fdba8a88a2e790d55237b3790"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSTabViewItem</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:a1c8af1ea3937baa5ee4cf66b5c3051db" id="r_a1c8af1ea3937baa5ee4cf66b5c3051db"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a1c8af1ea3937baa5ee4cf66b5c3051db">TabViewItem</a> (std::nullptr_t)</td></tr>
@@ -147,11 +148,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object" id="r_a53f4ad0e6a86173a96668457725eb369"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
 <tr class="memitem:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object template"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_object.html#a53f4ad0e6a86173a96668457725eb369">as</a> () const</td></tr>
 <tr class="memdesc:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reinterprets the native object as handle type <span class="tt">T</span> (no runtime type check).  <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a0a3953c729c1d7c77c8cbe6c565643ac" id="r_a0a3953c729c1d7c77c8cbe6c565643ac"><td class="memItemLeft">static <a class="el" href="#ac068d0a4f196cbdf8ed3151e3c1b19f3">TabViewItem</a>&#160;</td><td class="memItemRight"><a class="el" href="#a0a3953c729c1d7c77c8cbe6c565643ac">tab_view_item_with_view_controller</a> (const <a class="el" href="classcocoon_1_1_view_controller.html">ViewController</a> &amp;view_controller)</td></tr>
-<tr class="memdesc:a0a3953c729c1d7c77c8cbe6c565643ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSTabViewItem tabViewItemWithViewController:]</span>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>C++ handle for the Objective-C class <span class="tt">NSTabViewItem</span> (AppKit). </p>
@@ -161,7 +157,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="line"><a class="code hl_class" href="classcocoon_1_1_tab_view_item.html">cocoon::TabViewItem</a> tab_view_item;</div>
 <div class="line">tab_view_item.<a class="code hl_function" href="#a3b30ca4f58de49b43ffce76a0bba8890">set_color</a>(<a class="code hl_class" href="classcocoon_1_1_color.html">cocoon::Color</a>());</div>
 <div class="ttc" id="aclasscocoon_1_1_color_html"><div class="ttname"><a href="classcocoon_1_1_color.html">cocoon::Color</a></div><div class="ttdoc">A color (NSColor).</div><div class="ttdef"><b>Definition</b> color.h:42</div></div>
-<div class="ttc" id="aclasscocoon_1_1_tab_view_item_html"><div class="ttname"><a href="classcocoon_1_1_tab_view_item.html">cocoon::TabViewItem</a></div><div class="ttdoc">C++ handle for the Objective-C class NSTabViewItem (AppKit).</div><div class="ttdef"><b>Definition</b> tab_view_item.h:46</div></div>
+<div class="ttc" id="aclasscocoon_1_1_tab_view_item_html"><div class="ttname"><a href="classcocoon_1_1_tab_view_item.html">cocoon::TabViewItem</a></div><div class="ttdoc">C++ handle for the Objective-C class NSTabViewItem (AppKit).</div><div class="ttdef"><b>Definition</b> tab_view_item.h:45</div></div>
 <div class="ttc" id="aclasscocoon_1_1_tab_view_item_html_a3b30ca4f58de49b43ffce76a0bba8890"><div class="ttname"><a href="#a3b30ca4f58de49b43ffce76a0bba8890">cocoon::TabViewItem::set_color</a></div><div class="ttdeci">void set_color(const Color &amp;value) const</div><div class="ttdoc">Sets the color property of NSTabViewItem.</div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_tab_view_item.html">cocoon::TabViewItem</a> tab_view_item{};</div>
@@ -171,11 +167,9 @@ Static Public Member Functions</h2></td></tr>
 <div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#ad3961280461155b6f2f94f2dc8bcf970">image</a> = tab_view_item.<a class="code hl_function" href="#ad3961280461155b6f2f94f2dc8bcf970">image</a>();</div>
 <div class="line">tab_view_item.<a class="code hl_function" href="#a5f7fd2a46cf8352cc3996999a842bca9">set_initial_first_responder</a>(<a class="code hl_class" href="classcocoon_1_1_view.html">cocoon::View</a>());</div>
 <div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#a46bfeceaa2482e121dc3032d23b16d7b">initial_first_responder</a> = tab_view_item.<a class="code hl_function" href="#a46bfeceaa2482e121dc3032d23b16d7b">initial_first_responder</a>();</div>
-<div class="line"><span class="keyword">auto</span> made_0 = <a class="code hl_function" href="#a0a3953c729c1d7c77c8cbe6c565643ac">cocoon::TabViewItem::tab_view_item_with_view_controller</a>(<a class="code hl_class" href="classcocoon_1_1_view_controller.html">cocoon::ViewController</a>());</div>
 <div class="line">tab_view_item.<a class="code hl_function" href="#a9ea07fb891088dc4188c93e2d281ff3a">draw_label</a>(<span class="keyword">true</span>, {{0, 0}, {100, 100}});</div>
 <div class="line">tab_view_item.<a class="code hl_function" href="#a47b39d6bc13bb9c03e88d1a844b5dbd3">size_of_label</a>(<span class="keyword">true</span>);</div>
-<div class="ttc" id="aclasscocoon_1_1_image_html"><div class="ttname"><a href="classcocoon_1_1_image.html">cocoon::Image</a></div><div class="ttdoc">An image (NSImage).</div><div class="ttdef"><b>Definition</b> image.h:51</div></div>
-<div class="ttc" id="aclasscocoon_1_1_tab_view_item_html_a0a3953c729c1d7c77c8cbe6c565643ac"><div class="ttname"><a href="#a0a3953c729c1d7c77c8cbe6c565643ac">cocoon::TabViewItem::tab_view_item_with_view_controller</a></div><div class="ttdeci">static TabViewItem tab_view_item_with_view_controller(const ViewController &amp;view_controller)</div><div class="ttdoc">Calls +[NSTabViewItem tabViewItemWithViewController:].</div></div>
+<div class="ttc" id="aclasscocoon_1_1_image_html"><div class="ttname"><a href="classcocoon_1_1_image.html">cocoon::Image</a></div><div class="ttdoc">An image (NSImage).</div><div class="ttdef"><b>Definition</b> image.h:50</div></div>
 <div class="ttc" id="aclasscocoon_1_1_tab_view_item_html_a46bfeceaa2482e121dc3032d23b16d7b"><div class="ttname"><a href="#a46bfeceaa2482e121dc3032d23b16d7b">cocoon::TabViewItem::initial_first_responder</a></div><div class="ttdeci">View initial_first_responder() const</div><div class="ttdoc">Returns the initialFirstResponder property of NSTabViewItem.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_tab_view_item_html_a47b39d6bc13bb9c03e88d1a844b5dbd3"><div class="ttname"><a href="#a47b39d6bc13bb9c03e88d1a844b5dbd3">cocoon::TabViewItem::size_of_label</a></div><div class="ttdeci">Size size_of_label(bool compute_min) const</div><div class="ttdoc">Calls -[NSTabViewItem sizeOfLabel:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_tab_view_item_html_a5f7fd2a46cf8352cc3996999a842bca9"><div class="ttname"><a href="#a5f7fd2a46cf8352cc3996999a842bca9">cocoon::TabViewItem::set_initial_first_responder</a></div><div class="ttdeci">void set_initial_first_responder(const View &amp;value) const</div><div class="ttdoc">Sets the initialFirstResponder property of NSTabViewItem.</div></div>
@@ -183,13 +177,12 @@ Static Public Member Functions</h2></td></tr>
 <div class="ttc" id="aclasscocoon_1_1_tab_view_item_html_a9ea07fb891088dc4188c93e2d281ff3a"><div class="ttname"><a href="#a9ea07fb891088dc4188c93e2d281ff3a">cocoon::TabViewItem::draw_label</a></div><div class="ttdeci">void draw_label(bool should_truncate_label, const Rect &amp;label_rect) const</div><div class="ttdoc">Calls -[NSTabViewItem drawLabel:inRect:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_tab_view_item_html_ad3961280461155b6f2f94f2dc8bcf970"><div class="ttname"><a href="#ad3961280461155b6f2f94f2dc8bcf970">cocoon::TabViewItem::image</a></div><div class="ttdeci">Image image() const</div><div class="ttdoc">Returns the image property of NSTabViewItem.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_tab_view_item_html_adf00a2b49aa1f4d21fd47c6770fc124d"><div class="ttname"><a href="#adf00a2b49aa1f4d21fd47c6770fc124d">cocoon::TabViewItem::color</a></div><div class="ttdeci">Color color() const</div><div class="ttdoc">Returns the color property of NSTabViewItem.</div></div>
-<div class="ttc" id="aclasscocoon_1_1_view_controller_html"><div class="ttname"><a href="classcocoon_1_1_view_controller.html">cocoon::ViewController</a></div><div class="ttdoc">A view controller (NSViewController).</div><div class="ttdef"><b>Definition</b> view_controller.h:46</div></div>
 <div class="ttc" id="aclasscocoon_1_1_view_html"><div class="ttname"><a href="classcocoon_1_1_view.html">cocoon::View</a></div><div class="ttdoc">The base of all views (NSView): hierarchy, geometry, Auto Layout helpers and appearance.</div><div class="ttdef"><b>Definition</b> view.h:77</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/appkit/nstabviewitem">https://developer.apple.com/documentation/appkit/nstabviewitem</a> </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac068d0a4f196cbdf8ed3151e3c1b19f3" name="ac068d0a4f196cbdf8ed3151e3c1b19f3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac068d0a4f196cbdf8ed3151e3c1b19f3">&#9670;&#160;</a></span>TabViewItem() <span class="overload">[1/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac068d0a4f196cbdf8ed3151e3c1b19f3">&#9670;&#160;</a></span>TabViewItem() <span class="overload">[1/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -215,8 +208,35 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a66e209ea3b5a5d626bc4b9e7741c53ba" name="a66e209ea3b5a5d626bc4b9e7741c53ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66e209ea3b5a5d626bc4b9e7741c53ba">&#9670;&#160;</a></span>TabViewItem() <span class="overload">[2/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::TabViewItem::TabViewItem </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcocoon_1_1_view_controller.html">ViewController</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>view_controller</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSTabViewItem</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
 <a id="a210fa93fdba8a88a2e790d55237b3790" name="a210fa93fdba8a88a2e790d55237b3790"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a210fa93fdba8a88a2e790d55237b3790">&#9670;&#160;</a></span>TabViewItem() <span class="overload">[2/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a210fa93fdba8a88a2e790d55237b3790">&#9670;&#160;</a></span>TabViewItem() <span class="overload">[3/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -243,7 +263,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a1c8af1ea3937baa5ee4cf66b5c3051db" name="a1c8af1ea3937baa5ee4cf66b5c3051db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c8af1ea3937baa5ee4cf66b5c3051db">&#9670;&#160;</a></span>TabViewItem() <span class="overload">[3/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c8af1ea3937baa5ee4cf66b5c3051db">&#9670;&#160;</a></span>TabViewItem() <span class="overload">[4/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -262,7 +282,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a47a8032531eff9b7d6eb21638868d412" name="a47a8032531eff9b7d6eb21638868d412"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a47a8032531eff9b7d6eb21638868d412">&#9670;&#160;</a></span>TabViewItem() <span class="overload">[4/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a47a8032531eff9b7d6eb21638868d412">&#9670;&#160;</a></span>TabViewItem() <span class="overload">[5/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -681,40 +701,6 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the <span class="tt">tabView</span> property of <span class="tt">NSTabViewItem</span>. </p>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a0a3953c729c1d7c77c8cbe6c565643ac" name="a0a3953c729c1d7c77c8cbe6c565643ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a3953c729c1d7c77c8cbe6c565643ac">&#9670;&#160;</a></span>tab_view_item_with_view_controller()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#ac068d0a4f196cbdf8ed3151e3c1b19f3">TabViewItem</a> cocoon::TabViewItem::tab_view_item_with_view_controller </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_view_controller.html">ViewController</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>view_controller</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSTabViewItem tabViewItemWithViewController:]</span>. </p>
-<p>Creates an autoreleased '<a class="el" href="classcocoon_1_1_tab_view_item.html" title="C++ handle for the Objective-C class NSTabViewItem (AppKit).">TabViewItem</a>' that wraps the provided view controller. The view controller is set as the tab view item’s 'viewController' property, which sets several of the tab view item’s other properties. \param viewController The view controller to wrap, used to set the 'viewController' property </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">view_controller</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
 
 </div>

@@ -111,11 +111,6 @@ namespace cocoon
         return static_cast<bool>(__r);
     }
 
-    Scanner Scanner::scanner_with_string(const std::string& string)
-    {
-        return cocoon::internal::wrap<Scanner>([::NSScanner scannerWithString:cocoon::internal::to(string)]);
-    }
-
     bool Scanner::is_at_end() const
     {
         return static_cast<bool>([cocoon::internal::ns<::NSScanner>(this) isAtEnd]);

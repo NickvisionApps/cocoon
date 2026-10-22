@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -185,8 +185,6 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:aa5814e34b868da64463ccedb283c6a52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSLocale localeIdentifierFromComponents:]</span>.  <br /></td></tr>
 <tr class="memitem:a322f78604f59c1f8b1167fb20caa91b2" id="r_a322f78604f59c1f8b1167fb20caa91b2"><td class="memItemLeft">static std::string&#160;</td><td class="memItemRight"><a class="el" href="#a322f78604f59c1f8b1167fb20caa91b2">locale_identifier_from_windows_locale_code</a> (unsigned int lcid)</td></tr>
 <tr class="memdesc:a322f78604f59c1f8b1167fb20caa91b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSLocale localeIdentifierFromWindowsLocaleCode:]</span>.  <br /></td></tr>
-<tr class="memitem:ab087649b6e40ba5d573d4cd27d41dabc" id="r_ab087649b6e40ba5d573d4cd27d41dabc"><td class="memItemLeft">static <a class="el" href="#aae0d16abfe7135a9449f6ccb1a9aa650">Locale</a>&#160;</td><td class="memItemRight"><a class="el" href="#ab087649b6e40ba5d573d4cd27d41dabc">locale_with_locale_identifier</a> (const std::string &amp;ident)</td></tr>
-<tr class="memdesc:ab087649b6e40ba5d573d4cd27d41dabc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSLocale localeWithLocaleIdentifier:]</span>.  <br /></td></tr>
 <tr class="memitem:a081bbffba6f49af19443323fd06ae889" id="r_a081bbffba6f49af19443323fd06ae889"><td class="memItemLeft">static unsigned int&#160;</td><td class="memItemRight"><a class="el" href="#a081bbffba6f49af19443323fd06ae889">windows_locale_code_from_locale_identifier</a> (const std::string &amp;locale_identifier)</td></tr>
 <tr class="memdesc:a081bbffba6f49af19443323fd06ae889"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSLocale windowsLocaleCodeFromLocaleIdentifier:]</span>.  <br /></td></tr>
 <tr class="memitem:a3dd40d94b26dc88aa06f94681a732e89" id="r_a3dd40d94b26dc88aa06f94681a732e89"><td class="memItemLeft">static std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a3dd40d94b26dc88aa06f94681a732e89">iso_country_codes</a> ()</td></tr>
@@ -214,16 +212,14 @@ Static Public Member Functions</h2></td></tr>
 <dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;cocoon.h&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_class" href="classcocoon_1_1_locale.html">cocoon::Locale</a> locale{<span class="stringliteral">&quot;text&quot;</span>};</div>
-<div class="ttc" id="aclasscocoon_1_1_locale_html"><div class="ttname"><a href="classcocoon_1_1_locale.html">cocoon::Locale</a></div><div class="ttdoc">C++ handle for the Objective-C class NSLocale (Foundation).</div><div class="ttdef"><b>Definition</b> locale.h:37</div></div>
+<div class="ttc" id="aclasscocoon_1_1_locale_html"><div class="ttname"><a href="classcocoon_1_1_locale.html">cocoon::Locale</a></div><div class="ttdoc">C++ handle for the Objective-C class NSLocale (Foundation).</div><div class="ttdef"><b>Definition</b> locale.h:36</div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_locale.html">cocoon::Locale</a> locale{<span class="stringliteral">&quot;text&quot;</span>};</div>
-<div class="line"><span class="keyword">auto</span> made_0 = <a class="code hl_function" href="#ab087649b6e40ba5d573d4cd27d41dabc">cocoon::Locale::locale_with_locale_identifier</a>(<span class="stringliteral">&quot;text&quot;</span>);</div>
 <div class="line">locale.<a class="code hl_function" href="#a2a368a7288334d9db07154c34a01ebf4">localized_string_for_calendar_identifier</a>(<span class="stringliteral">&quot;text&quot;</span>);</div>
 <div class="line">locale.<a class="code hl_function" href="#ac9737d6cb3116300848616d6e1e9c8d2">localized_string_for_collation_identifier</a>(<span class="stringliteral">&quot;text&quot;</span>);</div>
 <div class="line">locale.<a class="code hl_function" href="#aa6187aa10a6ffe19306be07c21164470">localized_string_for_collator_identifier</a>(<span class="stringliteral">&quot;text&quot;</span>);</div>
 <div class="ttc" id="aclasscocoon_1_1_locale_html_a2a368a7288334d9db07154c34a01ebf4"><div class="ttname"><a href="#a2a368a7288334d9db07154c34a01ebf4">cocoon::Locale::localized_string_for_calendar_identifier</a></div><div class="ttdeci">std::string localized_string_for_calendar_identifier(const std::string &amp;calendar_identifier) const</div><div class="ttdoc">Calls -[NSLocale localizedStringForCalendarIdentifier:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_locale_html_aa6187aa10a6ffe19306be07c21164470"><div class="ttname"><a href="#aa6187aa10a6ffe19306be07c21164470">cocoon::Locale::localized_string_for_collator_identifier</a></div><div class="ttdeci">std::string localized_string_for_collator_identifier(const std::string &amp;collator_identifier) const</div><div class="ttdoc">Calls -[NSLocale localizedStringForCollatorIdentifier:].</div></div>
-<div class="ttc" id="aclasscocoon_1_1_locale_html_ab087649b6e40ba5d573d4cd27d41dabc"><div class="ttname"><a href="#ab087649b6e40ba5d573d4cd27d41dabc">cocoon::Locale::locale_with_locale_identifier</a></div><div class="ttdeci">static Locale locale_with_locale_identifier(const std::string &amp;ident)</div><div class="ttdoc">Calls +[NSLocale localeWithLocaleIdentifier:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_locale_html_ac9737d6cb3116300848616d6e1e9c8d2"><div class="ttname"><a href="#ac9737d6cb3116300848616d6e1e9c8d2">cocoon::Locale::localized_string_for_collation_identifier</a></div><div class="ttdeci">std::string localized_string_for_collation_identifier(const std::string &amp;collation_identifier) const</div><div class="ttdoc">Calls -[NSLocale localizedStringForCollationIdentifier:].</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/foundation/nslocale">https://developer.apple.com/documentation/foundation/nslocale</a> </dd></dl>
@@ -1057,40 +1053,6 @@ Static Public Member Functions</h2></td></tr>
 <p>Returns a locale identifier from a Windows locale code. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">lcid</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="ab087649b6e40ba5d573d4cd27d41dabc" name="ab087649b6e40ba5d573d4cd27d41dabc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab087649b6e40ba5d573d4cd27d41dabc">&#9670;&#160;</a></span>locale_with_locale_identifier()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#aae0d16abfe7135a9449f6ccb1a9aa650">Locale</a> cocoon::Locale::locale_with_locale_identifier </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>ident</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSLocale localeWithLocaleIdentifier:]</span>. </p>
-<p>Creates and returns a locale initialized with the given locale identifier. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">ident</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
   </table>
   </dd>
 </dl>

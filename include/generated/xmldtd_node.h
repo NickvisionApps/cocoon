@@ -49,58 +49,58 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit XMLDTDNode(Adopt adopt);
         /**
-     * @brief Returns the `DTDKind` property of `NSXMLDTDNode`.
-     * @details Returns the receiver's DTD kind. The DTD kind is distinct from a 'NSXMLDTDNode' object's node kind (returned by the 'NSXMLNode' ''XMLNode/kind'' method).
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `DTDKind` property of `NSXMLDTDNode`.
+         * @details Returns the receiver's DTD kind. The DTD kind is distinct from a 'NSXMLDTDNode' object's node kind (returned by the 'NSXMLNode' ''XMLNode/kind'' method).
+         * @return The converted Objective-C result.
+         */
         XMLDTDNodeKind dtd_kind() const;
         /**
-     * @brief Sets the `DTDKind` property of `NSXMLDTDNode`.
-     * @details Returns the receiver's DTD kind. The DTD kind is distinct from a 'NSXMLDTDNode' object's node kind (returned by the 'NSXMLNode' ''XMLNode/kind'' method).
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `DTDKind` property of `NSXMLDTDNode`.
+         * @details Returns the receiver's DTD kind. The DTD kind is distinct from a 'NSXMLDTDNode' object's node kind (returned by the 'NSXMLNode' ''XMLNode/kind'' method).
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_dtd_kind(XMLDTDNodeKind value) const;
         /**
-     * @brief Returns the `external` property of `NSXMLDTDNode`.
-     * @details True if the system id is set. Valid for entities and notations.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `external` property of `NSXMLDTDNode`.
+         * @details True if the system id is set. Valid for entities and notations.
+         * @return The converted Objective-C result.
+         */
         bool is_external() const;
         /**
-     * @brief Returns the `notationName` property of `NSXMLDTDNode`.
-     * @details Returns the name of the notation associated with the receiver. Notations are applicable to unparsed external entities, processing instructions, and some attribute values.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `notationName` property of `NSXMLDTDNode`.
+         * @details Returns the name of the notation associated with the receiver. Notations are applicable to unparsed external entities, processing instructions, and some attribute values.
+         * @return The converted Objective-C result.
+         */
         std::string notation_name() const;
         /**
-     * @brief Sets the `notationName` property of `NSXMLDTDNode`.
-     * @details Returns the name of the notation associated with the receiver. Notations are applicable to unparsed external entities, processing instructions, and some attribute values.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `notationName` property of `NSXMLDTDNode`.
+         * @details Returns the name of the notation associated with the receiver. Notations are applicable to unparsed external entities, processing instructions, and some attribute values.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_notation_name(const std::string& value) const;
         /**
-     * @brief Returns the `publicID` property of `NSXMLDTDNode`.
-     * @details Returns the public identifier associated with the receiver. The public ID is applicable to entities and notations. This identifier should be in the default catalog in '/etc/xml/catalog' or in a path specified by the environment variable 'XML_CATALOG_FILES'. When the public id is set the system id must also be set.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `publicID` property of `NSXMLDTDNode`.
+         * @details Returns the public identifier associated with the receiver. The public ID is applicable to entities and notations. This identifier should be in the default catalog in '/etc/xml/catalog' or in a path specified by the environment variable 'XML_CATALOG_FILES'. When the public id is set the system id must also be set.
+         * @return The converted Objective-C result.
+         */
         std::string public_id() const;
         /**
-     * @brief Sets the `publicID` property of `NSXMLDTDNode`.
-     * @details Returns the public identifier associated with the receiver. The public ID is applicable to entities and notations. This identifier should be in the default catalog in '/etc/xml/catalog' or in a path specified by the environment variable 'XML_CATALOG_FILES'. When the public id is set the system id must also be set.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `publicID` property of `NSXMLDTDNode`.
+         * @details Returns the public identifier associated with the receiver. The public ID is applicable to entities and notations. This identifier should be in the default catalog in '/etc/xml/catalog' or in a path specified by the environment variable 'XML_CATALOG_FILES'. When the public id is set the system id must also be set.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_public_id(const std::string& value) const;
         /**
-     * @brief Returns the `systemID` property of `NSXMLDTDNode`.
-     * @details Returns the system identifier associated with the receiver. This should be a URL that points to a valid DTD. Valid for entities and notations.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `systemID` property of `NSXMLDTDNode`.
+         * @details Returns the system identifier associated with the receiver. This should be a URL that points to a valid DTD. Valid for entities and notations.
+         * @return The converted Objective-C result.
+         */
         std::string system_id() const;
         /**
-     * @brief Sets the `systemID` property of `NSXMLDTDNode`.
-     * @details Returns the system identifier associated with the receiver. This should be a URL that points to a valid DTD. Valid for entities and notations.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `systemID` property of `NSXMLDTDNode`.
+         * @details Returns the system identifier associated with the receiver. This should be a URL that points to a valid DTD. Valid for entities and notations.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_system_id(const std::string& value) const;
     };
 }

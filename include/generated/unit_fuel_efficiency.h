@@ -31,22 +31,22 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit UnitFuelEfficiency(Adopt adopt);
         /**
-     * @brief Returns the `litersPer100Kilometers` property of `NSUnitFuelEfficiency`.
-     * @details The liters per 100 kilometers unit of fuel efficiency.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `litersPer100Kilometers` property of `NSUnitFuelEfficiency`.
+         * @details The liters per 100 kilometers unit of fuel efficiency.
+         * @return The converted Objective-C result.
+         */
         static UnitFuelEfficiency liters_per100_kilometers();
         /**
-     * @brief Returns the `milesPerGallon` property of `NSUnitFuelEfficiency`.
-     * @details The miles per gallon unit of fuel efficiency.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `milesPerGallon` property of `NSUnitFuelEfficiency`.
+         * @details The miles per gallon unit of fuel efficiency.
+         * @return The converted Objective-C result.
+         */
         static UnitFuelEfficiency miles_per_gallon();
         /**
-     * @brief Returns the `milesPerImperialGallon` property of `NSUnitFuelEfficiency`.
-     * @details The miles per imperial gallon unit of fuel efficiency.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `milesPerImperialGallon` property of `NSUnitFuelEfficiency`.
+         * @details The miles per imperial gallon unit of fuel efficiency.
+         * @return The converted Objective-C result.
+         */
         static UnitFuelEfficiency miles_per_imperial_gallon();
     };
 }

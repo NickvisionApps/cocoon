@@ -35,28 +35,28 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit WritingToolsCoordinatorContext(Adopt adopt);
         /**
-     * @brief Returns the `attributedString` property of `NSWritingToolsCoordinatorContext`.
-     * @details The portion of your view’s text to evaluate. The ''NSWritingToolsCoordinator/Context'' object initializes the value of this property at creation time and doesn’t change it during the course of an operation. Instead, it suggests changes to the text in the indicated range and reports those changes to your ''NSWritingToolsCoordinator/Delegate'' object. Use the methods of your delegate object to integrate those changes back into your view’s text storage. It’s your responsibility to track the location of this text in your view’s text storage object. When Writing Tools reports changes, it provides range values relative to this string. If you initialize this property with a subset of your view’s content, you must adjust any ranges that Writing Tools provides to get the correct location in your text storage.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `attributedString` property of `NSWritingToolsCoordinatorContext`.
+         * @details The portion of your view’s text to evaluate. The ''NSWritingToolsCoordinator/Context'' object initializes the value of this property at creation time and doesn’t change it during the course of an operation. Instead, it suggests changes to the text in the indicated range and reports those changes to your ''NSWritingToolsCoordinator/Delegate'' object. Use the methods of your delegate object to integrate those changes back into your view’s text storage. It’s your responsibility to track the location of this text in your view’s text storage object. When Writing Tools reports changes, it provides range values relative to this string. If you initialize this property with a subset of your view’s content, you must adjust any ranges that Writing Tools provides to get the correct location in your text storage.
+         * @return The converted Objective-C result.
+         */
         AttributedString attributed_string() const;
         /**
-     * @brief Returns the `identifier` property of `NSWritingToolsCoordinatorContext`.
-     * @details The unique identifier of the context object. The ''NSWritingToolsCoordinator/Context'' object initializes the value of this property at creation time. Use this value to identify the context object within your app.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `identifier` property of `NSWritingToolsCoordinatorContext`.
+         * @details The unique identifier of the context object. The ''NSWritingToolsCoordinator/Context'' object initializes the value of this property at creation time. Use this value to identify the context object within your app.
+         * @return The converted Objective-C result.
+         */
         UUID identifier() const;
         /**
-     * @brief Returns the `range` property of `NSWritingToolsCoordinatorContext`.
-     * @details The unique identifier of the context object. The ''NSWritingToolsCoordinator/Context'' object initializes the value of this property at creation time. Use this value to identify the context object within your app.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `range` property of `NSWritingToolsCoordinatorContext`.
+         * @details The unique identifier of the context object. The ''NSWritingToolsCoordinator/Context'' object initializes the value of this property at creation time. Use this value to identify the context object within your app.
+         * @return The converted Objective-C result.
+         */
         Range range() const;
         /**
-     * @brief Returns the `resolvedRange` property of `NSWritingToolsCoordinatorContext`.
-     * @details The actual range of text that Writing Tools might change, which can be different than the range of text you supplied. After analyzing the text in your context object, Writing Tools sets this property to the portion of ''attributedString'' it might modify. Initially, this property has a location of \<doc://com.apple.documentation/documentation/foundation/nsnotfound> and a length of '0', but Writing Tools updates those values before making any changes to the text. While the Writing Tools operation is active, make sure Writing Tools has exclusive access to the text in this range. Your ''NSWritingToolsCoordinator/Delegate'' object can make changes to the text as part of incorporating Writing Tools results, but don’t allow changes to come from other sources. For example, don’t let someone edit the text in this range directly until Writing Tools finishes.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `resolvedRange` property of `NSWritingToolsCoordinatorContext`.
+         * @details The actual range of text that Writing Tools might change, which can be different than the range of text you supplied. After analyzing the text in your context object, Writing Tools sets this property to the portion of ''attributedString'' it might modify. Initially, this property has a location of \<doc://com.apple.documentation/documentation/foundation/nsnotfound> and a length of '0', but Writing Tools updates those values before making any changes to the text. While the Writing Tools operation is active, make sure Writing Tools has exclusive access to the text in this range. Your ''NSWritingToolsCoordinator/Delegate'' object can make changes to the text as part of incorporating Writing Tools results, but don’t allow changes to come from other sources. For example, don’t let someone edit the text in this range directly until Writing Tools finishes.
+         * @return The converted Objective-C result.
+         */
         Range resolved_range() const;
     };
 }

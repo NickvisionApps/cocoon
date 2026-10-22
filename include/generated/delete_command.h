@@ -42,16 +42,16 @@ namespace cocoon
         explicit DeleteCommand(Adopt adopt);
         using ScriptCommand::set_receivers_specifier;
         /**
-     * @brief Calls `-[NSDeleteCommand setReceiversSpecifier:]`.
-     * @details Splits off the inner-most child specifier from the receivers specifier.
-     * @param receivers_ref Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSDeleteCommand setReceiversSpecifier:]`.
+         * @details Splits off the inner-most child specifier from the receivers specifier.
+         * @param receivers_ref Argument converted to the Objective-C parameter of the same role.
+         */
         void set_receivers_specifier(const ScriptObjectSpecifier& receivers_ref) const;
         /**
-     * @brief Returns the `keySpecifier` property of `NSDeleteCommand`.
-     * @details The key specifier for the delete operation.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `keySpecifier` property of `NSDeleteCommand`.
+         * @details The key specifier for the delete operation.
+         * @return The converted Objective-C result.
+         */
         ScriptObjectSpecifier key_specifier() const;
     };
 }

@@ -44,33 +44,33 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit DistributedLock(Adopt adopt);
         /**
-     * @brief Calls `-[NSDistributedLock breakLock]`.
-     * @details Forces the lock to be relinquished.
-     */
+         * @brief Calls `-[NSDistributedLock breakLock]`.
+         * @details Forces the lock to be relinquished.
+         */
         void break_lock() const;
         /**
-     * @brief Calls `+[NSDistributedLock lockWithPath:]`.
-     * @details Returns an ''NSDistributedLock'' object initialized with the specified path.
-     * @param path Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSDistributedLock lockWithPath:]`.
+         * @details Returns an ''NSDistributedLock'' object initialized with the specified path.
+         * @param path Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static DistributedLock lock_with_path(const std::string& path);
         /**
-     * @brief Calls `-[NSDistributedLock tryLock]`.
-     * @details Attempts to acquire the lock and immediately returns a Boolean value that indicates whether the attempt was successful.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSDistributedLock tryLock]`.
+         * @details Attempts to acquire the lock and immediately returns a Boolean value that indicates whether the attempt was successful.
+         * @return The converted Objective-C result.
+         */
         bool try_lock() const;
         /**
-     * @brief Calls `-[NSDistributedLock unlock]`.
-     * @details Relinquishes the receiver.
-     */
+         * @brief Calls `-[NSDistributedLock unlock]`.
+         * @details Relinquishes the receiver.
+         */
         void unlock() const;
         /**
-     * @brief Returns the `lockDate` property of `NSDistributedLock`.
-     * @details The time the lock was acquired.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `lockDate` property of `NSDistributedLock`.
+         * @details The time the lock was acquired.
+         * @return The converted Objective-C result.
+         */
         Date lock_date() const;
     };
 }

@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -61,7 +61,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classcocoon_1_1_pointer_functions-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">cocoon::PointerFunctions Class Reference</div></div>
 </div><!--header-->
@@ -131,11 +130,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object" id="r_a53f4ad0e6a86173a96668457725eb369"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
 <tr class="memitem:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object template"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_object.html#a53f4ad0e6a86173a96668457725eb369">as</a> () const</td></tr>
 <tr class="memdesc:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reinterprets the native object as handle type <span class="tt">T</span> (no runtime type check).  <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a3d8d55d0c34bcf443125b921eb0e3f5b" id="r_a3d8d55d0c34bcf443125b921eb0e3f5b"><td class="memItemLeft">static <a class="el" href="#a44a27df930ad9bfc6a3fa92ded1bc161">PointerFunctions</a>&#160;</td><td class="memItemRight"><a class="el" href="#a3d8d55d0c34bcf443125b921eb0e3f5b">pointer_functions_with_options</a> (<a class="el" href="namespacecocoon.html#a7cda810ceb3b8e47d7cc1be2f5c05c9d">PointerFunctionsOptions</a> options)</td></tr>
-<tr class="memdesc:a3d8d55d0c34bcf443125b921eb0e3f5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSPointerFunctions pointerFunctionsWithOptions:]</span>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>C++ handle for the Objective-C class <span class="tt">NSPointerFunctions</span> (Foundation). </p>
@@ -143,12 +137,7 @@ Static Public Member Functions</h2></td></tr>
 <dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;cocoon.h&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_class" href="classcocoon_1_1_pointer_functions.html">cocoon::PointerFunctions</a> pointer_functions;</div>
-<div class="ttc" id="aclasscocoon_1_1_pointer_functions_html"><div class="ttname"><a href="classcocoon_1_1_pointer_functions.html">cocoon::PointerFunctions</a></div><div class="ttdoc">C++ handle for the Objective-C class NSPointerFunctions (Foundation).</div><div class="ttdef"><b>Definition</b> pointer_functions.h:32</div></div>
-</div><!-- fragment --></dd></dl>
-<dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_pointer_functions.html">cocoon::PointerFunctions</a> pointer_functions{};</div>
-<div class="line"><span class="keyword">auto</span> made_0 = <a class="code hl_function" href="#a3d8d55d0c34bcf443125b921eb0e3f5b">cocoon::PointerFunctions::pointer_functions_with_options</a>(<a class="code hl_enumvalue" href="namespacecocoon.html#a7cda810ceb3b8e47d7cc1be2f5c05c9da59c706b1d666643bc26642a82c7fb0b5">cocoon::PointerFunctionsOptions::StrongMemory</a>);</div>
-<div class="ttc" id="aclasscocoon_1_1_pointer_functions_html_a3d8d55d0c34bcf443125b921eb0e3f5b"><div class="ttname"><a href="#a3d8d55d0c34bcf443125b921eb0e3f5b">cocoon::PointerFunctions::pointer_functions_with_options</a></div><div class="ttdeci">static PointerFunctions pointer_functions_with_options(PointerFunctionsOptions options)</div><div class="ttdoc">Calls +[NSPointerFunctions pointerFunctionsWithOptions:].</div></div>
-<div class="ttc" id="anamespacecocoon_html_a7cda810ceb3b8e47d7cc1be2f5c05c9da59c706b1d666643bc26642a82c7fb0b5"><div class="ttname"><a href="namespacecocoon.html#a7cda810ceb3b8e47d7cc1be2f5c05c9da59c706b1d666643bc26642a82c7fb0b5">cocoon::PointerFunctionsOptions::StrongMemory</a></div><div class="ttdeci">@ StrongMemory</div><div class="ttdef"><b>Definition</b> enums.h:3153</div></div>
+<div class="ttc" id="aclasscocoon_1_1_pointer_functions_html"><div class="ttname"><a href="classcocoon_1_1_pointer_functions.html">cocoon::PointerFunctions</a></div><div class="ttdoc">C++ handle for the Objective-C class NSPointerFunctions (Foundation).</div><div class="ttdef"><b>Definition</b> pointer_functions.h:25</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/foundation/nspointerfunctions">https://developer.apple.com/documentation/foundation/nspointerfunctions</a> </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -330,40 +319,6 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Returns the <span class="tt">isEqualFunction</span> property of <span class="tt">NSPointerFunctions</span>. </p>
 <p>The function used to compare pointers. </p><dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a3d8d55d0c34bcf443125b921eb0e3f5b" name="a3d8d55d0c34bcf443125b921eb0e3f5b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d8d55d0c34bcf443125b921eb0e3f5b">&#9670;&#160;</a></span>pointer_functions_with_options()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a44a27df930ad9bfc6a3fa92ded1bc161">PointerFunctions</a> cocoon::PointerFunctions::pointer_functions_with_options </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacecocoon.html#a7cda810ceb3b8e47d7cc1be2f5c05c9d">PointerFunctionsOptions</a></td>          <td class="paramname"><span class="paramname"><em>options</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSPointerFunctions pointerFunctionsWithOptions:]</span>. </p>
-<p>Returns a new 'NSPointerFunctions' object initialized with the given options. - Parameter options: The options for the new 'NSPointerFunctions' object. - Returns: A new 'NSPointerFunctions' object initialized with the given options. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">options</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
 
 </div>
 </div>

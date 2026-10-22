@@ -50,14 +50,14 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit CollectionViewCompositionalLayout(Adopt adopt);
         /**
-     * @brief Returns the `configuration` property of `NSCollectionViewCompositionalLayout`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `configuration` property of `NSCollectionViewCompositionalLayout`.
+         * @return The converted Objective-C result.
+         */
         CollectionViewCompositionalLayoutConfiguration configuration() const;
         /**
-     * @brief Sets the `configuration` property of `NSCollectionViewCompositionalLayout`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `configuration` property of `NSCollectionViewCompositionalLayout`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_configuration(const CollectionViewCompositionalLayoutConfiguration& value) const;
     };
 }

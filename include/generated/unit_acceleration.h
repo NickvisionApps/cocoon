@@ -31,16 +31,16 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit UnitAcceleration(Adopt adopt);
         /**
-     * @brief Returns the `gravity` property of `NSUnitAcceleration`.
-     * @details The gravity unit of acceleration.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `gravity` property of `NSUnitAcceleration`.
+         * @details The gravity unit of acceleration.
+         * @return The converted Objective-C result.
+         */
         static UnitAcceleration gravity();
         /**
-     * @brief Returns the `metersPerSecondSquared` property of `NSUnitAcceleration`.
-     * @details The meters per second squared unit of acceleration.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `metersPerSecondSquared` property of `NSUnitAcceleration`.
+         * @details The meters per second squared unit of acceleration.
+         * @return The converted Objective-C result.
+         */
         static UnitAcceleration meters_per_second_squared();
     };
 }

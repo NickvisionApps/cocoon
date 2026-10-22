@@ -19,14 +19,13 @@ namespace cocoon
      * @code
      * #include <cocoon.h>
      *
-     * cocoon::KeyValueSharedObservers key_value_shared_observers(nullptr);  // null handle; instances normally come from other API calls
+     * cocoon::KeyValueSharedObservers key_value_shared_observers{"text"};
      * @endcode
      *
      * @par Common tasks
      * Snippets built from this class's own members (values are placeholders).
      * @code
-     * cocoon::KeyValueSharedObservers key_value_shared_observers(nullptr);
-     * key_value_shared_observers.init_with_observable_class("text");
+     * cocoon::KeyValueSharedObservers key_value_shared_observers{"text"};
      * key_value_shared_observers.snapshot();
      * @endcode
      * @see https://developer.apple.com/documentation/foundation/nskeyvaluesharedobservers
@@ -34,32 +33,27 @@ namespace cocoon
     class KeyValueSharedObservers : public Object
     {
     public:
+        /// @brief Creates a new `NSKeyValueSharedObservers` instance and returns a handle to it.
+        explicit KeyValueSharedObservers(const std::string& observable_class);
         KeyValueSharedObservers();
         /// @brief Creates a null handle that refers to no native object.
         KeyValueSharedObservers(std::nullptr_t);
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit KeyValueSharedObservers(Adopt adopt);
         /**
-     * @brief Calls `-[NSKeyValueSharedObservers addSharedObserver:forKey:options:context:]`.
-     * @details Add a new observer to the collection. This method works like '-[NSObject addObserver: forKey: options: context:]', but observations on nested and computed properties are disallowed. Observers are not registered until 'setSharedObservers' is called on the observable. - Parameter observer: The observer object to register for KVO notifications. The observer must implement the key-value observing method ''observeValue: forKeyPath: of: change: context:'' - Parameter key: key of the property being observed. This cannot be a nested key path or a computed property - Parameter options: A combination of NSKeyValueObservingOptions values that specify what is included in observation notifications. For possible values see NSKeyValueObservingOptions. - Parameter context: Arbitrary data which is passed to the observer object
-     * @param observer Argument converted to the Objective-C parameter of the same role.
-     * @param key Argument converted to the Objective-C parameter of the same role.
-     * @param options Argument converted to the Objective-C parameter of the same role.
-     * @param context Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSKeyValueSharedObservers addSharedObserver:forKey:options:context:]`.
+         * @details Add a new observer to the collection. This method works like '-[NSObject addObserver: forKey: options: context:]', but observations on nested and computed properties are disallowed. Observers are not registered until 'setSharedObservers' is called on the observable. - Parameter observer: The observer object to register for KVO notifications. The observer must implement the key-value observing method ''observeValue: forKeyPath: of: change: context:'' - Parameter key: key of the property being observed. This cannot be a nested key path or a computed property - Parameter options: A combination of NSKeyValueObservingOptions values that specify what is included in observation notifications. For possible values see NSKeyValueObservingOptions. - Parameter context: Arbitrary data which is passed to the observer object
+         * @param observer Argument converted to the Objective-C parameter of the same role.
+         * @param key Argument converted to the Objective-C parameter of the same role.
+         * @param options Argument converted to the Objective-C parameter of the same role.
+         * @param context Argument converted to the Objective-C parameter of the same role.
+         */
         void add_shared_observer(const Object& observer, const std::string& key, KeyValueObservingOptions options, void* context) const;
         /**
-     * @brief Calls `-[NSKeyValueSharedObservers initWithObservableClass:]`.
-     * @details A new collection of observables for an observable object of the given class
-     * @param observable_class Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        Object init_with_observable_class(const std::string& observable_class) const;
-        /**
-     * @brief Calls `-[NSKeyValueSharedObservers snapshot]`.
-     * @details A momentary snapshot of all observers added to the collection thus far, that can be assigned to an observable using ''-[NSObject setSharedObservers:]''
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSKeyValueSharedObservers snapshot]`.
+         * @details A momentary snapshot of all observers added to the collection thus far, that can be assigned to an observable using ''-[NSObject setSharedObservers:]''
+         * @return The converted Objective-C result.
+         */
         KeyValueSharedObserversSnapshot snapshot() const;
     };
 }

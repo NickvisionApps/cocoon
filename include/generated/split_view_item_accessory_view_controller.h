@@ -53,56 +53,56 @@ namespace cocoon
         using ViewController::view_will_appear;
         using ViewController::view_will_disappear;
         /**
-     * @brief Calls `-[NSSplitViewItemAccessoryViewController viewDidAppear]`.
-     */
+         * @brief Calls `-[NSSplitViewItemAccessoryViewController viewDidAppear]`.
+         */
         void view_did_appear() const;
         /**
-     * @brief Calls `-[NSSplitViewItemAccessoryViewController viewDidDisappear]`.
-     */
+         * @brief Calls `-[NSSplitViewItemAccessoryViewController viewDidDisappear]`.
+         */
         void view_did_disappear() const;
         /**
-     * @brief Calls `-[NSSplitViewItemAccessoryViewController viewWillAppear]`.
-     */
+         * @brief Calls `-[NSSplitViewItemAccessoryViewController viewWillAppear]`.
+         */
         void view_will_appear() const;
         /**
-     * @brief Calls `-[NSSplitViewItemAccessoryViewController viewWillDisappear]`.
-     */
+         * @brief Calls `-[NSSplitViewItemAccessoryViewController viewWillDisappear]`.
+         */
         void view_will_disappear() const;
         /**
-     * @brief Returns the `automaticallyAppliesContentInsets` property of `NSSplitViewItemAccessoryViewController`.
-     * @details Whether or not standard content insets should be applied to the view. Defaults to YES.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `automaticallyAppliesContentInsets` property of `NSSplitViewItemAccessoryViewController`.
+         * @details Whether or not standard content insets should be applied to the view. Defaults to YES.
+         * @return The converted Objective-C result.
+         */
         bool automatically_applies_content_insets() const;
         /**
-     * @brief Sets the `automaticallyAppliesContentInsets` property of `NSSplitViewItemAccessoryViewController`.
-     * @details Whether or not standard content insets should be applied to the view. Defaults to YES.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `automaticallyAppliesContentInsets` property of `NSSplitViewItemAccessoryViewController`.
+         * @details Whether or not standard content insets should be applied to the view. Defaults to YES.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_automatically_applies_content_insets(bool value) const;
         /**
-     * @brief Returns the `hidden` property of `NSSplitViewItemAccessoryViewController`.
-     * @details When set, this property will collapse the accessory view to 0 height (animatable) but not remove it from the window. Set through the animator object to animate it.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `hidden` property of `NSSplitViewItemAccessoryViewController`.
+         * @details When set, this property will collapse the accessory view to 0 height (animatable) but not remove it from the window. Set through the animator object to animate it.
+         * @return The converted Objective-C result.
+         */
         bool is_hidden() const;
         /**
-     * @brief Sets the `hidden` property of `NSSplitViewItemAccessoryViewController`.
-     * @details When set, this property will collapse the accessory view to 0 height (animatable) but not remove it from the window. Set through the animator object to animate it.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `hidden` property of `NSSplitViewItemAccessoryViewController`.
+         * @details When set, this property will collapse the accessory view to 0 height (animatable) but not remove it from the window. Set through the animator object to animate it.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_hidden(bool value) const;
         /**
-     * @brief Returns the `preferredScrollEdgeEffectStyle` property of `NSSplitViewItemAccessoryViewController`.
-     * @details The split view item accessory’s preferred effect for content scrolling behind it. To allow for a soft edge on the interior edge of a titlebar accessory: splitViewItemAccessoryViewController.preferredScrollEdgeEffectStyle = NSScrollEdgeEffectStyle.softStyle;
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `preferredScrollEdgeEffectStyle` property of `NSSplitViewItemAccessoryViewController`.
+         * @details The split view item accessory’s preferred effect for content scrolling behind it. To allow for a soft edge on the interior edge of a titlebar accessory: splitViewItemAccessoryViewController.preferredScrollEdgeEffectStyle = NSScrollEdgeEffectStyle.softStyle;
+         * @return The converted Objective-C result.
+         */
         ScrollEdgeEffectStyle preferred_scroll_edge_effect_style() const;
         /**
-     * @brief Sets the `preferredScrollEdgeEffectStyle` property of `NSSplitViewItemAccessoryViewController`.
-     * @details The split view item accessory’s preferred effect for content scrolling behind it. To allow for a soft edge on the interior edge of a titlebar accessory: splitViewItemAccessoryViewController.preferredScrollEdgeEffectStyle = NSScrollEdgeEffectStyle.softStyle;
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `preferredScrollEdgeEffectStyle` property of `NSSplitViewItemAccessoryViewController`.
+         * @details The split view item accessory’s preferred effect for content scrolling behind it. To allow for a soft edge on the interior edge of a titlebar accessory: splitViewItemAccessoryViewController.preferredScrollEdgeEffectStyle = NSScrollEdgeEffectStyle.softStyle;
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_preferred_scroll_edge_effect_style(const ScrollEdgeEffectStyle& value) const;
     };
 }

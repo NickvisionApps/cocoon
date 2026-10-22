@@ -37,16 +37,16 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit ViewLayoutRegion(Adopt adopt);
         /**
-     * @brief Calls `+[NSViewLayoutRegion marginsLayoutRegionWithCornerAdaptation:]`.
-     * @param adaptivity_axis Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSViewLayoutRegion marginsLayoutRegionWithCornerAdaptation:]`.
+         * @param adaptivity_axis Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static ViewLayoutRegion margins_layout_region_with_corner_adaptation(ViewLayoutRegionAdaptivityAxis adaptivity_axis);
         /**
-     * @brief Calls `+[NSViewLayoutRegion safeAreaLayoutRegionWithCornerAdaptation:]`.
-     * @param adaptivity_axis Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSViewLayoutRegion safeAreaLayoutRegionWithCornerAdaptation:]`.
+         * @param adaptivity_axis Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static ViewLayoutRegion safe_area_layout_region_with_corner_adaptation(ViewLayoutRegionAdaptivityAxis adaptivity_axis);
     };
 }

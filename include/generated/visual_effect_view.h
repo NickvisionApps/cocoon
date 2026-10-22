@@ -49,79 +49,79 @@ namespace cocoon
         using View::view_did_move_to_window;
         using View::view_will_move_to_window;
         /**
-     * @brief Calls `-[NSVisualEffectView viewDidMoveToWindow]`.
-     */
+         * @brief Calls `-[NSVisualEffectView viewDidMoveToWindow]`.
+         */
         void view_did_move_to_window() const;
         /**
-     * @brief Calls `-[NSVisualEffectView viewWillMoveToWindow:]`.
-     * @param new_window Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSVisualEffectView viewWillMoveToWindow:]`.
+         * @param new_window Argument converted to the Objective-C parameter of the same role.
+         */
         void view_will_move_to_window(const Window& new_window) const;
         /**
-     * @brief Returns the `blendingMode` property of `NSVisualEffectView`.
-     * @details A value controlling how the NSVisualEffectView generates its material. See the comments on NSVisualEffectBlendingMode. Not all materials support both blending modes, so NSVisualEffectView may fall back to a more appropriate blending mode as needed. Defaults to NSVisualEffectBlendingModeBehindWindow.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `blendingMode` property of `NSVisualEffectView`.
+         * @details A value controlling how the NSVisualEffectView generates its material. See the comments on NSVisualEffectBlendingMode. Not all materials support both blending modes, so NSVisualEffectView may fall back to a more appropriate blending mode as needed. Defaults to NSVisualEffectBlendingModeBehindWindow.
+         * @return The converted Objective-C result.
+         */
         VisualEffectBlendingMode blending_mode() const;
         /**
-     * @brief Sets the `blendingMode` property of `NSVisualEffectView`.
-     * @details A value controlling how the NSVisualEffectView generates its material. See the comments on NSVisualEffectBlendingMode. Not all materials support both blending modes, so NSVisualEffectView may fall back to a more appropriate blending mode as needed. Defaults to NSVisualEffectBlendingModeBehindWindow.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `blendingMode` property of `NSVisualEffectView`.
+         * @details A value controlling how the NSVisualEffectView generates its material. See the comments on NSVisualEffectBlendingMode. Not all materials support both blending modes, so NSVisualEffectView may fall back to a more appropriate blending mode as needed. Defaults to NSVisualEffectBlendingModeBehindWindow.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_blending_mode(VisualEffectBlendingMode value) const;
         /**
-     * @brief Returns the `emphasized` property of `NSVisualEffectView`.
-     * @details When YES, the material takes on the emphasized look. Defaults to NO. Some, but not all, materials change their look when emphasized. This is used to indicate that an associated view has firstResponder status.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `emphasized` property of `NSVisualEffectView`.
+         * @details When YES, the material takes on the emphasized look. Defaults to NO. Some, but not all, materials change their look when emphasized. This is used to indicate that an associated view has firstResponder status.
+         * @return The converted Objective-C result.
+         */
         bool is_emphasized() const;
         /**
-     * @brief Sets the `emphasized` property of `NSVisualEffectView`.
-     * @details When YES, the material takes on the emphasized look. Defaults to NO. Some, but not all, materials change their look when emphasized. This is used to indicate that an associated view has firstResponder status.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `emphasized` property of `NSVisualEffectView`.
+         * @details When YES, the material takes on the emphasized look. Defaults to NO. Some, but not all, materials change their look when emphasized. This is used to indicate that an associated view has firstResponder status.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_emphasized(bool value) const;
         /**
-     * @brief Returns the `interiorBackgroundStyle` property of `NSVisualEffectView`.
-     * @details An NSBackgroundStyle value that most closely matches the look of the material shown by the NSVisualEffectView.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `interiorBackgroundStyle` property of `NSVisualEffectView`.
+         * @details An NSBackgroundStyle value that most closely matches the look of the material shown by the NSVisualEffectView.
+         * @return The converted Objective-C result.
+         */
         BackgroundStyle interior_background_style() const;
         /**
-     * @brief Returns the `maskImage` property of `NSVisualEffectView`.
-     * @details An image whose alpha channel is used to mask the material generated by the NSVisualEffectView. (It does not also mask subviews.) Defaults to nil. It is best to set this to the smallest mask image possible and properly set the image's capInsets property to stretch it. Setting the maskImage on an NSVisualEffectView that is the contentView of a window will correctly influence the window's shadow.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `maskImage` property of `NSVisualEffectView`.
+         * @details An image whose alpha channel is used to mask the material generated by the NSVisualEffectView. (It does not also mask subviews.) Defaults to nil. It is best to set this to the smallest mask image possible and properly set the image's capInsets property to stretch it. Setting the maskImage on an NSVisualEffectView that is the contentView of a window will correctly influence the window's shadow.
+         * @return The converted Objective-C result.
+         */
         Image mask_image() const;
         /**
-     * @brief Sets the `maskImage` property of `NSVisualEffectView`.
-     * @details An image whose alpha channel is used to mask the material generated by the NSVisualEffectView. (It does not also mask subviews.) Defaults to nil. It is best to set this to the smallest mask image possible and properly set the image's capInsets property to stretch it. Setting the maskImage on an NSVisualEffectView that is the contentView of a window will correctly influence the window's shadow.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `maskImage` property of `NSVisualEffectView`.
+         * @details An image whose alpha channel is used to mask the material generated by the NSVisualEffectView. (It does not also mask subviews.) Defaults to nil. It is best to set this to the smallest mask image possible and properly set the image's capInsets property to stretch it. Setting the maskImage on an NSVisualEffectView that is the contentView of a window will correctly influence the window's shadow.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_mask_image(const Image& value) const;
         /**
-     * @brief Returns the `material` property of `NSVisualEffectView`.
-     * @details A value indicating which material is shown by the NSVisualEffectView. See the comments on NSVisualEffectMaterial. Defaults to NSVisualEffectMaterialAppearanceBased. You should instead specify an appropriate semantic material value. See the comments on NSVisualEffectMaterial.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `material` property of `NSVisualEffectView`.
+         * @details A value indicating which material is shown by the NSVisualEffectView. See the comments on NSVisualEffectMaterial. Defaults to NSVisualEffectMaterialAppearanceBased. You should instead specify an appropriate semantic material value. See the comments on NSVisualEffectMaterial.
+         * @return The converted Objective-C result.
+         */
         VisualEffectMaterial material() const;
         /**
-     * @brief Sets the `material` property of `NSVisualEffectView`.
-     * @details A value indicating which material is shown by the NSVisualEffectView. See the comments on NSVisualEffectMaterial. Defaults to NSVisualEffectMaterialAppearanceBased. You should instead specify an appropriate semantic material value. See the comments on NSVisualEffectMaterial.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `material` property of `NSVisualEffectView`.
+         * @details A value indicating which material is shown by the NSVisualEffectView. See the comments on NSVisualEffectMaterial. Defaults to NSVisualEffectMaterialAppearanceBased. You should instead specify an appropriate semantic material value. See the comments on NSVisualEffectMaterial.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_material(VisualEffectMaterial value) const;
         /**
-     * @brief Returns the `state` property of `NSVisualEffectView`.
-     * @details A value controlling when the NSVisualEffectView takes on the active look. See the comments on NSVisualEffectState. Defaults to NSVisualEffectStateFollowsWindowActiveState.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `state` property of `NSVisualEffectView`.
+         * @details A value controlling when the NSVisualEffectView takes on the active look. See the comments on NSVisualEffectState. Defaults to NSVisualEffectStateFollowsWindowActiveState.
+         * @return The converted Objective-C result.
+         */
         VisualEffectState state() const;
         /**
-     * @brief Sets the `state` property of `NSVisualEffectView`.
-     * @details A value controlling when the NSVisualEffectView takes on the active look. See the comments on NSVisualEffectState. Defaults to NSVisualEffectStateFollowsWindowActiveState.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `state` property of `NSVisualEffectView`.
+         * @details A value controlling when the NSVisualEffectView takes on the active look. See the comments on NSVisualEffectState. Defaults to NSVisualEffectStateFollowsWindowActiveState.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_state(VisualEffectState value) const;
     };
 }

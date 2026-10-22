@@ -31,70 +31,70 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit UnitPower(Adopt adopt);
         /**
-     * @brief Returns the `femtowatts` property of `NSUnitPower`.
-     * @details The femtowatts unit of power.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `femtowatts` property of `NSUnitPower`.
+         * @details The femtowatts unit of power.
+         * @return The converted Objective-C result.
+         */
         static UnitPower femtowatts();
         /**
-     * @brief Returns the `gigawatts` property of `NSUnitPower`.
-     * @details The gigawatts unit of power.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `gigawatts` property of `NSUnitPower`.
+         * @details The gigawatts unit of power.
+         * @return The converted Objective-C result.
+         */
         static UnitPower gigawatts();
         /**
-     * @brief Returns the `horsepower` property of `NSUnitPower`.
-     * @details The horsepower unit of power.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `horsepower` property of `NSUnitPower`.
+         * @details The horsepower unit of power.
+         * @return The converted Objective-C result.
+         */
         static UnitPower horsepower();
         /**
-     * @brief Returns the `kilowatts` property of `NSUnitPower`.
-     * @details The kilowatts unit of power.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `kilowatts` property of `NSUnitPower`.
+         * @details The kilowatts unit of power.
+         * @return The converted Objective-C result.
+         */
         static UnitPower kilowatts();
         /**
-     * @brief Returns the `megawatts` property of `NSUnitPower`.
-     * @details The megawatts unit of power.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `megawatts` property of `NSUnitPower`.
+         * @details The megawatts unit of power.
+         * @return The converted Objective-C result.
+         */
         static UnitPower megawatts();
         /**
-     * @brief Returns the `microwatts` property of `NSUnitPower`.
-     * @details The microwatts unit of power.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `microwatts` property of `NSUnitPower`.
+         * @details The microwatts unit of power.
+         * @return The converted Objective-C result.
+         */
         static UnitPower microwatts();
         /**
-     * @brief Returns the `milliwatts` property of `NSUnitPower`.
-     * @details The milliwatts unit of power.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `milliwatts` property of `NSUnitPower`.
+         * @details The milliwatts unit of power.
+         * @return The converted Objective-C result.
+         */
         static UnitPower milliwatts();
         /**
-     * @brief Returns the `nanowatts` property of `NSUnitPower`.
-     * @details The nanowatts unit of power.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `nanowatts` property of `NSUnitPower`.
+         * @details The nanowatts unit of power.
+         * @return The converted Objective-C result.
+         */
         static UnitPower nanowatts();
         /**
-     * @brief Returns the `picowatts` property of `NSUnitPower`.
-     * @details The picowatts unit of power.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `picowatts` property of `NSUnitPower`.
+         * @details The picowatts unit of power.
+         * @return The converted Objective-C result.
+         */
         static UnitPower picowatts();
         /**
-     * @brief Returns the `terawatts` property of `NSUnitPower`.
-     * @details The terawatts unit of power.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `terawatts` property of `NSUnitPower`.
+         * @details The terawatts unit of power.
+         * @return The converted Objective-C result.
+         */
         static UnitPower terawatts();
         /**
-     * @brief Returns the `watts` property of `NSUnitPower`.
-     * @details The watts unit of power.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `watts` property of `NSUnitPower`.
+         * @details The watts unit of power.
+         * @return The converted Objective-C result.
+         */
         static UnitPower watts();
     };
 }

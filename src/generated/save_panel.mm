@@ -121,7 +121,7 @@
 
 namespace cocoon
 {
-    SavePanel::SavePanel() : SavePanel(Adopt{cocoon::internal::retain([[::NSSavePanel alloc] init])})
+    SavePanel::SavePanel() : SavePanel(Adopt{cocoon::internal::retain([::NSSavePanel savePanel])})
     {
         SavePanel::install_delegate_delegate_(handle());
     }
@@ -157,11 +157,6 @@ namespace cocoon
     std::int64_t SavePanel::run_modal() const
     {
         return static_cast<std::int64_t>([cocoon::internal::ns<::NSSavePanel>(this) runModal]);
-    }
-
-    SavePanel SavePanel::save_panel()
-    {
-        return cocoon::internal::wrap<SavePanel>([::NSSavePanel savePanel]);
     }
 
     void SavePanel::validate_visible_columns() const

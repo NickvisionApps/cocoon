@@ -45,28 +45,28 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit GlassEffectContainerView(Adopt adopt);
         /**
-     * @brief Returns the `contentView` property of `NSGlassEffectContainerView`.
-     * @details The view that contains descendant views to merge together when in proximity to each other. The glass effect container view does the following: 1. Elevates the z-order of descendants of 'contentView' to position them above the 'contentView'. 2. Merges descendants together if the views are sufficiently similar and within the proximity specified in ''spacing''. 3. Processes similar glass effect views as a batch to improve performance.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `contentView` property of `NSGlassEffectContainerView`.
+         * @details The view that contains descendant views to merge together when in proximity to each other. The glass effect container view does the following: 1. Elevates the z-order of descendants of 'contentView' to position them above the 'contentView'. 2. Merges descendants together if the views are sufficiently similar and within the proximity specified in ''spacing''. 3. Processes similar glass effect views as a batch to improve performance.
+         * @return The converted Objective-C result.
+         */
         View content_view() const;
         /**
-     * @brief Sets the `contentView` property of `NSGlassEffectContainerView`.
-     * @details The view that contains descendant views to merge together when in proximity to each other. The glass effect container view does the following: 1. Elevates the z-order of descendants of 'contentView' to position them above the 'contentView'. 2. Merges descendants together if the views are sufficiently similar and within the proximity specified in ''spacing''. 3. Processes similar glass effect views as a batch to improve performance.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `contentView` property of `NSGlassEffectContainerView`.
+         * @details The view that contains descendant views to merge together when in proximity to each other. The glass effect container view does the following: 1. Elevates the z-order of descendants of 'contentView' to position them above the 'contentView'. 2. Merges descendants together if the views are sufficiently similar and within the proximity specified in ''spacing''. 3. Processes similar glass effect views as a batch to improve performance.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_content_view(const View& value) const;
         /**
-     * @brief Returns the `spacing` property of `NSGlassEffectContainerView`.
-     * @details The proximity at which the glass effect container view begins merging eligible descendent glass effect views. The default value, zero, is sufficient for batch processing eligible glass effect views, while avoiding distortion and merging effects for other views in close proximity.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `spacing` property of `NSGlassEffectContainerView`.
+         * @details The proximity at which the glass effect container view begins merging eligible descendent glass effect views. The default value, zero, is sufficient for batch processing eligible glass effect views, while avoiding distortion and merging effects for other views in close proximity.
+         * @return The converted Objective-C result.
+         */
         double spacing() const;
         /**
-     * @brief Sets the `spacing` property of `NSGlassEffectContainerView`.
-     * @details The proximity at which the glass effect container view begins merging eligible descendent glass effect views. The default value, zero, is sufficient for batch processing eligible glass effect views, while avoiding distortion and merging effects for other views in close proximity.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `spacing` property of `NSGlassEffectContainerView`.
+         * @details The proximity at which the glass effect container view begins merging eligible descendent glass effect views. The default value, zero, is sufficient for batch processing eligible glass effect views, while avoiding distortion and merging effects for other views in close proximity.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_spacing(double value) const;
     };
 }

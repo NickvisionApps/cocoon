@@ -11,7 +11,7 @@ namespace cocoon
     {
     }
 
-    Date::Date() : Date(Adopt{cocoon::internal::retain([[::NSDate alloc] init])})
+    Date::Date() : Date(Adopt{cocoon::internal::retain([::NSDate date])})
     {
     }
 
@@ -28,34 +28,9 @@ namespace cocoon
         return static_cast<ComparisonResult>([cocoon::internal::ns<::NSDate>(this) compare:cocoon::internal::native<::NSDate>(other)]);
     }
 
-    Date Date::date()
-    {
-        return cocoon::internal::wrap<Date>([::NSDate date]);
-    }
-
     Date Date::date_by_adding_time_interval(double ti) const
     {
         return cocoon::internal::wrap<Date>([cocoon::internal::ns<::NSDate>(this) dateByAddingTimeInterval:static_cast<::NSTimeInterval>(ti)]);
-    }
-
-    Date Date::date_with_time_interval(double secs_to_be_added, const Date& date)
-    {
-        return cocoon::internal::wrap<Date>([::NSDate dateWithTimeInterval:static_cast<::NSTimeInterval>(secs_to_be_added) sinceDate:cocoon::internal::native<::NSDate>(date)]);
-    }
-
-    Date Date::date_with_time_interval_since1970(double secs)
-    {
-        return cocoon::internal::wrap<Date>([::NSDate dateWithTimeIntervalSince1970:static_cast<::NSTimeInterval>(secs)]);
-    }
-
-    Date Date::date_with_time_interval_since_now(double secs)
-    {
-        return cocoon::internal::wrap<Date>([::NSDate dateWithTimeIntervalSinceNow:static_cast<::NSTimeInterval>(secs)]);
-    }
-
-    Date Date::date_with_time_interval_since_reference_date(double ti)
-    {
-        return cocoon::internal::wrap<Date>([::NSDate dateWithTimeIntervalSinceReferenceDate:static_cast<::NSTimeInterval>(ti)]);
     }
 
     std::string Date::description_with_locale(const Object& locale) const

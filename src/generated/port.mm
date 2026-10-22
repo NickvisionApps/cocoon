@@ -3,7 +3,7 @@
 
 namespace cocoon
 {
-    Port::Port() : Port(Adopt{cocoon::internal::retain([[::NSPort alloc] init])})
+    Port::Port() : Port(Adopt{cocoon::internal::retain([::NSPort port])})
     {
     }
 
@@ -23,11 +23,6 @@ namespace cocoon
     void Port::invalidate() const
     {
         [cocoon::internal::ns<::NSPort>(this) invalidate];
-    }
-
-    Port Port::port()
-    {
-        return cocoon::internal::wrap<Port>([::NSPort port]);
     }
 
     void Port::remove_from_run_loop(const RunLoop& run_loop, const std::string& mode) const

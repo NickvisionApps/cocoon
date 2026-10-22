@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -74,6 +74,10 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a74e430458aca3e0e634450df15a5c507" id="r_a74e430458aca3e0e634450df15a5c507"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a74e430458aca3e0e634450df15a5c507">PrintOperation</a> (const <a class="el" href="classcocoon_1_1_view.html">View</a> &amp;view)</td></tr>
+<tr class="memdesc:a74e430458aca3e0e634450df15a5c507"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSPrintOperation</span> instance and returns a handle to it.  <br /></td></tr>
+<tr class="memitem:a1b8c3ca52bfe53b370aea62098a66038" id="r_a1b8c3ca52bfe53b370aea62098a66038"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a1b8c3ca52bfe53b370aea62098a66038">PrintOperation</a> (const <a class="el" href="classcocoon_1_1_view.html">View</a> &amp;view, const <a class="el" href="classcocoon_1_1_print_info.html">PrintInfo</a> &amp;print_info)</td></tr>
+<tr class="memdesc:a1b8c3ca52bfe53b370aea62098a66038"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSPrintOperation</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:a47f786a13e7eec73372c2af976222023" id="r_a47f786a13e7eec73372c2af976222023"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a47f786a13e7eec73372c2af976222023">PrintOperation</a> ()</td></tr>
 <tr class="memdesc:a47f786a13e7eec73372c2af976222023"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSPrintOperation</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:adb1bff13f0f255785644d858221aefd1" id="r_adb1bff13f0f255785644d858221aefd1"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#adb1bff13f0f255785644d858221aefd1">PrintOperation</a> (std::nullptr_t)</td></tr>
@@ -164,25 +168,21 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ad48fb2a82fe6ad6ddef071d371ed8b96" id="r_ad48fb2a82fe6ad6ddef071d371ed8b96"><td class="memItemLeft">static <a class="el" href="#a47f786a13e7eec73372c2af976222023">PrintOperation</a>&#160;</td><td class="memItemRight"><a class="el" href="#ad48fb2a82fe6ad6ddef071d371ed8b96">eps_operation_with_view</a> (const <a class="el" href="classcocoon_1_1_view.html">View</a> &amp;view, const <a class="el" href="structcocoon_1_1_rect.html">Rect</a> &amp;rect, const std::vector&lt; std::uint8_t &gt; &amp;data)</td></tr>
+<tr class="memitem:ad48fb2a82fe6ad6ddef071d371ed8b96" id="r_ad48fb2a82fe6ad6ddef071d371ed8b96"><td class="memItemLeft">static <a class="el" href="#a74e430458aca3e0e634450df15a5c507">PrintOperation</a>&#160;</td><td class="memItemRight"><a class="el" href="#ad48fb2a82fe6ad6ddef071d371ed8b96">eps_operation_with_view</a> (const <a class="el" href="classcocoon_1_1_view.html">View</a> &amp;view, const <a class="el" href="structcocoon_1_1_rect.html">Rect</a> &amp;rect, const std::vector&lt; std::uint8_t &gt; &amp;data)</td></tr>
 <tr class="memdesc:ad48fb2a82fe6ad6ddef071d371ed8b96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSPrintOperation EPSOperationWithView:insideRect:toData:]</span>.  <br /></td></tr>
-<tr class="memitem:a90a080d3593c1acb257c5a5edcc48470" id="r_a90a080d3593c1acb257c5a5edcc48470"><td class="memItemLeft">static <a class="el" href="#a47f786a13e7eec73372c2af976222023">PrintOperation</a>&#160;</td><td class="memItemRight"><a class="el" href="#a90a080d3593c1acb257c5a5edcc48470">eps_operation_with_view</a> (const <a class="el" href="classcocoon_1_1_view.html">View</a> &amp;view, const <a class="el" href="structcocoon_1_1_rect.html">Rect</a> &amp;rect, const std::vector&lt; std::uint8_t &gt; &amp;data, const <a class="el" href="classcocoon_1_1_print_info.html">PrintInfo</a> &amp;print_info)</td></tr>
+<tr class="memitem:a90a080d3593c1acb257c5a5edcc48470" id="r_a90a080d3593c1acb257c5a5edcc48470"><td class="memItemLeft">static <a class="el" href="#a74e430458aca3e0e634450df15a5c507">PrintOperation</a>&#160;</td><td class="memItemRight"><a class="el" href="#a90a080d3593c1acb257c5a5edcc48470">eps_operation_with_view</a> (const <a class="el" href="classcocoon_1_1_view.html">View</a> &amp;view, const <a class="el" href="structcocoon_1_1_rect.html">Rect</a> &amp;rect, const std::vector&lt; std::uint8_t &gt; &amp;data, const <a class="el" href="classcocoon_1_1_print_info.html">PrintInfo</a> &amp;print_info)</td></tr>
 <tr class="memdesc:a90a080d3593c1acb257c5a5edcc48470"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSPrintOperation EPSOperationWithView:insideRect:toData:printInfo:]</span>.  <br /></td></tr>
-<tr class="memitem:a17a329ed01bd8d44ce8289f22bd812d6" id="r_a17a329ed01bd8d44ce8289f22bd812d6"><td class="memItemLeft">static <a class="el" href="#a47f786a13e7eec73372c2af976222023">PrintOperation</a>&#160;</td><td class="memItemRight"><a class="el" href="#a17a329ed01bd8d44ce8289f22bd812d6">eps_operation_with_view</a> (const <a class="el" href="classcocoon_1_1_view.html">View</a> &amp;view, const <a class="el" href="structcocoon_1_1_rect.html">Rect</a> &amp;rect, const std::string &amp;path, const <a class="el" href="classcocoon_1_1_print_info.html">PrintInfo</a> &amp;print_info)</td></tr>
+<tr class="memitem:a17a329ed01bd8d44ce8289f22bd812d6" id="r_a17a329ed01bd8d44ce8289f22bd812d6"><td class="memItemLeft">static <a class="el" href="#a74e430458aca3e0e634450df15a5c507">PrintOperation</a>&#160;</td><td class="memItemRight"><a class="el" href="#a17a329ed01bd8d44ce8289f22bd812d6">eps_operation_with_view</a> (const <a class="el" href="classcocoon_1_1_view.html">View</a> &amp;view, const <a class="el" href="structcocoon_1_1_rect.html">Rect</a> &amp;rect, const std::string &amp;path, const <a class="el" href="classcocoon_1_1_print_info.html">PrintInfo</a> &amp;print_info)</td></tr>
 <tr class="memdesc:a17a329ed01bd8d44ce8289f22bd812d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSPrintOperation EPSOperationWithView:insideRect:toPath:printInfo:]</span>.  <br /></td></tr>
-<tr class="memitem:a0fa18af658fd553edfbbff86b3ac008b" id="r_a0fa18af658fd553edfbbff86b3ac008b"><td class="memItemLeft">static <a class="el" href="#a47f786a13e7eec73372c2af976222023">PrintOperation</a>&#160;</td><td class="memItemRight"><a class="el" href="#a0fa18af658fd553edfbbff86b3ac008b">pdf_operation_with_view</a> (const <a class="el" href="classcocoon_1_1_view.html">View</a> &amp;view, const <a class="el" href="structcocoon_1_1_rect.html">Rect</a> &amp;rect, const std::vector&lt; std::uint8_t &gt; &amp;data)</td></tr>
+<tr class="memitem:a0fa18af658fd553edfbbff86b3ac008b" id="r_a0fa18af658fd553edfbbff86b3ac008b"><td class="memItemLeft">static <a class="el" href="#a74e430458aca3e0e634450df15a5c507">PrintOperation</a>&#160;</td><td class="memItemRight"><a class="el" href="#a0fa18af658fd553edfbbff86b3ac008b">pdf_operation_with_view</a> (const <a class="el" href="classcocoon_1_1_view.html">View</a> &amp;view, const <a class="el" href="structcocoon_1_1_rect.html">Rect</a> &amp;rect, const std::vector&lt; std::uint8_t &gt; &amp;data)</td></tr>
 <tr class="memdesc:a0fa18af658fd553edfbbff86b3ac008b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSPrintOperation PDFOperationWithView:insideRect:toData:]</span>.  <br /></td></tr>
-<tr class="memitem:a379e34e0d245c0d9141efca58e43eb06" id="r_a379e34e0d245c0d9141efca58e43eb06"><td class="memItemLeft">static <a class="el" href="#a47f786a13e7eec73372c2af976222023">PrintOperation</a>&#160;</td><td class="memItemRight"><a class="el" href="#a379e34e0d245c0d9141efca58e43eb06">pdf_operation_with_view</a> (const <a class="el" href="classcocoon_1_1_view.html">View</a> &amp;view, const <a class="el" href="structcocoon_1_1_rect.html">Rect</a> &amp;rect, const std::vector&lt; std::uint8_t &gt; &amp;data, const <a class="el" href="classcocoon_1_1_print_info.html">PrintInfo</a> &amp;print_info)</td></tr>
+<tr class="memitem:a379e34e0d245c0d9141efca58e43eb06" id="r_a379e34e0d245c0d9141efca58e43eb06"><td class="memItemLeft">static <a class="el" href="#a74e430458aca3e0e634450df15a5c507">PrintOperation</a>&#160;</td><td class="memItemRight"><a class="el" href="#a379e34e0d245c0d9141efca58e43eb06">pdf_operation_with_view</a> (const <a class="el" href="classcocoon_1_1_view.html">View</a> &amp;view, const <a class="el" href="structcocoon_1_1_rect.html">Rect</a> &amp;rect, const std::vector&lt; std::uint8_t &gt; &amp;data, const <a class="el" href="classcocoon_1_1_print_info.html">PrintInfo</a> &amp;print_info)</td></tr>
 <tr class="memdesc:a379e34e0d245c0d9141efca58e43eb06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSPrintOperation PDFOperationWithView:insideRect:toData:printInfo:]</span>.  <br /></td></tr>
-<tr class="memitem:a554a1397f1cc729c6630f7a06d7195ce" id="r_a554a1397f1cc729c6630f7a06d7195ce"><td class="memItemLeft">static <a class="el" href="#a47f786a13e7eec73372c2af976222023">PrintOperation</a>&#160;</td><td class="memItemRight"><a class="el" href="#a554a1397f1cc729c6630f7a06d7195ce">pdf_operation_with_view</a> (const <a class="el" href="classcocoon_1_1_view.html">View</a> &amp;view, const <a class="el" href="structcocoon_1_1_rect.html">Rect</a> &amp;rect, const std::string &amp;path, const <a class="el" href="classcocoon_1_1_print_info.html">PrintInfo</a> &amp;print_info)</td></tr>
+<tr class="memitem:a554a1397f1cc729c6630f7a06d7195ce" id="r_a554a1397f1cc729c6630f7a06d7195ce"><td class="memItemLeft">static <a class="el" href="#a74e430458aca3e0e634450df15a5c507">PrintOperation</a>&#160;</td><td class="memItemRight"><a class="el" href="#a554a1397f1cc729c6630f7a06d7195ce">pdf_operation_with_view</a> (const <a class="el" href="classcocoon_1_1_view.html">View</a> &amp;view, const <a class="el" href="structcocoon_1_1_rect.html">Rect</a> &amp;rect, const std::string &amp;path, const <a class="el" href="classcocoon_1_1_print_info.html">PrintInfo</a> &amp;print_info)</td></tr>
 <tr class="memdesc:a554a1397f1cc729c6630f7a06d7195ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSPrintOperation PDFOperationWithView:insideRect:toPath:printInfo:]</span>.  <br /></td></tr>
-<tr class="memitem:ac2a78441eb947e532be18724d71717ff" id="r_ac2a78441eb947e532be18724d71717ff"><td class="memItemLeft">static <a class="el" href="#a47f786a13e7eec73372c2af976222023">PrintOperation</a>&#160;</td><td class="memItemRight"><a class="el" href="#ac2a78441eb947e532be18724d71717ff">print_operation_with_view</a> (const <a class="el" href="classcocoon_1_1_view.html">View</a> &amp;view)</td></tr>
-<tr class="memdesc:ac2a78441eb947e532be18724d71717ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSPrintOperation printOperationWithView:]</span>.  <br /></td></tr>
-<tr class="memitem:a1c81214cb2e5998ed26aa18f6f023dc8" id="r_a1c81214cb2e5998ed26aa18f6f023dc8"><td class="memItemLeft">static <a class="el" href="#a47f786a13e7eec73372c2af976222023">PrintOperation</a>&#160;</td><td class="memItemRight"><a class="el" href="#a1c81214cb2e5998ed26aa18f6f023dc8">print_operation_with_view</a> (const <a class="el" href="classcocoon_1_1_view.html">View</a> &amp;view, const <a class="el" href="classcocoon_1_1_print_info.html">PrintInfo</a> &amp;print_info)</td></tr>
-<tr class="memdesc:a1c81214cb2e5998ed26aa18f6f023dc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSPrintOperation printOperationWithView:printInfo:]</span>.  <br /></td></tr>
-<tr class="memitem:adadd7bb9f4fc31cbeccbd30d34fe8379" id="r_adadd7bb9f4fc31cbeccbd30d34fe8379"><td class="memItemLeft">static <a class="el" href="#a47f786a13e7eec73372c2af976222023">PrintOperation</a>&#160;</td><td class="memItemRight"><a class="el" href="#adadd7bb9f4fc31cbeccbd30d34fe8379">current_operation</a> ()</td></tr>
+<tr class="memitem:adadd7bb9f4fc31cbeccbd30d34fe8379" id="r_adadd7bb9f4fc31cbeccbd30d34fe8379"><td class="memItemLeft">static <a class="el" href="#a74e430458aca3e0e634450df15a5c507">PrintOperation</a>&#160;</td><td class="memItemRight"><a class="el" href="#adadd7bb9f4fc31cbeccbd30d34fe8379">current_operation</a> ()</td></tr>
 <tr class="memdesc:adadd7bb9f4fc31cbeccbd30d34fe8379"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">currentOperation</span> property of <span class="tt">NSPrintOperation</span>.  <br /></td></tr>
-<tr class="memitem:a05e98bacefc2324b493fada199cfe98f" id="r_a05e98bacefc2324b493fada199cfe98f"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a05e98bacefc2324b493fada199cfe98f">set_current_operation</a> (const <a class="el" href="#a47f786a13e7eec73372c2af976222023">PrintOperation</a> &amp;value)</td></tr>
+<tr class="memitem:a05e98bacefc2324b493fada199cfe98f" id="r_a05e98bacefc2324b493fada199cfe98f"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a05e98bacefc2324b493fada199cfe98f">set_current_operation</a> (const <a class="el" href="#a74e430458aca3e0e634450df15a5c507">PrintOperation</a> &amp;value)</td></tr>
 <tr class="memdesc:a05e98bacefc2324b493fada199cfe98f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the <span class="tt">currentOperation</span> property of <span class="tt">NSPrintOperation</span>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
@@ -222,8 +222,66 @@ Static Public Member Functions</h2></td></tr>
 </div><!-- fragment --> </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/appkit/nsprintoperation">https://developer.apple.com/documentation/appkit/nsprintoperation</a> </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a74e430458aca3e0e634450df15a5c507" name="a74e430458aca3e0e634450df15a5c507"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74e430458aca3e0e634450df15a5c507">&#9670;&#160;</a></span>PrintOperation() <span class="overload">[1/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::PrintOperation::PrintOperation </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcocoon_1_1_view.html">View</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>view</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSPrintOperation</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
+<a id="a1b8c3ca52bfe53b370aea62098a66038" name="a1b8c3ca52bfe53b370aea62098a66038"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b8c3ca52bfe53b370aea62098a66038">&#9670;&#160;</a></span>PrintOperation() <span class="overload">[2/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::PrintOperation::PrintOperation </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcocoon_1_1_view.html">View</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>view</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcocoon_1_1_print_info.html">PrintInfo</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>print_info</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSPrintOperation</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
 <a id="a47f786a13e7eec73372c2af976222023" name="a47f786a13e7eec73372c2af976222023"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a47f786a13e7eec73372c2af976222023">&#9670;&#160;</a></span>PrintOperation() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a47f786a13e7eec73372c2af976222023">&#9670;&#160;</a></span>PrintOperation() <span class="overload">[3/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -250,7 +308,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="adb1bff13f0f255785644d858221aefd1" name="adb1bff13f0f255785644d858221aefd1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb1bff13f0f255785644d858221aefd1">&#9670;&#160;</a></span>PrintOperation() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#adb1bff13f0f255785644d858221aefd1">&#9670;&#160;</a></span>PrintOperation() <span class="overload">[4/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -269,7 +327,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="abd01636fd043d734c9bf1f041e42ed97" name="abd01636fd043d734c9bf1f041e42ed97"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abd01636fd043d734c9bf1f041e42ed97">&#9670;&#160;</a></span>PrintOperation() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#abd01636fd043d734c9bf1f041e42ed97">&#9670;&#160;</a></span>PrintOperation() <span class="overload">[5/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -385,7 +443,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a47f786a13e7eec73372c2af976222023">PrintOperation</a> cocoon::PrintOperation::current_operation </td>
+          <td class="memname"><a class="el" href="#a74e430458aca3e0e634450df15a5c507">PrintOperation</a> cocoon::PrintOperation::current_operation </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -472,7 +530,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a47f786a13e7eec73372c2af976222023">PrintOperation</a> cocoon::PrintOperation::eps_operation_with_view </td>
+          <td class="memname"><a class="el" href="#a74e430458aca3e0e634450df15a5c507">PrintOperation</a> cocoon::PrintOperation::eps_operation_with_view </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classcocoon_1_1_view.html">View</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>view</em></span>, </td>
         </tr>
@@ -523,7 +581,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a47f786a13e7eec73372c2af976222023">PrintOperation</a> cocoon::PrintOperation::eps_operation_with_view </td>
+          <td class="memname"><a class="el" href="#a74e430458aca3e0e634450df15a5c507">PrintOperation</a> cocoon::PrintOperation::eps_operation_with_view </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classcocoon_1_1_view.html">View</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>view</em></span>, </td>
         </tr>
@@ -568,7 +626,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a47f786a13e7eec73372c2af976222023">PrintOperation</a> cocoon::PrintOperation::eps_operation_with_view </td>
+          <td class="memname"><a class="el" href="#a74e430458aca3e0e634450df15a5c507">PrintOperation</a> cocoon::PrintOperation::eps_operation_with_view </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classcocoon_1_1_view.html">View</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>view</em></span>, </td>
         </tr>
@@ -699,7 +757,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a47f786a13e7eec73372c2af976222023">PrintOperation</a> cocoon::PrintOperation::pdf_operation_with_view </td>
+          <td class="memname"><a class="el" href="#a74e430458aca3e0e634450df15a5c507">PrintOperation</a> cocoon::PrintOperation::pdf_operation_with_view </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classcocoon_1_1_view.html">View</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>view</em></span>, </td>
         </tr>
@@ -750,7 +808,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a47f786a13e7eec73372c2af976222023">PrintOperation</a> cocoon::PrintOperation::pdf_operation_with_view </td>
+          <td class="memname"><a class="el" href="#a74e430458aca3e0e634450df15a5c507">PrintOperation</a> cocoon::PrintOperation::pdf_operation_with_view </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classcocoon_1_1_view.html">View</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>view</em></span>, </td>
         </tr>
@@ -795,7 +853,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a47f786a13e7eec73372c2af976222023">PrintOperation</a> cocoon::PrintOperation::pdf_operation_with_view </td>
+          <td class="memname"><a class="el" href="#a74e430458aca3e0e634450df15a5c507">PrintOperation</a> cocoon::PrintOperation::pdf_operation_with_view </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classcocoon_1_1_view.html">View</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>view</em></span>, </td>
         </tr>
@@ -893,79 +951,6 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Returns the <span class="tt">printInfo</span> property of <span class="tt">NSPrintOperation</span>. </p>
 <p>The print info of the operation. -printInfo always returns a copy of the NSPrintInfo passed into the factory method used to create the print operation, unless -setPrintInfo: has been invoked, in which case it returns the exact same object passed into -setPrintInfo:. So, the factory methods listed above copy the passed-in NSPrintInfo, but -setPrintInfo: doesn't. </p><dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="ac2a78441eb947e532be18724d71717ff" name="ac2a78441eb947e532be18724d71717ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2a78441eb947e532be18724d71717ff">&#9670;&#160;</a></span>print_operation_with_view() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a47f786a13e7eec73372c2af976222023">PrintOperation</a> cocoon::PrintOperation::print_operation_with_view </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_view.html">View</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>view</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSPrintOperation printOperationWithView:]</span>. </p>
-<p>Slight conveniences, for use when the application's global NSPrintInfo is appropriate. Each of these methods invokes [NSPrintInfo sharedPrintInfo] and then invokes the like-named method listed above. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">view</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a1c81214cb2e5998ed26aa18f6f023dc8" name="a1c81214cb2e5998ed26aa18f6f023dc8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c81214cb2e5998ed26aa18f6f023dc8">&#9670;&#160;</a></span>print_operation_with_view() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a47f786a13e7eec73372c2af976222023">PrintOperation</a> cocoon::PrintOperation::print_operation_with_view </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_view.html">View</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>view</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_print_info.html">PrintInfo</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>print_info</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSPrintOperation printOperationWithView:printInfo:]</span>. </p>
-<p>Factory methods that create a new NSPrintOperation for printing, copying to Portable <a class="el" href="classcocoon_1_1_document.html" title="C++ handle for the Objective-C class NSDocument (AppKit).">Document</a> Format, or copying to Encapsulated PostScript. The passed-in NSPrintInfo is copied, and the copy is retained by the new NSPrintOperation. (So, no need to copy the NSPrintInfo you pass to these.) You can get the copy with -printInfo. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">view</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">print_info</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
 
 </div>
 </div>
@@ -1088,7 +1073,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void cocoon::PrintOperation::set_current_operation </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a47f786a13e7eec73372c2af976222023">PrintOperation</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="#a74e430458aca3e0e634450df15a5c507">PrintOperation</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>

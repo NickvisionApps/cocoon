@@ -43,37 +43,37 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit CompoundPredicate(Adopt adopt);
         /**
-     * @brief Calls `+[NSCompoundPredicate andPredicateWithSubpredicates:]`.
-     * @details Returns a new predicate that you form using an AND operation on the predicates in a specified array. - Parameters: - subpredicates: An array of 'NSPredicate' objects. - Returns: A new predicate formed by AND-ing the predicates specified by 'subpredicates'. An AND predicate with no subpredicates evaluates to TRUE.
-     * @param subpredicates Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSCompoundPredicate andPredicateWithSubpredicates:]`.
+         * @details Returns a new predicate that you form using an AND operation on the predicates in a specified array. - Parameters: - subpredicates: An array of 'NSPredicate' objects. - Returns: A new predicate formed by AND-ing the predicates specified by 'subpredicates'. An AND predicate with no subpredicates evaluates to TRUE.
+         * @param subpredicates Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static CompoundPredicate and_predicate_with_subpredicates(const std::vector<Predicate>& subpredicates);
         /**
-     * @brief Calls `+[NSCompoundPredicate notPredicateWithSubpredicate:]`.
-     * @details Returns a new predicate that you form using a NOT operation on a specified predicate.
-     * @param predicate Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSCompoundPredicate notPredicateWithSubpredicate:]`.
+         * @details Returns a new predicate that you form using a NOT operation on a specified predicate.
+         * @param predicate Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static CompoundPredicate not_predicate_with_subpredicate(const Predicate& predicate);
         /**
-     * @brief Calls `+[NSCompoundPredicate orPredicateWithSubpredicates:]`.
-     * @details Returns a new predicate that you form using an OR operation on the predicates in a specified array. An OR predicate with no subpredicates evaluates to FALSE.
-     * @param subpredicates Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSCompoundPredicate orPredicateWithSubpredicates:]`.
+         * @details Returns a new predicate that you form using an OR operation on the predicates in a specified array. An OR predicate with no subpredicates evaluates to FALSE.
+         * @param subpredicates Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static CompoundPredicate or_predicate_with_subpredicates(const std::vector<Predicate>& subpredicates);
         /**
-     * @brief Returns the `compoundPredicateType` property of `NSCompoundPredicate`.
-     * @details The predicate type for the receiver.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `compoundPredicateType` property of `NSCompoundPredicate`.
+         * @details The predicate type for the receiver.
+         * @return The converted Objective-C result.
+         */
         CompoundPredicateType compound_predicate_type() const;
         /**
-     * @brief Returns the `subpredicates` property of `NSCompoundPredicate`.
-     * @details The receiver's subpredicates.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `subpredicates` property of `NSCompoundPredicate`.
+         * @details The receiver's subpredicates.
+         * @return The converted Objective-C result.
+         */
         std::vector<Object> subpredicates() const;
     };
 }

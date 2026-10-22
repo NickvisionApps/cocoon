@@ -31,34 +31,34 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit UnitElectricResistance(Adopt adopt);
         /**
-     * @brief Returns the `kiloohms` property of `NSUnitElectricResistance`.
-     * @details The kiloohms unit of electric resistance.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `kiloohms` property of `NSUnitElectricResistance`.
+         * @details The kiloohms unit of electric resistance.
+         * @return The converted Objective-C result.
+         */
         static UnitElectricResistance kiloohms();
         /**
-     * @brief Returns the `megaohms` property of `NSUnitElectricResistance`.
-     * @details The megaohms unit of electric resistance.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `megaohms` property of `NSUnitElectricResistance`.
+         * @details The megaohms unit of electric resistance.
+         * @return The converted Objective-C result.
+         */
         static UnitElectricResistance megaohms();
         /**
-     * @brief Returns the `microohms` property of `NSUnitElectricResistance`.
-     * @details The microohms unit of electric resistance.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `microohms` property of `NSUnitElectricResistance`.
+         * @details The microohms unit of electric resistance.
+         * @return The converted Objective-C result.
+         */
         static UnitElectricResistance microohms();
         /**
-     * @brief Returns the `milliohms` property of `NSUnitElectricResistance`.
-     * @details The milliohms unit of electric resistance.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `milliohms` property of `NSUnitElectricResistance`.
+         * @details The milliohms unit of electric resistance.
+         * @return The converted Objective-C result.
+         */
         static UnitElectricResistance milliohms();
         /**
-     * @brief Returns the `ohms` property of `NSUnitElectricResistance`.
-     * @details The ohms unit of electric resistance.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `ohms` property of `NSUnitElectricResistance`.
+         * @details The ohms unit of electric resistance.
+         * @return The converted Objective-C result.
+         */
         static UnitElectricResistance ohms();
     };
 }

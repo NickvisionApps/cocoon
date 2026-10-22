@@ -36,11 +36,11 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit Nib(Adopt adopt);
         /**
-     * @brief Calls `-[NSNib instantiateWithOwner:topLevelObjects:]`.
-     * @param owner Argument converted to the Objective-C parameter of the same role.
-     * @param top_level_objects Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSNib instantiateWithOwner:topLevelObjects:]`.
+         * @param owner Argument converted to the Objective-C parameter of the same role.
+         * @param top_level_objects Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool instantiate_with_owner(const Object& owner, std::vector<Object>& top_level_objects) const;
     };
 }

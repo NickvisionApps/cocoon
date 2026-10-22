@@ -44,100 +44,100 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit URLCredentialStorage(Adopt adopt);
         /**
-     * @brief Calls `-[NSURLCredentialStorage credentialsForProtectionSpace:]`.
-     * @details Gets a dictionary mapping usernames to credentials for the specified protection space. - Parameter space: An 'NSURLProtectionSpace' indicating the protection space for which to get credentials. - Returns: A dictionary where the keys are usernames and the values are the corresponding 'NSURLCredential' instances.
-     * @param space Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSURLCredentialStorage credentialsForProtectionSpace:]`.
+         * @details Gets a dictionary mapping usernames to credentials for the specified protection space. - Parameter space: An 'NSURLProtectionSpace' indicating the protection space for which to get credentials. - Returns: A dictionary where the keys are usernames and the values are the corresponding 'NSURLCredential' instances.
+         * @param space Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::map<std::string, URLCredential> credentials_for_protection_space(const URLProtectionSpace& space) const;
         /**
-     * @brief Calls `-[NSURLCredentialStorage defaultCredentialForProtectionSpace:]`.
-     * @details Gets the default credential for the specified protection space. - Parameter space: The protection space for which to get the default credential.
-     * @param space Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSURLCredentialStorage defaultCredentialForProtectionSpace:]`.
+         * @details Gets the default credential for the specified protection space. - Parameter space: The protection space for which to get the default credential.
+         * @param space Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         URLCredential default_credential_for_protection_space(const URLProtectionSpace& space) const;
         /**
-     * @brief Calls `-[NSURLCredentialStorage getCredentialsForProtectionSpace:task:completionHandler:]`.
-     * @details Fetches credentials for the specified protection space and task, passing them to the completion handler.
-     * @param protection_space Argument converted to the Objective-C parameter of the same role.
-     * @param task Argument converted to the Objective-C parameter of the same role.
-     * @param completion_handler Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSURLCredentialStorage getCredentialsForProtectionSpace:task:completionHandler:]`.
+         * @details Fetches credentials for the specified protection space and task, passing them to the completion handler.
+         * @param protection_space Argument converted to the Objective-C parameter of the same role.
+         * @param task Argument converted to the Objective-C parameter of the same role.
+         * @param completion_handler Argument converted to the Objective-C parameter of the same role.
+         */
         void get_credentials_for_protection_space(const URLProtectionSpace& protection_space, const URLSessionTask& task, std::function<void(std::map<std::string, URLCredential>)> completion_handler) const;
         /**
-     * @brief Calls `-[NSURLCredentialStorage getDefaultCredentialForProtectionSpace:task:completionHandler:]`.
-     * @details Fetches the default credential for the specified protection space and task, passing it to the completion handler.
-     * @param space Argument converted to the Objective-C parameter of the same role.
-     * @param task Argument converted to the Objective-C parameter of the same role.
-     * @param completion_handler Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSURLCredentialStorage getDefaultCredentialForProtectionSpace:task:completionHandler:]`.
+         * @details Fetches the default credential for the specified protection space and task, passing it to the completion handler.
+         * @param space Argument converted to the Objective-C parameter of the same role.
+         * @param task Argument converted to the Objective-C parameter of the same role.
+         * @param completion_handler Argument converted to the Objective-C parameter of the same role.
+         */
         void get_default_credential_for_protection_space(const URLProtectionSpace& space, const URLSessionTask& task, std::function<void(URLCredential)> completion_handler) const;
         /**
-     * @brief Calls `-[NSURLCredentialStorage removeCredential:forProtectionSpace:]`.
-     * @details Removes the credential from the set for the specified protection space. - Parameter credential: The credential to remove. - Parameter space: The protection space for which a credential should be removed. The credential is removed from both persistent and temporary storage. A credential that has a persistence policy of 'NSURLCredentialPersistenceSynchronizable' will fail. See 'removeCredential:forProtectionSpace:options:'.
-     * @param credential Argument converted to the Objective-C parameter of the same role.
-     * @param space Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSURLCredentialStorage removeCredential:forProtectionSpace:]`.
+         * @details Removes the credential from the set for the specified protection space. - Parameter credential: The credential to remove. - Parameter space: The protection space for which a credential should be removed. The credential is removed from both persistent and temporary storage. A credential that has a persistence policy of 'NSURLCredentialPersistenceSynchronizable' will fail. See 'removeCredential:forProtectionSpace:options:'.
+         * @param credential Argument converted to the Objective-C parameter of the same role.
+         * @param space Argument converted to the Objective-C parameter of the same role.
+         */
         void remove_credential(const URLCredential& credential, const URLProtectionSpace& space) const;
         /**
-     * @brief Calls `-[NSURLCredentialStorage removeCredential:forProtectionSpace:options:]`.
-     * @details Removes the credential from the set for the specified protection space based on options. - Parameter credential: The credential to remove. - Parameter space: The protection space for which a credential should be removed. - Parameter options: A dictionary containing options to consider when removing the credential. This should be used when trying to delete a credential that has the 'NSURLCredentialPersistenceSynchronizable' policy. When such credentials are removed, the credential will be removed on all devices that contain this credential. The credential is removed from both persistent and temporary storage.
-     * @param credential Argument converted to the Objective-C parameter of the same role.
-     * @param space Argument converted to the Objective-C parameter of the same role.
-     * @param options Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSURLCredentialStorage removeCredential:forProtectionSpace:options:]`.
+         * @details Removes the credential from the set for the specified protection space based on options. - Parameter credential: The credential to remove. - Parameter space: The protection space for which a credential should be removed. - Parameter options: A dictionary containing options to consider when removing the credential. This should be used when trying to delete a credential that has the 'NSURLCredentialPersistenceSynchronizable' policy. When such credentials are removed, the credential will be removed on all devices that contain this credential. The credential is removed from both persistent and temporary storage.
+         * @param credential Argument converted to the Objective-C parameter of the same role.
+         * @param space Argument converted to the Objective-C parameter of the same role.
+         * @param options Argument converted to the Objective-C parameter of the same role.
+         */
         void remove_credential(const URLCredential& credential, const URLProtectionSpace& space, const std::map<std::string, Object>& options) const;
         /**
-     * @brief Calls `-[NSURLCredentialStorage removeCredential:forProtectionSpace:options:task:]`.
-     * @details Removes a credential for the specified protection space, options, and task.
-     * @param credential Argument converted to the Objective-C parameter of the same role.
-     * @param protection_space Argument converted to the Objective-C parameter of the same role.
-     * @param options Argument converted to the Objective-C parameter of the same role.
-     * @param task Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSURLCredentialStorage removeCredential:forProtectionSpace:options:task:]`.
+         * @details Removes a credential for the specified protection space, options, and task.
+         * @param credential Argument converted to the Objective-C parameter of the same role.
+         * @param protection_space Argument converted to the Objective-C parameter of the same role.
+         * @param options Argument converted to the Objective-C parameter of the same role.
+         * @param task Argument converted to the Objective-C parameter of the same role.
+         */
         void remove_credential(const URLCredential& credential, const URLProtectionSpace& protection_space, const std::map<std::string, Object>& options, const URLSessionTask& task) const;
         /**
-     * @brief Calls `-[NSURLCredentialStorage setCredential:forProtectionSpace:]`.
-     * @details Adds a new credential to the set for the specified protection space or replaces an existing one. - Parameter credential: The credential to set. - Parameter space: The protection space for which to add it. Multiple credentials may be set for a given protection space, but each must have a distinct user. If a credential with the same user is already set for the protection space, the new one will replace it.
-     * @param credential Argument converted to the Objective-C parameter of the same role.
-     * @param space Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSURLCredentialStorage setCredential:forProtectionSpace:]`.
+         * @details Adds a new credential to the set for the specified protection space or replaces an existing one. - Parameter credential: The credential to set. - Parameter space: The protection space for which to add it. Multiple credentials may be set for a given protection space, but each must have a distinct user. If a credential with the same user is already set for the protection space, the new one will replace it.
+         * @param credential Argument converted to the Objective-C parameter of the same role.
+         * @param space Argument converted to the Objective-C parameter of the same role.
+         */
         void set_credential(const URLCredential& credential, const URLProtectionSpace& space) const;
         /**
-     * @brief Calls `-[NSURLCredentialStorage setCredential:forProtectionSpace:task:]`.
-     * @details Sets a credential for the specified protection space and task.
-     * @param credential Argument converted to the Objective-C parameter of the same role.
-     * @param protection_space Argument converted to the Objective-C parameter of the same role.
-     * @param task Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSURLCredentialStorage setCredential:forProtectionSpace:task:]`.
+         * @details Sets a credential for the specified protection space and task.
+         * @param credential Argument converted to the Objective-C parameter of the same role.
+         * @param protection_space Argument converted to the Objective-C parameter of the same role.
+         * @param task Argument converted to the Objective-C parameter of the same role.
+         */
         void set_credential(const URLCredential& credential, const URLProtectionSpace& protection_space, const URLSessionTask& task) const;
         /**
-     * @brief Calls `-[NSURLCredentialStorage setDefaultCredential:forProtectionSpace:]`.
-     * @details Sets the default credential for the specified protection space. - Parameter credential: The credential to set as default. - Parameter space: The protection space for which the credential should be set as default. If the credential is not yet in the set for the protection space, it will be added to it.
-     * @param credential Argument converted to the Objective-C parameter of the same role.
-     * @param space Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSURLCredentialStorage setDefaultCredential:forProtectionSpace:]`.
+         * @details Sets the default credential for the specified protection space. - Parameter credential: The credential to set as default. - Parameter space: The protection space for which the credential should be set as default. If the credential is not yet in the set for the protection space, it will be added to it.
+         * @param credential Argument converted to the Objective-C parameter of the same role.
+         * @param space Argument converted to the Objective-C parameter of the same role.
+         */
         void set_default_credential(const URLCredential& credential, const URLProtectionSpace& space) const;
         /**
-     * @brief Calls `-[NSURLCredentialStorage setDefaultCredential:forProtectionSpace:task:]`.
-     * @details Sets the default credential for the specified protection space and task.
-     * @param credential Argument converted to the Objective-C parameter of the same role.
-     * @param protection_space Argument converted to the Objective-C parameter of the same role.
-     * @param task Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSURLCredentialStorage setDefaultCredential:forProtectionSpace:task:]`.
+         * @details Sets the default credential for the specified protection space and task.
+         * @param credential Argument converted to the Objective-C parameter of the same role.
+         * @param protection_space Argument converted to the Objective-C parameter of the same role.
+         * @param task Argument converted to the Objective-C parameter of the same role.
+         */
         void set_default_credential(const URLCredential& credential, const URLProtectionSpace& protection_space, const URLSessionTask& task) const;
         /**
-     * @brief Returns the `allCredentials` property of `NSURLCredentialStorage`.
-     * @details The credentials for all available protection spaces. The dictionary has keys corresponding to 'NSURLProtectionSpace' instances. The values are dictionaries where the keys are user name strings, and each value is the corresponding 'NSURLCredential' instance.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `allCredentials` property of `NSURLCredentialStorage`.
+         * @details The credentials for all available protection spaces. The dictionary has keys corresponding to 'NSURLProtectionSpace' instances. The values are dictionaries where the keys are user name strings, and each value is the corresponding 'NSURLCredential' instance.
+         * @return The converted Objective-C result.
+         */
         std::vector<std::pair<URLProtectionSpace, std::map<std::string, URLCredential>>> all_credentials() const;
         /**
-     * @brief Returns the `sharedCredentialStorage` property of `NSURLCredentialStorage`.
-     * @details The shared singleton authentication storage.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `sharedCredentialStorage` property of `NSURLCredentialStorage`.
+         * @details The shared singleton authentication storage.
+         * @return The converted Objective-C result.
+         */
         static URLCredentialStorage shared_credential_storage();
     };
 }

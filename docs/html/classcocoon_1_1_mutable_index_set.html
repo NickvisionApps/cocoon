@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -183,16 +183,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object" id="r_a53f4ad0e6a86173a96668457725eb369"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
 <tr class="memitem:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object template"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_object.html#a53f4ad0e6a86173a96668457725eb369">as</a> () const</td></tr>
 <tr class="memdesc:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reinterprets the native object as handle type <span class="tt">T</span> (no runtime type check).  <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_static_methods_classcocoon_1_1_index_set"><td colspan="2">Static Public Member Functions inherited from <a class="el" href="classcocoon_1_1_index_set.html">cocoon::IndexSet</a></td></tr>
-<tr class="memitem:aaf22e17b9ed2f93e9704a86c7aaf1db5 pub_static_methods_classcocoon_1_1_index_set" id="r_aaf22e17b9ed2f93e9704a86c7aaf1db5"><td class="memItemLeft">static <a class="el" href="classcocoon_1_1_index_set.html#a8ca3f4d9536d82880d2b81d8b69176f7">IndexSet</a>&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_index_set.html#aaf22e17b9ed2f93e9704a86c7aaf1db5">index_set</a> ()</td></tr>
-<tr class="memdesc:aaf22e17b9ed2f93e9704a86c7aaf1db5 pub_static_methods_classcocoon_1_1_index_set"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSIndexSet indexSet]</span>.  <br /></td></tr>
-<tr class="memitem:ade3e00a4908df15e5fe487ded4a8b2ab pub_static_methods_classcocoon_1_1_index_set" id="r_ade3e00a4908df15e5fe487ded4a8b2ab"><td class="memItemLeft">static <a class="el" href="classcocoon_1_1_index_set.html#a8ca3f4d9536d82880d2b81d8b69176f7">IndexSet</a>&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_index_set.html#ade3e00a4908df15e5fe487ded4a8b2ab">index_set_with_index</a> (std::uint64_t value)</td></tr>
-<tr class="memdesc:ade3e00a4908df15e5fe487ded4a8b2ab pub_static_methods_classcocoon_1_1_index_set"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSIndexSet indexSetWithIndex:]</span>.  <br /></td></tr>
-<tr class="memitem:a27074306bd1e5af419cb98e356245de5 pub_static_methods_classcocoon_1_1_index_set" id="r_a27074306bd1e5af419cb98e356245de5"><td class="memItemLeft">static <a class="el" href="classcocoon_1_1_index_set.html#a8ca3f4d9536d82880d2b81d8b69176f7">IndexSet</a>&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_index_set.html#a27074306bd1e5af419cb98e356245de5">index_set_with_indexes_in_range</a> (const <a class="el" href="structcocoon_1_1_range.html">Range</a> &amp;range)</td></tr>
-<tr class="memdesc:a27074306bd1e5af419cb98e356245de5 pub_static_methods_classcocoon_1_1_index_set"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSIndexSet indexSetWithIndexesInRange:]</span>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>C++ handle for the Objective-C class <span class="tt">NSMutableIndexSet</span> (Foundation). </p>
@@ -206,7 +196,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">mutable_index_set.<a class="code hl_function" href="#a81dadb3dde1696fc3ee5c8402d50c5f5">add_index</a>(1);</div>
 <div class="line">mutable_index_set.<a class="code hl_function" href="#a77e4ff43ce10a3090b70afd132b816e6">add_indexes</a>(<a class="code hl_class" href="classcocoon_1_1_index_set.html">cocoon::IndexSet</a>());</div>
 <div class="line">mutable_index_set.<a class="code hl_function" href="#a3cd3877666e2479a9bbb32668f6d8a41">remove_all_indexes</a>();</div>
-<div class="ttc" id="aclasscocoon_1_1_index_set_html"><div class="ttname"><a href="classcocoon_1_1_index_set.html">cocoon::IndexSet</a></div><div class="ttdoc">C++ handle for the Objective-C class NSIndexSet (Foundation).</div><div class="ttdef"><b>Definition</b> index_set.h:36</div></div>
+<div class="ttc" id="aclasscocoon_1_1_index_set_html"><div class="ttname"><a href="classcocoon_1_1_index_set.html">cocoon::IndexSet</a></div><div class="ttdoc">C++ handle for the Objective-C class NSIndexSet (Foundation).</div><div class="ttdef"><b>Definition</b> index_set.h:34</div></div>
 <div class="ttc" id="aclasscocoon_1_1_mutable_index_set_html_a3cd3877666e2479a9bbb32668f6d8a41"><div class="ttname"><a href="#a3cd3877666e2479a9bbb32668f6d8a41">cocoon::MutableIndexSet::remove_all_indexes</a></div><div class="ttdeci">void remove_all_indexes() const</div><div class="ttdoc">Calls -[NSMutableIndexSet removeAllIndexes].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_mutable_index_set_html_a77e4ff43ce10a3090b70afd132b816e6"><div class="ttname"><a href="#a77e4ff43ce10a3090b70afd132b816e6">cocoon::MutableIndexSet::add_indexes</a></div><div class="ttdeci">void add_indexes(const IndexSet &amp;index_set) const</div><div class="ttdoc">Calls -[NSMutableIndexSet addIndexes:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_mutable_index_set_html_a81dadb3dde1696fc3ee5c8402d50c5f5"><div class="ttname"><a href="#a81dadb3dde1696fc3ee5c8402d50c5f5">cocoon::MutableIndexSet::add_index</a></div><div class="ttdeci">void add_index(std::uint64_t value) const</div><div class="ttdoc">Calls -[NSMutableIndexSet addIndex:].</div></div>

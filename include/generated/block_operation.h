@@ -26,23 +26,18 @@ namespace cocoon
     {
     public:
         /// @brief Creates a new `NSBlockOperation` instance and returns a handle to it.
+        explicit BlockOperation(std::function<void()> block);
+        /// @brief Creates a new `NSBlockOperation` instance and returns a handle to it.
         explicit BlockOperation();
         /// @brief Creates a null handle that refers to no native object.
         BlockOperation(std::nullptr_t);
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit BlockOperation(Adopt adopt);
         /**
-     * @brief Calls `-[NSBlockOperation addExecutionBlock:]`.
-     * @details Adds the specified block to the receiver's list of blocks to perform. The specified block should not make any assumptions about its execution environment. Calling this method while the receiver is executing or has already finished causes an 'NSInvalidArgumentException' exception to be thrown. - Parameter block: The block to add to the receiver's list. The block should take no parameters and have no return value.
-     * @param block Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSBlockOperation addExecutionBlock:]`.
+         * @details Adds the specified block to the receiver's list of blocks to perform. The specified block should not make any assumptions about its execution environment. Calling this method while the receiver is executing or has already finished causes an 'NSInvalidArgumentException' exception to be thrown. - Parameter block: The block to add to the receiver's list. The block should take no parameters and have no return value.
+         * @param block Argument converted to the Objective-C parameter of the same role.
+         */
         void add_execution_block(std::function<void()> block) const;
-        /**
-     * @brief Calls `+[NSBlockOperation blockOperationWithBlock:]`.
-     * @details Creates and returns an 'NSBlockOperation' object and adds the specified block to it. - Parameter block: The block to add to the new block operation object's list. The block should take no parameters and have no return value. - Returns: A new block operation object.
-     * @param block Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static BlockOperation block_operation_with_block(std::function<void()> block);
     };
 }

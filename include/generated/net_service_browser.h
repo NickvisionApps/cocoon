@@ -51,52 +51,52 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit NetServiceBrowser(Adopt adopt);
         /**
-     * @brief Calls `-[NSNetServiceBrowser removeFromRunLoop:forMode:]`.
-     * @details Removes the receiver from the specified run loop. - Parameters: - aRunLoop: Run loop from which to remove the receiver. - mode: Run loop mode in which to perform this operation. You can use this method in conjunction with '-scheduleInRunLoop:forMode:' to transfer the receiver to a run loop other than the default one. Although it is possible to remove an 'NSNetService' object completely from any run loop and then attempt actions on it, you must not do it.
-     * @param a_run_loop Argument converted to the Objective-C parameter of the same role.
-     * @param mode Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSNetServiceBrowser removeFromRunLoop:forMode:]`.
+         * @details Removes the receiver from the specified run loop. - Parameters: - aRunLoop: Run loop from which to remove the receiver. - mode: Run loop mode in which to perform this operation. You can use this method in conjunction with '-scheduleInRunLoop:forMode:' to transfer the receiver to a run loop other than the default one. Although it is possible to remove an 'NSNetService' object completely from any run loop and then attempt actions on it, you must not do it.
+         * @param a_run_loop Argument converted to the Objective-C parameter of the same role.
+         * @param mode Argument converted to the Objective-C parameter of the same role.
+         */
         void remove_from_run_loop(const RunLoop& a_run_loop, const std::string& mode) const;
         /**
-     * @brief Calls `-[NSNetServiceBrowser scheduleInRunLoop:forMode:]`.
-     * @details Adds the receiver to the specified run loop. - Parameters: - aRunLoop: Run loop in which to schedule the receiver. - mode: Run loop mode in which to perform this operation. You can use this method in conjunction with '-removeFromRunLoop:forMode:' to transfer the receiver to a run loop other than the default one. You should not attempt to run the receiver on multiple run loops.
-     * @param a_run_loop Argument converted to the Objective-C parameter of the same role.
-     * @param mode Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSNetServiceBrowser scheduleInRunLoop:forMode:]`.
+         * @details Adds the receiver to the specified run loop. - Parameters: - aRunLoop: Run loop in which to schedule the receiver. - mode: Run loop mode in which to perform this operation. You can use this method in conjunction with '-removeFromRunLoop:forMode:' to transfer the receiver to a run loop other than the default one. You should not attempt to run the receiver on multiple run loops.
+         * @param a_run_loop Argument converted to the Objective-C parameter of the same role.
+         * @param mode Argument converted to the Objective-C parameter of the same role.
+         */
         void schedule_in_run_loop(const RunLoop& a_run_loop, const std::string& mode) const;
         /**
-     * @brief Calls `-[NSNetServiceBrowser searchForBrowsableDomains]`.
-     * @details Initiates a search for domains visible to the host. This method returns immediately. The delegate receives a '-netServiceBrowser:didFindDomain:moreComing:' message for each domain discovered.
-     */
+         * @brief Calls `-[NSNetServiceBrowser searchForBrowsableDomains]`.
+         * @details Initiates a search for domains visible to the host. This method returns immediately. The delegate receives a '-netServiceBrowser:didFindDomain:moreComing:' message for each domain discovered.
+         */
         void search_for_browsable_domains() const;
         /**
-     * @brief Calls `-[NSNetServiceBrowser searchForRegistrationDomains]`.
-     * @details Initiates a search for domains in which the host may register services. This method returns immediately, sending a '-netServiceBrowserWillSearch:' message to the delegate if the network was ready to initiate the search. The delegate receives a subsequent '-netServiceBrowser:didFindDomain:moreComing:' message for each domain discovered. Most network service browser clients do not have to use this method -- it is sufficient to publish a service with the empty string, which registers it in any available registration domains automatically.
-     */
+         * @brief Calls `-[NSNetServiceBrowser searchForRegistrationDomains]`.
+         * @details Initiates a search for domains in which the host may register services. This method returns immediately, sending a '-netServiceBrowserWillSearch:' message to the delegate if the network was ready to initiate the search. The delegate receives a subsequent '-netServiceBrowser:didFindDomain:moreComing:' message for each domain discovered. Most network service browser clients do not have to use this method -- it is sufficient to publish a service with the empty string, which registers it in any available registration domains automatically.
+         */
         void search_for_registration_domains() const;
         /**
-     * @brief Calls `-[NSNetServiceBrowser searchForServicesOfType:inDomain:]`.
-     * @details Starts a search for services of a particular type within a specific domain. - Parameters: - type: Type of the service to search for. Must contain both the service type and transport layer information (e.g. 'http.tcp.'). - domainString: Domain name in which to perform the search. Pass the empty string ('\@""') to search default registration domains. This method returns immediately, sending a '-netServiceBrowserWillSearch:' message to the delegate if the network was ready to initiate the search. The delegate receives subsequent '-netServiceBrowser:didFindService:moreComing:' messages for each service discovered.
-     * @param type Argument converted to the Objective-C parameter of the same role.
-     * @param domain_string Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSNetServiceBrowser searchForServicesOfType:inDomain:]`.
+         * @details Starts a search for services of a particular type within a specific domain. - Parameters: - type: Type of the service to search for. Must contain both the service type and transport layer information (e.g. 'http.tcp.'). - domainString: Domain name in which to perform the search. Pass the empty string ('\@""') to search default registration domains. This method returns immediately, sending a '-netServiceBrowserWillSearch:' message to the delegate if the network was ready to initiate the search. The delegate receives subsequent '-netServiceBrowser:didFindService:moreComing:' messages for each service discovered.
+         * @param type Argument converted to the Objective-C parameter of the same role.
+         * @param domain_string Argument converted to the Objective-C parameter of the same role.
+         */
         void search_for_services_of_type(const std::string& type, const std::string& domain_string) const;
         /**
-     * @brief Calls `-[NSNetServiceBrowser stop]`.
-     * @details Halts a currently running search or resolution. This method sends a '-netServiceBrowserDidStopSearch:' message to the delegate and causes the browser to discard any pending search results.
-     */
+         * @brief Calls `-[NSNetServiceBrowser stop]`.
+         * @details Halts a currently running search or resolution. This method sends a '-netServiceBrowserDidStopSearch:' message to the delegate and causes the browser to discard any pending search results.
+         */
         void stop() const;
         /**
-     * @brief Returns the `includesPeerToPeer` property of `NSNetServiceBrowser`.
-     * @details Whether to browse over peer-to-peer Bluetooth and Wi-Fi, if available. This property must be set before initiating a search to have an effect. Initially set to 'NO'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `includesPeerToPeer` property of `NSNetServiceBrowser`.
+         * @details Whether to browse over peer-to-peer Bluetooth and Wi-Fi, if available. This property must be set before initiating a search to have an effect. Initially set to 'NO'.
+         * @return The converted Objective-C result.
+         */
         bool includes_peer_to_peer() const;
         /**
-     * @brief Sets the `includesPeerToPeer` property of `NSNetServiceBrowser`.
-     * @details Whether to browse over peer-to-peer Bluetooth and Wi-Fi, if available. This property must be set before initiating a search to have an effect. Initially set to 'NO'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `includesPeerToPeer` property of `NSNetServiceBrowser`.
+         * @details Whether to browse over peer-to-peer Bluetooth and Wi-Fi, if available. This property must be set before initiating a search to have an effect. Initially set to 'NO'.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_includes_peer_to_peer(bool value) const;
         /// @brief Signal for the delegate/data-source method behind `will_search`; connect a callback with `will_search().connect(...)`.
         Signal<NetServiceBrowser, void()> will_search() const

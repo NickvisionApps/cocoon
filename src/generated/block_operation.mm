@@ -3,6 +3,10 @@
 
 namespace cocoon
 {
+    BlockOperation::BlockOperation(std::function<void()> block) : BlockOperation(Adopt{cocoon::internal::retain([::NSBlockOperation blockOperationWithBlock:(block ? (void (^)(void)) ^ void() { block(); } : (void (^)(void))nil)])})
+    {
+    }
+
     BlockOperation::BlockOperation() : BlockOperation(Adopt{cocoon::internal::retain([[::NSBlockOperation alloc] init])})
     {
     }
@@ -18,10 +22,5 @@ namespace cocoon
     void BlockOperation::add_execution_block(std::function<void()> block) const
     {
         [cocoon::internal::ns<::NSBlockOperation>(this) addExecutionBlock:(block ? (void (^)(void)) ^ void() { block(); } : (void (^)(void))nil)];
-    }
-
-    BlockOperation BlockOperation::block_operation_with_block(std::function<void()> block)
-    {
-        return cocoon::internal::wrap<BlockOperation>([::NSBlockOperation blockOperationWithBlock:(block ? (void (^)(void)) ^ void() { block(); } : (void (^)(void))nil)]);
     }
 }

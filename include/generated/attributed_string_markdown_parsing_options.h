@@ -44,64 +44,64 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit AttributedStringMarkdownParsingOptions(Adopt adopt);
         /**
-     * @brief Returns the `allowsExtendedAttributes` property of `NSAttributedStringMarkdownParsingOptions`.
-     * @details A Boolean value that indicates whether parsing allows extensions to Markdown that specify extended attributes. Defaults to 'NO' (only parse CommonMark syntax).
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `allowsExtendedAttributes` property of `NSAttributedStringMarkdownParsingOptions`.
+         * @details A Boolean value that indicates whether parsing allows extensions to Markdown that specify extended attributes. Defaults to 'NO' (only parse CommonMark syntax).
+         * @return The converted Objective-C result.
+         */
         bool allows_extended_attributes() const;
         /**
-     * @brief Sets the `allowsExtendedAttributes` property of `NSAttributedStringMarkdownParsingOptions`.
-     * @details A Boolean value that indicates whether parsing allows extensions to Markdown that specify extended attributes. Defaults to 'NO' (only parse CommonMark syntax).
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `allowsExtendedAttributes` property of `NSAttributedStringMarkdownParsingOptions`.
+         * @details A Boolean value that indicates whether parsing allows extensions to Markdown that specify extended attributes. Defaults to 'NO' (only parse CommonMark syntax).
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_allows_extended_attributes(bool value) const;
         /**
-     * @brief Returns the `appliesSourcePositionAttributes` property of `NSAttributedStringMarkdownParsingOptions`.
-     * @details A Boolean value that indicates whether parsing applies attributes that indicate the position of attributed text in the original Markdown string.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `appliesSourcePositionAttributes` property of `NSAttributedStringMarkdownParsingOptions`.
+         * @details A Boolean value that indicates whether parsing applies attributes that indicate the position of attributed text in the original Markdown string.
+         * @return The converted Objective-C result.
+         */
         bool applies_source_position_attributes() const;
         /**
-     * @brief Sets the `appliesSourcePositionAttributes` property of `NSAttributedStringMarkdownParsingOptions`.
-     * @details A Boolean value that indicates whether parsing applies attributes that indicate the position of attributed text in the original Markdown string.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `appliesSourcePositionAttributes` property of `NSAttributedStringMarkdownParsingOptions`.
+         * @details A Boolean value that indicates whether parsing applies attributes that indicate the position of attributed text in the original Markdown string.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_applies_source_position_attributes(bool value) const;
         /**
-     * @brief Returns the `failurePolicy` property of `NSAttributedStringMarkdownParsingOptions`.
-     * @details The policy for handling a parsing failure. The default is 'NSAttributedStringMarkdownParsingFailureReturnError'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `failurePolicy` property of `NSAttributedStringMarkdownParsingOptions`.
+         * @details The policy for handling a parsing failure. The default is 'NSAttributedStringMarkdownParsingFailureReturnError'.
+         * @return The converted Objective-C result.
+         */
         AttributedStringMarkdownParsingFailurePolicy failure_policy() const;
         /**
-     * @brief Sets the `failurePolicy` property of `NSAttributedStringMarkdownParsingOptions`.
-     * @details The policy for handling a parsing failure. The default is 'NSAttributedStringMarkdownParsingFailureReturnError'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `failurePolicy` property of `NSAttributedStringMarkdownParsingOptions`.
+         * @details The policy for handling a parsing failure. The default is 'NSAttributedStringMarkdownParsingFailureReturnError'.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_failure_policy(AttributedStringMarkdownParsingFailurePolicy value) const;
         /**
-     * @brief Returns the `interpretedSyntax` property of `NSAttributedStringMarkdownParsingOptions`.
-     * @details The syntax for interpreting a Markdown string. If your Markdown data uses syntax that this setting excludes, the parser still parses it and includes its text in the final result. However, the relevant text won't have attributes.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `interpretedSyntax` property of `NSAttributedStringMarkdownParsingOptions`.
+         * @details The syntax for interpreting a Markdown string. If your Markdown data uses syntax that this setting excludes, the parser still parses it and includes its text in the final result. However, the relevant text won't have attributes.
+         * @return The converted Objective-C result.
+         */
         AttributedStringMarkdownInterpretedSyntax interpreted_syntax() const;
         /**
-     * @brief Sets the `interpretedSyntax` property of `NSAttributedStringMarkdownParsingOptions`.
-     * @details The syntax for interpreting a Markdown string. If your Markdown data uses syntax that this setting excludes, the parser still parses it and includes its text in the final result. However, the relevant text won't have attributes.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `interpretedSyntax` property of `NSAttributedStringMarkdownParsingOptions`.
+         * @details The syntax for interpreting a Markdown string. If your Markdown data uses syntax that this setting excludes, the parser still parses it and includes its text in the final result. However, the relevant text won't have attributes.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_interpreted_syntax(AttributedStringMarkdownInterpretedSyntax value) const;
         /**
-     * @brief Returns the `languageCode` property of `NSAttributedStringMarkdownParsingOptions`.
-     * @details The BCP-47 language code for this document. If not 'nil', the 'NSLanguageIdentifierAttributeName' attribute will be applied to any range in the returned string that doesn't otherwise specify a language attribute. The default is 'nil', which applies no attributes.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `languageCode` property of `NSAttributedStringMarkdownParsingOptions`.
+         * @details The BCP-47 language code for this document. If not 'nil', the 'NSLanguageIdentifierAttributeName' attribute will be applied to any range in the returned string that doesn't otherwise specify a language attribute. The default is 'nil', which applies no attributes.
+         * @return The converted Objective-C result.
+         */
         std::string language_code() const;
         /**
-     * @brief Sets the `languageCode` property of `NSAttributedStringMarkdownParsingOptions`.
-     * @details The BCP-47 language code for this document. If not 'nil', the 'NSLanguageIdentifierAttributeName' attribute will be applied to any range in the returned string that doesn't otherwise specify a language attribute. The default is 'nil', which applies no attributes.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `languageCode` property of `NSAttributedStringMarkdownParsingOptions`.
+         * @details The BCP-47 language code for this document. If not 'nil', the 'NSLanguageIdentifierAttributeName' attribute will be applied to any range in the returned string that doesn't otherwise specify a language attribute. The default is 'nil', which applies no attributes.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_language_code(const std::string& value) const;
     };
 }

@@ -40,6 +40,11 @@ namespace cocoon
         Alert::install_delegate_delegate_(handle());
     }
 
+    Alert::Alert(const Error& error) : Alert(Adopt{cocoon::internal::retain([::NSAlert alertWithError:cocoon::internal::native<::NSError>(error)])})
+    {
+        Alert::install_delegate_delegate_(handle());
+    }
+
     Alert::Alert(std::nullptr_t) : Object(nullptr)
     {
     }
@@ -51,11 +56,6 @@ namespace cocoon
     Button Alert::add_button_with_title(const std::string& title) const
     {
         return cocoon::internal::wrap<Button>([cocoon::internal::ns<::NSAlert>(this) addButtonWithTitle:cocoon::internal::to(title)]);
-    }
-
-    Alert Alert::alert_with_error(const Error& error)
-    {
-        return cocoon::internal::wrap<Alert>([::NSAlert alertWithError:cocoon::internal::native<::NSError>(error)]);
     }
 
     void Alert::begin_sheet_modal_for_window(const Window& sheet_window, std::function<void(std::int64_t)> handler) const

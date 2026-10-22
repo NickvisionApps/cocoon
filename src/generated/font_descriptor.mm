@@ -14,6 +14,14 @@ namespace cocoon
     {
     }
 
+    FontDescriptor::FontDescriptor(const std::string& font_name, const AffineTransform& matrix) : FontDescriptor(Adopt{cocoon::internal::retain([::NSFontDescriptor fontDescriptorWithName:cocoon::internal::to(font_name) matrix:cocoon::internal::native<::NSAffineTransform>(matrix)])})
+    {
+    }
+
+    FontDescriptor::FontDescriptor(const std::string& font_name, double size) : FontDescriptor(Adopt{cocoon::internal::retain([::NSFontDescriptor fontDescriptorWithName:cocoon::internal::to(font_name) size:static_cast<::CGFloat>(size)])})
+    {
+    }
+
     FontDescriptor::FontDescriptor() : FontDescriptor(Adopt{cocoon::internal::retain([[::NSFontDescriptor alloc] init])})
     {
     }
@@ -53,31 +61,9 @@ namespace cocoon
         return cocoon::internal::wrap<FontDescriptor>([cocoon::internal::ns<::NSFontDescriptor>(this) fontDescriptorWithFamily:cocoon::internal::to(new_family)]);
     }
 
-    FontDescriptor FontDescriptor::font_descriptor_with_font_attributes(const std::map<std::string, Object>& attributes)
-    {
-        return cocoon::internal::wrap<FontDescriptor>([::NSFontDescriptor fontDescriptorWithFontAttributes:cocoon::internal::to_dictionary(attributes, [](const std::string& k) -> id
-                                                                                                                                           {
-                                                                                                                                               return cocoon::internal::to(k);
-                                                                                                                                           },
-                                                                                                                                           [](const Object& v) -> id
-                                                                                                                                           {
-                                                                                                                                               return cocoon::internal::native_id(v);
-                                                                                                                                           })]);
-    }
-
     FontDescriptor FontDescriptor::font_descriptor_with_matrix(const AffineTransform& matrix) const
     {
         return cocoon::internal::wrap<FontDescriptor>([cocoon::internal::ns<::NSFontDescriptor>(this) fontDescriptorWithMatrix:cocoon::internal::native<::NSAffineTransform>(matrix)]);
-    }
-
-    FontDescriptor FontDescriptor::font_descriptor_with_name(const std::string& font_name, const AffineTransform& matrix)
-    {
-        return cocoon::internal::wrap<FontDescriptor>([::NSFontDescriptor fontDescriptorWithName:cocoon::internal::to(font_name) matrix:cocoon::internal::native<::NSAffineTransform>(matrix)]);
-    }
-
-    FontDescriptor FontDescriptor::font_descriptor_with_name(const std::string& font_name, double size)
-    {
-        return cocoon::internal::wrap<FontDescriptor>([::NSFontDescriptor fontDescriptorWithName:cocoon::internal::to(font_name) size:static_cast<::CGFloat>(size)]);
     }
 
     FontDescriptor FontDescriptor::font_descriptor_with_size(double new_point_size) const

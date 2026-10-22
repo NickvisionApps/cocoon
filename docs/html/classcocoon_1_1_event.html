@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -74,6 +74,10 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a89340011904f28644409451d6af0a2e1" id="r_a89340011904f28644409451d6af0a2e1"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a89340011904f28644409451d6af0a2e1">Event</a> (const <a class="el" href="classcocoon_1_1_c_g_event.html">CGEvent</a> &amp;cg_event)</td></tr>
+<tr class="memdesc:a89340011904f28644409451d6af0a2e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSEvent</span> instance and returns a handle to it.  <br /></td></tr>
+<tr class="memitem:aa6f39c991d3843e3cee859e9d36ab2e9" id="r_aa6f39c991d3843e3cee859e9d36ab2e9"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa6f39c991d3843e3cee859e9d36ab2e9">Event</a> (const void *event_ref)</td></tr>
+<tr class="memdesc:aa6f39c991d3843e3cee859e9d36ab2e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSEvent</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:afdd7eb5f99b61609af86d7142b718d80" id="r_afdd7eb5f99b61609af86d7142b718d80"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#afdd7eb5f99b61609af86d7142b718d80">Event</a> ()</td></tr>
 <tr class="memdesc:afdd7eb5f99b61609af86d7142b718d80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSEvent</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:a3702e267cf7a6b9ccdb444b84a36ea40" id="r_a3702e267cf7a6b9ccdb444b84a36ea40"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a3702e267cf7a6b9ccdb444b84a36ea40">Event</a> (std::nullptr_t)</td></tr>
@@ -230,21 +234,17 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:acf9f10d5430745f9537029bfe376db4d" id="r_acf9f10d5430745f9537029bfe376db4d"><td class="memItemLeft">static <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a>&#160;</td><td class="memItemRight"><a class="el" href="#acf9f10d5430745f9537029bfe376db4d">add_global_monitor_for_events_matching_mask</a> (<a class="el" href="namespacecocoon.html#a1180c1cc9683cbffb2bd3105bdc08112">EventMask</a> mask, std::function&lt; void(<a class="el" href="#afdd7eb5f99b61609af86d7142b718d80">Event</a>)&gt; block)</td></tr>
+<tr class="memitem:acf9f10d5430745f9537029bfe376db4d" id="r_acf9f10d5430745f9537029bfe376db4d"><td class="memItemLeft">static <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a>&#160;</td><td class="memItemRight"><a class="el" href="#acf9f10d5430745f9537029bfe376db4d">add_global_monitor_for_events_matching_mask</a> (<a class="el" href="namespacecocoon.html#a1180c1cc9683cbffb2bd3105bdc08112">EventMask</a> mask, std::function&lt; void(<a class="el" href="#a89340011904f28644409451d6af0a2e1">Event</a>)&gt; block)</td></tr>
 <tr class="memdesc:acf9f10d5430745f9537029bfe376db4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSEvent addGlobalMonitorForEventsMatchingMask:handler:]</span>.  <br /></td></tr>
-<tr class="memitem:aea08bd8d2694321ac1f76f56b8614c5f" id="r_aea08bd8d2694321ac1f76f56b8614c5f"><td class="memItemLeft">static <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a>&#160;</td><td class="memItemRight"><a class="el" href="#aea08bd8d2694321ac1f76f56b8614c5f">add_local_monitor_for_events_matching_mask</a> (<a class="el" href="namespacecocoon.html#a1180c1cc9683cbffb2bd3105bdc08112">EventMask</a> mask, std::function&lt; <a class="el" href="#afdd7eb5f99b61609af86d7142b718d80">Event</a>(<a class="el" href="#afdd7eb5f99b61609af86d7142b718d80">Event</a>)&gt; block)</td></tr>
+<tr class="memitem:aea08bd8d2694321ac1f76f56b8614c5f" id="r_aea08bd8d2694321ac1f76f56b8614c5f"><td class="memItemLeft">static <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a>&#160;</td><td class="memItemRight"><a class="el" href="#aea08bd8d2694321ac1f76f56b8614c5f">add_local_monitor_for_events_matching_mask</a> (<a class="el" href="namespacecocoon.html#a1180c1cc9683cbffb2bd3105bdc08112">EventMask</a> mask, std::function&lt; <a class="el" href="#a89340011904f28644409451d6af0a2e1">Event</a>(<a class="el" href="#a89340011904f28644409451d6af0a2e1">Event</a>)&gt; block)</td></tr>
 <tr class="memdesc:aea08bd8d2694321ac1f76f56b8614c5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSEvent addLocalMonitorForEventsMatchingMask:handler:]</span>.  <br /></td></tr>
-<tr class="memitem:ae0a38c900656d10ff22b853c4d2dc242" id="r_ae0a38c900656d10ff22b853c4d2dc242"><td class="memItemLeft">static <a class="el" href="#afdd7eb5f99b61609af86d7142b718d80">Event</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae0a38c900656d10ff22b853c4d2dc242">enter_exit_event_with_type</a> (<a class="el" href="namespacecocoon.html#a07bb92bfde3eca330152331aec8646e5">EventType</a> type, const <a class="el" href="structcocoon_1_1_point.html">Point</a> &amp;location, <a class="el" href="namespacecocoon.html#a24f11dbd6a5563808d7633ce02227c49">EventModifierFlags</a> flags, double time, std::int64_t w_num, const <a class="el" href="classcocoon_1_1_graphics_context.html">GraphicsContext</a> &amp;unused_pass_nil, std::int64_t e_num, std::int64_t t_num, void *data)</td></tr>
+<tr class="memitem:ae0a38c900656d10ff22b853c4d2dc242" id="r_ae0a38c900656d10ff22b853c4d2dc242"><td class="memItemLeft">static <a class="el" href="#a89340011904f28644409451d6af0a2e1">Event</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae0a38c900656d10ff22b853c4d2dc242">enter_exit_event_with_type</a> (<a class="el" href="namespacecocoon.html#a07bb92bfde3eca330152331aec8646e5">EventType</a> type, const <a class="el" href="structcocoon_1_1_point.html">Point</a> &amp;location, <a class="el" href="namespacecocoon.html#a24f11dbd6a5563808d7633ce02227c49">EventModifierFlags</a> flags, double time, std::int64_t w_num, const <a class="el" href="classcocoon_1_1_graphics_context.html">GraphicsContext</a> &amp;unused_pass_nil, std::int64_t e_num, std::int64_t t_num, void *data)</td></tr>
 <tr class="memdesc:ae0a38c900656d10ff22b853c4d2dc242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSEvent enterExitEventWithType:location:modifierFlags:timestamp:windowNumber:context:eventNumber:trackingNumber:userData:]</span>.  <br /></td></tr>
-<tr class="memitem:a9b68c8d361df21ae7b37dc7a351cbb26" id="r_a9b68c8d361df21ae7b37dc7a351cbb26"><td class="memItemLeft">static <a class="el" href="#afdd7eb5f99b61609af86d7142b718d80">Event</a>&#160;</td><td class="memItemRight"><a class="el" href="#a9b68c8d361df21ae7b37dc7a351cbb26">event_with_cg_event</a> (const <a class="el" href="classcocoon_1_1_c_g_event.html">CGEvent</a> &amp;cg_event)</td></tr>
-<tr class="memdesc:a9b68c8d361df21ae7b37dc7a351cbb26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSEvent eventWithCGEvent:]</span>.  <br /></td></tr>
-<tr class="memitem:a12c4305f80ed9e4c4118bdb04e7d8b43" id="r_a12c4305f80ed9e4c4118bdb04e7d8b43"><td class="memItemLeft">static <a class="el" href="#afdd7eb5f99b61609af86d7142b718d80">Event</a>&#160;</td><td class="memItemRight"><a class="el" href="#a12c4305f80ed9e4c4118bdb04e7d8b43">event_with_event_ref</a> (const void *event_ref)</td></tr>
-<tr class="memdesc:a12c4305f80ed9e4c4118bdb04e7d8b43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSEvent eventWithEventRef:]</span>.  <br /></td></tr>
-<tr class="memitem:a2eb6eae2c75247f29732d2f1c8f1fefc" id="r_a2eb6eae2c75247f29732d2f1c8f1fefc"><td class="memItemLeft">static <a class="el" href="#afdd7eb5f99b61609af86d7142b718d80">Event</a>&#160;</td><td class="memItemRight"><a class="el" href="#a2eb6eae2c75247f29732d2f1c8f1fefc">key_event_with_type</a> (<a class="el" href="namespacecocoon.html#a07bb92bfde3eca330152331aec8646e5">EventType</a> type, const <a class="el" href="structcocoon_1_1_point.html">Point</a> &amp;location, <a class="el" href="namespacecocoon.html#a24f11dbd6a5563808d7633ce02227c49">EventModifierFlags</a> flags, double time, std::int64_t w_num, const <a class="el" href="classcocoon_1_1_graphics_context.html">GraphicsContext</a> &amp;unused_pass_nil, const std::string &amp;keys, const std::string &amp;ukeys, bool flag, std::uint16_t code)</td></tr>
+<tr class="memitem:a2eb6eae2c75247f29732d2f1c8f1fefc" id="r_a2eb6eae2c75247f29732d2f1c8f1fefc"><td class="memItemLeft">static <a class="el" href="#a89340011904f28644409451d6af0a2e1">Event</a>&#160;</td><td class="memItemRight"><a class="el" href="#a2eb6eae2c75247f29732d2f1c8f1fefc">key_event_with_type</a> (<a class="el" href="namespacecocoon.html#a07bb92bfde3eca330152331aec8646e5">EventType</a> type, const <a class="el" href="structcocoon_1_1_point.html">Point</a> &amp;location, <a class="el" href="namespacecocoon.html#a24f11dbd6a5563808d7633ce02227c49">EventModifierFlags</a> flags, double time, std::int64_t w_num, const <a class="el" href="classcocoon_1_1_graphics_context.html">GraphicsContext</a> &amp;unused_pass_nil, const std::string &amp;keys, const std::string &amp;ukeys, bool flag, std::uint16_t code)</td></tr>
 <tr class="memdesc:a2eb6eae2c75247f29732d2f1c8f1fefc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSEvent keyEventWithType:location:modifierFlags:timestamp:windowNumber:context:characters:charactersIgnoringModifiers:isARepeat:keyCode:]</span>.  <br /></td></tr>
-<tr class="memitem:a97c194a27f15043cb912cfa89b296cb7" id="r_a97c194a27f15043cb912cfa89b296cb7"><td class="memItemLeft">static <a class="el" href="#afdd7eb5f99b61609af86d7142b718d80">Event</a>&#160;</td><td class="memItemRight"><a class="el" href="#a97c194a27f15043cb912cfa89b296cb7">mouse_event_with_type</a> (<a class="el" href="namespacecocoon.html#a07bb92bfde3eca330152331aec8646e5">EventType</a> type, const <a class="el" href="structcocoon_1_1_point.html">Point</a> &amp;location, <a class="el" href="namespacecocoon.html#a24f11dbd6a5563808d7633ce02227c49">EventModifierFlags</a> flags, double time, std::int64_t w_num, const <a class="el" href="classcocoon_1_1_graphics_context.html">GraphicsContext</a> &amp;unused_pass_nil, std::int64_t e_num, std::int64_t c_num, float pressure)</td></tr>
+<tr class="memitem:a97c194a27f15043cb912cfa89b296cb7" id="r_a97c194a27f15043cb912cfa89b296cb7"><td class="memItemLeft">static <a class="el" href="#a89340011904f28644409451d6af0a2e1">Event</a>&#160;</td><td class="memItemRight"><a class="el" href="#a97c194a27f15043cb912cfa89b296cb7">mouse_event_with_type</a> (<a class="el" href="namespacecocoon.html#a07bb92bfde3eca330152331aec8646e5">EventType</a> type, const <a class="el" href="structcocoon_1_1_point.html">Point</a> &amp;location, <a class="el" href="namespacecocoon.html#a24f11dbd6a5563808d7633ce02227c49">EventModifierFlags</a> flags, double time, std::int64_t w_num, const <a class="el" href="classcocoon_1_1_graphics_context.html">GraphicsContext</a> &amp;unused_pass_nil, std::int64_t e_num, std::int64_t c_num, float pressure)</td></tr>
 <tr class="memdesc:a97c194a27f15043cb912cfa89b296cb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSEvent mouseEventWithType:location:modifierFlags:timestamp:windowNumber:context:eventNumber:clickCount:pressure:]</span>.  <br /></td></tr>
-<tr class="memitem:afe422f476ea75c08b40718da42210901" id="r_afe422f476ea75c08b40718da42210901"><td class="memItemLeft">static <a class="el" href="#afdd7eb5f99b61609af86d7142b718d80">Event</a>&#160;</td><td class="memItemRight"><a class="el" href="#afe422f476ea75c08b40718da42210901">other_event_with_type</a> (<a class="el" href="namespacecocoon.html#a07bb92bfde3eca330152331aec8646e5">EventType</a> type, const <a class="el" href="structcocoon_1_1_point.html">Point</a> &amp;location, <a class="el" href="namespacecocoon.html#a24f11dbd6a5563808d7633ce02227c49">EventModifierFlags</a> flags, double time, std::int64_t w_num, const <a class="el" href="classcocoon_1_1_graphics_context.html">GraphicsContext</a> &amp;unused_pass_nil, std::int16_t subtype, std::int64_t d1, std::int64_t d2)</td></tr>
+<tr class="memitem:afe422f476ea75c08b40718da42210901" id="r_afe422f476ea75c08b40718da42210901"><td class="memItemLeft">static <a class="el" href="#a89340011904f28644409451d6af0a2e1">Event</a>&#160;</td><td class="memItemRight"><a class="el" href="#afe422f476ea75c08b40718da42210901">other_event_with_type</a> (<a class="el" href="namespacecocoon.html#a07bb92bfde3eca330152331aec8646e5">EventType</a> type, const <a class="el" href="structcocoon_1_1_point.html">Point</a> &amp;location, <a class="el" href="namespacecocoon.html#a24f11dbd6a5563808d7633ce02227c49">EventModifierFlags</a> flags, double time, std::int64_t w_num, const <a class="el" href="classcocoon_1_1_graphics_context.html">GraphicsContext</a> &amp;unused_pass_nil, std::int16_t subtype, std::int64_t d1, std::int64_t d2)</td></tr>
 <tr class="memdesc:afe422f476ea75c08b40718da42210901"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSEvent otherEventWithType:location:modifierFlags:timestamp:windowNumber:context:subtype:data1:data2:]</span>.  <br /></td></tr>
 <tr class="memitem:a5208eb47e5ced64b3eefebe68be23eb3" id="r_a5208eb47e5ced64b3eefebe68be23eb3"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a5208eb47e5ced64b3eefebe68be23eb3">remove_monitor</a> (const <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &amp;event_monitor)</td></tr>
 <tr class="memdesc:a5208eb47e5ced64b3eefebe68be23eb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSEvent removeMonitor:]</span>.  <br /></td></tr>
@@ -292,15 +292,69 @@ Static Public Member Functions</h2></td></tr>
 <div class="ttc" id="aclasscocoon_1_1_event_html_a2eb6eae2c75247f29732d2f1c8f1fefc"><div class="ttname"><a href="#a2eb6eae2c75247f29732d2f1c8f1fefc">cocoon::Event::key_event_with_type</a></div><div class="ttdeci">static Event key_event_with_type(EventType type, const Point &amp;location, EventModifierFlags flags, double time, std::int64_t w_num, const GraphicsContext &amp;unused_pass_nil, const std::string &amp;keys, const std::string &amp;ukeys, bool flag, std::uint16_t code)</div><div class="ttdoc">Calls +[NSEvent keyEventWithType:location:modifierFlags:timestamp:windowNumber:context:characters:cha...</div></div>
 <div class="ttc" id="aclasscocoon_1_1_event_html_a97c194a27f15043cb912cfa89b296cb7"><div class="ttname"><a href="#a97c194a27f15043cb912cfa89b296cb7">cocoon::Event::mouse_event_with_type</a></div><div class="ttdeci">static Event mouse_event_with_type(EventType type, const Point &amp;location, EventModifierFlags flags, double time, std::int64_t w_num, const GraphicsContext &amp;unused_pass_nil, std::int64_t e_num, std::int64_t c_num, float pressure)</div><div class="ttdoc">Calls +[NSEvent mouseEventWithType:location:modifierFlags:timestamp:windowNumber:context:eventNumber:...</div></div>
 <div class="ttc" id="aclasscocoon_1_1_event_html_aba97eadf5ec72a4a56cc21c2173a8917"><div class="ttname"><a href="#aba97eadf5ec72a4a56cc21c2173a8917">cocoon::Event::all_touches</a></div><div class="ttdeci">std::vector&lt; Touch &gt; all_touches() const</div><div class="ttdoc">Calls -[NSEvent allTouches].</div></div>
-<div class="ttc" id="aclasscocoon_1_1_graphics_context_html"><div class="ttname"><a href="classcocoon_1_1_graphics_context.html">cocoon::GraphicsContext</a></div><div class="ttdoc">C++ handle for the Objective-C class NSGraphicsContext (AppKit).</div><div class="ttdef"><b>Definition</b> graphics_context.h:44</div></div>
+<div class="ttc" id="aclasscocoon_1_1_graphics_context_html"><div class="ttname"><a href="classcocoon_1_1_graphics_context.html">cocoon::GraphicsContext</a></div><div class="ttdoc">C++ handle for the Objective-C class NSGraphicsContext (AppKit).</div><div class="ttdef"><b>Definition</b> graphics_context.h:43</div></div>
 <div class="ttc" id="anamespacecocoon_html_a07bb92bfde3eca330152331aec8646e5a81e48b0ee1aabbf73a3cc6b1a512fda3"><div class="ttname"><a href="namespacecocoon.html#a07bb92bfde3eca330152331aec8646e5a81e48b0ee1aabbf73a3cc6b1a512fda3">cocoon::EventType::LeftMouseDown</a></div><div class="ttdeci">@ LeftMouseDown</div><div class="ttdef"><b>Definition</b> enums.h:1656</div></div>
 <div class="ttc" id="anamespacecocoon_html_a24f11dbd6a5563808d7633ce02227c49a8d0f4171170104d094d8b6d4f8bf49e6"><div class="ttname"><a href="namespacecocoon.html#a24f11dbd6a5563808d7633ce02227c49a8d0f4171170104d094d8b6d4f8bf49e6">cocoon::EventModifierFlags::CapsLock</a></div><div class="ttdeci">@ CapsLock</div><div class="ttdef"><b>Definition</b> enums.h:1569</div></div>
 <div class="ttc" id="anamespacecocoon_html_a5a51f734fb0a1e63af71c4c08c8e9083af0f31c9700c6b10d8a20dc487b2ae6a8"><div class="ttname"><a href="namespacecocoon.html#a5a51f734fb0a1e63af71c4c08c8e9083af0f31c9700c6b10d8a20dc487b2ae6a8">cocoon::EventSubtype::Touch</a></div><div class="ttdeci">@ Touch</div><div class="ttdef"><b>Definition</b> enums.h:1630</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/appkit/nsevent">https://developer.apple.com/documentation/appkit/nsevent</a> </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a89340011904f28644409451d6af0a2e1" name="a89340011904f28644409451d6af0a2e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89340011904f28644409451d6af0a2e1">&#9670;&#160;</a></span>Event() <span class="overload">[1/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::Event::Event </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcocoon_1_1_c_g_event.html">CGEvent</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>cg_event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSEvent</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
+<a id="aa6f39c991d3843e3cee859e9d36ab2e9" name="aa6f39c991d3843e3cee859e9d36ab2e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6f39c991d3843e3cee859e9d36ab2e9">&#9670;&#160;</a></span>Event() <span class="overload">[2/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::Event::Event </td>
+          <td>(</td>
+          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>event_ref</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSEvent</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
 <a id="afdd7eb5f99b61609af86d7142b718d80" name="afdd7eb5f99b61609af86d7142b718d80"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afdd7eb5f99b61609af86d7142b718d80">&#9670;&#160;</a></span>Event() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#afdd7eb5f99b61609af86d7142b718d80">&#9670;&#160;</a></span>Event() <span class="overload">[3/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -327,7 +381,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a3702e267cf7a6b9ccdb444b84a36ea40" name="a3702e267cf7a6b9ccdb444b84a36ea40"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3702e267cf7a6b9ccdb444b84a36ea40">&#9670;&#160;</a></span>Event() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3702e267cf7a6b9ccdb444b84a36ea40">&#9670;&#160;</a></span>Event() <span class="overload">[4/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -346,7 +400,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a1f6a4bab0384129196e07e1b90a5d74a" name="a1f6a4bab0384129196e07e1b90a5d74a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1f6a4bab0384129196e07e1b90a5d74a">&#9670;&#160;</a></span>Event() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f6a4bab0384129196e07e1b90a5d74a">&#9670;&#160;</a></span>Event() <span class="overload">[5/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -450,7 +504,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::function&lt; void(<a class="el" href="#afdd7eb5f99b61609af86d7142b718d80">Event</a>)&gt;</td>          <td class="paramname"><span class="paramname"><em>block</em></span>&#160;)</td>
+          <td class="paramtype">std::function&lt; void(<a class="el" href="#a89340011904f28644409451d6af0a2e1">Event</a>)&gt;</td>          <td class="paramname"><span class="paramname"><em>block</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -489,7 +543,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::function&lt; <a class="el" href="#afdd7eb5f99b61609af86d7142b718d80">Event</a>(<a class="el" href="#afdd7eb5f99b61609af86d7142b718d80">Event</a>)&gt;</td>          <td class="paramname"><span class="paramname"><em>block</em></span>&#160;)</td>
+          <td class="paramtype">std::function&lt; <a class="el" href="#a89340011904f28644409451d6af0a2e1">Event</a>(<a class="el" href="#a89340011904f28644409451d6af0a2e1">Event</a>)&gt;</td>          <td class="paramname"><span class="paramname"><em>block</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -901,7 +955,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#afdd7eb5f99b61609af86d7142b718d80">Event</a> cocoon::Event::enter_exit_event_with_type </td>
+          <td class="memname"><a class="el" href="#a89340011904f28644409451d6af0a2e1">Event</a> cocoon::Event::enter_exit_event_with_type </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespacecocoon.html#a07bb92bfde3eca330152331aec8646e5">EventType</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span>, </td>
         </tr>
@@ -1009,74 +1063,6 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Returns the <span class="tt">eventRef</span> property of <span class="tt">NSEvent</span>. </p>
 <p>-eventRef returns an EventRef corresponding to the NSEvent. The EventRef is retained by the NSEvent, so will be valid as long as the NSEvent is valid, and will be released when the NSEvent is freed. You can use RetainEvent to extend the lifetime of the EventRef, with a corresponding ReleaseEvent when you are done with it. If there is no EventRef corresponding to the NSEvent, -eventRef will return NULL. </p><dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a9b68c8d361df21ae7b37dc7a351cbb26" name="a9b68c8d361df21ae7b37dc7a351cbb26"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9b68c8d361df21ae7b37dc7a351cbb26">&#9670;&#160;</a></span>event_with_cg_event()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#afdd7eb5f99b61609af86d7142b718d80">Event</a> cocoon::Event::event_with_cg_event </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_c_g_event.html">CGEvent</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>cg_event</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSEvent eventWithCGEvent:]</span>. </p>
-<p>+eventWithCGEvent: returns an autoreleased NSEvent corresponding to the CGEventRef. The CGEventRef is retained by the NSEvent and will be released when the NSEvent is freed. If there is no NSEvent corresponding to the CGEventRef, +eventWithEventRef will return nil. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">cg_event</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a12c4305f80ed9e4c4118bdb04e7d8b43" name="a12c4305f80ed9e4c4118bdb04e7d8b43"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a12c4305f80ed9e4c4118bdb04e7d8b43">&#9670;&#160;</a></span>event_with_event_ref()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#afdd7eb5f99b61609af86d7142b718d80">Event</a> cocoon::Event::event_with_event_ref </td>
-          <td>(</td>
-          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>event_ref</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSEvent eventWithEventRef:]</span>. </p>
-<p>+eventWithEventRef: returns an autoreleased NSEvent corresponding to the EventRef. The EventRef is retained by the NSEvent and will be released when the NSEvent is freed. If there is no NSEvent corresponding to the EventRef, +eventWithEventRef will return nil. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">event_ref</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
 
 </div>
 </div>
@@ -1274,7 +1260,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#afdd7eb5f99b61609af86d7142b718d80">Event</a> cocoon::Event::key_event_with_type </td>
+          <td class="memname"><a class="el" href="#a89340011904f28644409451d6af0a2e1">Event</a> cocoon::Event::key_event_with_type </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespacecocoon.html#a07bb92bfde3eca330152331aec8646e5">EventType</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span>, </td>
         </tr>
@@ -1497,7 +1483,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#afdd7eb5f99b61609af86d7142b718d80">Event</a> cocoon::Event::mouse_event_with_type </td>
+          <td class="memname"><a class="el" href="#a89340011904f28644409451d6af0a2e1">Event</a> cocoon::Event::mouse_event_with_type </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespacecocoon.html#a07bb92bfde3eca330152331aec8646e5">EventType</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span>, </td>
         </tr>
@@ -1606,7 +1592,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#afdd7eb5f99b61609af86d7142b718d80">Event</a> cocoon::Event::other_event_with_type </td>
+          <td class="memname"><a class="el" href="#a89340011904f28644409451d6af0a2e1">Event</a> cocoon::Event::other_event_with_type </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespacecocoon.html#a07bb92bfde3eca330152331aec8646e5">EventType</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span>, </td>
         </tr>

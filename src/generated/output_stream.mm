@@ -46,11 +46,6 @@ namespace cocoon
         return cocoon::internal::wrap<OutputStream>([::NSOutputStream outputStreamToMemory]);
     }
 
-    OutputStream OutputStream::output_stream_with_url(const URL& url, bool should_append)
-    {
-        return cocoon::internal::wrap<OutputStream>([::NSOutputStream outputStreamWithURL:cocoon::internal::native<::NSURL>(url) append:static_cast<::BOOL>(should_append)]);
-    }
-
     std::int64_t OutputStream::write(const std::uint8_t* buffer, std::uint64_t len) const
     {
         return static_cast<std::int64_t>([cocoon::internal::ns<::NSOutputStream>(this) write:(const ::uint8_t*)(buffer) maxLength:static_cast<::NSUInteger>(len)]);

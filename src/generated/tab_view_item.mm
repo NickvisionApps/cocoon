@@ -7,6 +7,10 @@ namespace cocoon
     {
     }
 
+    TabViewItem::TabViewItem(const ViewController& view_controller) : TabViewItem(Adopt{cocoon::internal::retain([::NSTabViewItem tabViewItemWithViewController:cocoon::internal::native<::NSViewController>(view_controller)])})
+    {
+    }
+
     TabViewItem::TabViewItem() : TabViewItem(Adopt{cocoon::internal::retain([[::NSTabViewItem alloc] init])})
     {
     }
@@ -27,11 +31,6 @@ namespace cocoon
     Size TabViewItem::size_of_label(bool compute_min) const
     {
         return cocoon::internal::from([cocoon::internal::ns<::NSTabViewItem>(this) sizeOfLabel:static_cast<::BOOL>(compute_min)]);
-    }
-
-    TabViewItem TabViewItem::tab_view_item_with_view_controller(const ViewController& view_controller)
-    {
-        return cocoon::internal::wrap<TabViewItem>([::NSTabViewItem tabViewItemWithViewController:cocoon::internal::native<::NSViewController>(view_controller)]);
     }
 
     Color TabViewItem::color() const

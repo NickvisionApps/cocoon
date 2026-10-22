@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -61,7 +61,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-static-methods">Static Protected Member Functions</a> &#124;
 <a href="classcocoon_1_1_alert-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">cocoon::Alert Class Reference</div></div>
@@ -77,6 +76,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a176300a4d3d47456b7dab1c5e4a86ce4" id="r_a176300a4d3d47456b7dab1c5e4a86ce4"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a176300a4d3d47456b7dab1c5e4a86ce4">Alert</a> (const std::string &amp;message=&quot;&quot;, const std::string &amp;informative_text=&quot;&quot;, <a class="el" href="namespacecocoon.html#a5146fb85cedaa4165b088d0418c5b3d8">AlertStyle</a> style=<a class="el" href="namespacecocoon.html#a5146fb85cedaa4165b088d0418c5b3d8a5391f9a882a54c787b206138ed6d28b0">AlertStyle::Informational</a>)</td></tr>
 <tr class="memdesc:a176300a4d3d47456b7dab1c5e4a86ce4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSAlert</span> instance and returns a handle to it.  <br /></td></tr>
+<tr class="memitem:a5c7ce8922b10aa18fbc34da95329f107" id="r_a5c7ce8922b10aa18fbc34da95329f107"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a5c7ce8922b10aa18fbc34da95329f107">Alert</a> (const <a class="el" href="classcocoon_1_1_error.html">Error</a> &amp;error)</td></tr>
+<tr class="memdesc:a5c7ce8922b10aa18fbc34da95329f107"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSAlert</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:a202178e3c852174fed0bf5ce6c1dfbd0" id="r_a202178e3c852174fed0bf5ce6c1dfbd0"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a202178e3c852174fed0bf5ce6c1dfbd0">Alert</a> (std::nullptr_t)</td></tr>
 <tr class="memdesc:a202178e3c852174fed0bf5ce6c1dfbd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a null handle that refers to no native object.  <br /></td></tr>
 <tr class="memitem:aa50fa45de68323d9555472acd6bf0a84" id="r_aa50fa45de68323d9555472acd6bf0a84"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa50fa45de68323d9555472acd6bf0a84">Alert</a> (<a class="el" href="structcocoon_1_1_adopt.html">Adopt</a> adopt)</td></tr>
@@ -159,11 +160,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object template"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_object.html#a53f4ad0e6a86173a96668457725eb369">as</a> () const</td></tr>
 <tr class="memdesc:a53f4ad0e6a86173a96668457725eb369 pub_methods_classcocoon_1_1_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reinterprets the native object as handle type <span class="tt">T</span> (no runtime type check).  <br /></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a43d791e7ee0c7ef97869f57373cbb86e" id="r_a43d791e7ee0c7ef97869f57373cbb86e"><td class="memItemLeft">static <a class="el" href="#a176300a4d3d47456b7dab1c5e4a86ce4">Alert</a>&#160;</td><td class="memItemRight"><a class="el" href="#a43d791e7ee0c7ef97869f57373cbb86e">alert_with_error</a> (const <a class="el" href="classcocoon_1_1_error.html">Error</a> &amp;error)</td></tr>
-<tr class="memdesc:a43d791e7ee0c7ef97869f57373cbb86e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSAlert alertWithError:]</span>.  <br /></td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-static-methods" class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
 Static Protected Member Functions</h2></td></tr>
 <tr class="memitem:aaf12fabbd33f6206918a8ce6faab9067" id="r_aaf12fabbd33f6206918a8ce6faab9067"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#aaf12fabbd33f6206918a8ce6faab9067">install_delegate_delegate_</a> (void *native)</td></tr>
@@ -175,23 +171,21 @@ Static Protected Member Functions</h2></td></tr>
 <div class="line">alert.add_button_with_title(<span class="stringliteral">&quot;Delete&quot;</span>);</div>
 <div class="line">alert.add_button_with_title(<span class="stringliteral">&quot;Cancel&quot;</span>);</div>
 <div class="line"><span class="keywordtype">int</span> pressed = alert.exec();</div>
-<div class="ttc" id="aclasscocoon_1_1_alert_html"><div class="ttname"><a href="classcocoon_1_1_alert.html">cocoon::Alert</a></div><div class="ttdoc">A modal alert (NSAlert).</div><div class="ttdef"><b>Definition</b> alert.h:49</div></div>
+<div class="ttc" id="aclasscocoon_1_1_alert_html"><div class="ttname"><a href="classcocoon_1_1_alert.html">cocoon::Alert</a></div><div class="ttdoc">A modal alert (NSAlert).</div><div class="ttdef"><b>Definition</b> alert.h:48</div></div>
 <div class="ttc" id="anamespacecocoon_html_a5146fb85cedaa4165b088d0418c5b3d8a0eaadb4fcb48a0a0ed7bc9868be9fbaa"><div class="ttname"><a href="namespacecocoon.html#a5146fb85cedaa4165b088d0418c5b3d8a0eaadb4fcb48a0a0ed7bc9868be9fbaa">cocoon::AlertStyle::Warning</a></div><div class="ttdeci">@ Warning</div><div class="ttdef"><b>Definition</b> enums.h:130</div></div>
 </div><!-- fragment --></dd></dl>
-<dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_alert.html">cocoon::Alert</a> alert{<span class="stringliteral">&quot;text&quot;</span>, <span class="stringliteral">&quot;text&quot;</span>, <a class="code hl_enumvalue" href="namespacecocoon.html#a5146fb85cedaa4165b088d0418c5b3d8a0eaadb4fcb48a0a0ed7bc9868be9fbaa">cocoon::AlertStyle::Warning</a>};</div>
+<dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_alert.html">cocoon::Alert</a> alert{<a class="code hl_enumvalue" href="namespacecocoon.html#af8d5902cf1c857fc4c4aac097aeaf18da902b0d55fddef6f8d651fe1035b7d4bd">cocoon::Error</a>()};</div>
 <div class="line">alert.<a class="code hl_function" href="#a9b463ada3232966a9f2012aee12ca833">set_accessory_view</a>(<a class="code hl_class" href="classcocoon_1_1_view.html">cocoon::View</a>());</div>
 <div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#a7a90af108b4108dfcb97e6ee0608e288">accessory_view</a> = alert.<a class="code hl_function" href="#a7a90af108b4108dfcb97e6ee0608e288">accessory_view</a>();</div>
 <div class="line">alert.<a class="code hl_function" href="#a24e748d48d3b62050257a071798b799e">set_alert_style</a>(<a class="code hl_enumvalue" href="namespacecocoon.html#a5146fb85cedaa4165b088d0418c5b3d8a0eaadb4fcb48a0a0ed7bc9868be9fbaa">cocoon::AlertStyle::Warning</a>);</div>
 <div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#a39b2a11b42e794475a4451170c296a52">alert_style</a> = alert.<a class="code hl_function" href="#a39b2a11b42e794475a4451170c296a52">alert_style</a>();</div>
 <div class="line">alert.<a class="code hl_function" href="#a66bcb17ad50093672d3e1b5087d64f45">set_help_anchor</a>(<span class="stringliteral">&quot;text&quot;</span>);</div>
 <div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#aff7a3ae7e45f711f33eb29d6d3e44b8c">help_anchor</a> = alert.<a class="code hl_function" href="#aff7a3ae7e45f711f33eb29d6d3e44b8c">help_anchor</a>();</div>
-<div class="line"><span class="keyword">auto</span> made_0 = <a class="code hl_function" href="#a43d791e7ee0c7ef97869f57373cbb86e">cocoon::Alert::alert_with_error</a>(<a class="code hl_class" href="classcocoon_1_1_error.html">cocoon::Error</a>());</div>
 <div class="line">alert.<a class="code hl_function" href="#ad6373ac86a72b0ff890419bffebb2b4f">add_button_with_title</a>(<span class="stringliteral">&quot;text&quot;</span>);</div>
 <div class="line">alert.<a class="code hl_function" href="#ac1e3f2705d498a0756dc27a6c9642a4b">layout</a>();</div>
 <div class="line">alert.<a class="code hl_function" href="#af9e58c2fcf2807ed3482c9ffdfddcd42">run_modal</a>();</div>
 <div class="ttc" id="aclasscocoon_1_1_alert_html_a24e748d48d3b62050257a071798b799e"><div class="ttname"><a href="#a24e748d48d3b62050257a071798b799e">cocoon::Alert::set_alert_style</a></div><div class="ttdeci">void set_alert_style(AlertStyle value) const</div><div class="ttdoc">Sets the alertStyle property of NSAlert.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_alert_html_a39b2a11b42e794475a4451170c296a52"><div class="ttname"><a href="#a39b2a11b42e794475a4451170c296a52">cocoon::Alert::alert_style</a></div><div class="ttdeci">AlertStyle alert_style() const</div><div class="ttdoc">Returns the alertStyle property of NSAlert.</div></div>
-<div class="ttc" id="aclasscocoon_1_1_alert_html_a43d791e7ee0c7ef97869f57373cbb86e"><div class="ttname"><a href="#a43d791e7ee0c7ef97869f57373cbb86e">cocoon::Alert::alert_with_error</a></div><div class="ttdeci">static Alert alert_with_error(const Error &amp;error)</div><div class="ttdoc">Calls +[NSAlert alertWithError:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_alert_html_a66bcb17ad50093672d3e1b5087d64f45"><div class="ttname"><a href="#a66bcb17ad50093672d3e1b5087d64f45">cocoon::Alert::set_help_anchor</a></div><div class="ttdeci">void set_help_anchor(const std::string &amp;value) const</div><div class="ttdoc">Sets the helpAnchor property of NSAlert.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_alert_html_a7a90af108b4108dfcb97e6ee0608e288"><div class="ttname"><a href="#a7a90af108b4108dfcb97e6ee0608e288">cocoon::Alert::accessory_view</a></div><div class="ttdeci">View accessory_view() const</div><div class="ttdoc">Returns the accessoryView property of NSAlert.</div></div>
 <div class="ttc" id="aclasscocoon_1_1_alert_html_a9b463ada3232966a9f2012aee12ca833"><div class="ttname"><a href="#a9b463ada3232966a9f2012aee12ca833">cocoon::Alert::set_accessory_view</a></div><div class="ttdeci">void set_accessory_view(const View &amp;value) const</div><div class="ttdoc">Sets the accessoryView property of NSAlert.</div></div>
@@ -199,13 +193,13 @@ Static Protected Member Functions</h2></td></tr>
 <div class="ttc" id="aclasscocoon_1_1_alert_html_ad6373ac86a72b0ff890419bffebb2b4f"><div class="ttname"><a href="#ad6373ac86a72b0ff890419bffebb2b4f">cocoon::Alert::add_button_with_title</a></div><div class="ttdeci">Button add_button_with_title(const std::string &amp;title) const</div><div class="ttdoc">Calls -[NSAlert addButtonWithTitle:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_alert_html_af9e58c2fcf2807ed3482c9ffdfddcd42"><div class="ttname"><a href="#af9e58c2fcf2807ed3482c9ffdfddcd42">cocoon::Alert::run_modal</a></div><div class="ttdeci">std::int64_t run_modal() const</div><div class="ttdoc">Calls -[NSAlert runModal].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_alert_html_aff7a3ae7e45f711f33eb29d6d3e44b8c"><div class="ttname"><a href="#aff7a3ae7e45f711f33eb29d6d3e44b8c">cocoon::Alert::help_anchor</a></div><div class="ttdeci">std::string help_anchor() const</div><div class="ttdoc">Returns the helpAnchor property of NSAlert.</div></div>
-<div class="ttc" id="aclasscocoon_1_1_error_html"><div class="ttname"><a href="classcocoon_1_1_error.html">cocoon::Error</a></div><div class="ttdoc">C++ handle for the Objective-C class NSError (Foundation).</div><div class="ttdef"><b>Definition</b> error.h:25</div></div>
 <div class="ttc" id="aclasscocoon_1_1_view_html"><div class="ttname"><a href="classcocoon_1_1_view.html">cocoon::View</a></div><div class="ttdoc">The base of all views (NSView): hierarchy, geometry, Auto Layout helpers and appearance.</div><div class="ttdef"><b>Definition</b> view.h:77</div></div>
+<div class="ttc" id="anamespacecocoon_html_af8d5902cf1c857fc4c4aac097aeaf18da902b0d55fddef6f8d651fe1035b7d4bd"><div class="ttname"><a href="namespacecocoon.html#af8d5902cf1c857fc4c4aac097aeaf18da902b0d55fddef6f8d651fe1035b7d4bd">cocoon::AttributedStringMarkdownParsingFailurePolicy::Error</a></div><div class="ttdeci">@ Error</div><div class="ttdef"><b>Definition</b> enums.h:398</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/appkit/nsalert">https://developer.apple.com/documentation/appkit/nsalert</a> </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a176300a4d3d47456b7dab1c5e4a86ce4" name="a176300a4d3d47456b7dab1c5e4a86ce4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a176300a4d3d47456b7dab1c5e4a86ce4">&#9670;&#160;</a></span>Alert() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a176300a4d3d47456b7dab1c5e4a86ce4">&#9670;&#160;</a></span>Alert() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -240,8 +234,35 @@ Static Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a5c7ce8922b10aa18fbc34da95329f107" name="a5c7ce8922b10aa18fbc34da95329f107"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c7ce8922b10aa18fbc34da95329f107">&#9670;&#160;</a></span>Alert() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::Alert::Alert </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcocoon_1_1_error.html">Error</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>error</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSAlert</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
 <a id="a202178e3c852174fed0bf5ce6c1dfbd0" name="a202178e3c852174fed0bf5ce6c1dfbd0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a202178e3c852174fed0bf5ce6c1dfbd0">&#9670;&#160;</a></span>Alert() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a202178e3c852174fed0bf5ce6c1dfbd0">&#9670;&#160;</a></span>Alert() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -260,7 +281,7 @@ Static Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="aa50fa45de68323d9555472acd6bf0a84" name="aa50fa45de68323d9555472acd6bf0a84"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa50fa45de68323d9555472acd6bf0a84">&#9670;&#160;</a></span>Alert() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa50fa45de68323d9555472acd6bf0a84">&#9670;&#160;</a></span>Alert() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -350,40 +371,6 @@ Static Protected Member Functions</h2></td></tr>
 
 <p>Returns the <span class="tt">alertStyle</span> property of <span class="tt">NSAlert</span>. </p>
 <p>Indicates the alert’s severity level. See the 'NSAlertStyle' enumeration for the list of alert style constants. </p><dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a43d791e7ee0c7ef97869f57373cbb86e" name="a43d791e7ee0c7ef97869f57373cbb86e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43d791e7ee0c7ef97869f57373cbb86e">&#9670;&#160;</a></span>alert_with_error()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a176300a4d3d47456b7dab1c5e4a86ce4">Alert</a> cocoon::Alert::alert_with_error </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_error.html">Error</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>error</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSAlert alertWithError:]</span>. </p>
-<p>Returns an alert initialized from information in an error object. - Parameter error: <a class="el" href="classcocoon_1_1_error.html" title="C++ handle for the Objective-C class NSError (Foundation).">Error</a> information to display. - Returns: An initialized alert. - Note: The 'NSAlert' class extracts the localized error description, recovery suggestion, and recovery options from the error parameter and uses them as the alert’s message text, informative text, and button titles, respectively. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">error</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
 
 </div>
 </div>

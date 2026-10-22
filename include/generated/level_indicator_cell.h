@@ -48,96 +48,96 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit LevelIndicatorCell(Adopt adopt);
         /**
-     * @brief Calls `-[NSLevelIndicatorCell rectOfTickMarkAtIndex:]`.
-     * @param index Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSLevelIndicatorCell rectOfTickMarkAtIndex:]`.
+         * @param index Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Rect rect_of_tick_mark_at_index(std::int64_t index) const;
         /**
-     * @brief Calls `-[NSLevelIndicatorCell tickMarkValueAtIndex:]`.
-     * @param index Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSLevelIndicatorCell tickMarkValueAtIndex:]`.
+         * @param index Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         double tick_mark_value_at_index(std::int64_t index) const;
         /**
-     * @brief Returns the `criticalValue` property of `NSLevelIndicatorCell`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `criticalValue` property of `NSLevelIndicatorCell`.
+         * @return The converted Objective-C result.
+         */
         double critical_value() const;
         /**
-     * @brief Sets the `criticalValue` property of `NSLevelIndicatorCell`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `criticalValue` property of `NSLevelIndicatorCell`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_critical_value(double value) const;
         /**
-     * @brief Returns the `levelIndicatorStyle` property of `NSLevelIndicatorCell`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `levelIndicatorStyle` property of `NSLevelIndicatorCell`.
+         * @return The converted Objective-C result.
+         */
         LevelIndicatorStyle level_indicator_style() const;
         /**
-     * @brief Sets the `levelIndicatorStyle` property of `NSLevelIndicatorCell`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `levelIndicatorStyle` property of `NSLevelIndicatorCell`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_level_indicator_style(LevelIndicatorStyle value) const;
         /**
-     * @brief Returns the `maxValue` property of `NSLevelIndicatorCell`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `maxValue` property of `NSLevelIndicatorCell`.
+         * @return The converted Objective-C result.
+         */
         double max_value() const;
         /**
-     * @brief Sets the `maxValue` property of `NSLevelIndicatorCell`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `maxValue` property of `NSLevelIndicatorCell`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_max_value(double value) const;
         /**
-     * @brief Returns the `minValue` property of `NSLevelIndicatorCell`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `minValue` property of `NSLevelIndicatorCell`.
+         * @return The converted Objective-C result.
+         */
         double min_value() const;
         /**
-     * @brief Sets the `minValue` property of `NSLevelIndicatorCell`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `minValue` property of `NSLevelIndicatorCell`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_min_value(double value) const;
         /**
-     * @brief Returns the `numberOfMajorTickMarks` property of `NSLevelIndicatorCell`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `numberOfMajorTickMarks` property of `NSLevelIndicatorCell`.
+         * @return The converted Objective-C result.
+         */
         std::int64_t number_of_major_tick_marks() const;
         /**
-     * @brief Sets the `numberOfMajorTickMarks` property of `NSLevelIndicatorCell`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `numberOfMajorTickMarks` property of `NSLevelIndicatorCell`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_number_of_major_tick_marks(std::int64_t value) const;
         /**
-     * @brief Returns the `numberOfTickMarks` property of `NSLevelIndicatorCell`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `numberOfTickMarks` property of `NSLevelIndicatorCell`.
+         * @return The converted Objective-C result.
+         */
         std::int64_t number_of_tick_marks() const;
         /**
-     * @brief Sets the `numberOfTickMarks` property of `NSLevelIndicatorCell`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `numberOfTickMarks` property of `NSLevelIndicatorCell`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_number_of_tick_marks(std::int64_t value) const;
         /**
-     * @brief Returns the `tickMarkPosition` property of `NSLevelIndicatorCell`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `tickMarkPosition` property of `NSLevelIndicatorCell`.
+         * @return The converted Objective-C result.
+         */
         TickMarkPosition tick_mark_position() const;
         /**
-     * @brief Sets the `tickMarkPosition` property of `NSLevelIndicatorCell`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `tickMarkPosition` property of `NSLevelIndicatorCell`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_tick_mark_position(TickMarkPosition value) const;
         /**
-     * @brief Returns the `warningValue` property of `NSLevelIndicatorCell`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `warningValue` property of `NSLevelIndicatorCell`.
+         * @return The converted Objective-C result.
+         */
         double warning_value() const;
         /**
-     * @brief Sets the `warningValue` property of `NSLevelIndicatorCell`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `warningValue` property of `NSLevelIndicatorCell`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_warning_value(double value) const;
     };
 }

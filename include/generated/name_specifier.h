@@ -46,16 +46,16 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit NameSpecifier(Adopt adopt);
         /**
-     * @brief Returns the `name` property of `NSNameSpecifier`.
-     * @details The name of the object to be retrieved.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `name` property of `NSNameSpecifier`.
+         * @details The name of the object to be retrieved.
+         * @return The converted Objective-C result.
+         */
         std::string name() const;
         /**
-     * @brief Sets the `name` property of `NSNameSpecifier`.
-     * @details The name of the object to be retrieved.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `name` property of `NSNameSpecifier`.
+         * @details The name of the object to be retrieved.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_name(const std::string& value) const;
     };
 }

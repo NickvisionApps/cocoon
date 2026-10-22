@@ -26,7 +26,6 @@ namespace cocoon
      * Snippets built from this class's own members (values are placeholders).
      * @code
      * cocoon::RegularExpression regular_expression{};
-     * auto made_0 = cocoon::RegularExpression::regular_expression_with_pattern("text", cocoon::RegularExpressionOptions::CaseInsensitive);
      * regular_expression.replacement_string_for_result(cocoon::TextCheckingResult(), "text", 1, "text");
      * @endcode
      * @see https://developer.apple.com/documentation/foundation/nsregularexpression
@@ -43,119 +42,111 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit RegularExpression(Adopt adopt);
         /**
-     * @brief Calls `-[NSRegularExpression enumerateMatchesInString:options:range:usingBlock:]`.
-     * @details Enumerates the string allowing the Block to handle each regular expression match. - Parameter string: The string. - Parameter options: The matching options to report. See 'NSMatchingOptions' for the supported values. - Parameter range: The range of the string to test. - Parameter block: The Block enumerates the matches of the regular expression in the string. The block takes three arguments: 'result' (an 'NSTextCheckingResult' specifying the match), 'flags' (the current state of matching progress), and 'stop' (a reference to a Boolean value that the Block can set to 'YES' to stop further processing). This method is the fundamental matching method for regular expressions and is suitable for overriding by subclassers. There are additional convenience methods for returning all the matches as an array, the total number of matches, the first match, and the range of the first match.
-     * @param string Argument converted to the Objective-C parameter of the same role.
-     * @param options Argument converted to the Objective-C parameter of the same role.
-     * @param range Argument converted to the Objective-C parameter of the same role.
-     * @param block Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSRegularExpression enumerateMatchesInString:options:range:usingBlock:]`.
+         * @details Enumerates the string allowing the Block to handle each regular expression match. - Parameter string: The string. - Parameter options: The matching options to report. See 'NSMatchingOptions' for the supported values. - Parameter range: The range of the string to test. - Parameter block: The Block enumerates the matches of the regular expression in the string. The block takes three arguments: 'result' (an 'NSTextCheckingResult' specifying the match), 'flags' (the current state of matching progress), and 'stop' (a reference to a Boolean value that the Block can set to 'YES' to stop further processing). This method is the fundamental matching method for regular expressions and is suitable for overriding by subclassers. There are additional convenience methods for returning all the matches as an array, the total number of matches, the first match, and the range of the first match.
+         * @param string Argument converted to the Objective-C parameter of the same role.
+         * @param options Argument converted to the Objective-C parameter of the same role.
+         * @param range Argument converted to the Objective-C parameter of the same role.
+         * @param block Argument converted to the Objective-C parameter of the same role.
+         */
         void enumerate_matches_in_string(const std::string& string, MatchingOptions options, const Range& range, std::function<void(TextCheckingResult, MatchingFlags, bool&)> block) const;
         /**
-     * @brief Calls `+[NSRegularExpression escapedPatternForString:]`.
-     * @details Returns a string by adding backslash escapes as necessary to protect any characters that would match as pattern metacharacters. - Parameter string: The string. - Returns: The escaped string. Returns a string by adding backslash escapes as necessary to the given string, to escape any characters that would otherwise be treated as pattern metacharacters. You typically use this method to match on a particular string within a larger pattern.
-     * @param string Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSRegularExpression escapedPatternForString:]`.
+         * @details Returns a string by adding backslash escapes as necessary to protect any characters that would match as pattern metacharacters. - Parameter string: The string. - Returns: The escaped string. Returns a string by adding backslash escapes as necessary to the given string, to escape any characters that would otherwise be treated as pattern metacharacters. You typically use this method to match on a particular string within a larger pattern.
+         * @param string Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static std::string escaped_pattern_for_string(const std::string& string);
         /**
-     * @brief Calls `+[NSRegularExpression escapedTemplateForString:]`.
-     * @details Returns a template string by adding backslash escapes as necessary to protect any characters that would match as pattern metacharacters. - Parameter string: The template string. - Returns: The escaped template string. Returns a string by adding backslash escapes as necessary to the given string, to escape any characters that would otherwise be treated as template metacharacters.
-     * @param string Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSRegularExpression escapedTemplateForString:]`.
+         * @details Returns a template string by adding backslash escapes as necessary to protect any characters that would match as pattern metacharacters. - Parameter string: The template string. - Returns: The escaped template string. Returns a string by adding backslash escapes as necessary to the given string, to escape any characters that would otherwise be treated as template metacharacters.
+         * @param string Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static std::string escaped_template_for_string(const std::string& string);
         /**
-     * @brief Calls `-[NSRegularExpression firstMatchInString:options:range:]`.
-     * @details Returns the first match of the regular expression within the specified range of the string. - Parameter string: The string to search. - Parameter options: The matching options to use. See 'NSMatchingOptions' for possible values. - Parameter range: The range of the string to search. - Returns: An 'NSTextCheckingResult' object. This result gives the overall matched range via its 'range' property, and the range of each individual capture group via its 'rangeAtIndex:' method. The range {'NSNotFound', 0} is returned if one of the capture groups did not participate in this particular match.
-     * @param string Argument converted to the Objective-C parameter of the same role.
-     * @param options Argument converted to the Objective-C parameter of the same role.
-     * @param range Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSRegularExpression firstMatchInString:options:range:]`.
+         * @details Returns the first match of the regular expression within the specified range of the string. - Parameter string: The string to search. - Parameter options: The matching options to use. See 'NSMatchingOptions' for possible values. - Parameter range: The range of the string to search. - Returns: An 'NSTextCheckingResult' object. This result gives the overall matched range via its 'range' property, and the range of each individual capture group via its 'rangeAtIndex:' method. The range {'NSNotFound', 0} is returned if one of the capture groups did not participate in this particular match.
+         * @param string Argument converted to the Objective-C parameter of the same role.
+         * @param options Argument converted to the Objective-C parameter of the same role.
+         * @param range Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         TextCheckingResult first_match_in_string(const std::string& string, MatchingOptions options, const Range& range) const;
         /**
-     * @brief Calls `-[NSRegularExpression matchesInString:options:range:]`.
-     * @details Returns an array containing all the matches of the regular expression in the string. - Parameter string: The string to search. - Parameter options: The matching options to use. See 'NSMatchingOptions' for possible values. - Parameter range: The range of the string to search. - Returns: An array of 'NSTextCheckingResult' objects. Each result gives the overall matched range via its 'range' property, and the range of each individual capture group via its 'rangeAtIndex:' method. The range {'NSNotFound', 0} is returned if one of the capture groups did not participate in this particular match.
-     * @param string Argument converted to the Objective-C parameter of the same role.
-     * @param options Argument converted to the Objective-C parameter of the same role.
-     * @param range Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSRegularExpression matchesInString:options:range:]`.
+         * @details Returns an array containing all the matches of the regular expression in the string. - Parameter string: The string to search. - Parameter options: The matching options to use. See 'NSMatchingOptions' for possible values. - Parameter range: The range of the string to search. - Returns: An array of 'NSTextCheckingResult' objects. Each result gives the overall matched range via its 'range' property, and the range of each individual capture group via its 'rangeAtIndex:' method. The range {'NSNotFound', 0} is returned if one of the capture groups did not participate in this particular match.
+         * @param string Argument converted to the Objective-C parameter of the same role.
+         * @param options Argument converted to the Objective-C parameter of the same role.
+         * @param range Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::vector<TextCheckingResult> matches_in_string(const std::string& string, MatchingOptions options, const Range& range) const;
         /**
-     * @brief Calls `-[NSRegularExpression numberOfMatchesInString:options:range:]`.
-     * @details Returns the number of matches of the regular expression within the specified range of the string. - Parameter string: The string to search. - Parameter options: The matching options to use. See 'NSMatchingOptions' for possible values. - Parameter range: The range of the string to search. - Returns: The number of matches of the regular expression.
-     * @param string Argument converted to the Objective-C parameter of the same role.
-     * @param options Argument converted to the Objective-C parameter of the same role.
-     * @param range Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSRegularExpression numberOfMatchesInString:options:range:]`.
+         * @details Returns the number of matches of the regular expression within the specified range of the string. - Parameter string: The string to search. - Parameter options: The matching options to use. See 'NSMatchingOptions' for possible values. - Parameter range: The range of the string to search. - Returns: The number of matches of the regular expression.
+         * @param string Argument converted to the Objective-C parameter of the same role.
+         * @param options Argument converted to the Objective-C parameter of the same role.
+         * @param range Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::uint64_t number_of_matches_in_string(const std::string& string, MatchingOptions options, const Range& range) const;
         /**
-     * @brief Calls `-[NSRegularExpression rangeOfFirstMatchInString:options:range:]`.
-     * @details Returns the range of the first match of the regular expression within the specified range of the string. - Parameter string: The string to search. - Parameter options: The matching options to use. See 'NSMatchingOptions' for possible values. - Parameter range: The range of the string to search. - Returns: The range of the first match. Returns '{NSNotFound, 0}' if no match is found.
-     * @param string Argument converted to the Objective-C parameter of the same role.
-     * @param options Argument converted to the Objective-C parameter of the same role.
-     * @param range Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSRegularExpression rangeOfFirstMatchInString:options:range:]`.
+         * @details Returns the range of the first match of the regular expression within the specified range of the string. - Parameter string: The string to search. - Parameter options: The matching options to use. See 'NSMatchingOptions' for possible values. - Parameter range: The range of the string to search. - Returns: The range of the first match. Returns '{NSNotFound, 0}' if no match is found.
+         * @param string Argument converted to the Objective-C parameter of the same role.
+         * @param options Argument converted to the Objective-C parameter of the same role.
+         * @param range Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Range range_of_first_match_in_string(const std::string& string, MatchingOptions options, const Range& range) const;
         /**
-     * @brief Calls `+[NSRegularExpression regularExpressionWithPattern:options:error:]`.
-     * @details Creates an NSRegularExpression instance with the specified regular expression pattern and options. - Parameter pattern: The regular expression pattern to compile. - Parameter options: The matching options. See 'NSRegularExpressionOptions' for possible values. The values can be combined using the C-bitwise 'OR' operator. - Parameter error: An out value that returns any error encountered during initialization. Returns an 'NSError' object if the regular expression pattern is invalid; otherwise returns 'nil'. - Returns: An instance of 'NSRegularExpression' for the specified regular expression and options.
-     * @param pattern Argument converted to the Objective-C parameter of the same role.
-     * @param options Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static RegularExpression regular_expression_with_pattern(const std::string& pattern, RegularExpressionOptions options);
-        /**
-     * @brief Calls `-[NSRegularExpression replaceMatchesInString:options:range:withTemplate:]`.
-     * @details Replaces regular expression matches within the mutable string using the template string. - Parameter string: The mutable string to search and replace values within. - Parameter options: The matching options to use. See 'NSMatchingOptions' for possible values. - Parameter range: The range of the string to search. - Parameter templ: The substitution template used when replacing matching instances. - Returns: The number of matches.
-     * @param string Argument converted to the Objective-C parameter of the same role.
-     * @param options Argument converted to the Objective-C parameter of the same role.
-     * @param range Argument converted to the Objective-C parameter of the same role.
-     * @param templ Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSRegularExpression replaceMatchesInString:options:range:withTemplate:]`.
+         * @details Replaces regular expression matches within the mutable string using the template string. - Parameter string: The mutable string to search and replace values within. - Parameter options: The matching options to use. See 'NSMatchingOptions' for possible values. - Parameter range: The range of the string to search. - Parameter templ: The substitution template used when replacing matching instances. - Returns: The number of matches.
+         * @param string Argument converted to the Objective-C parameter of the same role.
+         * @param options Argument converted to the Objective-C parameter of the same role.
+         * @param range Argument converted to the Objective-C parameter of the same role.
+         * @param templ Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::uint64_t replace_matches_in_string(const std::string& string, MatchingOptions options, const Range& range, const std::string& templ) const;
         /**
-     * @brief Calls `-[NSRegularExpression replacementStringForResult:inString:offset:template:]`.
-     * @details Used to perform template substitution for a single result for clients implementing their own replace functionality. - Parameter result: The result of the single match. - Parameter string: The string from which the result was matched. - Parameter offset: The offset to be added to the location of the result in the string. - Parameter templ: The replacement template. - Returns: A replacement string. For clients implementing their own replace functionality, this is a method to perform the template substitution for a single result, given the string from which the result was matched, an offset to be added to the location of the result in the string (for example, in cases that modifications to the string moved the result since it was matched), and a replacement template.
-     * @param result Argument converted to the Objective-C parameter of the same role.
-     * @param string Argument converted to the Objective-C parameter of the same role.
-     * @param offset Argument converted to the Objective-C parameter of the same role.
-     * @param templ Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSRegularExpression replacementStringForResult:inString:offset:template:]`.
+         * @details Used to perform template substitution for a single result for clients implementing their own replace functionality. - Parameter result: The result of the single match. - Parameter string: The string from which the result was matched. - Parameter offset: The offset to be added to the location of the result in the string. - Parameter templ: The replacement template. - Returns: A replacement string. For clients implementing their own replace functionality, this is a method to perform the template substitution for a single result, given the string from which the result was matched, an offset to be added to the location of the result in the string (for example, in cases that modifications to the string moved the result since it was matched), and a replacement template.
+         * @param result Argument converted to the Objective-C parameter of the same role.
+         * @param string Argument converted to the Objective-C parameter of the same role.
+         * @param offset Argument converted to the Objective-C parameter of the same role.
+         * @param templ Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::string replacement_string_for_result(const TextCheckingResult& result, const std::string& string, std::int64_t offset, const std::string& templ) const;
         /**
-     * @brief Calls `-[NSRegularExpression stringByReplacingMatchesInString:options:range:withTemplate:]`.
-     * @details Returns a new string containing matching regular expressions replaced with the template string. - Parameter string: The string to search for values within. - Parameter options: The matching options to use. See 'NSMatchingOptions' for possible values. - Parameter range: The range of the string to search. - Parameter templ: The substitution template used when replacing matching instances. - Returns: A string with matching regular expressions replaced by the template string. The replacement is treated as a template, with '$0' being replaced by the contents of the matched range, '$1' by the contents of the first capture group, and so on. Additional digits beyond the maximum required to represent the number of capture groups will be treated as ordinary characters, as will a '$' not followed by digits. Backslash will escape both '$' and itself.
-     * @param string Argument converted to the Objective-C parameter of the same role.
-     * @param options Argument converted to the Objective-C parameter of the same role.
-     * @param range Argument converted to the Objective-C parameter of the same role.
-     * @param templ Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSRegularExpression stringByReplacingMatchesInString:options:range:withTemplate:]`.
+         * @details Returns a new string containing matching regular expressions replaced with the template string. - Parameter string: The string to search for values within. - Parameter options: The matching options to use. See 'NSMatchingOptions' for possible values. - Parameter range: The range of the string to search. - Parameter templ: The substitution template used when replacing matching instances. - Returns: A string with matching regular expressions replaced by the template string. The replacement is treated as a template, with '$0' being replaced by the contents of the matched range, '$1' by the contents of the first capture group, and so on. Additional digits beyond the maximum required to represent the number of capture groups will be treated as ordinary characters, as will a '$' not followed by digits. Backslash will escape both '$' and itself.
+         * @param string Argument converted to the Objective-C parameter of the same role.
+         * @param options Argument converted to the Objective-C parameter of the same role.
+         * @param range Argument converted to the Objective-C parameter of the same role.
+         * @param templ Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::string string_by_replacing_matches_in_string(const std::string& string, MatchingOptions options, const Range& range, const std::string& templ) const;
         /**
-     * @brief Returns the `numberOfCaptureGroups` property of `NSRegularExpression`.
-     * @details Returns the number of capture groups in the regular expression. A capture group consists of each possible match within a regular expression. Each capture group can then be used in a replacement template to insert that value into a replacement string. This value puts a limit on the values of 'n' for '$n' in templates, and it determines the number of ranges in the returned 'NSTextCheckingResult' instances returned in the match methods.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `numberOfCaptureGroups` property of `NSRegularExpression`.
+         * @details Returns the number of capture groups in the regular expression. A capture group consists of each possible match within a regular expression. Each capture group can then be used in a replacement template to insert that value into a replacement string. This value puts a limit on the values of 'n' for '$n' in templates, and it determines the number of ranges in the returned 'NSTextCheckingResult' instances returned in the match methods.
+         * @return The converted Objective-C result.
+         */
         std::uint64_t number_of_capture_groups() const;
         /**
-     * @brief Returns the `options` property of `NSRegularExpression`.
-     * @details Returns the options used when the regular expression option was created. The options property specifies aspects of the regular expression matching that are always used when matching the regular expression. For example, if the expression is case sensitive, allows comments, ignores metacharacters, etc.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `options` property of `NSRegularExpression`.
+         * @details Returns the options used when the regular expression option was created. The options property specifies aspects of the regular expression matching that are always used when matching the regular expression. For example, if the expression is case sensitive, allows comments, ignores metacharacters, etc.
+         * @return The converted Objective-C result.
+         */
         RegularExpressionOptions options() const;
         /**
-     * @brief Returns the `pattern` property of `NSRegularExpression`.
-     * @details Returns the regular expression pattern.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `pattern` property of `NSRegularExpression`.
+         * @details Returns the regular expression pattern.
+         * @return The converted Objective-C result.
+         */
         std::string pattern() const;
     };
 }

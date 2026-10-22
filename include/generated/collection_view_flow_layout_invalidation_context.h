@@ -42,24 +42,24 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit CollectionViewFlowLayoutInvalidationContext(Adopt adopt);
         /**
-     * @brief Returns the `invalidateFlowLayoutAttributes` property of `NSCollectionViewFlowLayoutInvalidationContext`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `invalidateFlowLayoutAttributes` property of `NSCollectionViewFlowLayoutInvalidationContext`.
+         * @return The converted Objective-C result.
+         */
         bool invalidate_flow_layout_attributes() const;
         /**
-     * @brief Sets the `invalidateFlowLayoutAttributes` property of `NSCollectionViewFlowLayoutInvalidationContext`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `invalidateFlowLayoutAttributes` property of `NSCollectionViewFlowLayoutInvalidationContext`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_invalidate_flow_layout_attributes(bool value) const;
         /**
-     * @brief Returns the `invalidateFlowLayoutDelegateMetrics` property of `NSCollectionViewFlowLayoutInvalidationContext`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `invalidateFlowLayoutDelegateMetrics` property of `NSCollectionViewFlowLayoutInvalidationContext`.
+         * @return The converted Objective-C result.
+         */
         bool invalidate_flow_layout_delegate_metrics() const;
         /**
-     * @brief Sets the `invalidateFlowLayoutDelegateMetrics` property of `NSCollectionViewFlowLayoutInvalidationContext`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `invalidateFlowLayoutDelegateMetrics` property of `NSCollectionViewFlowLayoutInvalidationContext`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_invalidate_flow_layout_delegate_metrics(bool value) const;
     };
 }

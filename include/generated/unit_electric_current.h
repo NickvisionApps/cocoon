@@ -31,34 +31,34 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit UnitElectricCurrent(Adopt adopt);
         /**
-     * @brief Returns the `amperes` property of `NSUnitElectricCurrent`.
-     * @details The amperes unit of electric current.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `amperes` property of `NSUnitElectricCurrent`.
+         * @details The amperes unit of electric current.
+         * @return The converted Objective-C result.
+         */
         static UnitElectricCurrent amperes();
         /**
-     * @brief Returns the `kiloamperes` property of `NSUnitElectricCurrent`.
-     * @details The kiloamperes unit of electric current.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `kiloamperes` property of `NSUnitElectricCurrent`.
+         * @details The kiloamperes unit of electric current.
+         * @return The converted Objective-C result.
+         */
         static UnitElectricCurrent kiloamperes();
         /**
-     * @brief Returns the `megaamperes` property of `NSUnitElectricCurrent`.
-     * @details The megaamperes unit of electric current.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `megaamperes` property of `NSUnitElectricCurrent`.
+         * @details The megaamperes unit of electric current.
+         * @return The converted Objective-C result.
+         */
         static UnitElectricCurrent megaamperes();
         /**
-     * @brief Returns the `microamperes` property of `NSUnitElectricCurrent`.
-     * @details The microamperes unit of electric current.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `microamperes` property of `NSUnitElectricCurrent`.
+         * @details The microamperes unit of electric current.
+         * @return The converted Objective-C result.
+         */
         static UnitElectricCurrent microamperes();
         /**
-     * @brief Returns the `milliamperes` property of `NSUnitElectricCurrent`.
-     * @details The milliamperes unit of electric current.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `milliamperes` property of `NSUnitElectricCurrent`.
+         * @details The milliamperes unit of electric current.
+         * @return The converted Objective-C result.
+         */
         static UnitElectricCurrent milliamperes();
     };
 }

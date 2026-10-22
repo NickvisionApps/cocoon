@@ -31,24 +31,24 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit AdaptiveImageGlyph(Adopt adopt);
         /**
-     * @brief Returns the `contentDescription` property of `NSAdaptiveImageGlyph`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `contentDescription` property of `NSAdaptiveImageGlyph`.
+         * @return The converted Objective-C result.
+         */
         std::string content_description() const;
         /**
-     * @brief Returns the `contentIdentifier` property of `NSAdaptiveImageGlyph`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `contentIdentifier` property of `NSAdaptiveImageGlyph`.
+         * @return The converted Objective-C result.
+         */
         std::string content_identifier() const;
         /**
-     * @brief Returns the `contentType` property of `NSAdaptiveImageGlyph`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `contentType` property of `NSAdaptiveImageGlyph`.
+         * @return The converted Objective-C result.
+         */
         static Object content_type();
         /**
-     * @brief Returns the `imageContent` property of `NSAdaptiveImageGlyph`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `imageContent` property of `NSAdaptiveImageGlyph`.
+         * @return The converted Objective-C result.
+         */
         std::vector<std::uint8_t> image_content() const;
     };
 }

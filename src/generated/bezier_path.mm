@@ -3,7 +3,19 @@
 
 namespace cocoon
 {
-    BezierPath::BezierPath() : BezierPath(Adopt{cocoon::internal::retain([[::NSBezierPath alloc] init])})
+    BezierPath::BezierPath() : BezierPath(Adopt{cocoon::internal::retain([::NSBezierPath bezierPath])})
+    {
+    }
+
+    BezierPath::BezierPath(const CGPath& cg_path) : BezierPath(Adopt{cocoon::internal::retain([::NSBezierPath bezierPathWithCGPath:((::CGPathRef)(cg_path).handle())])})
+    {
+    }
+
+    BezierPath::BezierPath(const Rect& rect) : BezierPath(Adopt{cocoon::internal::retain([::NSBezierPath bezierPathWithOvalInRect:cocoon::internal::to(rect)])})
+    {
+    }
+
+    BezierPath::BezierPath(const Rect& rect, double x_radius, double y_radius) : BezierPath(Adopt{cocoon::internal::retain([::NSBezierPath bezierPathWithRoundedRect:cocoon::internal::to(rect) xRadius:static_cast<::CGFloat>(x_radius) yRadius:static_cast<::CGFloat>(y_radius)])})
     {
     }
 
@@ -68,31 +80,6 @@ namespace cocoon
     void BezierPath::append_bezier_path_with_rounded_rect(const Rect& rect, double x_radius, double y_radius) const
     {
         [cocoon::internal::ns<::NSBezierPath>(this) appendBezierPathWithRoundedRect:cocoon::internal::to(rect) xRadius:static_cast<::CGFloat>(x_radius) yRadius:static_cast<::CGFloat>(y_radius)];
-    }
-
-    BezierPath BezierPath::bezier_path()
-    {
-        return cocoon::internal::wrap<BezierPath>([::NSBezierPath bezierPath]);
-    }
-
-    BezierPath BezierPath::bezier_path_with_cg_path(const CGPath& cg_path)
-    {
-        return cocoon::internal::wrap<BezierPath>([::NSBezierPath bezierPathWithCGPath:((::CGPathRef)(cg_path).handle())]);
-    }
-
-    BezierPath BezierPath::bezier_path_with_oval_in_rect(const Rect& rect)
-    {
-        return cocoon::internal::wrap<BezierPath>([::NSBezierPath bezierPathWithOvalInRect:cocoon::internal::to(rect)]);
-    }
-
-    BezierPath BezierPath::bezier_path_with_rect(const Rect& rect)
-    {
-        return cocoon::internal::wrap<BezierPath>([::NSBezierPath bezierPathWithRect:cocoon::internal::to(rect)]);
-    }
-
-    BezierPath BezierPath::bezier_path_with_rounded_rect(const Rect& rect, double x_radius, double y_radius)
-    {
-        return cocoon::internal::wrap<BezierPath>([::NSBezierPath bezierPathWithRoundedRect:cocoon::internal::to(rect) xRadius:static_cast<::CGFloat>(x_radius) yRadius:static_cast<::CGFloat>(y_radius)]);
     }
 
     void BezierPath::clip_rect(const Rect& rect)

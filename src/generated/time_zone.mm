@@ -80,21 +80,6 @@ namespace cocoon
         return cocoon::internal::wrap<TimeZone>([::NSTimeZone timeZoneForSecondsFromGMT:static_cast<::NSInteger>(seconds)]);
     }
 
-    TimeZone TimeZone::time_zone_with_abbreviation(const std::string& abbreviation)
-    {
-        return cocoon::internal::wrap<TimeZone>([::NSTimeZone timeZoneWithAbbreviation:cocoon::internal::to(abbreviation)]);
-    }
-
-    TimeZone TimeZone::time_zone_with_name(const std::string& tz_name)
-    {
-        return cocoon::internal::wrap<TimeZone>([::NSTimeZone timeZoneWithName:cocoon::internal::to(tz_name)]);
-    }
-
-    TimeZone TimeZone::time_zone_with_name(const std::string& tz_name, const std::vector<std::uint8_t>& a_data)
-    {
-        return cocoon::internal::wrap<TimeZone>([::NSTimeZone timeZoneWithName:cocoon::internal::to(tz_name) data:cocoon::internal::to_data(a_data)]);
-    }
-
     std::string TimeZone::abbreviation() const
     {
         return cocoon::internal::from([cocoon::internal::ns<::NSTimeZone>(this) abbreviation]);

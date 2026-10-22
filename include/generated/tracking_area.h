@@ -32,24 +32,24 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit TrackingArea(Adopt adopt);
         /**
-     * @brief Returns the `options` property of `NSTrackingArea`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `options` property of `NSTrackingArea`.
+         * @return The converted Objective-C result.
+         */
         TrackingAreaOptions options() const;
         /**
-     * @brief Returns the `owner` property of `NSTrackingArea`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `owner` property of `NSTrackingArea`.
+         * @return The converted Objective-C result.
+         */
         Object owner() const;
         /**
-     * @brief Returns the `rect` property of `NSTrackingArea`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `rect` property of `NSTrackingArea`.
+         * @return The converted Objective-C result.
+         */
         Rect rect() const;
         /**
-     * @brief Returns the `userInfo` property of `NSTrackingArea`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `userInfo` property of `NSTrackingArea`.
+         * @return The converted Objective-C result.
+         */
         std::vector<std::pair<Object, Object>> user_info() const;
     };
 }

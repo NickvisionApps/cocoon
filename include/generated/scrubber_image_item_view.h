@@ -46,29 +46,29 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit ScrubberImageItemView(Adopt adopt);
         /**
-     * @brief Returns the `image` property of `NSScrubberImageItemView`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `image` property of `NSScrubberImageItemView`.
+         * @return The converted Objective-C result.
+         */
         Image image() const;
         /**
-     * @brief Sets the `image` property of `NSScrubberImageItemView`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `image` property of `NSScrubberImageItemView`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_image(const Image& value) const;
         /**
-     * @brief Returns the `imageAlignment` property of `NSScrubberImageItemView`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `imageAlignment` property of `NSScrubberImageItemView`.
+         * @return The converted Objective-C result.
+         */
         ImageAlignment image_alignment() const;
         /**
-     * @brief Sets the `imageAlignment` property of `NSScrubberImageItemView`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `imageAlignment` property of `NSScrubberImageItemView`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_image_alignment(ImageAlignment value) const;
         /**
-     * @brief Returns the `imageView` property of `NSScrubberImageItemView`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `imageView` property of `NSScrubberImageItemView`.
+         * @return The converted Objective-C result.
+         */
         ImageView image_view() const;
     };
 }

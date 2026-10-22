@@ -47,62 +47,62 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit SpeechSynthesizer(Adopt adopt);
         /**
-     * @brief Calls `-[NSSpeechSynthesizer addSpeechDictionary:]`.
-     * @param speech_dictionary Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSSpeechSynthesizer addSpeechDictionary:]`.
+         * @param speech_dictionary Argument converted to the Objective-C parameter of the same role.
+         */
         void add_speech_dictionary(const std::map<std::string, Object>& speech_dictionary) const;
         /**
-     * @brief Calls `-[NSSpeechSynthesizer continueSpeaking]`.
-     */
+         * @brief Calls `-[NSSpeechSynthesizer continueSpeaking]`.
+         */
         void continue_speaking() const;
         /**
-     * @brief Calls `-[NSSpeechSynthesizer objectForProperty:error:]`.
-     * @param property Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSSpeechSynthesizer objectForProperty:error:]`.
+         * @param property Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Object object_for_property(const std::string& property) const;
         /**
-     * @brief Calls `-[NSSpeechSynthesizer pauseSpeakingAtBoundary:]`.
-     * @param boundary Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSSpeechSynthesizer pauseSpeakingAtBoundary:]`.
+         * @param boundary Argument converted to the Objective-C parameter of the same role.
+         */
         void pause_speaking_at_boundary(SpeechBoundary boundary) const;
         /**
-     * @brief Calls `-[NSSpeechSynthesizer phonemesFromText:]`.
-     * @param text Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSSpeechSynthesizer phonemesFromText:]`.
+         * @param text Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::string phonemes_from_text(const std::string& text) const;
         /**
-     * @brief Calls `-[NSSpeechSynthesizer setObject:forProperty:error:]`.
-     * @param object Argument converted to the Objective-C parameter of the same role.
-     * @param property Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSSpeechSynthesizer setObject:forProperty:error:]`.
+         * @param object Argument converted to the Objective-C parameter of the same role.
+         * @param property Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool set_object(const Object& object, const std::string& property) const;
         /**
-     * @brief Calls `-[NSSpeechSynthesizer stopSpeakingAtBoundary:]`.
-     * @param boundary Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSSpeechSynthesizer stopSpeakingAtBoundary:]`.
+         * @param boundary Argument converted to the Objective-C parameter of the same role.
+         */
         void stop_speaking_at_boundary(SpeechBoundary boundary) const;
         /**
-     * @brief Returns the `rate` property of `NSSpeechSynthesizer`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `rate` property of `NSSpeechSynthesizer`.
+         * @return The converted Objective-C result.
+         */
         float rate() const;
         /**
-     * @brief Sets the `rate` property of `NSSpeechSynthesizer`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `rate` property of `NSSpeechSynthesizer`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_rate(float value) const;
         /**
-     * @brief Returns the `volume` property of `NSSpeechSynthesizer`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `volume` property of `NSSpeechSynthesizer`.
+         * @return The converted Objective-C result.
+         */
         float volume() const;
         /**
-     * @brief Sets the `volume` property of `NSSpeechSynthesizer`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `volume` property of `NSSpeechSynthesizer`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_volume(float value) const;
         /// @brief Signal for the delegate/data-source method behind `did_encounter_error_at_index_of_string_message`; connect a callback with `did_encounter_error_at_index_of_string_message().connect(...)`.
         Signal<SpeechSynthesizer, void(std::uint64_t, std::string, std::string)> did_encounter_error_at_index_of_string_message() const

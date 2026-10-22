@@ -38,16 +38,16 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit InvocationOperation(Adopt adopt);
         /**
-     * @brief Returns the `invocation` property of `NSInvocationOperation`.
-     * @details The receiver's invocation object. The invocation object identifying the target object, selector, and parameters to use to execute the operation's task.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `invocation` property of `NSInvocationOperation`.
+         * @details The receiver's invocation object. The invocation object identifying the target object, selector, and parameters to use to execute the operation's task.
+         * @return The converted Objective-C result.
+         */
         Invocation invocation() const;
         /**
-     * @brief Returns the `result` property of `NSInvocationOperation`.
-     * @details The result of the invocation or method. The object returned by the method or an 'NSValue' object containing the return value if it is not an object. 'nil' if the method or invocation is not finished executing.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `result` property of `NSInvocationOperation`.
+         * @details The result of the invocation or method. The object returned by the method or an 'NSValue' object containing the return value if it is not an object. 'nil' if the method or invocation is not finished executing.
+         * @return The converted Objective-C result.
+         */
         Object result() const;
     };
 }

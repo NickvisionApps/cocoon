@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -74,6 +74,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:ad8da8d030df7347b40418b4d6de8c46b" id="r_ad8da8d030df7347b40418b4d6de8c46b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ad8da8d030df7347b40418b4d6de8c46b">Printer</a> (const std::string &amp;name)</td></tr>
+<tr class="memdesc:ad8da8d030df7347b40418b4d6de8c46b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSPrinter</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:a3f8c3b82c7fc1448b4fa4bf1e0711043" id="r_a3f8c3b82c7fc1448b4fa4bf1e0711043"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a3f8c3b82c7fc1448b4fa4bf1e0711043">Printer</a> ()</td></tr>
 <tr class="memdesc:a3f8c3b82c7fc1448b4fa4bf1e0711043"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSPrinter</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:a49659712041962d12e8662dc2acc1f8a" id="r_a49659712041962d12e8662dc2acc1f8a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a49659712041962d12e8662dc2acc1f8a">Printer</a> (std::nullptr_t)</td></tr>
@@ -118,10 +120,6 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:af55429189bc642303d8590172bfe96ba" id="r_af55429189bc642303d8590172bfe96ba"><td class="memItemLeft">static <a class="el" href="#a3f8c3b82c7fc1448b4fa4bf1e0711043">Printer</a>&#160;</td><td class="memItemRight"><a class="el" href="#af55429189bc642303d8590172bfe96ba">printer_with_name</a> (const std::string &amp;name)</td></tr>
-<tr class="memdesc:af55429189bc642303d8590172bfe96ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSPrinter printerWithName:]</span>.  <br /></td></tr>
-<tr class="memitem:a4c52d762372e4b22ea17a8f61a946733" id="r_a4c52d762372e4b22ea17a8f61a946733"><td class="memItemLeft">static <a class="el" href="#a3f8c3b82c7fc1448b4fa4bf1e0711043">Printer</a>&#160;</td><td class="memItemRight"><a class="el" href="#a4c52d762372e4b22ea17a8f61a946733">printer_with_type</a> (const std::string &amp;type)</td></tr>
-<tr class="memdesc:a4c52d762372e4b22ea17a8f61a946733"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSPrinter printerWithType:]</span>.  <br /></td></tr>
 <tr class="memitem:a77cb374f7c939a1cda0bc12154185d7f" id="r_a77cb374f7c939a1cda0bc12154185d7f"><td class="memItemLeft">static std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a77cb374f7c939a1cda0bc12154185d7f">printer_names</a> ()</td></tr>
 <tr class="memdesc:a77cb374f7c939a1cda0bc12154185d7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <span class="tt">printerNames</span> property of <span class="tt">NSPrinter</span>.  <br /></td></tr>
 <tr class="memitem:a699924bfb26de8c2feaf674d92a5c90e" id="r_a699924bfb26de8c2feaf674d92a5c90e"><td class="memItemLeft">static std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a699924bfb26de8c2feaf674d92a5c90e">printer_types</a> ()</td></tr>
@@ -133,20 +131,43 @@ Static Public Member Functions</h2></td></tr>
 <dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;cocoon.h&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_class" href="classcocoon_1_1_printer.html">cocoon::Printer</a> printer;</div>
-<div class="ttc" id="aclasscocoon_1_1_printer_html"><div class="ttname"><a href="classcocoon_1_1_printer.html">cocoon::Printer</a></div><div class="ttdoc">C++ handle for the Objective-C class NSPrinter (AppKit).</div><div class="ttdef"><b>Definition</b> printer.h:33</div></div>
+<div class="ttc" id="aclasscocoon_1_1_printer_html"><div class="ttname"><a href="classcocoon_1_1_printer.html">cocoon::Printer</a></div><div class="ttdoc">C++ handle for the Objective-C class NSPrinter (AppKit).</div><div class="ttdef"><b>Definition</b> printer.h:31</div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_printer.html">cocoon::Printer</a> printer{};</div>
-<div class="line"><span class="keyword">auto</span> made_0 = <a class="code hl_function" href="#af55429189bc642303d8590172bfe96ba">cocoon::Printer::printer_with_name</a>(<span class="stringliteral">&quot;text&quot;</span>);</div>
-<div class="line"><span class="keyword">auto</span> made_1 = <a class="code hl_function" href="#a4c52d762372e4b22ea17a8f61a946733">cocoon::Printer::printer_with_type</a>(<span class="stringliteral">&quot;text&quot;</span>);</div>
 <div class="line">printer.<a class="code hl_function" href="#a9b13362dafc25953eab7025d48844523">page_size_for_paper</a>(<span class="stringliteral">&quot;text&quot;</span>);</div>
-<div class="ttc" id="aclasscocoon_1_1_printer_html_a4c52d762372e4b22ea17a8f61a946733"><div class="ttname"><a href="#a4c52d762372e4b22ea17a8f61a946733">cocoon::Printer::printer_with_type</a></div><div class="ttdeci">static Printer printer_with_type(const std::string &amp;type)</div><div class="ttdoc">Calls +[NSPrinter printerWithType:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_printer_html_a9b13362dafc25953eab7025d48844523"><div class="ttname"><a href="#a9b13362dafc25953eab7025d48844523">cocoon::Printer::page_size_for_paper</a></div><div class="ttdeci">Size page_size_for_paper(const std::string &amp;paper_name) const</div><div class="ttdoc">Calls -[NSPrinter pageSizeForPaper:].</div></div>
-<div class="ttc" id="aclasscocoon_1_1_printer_html_af55429189bc642303d8590172bfe96ba"><div class="ttname"><a href="#af55429189bc642303d8590172bfe96ba">cocoon::Printer::printer_with_name</a></div><div class="ttdeci">static Printer printer_with_name(const std::string &amp;name)</div><div class="ttdoc">Calls +[NSPrinter printerWithName:].</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/appkit/nsprinter">https://developer.apple.com/documentation/appkit/nsprinter</a> </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ad8da8d030df7347b40418b4d6de8c46b" name="ad8da8d030df7347b40418b4d6de8c46b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8da8d030df7347b40418b4d6de8c46b">&#9670;&#160;</a></span>Printer() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::Printer::Printer </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSPrinter</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
 <a id="a3f8c3b82c7fc1448b4fa4bf1e0711043" name="a3f8c3b82c7fc1448b4fa4bf1e0711043"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f8c3b82c7fc1448b4fa4bf1e0711043">&#9670;&#160;</a></span>Printer() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f8c3b82c7fc1448b4fa4bf1e0711043">&#9670;&#160;</a></span>Printer() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -173,7 +194,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a49659712041962d12e8662dc2acc1f8a" name="a49659712041962d12e8662dc2acc1f8a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a49659712041962d12e8662dc2acc1f8a">&#9670;&#160;</a></span>Printer() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a49659712041962d12e8662dc2acc1f8a">&#9670;&#160;</a></span>Printer() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -192,7 +213,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a58b35513b9a1069f124f828df8e63c54" name="a58b35513b9a1069f124f828df8e63c54"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a58b35513b9a1069f124f828df8e63c54">&#9670;&#160;</a></span>Printer() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a58b35513b9a1069f124f828df8e63c54">&#9670;&#160;</a></span>Printer() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -358,74 +379,6 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Returns the <span class="tt">printerTypes</span> property of <span class="tt">NSPrinter</span>. </p>
 <p>Return an array of strings that contain the human-readable descriptions of the makes and models of all available printers. The array may contain fewer entries than the array that would be returned by an invocation of +printerNames. </p><dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="af55429189bc642303d8590172bfe96ba" name="af55429189bc642303d8590172bfe96ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af55429189bc642303d8590172bfe96ba">&#9670;&#160;</a></span>printer_with_name()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a3f8c3b82c7fc1448b4fa4bf1e0711043">Printer</a> cocoon::Printer::printer_with_name </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSPrinter printerWithName:]</span>. </p>
-<p>Given a human-readable printer name of the sort that appears in a Print panel's "Printer:" popup menu, return an instance of NSPrinter if the named printer is available, nil otherwise. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">name</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a4c52d762372e4b22ea17a8f61a946733" name="a4c52d762372e4b22ea17a8f61a946733"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4c52d762372e4b22ea17a8f61a946733">&#9670;&#160;</a></span>printer_with_type()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a3f8c3b82c7fc1448b4fa4bf1e0711043">Printer</a> cocoon::Printer::printer_with_type </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>type</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSPrinter printerWithType:]</span>. </p>
-<p>Given a string of the sort returned by +printerTypes:, return the first printer whose description matches, or nil if no available printer matches. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">type</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
 
 </div>
 </div>

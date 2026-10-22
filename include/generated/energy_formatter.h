@@ -50,71 +50,71 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit EnergyFormatter(Adopt adopt);
         /**
-     * @brief Calls `-[NSEnergyFormatter stringFromJoules:]`.
-     * @details Returns an energy string for the provided value in joules. Formats a number in joules to a localized string with the locale-appropriate unit and an appropriate scale (e.g. 10.3J = 2.46cal in the US locale).
-     * @param number_in_joules Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSEnergyFormatter stringFromJoules:]`.
+         * @details Returns an energy string for the provided value in joules. Formats a number in joules to a localized string with the locale-appropriate unit and an appropriate scale (e.g. 10.3J = 2.46cal in the US locale).
+         * @param number_in_joules Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::string string_from_joules(double number_in_joules) const;
         /**
-     * @brief Calls `-[NSEnergyFormatter stringFromValue:unit:]`.
-     * @details Returns an energy string for the provided value and unit.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     * @param unit Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSEnergyFormatter stringFromValue:unit:]`.
+         * @details Returns an energy string for the provided value and unit.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         * @param unit Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::string string_from_value(double value, EnergyFormatterUnit unit) const;
         /**
-     * @brief Calls `-[NSEnergyFormatter unitStringFromJoules:usedUnit:]`.
-     * @details Returns a unit string based on the provided value in joules. Returns the locale-appropriate unit, the same unit used by 'stringFromJoules:'.
-     * @param number_in_joules Argument converted to the Objective-C parameter of the same role.
-     * @param unitp Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSEnergyFormatter unitStringFromJoules:usedUnit:]`.
+         * @details Returns a unit string based on the provided value in joules. Returns the locale-appropriate unit, the same unit used by 'stringFromJoules:'.
+         * @param number_in_joules Argument converted to the Objective-C parameter of the same role.
+         * @param unitp Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::string unit_string_from_joules(double number_in_joules, EnergyFormatterUnit* unitp) const;
         /**
-     * @brief Calls `-[NSEnergyFormatter unitStringFromValue:unit:]`.
-     * @details Returns a unit string for the provided value and unit. Returns a localized string of the given unit, and if the unit is singular or plural is based on the given number.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     * @param unit Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSEnergyFormatter unitStringFromValue:unit:]`.
+         * @details Returns a unit string for the provided value and unit. Returns a localized string of the given unit, and if the unit is singular or plural is based on the given number.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         * @param unit Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::string unit_string_from_value(double value, EnergyFormatterUnit unit) const;
         /**
-     * @brief Returns the `forFoodEnergyUse` property of `NSEnergyFormatter`.
-     * @details A Boolean value that indicates whether the resulting string is used to represent food energy. The default value is 'NO'. If set to 'YES', 'NSEnergyFormatterUnitKilocalorie' may be displayed as "C" instead of "kcal".
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `forFoodEnergyUse` property of `NSEnergyFormatter`.
+         * @details A Boolean value that indicates whether the resulting string is used to represent food energy. The default value is 'NO'. If set to 'YES', 'NSEnergyFormatterUnitKilocalorie' may be displayed as "C" instead of "kcal".
+         * @return The converted Objective-C result.
+         */
         bool is_for_food_energy_use() const;
         /**
-     * @brief Sets the `forFoodEnergyUse` property of `NSEnergyFormatter`.
-     * @details A Boolean value that indicates whether the resulting string is used to represent food energy. The default value is 'NO'. If set to 'YES', 'NSEnergyFormatterUnitKilocalorie' may be displayed as "C" instead of "kcal".
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `forFoodEnergyUse` property of `NSEnergyFormatter`.
+         * @details A Boolean value that indicates whether the resulting string is used to represent food energy. The default value is 'NO'. If set to 'YES', 'NSEnergyFormatterUnitKilocalorie' may be displayed as "C" instead of "kcal".
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_for_food_energy_use(bool value) const;
         /**
-     * @brief Returns the `numberFormatter` property of `NSEnergyFormatter`.
-     * @details The number formatter used to format the numbers in an energy string. The default value is an 'NSNumberFormatter' with 'NSNumberFormatterDecimalStyle'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `numberFormatter` property of `NSEnergyFormatter`.
+         * @details The number formatter used to format the numbers in an energy string. The default value is an 'NSNumberFormatter' with 'NSNumberFormatterDecimalStyle'.
+         * @return The converted Objective-C result.
+         */
         NumberFormatter number_formatter() const;
         /**
-     * @brief Sets the `numberFormatter` property of `NSEnergyFormatter`.
-     * @details The number formatter used to format the numbers in an energy string. The default value is an 'NSNumberFormatter' with 'NSNumberFormatterDecimalStyle'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `numberFormatter` property of `NSEnergyFormatter`.
+         * @details The number formatter used to format the numbers in an energy string. The default value is an 'NSNumberFormatter' with 'NSNumberFormatterDecimalStyle'.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_number_formatter(const NumberFormatter& value) const;
         /**
-     * @brief Returns the `unitStyle` property of `NSEnergyFormatter`.
-     * @details The unit style used when creating string representations of energy values. The default value is 'NSFormattingUnitStyleMedium'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `unitStyle` property of `NSEnergyFormatter`.
+         * @details The unit style used when creating string representations of energy values. The default value is 'NSFormattingUnitStyleMedium'.
+         * @return The converted Objective-C result.
+         */
         FormattingUnitStyle unit_style() const;
         /**
-     * @brief Sets the `unitStyle` property of `NSEnergyFormatter`.
-     * @details The unit style used when creating string representations of energy values. The default value is 'NSFormattingUnitStyleMedium'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `unitStyle` property of `NSEnergyFormatter`.
+         * @details The unit style used when creating string representations of energy values. The default value is 'NSFormattingUnitStyleMedium'.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_unit_style(FormattingUnitStyle value) const;
     };
 }

@@ -44,88 +44,88 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit PersonNameComponents(Adopt adopt);
         /**
-     * @brief Returns the `familyName` property of `NSPersonNameComponents`.
-     * @details Name passed from one generation to another to indicate lineage, e.g. Appleseed.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `familyName` property of `NSPersonNameComponents`.
+         * @details Name passed from one generation to another to indicate lineage, e.g. Appleseed.
+         * @return The converted Objective-C result.
+         */
         std::string family_name() const;
         /**
-     * @brief Sets the `familyName` property of `NSPersonNameComponents`.
-     * @details Name passed from one generation to another to indicate lineage, e.g. Appleseed.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `familyName` property of `NSPersonNameComponents`.
+         * @details Name passed from one generation to another to indicate lineage, e.g. Appleseed.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_family_name(const std::string& value) const;
         /**
-     * @brief Returns the `givenName` property of `NSPersonNameComponents`.
-     * @details Name bestowed upon an individual by one's parents, e.g. Johnathan.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `givenName` property of `NSPersonNameComponents`.
+         * @details Name bestowed upon an individual by one's parents, e.g. Johnathan.
+         * @return The converted Objective-C result.
+         */
         std::string given_name() const;
         /**
-     * @brief Sets the `givenName` property of `NSPersonNameComponents`.
-     * @details Name bestowed upon an individual by one's parents, e.g. Johnathan.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `givenName` property of `NSPersonNameComponents`.
+         * @details Name bestowed upon an individual by one's parents, e.g. Johnathan.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_given_name(const std::string& value) const;
         /**
-     * @brief Returns the `middleName` property of `NSPersonNameComponents`.
-     * @details Secondary given name chosen to differentiate those with the same first name, e.g. Maple.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `middleName` property of `NSPersonNameComponents`.
+         * @details Secondary given name chosen to differentiate those with the same first name, e.g. Maple.
+         * @return The converted Objective-C result.
+         */
         std::string middle_name() const;
         /**
-     * @brief Sets the `middleName` property of `NSPersonNameComponents`.
-     * @details Secondary given name chosen to differentiate those with the same first name, e.g. Maple.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `middleName` property of `NSPersonNameComponents`.
+         * @details Secondary given name chosen to differentiate those with the same first name, e.g. Maple.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_middle_name(const std::string& value) const;
         /**
-     * @brief Returns the `namePrefix` property of `NSPersonNameComponents`.
-     * @details Pre-nominal letters denoting title, salutation, or honorific, e.g. Dr., Mr.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `namePrefix` property of `NSPersonNameComponents`.
+         * @details Pre-nominal letters denoting title, salutation, or honorific, e.g. Dr., Mr.
+         * @return The converted Objective-C result.
+         */
         std::string name_prefix() const;
         /**
-     * @brief Sets the `namePrefix` property of `NSPersonNameComponents`.
-     * @details Pre-nominal letters denoting title, salutation, or honorific, e.g. Dr., Mr.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `namePrefix` property of `NSPersonNameComponents`.
+         * @details Pre-nominal letters denoting title, salutation, or honorific, e.g. Dr., Mr.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_name_prefix(const std::string& value) const;
         /**
-     * @brief Returns the `nameSuffix` property of `NSPersonNameComponents`.
-     * @details Post-nominal letters denoting degree, accreditation, or other honor, e.g. Esq., Jr., Ph.D.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `nameSuffix` property of `NSPersonNameComponents`.
+         * @details Post-nominal letters denoting degree, accreditation, or other honor, e.g. Esq., Jr., Ph.D.
+         * @return The converted Objective-C result.
+         */
         std::string name_suffix() const;
         /**
-     * @brief Sets the `nameSuffix` property of `NSPersonNameComponents`.
-     * @details Post-nominal letters denoting degree, accreditation, or other honor, e.g. Esq., Jr., Ph.D.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `nameSuffix` property of `NSPersonNameComponents`.
+         * @details Post-nominal letters denoting degree, accreditation, or other honor, e.g. Esq., Jr., Ph.D.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_name_suffix(const std::string& value) const;
         /**
-     * @brief Returns the `nickname` property of `NSPersonNameComponents`.
-     * @details Name substituted for the purposes of familiarity, e.g. "Johnny".
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `nickname` property of `NSPersonNameComponents`.
+         * @details Name substituted for the purposes of familiarity, e.g. "Johnny".
+         * @return The converted Objective-C result.
+         */
         std::string nickname() const;
         /**
-     * @brief Sets the `nickname` property of `NSPersonNameComponents`.
-     * @details Name substituted for the purposes of familiarity, e.g. "Johnny".
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `nickname` property of `NSPersonNameComponents`.
+         * @details Name substituted for the purposes of familiarity, e.g. "Johnny".
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_nickname(const std::string& value) const;
         /**
-     * @brief Returns the `phoneticRepresentation` property of `NSPersonNameComponents`.
-     * @details The phonetic representation of the name components. Each element of the phonetic representation should correspond to an element of the original 'NSPersonNameComponents' instance. The phonetic representation of the phonetic representation object itself will be ignored. 'nil' by default; must be instantiated.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `phoneticRepresentation` property of `NSPersonNameComponents`.
+         * @details The phonetic representation of the name components. Each element of the phonetic representation should correspond to an element of the original 'NSPersonNameComponents' instance. The phonetic representation of the phonetic representation object itself will be ignored. 'nil' by default; must be instantiated.
+         * @return The converted Objective-C result.
+         */
         PersonNameComponents phonetic_representation() const;
         /**
-     * @brief Sets the `phoneticRepresentation` property of `NSPersonNameComponents`.
-     * @details The phonetic representation of the name components. Each element of the phonetic representation should correspond to an element of the original 'NSPersonNameComponents' instance. The phonetic representation of the phonetic representation object itself will be ignored. 'nil' by default; must be instantiated.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `phoneticRepresentation` property of `NSPersonNameComponents`.
+         * @details The phonetic representation of the name components. Each element of the phonetic representation should correspond to an element of the original 'NSPersonNameComponents' instance. The phonetic representation of the phonetic representation object itself will be ignored. 'nil' by default; must be instantiated.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_phonetic_representation(const PersonNameComponents& value) const;
     };
 }

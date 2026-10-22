@@ -19,11 +19,6 @@ namespace cocoon
     {
     }
 
-    PointerFunctions PointerFunctions::pointer_functions_with_options(PointerFunctionsOptions options)
-    {
-        return cocoon::internal::wrap<PointerFunctions>([::NSPointerFunctions pointerFunctionsWithOptions:static_cast<::NSPointerFunctionsOptions>(options)]);
-    }
-
     auto PointerFunctions::acquire_function() const -> void* (*)(void*, std::uint64_t (*)(void*), bool)
     {
         return (void* (*)(void*, std::uint64_t (*)(void*), bool))([cocoon::internal::ns<::NSPointerFunctions>(this) acquireFunction]);

@@ -47,25 +47,25 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit SpellServer(Adopt adopt);
         /**
-     * @brief Calls `-[NSSpellServer isWordInUserDictionaries:caseSensitive:]`.
-     * @details Indicates whether a given word is in the user's list of learned words, regardless of the language.
-     * @param word Argument converted to the Objective-C parameter of the same role.
-     * @param flag Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSSpellServer isWordInUserDictionaries:caseSensitive:]`.
+         * @details Indicates whether a given word is in the user's list of learned words, regardless of the language.
+         * @param word Argument converted to the Objective-C parameter of the same role.
+         * @param flag Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool is_word_in_user_dictionaries(const std::string& word, bool flag) const;
         /**
-     * @brief Calls `-[NSSpellServer registerLanguage:byVendor:]`.
-     * @details Registers the given language for the receiver with the given vendor name.
-     * @param language Argument converted to the Objective-C parameter of the same role.
-     * @param vendor Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSSpellServer registerLanguage:byVendor:]`.
+         * @details Registers the given language for the receiver with the given vendor name.
+         * @param language Argument converted to the Objective-C parameter of the same role.
+         * @param vendor Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool register_language(const std::string& language, const std::string& vendor) const;
         /**
-     * @brief Calls `-[NSSpellServer run]`.
-     * @details Causes the receiver to start listening for spell-checking requests.
-     */
+         * @brief Calls `-[NSSpellServer run]`.
+         * @details Causes the receiver to start listening for spell-checking requests.
+         */
         void run() const;
         /// @brief Signal for the delegate/data-source method behind `find_misspelled_word_in_string_language_word_count_count_only`; connect a callback with `find_misspelled_word_in_string_language_word_count_count_only().connect(...)`.
         Signal<SpellServer, Range(std::string, std::string, std::int64_t*, bool)> find_misspelled_word_in_string_language_word_count_count_only() const

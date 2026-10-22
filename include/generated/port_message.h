@@ -46,41 +46,41 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit PortMessage(Adopt adopt);
         /**
-     * @brief Calls `-[NSPortMessage sendBeforeDate:]`.
-     * @details Attempts to send the message before the specified date. If the message cannot be sent immediately, the sending thread blocks until either the message is sent or 'date' is reached. Sent messages are queued to minimize blocking, but failure can occur if multiple messages are sent to a port faster than the port's owner can receive them, causing the queue to fill up. If an error other than a time out occurs, this method could raise an 'NSInvalidSendPortException', 'NSInvalidReceivePortException', or an 'NSPortSendException'. - Parameters: - date: The instant before which the message should be sent. - Returns: 'YES' if the operation is successful, otherwise 'NO' (for example, if the operation times out).
-     * @param date Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSPortMessage sendBeforeDate:]`.
+         * @details Attempts to send the message before the specified date. If the message cannot be sent immediately, the sending thread blocks until either the message is sent or 'date' is reached. Sent messages are queued to minimize blocking, but failure can occur if multiple messages are sent to a port faster than the port's owner can receive them, causing the queue to fill up. If an error other than a time out occurs, this method could raise an 'NSInvalidSendPortException', 'NSInvalidReceivePortException', or an 'NSPortSendException'. - Parameters: - date: The instant before which the message should be sent. - Returns: 'YES' if the operation is successful, otherwise 'NO' (for example, if the operation times out).
+         * @param date Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool send_before_date(const Date& date) const;
         /**
-     * @brief Returns the `components` property of `NSPortMessage`.
-     * @details The data components of the receiver. See ''NSPortMessage'' for more information.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `components` property of `NSPortMessage`.
+         * @details The data components of the receiver. See ''NSPortMessage'' for more information.
+         * @return The converted Objective-C result.
+         */
         std::vector<Object> components() const;
         /**
-     * @brief Returns the `msgid` property of `NSPortMessage`.
-     * @details The identifier for the receiver. Cooperating applications can use this to define different types of messages, such as connection requests, RPCs, errors, and so on.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `msgid` property of `NSPortMessage`.
+         * @details The identifier for the receiver. Cooperating applications can use this to define different types of messages, such as connection requests, RPCs, errors, and so on.
+         * @return The converted Objective-C result.
+         */
         unsigned int msgid() const;
         /**
-     * @brief Sets the `msgid` property of `NSPortMessage`.
-     * @details The identifier for the receiver. Cooperating applications can use this to define different types of messages, such as connection requests, RPCs, errors, and so on.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `msgid` property of `NSPortMessage`.
+         * @details The identifier for the receiver. Cooperating applications can use this to define different types of messages, such as connection requests, RPCs, errors, and so on.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_msgid(unsigned int value) const;
         /**
-     * @brief Returns the `receivePort` property of `NSPortMessage`.
-     * @details For an outgoing message, the port on which replies to the receiver will arrive. For an incoming message, the port the receiver did arrive on.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `receivePort` property of `NSPortMessage`.
+         * @details For an outgoing message, the port on which replies to the receiver will arrive. For an incoming message, the port the receiver did arrive on.
+         * @return The converted Objective-C result.
+         */
         Port receive_port() const;
         /**
-     * @brief Returns the `sendPort` property of `NSPortMessage`.
-     * @details For an outgoing message, the port the receiver will send itself through. For an incoming message, the port replies to the receiver should be sent through.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `sendPort` property of `NSPortMessage`.
+         * @details For an outgoing message, the port the receiver will send itself through. For an incoming message, the port replies to the receiver should be sent through.
+         * @return The converted Objective-C result.
+         */
         Port send_port() const;
     };
 }

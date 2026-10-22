@@ -50,101 +50,101 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit TextAttachment(Adopt adopt);
         /**
-     * @brief Calls `+[NSTextAttachment registerTextAttachmentViewProviderClass:forFileType:]`.
-     * @param text_attachment_view_provider_class Argument converted to the Objective-C parameter of the same role.
-     * @param file_type Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `+[NSTextAttachment registerTextAttachmentViewProviderClass:forFileType:]`.
+         * @param text_attachment_view_provider_class Argument converted to the Objective-C parameter of the same role.
+         * @param file_type Argument converted to the Objective-C parameter of the same role.
+         */
         static void register_text_attachment_view_provider_class(const std::string& text_attachment_view_provider_class, const std::string& file_type);
         /**
-     * @brief Calls `+[NSTextAttachment textAttachmentViewProviderClassForFileType:]`.
-     * @param file_type Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSTextAttachment textAttachmentViewProviderClassForFileType:]`.
+         * @param file_type Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static std::string text_attachment_view_provider_class_for_file_type(const std::string& file_type);
         /**
-     * @brief Returns the `allowsTextAttachmentView` property of `NSTextAttachment`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `allowsTextAttachmentView` property of `NSTextAttachment`.
+         * @return The converted Objective-C result.
+         */
         bool allows_text_attachment_view() const;
         /**
-     * @brief Sets the `allowsTextAttachmentView` property of `NSTextAttachment`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `allowsTextAttachmentView` property of `NSTextAttachment`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_allows_text_attachment_view(bool value) const;
         /**
-     * @brief Returns the `attachmentCell` property of `NSTextAttachment`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `attachmentCell` property of `NSTextAttachment`.
+         * @return The converted Objective-C result.
+         */
         Object attachment_cell() const;
         /**
-     * @brief Sets the `attachmentCell` property of `NSTextAttachment`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `attachmentCell` property of `NSTextAttachment`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_attachment_cell(const Object& value) const;
         /**
-     * @brief Returns the `bounds` property of `NSTextAttachment`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `bounds` property of `NSTextAttachment`.
+         * @return The converted Objective-C result.
+         */
         Rect bounds() const;
         /**
-     * @brief Sets the `bounds` property of `NSTextAttachment`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `bounds` property of `NSTextAttachment`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_bounds(const Rect& value) const;
         /**
-     * @brief Returns the `contents` property of `NSTextAttachment`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `contents` property of `NSTextAttachment`.
+         * @return The converted Objective-C result.
+         */
         std::vector<std::uint8_t> contents() const;
         /**
-     * @brief Sets the `contents` property of `NSTextAttachment`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `contents` property of `NSTextAttachment`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_contents(const std::vector<std::uint8_t>& value) const;
         /**
-     * @brief Returns the `fileType` property of `NSTextAttachment`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `fileType` property of `NSTextAttachment`.
+         * @return The converted Objective-C result.
+         */
         std::string file_type() const;
         /**
-     * @brief Sets the `fileType` property of `NSTextAttachment`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `fileType` property of `NSTextAttachment`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_file_type(const std::string& value) const;
         /**
-     * @brief Returns the `fileWrapper` property of `NSTextAttachment`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `fileWrapper` property of `NSTextAttachment`.
+         * @return The converted Objective-C result.
+         */
         FileWrapper file_wrapper() const;
         /**
-     * @brief Sets the `fileWrapper` property of `NSTextAttachment`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `fileWrapper` property of `NSTextAttachment`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_file_wrapper(const FileWrapper& value) const;
         /**
-     * @brief Returns the `image` property of `NSTextAttachment`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `image` property of `NSTextAttachment`.
+         * @return The converted Objective-C result.
+         */
         Image image() const;
         /**
-     * @brief Sets the `image` property of `NSTextAttachment`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `image` property of `NSTextAttachment`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_image(const Image& value) const;
         /**
-     * @brief Returns the `lineLayoutPadding` property of `NSTextAttachment`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `lineLayoutPadding` property of `NSTextAttachment`.
+         * @return The converted Objective-C result.
+         */
         double line_layout_padding() const;
         /**
-     * @brief Sets the `lineLayoutPadding` property of `NSTextAttachment`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `lineLayoutPadding` property of `NSTextAttachment`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_line_layout_padding(double value) const;
         /**
-     * @brief Returns the `usesTextAttachmentView` property of `NSTextAttachment`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `usesTextAttachmentView` property of `NSTextAttachment`.
+         * @return The converted Objective-C result.
+         */
         bool uses_text_attachment_view() const;
     };
 }

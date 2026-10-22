@@ -31,100 +31,100 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit UnitMass(Adopt adopt);
         /**
-     * @brief Returns the `carats` property of `NSUnitMass`.
-     * @details The carats unit of mass.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `carats` property of `NSUnitMass`.
+         * @details The carats unit of mass.
+         * @return The converted Objective-C result.
+         */
         static UnitMass carats();
         /**
-     * @brief Returns the `centigrams` property of `NSUnitMass`.
-     * @details The centigrams unit of mass.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `centigrams` property of `NSUnitMass`.
+         * @details The centigrams unit of mass.
+         * @return The converted Objective-C result.
+         */
         static UnitMass centigrams();
         /**
-     * @brief Returns the `decigrams` property of `NSUnitMass`.
-     * @details The decigrams unit of mass.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `decigrams` property of `NSUnitMass`.
+         * @details The decigrams unit of mass.
+         * @return The converted Objective-C result.
+         */
         static UnitMass decigrams();
         /**
-     * @brief Returns the `grams` property of `NSUnitMass`.
-     * @details The grams unit of mass.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `grams` property of `NSUnitMass`.
+         * @details The grams unit of mass.
+         * @return The converted Objective-C result.
+         */
         static UnitMass grams();
         /**
-     * @brief Returns the `kilograms` property of `NSUnitMass`.
-     * @details The kilograms unit of mass.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `kilograms` property of `NSUnitMass`.
+         * @details The kilograms unit of mass.
+         * @return The converted Objective-C result.
+         */
         static UnitMass kilograms();
         /**
-     * @brief Returns the `metricTons` property of `NSUnitMass`.
-     * @details The metric tons unit of mass.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `metricTons` property of `NSUnitMass`.
+         * @details The metric tons unit of mass.
+         * @return The converted Objective-C result.
+         */
         static UnitMass metric_tons();
         /**
-     * @brief Returns the `micrograms` property of `NSUnitMass`.
-     * @details The micrograms unit of mass.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `micrograms` property of `NSUnitMass`.
+         * @details The micrograms unit of mass.
+         * @return The converted Objective-C result.
+         */
         static UnitMass micrograms();
         /**
-     * @brief Returns the `milligrams` property of `NSUnitMass`.
-     * @details The milligrams unit of mass.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `milligrams` property of `NSUnitMass`.
+         * @details The milligrams unit of mass.
+         * @return The converted Objective-C result.
+         */
         static UnitMass milligrams();
         /**
-     * @brief Returns the `nanograms` property of `NSUnitMass`.
-     * @details The nanograms unit of mass.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `nanograms` property of `NSUnitMass`.
+         * @details The nanograms unit of mass.
+         * @return The converted Objective-C result.
+         */
         static UnitMass nanograms();
         /**
-     * @brief Returns the `ounces` property of `NSUnitMass`.
-     * @details The ounces unit of mass.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `ounces` property of `NSUnitMass`.
+         * @details The ounces unit of mass.
+         * @return The converted Objective-C result.
+         */
         static UnitMass ounces();
         /**
-     * @brief Returns the `ouncesTroy` property of `NSUnitMass`.
-     * @details The troy ounces unit of mass.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `ouncesTroy` property of `NSUnitMass`.
+         * @details The troy ounces unit of mass.
+         * @return The converted Objective-C result.
+         */
         static UnitMass ounces_troy();
         /**
-     * @brief Returns the `picograms` property of `NSUnitMass`.
-     * @details The picograms unit of mass.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `picograms` property of `NSUnitMass`.
+         * @details The picograms unit of mass.
+         * @return The converted Objective-C result.
+         */
         static UnitMass picograms();
         /**
-     * @brief Returns the `poundsMass` property of `NSUnitMass`.
-     * @details The pounds unit of mass.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `poundsMass` property of `NSUnitMass`.
+         * @details The pounds unit of mass.
+         * @return The converted Objective-C result.
+         */
         static UnitMass pounds_mass();
         /**
-     * @brief Returns the `shortTons` property of `NSUnitMass`.
-     * @details The short tons unit of mass.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `shortTons` property of `NSUnitMass`.
+         * @details The short tons unit of mass.
+         * @return The converted Objective-C result.
+         */
         static UnitMass short_tons();
         /**
-     * @brief Returns the `slugs` property of `NSUnitMass`.
-     * @details The slugs unit of mass.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `slugs` property of `NSUnitMass`.
+         * @details The slugs unit of mass.
+         * @return The converted Objective-C result.
+         */
         static UnitMass slugs();
         /**
-     * @brief Returns the `stones` property of `NSUnitMass`.
-     * @details The stones unit of mass.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `stones` property of `NSUnitMass`.
+         * @details The stones unit of mass.
+         * @return The converted Objective-C result.
+         */
         static UnitMass stones();
     };
 }

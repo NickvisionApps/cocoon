@@ -40,14 +40,14 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit SecureTextFieldCell(Adopt adopt);
         /**
-     * @brief Returns the `echosBullets` property of `NSSecureTextFieldCell`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `echosBullets` property of `NSSecureTextFieldCell`.
+         * @return The converted Objective-C result.
+         */
         bool echos_bullets() const;
         /**
-     * @brief Sets the `echosBullets` property of `NSSecureTextFieldCell`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `echosBullets` property of `NSSecureTextFieldCell`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_echos_bullets(bool value) const;
     };
 }

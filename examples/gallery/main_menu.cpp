@@ -17,7 +17,7 @@ namespace gallery
         MenuItem open_item{"Open...", "Cmd+O"};
         open_item.triggered().connect([]
         {
-            OpenPanel::open_panel().run_modal();
+            OpenPanel().run_modal();
         });
         file.insert_item(new_item, 0);
         file.insert_item(open_item, 1);

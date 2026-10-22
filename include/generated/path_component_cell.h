@@ -48,26 +48,26 @@ namespace cocoon
         using Cell::image;
         using Cell::set_image;
         /**
-     * @brief Returns the `URL` property of `NSPathComponentCell`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `URL` property of `NSPathComponentCell`.
+         * @return The converted Objective-C result.
+         */
         URL url() const;
         /**
-     * @brief Sets the `URL` property of `NSPathComponentCell`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `URL` property of `NSPathComponentCell`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_url(const URL& value) const;
         /**
-     * @brief Returns the `image` property of `NSPathComponentCell`.
-     * @details See NSPathComponent.h for details on the image & URL properties.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `image` property of `NSPathComponentCell`.
+         * @details See NSPathComponent.h for details on the image & URL properties.
+         * @return The converted Objective-C result.
+         */
         Image image() const;
         /**
-     * @brief Sets the `image` property of `NSPathComponentCell`.
-     * @details See NSPathComponent.h for details on the image & URL properties.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `image` property of `NSPathComponentCell`.
+         * @details See NSPathComponent.h for details on the image & URL properties.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_image(const Image& value) const;
     };
 }

@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -130,8 +130,6 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a2bc5b5751cb8524a70e65f414971345d" id="r_a2bc5b5751cb8524a70e65f414971345d"><td class="memItemLeft">static <a class="el" href="#abb476d96a59aba5f414d6b3ae6b9347a">Error</a>&#160;</td><td class="memItemRight"><a class="el" href="#a2bc5b5751cb8524a70e65f414971345d">error_with_domain</a> (const std::string &amp;domain, std::int64_t code, const std::map&lt; std::string, <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &gt; &amp;dict)</td></tr>
-<tr class="memdesc:a2bc5b5751cb8524a70e65f414971345d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSError errorWithDomain:code:userInfo:]</span>.  <br /></td></tr>
 <tr class="memitem:a5063f867f5c10730b747943e477357c8" id="r_a5063f867f5c10730b747943e477357c8"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a5063f867f5c10730b747943e477357c8">set_user_info_value_provider_for_domain</a> (const std::string &amp;error_domain, std::function&lt; <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a>(<a class="el" href="#abb476d96a59aba5f414d6b3ae6b9347a">Error</a>, std::string)&gt; provider)</td></tr>
 <tr class="memdesc:a5063f867f5c10730b747943e477357c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSError setUserInfoValueProviderForDomain:provider:]</span>.  <br /></td></tr>
 <tr class="memitem:a9d212ccdca91e0d555f2c94768e70066" id="r_a9d212ccdca91e0d555f2c94768e70066"><td class="memItemLeft">static std::function&lt; <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a>(<a class="el" href="#abb476d96a59aba5f414d6b3ae6b9347a">Error</a>, std::string)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#a9d212ccdca91e0d555f2c94768e70066">user_info_value_provider_for_domain</a> (const std::string &amp;error_domain)</td></tr>
@@ -294,51 +292,6 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Returns the <span class="tt"><a class="el" href="#ab3d3620cf9f5543bdf94c4f1b339cc60" title="Returns the domain property of NSError.">domain</a></span> property of <span class="tt">NSError</span>. </p>
 <p>A string containing the error domain. Domains are described by names that are arbitrary strings used to differentiate groups of codes; for custom domains, using reverse-DNS naming will help avoid conflicts. </p><dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a2bc5b5751cb8524a70e65f414971345d" name="a2bc5b5751cb8524a70e65f414971345d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2bc5b5751cb8524a70e65f414971345d">&#9670;&#160;</a></span>error_with_domain()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#abb476d96a59aba5f414d6b3ae6b9347a">Error</a> cocoon::Error::error_with_domain </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>domain</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::int64_t</td>          <td class="paramname"><span class="paramname"><em>code</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::map&lt; std::string, <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>dict</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSError errorWithDomain:code:userInfo:]</span>. </p>
-<p>Creates and initializes an @c NSError object for a given domain and code with a given @c userInfo dictionary. @param domain The error domain&mdash;this can be one of the predefined @c NSError domains, or an arbitrary string describing a custom domain. @param code The error code for the error. @param dict The @c userInfo dictionary for the error. May be @c nil. @return An @c NSError object for @c domain with the specified error @c code and the dictionary of arbitrary data @c userInfo. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">domain</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">code</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">dict</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
 
 </div>
 </div>

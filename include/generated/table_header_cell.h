@@ -41,20 +41,20 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit TableHeaderCell(Adopt adopt);
         /**
-     * @brief Calls `-[NSTableHeaderCell drawSortIndicatorWithFrame:inView:ascending:priority:]`.
-     * @details Draws a sorting indicator given a cellFrame. If priority is 0, this is the primary sort indicator. If ascending is YES, a "^" indicator will be drawn. Override this routine to customimze the sorting UI.
-     * @param cell_frame Argument converted to the Objective-C parameter of the same role.
-     * @param control_view Argument converted to the Objective-C parameter of the same role.
-     * @param ascending Argument converted to the Objective-C parameter of the same role.
-     * @param priority Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSTableHeaderCell drawSortIndicatorWithFrame:inView:ascending:priority:]`.
+         * @details Draws a sorting indicator given a cellFrame. If priority is 0, this is the primary sort indicator. If ascending is YES, a "^" indicator will be drawn. Override this routine to customimze the sorting UI.
+         * @param cell_frame Argument converted to the Objective-C parameter of the same role.
+         * @param control_view Argument converted to the Objective-C parameter of the same role.
+         * @param ascending Argument converted to the Objective-C parameter of the same role.
+         * @param priority Argument converted to the Objective-C parameter of the same role.
+         */
         void draw_sort_indicator_with_frame(const Rect& cell_frame, const View& control_view, bool ascending, std::int64_t priority) const;
         /**
-     * @brief Calls `-[NSTableHeaderCell sortIndicatorRectForBounds:]`.
-     * @details Returns the location to display the sorting indicator given the cellFrame.
-     * @param rect Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSTableHeaderCell sortIndicatorRectForBounds:]`.
+         * @details Returns the location to display the sorting indicator given the cellFrame.
+         * @param rect Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Rect sort_indicator_rect_for_bounds(const Rect& rect) const;
     };
 }

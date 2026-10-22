@@ -3,6 +3,22 @@
 
 namespace cocoon
 {
+    GlyphInfo::GlyphInfo(std::uint16_t glyph, const Font& font, const std::string& string) : GlyphInfo(Adopt{cocoon::internal::retain([::NSGlyphInfo glyphInfoWithCGGlyph:static_cast<::CGGlyph>(glyph) forFont:cocoon::internal::native<::NSFont>(font) baseString:cocoon::internal::to(string)])})
+    {
+    }
+
+    GlyphInfo::GlyphInfo(std::uint64_t cid, CharacterCollection character_collection, const std::string& string) : GlyphInfo(Adopt{cocoon::internal::retain([::NSGlyphInfo glyphInfoWithCharacterIdentifier:static_cast<::NSUInteger>(cid) collection:static_cast<::NSCharacterCollection>(character_collection) baseString:cocoon::internal::to(string)])})
+    {
+    }
+
+    GlyphInfo::GlyphInfo(unsigned int glyph, const Font& font, const std::string& string) : GlyphInfo(Adopt{cocoon::internal::retain([::NSGlyphInfo glyphInfoWithGlyph:static_cast<::NSGlyph>(glyph) forFont:cocoon::internal::native<::NSFont>(font) baseString:cocoon::internal::to(string)])})
+    {
+    }
+
+    GlyphInfo::GlyphInfo(const std::string& glyph_name, const Font& font, const std::string& string) : GlyphInfo(Adopt{cocoon::internal::retain([::NSGlyphInfo glyphInfoWithGlyphName:cocoon::internal::to(glyph_name) forFont:cocoon::internal::native<::NSFont>(font) baseString:cocoon::internal::to(string)])})
+    {
+    }
+
     GlyphInfo::GlyphInfo() : GlyphInfo(Adopt{cocoon::internal::retain([[::NSGlyphInfo alloc] init])})
     {
     }
@@ -13,26 +29,6 @@ namespace cocoon
 
     GlyphInfo::GlyphInfo(Adopt adopt) : Object(adopt)
     {
-    }
-
-    GlyphInfo GlyphInfo::glyph_info_with_cg_glyph(std::uint16_t glyph, const Font& font, const std::string& string)
-    {
-        return cocoon::internal::wrap<GlyphInfo>([::NSGlyphInfo glyphInfoWithCGGlyph:static_cast<::CGGlyph>(glyph) forFont:cocoon::internal::native<::NSFont>(font) baseString:cocoon::internal::to(string)]);
-    }
-
-    GlyphInfo GlyphInfo::glyph_info_with_character_identifier(std::uint64_t cid, CharacterCollection character_collection, const std::string& string)
-    {
-        return cocoon::internal::wrap<GlyphInfo>([::NSGlyphInfo glyphInfoWithCharacterIdentifier:static_cast<::NSUInteger>(cid) collection:static_cast<::NSCharacterCollection>(character_collection) baseString:cocoon::internal::to(string)]);
-    }
-
-    GlyphInfo GlyphInfo::glyph_info_with_glyph(unsigned int glyph, const Font& font, const std::string& string)
-    {
-        return cocoon::internal::wrap<GlyphInfo>([::NSGlyphInfo glyphInfoWithGlyph:static_cast<::NSGlyph>(glyph) forFont:cocoon::internal::native<::NSFont>(font) baseString:cocoon::internal::to(string)]);
-    }
-
-    GlyphInfo GlyphInfo::glyph_info_with_glyph_name(const std::string& glyph_name, const Font& font, const std::string& string)
-    {
-        return cocoon::internal::wrap<GlyphInfo>([::NSGlyphInfo glyphInfoWithGlyphName:cocoon::internal::to(glyph_name) forFont:cocoon::internal::native<::NSFont>(font) baseString:cocoon::internal::to(string)]);
     }
 
     std::string GlyphInfo::base_string() const

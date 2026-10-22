@@ -46,34 +46,34 @@ namespace cocoon
         using Window::is_floating_panel;
         using Window::works_when_modal;
         /**
-     * @brief Returns the `becomesKeyOnlyIfNeeded` property of `NSPanel`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `becomesKeyOnlyIfNeeded` property of `NSPanel`.
+         * @return The converted Objective-C result.
+         */
         bool becomes_key_only_if_needed() const;
         /**
-     * @brief Sets the `becomesKeyOnlyIfNeeded` property of `NSPanel`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `becomesKeyOnlyIfNeeded` property of `NSPanel`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_becomes_key_only_if_needed(bool value) const;
         /**
-     * @brief Returns the `floatingPanel` property of `NSPanel`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `floatingPanel` property of `NSPanel`.
+         * @return The converted Objective-C result.
+         */
         bool is_floating_panel() const;
         /**
-     * @brief Sets the `floatingPanel` property of `NSPanel`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `floatingPanel` property of `NSPanel`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_floating_panel(bool value) const;
         /**
-     * @brief Returns the `worksWhenModal` property of `NSPanel`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `worksWhenModal` property of `NSPanel`.
+         * @return The converted Objective-C result.
+         */
         bool works_when_modal() const;
         /**
-     * @brief Sets the `worksWhenModal` property of `NSPanel`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `worksWhenModal` property of `NSPanel`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_works_when_modal(bool value) const;
     };
 }

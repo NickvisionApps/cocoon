@@ -3,7 +3,7 @@
 
 namespace cocoon
 {
-    PrintPanel::PrintPanel() : PrintPanel(Adopt{cocoon::internal::retain([[::NSPrintPanel alloc] init])})
+    PrintPanel::PrintPanel() : PrintPanel(Adopt{cocoon::internal::retain([::NSPrintPanel printPanel])})
     {
     }
 
@@ -33,11 +33,6 @@ namespace cocoon
     std::string PrintPanel::default_button_title() const
     {
         return cocoon::internal::from([cocoon::internal::ns<::NSPrintPanel>(this) defaultButtonTitle]);
-    }
-
-    PrintPanel PrintPanel::print_panel()
-    {
-        return cocoon::internal::wrap<PrintPanel>([::NSPrintPanel printPanel]);
     }
 
     void PrintPanel::remove_accessory_controller(const ViewController& accessory_controller) const

@@ -35,34 +35,34 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit URLResponse(Adopt adopt);
         /**
-     * @brief Returns the `MIMEType` property of `NSURLResponse`.
-     * @details The MIME type of the response. The MIME type is often provided by the response's originating source. However, that value may be changed or corrected by a protocol implementation if it can be determined that the response's source reported the information incorrectly. If the response's originating source does not provide a MIME type, an attempt to guess the MIME type may be made.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `MIMEType` property of `NSURLResponse`.
+         * @details The MIME type of the response. The MIME type is often provided by the response's originating source. However, that value may be changed or corrected by a protocol implementation if it can be determined that the response's source reported the information incorrectly. If the response's originating source does not provide a MIME type, an attempt to guess the MIME type may be made.
+         * @return The converted Objective-C result.
+         */
         std::string mime_type() const;
         /**
-     * @brief Returns the `URL` property of `NSURLResponse`.
-     * @details The URL for the response.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `URL` property of `NSURLResponse`.
+         * @details The URL for the response.
+         * @return The converted Objective-C result.
+         */
         URL url() const;
         /**
-     * @brief Returns the `expectedContentLength` property of `NSURLResponse`.
-     * @details The expected length of the response's content. This property's value is 'NSURLResponseUnknownLength' if the length can't be determined. Some protocol implementations report the content length as part of the response, but not all protocols guarantee to deliver that amount of data. Your app should be prepared to deal with more or less data.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `expectedContentLength` property of `NSURLResponse`.
+         * @details The expected length of the response's content. This property's value is 'NSURLResponseUnknownLength' if the length can't be determined. Some protocol implementations report the content length as part of the response, but not all protocols guarantee to deliver that amount of data. Your app should be prepared to deal with more or less data.
+         * @return The converted Objective-C result.
+         */
         std::int64_t expected_content_length() const;
         /**
-     * @brief Returns the `suggestedFilename` property of `NSURLResponse`.
-     * @details A suggested filename for the response data. Accessing this property attempts to generate a filename using the following information, in order: 1. A filename specified using the content disposition header. 2. The last path component of the URL. 3. The host of the URL. If the host of URL can't be converted to a valid filename, the filename '"unknown"' is used. In most cases, this property appends the proper file extension based on the MIME type. Accessing this property always returns a valid filename regardless of whether the resource is saved to disk.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `suggestedFilename` property of `NSURLResponse`.
+         * @details A suggested filename for the response data. Accessing this property attempts to generate a filename using the following information, in order: 1. A filename specified using the content disposition header. 2. The last path component of the URL. 3. The host of the URL. If the host of URL can't be converted to a valid filename, the filename '"unknown"' is used. In most cases, this property appends the proper file extension based on the MIME type. Accessing this property always returns a valid filename regardless of whether the resource is saved to disk.
+         * @return The converted Objective-C result.
+         */
         std::string suggested_filename() const;
         /**
-     * @brief Returns the `textEncodingName` property of `NSURLResponse`.
-     * @details The name of the text encoding provided by the response's originating source. If no text encoding was provided by the protocol, this property's value is 'nil'. You can convert this string to a 'CFStringEncoding' value by calling 'CFStringConvertIANACharSetNameToEncoding(:)'. You can subsequently convert that value to an 'NSStringEncoding' value by calling 'CFStringConvertEncodingToNSStringEncoding(:)'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `textEncodingName` property of `NSURLResponse`.
+         * @details The name of the text encoding provided by the response's originating source. If no text encoding was provided by the protocol, this property's value is 'nil'. You can convert this string to a 'CFStringEncoding' value by calling 'CFStringConvertIANACharSetNameToEncoding(:)'. You can subsequently convert that value to an 'NSStringEncoding' value by calling 'CFStringConvertEncodingToNSStringEncoding(:)'.
+         * @return The converted Objective-C result.
+         */
         std::string text_encoding_name() const;
     };
 }

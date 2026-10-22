@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -1253,8 +1253,6 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a3f08682ddae77e06352bd7e488931435 pub_static_methods_classcocoon_1_1_text_field"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSTextField labelWithAttributedString:]</span>.  <br /></td></tr>
 <tr class="memitem:a089a784cf41c64d4dd60121da1b260f9 pub_static_methods_classcocoon_1_1_text_field" id="r_a089a784cf41c64d4dd60121da1b260f9"><td class="memItemLeft">static <a class="el" href="classcocoon_1_1_text_field.html#a5df1d7738d84b148ef088d2a3d0621e1">TextField</a>&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_text_field.html#a089a784cf41c64d4dd60121da1b260f9">label_with_string</a> (const std::string &amp;string_value)</td></tr>
 <tr class="memdesc:a089a784cf41c64d4dd60121da1b260f9 pub_static_methods_classcocoon_1_1_text_field"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSTextField labelWithString:]</span>.  <br /></td></tr>
-<tr class="memitem:ab7e58cfb60bc43d22932232c2046c288 pub_static_methods_classcocoon_1_1_text_field" id="r_ab7e58cfb60bc43d22932232c2046c288"><td class="memItemLeft">static <a class="el" href="classcocoon_1_1_text_field.html#a5df1d7738d84b148ef088d2a3d0621e1">TextField</a>&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_text_field.html#ab7e58cfb60bc43d22932232c2046c288">text_field_with_string</a> (const std::string &amp;string_value)</td></tr>
-<tr class="memdesc:ab7e58cfb60bc43d22932232c2046c288 pub_static_methods_classcocoon_1_1_text_field"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSTextField textFieldWithString:]</span>.  <br /></td></tr>
 <tr class="memitem:a10ba6b060bf5b5f51095719b916c0016 pub_static_methods_classcocoon_1_1_text_field" id="r_a10ba6b060bf5b5f51095719b916c0016"><td class="memItemLeft">static <a class="el" href="classcocoon_1_1_text_field.html#a5df1d7738d84b148ef088d2a3d0621e1">TextField</a>&#160;</td><td class="memItemRight"><a class="el" href="classcocoon_1_1_text_field.html#a10ba6b060bf5b5f51095719b916c0016">wrapping_label_with_string</a> (const std::string &amp;string_value)</td></tr>
 <tr class="memdesc:a10ba6b060bf5b5f51095719b916c0016 pub_static_methods_classcocoon_1_1_text_field"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSTextField wrappingLabelWithString:]</span>.  <br /></td></tr>
 <tr class="inherit_header pub_static_methods_classcocoon_1_1_control"><td colspan="2">Static Public Member Functions inherited from <a class="el" href="classcocoon_1_1_control.html">cocoon::Control</a></td></tr>
@@ -1285,7 +1283,7 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_search_field.html">cocoon::SearchField</a> search;</div>
 <div class="line">search.<a class="code hl_function" href="classcocoon_1_1_text_field.html#af7dc174d894467d6548553fa944a930e">editing_finished</a>().connect([] {});</div>
 <div class="ttc" id="aclasscocoon_1_1_search_field_html"><div class="ttname"><a href="classcocoon_1_1_search_field.html">cocoon::SearchField</a></div><div class="ttdoc">A search field (NSSearchField).</div><div class="ttdef"><b>Definition</b> search_field.h:44</div></div>
-<div class="ttc" id="aclasscocoon_1_1_text_field_html_af7dc174d894467d6548553fa944a930e"><div class="ttname"><a href="classcocoon_1_1_text_field.html#af7dc174d894467d6548553fa944a930e">cocoon::TextField::editing_finished</a></div><div class="ttdeci">Signal&lt; TextField, void()&gt; editing_finished() const</div><div class="ttdoc">Signal editing_finished: connect a callback with editing_finished().connect(...).</div><div class="ttdef"><b>Definition</b> text_field.h:391</div></div>
+<div class="ttc" id="aclasscocoon_1_1_text_field_html_af7dc174d894467d6548553fa944a930e"><div class="ttname"><a href="classcocoon_1_1_text_field.html#af7dc174d894467d6548553fa944a930e">cocoon::TextField::editing_finished</a></div><div class="ttdeci">Signal&lt; TextField, void()&gt; editing_finished() const</div><div class="ttdoc">Signal editing_finished: connect a callback with editing_finished().connect(...).</div><div class="ttdef"><b>Definition</b> text_field.h:384</div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_search_field.html">cocoon::SearchField</a> search_field{};</div>
 <div class="line">search_field.<a class="code hl_function" href="#aacff72d117604b1dff192584dfb7ab67">set_maximum_recents</a>(1);</div>

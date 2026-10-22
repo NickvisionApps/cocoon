@@ -31,40 +31,40 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit UnitElectricCharge(Adopt adopt);
         /**
-     * @brief Returns the `ampereHours` property of `NSUnitElectricCharge`.
-     * @details The ampere hours unit of electric charge.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `ampereHours` property of `NSUnitElectricCharge`.
+         * @details The ampere hours unit of electric charge.
+         * @return The converted Objective-C result.
+         */
         static UnitElectricCharge ampere_hours();
         /**
-     * @brief Returns the `coulombs` property of `NSUnitElectricCharge`.
-     * @details The coulombs unit of electric charge.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `coulombs` property of `NSUnitElectricCharge`.
+         * @details The coulombs unit of electric charge.
+         * @return The converted Objective-C result.
+         */
         static UnitElectricCharge coulombs();
         /**
-     * @brief Returns the `kiloampereHours` property of `NSUnitElectricCharge`.
-     * @details The kiloampere hours unit of electric charge.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `kiloampereHours` property of `NSUnitElectricCharge`.
+         * @details The kiloampere hours unit of electric charge.
+         * @return The converted Objective-C result.
+         */
         static UnitElectricCharge kiloampere_hours();
         /**
-     * @brief Returns the `megaampereHours` property of `NSUnitElectricCharge`.
-     * @details The megaampere hours unit of electric charge.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `megaampereHours` property of `NSUnitElectricCharge`.
+         * @details The megaampere hours unit of electric charge.
+         * @return The converted Objective-C result.
+         */
         static UnitElectricCharge megaampere_hours();
         /**
-     * @brief Returns the `microampereHours` property of `NSUnitElectricCharge`.
-     * @details The microampere hours unit of electric charge.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `microampereHours` property of `NSUnitElectricCharge`.
+         * @details The microampere hours unit of electric charge.
+         * @return The converted Objective-C result.
+         */
         static UnitElectricCharge microampere_hours();
         /**
-     * @brief Returns the `milliampereHours` property of `NSUnitElectricCharge`.
-     * @details The milliampere hours unit of electric charge.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `milliampereHours` property of `NSUnitElectricCharge`.
+         * @details The milliampere hours unit of electric charge.
+         * @return The converted Objective-C result.
+         */
         static UnitElectricCharge milliampere_hours();
     };
 }

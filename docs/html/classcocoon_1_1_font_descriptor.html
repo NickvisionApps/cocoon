@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -76,6 +76,10 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2292f378f475f01cbbdeb5571f954238" id="r_a2292f378f475f01cbbdeb5571f954238"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a2292f378f475f01cbbdeb5571f954238">FontDescriptor</a> (const std::map&lt; std::string, <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &gt; &amp;attributes)</td></tr>
 <tr class="memdesc:a2292f378f475f01cbbdeb5571f954238"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSFontDescriptor</span> instance and returns a handle to it.  <br /></td></tr>
+<tr class="memitem:a956acf0d9afde32c1b567a79a2917c52" id="r_a956acf0d9afde32c1b567a79a2917c52"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a956acf0d9afde32c1b567a79a2917c52">FontDescriptor</a> (const std::string &amp;font_name, const <a class="el" href="classcocoon_1_1_affine_transform.html">AffineTransform</a> &amp;matrix)</td></tr>
+<tr class="memdesc:a956acf0d9afde32c1b567a79a2917c52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSFontDescriptor</span> instance and returns a handle to it.  <br /></td></tr>
+<tr class="memitem:a6e453b87fc42469b6ffa88dd1495c491" id="r_a6e453b87fc42469b6ffa88dd1495c491"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a6e453b87fc42469b6ffa88dd1495c491">FontDescriptor</a> (const std::string &amp;font_name, double size)</td></tr>
+<tr class="memdesc:a6e453b87fc42469b6ffa88dd1495c491"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSFontDescriptor</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:ae7eaf88ac9b403844df4c5b6a03e763d" id="r_ae7eaf88ac9b403844df4c5b6a03e763d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ae7eaf88ac9b403844df4c5b6a03e763d">FontDescriptor</a> ()</td></tr>
 <tr class="memdesc:ae7eaf88ac9b403844df4c5b6a03e763d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <span class="tt">NSFontDescriptor</span> instance and returns a handle to it.  <br /></td></tr>
 <tr class="memitem:aa6ee43b8856ea0f62b663f6371cf76a1" id="r_aa6ee43b8856ea0f62b663f6371cf76a1"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa6ee43b8856ea0f62b663f6371cf76a1">FontDescriptor</a> (std::nullptr_t)</td></tr>
@@ -142,12 +146,6 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ad9b76e28d73137ed83c54ed95ae4cdef" id="r_ad9b76e28d73137ed83c54ed95ae4cdef"><td class="memItemLeft">static <a class="el" href="#a2292f378f475f01cbbdeb5571f954238">FontDescriptor</a>&#160;</td><td class="memItemRight"><a class="el" href="#ad9b76e28d73137ed83c54ed95ae4cdef">font_descriptor_with_font_attributes</a> (const std::map&lt; std::string, <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &gt; &amp;attributes)</td></tr>
-<tr class="memdesc:ad9b76e28d73137ed83c54ed95ae4cdef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSFontDescriptor fontDescriptorWithFontAttributes:]</span>.  <br /></td></tr>
-<tr class="memitem:a65af16a3465a7ee805f35b41d0063225" id="r_a65af16a3465a7ee805f35b41d0063225"><td class="memItemLeft">static <a class="el" href="#a2292f378f475f01cbbdeb5571f954238">FontDescriptor</a>&#160;</td><td class="memItemRight"><a class="el" href="#a65af16a3465a7ee805f35b41d0063225">font_descriptor_with_name</a> (const std::string &amp;font_name, const <a class="el" href="classcocoon_1_1_affine_transform.html">AffineTransform</a> &amp;matrix)</td></tr>
-<tr class="memdesc:a65af16a3465a7ee805f35b41d0063225"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSFontDescriptor fontDescriptorWithName:matrix:]</span>.  <br /></td></tr>
-<tr class="memitem:a7674b0413fc7cb289f08fc2cbc42ac43" id="r_a7674b0413fc7cb289f08fc2cbc42ac43"><td class="memItemLeft">static <a class="el" href="#a2292f378f475f01cbbdeb5571f954238">FontDescriptor</a>&#160;</td><td class="memItemRight"><a class="el" href="#a7674b0413fc7cb289f08fc2cbc42ac43">font_descriptor_with_name</a> (const std::string &amp;font_name, double size)</td></tr>
-<tr class="memdesc:a7674b0413fc7cb289f08fc2cbc42ac43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSFontDescriptor fontDescriptorWithName:size:]</span>.  <br /></td></tr>
 <tr class="memitem:a8a6e20f7c2afeac807ed7829d291fa9b" id="r_a8a6e20f7c2afeac807ed7829d291fa9b"><td class="memItemLeft">static <a class="el" href="#a2292f378f475f01cbbdeb5571f954238">FontDescriptor</a>&#160;</td><td class="memItemRight"><a class="el" href="#a8a6e20f7c2afeac807ed7829d291fa9b">preferred_font_descriptor_for_text_style</a> (const std::string &amp;style, const std::map&lt; std::string, <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &gt; &amp;options)</td></tr>
 <tr class="memdesc:a8a6e20f7c2afeac807ed7829d291fa9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSFontDescriptor preferredFontDescriptorForTextStyle:options:]</span>.  <br /></td></tr>
 </table>
@@ -157,24 +155,20 @@ Static Public Member Functions</h2></td></tr>
 <dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;cocoon.h&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_class" href="classcocoon_1_1_font_descriptor.html">cocoon::FontDescriptor</a> font_descriptor;</div>
-<div class="ttc" id="aclasscocoon_1_1_font_descriptor_html"><div class="ttname"><a href="classcocoon_1_1_font_descriptor.html">cocoon::FontDescriptor</a></div><div class="ttdoc">C++ handle for the Objective-C class NSFontDescriptor (AppKit).</div><div class="ttdef"><b>Definition</b> font_descriptor.h:37</div></div>
+<div class="ttc" id="aclasscocoon_1_1_font_descriptor_html"><div class="ttname"><a href="classcocoon_1_1_font_descriptor.html">cocoon::FontDescriptor</a></div><div class="ttdoc">C++ handle for the Objective-C class NSFontDescriptor (AppKit).</div><div class="ttdef"><b>Definition</b> font_descriptor.h:35</div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="section user"><dt>Common tasks</dt><dd>Snippets built from this class's own members (values are placeholders). <div class="fragment"><div class="line"><a class="code hl_class" href="classcocoon_1_1_font_descriptor.html">cocoon::FontDescriptor</a> font_descriptor{};</div>
-<div class="line"><span class="keyword">auto</span> made_0 = <a class="code hl_function" href="#a65af16a3465a7ee805f35b41d0063225">cocoon::FontDescriptor::font_descriptor_with_name</a>(<span class="stringliteral">&quot;text&quot;</span>, <a class="code hl_class" href="classcocoon_1_1_affine_transform.html">cocoon::AffineTransform</a>());</div>
-<div class="line"><span class="keyword">auto</span> made_1 = <a class="code hl_function" href="#a65af16a3465a7ee805f35b41d0063225">cocoon::FontDescriptor::font_descriptor_with_name</a>(<span class="stringliteral">&quot;text&quot;</span>, 1);</div>
 <div class="line">font_descriptor.<a class="code hl_function" href="#a7c1c2a0c75b9c1b41b80400670264131">font_descriptor_with_design</a>(<span class="stringliteral">&quot;text&quot;</span>);</div>
 <div class="line">font_descriptor.<a class="code hl_function" href="#a1e0b5ece14043c5a1de3f1a4a661c3cf">font_descriptor_with_face</a>(<span class="stringliteral">&quot;text&quot;</span>);</div>
 <div class="line">font_descriptor.<a class="code hl_function" href="#ac2a9cc1b05210ab9b073e6365b579c64">font_descriptor_with_family</a>(<span class="stringliteral">&quot;text&quot;</span>);</div>
-<div class="ttc" id="aclasscocoon_1_1_affine_transform_html"><div class="ttname"><a href="classcocoon_1_1_affine_transform.html">cocoon::AffineTransform</a></div><div class="ttdoc">C++ handle for the Objective-C class NSAffineTransform (Foundation).</div><div class="ttdef"><b>Definition</b> affine_transform.h:37</div></div>
 <div class="ttc" id="aclasscocoon_1_1_font_descriptor_html_a1e0b5ece14043c5a1de3f1a4a661c3cf"><div class="ttname"><a href="#a1e0b5ece14043c5a1de3f1a4a661c3cf">cocoon::FontDescriptor::font_descriptor_with_face</a></div><div class="ttdeci">FontDescriptor font_descriptor_with_face(const std::string &amp;new_face) const</div><div class="ttdoc">Calls -[NSFontDescriptor fontDescriptorWithFace:].</div></div>
-<div class="ttc" id="aclasscocoon_1_1_font_descriptor_html_a65af16a3465a7ee805f35b41d0063225"><div class="ttname"><a href="#a65af16a3465a7ee805f35b41d0063225">cocoon::FontDescriptor::font_descriptor_with_name</a></div><div class="ttdeci">static FontDescriptor font_descriptor_with_name(const std::string &amp;font_name, const AffineTransform &amp;matrix)</div><div class="ttdoc">Calls +[NSFontDescriptor fontDescriptorWithName:matrix:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_font_descriptor_html_a7c1c2a0c75b9c1b41b80400670264131"><div class="ttname"><a href="#a7c1c2a0c75b9c1b41b80400670264131">cocoon::FontDescriptor::font_descriptor_with_design</a></div><div class="ttdeci">FontDescriptor font_descriptor_with_design(const std::string &amp;design) const</div><div class="ttdoc">Calls -[NSFontDescriptor fontDescriptorWithDesign:].</div></div>
 <div class="ttc" id="aclasscocoon_1_1_font_descriptor_html_ac2a9cc1b05210ab9b073e6365b579c64"><div class="ttname"><a href="#ac2a9cc1b05210ab9b073e6365b579c64">cocoon::FontDescriptor::font_descriptor_with_family</a></div><div class="ttdeci">FontDescriptor font_descriptor_with_family(const std::string &amp;new_family) const</div><div class="ttdoc">Calls -[NSFontDescriptor fontDescriptorWithFamily:].</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://developer.apple.com/documentation/appkit/nsfontdescriptor">https://developer.apple.com/documentation/appkit/nsfontdescriptor</a> </dd></dl>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a2292f378f475f01cbbdeb5571f954238" name="a2292f378f475f01cbbdeb5571f954238"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2292f378f475f01cbbdeb5571f954238">&#9670;&#160;</a></span>FontDescriptor() <span class="overload">[1/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2292f378f475f01cbbdeb5571f954238">&#9670;&#160;</a></span>FontDescriptor() <span class="overload">[1/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -200,8 +194,70 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a956acf0d9afde32c1b567a79a2917c52" name="a956acf0d9afde32c1b567a79a2917c52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a956acf0d9afde32c1b567a79a2917c52">&#9670;&#160;</a></span>FontDescriptor() <span class="overload">[2/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::FontDescriptor::FontDescriptor </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>font_name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcocoon_1_1_affine_transform.html">AffineTransform</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>matrix</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSFontDescriptor</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
+<a id="a6e453b87fc42469b6ffa88dd1495c491" name="a6e453b87fc42469b6ffa88dd1495c491"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e453b87fc42469b6ffa88dd1495c491">&#9670;&#160;</a></span>FontDescriptor() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cocoon::FontDescriptor::FontDescriptor </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>font_name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <span class="tt">NSFontDescriptor</span> instance and returns a handle to it. </p>
+
+</div>
+</div>
 <a id="ae7eaf88ac9b403844df4c5b6a03e763d" name="ae7eaf88ac9b403844df4c5b6a03e763d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae7eaf88ac9b403844df4c5b6a03e763d">&#9670;&#160;</a></span>FontDescriptor() <span class="overload">[2/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7eaf88ac9b403844df4c5b6a03e763d">&#9670;&#160;</a></span>FontDescriptor() <span class="overload">[4/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -228,7 +284,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="aa6ee43b8856ea0f62b663f6371cf76a1" name="aa6ee43b8856ea0f62b663f6371cf76a1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa6ee43b8856ea0f62b663f6371cf76a1">&#9670;&#160;</a></span>FontDescriptor() <span class="overload">[3/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6ee43b8856ea0f62b663f6371cf76a1">&#9670;&#160;</a></span>FontDescriptor() <span class="overload">[5/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -247,7 +303,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a72bd5d8df1fe00f197e5fb98f11ea137" name="a72bd5d8df1fe00f197e5fb98f11ea137"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a72bd5d8df1fe00f197e5fb98f11ea137">&#9670;&#160;</a></span>FontDescriptor() <span class="overload">[4/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a72bd5d8df1fe00f197e5fb98f11ea137">&#9670;&#160;</a></span>FontDescriptor() <span class="overload">[6/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -398,40 +454,6 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ad9b76e28d73137ed83c54ed95ae4cdef" name="ad9b76e28d73137ed83c54ed95ae4cdef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9b76e28d73137ed83c54ed95ae4cdef">&#9670;&#160;</a></span>font_descriptor_with_font_attributes()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a2292f378f475f01cbbdeb5571f954238">FontDescriptor</a> cocoon::FontDescriptor::font_descriptor_with_font_attributes </td>
-          <td>(</td>
-          <td class="paramtype">const std::map&lt; std::string, <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>attributes</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSFontDescriptor fontDescriptorWithFontAttributes:]</span>. </p>
-<p>Instantiation </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">attributes</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
 <a id="a5fed397e1d98de5af80e798576c768bf" name="a5fed397e1d98de5af80e798576c768bf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5fed397e1d98de5af80e798576c768bf">&#9670;&#160;</a></span>font_descriptor_with_matrix()</h2>
 
@@ -451,84 +473,6 @@ Static Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">matrix</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a65af16a3465a7ee805f35b41d0063225" name="a65af16a3465a7ee805f35b41d0063225"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a65af16a3465a7ee805f35b41d0063225">&#9670;&#160;</a></span>font_descriptor_with_name() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a2292f378f475f01cbbdeb5571f954238">FontDescriptor</a> cocoon::FontDescriptor::font_descriptor_with_name </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>font_name</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classcocoon_1_1_affine_transform.html">AffineTransform</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>matrix</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSFontDescriptor fontDescriptorWithName:matrix:]</span>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">font_name</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">matrix</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a7674b0413fc7cb289f08fc2cbc42ac43" name="a7674b0413fc7cb289f08fc2cbc42ac43"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7674b0413fc7cb289f08fc2cbc42ac43">&#9670;&#160;</a></span>font_descriptor_with_name() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a2292f378f475f01cbbdeb5571f954238">FontDescriptor</a> cocoon::FontDescriptor::font_descriptor_with_name </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>font_name</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSFontDescriptor fontDescriptorWithName:size:]</span>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">font_name</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">size</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
   </table>
   </dd>
 </dl>

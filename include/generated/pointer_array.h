@@ -29,8 +29,8 @@ namespace cocoon
      * cocoon::PointerArray pointer_array{};
      * pointer_array.set_count(1);
      * auto count = pointer_array.count();
-     * auto made_0 = cocoon::PointerArray::pointer_array_with_options(cocoon::PointerFunctionsOptions::StrongMemory);
-     * auto made_1 = cocoon::PointerArray::pointer_array_with_pointer_functions(cocoon::PointerFunctions());
+     * auto made_0 = cocoon::PointerArray::strong_objects_pointer_array();
+     * auto made_1 = cocoon::PointerArray::weak_objects_pointer_array();
      * pointer_array.compact();
      * pointer_array.pointer_at_index(1);
      * pointer_array.remove_pointer_at_index(1);
@@ -51,92 +51,78 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit PointerArray(Adopt adopt);
         /**
-     * @brief Calls `-[NSPointerArray addPointer:]`.
-     * @details Adds a given pointer to the receiver. 'pointer' is added at index 'count'. - Parameter pointer: The pointer to add. This value may be 'NULL'.
-     * @param pointer Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSPointerArray addPointer:]`.
+         * @details Adds a given pointer to the receiver. 'pointer' is added at index 'count'. - Parameter pointer: The pointer to add. This value may be 'NULL'.
+         * @param pointer Argument converted to the Objective-C parameter of the same role.
+         */
         void add_pointer(void* pointer) const;
         /**
-     * @brief Calls `-[NSPointerArray compact]`.
-     * @details Removes 'NULL' values from the receiver.
-     */
+         * @brief Calls `-[NSPointerArray compact]`.
+         * @details Removes 'NULL' values from the receiver.
+         */
         void compact() const;
         /**
-     * @brief Calls `-[NSPointerArray insertPointer:atIndex:]`.
-     * @details Inserts a pointer at a given index. Elements at and above 'index', including 'NULL' values, slide higher. - Parameter item: The pointer to add. - Parameter index: The index of an element in the receiver. This value must be less than the count of the receiver.
-     * @param item Argument converted to the Objective-C parameter of the same role.
-     * @param index Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSPointerArray insertPointer:atIndex:]`.
+         * @details Inserts a pointer at a given index. Elements at and above 'index', including 'NULL' values, slide higher. - Parameter item: The pointer to add. - Parameter index: The index of an element in the receiver. This value must be less than the count of the receiver.
+         * @param item Argument converted to the Objective-C parameter of the same role.
+         * @param index Argument converted to the Objective-C parameter of the same role.
+         */
         void insert_pointer(void* item, std::uint64_t index) const;
         /**
-     * @brief Calls `+[NSPointerArray pointerArrayWithOptions:]`.
-     * @details Returns a new pointer array initialized to use the given options. - Parameter options: The pointer functions options for the new instance. - Returns: A new pointer array initialized to use the given options.
-     * @param options Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static PointerArray pointer_array_with_options(PointerFunctionsOptions options);
-        /**
-     * @brief Calls `+[NSPointerArray pointerArrayWithPointerFunctions:]`.
-     * @details A new pointer array initialized to use the given functions. - Parameter functions: The pointer functions for the new instance. - Returns: A new pointer array initialized to use the given pointer functions.
-     * @param functions Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static PointerArray pointer_array_with_pointer_functions(const PointerFunctions& functions);
-        /**
-     * @brief Calls `-[NSPointerArray pointerAtIndex:]`.
-     * @details Returns the pointer at a given index. The returned value may be 'NULL'. - Parameter index: The index of an element in the receiver. This value must be less than the count of the receiver. - Returns: The pointer at 'index'.
-     * @param index Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSPointerArray pointerAtIndex:]`.
+         * @details Returns the pointer at a given index. The returned value may be 'NULL'. - Parameter index: The index of an element in the receiver. This value must be less than the count of the receiver. - Returns: The pointer at 'index'.
+         * @param index Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         void* pointer_at_index(std::uint64_t index) const;
         /**
-     * @brief Calls `-[NSPointerArray removePointerAtIndex:]`.
-     * @details Removes the pointer at a given index. Elements above 'index', including 'NULL' values, slide lower. - Parameter index: The index of an element in the receiver. This value must be less than the count of the receiver.
-     * @param index Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSPointerArray removePointerAtIndex:]`.
+         * @details Removes the pointer at a given index. Elements above 'index', including 'NULL' values, slide lower. - Parameter index: The index of an element in the receiver. This value must be less than the count of the receiver.
+         * @param index Argument converted to the Objective-C parameter of the same role.
+         */
         void remove_pointer_at_index(std::uint64_t index) const;
         /**
-     * @brief Calls `-[NSPointerArray replacePointerAtIndex:withPointer:]`.
-     * @details Replaces the pointer at a given index. - Parameter index: The index of an element in the receiver. This value must be less than the count of the receiver. - Parameter item: The item with which to replace the element at 'index'. This value may be 'NULL'.
-     * @param index Argument converted to the Objective-C parameter of the same role.
-     * @param item Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSPointerArray replacePointerAtIndex:withPointer:]`.
+         * @details Replaces the pointer at a given index. - Parameter index: The index of an element in the receiver. This value must be less than the count of the receiver. - Parameter item: The item with which to replace the element at 'index'. This value may be 'NULL'.
+         * @param index Argument converted to the Objective-C parameter of the same role.
+         * @param item Argument converted to the Objective-C parameter of the same role.
+         */
         void replace_pointer_at_index(std::uint64_t index, void* item) const;
         /**
-     * @brief Calls `+[NSPointerArray strongObjectsPointerArray]`.
-     * @details Returns a new pointer array that maintains strong references to its elements.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSPointerArray strongObjectsPointerArray]`.
+         * @details Returns a new pointer array that maintains strong references to its elements.
+         * @return The converted Objective-C result.
+         */
         static PointerArray strong_objects_pointer_array();
         /**
-     * @brief Calls `+[NSPointerArray weakObjectsPointerArray]`.
-     * @details Returns a new pointer array that maintains weak references to its elements.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSPointerArray weakObjectsPointerArray]`.
+         * @details Returns a new pointer array that maintains weak references to its elements.
+         * @return The converted Objective-C result.
+         */
         static PointerArray weak_objects_pointer_array();
         /**
-     * @brief Returns the `allObjects` property of `NSPointerArray`.
-     * @details All the objects in the receiver.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `allObjects` property of `NSPointerArray`.
+         * @details All the objects in the receiver.
+         * @return The converted Objective-C result.
+         */
         std::vector<Object> all_objects() const;
         /**
-     * @brief Returns the `count` property of `NSPointerArray`.
-     * @details The number of elements in the receiver. If you increase the 'count', 'NULL' values are added. If you decrease the 'count', elements at indexes 'count' and greater are removed.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `count` property of `NSPointerArray`.
+         * @details The number of elements in the receiver. If you increase the 'count', 'NULL' values are added. If you decrease the 'count', elements at indexes 'count' and greater are removed.
+         * @return The converted Objective-C result.
+         */
         std::uint64_t count() const;
         /**
-     * @brief Sets the `count` property of `NSPointerArray`.
-     * @details The number of elements in the receiver. If you increase the 'count', 'NULL' values are added. If you decrease the 'count', elements at indexes 'count' and greater are removed.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `count` property of `NSPointerArray`.
+         * @details The number of elements in the receiver. If you increase the 'count', 'NULL' values are added. If you decrease the 'count', elements at indexes 'count' and greater are removed.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_count(std::uint64_t value) const;
         /**
-     * @brief Returns the `pointerFunctions` property of `NSPointerArray`.
-     * @details The functions in use by the receiver. The returned object is a new 'NSPointerFunctions' object that you can modify and/or use directly to create other pointer collections.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `pointerFunctions` property of `NSPointerArray`.
+         * @details The functions in use by the receiver. The returned object is a new 'NSPointerFunctions' object that you can modify and/or use directly to create other pointer collections.
+         * @return The converted Objective-C result.
+         */
         PointerFunctions pointer_functions() const;
     };
 }

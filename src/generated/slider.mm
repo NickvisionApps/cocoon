@@ -8,6 +8,16 @@ namespace cocoon
         Slider::bind_action_(handle());
     }
 
+    Slider::Slider(const Object& target, const std::string& action) : Slider(Adopt{cocoon::internal::retain([::NSSlider sliderWithTarget:cocoon::internal::native_id(target) action:NSSelectorFromString(cocoon::internal::to(action))])})
+    {
+        Slider::bind_action_(handle());
+    }
+
+    Slider::Slider(double value, double min_value, double max_value, const Object& target, const std::string& action) : Slider(Adopt{cocoon::internal::retain([::NSSlider sliderWithValue:static_cast<double>(value) minValue:static_cast<double>(min_value) maxValue:static_cast<double>(max_value) target:cocoon::internal::native_id(target) action:NSSelectorFromString(cocoon::internal::to(action))])})
+    {
+        Slider::bind_action_(handle());
+    }
+
     Slider::Slider(std::nullptr_t) : Control(nullptr)
     {
     }
@@ -34,16 +44,6 @@ namespace cocoon
     Rect Slider::rect_of_tick_mark_at_index(std::int64_t index) const
     {
         return cocoon::internal::from([cocoon::internal::ns<::NSSlider>(this) rectOfTickMarkAtIndex:static_cast<::NSInteger>(index)]);
-    }
-
-    Slider Slider::slider_with_target(const Object& target, const std::string& action)
-    {
-        return cocoon::internal::wrap<Slider>([::NSSlider sliderWithTarget:cocoon::internal::native_id(target) action:NSSelectorFromString(cocoon::internal::to(action))]);
-    }
-
-    Slider Slider::slider_with_value(double value, double min_value, double max_value, const Object& target, const std::string& action)
-    {
-        return cocoon::internal::wrap<Slider>([::NSSlider sliderWithValue:static_cast<double>(value) minValue:static_cast<double>(min_value) maxValue:static_cast<double>(max_value) target:cocoon::internal::native_id(target) action:NSSelectorFromString(cocoon::internal::to(action))]);
     }
 
     double Slider::tick_mark_value_at_index(std::int64_t index) const

@@ -11,6 +11,18 @@ namespace cocoon
     {
     }
 
+    Timer::Timer(double ti, const Invocation& invocation, bool yes_or_no) : Timer(Adopt{cocoon::internal::retain([::NSTimer timerWithTimeInterval:static_cast<::NSTimeInterval>(ti) invocation:cocoon::internal::native<::NSInvocation>(invocation) repeats:static_cast<::BOOL>(yes_or_no)])})
+    {
+    }
+
+    Timer::Timer(double interval, bool repeats, std::function<void(Timer)> block) : Timer(Adopt{cocoon::internal::retain([::NSTimer timerWithTimeInterval:static_cast<::NSTimeInterval>(interval) repeats:static_cast<::BOOL>(repeats) block:(block ? (void (^)(::NSTimer*)) ^ void(::NSTimer * a227_0) { block(cocoon::internal::wrap<Timer>(a227_0)); } : (void (^)(::NSTimer*))nil)])})
+    {
+    }
+
+    Timer::Timer(double ti, const Object& a_target, const std::string& a_selector, const Object& user_info, bool yes_or_no) : Timer(Adopt{cocoon::internal::retain([::NSTimer timerWithTimeInterval:static_cast<::NSTimeInterval>(ti) target:cocoon::internal::native_id(a_target) selector:NSSelectorFromString(cocoon::internal::to(a_selector)) userInfo:cocoon::internal::native_id(user_info) repeats:static_cast<::BOOL>(yes_or_no)])})
+    {
+    }
+
     Timer::Timer() : Timer(Adopt{cocoon::internal::retain([[::NSTimer alloc] init])})
     {
     }
@@ -46,21 +58,6 @@ namespace cocoon
     Timer Timer::scheduled_timer_with_time_interval(double ti, const Object& a_target, const std::string& a_selector, const Object& user_info, bool yes_or_no)
     {
         return cocoon::internal::wrap<Timer>([::NSTimer scheduledTimerWithTimeInterval:static_cast<::NSTimeInterval>(ti) target:cocoon::internal::native_id(a_target) selector:NSSelectorFromString(cocoon::internal::to(a_selector)) userInfo:cocoon::internal::native_id(user_info) repeats:static_cast<::BOOL>(yes_or_no)]);
-    }
-
-    Timer Timer::timer_with_time_interval(double ti, const Invocation& invocation, bool yes_or_no)
-    {
-        return cocoon::internal::wrap<Timer>([::NSTimer timerWithTimeInterval:static_cast<::NSTimeInterval>(ti) invocation:cocoon::internal::native<::NSInvocation>(invocation) repeats:static_cast<::BOOL>(yes_or_no)]);
-    }
-
-    Timer Timer::timer_with_time_interval(double interval, bool repeats, std::function<void(Timer)> block)
-    {
-        return cocoon::internal::wrap<Timer>([::NSTimer timerWithTimeInterval:static_cast<::NSTimeInterval>(interval) repeats:static_cast<::BOOL>(repeats) block:(block ? (void (^)(::NSTimer*)) ^ void(::NSTimer * a227_0) { block(cocoon::internal::wrap<Timer>(a227_0)); } : (void (^)(::NSTimer*))nil)]);
-    }
-
-    Timer Timer::timer_with_time_interval(double ti, const Object& a_target, const std::string& a_selector, const Object& user_info, bool yes_or_no)
-    {
-        return cocoon::internal::wrap<Timer>([::NSTimer timerWithTimeInterval:static_cast<::NSTimeInterval>(ti) target:cocoon::internal::native_id(a_target) selector:NSSelectorFromString(cocoon::internal::to(a_selector)) userInfo:cocoon::internal::native_id(user_info) repeats:static_cast<::BOOL>(yes_or_no)]);
     }
 
     Date Timer::fire_date() const

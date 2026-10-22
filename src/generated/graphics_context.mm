@@ -3,6 +3,25 @@
 
 namespace cocoon
 {
+    GraphicsContext::GraphicsContext(const std::map<std::string, Object>& attributes) : GraphicsContext(Adopt{cocoon::internal::retain([::NSGraphicsContext graphicsContextWithAttributes:cocoon::internal::to_dictionary(attributes, [](const std::string& k) -> id
+                                                                                                                                                                                                                          {
+                                                                                                                                                                                                                              return cocoon::internal::to(k);
+                                                                                                                                                                                                                          },
+                                                                                                                                                                                                                          [](const Object& v) -> id
+                                                                                                                                                                                                                          {
+                                                                                                                                                                                                                              return cocoon::internal::native_id(v);
+                                                                                                                                                                                                                          })])})
+    {
+    }
+
+    GraphicsContext::GraphicsContext(const BitmapImageRep& bitmap_rep) : GraphicsContext(Adopt{cocoon::internal::retain([::NSGraphicsContext graphicsContextWithBitmapImageRep:cocoon::internal::native<::NSBitmapImageRep>(bitmap_rep)])})
+    {
+    }
+
+    GraphicsContext::GraphicsContext(const CGContext& graphics_port, bool initial_flipped_state) : GraphicsContext(Adopt{cocoon::internal::retain([::NSGraphicsContext graphicsContextWithCGContext:((::CGContextRef)(graphics_port).handle()) flipped:static_cast<::BOOL>(initial_flipped_state)])})
+    {
+    }
+
     GraphicsContext::GraphicsContext() : GraphicsContext(Adopt{cocoon::internal::retain([[::NSGraphicsContext alloc] init])})
     {
     }
@@ -23,28 +42,6 @@ namespace cocoon
     void GraphicsContext::flush_graphics() const
     {
         [cocoon::internal::ns<::NSGraphicsContext>(this) flushGraphics];
-    }
-
-    GraphicsContext GraphicsContext::graphics_context_with_attributes(const std::map<std::string, Object>& attributes)
-    {
-        return cocoon::internal::wrap<GraphicsContext>([::NSGraphicsContext graphicsContextWithAttributes:cocoon::internal::to_dictionary(attributes, [](const std::string& k) -> id
-                                                                                                                                          {
-                                                                                                                                              return cocoon::internal::to(k);
-                                                                                                                                          },
-                                                                                                                                          [](const Object& v) -> id
-                                                                                                                                          {
-                                                                                                                                              return cocoon::internal::native_id(v);
-                                                                                                                                          })]);
-    }
-
-    GraphicsContext GraphicsContext::graphics_context_with_bitmap_image_rep(const BitmapImageRep& bitmap_rep)
-    {
-        return cocoon::internal::wrap<GraphicsContext>([::NSGraphicsContext graphicsContextWithBitmapImageRep:cocoon::internal::native<::NSBitmapImageRep>(bitmap_rep)]);
-    }
-
-    GraphicsContext GraphicsContext::graphics_context_with_cg_context(const CGContext& graphics_port, bool initial_flipped_state)
-    {
-        return cocoon::internal::wrap<GraphicsContext>([::NSGraphicsContext graphicsContextWithCGContext:((::CGContextRef)(graphics_port).handle()) flipped:static_cast<::BOOL>(initial_flipped_state)]);
     }
 
     void GraphicsContext::restore_graphics_state() const

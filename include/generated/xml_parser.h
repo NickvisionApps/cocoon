@@ -59,105 +59,105 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit XMLParser(Adopt adopt);
         /**
-     * @brief Calls `-[NSXMLParser abortParsing]`.
-     * @details Stops the parser object. If you invoke this method, the delegate, if it implements '-parser:parseErrorOccurred:', is informed of the cancelled parsing operation.
-     */
+         * @brief Calls `-[NSXMLParser abortParsing]`.
+         * @details Stops the parser object. If you invoke this method, the delegate, if it implements '-parser:parseErrorOccurred:', is informed of the cancelled parsing operation.
+         */
         void abort_parsing() const;
         /**
-     * @brief Calls `-[NSXMLParser parse]`.
-     * @details Starts the event-driven parsing operation. - Returns: 'YES' if the parsing operation succeeds; 'NO' if an error occurs or if the parsing operation aborts.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSXMLParser parse]`.
+         * @details Starts the event-driven parsing operation. - Returns: 'YES' if the parsing operation succeeds; 'NO' if an error occurs or if the parsing operation aborts.
+         * @return The converted Objective-C result.
+         */
         bool parse() const;
         /**
-     * @brief Returns the `allowedExternalEntityURLs` property of `NSXMLParser`.
-     * @details The set of external entity URLs that the parser is allowed to load.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `allowedExternalEntityURLs` property of `NSXMLParser`.
+         * @details The set of external entity URLs that the parser is allowed to load.
+         * @return The converted Objective-C result.
+         */
         std::vector<URL> allowed_external_entity_urls() const;
         /**
-     * @brief Sets the `allowedExternalEntityURLs` property of `NSXMLParser`.
-     * @details The set of external entity URLs that the parser is allowed to load.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `allowedExternalEntityURLs` property of `NSXMLParser`.
+         * @details The set of external entity URLs that the parser is allowed to load.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_allowed_external_entity_urls(const std::vector<URL>& value) const;
         /**
-     * @brief Returns the `columnNumber` property of `NSXMLParser`.
-     * @details The column number of the XML document being processed by the parser. The column refers to the nesting level of the XML elements in the document. You may access this property once a parsing operation has begun or after an error occurs.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `columnNumber` property of `NSXMLParser`.
+         * @details The column number of the XML document being processed by the parser. The column refers to the nesting level of the XML elements in the document. You may access this property once a parsing operation has begun or after an error occurs.
+         * @return The converted Objective-C result.
+         */
         std::int64_t column_number() const;
         /**
-     * @brief Returns the `externalEntityResolvingPolicy` property of `NSXMLParser`.
-     * @details The external entity resolving policy for the parser. Defaults to 'NSXMLParserResolveExternalEntitiesNever'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `externalEntityResolvingPolicy` property of `NSXMLParser`.
+         * @details The external entity resolving policy for the parser. Defaults to 'NSXMLParserResolveExternalEntitiesNever'.
+         * @return The converted Objective-C result.
+         */
         XMLParserExternalEntityResolvingPolicy external_entity_resolving_policy() const;
         /**
-     * @brief Sets the `externalEntityResolvingPolicy` property of `NSXMLParser`.
-     * @details The external entity resolving policy for the parser. Defaults to 'NSXMLParserResolveExternalEntitiesNever'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `externalEntityResolvingPolicy` property of `NSXMLParser`.
+         * @details The external entity resolving policy for the parser. Defaults to 'NSXMLParserResolveExternalEntitiesNever'.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_external_entity_resolving_policy(XMLParserExternalEntityResolvingPolicy value) const;
         /**
-     * @brief Returns the `lineNumber` property of `NSXMLParser`.
-     * @details The line number of the XML document being processed by the parser. You may access this property once a parsing operation has begun or after an error occurs.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `lineNumber` property of `NSXMLParser`.
+         * @details The line number of the XML document being processed by the parser. You may access this property once a parsing operation has begun or after an error occurs.
+         * @return The converted Objective-C result.
+         */
         std::int64_t line_number() const;
         /**
-     * @brief Returns the `parserError` property of `NSXMLParser`.
-     * @details An 'NSError' object from which you can obtain information about a parsing error. You may access this property after a parsing operation abnormally terminates to determine the cause of error.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `parserError` property of `NSXMLParser`.
+         * @details An 'NSError' object from which you can obtain information about a parsing error. You may access this property after a parsing operation abnormally terminates to determine the cause of error.
+         * @return The converted Objective-C result.
+         */
         Error parser_error() const;
         /**
-     * @brief Returns the `publicID` property of `NSXMLParser`.
-     * @details The public identifier of the external entity referenced in the XML document. You may access this property once a parsing operation has begun or after an error occurs.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `publicID` property of `NSXMLParser`.
+         * @details The public identifier of the external entity referenced in the XML document. You may access this property once a parsing operation has begun or after an error occurs.
+         * @return The converted Objective-C result.
+         */
         std::string public_id() const;
         /**
-     * @brief Returns the `shouldProcessNamespaces` property of `NSXMLParser`.
-     * @details A Boolean value that determines whether the parser reports the namespaces and qualified names of elements. 'YES' if the parser reports namespace and qualified name, 'NO' otherwise. The parser reports element names with the delegate methods '-parser:didStartElement:namespaceURI:qualifiedName:attributes:' and '-parser:didEndElement:namespaceURI:qualifiedName:'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `shouldProcessNamespaces` property of `NSXMLParser`.
+         * @details A Boolean value that determines whether the parser reports the namespaces and qualified names of elements. 'YES' if the parser reports namespace and qualified name, 'NO' otherwise. The parser reports element names with the delegate methods '-parser:didStartElement:namespaceURI:qualifiedName:attributes:' and '-parser:didEndElement:namespaceURI:qualifiedName:'.
+         * @return The converted Objective-C result.
+         */
         bool should_process_namespaces() const;
         /**
-     * @brief Sets the `shouldProcessNamespaces` property of `NSXMLParser`.
-     * @details A Boolean value that determines whether the parser reports the namespaces and qualified names of elements. 'YES' if the parser reports namespace and qualified name, 'NO' otherwise. The parser reports element names with the delegate methods '-parser:didStartElement:namespaceURI:qualifiedName:attributes:' and '-parser:didEndElement:namespaceURI:qualifiedName:'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `shouldProcessNamespaces` property of `NSXMLParser`.
+         * @details A Boolean value that determines whether the parser reports the namespaces and qualified names of elements. 'YES' if the parser reports namespace and qualified name, 'NO' otherwise. The parser reports element names with the delegate methods '-parser:didStartElement:namespaceURI:qualifiedName:attributes:' and '-parser:didEndElement:namespaceURI:qualifiedName:'.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_should_process_namespaces(bool value) const;
         /**
-     * @brief Returns the `shouldReportNamespacePrefixes` property of `NSXMLParser`.
-     * @details A Boolean value that determines whether the parser reports the prefixes indicating the scope of namespace declarations. 'YES' if the parser reports the scope of namespace declarations, 'NO' otherwise. The default value is 'NO'. The parser reports prefixes with the delegate methods '-parser:didStartMappingPrefix:toURI:' and '-parser:didEndMappingPrefix:'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `shouldReportNamespacePrefixes` property of `NSXMLParser`.
+         * @details A Boolean value that determines whether the parser reports the prefixes indicating the scope of namespace declarations. 'YES' if the parser reports the scope of namespace declarations, 'NO' otherwise. The default value is 'NO'. The parser reports prefixes with the delegate methods '-parser:didStartMappingPrefix:toURI:' and '-parser:didEndMappingPrefix:'.
+         * @return The converted Objective-C result.
+         */
         bool should_report_namespace_prefixes() const;
         /**
-     * @brief Sets the `shouldReportNamespacePrefixes` property of `NSXMLParser`.
-     * @details A Boolean value that determines whether the parser reports the prefixes indicating the scope of namespace declarations. 'YES' if the parser reports the scope of namespace declarations, 'NO' otherwise. The default value is 'NO'. The parser reports prefixes with the delegate methods '-parser:didStartMappingPrefix:toURI:' and '-parser:didEndMappingPrefix:'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `shouldReportNamespacePrefixes` property of `NSXMLParser`.
+         * @details A Boolean value that determines whether the parser reports the prefixes indicating the scope of namespace declarations. 'YES' if the parser reports the scope of namespace declarations, 'NO' otherwise. The default value is 'NO'. The parser reports prefixes with the delegate methods '-parser:didStartMappingPrefix:toURI:' and '-parser:didEndMappingPrefix:'.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_should_report_namespace_prefixes(bool value) const;
         /**
-     * @brief Returns the `shouldResolveExternalEntities` property of `NSXMLParser`.
-     * @details A Boolean value that determines whether the parser reports declarations of external entities. 'YES' if the parser reports declarations of external entities, 'NO' otherwise. The default value is 'NO'. If you set this property to 'YES', you may cause other I/O operations, either network-based or disk-based, to load the external DTD. Toggles between disabling external entities entirely, and the current setting of the 'externalEntityResolvingPolicy'. The 'externalEntityResolvingPolicy' property should be used instead of this, unless targeting 10.9/7.0 or earlier.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `shouldResolveExternalEntities` property of `NSXMLParser`.
+         * @details A Boolean value that determines whether the parser reports declarations of external entities. 'YES' if the parser reports declarations of external entities, 'NO' otherwise. The default value is 'NO'. If you set this property to 'YES', you may cause other I/O operations, either network-based or disk-based, to load the external DTD. Toggles between disabling external entities entirely, and the current setting of the 'externalEntityResolvingPolicy'. The 'externalEntityResolvingPolicy' property should be used instead of this, unless targeting 10.9/7.0 or earlier.
+         * @return The converted Objective-C result.
+         */
         bool should_resolve_external_entities() const;
         /**
-     * @brief Sets the `shouldResolveExternalEntities` property of `NSXMLParser`.
-     * @details A Boolean value that determines whether the parser reports declarations of external entities. 'YES' if the parser reports declarations of external entities, 'NO' otherwise. The default value is 'NO'. If you set this property to 'YES', you may cause other I/O operations, either network-based or disk-based, to load the external DTD. Toggles between disabling external entities entirely, and the current setting of the 'externalEntityResolvingPolicy'. The 'externalEntityResolvingPolicy' property should be used instead of this, unless targeting 10.9/7.0 or earlier.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `shouldResolveExternalEntities` property of `NSXMLParser`.
+         * @details A Boolean value that determines whether the parser reports declarations of external entities. 'YES' if the parser reports declarations of external entities, 'NO' otherwise. The default value is 'NO'. If you set this property to 'YES', you may cause other I/O operations, either network-based or disk-based, to load the external DTD. Toggles between disabling external entities entirely, and the current setting of the 'externalEntityResolvingPolicy'. The 'externalEntityResolvingPolicy' property should be used instead of this, unless targeting 10.9/7.0 or earlier.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_should_resolve_external_entities(bool value) const;
         /**
-     * @brief Returns the `systemID` property of `NSXMLParser`.
-     * @details The system identifier of the external entity referenced in the XML document. You may access this property once a parsing operation has begun or after an error occurs.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `systemID` property of `NSXMLParser`.
+         * @details The system identifier of the external entity referenced in the XML document. You may access this property once a parsing operation has begun or after an error occurs.
+         * @return The converted Objective-C result.
+         */
         std::string system_id() const;
         /// @brief Signal for the delegate/data-source method behind `parser_did_start_document`; connect a callback with `parser_did_start_document().connect(...)`.
         Signal<XMLParser, void()> parser_did_start_document() const

@@ -47,52 +47,52 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit WindowTab(Adopt adopt);
         /**
-     * @brief Returns the `accessoryView` property of `NSWindowTab`.
-     * @details Get and set the accessory view for this window when it is in a tabbed window. translatesAutoresizingMaskIntoConstraints will automatically be set to NO on the view. Constraints can be created and activated to specify the view's width and height values. A constraint will automatically be added to y-center the view, and to right align the view.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `accessoryView` property of `NSWindowTab`.
+         * @details Get and set the accessory view for this window when it is in a tabbed window. translatesAutoresizingMaskIntoConstraints will automatically be set to NO on the view. Constraints can be created and activated to specify the view's width and height values. A constraint will automatically be added to y-center the view, and to right align the view.
+         * @return The converted Objective-C result.
+         */
         View accessory_view() const;
         /**
-     * @brief Sets the `accessoryView` property of `NSWindowTab`.
-     * @details Get and set the accessory view for this window when it is in a tabbed window. translatesAutoresizingMaskIntoConstraints will automatically be set to NO on the view. Constraints can be created and activated to specify the view's width and height values. A constraint will automatically be added to y-center the view, and to right align the view.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `accessoryView` property of `NSWindowTab`.
+         * @details Get and set the accessory view for this window when it is in a tabbed window. translatesAutoresizingMaskIntoConstraints will automatically be set to NO on the view. Constraints can be created and activated to specify the view's width and height values. A constraint will automatically be added to y-center the view, and to right align the view.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_accessory_view(const View& value) const;
         /**
-     * @brief Returns the `attributedTitle` property of `NSWindowTab`.
-     * @details The attributed string tab title for this window when in a tab. This value is only used when non-nil; otherwise the title is used. The attributedTitle will use the provided attributes that are explicitly given. Attributes not given, such as the font type, color and size, will default to the correct values for the window tab.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `attributedTitle` property of `NSWindowTab`.
+         * @details The attributed string tab title for this window when in a tab. This value is only used when non-nil; otherwise the title is used. The attributedTitle will use the provided attributes that are explicitly given. Attributes not given, such as the font type, color and size, will default to the correct values for the window tab.
+         * @return The converted Objective-C result.
+         */
         AttributedString attributed_title() const;
         /**
-     * @brief Sets the `attributedTitle` property of `NSWindowTab`.
-     * @details The attributed string tab title for this window when in a tab. This value is only used when non-nil; otherwise the title is used. The attributedTitle will use the provided attributes that are explicitly given. Attributes not given, such as the font type, color and size, will default to the correct values for the window tab.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `attributedTitle` property of `NSWindowTab`.
+         * @details The attributed string tab title for this window when in a tab. This value is only used when non-nil; otherwise the title is used. The attributedTitle will use the provided attributes that are explicitly given. Attributes not given, such as the font type, color and size, will default to the correct values for the window tab.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_attributed_title(const AttributedString& value) const;
         /**
-     * @brief Returns the `title` property of `NSWindowTab`.
-     * @details The tab title for this window when in a tab. By default it follows the window.title. You can override this by explicitly setting it to something custom. Setting it to nil will make it follow the window.title again.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `title` property of `NSWindowTab`.
+         * @details The tab title for this window when in a tab. By default it follows the window.title. You can override this by explicitly setting it to something custom. Setting it to nil will make it follow the window.title again.
+         * @return The converted Objective-C result.
+         */
         std::string title() const;
         /**
-     * @brief Sets the `title` property of `NSWindowTab`.
-     * @details The tab title for this window when in a tab. By default it follows the window.title. You can override this by explicitly setting it to something custom. Setting it to nil will make it follow the window.title again.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `title` property of `NSWindowTab`.
+         * @details The tab title for this window when in a tab. By default it follows the window.title. You can override this by explicitly setting it to something custom. Setting it to nil will make it follow the window.title again.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_title(const std::string& value) const;
         /**
-     * @brief Returns the `toolTip` property of `NSWindowTab`.
-     * @details The tool tip for this window when in a tab. By default, it is self.title but can be set to something custom. Setting it back to nil will make it follow self.title again.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `toolTip` property of `NSWindowTab`.
+         * @details The tool tip for this window when in a tab. By default, it is self.title but can be set to something custom. Setting it back to nil will make it follow self.title again.
+         * @return The converted Objective-C result.
+         */
         std::string tool_tip() const;
         /**
-     * @brief Sets the `toolTip` property of `NSWindowTab`.
-     * @details The tool tip for this window when in a tab. By default, it is self.title but can be set to something custom. Setting it back to nil will make it follow self.title again.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `toolTip` property of `NSWindowTab`.
+         * @details The tool tip for this window when in a tab. By default, it is self.title but can be set to something custom. Setting it back to nil will make it follow self.title again.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_tool_tip(const std::string& value) const;
     };
 }

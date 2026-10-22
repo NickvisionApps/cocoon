@@ -3,6 +3,28 @@
 
 namespace cocoon
 {
+    PickerTouchBarItem::PickerTouchBarItem(const std::string& identifier, const std::vector<Image>& images, PickerTouchBarItemSelectionMode selection_mode, const Object& target, const std::string& action) : PickerTouchBarItem(Adopt{cocoon::internal::retain([::NSPickerTouchBarItem pickerTouchBarItemWithIdentifier:cocoon::internal::to(identifier)
+                                                                                                                                                                                                                                                                                                                   images:cocoon::internal::to_array(images, [](const Image& e) -> id
+                                                                                                                                                                                                                                                                                                                                                     {
+                                                                                                                                                                                                                                                                                                                                                         return cocoon::internal::native<::NSImage>(e);
+                                                                                                                                                                                                                                                                                                                                                     })
+                                                                                                                                                                                                                                                                                                            selectionMode:static_cast<::NSPickerTouchBarItemSelectionMode>(selection_mode)
+                                                                                                                                                                                                                                                                                                                   target:cocoon::internal::native_id(target)
+                                                                                                                                                                                                                                                                                                                   action:NSSelectorFromString(cocoon::internal::to(action))])})
+    {
+    }
+
+    PickerTouchBarItem::PickerTouchBarItem(const std::string& identifier, const std::vector<std::string>& labels, PickerTouchBarItemSelectionMode selection_mode, const Object& target, const std::string& action) : PickerTouchBarItem(Adopt{cocoon::internal::retain([::NSPickerTouchBarItem pickerTouchBarItemWithIdentifier:cocoon::internal::to(identifier)
+                                                                                                                                                                                                                                                                                                                         labels:cocoon::internal::to_array(labels, [](const std::string& e) -> id
+                                                                                                                                                                                                                                                                                                                                                           {
+                                                                                                                                                                                                                                                                                                                                                               return cocoon::internal::to(e);
+                                                                                                                                                                                                                                                                                                                                                           })
+                                                                                                                                                                                                                                                                                                                  selectionMode:static_cast<::NSPickerTouchBarItemSelectionMode>(selection_mode)
+                                                                                                                                                                                                                                                                                                                         target:cocoon::internal::native_id(target)
+                                                                                                                                                                                                                                                                                                                         action:NSSelectorFromString(cocoon::internal::to(action))])})
+    {
+    }
+
     PickerTouchBarItem::PickerTouchBarItem() : TouchBarItem(nullptr)
     {
     }
@@ -28,30 +50,6 @@ namespace cocoon
     std::string PickerTouchBarItem::label_at_index(std::int64_t index) const
     {
         return cocoon::internal::from([cocoon::internal::ns<::NSPickerTouchBarItem>(this) labelAtIndex:static_cast<::NSInteger>(index)]);
-    }
-
-    PickerTouchBarItem PickerTouchBarItem::picker_touch_bar_item_with_identifier(const std::string& identifier, const std::vector<Image>& images, PickerTouchBarItemSelectionMode selection_mode, const Object& target, const std::string& action)
-    {
-        return cocoon::internal::wrap<PickerTouchBarItem>([::NSPickerTouchBarItem pickerTouchBarItemWithIdentifier:cocoon::internal::to(identifier)
-                                                                                                            images:cocoon::internal::to_array(images, [](const Image& e) -> id
-                                                                                                                                              {
-                                                                                                                                                  return cocoon::internal::native<::NSImage>(e);
-                                                                                                                                              })
-                                                                                                     selectionMode:static_cast<::NSPickerTouchBarItemSelectionMode>(selection_mode)
-                                                                                                            target:cocoon::internal::native_id(target)
-                                                                                                            action:NSSelectorFromString(cocoon::internal::to(action))]);
-    }
-
-    PickerTouchBarItem PickerTouchBarItem::picker_touch_bar_item_with_identifier(const std::string& identifier, const std::vector<std::string>& labels, PickerTouchBarItemSelectionMode selection_mode, const Object& target, const std::string& action)
-    {
-        return cocoon::internal::wrap<PickerTouchBarItem>([::NSPickerTouchBarItem pickerTouchBarItemWithIdentifier:cocoon::internal::to(identifier)
-                                                                                                            labels:cocoon::internal::to_array(labels, [](const std::string& e) -> id
-                                                                                                                                              {
-                                                                                                                                                  return cocoon::internal::to(e);
-                                                                                                                                              })
-                                                                                                     selectionMode:static_cast<::NSPickerTouchBarItemSelectionMode>(selection_mode)
-                                                                                                            target:cocoon::internal::native_id(target)
-                                                                                                            action:NSSelectorFromString(cocoon::internal::to(action))]);
     }
 
     void PickerTouchBarItem::set_enabled(bool enabled, std::int64_t index) const

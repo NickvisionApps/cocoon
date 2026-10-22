@@ -46,23 +46,23 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit SharingServicePicker(Adopt adopt);
         /**
-     * @brief Calls `-[NSSharingServicePicker close]`.
-     * @details Closes the picker UI. '-[NSSharingServicePickerDelegate sharingServicePicker:didChooseSharingService:]' will be invoked if 'delegate' is set, with a 'nil' service.
-     */
+         * @brief Calls `-[NSSharingServicePicker close]`.
+         * @details Closes the picker UI. '-[NSSharingServicePickerDelegate sharingServicePicker:didChooseSharingService:]' will be invoked if 'delegate' is set, with a 'nil' service.
+         */
         void close() const;
         /**
-     * @brief Calls `-[NSSharingServicePicker showRelativeToRect:ofView:preferredEdge:]`.
-     * @details Shows the picker, populated with sharing services related to the instance items. When the user selects one of the sharing services, the sharing service will be performed. Note that this method must be called on mouseDown.
-     * @param rect Argument converted to the Objective-C parameter of the same role.
-     * @param view Argument converted to the Objective-C parameter of the same role.
-     * @param preferred_edge Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSSharingServicePicker showRelativeToRect:ofView:preferredEdge:]`.
+         * @details Shows the picker, populated with sharing services related to the instance items. When the user selects one of the sharing services, the sharing service will be performed. Note that this method must be called on mouseDown.
+         * @param rect Argument converted to the Objective-C parameter of the same role.
+         * @param view Argument converted to the Objective-C parameter of the same role.
+         * @param preferred_edge Argument converted to the Objective-C parameter of the same role.
+         */
         void show_relative_to_rect(const Rect& rect, const View& view, RectEdge preferred_edge) const;
         /**
-     * @brief Returns the `standardShareMenuItem` property of `NSSharingServicePicker`.
-     * @details Returns a menu item suitable to display the picker for the given items.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `standardShareMenuItem` property of `NSSharingServicePicker`.
+         * @details Returns a menu item suitable to display the picker for the given items.
+         * @return The converted Objective-C result.
+         */
         MenuItem standard_share_menu_item() const;
         /// @brief Signal for the delegate/data-source method behind `sharing_services_for_items_proposed_sharing_services`; connect a callback with `sharing_services_for_items_proposed_sharing_services().connect(...)`.
         Signal<SharingServicePicker, std::vector<SharingService>(std::vector<Object>, std::vector<SharingService>)> sharing_services_for_items_proposed_sharing_services() const

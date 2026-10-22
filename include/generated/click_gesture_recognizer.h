@@ -44,38 +44,38 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit ClickGestureRecognizer(Adopt adopt);
         /**
-     * @brief Returns the `buttonMask` property of `NSClickGestureRecognizer`.
-     * @details bitfield of the button(s) required to recognize this click where bit 0 is the primary button, 1 is the secondary button, etc... NSClickGestureRecognizer dynamically returns YES to delay primary, secondary and other mouse events depending on this value.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `buttonMask` property of `NSClickGestureRecognizer`.
+         * @details bitfield of the button(s) required to recognize this click where bit 0 is the primary button, 1 is the secondary button, etc... NSClickGestureRecognizer dynamically returns YES to delay primary, secondary and other mouse events depending on this value.
+         * @return The converted Objective-C result.
+         */
         std::uint64_t button_mask() const;
         /**
-     * @brief Sets the `buttonMask` property of `NSClickGestureRecognizer`.
-     * @details bitfield of the button(s) required to recognize this click where bit 0 is the primary button, 1 is the secondary button, etc... NSClickGestureRecognizer dynamically returns YES to delay primary, secondary and other mouse events depending on this value.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `buttonMask` property of `NSClickGestureRecognizer`.
+         * @details bitfield of the button(s) required to recognize this click where bit 0 is the primary button, 1 is the secondary button, etc... NSClickGestureRecognizer dynamically returns YES to delay primary, secondary and other mouse events depending on this value.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_button_mask(std::uint64_t value) const;
         /**
-     * @brief Returns the `numberOfClicksRequired` property of `NSClickGestureRecognizer`.
-     * @details the number of clicks required to match
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `numberOfClicksRequired` property of `NSClickGestureRecognizer`.
+         * @details the number of clicks required to match
+         * @return The converted Objective-C result.
+         */
         std::int64_t number_of_clicks_required() const;
         /**
-     * @brief Sets the `numberOfClicksRequired` property of `NSClickGestureRecognizer`.
-     * @details the number of clicks required to match
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `numberOfClicksRequired` property of `NSClickGestureRecognizer`.
+         * @details the number of clicks required to match
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_number_of_clicks_required(std::int64_t value) const;
         /**
-     * @brief Returns the `numberOfTouchesRequired` property of `NSClickGestureRecognizer`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `numberOfTouchesRequired` property of `NSClickGestureRecognizer`.
+         * @return The converted Objective-C result.
+         */
         std::int64_t number_of_touches_required() const;
         /**
-     * @brief Sets the `numberOfTouchesRequired` property of `NSClickGestureRecognizer`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `numberOfTouchesRequired` property of `NSClickGestureRecognizer`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_number_of_touches_required(std::int64_t value) const;
     };
 }

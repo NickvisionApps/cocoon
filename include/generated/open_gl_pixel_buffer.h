@@ -33,10 +33,10 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit OpenGLPixelBuffer(Adopt adopt);
         /**
-     * @brief Returns the `CGLPBufferObj` property of `NSOpenGLPixelBuffer`.
-     * @details - (nullable NSOpenGLPixelBuffer )initWithCGLPBufferObj:(CGLPBufferObj)pbuffer API_DEPRECATED("", macos(10.6,10.7)); / Use IOSurface instead of NSOpenGLPixelBuffer on Mac OS 10.7 and newer.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `CGLPBufferObj` property of `NSOpenGLPixelBuffer`.
+         * @details - (nullable NSOpenGLPixelBuffer )initWithCGLPBufferObj:(CGLPBufferObj)pbuffer API_DEPRECATED("", macos(10.6,10.7)); / Use IOSurface instead of NSOpenGLPixelBuffer on Mac OS 10.7 and newer.
+         * @return The converted Objective-C result.
+         */
         CGLPBufferObj cglp_buffer_obj() const;
     };
 }

@@ -34,16 +34,16 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit FileProviderService(Adopt adopt);
         /**
-     * @brief Calls `-[NSFileProviderService getFileProviderConnectionWithCompletionHandler:]`.
-     * @details Asynchronously returns the service's connection object. - Parameters: - completionHandler: A block that is called on an anonymous background queue. The block receives the 'NSXPCConnection' object for the service, or 'nil' if an error occurs, and an 'NSError' describing the error if one occurred.
-     * @param completion_handler Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSFileProviderService getFileProviderConnectionWithCompletionHandler:]`.
+         * @details Asynchronously returns the service's connection object. - Parameters: - completionHandler: A block that is called on an anonymous background queue. The block receives the 'NSXPCConnection' object for the service, or 'nil' if an error occurs, and an 'NSError' describing the error if one occurred.
+         * @param completion_handler Argument converted to the Objective-C parameter of the same role.
+         */
         void get_file_provider_connection_with_completion_handler(std::function<void(XPCConnection, Error)> completion_handler) const;
         /**
-     * @brief Returns the `name` property of `NSFileProviderService`.
-     * @details The File Provider service's name.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `name` property of `NSFileProviderService`.
+         * @details The File Provider service's name.
+         * @return The converted Objective-C result.
+         */
         std::string name() const;
     };
 }

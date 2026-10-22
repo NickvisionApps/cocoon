@@ -37,34 +37,34 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit TextTab(Adopt adopt);
         /**
-     * @brief Calls `+[NSTextTab columnTerminatorsForLocale:]`.
-     * @details Returns the column terminators for the specified locale. The returned value can be used as the value for ''NSTextTab/OptionKey/columnTerminators'' to make a decimal tab stop. - Parameters: - aLocale: The locale to use when determining the terminators. Specify 'nil' to use the system's current locale. You can get the user's locale using the \<doc://com.apple.documentation/documentation/foundation/nslocale/1409990-current> method of \<doc://com.apple.documentation/documentation/foundation/nslocale>. - Returns: The characters for the column terminators.
-     * @param a_locale Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSTextTab columnTerminatorsForLocale:]`.
+         * @details Returns the column terminators for the specified locale. The returned value can be used as the value for ''NSTextTab/OptionKey/columnTerminators'' to make a decimal tab stop. - Parameters: - aLocale: The locale to use when determining the terminators. Specify 'nil' to use the system's current locale. You can get the user's locale using the \<doc://com.apple.documentation/documentation/foundation/nslocale/1409990-current> method of \<doc://com.apple.documentation/documentation/foundation/nslocale>. - Returns: The characters for the column terminators.
+         * @param a_locale Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static CharacterSet column_terminators_for_locale(const Locale& a_locale);
         /**
-     * @brief Returns the `alignment` property of `NSTextTab`.
-     * @details The text alignment of the text tab. 'NSTextAlignmentNatural' and 'NSTextAlignmentJustified' are resolved to either 'NSTextAlignmentLeft' or 'NSTextAlignmentRight' based on the user's preferred language.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `alignment` property of `NSTextTab`.
+         * @details The text alignment of the text tab. 'NSTextAlignmentNatural' and 'NSTextAlignmentJustified' are resolved to either 'NSTextAlignmentLeft' or 'NSTextAlignmentRight' based on the user's preferred language.
+         * @return The converted Objective-C result.
+         */
         TextAlignment alignment() const;
         /**
-     * @brief Returns the `location` property of `NSTextTab`.
-     * @details The text tab's ruler location relative to the back margin.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `location` property of `NSTextTab`.
+         * @details The text tab's ruler location relative to the back margin.
+         * @return The converted Objective-C result.
+         */
         double location() const;
         /**
-     * @brief Returns the `options` property of `NSTextTab`.
-     * @details The dictionary of attributes for the text tab.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `options` property of `NSTextTab`.
+         * @details The dictionary of attributes for the text tab.
+         * @return The converted Objective-C result.
+         */
         std::map<std::string, Object> options() const;
         /**
-     * @brief Returns the `tabStopType` property of `NSTextTab`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `tabStopType` property of `NSTextTab`.
+         * @return The converted Objective-C result.
+         */
         TextTabType tab_stop_type() const;
     };
 }

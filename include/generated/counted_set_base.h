@@ -45,29 +45,29 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit CountedSetBase(Adopt adopt);
         /**
-     * @brief Calls `-[NSCountedSet addObject:]`.
-     * @details Adds a given object to the set. If 'object' is already a member, 'addObject:' increments the count associated with the object. If 'object' is not already a member, it is sent a 'retain' message. - Parameter object: The object to add to the set.
-     * @param object Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSCountedSet addObject:]`.
+         * @details Adds a given object to the set. If 'object' is already a member, 'addObject:' increments the count associated with the object. If 'object' is not already a member, it is sent a 'retain' message. - Parameter object: The object to add to the set.
+         * @param object Argument converted to the Objective-C parameter of the same role.
+         */
         void add_object(const Object& object) const;
         /**
-     * @brief Calls `-[NSCountedSet countForObject:]`.
-     * @details Returns the count associated with a given object in the set. - Parameter object: The object for which to return the count. - Returns: The count associated with 'object' in the set, which can be thought of as the number of occurrences of 'object' present in the set.
-     * @param object Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSCountedSet countForObject:]`.
+         * @details Returns the count associated with a given object in the set. - Parameter object: The object for which to return the count. - Returns: The count associated with 'object' in the set, which can be thought of as the number of occurrences of 'object' present in the set.
+         * @param object Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::uint64_t count_for_object(const Object& object) const;
         /**
-     * @brief Calls `-[NSCountedSet objectEnumerator]`.
-     * @details Returns an enumerator object that lets you access each object in the set once, independent of its count. If you add a given object to the counted set multiple times, an enumeration of the set will produce that object only once. You shouldn't modify the set during enumeration. If you intend to modify the set, use the 'allObjects' method to create a "snapshot," then enumerate the snapshot and modify the original set. - Returns: An enumerator object that lets you access each object in the set once, independent of its count.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSCountedSet objectEnumerator]`.
+         * @details Returns an enumerator object that lets you access each object in the set once, independent of its count. If you add a given object to the counted set multiple times, an enumeration of the set will produce that object only once. You shouldn't modify the set during enumeration. If you intend to modify the set, use the 'allObjects' method to create a "snapshot," then enumerate the snapshot and modify the original set. - Returns: An enumerator object that lets you access each object in the set once, independent of its count.
+         * @return The converted Objective-C result.
+         */
         EnumeratorBase object_enumerator() const;
         /**
-     * @brief Calls `-[NSCountedSet removeObject:]`.
-     * @details Removes a given object from the set. If 'object' is present in the set, decrements the count associated with it. If the count is decremented to '0', 'object' is removed from the set. 'removeObject:' does nothing if 'object' is not present in the set. - Parameter object: The object to remove from the set.
-     * @param object Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSCountedSet removeObject:]`.
+         * @details Removes a given object from the set. If 'object' is present in the set, decrements the count associated with it. If the count is decremented to '0', 'object' is removed from the set. 'removeObject:' does nothing if 'object' is not present in the set. - Parameter object: The object to remove from the set.
+         * @param object Argument converted to the Objective-C parameter of the same role.
+         */
         void remove_object(const Object& object) const;
     };
 

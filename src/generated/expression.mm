@@ -7,6 +7,18 @@ namespace cocoon
     {
     }
 
+    Expression::Expression(const std::string& expression_format, const std::vector<Object>& arguments) : Expression(Adopt{cocoon::internal::retain([::NSExpression expressionWithFormat:cocoon::internal::to(expression_format)
+                                                                                                                                                                          argumentArray:cocoon::internal::to_array(arguments, [](const Object& e) -> id
+                                                                                                                                                                                                                   {
+                                                                                                                                                                                                                       return cocoon::internal::native_id(e);
+                                                                                                                                                                                                                   })])})
+    {
+    }
+
+    Expression::Expression(const std::string& expression_format, char* arg_list) : Expression(Adopt{cocoon::internal::retain([::NSExpression expressionWithFormat:cocoon::internal::to(expression_format) arguments:(::va_list)(arg_list)])})
+    {
+    }
+
     Expression::Expression() : Expression(Adopt{cocoon::internal::retain([[::NSExpression alloc] init])})
     {
     }
@@ -121,27 +133,6 @@ namespace cocoon
                                                                                                                                                      {
                                                                                                                                                          return cocoon::internal::native_id(v);
                                                                                                                                                      }) mutableCopy]]);
-    }
-
-    Expression Expression::expression_with_format_(const std::string& expression_format, const std::vector<VarArg>& args)
-    {
-        std::vector<std::uint64_t> __slots = cocoon::internal::pack_var_args(args);
-        va_list __list = cocoon::internal::make_va_list(__slots);
-        return cocoon::internal::wrap<Expression>([::NSExpression expressionWithFormat:cocoon::internal::to(expression_format) arguments:__list]);
-    }
-
-    Expression Expression::expression_with_format(const std::string& expression_format, const std::vector<Object>& arguments)
-    {
-        return cocoon::internal::wrap<Expression>([::NSExpression expressionWithFormat:cocoon::internal::to(expression_format)
-                                                                         argumentArray:cocoon::internal::to_array(arguments, [](const Object& e) -> id
-                                                                                                                  {
-                                                                                                                      return cocoon::internal::native_id(e);
-                                                                                                                  })]);
-    }
-
-    Expression Expression::expression_with_format(const std::string& expression_format, char* arg_list)
-    {
-        return cocoon::internal::wrap<Expression>([::NSExpression expressionWithFormat:cocoon::internal::to(expression_format) arguments:(::va_list)(arg_list)]);
     }
 
     std::vector<Expression> Expression::arguments() const

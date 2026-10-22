@@ -3,6 +3,10 @@
 
 namespace cocoon
 {
+    RunningApplication::RunningApplication(int pid) : RunningApplication(Adopt{cocoon::internal::retain([::NSRunningApplication runningApplicationWithProcessIdentifier:static_cast<::pid_t>(pid)])})
+    {
+    }
+
     RunningApplication::RunningApplication() : RunningApplication(Adopt{cocoon::internal::retain([[::NSRunningApplication alloc] init])})
     {
     }
@@ -33,11 +37,6 @@ namespace cocoon
     bool RunningApplication::hide() const
     {
         return static_cast<bool>([cocoon::internal::ns<::NSRunningApplication>(this) hide]);
-    }
-
-    RunningApplication RunningApplication::running_application_with_process_identifier(int pid)
-    {
-        return cocoon::internal::wrap<RunningApplication>([::NSRunningApplication runningApplicationWithProcessIdentifier:static_cast<::pid_t>(pid)]);
     }
 
     std::vector<RunningApplication> RunningApplication::running_applications_with_bundle_identifier(const std::string& bundle_identifier)

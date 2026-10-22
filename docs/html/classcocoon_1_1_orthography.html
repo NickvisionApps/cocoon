@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -126,8 +126,6 @@ Public Member Functions</h2></td></tr>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a8ec045e87bfae7cf5839633b232bfa97" id="r_a8ec045e87bfae7cf5839633b232bfa97"><td class="memItemLeft">static <a class="el" href="#a065e6a920de81e95c92b4d324fa61be0">Orthography</a>&#160;</td><td class="memItemRight"><a class="el" href="#a8ec045e87bfae7cf5839633b232bfa97">default_orthography_for_language</a> (const std::string &amp;language)</td></tr>
 <tr class="memdesc:a8ec045e87bfae7cf5839633b232bfa97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSOrthography defaultOrthographyForLanguage:]</span>.  <br /></td></tr>
-<tr class="memitem:aba2ff170cad30d818e74ff1e216dcac7" id="r_aba2ff170cad30d818e74ff1e216dcac7"><td class="memItemLeft">static <a class="el" href="#a065e6a920de81e95c92b4d324fa61be0">Orthography</a>&#160;</td><td class="memItemRight"><a class="el" href="#aba2ff170cad30d818e74ff1e216dcac7">orthography_with_dominant_script</a> (const std::string &amp;script, const std::map&lt; std::string, std::vector&lt; std::string &gt; &gt; &amp;map)</td></tr>
-<tr class="memdesc:aba2ff170cad30d818e74ff1e216dcac7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSOrthography orthographyWithDominantScript:languageMap:]</span>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>C++ handle for the Objective-C class <span class="tt">NSOrthography</span> (Foundation). </p>
@@ -431,45 +429,6 @@ Static Public Member Functions</h2></td></tr>
 <p>Returns the list of languages for the specified script. - Parameter script: The specified script. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">script</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="aba2ff170cad30d818e74ff1e216dcac7" name="aba2ff170cad30d818e74ff1e216dcac7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba2ff170cad30d818e74ff1e216dcac7">&#9670;&#160;</a></span>orthography_with_dominant_script()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a065e6a920de81e95c92b4d324fa61be0">Orthography</a> cocoon::Orthography::orthography_with_dominant_script </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>script</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::map&lt; std::string, std::vector&lt; std::string &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>map</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSOrthography orthographyWithDominantScript:languageMap:]</span>. </p>
-<p>Creates and returns an orthography object with the specified dominant script and language map. - Parameter script: The dominant script. - Parameter map: A dictionary mapping ISO 15924 script codes to arrays of BCP-47 language tags. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">script</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">map</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
   </table>
   </dd>
 </dl>

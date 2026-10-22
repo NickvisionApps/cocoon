@@ -42,16 +42,16 @@ namespace cocoon
         explicit CloneCommand(Adopt adopt);
         using ScriptCommand::set_receivers_specifier;
         /**
-     * @brief Calls `-[NSCloneCommand setReceiversSpecifier:]`.
-     * @details Splits off the inner-most child specifier from the receivers specifier.
-     * @param receivers_ref Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSCloneCommand setReceiversSpecifier:]`.
+         * @details Splits off the inner-most child specifier from the receivers specifier.
+         * @param receivers_ref Argument converted to the Objective-C parameter of the same role.
+         */
         void set_receivers_specifier(const ScriptObjectSpecifier& receivers_ref) const;
         /**
-     * @brief Returns the `keySpecifier` property of `NSCloneCommand`.
-     * @details The key specifier for the clone operation.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `keySpecifier` property of `NSCloneCommand`.
+         * @details The key specifier for the clone operation.
+         * @return The converted Objective-C result.
+         */
         ScriptObjectSpecifier key_specifier() const;
     };
 }

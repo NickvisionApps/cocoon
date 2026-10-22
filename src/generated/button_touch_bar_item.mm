@@ -3,6 +3,18 @@
 
 namespace cocoon
 {
+    ButtonTouchBarItem::ButtonTouchBarItem(const std::string& identifier, const Image& image, const Object& target, const std::string& action) : ButtonTouchBarItem(Adopt{cocoon::internal::retain([::NSButtonTouchBarItem buttonTouchBarItemWithIdentifier:cocoon::internal::to(identifier) image:cocoon::internal::native<::NSImage>(image) target:cocoon::internal::native_id(target) action:NSSelectorFromString(cocoon::internal::to(action))])})
+    {
+    }
+
+    ButtonTouchBarItem::ButtonTouchBarItem(const std::string& identifier, const std::string& title, const Image& image, const Object& target, const std::string& action) : ButtonTouchBarItem(Adopt{cocoon::internal::retain([::NSButtonTouchBarItem buttonTouchBarItemWithIdentifier:cocoon::internal::to(identifier) title:cocoon::internal::to(title) image:cocoon::internal::native<::NSImage>(image) target:cocoon::internal::native_id(target) action:NSSelectorFromString(cocoon::internal::to(action))])})
+    {
+    }
+
+    ButtonTouchBarItem::ButtonTouchBarItem(const std::string& identifier, const std::string& title, const Object& target, const std::string& action) : ButtonTouchBarItem(Adopt{cocoon::internal::retain([::NSButtonTouchBarItem buttonTouchBarItemWithIdentifier:cocoon::internal::to(identifier) title:cocoon::internal::to(title) target:cocoon::internal::native_id(target) action:NSSelectorFromString(cocoon::internal::to(action))])})
+    {
+    }
+
     ButtonTouchBarItem::ButtonTouchBarItem() : TouchBarItem(nullptr)
     {
     }
@@ -13,21 +25,6 @@ namespace cocoon
 
     ButtonTouchBarItem::ButtonTouchBarItem(Adopt adopt) : TouchBarItem(adopt)
     {
-    }
-
-    ButtonTouchBarItem ButtonTouchBarItem::button_touch_bar_item_with_identifier(const std::string& identifier, const Image& image, const Object& target, const std::string& action)
-    {
-        return cocoon::internal::wrap<ButtonTouchBarItem>([::NSButtonTouchBarItem buttonTouchBarItemWithIdentifier:cocoon::internal::to(identifier) image:cocoon::internal::native<::NSImage>(image) target:cocoon::internal::native_id(target) action:NSSelectorFromString(cocoon::internal::to(action))]);
-    }
-
-    ButtonTouchBarItem ButtonTouchBarItem::button_touch_bar_item_with_identifier(const std::string& identifier, const std::string& title, const Image& image, const Object& target, const std::string& action)
-    {
-        return cocoon::internal::wrap<ButtonTouchBarItem>([::NSButtonTouchBarItem buttonTouchBarItemWithIdentifier:cocoon::internal::to(identifier) title:cocoon::internal::to(title) image:cocoon::internal::native<::NSImage>(image) target:cocoon::internal::native_id(target) action:NSSelectorFromString(cocoon::internal::to(action))]);
-    }
-
-    ButtonTouchBarItem ButtonTouchBarItem::button_touch_bar_item_with_identifier(const std::string& identifier, const std::string& title, const Object& target, const std::string& action)
-    {
-        return cocoon::internal::wrap<ButtonTouchBarItem>([::NSButtonTouchBarItem buttonTouchBarItemWithIdentifier:cocoon::internal::to(identifier) title:cocoon::internal::to(title) target:cocoon::internal::native_id(target) action:NSSelectorFromString(cocoon::internal::to(action))]);
     }
 
     std::string ButtonTouchBarItem::action() const

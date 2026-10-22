@@ -3,6 +3,18 @@
 
 namespace cocoon
 {
+    CharacterSet::CharacterSet(const std::vector<std::uint8_t>& data) : CharacterSet(Adopt{cocoon::internal::retain([::NSCharacterSet characterSetWithBitmapRepresentation:cocoon::internal::to_data(data)])})
+    {
+    }
+
+    CharacterSet::CharacterSet(const std::string& a_string) : CharacterSet(Adopt{cocoon::internal::retain([::NSCharacterSet characterSetWithCharactersInString:cocoon::internal::to(a_string)])})
+    {
+    }
+
+    CharacterSet::CharacterSet(const Range& a_range) : CharacterSet(Adopt{cocoon::internal::retain([::NSCharacterSet characterSetWithRange:cocoon::internal::to(a_range)])})
+    {
+    }
+
     CharacterSet::CharacterSet() : CharacterSet(Adopt{cocoon::internal::retain([[::NSCharacterSet alloc] init])})
     {
     }
@@ -18,26 +30,6 @@ namespace cocoon
     bool CharacterSet::character_is_member(std::uint16_t a_character) const
     {
         return static_cast<bool>([cocoon::internal::ns<::NSCharacterSet>(this) characterIsMember:static_cast<::unichar>(a_character)]);
-    }
-
-    CharacterSet CharacterSet::character_set_with_bitmap_representation(const std::vector<std::uint8_t>& data)
-    {
-        return cocoon::internal::wrap<CharacterSet>([::NSCharacterSet characterSetWithBitmapRepresentation:cocoon::internal::to_data(data)]);
-    }
-
-    CharacterSet CharacterSet::character_set_with_characters_in_string(const std::string& a_string)
-    {
-        return cocoon::internal::wrap<CharacterSet>([::NSCharacterSet characterSetWithCharactersInString:cocoon::internal::to(a_string)]);
-    }
-
-    CharacterSet CharacterSet::character_set_with_contents_of_file(const std::string& f_name)
-    {
-        return cocoon::internal::wrap<CharacterSet>([::NSCharacterSet characterSetWithContentsOfFile:cocoon::internal::to(f_name)]);
-    }
-
-    CharacterSet CharacterSet::character_set_with_range(const Range& a_range)
-    {
-        return cocoon::internal::wrap<CharacterSet>([::NSCharacterSet characterSetWithRange:cocoon::internal::to(a_range)]);
     }
 
     bool CharacterSet::has_member_in_plane(std::uint8_t the_plane) const

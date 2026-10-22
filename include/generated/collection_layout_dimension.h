@@ -37,53 +37,53 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit CollectionLayoutDimension(Adopt adopt);
         /**
-     * @brief Calls `+[NSCollectionLayoutDimension absoluteDimension:]`.
-     * @param absolute_dimension Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSCollectionLayoutDimension absoluteDimension:]`.
+         * @param absolute_dimension Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static CollectionLayoutDimension absolute_dimension(double absolute_dimension);
         /**
-     * @brief Calls `+[NSCollectionLayoutDimension estimatedDimension:]`.
-     * @param estimated_dimension Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSCollectionLayoutDimension estimatedDimension:]`.
+         * @param estimated_dimension Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static CollectionLayoutDimension estimated_dimension(double estimated_dimension);
         /**
-     * @brief Calls `+[NSCollectionLayoutDimension fractionalHeightDimension:]`.
-     * @param fractional_height Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSCollectionLayoutDimension fractionalHeightDimension:]`.
+         * @param fractional_height Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static CollectionLayoutDimension fractional_height_dimension(double fractional_height);
         /**
-     * @brief Calls `+[NSCollectionLayoutDimension fractionalWidthDimension:]`.
-     * @param fractional_width Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSCollectionLayoutDimension fractionalWidthDimension:]`.
+         * @param fractional_width Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static CollectionLayoutDimension fractional_width_dimension(double fractional_width);
         /**
-     * @brief Returns the `dimension` property of `NSCollectionLayoutDimension`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `dimension` property of `NSCollectionLayoutDimension`.
+         * @return The converted Objective-C result.
+         */
         double dimension() const;
         /**
-     * @brief Returns the `isAbsolute` property of `NSCollectionLayoutDimension`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `isAbsolute` property of `NSCollectionLayoutDimension`.
+         * @return The converted Objective-C result.
+         */
         bool is_absolute() const;
         /**
-     * @brief Returns the `isEstimated` property of `NSCollectionLayoutDimension`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `isEstimated` property of `NSCollectionLayoutDimension`.
+         * @return The converted Objective-C result.
+         */
         bool is_estimated() const;
         /**
-     * @brief Returns the `isFractionalHeight` property of `NSCollectionLayoutDimension`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `isFractionalHeight` property of `NSCollectionLayoutDimension`.
+         * @return The converted Objective-C result.
+         */
         bool is_fractional_height() const;
         /**
-     * @brief Returns the `isFractionalWidth` property of `NSCollectionLayoutDimension`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `isFractionalWidth` property of `NSCollectionLayoutDimension`.
+         * @return The converted Objective-C result.
+         */
         bool is_fractional_width() const;
     };
 }

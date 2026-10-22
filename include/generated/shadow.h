@@ -46,38 +46,38 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit Shadow(Adopt adopt);
         /**
-     * @brief Calls `-[NSShadow set]`.
-     */
+         * @brief Calls `-[NSShadow set]`.
+         */
         void set() const;
         /**
-     * @brief Returns the `shadowBlurRadius` property of `NSShadow`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `shadowBlurRadius` property of `NSShadow`.
+         * @return The converted Objective-C result.
+         */
         double shadow_blur_radius() const;
         /**
-     * @brief Sets the `shadowBlurRadius` property of `NSShadow`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `shadowBlurRadius` property of `NSShadow`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_shadow_blur_radius(double value) const;
         /**
-     * @brief Returns the `shadowColor` property of `NSShadow`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `shadowColor` property of `NSShadow`.
+         * @return The converted Objective-C result.
+         */
         Color shadow_color() const;
         /**
-     * @brief Sets the `shadowColor` property of `NSShadow`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `shadowColor` property of `NSShadow`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_shadow_color(const Color& value) const;
         /**
-     * @brief Returns the `shadowOffset` property of `NSShadow`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `shadowOffset` property of `NSShadow`.
+         * @return The converted Objective-C result.
+         */
         Size shadow_offset() const;
         /**
-     * @brief Sets the `shadowOffset` property of `NSShadow`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `shadowOffset` property of `NSShadow`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_shadow_offset(const Size& value) const;
     };
 }

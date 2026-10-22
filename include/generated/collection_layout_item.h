@@ -42,47 +42,47 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit CollectionLayoutItem(Adopt adopt);
         /**
-     * @brief Calls `+[NSCollectionLayoutItem itemWithLayoutSize:]`.
-     * @param layout_size Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSCollectionLayoutItem itemWithLayoutSize:]`.
+         * @param layout_size Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static CollectionLayoutItem item_with_layout_size(const CollectionLayoutSize& layout_size);
         /**
-     * @brief Calls `+[NSCollectionLayoutItem itemWithLayoutSize:supplementaryItems:]`.
-     * @param layout_size Argument converted to the Objective-C parameter of the same role.
-     * @param supplementary_items Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSCollectionLayoutItem itemWithLayoutSize:supplementaryItems:]`.
+         * @param layout_size Argument converted to the Objective-C parameter of the same role.
+         * @param supplementary_items Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static CollectionLayoutItem item_with_layout_size(const CollectionLayoutSize& layout_size, const std::vector<CollectionLayoutSupplementaryItem>& supplementary_items);
         /**
-     * @brief Returns the `contentInsets` property of `NSCollectionLayoutItem`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `contentInsets` property of `NSCollectionLayoutItem`.
+         * @return The converted Objective-C result.
+         */
         DirectionalEdgeInsets content_insets() const;
         /**
-     * @brief Sets the `contentInsets` property of `NSCollectionLayoutItem`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `contentInsets` property of `NSCollectionLayoutItem`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_content_insets(const DirectionalEdgeInsets& value) const;
         /**
-     * @brief Returns the `edgeSpacing` property of `NSCollectionLayoutItem`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `edgeSpacing` property of `NSCollectionLayoutItem`.
+         * @return The converted Objective-C result.
+         */
         CollectionLayoutEdgeSpacing edge_spacing() const;
         /**
-     * @brief Sets the `edgeSpacing` property of `NSCollectionLayoutItem`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `edgeSpacing` property of `NSCollectionLayoutItem`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_edge_spacing(const CollectionLayoutEdgeSpacing& value) const;
         /**
-     * @brief Returns the `layoutSize` property of `NSCollectionLayoutItem`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `layoutSize` property of `NSCollectionLayoutItem`.
+         * @return The converted Objective-C result.
+         */
         CollectionLayoutSize layout_size() const;
         /**
-     * @brief Returns the `supplementaryItems` property of `NSCollectionLayoutItem`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `supplementaryItems` property of `NSCollectionLayoutItem`.
+         * @return The converted Objective-C result.
+         */
         std::vector<CollectionLayoutSupplementaryItem> supplementary_items() const;
     };
 }

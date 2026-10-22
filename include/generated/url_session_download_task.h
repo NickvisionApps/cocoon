@@ -32,10 +32,10 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit URLSessionDownloadTask(Adopt adopt);
         /**
-     * @brief Calls `-[NSURLSessionDownloadTask cancelByProducingResumeData:]`.
-     * @details Cancels a download and calls the completion handler with resume data for later use. If conditions will allow for resuming the download in the future, the callback will be called with an opaque data blob, which may be used with '-downloadTaskWithResumeData:' to attempt to resume the download. If resume data cannot be created, the completion handler will be called with 'nil' resumeData. - Parameter completionHandler: The completion handler to call when the cancel operation is complete. The 'resumeData' parameter contains data that can be used to resume the download at a later time, or 'nil' if resuming is not possible.
-     * @param completion_handler Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSURLSessionDownloadTask cancelByProducingResumeData:]`.
+         * @details Cancels a download and calls the completion handler with resume data for later use. If conditions will allow for resuming the download in the future, the callback will be called with an opaque data blob, which may be used with '-downloadTaskWithResumeData:' to attempt to resume the download. If resume data cannot be created, the completion handler will be called with 'nil' resumeData. - Parameter completionHandler: The completion handler to call when the cancel operation is complete. The 'resumeData' parameter contains data that can be used to resume the download at a later time, or 'nil' if resuming is not possible.
+         * @param completion_handler Argument converted to the Objective-C parameter of the same role.
+         */
         void cancel_by_producing_resume_data(std::function<void(std::vector<std::uint8_t>)> completion_handler) const;
     };
 }

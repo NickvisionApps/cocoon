@@ -40,9 +40,9 @@ namespace cocoon
         explicit StatusItemExpandedInterfaceSession(Adopt adopt);
 #ifdef COCOON_MACOS_27
         /**
-     * @brief Calls `-[NSStatusItemExpandedInterfaceSession cancel]`.
-     * @details Cancels tracking of the expanded interface state in the menu bar system. NSStatusItemExpandedInterfaceDelegate will receive -statusItemDidEndExpandedInterfaceSession:animated: after cancellation.
-     */
+         * @brief Calls `-[NSStatusItemExpandedInterfaceSession cancel]`.
+         * @details Cancels tracking of the expanded interface state in the menu bar system. NSStatusItemExpandedInterfaceDelegate will receive -statusItemDidEndExpandedInterfaceSession:animated: after cancellation.
+         */
         void cancel() const;
 #endif
     };

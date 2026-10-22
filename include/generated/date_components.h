@@ -51,263 +51,263 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit DateComponents(Adopt adopt);
         /**
-     * @brief Calls `-[NSDateComponents isValidDateInCalendar:]`.
-     * @details Reports whether or not the combination of properties which have been set in the receiver is a date which exists in the calendar. This method is not appropriate for use on NSDateComponents objects which are specifying relative quantities of calendar components. Except for some trivial cases (e.g., 'seconds' should be 0 - 59 in any calendar), this method is not necessarily cheap. If the time zone property is set in the NSDateComponents object, it is used.
-     * @param calendar Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSDateComponents isValidDateInCalendar:]`.
+         * @details Reports whether or not the combination of properties which have been set in the receiver is a date which exists in the calendar. This method is not appropriate for use on NSDateComponents objects which are specifying relative quantities of calendar components. Except for some trivial cases (e.g., 'seconds' should be 0 - 59 in any calendar), this method is not necessarily cheap. If the time zone property is set in the NSDateComponents object, it is used.
+         * @param calendar Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool is_valid_date_in_calendar(const Calendar& calendar) const;
         /**
-     * @brief Calls `-[NSDateComponents setValue:forComponent:]`.
-     * @details This API allows one to set a specific component of NSDateComponents, by enum constant value rather than property name. The calendar and timeZone and isLeapMonth properties cannot be set by this method.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     * @param unit Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSDateComponents setValue:forComponent:]`.
+         * @details This API allows one to set a specific component of NSDateComponents, by enum constant value rather than property name. The calendar and timeZone and isLeapMonth properties cannot be set by this method.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         * @param unit Argument converted to the Objective-C parameter of the same role.
+         */
         void set_value(std::int64_t value, CalendarUnit unit) const;
         /**
-     * @brief Calls `-[NSDateComponents valueForComponent:]`.
-     * @details This API allows one to get the value of a specific component of NSDateComponents, by enum constant value rather than property name. The calendar and timeZone and isLeapMonth property values cannot be retrieved by this method.
-     * @param unit Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSDateComponents valueForComponent:]`.
+         * @details This API allows one to get the value of a specific component of NSDateComponents, by enum constant value rather than property name. The calendar and timeZone and isLeapMonth property values cannot be retrieved by this method.
+         * @param unit Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::int64_t value_for_component(CalendarUnit unit) const;
         /**
-     * @brief Returns the `calendar` property of `NSDateComponents`.
-     * @details The calendar used to interpret the date components.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `calendar` property of `NSDateComponents`.
+         * @details The calendar used to interpret the date components.
+         * @return The converted Objective-C result.
+         */
         Calendar calendar() const;
         /**
-     * @brief Sets the `calendar` property of `NSDateComponents`.
-     * @details The calendar used to interpret the date components.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `calendar` property of `NSDateComponents`.
+         * @details The calendar used to interpret the date components.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_calendar(const Calendar& value) const;
         /**
-     * @brief Returns the `date` property of `NSDateComponents`.
-     * @details The date calculated from the current components using the stored calendar.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `date` property of `NSDateComponents`.
+         * @details The date calculated from the current components using the stored calendar.
+         * @return The converted Objective-C result.
+         */
         Date date() const;
         /**
-     * @brief Returns the `day` property of `NSDateComponents`.
-     * @details The number of days.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `day` property of `NSDateComponents`.
+         * @details The number of days.
+         * @return The converted Objective-C result.
+         */
         std::int64_t day() const;
         /**
-     * @brief Sets the `day` property of `NSDateComponents`.
-     * @details The number of days.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `day` property of `NSDateComponents`.
+         * @details The number of days.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_day(std::int64_t value) const;
         /**
-     * @brief Returns the `dayOfYear` property of `NSDateComponents`.
-     * @details The day of the year value of the date components.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `dayOfYear` property of `NSDateComponents`.
+         * @details The day of the year value of the date components.
+         * @return The converted Objective-C result.
+         */
         std::int64_t day_of_year() const;
         /**
-     * @brief Sets the `dayOfYear` property of `NSDateComponents`.
-     * @details The day of the year value of the date components.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `dayOfYear` property of `NSDateComponents`.
+         * @details The day of the year value of the date components.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_day_of_year(std::int64_t value) const;
         /**
-     * @brief Returns the `era` property of `NSDateComponents`.
-     * @details The number of eras.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `era` property of `NSDateComponents`.
+         * @details The number of eras.
+         * @return The converted Objective-C result.
+         */
         std::int64_t era() const;
         /**
-     * @brief Sets the `era` property of `NSDateComponents`.
-     * @details The number of eras.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `era` property of `NSDateComponents`.
+         * @details The number of eras.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_era(std::int64_t value) const;
         /**
-     * @brief Returns the `hour` property of `NSDateComponents`.
-     * @details The number of hour units for the receiver.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `hour` property of `NSDateComponents`.
+         * @details The number of hour units for the receiver.
+         * @return The converted Objective-C result.
+         */
         std::int64_t hour() const;
         /**
-     * @brief Sets the `hour` property of `NSDateComponents`.
-     * @details The number of hour units for the receiver.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `hour` property of `NSDateComponents`.
+         * @details The number of hour units for the receiver.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_hour(std::int64_t value) const;
         /**
-     * @brief Returns the `leapMonth` property of `NSDateComponents`.
-     * @details A Boolean value that indicates whether the month is a leap month.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `leapMonth` property of `NSDateComponents`.
+         * @details A Boolean value that indicates whether the month is a leap month.
+         * @return The converted Objective-C result.
+         */
         bool is_leap_month() const;
         /**
-     * @brief Sets the `leapMonth` property of `NSDateComponents`.
-     * @details A Boolean value that indicates whether the month is a leap month.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `leapMonth` property of `NSDateComponents`.
+         * @details A Boolean value that indicates whether the month is a leap month.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_leap_month(bool value) const;
         /**
-     * @brief Returns the `minute` property of `NSDateComponents`.
-     * @details The number of minute units for the receiver.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `minute` property of `NSDateComponents`.
+         * @details The number of minute units for the receiver.
+         * @return The converted Objective-C result.
+         */
         std::int64_t minute() const;
         /**
-     * @brief Sets the `minute` property of `NSDateComponents`.
-     * @details The number of minute units for the receiver.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `minute` property of `NSDateComponents`.
+         * @details The number of minute units for the receiver.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_minute(std::int64_t value) const;
         /**
-     * @brief Returns the `month` property of `NSDateComponents`.
-     * @details The number of months.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `month` property of `NSDateComponents`.
+         * @details The number of months.
+         * @return The converted Objective-C result.
+         */
         std::int64_t month() const;
         /**
-     * @brief Sets the `month` property of `NSDateComponents`.
-     * @details The number of months.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `month` property of `NSDateComponents`.
+         * @details The number of months.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_month(std::int64_t value) const;
         /**
-     * @brief Returns the `nanosecond` property of `NSDateComponents`.
-     * @details The number of nanosecond units for the receiver.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `nanosecond` property of `NSDateComponents`.
+         * @details The number of nanosecond units for the receiver.
+         * @return The converted Objective-C result.
+         */
         std::int64_t nanosecond() const;
         /**
-     * @brief Sets the `nanosecond` property of `NSDateComponents`.
-     * @details The number of nanosecond units for the receiver.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `nanosecond` property of `NSDateComponents`.
+         * @details The number of nanosecond units for the receiver.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_nanosecond(std::int64_t value) const;
         /**
-     * @brief Returns the `quarter` property of `NSDateComponents`.
-     * @details The number of quarters.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `quarter` property of `NSDateComponents`.
+         * @details The number of quarters.
+         * @return The converted Objective-C result.
+         */
         std::int64_t quarter() const;
         /**
-     * @brief Sets the `quarter` property of `NSDateComponents`.
-     * @details The number of quarters.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `quarter` property of `NSDateComponents`.
+         * @details The number of quarters.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_quarter(std::int64_t value) const;
         /**
-     * @brief Returns the `repeatedDay` property of `NSDateComponents`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `repeatedDay` property of `NSDateComponents`.
+         * @return The converted Objective-C result.
+         */
         bool is_repeated_day() const;
         /**
-     * @brief Sets the `repeatedDay` property of `NSDateComponents`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `repeatedDay` property of `NSDateComponents`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_repeated_day(bool value) const;
         /**
-     * @brief Returns the `second` property of `NSDateComponents`.
-     * @details The number of second units for the receiver.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `second` property of `NSDateComponents`.
+         * @details The number of second units for the receiver.
+         * @return The converted Objective-C result.
+         */
         std::int64_t second() const;
         /**
-     * @brief Sets the `second` property of `NSDateComponents`.
-     * @details The number of second units for the receiver.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `second` property of `NSDateComponents`.
+         * @details The number of second units for the receiver.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_second(std::int64_t value) const;
         /**
-     * @brief Returns the `timeZone` property of `NSDateComponents`.
-     * @details The time zone used to interpret the date components.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `timeZone` property of `NSDateComponents`.
+         * @details The time zone used to interpret the date components.
+         * @return The converted Objective-C result.
+         */
         TimeZone time_zone() const;
         /**
-     * @brief Sets the `timeZone` property of `NSDateComponents`.
-     * @details The time zone used to interpret the date components.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `timeZone` property of `NSDateComponents`.
+         * @details The time zone used to interpret the date components.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_time_zone(const TimeZone& value) const;
         /**
-     * @brief Returns the `validDate` property of `NSDateComponents`.
-     * @details Reports whether or not the combination of properties which have been set in the receiver is a date which exists in the calendar. This method is not appropriate for use on NSDateComponents objects which are specifying relative quantities of calendar components. Except for some trivial cases (e.g., 'seconds' should be 0 - 59 in any calendar), this method is not necessarily cheap. If the time zone property is set in the NSDateComponents object, it is used. The calendar property must be set, or NO is returned.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `validDate` property of `NSDateComponents`.
+         * @details Reports whether or not the combination of properties which have been set in the receiver is a date which exists in the calendar. This method is not appropriate for use on NSDateComponents objects which are specifying relative quantities of calendar components. Except for some trivial cases (e.g., 'seconds' should be 0 - 59 in any calendar), this method is not necessarily cheap. If the time zone property is set in the NSDateComponents object, it is used. The calendar property must be set, or NO is returned.
+         * @return The converted Objective-C result.
+         */
         bool is_valid_date() const;
         /**
-     * @brief Returns the `weekOfMonth` property of `NSDateComponents`.
-     * @details The week number of the months.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `weekOfMonth` property of `NSDateComponents`.
+         * @details The week number of the months.
+         * @return The converted Objective-C result.
+         */
         std::int64_t week_of_month() const;
         /**
-     * @brief Sets the `weekOfMonth` property of `NSDateComponents`.
-     * @details The week number of the months.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `weekOfMonth` property of `NSDateComponents`.
+         * @details The week number of the months.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_week_of_month(std::int64_t value) const;
         /**
-     * @brief Returns the `weekOfYear` property of `NSDateComponents`.
-     * @details The ISO 8601 week date of the year.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `weekOfYear` property of `NSDateComponents`.
+         * @details The ISO 8601 week date of the year.
+         * @return The converted Objective-C result.
+         */
         std::int64_t week_of_year() const;
         /**
-     * @brief Sets the `weekOfYear` property of `NSDateComponents`.
-     * @details The ISO 8601 week date of the year.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `weekOfYear` property of `NSDateComponents`.
+         * @details The ISO 8601 week date of the year.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_week_of_year(std::int64_t value) const;
         /**
-     * @brief Returns the `weekday` property of `NSDateComponents`.
-     * @details The number of the weekdays.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `weekday` property of `NSDateComponents`.
+         * @details The number of the weekdays.
+         * @return The converted Objective-C result.
+         */
         std::int64_t weekday() const;
         /**
-     * @brief Sets the `weekday` property of `NSDateComponents`.
-     * @details The number of the weekdays.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `weekday` property of `NSDateComponents`.
+         * @details The number of the weekdays.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_weekday(std::int64_t value) const;
         /**
-     * @brief Returns the `weekdayOrdinal` property of `NSDateComponents`.
-     * @details The ordinal number of weekdays.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `weekdayOrdinal` property of `NSDateComponents`.
+         * @details The ordinal number of weekdays.
+         * @return The converted Objective-C result.
+         */
         std::int64_t weekday_ordinal() const;
         /**
-     * @brief Sets the `weekdayOrdinal` property of `NSDateComponents`.
-     * @details The ordinal number of weekdays.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `weekdayOrdinal` property of `NSDateComponents`.
+         * @details The ordinal number of weekdays.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_weekday_ordinal(std::int64_t value) const;
         /**
-     * @brief Returns the `year` property of `NSDateComponents`.
-     * @details The number of years.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `year` property of `NSDateComponents`.
+         * @details The number of years.
+         * @return The converted Objective-C result.
+         */
         std::int64_t year() const;
         /**
-     * @brief Sets the `year` property of `NSDateComponents`.
-     * @details The number of years.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `year` property of `NSDateComponents`.
+         * @details The number of years.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_year(std::int64_t value) const;
         /**
-     * @brief Returns the `yearForWeekOfYear` property of `NSDateComponents`.
-     * @details The ISO 8601 week-numbering year.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `yearForWeekOfYear` property of `NSDateComponents`.
+         * @details The ISO 8601 week-numbering year.
+         * @return The converted Objective-C result.
+         */
         std::int64_t year_for_week_of_year() const;
         /**
-     * @brief Sets the `yearForWeekOfYear` property of `NSDateComponents`.
-     * @details The ISO 8601 week-numbering year.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `yearForWeekOfYear` property of `NSDateComponents`.
+         * @details The ISO 8601 week-numbering year.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_year_for_week_of_year(std::int64_t value) const;
     };
 }

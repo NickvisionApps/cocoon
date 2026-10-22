@@ -49,68 +49,68 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit TableCellView(Adopt adopt);
         /**
-     * @brief Returns the `backgroundStyle` property of `NSTableCellView`.
-     * @details The backgroundStyle property is automatically set by the enclosing NSTableRowView to let this view know what its background looks like. For instance, when the -backgroundStyle is NSBackgroundStyleEmphasized, the view should use a contrasting text color. The system label colors (labelColor, secondaryLabelColor, tertiaryLabelColor, and quaternaryLabelColor) automatically adapt when displayed with an emphasized backgroundStyle. Upon setting, the default implementation automatically forwards calls to all subviews that implement -setBackgroundStyle: or are an NSControl (which have NSCells that respond to -setBackgroundStyle:).
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `backgroundStyle` property of `NSTableCellView`.
+         * @details The backgroundStyle property is automatically set by the enclosing NSTableRowView to let this view know what its background looks like. For instance, when the -backgroundStyle is NSBackgroundStyleEmphasized, the view should use a contrasting text color. The system label colors (labelColor, secondaryLabelColor, tertiaryLabelColor, and quaternaryLabelColor) automatically adapt when displayed with an emphasized backgroundStyle. Upon setting, the default implementation automatically forwards calls to all subviews that implement -setBackgroundStyle: or are an NSControl (which have NSCells that respond to -setBackgroundStyle:).
+         * @return The converted Objective-C result.
+         */
         BackgroundStyle background_style() const;
         /**
-     * @brief Sets the `backgroundStyle` property of `NSTableCellView`.
-     * @details The backgroundStyle property is automatically set by the enclosing NSTableRowView to let this view know what its background looks like. For instance, when the -backgroundStyle is NSBackgroundStyleEmphasized, the view should use a contrasting text color. The system label colors (labelColor, secondaryLabelColor, tertiaryLabelColor, and quaternaryLabelColor) automatically adapt when displayed with an emphasized backgroundStyle. Upon setting, the default implementation automatically forwards calls to all subviews that implement -setBackgroundStyle: or are an NSControl (which have NSCells that respond to -setBackgroundStyle:).
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `backgroundStyle` property of `NSTableCellView`.
+         * @details The backgroundStyle property is automatically set by the enclosing NSTableRowView to let this view know what its background looks like. For instance, when the -backgroundStyle is NSBackgroundStyleEmphasized, the view should use a contrasting text color. The system label colors (labelColor, secondaryLabelColor, tertiaryLabelColor, and quaternaryLabelColor) automatically adapt when displayed with an emphasized backgroundStyle. Upon setting, the default implementation automatically forwards calls to all subviews that implement -setBackgroundStyle: or are an NSControl (which have NSCells that respond to -setBackgroundStyle:).
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_background_style(BackgroundStyle value) const;
         /**
-     * @brief Returns the `draggingImageComponents` property of `NSTableCellView`.
-     * @details Multi-Item Drag Support. The default implementation will return an array of up to two NSDraggingImageComponent instances -- one for the imageView and another for the textField (if not nil). These methods can be subclassed and overridden to provide a custom set of NSDraggingImageComponents to create the drag image from this view.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `draggingImageComponents` property of `NSTableCellView`.
+         * @details Multi-Item Drag Support. The default implementation will return an array of up to two NSDraggingImageComponent instances -- one for the imageView and another for the textField (if not nil). These methods can be subclassed and overridden to provide a custom set of NSDraggingImageComponents to create the drag image from this view.
+         * @return The converted Objective-C result.
+         */
         std::vector<DraggingImageComponent> dragging_image_components() const;
         /**
-     * @brief Returns the `imageView` property of `NSTableCellView`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `imageView` property of `NSTableCellView`.
+         * @return The converted Objective-C result.
+         */
         ImageView image_view() const;
         /**
-     * @brief Sets the `imageView` property of `NSTableCellView`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `imageView` property of `NSTableCellView`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_image_view(const ImageView& value) const;
         /**
-     * @brief Returns the `objectValue` property of `NSTableCellView`.
-     * @details The 'objectValue' is automatically set by the table when using bindings, or the result from the dataSource method -tableView:objectValueForTableColumn:row:. Key Value Observing (KVO) compliant so user interface elements can be bound to the 'objectValue'.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `objectValue` property of `NSTableCellView`.
+         * @details The 'objectValue' is automatically set by the table when using bindings, or the result from the dataSource method -tableView:objectValueForTableColumn:row:. Key Value Observing (KVO) compliant so user interface elements can be bound to the 'objectValue'.
+         * @return The converted Objective-C result.
+         */
         Object object_value() const;
         /**
-     * @brief Sets the `objectValue` property of `NSTableCellView`.
-     * @details The 'objectValue' is automatically set by the table when using bindings, or the result from the dataSource method -tableView:objectValueForTableColumn:row:. Key Value Observing (KVO) compliant so user interface elements can be bound to the 'objectValue'.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `objectValue` property of `NSTableCellView`.
+         * @details The 'objectValue' is automatically set by the table when using bindings, or the result from the dataSource method -tableView:objectValueForTableColumn:row:. Key Value Observing (KVO) compliant so user interface elements can be bound to the 'objectValue'.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_object_value(const Object& value) const;
         /**
-     * @brief Returns the `rowSizeStyle` property of `NSTableCellView`.
-     * @details The rowSizeStyle is set by the NSTableView to its -effectiveRowSizeStyle. The cell view will layout the textField and imageView based on the rowSizeStyle. A value of NSTableViewRowSizeStyleDefault should never be set on the cell view, as it is an appropriate value only for the table. See NSTableView.h for more information.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `rowSizeStyle` property of `NSTableCellView`.
+         * @details The rowSizeStyle is set by the NSTableView to its -effectiveRowSizeStyle. The cell view will layout the textField and imageView based on the rowSizeStyle. A value of NSTableViewRowSizeStyleDefault should never be set on the cell view, as it is an appropriate value only for the table. See NSTableView.h for more information.
+         * @return The converted Objective-C result.
+         */
         TableViewRowSizeStyle row_size_style() const;
         /**
-     * @brief Sets the `rowSizeStyle` property of `NSTableCellView`.
-     * @details The rowSizeStyle is set by the NSTableView to its -effectiveRowSizeStyle. The cell view will layout the textField and imageView based on the rowSizeStyle. A value of NSTableViewRowSizeStyleDefault should never be set on the cell view, as it is an appropriate value only for the table. See NSTableView.h for more information.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `rowSizeStyle` property of `NSTableCellView`.
+         * @details The rowSizeStyle is set by the NSTableView to its -effectiveRowSizeStyle. The cell view will layout the textField and imageView based on the rowSizeStyle. A value of NSTableViewRowSizeStyleDefault should never be set on the cell view, as it is an appropriate value only for the table. See NSTableView.h for more information.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_row_size_style(TableViewRowSizeStyle value) const;
         /**
-     * @brief Returns the `textField` property of `NSTableCellView`.
-     * @details The following two properties are provided for the developer to hook up as outlets. These outlets can then be accessed in -tableView:viewForTableColumn:row: and modified. Additional outlets can be added by subclassing NSTableCellView, adding appropriate ivars and properties, and hooking it up in Interface Builder.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `textField` property of `NSTableCellView`.
+         * @details The following two properties are provided for the developer to hook up as outlets. These outlets can then be accessed in -tableView:viewForTableColumn:row: and modified. Additional outlets can be added by subclassing NSTableCellView, adding appropriate ivars and properties, and hooking it up in Interface Builder.
+         * @return The converted Objective-C result.
+         */
         TextField text_field() const;
         /**
-     * @brief Sets the `textField` property of `NSTableCellView`.
-     * @details The following two properties are provided for the developer to hook up as outlets. These outlets can then be accessed in -tableView:viewForTableColumn:row: and modified. Additional outlets can be added by subclassing NSTableCellView, adding appropriate ivars and properties, and hooking it up in Interface Builder.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `textField` property of `NSTableCellView`.
+         * @details The following two properties are provided for the developer to hook up as outlets. These outlets can then be accessed in -tableView:viewForTableColumn:row: and modified. Additional outlets can be added by subclassing NSTableCellView, adding appropriate ivars and properties, and hooking it up in Interface Builder.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_text_field(const TextField& value) const;
     };
 }

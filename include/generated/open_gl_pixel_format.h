@@ -37,21 +37,21 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit OpenGLPixelFormat(Adopt adopt);
         /**
-     * @brief Calls `-[NSOpenGLPixelFormat getValues:forAttribute:forVirtualScreen:]`.
-     * @param vals Argument converted to the Objective-C parameter of the same role.
-     * @param attrib Argument converted to the Objective-C parameter of the same role.
-     * @param screen Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSOpenGLPixelFormat getValues:forAttribute:forVirtualScreen:]`.
+         * @param vals Argument converted to the Objective-C parameter of the same role.
+         * @param attrib Argument converted to the Objective-C parameter of the same role.
+         * @param screen Argument converted to the Objective-C parameter of the same role.
+         */
         void get_values(int* vals, unsigned int attrib, int screen) const;
         /**
-     * @brief Returns the `CGLPixelFormatObj` property of `NSOpenGLPixelFormat`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `CGLPixelFormatObj` property of `NSOpenGLPixelFormat`.
+         * @return The converted Objective-C result.
+         */
         CGLPixelFormatObj cgl_pixel_format_obj() const;
         /**
-     * @brief Returns the `numberOfVirtualScreens` property of `NSOpenGLPixelFormat`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `numberOfVirtualScreens` property of `NSOpenGLPixelFormat`.
+         * @return The converted Objective-C result.
+         */
         int number_of_virtual_screens() const;
     };
 }

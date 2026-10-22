@@ -49,123 +49,123 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit HashTableBase(Adopt adopt);
         /**
-     * @brief Calls `-[NSHashTable addObject:]`.
-     * @details Adds a given object to the hash table. - Parameter object: The object to add to the hash table.
-     * @param object Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSHashTable addObject:]`.
+         * @details Adds a given object to the hash table. - Parameter object: The object to add to the hash table.
+         * @param object Argument converted to the Objective-C parameter of the same role.
+         */
         void add_object(const Object& object) const;
         /**
-     * @brief Calls `-[NSHashTable containsObject:]`.
-     * @details Returns a Boolean value that indicates whether the hash table contains a given object. - Parameter anObject: The object to test for membership in the hash table. - Returns: 'YES' if the hash table contains 'anObject', otherwise 'NO'.
-     * @param an_object Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSHashTable containsObject:]`.
+         * @details Returns a Boolean value that indicates whether the hash table contains a given object. - Parameter anObject: The object to test for membership in the hash table. - Returns: 'YES' if the hash table contains 'anObject', otherwise 'NO'.
+         * @param an_object Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool contains_object(const Object& an_object) const;
         /**
-     * @brief Calls `+[NSHashTable hashTableWithOptions:]`.
-     * @details Returns a hash table with given pointer functions options. - Parameter options: A bit field that specifies the options for the elements in the hash table. - Returns: A hash table with given pointer functions options.
-     * @param options Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSHashTable hashTableWithOptions:]`.
+         * @details Returns a hash table with given pointer functions options. - Parameter options: A bit field that specifies the options for the elements in the hash table. - Returns: A hash table with given pointer functions options.
+         * @param options Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static HashTableBase hash_table_with_options(PointerFunctionsOptions options);
         /**
-     * @brief Calls `-[NSHashTable intersectHashTable:]`.
-     * @details Removes from the receiving hash table each element that isn't a member of another given hash table. - Parameter other: The hash table with which to perform the intersection.
-     * @param other Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSHashTable intersectHashTable:]`.
+         * @details Removes from the receiving hash table each element that isn't a member of another given hash table. - Parameter other: The hash table with which to perform the intersection.
+         * @param other Argument converted to the Objective-C parameter of the same role.
+         */
         void intersect_hash_table(const HashTableBase& other) const;
         /**
-     * @brief Calls `-[NSHashTable intersectsHashTable:]`.
-     * @details Returns a Boolean value that indicates whether a given hash table intersects with the receiving hash table. - Parameter other: The hash table with which to compare the receiving hash table. - Returns: 'YES' if 'other' intersects with the receiving hash table, otherwise 'NO'.
-     * @param other Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSHashTable intersectsHashTable:]`.
+         * @details Returns a Boolean value that indicates whether a given hash table intersects with the receiving hash table. - Parameter other: The hash table with which to compare the receiving hash table. - Returns: 'YES' if 'other' intersects with the receiving hash table, otherwise 'NO'.
+         * @param other Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool intersects_hash_table(const HashTableBase& other) const;
         /**
-     * @brief Calls `-[NSHashTable isEqualToHashTable:]`.
-     * @details Returns a Boolean value that indicates whether a given hash table is equal to the receiving hash table. Two hash tables have equal contents if they each have the same number of members and if each member of one hash table is present in the other. - Parameter other: The hash table with which to compare the receiving hash table. - Returns: 'YES' if the contents of 'other' are equal to the contents of the receiving hash table, otherwise 'NO'.
-     * @param other Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSHashTable isEqualToHashTable:]`.
+         * @details Returns a Boolean value that indicates whether a given hash table is equal to the receiving hash table. Two hash tables have equal contents if they each have the same number of members and if each member of one hash table is present in the other. - Parameter other: The hash table with which to compare the receiving hash table. - Returns: 'YES' if the contents of 'other' are equal to the contents of the receiving hash table, otherwise 'NO'.
+         * @param other Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool is_equal_to_hash_table(const HashTableBase& other) const;
         /**
-     * @brief Calls `-[NSHashTable isSubsetOfHashTable:]`.
-     * @details Returns a Boolean value that indicates whether every element in the receiving hash table is also present in another given hash table. - Parameter other: The hash table with which to compare the receiving hash table. - Returns: 'YES' if every element in the receiving hash table is also present in 'other', otherwise 'NO'.
-     * @param other Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSHashTable isSubsetOfHashTable:]`.
+         * @details Returns a Boolean value that indicates whether every element in the receiving hash table is also present in another given hash table. - Parameter other: The hash table with which to compare the receiving hash table. - Returns: 'YES' if every element in the receiving hash table is also present in 'other', otherwise 'NO'.
+         * @param other Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool is_subset_of_hash_table(const HashTableBase& other) const;
         /**
-     * @brief Calls `-[NSHashTable member:]`.
-     * @details Determines whether the hash table contains a given object, and returns that object if it is present. - Parameter object: The object to test for membership in the hash table. - Returns: If 'object' is a member of the hash table, returns 'object', otherwise returns 'nil'.
-     * @param object Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSHashTable member:]`.
+         * @details Determines whether the hash table contains a given object, and returns that object if it is present. - Parameter object: The object to test for membership in the hash table. - Returns: If 'object' is a member of the hash table, returns 'object', otherwise returns 'nil'.
+         * @param object Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Object member(const Object& object) const;
         /**
-     * @brief Calls `-[NSHashTable minusHashTable:]`.
-     * @details Removes each element in another given hash table from the receiving hash table, if present. - Parameter other: The hash table of elements to remove from the receiving hash table.
-     * @param other Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSHashTable minusHashTable:]`.
+         * @details Removes each element in another given hash table from the receiving hash table, if present. - Parameter other: The hash table of elements to remove from the receiving hash table.
+         * @param other Argument converted to the Objective-C parameter of the same role.
+         */
         void minus_hash_table(const HashTableBase& other) const;
         /**
-     * @brief Calls `-[NSHashTable objectEnumerator]`.
-     * @details Returns an enumerator object that lets you access each object in the hash table. It is more efficient to use the fast enumeration protocol (see 'NSFastEnumeration'). - Returns: An enumerator object that lets you access each object in the hash table.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSHashTable objectEnumerator]`.
+         * @details Returns an enumerator object that lets you access each object in the hash table. It is more efficient to use the fast enumeration protocol (see 'NSFastEnumeration'). - Returns: An enumerator object that lets you access each object in the hash table.
+         * @return The converted Objective-C result.
+         */
         EnumeratorBase object_enumerator() const;
         /**
-     * @brief Calls `-[NSHashTable removeAllObjects]`.
-     * @details Removes all objects from the hash table.
-     */
+         * @brief Calls `-[NSHashTable removeAllObjects]`.
+         * @details Removes all objects from the hash table.
+         */
         void remove_all_objects() const;
         /**
-     * @brief Calls `-[NSHashTable removeObject:]`.
-     * @details Removes a given object from the hash table. - Parameter object: The object to remove from the hash table.
-     * @param object Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSHashTable removeObject:]`.
+         * @details Removes a given object from the hash table. - Parameter object: The object to remove from the hash table.
+         * @param object Argument converted to the Objective-C parameter of the same role.
+         */
         void remove_object(const Object& object) const;
         /**
-     * @brief Calls `-[NSHashTable unionHashTable:]`.
-     * @details Adds each element in another given hash table to the receiving hash table, if not present. - Parameter other: The hash table of elements to add to the receiving hash table.
-     * @param other Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSHashTable unionHashTable:]`.
+         * @details Adds each element in another given hash table to the receiving hash table, if not present. - Parameter other: The hash table of elements to add to the receiving hash table.
+         * @param other Argument converted to the Objective-C parameter of the same role.
+         */
         void union_hash_table(const HashTableBase& other) const;
         /**
-     * @brief Calls `+[NSHashTable weakObjectsHashTable]`.
-     * @details Returns a new hash table for storing weak references to its contents.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSHashTable weakObjectsHashTable]`.
+         * @details Returns a new hash table for storing weak references to its contents.
+         * @return The converted Objective-C result.
+         */
         static HashTableBase weak_objects_hash_table();
         /**
-     * @brief Returns the `allObjects` property of `NSHashTable`.
-     * @details The hash table's members.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `allObjects` property of `NSHashTable`.
+         * @details The hash table's members.
+         * @return The converted Objective-C result.
+         */
         std::vector<Object> all_objects() const;
         /**
-     * @brief Returns the `anyObject` property of `NSHashTable`.
-     * @details One of the objects in the hash table. One of the objects in the hash table, or 'nil' if the hash table contains no objects. The object returned is chosen at the hash table's convenience -- the selection is not guaranteed to be random.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `anyObject` property of `NSHashTable`.
+         * @details One of the objects in the hash table. One of the objects in the hash table, or 'nil' if the hash table contains no objects. The object returned is chosen at the hash table's convenience -- the selection is not guaranteed to be random.
+         * @return The converted Objective-C result.
+         */
         Object any_object() const;
         /**
-     * @brief Returns the `count` property of `NSHashTable`.
-     * @details The number of elements in the hash table.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `count` property of `NSHashTable`.
+         * @details The number of elements in the hash table.
+         * @return The converted Objective-C result.
+         */
         std::uint64_t count() const;
         /**
-     * @brief Returns the `pointerFunctions` property of `NSHashTable`.
-     * @details The pointer functions for the hash table.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `pointerFunctions` property of `NSHashTable`.
+         * @details The pointer functions for the hash table.
+         * @return The converted Objective-C result.
+         */
         PointerFunctions pointer_functions() const;
         /**
-     * @brief Returns the `setRepresentation` property of `NSHashTable`.
-     * @details A set that contains the hash table's members.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `setRepresentation` property of `NSHashTable`.
+         * @details A set that contains the hash table's members.
+         * @return The converted Objective-C result.
+         */
         std::vector<Object> set_representation() const;
     };
 

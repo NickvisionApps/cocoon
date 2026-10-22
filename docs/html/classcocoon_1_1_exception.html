@@ -18,7 +18,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cocoon<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">cocoon<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">A C++20 wrapper over modern AppKit.</div>
   </td>
@@ -122,8 +122,6 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a7ee7f4117ba2f7f4758e995a333255b9" id="r_a7ee7f4117ba2f7f4758e995a333255b9"><td class="memItemLeft">static <a class="el" href="#a2a55e5858e5af58cf65a66c29f0388a4">Exception</a>&#160;</td><td class="memItemRight"><a class="el" href="#a7ee7f4117ba2f7f4758e995a333255b9">exception_with_name</a> (const std::string &amp;name, const std::string &amp;reason, const std::vector&lt; std::pair&lt; <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a>, <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &gt; &gt; &amp;user_info)</td></tr>
-<tr class="memdesc:a7ee7f4117ba2f7f4758e995a333255b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <span class="tt">+[NSException exceptionWithName:reason:userInfo:]</span>.  <br /></td></tr>
 <tr class="memitem:a1f41c6b42440e573747ed37f0483addf" id="r_a1f41c6b42440e573747ed37f0483addf"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
 <tr class="memitem:a1f41c6b42440e573747ed37f0483addf template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a1f41c6b42440e573747ed37f0483addf">raise</a> (const std::string &amp;name, const std::string &amp;format, const Args &amp;... args)</td></tr>
 <tr class="memitem:aa1267d40373ed43380786e70191d8b37" id="r_aa1267d40373ed43380786e70191d8b37"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#aa1267d40373ed43380786e70191d8b37">raise_</a> (const std::string &amp;name, const std::string &amp;format, const std::vector&lt; <a class="el" href="classcocoon_1_1_var_arg.html">VarArg</a> &gt; &amp;args)</td></tr>
@@ -292,51 +290,6 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Returns the <span class="tt">callStackSymbols</span> property of <span class="tt">NSException</span>. </p>
 <p>An array of strings describing the call stack backtrace at the point the exception was first raised. </p><dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
-
-</div>
-</div>
-<a id="a7ee7f4117ba2f7f4758e995a333255b9" name="a7ee7f4117ba2f7f4758e995a333255b9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ee7f4117ba2f7f4758e995a333255b9">&#9670;&#160;</a></span>exception_with_name()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a2a55e5858e5af58cf65a66c29f0388a4">Exception</a> cocoon::Exception::exception_with_name </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>reason</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; std::pair&lt; <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a>, <a class="el" href="classcocoon_1_1_object.html#aa304a07e1fdfe52a0452420b27c893f5">Object</a> &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>user_info</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calls <span class="tt">+[NSException exceptionWithName:reason:userInfo:]</span>. </p>
-<p>Creates and returns an exception object with the specified name, reason, and user info dictionary. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">name</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">reason</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-    <tr><td class="paramname">user_info</td><td>Argument converted to the Objective-C parameter of the same role. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The converted Objective-C result. </dd></dl>
 
 </div>
 </div>

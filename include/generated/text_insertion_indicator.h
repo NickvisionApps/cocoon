@@ -47,52 +47,52 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit TextInsertionIndicator(Adopt adopt);
         /**
-     * @brief Returns the `automaticModeOptions` property of `NSTextInsertionIndicator`.
-     * @details Options for the NSTextInsertionIndicatorDisplayModeAutomatic display mode. Defaults to NSTextInsertionIndicatorAutomaticModeOptionsShowEffectsView.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `automaticModeOptions` property of `NSTextInsertionIndicator`.
+         * @details Options for the NSTextInsertionIndicatorDisplayModeAutomatic display mode. Defaults to NSTextInsertionIndicatorAutomaticModeOptionsShowEffectsView.
+         * @return The converted Objective-C result.
+         */
         TextInsertionIndicatorAutomaticModeOptions automatic_mode_options() const;
         /**
-     * @brief Sets the `automaticModeOptions` property of `NSTextInsertionIndicator`.
-     * @details Options for the NSTextInsertionIndicatorDisplayModeAutomatic display mode. Defaults to NSTextInsertionIndicatorAutomaticModeOptionsShowEffectsView.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `automaticModeOptions` property of `NSTextInsertionIndicator`.
+         * @details Options for the NSTextInsertionIndicatorDisplayModeAutomatic display mode. Defaults to NSTextInsertionIndicatorAutomaticModeOptionsShowEffectsView.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_automatic_mode_options(TextInsertionIndicatorAutomaticModeOptions value) const;
         /**
-     * @brief Returns the `color` property of `NSTextInsertionIndicator`.
-     * @details The color of the indicator. \@discussion Defaults to NSColor.textInsertionPointColor. \@note If set to \@c nil, uses NSColor.textInsertionPointColor.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `color` property of `NSTextInsertionIndicator`.
+         * @details The color of the indicator. \@discussion Defaults to NSColor.textInsertionPointColor. \@note If set to \@c nil, uses NSColor.textInsertionPointColor.
+         * @return The converted Objective-C result.
+         */
         Color color() const;
         /**
-     * @brief Sets the `color` property of `NSTextInsertionIndicator`.
-     * @details The color of the indicator. \@discussion Defaults to NSColor.textInsertionPointColor. \@note If set to \@c nil, uses NSColor.textInsertionPointColor.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `color` property of `NSTextInsertionIndicator`.
+         * @details The color of the indicator. \@discussion Defaults to NSColor.textInsertionPointColor. \@note If set to \@c nil, uses NSColor.textInsertionPointColor.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_color(const Color& value) const;
         /**
-     * @brief Returns the `displayMode` property of `NSTextInsertionIndicator`.
-     * @details Sets-returns the indicator's display mode.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `displayMode` property of `NSTextInsertionIndicator`.
+         * @details Sets-returns the indicator's display mode.
+         * @return The converted Objective-C result.
+         */
         TextInsertionIndicatorDisplayMode display_mode() const;
         /**
-     * @brief Sets the `displayMode` property of `NSTextInsertionIndicator`.
-     * @details Sets-returns the indicator's display mode.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `displayMode` property of `NSTextInsertionIndicator`.
+         * @details Sets-returns the indicator's display mode.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_display_mode(TextInsertionIndicatorDisplayMode value) const;
         /**
-     * @brief Returns the `effectsViewInserter` property of `NSTextInsertionIndicator`.
-     * @details Sets-returns a block that inserts a view into the view hierarchy. \@discussion During dictation the NSTextInsertionIndicator displays a glow effect by inserting a view below the text view. If an application needs to insert the view in a different way, the application can specify a block of code that will be called when the glow effect needs to be displayed.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `effectsViewInserter` property of `NSTextInsertionIndicator`.
+         * @details Sets-returns a block that inserts a view into the view hierarchy. \@discussion During dictation the NSTextInsertionIndicator displays a glow effect by inserting a view below the text view. If an application needs to insert the view in a different way, the application can specify a block of code that will be called when the glow effect needs to be displayed.
+         * @return The converted Objective-C result.
+         */
         std::function<void(View)> effects_view_inserter() const;
         /**
-     * @brief Sets the `effectsViewInserter` property of `NSTextInsertionIndicator`.
-     * @details Sets-returns a block that inserts a view into the view hierarchy. \@discussion During dictation the NSTextInsertionIndicator displays a glow effect by inserting a view below the text view. If an application needs to insert the view in a different way, the application can specify a block of code that will be called when the glow effect needs to be displayed.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `effectsViewInserter` property of `NSTextInsertionIndicator`.
+         * @details Sets-returns a block that inserts a view into the view hierarchy. \@discussion During dictation the NSTextInsertionIndicator displays a glow effect by inserting a view below the text view. If an application needs to insert the view in a different way, the application can specify a block of code that will be called when the glow effect needs to be displayed.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_effects_view_inserter(std::function<void(View)> value) const;
     };
 }

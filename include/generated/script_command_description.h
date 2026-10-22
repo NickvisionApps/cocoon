@@ -43,79 +43,79 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit ScriptCommandDescription(Adopt adopt);
         /**
-     * @brief Calls `-[NSScriptCommandDescription appleEventCodeForArgumentWithName:]`.
-     * @details Returns the Apple event code for the specified command argument of the receiver. - Parameter argumentName: The argument name (used as a key) for which to obtain the corresponding Apple event code. - Returns: The code for the specified argument.
-     * @param argument_name Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSScriptCommandDescription appleEventCodeForArgumentWithName:]`.
+         * @details Returns the Apple event code for the specified command argument of the receiver. - Parameter argumentName: The argument name (used as a key) for which to obtain the corresponding Apple event code. - Returns: The code for the specified argument.
+         * @param argument_name Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         unsigned int apple_event_code_for_argument_with_name(const std::string& argument_name) const;
         /**
-     * @brief Calls `-[NSScriptCommandDescription createCommandInstance]`.
-     * @details Creates and returns an instance of the command object described by the receiver. - Returns: The command object, instantiated from ''NSScriptCommand'' or a subclass.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSScriptCommandDescription createCommandInstance]`.
+         * @details Creates and returns an instance of the command object described by the receiver. - Returns: The command object, instantiated from ''NSScriptCommand'' or a subclass.
+         * @return The converted Objective-C result.
+         */
         ScriptCommand create_command_instance() const;
         /**
-     * @brief Calls `-[NSScriptCommandDescription isOptionalArgumentWithName:]`.
-     * @details Returns a Boolean value that indicates whether the command argument identified by the specified argument key is an optional argument. - Parameter argumentName: Argument name (used as a key) that identifies the command argument to examine. - Returns: 'true' if the specified argument exists and is optional; otherwise, 'false'.
-     * @param argument_name Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSScriptCommandDescription isOptionalArgumentWithName:]`.
+         * @details Returns a Boolean value that indicates whether the command argument identified by the specified argument key is an optional argument. - Parameter argumentName: Argument name (used as a key) that identifies the command argument to examine. - Returns: 'true' if the specified argument exists and is optional; otherwise, 'false'.
+         * @param argument_name Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         bool is_optional_argument_with_name(const std::string& argument_name) const;
         /**
-     * @brief Calls `-[NSScriptCommandDescription typeForArgumentWithName:]`.
-     * @details Returns the type of the command argument identified by the specified key. - Parameter argumentName: Argument name (used as a key) that identifies the command argument to examine. - Returns: The type of the specified command argument. Returns 'nil' if there is no such argument.
-     * @param argument_name Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSScriptCommandDescription typeForArgumentWithName:]`.
+         * @details Returns the type of the command argument identified by the specified key. - Parameter argumentName: Argument name (used as a key) that identifies the command argument to examine. - Returns: The type of the specified command argument. Returns 'nil' if there is no such argument.
+         * @param argument_name Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::string type_for_argument_with_name(const std::string& argument_name) const;
         /**
-     * @brief Returns the `appleEventClassCode` property of `NSScriptCommandDescription`.
-     * @details The four-character code for the Apple event class of the receiver's command. In an Apple event that specifies a script command, two four character codes -- the event class and event ID -- together identify the command. You use this property to obtain the event class. You use ''NSScriptCommandDescription/appleEventCode'' to obtain the event ID. For example, commands in AppleScript's Core suite, such as 'clone', 'count', and 'create', have an event class code of ''core''. This code and the event ID code returned by ''appleEventCode'' together specify the necessary information for identifying and dispatching an Apple event.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `appleEventClassCode` property of `NSScriptCommandDescription`.
+         * @details The four-character code for the Apple event class of the receiver's command. In an Apple event that specifies a script command, two four character codes -- the event class and event ID -- together identify the command. You use this property to obtain the event class. You use ''NSScriptCommandDescription/appleEventCode'' to obtain the event ID. For example, commands in AppleScript's Core suite, such as 'clone', 'count', and 'create', have an event class code of ''core''. This code and the event ID code returned by ''appleEventCode'' together specify the necessary information for identifying and dispatching an Apple event.
+         * @return The converted Objective-C result.
+         */
         unsigned int apple_event_class_code() const;
         /**
-     * @brief Returns the `appleEventCode` property of `NSScriptCommandDescription`.
-     * @details The four-character code for the Apple event ID of the receiver's command. This value, together with the event class code returned by ''NSScriptCommandDescription/appleEventClassCode'', specifies the necessary information for identifying and dispatching an Apple event.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `appleEventCode` property of `NSScriptCommandDescription`.
+         * @details The four-character code for the Apple event ID of the receiver's command. This value, together with the event class code returned by ''NSScriptCommandDescription/appleEventClassCode'', specifies the necessary information for identifying and dispatching an Apple event.
+         * @return The converted Objective-C result.
+         */
         unsigned int apple_event_code() const;
         /**
-     * @brief Returns the `appleEventCodeForReturnType` property of `NSScriptCommandDescription`.
-     * @details The Apple event code that identifies the command's return type.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `appleEventCodeForReturnType` property of `NSScriptCommandDescription`.
+         * @details The Apple event code that identifies the command's return type.
+         * @return The converted Objective-C result.
+         */
         unsigned int apple_event_code_for_return_type() const;
         /**
-     * @brief Returns the `argumentNames` property of `NSScriptCommandDescription`.
-     * @details The names (or keys) for all arguments of the receiver's command. If there are no arguments for the command, returns an empty array.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `argumentNames` property of `NSScriptCommandDescription`.
+         * @details The names (or keys) for all arguments of the receiver's command. If there are no arguments for the command, returns an empty array.
+         * @return The converted Objective-C result.
+         */
         std::vector<std::string> argument_names() const;
         /**
-     * @brief Returns the `commandClassName` property of `NSScriptCommandDescription`.
-     * @details The name of the class that will be instantiated to handle the command. The Objective-C class name (for example, '"NSGetCommand"'). This is always ''NSScriptCommand'' or a subclass.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `commandClassName` property of `NSScriptCommandDescription`.
+         * @details The name of the class that will be instantiated to handle the command. The Objective-C class name (for example, '"NSGetCommand"'). This is always ''NSScriptCommand'' or a subclass.
+         * @return The converted Objective-C result.
+         */
         std::string command_class_name() const;
         /**
-     * @brief Returns the `commandName` property of `NSScriptCommandDescription`.
-     * @details The name of the command. The command name as it appears in the application's scriptability information; may be different from what is displayed to the scripter.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `commandName` property of `NSScriptCommandDescription`.
+         * @details The name of the command. The command name as it appears in the application's scriptability information; may be different from what is displayed to the scripter.
+         * @return The converted Objective-C result.
+         */
         std::string command_name() const;
         /**
-     * @brief Returns the `returnType` property of `NSScriptCommandDescription`.
-     * @details The return type of the command. The receiver's command return type (for example, '"NSNumber"' or '"NSDictionary"'), or 'nil' if the described command is not declared to return a result.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `returnType` property of `NSScriptCommandDescription`.
+         * @details The return type of the command. The receiver's command return type (for example, '"NSNumber"' or '"NSDictionary"'), or 'nil' if the described command is not declared to return a result.
+         * @return The converted Objective-C result.
+         */
         std::string return_type() const;
         /**
-     * @brief Returns the `suiteName` property of `NSScriptCommandDescription`.
-     * @details The name of the suite that contains the command described by the receiver. Within an application's scriptability information, named suites contain related sets of information.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `suiteName` property of `NSScriptCommandDescription`.
+         * @details The name of the suite that contains the command described by the receiver. Within an application's scriptability information, named suites contain related sets of information.
+         * @return The converted Objective-C result.
+         */
         std::string suite_name() const;
     };
 }

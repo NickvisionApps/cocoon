@@ -33,63 +33,63 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit LayoutAnchorBase(Adopt adopt);
         /**
-     * @brief Calls `-[NSLayoutAnchor constraintEqualToAnchor:]`.
-     * @param anchor Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSLayoutAnchor constraintEqualToAnchor:]`.
+         * @param anchor Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         LayoutConstraint constraint_equal_to_anchor(const LayoutAnchorBase& anchor) const;
         /**
-     * @brief Calls `-[NSLayoutAnchor constraintEqualToAnchor:constant:]`.
-     * @param anchor Argument converted to the Objective-C parameter of the same role.
-     * @param c Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSLayoutAnchor constraintEqualToAnchor:constant:]`.
+         * @param anchor Argument converted to the Objective-C parameter of the same role.
+         * @param c Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         LayoutConstraint constraint_equal_to_anchor(const LayoutAnchorBase& anchor, double c) const;
         /**
-     * @brief Calls `-[NSLayoutAnchor constraintGreaterThanOrEqualToAnchor:]`.
-     * @param anchor Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSLayoutAnchor constraintGreaterThanOrEqualToAnchor:]`.
+         * @param anchor Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         LayoutConstraint constraint_greater_than_or_equal_to_anchor(const LayoutAnchorBase& anchor) const;
         /**
-     * @brief Calls `-[NSLayoutAnchor constraintGreaterThanOrEqualToAnchor:constant:]`.
-     * @param anchor Argument converted to the Objective-C parameter of the same role.
-     * @param c Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSLayoutAnchor constraintGreaterThanOrEqualToAnchor:constant:]`.
+         * @param anchor Argument converted to the Objective-C parameter of the same role.
+         * @param c Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         LayoutConstraint constraint_greater_than_or_equal_to_anchor(const LayoutAnchorBase& anchor, double c) const;
         /**
-     * @brief Calls `-[NSLayoutAnchor constraintLessThanOrEqualToAnchor:]`.
-     * @param anchor Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSLayoutAnchor constraintLessThanOrEqualToAnchor:]`.
+         * @param anchor Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         LayoutConstraint constraint_less_than_or_equal_to_anchor(const LayoutAnchorBase& anchor) const;
         /**
-     * @brief Calls `-[NSLayoutAnchor constraintLessThanOrEqualToAnchor:constant:]`.
-     * @param anchor Argument converted to the Objective-C parameter of the same role.
-     * @param c Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSLayoutAnchor constraintLessThanOrEqualToAnchor:constant:]`.
+         * @param anchor Argument converted to the Objective-C parameter of the same role.
+         * @param c Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         LayoutConstraint constraint_less_than_or_equal_to_anchor(const LayoutAnchorBase& anchor, double c) const;
         /**
-     * @brief Returns the `constraintsAffectingLayout` property of `NSLayoutAnchor`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `constraintsAffectingLayout` property of `NSLayoutAnchor`.
+         * @return The converted Objective-C result.
+         */
         std::vector<LayoutConstraint> constraints_affecting_layout() const;
         /**
-     * @brief Returns the `hasAmbiguousLayout` property of `NSLayoutAnchor`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `hasAmbiguousLayout` property of `NSLayoutAnchor`.
+         * @return The converted Objective-C result.
+         */
         bool has_ambiguous_layout() const;
         /**
-     * @brief Returns the `item` property of `NSLayoutAnchor`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `item` property of `NSLayoutAnchor`.
+         * @return The converted Objective-C result.
+         */
         Object item() const;
         /**
-     * @brief Returns the `name` property of `NSLayoutAnchor`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `name` property of `NSLayoutAnchor`.
+         * @return The converted Objective-C result.
+         */
         std::string name() const;
     };
 

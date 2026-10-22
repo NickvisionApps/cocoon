@@ -29,35 +29,35 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit BindingSelectionMarker(Adopt adopt);
         /**
-     * @brief Calls `+[NSBindingSelectionMarker defaultPlaceholderForMarker:onClass:withBinding:]`.
-     * @param marker Argument converted to the Objective-C parameter of the same role.
-     * @param object_class Argument converted to the Objective-C parameter of the same role.
-     * @param binding Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSBindingSelectionMarker defaultPlaceholderForMarker:onClass:withBinding:]`.
+         * @param marker Argument converted to the Objective-C parameter of the same role.
+         * @param object_class Argument converted to the Objective-C parameter of the same role.
+         * @param binding Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static Object default_placeholder_for_marker(const BindingSelectionMarker& marker, const std::string& object_class, const std::string& binding);
         /**
-     * @brief Calls `+[NSBindingSelectionMarker setDefaultPlaceholder:forMarker:onClass:withBinding:]`.
-     * @param placeholder Argument converted to the Objective-C parameter of the same role.
-     * @param marker Argument converted to the Objective-C parameter of the same role.
-     * @param object_class Argument converted to the Objective-C parameter of the same role.
-     * @param binding Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `+[NSBindingSelectionMarker setDefaultPlaceholder:forMarker:onClass:withBinding:]`.
+         * @param placeholder Argument converted to the Objective-C parameter of the same role.
+         * @param marker Argument converted to the Objective-C parameter of the same role.
+         * @param object_class Argument converted to the Objective-C parameter of the same role.
+         * @param binding Argument converted to the Objective-C parameter of the same role.
+         */
         static void set_default_placeholder(const Object& placeholder, const BindingSelectionMarker& marker, const std::string& object_class, const std::string& binding);
         /**
-     * @brief Returns the `multipleValuesSelectionMarker` property of `NSBindingSelectionMarker`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `multipleValuesSelectionMarker` property of `NSBindingSelectionMarker`.
+         * @return The converted Objective-C result.
+         */
         static BindingSelectionMarker multiple_values_selection_marker();
         /**
-     * @brief Returns the `noSelectionMarker` property of `NSBindingSelectionMarker`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `noSelectionMarker` property of `NSBindingSelectionMarker`.
+         * @return The converted Objective-C result.
+         */
         static BindingSelectionMarker no_selection_marker();
         /**
-     * @brief Returns the `notApplicableSelectionMarker` property of `NSBindingSelectionMarker`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `notApplicableSelectionMarker` property of `NSBindingSelectionMarker`.
+         * @return The converted Objective-C result.
+         */
         static BindingSelectionMarker not_applicable_selection_marker();
     };
 }

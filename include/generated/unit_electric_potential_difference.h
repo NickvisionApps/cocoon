@@ -31,34 +31,34 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit UnitElectricPotentialDifference(Adopt adopt);
         /**
-     * @brief Returns the `kilovolts` property of `NSUnitElectricPotentialDifference`.
-     * @details The kilovolts unit of electric potential difference.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `kilovolts` property of `NSUnitElectricPotentialDifference`.
+         * @details The kilovolts unit of electric potential difference.
+         * @return The converted Objective-C result.
+         */
         static UnitElectricPotentialDifference kilovolts();
         /**
-     * @brief Returns the `megavolts` property of `NSUnitElectricPotentialDifference`.
-     * @details The megavolts unit of electric potential difference.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `megavolts` property of `NSUnitElectricPotentialDifference`.
+         * @details The megavolts unit of electric potential difference.
+         * @return The converted Objective-C result.
+         */
         static UnitElectricPotentialDifference megavolts();
         /**
-     * @brief Returns the `microvolts` property of `NSUnitElectricPotentialDifference`.
-     * @details The microvolts unit of electric potential difference.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `microvolts` property of `NSUnitElectricPotentialDifference`.
+         * @details The microvolts unit of electric potential difference.
+         * @return The converted Objective-C result.
+         */
         static UnitElectricPotentialDifference microvolts();
         /**
-     * @brief Returns the `millivolts` property of `NSUnitElectricPotentialDifference`.
-     * @details The millivolts unit of electric potential difference.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `millivolts` property of `NSUnitElectricPotentialDifference`.
+         * @details The millivolts unit of electric potential difference.
+         * @return The converted Objective-C result.
+         */
         static UnitElectricPotentialDifference millivolts();
         /**
-     * @brief Returns the `volts` property of `NSUnitElectricPotentialDifference`.
-     * @details The volts unit of electric potential difference.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `volts` property of `NSUnitElectricPotentialDifference`.
+         * @details The volts unit of electric potential difference.
+         * @return The converted Objective-C result.
+         */
         static UnitElectricPotentialDifference volts();
     };
 }

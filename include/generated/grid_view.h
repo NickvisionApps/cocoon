@@ -35,7 +35,6 @@ namespace cocoon
      * auto row_alignment = grid_view.row_alignment();
      * grid_view.set_row_spacing(1);
      * auto row_spacing = grid_view.row_spacing();
-     * auto made_0 = cocoon::GridView::grid_view_with_number_of_columns(1, 1);
      * grid_view.cell_at_column_index(1, 1);
      * grid_view.cell_for_view(cocoon::View());
      * grid_view.column_at_index(1);
@@ -49,173 +48,164 @@ namespace cocoon
         explicit GridView();
         /// @brief Creates a new `NSGridView` instance and returns a handle to it.
         explicit GridView(const Rect& frame_rect);
+        /// @brief Creates a new `NSGridView` instance and returns a handle to it.
+        explicit GridView(std::int64_t column_count, std::int64_t row_count);
+        /// @brief Creates a new `NSGridView` instance and returns a handle to it.
+        explicit GridView(const std::vector<std::vector<View>>& rows);
         /// @brief Creates a null handle that refers to no native object.
         GridView(std::nullptr_t);
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit GridView(Adopt adopt);
         /**
-     * @brief Calls `-[NSGridView addColumnWithViews:]`.
-     * @param views Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSGridView addColumnWithViews:]`.
+         * @param views Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         GridColumn add_column_with_views(const std::vector<View>& views) const;
         /**
-     * @brief Calls `-[NSGridView addRowWithViews:]`.
-     * @param views Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSGridView addRowWithViews:]`.
+         * @param views Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         GridRow add_row_with_views(const std::vector<View>& views) const;
         /**
-     * @brief Calls `-[NSGridView cellAtColumnIndex:rowIndex:]`.
-     * @param column_index Argument converted to the Objective-C parameter of the same role.
-     * @param row_index Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSGridView cellAtColumnIndex:rowIndex:]`.
+         * @param column_index Argument converted to the Objective-C parameter of the same role.
+         * @param row_index Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         GridCell cell_at_column_index(std::int64_t column_index, std::int64_t row_index) const;
         /**
-     * @brief Calls `-[NSGridView cellForView:]`.
-     * @param view Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSGridView cellForView:]`.
+         * @param view Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         GridCell cell_for_view(const View& view) const;
         /**
-     * @brief Calls `-[NSGridView columnAtIndex:]`.
-     * @param index Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSGridView columnAtIndex:]`.
+         * @param index Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         GridColumn column_at_index(std::int64_t index) const;
         /**
-     * @brief Calls `+[NSGridView gridViewWithNumberOfColumns:rows:]`.
-     * @param column_count Argument converted to the Objective-C parameter of the same role.
-     * @param row_count Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static GridView grid_view_with_number_of_columns(std::int64_t column_count, std::int64_t row_count);
-        /**
-     * @brief Calls `+[NSGridView gridViewWithViews:]`.
-     * @param rows Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static GridView grid_view_with_views(const std::vector<std::vector<View>>& rows);
-        /**
-     * @brief Calls `-[NSGridView indexOfColumn:]`.
-     * @param column Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSGridView indexOfColumn:]`.
+         * @param column Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::int64_t index_of_column(const GridColumn& column) const;
         /**
-     * @brief Calls `-[NSGridView indexOfRow:]`.
-     * @param row Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSGridView indexOfRow:]`.
+         * @param row Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         std::int64_t index_of_row(const GridRow& row) const;
         /**
-     * @brief Calls `-[NSGridView insertColumnAtIndex:withViews:]`.
-     * @param index Argument converted to the Objective-C parameter of the same role.
-     * @param views Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSGridView insertColumnAtIndex:withViews:]`.
+         * @param index Argument converted to the Objective-C parameter of the same role.
+         * @param views Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         GridColumn insert_column_at_index(std::int64_t index, const std::vector<View>& views) const;
         /**
-     * @brief Calls `-[NSGridView insertRowAtIndex:withViews:]`.
-     * @param index Argument converted to the Objective-C parameter of the same role.
-     * @param views Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSGridView insertRowAtIndex:withViews:]`.
+         * @param index Argument converted to the Objective-C parameter of the same role.
+         * @param views Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         GridRow insert_row_at_index(std::int64_t index, const std::vector<View>& views) const;
         /**
-     * @brief Calls `-[NSGridView mergeCellsInHorizontalRange:verticalRange:]`.
-     * @param h_range Argument converted to the Objective-C parameter of the same role.
-     * @param v_range Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSGridView mergeCellsInHorizontalRange:verticalRange:]`.
+         * @param h_range Argument converted to the Objective-C parameter of the same role.
+         * @param v_range Argument converted to the Objective-C parameter of the same role.
+         */
         void merge_cells_in_horizontal_range(const Range& h_range, const Range& v_range) const;
         /**
-     * @brief Calls `-[NSGridView moveColumnAtIndex:toIndex:]`.
-     * @param from_index Argument converted to the Objective-C parameter of the same role.
-     * @param to_index Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSGridView moveColumnAtIndex:toIndex:]`.
+         * @param from_index Argument converted to the Objective-C parameter of the same role.
+         * @param to_index Argument converted to the Objective-C parameter of the same role.
+         */
         void move_column_at_index(std::int64_t from_index, std::int64_t to_index) const;
         /**
-     * @brief Calls `-[NSGridView moveRowAtIndex:toIndex:]`.
-     * @param from_index Argument converted to the Objective-C parameter of the same role.
-     * @param to_index Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSGridView moveRowAtIndex:toIndex:]`.
+         * @param from_index Argument converted to the Objective-C parameter of the same role.
+         * @param to_index Argument converted to the Objective-C parameter of the same role.
+         */
         void move_row_at_index(std::int64_t from_index, std::int64_t to_index) const;
         /**
-     * @brief Calls `-[NSGridView removeColumnAtIndex:]`.
-     * @param index Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSGridView removeColumnAtIndex:]`.
+         * @param index Argument converted to the Objective-C parameter of the same role.
+         */
         void remove_column_at_index(std::int64_t index) const;
         /**
-     * @brief Calls `-[NSGridView removeRowAtIndex:]`.
-     * @param index Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSGridView removeRowAtIndex:]`.
+         * @param index Argument converted to the Objective-C parameter of the same role.
+         */
         void remove_row_at_index(std::int64_t index) const;
         /**
-     * @brief Calls `-[NSGridView rowAtIndex:]`.
-     * @param index Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSGridView rowAtIndex:]`.
+         * @param index Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         GridRow row_at_index(std::int64_t index) const;
         /**
-     * @brief Returns the `columnSpacing` property of `NSGridView`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `columnSpacing` property of `NSGridView`.
+         * @return The converted Objective-C result.
+         */
         double column_spacing() const;
         /**
-     * @brief Sets the `columnSpacing` property of `NSGridView`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `columnSpacing` property of `NSGridView`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_column_spacing(double value) const;
         /**
-     * @brief Returns the `numberOfColumns` property of `NSGridView`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `numberOfColumns` property of `NSGridView`.
+         * @return The converted Objective-C result.
+         */
         std::int64_t number_of_columns() const;
         /**
-     * @brief Returns the `numberOfRows` property of `NSGridView`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `numberOfRows` property of `NSGridView`.
+         * @return The converted Objective-C result.
+         */
         std::int64_t number_of_rows() const;
         /**
-     * @brief Returns the `rowAlignment` property of `NSGridView`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `rowAlignment` property of `NSGridView`.
+         * @return The converted Objective-C result.
+         */
         GridRowAlignment row_alignment() const;
         /**
-     * @brief Sets the `rowAlignment` property of `NSGridView`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `rowAlignment` property of `NSGridView`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_row_alignment(GridRowAlignment value) const;
         /**
-     * @brief Returns the `rowSpacing` property of `NSGridView`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `rowSpacing` property of `NSGridView`.
+         * @return The converted Objective-C result.
+         */
         double row_spacing() const;
         /**
-     * @brief Sets the `rowSpacing` property of `NSGridView`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `rowSpacing` property of `NSGridView`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_row_spacing(double value) const;
         /**
-     * @brief Returns the `xPlacement` property of `NSGridView`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `xPlacement` property of `NSGridView`.
+         * @return The converted Objective-C result.
+         */
         GridCellPlacement x_placement() const;
         /**
-     * @brief Sets the `xPlacement` property of `NSGridView`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `xPlacement` property of `NSGridView`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_x_placement(GridCellPlacement value) const;
         /**
-     * @brief Returns the `yPlacement` property of `NSGridView`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `yPlacement` property of `NSGridView`.
+         * @return The converted Objective-C result.
+         */
         GridCellPlacement y_placement() const;
         /**
-     * @brief Sets the `yPlacement` property of `NSGridView`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `yPlacement` property of `NSGridView`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_y_placement(GridCellPlacement value) const;
         /// @brief Convenience helper `add_row` provided by cocoon.
         void add_row(const std::vector<View>& views) const;

@@ -44,44 +44,44 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit MediaLibraryBrowserController(Adopt adopt);
         /**
-     * @brief Calls `-[NSMediaLibraryBrowserController togglePanel:]`.
-     * @param sender Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSMediaLibraryBrowserController togglePanel:]`.
+         * @param sender Argument converted to the Objective-C parameter of the same role.
+         */
         void toggle_panel(const Object& sender) const;
         /**
-     * @brief Returns the `frame` property of `NSMediaLibraryBrowserController`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `frame` property of `NSMediaLibraryBrowserController`.
+         * @return The converted Objective-C result.
+         */
         Rect frame() const;
         /**
-     * @brief Sets the `frame` property of `NSMediaLibraryBrowserController`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `frame` property of `NSMediaLibraryBrowserController`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_frame(const Rect& value) const;
         /**
-     * @brief Returns the `mediaLibraries` property of `NSMediaLibraryBrowserController`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `mediaLibraries` property of `NSMediaLibraryBrowserController`.
+         * @return The converted Objective-C result.
+         */
         MediaLibrary media_libraries() const;
         /**
-     * @brief Sets the `mediaLibraries` property of `NSMediaLibraryBrowserController`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `mediaLibraries` property of `NSMediaLibraryBrowserController`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_media_libraries(MediaLibrary value) const;
         /**
-     * @brief Returns the `sharedMediaLibraryBrowserController` property of `NSMediaLibraryBrowserController`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `sharedMediaLibraryBrowserController` property of `NSMediaLibraryBrowserController`.
+         * @return The converted Objective-C result.
+         */
         static MediaLibraryBrowserController shared_media_library_browser_controller();
         /**
-     * @brief Returns the `visible` property of `NSMediaLibraryBrowserController`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `visible` property of `NSMediaLibraryBrowserController`.
+         * @return The converted Objective-C result.
+         */
         bool is_visible() const;
         /**
-     * @brief Sets the `visible` property of `NSMediaLibraryBrowserController`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `visible` property of `NSMediaLibraryBrowserController`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_visible(bool value) const;
     };
 }

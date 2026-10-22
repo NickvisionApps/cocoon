@@ -57,68 +57,68 @@ namespace cocoon
         using Cell::image;
         using Cell::set_image;
         /**
-     * @brief Calls `-[NSBrowserCell highlightColorInView:]`.
-     * @param control_view Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSBrowserCell highlightColorInView:]`.
+         * @param control_view Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         Color highlight_color_in_view(const View& control_view) const;
         /**
-     * @brief Calls `-[NSBrowserCell reset]`.
-     */
+         * @brief Calls `-[NSBrowserCell reset]`.
+         */
         void reset() const;
         /**
-     * @brief Calls `-[NSBrowserCell set]`.
-     */
+         * @brief Calls `-[NSBrowserCell set]`.
+         */
         void set() const;
         /**
-     * @brief Returns the `alternateImage` property of `NSBrowserCell`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `alternateImage` property of `NSBrowserCell`.
+         * @return The converted Objective-C result.
+         */
         Image alternate_image() const;
         /**
-     * @brief Sets the `alternateImage` property of `NSBrowserCell`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `alternateImage` property of `NSBrowserCell`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_alternate_image(const Image& value) const;
         /**
-     * @brief Returns the `branchImage` property of `NSBrowserCell`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `branchImage` property of `NSBrowserCell`.
+         * @return The converted Objective-C result.
+         */
         static Image branch_image();
         /**
-     * @brief Returns the `highlightedBranchImage` property of `NSBrowserCell`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `highlightedBranchImage` property of `NSBrowserCell`.
+         * @return The converted Objective-C result.
+         */
         static Image highlighted_branch_image();
         /**
-     * @brief Returns the `image` property of `NSBrowserCell`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `image` property of `NSBrowserCell`.
+         * @return The converted Objective-C result.
+         */
         Image image() const;
         /**
-     * @brief Sets the `image` property of `NSBrowserCell`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `image` property of `NSBrowserCell`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_image(const Image& value) const;
         /**
-     * @brief Returns the `leaf` property of `NSBrowserCell`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `leaf` property of `NSBrowserCell`.
+         * @return The converted Objective-C result.
+         */
         bool is_leaf() const;
         /**
-     * @brief Sets the `leaf` property of `NSBrowserCell`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `leaf` property of `NSBrowserCell`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_leaf(bool value) const;
         /**
-     * @brief Returns the `loaded` property of `NSBrowserCell`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `loaded` property of `NSBrowserCell`.
+         * @return The converted Objective-C result.
+         */
         bool is_loaded() const;
         /**
-     * @brief Sets the `loaded` property of `NSBrowserCell`.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `loaded` property of `NSBrowserCell`.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_loaded(bool value) const;
     };
 }

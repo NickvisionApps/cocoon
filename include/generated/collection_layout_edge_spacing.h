@@ -38,33 +38,33 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit CollectionLayoutEdgeSpacing(Adopt adopt);
         /**
-     * @brief Calls `+[NSCollectionLayoutEdgeSpacing spacingForLeading:top:trailing:bottom:]`.
-     * @param leading Argument converted to the Objective-C parameter of the same role.
-     * @param top Argument converted to the Objective-C parameter of the same role.
-     * @param trailing Argument converted to the Objective-C parameter of the same role.
-     * @param bottom Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `+[NSCollectionLayoutEdgeSpacing spacingForLeading:top:trailing:bottom:]`.
+         * @param leading Argument converted to the Objective-C parameter of the same role.
+         * @param top Argument converted to the Objective-C parameter of the same role.
+         * @param trailing Argument converted to the Objective-C parameter of the same role.
+         * @param bottom Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         static CollectionLayoutEdgeSpacing spacing_for_leading(const CollectionLayoutSpacing& leading, const CollectionLayoutSpacing& top, const CollectionLayoutSpacing& trailing, const CollectionLayoutSpacing& bottom);
         /**
-     * @brief Returns the `bottom` property of `NSCollectionLayoutEdgeSpacing`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `bottom` property of `NSCollectionLayoutEdgeSpacing`.
+         * @return The converted Objective-C result.
+         */
         CollectionLayoutSpacing bottom() const;
         /**
-     * @brief Returns the `leading` property of `NSCollectionLayoutEdgeSpacing`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `leading` property of `NSCollectionLayoutEdgeSpacing`.
+         * @return The converted Objective-C result.
+         */
         CollectionLayoutSpacing leading() const;
         /**
-     * @brief Returns the `top` property of `NSCollectionLayoutEdgeSpacing`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `top` property of `NSCollectionLayoutEdgeSpacing`.
+         * @return The converted Objective-C result.
+         */
         CollectionLayoutSpacing top() const;
         /**
-     * @brief Returns the `trailing` property of `NSCollectionLayoutEdgeSpacing`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `trailing` property of `NSCollectionLayoutEdgeSpacing`.
+         * @return The converted Objective-C result.
+         */
         CollectionLayoutSpacing trailing() const;
     };
 }

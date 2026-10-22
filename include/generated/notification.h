@@ -27,45 +27,30 @@ namespace cocoon
         /// @brief Creates a new `NSNotification` instance and returns a handle to it.
         explicit Notification(const std::string& name, const Object& object, const std::vector<std::pair<Object, Object>>& user_info);
         /// @brief Creates a new `NSNotification` instance and returns a handle to it.
+        explicit Notification(const std::string& a_name, const Object& an_object);
+        /// @brief Creates a new `NSNotification` instance and returns a handle to it.
         explicit Notification();
         /// @brief Creates a null handle that refers to no native object.
         Notification(std::nullptr_t);
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit Notification(Adopt adopt);
         /**
-     * @brief Calls `+[NSNotification notificationWithName:object:]`.
-     * @details Returns a new notification object with a specified name and object. - Parameters: - aName: The name for the new notification. May not be 'nil'. - anObject: The object for the new notification.
-     * @param a_name Argument converted to the Objective-C parameter of the same role.
-     * @param an_object Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Notification notification_with_name(const std::string& a_name, const Object& an_object);
-        /**
-     * @brief Calls `+[NSNotification notificationWithName:object:userInfo:]`.
-     * @details Returns a notification object with a specified name, object, and user information. - Parameters: - aName: The name for the new notification. May not be 'nil'. - anObject: The object for the new notification. - aUserInfo: The user information dictionary for the new notification. May be 'nil'.
-     * @param a_name Argument converted to the Objective-C parameter of the same role.
-     * @param an_object Argument converted to the Objective-C parameter of the same role.
-     * @param a_user_info Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static Notification notification_with_name(const std::string& a_name, const Object& an_object, const std::vector<std::pair<Object, Object>>& a_user_info);
-        /**
-     * @brief Returns the `name` property of `NSNotification`.
-     * @details The name of the notification. Typically you use this property to find out what kind of notification you are dealing with when you receive a notification. Notification names can be any string. To avoid name collisions, you might want to use a prefix that's specific to your application.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `name` property of `NSNotification`.
+         * @details The name of the notification. Typically you use this property to find out what kind of notification you are dealing with when you receive a notification. Notification names can be any string. To avoid name collisions, you might want to use a prefix that's specific to your application.
+         * @return The converted Objective-C result.
+         */
         std::string name() const;
         /**
-     * @brief Returns the `object` property of `NSNotification`.
-     * @details The object associated with the notification. This is often the object that posted this notification. It may be 'nil'. Typically you use this method to find out what object a notification applies to when you receive a notification.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `object` property of `NSNotification`.
+         * @details The object associated with the notification. This is often the object that posted this notification. It may be 'nil'. Typically you use this method to find out what object a notification applies to when you receive a notification.
+         * @return The converted Objective-C result.
+         */
         Object object() const;
         /**
-     * @brief Returns the `userInfo` property of `NSNotification`.
-     * @details The user information dictionary associated with the notification. This may be 'nil'. The user information dictionary stores any additional objects that objects receiving the notification might use.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `userInfo` property of `NSNotification`.
+         * @details The user information dictionary associated with the notification. This may be 'nil'. The user information dictionary stores any additional objects that objects receiving the notification might use.
+         * @return The converted Objective-C result.
+         */
         std::vector<std::pair<Object, Object>> user_info() const;
     };
 }

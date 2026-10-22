@@ -19,11 +19,6 @@ namespace cocoon
     {
     }
 
-    DraggingImageComponent DraggingImageComponent::dragging_image_component_with_key(const std::string& key)
-    {
-        return cocoon::internal::wrap<DraggingImageComponent>([::NSDraggingImageComponent draggingImageComponentWithKey:cocoon::internal::to(key)]);
-    }
-
     Object DraggingImageComponent::contents() const
     {
         return cocoon::internal::wrap<Object>([cocoon::internal::ns<::NSDraggingImageComponent>(this) contents]);

@@ -260,6 +260,11 @@
 
 namespace cocoon
 {
+    FileManager::FileManager(const WorkspaceAuthorization& authorization) : FileManager(Adopt{cocoon::internal::retain([::NSFileManager fileManagerWithAuthorization:cocoon::internal::native<::NSWorkspaceAuthorization>(authorization)])})
+    {
+        FileManager::install_delegate_delegate_(handle());
+    }
+
     FileManager::FileManager() : FileManager(Adopt{cocoon::internal::retain([[::NSFileManager alloc] init])})
     {
         FileManager::install_delegate_delegate_(handle());
@@ -564,11 +569,6 @@ namespace cocoon
     bool FileManager::file_exists_at_path(const std::string& path, bool* is_directory) const
     {
         return static_cast<bool>([cocoon::internal::ns<::NSFileManager>(this) fileExistsAtPath:cocoon::internal::to(path) isDirectory:(BOOL*)(is_directory)]);
-    }
-
-    FileManager FileManager::file_manager_with_authorization(const WorkspaceAuthorization& authorization)
-    {
-        return cocoon::internal::wrap<FileManager>([::NSFileManager fileManagerWithAuthorization:cocoon::internal::native<::NSWorkspaceAuthorization>(authorization)]);
     }
 
     std::string FileManager::file_system_representation_with_path(const std::string& path) const

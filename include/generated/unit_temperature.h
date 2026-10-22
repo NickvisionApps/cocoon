@@ -31,22 +31,22 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit UnitTemperature(Adopt adopt);
         /**
-     * @brief Returns the `celsius` property of `NSUnitTemperature`.
-     * @details The degrees Celsius unit of temperature.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `celsius` property of `NSUnitTemperature`.
+         * @details The degrees Celsius unit of temperature.
+         * @return The converted Objective-C result.
+         */
         static UnitTemperature celsius();
         /**
-     * @brief Returns the `fahrenheit` property of `NSUnitTemperature`.
-     * @details The degrees Fahrenheit unit of temperature.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `fahrenheit` property of `NSUnitTemperature`.
+         * @details The degrees Fahrenheit unit of temperature.
+         * @return The converted Objective-C result.
+         */
         static UnitTemperature fahrenheit();
         /**
-     * @brief Returns the `kelvin` property of `NSUnitTemperature`.
-     * @details The kelvin unit of temperature.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `kelvin` property of `NSUnitTemperature`.
+         * @details The kelvin unit of temperature.
+         * @return The converted Objective-C result.
+         */
         static UnitTemperature kelvin();
     };
 }

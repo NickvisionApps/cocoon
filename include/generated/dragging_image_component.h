@@ -27,7 +27,6 @@ namespace cocoon
      * auto frame = dragging_image_component.frame();
      * dragging_image_component.set_key("text");
      * auto key = dragging_image_component.key();
-     * auto made_0 = cocoon::DraggingImageComponent::dragging_image_component_with_key("text");
      * @endcode
      * @see https://developer.apple.com/documentation/appkit/nsdraggingimagecomponent
      */
@@ -42,46 +41,40 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit DraggingImageComponent(Adopt adopt);
         /**
-     * @brief Calls `+[NSDraggingImageComponent draggingImageComponentWithKey:]`.
-     * @param key Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static DraggingImageComponent dragging_image_component_with_key(const std::string& key);
-        /**
-     * @brief Returns the `contents` property of `NSDraggingImageComponent`.
-     * @details An object providing the image contents of the component, typically you set an NSImage, but may be anything CALayer accepts.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `contents` property of `NSDraggingImageComponent`.
+         * @details An object providing the image contents of the component, typically you set an NSImage, but may be anything CALayer accepts.
+         * @return The converted Objective-C result.
+         */
         Object contents() const;
         /**
-     * @brief Sets the `contents` property of `NSDraggingImageComponent`.
-     * @details An object providing the image contents of the component, typically you set an NSImage, but may be anything CALayer accepts.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `contents` property of `NSDraggingImageComponent`.
+         * @details An object providing the image contents of the component, typically you set an NSImage, but may be anything CALayer accepts.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_contents(const Object& value) const;
         /**
-     * @brief Returns the `frame` property of `NSDraggingImageComponent`.
-     * @details The coordinate space is the bounds of the parent NSDraggingItem. That is, {{0,0}, {draggingFrame.size.width, draggingFrame.size.height}} Note: NSDraggingItem does not clip its components.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `frame` property of `NSDraggingImageComponent`.
+         * @details The coordinate space is the bounds of the parent NSDraggingItem. That is, {{0,0}, {draggingFrame.size.width, draggingFrame.size.height}} Note: NSDraggingItem does not clip its components.
+         * @return The converted Objective-C result.
+         */
         Rect frame() const;
         /**
-     * @brief Sets the `frame` property of `NSDraggingImageComponent`.
-     * @details The coordinate space is the bounds of the parent NSDraggingItem. That is, {{0,0}, {draggingFrame.size.width, draggingFrame.size.height}} Note: NSDraggingItem does not clip its components.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `frame` property of `NSDraggingImageComponent`.
+         * @details The coordinate space is the bounds of the parent NSDraggingItem. That is, {{0,0}, {draggingFrame.size.width, draggingFrame.size.height}} Note: NSDraggingItem does not clip its components.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_frame(const Rect& value) const;
         /**
-     * @brief Returns the `key` property of `NSDraggingImageComponent`.
-     * @details key must be unique for each component in an NSDraggingItem. You can create your own named components, but the following names have special meaning. NSDraggingImageComponentIconKey is an image of the item being dragged. NSDraggingImageComponentLabelKey represents a textual label associate with the item, for example, a file name.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `key` property of `NSDraggingImageComponent`.
+         * @details key must be unique for each component in an NSDraggingItem. You can create your own named components, but the following names have special meaning. NSDraggingImageComponentIconKey is an image of the item being dragged. NSDraggingImageComponentLabelKey represents a textual label associate with the item, for example, a file name.
+         * @return The converted Objective-C result.
+         */
         std::string key() const;
         /**
-     * @brief Sets the `key` property of `NSDraggingImageComponent`.
-     * @details key must be unique for each component in an NSDraggingItem. You can create your own named components, but the following names have special meaning. NSDraggingImageComponentIconKey is an image of the item being dragged. NSDraggingImageComponentLabelKey represents a textual label associate with the item, for example, a file name.
-     * @param value Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Sets the `key` property of `NSDraggingImageComponent`.
+         * @details key must be unique for each component in an NSDraggingItem. You can create your own named components, but the following names have special meaning. NSDraggingImageComponentIconKey is an image of the item being dragged. NSDraggingImageComponentLabelKey represents a textual label associate with the item, for example, a file name.
+         * @param value Argument converted to the Objective-C parameter of the same role.
+         */
         void set_key(const std::string& value) const;
     };
 }

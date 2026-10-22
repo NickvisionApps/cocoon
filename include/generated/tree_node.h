@@ -42,52 +42,46 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit TreeNode(Adopt adopt);
         /**
-     * @brief Calls `-[NSTreeNode descendantNodeAtIndexPath:]`.
-     * @param index_path Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
+         * @brief Calls `-[NSTreeNode descendantNodeAtIndexPath:]`.
+         * @param index_path Argument converted to the Objective-C parameter of the same role.
+         * @return The converted Objective-C result.
+         */
         TreeNode descendant_node_at_index_path(const IndexPath& index_path) const;
         /**
-     * @brief Calls `-[NSTreeNode sortWithSortDescriptors:recursively:]`.
-     * @param sort_descriptors Argument converted to the Objective-C parameter of the same role.
-     * @param recursively Argument converted to the Objective-C parameter of the same role.
-     */
+         * @brief Calls `-[NSTreeNode sortWithSortDescriptors:recursively:]`.
+         * @param sort_descriptors Argument converted to the Objective-C parameter of the same role.
+         * @param recursively Argument converted to the Objective-C parameter of the same role.
+         */
         void sort_with_sort_descriptors(const std::vector<SortDescriptor>& sort_descriptors, bool recursively) const;
         /**
-     * @brief Calls `+[NSTreeNode treeNodeWithRepresentedObject:]`.
-     * @param model_object Argument converted to the Objective-C parameter of the same role.
-     * @return The converted Objective-C result.
-     */
-        static TreeNode tree_node_with_represented_object(const Object& model_object);
-        /**
-     * @brief Returns the `childNodes` property of `NSTreeNode`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `childNodes` property of `NSTreeNode`.
+         * @return The converted Objective-C result.
+         */
         std::vector<TreeNode> child_nodes() const;
         /**
-     * @brief Returns the `indexPath` property of `NSTreeNode`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `indexPath` property of `NSTreeNode`.
+         * @return The converted Objective-C result.
+         */
         IndexPath index_path() const;
         /**
-     * @brief Returns the `leaf` property of `NSTreeNode`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `leaf` property of `NSTreeNode`.
+         * @return The converted Objective-C result.
+         */
         bool is_leaf() const;
         /**
-     * @brief Returns the `mutableChildNodes` property of `NSTreeNode`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `mutableChildNodes` property of `NSTreeNode`.
+         * @return The converted Objective-C result.
+         */
         std::vector<TreeNode> mutable_child_nodes() const;
         /**
-     * @brief Returns the `parentNode` property of `NSTreeNode`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `parentNode` property of `NSTreeNode`.
+         * @return The converted Objective-C result.
+         */
         TreeNode parent_node() const;
         /**
-     * @brief Returns the `representedObject` property of `NSTreeNode`.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `representedObject` property of `NSTreeNode`.
+         * @return The converted Objective-C result.
+         */
         Object represented_object() const;
     };
 }

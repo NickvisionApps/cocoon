@@ -30,11 +30,6 @@ namespace cocoon
         [cocoon::internal::ns<::NSImageView>(this) addSymbolEffect:cocoon::internal::native<::NSSymbolEffect>(symbol_effect) options:cocoon::internal::native<::NSSymbolEffectOptions>(options) animated:static_cast<::BOOL>(animated)];
     }
 
-    ImageView ImageView::image_view_with_image(const Image& image)
-    {
-        return cocoon::internal::wrap<ImageView>([::NSImageView imageViewWithImage:cocoon::internal::native<::NSImage>(image)]);
-    }
-
     void ImageView::remove_all_symbol_effects() const
     {
         [cocoon::internal::ns<::NSImageView>(this) removeAllSymbolEffects];

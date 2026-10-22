@@ -3,7 +3,7 @@
 
 namespace cocoon
 {
-    PageLayout::PageLayout() : PageLayout(Adopt{cocoon::internal::retain([[::NSPageLayout alloc] init])})
+    PageLayout::PageLayout() : PageLayout(Adopt{cocoon::internal::retain([::NSPageLayout pageLayout])})
     {
     }
 
@@ -28,11 +28,6 @@ namespace cocoon
     void PageLayout::begin_sheet_with_print_info(const PrintInfo& print_info, const Window& doc_window, const Object& delegate, const std::string& did_end_selector, void* context_info) const
     {
         [cocoon::internal::ns<::NSPageLayout>(this) beginSheetWithPrintInfo:cocoon::internal::native<::NSPrintInfo>(print_info) modalForWindow:cocoon::internal::native<::NSWindow>(doc_window) delegate:cocoon::internal::native_id(delegate) didEndSelector:NSSelectorFromString(cocoon::internal::to(did_end_selector)) contextInfo:context_info];
-    }
-
-    PageLayout PageLayout::page_layout()
-    {
-        return cocoon::internal::wrap<PageLayout>([::NSPageLayout pageLayout]);
     }
 
     void PageLayout::remove_accessory_controller(const ViewController& accessory_controller) const

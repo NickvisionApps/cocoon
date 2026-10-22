@@ -36,16 +36,16 @@ namespace cocoon
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit UnitConverterLinear(Adopt adopt);
         /**
-     * @brief Returns the `coefficient` property of `NSUnitConverterLinear`.
-     * @details The coefficient to use in the linear unit conversion calculation.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `coefficient` property of `NSUnitConverterLinear`.
+         * @details The coefficient to use in the linear unit conversion calculation.
+         * @return The converted Objective-C result.
+         */
         double coefficient() const;
         /**
-     * @brief Returns the `constant` property of `NSUnitConverterLinear`.
-     * @details The constant to use in the linear unit conversion calculation.
-     * @return The converted Objective-C result.
-     */
+         * @brief Returns the `constant` property of `NSUnitConverterLinear`.
+         * @details The constant to use in the linear unit conversion calculation.
+         * @return The converted Objective-C result.
+         */
         double constant() const;
     };
 }
