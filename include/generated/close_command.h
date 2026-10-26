@@ -10,7 +10,6 @@ namespace cocoon
 {
     /**
      * @brief C++ handle for the Objective-C class `NSCloseCommand` (Foundation).
-     * @details A command that closes one or more scriptable objects. An instance of 'NSCloseCommand' closes the specified scriptable object or objects—typically a document or window (and its associated document, if any). The command may optionally specify a location to save in and how to handle modified documents (by automatically saving changes, not saving them, or asking the user). 'NSCloseCommand' is part of Cocoa's built-in scripting support. It works automatically to support the 'close' command through key-value coding. Most applications don't need to subclass 'NSCloseCommand' or call its methods.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      * Inherits from @ref ScriptCommand.
      *
@@ -33,7 +32,6 @@ namespace cocoon
         explicit CloseCommand(Adopt adopt);
         /**
          * @brief Returns the `saveOptions` property of `NSCloseCommand`.
-         * @details The save options specified by the command.
          * @return The converted Objective-C result.
          */
         SaveOptions save_options() const;

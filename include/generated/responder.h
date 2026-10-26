@@ -329,7 +329,7 @@ namespace cocoon
         void tablet_proximity(const Event& event) const;
         /**
          * @brief Calls `-[NSResponder touchesBeganWithEvent:]`.
-         * @details A new set of touches has been recognized. To get the set of touches that began for this view (or descendants of this view): [event touchesMatchingPhase:NSTouchPhaseBegan inView:self]; Note: this is not always the point of contact with the touch device. A touch that transitions from resting to active may be part of a Began set. Note: These 'touches' responder methods are used for indirect touches and touchbar devices only. They are not used for Sidecar devices.
+         * @details A new set of touches has been recognized. To get the set of touches that began for this view (or descendants of this view): [event touchesMatchingPhase:NSTouchPhaseBegan inView:self]; Note: this is not always the point of contact with the touch device. A touch that transitions from resting to active may be part of a Began set.
          * @param event Argument converted to the Objective-C parameter of the same role.
          */
         void touches_began_with_event(const Event& event) const;

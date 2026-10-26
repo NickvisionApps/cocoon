@@ -259,13 +259,13 @@ namespace cocoon
         void set_prompt(const std::string& value) const;
         /**
          * @brief Returns the `showsContentTypes` property of `NSSavePanel`.
-         * @details Whether or not to show a popup list for selecting the type of the saved file. \@discussion The popup list shows the localized description for the types in 'allowedContentTypes'. To display a different description, implement the delegate method '-panel:displayNameForType:'. The default value is 'NO', do not show the content types. - Note: If 'allowedContentTypes' is empty, the control is not displayed.
+         * @details 'NSSavePanel': Whether or not to show a control for selecting the type of the saved file. The control shows the types in 'allowedContentTypes'. Default is 'NO'. 'NSOpenPanel': Not used. - Note: If 'allowedContentTypes' is empty, the control is not displayed.
          * @return The converted Objective-C result.
          */
         bool shows_content_types() const;
         /**
          * @brief Sets the `showsContentTypes` property of `NSSavePanel`.
-         * @details Whether or not to show a popup list for selecting the type of the saved file. \@discussion The popup list shows the localized description for the types in 'allowedContentTypes'. To display a different description, implement the delegate method '-panel:displayNameForType:'. The default value is 'NO', do not show the content types. - Note: If 'allowedContentTypes' is empty, the control is not displayed.
+         * @details 'NSSavePanel': Whether or not to show a control for selecting the type of the saved file. The control shows the types in 'allowedContentTypes'. Default is 'NO'. 'NSOpenPanel': Not used. - Note: If 'allowedContentTypes' is empty, the control is not displayed.
          * @param value Argument converted to the Objective-C parameter of the same role.
          */
         void set_shows_content_types(bool value) const;

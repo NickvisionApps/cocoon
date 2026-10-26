@@ -12,8 +12,6 @@ namespace cocoon
     class Color;
     class Cursor;
     class Event;
-    class GestureRecognizer;
-    class RefreshController;
     class RulerView;
     class Scroller;
     class View;
@@ -376,24 +374,6 @@ namespace cocoon
          * @param value Argument converted to the Objective-C parameter of the same role.
          */
         void set_max_magnification(double value) const;
-#ifdef COCOON_MACOS_27
-        /**
-         * @brief Returns the `maximumNumberOfTouchesForScrolling` property of `NSScrollView`.
-         * @details The maximum number of touches needed for scrolling Set this property to 0 to require exactly 'minimumNumberOfTouchesForScrolling' touches to recognize the gesture. Defaults to 'NSIntegerMax'.
-         * @return The converted Objective-C result.
-         */
-        std::int64_t maximum_number_of_touches_for_scrolling() const;
-#endif
-
-#ifdef COCOON_MACOS_27
-        /**
-         * @brief Sets the `maximumNumberOfTouchesForScrolling` property of `NSScrollView`.
-         * @details The maximum number of touches needed for scrolling Set this property to 0 to require exactly 'minimumNumberOfTouchesForScrolling' touches to recognize the gesture. Defaults to 'NSIntegerMax'.
-         * @param value Argument converted to the Objective-C parameter of the same role.
-         */
-        void set_maximum_number_of_touches_for_scrolling(std::int64_t value) const;
-#endif
-
         /**
          * @brief Returns the `minMagnification` property of `NSScrollView`.
          * @details This value determines how small the content can be magnified. The default value is 0.25.
@@ -406,24 +386,6 @@ namespace cocoon
          * @param value Argument converted to the Objective-C parameter of the same role.
          */
         void set_min_magnification(double value) const;
-#ifdef COCOON_MACOS_27
-        /**
-         * @brief Returns the `minimumNumberOfTouchesForScrolling` property of `NSScrollView`.
-         * @details The minimum number of touches needed for scrolling Defaults to 1.
-         * @return The converted Objective-C result.
-         */
-        std::int64_t minimum_number_of_touches_for_scrolling() const;
-#endif
-
-#ifdef COCOON_MACOS_27
-        /**
-         * @brief Sets the `minimumNumberOfTouchesForScrolling` property of `NSScrollView`.
-         * @details The minimum number of touches needed for scrolling Defaults to 1.
-         * @param value Argument converted to the Objective-C parameter of the same role.
-         */
-        void set_minimum_number_of_touches_for_scrolling(std::int64_t value) const;
-#endif
-
         /**
          * @brief Returns the `pageScroll` property of `NSScrollView`.
          * @return The converted Objective-C result.
@@ -434,24 +396,6 @@ namespace cocoon
          * @param value Argument converted to the Objective-C parameter of the same role.
          */
         void set_page_scroll(double value) const;
-#ifdef COCOON_MACOS_27
-        /**
-         * @brief Returns the `refreshController` property of `NSScrollView`.
-         * @details The refresh controller associated with this scroll view. Setting this property adds the refresh controller to the scroll view, enabling pull-to-refresh functionality. Set to nil to remove it.
-         * @return The converted Objective-C result.
-         */
-        RefreshController refresh_controller() const;
-#endif
-
-#ifdef COCOON_MACOS_27
-        /**
-         * @brief Sets the `refreshController` property of `NSScrollView`.
-         * @details The refresh controller associated with this scroll view. Setting this property adds the refresh controller to the scroll view, enabling pull-to-refresh functionality. Set to nil to remove it.
-         * @param value Argument converted to the Objective-C parameter of the same role.
-         */
-        void set_refresh_controller(const RefreshController& value) const;
-#endif
-
         /**
          * @brief Returns the `rulerViewClass` property of `NSScrollView`.
          * @return The converted Objective-C result.
@@ -472,15 +416,6 @@ namespace cocoon
          * @param value Argument converted to the Objective-C parameter of the same role.
          */
         void set_rulers_visible(bool value) const;
-#ifdef COCOON_MACOS_27
-        /**
-         * @brief Returns the `scrollGestureForRelationships` property of `NSScrollView`.
-         * @details A gesture recognizer for setting up failure or exclusion relationships against scrolling gestures
-         * @return The converted Objective-C result.
-         */
-        GestureRecognizer scroll_gesture_for_relationships() const;
-#endif
-
         /**
          * @brief Returns the `scrollerInsets` property of `NSScrollView`.
          * @details The distance the scrollers are inset from the edge of the scroll view.
@@ -527,24 +462,6 @@ namespace cocoon
          * @param value Argument converted to the Objective-C parameter of the same role.
          */
         void set_scrolls_dynamically(bool value) const;
-#ifdef COCOON_MACOS_27
-        /**
-         * @brief Returns the `touchScrollingEnabled` property of `NSScrollView`.
-         * @details Enable touch scrolling Defaults to 'true'.
-         * @return The converted Objective-C result.
-         */
-        bool is_touch_scrolling_enabled() const;
-#endif
-
-#ifdef COCOON_MACOS_27
-        /**
-         * @brief Sets the `touchScrollingEnabled` property of `NSScrollView`.
-         * @details Enable touch scrolling Defaults to 'true'.
-         * @param value Argument converted to the Objective-C parameter of the same role.
-         */
-        void set_touch_scrolling_enabled(bool value) const;
-#endif
-
         /**
          * @brief Returns the `usesPredominantAxisScrolling` property of `NSScrollView`.
          * @details Some content is scrollable in both the horizontal and vertical axes, but is predominantly scrolled one axis at a time. Other content (such as a drawing canvas) should scroll freely in both axes. Traditionally this is not an issue with scroll wheels since they can only scroll in one direction at a time. With scroll balls and touch surfaces, it becomes more difficult to determine the user's intention. This property helps NSScrollView determine the user's intention by specifying the type of scrolling content. When set to YES, NSScrollView will only scroll in the predominate direction the user is scrolling. The default value is YES for apps build on 10.7; NO otherwise.

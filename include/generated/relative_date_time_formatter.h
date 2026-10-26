@@ -15,7 +15,7 @@ namespace cocoon
 
     /**
      * @brief C++ handle for the Objective-C class `NSRelativeDateTimeFormatter` (Foundation).
-     * @details A formatter that creates locale-aware string representations of a relative date or time. Use the strings that the formatter produces, such as "1 hour ago", "in 2 weeks", "yesterday", and "tomorrow" as standalone strings. Embedding them in other strings may not be grammatically correct.
+     * @details NSRelativeDateTimeFormatter provides locale-aware formatting of a relative date or time, such as "1 hour ago", "in 2 weeks", "yesterday", and "tomorrow." Note that the string produced by the formatter should only be used in a standalone manner as it may not be grammatically correct to embed the string in longer strings.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      * Inherits from @ref Formatter.
      *
@@ -63,82 +63,82 @@ namespace cocoon
         std::string localized_string_for_date(const Date& date, const Date& reference_date) const;
         /**
          * @brief Calls `-[NSRelativeDateTimeFormatter localizedStringFromDateComponents:]`.
-         * @details Returns a formatted string representing a relative time from the given date components. Negative component values are evaluated as a date in the past. This method formats the value of the least granular unit in the 'NSDateComponents' object, and does not provide a compound format of the date component. Note this method only supports the following components: year, month, week of month, day, hour, minute, and second. The rest will be ignored.
+         * @details Convenience method for formatting a relative time represented by an NSDateComponents object. Negative component values are evaluated as a date in the past. This method formats the value of the least granular unit in the NSDateComponents object, and does not provide a compound format of the date component. Note this method only supports the following components: year, month, week of month, day, hour, minute, and second. The rest will be ignored.
          * @param date_components Argument converted to the Objective-C parameter of the same role.
          * @return The converted Objective-C result.
          */
         std::string localized_string_from_date_components(const DateComponents& date_components) const;
         /**
          * @brief Calls `-[NSRelativeDateTimeFormatter localizedStringFromTimeInterval:]`.
-         * @details Returns a formatted string representing a relative time from the given time interval. Negative time interval is evaluated as a date in the past.
+         * @details Convenience method for formatting a time interval using the formatter's calendar. Negative time interval is evaluated as a date in the past.
          * @param time_interval Argument converted to the Objective-C parameter of the same role.
          * @return The converted Objective-C result.
          */
         std::string localized_string_from_time_interval(double time_interval) const;
         /**
          * @brief Calls `-[NSRelativeDateTimeFormatter stringForObjectValue:]`.
-         * @details Creates a formatted string for a date relative to the current date and time. To determine the relative interval, the formatter uses '[NSDate date]' as the reference date. - Parameters: - obj: A date object to format. - Returns: A string that represents the date interval between a date and the current date and time, or 'nil' if 'obj' isn't an instance of 'NSDate'.
+         * @details Inherited from NSFormatter. 'obj' must be an instance of NSDate. Returns nil otherwise. When formatting a relative date using this method, the class uses -[NSDate date] as the reference date.
          * @param obj Argument converted to the Objective-C parameter of the same role.
          * @return The converted Objective-C result.
          */
         std::string string_for_object_value(const Object& obj) const;
         /**
          * @brief Returns the `calendar` property of `NSRelativeDateTimeFormatter`.
-         * @details Specifies the calendar to use for formatting values that do not have an inherent calendar of their own. Defaults to 'autoupdatingCurrentCalendar'. Also resets to 'autoupdatingCurrentCalendar' on assignment of 'nil'.
+         * @details Specifies the calendar to use for formatting values that do not have an inherent calendar of their own. Defaults to autoupdatingCurrentCalendar. Also resets to autoupdatingCurrentCalendar on assignment of nil.
          * @return The converted Objective-C result.
          */
         Calendar calendar() const;
         /**
          * @brief Sets the `calendar` property of `NSRelativeDateTimeFormatter`.
-         * @details Specifies the calendar to use for formatting values that do not have an inherent calendar of their own. Defaults to 'autoupdatingCurrentCalendar'. Also resets to 'autoupdatingCurrentCalendar' on assignment of 'nil'.
+         * @details Specifies the calendar to use for formatting values that do not have an inherent calendar of their own. Defaults to autoupdatingCurrentCalendar. Also resets to autoupdatingCurrentCalendar on assignment of nil.
          * @param value Argument converted to the Objective-C parameter of the same role.
          */
         void set_calendar(const Calendar& value) const;
         /**
          * @brief Returns the `dateTimeStyle` property of `NSRelativeDateTimeFormatter`.
-         * @details Specifies how to describe a relative date. For example, "yesterday" vs "1 day ago" in English. Default is 'NSRelativeDateTimeFormatterStyleNumeric'.
+         * @details Specifies how to describe a relative date. For example, "yesterday" vs "1 day ago" in English. Default is NSRelativeDateTimeFormatterStyleNumeric.
          * @return The converted Objective-C result.
          */
         RelativeDateTimeFormatterStyle date_time_style() const;
         /**
          * @brief Sets the `dateTimeStyle` property of `NSRelativeDateTimeFormatter`.
-         * @details Specifies how to describe a relative date. For example, "yesterday" vs "1 day ago" in English. Default is 'NSRelativeDateTimeFormatterStyleNumeric'.
+         * @details Specifies how to describe a relative date. For example, "yesterday" vs "1 day ago" in English. Default is NSRelativeDateTimeFormatterStyleNumeric.
          * @param value Argument converted to the Objective-C parameter of the same role.
          */
         void set_date_time_style(RelativeDateTimeFormatterStyle value) const;
         /**
          * @brief Returns the `formattingContext` property of `NSRelativeDateTimeFormatter`.
-         * @details Specifies the formatting context of the output. Default is 'NSFormattingContextUnknown'.
+         * @details Specifies the formatting context of the output. Default is NSFormattingContextUnknown.
          * @return The converted Objective-C result.
          */
         FormattingContext formatting_context() const;
         /**
          * @brief Sets the `formattingContext` property of `NSRelativeDateTimeFormatter`.
-         * @details Specifies the formatting context of the output. Default is 'NSFormattingContextUnknown'.
+         * @details Specifies the formatting context of the output. Default is NSFormattingContextUnknown.
          * @param value Argument converted to the Objective-C parameter of the same role.
          */
         void set_formatting_context(FormattingContext value) const;
         /**
          * @brief Returns the `locale` property of `NSRelativeDateTimeFormatter`.
-         * @details Specifies the locale of the output string. Defaults to and resets on assignment of 'nil' to the calendar's locale.
+         * @details Specifies the locale of the output string. Defaults to and resets on assignment of nil to the calendar's locale.
          * @return The converted Objective-C result.
          */
         Locale locale() const;
         /**
          * @brief Sets the `locale` property of `NSRelativeDateTimeFormatter`.
-         * @details Specifies the locale of the output string. Defaults to and resets on assignment of 'nil' to the calendar's locale.
+         * @details Specifies the locale of the output string. Defaults to and resets on assignment of nil to the calendar's locale.
          * @param value Argument converted to the Objective-C parameter of the same role.
          */
         void set_locale(const Locale& value) const;
         /**
          * @brief Returns the `unitsStyle` property of `NSRelativeDateTimeFormatter`.
-         * @details Specifies how to format the quantity or the name of the unit. For example, "1 day ago" vs "one day ago" in English. Default is 'NSRelativeDateTimeFormatterUnitsStyleFull'.
+         * @details Specifies how to format the quantity or the name of the unit. For example, "1 day ago" vs "one day ago" in English. Default is NSRelativeDateTimeFormatterUnitsStyleFull.
          * @return The converted Objective-C result.
          */
         RelativeDateTimeFormatterUnitsStyle units_style() const;
         /**
          * @brief Sets the `unitsStyle` property of `NSRelativeDateTimeFormatter`.
-         * @details Specifies how to format the quantity or the name of the unit. For example, "1 day ago" vs "one day ago" in English. Default is 'NSRelativeDateTimeFormatterUnitsStyleFull'.
+         * @details Specifies how to format the quantity or the name of the unit. For example, "1 day ago" vs "one day ago" in English. Default is NSRelativeDateTimeFormatterUnitsStyleFull.
          * @param value Argument converted to the Objective-C parameter of the same role.
          */
         void set_units_style(RelativeDateTimeFormatterUnitsStyle value) const;

@@ -173,13 +173,11 @@ namespace cocoon
         bool is_highlighted() const;
         /**
          * @brief Returns the `image` property of `NSMenuItem`.
-         * @details Set an image that is displayed next to the menu item's title. Note that in macOS 27 and later, AppKit determines the visibility of menu item images, and will typically hide images. Use the 'preferredImageVisibility' property with the '.visible' constant to specify that an image should always be visible.
          * @return The converted Objective-C result.
          */
         Image image() const;
         /**
          * @brief Sets the `image` property of `NSMenuItem`.
-         * @details Set an image that is displayed next to the menu item's title. Note that in macOS 27 and later, AppKit determines the visibility of menu item images, and will typically hide images. Use the 'preferredImageVisibility' property with the '.visible' constant to specify that an image should always be visible.
          * @param value Argument converted to the Objective-C parameter of the same role.
          */
         void set_image(const Image& value) const;
@@ -261,24 +259,6 @@ namespace cocoon
          * @return The converted Objective-C result.
          */
         MenuItem parent_item() const;
-#ifdef COCOON_MACOS_27
-        /**
-         * @brief Returns the `preferredImageVisibility` property of `NSMenuItem`.
-         * @details A menu item's image visibility determines whether the item's image is displayed when the menu is open. The default visibility for an item's image is Automatic. With this value, AppKit determines whether the item's image is visible based on system configuration. If an item's image should be visible in all cases, regardless of macOS version or other settings, then set the image visibility to '.visible'.
-         * @return The converted Objective-C result.
-         */
-        MenuItemImageVisibility preferred_image_visibility() const;
-#endif
-
-#ifdef COCOON_MACOS_27
-        /**
-         * @brief Sets the `preferredImageVisibility` property of `NSMenuItem`.
-         * @details A menu item's image visibility determines whether the item's image is displayed when the menu is open. The default visibility for an item's image is Automatic. With this value, AppKit determines whether the item's image is visible based on system configuration. If an item's image should be visible in all cases, regardless of macOS version or other settings, then set the image visibility to '.visible'.
-         * @param value Argument converted to the Objective-C parameter of the same role.
-         */
-        void set_preferred_image_visibility(MenuItemImageVisibility value) const;
-#endif
-
         /**
          * @brief Returns the `representedObject` property of `NSMenuItem`.
          * @return The converted Objective-C result.

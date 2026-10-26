@@ -43,7 +43,7 @@ deprecated: 535
   NSCell.setEntryType:
   ...
 
-unavailable/deprecated: 98
+unavailable/deprecated: 101
   NSAppearance.currentAppearance
   NSApplication.context
   NSBox.borderType
@@ -129,7 +129,7 @@ duplicate constructor signature: 76
   NSIndexSet.indexSetWithIndexesInRange:
   ...
 
-unavailable: 66
+unavailable: 65
   NSAlert.alertWithMessageText:defaultButton:alternateButton:otherButton:informativeTextWithFormat:
   NSBitmapImageRep.initWithFocusedViewRect:
   NSCachedImageRep.initWithSize:depth:separate:alpha:
@@ -158,7 +158,6 @@ unavailable: 66
   NSSpeechSynthesizer.initWithVoice:
   NSTextFieldCell.initImageCell:
   NSTextListElement.initWithAttributedString:
-  NSTextViewportLayoutController.renderingSurfaceForKey:
   NSWindow.initWithWindowRef:
   NSUnarchiver.objectZone
   NSUnarchiver.setObjectZone:
@@ -170,9 +169,10 @@ unavailable: 66
   NSBundle.setPreservationPriority:forTags:
   NSCalendarDate.initWithString:
   NSCalendarDate.initWithString:calendarFormat:
+  NSCalendarDate.initWithString:calendarFormat:locale:
   ...
 
-skipped selector: 49
+skipped selector: 45
   NSCollectionViewCompositionalLayout.new
   NSCollectionLayoutSection.new
   NSCollectionLayoutItem.new
@@ -195,12 +195,8 @@ skipped selector: 49
   NSTextRange.new
   NSTextSelectionNavigation.new
   NSTextViewportLayoutController.new
-  NSViewCornerConfiguration.new
-  NSViewCornerRadii.new
-  NSViewCornerRadius.new
   NSViewLayoutRegion.new
   NSBundle.load
-  NSError.new
   NSKeyValueSharedObserversSnapshot.new
   NSKeyValueSharedObservers.new
   NSLocalizedNumberFormatRule.new
@@ -213,6 +209,10 @@ skipped selector: 49
   NSURLSessionDownloadTask.new
   NSURLSessionStreamTask.new
   NSURLSessionWebSocketMessage.new
+  NSURLSessionWebSocketTask.new
+  NSURLSessionConfiguration.new
+  NSURLSessionTaskTransactionMetrics.new
+  NSURLSessionTaskMetrics.new
   ...
 
 unmapped pointer: 11

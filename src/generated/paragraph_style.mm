@@ -20,11 +20,6 @@ namespace cocoon
         return static_cast<WritingDirection>([::NSParagraphStyle defaultWritingDirectionForLanguage:cocoon::internal::to(language_name)]);
     }
 
-    TextAlignment ParagraphStyle::alignment() const
-    {
-        return static_cast<TextAlignment>([cocoon::internal::ns<::NSParagraphStyle>(this) alignment]);
-    }
-
     bool ParagraphStyle::allows_default_tightening_for_truncation() const
     {
         return static_cast<bool>([cocoon::internal::ns<::NSParagraphStyle>(this) allowsDefaultTighteningForTruncation]);
@@ -53,11 +48,6 @@ namespace cocoon
     double ParagraphStyle::head_indent() const
     {
         return static_cast<double>([cocoon::internal::ns<::NSParagraphStyle>(this) headIndent]);
-    }
-
-    std::int64_t ParagraphStyle::header_level() const
-    {
-        return static_cast<std::int64_t>([cocoon::internal::ns<::NSParagraphStyle>(this) headerLevel]);
     }
 
     float ParagraphStyle::hyphenation_factor() const
@@ -118,25 +108,12 @@ namespace cocoon
         return static_cast<double>([cocoon::internal::ns<::NSParagraphStyle>(this) tailIndent]);
     }
 
-    std::vector<TextBlock> ParagraphStyle::text_blocks() const
-    {
-        return cocoon::internal::from_array<TextBlock>([cocoon::internal::ns<::NSParagraphStyle>(this) textBlocks], [](id e) -> TextBlock
-                                                       {
-                                                           return cocoon::internal::wrap<TextBlock>((::NSTextBlock*)e);
-                                                       });
-    }
-
     std::vector<TextList> ParagraphStyle::text_lists() const
     {
         return cocoon::internal::from_array<TextList>([cocoon::internal::ns<::NSParagraphStyle>(this) textLists], [](id e) -> TextList
                                                       {
                                                           return cocoon::internal::wrap<TextList>((::NSTextList*)e);
                                                       });
-    }
-
-    float ParagraphStyle::tightening_factor_for_truncation() const
-    {
-        return static_cast<float>([cocoon::internal::ns<::NSParagraphStyle>(this) tighteningFactorForTruncation]);
     }
 
     bool ParagraphStyle::uses_default_hyphenation() const

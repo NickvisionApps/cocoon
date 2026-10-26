@@ -12,7 +12,7 @@ namespace cocoon
 
     /**
      * @brief C++ handle for the Objective-C class `NSCachedURLResponse` (Foundation).
-     * @details A cached response to a URL request. A ''CachedURLResponse'' object provides the server's response metadata in the form of a ''URLResponse'' object, along with an [NSData](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/PropertyLists/OldStylePlists/OldStylePLists.html\#//apple_ref/doc/uid/20001012-47169) object containing the actual cached content data. Its storage policy determines whether the response should be cached on disk, in memory, or not at all. Cached responses also contain a user info dictionary where you can store app-specific information about the cached item. The ''URLCache'' class stores and retrieves instances of ''CachedURLResponse''.
+     * @details \@class NSCachedURLResponse NSCachedURLResponse is a class whose objects functions as a wrapper for objects that are stored in the framework's caching system. It is used to maintain characteristics and attributes of a cached object.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      *
      * @par Example
@@ -38,25 +38,25 @@ namespace cocoon
         explicit CachedURLResponse(Adopt adopt);
         /**
          * @brief Returns the `data` property of `NSCachedURLResponse`.
-         * @details The cached response's data.
+         * @details \@abstract Returns the data of the receiver. \@result The data of the receiver.
          * @return The converted Objective-C result.
          */
         std::vector<std::uint8_t> data() const;
         /**
          * @brief Returns the `response` property of `NSCachedURLResponse`.
-         * @details The URL response object associated with the instance.
+         * @details \@abstract Returns the response wrapped by this instance. \@result The response wrapped by this instance.
          * @return The converted Objective-C result.
          */
         URLResponse response() const;
         /**
          * @brief Returns the `storagePolicy` property of `NSCachedURLResponse`.
-         * @details The cached response's storage policy.
+         * @details \@abstract Returns the NSURLCacheStoragePolicy constant of the receiver. \@result The NSURLCacheStoragePolicy constant of the receiver.
          * @return The converted Objective-C result.
          */
         URLCacheStoragePolicy storage_policy() const;
         /**
          * @brief Returns the `userInfo` property of `NSCachedURLResponse`.
-         * @details The cached response's user info dictionary.
+         * @details \@abstract Returns the userInfo dictionary of the receiver. \@result The userInfo dictionary of the receiver.
          * @return The converted Objective-C result.
          */
         std::vector<std::pair<Object, Object>> user_info() const;

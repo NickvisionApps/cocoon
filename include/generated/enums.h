@@ -86,15 +86,6 @@ namespace cocoon
         Left = 8,
     };
 
-    /** @brief Wraps the Objective-C enumeration `CGRectEdge`. */
-    enum class CGRectEdge : std::uint32_t
-    {
-        MinXEdge = 0,
-        MinYEdge = 1,
-        MaxXEdge = 2,
-        MaxYEdge = 3,
-    };
-
     /** @brief Wraps the Objective-C option set `NSActivityOptions`. Combine option sets with `|` and test them with `test_flag`. */
     enum class ActivityOptions : std::uint64_t
     {
@@ -290,7 +281,6 @@ namespace cocoon
         FullScreen = 1024,
         AutoHideToolbar = 2048,
         DisableCursorLocationAssistance = 4096,
-        DisableScreenCornerInteractions = 32768,
     };
 
     constexpr ApplicationPresentationOptions operator|(ApplicationPresentationOptions a, ApplicationPresentationOptions b)
@@ -1082,40 +1072,6 @@ namespace cocoon
     constexpr bool test_flag(ControlCharacterAction value, ControlCharacterAction flag)
     {
         return (static_cast<std::int64_t>(value) & static_cast<std::int64_t>(flag)) != 0;
-    }
-
-    /** @brief Wraps the Objective-C option set `NSControlEvents`. Combine option sets with `|` and test them with `test_flag`. */
-    enum class ControlEvents : std::uint64_t
-    {
-        TrackingBegan = 1,
-        TrackingRepeated = 2,
-        TrackingInside = 4,
-        TrackingOutside = 8,
-        TrackingEntered = 16,
-        TrackingExited = 32,
-        TrackingEndedInside = 64,
-        TrackingEndedOutside = 128,
-        TrackingCancelled = 256,
-        ValueChanged = 4096,
-        PrimaryActionTriggered = 8192,
-        MenuActionTriggered = 16384,
-        AllTrackingEvents = 4095,
-        ApplicationReserved = 251658240,
-        SystemReserved = 4026531840,
-        AllEvents = 4294967295,
-    };
-
-    constexpr ControlEvents operator|(ControlEvents a, ControlEvents b)
-    {
-        return static_cast<ControlEvents>(static_cast<std::uint64_t>(a) | static_cast<std::uint64_t>(b));
-    }
-    constexpr ControlEvents operator&(ControlEvents a, ControlEvents b)
-    {
-        return static_cast<ControlEvents>(static_cast<std::uint64_t>(a) & static_cast<std::uint64_t>(b));
-    }
-    constexpr bool test_flag(ControlEvents value, ControlEvents flag)
-    {
-        return (static_cast<std::uint64_t>(value) & static_cast<std::uint64_t>(flag)) != 0;
     }
 
     /** @brief Wraps the Objective-C enumeration `NSControlSize`. */
@@ -2852,14 +2808,6 @@ namespace cocoon
         Alerts = 3,
     };
 
-    /** @brief Wraps the Objective-C enumeration `NSMenuItemImageVisibility`. */
-    enum class MenuItemImageVisibility : std::int64_t
-    {
-        Automatic = 0,
-        Visible = 1,
-        Hidden = 2,
-    };
-
     /** @brief Wraps the Objective-C enumeration `NSMenuPresentationStyle`. */
     enum class MenuPresentationStyle : std::int64_t
     {
@@ -3527,26 +3475,6 @@ namespace cocoon
         Ask = 2,
     };
 
-    /** @brief Wraps the Objective-C option set `NSScreenTouchCapabilities`. Combine option sets with `|` and test them with `test_flag`. */
-    enum class ScreenTouchCapabilities : std::uint64_t
-    {
-        None = 0,
-        MultiTouch = 1,
-    };
-
-    constexpr ScreenTouchCapabilities operator|(ScreenTouchCapabilities a, ScreenTouchCapabilities b)
-    {
-        return static_cast<ScreenTouchCapabilities>(static_cast<std::uint64_t>(a) | static_cast<std::uint64_t>(b));
-    }
-    constexpr ScreenTouchCapabilities operator&(ScreenTouchCapabilities a, ScreenTouchCapabilities b)
-    {
-        return static_cast<ScreenTouchCapabilities>(static_cast<std::uint64_t>(a) & static_cast<std::uint64_t>(b));
-    }
-    constexpr bool test_flag(ScreenTouchCapabilities value, ScreenTouchCapabilities flag)
-    {
-        return (static_cast<std::uint64_t>(value) & static_cast<std::uint64_t>(flag)) != 0;
-    }
-
     /** @brief Wraps the Objective-C enumeration `NSScrollElasticity`. */
     enum class ScrollElasticity : std::int64_t
     {
@@ -3690,14 +3618,6 @@ namespace cocoon
         SelectAny = 1,
         Momentary = 2,
         MomentaryAccelerator = 3,
-    };
-
-    /** @brief Wraps the Objective-C enumeration `NSSegmentedControlRole`. */
-    enum class SegmentedControlRole : std::int64_t
-    {
-        Automatic = 0,
-        Tabs = 1,
-        ValueSelection = 2,
     };
 
     /** @brief Wraps the Objective-C enumeration `NSSelectionAffinity`. */
@@ -3880,34 +3800,6 @@ namespace cocoon
     constexpr bool test_flag(StringDrawingOptions value, StringDrawingOptions flag)
     {
         return (static_cast<std::int64_t>(value) & static_cast<std::int64_t>(flag)) != 0;
-    }
-
-    /** @brief Wraps the Objective-C option set `NSStringEnumerationOptions`. Combine option sets with `|` and test them with `test_flag`. */
-    enum class StringEnumerationOptions : std::uint64_t
-    {
-        ByLines = 0,
-        ByParagraphs = 1,
-        ByComposedCharacterSequences = 2,
-        ByWords = 3,
-        BySentences = 4,
-        ByCaretPositions = 5,
-        ByDeletionClusters = 6,
-        Reverse = 256,
-        SubstringNotRequired = 512,
-        Localized = 1024,
-    };
-
-    constexpr StringEnumerationOptions operator|(StringEnumerationOptions a, StringEnumerationOptions b)
-    {
-        return static_cast<StringEnumerationOptions>(static_cast<std::uint64_t>(a) | static_cast<std::uint64_t>(b));
-    }
-    constexpr StringEnumerationOptions operator&(StringEnumerationOptions a, StringEnumerationOptions b)
-    {
-        return static_cast<StringEnumerationOptions>(static_cast<std::uint64_t>(a) & static_cast<std::uint64_t>(b));
-    }
-    constexpr bool test_flag(StringEnumerationOptions value, StringEnumerationOptions flag)
-    {
-        return (static_cast<std::uint64_t>(value) & static_cast<std::uint64_t>(flag)) != 0;
     }
 
     /** @brief Wraps the Objective-C enumeration `NSTIFFCompression`. */
@@ -4137,28 +4029,8 @@ namespace cocoon
         Natural = 4,
     };
 
-    /** @brief Wraps the Objective-C option set `NSTextAttachmentViewProviderReusePolicy`. Combine option sets with `|` and test them with `test_flag`. */
-    enum class TextAttachmentViewProviderReusePolicy : std::uint64_t
-    {
-        OnScrollingOutOfViewport = 1,
-        OnEditingInlineParagraphs = 2,
-    };
-
-    constexpr TextAttachmentViewProviderReusePolicy operator|(TextAttachmentViewProviderReusePolicy a, TextAttachmentViewProviderReusePolicy b)
-    {
-        return static_cast<TextAttachmentViewProviderReusePolicy>(static_cast<std::uint64_t>(a) | static_cast<std::uint64_t>(b));
-    }
-    constexpr TextAttachmentViewProviderReusePolicy operator&(TextAttachmentViewProviderReusePolicy a, TextAttachmentViewProviderReusePolicy b)
-    {
-        return static_cast<TextAttachmentViewProviderReusePolicy>(static_cast<std::uint64_t>(a) & static_cast<std::uint64_t>(b));
-    }
-    constexpr bool test_flag(TextAttachmentViewProviderReusePolicy value, TextAttachmentViewProviderReusePolicy flag)
-    {
-        return (static_cast<std::uint64_t>(value) & static_cast<std::uint64_t>(flag)) != 0;
-    }
-
     /** @brief Wraps the Objective-C enumeration `NSTextBlockDimension`. */
-    enum class TextBlockDimension : std::int64_t
+    enum class TextBlockDimension : std::uint64_t
     {
         Width = 0,
         MinimumWidth = 1,
@@ -4166,12 +4038,6 @@ namespace cocoon
         Height = 4,
         MinimumHeight = 5,
         MaximumHeight = 6,
-        TextBlockWidth = 0,
-        TextBlockMinimumWidth = 1,
-        TextBlockMaximumWidth = 2,
-        TextBlockHeight = 4,
-        TextBlockMinimumHeight = 5,
-        TextBlockMaximumHeight = 6,
     };
 
     /** @brief Wraps the Objective-C enumeration `NSTextBlockLayer`. */
@@ -4180,31 +4046,22 @@ namespace cocoon
         Padding = -1,
         Border = 0,
         Margin = 1,
-        TextBlockPadding = -1,
-        TextBlockBorder = 0,
-        TextBlockMargin = 1,
     };
 
     /** @brief Wraps the Objective-C enumeration `NSTextBlockValueType`. */
-    enum class TextBlockValueType : std::int64_t
+    enum class TextBlockValueType : std::uint64_t
     {
-        Absolute = 0,
-        Percentage = 1,
-        TextBlockAbsoluteValueType = 0,
-        TextBlockPercentageValueType = 1,
+        AbsoluteValueType = 0,
+        PercentageValueType = 1,
     };
 
     /** @brief Wraps the Objective-C enumeration `NSTextBlockVerticalAlignment`. */
-    enum class TextBlockVerticalAlignment : std::int64_t
+    enum class TextBlockVerticalAlignment : std::uint64_t
     {
-        Top = 0,
-        Middle = 1,
-        Bottom = 2,
-        Baseline = 3,
-        TextBlockTopAlignment = 0,
-        TextBlockMiddleAlignment = 1,
-        TextBlockBottomAlignment = 2,
-        TextBlockBaselineAlignment = 3,
+        TopAlignment = 0,
+        MiddleAlignment = 1,
+        BottomAlignment = 2,
+        BaselineAlignment = 3,
     };
 
     /** @brief Wraps the Objective-C option set `NSTextCheckingType`. Combine option sets with `|` and test them with `test_flag`. */
@@ -4426,14 +4283,6 @@ namespace cocoon
         Sentence = 4,
     };
 
-    /** @brief Wraps the Objective-C enumeration `NSTextSelectionMode`. */
-    enum class TextSelectionMode : std::int64_t
-    {
-        Editable = 0,
-        Selectable = 1,
-        NonInteractive = 2,
-    };
-
     /** @brief Wraps the Objective-C enumeration `NSTextSelectionNavigationDestination`. */
     enum class TextSelectionNavigationDestination : std::int64_t
     {
@@ -4455,13 +4304,6 @@ namespace cocoon
         Left = 3,
         Up = 4,
         Down = 5,
-    };
-
-    /** @brief Wraps the Objective-C enumeration `NSTextSelectionNavigationLayoutOrientation`. */
-    enum class TextSelectionNavigationLayoutOrientation : std::int64_t
-    {
-        Horizontal = 0,
-        Vertical = 1,
     };
 
     /** @brief Wraps the Objective-C option set `NSTextSelectionNavigationModifier`. Combine option sets with `|` and test them with `test_flag`. */
@@ -4522,12 +4364,10 @@ namespace cocoon
     };
 
     /** @brief Wraps the Objective-C enumeration `NSTextTableLayoutAlgorithm`. */
-    enum class TextTableLayoutAlgorithm : std::int64_t
+    enum class TextTableLayoutAlgorithm : std::uint64_t
     {
-        Automatic = 0,
-        Fixed = 1,
-        TextTableAutomaticLayoutAlgorithm = 0,
-        TextTableFixedLayoutAlgorithm = 1,
+        AutomaticLayoutAlgorithm = 0,
+        FixedLayoutAlgorithm = 1,
     };
 
     /** @brief Wraps the Objective-C enumeration `NSTickMarkPosition`. */
@@ -4605,14 +4445,6 @@ namespace cocoon
         Automatic = 0,
         Expanded = 1,
         Collapsed = 2,
-    };
-
-    /** @brief Wraps the Objective-C enumeration `NSToolbarItemGroupRole`. */
-    enum class ToolbarItemGroupRole : std::int64_t
-    {
-        Automatic = 0,
-        Tabs = 1,
-        ValueSelection = 2,
     };
 
     /** @brief Wraps the Objective-C enumeration `NSToolbarItemGroupSelectionMode`. */
@@ -5035,14 +4867,6 @@ namespace cocoon
         return (static_cast<std::uint64_t>(value) & static_cast<std::uint64_t>(flag)) != 0;
     }
 
-    /** @brief Wraps the Objective-C enumeration `NSViewExclusiveGestureBehavior`. */
-    enum class ViewExclusiveGestureBehavior : std::int64_t
-    {
-        Inherit = 0,
-        Exclusive = 1,
-        NotExclusive = 2,
-    };
-
     /** @brief Wraps the Objective-C enumeration `NSViewLayerContentsPlacement`. */
     enum class ViewLayerContentsPlacement : std::int64_t
     {
@@ -5406,17 +5230,6 @@ namespace cocoon
         Noninteractive = 1,
         InteractiveResting = 2,
         InteractiveStreaming = 3,
-    };
-
-    /** @brief Wraps the Objective-C enumeration `NSWritingToolsCoordinatorTextAnimation`. */
-    enum class WritingToolsCoordinatorTextAnimation : std::int64_t
-    {
-        Anticipate = 0,
-        Remove = 1,
-        Insert = 2,
-        AnticipateInactive = 8,
-        Translate = 9,
-        IndicateGrammar = 10,
     };
 
     /** @brief Wraps the Objective-C enumeration `NSWritingToolsCoordinatorTextUpdateReason`. */

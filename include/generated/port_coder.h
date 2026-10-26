@@ -43,25 +43,21 @@ namespace cocoon
         explicit PortCoder(Adopt adopt);
         /**
          * @brief Calls `-[NSPortCoder decodePortObject]`.
-         * @details Decodes and returns a port that was previously encoded with '-encodePortObject:'.
          * @return The converted Objective-C result.
          */
         Port decode_port_object() const;
         /**
          * @brief Calls `-[NSPortCoder encodePortObject:]`.
-         * @details Encodes a given port so that a copy or proxy of it can be decoded in another process.
          * @param aport Argument converted to the Objective-C parameter of the same role.
          */
         void encode_port_object(const Port& aport) const;
         /**
          * @brief Calls `-[NSPortCoder isBycopy]`.
-         * @details Returns a Boolean value that indicates whether the receiver has been told to encode objects by copying them.
          * @return The converted Objective-C result.
          */
         bool is_bycopy() const;
         /**
          * @brief Calls `-[NSPortCoder isByref]`.
-         * @details Returns a Boolean value that indicates whether the receiver has been told to encode objects by reference.
          * @return The converted Objective-C result.
          */
         bool is_byref() const;

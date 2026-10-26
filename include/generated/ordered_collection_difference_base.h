@@ -13,7 +13,6 @@ namespace cocoon
 
     /**
      * @brief C++ handle for the Objective-C class `NSOrderedCollectionDifference` (Foundation).
-     * @details An object representing the difference between two ordered collections. Use ''NSArray/differenceFromArray:'' or one of its variations to get an instance of ''NSOrderedCollectionDifference'', which represents the difference between two ordered collections. For example, the following sample compares two arrays of strings to create a difference that represents the changes: '''objc NSArray original = \@[\@"Red", \@"Green", \@"Blue"]; NSArray modified = \@[\@"Red", \@"Blue", \@"Green"]; NSOrderedCollectionDifference diff = [original differenceFromArray:modified]; // diff.hasChanges == TRUE // diff.insertions.count == 1 // diff.removals.count == 1 '''
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      * Use the typed template @ref OrderedCollectionDifference to supply ObjectType.
      *
@@ -49,32 +48,27 @@ namespace cocoon
         explicit OrderedCollectionDifferenceBase(Adopt adopt);
         /**
          * @brief Calls `-[NSOrderedCollectionDifference differenceByTransformingChangesWithBlock:]`.
-         * @details Create a new ordered collection difference by mapping over this difference's members, processing the change objects with the block provided. - Parameter block: A block that receives an ordered collection change and returns an updated change. - Returns: A new ordered collection difference.
          * @param block Argument converted to the Objective-C parameter of the same role.
          * @return The converted Objective-C result.
          */
         OrderedCollectionDifferenceBase difference_by_transforming_changes_with_block(std::function<OrderedCollectionChangeBase(OrderedCollectionChangeBase)> block) const;
         /**
          * @brief Calls `-[NSOrderedCollectionDifference inverseDifference]`.
-         * @details Returns a difference that is the inverse of the receiver. Applying a difference to an ordered collection and then applying the inverse difference results in the original ordered collection. To revert a chronological sequence of diffs, apply their inverses in reverse order.
          * @return The converted Objective-C result.
          */
         OrderedCollectionDifferenceBase inverse_difference() const;
         /**
          * @brief Returns the `hasChanges` property of `NSOrderedCollectionDifference`.
-         * @details A Boolean value that indicates if the difference has changes.
          * @return The converted Objective-C result.
          */
         bool has_changes() const;
         /**
          * @brief Returns the `insertions` property of `NSOrderedCollectionDifference`.
-         * @details A collection of insertion change objects.
          * @return The converted Objective-C result.
          */
         std::vector<OrderedCollectionChangeBase> insertions() const;
         /**
          * @brief Returns the `removals` property of `NSOrderedCollectionDifference`.
-         * @details A collection of removal change objects.
          * @return The converted Objective-C result.
          */
         std::vector<OrderedCollectionChangeBase> removals() const;

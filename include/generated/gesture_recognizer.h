@@ -33,8 +33,8 @@ namespace cocoon
      * auto action = gesture_recognizer.action();
      * gesture_recognizer.set_allowed_touch_types(cocoon::TouchTypeMask::Direct);
      * auto allowed_touch_types = gesture_recognizer.allowed_touch_types();
-     * gesture_recognizer.set_cancellable_by_scroll_gesture(true);
-     * auto cancellable_by_scroll_gesture = gesture_recognizer.is_cancellable_by_scroll_gesture();
+     * gesture_recognizer.set_delays_key_events(true);
+     * auto delays_key_events = gesture_recognizer.delays_key_events();
      * gesture_recognizer.can_be_prevented_by_gesture_recognizer(cocoon::GestureRecognizer());
      * gesture_recognizer.can_prevent_gesture_recognizer(cocoon::GestureRecognizer());
      * gesture_recognizer.flags_changed(cocoon::Event());
@@ -81,7 +81,7 @@ namespace cocoon
         void key_up(const Event& event) const;
         /**
          * @brief Calls `-[NSGestureRecognizer locationInView:]`.
-         * @details individual NSGestureRecognizer subclasses may provide subclass-specific location information. see individual subclasses for details. Note that locationInView: is only set after the recognizer starts recognizing events, so for example it is not valid to consult locationInView: from gestureRecognizer:shouldAttemptToRecognizeWithEvent: or gestureRecognizer:shouldReceiveTouch:, but it is valid for gestureRecognizerShouldBegin:
+         * @details individual NSGestureRecognizer subclasses may provide subclass-specific location information. see individual subclasses for details
          * @param view Argument converted to the Objective-C parameter of the same role.
          * @return The converted Objective-C result.
          */
@@ -204,34 +204,16 @@ namespace cocoon
         void set_action(const std::string& value) const;
         /**
          * @brief Returns the `allowedTouchTypes` property of `NSGestureRecognizer`.
-         * @details Currently, only NSTouchTypeDirect is supported. Defaults to NSTouchTypeDirect as of macOS 27, and 0 on earlier releases.
+         * @details Currently, only NSTouchTypeDirect is supported. Defaults to 0
          * @return The converted Objective-C result.
          */
         TouchTypeMask allowed_touch_types() const;
         /**
          * @brief Sets the `allowedTouchTypes` property of `NSGestureRecognizer`.
-         * @details Currently, only NSTouchTypeDirect is supported. Defaults to NSTouchTypeDirect as of macOS 27, and 0 on earlier releases.
+         * @details Currently, only NSTouchTypeDirect is supported. Defaults to 0
          * @param value Argument converted to the Objective-C parameter of the same role.
          */
         void set_allowed_touch_types(TouchTypeMask value) const;
-#ifdef COCOON_MACOS_27
-        /**
-         * @brief Returns the `cancellableByScrollGesture` property of `NSGestureRecognizer`.
-         * @details Causes the receiver to be cancelled when its enclosing scroll view's gesture recognizer begins. Defaults to 'false'.
-         * @return The converted Objective-C result.
-         */
-        bool is_cancellable_by_scroll_gesture() const;
-#endif
-
-#ifdef COCOON_MACOS_27
-        /**
-         * @brief Sets the `cancellableByScrollGesture` property of `NSGestureRecognizer`.
-         * @details Causes the receiver to be cancelled when its enclosing scroll view's gesture recognizer begins. Defaults to 'false'.
-         * @param value Argument converted to the Objective-C parameter of the same role.
-         */
-        void set_cancellable_by_scroll_gesture(bool value) const;
-#endif
-
         /**
          * @brief Returns the `delaysKeyEvents` property of `NSGestureRecognizer`.
          * @return The converted Objective-C result.

@@ -125,18 +125,6 @@ namespace cocoon
         return (const WindowDepth*)([cocoon::internal::ns<::NSScreen>(this) supportedWindowDepths]);
     }
 
-#ifdef COCOON_MACOS_27
-    ScreenTouchCapabilities Screen::touch_capabilities() const
-    {
-        if (@available(macOS 27.0, *))
-        {
-            return static_cast<ScreenTouchCapabilities>([cocoon::internal::ns<::NSScreen>(this) touchCapabilities]);
-        }
-        return {};
-    }
-
-#endif
-
     Rect Screen::visible_frame() const
     {
         return cocoon::internal::from([cocoon::internal::ns<::NSScreen>(this) visibleFrame]);

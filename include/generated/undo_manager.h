@@ -10,7 +10,6 @@ namespace cocoon
 {
     /**
      * @brief C++ handle for the Objective-C class `NSUndoManager` (Foundation).
-     * @details A general-purpose recorder of operations that enables undo and redo. You register an undo operation by calling one of the methods described in Registering undo operations. You specify the name of the object that's changing (or the owner of that object) and provide a closure, method, or invocation to revert its state. After you register an undo operation, you can call ''undo()'' on the undo manager to revert to the state of the last undo operation. When undoing an action, ''UndoManager'' saves the operations you revert to so that you can call ''redo()'' automatically. Typically, apps with UI interactions work with ''UndoManager''. For example, UIKit implements undo and redo in its text view object, making it easy for you to undo and redo actions in objects along the responder chain. ''UndoManager'' also serves as a general-purpose state manager, which you can use to undo and redo many kinds of actions. For example, an interactive command-line utility can use this class to undo the last command run, or a networking library can undo a request by sending another request that invalidates the previous one. > Important: 'UndoManager' is \<doc://com.apple.documentation/documentation/swift/MainActor>-isolated in Swift, making it safe to use in UI frameworks like \<doc://com.apple.documentation/documentation/AppKit> and \<doc://com.apple.documentation/documentation/UIKit> that expect to execute code on the main thread, queue, or actor. When registering an undoable action with ''registerUndo(withTarget:handler:)'', the 'handler' closure is also \<doc://com.apple.documentation/documentation/swift/MainActor>-isolated to ensure safety and simplify ergonomics.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      *
      * @par Example
@@ -53,7 +52,7 @@ namespace cocoon
         void begin_undo_grouping() const;
         /**
          * @brief Calls `-[NSUndoManager disableUndoRegistration]`.
-         * @details Disables the recording of undo operations. This method can be invoked multiple times by multiple clients. The ''enableUndoRegistration'' method must be invoked an equal number of times to re-enable undo registration.
+         * @details Disables the recording of undo operations, whether by ''registerUndoWithTarget:selector:object:'' or by invocation-based undo. This method can be invoked multiple times by multiple clients. The ''enableUndoRegistration'' method must be invoked an equal number of times to re-enable undo registration.
          */
         void disable_undo_registration() const;
         /**
@@ -80,21 +79,21 @@ namespace cocoon
         void redo() const;
         /**
          * @brief Calls `-[NSUndoManager redoActionUserInfoValueForKey:]`.
-         * @details Retrieves the redo action's user info value for the given key. - Parameter key: Which value should be retrieved
+         * @details Get a value from the redo action's user info - Parameter key: Which value should be retrieved
          * @param key Argument converted to the Objective-C parameter of the same role.
          * @return The converted Objective-C result.
          */
         Object redo_action_user_info_value_for_key(const std::string& key) const;
         /**
          * @brief Calls `-[NSUndoManager redoMenuTitleForUndoActionName:]`.
-         * @details Returns the localized title of the Redo menu command for the identified action. Override this method if you want to customize the localization behaviour. This method is invoked by ''redoMenuItemTitle''. - Parameter actionName: The name of the redo action. - Returns: The localized title of the redo menu item.
+         * @details Returns the complete, localized title of the Redo menu command for the action identified by the given name. Override this method if you want to customize the localization behaviour. This method is invoked by ''redoMenuItemTitle''. - Parameter actionName: The name of the redo action. - Returns: The localized title of the redo menu item.
          * @param action_name Argument converted to the Objective-C parameter of the same role.
          * @return The converted Objective-C result.
          */
         std::string redo_menu_title_for_undo_action_name(const std::string& action_name) const;
         /**
          * @brief Calls `-[NSUndoManager registerUndoWithTarget:handler:]`.
-         * @details Registers the specified closure to implement a single undo operation that the target receives. As with other undo operations, this does not strongly retain target. Care should be taken to avoid introducing retain cycles by other references captured by the block. - Parameter target: The target of the undo operation. - Parameter undoHandler: The block to be executed when an operation is undone. The block takes a single argument, the target of the undo operation.
+         * @details Records a single undo operation for a given target so that when an undo is performed, it executes the specified block. As with other undo operations, this does not strongly retain target. Care should be taken to avoid introducing retain cycles by other references captured by the block. - Parameter target: The target of the undo operation. - Parameter undoHandler: The block to be executed when an operation is undone. The block takes a single argument, the target of the undo operation.
          * @param target Argument converted to the Objective-C parameter of the same role.
          * @param undo_handler Argument converted to the Objective-C parameter of the same role.
          */
@@ -109,7 +108,7 @@ namespace cocoon
         void register_undo_with_target(const Object& target, const std::string& selector, const Object& object) const;
         /**
          * @brief Calls `-[NSUndoManager removeAllActions]`.
-         * @details Clears the undo and redo stacks and reenables the manager.
+         * @details Clears the undo and redo stacks and re-enables the receiver.
          */
         void remove_all_actions() const;
         /**
@@ -132,26 +131,26 @@ namespace cocoon
         void set_action_name(const std::string& action_name) const;
         /**
          * @brief Calls `-[NSUndoManager setActionUserInfoValue:forKey:]`.
-         * @details Sets a user info value for an undo or redo action. - Parameter info: Value to be saved in the user info - Parameter key: Key at which the object should be saved
+         * @details Set user info for the Undo or Redo command. - Parameter info: Value to be saved in the user info - Parameter key: Key at which the object should be saved
          * @param info Argument converted to the Objective-C parameter of the same role.
          * @param key Argument converted to the Objective-C parameter of the same role.
          */
         void set_action_user_info_value(const Object& info, const std::string& key) const;
         /**
          * @brief Calls `-[NSUndoManager undo]`.
-         * @details Closes the top-level undo group if necessary, and then performs undo operations on the group. This method also invokes ''endUndoGrouping'' if the nesting level is 1. Raises an ''NSInternalInconsistencyException'' if more than one undo group is open (that is, if the last group isn’t at the top level). This method posts an ''NSUndoManagerCheckpointNotification''.
+         * @details Closes the top-level undo group if necessary and invokes ''undoNestedGroup''. This method also invokes ''endUndoGrouping'' if the nesting level is 1. Raises an ''NSInternalInconsistencyException'' if more than one undo group is open (that is, if the last group isn’t at the top level). This method posts an ''NSUndoManagerCheckpointNotification''.
          */
         void undo() const;
         /**
          * @brief Calls `-[NSUndoManager undoActionUserInfoValueForKey:]`.
-         * @details Retrieves the undo action's user info value for the given key. - Parameter key: Which value should be retrieved
+         * @details Get a value from the undo action's user info - Parameter key: Which value should be retrieved
          * @param key Argument converted to the Objective-C parameter of the same role.
          * @return The converted Objective-C result.
          */
         Object undo_action_user_info_value_for_key(const std::string& key) const;
         /**
          * @brief Calls `-[NSUndoManager undoMenuTitleForUndoActionName:]`.
-         * @details Returns the localized title of the Undo menu command for the identified action. Override this method if you want to customize the localization behaviour. This method is invoked by ''undoMenuItemTitle''. - Parameter actionName: The name of the undo action. - Returns: The localized title of the undo menu item.
+         * @details Returns the complete, localized title of the Undo menu command for the action identified by the given name. Override this method if you want to customize the localization behaviour. This method is invoked by ''undoMenuItemTitle''. - Parameter actionName: The name of the undo action. - Returns: The localized title of the undo menu item.
          * @param action_name Argument converted to the Objective-C parameter of the same role.
          * @return The converted Objective-C result.
          */
@@ -163,31 +162,31 @@ namespace cocoon
         void undo_nested_group() const;
         /**
          * @brief Returns the `canRedo` property of `NSUndoManager`.
-         * @details A Boolean value that indicates whether the manager has any actions to redo. Because any undo operation registered clears the redo stack, this method posts an NSUndoManagerCheckpointNotification to allow clients to apply their pending operations before testing the redo stack.
+         * @details Whether the receiver has any actions to redo. Because any undo operation registered clears the redo stack, this method posts an NSUndoManagerCheckpointNotification to allow clients to apply their pending operations before testing the redo stack.
          * @return The converted Objective-C result.
          */
         bool can_redo() const;
         /**
          * @brief Returns the `canUndo` property of `NSUndoManager`.
-         * @details A Boolean value that indicates whether the manager has any actions to undo. The return value does not mean you can safely invoke ''undo'' or ''undoNestedGroup'' — you may have to close open undo groups first.
+         * @details Whether the receiver has any actions to undo. The return value does not mean you can safely invoke ''undo'' or ''undoNestedGroup'' — you may have to close open undo groups first.
          * @return The converted Objective-C result.
          */
         bool can_undo() const;
         /**
          * @brief Returns the `groupingLevel` property of `NSUndoManager`.
-         * @details The number of nested undo groups (or redo groups, if redo is the most recent operation) in the current event loop. An integer indicating the number of nested groups. If '0' is returned, there is no open undo or redo group.
+         * @details The number of nested undo groups (or redo groups, if Redo was invoked last) in the current event loop. An integer indicating the number of nested groups. If '0' is returned, there is no open undo or redo group.
          * @return The converted Objective-C result.
          */
         std::int64_t grouping_level() const;
         /**
          * @brief Returns the `groupsByEvent` property of `NSUndoManager`.
-         * @details A Boolean value that indicates whether the manager automatically creates undo groups around each pass of the run loop. If 'true', the receiver automatically creates undo groups around each pass of the run loop. The default is 'true'. If you turn automatic grouping off, you must close groups explicitly before invoking either ''undo'' or ''undoNestedGroup''.
+         * @details A Boolean value that indicates whether the receiver automatically creates undo groups around each pass of the run loop. If 'true', the receiver automatically creates undo groups around each pass of the run loop. The default is 'true'. If you turn automatic grouping off, you must close groups explicitly before invoking either ''undo'' or ''undoNestedGroup''.
          * @return The converted Objective-C result.
          */
         bool groups_by_event() const;
         /**
          * @brief Sets the `groupsByEvent` property of `NSUndoManager`.
-         * @details A Boolean value that indicates whether the manager automatically creates undo groups around each pass of the run loop. If 'true', the receiver automatically creates undo groups around each pass of the run loop. The default is 'true'. If you turn automatic grouping off, you must close groups explicitly before invoking either ''undo'' or ''undoNestedGroup''.
+         * @details A Boolean value that indicates whether the receiver automatically creates undo groups around each pass of the run loop. If 'true', the receiver automatically creates undo groups around each pass of the run loop. The default is 'true'. If you turn automatic grouping off, you must close groups explicitly before invoking either ''undo'' or ''undoNestedGroup''.
          * @param value Argument converted to the Objective-C parameter of the same role.
          */
         void set_groups_by_event(bool value) const;
@@ -217,19 +216,19 @@ namespace cocoon
         std::string redo_action_name() const;
         /**
          * @brief Returns the `redoCount` property of `NSUndoManager`.
-         * @details The number of times you can invoke redo before there are no actions left to redo.
+         * @details How many times 'redo' can be invoked before there are no more actions left to be redone
          * @return The converted Objective-C result.
          */
         std::uint64_t redo_count() const;
         /**
          * @brief Returns the `redoMenuItemTitle` property of `NSUndoManager`.
-         * @details The title of the Redo menu command, such as Redo Paste. Returns “Redo” if no action name has been assigned or nil if there is nothing to redo.
+         * @details The complete title of the Redo menu command, for example, “Redo Paste.” Returns “Redo” if no action name has been assigned or nil if there is nothing to redo.
          * @return The converted Objective-C result.
          */
         std::string redo_menu_item_title() const;
         /**
          * @brief Returns the `redoing` property of `NSUndoManager`.
-         * @details Returns a Boolean value that indicates whether the manager is in the process of performing a redo action.
+         * @details Whether the receiver is in the process of performing its ''redo'' method.
          * @return The converted Objective-C result.
          */
         bool is_redoing() const;
@@ -259,25 +258,25 @@ namespace cocoon
         std::string undo_action_name() const;
         /**
          * @brief Returns the `undoCount` property of `NSUndoManager`.
-         * @details The number of times you can invoke undo before there are no actions left to undo. A nonzero value doesn't imply you can safely invoke ''undo'' immediately, because you may have to close open undo groups first.
+         * @details How many times 'undo' can be invoked before there are no more actions left to be undone
          * @return The converted Objective-C result.
          */
         std::uint64_t undo_count() const;
         /**
          * @brief Returns the `undoMenuItemTitle` property of `NSUndoManager`.
-         * @details The title of the Undo menu command, such as Undo Paste. Returns “Undo” if no action name has been assigned or nil if there is nothing to undo.
+         * @details The complete title of the Undo menu command, for example, “Undo Paste.” Returns “Undo” if no action name has been assigned or nil if there is nothing to undo.
          * @return The converted Objective-C result.
          */
         std::string undo_menu_item_title() const;
         /**
          * @brief Returns the `undoRegistrationEnabled` property of `NSUndoManager`.
-         * @details A Boolean value that indicates whether the recording of undo operations is enabled.
+         * @details Whether the recording of undo operations is enabled.
          * @return The converted Objective-C result.
          */
         bool is_undo_registration_enabled() const;
         /**
          * @brief Returns the `undoing` property of `NSUndoManager`.
-         * @details Returns a Boolean value that indicates whether the manager is in the process of performing an undo action.
+         * @details Whether the receiver is in the process of performing its ''undo'' or ''undoNestedGroup'' method.
          * @return The converted Objective-C result.
          */
         bool is_undoing() const;

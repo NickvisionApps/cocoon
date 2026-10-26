@@ -12,7 +12,6 @@ namespace cocoon
 
     /**
      * @brief C++ handle for the Objective-C class `NSPortNameServer` (Foundation).
-     * @details An object-oriented interface to the port registration service used by the distributed objects system.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      *
      * @par Example
@@ -44,14 +43,12 @@ namespace cocoon
         explicit PortNameServer(Adopt adopt);
         /**
          * @brief Calls `-[NSPortNameServer portForName:]`.
-         * @details Looks up and returns the port registered under the specified name on the local host.
          * @param name Argument converted to the Objective-C parameter of the same role.
          * @return The converted Objective-C result.
          */
         Port port_for_name(const std::string& name) const;
         /**
          * @brief Calls `-[NSPortNameServer portForName:host:]`.
-         * @details Looks up and returns the port registered under the specified name on a given host.
          * @param name Argument converted to the Objective-C parameter of the same role.
          * @param host Argument converted to the Objective-C parameter of the same role.
          * @return The converted Objective-C result.
@@ -59,7 +56,6 @@ namespace cocoon
         Port port_for_name(const std::string& name, const std::string& host) const;
         /**
          * @brief Calls `-[NSPortNameServer registerPort:name:]`.
-         * @details Registers a given port as a network service with the specified name.
          * @param port Argument converted to the Objective-C parameter of the same role.
          * @param name Argument converted to the Objective-C parameter of the same role.
          * @return The converted Objective-C result.
@@ -67,14 +63,12 @@ namespace cocoon
         bool register_port(const Port& port, const std::string& name) const;
         /**
          * @brief Calls `-[NSPortNameServer removePortForName:]`.
-         * @details Unregisters the port for a given name.
          * @param name Argument converted to the Objective-C parameter of the same role.
          * @return The converted Objective-C result.
          */
         bool remove_port_for_name(const std::string& name) const;
         /**
          * @brief Calls `+[NSPortNameServer systemDefaultPortNameServer]`.
-         * @details Returns the default system port name server.
          * @return The converted Objective-C result.
          */
         static PortNameServer system_default_port_name_server();

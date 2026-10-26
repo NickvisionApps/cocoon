@@ -3,7 +3,7 @@
 
 namespace cocoon
 {
-    TextTableBlock::TextTableBlock(const TextTable& table, std::int64_t row, std::int64_t row_span, std::int64_t column, std::int64_t column_span) : TextTableBlock(Adopt{cocoon::internal::retain([[::NSTextTableBlock alloc] initWithTable:cocoon::internal::native<::NSTextTable>(table) startingRow:static_cast<::NSInteger>(row) rowSpan:static_cast<::NSInteger>(row_span) startingColumn:static_cast<::NSInteger>(column) columnSpan:static_cast<::NSInteger>(column_span)])})
+    TextTableBlock::TextTableBlock(const TextTable& table, std::int64_t row, std::int64_t row_span, std::int64_t col, std::int64_t col_span) : TextTableBlock(Adopt{cocoon::internal::retain([[::NSTextTableBlock alloc] initWithTable:cocoon::internal::native<::NSTextTable>(table) startingRow:static_cast<::NSInteger>(row) rowSpan:static_cast<::NSInteger>(row_span) startingColumn:static_cast<::NSInteger>(col) columnSpan:static_cast<::NSInteger>(col_span)])})
     {
     }
 

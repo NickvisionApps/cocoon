@@ -12,7 +12,7 @@ namespace cocoon
 
     /**
      * @brief C++ handle for the Objective-C class `NSURLProtectionSpace` (Foundation).
-     * @details A server or an area on a server, commonly referred to as a realm, that requires authentication. A protection space defines a series of matching constraints that determine which credential should be provided. For example, if a request provides your delegate with a ''URLAuthenticationChallenge'' object that requests a client username and password, your app should provide the correct username and password for the particular host, port, protocol, and realm, as specified in the challenge's protection space. > Note: > This class has no designated initializer; its 'init' method always returns 'nil'. You must initialize this class by calling one of the initialization methods described in Creating a protection space.
+     * @details \@class NSURLProtectionSpace \@discussion This class represents a protection space requiring authentication.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      *
      * @par Example
@@ -36,61 +36,61 @@ namespace cocoon
         explicit URLProtectionSpace(Adopt adopt);
         /**
          * @brief Returns the `authenticationMethod` property of `NSURLProtectionSpace`.
-         * @details The authentication method used by the receiver.
+         * @details \@abstract Get the authentication method to be used for this protection space \@result The authentication method
          * @return The converted Objective-C result.
          */
         std::string authentication_method() const;
         /**
          * @brief Returns the `distinguishedNames` property of `NSURLProtectionSpace`.
-         * @details The acceptable certificate-issuing authorities for client certificate authentication. Issuers are identified by their distinguished name and returned as DER encoded data. This value is 'nil' if the authentication method is not 'NSURLAuthenticationMethodClientCertificate'.
+         * @details \@abstract Returns an array of acceptable certificate issuing authorities for client certification authentication. Issuers are identified by their distinguished name and returned as a DER encoded data. \@result An array of NSData objects. (Nil if the authenticationMethod is not NSURLAuthenticationMethodClientCertificate)
          * @return The converted Objective-C result.
          */
         std::vector<std::vector<std::uint8_t>> distinguished_names() const;
         /**
          * @brief Returns the `host` property of `NSURLProtectionSpace`.
-         * @details The receiver's host.
+         * @details \@abstract Get the proxy host if this is a proxy authentication, or the host from the URL. \@result The host for this protection space.
          * @return The converted Objective-C result.
          */
         std::string host() const;
         /**
          * @brief Returns the `isProxy` property of `NSURLProtectionSpace`.
-         * @details A Boolean value that indicates whether this authenticating protection space is a proxy server.
+         * @details \@abstract Determine if this authenticating protection space is a proxy server \@result YES if a proxy, NO otherwise
          * @return The converted Objective-C result.
          */
         bool is_proxy() const;
         /**
          * @brief Returns the `port` property of `NSURLProtectionSpace`.
-         * @details The receiver's port.
+         * @details \@abstract Get the proxy port if this is a proxy authentication, or the port from the URL. \@result The port for this protection space, or 0 if not set.
          * @return The converted Objective-C result.
          */
         std::int64_t port() const;
         /**
          * @brief Returns the `protocol` property of `NSURLProtectionSpace`.
-         * @details The receiver's protocol. This value is 'nil' if the receiver represents a proxy protection space.
+         * @details \@abstract Get the protocol of this protection space, if not a proxy \@result The type string, or nil if a proxy.
          * @return The converted Objective-C result.
          */
         std::string protocol() const;
         /**
          * @brief Returns the `proxyType` property of `NSURLProtectionSpace`.
-         * @details The receiver's proxy type. This value is 'nil' if the receiver does not represent a proxy protection space.
+         * @details \@abstract Get the type of this protection space, if a proxy \@result The type string, or nil if not a proxy.
          * @return The converted Objective-C result.
          */
         std::string proxy_type() const;
         /**
          * @brief Returns the `realm` property of `NSURLProtectionSpace`.
-         * @details The receiver's authentication realm. This value is 'nil' if no realm has been set. A realm is generally only specified for HTTP and HTTPS authentication.
+         * @details \@abstract Get the authentication realm for which the protection space that needs authentication \@discussion This is generally only available for http authentication, and may be nil otherwise. \@result The realm string
          * @return The converted Objective-C result.
          */
         std::string realm() const;
         /**
          * @brief Returns the `receivesCredentialSecurely` property of `NSURLProtectionSpace`.
-         * @details A Boolean value that indicates whether the credentials for the protection space can be sent securely.
+         * @details \@abstract Determine if the password for this protection space can be sent securely \@result YES if a secure authentication method or protocol will be used, NO otherwise
          * @return The converted Objective-C result.
          */
         bool receives_credential_securely() const;
         /**
          * @brief Returns the `serverTrust` property of `NSURLProtectionSpace`.
-         * @details A representation of the server's SSL transaction state. This value is 'nil' if the authentication method is not 'NSURLAuthenticationMethodServerTrust'.
+         * @details \@abstract Returns a SecTrustRef which represents the state of the servers SSL transaction state \@result A SecTrustRef from Security.framework. (Nil if the authenticationMethod is not NSURLAuthenticationMethodServerTrust)
          * @return The converted Objective-C result.
          */
         SecTrust server_trust() const;

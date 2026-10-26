@@ -15,7 +15,7 @@ namespace cocoon
 
     /**
      * @brief C++ handle for the Objective-C class `NSURLAuthenticationChallenge` (Foundation).
-     * @details A challenge from a server requiring authentication from the client. Your app receives authentication challenges in various ''URLSession'', ''NSURLConnection'', and ''NSURLDownload'' delegate methods, such as ''URLSessionTaskDelegate/urlSession(:task:didReceive:completionHandler:)''. These objects provide the information you'll need when deciding how to handle a server's request for authentication. At the core of that authentication challenge is a protection space that defines the type of authentication being requested, the host and port number, the networking protocol, and (where applicable) the authentication realm (a group of related URLs on the same server that share a single set of credentials).
+     * @details \@class NSURLAuthenticationChallenge \@discussion This class represents an authentication challenge. It provides all the information about the challenge, and has a method to indicate when it's done.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      *
      * @par Example
@@ -41,31 +41,31 @@ namespace cocoon
         explicit URLAuthenticationChallenge(Adopt adopt);
         /**
          * @brief Returns the `error` property of `NSURLAuthenticationChallenge`.
-         * @details The error representing authentication failure. If there was a previous authentication failure, and this protocol uses errors to indicate authentication failure, then this method will return the error. Otherwise it will return 'nil'.
+         * @details \@abstract Get the error representing authentication failure. \@discussion If there was a previous authentication failure, and this protocol uses errors to indicate authentication failure, then this method will return the error. Otherwise it will return nil.
          * @return The converted Objective-C result.
          */
         Error error() const;
         /**
          * @brief Returns the `failureResponse` property of `NSURLAuthenticationChallenge`.
-         * @details The response representing authentication failure. If there was a previous authentication failure, and this protocol uses responses to indicate authentication failure, then this method will return the response. Otherwise it will return 'nil'.
+         * @details \@abstract Get the response representing authentication failure. \@result The failure response or nil \@discussion If there was a previous authentication failure, and this protocol uses responses to indicate authentication failure, then this method will return the response. Otherwise it will return nil.
          * @return The converted Objective-C result.
          */
         URLResponse failure_response() const;
         /**
          * @brief Returns the `previousFailureCount` property of `NSURLAuthenticationChallenge`.
-         * @details The count of previous failed authentication attempts.
+         * @details \@abstract Get count of previous failed authentication attempts \@result The count of previous failures
          * @return The converted Objective-C result.
          */
         std::int64_t previous_failure_count() const;
         /**
          * @brief Returns the `proposedCredential` property of `NSURLAuthenticationChallenge`.
-         * @details The proposed credential for this challenge. The proposed credential may be 'nil', if there is no default credential to use for this challenge (either stored or in the URL). If the credential is not 'nil' and returns 'YES' for 'hasPassword', it is ready to use as-is. If it returns 'NO' for 'hasPassword', it provides a default username the client could use when prompting.
+         * @details \@abstract Get the proposed credential for this challenge \@result The proposed credential \@discussion proposedCredential may be nil, if there is no default credential to use for this challenge (either stored or in the URL). If the credential is not nil and returns YES for hasPassword, this means the NSURLConnection thinks the credential is ready to use as-is. If it returns NO for hasPassword, then the credential is not ready to use as-is, but provides a default username the client could use when prompting.
          * @return The converted Objective-C result.
          */
         URLCredential proposed_credential() const;
         /**
          * @brief Returns the `protectionSpace` property of `NSURLAuthenticationChallenge`.
-         * @details A description of the protection space that requires authentication.
+         * @details \@abstract Get a description of the protection space that requires authentication \@result The protection space that needs authentication
          * @return The converted Objective-C result.
          */
         URLProtectionSpace protection_space() const;

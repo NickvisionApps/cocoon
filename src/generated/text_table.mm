@@ -60,13 +60,13 @@ namespace cocoon
         [cocoon::internal::ns<::NSTextTable>(this) setLayoutAlgorithm:static_cast<::NSTextTableLayoutAlgorithm>(value)];
     }
 
-    std::int64_t TextTable::number_of_columns() const
+    std::uint64_t TextTable::number_of_columns() const
     {
-        return static_cast<std::int64_t>([cocoon::internal::ns<::NSTextTable>(this) numberOfColumns]);
+        return static_cast<std::uint64_t>([cocoon::internal::ns<::NSTextTable>(this) numberOfColumns]);
     }
 
-    void TextTable::set_number_of_columns(std::int64_t value) const
+    void TextTable::set_number_of_columns(std::uint64_t value) const
     {
-        [cocoon::internal::ns<::NSTextTable>(this) setNumberOfColumns:static_cast<::NSInteger>(value)];
+        [cocoon::internal::ns<::NSTextTable>(this) setNumberOfColumns:static_cast<::NSUInteger>(value)];
     }
 }

@@ -10,7 +10,6 @@ namespace cocoon
 {
     /**
      * @brief C++ handle for the Objective-C class `NSXPCListenerEndpoint` (Foundation).
-     * @details An object that names a specific XPC listener. An instance of ''NSXPCListenerEndpoint'' may be retrieved from an ''NSXPCListener'' instance and sent over existing ''NSXPCConnection''s. A process may then use the endpoint to create a new ''NSXPCConnection'' to the original ''NSXPCListener''. This pattern is useful if you have a service which multiplexes work to other services. The service can act as an intermediate helper. The requesting application does not need to know specifically which service it is connecting to, just that it implements a known ''NSXPCInterface''.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      *
      * @par Example

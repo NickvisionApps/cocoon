@@ -12,7 +12,6 @@ namespace cocoon
 
     /**
      * @brief C++ handle for the Objective-C class `NSDistributedLock` (Foundation).
-     * @details A lock that multiple applications on multiple hosts can use to restrict access to some shared resource, such as a file.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      *
      * @par Example
@@ -45,30 +44,25 @@ namespace cocoon
         explicit DistributedLock(Adopt adopt);
         /**
          * @brief Calls `-[NSDistributedLock breakLock]`.
-         * @details Forces the lock to be relinquished.
          */
         void break_lock() const;
         /**
          * @brief Calls `+[NSDistributedLock lockWithPath:]`.
-         * @details Returns an ''NSDistributedLock'' object initialized with the specified path.
          * @param path Argument converted to the Objective-C parameter of the same role.
          * @return The converted Objective-C result.
          */
         static DistributedLock lock_with_path(const std::string& path);
         /**
          * @brief Calls `-[NSDistributedLock tryLock]`.
-         * @details Attempts to acquire the lock and immediately returns a Boolean value that indicates whether the attempt was successful.
          * @return The converted Objective-C result.
          */
         bool try_lock() const;
         /**
          * @brief Calls `-[NSDistributedLock unlock]`.
-         * @details Relinquishes the receiver.
          */
         void unlock() const;
         /**
          * @brief Returns the `lockDate` property of `NSDistributedLock`.
-         * @details The time the lock was acquired.
          * @return The converted Objective-C result.
          */
         Date lock_date() const;

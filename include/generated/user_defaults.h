@@ -12,7 +12,7 @@ namespace cocoon
 
     /**
      * @brief C++ handle for the Objective-C class `NSUserDefaults` (Foundation).
-     * @details An interface to the user's defaults database, which stores system-wide and app-specific settings. A 'UserDefaults' object provides access to the defaults system, which is a persistent store for app-specific and system-wide settings. You use this system to store nonsensitive information, such as app-specific configuration details. The system also stores configuration details that apply to all apps, such as the current language settings for the device. In your code, you check values from this system and use them to dynamically alter your app's appearance or behavior. The term defaults refers to the fact that the stored data determines the default startup state and behavior. > Important: Don't store personal or sensitive information as settings. The defaults system stores information on disk in an unencrypted format. Store personal or sensitive information in the person's Keychain instead. To access the defaults system, obtain a 'UserDefaults' object and call its methods to read and write values. The ''standard'' object is a shared object you use to read and write your app's standard settings. You can also create unique 'UserDefaults' objects to manage specific sets of settings. For example, you can create a 'UserDefaults' object that reads and writes settings your app shares with an app extension. Don't subclass 'UserDefaults'. Each item you store in a defaults object consists of a key-value pair, where each key is a string that you use to locate the item and each value is a data object. The defaults database supports the same value types found in property list files, including types like 'Int', 'Float', 'Double', 'Bool', 'String', ''URL'', 'NSNumber', ''Date'', 'Array', and 'Dictionary'. To include other types of objects in the defaults database, archive them to a ''Data'' object first and store that object instead. Prefer simple types over custom objects whenever possible. With the exception of managed devices in educational institutions, the system stores defaults locally on the current device. When you write values to a 'UserDefaults' object, the object updates its in-memory version of that information right away, and writes the value to disk asynchronously. When someone backs up their device, the system includes any persistent defaults databases in the backup data. Because the data is device-specific, you don't use the defaults system to share data between devices. To share data between someone's devices, use the ''NSUbiquitousKeyValueStore'' instead. > Warning: Don't access the files of the defaults database directly from the file system. Modifying one of the underlying files directly may cause data loss, a delay in changes being available, or an app crash. In macOS, use the 'defaults' command-line utility to safely view or modify the defaults database outside of your app. While your app is running, the defaults system generates notifications to let you know when values change. To observe changes to individual settings, add a key-value observer to your 'UserDefaults' object, using key names to build the path to the setting you want. To observe changes for all settings, register for a ''didChangeNotification'' with your 'UserDefaults' object. The 'UserDefaults' type is thread-safe, and you can use the same object in multiple threads or tasks simultaneously. \#\#\# Domains and Settings Search Paths To integrate settings from different sources, the defaults system organizes them into domains. An app defines its own custom settings, but the system defines settings that apply to all apps. Similarly, you might choose to override a specific setting temporarily to test one of your app's features. The defaults system provides domains for each of these cases along with several others. When you request the value of a setting, the 'UserDefaults' object searches its domains in a specific order until it finds the value you want. The following table lists the key domains that the defaults system supports and their search order. Some domains might not be present for all apps. For example, the managed domain is present only on administrator-managed devices. | Domain | Type | Description | |----------|----------|----------| | Managed | persistent | This domain contains settings that an administrator provided for a managed device. | | Argument | volatile | This domain contains the settings you specified when launching your app from the command-line or Xcode. These keys represent temporary overrides of settings, and the system discards them after the app quits. | | Educational managed | persistent | For managed devices in an educational institution, this domain contains any settings saved to the iCloud key-value store for that institution. | | App | persistent | This domain contains the settings your app saves, either programmatically or using its settings UI. | | Suite | persistent | This domain contains custom settings from an app group or other app you specify at runtime. This domain is absent by default, but you can add a suite using the ''addSuite(named:)'' method. | | Global | persistent | This domain contains keys present for all apps on the system. The system provides the keys for this domain, and apps can't write to it. | | Registration | volatile | This domain contains system-provided default values and the default values you register for your app at launch time. Registering a set of default values prevents your code from receiving 'nil' values when requesting a setting. The system discards these values when your app quits, so you must register them each time your app launches. | The system stores data for most persistent domains on the current device, and doesn't share that data with other devices. To share settings among all of a person's devices, save them using an ''NSUbiquitousKeyValueStore'' object instead. \#\#\# Settings in Managed Environments If your app supports managed environments, an administrator might configure any managed devices with a default set of settings. Apps can't write to managed domains, so if your app encounters a managed setting, disable or hide any controls that someone might use to change that setting's value. To determine if a setting is managed, call the ''objectIsForced(forKey:)'' or ''objectIsForced(forKey:inDomain:)'' method of your 'UserDefaults' object. \#\#\# Sandbox Considerations A sandboxed app cannot access or modify the settings of another app or process, with the following exceptions: - An app can modify settings for one of its app extensions. - An app can modify settings for an app group to which it belongs.
+     * @details NSUserDefaults is a hierarchical persistent interprocess (optionally distributed) key-value store, optimized for storing user settings. Hierarchical: NSUserDefaults has a list of places to look for data called the "search list". A search list is referred to by an arbitrary string called the "suite identifier" or "domain identifier". When queried, NSUserDefaults checks each entry of its search list until it finds one that contains the key in question, or has searched the whole list. The list is (note: "current host + current user" preferences are unimplemented on iOS, watchOS, and tvOS, and "any user" preferences are not generally useful for applications on those operating systems): - Managed ("forced") preferences, set by a configuration profile or via mcx from a network administrator - Commandline arguments - Preferences for the current domain, in the cloud - Preferences for the current domain, the current user, in the current host - Preferences for the current domain, the current user, in any host - Preferences added via -addSuiteNamed: - Preferences global to all apps for the current user, in the current host - Preferences global to all apps for the current user, in any host - Preferences for the current domain, for all users, in the current host - Preferences global to all apps for all users, in the current host - Preferences registered with -registerDefaults: Persistent: Preferences stored in NSUserDefaults persist across reboots and relaunches of apps unless otherwise specified. Interprocess: Preferences may be accessible to and modified from multiple processes simultaneously (for example between an application and an extension). Optionally distributed (Currently only supported in Shared iPad for Students mode): Data stored in user defaults can be made "ubiqitous", i.e. synchronized between devices via the cloud. Ubiquitous user defaults are automatically propagated to all devices logged into the same iCloud account. When reading defaults (via -ForKey: methods on NSUserDefaults), ubiquitous defaults are searched before local defaults. All operations on ubiquitous defaults are asynchronous, so registered defaults may be returned in place of ubiquitous defaults if downloading from iCloud hasn't finished. Ubiquitous defaults are specified in the Defaults Configuration File for an application. Key-Value Store: NSUserDefaults stores Property List objects (NSString, NSData, NSNumber, NSDate, NSArray, and NSDictionary) identified by NSString keys, similar to an NSMutableDictionary. Optimized for storing user settings: NSUserDefaults is intended for relatively small amounts of data, queried very frequently, and modified occasionally. Using it in other ways may be slow or use more memory than solutions more suited to those uses. The 'App' CFPreferences functions in CoreFoundation act on the same search lists that NSUserDefaults does. NSUserDefaults can be observed using Key-Value Observing for any key stored in it. Using NSKeyValueObservingOptionPrior to observe changes from other processes or devices will behave as though NSKeyValueObservingOptionPrior was not specified.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      *
      * @par Example
@@ -45,89 +45,87 @@ namespace cocoon
         explicit UserDefaults(Adopt adopt);
         /**
          * @brief Calls `-[NSUserDefaults URLForKey:]`.
-         * @details Returns the URL associated with the specified key. - Parameter defaultName: A key in the current user's defaults database. - Returns: The URL associated with the specified key, or 'nil' if the key doesn't exist or its value can't be converted to a URL. If the value is an 'NSString' path, then it will construct a file URL to that path. If the value is an archived URL from ''UserDefaults/set(:forKey:)-2bqjt'' it will be unarchived.
+         * @details -URLForKey: is equivalent to -objectForKey: except that it converts the returned value to an NSURL. If the value is an NSString path, then it will construct a file URL to that path. If the value is an archived URL from -setURL:forKey: it will be unarchived. If the value is absent or can't be converted to an NSURL, nil will be returned.
          * @param default_name Argument converted to the Objective-C parameter of the same role.
          * @return The converted Objective-C result.
          */
         URL url_for_key(const std::string& default_name) const;
         /**
          * @brief Calls `-[NSUserDefaults addSuiteNamed:]`.
-         * @details Inserts settings for the specified domain into the search list of the current object. - Parameter suiteName: The domain name to insert. This domain is inserted after the application domain. Passing ''NSGlobalDomain'' or the current application's bundle identifier is unsupported. The additional search lists are searched after the current domain, but before global defaults.
+         * @details -addSuiteNamed: adds the full search list for 'suiteName' as a sub-search-list of the receiver's. The additional search lists are searched after the current domain, but before global defaults. Passing NSGlobalDomain or the current application's bundle identifier is unsupported.
          * @param suite_name Argument converted to the Objective-C parameter of the same role.
          */
         void add_suite_named(const std::string& suite_name) const;
         /**
          * @brief Calls `-[NSUserDefaults arrayForKey:]`.
-         * @details Returns the array associated with the specified key. - Parameter defaultName: A key in the current user's defaults database. - Returns: The array associated with the specified key, or 'nil' if the key doesn't exist or its value is not an array. The returned array and its contents are immutable, even if the values you originally set were mutable.
+         * @details -arrayForKey: is equivalent to -objectForKey:, except that it will return nil if the value is not an NSArray.
          * @param default_name Argument converted to the Objective-C parameter of the same role.
          * @return The converted Objective-C result.
          */
         std::vector<Object> array_for_key(const std::string& default_name) const;
         /**
          * @brief Calls `-[NSUserDefaults boolForKey:]`.
-         * @details Returns the Boolean value associated with the specified key. - Parameter defaultName: A key in the current user's defaults database. - Returns: The Boolean value associated with the specified key. If the key doesn't exist, this method returns 'NO'. If the value is an 'NSNumber', 'NO' will be returned if the value is '0', 'YES' otherwise. If the value is an 'NSString', values of '"YES"' or '"1"' will return 'YES', and values of '"NO"', '"0"', or any other string will return 'NO'. If the value is absent or can't be converted to a 'BOOL', 'NO' will be returned.
+         * @details -boolForKey: is equivalent to -objectForKey:, except that it converts the returned value to a BOOL. If the value is an NSNumber, NO will be returned if the value is 0, YES otherwise. If the value is an NSString, values of "YES" or "1" will return YES, and values of "NO", "0", or any other string will return NO. If the value is absent or can't be converted to a BOOL, NO will be returned.
          * @param default_name Argument converted to the Objective-C parameter of the same role.
          * @return The converted Objective-C result.
          */
         bool bool_for_key(const std::string& default_name) const;
         /**
          * @brief Calls `-[NSUserDefaults dataForKey:]`.
-         * @details Returns the data object associated with the specified key. - Parameter defaultName: A key in the current user's defaults database. - Returns: The data object associated with the specified key, or 'nil' if the key doesn't exist or its value is not a data object. The returned data object is immutable, even if the value you originally set was mutable.
+         * @details -dataForKey: is equivalent to -objectForKey:, except that it will return nil if the value is not an NSData.
          * @param default_name Argument converted to the Objective-C parameter of the same role.
          * @return The converted Objective-C result.
          */
         std::vector<std::uint8_t> data_for_key(const std::string& default_name) const;
         /**
          * @brief Calls `-[NSUserDefaults dictionaryForKey:]`.
-         * @details Returns the dictionary object associated with the specified key. - Parameter defaultName: A key in the current user's defaults database. - Returns: The dictionary object associated with the specified key, or 'nil' if the key doesn't exist or its value is not a dictionary. The returned dictionary and its contents are immutable, even if the values you originally set were mutable.
+         * @details -dictionaryForKey: is equivalent to -objectForKey:, except that it will return nil if the value is not an NSDictionary.
          * @param default_name Argument converted to the Objective-C parameter of the same role.
          * @return The converted Objective-C result.
          */
         std::map<std::string, Object> dictionary_for_key(const std::string& default_name) const;
         /**
          * @brief Calls `-[NSUserDefaults dictionaryRepresentation]`.
-         * @details Returns a dictionary with the union of all key-value pairs found from all domains. - Returns: A dictionary that contains the keys and their corresponding values from each of the search list's domains. For duplicate keys, the object from the domain that is closest to the front of the search list is used.
+         * @details -dictionaryRepresentation returns a composite snapshot of the values in the receiver's search list, such that [[receiver dictionaryRepresentation] objectForKey:x] will return the same thing as [receiver objectForKey:x].
          * @return The converted Objective-C result.
          */
         std::map<std::string, Object> dictionary_representation() const;
         /**
          * @brief Calls `-[NSUserDefaults doubleForKey:]`.
-         * @details Returns the double value associated with the specified key. - Parameter defaultName: A key in the current user's defaults database. - Returns: The double value associated with the specified key. If the key doesn't exist, this method returns '0'. If the value is an 'NSNumber', the result of '-doubleValue' will be returned. If the value is an 'NSString', it will be converted if possible. Boolean values will not be converted.
+         * @details -doubleForKey: is similar to -integerForKey:, except that it returns a double, and boolean values will not be converted.
          * @param default_name Argument converted to the Objective-C parameter of the same role.
          * @return The converted Objective-C result.
          */
         double double_for_key(const std::string& default_name) const;
         /**
          * @brief Calls `-[NSUserDefaults floatForKey:]`.
-         * @details Returns the floating-point value associated with the specified key. - Parameter defaultName: A key in the current user's defaults database. - Returns: The float value associated with the specified key. If the key doesn't exist, this method returns '0'. If the value is an 'NSNumber', the result of '-floatValue' will be returned. If the value is an 'NSString', it will be converted if possible. Boolean values will not be converted.
+         * @details -floatForKey: is similar to -integerForKey:, except that it returns a float, and boolean values will not be converted.
          * @param default_name Argument converted to the Objective-C parameter of the same role.
          * @return The converted Objective-C result.
          */
         float float_for_key(const std::string& default_name) const;
         /**
          * @brief Calls `-[NSUserDefaults integerForKey:]`.
-         * @details Returns the integer value associated with the specified key. - Parameter defaultName: A key in the current user's defaults database. - Returns: The integer value associated with the specified key. If the key doesn't exist, this method returns '0'. If the value is an 'NSNumber', the result of '-integerValue' will be returned. If the value is an 'NSString', it will be converted to 'NSInteger' if possible. If the value is a Boolean, it will be converted to either '1' for 'YES' or '0' for 'NO'. If the value is absent or can't be converted to an integer, '0' will be returned.
+         * @details -integerForKey: is equivalent to -objectForKey:, except that it converts the returned value to an NSInteger. If the value is an NSNumber, the result of -integerValue will be returned. If the value is an NSString, it will be converted to NSInteger if possible. If the value is a boolean, it will be converted to either 1 for YES or 0 for NO. If the value is absent or can't be converted to an integer, 0 will be returned.
          * @param default_name Argument converted to the Objective-C parameter of the same role.
          * @return The converted Objective-C result.
          */
         std::int64_t integer_for_key(const std::string& default_name) const;
         /**
          * @brief Calls `-[NSUserDefaults objectForKey:]`.
-         * @details Returns the object associated with the specified key. - Parameter defaultName: A key in the current user's defaults database. - Returns: The object associated with the specified key, or 'nil' if the key was not found. This method searches the receiver's search list for a default with the key 'defaultName' and returns it. If another process has changed defaults in the search list, NSUserDefaults will automatically update to the latest values. If the key in question has been marked as ubiquitous via a Defaults Configuration File, the latest value may not be immediately available, and the registered value will be returned instead. The returned object is immutable, even if the value you originally set was mutable.
+         * @details -objectForKey: will search the receiver's search list for a default with the key 'defaultName' and return it. If another process has changed defaults in the search list, NSUserDefaults will automatically update to the latest values. If the key in question has been marked as ubiquitous via a Defaults Configuration File, the latest value may not be immediately available, and the registered value will be returned instead.
          * @param default_name Argument converted to the Objective-C parameter of the same role.
          * @return The converted Objective-C result.
          */
         Object object_for_key(const std::string& default_name) const;
         /**
          * @brief Calls `-[NSUserDefaults objectIsForcedForKey:]`.
-         * @details Returns a Boolean value that indicates whether an administrator provided the value for the specified key. - Parameter key: The key whose status you want to check. - Returns: 'YES' if the value for 'key' is managed by an administrator; otherwise, 'NO'. A key is managed when its value has been set by a configuration profile or managed by a mobile device management (MDM) server. For keys that are managed, you should disable any user interface that allows the user to modify the value of that key.
          * @param key Argument converted to the Objective-C parameter of the same role.
          * @return The converted Objective-C result.
          */
         bool object_is_forced_for_key(const std::string& key) const;
         /**
          * @brief Calls `-[NSUserDefaults objectIsForcedForKey:inDomain:]`.
-         * @details Returns a Boolean value that indicates whether an administrator provided the value for the key in the specified domain. - Parameters: - key: The key whose status you want to check. - domain: The domain of the key. - Returns: 'YES' if the value for 'key' in 'domain' is managed by an administrator; otherwise, 'NO'. For keys that are managed, you should disable any user interface that allows the user to modify the value of that key.
          * @param key Argument converted to the Objective-C parameter of the same role.
          * @param domain Argument converted to the Objective-C parameter of the same role.
          * @return The converted Objective-C result.
@@ -135,138 +133,135 @@ namespace cocoon
         bool object_is_forced_for_key(const std::string& key, const std::string& domain) const;
         /**
          * @brief Calls `-[NSUserDefaults persistentDomainForName:]`.
-         * @details Retrieves the settings from the specified persistent domain. - Parameter domainName: The domain name. - Returns: A dictionary containing the keys and values in the specified persistent domain, or 'nil' if the domain doesn't exist.
+         * @details -persistentDomainForName: returns a dictionary representation of the search list entry specified by 'domainName', the current user, and any host.
          * @param domain_name Argument converted to the Objective-C parameter of the same role.
          * @return The converted Objective-C result.
          */
         std::map<std::string, Object> persistent_domain_for_name(const std::string& domain_name) const;
         /**
          * @brief Calls `-[NSUserDefaults registerDefaults:]`.
-         * @details Specifies the set of default settings and values to use as a fallback in cases where the app domain doesn't have them. - Parameter registrationDictionary: The dictionary of keys and values you want to register. The contents of the registration domain are not written to disk; you need to call this method each time your application starts. You can call this method more than once; each call adds or updates the entries in the registration domain. Default values from Defaults Configuration Files will automatically be registered.
+         * @details -registerDefaults: adds the registrationDictionary to the last item in every search list. This means that after NSUserDefaults has looked for a value in every other valid location, it will look in registered defaults, making them useful as a "fallback" value. Registered defaults are never stored between runs of an application, and are visible only to the application that registers them. Default values from Defaults Configuration Files will automatically be registered.
          * @param registration_dictionary Argument converted to the Objective-C parameter of the same role.
          */
         void register_defaults(const std::map<std::string, Object>& registration_dictionary) const;
         /**
          * @brief Calls `-[NSUserDefaults removeObjectForKey:]`.
-         * @details Removes the value for the specified key from the defaults database. - Parameter defaultName: The key whose value you want to remove. Removing a default has no effect on the value returned by the 'object(forKey:)' method if the same key exists in a domain that precedes the application domain in the search list.
+         * @details -removeObjectForKey: is equivalent to -[... setObject:nil forKey:defaultName]
          * @param default_name Argument converted to the Objective-C parameter of the same role.
          */
         void remove_object_for_key(const std::string& default_name) const;
         /**
          * @brief Calls `-[NSUserDefaults removePersistentDomainForName:]`.
-         * @details Removes the keys and values from the specified persistent domain. - Parameter domainName: The name of the persistent domain. Removes all values from the search list entry specified by 'domainName', the current user, and any host. The change is persistent.
+         * @details -removePersistentDomainForName: removes all values from the search list entry specified by 'domainName', the current user, and any host. The change is persistent.
          * @param domain_name Argument converted to the Objective-C parameter of the same role.
          */
         void remove_persistent_domain_for_name(const std::string& domain_name) const;
         /**
          * @brief Calls `-[NSUserDefaults removeSuiteNamed:]`.
-         * @details Removes the specified domain from the search list of the current object. - Parameter suiteName: The domain name to remove.
+         * @details -removeSuiteNamed: removes a sub-searchlist added via -addSuiteNamed:.
          * @param suite_name Argument converted to the Objective-C parameter of the same role.
          */
         void remove_suite_named(const std::string& suite_name) const;
         /**
          * @brief Calls `-[NSUserDefaults removeVolatileDomainForName:]`.
-         * @details Removes the keys and values from the specified volatile domain. - Parameter domainName: The name of the volatile domain to remove.
          * @param domain_name Argument converted to the Objective-C parameter of the same role.
          */
         void remove_volatile_domain_for_name(const std::string& domain_name) const;
         /**
          * @brief Calls `+[NSUserDefaults resetStandardUserDefaults]`.
-         * @details This method has no effect and shouldn't be used.
+         * @details +resetStandardUserDefaults releases the standardUserDefaults and sets it to nil. A new standardUserDefaults will be created the next time it's accessed. The only visible effect this has is that all KVO observers of the previous standardUserDefaults will no longer be observing it.
          */
         static void reset_standard_user_defaults();
         /**
          * @brief Calls `-[NSUserDefaults setBool:forKey:]`.
-         * @details Sets the value of the specified key to a Boolean value. - Parameters: - value: The Boolean value to store. - defaultName: The key with which to associate the value.
+         * @details -setBool:forKey: is equivalent to -setObject:forKey: except that the value is converted from a BOOL to an NSNumber.
          * @param value Argument converted to the Objective-C parameter of the same role.
          * @param default_name Argument converted to the Objective-C parameter of the same role.
          */
         void set_bool(bool value, const std::string& default_name) const;
         /**
          * @brief Calls `-[NSUserDefaults setDouble:forKey:]`.
-         * @details Sets the value of the specified key to a double. - Parameters: - value: The double value to store. - defaultName: The key with which to associate the value.
+         * @details -setDouble:forKey: is equivalent to -setObject:forKey: except that the value is converted from a double to an NSNumber.
          * @param value Argument converted to the Objective-C parameter of the same role.
          * @param default_name Argument converted to the Objective-C parameter of the same role.
          */
         void set_double(double value, const std::string& default_name) const;
         /**
          * @brief Calls `-[NSUserDefaults setFloat:forKey:]`.
-         * @details Sets the value of the specified key to a floating-point number. - Parameters: - value: The floating-point value to store. - defaultName: The key with which to associate the value.
+         * @details -setFloat:forKey: is equivalent to -setObject:forKey: except that the value is converted from a float to an NSNumber.
          * @param value Argument converted to the Objective-C parameter of the same role.
          * @param default_name Argument converted to the Objective-C parameter of the same role.
          */
         void set_float(float value, const std::string& default_name) const;
         /**
          * @brief Calls `-[NSUserDefaults setInteger:forKey:]`.
-         * @details Sets the value of the specified key to an integer. - Parameters: - value: The integer value to store. - defaultName: The key with which to associate the value.
+         * @details -setInteger:forKey: is equivalent to -setObject:forKey: except that the value is converted from an NSInteger to an NSNumber.
          * @param value Argument converted to the Objective-C parameter of the same role.
          * @param default_name Argument converted to the Objective-C parameter of the same role.
          */
         void set_integer(std::int64_t value, const std::string& default_name) const;
         /**
          * @brief Calls `-[NSUserDefaults setObject:forKey:]`.
-         * @details Sets the value of the specified key to a property list object. - Parameters: - value: The object to store in the defaults database. Pass 'nil' to remove the value for 'defaultName'. - defaultName: The key with which to associate the value. This method immediately stores a value (or removes the value if 'nil' is passed) for the provided key in the search list entry for the receiver's suite name in the current user and any host, then asynchronously stores the value persistently, where it is made available to other processes. Setting a default value to a non-property-list object that can't be archived will throw an exception.
+         * @details -setObject:forKey: immediately stores a value (or removes the value if nil is passed as the value) for the provided key in the search list entry for the receiver's suite name in the current user and any host, then asynchronously stores the value persistently, where it is made available to other processes.
          * @param value Argument converted to the Objective-C parameter of the same role.
          * @param default_name Argument converted to the Objective-C parameter of the same role.
          */
         void set_object(const Object& value, const std::string& default_name) const;
         /**
          * @brief Calls `-[NSUserDefaults setPersistentDomain:forName:]`.
-         * @details Replaces the keys and values in the specified domain with the new keys and values you supply. - Parameters: - domain: The dictionary of keys and values to assign to the domain. - domainName: The name of the persistent domain. Replaces all values in the search list entry specified by 'domainName', the current user, and any host, with the values in 'domain'. The change will be persisted.
+         * @details -setPersistentDomain:forName: replaces all values in the search list entry specified by 'domainName', the current user, and any host, with the values in 'domain'. The change will be persisted.
          * @param domain Argument converted to the Objective-C parameter of the same role.
          * @param domain_name Argument converted to the Objective-C parameter of the same role.
          */
         void set_persistent_domain(const std::map<std::string, Object>& domain, const std::string& domain_name) const;
         /**
          * @brief Calls `-[NSUserDefaults setURL:forKey:]`.
-         * @details Sets the value of the specified key to a URL. - Parameters: - url: The URL to store. - defaultName: The key with which to associate the value. If 'url' is a file URL, the value that is archived is the 'path' with the user's home directory abbreviated using a tilde ('~') character. Use ''UserDefaults/url(forKey:)'' to retrieve values set this way.
+         * @details -setURL:forKey is equivalent to -setObject:forKey: except that the value is archived to an NSData. Use -URLForKey: to retrieve values set this way.
          * @param url Argument converted to the Objective-C parameter of the same role.
          * @param default_name Argument converted to the Objective-C parameter of the same role.
          */
         void set_url(const URL& url, const std::string& default_name) const;
         /**
          * @brief Calls `-[NSUserDefaults setVolatileDomain:forName:]`.
-         * @details Replaces the keys and values in the specified domain with the new keys and values you supply. - Parameters: - domain: The dictionary of keys and values to assign to the domain. - domainName: The name of the volatile domain.
          * @param domain Argument converted to the Objective-C parameter of the same role.
          * @param domain_name Argument converted to the Objective-C parameter of the same role.
          */
         void set_volatile_domain(const std::map<std::string, Object>& domain, const std::string& domain_name) const;
         /**
          * @brief Calls `-[NSUserDefaults stringArrayForKey:]`.
-         * @details Returns the array of strings associated with the specified key. - Parameter defaultName: A key in the current user's defaults database. - Returns: The array of strings associated with the specified key, or 'nil' if the key doesn't exist, the value is not an array, or any element in the array is not a string. Unlike ''UserDefaults/string(forKey:)'', 'NSNumber' values are not converted to strings.
+         * @details -stringForKey: is equivalent to -objectForKey:, except that it will return nil if the value is not an NSArray\<NSString >. Note that unlike -stringForKey:, NSNumbers are not converted to NSStrings.
          * @param default_name Argument converted to the Objective-C parameter of the same role.
          * @return The converted Objective-C result.
          */
         std::vector<std::string> string_array_for_key(const std::string& default_name) const;
         /**
          * @brief Calls `-[NSUserDefaults stringForKey:]`.
-         * @details Returns the string associated with the specified key. - Parameter defaultName: A key in the current user's defaults database. - Returns: The string associated with the specified key, or 'nil' if the key doesn't exist or the value is not a string. If the value is a number, this method converts it to a string representation.
+         * @details -stringForKey: is equivalent to -objectForKey:, except that it will convert NSNumber values to their NSString representation. If a non-string non-number value is found, nil will be returned.
          * @param default_name Argument converted to the Objective-C parameter of the same role.
          * @return The converted Objective-C result.
          */
         std::string string_for_key(const std::string& default_name) const;
         /**
          * @brief Calls `-[NSUserDefaults synchronize]`.
-         * @details Waits for any pending asynchronous updates to the defaults database and returns; this method is unnecessary and shouldn't be used. This method is unnecessary and shouldn't be used.
+         * @details -synchronize is deprecated and will be marked with the API_DEPRECATED macro in a future release. -synchronize blocks the calling thread until all in-progress set operations have completed. This is no longer necessary. Replacements for previous uses of -synchronize depend on what the intent of calling synchronize was. If you synchronized... - ...before reading in order to fetch updated values: remove the synchronize call - ...after writing in order to notify another program to read: the other program can use KVO to observe the default without needing to notify - ...before exiting in a non-app (command line tool, agent, or daemon) process: call CFPreferencesAppSynchronize(kCFPreferencesCurrentApplication) - ...for any other reason: remove the synchronize call
          * @return The converted Objective-C result.
          */
         bool synchronize() const;
         /**
          * @brief Calls `-[NSUserDefaults volatileDomainForName:]`.
-         * @details Retrieves the settings from the specified volatile domain. - Parameter domainName: The name of the volatile domain. - Returns: The dictionary for the volatile domain specified by 'domainName', or 'nil' if the domain doesn't exist.
          * @param domain_name Argument converted to the Objective-C parameter of the same role.
          * @return The converted Objective-C result.
          */
         std::map<std::string, Object> volatile_domain_for_name(const std::string& domain_name) const;
         /**
          * @brief Returns the `standardUserDefaults` property of `NSUserDefaults`.
-         * @details The shared defaults object for the current app. The shared defaults object searches the current application's search list, which consists of the current domain, followed by any added suite domains, the global domain, and the registration domain.
+         * @details +standardUserDefaults returns a global instance of NSUserDefaults configured to search the current application's search list.
          * @return The converted Objective-C result.
          */
         static UserDefaults standard_user_defaults();
         /**
          * @brief Returns the `volatileDomainNames` property of `NSUserDefaults`.
-         * @details An array of identifiers for the volatile domains associated with the current object. Use ''UserDefaults/volatileDomain(forName:)'' to retrieve the contents of a specific volatile domain.
+         * @details Volatile domains are not added to any search list, are not persisted, and are not visible to other applications. Using them is not recommended.
          * @return The converted Objective-C result.
          */
         std::vector<std::string> volatile_domain_names() const;

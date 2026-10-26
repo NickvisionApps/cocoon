@@ -13,7 +13,6 @@ namespace cocoon
 
     /**
      * @brief C++ handle for the Objective-C class `NSRelativeSpecifier` (Foundation).
-     * @details A specifier that indicates an object in a collection by its position relative to another object. You don't normally subclass 'NSRelativeSpecifier'.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      * Inherits from @ref ScriptObjectSpecifier.
      *
@@ -49,25 +48,21 @@ namespace cocoon
         explicit RelativeSpecifier(Adopt adopt);
         /**
          * @brief Returns the `baseSpecifier` property of `NSRelativeSpecifier`.
-         * @details The specifier for the base object relative to which the target is located.
          * @return The converted Objective-C result.
          */
         ScriptObjectSpecifier base_specifier() const;
         /**
          * @brief Sets the `baseSpecifier` property of `NSRelativeSpecifier`.
-         * @details The specifier for the base object relative to which the target is located.
          * @param value Argument converted to the Objective-C parameter of the same role.
          */
         void set_base_specifier(const ScriptObjectSpecifier& value) const;
         /**
          * @brief Returns the `relativePosition` property of `NSRelativeSpecifier`.
-         * @details The relative position (before or after) of the object to be located.
          * @return The converted Objective-C result.
          */
         RelativePosition relative_position() const;
         /**
          * @brief Sets the `relativePosition` property of `NSRelativeSpecifier`.
-         * @details The relative position (before or after) of the object to be located.
          * @param value Argument converted to the Objective-C parameter of the same role.
          */
         void set_relative_position(RelativePosition value) const;

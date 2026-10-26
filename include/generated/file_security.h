@@ -10,7 +10,7 @@ namespace cocoon
 {
     /**
      * @brief C++ handle for the Objective-C class `NSFileSecurity` (Foundation).
-     * @details A stub class that encapsulates security information about a file. ''NSFileSecurity'' contains no methods of its own. Instead, it is transparently bridged to \<doc://com.apple.documentation/documentation/corefoundation/cffilesecurity>.
+     * @details NSFileSecurity encapsulates a file system object's security information. NSFileSecurity and CFFileSecurity are toll-free bridged. Use the CFFileSecurity API for access to the low-level file security properties encapsulated by NSFileSecurity.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      *
      * @par Example

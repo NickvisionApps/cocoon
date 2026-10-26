@@ -12,7 +12,6 @@ namespace cocoon
 
     /**
      * @brief C++ handle for the Objective-C class `NSSpecifierTest` (Foundation).
-     * @details A script whose test that compares an object specifier against a value using a comparison operator. The specifiers are evaluated normally before the comparison operator is evaluated.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      * Inherits from @ref ScriptWhoseTest.
      *

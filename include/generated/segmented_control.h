@@ -33,10 +33,10 @@ namespace cocoon
      * cocoon::SegmentedControl segmented_control{};
      * segmented_control.set_border_shape(cocoon::ControlBorderShape::Automatic);
      * auto border_shape = segmented_control.border_shape();
-     * segmented_control.set_role(cocoon::SegmentedControlRole::Automatic);
-     * auto role = segmented_control.role();
      * segmented_control.set_segment_count(1);
      * auto segment_count = segmented_control.segment_count();
+     * segmented_control.set_segment_distribution(cocoon::SegmentDistribution::Fit);
+     * auto segment_distribution = segmented_control.segment_distribution();
      * segmented_control.alignment_for_segment(1);
      * segmented_control.image_for_segment(1);
      * segmented_control.image_scaling_for_segment(1);
@@ -237,22 +237,6 @@ namespace cocoon
          * @return The converted Objective-C result.
          */
         std::int64_t index_of_selected_item() const;
-#ifdef COCOON_MACOS_27
-        /**
-         * @brief Returns the `role` property of `NSSegmentedControl`.
-         * @return The converted Objective-C result.
-         */
-        SegmentedControlRole role() const;
-#endif
-
-#ifdef COCOON_MACOS_27
-        /**
-         * @brief Sets the `role` property of `NSSegmentedControl`.
-         * @param value Argument converted to the Objective-C parameter of the same role.
-         */
-        void set_role(SegmentedControlRole value) const;
-#endif
-
         /**
          * @brief Returns the `segmentCount` property of `NSSegmentedControl`.
          * @return The converted Objective-C result.
