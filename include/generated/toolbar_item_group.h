@@ -30,10 +30,10 @@ namespace cocoon
      * cocoon::ToolbarItemGroup toolbar_item_group{};
      * toolbar_item_group.set_control_representation(cocoon::ToolbarItemGroupControlRepresentation::Automatic);
      * auto control_representation = toolbar_item_group.control_representation();
-     * toolbar_item_group.set_role(cocoon::ToolbarItemGroupRole::Automatic);
-     * auto role = toolbar_item_group.role();
      * toolbar_item_group.set_selected_index(1);
      * auto selected_index = toolbar_item_group.selected_index();
+     * toolbar_item_group.set_selection_mode(cocoon::ToolbarItemGroupSelectionMode::SelectOne);
+     * auto selection_mode = toolbar_item_group.selection_mode();
      * toolbar_item_group.is_selected_at_index(1);
      * toolbar_item_group.set_selected(true, 1);
      * @endcode
@@ -96,24 +96,6 @@ namespace cocoon
          * @param value Argument converted to the Objective-C parameter of the same role.
          */
         void set_control_representation(ToolbarItemGroupControlRepresentation value) const;
-#ifdef COCOON_MACOS_27
-        /**
-         * @brief Returns the `role` property of `NSToolbarItemGroup`.
-         * @details The semantic role of the item. Defaults to 'NSToolbarItemGroupRoleAutomatic'.
-         * @return The converted Objective-C result.
-         */
-        ToolbarItemGroupRole role() const;
-#endif
-
-#ifdef COCOON_MACOS_27
-        /**
-         * @brief Sets the `role` property of `NSToolbarItemGroup`.
-         * @details The semantic role of the item. Defaults to 'NSToolbarItemGroupRoleAutomatic'.
-         * @param value Argument converted to the Objective-C parameter of the same role.
-         */
-        void set_role(ToolbarItemGroupRole value) const;
-#endif
-
         /**
          * @brief Returns the `selectedIndex` property of `NSToolbarItemGroup`.
          * @details The most recently selected item of the group, or -1 if nothing is selected.

@@ -12,6 +12,7 @@ namespace cocoon
 
     /**
      * @brief C++ handle for the Objective-C class `NSTextTableBlock` (AppKit).
+     * @details NSTextTableBlock is a subclass of NSTextBlock used for a block that appears as a cell in a text table.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      * Inherits from @ref TextBlock.
      *
@@ -27,7 +28,7 @@ namespace cocoon
     {
     public:
         /// @brief Creates a new `NSTextTableBlock` instance and returns a handle to it.
-        explicit TextTableBlock(const TextTable& table, std::int64_t row, std::int64_t row_span, std::int64_t column, std::int64_t column_span);
+        explicit TextTableBlock(const TextTable& table, std::int64_t row, std::int64_t row_span, std::int64_t col, std::int64_t col_span);
         /// @brief Creates a new `NSTextTableBlock` instance and returns a handle to it.
         explicit TextTableBlock();
         /// @brief Creates a null handle that refers to no native object.

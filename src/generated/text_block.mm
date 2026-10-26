@@ -20,18 +20,6 @@ namespace cocoon
         return cocoon::internal::wrap<Color>([cocoon::internal::ns<::NSTextBlock>(this) borderColorForEdge:static_cast<::NSRectEdge>(edge)]);
     }
 
-#ifdef COCOON_MACOS_27
-    Color TextBlock::border_color_for_rect_edge(CGRectEdge rect_edge) const
-    {
-        if (@available(macOS 27.0, *))
-        {
-            return cocoon::internal::wrap<Color>([cocoon::internal::ns<::NSTextBlock>(this) borderColorForRectEdge:static_cast<::CGRectEdge>(rect_edge)]);
-        }
-        return Color(nullptr);
-    }
-
-#endif
-
     Rect TextBlock::bounds_rect_for_content_rect(const Rect& content_rect, const Rect& rect, const TextContainer& text_container, const Range& char_range) const
     {
         return cocoon::internal::from([cocoon::internal::ns<::NSTextBlock>(this) boundsRectForContentRect:cocoon::internal::to(content_rect) inRect:cocoon::internal::to(rect) textContainer:cocoon::internal::native<::NSTextContainer>(text_container) characterRange:cocoon::internal::to(char_range)]);
@@ -57,47 +45,25 @@ namespace cocoon
         [cocoon::internal::ns<::NSTextBlock>(this) setBorderColor:cocoon::internal::native<::NSColor>(color) forEdge:static_cast<::NSRectEdge>(edge)];
     }
 
-#ifdef COCOON_MACOS_27
-    void TextBlock::set_border_color(const Color& border_color, CGRectEdge rect_edge) const
+    void TextBlock::set_content_width(double val, TextBlockValueType type) const
     {
-        if (@available(macOS 27.0, *))
-        {
-            [cocoon::internal::ns<::NSTextBlock>(this) setBorderColor:cocoon::internal::native<::NSColor>(border_color) rectEdge:static_cast<::CGRectEdge>(rect_edge)];
-        }
+        [cocoon::internal::ns<::NSTextBlock>(this) setContentWidth:static_cast<::CGFloat>(val) type:static_cast<::NSTextBlockValueType>(type)];
     }
 
-#endif
-
-    void TextBlock::set_content_width(double content_width, TextBlockValueType type) const
+    void TextBlock::set_value(double val, TextBlockValueType type, TextBlockDimension dimension) const
     {
-        [cocoon::internal::ns<::NSTextBlock>(this) setContentWidth:static_cast<::CGFloat>(content_width) type:static_cast<::NSTextBlockValueType>(type)];
+        [cocoon::internal::ns<::NSTextBlock>(this) setValue:static_cast<::CGFloat>(val) type:static_cast<::NSTextBlockValueType>(type) forDimension:static_cast<::NSTextBlockDimension>(dimension)];
     }
 
-    void TextBlock::set_value(double value, TextBlockValueType type, TextBlockDimension dimension) const
+    void TextBlock::set_width(double val, TextBlockValueType type, TextBlockLayer layer) const
     {
-        [cocoon::internal::ns<::NSTextBlock>(this) setValue:static_cast<::CGFloat>(value) type:static_cast<::NSTextBlockValueType>(type) forDimension:static_cast<::NSTextBlockDimension>(dimension)];
-    }
-
-    void TextBlock::set_width(double width, TextBlockValueType type, TextBlockLayer layer) const
-    {
-        [cocoon::internal::ns<::NSTextBlock>(this) setWidth:static_cast<::CGFloat>(width) type:static_cast<::NSTextBlockValueType>(type) forLayer:static_cast<::NSTextBlockLayer>(layer)];
+        [cocoon::internal::ns<::NSTextBlock>(this) setWidth:static_cast<::CGFloat>(val) type:static_cast<::NSTextBlockValueType>(type) forLayer:static_cast<::NSTextBlockLayer>(layer)];
     }
 
     void TextBlock::set_width(double val, TextBlockValueType type, TextBlockLayer layer, RectEdge edge) const
     {
         [cocoon::internal::ns<::NSTextBlock>(this) setWidth:static_cast<::CGFloat>(val) type:static_cast<::NSTextBlockValueType>(type) forLayer:static_cast<::NSTextBlockLayer>(layer) edge:static_cast<::NSRectEdge>(edge)];
     }
-
-#ifdef COCOON_MACOS_27
-    void TextBlock::set_width(double width, TextBlockValueType type, TextBlockLayer layer, CGRectEdge rect_edge) const
-    {
-        if (@available(macOS 27.0, *))
-        {
-            [cocoon::internal::ns<::NSTextBlock>(this) setWidth:static_cast<::CGFloat>(width) type:static_cast<::NSTextBlockValueType>(type) forLayer:static_cast<::NSTextBlockLayer>(layer) rectEdge:static_cast<::CGRectEdge>(rect_edge)];
-        }
-    }
-
-#endif
 
     double TextBlock::value_for_dimension(TextBlockDimension dimension) const
     {
@@ -114,34 +80,10 @@ namespace cocoon
         return static_cast<double>([cocoon::internal::ns<::NSTextBlock>(this) widthForLayer:static_cast<::NSTextBlockLayer>(layer) edge:static_cast<::NSRectEdge>(edge)]);
     }
 
-#ifdef COCOON_MACOS_27
-    double TextBlock::width_for_layer(TextBlockLayer layer, CGRectEdge rect_edge) const
-    {
-        if (@available(macOS 27.0, *))
-        {
-            return static_cast<double>([cocoon::internal::ns<::NSTextBlock>(this) widthForLayer:static_cast<::NSTextBlockLayer>(layer) rectEdge:static_cast<::CGRectEdge>(rect_edge)]);
-        }
-        return {};
-    }
-
-#endif
-
     TextBlockValueType TextBlock::width_value_type_for_layer(TextBlockLayer layer, RectEdge edge) const
     {
         return static_cast<TextBlockValueType>([cocoon::internal::ns<::NSTextBlock>(this) widthValueTypeForLayer:static_cast<::NSTextBlockLayer>(layer) edge:static_cast<::NSRectEdge>(edge)]);
     }
-
-#ifdef COCOON_MACOS_27
-    TextBlockValueType TextBlock::width_value_type_for_layer(TextBlockLayer layer, CGRectEdge rect_edge) const
-    {
-        if (@available(macOS 27.0, *))
-        {
-            return static_cast<TextBlockValueType>([cocoon::internal::ns<::NSTextBlock>(this) widthValueTypeForLayer:static_cast<::NSTextBlockLayer>(layer) rectEdge:static_cast<::CGRectEdge>(rect_edge)]);
-        }
-        return {};
-    }
-
-#endif
 
     Color TextBlock::background_color() const
     {

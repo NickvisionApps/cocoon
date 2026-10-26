@@ -30,16 +30,6 @@ namespace cocoon
         [cocoon::internal::ns<::NSMutableParagraphStyle>(this) setParagraphStyle:cocoon::internal::native<::NSParagraphStyle>(obj)];
     }
 
-    TextAlignment MutableParagraphStyle::alignment() const
-    {
-        return static_cast<TextAlignment>([cocoon::internal::ns<::NSMutableParagraphStyle>(this) alignment]);
-    }
-
-    void MutableParagraphStyle::set_alignment(TextAlignment value) const
-    {
-        [cocoon::internal::ns<::NSMutableParagraphStyle>(this) setAlignment:static_cast<::NSTextAlignment>(value)];
-    }
-
     bool MutableParagraphStyle::allows_default_tightening_for_truncation() const
     {
         return static_cast<bool>([cocoon::internal::ns<::NSMutableParagraphStyle>(this) allowsDefaultTighteningForTruncation]);
@@ -88,16 +78,6 @@ namespace cocoon
     void MutableParagraphStyle::set_head_indent(double value) const
     {
         [cocoon::internal::ns<::NSMutableParagraphStyle>(this) setHeadIndent:static_cast<::CGFloat>(value)];
-    }
-
-    std::int64_t MutableParagraphStyle::header_level() const
-    {
-        return static_cast<std::int64_t>([cocoon::internal::ns<::NSMutableParagraphStyle>(this) headerLevel]);
-    }
-
-    void MutableParagraphStyle::set_header_level(std::int64_t value) const
-    {
-        [cocoon::internal::ns<::NSMutableParagraphStyle>(this) setHeaderLevel:static_cast<::NSInteger>(value)];
     }
 
     float MutableParagraphStyle::hyphenation_factor() const
@@ -216,22 +196,6 @@ namespace cocoon
         [cocoon::internal::ns<::NSMutableParagraphStyle>(this) setTailIndent:static_cast<::CGFloat>(value)];
     }
 
-    std::vector<TextBlock> MutableParagraphStyle::text_blocks() const
-    {
-        return cocoon::internal::from_array<TextBlock>([cocoon::internal::ns<::NSMutableParagraphStyle>(this) textBlocks], [](id e) -> TextBlock
-                                                       {
-                                                           return cocoon::internal::wrap<TextBlock>((::NSTextBlock*)e);
-                                                       });
-    }
-
-    void MutableParagraphStyle::set_text_blocks(const std::vector<TextBlock>& value) const
-    {
-        [cocoon::internal::ns<::NSMutableParagraphStyle>(this) setTextBlocks:cocoon::internal::to_array(value, [](const TextBlock& e) -> id
-                                                                                                        {
-                                                                                                            return cocoon::internal::native<::NSTextBlock>(e);
-                                                                                                        })];
-    }
-
     std::vector<TextList> MutableParagraphStyle::text_lists() const
     {
         return cocoon::internal::from_array<TextList>([cocoon::internal::ns<::NSMutableParagraphStyle>(this) textLists], [](id e) -> TextList
@@ -246,16 +210,6 @@ namespace cocoon
                                                                                                        {
                                                                                                            return cocoon::internal::native<::NSTextList>(e);
                                                                                                        })];
-    }
-
-    float MutableParagraphStyle::tightening_factor_for_truncation() const
-    {
-        return static_cast<float>([cocoon::internal::ns<::NSMutableParagraphStyle>(this) tighteningFactorForTruncation]);
-    }
-
-    void MutableParagraphStyle::set_tightening_factor_for_truncation(float value) const
-    {
-        [cocoon::internal::ns<::NSMutableParagraphStyle>(this) setTighteningFactorForTruncation:static_cast<float>(value)];
     }
 
     bool MutableParagraphStyle::uses_default_hyphenation() const

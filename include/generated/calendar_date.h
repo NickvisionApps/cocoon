@@ -10,7 +10,6 @@ namespace cocoon
 {
     /**
      * @brief C++ handle for the Objective-C class `NSCalendarDate` (Foundation).
-     * @details A specialized date object with embedded calendar information. \@DeprecationSummary { Use ''NSDate'' and ''NSCalendar'' instead. }
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      * Inherits from @ref Date.
      *

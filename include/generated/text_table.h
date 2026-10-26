@@ -15,6 +15,7 @@ namespace cocoon
 
     /**
      * @brief C++ handle for the Objective-C class `NSTextTable` (AppKit).
+     * @details NSTextTable represents a table as a whole.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      * Inherits from @ref TextBlock.
      *
@@ -34,7 +35,7 @@ namespace cocoon
      * auto collapses_borders = text_table.collapses_borders();
      * text_table.set_hides_empty_cells(true);
      * auto hides_empty_cells = text_table.hides_empty_cells();
-     * text_table.set_layout_algorithm(cocoon::TextTableLayoutAlgorithm::Automatic);
+     * text_table.set_layout_algorithm(cocoon::TextTableLayoutAlgorithm::AutomaticLayoutAlgorithm);
      * auto layout_algorithm = text_table.layout_algorithm();
      * @endcode
      * @see https://developer.apple.com/documentation/appkit/nstexttable
@@ -113,12 +114,12 @@ namespace cocoon
          * @details These methods control the basic parameters of the table.
          * @return The converted Objective-C result.
          */
-        std::int64_t number_of_columns() const;
+        std::uint64_t number_of_columns() const;
         /**
          * @brief Sets the `numberOfColumns` property of `NSTextTable`.
          * @details These methods control the basic parameters of the table.
          * @param value Argument converted to the Objective-C parameter of the same role.
          */
-        void set_number_of_columns(std::int64_t value) const;
+        void set_number_of_columns(std::uint64_t value) const;
     };
 }

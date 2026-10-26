@@ -19,44 +19,6 @@ namespace cocoon
     {
     }
 
-#ifdef COCOON_MACOS_27
-    void WritingToolsCoordinator::cancel_text_animations_with_identifiers(const std::vector<UUID>& identifiers) const
-    {
-        if (@available(macOS 27.0, *))
-        {
-            [cocoon::internal::ns<::NSWritingToolsCoordinator>(this) cancelTextAnimationsWithIdentifiers:cocoon::internal::to_array(identifiers, [](const UUID& e) -> id
-                                                                                                                                    {
-                                                                                                                                        return cocoon::internal::native<::NSUUID>(e);
-                                                                                                                                    })];
-        }
-    }
-
-#endif
-
-#ifdef COCOON_MACOS_27
-    bool WritingToolsCoordinator::show_grammar_presentation_for_range(const Range& range, const WritingToolsCoordinatorContext& context) const
-    {
-        if (@available(macOS 27.0, *))
-        {
-            return static_cast<bool>([cocoon::internal::ns<::NSWritingToolsCoordinator>(this) showGrammarPresentationForRange:cocoon::internal::to(range) inContext:cocoon::internal::native<::NSWritingToolsCoordinatorContext>(context)]);
-        }
-        return {};
-    }
-
-#endif
-
-#ifdef COCOON_MACOS_27
-    UUID WritingToolsCoordinator::start_text_animation(WritingToolsCoordinatorTextAnimation text_animation, const Range& range, const WritingToolsCoordinatorContext& context, WritingDirection writing_direction) const
-    {
-        if (@available(macOS 27.0, *))
-        {
-            return cocoon::internal::wrap<UUID>([cocoon::internal::ns<::NSWritingToolsCoordinator>(this) startTextAnimation:static_cast<::NSWritingToolsCoordinatorTextAnimation>(text_animation) forRange:cocoon::internal::to(range) inContext:cocoon::internal::native<::NSWritingToolsCoordinatorContext>(context) writingDirection:static_cast<::NSWritingDirection>(writing_direction)]);
-        }
-        return UUID(nullptr);
-    }
-
-#endif
-
     void WritingToolsCoordinator::stop_writing_tools() const
     {
         [cocoon::internal::ns<::NSWritingToolsCoordinator>(this) stopWritingTools];

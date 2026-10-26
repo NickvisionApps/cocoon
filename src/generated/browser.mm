@@ -235,46 +235,6 @@
     return static_cast<::BOOL>(__r);
 }
 
-#ifdef COCOON_MACOS_27
-- (id<NSPasteboardWriting>)browser:(NSBrowser*)browser pasteboardWriterForRow:(NSInteger)row column:(NSInteger)column
-{
-    id strongHost = host;
-    if (!strongHost)
-    {
-        return {};
-    }
-    auto __r = cocoon::Signal<cocoon::Browser, cocoon::Object(std::int64_t, std::int64_t)>::emit((__bridge void*)strongHost, "pasteboard_writer_for_row_column", static_cast<std::int64_t>(row), static_cast<std::int64_t>(column));
-    return cocoon::internal::native_id(__r);
-}
-
-#endif
-
-#ifdef COCOON_MACOS_27
-- (void)browser:(NSBrowser*)browser draggingSession:(NSDraggingSession*)session willBeginAtPoint:(NSPoint)screenPoint forRowsWithIndexes:(NSIndexSet*)rowIndexes column:(NSInteger)column
-{
-    id strongHost = host;
-    if (!strongHost)
-    {
-        return;
-    }
-    cocoon::Signal<cocoon::Browser, void(cocoon::DraggingSession, cocoon::Point, cocoon::IndexSet, std::int64_t)>::emit((__bridge void*)strongHost, "dragging_session_will_begin_at_point_for_rows_with_indexes_column", cocoon::internal::wrap<cocoon::DraggingSession>(session), cocoon::internal::from(screenPoint), cocoon::internal::wrap<cocoon::IndexSet>(rowIndexes), static_cast<std::int64_t>(column));
-}
-
-#endif
-
-#ifdef COCOON_MACOS_27
-- (void)browser:(NSBrowser*)browser draggingSession:(NSDraggingSession*)session endedAtPoint:(NSPoint)screenPoint operation:(NSDragOperation)operation
-{
-    id strongHost = host;
-    if (!strongHost)
-    {
-        return;
-    }
-    cocoon::Signal<cocoon::Browser, void(cocoon::DraggingSession, cocoon::Point, cocoon::DragOperation)>::emit((__bridge void*)strongHost, "dragging_session_ended_at_point_operation", cocoon::internal::wrap<cocoon::DraggingSession>(session), cocoon::internal::from(screenPoint), static_cast<cocoon::DragOperation>(operation));
-}
-
-#endif
-
 - (BOOL)browser:(NSBrowser*)browser writeRowsWithIndexes:(NSIndexSet*)rowIndexes inColumn:(NSInteger)column toPasteboard:(NSPasteboard*)pasteboard
 {
     id strongHost = host;
@@ -493,27 +453,6 @@
     {
         return strongHost && cocoon::Signal<cocoon::Browser, bool(std::int64_t, std::int64_t)>::connected((__bridge void*)strongHost, "should_show_cell_expansion_for_row_column");
     }
-#ifdef COCOON_MACOS_27
-    if (selector == @selector(browser:pasteboardWriterForRow:column:))
-    {
-        return strongHost && cocoon::Signal<cocoon::Browser, cocoon::Object(std::int64_t, std::int64_t)>::connected((__bridge void*)strongHost, "pasteboard_writer_for_row_column");
-    }
-#endif
-
-#ifdef COCOON_MACOS_27
-    if (selector == @selector(browser:draggingSession:willBeginAtPoint:forRowsWithIndexes:column:))
-    {
-        return strongHost && cocoon::Signal<cocoon::Browser, void(cocoon::DraggingSession, cocoon::Point, cocoon::IndexSet, std::int64_t)>::connected((__bridge void*)strongHost, "dragging_session_will_begin_at_point_for_rows_with_indexes_column");
-    }
-#endif
-
-#ifdef COCOON_MACOS_27
-    if (selector == @selector(browser:draggingSession:endedAtPoint:operation:))
-    {
-        return strongHost && cocoon::Signal<cocoon::Browser, void(cocoon::DraggingSession, cocoon::Point, cocoon::DragOperation)>::connected((__bridge void*)strongHost, "dragging_session_ended_at_point_operation");
-    }
-#endif
-
     if (selector == @selector(browser:writeRowsWithIndexes:inColumn:toPasteboard:))
     {
         return strongHost && cocoon::Signal<cocoon::Browser, bool(cocoon::IndexSet, std::int64_t, cocoon::Pasteboard)>::connected((__bridge void*)strongHost, "write_rows_with_indexes_in_column_to_pasteboard");

@@ -12,7 +12,7 @@ namespace cocoon
 
     /**
      * @brief C++ handle for the Objective-C class `NSURLSessionStreamTask` (Foundation).
-     * @details A URL session task that is stream-based. ''URLSessionStreamTask'' is a concrete subclass of ''URLSessionTask''. Many of the methods in the ''URLSessionStreamTask'' class are documented in ''URLSessionTask''. The ''URLSessionStreamTask'' class provides an interface a TCP/IP connection created via ''URLSession''. Tasks may be created from an ''URLSession'' using the ''URLSession/streamTask(withHostName:port:)'' and ''URLSession/streamTask(with:)'' methods. They may also be created as a result of an ''URLSessionDataTask'' being upgraded via the HTTP 'Upgrade:' response header and appropriate use of the ''URLSessionConfiguration/httpShouldUsePipelining'' option of ''URLSessionConfiguration''. > Note: > See [RFC 2817](https://tools.ietf.org/html/rfc2817) and [RFC 6455](https://tools.ietf.org/html/rfc6455) for information about the 'Upgrade:' header. A ''URLSessionStreamTask'' object performs asynchronous reads and writes, which are enqueued and executed serially, calling a handler upon completion being on the session delegate queue. If the task is canceled, all enqueued reads and writes will call their completion handlers with an appropriate error. When working with APIs that accept ''Stream'' objects, you can create ''InputStream'' and ''OutputStream'' objects from an ''URLSessionStreamTask'' object by calling the ''captureStreams()'' method. > Note: > watchOS supports ''URLSessionStreamTask'' for specific use cases. For more details, see \<doc://com.apple.documentation/documentation/technotes/tn3135-low-level-networking-on-watchos>.
+     * @details An NSURLSessionStreamTask provides an interface to perform reads and writes to a TCP/IP stream created via NSURLSession. This task may be explicitly created from an NSURLSession, or created as a result of the appropriate disposition response to a -URLSession:dataTask:didReceiveResponse: delegate message. NSURLSessionStreamTask can be used to perform asynchronous reads and writes. Reads and writes are enqueued and executed serially, with the completion handler being invoked on the sessions delegate queue. If an error occurs, or the task is canceled, all outstanding read and write calls will have their completion handlers invoked with an appropriate error. It is also possible to create NSInputStream and NSOutputStream instances from an NSURLSessionTask by sending -captureStreams to the task. All outstanding reads and writes are completed before the streams are created. Once the streams are delivered to the session delegate, the task is considered complete and will receive no more messages. These streams are disassociated from the underlying session.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      * Inherits from @ref URLSessionTask.
      *
@@ -44,22 +44,22 @@ namespace cocoon
         explicit URLSessionStreamTask(Adopt adopt);
         /**
          * @brief Calls `-[NSURLSessionStreamTask captureStreams]`.
-         * @details Completes any already enqueued reads and writes, then invokes the 'URLSession:streamTask:didBecomeInputStream:outputStream:' delegate message. When that message is received, the task object is considered completed and will not receive any more delegate messages.
+         * @details -captureStreams completes any already enqueued reads and writes, and then invokes the URLSession:streamTask:didBecomeInputStream:outputStream: delegate message. When that message is received, the task object is considered completed and will not receive any more delegate messages.
          */
         void capture_streams() const;
         /**
          * @brief Calls `-[NSURLSessionStreamTask closeRead]`.
-         * @details Enqueues a request to close the read side of the underlying socket. All outstanding IO will complete before the read side is closed. You may continue writing to the server.
+         * @details Enqueue a request to close the read side of the underlying socket. All outstanding IO will complete before the read side is closed. You may continue writing to the server.
          */
         void close_read() const;
         /**
          * @brief Calls `-[NSURLSessionStreamTask closeWrite]`.
-         * @details Enqueues a request to close the write end of the underlying socket. All outstanding IO will complete before the write side of the socket is closed. The server, however, may continue to write bytes back to the client, so best practice is to continue reading from the server until you receive EOF.
+         * @details Enqueue a request to close the write end of the underlying socket. All outstanding IO will complete before the write side of the socket is closed. The server, however, may continue to write bytes back to the client, so best practice is to continue reading from the server until you receive EOF.
          */
         void close_write() const;
         /**
          * @brief Calls `-[NSURLSessionStreamTask readDataOfMinLength:maxLength:timeout:completionHandler:]`.
-         * @details Reads minimum 'minBytes', or at most 'maxBytes' bytes and invokes the completion handler on the session's delegate queue with the data or an error. If an error occurs, any outstanding reads will also fail, and new read requests will error out immediately. - Parameter minBytes: The minimum number of bytes to read. - Parameter maxBytes: The maximum number of bytes to read. - Parameter timeout: The timeout interval for the read operation. - Parameter completionHandler: The completion handler to call when the read operation completes.
+         * @details Read minBytes, or at most maxBytes bytes and invoke the completion handler on the sessions delegate queue with the data or an error. If an error occurs, any outstanding reads will also fail, and new read requests will error out immediately.
          * @param min_bytes Argument converted to the Objective-C parameter of the same role.
          * @param max_bytes Argument converted to the Objective-C parameter of the same role.
          * @param timeout Argument converted to the Objective-C parameter of the same role.
@@ -68,12 +68,12 @@ namespace cocoon
         void read_data_of_min_length(std::uint64_t min_bytes, std::uint64_t max_bytes, double timeout, std::function<void(std::vector<std::uint8_t>, bool, Error)> completion_handler) const;
         /**
          * @brief Calls `-[NSURLSessionStreamTask startSecureConnection]`.
-         * @details Begins encrypted handshake. The handshake begins after all pending IO has completed. TLS authentication callbacks are sent to the session's 'URLSession:task:didReceiveChallenge:completionHandler:' delegate method.
+         * @details Begin encrypted handshake. The handshake begins after all pending IO has completed. TLS authentication callbacks are sent to the session's -URLSession:task:didReceiveChallenge:completionHandler:
          */
         void start_secure_connection() const;
         /**
          * @brief Calls `-[NSURLSessionStreamTask writeData:timeout:completionHandler:]`.
-         * @details Writes the data completely to the underlying socket. If all the bytes have not been written by the timeout, a timeout error will occur. Note that invocation of the completion handler does not guarantee that the remote side has received all the bytes, only that they have been written to the kernel. - Parameter data: The data to write to the stream. - Parameter timeout: The timeout interval for the write operation. - Parameter completionHandler: The completion handler to call when the write operation completes.
+         * @details Write the data completely to the underlying socket. If all the bytes have not been written by the timeout, a timeout error will occur. Note that invocation of the completion handler does not guarantee that the remote side has received all the bytes, only that they have been written to the kernel.
          * @param data Argument converted to the Objective-C parameter of the same role.
          * @param timeout Argument converted to the Objective-C parameter of the same role.
          * @param completion_handler Argument converted to the Objective-C parameter of the same role.

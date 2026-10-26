@@ -13,7 +13,6 @@ namespace cocoon
 
     /**
      * @brief C++ handle for the Objective-C class `NSIndexSpecifier` (Foundation).
-     * @details A specifier representing an object in a collection (or container) with an index number. The script terms 'first' and 'front' specify the object with index '0', while 'last' specifies the object with index of 'count-1'. A negative index indicates a location by counting backward from the last object in the collection. You don't normally subclass 'NSIndexSpecifier'.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      * Inherits from @ref ScriptObjectSpecifier.
      *
@@ -47,13 +46,11 @@ namespace cocoon
         explicit IndexSpecifier(Adopt adopt);
         /**
          * @brief Returns the `index` property of `NSIndexSpecifier`.
-         * @details The index position of the object to be retrieved.
          * @return The converted Objective-C result.
          */
         std::int64_t index() const;
         /**
          * @brief Sets the `index` property of `NSIndexSpecifier`.
-         * @details The index position of the object to be retrieved.
          * @param value Argument converted to the Objective-C parameter of the same role.
          */
         void set_index(std::int64_t value) const;

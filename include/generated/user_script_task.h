@@ -13,7 +13,7 @@ namespace cocoon
 
     /**
      * @brief C++ handle for the Objective-C class `NSUserScriptTask` (Foundation).
-     * @details An object that executes scripts. The ''NSUserScriptTask'' class is able to run all the scripts normally run by the one of its subclasses, however it ignores the results. It is intended to execute user-supplied scripts and will execute them outside of the application's sandbox, if any. If you need to execute scripts and get the input and output information use the ''NSUserUnixTask'', ''NSUserAppleScriptTask'', and ''NSUserAutomatorTask'' sub classes.
+     * @details NSUserScriptTask: An abstract "user script".
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      *
      * @par Example
@@ -42,7 +42,6 @@ namespace cocoon
         void execute_with_completion_handler(std::function<void(Error)> handler) const;
         /**
          * @brief Returns the `scriptURL` property of `NSUserScriptTask`.
-         * @details The URL of the script file.
          * @return The converted Objective-C result.
          */
         URL script_url() const;

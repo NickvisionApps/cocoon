@@ -51,43 +51,6 @@
     cocoon::Signal<cocoon::TextViewportLayoutController, void()>::emit((__bridge void*)strongHost, "did_layout");
 }
 
-#ifdef COCOON_MACOS_27
-- (void)textViewportLayoutController:(NSTextViewportLayoutController*)textViewportLayoutController cacheRenderingSurface:(id<NSTextViewportRenderingSurface>)renderingSurface forKey:(id<NSTextViewportRenderingSurfaceKey>)renderingSurfaceKey
-{
-    id strongHost = host;
-    if (!strongHost)
-    {
-        return;
-    }
-    cocoon::Signal<cocoon::TextViewportLayoutController, void(cocoon::Object, cocoon::Object)>::emit((__bridge void*)strongHost, "cache_rendering_surface_for_key", cocoon::internal::wrap<cocoon::Object>(renderingSurface), cocoon::internal::wrap<cocoon::Object>(renderingSurfaceKey));
-}
-
-#endif
-
-#ifdef COCOON_MACOS_27
-- (id<NSTextViewportRenderingSurface>)textViewportLayoutController:(NSTextViewportLayoutController*)textViewportLayoutController retrieveCachedRenderingSurfaceForKey:(id<NSTextViewportRenderingSurfaceKey>)renderingSurfaceKey
-{
-    id strongHost = host;
-    if (!strongHost)
-    {
-        return {};
-    }
-    auto __r = cocoon::Signal<cocoon::TextViewportLayoutController, cocoon::Object(cocoon::Object)>::emit((__bridge void*)strongHost, "retrieve_cached_rendering_surface_for_key", cocoon::internal::wrap<cocoon::Object>(renderingSurfaceKey));
-    return cocoon::internal::native_id(__r);
-}
-
-#endif
-
-- (void)textViewportLayoutControllerReceivedSetNeedsLayout:(NSTextViewportLayoutController*)textViewportLayoutController
-{
-    id strongHost = host;
-    if (!strongHost)
-    {
-        return;
-    }
-    cocoon::Signal<cocoon::TextViewportLayoutController, void()>::emit((__bridge void*)strongHost, "received_set_needs_layout");
-}
-
 - (BOOL)respondsToSelector:(SEL)selector
 {
     id strongHost = host;
@@ -106,24 +69,6 @@
     if (selector == @selector(textViewportLayoutControllerDidLayout:))
     {
         return strongHost && cocoon::Signal<cocoon::TextViewportLayoutController, void()>::connected((__bridge void*)strongHost, "did_layout");
-    }
-#ifdef COCOON_MACOS_27
-    if (selector == @selector(textViewportLayoutController:cacheRenderingSurface:forKey:))
-    {
-        return strongHost && cocoon::Signal<cocoon::TextViewportLayoutController, void(cocoon::Object, cocoon::Object)>::connected((__bridge void*)strongHost, "cache_rendering_surface_for_key");
-    }
-#endif
-
-#ifdef COCOON_MACOS_27
-    if (selector == @selector(textViewportLayoutController:retrieveCachedRenderingSurfaceForKey:))
-    {
-        return strongHost && cocoon::Signal<cocoon::TextViewportLayoutController, cocoon::Object(cocoon::Object)>::connected((__bridge void*)strongHost, "retrieve_cached_rendering_surface_for_key");
-    }
-#endif
-
-    if (selector == @selector(textViewportLayoutControllerReceivedSetNeedsLayout:))
-    {
-        return strongHost && cocoon::Signal<cocoon::TextViewportLayoutController, void()>::connected((__bridge void*)strongHost, "received_set_needs_layout");
     }
     return [super respondsToSelector:selector];
 }

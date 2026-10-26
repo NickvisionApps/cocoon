@@ -194,29 +194,6 @@ namespace cocoon
         return static_cast<std::int64_t>([cocoon::internal::ns<::NSSegmentedControl>(this) indexOfSelectedItem]);
     }
 
-#ifdef COCOON_MACOS_27
-    SegmentedControlRole SegmentedControl::role() const
-    {
-        if (@available(macOS 27.0, *))
-        {
-            return static_cast<SegmentedControlRole>([cocoon::internal::ns<::NSSegmentedControl>(this) role]);
-        }
-        return {};
-    }
-
-#endif
-
-#ifdef COCOON_MACOS_27
-    void SegmentedControl::set_role(SegmentedControlRole value) const
-    {
-        if (@available(macOS 27.0, *))
-        {
-            [cocoon::internal::ns<::NSSegmentedControl>(this) setRole:static_cast<::NSSegmentedControlRole>(value)];
-        }
-    }
-
-#endif
-
     std::int64_t SegmentedControl::segment_count() const
     {
         return static_cast<std::int64_t>([cocoon::internal::ns<::NSSegmentedControl>(this) segmentCount]);

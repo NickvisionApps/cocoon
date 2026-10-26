@@ -29,11 +29,6 @@ namespace cocoon
         return cocoon::internal::from([cocoon::internal::ns<::NSTextContainer>(this) lineFragmentRectForProposedRect:cocoon::internal::to(proposed_rect) sweepDirection:static_cast<::NSLineSweepDirection>(sweep_direction) movementDirection:static_cast<::NSLineMovementDirection>(movement_direction) remainingRect:(::NSRectPointer)(remaining_rect)]);
     }
 
-    void TextContainer::replace_layout_manager(const LayoutManager& new_layout_manager) const
-    {
-        [cocoon::internal::ns<::NSTextContainer>(this) replaceLayoutManager:cocoon::internal::native<::NSLayoutManager>(new_layout_manager)];
-    }
-
     Size TextContainer::container_size() const
     {
         return cocoon::internal::from([cocoon::internal::ns<::NSTextContainer>(this) containerSize]);
@@ -44,22 +39,6 @@ namespace cocoon
         [cocoon::internal::ns<::NSTextContainer>(this) setContainerSize:cocoon::internal::to(value)];
     }
 
-    std::vector<BezierPath> TextContainer::exclusion_paths() const
-    {
-        return cocoon::internal::from_array<BezierPath>([cocoon::internal::ns<::NSTextContainer>(this) exclusionPaths], [](id e) -> BezierPath
-                                                        {
-                                                            return cocoon::internal::wrap<BezierPath>((::NSBezierPath*)e);
-                                                        });
-    }
-
-    void TextContainer::set_exclusion_paths(const std::vector<BezierPath>& value) const
-    {
-        [cocoon::internal::ns<::NSTextContainer>(this) setExclusionPaths:cocoon::internal::to_array(value, [](const BezierPath& e) -> id
-                                                                                                    {
-                                                                                                        return cocoon::internal::native<::NSBezierPath>(e);
-                                                                                                    })];
-    }
-
     bool TextContainer::height_tracks_text_view() const
     {
         return static_cast<bool>([cocoon::internal::ns<::NSTextContainer>(this) heightTracksTextView]);
@@ -68,16 +47,6 @@ namespace cocoon
     void TextContainer::set_height_tracks_text_view(bool value) const
     {
         [cocoon::internal::ns<::NSTextContainer>(this) setHeightTracksTextView:static_cast<::BOOL>(value)];
-    }
-
-    LayoutManager TextContainer::layout_manager() const
-    {
-        return cocoon::internal::wrap<LayoutManager>([cocoon::internal::ns<::NSTextContainer>(this) layoutManager]);
-    }
-
-    void TextContainer::set_layout_manager(const LayoutManager& value) const
-    {
-        [cocoon::internal::ns<::NSTextContainer>(this) setLayoutManager:cocoon::internal::native<::NSLayoutManager>(value)];
     }
 
     LineBreakMode TextContainer::line_break_mode() const
@@ -128,16 +97,6 @@ namespace cocoon
     TextLayoutManager TextContainer::text_layout_manager() const
     {
         return cocoon::internal::wrap<TextLayoutManager>([cocoon::internal::ns<::NSTextContainer>(this) textLayoutManager]);
-    }
-
-    TextView TextContainer::text_view() const
-    {
-        return cocoon::internal::wrap<TextView>([cocoon::internal::ns<::NSTextContainer>(this) textView]);
-    }
-
-    void TextContainer::set_text_view(const TextView& value) const
-    {
-        [cocoon::internal::ns<::NSTextContainer>(this) setTextView:cocoon::internal::native<::NSTextView>(value)];
     }
 
     bool TextContainer::width_tracks_text_view() const

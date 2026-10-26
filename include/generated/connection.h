@@ -16,7 +16,6 @@ namespace cocoon
 
     /**
      * @brief C++ handle for the Objective-C class `NSConnection` (Foundation).
-     * @details \@DeprecationSummary { Use ''NSXPCConnection'' instead. } An object that manages the communication between objects in different threads or between a thread and a process running on a local or remote system. Connection objects form the backbone of the distributed objects mechanism and normally operate in the background. You use the methods of ''NSConnection'' explicitly when vending an object to other applications, when accessing such a vended object through a proxy, and when altering default communication parameters. At other times, you simply interact with a vended object or its proxy. A single connection object may be shared by multiple threads and used to access a vended object.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      *
      * @par Example
@@ -60,54 +59,45 @@ namespace cocoon
         explicit Connection(Adopt adopt);
         /**
          * @brief Calls `-[NSConnection addRequestMode:]`.
-         * @details Adds 'rmode' to the set of run-loop input modes that the receiver uses for connection requests. The default input mode is 'NSDefaultRunLoopMode'. See the 'NSRunLoop' class specification for more information on input modes.
          * @param rmode Argument converted to the Objective-C parameter of the same role.
          */
         void add_request_mode(const std::string& rmode) const;
         /**
          * @brief Calls `-[NSConnection addRunLoop:]`.
-         * @details Adds the specified run loop to the list of run loops on which the receiver listens for incoming messages.
          * @param runloop Argument converted to the Objective-C parameter of the same role.
          */
         void add_run_loop(const RunLoop& runloop) const;
         /**
          * @brief Calls `+[NSConnection allConnections]`.
-         * @details Returns an array of all existing 'NSConnection' objects.
          * @return The converted Objective-C result.
          */
         static std::vector<Connection> all_connections();
         /**
          * @brief Calls `+[NSConnection currentConversation]`.
-         * @details Returns an object representing an ongoing conversation triggered by a received message.
          * @return The converted Objective-C result.
          */
         static Object current_conversation();
         /**
          * @brief Calls `-[NSConnection dispatchWithComponents:]`.
-         * @details Dispatches Distributed Objects component data received over the wire. NSPort subclasses should use this method to ask a connection object to dispatch Distributed Objects component data. This will decode the data, authenticate, and send the message.
          * @param components Argument converted to the Objective-C parameter of the same role.
          */
         void dispatch_with_components(const std::vector<Object>& components) const;
         /**
          * @brief Calls `-[NSConnection enableMultipleThreads]`.
-         * @details Configures the receiver to allow requests from multiple threads to the remote object, without requiring each thread to maintain its own connection.
          */
         void enable_multiple_threads() const;
         /**
          * @brief Calls `-[NSConnection invalidate]`.
-         * @details Invalidates the receiver.
          */
         void invalidate() const;
         /**
          * @brief Calls `-[NSConnection registerName:]`.
-         * @details Registers the receiver with the default 'NSPortNameServer' under the given name.
          * @param name Argument converted to the Objective-C parameter of the same role.
          * @return The converted Objective-C result.
          */
         bool register_name(const std::string& name) const;
         /**
          * @brief Calls `-[NSConnection registerName:withNameServer:]`.
-         * @details Registers the receiver with the given name server under the given name.
          * @param name Argument converted to the Objective-C parameter of the same role.
          * @param server Argument converted to the Objective-C parameter of the same role.
          * @return The converted Objective-C result.
@@ -115,24 +105,20 @@ namespace cocoon
         bool register_name(const std::string& name, const PortNameServer& server) const;
         /**
          * @brief Calls `-[NSConnection removeRequestMode:]`.
-         * @details Removes 'rmode' from the set of run-loop input modes the receiver uses for connection requests.
          * @param rmode Argument converted to the Objective-C parameter of the same role.
          */
         void remove_request_mode(const std::string& rmode) const;
         /**
          * @brief Calls `-[NSConnection removeRunLoop:]`.
-         * @details Removes the specified run loop from the list of run loops on which the receiver listens for incoming messages.
          * @param runloop Argument converted to the Objective-C parameter of the same role.
          */
         void remove_run_loop(const RunLoop& runloop) const;
         /**
          * @brief Calls `-[NSConnection runInNewThread]`.
-         * @details Configures the receiver to use a new thread for its connection.
          */
         void run_in_new_thread() const;
         /**
          * @brief Calls `+[NSConnection serviceConnectionWithName:rootObject:]`.
-         * @details Returns an 'NSConnection' object that both listens for contact from external clients and has a designated root object, using the default name server.
          * @param name Argument converted to the Objective-C parameter of the same role.
          * @param root Argument converted to the Objective-C parameter of the same role.
          * @return The converted Objective-C result.
@@ -140,7 +126,6 @@ namespace cocoon
         static Connection service_connection_with_name(const std::string& name, const Object& root);
         /**
          * @brief Calls `+[NSConnection serviceConnectionWithName:rootObject:usingNameServer:]`.
-         * @details Returns an 'NSConnection' object that both listens for contact from external clients and has a designated root object.
          * @param name Argument converted to the Objective-C parameter of the same role.
          * @param root Argument converted to the Objective-C parameter of the same role.
          * @param server Argument converted to the Objective-C parameter of the same role.
@@ -149,97 +134,81 @@ namespace cocoon
         static Connection service_connection_with_name(const std::string& name, const Object& root, const PortNameServer& server);
         /**
          * @brief Returns the `independentConversationQueueing` property of `NSConnection`.
-         * @details A Boolean value that indicates whether the receiver handles requests atomically.
          * @return The converted Objective-C result.
          */
         bool independent_conversation_queueing() const;
         /**
          * @brief Sets the `independentConversationQueueing` property of `NSConnection`.
-         * @details A Boolean value that indicates whether the receiver handles requests atomically.
          * @param value Argument converted to the Objective-C parameter of the same role.
          */
         void set_independent_conversation_queueing(bool value) const;
         /**
          * @brief Returns the `localObjects` property of `NSConnection`.
-         * @details All local objects that are being vended over the connection.
          * @return The converted Objective-C result.
          */
         std::vector<Object> local_objects() const;
         /**
          * @brief Returns the `multipleThreadsEnabled` property of `NSConnection`.
-         * @details A Boolean value that indicates whether the receiver supports requests from multiple threads.
          * @return The converted Objective-C result.
          */
         bool multiple_threads_enabled() const;
         /**
          * @brief Returns the `receivePort` property of `NSConnection`.
-         * @details The port on which the receiver receives messages.
          * @return The converted Objective-C result.
          */
         Port receive_port() const;
         /**
          * @brief Returns the `remoteObjects` property of `NSConnection`.
-         * @details The proxies for all remote objects that have been received over the connection but have not yet been deallocated.
          * @return The converted Objective-C result.
          */
         std::vector<Object> remote_objects() const;
         /**
          * @brief Returns the `replyTimeout` property of `NSConnection`.
-         * @details The timeout interval for replies.
          * @return The converted Objective-C result.
          */
         double reply_timeout() const;
         /**
          * @brief Sets the `replyTimeout` property of `NSConnection`.
-         * @details The timeout interval for replies.
          * @param value Argument converted to the Objective-C parameter of the same role.
          */
         void set_reply_timeout(double value) const;
         /**
          * @brief Returns the `requestModes` property of `NSConnection`.
-         * @details The set of request modes the receiver's receive port is registered for with its 'NSRunLoop' object.
          * @return The converted Objective-C result.
          */
         std::vector<std::string> request_modes() const;
         /**
          * @brief Returns the `requestTimeout` property of `NSConnection`.
-         * @details The timeout interval for outgoing requests.
          * @return The converted Objective-C result.
          */
         double request_timeout() const;
         /**
          * @brief Sets the `requestTimeout` property of `NSConnection`.
-         * @details The timeout interval for outgoing requests.
          * @param value Argument converted to the Objective-C parameter of the same role.
          */
         void set_request_timeout(double value) const;
         /**
          * @brief Returns the `rootObject` property of `NSConnection`.
-         * @details The object that the receiver makes available to other applications or threads.
          * @return The converted Objective-C result.
          */
         Object root_object() const;
         /**
          * @brief Sets the `rootObject` property of `NSConnection`.
-         * @details The object that the receiver makes available to other applications or threads.
          * @param value Argument converted to the Objective-C parameter of the same role.
          */
         void set_root_object(const Object& value) const;
         /**
          * @brief Returns the `sendPort` property of `NSConnection`.
-         * @details The port on which the receiver sends messages.
          * @return The converted Objective-C result.
          */
         Port send_port() const;
         /**
          * @brief Returns the `statistics` property of `NSConnection`.
-         * @details A dictionary containing various statistics for the receiver. An 'NSDictionary' object containing various statistics for the receiver, such as the number of vended objects, the number of requests and replies, and so on. The statistics dictionary should be used only for debugging purposes.
          * @return The converted Objective-C result.
          */
         std::map<std::string, Number> statistics() const;
         /**
          * @brief Returns the `valid` property of `NSConnection`.
-         * @details A Boolean value that indicates whether the receiver is known to be valid.
          * @return The converted Objective-C result.
          */
         bool is_valid() const;

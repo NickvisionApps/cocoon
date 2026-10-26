@@ -12,7 +12,6 @@ namespace cocoon
 
     /**
      * @brief C++ handle for the Objective-C class `NSCondition` (Foundation).
-     * @details A condition variable whose semantics follow those used for POSIX-style conditions.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      *
      * @par Example
@@ -46,35 +45,29 @@ namespace cocoon
         explicit Condition(Adopt adopt);
         /**
          * @brief Calls `-[NSCondition broadcast]`.
-         * @details Signals the condition, waking up all waiting threads.
          */
         void broadcast() const;
         /**
          * @brief Calls `-[NSCondition signal]`.
-         * @details Signals the condition, waking up one waiting thread.
          */
         void signal_() const;
         /**
          * @brief Calls `-[NSCondition wait]`.
-         * @details Blocks the current thread until the condition is signaled.
          */
         void wait() const;
         /**
          * @brief Calls `-[NSCondition waitUntilDate:]`.
-         * @details Blocks the current thread until the condition is signaled or the specified time limit is reached.
          * @param limit Argument converted to the Objective-C parameter of the same role.
          * @return The converted Objective-C result.
          */
         bool wait_until_date(const Date& limit) const;
         /**
          * @brief Returns the `name` property of `NSCondition`.
-         * @details The name associated with the receiver.
          * @return The converted Objective-C result.
          */
         std::string name() const;
         /**
          * @brief Sets the `name` property of `NSCondition`.
-         * @details The name associated with the receiver.
          * @param value Argument converted to the Objective-C parameter of the same role.
          */
         void set_name(const std::string& value) const;

@@ -12,7 +12,6 @@ namespace cocoon
 
     /**
      * @brief C++ handle for the Objective-C class `NSDeleteCommand` (Foundation).
-     * @details A command that deletes a scriptable object. An instance of 'NSDeleteCommand' deletes the specified scriptable object or objects (such as words, paragraphs, and so on). Suppose, for example, a user executes a script that sends the command 'delete the third rectangle in the first document' to the Sketch sample application (located in '/Developer/Examples/AppKit'). Cocoa creates an 'NSDeleteCommand' object to perform the operation. When the command is executed, it uses the key-value coding mechanism (by invoking 'removeValueAtIndex:fromPropertyWithKey:') to remove the specified object or objects from their container. See the description for \<doc://com.apple.documentation/documentation/objectivec/nsobject-swift.class/removevalue(at:frompropertywithkey:)> for related information. 'NSDeleteCommand' is part of Cocoa's built-in scripting support. Most applications don't need to subclass 'NSDeleteCommand' or call its methods.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      * Inherits from @ref ScriptCommand.
      *
@@ -43,13 +42,11 @@ namespace cocoon
         using ScriptCommand::set_receivers_specifier;
         /**
          * @brief Calls `-[NSDeleteCommand setReceiversSpecifier:]`.
-         * @details Splits off the inner-most child specifier from the receivers specifier.
          * @param receivers_ref Argument converted to the Objective-C parameter of the same role.
          */
         void set_receivers_specifier(const ScriptObjectSpecifier& receivers_ref) const;
         /**
          * @brief Returns the `keySpecifier` property of `NSDeleteCommand`.
-         * @details The key specifier for the delete operation.
          * @return The converted Objective-C result.
          */
         ScriptObjectSpecifier key_specifier() const;

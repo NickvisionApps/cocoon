@@ -13,7 +13,6 @@ namespace cocoon
 
     /**
      * @brief C++ handle for the Objective-C class `NSRangeSpecifier` (Foundation).
-     * @details A specifier for a range of objects in a container. An 'NSRangeSpecifier' object specifies a range (that is, an uninterrupted series) of objects in a container through two delimiting objects. The range is represented by two object specifiers, a start specifier and an end specifier, which can be of any specifier type (such as ''NSIndexSpecifier'' or ''NSWhoseSpecifier'' object). These specifiers are evaluated in the context of the same container object as the range specifier itself. You don't normally subclass 'NSRangeSpecifier'.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      * Inherits from @ref ScriptObjectSpecifier.
      *
@@ -49,25 +48,21 @@ namespace cocoon
         explicit RangeSpecifier(Adopt adopt);
         /**
          * @brief Returns the `endSpecifier` property of `NSRangeSpecifier`.
-         * @details The specifier for the end of the range.
          * @return The converted Objective-C result.
          */
         ScriptObjectSpecifier end_specifier() const;
         /**
          * @brief Sets the `endSpecifier` property of `NSRangeSpecifier`.
-         * @details The specifier for the end of the range.
          * @param value Argument converted to the Objective-C parameter of the same role.
          */
         void set_end_specifier(const ScriptObjectSpecifier& value) const;
         /**
          * @brief Returns the `startSpecifier` property of `NSRangeSpecifier`.
-         * @details The specifier for the beginning of the range.
          * @return The converted Objective-C result.
          */
         ScriptObjectSpecifier start_specifier() const;
         /**
          * @brief Sets the `startSpecifier` property of `NSRangeSpecifier`.
-         * @details The specifier for the beginning of the range.
          * @param value Argument converted to the Objective-C parameter of the same role.
          */
         void set_start_specifier(const ScriptObjectSpecifier& value) const;

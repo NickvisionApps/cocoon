@@ -158,14 +158,6 @@ namespace cocoon
          * @return The converted Objective-C result.
          */
         const WindowDepth* supported_window_depths() const;
-#ifdef COCOON_MACOS_27
-        /**
-         * @brief Returns the `touchCapabilities` property of `NSScreen`.
-         * @return The converted Objective-C result.
-         */
-        ScreenTouchCapabilities touch_capabilities() const;
-#endif
-
         /**
          * @brief Returns the `visibleFrame` property of `NSScreen`.
          * @return The converted Objective-C result.

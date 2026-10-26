@@ -13,7 +13,6 @@ namespace cocoon
 
     /**
      * @brief C++ handle for the Objective-C class `NSURLSessionTaskMetrics` (Foundation).
-     * @details An object encapsulating the metrics for a session task. Each ''URLSessionTaskMetrics'' object contains the ''taskInterval'' and ''redirectCount'', as well as metrics for each request-and-response transaction made during the execution of the task.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      *
      * @par Example
@@ -35,7 +34,7 @@ namespace cocoon
         explicit URLSessionTaskMetrics(Adopt adopt);
         /**
          * @brief Returns the `redirectCount` property of `NSURLSessionTaskMetrics`.
-         * @details The number of redirects that were recorded.
+         * @details redirectCount is the number of redirects that were recorded.
          * @return The converted Objective-C result.
          */
         std::uint64_t redirect_count() const;
@@ -47,7 +46,7 @@ namespace cocoon
         DateInterval task_interval() const;
         /**
          * @brief Returns the `transactionMetrics` property of `NSURLSessionTaskMetrics`.
-         * @details An array containing the metrics collected for every request/response transaction created during the task execution.
+         * @details transactionMetrics array contains the metrics collected for every request/response transaction created during the task execution.
          * @return The converted Objective-C result.
          */
         std::vector<URLSessionTaskTransactionMetrics> transaction_metrics() const;

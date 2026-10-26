@@ -68,29 +68,6 @@ namespace cocoon
         [cocoon::internal::ns<::NSToolbarItemGroup>(this) setControlRepresentation:static_cast<::NSToolbarItemGroupControlRepresentation>(value)];
     }
 
-#ifdef COCOON_MACOS_27
-    ToolbarItemGroupRole ToolbarItemGroup::role() const
-    {
-        if (@available(macOS 27.0, *))
-        {
-            return static_cast<ToolbarItemGroupRole>([cocoon::internal::ns<::NSToolbarItemGroup>(this) role]);
-        }
-        return {};
-    }
-
-#endif
-
-#ifdef COCOON_MACOS_27
-    void ToolbarItemGroup::set_role(ToolbarItemGroupRole value) const
-    {
-        if (@available(macOS 27.0, *))
-        {
-            [cocoon::internal::ns<::NSToolbarItemGroup>(this) setRole:static_cast<::NSToolbarItemGroupRole>(value)];
-        }
-    }
-
-#endif
-
     std::int64_t ToolbarItemGroup::selected_index() const
     {
         return static_cast<std::int64_t>([cocoon::internal::ns<::NSToolbarItemGroup>(this) selectedIndex]);

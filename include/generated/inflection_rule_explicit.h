@@ -12,7 +12,6 @@ namespace cocoon
 
     /**
      * @brief C++ handle for the Objective-C class `NSInflectionRuleExplicit` (Foundation).
-     * @details An inflection rule that uses a morphology instance to determine how to inflect attributed strings.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      * Inherits from @ref InflectionRule.
      *
@@ -36,7 +35,6 @@ namespace cocoon
         explicit InflectionRuleExplicit(Adopt adopt);
         /**
          * @brief Returns the `morphology` property of `NSInflectionRuleExplicit`.
-         * @details The morphology used by the receiver.
          * @return The converted Objective-C result.
          */
         Morphology morphology() const;

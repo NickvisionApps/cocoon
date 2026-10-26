@@ -12,7 +12,6 @@ namespace cocoon
 
     /**
      * @brief C++ handle for the Objective-C class `NSMeasurement` (Foundation).
-     * @details A numeric quantity labeled with a unit of measure, with support for unit conversion and unit-aware calculations. An ''NSMeasurement'' object represents a quantity and unit of measure. The ''NSMeasurement'' class provides a programmatic interface to converting measurements into different units, as well as calculating the sum or difference between two measurements. ''NSMeasurement'' objects are initialized with an ''Unit'' object and 'double' value. ''NSMeasurement'' objects are immutable, and cannot be changed after being created. You can use the ''MeasurementFormatter'' class to create localized string representations of ''NSMeasurement'' objects. > Important: > The Swift overlay to the Foundation framework provides the ''Measurement'' structure, which bridges to the ''NSMeasurement'' class. For more information about value types, see \<doc://com.apple.documentation/documentation/swift/working-with-foundation-types>.
      * Handles are cheap, copyable wrappers around a retained native object: copies refer to the same underlying instance.
      * Use the typed template @ref Measurement to supply UnitType.
      *
@@ -44,41 +43,38 @@ namespace cocoon
         explicit MeasurementBase(Adopt adopt);
         /**
          * @brief Calls `-[NSMeasurement canBeConvertedToUnit:]`.
-         * @details Returns a Boolean value that indicates whether this measurement can be converted to the given unit.
+         * @details Given an NSUnit object, canBeConvertedToUnit: will check for dimensionality i.e. check the unit type (NSUnitAngle, NSUnitLength, NSUnitCustom, etc.) of the NSUnit object. It will return YES if the unit type of the given unit is the same as the unit type of the unit within the NSMeasurement object and NO if not. Note: This method will return NO if given or called on a dimensionless unit.
          * @param unit Argument converted to the Objective-C parameter of the same role.
          * @return The converted Objective-C result.
          */
         bool can_be_converted_to_unit(const Unit& unit) const;
         /**
          * @brief Calls `-[NSMeasurement measurementByAddingMeasurement:]`.
-         * @details Returns a new measurement by adding the receiver to the given measurement. - Parameter measurement: The measurement to add. Must be of the same dimensionality as the receiver. - Returns: A new 'NSMeasurement' with the adjusted value and the same unit as the receiver.
+         * @details Given an NSMeasurement object, these methods will first check for dimensionality i.e. check the unit type (NSUnitAngle, NSUnitLength, NSUnitCustom, etc.) of the unit contained in that object. If the unit type of the unit in the given NSMeasurement object is not the same as the unit type of the unit within the current NSMeasurement instance (i.e. the units are of differing dimensionalities), these methods will throw an InvalidArgumentException. \@return A new NSMeasurement object with the adjusted value and a unit that is the same type as the current NSMeasurement instance.
          * @param measurement Argument converted to the Objective-C parameter of the same role.
          * @return The converted Objective-C result.
          */
         MeasurementBase measurement_by_adding_measurement(const MeasurementBase& measurement) const;
         /**
          * @brief Calls `-[NSMeasurement measurementByConvertingToUnit:]`.
-         * @details Returns a measurement created by converting the receiver to the specified unit. - Parameter unit: The unit to convert to. Must be of the same dimensionality as the receiver's unit. - Returns: A new 'NSMeasurement' object with the given unit and converted value.
+         * @details Given an NSUnit object, measurementByConvertingUnit: will first check for dimensionality i.e. check the unit type (NSUnitAngle, NSUnitLength, NSUnitCustom, etc.) of the NSUnit object. If the unit type of the given unit is not the same as the unit type of the unit within the NSMeasurement object (i.e. the units are of differing dimensionalities), measurementByConvertingToUnit: will throw an InvalidArgumentException. \@return A new NSMeasurement object with the given unit and converted value.
          * @param unit Argument converted to the Objective-C parameter of the same role.
          * @return The converted Objective-C result.
          */
         MeasurementBase measurement_by_converting_to_unit(const Unit& unit) const;
         /**
          * @brief Calls `-[NSMeasurement measurementBySubtractingMeasurement:]`.
-         * @details Returns a new measurement by subtracting the given measurement from the receiver. - Parameter measurement: The measurement to subtract. Must be of the same dimensionality as the receiver. - Returns: A new 'NSMeasurement' with the adjusted value and the same unit as the receiver.
          * @param measurement Argument converted to the Objective-C parameter of the same role.
          * @return The converted Objective-C result.
          */
         MeasurementBase measurement_by_subtracting_measurement(const MeasurementBase& measurement) const;
         /**
          * @brief Returns the `doubleValue` property of `NSMeasurement`.
-         * @details The value component of the measurement.
          * @return The converted Objective-C result.
          */
         double double_value() const;
         /**
          * @brief Returns the `unit` property of `NSMeasurement`.
-         * @details The unit component of the measurement.
          * @return The converted Objective-C result.
          */
         Object unit() const;

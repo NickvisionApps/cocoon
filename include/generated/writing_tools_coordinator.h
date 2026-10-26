@@ -11,7 +11,6 @@ namespace cocoon
     class AttributedString;
     class UUID;
     class View;
-    class WritingToolsCoordinatorContext;
 
     /**
      * @brief C++ handle for the Objective-C class `NSWritingToolsCoordinator` (AppKit).
@@ -52,38 +51,6 @@ namespace cocoon
         WritingToolsCoordinator(std::nullptr_t);
         /// @brief Wraps an existing retained native object without creating a new one.
         explicit WritingToolsCoordinator(Adopt adopt);
-#ifdef COCOON_MACOS_27
-        /**
-         * @brief Calls `-[NSWritingToolsCoordinator cancelTextAnimationsWithIdentifiers:]`.
-         * @details Used to support the presentation of grammar issues in text. If it is necessary to cancel the animation of one or more issues, call this to cancel theanimations. The UUIDs passed in should be those returned when starting the animations. To cancel all ahimations, use ''stopWritingTools'' instead.
-         * @param identifiers Argument converted to the Objective-C parameter of the same role.
-         */
-        void cancel_text_animations_with_identifiers(const std::vector<UUID>& identifiers) const;
-#endif
-
-#ifdef COCOON_MACOS_27
-        /**
-         * @brief Calls `-[NSWritingToolsCoordinator showGrammarPresentationForRange:inContext:]`.
-         * @details Used to support the presentation of grammar issues in text. When the user interacts with an issue, call this to bring up the relevant UI. Pass in context and range to identify the issue the user selected. The context must match one of the contexts returned from ''NSWritingToolsCoordinator/Delegate/writingToolsCoordinator(:requestsContextsFor:completion:)'' and the range must match the range in the context of one of the grammar details returned for that context from ''NSWritingToolsCoordinator/Delegate/writingToolsCoordinator(:requestsGrammarResultsFor:completion:)'' Returns NO if the UI cannot be brought up.
-         * @param range Argument converted to the Objective-C parameter of the same role.
-         * @param context Argument converted to the Objective-C parameter of the same role.
-         * @return The converted Objective-C result.
-         */
-        bool show_grammar_presentation_for_range(const Range& range, const WritingToolsCoordinatorContext& context) const;
-#endif
-
-#ifdef COCOON_MACOS_27
-        /**
-         * @brief Calls `-[NSWritingToolsCoordinator startTextAnimation:forRange:inContext:writingDirection:]`.
-         * @param text_animation Argument converted to the Objective-C parameter of the same role.
-         * @param range Argument converted to the Objective-C parameter of the same role.
-         * @param context Argument converted to the Objective-C parameter of the same role.
-         * @param writing_direction Argument converted to the Objective-C parameter of the same role.
-         * @return The converted Objective-C result.
-         */
-        UUID start_text_animation(WritingToolsCoordinatorTextAnimation text_animation, const Range& range, const WritingToolsCoordinatorContext& context, WritingDirection writing_direction) const;
-#endif
-
         /**
          * @brief Calls `-[NSWritingToolsCoordinator stopWritingTools]`.
          * @details Stops the current Writing Tools operation and dismisses the system UI. Call this method to abort the current Writing Tools operation. This method dismisses the system’s Writing Tools UI and stops any in-flight interactions with your view. This method does not undo any changes that Writing Tools already made to your view’s content.
@@ -146,7 +113,7 @@ namespace cocoon
         void set_includes_text_list_markers(bool value) const;
         /**
          * @brief Returns the `isWritingToolsAvailable` property of `NSWritingToolsCoordinator`.
-         * @details A Boolean value that indicates whether Writing Tools features are available to enable. The value of this property is 'true' when Writing Tools features are supported, even when the user has not enabled the feature. Writing Tools support might be unavailable because of device constraints.
+         * @details A Boolean value that indicates whether Writing Tools features are currently available. The value of this property is 'true' when Writing Tools features are available, and 'false' when they aren’t. Writing Tools support might be unavailable because of device constraints or because the system isn’t ready to process Writing Tools requests.
          * @return The converted Objective-C result.
          */
         static bool is_writing_tools_available();
